@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "frompdf"
+version = "0.1.0"
+description = "Extract text from PDFs and write structured outputs"
+requires-python = ">=3.11"
+license = "MIT"
+license-files = ["LICENSE.txt"]
+authors = [
+    { name = "Christian Siefkes" },
+]
+keywords = ["pdf", "text-extraction", "markdown", "cli"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Text Processing",
+    "Topic :: Utilities",
+]
+dependencies = [
+    "pdftext",
+]
+
+[project.scripts]
+frompdf = "frompdf.pdfextractor:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
