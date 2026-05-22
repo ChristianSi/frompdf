@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import argparse
 import csv
+import re
 from collections import defaultdict
 from dataclasses import asdict, dataclass
 from pathlib import Path
@@ -100,8 +101,7 @@ def iter_lines(page_list: list[dict]) -> list[Line]:
                 line_no_on_page += 1
 
                 text_value = ''.join(
-                    span_dict.get('text', '')
-                    for span_dict in line_dict.get('spans', [])
+                    span_dict.get('text', '') for span_dict in line_dict.get('spans', [])
                 ).strip()
 
                 x1, y1, x2, y2 = get_bbox(line_dict)
@@ -132,6 +132,26 @@ def iter_lines(page_list: list[dict]) -> list[Line]:
                 previous_y1 = y1
 
     return line_list
+
+
+def normalize_header_footer_text(text: str) -> str:
+    """Normalize text for detecting repeated headers and footers."""
+    normalized = text.strip()
+    normalized = re.sub(r'\s+', ' ', normalized)
+    normalized = normalized.casefold()
+
+    # Replace Arabic numerals.
+    normalized = re.sub(r'\d+', '$NUM', normalized)
+
+    # Replace common Roman numerals, conservatively.
+    roman_pattern = r'\b[ivxlcdm]+\b'
+    normalized = re.sub(roman_pattern, '$ROMAN', normalized, flags=re.IGNORECASE)
+
+    # Normalize repeated punctuation around page numbers.
+    normalized = re.sub(r'[–—−-]+', '-', normalized)
+    normalized = re.sub(r'\s*([|•·/\\-])\s*', r'\1', normalized)
+
+    return normalized
 
 
 def dump_csv(line_list: list[Line], output_path: Path) -> None:
@@ -171,10 +191,7 @@ def lines_to_markdown_blocks(line_list: list[Line]) -> list[Block]:
         if (
             current_page_no is not None
             and current_block_no is not None
-            and (
-                line_obj.page_no != current_page_no
-                or line_obj.block_no != current_block_no
-            )
+            and (line_obj.page_no != current_page_no or line_obj.block_no != current_block_no)
         ):
             block_list.append(
                 Paragraph(
@@ -231,9 +248,7 @@ def dump_text(block_list: list[Block], output_path: Path) -> None:
 
 def main() -> int:
     """Run the command-line interface."""
-    parser = argparse.ArgumentParser(
-        description='Extract line records from a PDF using pdftext.'
-    )
+    parser = argparse.ArgumentParser(description='Extract line records from a PDF using pdftext.')
     parser.add_argument('pdf_file', type=Path, help='Path to the input PDF file')
     args = parser.parse_args()
 
