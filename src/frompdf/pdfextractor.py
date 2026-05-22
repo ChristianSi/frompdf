@@ -3,11 +3,14 @@ import argparse
 import csv
 import re
 from collections import defaultdict
+from collections.abc import Sequence
 from dataclasses import asdict, dataclass
 from pathlib import Path
 from typing import TextIO
 
 from pdftext.extraction import dictionary_output
+from pdftext.schema import Line as PdfTextLine
+from pdftext.schema import Page
 
 
 @dataclass
@@ -48,7 +51,7 @@ def round_or_none(value: float | int | None, digits: int = 1) -> float | None:
     return round(float(value), digits)
 
 
-def get_bbox(obj: dict) -> tuple[float | None, float | None, float | None, float | None]:
+def get_bbox(obj: PdfTextLine) -> tuple[float | None, float | None, float | None, float | None]:
     """Extract a 4-value bbox tuple from an object, if present."""
     bbox = obj.get('bbox')
     if not isinstance(bbox, list | tuple) or len(bbox) != 4:
@@ -61,7 +64,7 @@ def get_bbox(obj: dict) -> tuple[float | None, float | None, float | None, float
         return None, None, None, None
 
 
-def dominant_font_size(line_dict: dict) -> float | None:
+def dominant_font_size(line_dict: PdfTextLine) -> float | None:
     """Return the dominant font size for a line, weighted by text length."""
     size_weights: dict[float, int] = defaultdict(int)
 
@@ -87,7 +90,7 @@ def dominant_font_size(line_dict: dict) -> float | None:
     return max(size_weights.items(), key=lambda item: (item[1], item[0]))[0]
 
 
-def iter_lines(page_list: list[dict]) -> list[Line]:
+def iter_lines(page_list: Sequence[Page]) -> list[Line]:
     """Flatten pdftext dictionary output into a list of Line records."""
     line_list: list[Line] = []
 
