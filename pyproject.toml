@@ -37,8 +37,14 @@ package-dir = {"" = "src"}
 [tool.setuptools.packages.find]
 where = ["src"]
 
+[tool.basedpyright]
+typeCheckingMode = "standard"
+
 [tool.ruff]
 line-length = 100
 
 [tool.ruff.format]
 quote-style = "single"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
