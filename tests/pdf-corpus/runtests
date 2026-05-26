@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+set -u
+
+cd "$(dirname "$0")" || exit 1
+shopt -s nullglob
+
+failed=0
+
+for pdf_file in *.pdf; do
+    echo "Converting $pdf_file"
+    if ! frompdf "$pdf_file" >/dev/null; then
+        echo "Conversion failed: $pdf_file"
+        failed=1
+    fi
+done
+
+for expected_file in *.expected.*; do
+    actual_file="${expected_file/.expected./.}"
+
+    if [[ ! -f "$actual_file" ]]; then
+        echo "Missing output: $actual_file"
+        failed=1
+        continue
+    fi
+
+    if ! diff -q "$expected_file" "$actual_file" >/dev/null; then
+        echo "Mismatch: $expected_file differs from $actual_file"
+        failed=1
+    fi
+done
+
+if [[ "$failed" -eq 0 ]]; then
+    echo "All checks passed"
+fi
+
+exit "$failed"
