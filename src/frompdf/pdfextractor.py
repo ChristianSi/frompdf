@@ -2,7 +2,7 @@
 import argparse
 import csv
 import re
-from collections import defaultdict
+from collections import Counter, defaultdict
 from collections.abc import Sequence
 from dataclasses import asdict, dataclass
 from pathlib import Path
@@ -42,6 +42,24 @@ class Block:
 @dataclass
 class Paragraph(Block):
     """A Markdown paragraph."""
+
+
+@dataclass
+class PageNumber:
+    """A visible page number found in a header or footer."""
+
+    raw: int
+    visible: str
+
+
+@dataclass
+class HeaderFooterCandidate:
+    """A line that may be part of a repeated header or footer."""
+
+    index: int
+    line: Line
+    zone: str
+    normalized: str
 
 
 def round_or_none(value: float | int | None, digits: int = 1) -> float | None:
@@ -148,13 +166,21 @@ def normalize_header_footer_text(text: str) -> str:
 
     # Replace common Roman numerals, conservatively.
     roman_pattern = r'\b[ivxlcdm]+\b'
-    normalized = re.sub(roman_pattern, '$ROMAN', normalized, flags=re.IGNORECASE)
+    normalized = re.sub(roman_pattern, normalize_roman_numeral, normalized)
 
     # Normalize repeated punctuation around page numbers.
     normalized = re.sub(r'[–—−-]+', '-', normalized)
     normalized = re.sub(r'\s*([|•·/\\-])\s*', r'\1', normalized)
 
     return normalized
+
+
+def normalize_roman_numeral(match: re.Match[str]) -> str:
+    """Normalize plausible Roman numerals without rewriting every single letter."""
+    text = match.group(0)
+    if len(text) == 1 and text not in {'i', 'v', 'x'}:
+        return text
+    return '$ROMAN'
 
 
 def dump_csv(line_list: list[Line], output_path: Path) -> None:
@@ -172,6 +198,11 @@ def build_csv_output_path(input_path: Path) -> Path:
     return input_path.with_name(f'{input_path.stem}-lines.csv')
 
 
+def build_pagenos_output_path(input_path: Path) -> Path:
+    """Return the default CSV output path for visible page numbers."""
+    return input_path.with_name(f'{input_path.stem}-pagenos.csv')
+
+
 def build_text_output_path(input_path: Path) -> Path:
     """Return the default Markdown output path."""
     return input_path.with_suffix('.md')
@@ -181,6 +212,216 @@ def backup_existing_file(output_path: Path) -> None:
     """Move an existing output file aside before writing."""
     if output_path.exists():
         output_path.replace(output_path.with_name(f'{output_path.name}.bak'))
+
+
+def dump_page_numbers(page_number_list: list[PageNumber], output_path: Path) -> None:
+    """Write visible page numbers as CSV with a header row."""
+    with output_path.open('w', encoding='utf-8', newline='') as output_file:
+        writer = csv.DictWriter(output_file, fieldnames=['raw', 'visible'])
+        writer.writeheader()
+        for page_number in page_number_list:
+            writer.writerow(asdict(page_number))
+
+
+def candidate_zone(line_obj: Line, page_height: float) -> str | None:
+    """Return the header/footer zone for a line, if it is near a page edge."""
+    if line_obj.y1 is None:
+        return None
+
+    header_end = max(80.0, page_height * 0.10)
+    footer_start = page_height - max(120.0, page_height * 0.15)
+
+    if line_obj.y1 <= header_end:
+        return 'header'
+    if line_obj.y1 >= footer_start:
+        return 'footer'
+    return None
+
+
+def iter_header_footer_candidates(
+    line_list: list[Line], page_list: Sequence[Page]
+) -> list[HeaderFooterCandidate]:
+    """Return non-empty lines in likely header and footer zones."""
+    page_heights = {
+        page_no: float(page_dict['height']) for page_no, page_dict in enumerate(page_list, start=1)
+    }
+    candidate_list: list[HeaderFooterCandidate] = []
+
+    for index, line_obj in enumerate(line_list):
+        if not line_obj.text:
+            continue
+
+        page_height = page_heights.get(line_obj.page_no)
+        if page_height is None:
+            continue
+
+        zone = candidate_zone(line_obj, page_height)
+        if zone is None:
+            continue
+
+        candidate_list.append(
+            HeaderFooterCandidate(
+                index=index,
+                line=line_obj,
+                zone=zone,
+                normalized=normalize_header_footer_text(line_obj.text),
+            )
+        )
+
+    return candidate_list
+
+
+def repeated_header_footer_keys(
+    candidate_list: list[HeaderFooterCandidate], page_count: int
+) -> set[tuple[str, str]]:
+    """Return normalized header/footer texts that repeat on enough pages."""
+    pages_by_key: dict[tuple[str, str], set[int]] = defaultdict(set)
+    threshold = max(3, (page_count + 3) // 4)
+
+    for candidate in candidate_list:
+        pages_by_key[(candidate.zone, candidate.normalized)].add(candidate.line.page_no)
+
+    return {key for key, page_set in pages_by_key.items() if len(page_set) >= threshold}
+
+
+def explicit_visible_page_number(text: str) -> str | None:
+    """Extract an explicit page number from common page labels."""
+    match = re.match(r'\s*(?:page|página)\s+([0-9ivxlcdm]+)\b', text, flags=re.IGNORECASE)
+    if match:
+        return match.group(1)
+
+    return None
+
+
+def infer_repeated_page_numbers(
+    candidate_list: list[HeaderFooterCandidate], repeated_keys: set[tuple[str, str]]
+) -> dict[int, str]:
+    """Infer page numbers embedded in repeated header/footer text."""
+    candidates_by_key: dict[tuple[str, str], list[HeaderFooterCandidate]] = defaultdict(list)
+    page_numbers: dict[int, str] = {}
+
+    for candidate in candidate_list:
+        key = (candidate.zone, candidate.normalized)
+        if key in repeated_keys:
+            candidates_by_key[key].append(candidate)
+
+    for repeated_candidates in candidates_by_key.values():
+        numbers_by_position: dict[int, list[tuple[int, str]]] = defaultdict(list)
+        for candidate in repeated_candidates:
+            for position, match in enumerate(re.finditer(r'\d+', candidate.line.text)):
+                numbers_by_position[position].append((candidate.line.page_no, match.group(0)))
+
+        for raw_and_visible in numbers_by_position.values():
+            offsets = Counter(int(visible) - raw for raw, visible in raw_and_visible)
+            if not offsets:
+                continue
+
+            offset, offset_count = offsets.most_common(1)[0]
+            if offset_count < max(3, len(raw_and_visible) * 2 // 3):
+                continue
+
+            for raw, visible in raw_and_visible:
+                if int(visible) - raw == offset:
+                    page_numbers.setdefault(raw, visible)
+
+    return page_numbers
+
+
+def infer_edge_page_numbers(candidate_list: list[HeaderFooterCandidate]) -> dict[int, str]:
+    """Infer visible page numbers printed at the start or end of edge lines."""
+    numbers_by_position: dict[tuple[str, str], list[tuple[int, str]]] = defaultdict(list)
+    page_numbers: dict[int, str] = {}
+
+    for candidate in candidate_list:
+        for edge, pattern in [('start', r'^\s*(\d+)\b'), ('end', r'\b(\d+)\s*$')]:
+            match = re.search(pattern, candidate.line.text)
+            if match:
+                numbers_by_position[(candidate.zone, edge)].append(
+                    (candidate.line.page_no, match.group(1))
+                )
+
+    for raw_and_visible in numbers_by_position.values():
+        offsets = Counter(int(visible) - raw for raw, visible in raw_and_visible)
+        if not offsets:
+            continue
+
+        offset, offset_count = offsets.most_common(1)[0]
+        if offset_count < max(3, len(raw_and_visible) * 2 // 3):
+            continue
+
+        for raw, visible in raw_and_visible:
+            if int(visible) - raw == offset:
+                page_numbers.setdefault(raw, visible)
+
+    return page_numbers
+
+
+def has_edge_page_number(text: str, visible: str) -> bool:
+    """Return whether a line starts or ends with a known visible page number."""
+    return bool(re.search(rf'^\s*{re.escape(visible)}\b', text)) or bool(
+        re.search(rf'\b{re.escape(visible)}\s*$', text)
+    )
+
+
+def add_same_baseline_footer_companions(
+    excluded_indices: set[int], candidate_list: list[HeaderFooterCandidate]
+) -> None:
+    """Also exclude footer candidates printed on the same baseline as excluded footer text."""
+    excluded_footer_y_by_page: dict[int, list[float]] = defaultdict(list)
+
+    for candidate in candidate_list:
+        if candidate.index not in excluded_indices or candidate.zone != 'footer':
+            continue
+        if candidate.line.y1 is not None:
+            excluded_footer_y_by_page[candidate.line.page_no].append(candidate.line.y1)
+
+    for candidate in candidate_list:
+        if candidate.index in excluded_indices or candidate.zone != 'footer':
+            continue
+        if candidate.line.y1 is None:
+            continue
+        if any(
+            abs(candidate.line.y1 - excluded_y) <= 3.0
+            for excluded_y in excluded_footer_y_by_page[candidate.line.page_no]
+        ):
+            excluded_indices.add(candidate.index)
+
+
+def remove_headers_and_footers(
+    line_list: list[Line], page_list: Sequence[Page]
+) -> tuple[list[Line], list[PageNumber]]:
+    """Remove repeated header/footer lines and collect visible page numbers."""
+    candidate_list = iter_header_footer_candidates(line_list, page_list)
+    repeated_keys = repeated_header_footer_keys(candidate_list, len(page_list))
+    excluded_indices: set[int] = set()
+    visible_by_raw = infer_repeated_page_numbers(candidate_list, repeated_keys)
+    visible_by_raw.update(infer_edge_page_numbers(candidate_list))
+
+    for candidate in candidate_list:
+        key = (candidate.zone, candidate.normalized)
+        explicit_visible = explicit_visible_page_number(candidate.line.text)
+        inferred_visible = visible_by_raw.get(candidate.line.page_no)
+
+        if key in repeated_keys or explicit_visible is not None:
+            excluded_indices.add(candidate.index)
+        elif inferred_visible is not None and has_edge_page_number(
+            candidate.line.text, inferred_visible
+        ):
+            excluded_indices.add(candidate.index)
+
+        if explicit_visible is not None:
+            visible_by_raw.setdefault(candidate.line.page_no, explicit_visible)
+
+    add_same_baseline_footer_companions(excluded_indices, candidate_list)
+
+    filtered_lines = [
+        line_obj for index, line_obj in enumerate(line_list) if index not in excluded_indices
+    ]
+    page_number_list = [
+        PageNumber(raw=raw, visible=visible) for raw, visible in sorted(visible_by_raw.items())
+    ]
+
+    return filtered_lines, page_number_list
 
 
 def lines_to_markdown_blocks(line_list: list[Line]) -> list[Block]:
@@ -221,7 +462,9 @@ def lines_to_markdown_blocks(line_list: list[Line]) -> list[Block]:
     return block_list
 
 
-def extract_markdown(input_file_name: str | Path, dump_lines: bool = False) -> list[Block]:
+def extract_markdown(
+    input_file_name: str | Path, dump_lines: bool = False, dump_pagenos: bool = False
+) -> list[Block]:
     """Extract Markdown blocks from a PDF."""
     input_path = Path(input_file_name)
     page_list = dictionary_output(str(input_path), sort=True)
@@ -230,7 +473,12 @@ def extract_markdown(input_file_name: str | Path, dump_lines: bool = False) -> l
     if dump_lines:
         dump_csv(line_list, build_csv_output_path(input_path))
 
-    return lines_to_markdown_blocks(line_list)
+    filtered_lines, page_number_list = remove_headers_and_footers(line_list, page_list)
+
+    if dump_pagenos:
+        dump_page_numbers(page_number_list, build_pagenos_output_path(input_path))
+
+    return lines_to_markdown_blocks(filtered_lines)
 
 
 def markdown_to_text(block_list: list[Block], output_file: TextIO) -> None:
@@ -262,12 +510,14 @@ def main() -> int:
         raise SystemExit(f'Not a file: {input_path}')
 
     csv_output_path = build_csv_output_path(input_path)
+    pagenos_output_path = build_pagenos_output_path(input_path)
     text_output_path = build_text_output_path(input_path)
 
-    block_list = extract_markdown(input_path, dump_lines=True)
+    block_list = extract_markdown(input_path, dump_lines=True, dump_pagenos=True)
     dump_text(block_list, text_output_path)
 
     print(csv_output_path)
+    print(pagenos_output_path)
     print(text_output_path)
     return 0
 
