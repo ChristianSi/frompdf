@@ -298,11 +298,39 @@ def explicit_visible_page_number(text: str) -> str | None:
 
 
 VISIBLE_PAGE_LABEL_PATTERN = r'(?:[A-Za-z]+|\d+)[:-]\d+|\d+'
+COMPOUND_VISIBLE_PAGE_LABEL_PATTERN = r'(?:[A-Za-z]+|\d+)[:-]\d+'
 
 
 def visible_page_label_sort_number(label: str) -> int:
     """Return the numeric part that should track raw page order."""
     return int(label.rsplit(':', 1)[-1].rsplit('-', 1)[-1])
+
+
+def is_compound_visible_page_label(label: str) -> bool:
+    """Return whether a visible page label has a section/article prefix."""
+    return bool(re.fullmatch(COMPOUND_VISIBLE_PAGE_LABEL_PATTERN, label))
+
+
+def edge_visible_page_label(text: str, edge: str) -> str | None:
+    """Return a visible page label at the requested edge of a line."""
+    if edge == 'start':
+        compound_match = re.match(rf'\s*({COMPOUND_VISIBLE_PAGE_LABEL_PATTERN})\b', text)
+        if compound_match:
+            return compound_match.group(1)
+
+        plain_match = re.fullmatch(r'\s*(\d+)\s*', text)
+        if plain_match:
+            return plain_match.group(1)
+        return None
+
+    compound_match = re.search(rf'\b({COMPOUND_VISIBLE_PAGE_LABEL_PATTERN})\s*$', text)
+    if compound_match:
+        return compound_match.group(1)
+
+    plain_match = re.search(r'\b(\d+)\s*$', text)
+    if plain_match:
+        return plain_match.group(1)
+    return None
 
 
 def infer_repeated_page_numbers(
@@ -343,17 +371,13 @@ def infer_edge_page_numbers(candidate_list: list[HeaderFooterCandidate]) -> dict
     """Infer visible page numbers printed at the start or end of edge lines."""
     numbers_by_position: dict[tuple[str, str], list[tuple[int, str]]] = defaultdict(list)
     page_numbers: dict[int, str] = {}
-    label_pattern = VISIBLE_PAGE_LABEL_PATTERN
 
     for candidate in candidate_list:
-        for edge, pattern in [
-            ('start', rf'^\s*({label_pattern})\b'),
-            ('end', rf'\b({label_pattern})\s*$'),
-        ]:
-            match = re.search(pattern, candidate.line.text)
-            if match:
+        for edge in ['start', 'end']:
+            visible = edge_visible_page_label(candidate.line.text, edge)
+            if visible is not None:
                 numbers_by_position[(candidate.zone, edge)].append(
-                    (candidate.line.page_no, match.group(1))
+                    (candidate.line.page_no, visible)
                 )
 
     for raw_and_visible in numbers_by_position.values():
@@ -376,7 +400,12 @@ def infer_edge_page_numbers(candidate_list: list[HeaderFooterCandidate]) -> dict
 
 def has_edge_page_number(text: str, visible: str) -> bool:
     """Return whether a line starts or ends with a known visible page number."""
-    return bool(re.search(rf'^\s*{re.escape(visible)}\b', text)) or bool(
+    if is_compound_visible_page_label(visible):
+        return bool(re.search(rf'^\s*{re.escape(visible)}\b', text)) or bool(
+            re.search(rf'\b{re.escape(visible)}\s*$', text)
+        )
+
+    return bool(re.fullmatch(rf'\s*{re.escape(visible)}\s*', text)) or bool(
         re.search(rf'\b{re.escape(visible)}\s*$', text)
     )
 
