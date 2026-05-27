@@ -1,0 +1,412 @@
+text,page_no,block_no,line_no_on_page,font_size,x1,y1,x2,y2,rel_x,rel_y
+Proceedings of the Conference on Technology Ethics 2021 - Tethics 2021,1,1,1,10.0,149.6,82.6,445.7,92.6,,
+A Proposed Addition to Open-Source Licensing for,1,2,2,12.0,166.2,152.9,428.5,164.9,16.6,70.3
+Improving Freedom of Use,1,2,3,12.0,228.2,167.4,366.5,179.4,62.0,14.5
+Short paper,1,3,4,10.0,269.4,191.7,315.6,201.7,41.2,24.3
+Juhani Naskali 0000-0002-7559-2595,1,4,5,7.4,233.5,218.5,361.3,230.1,-35.9,26.7
+"Information Systems Science,",1,5,6,9.0,244.0,241.8,351.3,250.8,10.5,23.3
+"Turku School of Economics, University of Turku",1,5,7,9.0,209.7,252.7,385.6,261.7,-34.3,11.0
+"Turku, Finland",1,5,8,9.0,270.9,263.7,324.3,272.7,61.3,11.0
+juhani.naskali@utu.fi,1,6,9,9.0,259.1,275.7,336.1,284.6,-11.8,12.0
+Abstract. This paper identifies an often overlooked dimension of open source li-,1,7,10,9.0,149.4,326.4,445.9,335.4,-109.8,50.7
+"censing, that of users being able to run distributed software freely and without dis-",1,8,11,9.0,149.4,337.4,445.9,346.4,0.0,11.0
+"crimination, and suggests additions that would further secure freedom 0 to end",1,8,12,9.0,149.4,348.4,445.9,357.4,0.0,11.0
+"users — the freedom for the user to use software however they wish. While, tradi-",1,8,13,9.0,149.4,359.3,445.9,368.3,0.0,11.0
+"tionally, open source licenses have left developers free to work with their code in",1,8,14,9.0,149.4,370.3,445.9,379.3,0.0,11.0
+"any way they wish, and only secured rights for end-users through code modifica-",1,8,15,9.0,149.4,381.3,445.9,390.2,0.0,11.0
+"tions, new licenses rethink this paradigm. Furthermore, modern mobile application",1,8,16,9.0,149.4,392.2,445.9,401.2,0.0,11.0
+"infrastructure is more restricted by design, and has changed the landscape of modi-",1,8,17,9.0,149.4,403.2,445.9,412.1,0.0,11.0
+"fied versions of applications (simultaneously widening the digital divide), and thus",1,8,18,9.0,149.4,414.1,445.9,423.1,0.0,11.0
+a new analysis is needed on how (and which) freedoms should be secured to ensure,1,8,19,9.0,149.4,425.1,445.9,434.1,0.0,11.0
+that free software remains free.,1,8,20,9.0,149.4,436.1,261.1,445.0,0.0,11.0
+"Keywords: open source, free software, FOSS, licensing terms, liberty, GNU GPL",1,9,21,9.0,149.4,450.9,443.5,460.0,0.0,14.9
+Copyright © 2021 for this paper by its authors.,1,10,22,10.0,203.7,778.5,391.6,788.5,54.3,327.6
+Use permitted under Creative Commons License Attribution 4.0 International (CC BY 4.0),1,10,23,10.0,114.0,789.6,481.2,799.6,-89.7,11.1
+132,1,11,24,10.0,544.3,778.5,559.3,788.5,430.2,-11.1
+Proceedings of the Conference on Technology Ethics 2021 - Tethics 2021,2,1,1,10.0,149.6,82.6,445.7,92.6,,
+1 Introduction,2,2,2,12.0,124.5,119.1,207.3,131.0,-25.1,36.5
+1.1 Free/Libre Open Source Software,2,3,3,10.0,124.5,142.9,290.3,152.8,0.0,23.8
+Rights of ownership inherent in copyright can be granted to others using licensing.,2,4,4,10.0,124.5,161.6,470.8,171.6,0.0,18.8
+Open source (OS) software refers to licensing that allows licensees to freely distribute,2,4,5,10.0,124.5,173.6,470.8,183.5,0.0,12.0
+software code and redistribute it along with any changes. Open source is based on the,2,4,6,10.0,124.5,185.5,470.8,195.5,0.0,12.0
+"idea of free software — an ideology of openness and inclusiveness, where required",2,4,7,10.0,124.5,197.5,470.8,207.5,0.0,12.0
+freedoms for using the software are secured for the public.,2,4,8,10.0,124.5,209.4,357.3,219.4,0.0,12.0
+"The freedom in free software refers to liberty, not cost, and this is often empha-",2,5,9,10.0,139.4,221.4,470.8,231.4,14.9,12.0
+sized with the name FOSS or FLOSS — Free/Libre and Open Source Software. (GNU,2,5,10,10.0,124.5,233.4,470.8,243.3,-14.9,12.0
+"Project, 2001) Open source software is not necessarily free of cost (e.g. the applica-",2,5,11,10.0,124.5,245.3,470.8,255.3,0.0,12.0
+"tion can be sold as a for-profit service while the code is open), and there are different",2,5,12,10.0,124.5,257.3,470.8,267.2,0.0,12.0
+licenses that grant differing amounts of freedoms to stakeholders. Developers are free,2,5,13,10.0,124.5,269.2,470.8,279.2,0.0,12.0
+to choose a license for their work that fits with their own values.,2,5,14,10.0,124.5,281.2,379.8,291.1,0.0,12.0
+1.2 Freedom for everyone? Licenses of varying degrees of liberty,2,6,15,10.0,124.5,307.6,405.8,317.6,0.0,26.4
+"As with every kind of liberty in law, liberties secured through licensing come with",2,7,16,10.0,124.5,326.4,470.8,336.3,0.0,18.8
+"opposing duties to others (Austin, 1885, p. 398). A license that protects (i.e. does not",2,7,17,10.0,124.5,338.3,470.8,348.3,0.0,12.0
+give away) patent rights of authors and contributors does so at the expense of end-users,2,7,18,10.0,124.5,350.3,470.8,360.3,0.0,12.0
+who now have to secure any patent licenses they require by other means. A copyleft,2,7,19,10.0,124.5,362.3,470.8,372.2,0.0,12.0
+"or non-permissive open source license, one that requires contributors to license their",2,7,20,10.0,124.5,374.2,470.8,384.2,0.0,12.0
+"derivative works using the same license, is using this duty of contributors to secure the",2,7,21,10.0,124.5,386.2,470.8,396.1,0.0,12.0
+right to use the software for the public. Both of these groups shape the license selection,2,7,22,10.0,124.5,398.1,470.8,408.1,0.0,12.0
+of OS projects Lerner & Tirole (2005).,2,7,23,10.0,124.5,410.1,279.3,420.0,0.0,12.0
+"Thus licensing liberty is a question of who holds what rights, and how this affects",2,8,24,10.0,139.4,422.0,470.8,432.0,14.9,12.0
+"others. There is no ultimate universal liberty for everyone, as each liberty imposes",2,8,25,10.0,124.5,434.0,470.8,443.9,-14.9,12.0
+"some duties to others or signs away other rights. Practically, there are three somewhat",2,8,26,10.0,124.5,445.9,470.8,455.9,0.0,12.0
+"overlapping parties to these license agreements: authors (original licencers), contrib-",2,8,27,10.0,124.5,457.9,470.8,467.9,0.0,12.0
+utors (those who relicense/rerelease or sublicense their derivative works) and public,2,8,28,10.0,124.5,469.8,470.8,479.8,0.0,12.0
+(end-user licensees). The rights of these three parties are weighed against each other,2,8,29,10.0,124.5,481.8,470.8,491.8,0.0,12.0
+depending on what the license contains.,2,8,30,10.0,124.5,493.8,283.3,503.7,0.0,12.0
+As choosing what rights to sign away with licensing is both a very personal choice,2,9,31,10.0,139.4,505.7,470.8,515.7,14.9,12.0
+"and depends a lot on the type of project in question, it is a good thing that there is a va-",2,9,32,10.0,124.5,517.7,470.8,527.6,-14.9,12.0
+riety of licenses to choose from: A for-profit endeavor can open their code to the public,2,9,33,10.0,124.5,529.6,470.8,539.6,0.0,12.0
+without losing rights to make a profit with their software; an ideological programmer,2,9,34,10.0,124.5,541.6,470.8,551.5,0.0,12.0
+can release code secure in the knowledge that the fruit of his labour will be free to all,2,9,35,10.0,124.5,553.5,470.8,563.5,0.0,12.0
+future end-users and not commercialized by others.,2,9,36,10.0,124.5,565.5,328.9,575.5,0.0,12.0
+"The degree of freedom and its recipients can be freely chosen, but while it is tech-",2,10,37,10.0,139.4,577.4,470.8,587.4,14.9,12.0
+"nically possible for everyone to write their own license, not everyone has the necessary",2,10,38,10.0,124.5,589.4,470.8,599.4,-14.9,12.0
+legal skills to do so. It also takes a substantial amount of effort and skill to read through,2,10,39,10.0,124.5,601.4,470.8,611.3,0.0,12.0
+new licenses and understand their legal ramifications. A large enough diversity in li-,2,10,40,10.0,124.5,613.3,470.8,623.3,0.0,12.0
+"censes will create confusion, as it is difficult to grasp the totality of offered possibilities",2,10,41,10.0,124.5,625.3,470.8,635.2,0.0,12.0
+"(Gomulkiewicz, 2009). It is clear that reusing shared, known licenses drives adoption.",2,10,42,10.0,124.5,637.2,467.0,647.2,0.0,12.0
+Copyright © 2021 for this paper by its authors.,2,11,43,10.0,203.7,778.5,391.6,788.5,79.2,141.3
+Use permitted under Creative Commons License Attribution 4.0 International (CC BY 4.0),2,11,44,10.0,114.0,789.6,481.2,799.6,-89.7,11.1
+133,2,12,45,10.0,544.3,778.5,559.3,788.5,430.2,-11.1
+Proceedings of the Conference on Technology Ethics 2021 - Tethics 2021,3,1,1,10.0,149.6,82.6,445.7,92.6,,
+1.3 The four user freedoms of free software,3,2,2,10.0,124.5,120.6,314.9,130.6,-25.1,38.0
+Free software ideology values the freedom of users. GNU GPL is founded on the four,3,3,3,10.0,124.5,139.4,470.8,149.3,0.0,18.8
+"basic freedoms, which are an attempt to codify these values. The four basic freedoms",3,3,4,10.0,124.5,151.3,470.8,161.3,0.0,12.0
+are:,3,3,5,10.0,124.5,163.3,139.4,173.2,0.0,12.0
+"• the freedom to use the software for any purpose, (Freedom 0)",3,4,6,10.0,140.9,184.8,394.0,194.7,16.4,21.5
+"• the freedom to change the software to suit your needs, (Freedom 1)",3,5,7,10.0,140.9,204.5,417.1,214.5,0.0,19.8
+"• the freedom to share the software with your friends and neighbors, and (Freedom",3,6,8,10.0,140.9,224.3,470.8,234.3,0.0,19.8
+2),3,6,9,10.0,149.4,236.3,157.7,246.2,8.5,12.0
+• the freedom to share the changes you make. (Freedom 3),3,7,10,10.0,140.9,256.0,376.8,266.0,-8.5,19.8
+"These four freedoms form the definition of free software, according to GNU Project",3,8,11,10.0,139.4,277.5,470.8,287.5,-1.5,21.5
+"(2001). Of particular interest to the topic of this paper is Freedom 0, which can be seen",3,8,12,10.0,124.5,289.5,470.8,299.5,-14.9,12.0
+to be at the foundation of free software.,3,8,13,10.0,124.5,301.5,282.1,311.4,0.0,12.0
+1.4 Researched dimensions of rights included in OS licenses,3,9,14,10.0,124.5,327.8,384.5,337.8,0.0,26.4
+Lerner & Tirole (2005) conducted an empirical analysis on the determinants of license,3,10,15,10.0,124.5,346.6,470.8,356.5,0.0,18.8
+"choice, and the scope of OS licenses on licensees freedom to use their software as",3,10,16,10.0,124.5,358.5,470.8,368.5,0.0,12.0
+"they wish. They focused on two characteristics of OS licenses: copyleft, whether the",3,10,17,10.0,124.5,370.5,470.8,380.5,0.0,12.0
+"full source code of any modified versions should also be published, and reciprocality,",3,10,18,10.0,124.5,382.5,470.8,392.4,0.0,12.0
+whether the source code can be mingled with source code utilizing different licensing,3,10,19,10.0,124.5,394.4,470.8,404.4,0.0,12.0
+terms.,3,10,20,10.0,124.5,406.4,149.1,416.3,0.0,12.0
+"These two main considerations, as well as author attribution, the inclusion informa-",3,11,21,10.0,139.4,418.3,470.8,428.3,14.9,12.0
+tional texts (e.g. copyright and license notices) and DRM (Digital Rights Management),3,11,22,10.0,124.5,430.3,470.8,440.2,-14.9,12.0
+"or patent usage rights in the license, are commonly used in mapping the different di-",3,11,23,10.0,124.5,442.2,470.8,452.2,0.0,12.0
+"mensions or aspects of rights granted by OS licenses (Schoettle, 2019; Hofmann et al.,",3,11,24,10.0,124.5,454.2,470.8,464.1,0.0,12.0
+2013).,3,11,25,10.0,124.5,466.1,150.2,476.1,0.0,12.0
+One dimension not yet explicitly covered by previous examinations of the wide,3,12,26,10.0,139.4,478.1,470.8,488.1,14.9,12.0
+array of rights granted to licensees is the right to use the software as they wish (i.e.,3,12,27,10.0,124.5,490.0,470.8,500.0,-14.9,12.0
+freely) without the need to alter source-code. Even though the importance of Freedom,3,12,28,10.0,124.5,502.0,470.8,512.0,0.0,12.0
+"0 has been discussed (GNU Project, 2001; Stallman, 2013) and included in the very",3,12,29,10.0,124.5,514.0,470.8,523.9,0.0,12.0
+"definition of Free Software from the beginning (GNU, 1986), it has been mostly thought",3,12,30,10.0,124.5,525.9,470.8,535.9,0.0,12.0
+to be covered by the sharing of the source code and the right to modify and distribute,3,12,31,10.0,124.5,537.9,470.8,547.8,0.0,12.0
+"it. After all, the idea goes, any unwanted limitations in the software can be changed or",3,12,32,10.0,124.5,549.8,470.8,559.8,0.0,12.0
+removed by licensees. But it can be argued that this way of securing freedom of usage,3,12,33,10.0,124.5,561.8,470.8,571.7,0.0,12.0
+is not strong enough to guarantee freedom 0 for everyone.,3,12,34,10.0,124.5,573.7,355.4,583.7,0.0,12.0
+2 Missing dimension of securing user freedom to run software,3,13,35,12.0,124.5,602.7,448.1,614.6,0.0,28.9
+2.1 User blocking is arguably allowed in open source software,3,14,36,10.0,124.5,626.5,393.2,636.4,0.0,23.8
+While the four freedoms should secure the public the right to use software as they,3,15,37,10.0,124.5,645.2,470.8,655.2,0.0,18.8
+"wish, there is no clear consensus about whether these freedoms are secured merely",3,15,38,10.0,124.5,657.2,470.8,667.2,0.0,12.0
+Copyright © 2021 for this paper by its authors.,3,16,39,10.0,203.7,778.5,391.6,788.5,79.2,121.3
+Use permitted under Creative Commons License Attribution 4.0 International (CC BY 4.0),3,16,40,10.0,114.0,789.6,481.2,799.6,-89.7,11.1
+134,3,17,41,10.0,544.3,778.5,559.3,788.5,430.2,-11.1
+Proceedings of the Conference on Technology Ethics 2021 - Tethics 2021,4,1,1,10.0,149.6,82.6,445.7,92.6,,
+by sharing the source-code. An effective example of this can be seen in cases where,4,2,2,10.0,124.5,120.7,470.8,130.6,-25.1,38.1
+distributed programs include hard-coded (embedded in the source code) functions that,4,2,3,10.0,124.5,132.6,470.8,142.6,0.0,12.0
+"explicitly block users based on their affilitation (see Naskali, 2020). Affected users",4,2,4,10.0,124.5,144.6,470.8,154.6,0.0,12.0
+are unable to use the program without modifying the code and rebuilding the program.,4,2,5,10.0,124.5,156.5,470.8,166.5,0.0,12.0
+While Freedom 0 does not mean that application developers should be forced to add,4,2,6,10.0,124.5,168.5,470.8,178.5,0.0,12.0
+in functionalities for their users or that developers are in violation of GPL licensing if,4,2,7,10.0,124.5,180.5,470.8,190.4,0.0,12.0
+"their programs fail to run with some inputs (GNU Project, 2001), it is something else",4,2,8,10.0,124.5,192.4,470.8,202.4,0.0,12.0
+entirely when a function that selectively identifies certain user groups and stops the,4,2,9,10.0,124.5,204.4,470.8,214.3,0.0,12.0
+program from running for them. This is clearly the case when the added function has,4,2,10,10.0,124.5,216.3,470.8,226.3,0.0,12.0
+no other purpose than blocking certain user groups and without it they would not be,4,2,11,10.0,124.5,228.3,470.8,238.2,0.0,12.0
+blocked (i.e. it is not an unintended consequence of something else or missing support,4,2,12,10.0,124.5,240.2,470.8,250.2,0.0,12.0
+for a protocol or service).,4,2,13,10.0,124.5,252.2,226.0,262.2,0.0,12.0
+As censorship on the code level (e.g. domain blocking in source code) is a new phe-,4,3,14,10.0,139.4,264.1,470.8,274.1,14.9,12.0
+"nomenon, it is difficult to say how prevalent these practices will become. Comments on",4,3,15,10.0,124.5,276.1,470.8,286.1,-14.9,12.0
+implementations of domain blocking reveal that there is confusion on whether such an,4,3,16,10.0,124.5,288.1,470.8,298.0,0.0,12.0
+"implementation of rights management is in compliance with OS licenses, free software",4,3,17,10.0,124.5,300.0,470.8,310.0,0.0,12.0
+"philosophy or both/neither (e.g. Tusky, 2019). DRM has traditionally been seen to limit",4,3,18,10.0,124.5,312.0,470.8,321.9,0.0,12.0
+"usage rights based on content copyright, not based on user affiliation. Nevertheless do-",4,3,19,10.0,124.5,323.9,470.8,333.9,0.0,12.0
+"main blocking is similar enough to traditional DRM, which is explicitly allowed in GPL",4,3,20,10.0,124.5,335.9,470.8,345.8,0.0,12.0
+"as long as it is possible to remove such limitations by changing the program code, that",4,3,21,10.0,124.5,347.8,470.8,357.8,0.0,12.0
+it can be said to be in accordance of the licensing terms.,4,3,22,10.0,124.5,359.8,347.5,369.7,0.0,12.0
+"The technological industry has been moving towards permissive licenses, that allow",4,4,23,10.0,139.4,371.7,470.8,381.7,14.9,12.0
+for parts of the source code to be republished under closed licenses. Johnson (2021),4,4,24,10.0,124.5,383.7,470.8,393.7,-14.9,12.0
+data shows that while permissive licenses were used in 41% of open source licenses,4,4,25,10.0,124.5,395.7,470.8,405.6,0.0,12.0
+"in 2012, in 2020 that number has risen to 76%. While it could be argued that as non-",4,4,26,10.0,124.5,407.6,470.8,417.6,0.0,12.0
+"permissive licenses get less popular, the need for licenses that secure more freedoms for",4,4,27,10.0,124.5,419.6,470.8,429.5,0.0,12.0
+"the end-users lessens, it does not necessarily follow. In fact, there is little downside to",4,4,28,10.0,124.5,431.5,470.8,441.5,0.0,12.0
+"having multiple levels of freedom-securing licenses, especially when it comes to non-",4,4,29,10.0,124.5,443.5,470.8,453.4,0.0,12.0
+exclusive and discrete license dimensions (permissiveness and user blocking). There is,4,4,30,10.0,124.5,455.4,470.8,465.4,0.0,12.0
+perhaps some value in having clear options on this new dimension of user blocking.,4,4,31,10.0,124.5,467.4,458.0,477.3,0.0,12.0
+2.2 Digital divide makes it impossible for general public to secure Freedom 0,4,5,32,10.0,124.5,493.8,470.8,503.8,0.0,26.4
+using source code,4,5,33,10.0,146.9,505.8,221.4,515.7,22.4,12.0
+The digital divide is defined as inequality between those who have access and means to,4,6,34,10.0,124.5,524.5,470.8,534.5,-22.4,18.8
+"use technology and those who do not. While these inequalities are not absolute, in that",4,6,35,10.0,124.5,536.5,470.8,546.5,0.0,12.0
+"they can be bridged, nor the division clear-cut, it is a phenomenon that clearly exists",4,6,36,10.0,124.5,548.5,470.8,558.4,0.0,12.0
+"and should be addressed (Van Dijk, 2006).",4,6,37,10.0,124.5,560.4,293.8,570.4,0.0,12.0
+The effects of digital divide become more pronounced on second-and third-level,4,7,38,10.0,139.4,572.4,470.8,582.3,14.9,12.0
+"digital divide, where the use and outcomes of differing skill-sets and possibilities are",4,7,39,10.0,124.5,584.3,470.8,594.3,-14.9,12.0
+"weighed (Scheerder et al., 2017). In the case of controlling usage of open source soft-",4,7,40,10.0,124.5,596.3,470.8,606.2,0.0,12.0
+"ware, hard-coded control methods such as domain blocking and other types of censor-",4,7,41,10.0,124.5,608.2,470.8,618.2,0.0,12.0
+ship make it so that only those with access to computers and high-level programming,4,7,42,10.0,124.5,620.2,470.8,630.1,0.0,12.0
+"skills have the freedom to use such software, and voice their opinions reliably (Naskali,",4,7,43,10.0,124.5,632.1,470.8,642.1,0.0,12.0
+2020). This means that for any individuals not possessing the required programming,4,7,44,10.0,124.5,644.1,470.8,654.1,0.0,12.0
+"skills to circumvent blocking functionality, Freedom 0 is not secured unless someone",4,7,45,10.0,124.5,656.0,470.8,666.0,0.0,12.0
+Copyright © 2021 for this paper by its authors.,4,8,46,10.0,203.7,778.5,391.6,788.5,79.2,122.5
+Use permitted under Creative Commons License Attribution 4.0 International (CC BY 4.0),4,8,47,10.0,114.0,789.6,481.2,799.6,-89.7,11.1
+135,4,9,48,10.0,544.3,778.5,559.3,788.5,430.2,-11.1
+Proceedings of the Conference on Technology Ethics 2021 - Tethics 2021,5,1,1,10.0,149.6,82.6,445.7,92.6,,
+more skilled goes through the effort of removing said functionality and redistributing,5,2,2,10.0,124.5,120.7,470.8,130.6,-25.1,38.1
+the unblocked version of the software.,5,2,3,10.0,124.5,132.6,276.9,142.6,0.0,12.0
+If code is introduced in an open source project with the goal of blocking certain,5,3,4,10.0,139.4,144.6,470.8,154.6,14.9,12.0
+"groups from making use of said software, it is not necessarily enough that the code",5,3,5,10.0,124.5,156.5,470.8,166.5,-14.9,12.0
+can be copied and changed to remove the changes. If it is indeed an important goal of,5,3,6,10.0,124.5,168.5,470.8,178.5,0.0,12.0
+"(some of) the developers to consciously block such use, it is possible that the blocking",5,3,7,10.0,124.5,180.5,470.8,190.4,0.0,12.0
+"code will be obfuscated and made difficult to remove, or that other types of difficult-to-",5,3,8,10.0,124.5,192.4,470.8,202.4,0.0,12.0
+"remove DRM will be introduced. In the current era of centralized platforms, it is even",5,3,9,10.0,124.5,204.4,470.8,214.3,0.0,12.0
+possible to release open-source software that depends on a centralized server network,5,3,10,10.0,124.5,216.3,470.8,226.3,0.0,12.0
+that doesn’t allow forks on it. Both these methods would further exasperate the dig-,5,3,11,10.0,124.5,228.3,470.8,238.2,0.0,12.0
+"ital divide, and make securing freedom 0 difficult or impossible even for experienced",5,3,12,10.0,124.5,240.2,470.8,250.2,0.0,12.0
+programmers.,5,3,13,10.0,124.5,252.2,180.1,262.2,0.0,12.0
+Much of open source ideology hinges on the fact that development is done according,5,4,14,10.0,139.4,264.1,470.8,274.1,14.9,12.0
+to good programming practices and technology is not influenced by outside forces such,5,4,15,10.0,124.5,276.1,470.8,286.1,-14.9,12.0
+as politics. This is perhaps not quite as true as it was a a couple of decades ago. In a,5,4,16,10.0,124.5,288.1,470.8,298.0,0.0,12.0
+"more uncertain environment, it is completely conceivable that a developer might want",5,4,17,10.0,124.5,300.0,470.8,310.0,0.0,12.0
+"the option to protect the freedom of the public to use their software freely, and licensing",5,4,18,10.0,124.5,312.0,470.8,321.9,0.0,12.0
+is the correct tool for guaranteeing such freedoms.,5,4,19,10.0,124.5,323.9,324.8,333.9,0.0,12.0
+Digital divide makes it imperative for IT specialists to pay closer attention to public,5,5,20,10.0,139.4,335.9,470.8,345.8,14.9,12.0
+"liberties, as the majority of users do not have the requisite skillset to modify program-",5,5,21,10.0,124.5,347.8,470.8,357.8,-14.9,12.0
+"ming code, rebuild it to new binaries and distribute their fork of the software. This",5,5,22,10.0,124.5,359.8,470.8,369.7,0.0,12.0
+majority is silent due to not being represented on the discussion forums of code devel-,5,5,23,10.0,124.5,371.7,470.8,381.7,0.0,12.0
+"opment platforms. Moreover, the walled gardens of modern mobile platforms make it",5,5,24,10.0,124.5,383.7,470.8,393.7,0.0,12.0
+even more complicated to distribute your own version of an applications.,5,5,25,10.0,124.5,395.7,414.8,405.6,0.0,12.0
+2.3 New ethical source licenses,5,6,26,10.0,124.5,422.0,261.0,432.0,0.0,26.4
+"In past years, there has been more interest in open source licenses based on ethical",5,7,27,10.0,124.5,440.8,470.8,450.8,0.0,18.8
+"values (Goodman-Wilson, 2020). For example, Ethical Source tries to drive licenses",5,7,28,10.0,124.5,452.8,470.8,462.7,0.0,12.0
+that prevent software use for harm1,5,7,29,10.0,124.5,463.1,270.1,474.7,0.0,10.3
+and their GitHub repository’s2 first commit was,5,7,30,10.0,274.2,463.1,470.8,474.7,149.7,0.0
+made in 2019.,5,7,31,10.0,124.5,476.7,181.2,486.6,-149.7,13.6
+"Notably, such licenses cannot be considered open source, as restricting the use",5,8,32,10.0,139.4,488.6,470.8,498.6,14.9,12.0
+of software by licensing is against the open-source ideology and Open Source Initia-,5,8,33,10.0,124.5,500.6,470.8,510.5,-14.9,12.0
+"tives rules for open source licenses (2019), which state that open-source licenses must",5,8,34,10.0,124.5,512.5,470.8,522.5,0.0,12.0
+comply with ”No Discrimination Against Persons or Groups” and ”No Discrimination,5,8,35,10.0,124.5,524.5,470.8,534.5,0.0,12.0
+Against Fields of Endeavor”. Such license is not open. This new type of licensing nev-,5,8,36,10.0,124.5,536.4,470.8,546.4,0.0,12.0
+"ertheless serves as an example of more ethical consideration being put in licensing, as",5,8,37,10.0,124.5,548.4,470.8,558.4,0.0,12.0
+well as the cultural drive for more restrictive measures in licensing — more restrictive,5,8,38,10.0,124.5,560.4,470.8,570.3,0.0,12.0
+"for the public, securing more rights for the licensers (i.e. limiting what others do).",5,8,39,10.0,124.5,572.3,450.8,582.3,0.0,12.0
+2.4 Examination of GNU GPLv3,5,9,40,10.0,124.5,598.7,270.1,608.7,0.0,26.4
+GNU GPL is founded on the four basic freedoms listed in the introduction. The li-,5,10,41,10.0,124.5,617.5,470.8,627.4,0.0,18.8
+cense has been formulated to secure these freedoms through the sharing of source code.,5,10,42,10.0,124.5,629.4,470.8,639.4,0.0,12.0
+1https://ethicalsource.dev/licenses/,5,10,43,8.0,135.3,647.5,246.0,656.9,10.9,18.1
+2https://github.com/EthicalSource/ethicalsource.dev,5,11,44,8.0,135.3,657.3,301.2,666.7,0.0,9.8
+Copyright © 2021 for this paper by its authors.,5,12,45,10.0,203.7,778.5,391.6,788.5,68.4,121.2
+Use permitted under Creative Commons License Attribution 4.0 International (CC BY 4.0),5,12,46,10.0,114.0,789.6,481.2,799.6,-89.7,11.1
+136,5,13,47,10.0,544.3,778.5,559.3,788.5,430.2,-11.1
+Proceedings of the Conference on Technology Ethics 2021 - Tethics 2021,6,1,1,10.0,149.6,82.6,445.7,92.6,,
+"Distribution agreements have been consciously left outside this license, presumably be-",6,2,2,10.0,124.5,120.7,470.8,130.6,-25.1,38.1
+"cause user freedom is secured through the availability of the code, even in the case of",6,2,3,10.0,124.5,132.6,470.8,142.6,0.0,12.0
+closed or paid binary distribution.,6,2,4,10.0,124.5,144.6,259.0,154.6,0.0,12.0
+GPLv2 was updated to GPLv3 in 2007 to include new freedoms that were previously,6,3,5,10.0,139.4,156.5,470.8,166.5,14.9,12.0
+"not secured for end-users, and includes protections against ”Tivoization”, that prevent",6,3,6,10.0,124.5,168.5,470.8,178.5,-14.9,12.0
+users from freely using the software by using hardware-based limits to code modifi-,6,3,7,10.0,124.5,180.5,470.8,190.4,0.0,12.0
+"cation; and laws prohibiting free software, that prevent using DRM laws to prevent",6,3,8,10.0,124.5,192.4,470.8,202.4,0.0,12.0
+"software distribution and discriminatory patent deals. In other words, GPL-licensed",6,3,9,10.0,124.5,204.4,470.8,214.3,0.0,12.0
+software can include DRM as long as its removal is not made impossible with special,6,3,10,10.0,124.5,216.3,470.8,226.3,0.0,12.0
+hardware or laws.,6,3,11,10.0,124.5,228.3,195.3,238.2,0.0,12.0
+"GPLv3 (GNU, 2007) is used as an example in this paper because it is explicitly",6,4,12,10.0,139.4,240.2,470.8,250.2,14.9,12.0
+founded on the four basic (user) freedoms and is one of the most freedom-securing and,6,4,13,10.0,124.5,252.2,470.8,262.2,-14.9,12.0
+"well-known OS licenses. Nevertheless, the proposed changes could be built on top of",6,4,14,10.0,124.5,264.1,470.8,274.1,0.0,12.0
+any number of licenses or formulated as a new license with a completely different name.,6,4,15,10.0,124.5,276.1,470.8,286.1,0.0,12.0
+GPL and open-source licenses currently do not include protections for users to run,6,4,16,10.0,139.4,288.1,470.8,298.0,14.9,12.0
+the distributed binaries without impediments. It must be understood that this is not nec-,6,4,17,10.0,124.5,300.0,470.8,310.0,-14.9,12.0
+essarily a bad thing. Not securing these liberties ensures more freedom to the licensers,6,4,18,10.0,124.5,312.0,470.8,321.9,0.0,12.0
+"to do as they wish (e.g. implement DRM), and this can be a good thing.",6,4,19,10.0,124.5,323.9,409.9,333.9,0.0,12.0
+"I argue that the following changes are in the spirit of GNU’s four basic freedoms, but",6,5,20,10.0,139.4,335.9,470.8,345.8,14.9,12.0
+should not necessarily be at the core of all GPL licenses. In a similar fashion as LGPL,6,5,21,10.0,124.5,347.8,470.8,357.8,-14.9,12.0
+"has a slightly different emphasis on the open source ideals compared to GPLv3, these",6,5,22,10.0,124.5,359.8,470.8,369.7,0.0,12.0
+proposed additions would constitute another take on how the license weighs liberties,6,5,23,10.0,124.5,371.7,470.8,381.7,0.0,12.0
+"between authors, contributors and the public, granting some freedom away from authors",6,5,24,10.0,124.5,383.7,470.8,393.7,0.0,12.0
+and contributors in favor of the public. I’m not arguing that this should happen instead,6,5,25,10.0,124.5,395.7,470.8,405.6,0.0,12.0
+of what e.g. GPLv3 does — I’m only arguing it should be an explicitly stated option.,6,5,26,10.0,124.5,407.6,463.5,417.6,0.0,12.0
+"3 Proposed additions, by example of GPLv3",6,6,27,12.0,124.5,436.6,356.7,448.6,0.0,29.0
+First proposed addition to GNU GPLv3 Chapter 5. Conveying Modified Source,6,7,28,10.0,124.5,460.4,470.8,470.4,0.0,23.8
+Versions.,6,7,29,10.0,124.5,472.4,163.1,482.3,0.0,12.0
+e) The work must not include any methods or additional protections for restricting the,6,8,30,10.0,124.5,491.0,470.8,500.9,0.0,18.6
+"use of the work by particular persons, groups or fields of endeavor.",6,8,31,10.0,124.5,502.9,391.5,512.9,0.0,12.0
+This addition would disallow the use of DRM (digital rights management) that tar-,6,9,32,10.0,139.4,515.1,470.8,525.0,14.9,12.1
+gets persons or groups. Censorship systems such as domain blocking and network-,6,9,33,10.0,124.5,527.0,470.8,537.0,-14.9,12.0
+based DRM would also fall under this category.,6,9,34,10.0,124.5,539.0,314.4,548.9,0.0,12.0
+Second proposed addition to GNU GPLv3 chapter 6. Conveying Non-Source Forms,6,10,35,10.0,124.5,565.4,472.9,575.4,0.0,26.4
+1. Any object code conveyed must not include extra blocking methods aimed at dis-,6,11,36,10.0,136.9,584.0,470.8,594.1,12.5,18.6
+"criminating agains persons, groups or fields of endeavor specified in Chapter",6,11,37,10.0,149.4,595.9,470.8,605.9,12.5,12.0
+5.,6,11,38,10.0,149.4,607.9,156.9,617.9,0.0,12.0
+The object of this addition would be to secure Freedom 0 when using conveyed,6,12,39,10.0,139.4,630.0,470.8,640.0,-10.0,22.1
+non-source forms (i.e. binaries). This would (most importantly) include mobile apps,6,12,40,10.0,124.5,642.0,470.8,651.9,-14.9,12.0
+downloaded from official app stores.,6,12,41,10.0,124.5,653.9,270.4,663.9,0.0,12.0
+Copyright © 2021 for this paper by its authors.,6,13,42,10.0,203.7,778.5,391.6,788.5,79.2,124.6
+Use permitted under Creative Commons License Attribution 4.0 International (CC BY 4.0),6,13,43,10.0,114.0,789.6,481.2,799.6,-89.7,11.1
+137,6,14,44,10.0,544.3,778.5,559.3,788.5,430.2,-11.1
+Proceedings of the Conference on Technology Ethics 2021 - Tethics 2021,7,1,1,10.0,149.6,82.6,445.7,92.6,,
+This addition might be redundant with the previous addition blocking the use of said,7,2,2,10.0,139.4,120.7,470.8,130.6,-10.2,38.1
+"blocking methods in the source code. It is included here to facilitate discussion, as the",7,2,3,10.0,124.5,132.6,470.8,142.6,-14.9,12.0
+"main part of the addressed problem is caused by distributed binaries, especially in the",7,2,4,10.0,124.5,144.6,470.8,154.6,0.0,12.0
+walled-gardens of mobile app stores. Perhaps it would be best to only target the source,7,2,5,10.0,124.5,156.5,470.8,166.5,0.0,12.0
+code and not widen the license to touch this part of distribution. Or perhaps it would be,7,2,6,10.0,124.5,168.5,470.8,178.5,0.0,12.0
+"better to keep total freedom for developers when it comes to the source code, and only",7,2,7,10.0,124.5,180.5,470.8,190.4,0.0,12.0
+include this addition or allow distribution as long as there is also a version available,7,2,8,10.0,124.5,192.4,470.8,202.4,0.0,12.0
+without restrictions.,7,2,9,10.0,124.5,204.4,204.2,214.3,0.0,12.0
+4 Thoughts,7,3,10,12.0,124.5,232.8,190.9,244.8,0.0,28.5
+4.1 Would a license with the proposed changes still be open source?,7,4,11,10.0,124.5,256.6,416.5,266.6,0.0,23.8
+"The proposals would sign away more rights from contributors, should they wish to",7,5,12,10.0,124.5,275.4,470.8,285.4,0.0,18.8
+restrict the right of usage by the public. It could be argued that such licensing is no,7,5,13,10.0,124.5,287.3,470.8,297.3,0.0,12.0
+"longer open source, or that it is less open, because use of the source code is restricted",7,5,14,10.0,124.5,299.3,470.8,309.3,0.0,12.0
+in some manner (especially in the first proposal). But the restrictions are comparable to,7,5,15,10.0,124.5,311.3,470.8,321.2,0.0,12.0
+the duties of needing to provide the source-code along with distributed binaries or not,7,5,16,10.0,124.5,323.2,470.8,333.2,0.0,12.0
+being allowed to relicense the work and choose their own license — the contributors,7,5,17,10.0,124.5,335.2,470.8,345.1,0.0,12.0
+are given duties that correspond to ensuring the freedoms of the public.,7,5,18,10.0,124.5,347.1,408.0,357.1,0.0,12.0
+"Perhaps such a license would not be open source, but rather part of the ethical li-",7,6,19,10.0,139.4,359.1,470.8,369.0,14.9,12.0
+"censes family. Nevertheless, such a distinction is somewhat semantic in nature. The",7,6,20,10.0,124.5,371.0,470.8,381.0,-14.9,12.0
+cure issue is whether more weight is put on the rights of the developers (both original,7,6,21,10.0,124.5,383.0,470.8,393.0,0.0,12.0
+"licencers and new licensees) or the public (end-users, whether developers or not).",7,6,22,10.0,124.5,394.9,448.4,404.9,0.0,12.0
+4.2 Proposed changes are arguably in line with GNU values,7,7,23,10.0,124.5,420.8,383.2,430.8,0.0,25.9
+"GNU GPL is based on the four basic freedoms of users, and as articulated by Stallman",7,8,24,10.0,124.5,439.6,470.8,449.6,0.0,18.8
+"(2013), freedom 0 ”means that the distribution of the software does not restrict how",7,8,25,10.0,124.5,451.5,470.8,461.5,0.0,12.0
+you use it”. Stallman’s example is vivid: ”Imagine selling pens with conditions about,7,8,26,10.0,124.5,463.5,470.8,473.5,0.0,12.0
+"what you can write with them; that would be noisome, and we should not stand for it.",7,8,27,10.0,124.5,475.5,470.8,485.4,0.0,12.0
+Likewise for general software.”,7,8,28,10.0,124.5,487.4,249.5,497.4,0.0,12.0
+The digital divide mentioned in chapter 2.2 makes it imperative that user freedom,7,9,29,10.0,139.4,499.4,470.8,509.3,14.9,12.0
+"be guaranteed, moreso when development and distribution options get more difficult.",7,9,30,10.0,124.5,511.3,470.8,521.3,-14.9,12.0
+Mobile application distributions systems are perhaps a special case when it comes to,7,9,31,10.0,124.5,523.3,470.8,533.2,0.0,12.0
+"software distribution, as they mostly rely on ”walled gardens”, a centralized distribution",7,9,32,10.0,124.5,535.2,470.8,545.2,0.0,12.0
+system in the form of app stores3,7,9,33,10.0,124.5,545.5,253.9,557.2,0.0,10.3
+. Installing your own version of an application requires,7,9,34,10.0,254.4,547.2,470.8,557.2,129.9,1.7
+at the very least a development environment dedicated to the chosen platform and a,7,9,35,10.0,124.5,559.1,470.8,569.1,-129.9,12.0
+high level of technical know-how; possibly also payment to the required distribution,7,9,36,10.0,124.5,571.1,470.8,581.1,0.0,12.0
+"platform, if one wants to share the application or install it without resorting to developer",7,9,37,10.0,124.5,583.1,470.8,593.0,0.0,12.0
+"options. In such a case, Freedom 0, the freedom to use the software for any purpose, is",7,9,38,10.0,124.5,595.0,470.8,605.0,0.0,12.0
+not secured for all users without additions such as the ones proposed.,7,9,39,10.0,124.5,607.0,400.1,616.9,0.0,12.0
+"In comparison, the proposed changes would be clearly in conflict with the values",7,10,40,10.0,139.4,618.9,470.8,628.9,14.9,12.0
+"of some other ethics-based licenses that explicitly restrict the use of software, e.g. the",7,10,41,10.0,124.5,630.9,470.8,640.8,-14.9,12.0
+"3While Android allows the installation of apk files outside Play Store, the option is off by default and can",7,10,42,8.0,135.3,647.9,470.8,657.2,10.9,17.0
+be difficult to do without technical skills.,7,10,43,8.0,124.5,658.7,255.1,666.7,-10.9,10.8
+Copyright © 2021 for this paper by its authors.,7,11,44,10.0,203.7,778.5,391.6,788.5,79.2,119.8
+Use permitted under Creative Commons License Attribution 4.0 International (CC BY 4.0),7,11,45,10.0,114.0,789.6,481.2,799.6,-89.7,11.1
+138,7,12,46,10.0,544.3,778.5,559.3,788.5,430.2,-11.1
+Proceedings of the Conference on Technology Ethics 2021 - Tethics 2021,8,1,1,10.0,149.6,82.6,445.7,92.6,,
+NoHarm license4,8,2,2,10.0,124.5,119.0,193.5,130.6,-25.1,36.4
+"that forbids use related to things such as slavery, gambling, tobacco,",8,2,3,10.0,196.8,120.7,470.8,130.6,72.3,1.7
+"hate speech or discrimination. This is not a problem, as a wider selection of licenses",8,2,4,10.0,124.5,132.6,470.8,142.6,-72.3,12.0
+ensures that people can choose how their software is shared and used. The proposed,8,2,5,10.0,124.5,144.6,470.8,154.6,0.0,12.0
+additions would not affect those who choose not to use a license that includes them.,8,2,6,10.0,124.5,156.5,458.1,166.5,0.0,12.0
+"Arguably, the proposed changes would go well together with a new version of GNU",8,2,7,10.0,139.4,168.5,470.8,178.5,14.9,12.0
+"GPL. Just as GPLv2 was updated to GPLv3 to protect user freedom from tivoization,",8,2,8,10.0,124.5,180.5,470.8,190.4,-14.9,12.0
+"laws prohibiting free software and discriminatory patent deals, these new additions",8,2,9,10.0,124.5,192.4,470.8,202.4,0.0,12.0
+"would further protect users from new discriminatory restriction methods. As such, they",8,2,10,10.0,124.5,204.4,470.8,214.3,0.0,12.0
+should not be a replacement license but a complementary one or a completely new,8,2,11,10.0,124.5,216.3,470.8,226.3,0.0,12.0
+license.,8,2,12,10.0,124.5,228.3,154.6,238.2,0.0,12.0
+4.3 Comparisons with similar end-user freedoms not included in GPLv3,8,3,13,10.0,124.5,254.7,437.3,264.7,0.0,26.4
+Money for nothing,8,4,14,10.0,124.5,273.4,203.9,283.4,0.0,18.7
+GNU GPL explicitly allows selling copies of free software5,8,5,15,10.0,124.5,290.5,372.8,302.1,0.0,17.1
+. This provides a good,8,5,16,10.0,373.3,292.2,470.8,302.1,248.8,1.7
+example of how ’free’ in free software refers to liberty (of code) and not cost (of dis-,8,5,17,10.0,124.5,304.1,470.8,314.1,-248.8,12.0
+"tribution). The proposed changes do limit freedom to work with the code, which could",8,5,18,10.0,124.5,316.1,470.8,326.0,0.0,12.0
+bear further examination to ensure that this does not create unforeseen problems.,8,5,19,10.0,124.5,328.0,446.4,338.0,0.0,12.0
+Limiting usage through DRM,8,6,20,10.0,124.5,354.5,250.8,364.4,0.0,26.4
+"Perhaps the closest thing to the proposed changes is the use of DRM, which is explicitly",8,7,21,10.0,124.5,373.2,470.8,383.2,0.0,18.8
+allowed under GPLv3 licensing6,8,7,22,10.0,124.5,383.5,258.8,395.2,0.0,10.3
+. But even DRM is disallowed when protected by,8,7,23,10.0,259.3,385.2,470.8,395.2,134.8,1.7
+"tivoization or law, and a case could be made that similar protection is provided by",8,8,24,10.0,124.5,397.1,470.8,407.1,-134.8,12.0
+"modern mobile app distribution platforms, which should be included in similar fashion.",8,8,25,10.0,124.5,409.1,470.8,419.1,0.0,12.0
+Voters are not allowed to change open source code in voting machines,8,9,26,10.0,124.5,435.5,419.3,445.5,0.0,26.4
+The GPL FAQ gives an example of voting machine users not being allowed to change,8,10,27,10.0,124.5,454.3,470.8,464.3,0.0,18.8
+the code running on voting machines. Such abilities to control running software are not,8,10,28,10.0,124.5,466.3,470.8,476.2,0.0,12.0
+required by GPLv3 licensing.,8,10,29,10.0,124.5,478.2,242.4,488.2,0.0,12.0
+"The FAQ states that such liberty is not required, as the voter doesn’t get posession",8,11,30,10.0,139.4,490.2,470.8,500.1,14.9,12.0
+"of the object code, even temporarily, and so the voter also doesn’t get possession of the",8,11,31,10.0,124.5,502.1,470.8,512.1,-14.9,12.0
+"binary software. The FAQ also states that ”voting is a very special case”, so the appli-",8,11,32,10.0,124.5,514.1,470.8,524.0,0.0,12.0
+cability of these thoughts on software in general and distribution of mobile applications,8,11,33,10.0,124.5,526.0,470.8,536.0,0.0,12.0
+specifically is arguable.,8,11,34,10.0,124.5,538.0,218.1,548.0,0.0,12.0
+4.4 Possible problems,8,12,35,10.0,124.5,564.4,223.2,574.4,0.0,26.4
+"The proposed changes should be scrutinized by the open-source community and, specif-",8,13,36,10.0,124.5,583.2,470.8,593.2,0.0,18.8
+"ically, legal experts, to make sure that their scope is as-intended. Without sufficient legal",8,13,37,10.0,124.5,595.2,470.8,605.1,0.0,12.0
+"expertise, it is possible that there are large unintended consequences, and these should",8,13,38,10.0,124.5,607.1,470.8,617.1,0.0,12.0
+be found out and eliminated before releasing a full license.,8,13,39,10.0,124.5,619.1,358.5,629.0,0.0,12.0
+4https://github.com/raisely/NoHarm/,8,13,40,8.0,135.3,637.3,252.5,646.6,10.9,18.2
+5https://www.gnu.org/philosophy/selling.html,8,13,41,8.0,135.3,647.1,281.8,656.4,0.0,9.8
+6https://www.gnu.org/licenses/gpl-faq.htmlDRMProhibited,8,13,42,8.0,135.3,656.9,324.7,666.3,0.0,9.8
+Copyright © 2021 for this paper by its authors.,8,14,43,10.0,203.7,778.5,391.6,788.5,68.4,121.6
+Use permitted under Creative Commons License Attribution 4.0 International (CC BY 4.0),8,14,44,10.0,114.0,789.6,481.2,799.6,-89.7,11.1
+139,8,15,45,10.0,544.3,778.5,559.3,788.5,430.2,-11.1
+Proceedings of the Conference on Technology Ethics 2021 - Tethics 2021,9,1,1,10.0,149.6,82.6,445.7,92.6,,
+The proposed changes do limit the freedoms of contributors significantly. It might,9,2,2,10.0,139.4,120.7,470.8,130.6,-10.2,38.1
+"be possible to limit these freedoms less, while still protecting the public freedom of",9,2,3,10.0,124.5,132.6,470.8,142.6,-14.9,12.0
+"use, by e.g. requiring the conveying of non-source forms without the listed protection",9,2,4,10.0,124.5,144.6,470.8,154.6,0.0,12.0
+methods. This would allow contributors to release code and binaries with discriminating,9,2,5,10.0,124.5,156.5,470.8,166.5,0.0,12.0
+restriction methods as long as they also release versions without restricting methods.,9,2,6,10.0,124.5,168.5,461.2,178.5,0.0,12.0
+"Arguably, a more clear-cut division of licenses makes more sense: if you wish to",9,3,7,10.0,139.4,180.5,470.8,190.4,14.9,12.0
+"restrict the use of your software by code, choose a license that clearly allows such",9,3,8,10.0,124.5,192.4,470.8,202.4,-14.9,12.0
+"restrictions; if you wish for your program to be open and freely usable, choose a license",9,3,9,10.0,124.5,204.4,470.8,214.3,0.0,12.0
+that disallows restricting methods.,9,3,10,10.0,124.5,216.3,260.9,226.3,0.0,12.0
+5 Conclusion,9,4,11,12.0,124.5,245.3,199.5,257.3,0.0,29.0
+This paper identified user freedom to run a software as they wish as a dimension of open,9,5,12,10.0,124.5,269.2,470.8,279.2,0.0,23.9
+source licensing that has so far been left undefined in commonly used OS licenses. This,9,5,13,10.0,124.5,281.2,470.8,291.1,0.0,12.0
+new dimension should perhaps be considered in scientific literature along with the more,9,5,14,10.0,124.5,293.1,470.8,303.1,0.0,12.0
+common dimensions of copyleft/permissiveness and the securing of patent rights.,9,5,15,10.0,124.5,305.1,448.8,315.1,0.0,12.0
+"In practice, while there are already many licenses to choose from, and there is noth-",9,6,16,10.0,139.4,317.0,470.8,327.0,14.9,12.0
+"ing inherently wrong in the current formulation of GPLv3, there is some confusion",9,6,17,10.0,124.5,329.0,470.8,339.0,-14.9,12.0
+"on whether blocking particular persons or groups is compliant with it (Naskali, 2020).",9,6,18,10.0,124.5,341.0,470.8,350.9,0.0,12.0
+When some people interpret the licensing terms in a way that it already forbids things,9,6,19,10.0,124.5,352.9,470.8,362.9,0.0,12.0
+"like hard-coded domain blocking of user groups, and others view this type of application",9,6,20,10.0,124.5,364.9,470.8,374.8,0.0,12.0
+"behaviour as license compliant, it seems like some clarification is in order.",9,6,21,10.0,124.5,376.8,420.5,386.8,0.0,12.0
+Functionality overriding Freedom 0 should be clearly allowed or clearly disallowed,9,7,22,10.0,139.4,388.8,470.8,398.7,14.9,12.0
+"in OS licenses, in order for licensers to make informed choices on the matter. If the",9,7,23,10.0,124.5,400.7,470.8,410.7,-14.9,12.0
+question is made explicit in the form of new licenses with the additions proposed in,9,7,24,10.0,124.5,412.7,470.8,422.6,0.0,12.0
+"this paper, licensees could choose between licenses based on their own wishes, and",9,7,25,10.0,124.5,424.6,470.8,434.6,0.0,12.0
+contributors using freedom 0 securing licenses could be secure in the knowledge that,9,7,26,10.0,124.5,436.6,470.8,446.6,0.0,12.0
+the project they are working on will stay free.,9,7,27,10.0,124.5,448.6,306.0,458.5,0.0,12.0
+Copyright © 2021 for this paper by its authors.,9,8,28,10.0,203.7,778.5,391.6,788.5,79.2,330.0
+Use permitted under Creative Commons License Attribution 4.0 International (CC BY 4.0),9,8,29,10.0,114.0,789.6,481.2,799.6,-89.7,11.1
+140,9,9,30,10.0,544.3,778.5,559.3,788.5,430.2,-11.1
+Proceedings of the Conference on Technology Ethics 2021 - Tethics 2021,10,1,1,10.0,149.6,82.6,445.7,92.6,,
+References,10,2,2,12.0,124.5,119.1,180.0,131.0,-25.1,36.5
+"Austin, J. (1885). Lectures on jurisprudence, or, The philosophy of positive law. John",10,3,3,10.0,124.5,142.8,470.8,152.9,0.0,23.7
+Murray.,10,3,4,10.0,134.4,154.9,166.2,164.9,10.0,12.1
+GNU (1986). Gnu’s bulletin volume 1 no.1.,10,4,5,10.0,124.5,173.7,299.8,183.7,-10.0,18.8
+Retrieved from https://www.gnu.org/bulletins/bull1.txt,10,4,6,10.0,134.4,185.7,401.1,195.9,10.0,12.0
+GNU (2007). Gnu general public license v3.,10,5,7,10.0,124.5,204.5,302.6,214.4,-10.0,18.8
+Retrieved from https://www.gnu.org/licenses/gpl-3.0.html,10,5,8,10.0,134.4,216.4,412.1,226.6,10.0,12.0
+GNU Project (2001). What is free software?,10,6,9,10.0,124.5,235.2,301.7,245.2,-10.0,18.8
+Retrieved from https://www.gnu.org/philosophy/free-sw.html,10,6,10,10.0,134.4,247.2,422.5,257.4,10.0,12.0
+"Gomulkiewicz, R. W. (2009). Open source license proliferation: Helpful diversity or",10,7,11,10.0,124.5,266.0,470.8,275.9,-10.0,18.8
+"hopeless confusion. Wash. UJL & Pol’y, 30, 261.",10,7,12,10.0,134.4,277.7,330.8,287.9,10.0,11.8
+"Goodman-Wilson, D. (2020). Open source is broken. FOSDEM. Brussels, Belgium.",10,8,13,10.0,124.5,296.7,461.6,306.7,-10.0,19.0
+Retrieved from https://mirrors.dotsrc.org/fosdem/2020/UB5.230/,10,8,14,10.0,134.4,308.7,470.8,318.9,10.0,12.0
+ethicsoss.webm,10,8,15,10.0,134.4,320.9,207.7,330.8,0.0,12.2
+"Hofmann, G., Riehle, D., Kolassa, C., & Mauerer, W. (2013). A dual model of open",10,9,16,10.0,124.5,339.4,470.8,349.4,-10.0,18.6
+"source license growth. In IFIP International Conference on Open Source Systems,",10,9,17,10.0,134.4,351.2,470.8,361.3,10.0,11.8
+(pp. 245–256). Springer.,10,9,18,10.0,134.4,363.3,232.1,373.3,0.0,12.1
+"Johnson, P. (2021). Open source licenses in 2021: Trends and predictions. Accessed",10,10,19,10.0,124.5,382.1,470.8,392.1,-10.0,18.8
+2021-06-07.,10,10,20,10.0,134.4,394.1,183.4,404.1,10.0,12.0
+Retrieved from https://www.whitesourcesoftware.com/resources/blog/,10,11,21,10.0,134.4,406.1,470.8,416.3,0.0,12.0
+open-source-licenses-trends-and-predictions,10,11,22,10.0,134.4,418.3,361.8,428.2,0.0,12.2
+"Lerner, J., & Tirole, J. (2005). The scope of open source licensing. Journal of Law,",10,12,23,10.0,124.5,436.6,470.8,446.8,-10.0,18.4
+"Economics, and Organization, 21(1), 20–56.",10,12,24,10.0,134.4,448.6,312.3,458.7,10.0,12.0
+"Naskali, J. (2020). Hard-coded censorship in open source mastodon clients—how free",10,13,25,10.0,124.5,467.6,470.8,477.5,-10.0,19.0
+is open source? Proceedings of the Conference on Technology Ethics 2020.,10,13,26,10.0,134.4,479.3,434.9,489.5,10.0,11.8
+"Scheerder, A., van Deursen, A., & van Dijk, J. (2017). Determinants of internet skills,",10,14,27,10.0,124.5,498.3,470.8,508.3,-10.0,19.0
+uses and outcomes. a systematic review of the second-and third-level digital divide.,10,14,28,10.0,134.4,510.3,470.8,520.2,10.0,12.0
+"Telematics and informatics, 34(8), 1607–1624.",10,14,29,10.0,134.4,522.0,320.9,532.2,0.0,11.8
+"Schoettle, H. (2019). Open source license compliance-why and how? Computer, 52(8),",10,15,30,10.0,124.5,540.8,470.8,551.0,-10.0,18.8
+63–67.,10,15,31,10.0,134.4,553.0,161.8,562.9,10.0,12.1
+"Stallman, R. (2013). Why programs must not limit the freedom to run them.",10,16,32,10.0,124.5,571.8,428.3,581.7,-10.0,18.8
+Retrieved from https://www.gnu.org/philosophy/,10,16,33,10.0,134.4,583.7,470.8,593.9,10.0,12.0
+programs-must-not-limit-freedom-to-run.html,10,16,34,10.0,134.4,595.9,362.3,605.9,0.0,12.2
+Tusky (2019). Tusky pull request #1303 · tuskyapp/tusky.,10,17,35,10.0,124.5,614.5,354.2,624.5,-10.0,18.6
+Retrieved from https://github.com/tuskyapp/Tusky/pull/1303/,10,17,36,10.0,134.4,626.4,427.3,636.7,10.0,12.0
+"Van Dijk, J. A. (2006). Digital divide research, achievements and shortcomings. Poetics,",10,18,37,10.0,124.5,645.1,470.8,655.2,-10.0,18.6
+"34(4-5), 221–235.",10,18,38,10.0,134.4,657.0,206.7,667.2,10.0,12.0
+Copyright © 2021 for this paper by its authors.,10,19,39,10.0,203.7,778.5,391.6,788.5,69.3,121.5
+Use permitted under Creative Commons License Attribution 4.0 International (CC BY 4.0),10,19,40,10.0,114.0,789.6,481.2,799.6,-89.7,11.1
+141,10,20,41,10.0,544.3,778.5,559.3,788.5,430.2,-11.1

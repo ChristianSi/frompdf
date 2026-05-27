@@ -1,0 +1,377 @@
+text,page_no,block_no,line_no_on_page,font_size,x1,y1,x2,y2,rel_x,rel_y
+Brief Announcement:,1,1,1,17.2,90.7,76.1,258.5,93.3,,
+Proximal Byzantine Agreement: Improved,1,2,2,17.2,90.7,98.0,422.7,115.3,0.0,21.9
+Accuracy for Fault-Tolerant Replicated,1,3,3,17.2,90.1,120.0,395.4,137.2,-0.6,21.9
+Datastreams,1,4,4,17.2,90.7,141.9,190.0,159.1,0.6,21.9
+Roy Shadmon # Ñ,1,5,5,12.0,90.7,167.7,198.8,179.6,0.0,25.8
+"University of California, Santa Cruz, CA, USA",1,6,6,9.0,90.7,182.0,279.8,190.9,0.0,14.3
+Owen Arden # Ñ,1,6,7,12.0,90.7,197.3,190.8,209.3,0.0,15.4
+"University of California, Santa Cruz, CA, USA",1,7,8,9.0,90.7,211.6,279.8,220.5,0.0,14.3
+Abstract,1,8,9,10.5,114.8,233.7,155.7,244.1,24.1,22.1
+Approximate Byzantine Agreement (ABA) protocols enable nonfaulty replicas with different initial,1,8,10,9.0,90.4,250.1,487.3,259.0,-24.4,16.4
+"values to derive a values within a ϵ-neighborhood of each other, despite the presence of Byzantine",1,8,11,9.0,90.5,262.0,487.4,271.0,0.1,11.9
+"behavior. While they give strong guarantees for this ϵ-agreement property, they tend to have weaker",1,8,12,9.0,90.7,274.0,487.7,282.9,0.2,12.0
+"guarantees that the derived value is accurate with respect to some ground truth. Worse, they often",1,8,13,9.0,90.7,285.9,487.5,294.9,0.0,12.0
+"have impractical requirements such as large replica sets proportional to data dimensionality, or a",1,8,14,9.0,90.7,297.8,487.2,306.9,0.0,11.8
+priori knowledge of the maximum distance between nonfaulty values.,1,8,15,9.0,90.7,309.8,369.2,318.8,0.0,12.1
+"In Stochastic Byzantine Agreement (SBA), the distribution of the nonfaulty values is the result",1,9,16,9.0,105.7,322.0,487.7,331.0,14.9,12.2
+of a stochastic process influenced by sensor measurement error or other sources of noise that affect,1,9,17,9.0,90.7,334.0,487.5,343.0,-14.9,12.0
+"system outputs. For these scenarios, we present Proximal Byzantine Agreement (PBA), a stochastic",1,9,18,9.0,90.7,345.9,487.5,354.9,0.0,11.9
+Byzantine agreement protocol which infers the most likely output of replicated computation based on,1,9,19,9.0,90.7,357.9,487.3,366.9,0.0,12.0
+"the proposed values observed by each replica. Unlike ABA protocols, PBA prioritizes accuracy over",1,9,20,9.0,90.7,369.8,487.7,378.8,0.0,11.9
+"agreement. PBA accuracy is relative to the variance of nonfaulty values, yielding comparatively more",1,9,21,9.0,90.7,381.8,487.4,390.8,0.0,12.0
+"accurate results for noisy data, particularly when noise is asymmetric. Our evaluations demonstrate",1,9,22,9.0,90.7,393.8,487.3,402.7,0.0,12.0
+"this accuracy scales with data dimensionality, outperforming or only mildly underperforming methods",1,9,23,9.0,90.7,405.7,487.3,414.7,0.0,12.0
+that require quorums with up to 10× more replicas and 4× to 124× more computation time per,1,9,24,9.0,90.7,417.5,487.7,426.7,0.0,11.8
+"agreement decision, even at relatively low dimensions (d = 4 to d = 18).",1,9,25,9.0,90.7,429.6,380.8,438.6,0.0,12.1
+2012 ACM Subject Classification Computer systems organization → Dependable and fault-tolerant,1,10,26,9.0,90.7,450.1,487.8,459.2,0.0,20.4
+systems and networks; Computer systems organization → Sensor networks,1,10,27,9.0,90.7,462.0,391.8,471.1,0.0,12.0
+"Keywords and phrases Byzantine fault tolerance, distributed control systems, robust statistics",1,11,28,9.0,90.7,482.7,472.4,491.7,0.0,20.7
+Digital Object Identifier 10.4230/LIPIcs.DISC.2025.64,1,12,29,9.0,90.7,503.3,312.0,512.2,0.0,20.6
+Funding Partial funding provided by 2025 Berkeley RDI AI & Decentralization Innovation Award.,1,13,30,9.0,90.7,524.8,488.6,533.8,0.0,21.6
+1 Introduction,1,14,31,12.0,95.7,552.7,187.6,564.7,5.0,27.9
+Reliably controlling systems and devices that interact with the physical environment is,1,15,32,10.0,90.7,577.4,487.1,587.6,-5.0,24.7
+"challenging in any context, but especially in edge networks. Volatile communication, power,",1,15,33,10.0,90.7,590.5,488.5,600.5,0.0,13.1
+"and operating conditions demand greater fault tolerance, and edge devices and sensors are",1,15,34,10.0,90.7,603.4,487.2,613.4,0.0,12.9
+"often more vulnerable to malicious manipulation than those in secure, monitored facilities.",1,15,35,10.0,90.7,616.3,489.1,626.4,0.0,12.9
+"These realities complicate the coherent design of sensor data-processing pipelines, distributed",1,15,36,10.0,90.4,629.4,487.2,639.3,-0.4,13.0
+"control systems, and multi-agent robotics applications – scenarios that are functionally similar",1,15,37,10.0,90.7,642.3,487.8,652.3,0.4,13.0
+but operationally require ad hoc mitigation techniques to tolerate deployment conditions.,1,15,38,10.0,90.7,655.3,480.5,665.2,0.0,13.0
+The growing demand for such systems spans consumer-facing devices such as home-,1,15,39,10.0,105.7,668.3,488.9,678.5,14.9,13.0
+"automation sensors and controls, personal health monitoring devices and drug-delivery",1,15,40,10.0,90.7,681.3,487.5,691.4,-14.9,13.0
+"systems, and automotive telemetry and safety systems, as well as industrial and agricultural",1,15,41,10.0,90.7,694.4,487.2,704.3,0.0,13.1
+"platforms for monitoring and controlling mechanical, physical, and biological processes. In",1,15,42,10.0,90.7,707.3,487.2,717.3,0.0,12.9
+"all of these domains, the quality and reliability of sensor and sensor-derived data is central",1,15,43,10.0,90.7,720.2,487.1,730.2,0.0,13.0
+© Roy Shadmon and Owen Arden;,1,15,44,7.0,134.3,739.1,254.1,746.1,43.6,18.8
+licensed under Creative Commons License CC-BY 4.0,1,16,45,7.0,134.3,747.0,321.7,754.0,0.0,8.0
+39th International Symposium on Distributed Computing (DISC 2025).,1,16,46,7.0,90.5,755.0,340.1,762.0,-43.8,8.0
+Editor: Dariusz R. Kowalski; Article No. 64; pp. 64:1–64:8,1,16,47,7.0,90.7,763.0,291.7,770.0,0.2,8.0
+Leibniz International Proceedings in Informatics,1,17,48,7.0,158.4,771.0,327.1,777.9,67.7,8.0
+"Schloss Dagstuhl – Leibniz-Zentrum für Informatik, Dagstuhl Publishing, Germany",1,18,49,7.0,158.4,778.9,448.6,785.9,0.0,8.0
+64:2 Brief Announcement: Proximal Byzantine Agreement,2,1,1,10.5,66.2,62.2,364.1,72.7,,
+"to effective operation. When that data is delayed, missing, or corrupted – whether from",2,2,2,10.0,107.7,100.8,504.2,111.0,41.5,38.6
+"environmental noise, hardware faults, or malicious interference – the consequences can range",2,2,3,10.0,107.7,113.9,504.2,123.9,0.0,13.1
+"from suboptimal performance to catastrophic, even unsafe, failures.",2,2,4,10.0,107.7,126.8,401.7,136.8,0.0,13.0
+"Despite shared characteristics, a divergence occurred between communities that prioritize",2,3,5,10.0,122.7,140.5,504.2,150.5,14.9,13.7
+"agreement “regardless of what they agree upon” originally proposed by Lamport [9], and",2,3,6,10.0,107.7,153.3,504.5,163.5,-14.9,12.8
+communities that also want guarantees on the accuracy of some quantity being approximated.,2,3,7,10.0,107.7,166.4,506.2,176.4,0.0,13.1
+Whereas most agreement protocols give validity [5] specifications on their output in terms of,2,3,8,10.0,107.2,179.4,504.4,189.3,-0.5,13.0
+"the initial values proposed by nonfaulty replicas, accuracy [12] specifications are with respect",2,3,9,10.0,107.7,192.3,504.8,202.3,0.5,13.0
+to a true quantity approximated by the outputs. Much subsequent work on approximate,2,3,10,10.0,107.7,205.1,504.2,215.3,0.0,12.8
+"agreement does not explicitly consider accuracy, with some notable exceptions [1, 3] in",2,3,11,10.0,107.7,218.1,504.5,228.2,0.0,13.0
+"the sensor fusion community. In all cases, relatively strong assumptions are made about",2,3,12,10.0,107.7,231.0,504.4,241.2,0.0,13.0
+"nonfaulty values such as the maximum pairwise distance [10], maximum width of a containing",2,3,13,10.0,107.7,244.1,504.5,254.1,0.0,13.1
+"interval [12], or the true value is contained in the intersection of ranges of nonfaulty replicas [3].",2,3,14,10.0,107.7,257.1,506.5,267.1,0.0,13.0
+Violating these assumptions affects accuracy and can lead to arbitrary protocol failure.,2,3,15,10.0,107.3,270.0,487.1,280.0,-0.4,13.0
+This paper restores focus on the accuracy of an important subset of approximate Byzantine,2,4,16,10.0,122.7,283.7,504.3,293.7,15.3,13.7
+"agreement (ABA) problems under weaker, more realistic assumptions. Since phenomena",2,4,17,10.0,107.7,296.5,504.2,306.7,-14.9,12.8
+"measured by sensors can often be modeled as stochastic processes [17], we define Stochastic",2,4,18,10.0,107.7,309.6,504.5,319.6,0.0,13.1
+"Byzantine Agreement (SBA), a refinement of the ABA problem. In the SBA problem, “true”",2,4,19,10.0,107.1,322.6,506.3,332.5,-0.6,13.0
+"values are generated by a stochastic process with an unknown output distribution, and the",2,4,20,10.0,107.5,335.5,504.5,345.5,0.3,12.9
+observations of those values proposed by nonfaulty replicas are perturbed by noise drawn from,2,4,21,10.0,107.7,348.5,504.3,358.4,0.3,13.0
+"an unknown error distribution. Byzantine replicas act arbitrarily, and thus their proposed",2,4,22,10.0,107.7,361.3,504.3,371.4,0.0,12.9
+values are not generated – or even effectively approximated – by any distribution. Our SBA,2,4,23,10.0,107.5,374.4,504.7,384.4,-0.3,13.0
+"protocol, Proximal Byzantine Agreement (PBA), uses a novel value selection process, how",2,4,24,10.0,107.7,387.2,504.9,397.3,0.3,12.8
+"replicas select outputs based on the messages they receive, that borrows techniques from",2,4,25,10.0,107.7,400.1,504.2,410.3,0.0,13.0
+"robust statistics [7]. As long as a majority of these messages are stochastically distributed,",2,4,26,10.0,107.7,413.2,505.6,423.2,0.0,13.1
+the influence of arbitrarily selected values on the inference process is limited to a fixed bound.,2,4,27,10.0,107.7,426.2,506.1,436.2,0.0,13.0
+This brief announcement reports on progress following our initial evaluation [18] of the,2,4,28,10.0,122.7,439.8,504.5,449.9,14.9,13.6
+"feasibility of this value selection technique. Previously, only one-dimensional, normally",2,4,29,10.0,107.7,452.7,504.5,462.8,-14.9,12.9
+"distributed distributions were explored, and probabilistic protocol properties were described",2,4,30,10.0,107.7,465.8,504.2,475.7,0.0,13.1
+"informally. Here we give formal, geometric definitions and theorems with rigorous guarantees,",2,4,31,10.0,107.7,478.7,505.6,488.7,0.0,13.0
+including evaluations comparing PBA to multiple ABA protocols on multidimensional data.,2,4,32,10.0,107.7,491.7,506.3,501.6,0.0,12.9
+These evaluations indicate a surprising degree of scalability with respect to dimensionality:,2,4,33,10.0,107.4,504.6,505.5,514.6,-0.4,12.9
+only minor losses in accuracy compared to ABA protocols that require 10× more replicas and,2,4,34,10.0,107.7,517.4,504.7,527.6,0.4,12.8
+"4× to 124× more computation time per agreement decision, even at relatively low dimensions",2,4,35,10.0,107.4,530.4,504.4,540.5,-0.3,13.0
+(d = 4 to d = 18). Since each additional output offers more information from the unknown,2,4,36,10.0,106.6,543.4,504.3,553.5,-0.8,13.0
+"output distribution, our results indicate PBA can extract more information from observations,",2,5,37,10.0,107.7,556.4,505.8,566.4,1.2,13.0
+reinforcing the tradeoff [12] between high-precision agreement and statistical accuracy.,2,5,38,10.0,107.7,569.4,484.6,579.4,0.0,13.0
+2 Proximal agreement as a probability maximization,2,6,39,12.0,112.7,600.7,411.0,612.6,5.0,31.3
+"Replicas participating in Approximate Byzantine Agreement (ABA) protocols (e.g.,[5, 14, 19])",2,7,40,10.0,107.7,626.4,505.8,636.4,-5.0,25.7
+start with an arbitrary real value and reach an output solution satisfying two properties:,2,7,41,10.0,107.7,639.4,494.7,649.3,0.0,13.0
+1. ϵ-Agreement: all nonfaulty replicas eventually output values within ϵ of each other.,2,7,42,10.0,107.7,653.0,487.1,663.0,0.0,13.7
+2. Validity: these values are bound (in some sense) by the initial values of nonfaulty replicas.,2,8,43,10.0,107.7,667.7,506.2,677.7,0.0,14.7
+Mahaney and Schneider [12] distinguish Inexact Agreement (IA) from classical ABA by,2,9,44,10.0,122.7,694.4,504.7,704.3,14.9,26.6
+redefining the validity property in terms of accuracy. Outputs are instead bound by their,2,9,45,10.0,107.7,707.2,504.6,717.3,-14.9,12.8
+"distance to a true value vˆ, which each nonfaulty replica’s initial value vi approximates.",2,9,46,10.0,107.7,720.3,486.3,731.1,0.0,13.1
+R. Shadmon and O. Arden 64:3,3,1,1,10.5,90.7,62.2,532.9,72.7,,
+"Our work concerns a new class of protocols that make an additional assumption, often",3,2,2,10.0,105.7,100.8,487.2,110.9,14.9,38.6
+satisfied by the underlying data processed by IA systems. Stochastic Byzantine Agreement,3,2,3,10.0,90.7,113.9,487.4,123.9,-14.9,13.1
+(SBA) protocols require that vˆ and nonfaulty vi are – or can be effectively approximated as,3,2,4,10.0,89.5,126.8,487.4,137.6,-1.2,12.9
+being – distributed according to probability distributions. No assumptions are made about,3,2,5,10.0,90.7,139.8,487.4,149.8,1.2,13.0
+"the nature of Byzantine values. The two distributions are distinct and potentially unknown,",3,2,6,10.0,90.7,152.8,488.5,162.7,0.0,13.0
+"but correlated since vis approximate vˆ. SBA protocols also satisfy ϵ-agreement, but ϵ in SBA",3,2,7,10.0,90.7,165.7,488.1,176.5,0.0,12.9
+is larger than the ϵ values in classical ABA protocols. This difference in ϵ-agreement is by,3,2,8,10.0,90.7,178.5,487.9,188.6,0.0,12.9
+design and unavoidable due to tradeoffs between accuracy and high-precision agreement [12].,3,2,9,10.0,90.7,191.6,489.5,201.6,0.0,13.1
+The goals of these protocols are close enough that we argue ABA is an appropriate umbrella,3,2,10,10.0,90.4,204.6,487.3,214.5,-0.4,13.0
+"term, with IA and SBA refining properties 1 and 2 as described above.",3,2,11,10.0,90.7,217.5,399.7,227.5,0.4,13.0
+"The key characteristic of our SBA protocol, Proximal Byzantine Agreement (PBA), is",3,3,12,10.0,105.7,230.3,487.5,240.5,14.9,12.8
+that each replica uses the set R of received values vi ∈ R to find a quorum of values r and,3,3,13,10.0,90.7,243.3,487.5,254.2,-14.9,13.0
+a candidate vˆ such that vˆ would be the most likely true value if we knew that the quorum,3,3,14,10.0,90.7,256.3,487.3,266.3,0.0,13.0
+values were nonfaulty. Selecting the highest-probability vˆ conditioned on the observations in,3,3,15,10.0,90.5,269.3,487.5,279.3,-0.3,13.0
+"r, ensures that if any (minority of) values in r turn out to be faulty, then the quorum r (and",3,3,16,10.0,90.7,282.3,487.6,292.2,0.3,13.0
+thus the inferred vˆ) is at least a likely as a quorum containing only nonfaulty values. At a,3,3,17,10.0,90.7,295.1,487.2,305.2,0.0,12.9
+"high level, this process is described by the probability maximization in Def. 2.1.",3,3,18,10.0,90.7,308.2,438.7,318.1,0.0,13.0
+▶ Definition 2.1 (Proximal Byzantine Value Selection). For received values R ⊆ R,3,3,19,10.0,90.7,325.5,461.4,337.6,0.0,17.3
+n and,3,3,20,10.0,461.4,326.3,487.3,337.6,370.7,0.9
+"quorum size s, select a set r from the s-sized subsets of R, and a value x that maximizes the",3,4,21,10.0,89.9,340.6,487.6,350.6,-371.5,14.2
+likelihood that x is the true value given observations in r.,3,4,22,10.0,90.1,353.5,339.9,363.5,0.2,13.0
+"PBA(R, s) ≜ argmax",3,4,23,10.0,105.7,370.8,193.2,383.0,15.6,17.3
+r∈[R],3,4,24,7.0,166.3,384.1,186.2,391.2,60.7,13.2
+s,3,4,25,5.0,186.2,382.7,189.5,387.7,19.8,-1.4
+x∈R,3,4,26,7.0,168.3,390.7,183.2,399.2,-17.9,8.0
+n,3,4,27,5.0,183.2,390.8,187.6,395.8,14.9,0.1
+P(x | r),3,4,28,10.0,194.9,372.9,230.3,383.0,11.7,-17.9
+Our chosen approximation of Proximal Byzantine Value Selection (PBVS) uses the,3,5,29,10.0,105.7,404.7,487.2,414.8,-89.3,31.8
+geometric median of each r as a robust estimator for the expected value of the unknown,3,5,30,10.0,90.7,417.6,487.3,427.8,-14.9,13.0
+"distribution of observations in r, thus approximating the candidate x. Below we will just",3,5,31,10.0,90.7,430.6,487.7,440.7,0.0,13.0
+"use PBA(R, s) to refer to our approximation of PBVS to avoid additional notation. The",3,5,32,10.0,90.7,443.5,487.3,453.7,0.0,13.0
+geometric median [16] is well-suited for estimating the expected value of a broad class of,3,5,33,10.0,90.7,456.5,487.2,466.6,0.0,13.0
+"distributions [15, 16], and remains robust even when <",3,5,34,10.0,90.7,469.4,340.9,479.6,0.0,13.0
+1,3,5,35,7.0,346.2,468.0,350.2,475.0,255.5,-1.4
+2,3,5,36,7.0,346.2,475.3,350.2,482.3,-0.0,7.4
+of the samples are arbitrarily,3,5,37,10.0,355.5,469.4,487.8,479.6,9.3,-5.9
+corrupted. We compare the conditional likelihoods P(x | r) for each r and x with a similarity-,3,6,38,10.0,90.7,482.4,489.1,492.5,-264.8,13.0
+based approximation of conditional probabilities [2]. This is necessary for multidimensional,3,6,39,10.0,90.7,495.5,487.4,505.4,0.0,13.1
+"data since the covariance matrix is unknown, but is a reasonable approach since each nonfaulty",3,6,40,10.0,90.7,508.4,487.6,518.4,0.0,13.0
+replica output is an approximation of the same underlying value.,3,6,41,10.0,90.7,521.4,373.7,531.3,0.0,13.0
+"More specifically, for each quorum r, we compute its median x = Gm(r) and evaluate",3,7,42,10.0,105.7,532.1,487.5,544.3,14.9,10.8
+the likelihood Pb(x | r) using a similarity measure adapted from Blok et al. [2]. Pb(x | r),3,7,43,10.0,90.7,547.1,488.7,561.9,-14.9,15.0
+approximates the affect of the unknown covariance matrix and joint probability of q on,3,7,44,10.0,90.7,560.1,487.6,570.2,0.0,13.0
+the independent probability of x with an exponent α to score similarity between x and,3,7,45,10.0,90.7,573.0,487.5,583.2,0.0,13.0
+"quorum values on a [0, 1) scale. We chose this approach after discovering that computing the",3,7,46,10.0,90.7,586.1,487.4,596.1,0.0,13.1
+geometric median and then approximating its likelihood is significantly faster than iteratively,3,7,47,10.0,90.7,599.1,487.6,609.1,0.0,13.0
+"evaluating Pb(X = x | r) to find maximal values, and had almost no impact on accuracy.",3,7,48,10.0,90.7,611.9,476.3,626.6,0.0,12.8
+2.1 Geometric properties,3,8,49,12.0,90.7,638.1,235.1,650.0,-0.0,26.1
+Approximation of a true value introduces a degree of uncertainty for systems that use those,3,9,50,10.0,90.3,659.0,487.2,669.0,-0.4,21.0
+approximations to make decisions. We are unaware of any ABA protocols that estimates,3,9,51,10.0,90.7,671.8,487.2,682.0,0.4,12.8
+the uncertainty of its outputs.1,3,9,52,10.0,90.7,683.6,224.3,694.9,0.0,11.8
+"In many scenarios, it may be better to perform no action at",3,9,53,10.0,229.3,684.9,487.6,694.9,138.5,1.3
+"all than to act on very uncertain data. Therefore, calculating a concrete guarantee on each",3,9,54,10.0,90.7,697.9,487.2,707.8,-138.5,13.0
+output is an important feature of PBA protocols.,3,9,55,10.0,90.7,710.8,304.5,720.8,0.0,12.9
+1,3,10,56,5.9,90.3,744.4,94.0,750.4,-0.4,33.6
+"In a sense, the strong assumptions of existing IA protocols [12, 4, 3] act as inputs about uncertainty.",3,11,57,8.5,99.1,746.0,482.4,754.5,8.7,1.6
+D I S C 2 0 2 5,3,12,58,10.0,494.9,769.2,554.5,779.1,395.9,23.1
+64:4 Brief Announcement: Proximal Byzantine Agreement,4,1,1,10.5,66.2,62.2,364.1,72.7,,
+A well-known result [11] is that the displacement of the geometric median Gm(Q) of a,4,2,2,10.0,122.7,98.8,504.6,110.9,56.5,36.5
+set of nonfaulty values is bounded when up to |F| < |Q| faulty values are added to the set.,4,2,3,10.0,107.7,113.8,503.8,123.9,-14.9,15.0
+"▶ Lemma 2.2 (Theoretical maximum displacement [6, 11]). Let R = Q ∪ F, |Q| = s and",4,3,4,10.0,107.7,132.2,504.3,144.4,0.0,18.4
+|F| = f such that s > f with geometric medians Gm(Q) = mQ and Gm(R) = mR. Let,4,3,5,10.0,107.7,145.1,504.5,158.1,-0.0,13.0
+∆Q = maxqi∈Q ||qi − Gm(Q)||2 and C,4,3,6,10.0,106.9,159.4,271.6,172.9,-0.8,14.3
+"(s,f)",4,3,7,7.0,272.3,158.7,289.3,165.7,165.4,-0.7
+0 = √ s,4,3,8,1.0,271.6,160.0,321.6,173.5,-0.7,1.3
+s,4,3,9,7.0,312.6,169.7,316.4,176.7,41.0,9.7
+2−f,4,3,10,7.0,316.4,169.3,330.4,176.7,3.8,-0.4
+2,4,3,11,5.0,331.2,169.3,334.6,174.3,14.8,0.0
+. Then the maximum displacement is,4,3,12,10.0,336.3,161.6,498.4,171.5,5.1,-7.7
+"(s,f)",4,4,13,7.0,202.3,188.0,219.3,195.0,-134.0,26.4
+0 ∆Q,4,4,14,7.0,201.6,189.0,234.4,202.8,-0.7,1.1
+||mQ − mR||2 ≤ C,4,5,15,10.0,122.7,190.7,201.6,201.6,-78.9,1.6
+"However, the contents of Q is unknown, so the bound implied by Lemma 2.2 cannot be",4,6,16,10.0,107.7,213.2,488.8,223.1,-14.9,22.5
+"directly calculated from the information available. Instead, Lemma 2.3 presents a",4,6,17,10.0,107.7,226.1,463.4,236.1,0.0,13.0
+"computable bound guaranteed to contain the geometric median of the nonfaulty values, but",4,6,18,10.0,107.7,239.1,504.5,249.0,0.0,13.0
+"is based only on the received values and the system parameters (i.e., n, f, and s).",4,6,19,10.0,107.7,252.0,464.8,262.0,0.0,12.9
+"▶ Lemma 2.3 (Computable maximum displacement). Let R = Q ∪ F, |Q| = s and |F| = f",4,7,20,10.0,107.7,272.2,503.5,284.4,0.0,20.2
+"such that s > 2f with Gm(Q) = mQ and Gm(R) = mR, and C",4,7,21,10.0,107.2,285.1,380.5,298.1,-0.5,13.0
+"(s,f) = √ s",4,7,22,7.0,381.2,285.7,432.9,297.3,274.1,0.6
+2sf−f,4,7,23,7.0,421.5,295.4,444.1,302.4,40.3,9.7
+2,4,7,24,5.0,444.8,295.0,448.2,300.0,23.3,-0.3
+. Then,4,7,25,10.0,449.9,287.3,479.9,297.3,5.1,-7.7
+"(s,f)∆R",4,8,26,7.0,202.3,313.7,234.1,325.5,-247.6,26.4
+f,4,8,27,7.0,228.1,320.3,232.0,327.3,25.8,6.6
+||mQ − mR||2 ≤ C,4,9,28,10.0,122.7,315.4,201.6,326.3,-105.5,-4.9
+The computable displacement is used to compute the region guarantee for a given PBA,4,10,29,10.0,122.7,337.8,504.9,347.8,-0.0,22.4
+result. The fact that PBA only produces outputs with region guarantees containing the true,4,10,30,10.0,107.7,350.8,504.4,360.8,-14.9,13.0
+output is our instantiation of an accuracy [12] property.,4,10,31,10.0,107.7,363.8,351.1,373.7,0.0,13.0
+▶ Definition 2.4 (Region Guarantee). For any set R ⊆ R,4,10,32,10.0,107.7,382.0,356.2,394.2,0.0,18.3
+d,4,10,33,7.0,356.2,382.9,360.3,389.9,248.4,0.9
+", |R| > s + f where s > f, define",4,10,34,10.0,360.8,384.1,504.6,394.2,4.6,1.2
+"R(f,x) ⊆ R by removing the f elements of R furthest from x. Let ∆R",4,10,35,10.0,107.7,395.9,399.2,407.1,-253.1,11.8
+"f = maxri∈R(f,Gm(R)) ||ri −",4,10,36,5.0,393.2,397.0,504.6,409.3,285.5,1.2
+"Gm(R)||2. The region guarantee RG(R, s, f) is a d-dimensional ball centered at x with radius",4,10,37,10.0,107.7,407.9,504.6,420.9,-285.5,10.9
+2C,4,10,38,10.0,107.5,423.1,119.6,433.0,-0.2,15.1
+"(s,f)∆R",4,10,39,7.0,120.3,421.8,152.1,433.0,12.8,-1.3
+f,4,10,40,7.0,146.1,428.2,150.0,435.2,25.8,6.4
+.,4,10,41,10.0,152.6,423.1,155.7,433.0,6.5,-5.1
+▶ Lemma 2.5 (Accuracy). For any R = (Q ∪ F) containing |Q| = s > 2f nonfaulty and at,4,11,42,10.0,107.7,441.3,504.5,453.5,-44.9,18.3
+"most |F| = f faulty values, let PBA(R, s) = (x, R′",4,11,43,10.0,107.1,455.1,323.3,466.4,-0.7,13.8
+"). Then Gm(Q) ∈ RG(R, s, f) and",4,11,44,10.0,323.8,454.3,474.7,466.4,216.8,-0.8
+"(s,f)",4,12,45,7.0,192.7,476.0,209.7,483.0,-131.1,21.7
+0 ∆R,4,12,46,7.0,192.0,477.0,224.5,490.8,-0.7,1.1
+′,4,12,47,5.0,224.6,475.5,226.8,480.5,32.6,-1.5
++ C,4,12,48,10.0,230.0,478.8,247.0,488.8,5.4,3.3
+"(s,f)",4,12,49,7.0,247.8,476.0,264.8,483.0,17.8,-2.8
+0 ∆Q ≤ 2C,4,12,50,10.0,247.1,477.0,305.7,490.8,-0.7,1.1
+"(s,f)∆R",4,13,51,7.0,306.5,477.0,338.3,488.8,59.4,0.0
+f,4,13,52,7.0,332.3,483.6,336.2,490.6,25.8,6.6
+||mQ − x||2 ≤ C,4,14,53,10.0,122.7,478.7,192.0,489.6,-209.6,-4.9
+2.2 OneShot PBA Agreement and Termination,4,15,54,12.0,107.7,505.0,374.3,517.0,-14.9,26.4
+"For this brief announcement, we describe OneShot PBA, a protocol that prioritizes accuracy.",4,16,55,10.0,107.7,524.0,506.4,536.0,0.0,19.0
+"It infers the potential distances between the true value, its output, and other replica outputs",4,16,56,10.0,107.7,539.0,504.2,548.9,0.0,14.9
+"using only the messages it receives, without additional coordination. Clients can receive",4,16,57,10.0,107.7,551.7,504.1,561.9,0.0,12.8
+proposed values directly from replicas and execute our PBVS algorithm locally to select,4,16,58,10.0,107.7,564.7,504.4,574.9,0.0,13.0
+"values. Like most IA protocols [3, 4, 13], but unlike other ABA protocols [5, 12, 14, 19],",4,16,59,10.0,107.5,577.7,505.9,587.8,-0.3,13.0
+OneShot does not iterate to converge on a single answer. Doing so would obscure the initial,4,16,60,10.0,107.7,588.8,504.3,600.7,0.3,11.1
+"values, sacrifice accuracy, and undermine the fidelity of the region guarantees.",4,16,61,10.0,107.5,603.7,447.0,613.7,-0.3,14.9
+The termination conditions are thus straightforward: OneShot PBA requires s+f values,4,17,62,10.0,122.7,614.7,504.6,626.6,15.2,11.0
+"where s ≥ 2f +1, so termination for the asynchronous case requires at least n ≥ s+2f ≥ 4f +1",4,17,63,10.0,107.4,629.5,505.7,639.6,-15.3,14.8
+"replicas. Otherwise, f faulty replicas could withhold values without being distinguished from",4,17,64,10.0,107.7,642.6,504.4,652.5,0.4,13.1
+"f nonfaulty replicas experiencing a network partition, and halt progress.",4,17,65,10.0,107.7,655.5,423.6,665.5,0.0,13.0
+PBA OneShot’s requirements on replica set size compare favorably to other ABA proto-,4,18,66,10.0,122.7,666.5,505.9,678.4,14.9,11.0
+"cols (Table 1), particularly when considering its lack of dependency on data dimensionality",4,18,67,10.0,107.7,681.4,504.5,691.4,-14.9,14.9
+and weak assumptions regarding the range of correct values. Unlike prior work that tend to,4,18,68,10.0,107.7,694.4,504.2,704.3,0.0,13.0
+"improve accuracy with more replicas, a distinguishing characteristic of PBA value selection is",4,18,69,10.0,107.7,707.3,504.6,717.3,0.0,12.9
+"that more replicas are not required to ensure the safety or liveness properties of the system,",4,18,70,10.0,107.7,720.3,505.5,730.2,0.0,13.0
+yet still benefits from the increase in accuracy.,4,18,71,10.0,107.5,733.2,310.0,743.2,-0.3,13.0
+R. Shadmon and O. Arden 64:5,5,1,1,10.5,90.7,62.2,532.9,72.7,,
+Table 1 Replica set size. d is number of data dimensions.,5,2,2,9.0,105.0,99.8,336.0,108.7,14.3,37.5
+Algorithm n ≥,5,3,3,9.0,232.3,122.5,329.0,131.6,127.3,22.7
+OneShot 4f + 1,5,3,4,9.0,232.3,134.0,334.3,145.0,0.0,11.5
+ABA [5] 5f + 1,5,3,5,9.0,232.3,148.9,334.3,157.9,0.0,14.9
+IA [12] 3f + 1,5,3,6,9.0,232.3,161.9,334.3,170.9,0.0,13.0
+"BI [3, 4] 2df + 1",5,3,7,9.0,232.3,174.8,335.9,183.8,0.0,13.0
+"BVC [14, 19] (d + 2)f + 1",5,3,8,9.0,232.3,187.8,345.9,196.8,0.0,13.0
+"(a) Gaussian samples, Byzantine attack. (b) Exponential samples, Byzantine attack.",5,4,9,8.5,108.5,415.9,456.1,424.4,-123.8,228.1
+Figure 1 Empirical simulations measuring PBA’s accuracy compared to baseline algorithms given,5,5,10,9.0,105.0,436.3,487.5,445.3,-3.5,20.4
+data distributed by a Gaussian (symmetric) and Exponential (asymmetric) distributions.,5,5,11,9.0,90.7,447.8,450.2,456.8,-14.3,11.5
+"Despite the absence of inter-replica coordination or iteration, the PBA values derived",5,6,12,10.0,105.7,494.8,487.5,504.9,14.9,47.0
+by consumers from different subsets are bounded with respect to their distance to the true,5,6,13,10.0,90.7,507.8,487.1,517.8,-14.9,13.1
+expected value. This bound is in terms of the displacement properties of the geometric,5,6,14,10.0,90.7,520.7,487.2,530.8,0.0,12.8
+"median discussed in §2.1, and contingent on quorum sizes representing a sufficiently large",5,6,15,10.0,90.7,533.6,487.2,543.8,0.0,13.0
+"fraction of the nonfaulty replicas, in this case >",5,6,16,10.0,90.7,546.7,299.3,556.7,0.0,13.1
+|Q|,5,6,17,7.0,303.3,544.1,314.3,551.2,212.6,-2.6
+2,5,6,18,7.0,306.8,552.5,310.8,559.5,3.5,8.4
+.,5,6,19,10.0,315.5,546.7,318.2,556.7,8.7,-5.8
+It is taken for granted in other protocols that quorums must contain at least half of all,5,7,20,10.0,105.7,566.9,487.2,576.9,-209.8,20.2
+nonfaulty replicas since these protocols ensure all quorums intersect. We only make this,5,7,21,10.0,90.7,579.8,487.1,589.9,-14.9,12.9
+size requirement explicit for agreement because not all instances of PBA necessarily involve,5,7,22,10.0,90.7,592.9,487.5,602.8,0.0,13.1
+"multiple consumers. For example, there is no need for agreement if a system controller is",5,7,23,10.0,90.7,605.7,487.2,615.8,0.0,12.8
+"the only consumer of replica outputs, as is often the case in industrial control systems. For",5,7,24,10.0,90.7,618.8,487.3,628.7,0.0,13.1
+"contrast, note that accuracy (Lemma 2.5) only requires quorum membership to be more",5,7,25,10.0,90.7,631.6,487.2,641.7,0.0,12.8
+than twice the number of faulty replicas.,5,7,26,10.0,90.7,644.7,268.3,654.6,0.0,13.1
+▶ Lemma 2.6 (Agreement). For any Ri = (Qi ∪ F,5,8,27,10.0,90.7,685.3,312.0,697.4,0.0,40.6
+") ⊆ R = (Q ∪ F), let r = |Ri",5,9,28,10.0,316.7,686.2,441.3,697.4,226.0,0.9
+"|, s = |Qi",5,9,29,10.0,441.8,686.2,482.6,697.4,125.1,0.0
+"|,",5,9,30,10.0,483.1,687.3,488.9,697.4,41.3,1.2
+"f = |F|, and PBA(Ri",5,9,31,10.0,90.7,701.1,184.1,712.4,-392.4,13.8
+", s) = (xi",5,9,32,10.0,184.6,702.2,223.8,713.2,93.9,1.1
+", Ri",5,9,33,10.0,224.3,701.1,239.2,712.3,39.6,-1.1
+∗,5,9,34,7.0,236.3,707.1,240.3,714.1,12.0,6.0
+). If s > l,5,9,35,10.0,240.8,698.5,286.7,712.4,4.6,-8.6
+|R|,5,9,36,7.0,287.9,699.8,298.7,706.9,47.0,1.3
+2,5,9,37,7.0,291.3,708.2,295.3,715.1,3.4,8.4
+m,5,9,38,10.0,299.9,698.5,305.1,708.5,8.6,-9.7
+"and r ≥ s + f, then for any other subset",5,9,39,10.0,308.7,702.2,487.5,712.4,8.9,3.8
+Rj = (Qj ∪ F,5,9,40,10.0,90.7,719.0,149.3,730.2,-218.0,16.7
+j,5,9,41,7.0,150.6,719.0,153.9,726.0,59.9,0.0
+) ⊆ R where |Rj,5,9,42,10.0,154.8,719.0,225.0,730.2,4.2,0.0
+| ≥ r and PBA(Rj,5,9,43,10.0,225.9,719.0,304.1,730.2,71.1,0.0
+", s) = (xj , Rj",5,9,44,10.0,305.0,717.8,360.4,731.1,79.1,-1.2
+"∗), ||xi − xj || ≤ 2C",5,9,45,10.0,357.1,720.1,439.7,731.1,52.0,2.3
+"(s,f)",5,9,46,7.0,440.4,717.4,457.4,724.4,83.3,-2.7
+0 ∆Q.,5,9,47,10.0,439.7,719.0,476.0,732.2,-0.7,1.6
+i,5,10,48,7.0,313.4,686.2,316.2,693.1,-126.3,-32.8
+D I S C 2 0 2 5,5,11,49,10.0,494.9,769.2,554.5,779.1,181.6,83.0
+64:6 Brief Announcement: Proximal Byzantine Agreement,6,1,1,10.5,66.2,62.2,364.1,72.7,,
+Figure 2 Runtime benchmark (Pi Zero).,6,2,2,9.0,122.0,258.6,283.6,267.5,55.8,196.3
+3 Evaluation,6,3,3,12.0,112.7,291.3,194.5,303.3,-9.3,32.8
+PBA accuracy compared to baseline. We perform repeated simulations on Chameleon,6,4,4,10.0,107.7,316.0,504.4,326.1,-5.0,24.6
+"Cloud [8], comparing PBA under several quorum sizes against approximate Byzantine Vector",6,4,5,10.0,107.7,329.1,504.6,339.0,0.0,13.1
+Consensus (BVC) [19] and Brooks-Iyengar (BI) [4]. Here we present only the Byzantine attack,6,4,6,10.0,107.7,342.0,504.7,352.0,0.0,13.0
+scenario. Each trial samples n − f d-dimensional replica outputs xi from a random Gaussian,6,4,7,10.0,107.7,354.8,504.6,365.8,0.0,12.8
+"or Exponential distribution (with a fixed, low variance) and multiplies each element-wise",6,4,8,10.0,107.7,367.8,504.1,377.9,0.0,12.9
+by a noise vector yi,6,4,9,10.0,107.7,380.7,193.9,391.7,0.0,13.0
+independently sampled from an error distribution with E[Y ] = 1 and,6,4,10,10.0,197.8,380.7,504.6,390.9,90.0,0.0
+(uniformly-sampled) standard deviation from 0.01 to 0.09. We compute the agreement vector,6,5,11,10.0,106.6,393.8,504.7,403.8,-91.2,13.1
+of each protocol and report the median percent error with respect to xi across 1000 trials.,6,5,12,10.0,107.7,406.8,501.0,417.6,1.2,13.0
+Figure 1a compares results when n − f outputs are sampled from a Gaussian distribution,6,6,13,10.0,122.7,419.8,504.5,429.9,14.9,13.0
+"under an optimal Byzantine attack with f = 1. While BVC remains highly robust, PBA",6,6,14,10.0,107.7,432.8,504.9,442.9,-14.9,12.9
+"achieves comparable accuracy with just n = 4f + 1 = 5 (small n) outputs, versus BVC’s",6,6,15,10.0,107.7,445.7,504.5,455.9,0.0,13.0
+n = (d + 2)f + 1 = 13 (large n) outputs. This indicates that at least some of BVC’s accuracy,6,6,16,10.0,107.7,458.8,504.8,468.8,0.0,13.1
+"may result from its reliance on more samples, but any ABA protocol will improve in accuracy",6,6,17,10.0,107.7,471.8,504.7,481.7,0.0,13.0
+with more samples: aggregating values concentrates outputs around the true value. PBA,6,6,18,10.0,107.4,484.6,504.9,494.7,-0.4,12.8
+"approaches the true value with fewer samples (i.e., replicas) and performance overhead.",6,6,19,10.0,107.7,497.7,488.8,507.6,0.4,13.1
+"In the Exponential and large n setting (n = (d+2)f+1), Figure 1b shows PBA outperforms",6,7,20,10.0,122.7,510.8,504.6,520.8,14.9,13.2
+"all other n = 4 protocols. In the small n setting, PBA demonstrates superior accuracy to",6,7,21,10.0,107.7,523.7,504.4,533.8,-14.9,12.8
+"all baselines – even in the PBA-unknown case, where the prior distribution is estimated",6,7,22,10.0,107.7,536.6,504.3,546.8,0.0,13.0
+as Gaussian. This accuracy advantage likely stems from PBA’s quorum selection strategy,6,7,23,10.0,107.7,549.6,504.8,559.7,0.0,13.0
+"and agreement inference method. In contrast, the benefit other protocols received from",6,7,24,10.0,107.7,562.5,504.2,572.7,0.0,13.0
+"additional samples in the Gaussian case, a symmetric distribution, are tempered in the",6,7,25,10.0,107.7,575.5,504.2,585.6,0.0,13.0
+"exponential case, an asymmetric distribution. The gap in accuracy suggests the averaging",6,7,26,10.0,107.7,588.5,504.2,598.6,0.0,13.0
+"effect occurring in other protocols generalizes poorly to other distributions, whereas PBA’s",6,7,27,10.0,107.7,601.5,504.6,611.5,0.0,13.0
+more statistically-informed approach adapts more easily.,6,7,28,10.0,107.7,614.5,353.8,624.4,0.0,13.0
+Runtime performance. Figure 2 presents runtime benchmarks for f = 1 and f = 2 on,6,8,29,10.0,107.7,642.4,504.6,652.6,0.0,27.9
+a node hosted on a single Raspberry Pi Zero 2W. These results are based on repeated,6,8,30,10.0,107.7,655.4,504.2,665.5,0.0,13.0
+"simulations of the PBA, BVC, and BI protocols operating on sets of n d-dimensional vectors.",6,8,31,10.0,107.7,668.5,506.5,678.4,0.0,13.1
+"where n = (d + 2)f + 1, and PBA quorum sizes set to s = n − f. PBA is faster than BVC for",6,8,32,10.0,107.4,681.3,504.8,691.4,-0.4,12.8
+"f = 1, d > 5 (with similar performance at lower d), and more than 4× faster at f = 1, d = 18.",6,8,33,10.0,107.7,694.2,506.5,704.3,0.4,13.0
+"In all f = 2, d = 4 scenarios, PBA significantly outperforms BVC (124×). While BI also",6,8,34,10.0,107.7,707.2,504.5,717.3,0.0,12.9
+"exhibits scalable runtime in high-dimensional settings, each replica must produce outputs",6,8,35,10.0,107.7,720.1,504.1,730.3,0.0,13.0
+R. Shadmon and O. Arden 64:7,7,1,1,10.5,90.7,62.2,532.9,72.7,,
+"with a known error range that contains the true value, and that must also intersect the",7,2,2,10.0,90.4,100.8,487.2,111.0,-0.4,38.6
+"ranges of all other nonfaulty nodes. If these invariants are violated by any nonfaulty replica,",7,2,3,10.0,90.7,113.9,488.6,123.9,0.4,13.1
+"the system may not withstand Byzantine attack. Even without an attack, the protocol could",7,2,4,10.0,90.7,126.8,487.3,136.8,0.0,13.0
+fail to terminate.,7,2,5,10.0,90.7,139.8,164.5,149.8,0.0,13.0
+Our empirical results against BVC reinforces that PBA offers a compelling trade-off: it,7,3,6,10.0,105.7,152.7,487.7,162.7,14.9,12.9
+maintains competitive accuracy while substantially reducing computational cost. Beyond per-,7,3,7,10.0,90.7,165.7,488.8,175.7,-14.9,13.0
+"formance, PBA also provides robust fault tolerance and accurate agreement with significantly",7,3,8,10.0,90.7,178.6,487.7,188.6,0.0,12.9
+"fewer replica outputs. Notably, PBA’s minimum required number of replicas and quorum",7,3,9,10.0,90.7,191.5,487.3,201.6,0.0,12.8
+"size are independent of d; in contrast to BVC, whose replica requirements scale significantly",7,3,10,10.0,90.7,204.5,487.7,214.5,0.0,13.1
+"with d. Under-provisioned PBA systems instead have more uncertainty, but the amount",7,3,11,10.0,90.4,217.4,487.6,227.5,-0.4,12.8
+"is characterized by region guarantees. This scalable perfomance and graceful, principled",7,3,12,10.0,90.7,230.3,487.2,240.5,0.4,13.0
+degradation indicate promise for both large-scale and resource-constrained sensor-based,7,3,13,10.0,90.7,243.3,487.2,253.4,0.0,13.0
+control systems and datastream processing applications.,7,3,14,10.0,90.7,256.4,335.3,266.3,0.0,13.1
+References,7,4,15,10.0,114.8,286.0,163.9,296.0,24.1,29.7
+"1 Buke Ao, Yongcai Wang, Lu Yu, Richard R. Brooks, and S. S. Iyengar. On Precision Bound",7,4,16,9.0,96.7,302.6,487.3,311.6,-18.1,16.5
+"of Distributed Fault-Tolerant Sensor Fusion Algorithms. ACM Computing Surveys (CSUR),",7,4,17,9.0,114.8,314.5,488.8,323.5,18.1,11.9
+May 2016. doi:10.1145/2898984.,7,4,18,9.0,114.8,326.5,252.6,335.9,0.0,12.0
+"2 Sergey Blok, Douglas Medin, and Daniel Osherson. Probability from similarity. In AAAI",7,5,19,9.0,96.7,338.3,487.1,347.5,-18.1,11.8
+"Spring Symposium on Logical Formalization of Commonsense Reasoning, pages 36–42, 2003.",7,5,20,9.0,114.3,350.4,487.2,359.4,17.6,12.1
+3 Richard Ree Brooks and S. Sitharama Iyengar. Optimal matching algorithm for multidimen-,7,5,21,9.0,96.7,362.4,488.8,371.3,-17.6,11.9
+"sional sensor readings. In Sensor Fusion and Networked Robotics VIII, volume 2589. SPIE,",7,5,22,9.0,114.8,374.2,488.8,383.3,18.1,11.8
+September 1995. doi:10.1117/12.220948.,7,5,23,9.0,114.8,386.3,286.9,395.7,0.0,12.1
+"4 R.R. Brooks and S.S. Iyengar. Robust distributed computing and sensing algorithm. Computer,",7,6,24,9.0,96.7,398.2,488.9,407.2,-18.1,11.9
+"29(6), June 1996. doi:10.1109/2.507632.",7,6,25,9.0,114.6,410.2,285.1,419.6,17.8,12.0
+"5 Danny Dolev, Nancy A. Lynch, Shlomit S. Pinter, Eugene W. Stark, and William E. Weihl.",7,7,26,9.0,96.7,422.1,489.1,431.1,-17.8,11.9
+"Reaching approximate agreement in the presence of faults. Journal of The Acm, 33(3), May",7,7,27,9.0,114.8,434.1,487.8,443.1,18.1,12.0
+1986. doi:10.1145/5925.5931.,7,7,28,9.0,114.3,446.1,240.8,455.5,-0.5,12.0
+"6 El-Mahdi El-Mhamdi, Sadegh Farhadkhani, Rachid Guerraoui, and Lê-Nguyên Hoang. On",7,8,29,9.0,96.7,457.9,487.3,467.0,-17.6,11.8
+the Strategyproofness of the Geometric Median. In Proceedings of The 26th International,7,8,30,9.0,114.8,469.8,487.2,479.0,18.1,11.9
+"Conference on Artificial Intelligence and Statistics. PMLR, April 2023. URL: https://",7,8,31,9.0,113.7,481.8,488.5,491.3,-1.1,12.0
+proceedings.mlr.press/v206/el-mhamdi23a.html.,7,8,32,9.0,114.8,493.9,325.0,503.3,1.1,12.1
+"7 Peter J. Huber and Elvezio M. Ronchetti. Robust Statistics. Wiley, 2011.",7,8,33,9.0,96.7,505.8,410.3,514.8,-18.1,11.9
+"8 Kate Keahey, Jason Anderson, Zhuo Zhen, Pierre Riteau, Paul Ruth, Dan Stanzione, Mert",7,8,34,9.0,96.7,517.7,487.6,526.8,0.0,11.8
+"Cevik, Jacob Colleran, Haryadi S. Gunawi, Cody Hammock, Joe Mambretti, Alexander",7,8,35,9.0,114.8,529.6,487.5,538.8,18.1,11.9
+"Barnes, François Halbach, Alex Rocha, and Joe Stubbs. Lessons learned from the chameleon",7,8,36,9.0,114.8,541.7,487.3,550.7,0.0,12.1
+testbed. In Proceedings of the 2020 USENIX Annual Technical Conference (USENIX ATC,7,8,37,9.0,114.8,553.5,486.8,562.7,0.0,11.8
+"’20). USENIX Association, July 2020. URL: https://www.usenix.org/conference/atc20/",7,8,38,9.0,112.5,565.5,488.5,575.0,-2.3,11.9
+presentation/keahey.,7,8,39,9.0,114.8,577.6,206.8,587.0,2.3,12.1
+"9 Leslie Lamport. The weak Byzantine generals problem. Journal of the ACM, 30(3), 1983.",7,9,40,9.0,96.7,589.4,489.3,598.5,-18.1,11.8
+doi:10.1145/2402.322398.,7,9,41,9.0,114.8,601.5,225.6,610.9,18.1,12.1
+10 Leslie Lamport and P. M. Melliar-Smith. Byzantine clock synchronization. In Principles of,7,10,42,9.0,91.8,613.4,486.8,622.4,-23.0,11.9
+"Distributed Computing (PODC), 1984. doi:10.1145/800222.806737.",7,10,43,9.0,114.3,625.4,393.9,634.8,22.5,12.0
+11 Hendrik P. Lopuhaa and Peter J. Rousseeuw. Breakdown Points of Affine Equivariant,7,10,44,9.0,91.8,637.2,487.6,646.4,-22.5,11.8
+"Estimators of Multivariate Location and Covariance Matrices. The Annals of Statistics, 19(1),",7,10,45,9.0,114.8,649.3,488.8,658.3,23.0,12.1
+March 1991. doi:10.1214/aos/1176347978.,7,10,46,9.0,114.8,661.3,293.5,670.7,0.0,12.0
+"12 Stephen R. Mahaney and Fred B. Schneider. Inexact agreement: Accuracy, precision, and",7,11,47,9.0,91.8,673.1,487.3,682.2,-23.0,11.8
+"graceful degradation. In Principles of Distributed Computing (PODC). ACM Press, 1985.",7,11,48,9.0,114.8,685.0,489.3,694.2,23.0,12.0
+doi:10.1145/323596.323618.,7,11,49,9.0,114.8,697.1,235.0,706.6,0.0,12.1
+13 Keith Marzullo. Tolerating failures of continuous-valued sensors. ACM Transactions on,7,12,50,9.0,91.8,709.0,487.5,718.1,-23.0,11.8
+"Computer Systems, 8(4), November 1990. doi:10.1145/128733.128735.",7,12,51,9.0,113.7,721.1,405.1,730.5,21.9,12.1
+D I S C 2 0 2 5,7,13,52,10.0,496.2,770.4,555.8,780.4,382.5,49.4
+64:8 Brief Announcement: Proximal Byzantine Agreement,8,1,1,10.5,66.2,62.2,364.1,72.7,,
+14 Hammurabi Mendes and Maurice Herlihy. Multidimensional approximate agreement in,8,2,2,9.0,108.8,101.6,504.3,110.7,42.6,39.3
+Byzantine asynchronous systems. In Proceedings of the Forty-Fifth Annual ACM Symposium,8,2,3,9.0,131.8,113.7,504.4,122.6,23.0,12.1
+"on Theory of Computing. ACM, June 2013. doi:10.1145/2488608.2488657.",8,2,4,9.0,131.1,125.6,440.1,135.1,-0.7,12.0
+"15 Stanislav Minsker. Geometric median and robust estimation in Banach spaces. Bernoulli,",8,2,5,9.0,108.8,137.4,505.8,146.6,-22.3,11.8
+"21(4), November 2015. doi:10.3150/14-BEJ645.",8,2,6,9.0,131.6,149.5,328.7,159.0,22.8,12.1
+16 Stanislav Minsker and Nate Strawn. The Geometric Median and Applications to Robust,8,3,7,9.0,108.8,161.4,504.6,170.5,-22.8,11.8
+"Mean Estimation. SIAM Journal on Mathematics of Data Science, 6(2), June 2024. doi:",8,3,8,9.0,131.8,173.3,506.9,182.9,23.0,12.0
+10.1137/23M1592420.,8,3,9,9.0,131.6,185.4,218.9,194.8,-0.2,12.1
+"17 Emanuel Parzen. Stochastic Processes. Dover Books on Mathematics. Dover Publications Inc.,",8,4,10,9.0,108.8,197.4,505.7,206.3,-22.8,11.9
+2015.,8,4,11,9.0,131.6,209.3,152.5,218.3,22.8,12.0
+18 Roy Shadmon and Owen Arden. Enhancing accuracy in approximate byzantine agreement with,8,5,12,9.0,108.8,221.3,504.4,230.2,-22.8,11.9
+bayesian inference. In 55th Annual IEEE/IFIP International Conference on Dependable Systems,8,5,13,9.0,131.8,233.2,504.4,242.2,23.0,12.0
+"and Networks - Supplemental Volume (DSN-S), 2025. doi:10.1109/DSN-S65789.2025.00064.",8,5,14,9.0,131.1,245.2,506.4,254.6,-0.7,12.0
+19 Nitin H Vaidya and Vijay K Garg. Byzantine vector consensus in complete graphs. In Proc.,8,5,15,9.0,108.8,257.1,506.0,266.1,-22.3,11.9
+"of the 2013 ACM Symposium on Principles of Distributed Computing, 2013.",8,5,16,9.0,131.1,269.1,437.4,278.1,22.3,12.0
