@@ -286,11 +286,23 @@ def repeated_header_footer_keys(
 
 def explicit_visible_page_number(text: str) -> str | None:
     """Extract an explicit page number from common page labels."""
-    match = re.match(r'\s*(?:page|página)\s+([0-9ivxlcdm]+)\b', text, flags=re.IGNORECASE)
+    match = re.match(
+        rf'\s*(?:page|página)\s+({VISIBLE_PAGE_LABEL_PATTERN})\b',
+        text,
+        flags=re.IGNORECASE,
+    )
     if match:
         return match.group(1)
 
     return None
+
+
+VISIBLE_PAGE_LABEL_PATTERN = r'(?:[A-Za-z]+|\d+)[:-]\d+|\d+'
+
+
+def visible_page_label_sort_number(label: str) -> int:
+    """Return the numeric part that should track raw page order."""
+    return int(label.rsplit(':', 1)[-1].rsplit('-', 1)[-1])
 
 
 def infer_repeated_page_numbers(
@@ -331,9 +343,13 @@ def infer_edge_page_numbers(candidate_list: list[HeaderFooterCandidate]) -> dict
     """Infer visible page numbers printed at the start or end of edge lines."""
     numbers_by_position: dict[tuple[str, str], list[tuple[int, str]]] = defaultdict(list)
     page_numbers: dict[int, str] = {}
+    label_pattern = VISIBLE_PAGE_LABEL_PATTERN
 
     for candidate in candidate_list:
-        for edge, pattern in [('start', r'^\s*(\d+)\b'), ('end', r'\b(\d+)\s*$')]:
+        for edge, pattern in [
+            ('start', rf'^\s*({label_pattern})\b'),
+            ('end', rf'\b({label_pattern})\s*$'),
+        ]:
             match = re.search(pattern, candidate.line.text)
             if match:
                 numbers_by_position[(candidate.zone, edge)].append(
@@ -341,7 +357,9 @@ def infer_edge_page_numbers(candidate_list: list[HeaderFooterCandidate]) -> dict
                 )
 
     for raw_and_visible in numbers_by_position.values():
-        offsets = Counter(int(visible) - raw for raw, visible in raw_and_visible)
+        offsets = Counter(
+            visible_page_label_sort_number(visible) - raw for raw, visible in raw_and_visible
+        )
         if not offsets:
             continue
 
@@ -350,7 +368,7 @@ def infer_edge_page_numbers(candidate_list: list[HeaderFooterCandidate]) -> dict
             continue
 
         for raw, visible in raw_and_visible:
-            if int(visible) - raw == offset:
+            if visible_page_label_sort_number(visible) - raw == offset:
                 page_numbers.setdefault(raw, visible)
 
     return page_numbers
