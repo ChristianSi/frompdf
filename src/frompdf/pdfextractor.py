@@ -475,7 +475,7 @@ def extract_markdown(
 
     filtered_lines, page_number_list = remove_headers_and_footers(line_list, page_list)
 
-    if dump_pagenos:
+    if dump_pagenos and page_number_list:
         dump_page_numbers(page_number_list, build_pagenos_output_path(input_path))
 
     return lines_to_markdown_blocks(filtered_lines)
@@ -510,14 +510,15 @@ def main() -> int:
         raise SystemExit(f'Not a file: {input_path}')
 
     csv_output_path = build_csv_output_path(input_path)
-    pagenos_output_path = build_pagenos_output_path(input_path)
     text_output_path = build_text_output_path(input_path)
 
     block_list = extract_markdown(input_path, dump_lines=True, dump_pagenos=True)
     dump_text(block_list, text_output_path)
 
     print(csv_output_path)
-    print(pagenos_output_path)
+    pagenos_output_path = build_pagenos_output_path(input_path)
+    if pagenos_output_path.exists():
+        print(pagenos_output_path)
     print(text_output_path)
     return 0
 
