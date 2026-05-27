@@ -59,6 +59,7 @@ abundance in the skyrmion-lattice/cycloid phase. These results highlight the imp
 spin structure on the ultrafast heat transport in spin systems, providing a useful insight for
 the step toward ultrafast photocontrol of the magnets with novel spin orders.
 
+1 II. Physikalisches Institut, Universität zu Köln, Zülpicher Str. 77, D-50937 Köln, Germany. 2 Experimental Physics V, Center for Electronic Correlations
 and Magnetism, University of Augsburg, 86159 Augsburg, Germany. 3 Institute of Applied Physics, MD 2028 Chișinău, Republic of Moldova. 4 Istituto
 Italiano di Tecnologia, Via Morego 30, 16163 Genova, Italy. 5Dipartimento di Fisica, Università di Genova, Via Dodecaneso, 33, 16146 Genova, Italy. ✉email: sekiguchi.fumiya.2n@kyoto-u.ac.jp; pvl@ph2.uni-koeln.de
 
