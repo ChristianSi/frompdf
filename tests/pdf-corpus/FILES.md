@@ -17,6 +17,11 @@ Short, freely licensed PDF files for testing the conversion.
   difusión de datos SIGC en el Catálogo de Servicios
   SIGPAC](https://www.fega.gob.es/sites/default/files/files/document/250923-AD-Nota_Catalogo_Nube_Nuevos_Servicios_SIGPAC.pdf)"
   by Fondo Español de Garantía Agraria (FEGA); license: CC-BY-4.0.
+- folie-chick-lit-web-archives.pdf: "[Recovering contemporary genre
+  histories – the development of chick lit as seen through the internet
+  archive's wayback machine and wikipedia's history
+  page](https://link.springer.com/article/10.1007/s42803-021-00031-6)" by
+  Sandra Folie; license: CC-BY-4.0.
 - intertrans-espacologia.pdf: "[Espaçologia: filosofias na totalidade do
   espaço](https://revistas.hcte.ufrj.br/index.php/intertrans/article/download/249/205/)"
   by Wallace Lopes; license: CC-BY-4.0.
