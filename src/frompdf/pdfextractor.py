@@ -31,25 +31,25 @@ class Line:
 
 
 @dataclass
+class PageNumber:
+    """A raw PDF page number with optional visible page label."""
+
+    raw: int
+    visible: str | None
+
+
+@dataclass
 class Block:
     """A Markdown block extracted from a PDF."""
 
     text: str
-    start_page: int
-    end_page: int
+    start_page: PageNumber
+    end_page: PageNumber
 
 
 @dataclass
 class Paragraph(Block):
     """A Markdown paragraph."""
-
-
-@dataclass
-class PageNumber:
-    """A visible page number found in a header or footer."""
-
-    raw: int
-    visible: str
 
 
 @dataclass
@@ -220,7 +220,8 @@ def dump_page_numbers(page_number_list: list[PageNumber], output_path: Path) -> 
         writer = csv.DictWriter(output_file, fieldnames=['raw', 'visible'])
         writer.writeheader()
         for page_number in page_number_list:
-            writer.writerow(asdict(page_number))
+            if page_number.visible is not None:
+                writer.writerow(asdict(page_number))
 
 
 def candidate_zone(line_obj: Line, page_height: float) -> str | None:
@@ -471,7 +472,21 @@ def remove_headers_and_footers(
     return filtered_lines, page_number_list
 
 
-def lines_to_markdown_blocks(line_list: list[Line]) -> list[Block]:
+def build_page_number_map(
+    page_count: int, visible_page_number_list: list[PageNumber]
+) -> dict[int, PageNumber]:
+    """Return PageNumber metadata for every raw page."""
+    page_number_map = {raw: PageNumber(raw=raw, visible=None) for raw in range(1, page_count + 1)}
+
+    for page_number in visible_page_number_list:
+        page_number_map[page_number.raw] = page_number
+
+    return page_number_map
+
+
+def lines_to_markdown_blocks(
+    line_list: list[Line], page_number_map: dict[int, PageNumber]
+) -> list[Block]:
     """Convert line records into Markdown blocks."""
     block_list: list[Block] = []
     current_lines: list[str] = []
@@ -487,8 +502,8 @@ def lines_to_markdown_blocks(line_list: list[Line]) -> list[Block]:
             block_list.append(
                 Paragraph(
                     text='\n'.join(current_lines),
-                    start_page=current_page_no,
-                    end_page=current_page_no,
+                    start_page=page_number_map[current_page_no],
+                    end_page=page_number_map[current_page_no],
                 )
             )
             current_lines = []
@@ -501,8 +516,8 @@ def lines_to_markdown_blocks(line_list: list[Line]) -> list[Block]:
         block_list.append(
             Paragraph(
                 text='\n'.join(current_lines),
-                start_page=current_page_no,
-                end_page=current_page_no,
+                start_page=page_number_map[current_page_no],
+                end_page=page_number_map[current_page_no],
             )
         )
 
@@ -522,10 +537,11 @@ def extract_markdown(
 
     filtered_lines, page_number_list = remove_headers_and_footers(line_list, page_list)
 
-    if dump_pagenos and page_number_list:
+    if dump_pagenos and any(page_number.visible is not None for page_number in page_number_list):
         dump_page_numbers(page_number_list, build_pagenos_output_path(input_path))
 
-    return lines_to_markdown_blocks(filtered_lines)
+    page_number_map = build_page_number_map(len(page_list), page_number_list)
+    return lines_to_markdown_blocks(filtered_lines, page_number_map)
 
 
 def markdown_to_text(block_list: list[Block], output_file: TextIO) -> None:
