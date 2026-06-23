@@ -53,6 +53,11 @@ class Paragraph(Block):
 
 
 @dataclass
+class BlockQuote(Block):
+    """A Markdown block quote."""
+
+
+@dataclass
 class HeaderFooterCandidate:
     """A line that may be part of a repeated header or footer."""
 
@@ -484,14 +489,103 @@ def build_page_number_map(
     return page_number_map
 
 
+def dominant_document_font_size(line_list: list[Line]) -> float | None:
+    """Return the font size most widely used in the document."""
+    size_weights: dict[float, int] = defaultdict(int)
+
+    for line_obj in line_list:
+        if line_obj.font_size is None or not line_obj.text:
+            continue
+        size_weights[line_obj.font_size] += max(len(line_obj.text), 1)
+
+    if not size_weights:
+        return None
+
+    return max(size_weights.items(), key=lambda item: (item[1], item[0]))[0]
+
+
+def block_font_size(line_list: list[Line]) -> float | None:
+    """Return the dominant font size in a Markdown block."""
+    size_weights: dict[float, int] = defaultdict(int)
+
+    for line_obj in line_list:
+        if line_obj.font_size is None:
+            continue
+        size_weights[line_obj.font_size] += max(len(line_obj.text), 1)
+
+    if not size_weights:
+        return None
+
+    return max(size_weights.items(), key=lambda item: (item[1], item[0]))[0]
+
+
+def is_footnote_like_block(line_list: list[Line]) -> bool:
+    """Return whether a small-font block looks like a bottom footnote."""
+    if not line_list:
+        return False
+
+    first_line = line_list[0]
+    return bool(re.match(r'\s*\d+\s+', first_line.text))
+
+
+def is_indented_blockquote_block(line_list: list[Line]) -> bool:
+    """Return whether a block is consistently inset from both page margins."""
+    if not line_list:
+        return False
+
+    x1_values = [line_obj.x1 for line_obj in line_list if line_obj.x1 is not None]
+    x2_values = [line_obj.x2 for line_obj in line_list if line_obj.x2 is not None]
+    if not x1_values or not x2_values:
+        return False
+
+    min_x1 = min(x1_values)
+    max_x2 = max(x2_values)
+    return min_x1 >= 58.0 and max_x2 <= 380.0
+
+
+def is_blockquote_block(line_list: list[Line], default_font_size: float | None) -> bool:
+    """Return whether a group of lines should be rendered as a Markdown block quote."""
+    if not line_list or is_footnote_like_block(line_list):
+        return False
+
+    font_size = block_font_size(line_list)
+    if (
+        default_font_size is not None
+        and font_size is not None
+        and font_size < default_font_size - 0.3
+    ):
+        return True
+
+    return is_indented_blockquote_block(line_list)
+
+
+def markdown_block_from_lines(
+    line_list: list[Line],
+    page_number_map: dict[int, PageNumber],
+    default_font_size: float | None,
+) -> Block:
+    """Build a Markdown block from grouped line records."""
+    block_class: type[Block] = (
+        BlockQuote if is_blockquote_block(line_list, default_font_size) else Paragraph
+    )
+    start_page = page_number_map[line_list[0].page_no]
+    end_page = page_number_map[line_list[-1].page_no]
+    return block_class(
+        text='\n'.join(line_obj.text for line_obj in line_list),
+        start_page=start_page,
+        end_page=end_page,
+    )
+
+
 def lines_to_markdown_blocks(
     line_list: list[Line], page_number_map: dict[int, PageNumber]
 ) -> list[Block]:
     """Convert line records into Markdown blocks."""
     block_list: list[Block] = []
-    current_lines: list[str] = []
+    current_lines: list[Line] = []
     current_page_no: int | None = None
     current_block_no: int | None = None
+    default_font_size = dominant_document_font_size(line_list)
 
     for line_obj in line_list:
         if (
@@ -500,25 +594,17 @@ def lines_to_markdown_blocks(
             and (line_obj.page_no != current_page_no or line_obj.block_no != current_block_no)
         ):
             block_list.append(
-                Paragraph(
-                    text='\n'.join(current_lines),
-                    start_page=page_number_map[current_page_no],
-                    end_page=page_number_map[current_page_no],
-                )
+                markdown_block_from_lines(current_lines, page_number_map, default_font_size)
             )
             current_lines = []
 
-        current_lines.append(line_obj.text)
+        current_lines.append(line_obj)
         current_page_no = line_obj.page_no
         current_block_no = line_obj.block_no
 
-    if current_lines and current_page_no is not None:
+    if current_lines:
         block_list.append(
-            Paragraph(
-                text='\n'.join(current_lines),
-                start_page=page_number_map[current_page_no],
-                end_page=page_number_map[current_page_no],
-            )
+            markdown_block_from_lines(current_lines, page_number_map, default_font_size)
         )
 
     return block_list
@@ -548,8 +634,18 @@ def markdown_to_text(block_list: list[Block], output_file: TextIO) -> None:
     """Write Markdown blocks as readable plain text."""
     for block_index, block_obj in enumerate(block_list):
         if block_index:
-            output_file.write('\n\n')
-        output_file.write(block_obj.text)
+            previous_block = block_list[block_index - 1]
+            if isinstance(previous_block, BlockQuote) and isinstance(block_obj, BlockQuote):
+                output_file.write('\n>\n')
+            else:
+                output_file.write('\n\n')
+
+        if isinstance(block_obj, BlockQuote):
+            output_file.write(
+                '\n'.join(f'> {line}' if line else '>' for line in block_obj.text.split('\n'))
+            )
+        else:
+            output_file.write(block_obj.text)
     output_file.write('\n')
 
 
