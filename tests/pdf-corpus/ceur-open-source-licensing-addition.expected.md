@@ -86,8 +86,8 @@ are:
 
 • the freedom to change the software to suit your needs, (Freedom 1)
 
-• the freedom to share the software with your friends and neighbors, and (Freedom
-2)
+> • the freedom to share the software with your friends and neighbors, and (Freedom
+> 2)
 
 • the freedom to share the changes you make. (Freedom 3)
 
@@ -273,9 +273,9 @@ based DRM would also fall under this category.
 
 Second proposed addition to GNU GPLv3 chapter 6. Conveying Non-Source Forms
 
-1. Any object code conveyed must not include extra blocking methods aimed at dis-
-criminating agains persons, groups or fields of endeavor specified in Chapter
-5.
+> 1. Any object code conveyed must not include extra blocking methods aimed at dis-
+> criminating agains persons, groups or fields of endeavor specified in Chapter
+> 5.
 
 The object of this addition would be to secure Freedom 0 when using conveyed
 non-source forms (i.e. binaries). This would (most importantly) include mobile apps
@@ -445,8 +445,8 @@ source license growth. In IFIP International Conference on Open Source Systems,
 Johnson, P. (2021). Open source licenses in 2021: Trends and predictions. Accessed
 2021-06-07.
 
-Retrieved from https://www.whitesourcesoftware.com/resources/blog/
-open-source-licenses-trends-and-predictions
+> Retrieved from https://www.whitesourcesoftware.com/resources/blog/
+> open-source-licenses-trends-and-predictions
 
 Lerner, J., & Tirole, J. (2005). The scope of open source licensing. Journal of Law,
 Economics, and Organization, 21(1), 20–56.

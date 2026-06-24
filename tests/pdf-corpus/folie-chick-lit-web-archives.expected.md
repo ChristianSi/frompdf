@@ -231,15 +231,15 @@ Let me start out by telling you what Chick Lit is NOT:
 
 – Cheesy romance novels
 
-– Bad influence on women
-– Brain-numbing fluff
-
-I’m not speaking for all books with the above criteria – there are some really
-bad Chick-Lit novels out there. For the most part however, the books are
-entertaining, interesting, and many women can identify with them. The plots
-usually involve a woman in her 20s or 30s, going through everyday problems and
-challenges with her boyfriend, job, living situation, marriage, dating life, etc.
-(“FAQ”, 11 Oct. 2003)
+> – Bad influence on women
+> – Brain-numbing fluff
+>
+> I’m not speaking for all books with the above criteria – there are some really
+> bad Chick-Lit novels out there. For the most part however, the books are
+> entertaining, interesting, and many women can identify with them. The plots
+> usually involve a woman in her 20s or 30s, going through everyday problems and
+> challenges with her boyfriend, job, living situation, marriage, dating life, etc.
+> (“FAQ”, 11 Oct. 2003)
 
 Two conclusions regarding the development of chick lit can be drawn from this partly
 negative definition. First, there seems to have been a need to justify chick lit as a genre
@@ -280,19 +280,19 @@ the genre, however, turned out to be surprisingly biased and more reminiscent of
 problematic for a genre definition than the one-sided adoration of its fans. The author of
 the article, Chris Baldick, defines chick lit as
 
-[a] kind of light commercial fiction addressed to British women readers of the late
-1990s and early 2000s and subsequently imitated in the United States and
-beyond. The term appeared from 1996 as a flippant counterpart to the lad-lit
-fiction of that time. The defining model for the genre was Helen Fielding’s comic
-novel Bridget Jones’s Diary (1996) [...]. Chick-lit novels are written by women
-about the misadventures of contemporary unmarried working women in their 20s
-or 30s who struggle with multiple pressures from reproachful mothers, inade-
-quate boyfriends, and tyrannical bosses while consoling themselves with shop-
-ping trips, chocolate, and erotic daydreams. The stories are commonly told in the
-first person in tones of humorous self-deprecation. As the boom in this kind of
-fiction, sometimes referred to as chic fic, continued into the early 21st century,
-new subgenres emerged, including ‘nanny lit’ and ‘mommy lit’. (Baldick, 2015a,
-[2008], 57–58; emphasis in original)
+> [a] kind of light commercial fiction addressed to British women readers of the late
+> 1990s and early 2000s and subsequently imitated in the United States and
+> beyond. The term appeared from 1996 as a flippant counterpart to the lad-lit
+> fiction of that time. The defining model for the genre was Helen Fielding’s comic
+> novel Bridget Jones’s Diary (1996) [...]. Chick-lit novels are written by women
+> about the misadventures of contemporary unmarried working women in their 20s
+> or 30s who struggle with multiple pressures from reproachful mothers, inade-
+> quate boyfriends, and tyrannical bosses while consoling themselves with shop-
+> ping trips, chocolate, and erotic daydreams. The stories are commonly told in the
+> first person in tones of humorous self-deprecation. As the boom in this kind of
+> fiction, sometimes referred to as chic fic, continued into the early 21st century,
+> new subgenres emerged, including ‘nanny lit’ and ‘mommy lit’. (Baldick, 2015a,
+> [2008], 57–58; emphasis in original)
 
 Considering that this is an article in a prestigious academic dictionary and not
 the intervention of a literary critic, one can only wonder about the inherent
@@ -456,19 +456,19 @@ fiction written for and marketed to young
 women, especially single, working women
 in their twenties and thirties. [no references]
 
-Postfeminist Fiction, edited by Cris Mazza
-and Jeffrey DeShell. The work in this
-anthology was not chick lit as we know it
-today, and the term was used ironically.
-However James Wolcott’s 1996 article in
-The New Yorker “Hear Me Purr” co-opted
-“chick lit” to define the trend of “girlish-
-ness” evident in the writing of female
-newspaper columnists at that time. This is
-significant, as major chick lit works such as
-Helen Fielding’sBridget Jones’s Diaryand
-Candace Bushnell’sSex and the
-Cityoriginated in such columns.
+> Postfeminist Fiction, edited by Cris Mazza
+> and Jeffrey DeShell. The work in this
+> anthology was not chick lit as we know it
+> today, and the term was used ironically.
+> However James Wolcott’s 1996 article in
+> The New Yorker “Hear Me Purr” co-opted
+> “chick lit” to define the trend of “girlish-
+> ness” evident in the writing of female
+> newspaper columnists at that time. This is
+> significant, as major chick lit works such as
+> Helen Fielding’sBridget Jones’s Diaryand
+> Candace Bushnell’sSex and the
+> Cityoriginated in such columns.
 
 2007 unaltered The term was introduced by Cris Mazza and
 Jeffrey DeShell as an ironic title for their
@@ -482,18 +482,18 @@ cluding love, courtship and gender. The
 collection emphasized experimental work,
 including violent, perverse and sexual
 
-themes. James Wolcott’s 1996 article in The
-New Yorker “Hear Me Purr” co-opted the
-term “chick lit” to proscribe what he called
-the trend of “girlishness” evident in the
-writing of female newspaper columnists at
+> themes. James Wolcott’s 1996 article in The
+> New Yorker “Hear Me Purr” co-opted the
+> term “chick lit” to proscribe what he called
+> the trend of “girlishness” evident in the
+> writing of female newspaper columnists at
 
 Table 1 (continued)
 
 Date Minimum Definition (first sentence) Information on the origin of the term
 
-that time. Works such as Helen Fielding’s
-Bridget Jones’s Diary and Candace
+> that time. Works such as Helen Fielding’s
+> Bridget Jones’s Diary and Candace
 
 Bushnell’s Sex and the City are examples of
 such work that helped establish contempo-
@@ -600,10 +600,10 @@ characters.” (“What is Chick Lit?“, 9 Dec. 2004b). The last update of the 
 “What is chick lit?” (22 Sept. 2012) goes even further by emphasizing the general
 openness and flexibility of chick lit:
 
-Chick lit is smart, fun fiction for and/or about women of all ages. Story lines often
-revolve around jobs, children, motherhood, romance, fame, living in the ‘big
-city’, friendship, dieting and much more, usually with a touch of humor thrown
-in. Many of these books are written from a first-person viewpoint, making them a
+> Chick lit is smart, fun fiction for and/or about women of all ages. Story lines often
+> revolve around jobs, children, motherhood, romance, fame, living in the ‘big
+> city’, friendship, dieting and much more, usually with a touch of humor thrown
+> in. Many of these books are written from a first-person viewpoint, making them a
 
 14 The average Wikipedia editor is about 26 years old, male and from the United States, Germany, or Russia
 (Wikipedia: “Wikipedians”, 24 July 2020h). There is broad agreement that there is a considerable gender bias
@@ -612,8 +612,8 @@ in Wikipedia (Wikipedia: “Gender bias on Wikipedia”, 12 July 2020e); a racia
 ately, and, as far as possible, without editorial bias, all the significant views that have been published by
 reliable sources on a topic.” (Wikipedia: “Neutral point of view”, 12 July 2020f)
 
-bit more personal and realistic. The plots can range from being very light and fast-
-paced to being extraordinarily deep, thought-provoking and/or moving.
+> bit more personal and realistic. The plots can range from being very light and fast-
+> paced to being extraordinarily deep, thought-provoking and/or moving.
 
 In 2007, chicklit.co.uk also distanced itself from its earlier definition of the genre. The
 owner of the website, Paula Gardner, pointed out that “pure chicklit […] has changed
@@ -649,15 +649,15 @@ narrowly defined as popular fiction, genre fiction, or a subcategory of women’
 fiction aimed at a limited target group of young women (see extracts in Table 1), the
 current definition is very broad:
 
-Chick lit or chick literature is genre fiction, which “consists of heroine-centered
-narratives that focus on the trials and tribulations of their individual protago-
-nists”[1]. The genre often addresses issues of modern womanhood – from roman-
-tic relationships to female friendships to matters in the workplace – in humorous
-and lighthearted ways[2]. At its onset, chick lit’s protagonists tended to be “single,
-white, heterosexual, British and American women in their late twenties and early
-
-thirties, living in metropolitan areas”[1] (22 June 2020c; emphasis and footnotes in
-the original)
+> Chick lit or chick literature is genre fiction, which “consists of heroine-centered
+> narratives that focus on the trials and tribulations of their individual protago-
+> nists”[1]. The genre often addresses issues of modern womanhood – from roman-
+> tic relationships to female friendships to matters in the workplace – in humorous
+> and lighthearted ways[2]. At its onset, chick lit’s protagonists tended to be “single,
+> white, heterosexual, British and American women in their late twenties and early
+>
+> thirties, living in metropolitan areas”[1] (22 June 2020c; emphasis and footnotes in
+> the original)
 
 16 It should be noted, however, that most authors have only made small contributions and changes. More than
 50% of the text mass was written by two authors with the nicknames Mrthbtn11 (36.9%) and
@@ -721,13 +721,13 @@ not been addressed (Hurt, 2019b). On 26 September 2013 an editor named Jcross 12
 added a new section entitled “Criticism” to the chick lit article, in which they address
 the whiteness not only of the genre, but also of the discourse that surrounds it:
 
-Common criticism that arises from this genre is the emphasis of western liberal
-views[7]. The plot typically centers on a ‘white’ woman’s narrative of the issues that
-surround her[8]. Critics argue that these stories often reflect a fixation on consumerism
-of [sic] designer brands and sexuality rather than addressing global issues such as
-equality[9]. Although there are subsections of this genre that include protagonist [sic]
-of various ethnicities, cultures, and backgrounds, these generally fall second to the
-dominant ‘white’ chick lit[10]. […] (emphasis and footnotes in the original)
+> Common criticism that arises from this genre is the emphasis of western liberal
+> views[7]. The plot typically centers on a ‘white’ woman’s narrative of the issues that
+> surround her[8]. Critics argue that these stories often reflect a fixation on consumerism
+> of [sic] designer brands and sexuality rather than addressing global issues such as
+> equality[9]. Although there are subsections of this genre that include protagonist [sic]
+> of various ethnicities, cultures, and backgrounds, these generally fall second to the
+> dominant ‘white’ chick lit[10]. […] (emphasis and footnotes in the original)
 
 The section ends with the statement that “[t]he women of color genre of chick lit is
 becoming increasingly important as it presents questions regarding the issues these
@@ -746,10 +746,10 @@ previous discussion about the section’s (ir)relevance on the talk page of the 
 However, this ‘discussion’ was actually limited to a highly problematic and insulting
 comment titled “Which PC halfwit wrote the ‘criticism’ section?”:
 
-Pamela Butler or Jigna Desai? Whichever one of you managed to get your
-narrow, tendentious p.o.v. (with something like 7 straight footnotes to the exact
-same source) turned into an entire section of this article should be very, very
-proud. Not. (“Talk: Chick lit”, 13 Jan. 2015a).
+> Pamela Butler or Jigna Desai? Whichever one of you managed to get your
+> narrow, tendentious p.o.v. (with something like 7 straight footnotes to the exact
+> same source) turned into an entire section of this article should be very, very
+> proud. Not. (“Talk: Chick lit”, 13 Jan. 2015a).
 
 I argue that the incomprehensible deletion of the criticism section represents an
 example of the often criticized racial bias in Wikipedia, which “stems in part from an

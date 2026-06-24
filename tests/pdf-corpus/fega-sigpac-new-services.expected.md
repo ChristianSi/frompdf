@@ -1,17 +1,17 @@
 SECRETARIA GENERAL
 
-DE RECURSOS AGRARIOS
-Y SEGURIDAD ALIMENTARIA
-FONDO ESPAÑOL DE
+> DE RECURSOS AGRARIOS
+> Y SEGURIDAD ALIMENTARIA
+> FONDO ESPAÑOL DE
 
 MINISTERIO
 
-DE AGRICULTURA, PESCA
-Y ALIMENTACION
-
-GARANTÍA AGRARIA O.A.
-SUBDIRECCIÓN GENERAL
-DE AYUDAS DIRECTAS
+> DE AGRICULTURA, PESCA
+> Y ALIMENTACION
+>
+> GARANTÍA AGRARIA O.A.
+> SUBDIRECCIÓN GENERAL
+> DE AYUDAS DIRECTAS
 
 PUBLICACIÓN DE NUEVOS SERVICIOS SIGPAC DE
 CONSULTA Y DIVULGACIÓN DE DATOS DEL SISTEMA
@@ -130,12 +130,12 @@ Servicio de Teselas Vectoriales, únicamente se comentan algunos cambios
 respecto de la información que se proporcionó en la anterior Nota WEB del
 Servicio MVT de Sigpac.
 
-1. Servicio de Teselas Vectoriales (MVT) de SIGPAC
-2. WMS – Web Map Service de SIGPAC7
-3. Servicio de Consultas de SIGPAC
-4. Servicio OGC API de SIGPAC
-5. Servicio de Listas de Códigos SIGPAC
-6. Servicio de Salidas Gráficas de SIGPAC
+> 1. Servicio de Teselas Vectoriales (MVT) de SIGPAC
+> 2. WMS – Web Map Service de SIGPAC7
+> 3. Servicio de Consultas de SIGPAC
+> 4. Servicio OGC API de SIGPAC
+> 5. Servicio de Listas de Códigos SIGPAC
+> 6. Servicio de Salidas Gráficas de SIGPAC
 
 La información del SIGC que se distribuye mediante los nuevos servicios
 descritos en esta Nota8
@@ -193,13 +193,13 @@ declarados de la campaña anterior que ya se proporcionaban.
 Presenta 2 URL para que las aplicaciones GIS10 se configuren para mostrar sus
 datos.
 
-- https://sigpac-hubcloud.es/mvt/[parametro]@3857@geojson/
-{z}/{x}/{y}.geojson: para mostrar los datos de la campaña vigente.
-También la capa Cultivo declarado de la campaña anterior.
-- https://sigpac-hubcloud.es/mvt/anterior/
-
-[parametro]@3857@geojson/{z}/{x}/{y}.geojson para visualizar los datos
-completos de la campaña anterior.
+> - https://sigpac-hubcloud.es/mvt/[parametro]@3857@geojson/
+> {z}/{x}/{y}.geojson: para mostrar los datos de la campaña vigente.
+> También la capa Cultivo declarado de la campaña anterior.
+> - https://sigpac-hubcloud.es/mvt/anterior/
+>
+> [parametro]@3857@geojson/{z}/{x}/{y}.geojson para visualizar los datos
+> completos de la campaña anterior.
 
 2. WMS – Web Map Service de SIGPAC
 
@@ -250,13 +250,13 @@ HTTP de tipo REST (Representational state transfer).
 Actualmente pueden realizarse un total de 11 consultas diferentes, entre las que
 destacan:
 
-- Propiedades de un recinto por códigos SIGPAC o coordenadas.
-- Centroide de un recinto por códigos SIGPAC.
-- Referencia SIGPAC de un recinto a partir de coordenadas.
-- Referencia Catastral de una parcela a partir de referencia SIGPAC.
-- Propiedades de los recintos contenidos en una parcela SIGPAC.
-- Intersecciones de un recinto con diferentes capas (Red Natura,
-Montanera, Fitosanitarios, Nitratos o Pastos Permanentes).
+> - Propiedades de un recinto por códigos SIGPAC o coordenadas.
+> - Centroide de un recinto por códigos SIGPAC.
+> - Referencia SIGPAC de un recinto a partir de coordenadas.
+> - Referencia Catastral de una parcela a partir de referencia SIGPAC.
+> - Propiedades de los recintos contenidos en una parcela SIGPAC.
+> - Intersecciones de un recinto con diferentes capas (Red Natura,
+> Montanera, Fitosanitarios, Nitratos o Pastos Permanentes).
 
 EJEMPLO: https://sigpac-
 
@@ -270,8 +270,8 @@ El Reglamento de Ejecución 2023/138 establece, para la categoría de datos
 Geoespaciales, que los conjuntos de datos de alto valor se pondrán a disposición
 para su reutilización, entre otras, con las siguientes condiciones:
 
-- licencia Creative Commons BY 4.0 u otra menos restrictiva.
-- formato abierto, legible por máquina y documentado públicamente;
+> - licencia Creative Commons BY 4.0 u otra menos restrictiva.
+> - formato abierto, legible por máquina y documentado públicamente;
 
 
 
@@ -310,24 +310,24 @@ de longitud/latitud
 
 Actualmente se pueden consultar listas de códigos de:
 
-- Provincias
-- Municipios
-- Usos SIGPAC
-
-- Tipo de aprovechamiento
-- Incidencias
-
-- Líneas de ayuda directa
-- Líneas de ayuda directa PDR
-- Productos
-- Región 2023
+> - Provincias
+> - Municipios
+> - Usos SIGPAC
+>
+> - Tipo de aprovechamiento
+> - Incidencias
+>
+> - Líneas de ayuda directa
+> - Líneas de ayuda directa PDR
+> - Productos
+> - Región 2023
 
 - Elementos del paisaje tipo punto, línea y área.
 
 EJEMPLO: https://sigpac-hubcloud.es/codigossigpac/cod_aprovechamiento.json
 
-Ejemplo de Respuesta a la consulta de listado de códigos de tipo de
-aprovechamiento
+> Ejemplo de Respuesta a la consulta de listado de códigos de tipo de
+> aprovechamiento
 
 6. Servicio de Salidas Gráficas de SIGPAC
 
@@ -363,30 +363,30 @@ Tabla resumen de los medios de difusión SIGPAC de datos SIGC
 
 Servicio Ventajas Limitaciones Propuestas de uso
 
-- Interfaz sencilla e
-intuitiva
-
-- No permite
-automatización
-- Consulta rápida de
-parcelas y recintos
-- Información SIGPAC
-de Campaña PAC - Limitada
-personalización de
-capas
-- Gestión PAC.
-Verificación visual de
-datos por técnicos - Útil para validaciones
-visuales rápidas
-- Útil para trámites
-(Ayudas PAC)
-- Requiere conexión
-estable
-- Formación o soporte
-a usuarios externos
-
-Visor
-SIGPAC
+> - Interfaz sencilla e
+> intuitiva
+>
+> - No permite
+> automatización
+> - Consulta rápida de
+> parcelas y recintos
+> - Información SIGPAC
+> de Campaña PAC - Limitada
+> personalización de
+> capas
+> - Gestión PAC.
+> Verificación visual de
+> datos por técnicos - Útil para validaciones
+> visuales rápidas
+> - Útil para trámites
+> (Ayudas PAC)
+> - Requiere conexión
+> estable
+> - Formación o soporte
+> a usuarios externos
+>
+> Visor
+> SIGPAC
 
 
 
@@ -533,64 +533,64 @@ profesionales
 
 Servicio Ventajas Limitaciones Propuestas de uso
 
-- Desarrollo de
-aplicaciones con
-datos SIGPAC
-
-- Acceso selectivo a
-datos vectoriales
-
-- Alta interoperabilidad - Visualización en
-proyectos SIG
-
-- Codificación oficial
-estandarizada
-
-- Son datos sólo
-alfanuméricos
-- Validación de datos
-en formularios
-- Fácil integración y
-validación
-- No es un servicio
-dinámico
-- Mapeo e
-interpretación de
-- Documentación clara datos SIGPAC
-y mantenida
-- Sin visualización
-directa
-- Compatible con
-múltiples entornos
-- Actualización
-manual periódica
-- Cruce con ayudas,
-tipos de uso, etc.
-
-Listas de
-códigos
-SIGPAC
-
-- Obtención inmediata
-de salidas gráficas,
-desde navegador
-
-- Consulta y descarga
-individual (no masiva)
-- Integración en
-procesos y
-aplicaciones
-- Proporciona
-descargas, no solo
-visualización - Consultas puntuales
-sin tener que recurrir
-al Visor Sigpac - Componente
-incrustable en
-aplicaciones
-
-Salidas
-Gráficas
-SIGPAC
+> - Desarrollo de
+> aplicaciones con
+> datos SIGPAC
+>
+> - Acceso selectivo a
+> datos vectoriales
+>
+> - Alta interoperabilidad - Visualización en
+> proyectos SIG
+>
+> - Codificación oficial
+> estandarizada
+>
+> - Son datos sólo
+> alfanuméricos
+> - Validación de datos
+> en formularios
+> - Fácil integración y
+> validación
+> - No es un servicio
+> dinámico
+> - Mapeo e
+> interpretación de
+> - Documentación clara datos SIGPAC
+> y mantenida
+> - Sin visualización
+> directa
+> - Compatible con
+> múltiples entornos
+> - Actualización
+> manual periódica
+> - Cruce con ayudas,
+> tipos de uso, etc.
+>
+> Listas de
+> códigos
+> SIGPAC
+>
+> - Obtención inmediata
+> de salidas gráficas,
+> desde navegador
+>
+> - Consulta y descarga
+> individual (no masiva)
+> - Integración en
+> procesos y
+> aplicaciones
+> - Proporciona
+> descargas, no solo
+> visualización - Consultas puntuales
+> sin tener que recurrir
+> al Visor Sigpac - Componente
+> incrustable en
+> aplicaciones
+>
+> Salidas
+> Gráficas
+> SIGPAC
 
 Información Histórica del SIGC
 
@@ -598,12 +598,12 @@ Finalmente, se comunica que en 2024 el FEGA inició el proyecto SIGPAC de
 recuperación y adaptación de la información INSPIRE relativa al histórico del
 SIGC desde el origen de la misma, que a nivel nacional se data en:
 
-• Respecto de información SIGPAC (LPIS, Land Parcel Identification
-System): en 2005 para el caso de la capa Recintos y en 2023 para la capa
-Elementos del paisaje.
-
-• Respecto de información de la Declaración Gráfica (GSA, Geo Spatial
-Application): en 2020 para la capa Cultivos declarados.
+> • Respecto de información SIGPAC (LPIS, Land Parcel Identification
+> System): en 2005 para el caso de la capa Recintos y en 2023 para la capa
+> Elementos del paisaje.
+>
+> • Respecto de información de la Declaración Gráfica (GSA, Geo Spatial
+> Application): en 2020 para la capa Cultivos declarados.
 
 El objetivo es seguir aumentando la respuesta al público de los medios de
 consulta y divulgación del SIGPAC a las solicitudes de información del SIGC,

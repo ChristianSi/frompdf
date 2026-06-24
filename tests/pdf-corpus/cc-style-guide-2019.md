@@ -70,12 +70,12 @@ CC Chapters.
 Please take the time to read this guide fully in order to understand and portray the brand
 consistently and in a cohesive manner.
 
-“Your brand is the values that guide you, the roles you play, the relationships and interactions
-you have, and your impact. Your brand is a promise that your actions will always be aligned with
-your values...Design is the process through which we make these brand experiences tangible so
-that they create deeper meaning for audiences. And when driven by well-defined brand strategy,
-consistent design creates cohesive experiences that effectively engage audiences with your
-organization’s mission.”
+> “Your brand is the values that guide you, the roles you play, the relationships and interactions
+> you have, and your impact. Your brand is a promise that your actions will always be aligned with
+> your values...Design is the process through which we make these brand experiences tangible so
+> that they create deeper meaning for audiences. And when driven by well-defined brand strategy,
+> consistent design creates cohesive experiences that effectively engage audiences with your
+> organization’s mission.”
 
 Matthew Schwarts | Founder and Executive Director of Constructive
 

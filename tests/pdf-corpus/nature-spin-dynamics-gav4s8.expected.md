@@ -46,18 +46,18 @@ Paul H. M. van Loosdrecht 1✉
 
 1234567890():,;
 
-Formation of magnetic order alters the character of spin excitations, which then affects
-transport properties. We investigate the photoexcited ultrafast spin dynamics in different
-magnetic phases in Néel-type skyrmion host GaV4S8 with time-resolved magneto-optical
-Kerr effect experiments. The coherent spin precession, whose amplitude is enhanced in the
-skyrmion-lattice phase, shows a signature of phase coexistence across the magnetic phase
-transitions. The incoherent spin relaxation dynamics slows down by a factor of two in the
-skyrmion-lattice/cycloid phases, indicating significant decrease in thermal conductivity
-triggered by a small change of magnetic field. The slow heat diffusion in the skyrmion-lattice/
-cycloid phases is attributed to the stronger magnon scattering off the domain walls formed in
-abundance in the skyrmion-lattice/cycloid phase. These results highlight the impact of spatial
-spin structure on the ultrafast heat transport in spin systems, providing a useful insight for
-the step toward ultrafast photocontrol of the magnets with novel spin orders.
+> Formation of magnetic order alters the character of spin excitations, which then affects
+> transport properties. We investigate the photoexcited ultrafast spin dynamics in different
+> magnetic phases in Néel-type skyrmion host GaV4S8 with time-resolved magneto-optical
+> Kerr effect experiments. The coherent spin precession, whose amplitude is enhanced in the
+> skyrmion-lattice phase, shows a signature of phase coexistence across the magnetic phase
+> transitions. The incoherent spin relaxation dynamics slows down by a factor of two in the
+> skyrmion-lattice/cycloid phases, indicating significant decrease in thermal conductivity
+> triggered by a small change of magnetic field. The slow heat diffusion in the skyrmion-lattice/
+> cycloid phases is attributed to the stronger magnon scattering off the domain walls formed in
+> abundance in the skyrmion-lattice/cycloid phase. These results highlight the impact of spatial
+> spin structure on the ultrafast heat transport in spin systems, providing a useful insight for
+> the step toward ultrafast photocontrol of the magnets with novel spin orders.
 
 1 II. Physikalisches Institut, Universität zu Köln, Zülpicher Str. 77, D-50937 Köln, Germany. 2 Experimental Physics V, Center for Electronic Correlations
 and Magnetism, University of Augsburg, 86159 Augsburg, Germany. 3 Institute of Applied Physics, MD 2028 Chișinău, Republic of Moldova. 4 Istituto
@@ -86,29 +86,29 @@ transfer of the skyrmions necessitate dynamic perturbations of
 the magnetic order. Consequently, the interest in the non-
 equilibrium skyrmion phenomena is currently emerging12–23.
 
-the spin ordering, that can affect the thermal transport properties.
-However, the influence of the complex spin order on thermal
-conductivity remains hitherto largely unexplored.
-
-In this study, we investigate dynamic behavior of the spin
-system with different magnetic orders of the bulk Néel-type
-skyrmion host material GaV4S8, by performing time-resolved
-magneto-optical Kerr effect (trMOKE) experiment across the
-magnetic phase diagram, i.e., the ferromagnetic (FM) phase,
-skyrmion-lattice (SkL) phase and cycloid (Cyc) phase. It is pre-
-viously reported that the coherent spin precession in GaV4S8 can
-be optically driven by the sudden suppression of magnetic
-anisotropy23. Here, we show that the amplitude of this coherent
-spin motion is enhanced in the SkL phase owing to the efficient
-coupling between the photoinduced magnetic perturbation and
-the skyrmion breathing mode. Furthermore, the incoherent
-remagnetization dynamics becomes slow in the SkL and Cyc
-phases, suggesting a strong suppression of spin thermal con-
-ductivity. By comparing with atomistic spin dynamics simula-
-tions, this behavior is attributed to strongly enhanced magnon
-scattering due to the multi-domain magnetic structure, consistent
-with the signature of phase coexistence observed in the coherent
-spin precession experiments.
+> the spin ordering, that can affect the thermal transport properties.
+> However, the influence of the complex spin order on thermal
+> conductivity remains hitherto largely unexplored.
+>
+> In this study, we investigate dynamic behavior of the spin
+> system with different magnetic orders of the bulk Néel-type
+> skyrmion host material GaV4S8, by performing time-resolved
+> magneto-optical Kerr effect (trMOKE) experiment across the
+> magnetic phase diagram, i.e., the ferromagnetic (FM) phase,
+> skyrmion-lattice (SkL) phase and cycloid (Cyc) phase. It is pre-
+> viously reported that the coherent spin precession in GaV4S8 can
+> be optically driven by the sudden suppression of magnetic
+> anisotropy23. Here, we show that the amplitude of this coherent
+> spin motion is enhanced in the SkL phase owing to the efficient
+> coupling between the photoinduced magnetic perturbation and
+> the skyrmion breathing mode. Furthermore, the incoherent
+> remagnetization dynamics becomes slow in the SkL and Cyc
+> phases, suggesting a strong suppression of spin thermal con-
+> ductivity. By comparing with atomistic spin dynamics simula-
+> tions, this behavior is attributed to strongly enhanced magnon
+> scattering due to the multi-domain magnetic structure, consistent
+> with the signature of phase coexistence observed in the coherent
+> spin precession experiments.
 
 It is of particular interest to drive skyrmions utilizing optical
 technologies. To date, several methods for the optical manip-
@@ -126,26 +126,26 @@ demanded for the coherent photocontrol of skyrmions.
 
 Results
 
-Magnetic properties and phase diagram of GaV4S8. GaV4S8 is a
-multiferroic semiconductor from the lacunar spinel family, with a
-non-chiral polar crystal structure. The magnetic phase diagram of
-GaV4S8 is shown in Fig. 1a; below the Curie temperature of TC
-~13 K, the Cyc phase and SkL phase appear in addition to the FM
-phase33. The SkL phase in GaV4S8 extends over a wide region in
-the phase diagram, which facilitate the study of the dynamical
-properties of the skyrmions. Below ~44 K, a cooperative Jahn-
-Teller distortion along one of the cubic body diagonal axes drives
-a transition from a cubic to polar rhombohedral structure,
-resulting in the formation of a submicron-thick lamella-type
-multi-domain structure33,34. We note that in the sister com-
-pound, GaV4Se8, the polar structural domain walls were recently
-reported to host twisted magnetic states different from those in
-the interior of the domains35. In the rhombohedral phase of
-GaV4S8, uniaxial anisotropy develops with the magnetic easy axis
-parallel to the polar rhombohedral axes, being either of the cubic
-<111> axes33,34,36. The temperature dependence of this aniso-
-tropy has been investigated by electron spin resonance (ESR)
-spectroscopy below the magnetic ordering temperature, TC ~13
+> Magnetic properties and phase diagram of GaV4S8. GaV4S8 is a
+> multiferroic semiconductor from the lacunar spinel family, with a
+> non-chiral polar crystal structure. The magnetic phase diagram of
+> GaV4S8 is shown in Fig. 1a; below the Curie temperature of TC
+> ~13 K, the Cyc phase and SkL phase appear in addition to the FM
+> phase33. The SkL phase in GaV4S8 extends over a wide region in
+> the phase diagram, which facilitate the study of the dynamical
+> properties of the skyrmions. Below ~44 K, a cooperative Jahn-
+> Teller distortion along one of the cubic body diagonal axes drives
+> a transition from a cubic to polar rhombohedral structure,
+> resulting in the formation of a submicron-thick lamella-type
+> multi-domain structure33,34. We note that in the sister com-
+> pound, GaV4Se8, the polar structural domain walls were recently
+> reported to host twisted magnetic states different from those in
+> the interior of the domains35. In the rhombohedral phase of
+> GaV4S8, uniaxial anisotropy develops with the magnetic easy axis
+> parallel to the polar rhombohedral axes, being either of the cubic
+> <111> axes33,34,36. The temperature dependence of this aniso-
+> tropy has been investigated by electron spin resonance (ESR)
+> spectroscopy below the magnetic ordering temperature, TC ~13
 
 Furthermore, laser-based time-resolved studies also shed light
 on the thermal properties of the spin system through the obser-
@@ -164,15 +164,15 @@ a b c
 
 0
 
--
-
-
-(mdeg.)
-
--
-
-
-(mdeg.)
+> -
+>
+>
+> (mdeg.)
+>
+> -
+>
+>
+> (mdeg.)
 
 30 mT
 40 mT
@@ -212,15 +212,15 @@ d e
 40 mT
 50 mT
 
--
-
-
-(mdeg.)
-
--
-
-
-(mdeg.)
+> -
+>
+>
+> (mdeg.)
+>
+> -
+>
+>
+> (mdeg.)
 
 30 mT
 60 mT
@@ -262,19 +262,19 @@ c
 
 e
 
-SkL
-FM
-6
-5
-4
-3
-2
-0 40 80 120
-Magnetic Field (mT)
-15
-14
-13
-12
+> SkL
+> FM
+> 6
+> 5
+> 4
+> 3
+> 2
+> 0 40 80 120
+> Magnetic Field (mT)
+> 15
+> 14
+> 13
+> 12
 
 6
 
@@ -292,10 +292,10 @@ Frequency
 
 -0.5
 
--
-
-
-(mdeg.)
+> -
+>
+>
+> (mdeg.)
 
 4
 
@@ -305,11 +305,11 @@ Frequency
 
 2
 
-Cyc
-Sk
-
-Cyc
-Sk
+> Cyc
+> Sk
+>
+> Cyc
+> Sk
 
 -1.5
 
@@ -339,11 +339,11 @@ f
 
 1.2
 
-Cyc
-Sk
-FM
--0.3
-0.0
+> Cyc
+> Sk
+> FM
+> -0.3
+> 0.0
 
 Lifetime (ps)
 
@@ -355,10 +355,10 @@ Lifetime (ps)
 60 mT
 75 mT
 
--
-
-
-(mdeg.)
+> -
+>
+>
+> (mdeg.)
 
 Amplitude
 
@@ -372,8 +372,8 @@ Cyc
 
 0.4
 
-Cyc
-Sk
+> Cyc
+> Sk
 
 FM SkL
 
@@ -406,43 +406,43 @@ spinels33,34,37,38, and specific to GaV4S8 it confines the orientation
 of the skyrmion tubes along the easy axis33,37.
 In the trMOKE experiments, the external magnetic field is
 
-process, Δθ shows a relatively slow demagnetization, and an even
-slower subsequent remagnetization. The demagnetization and
-remagnetization processes also occur in the paramagnetic phase
-slightly above TC. Because GaV4S8 is a semiconductor, the
-demagnetization process is completed in a relatively slow time-
-scale of ~200–400 ps, as widely observed in semiconductor
-magnets24. In general, in semiconductors this slow demagneti-
-zation dynamics is understood in terms of spin-lattice thermali-
-zation, which takes place after the rapid heating of the lattice
-system due to an efficient energy transfer from the electron sys-
-tem to the lattice system24. An interesting observation is that at
-11.5 K and at a low magnetic field Δθ changes sign and takes a
-positive value, indicating that magnetization is enhanced by the
-photoexcitation. The origin of this lies in the peak structure of
-magnetic susceptibility around the phase boundary between the
-Cyc and paramagnetic phases23,42. In addition to these incoherent
-spin dynamics, a clear oscillatory structure appears in the mag-
-netically ordered phase with a typical period of 100–300 ps, i.e., in
-the few GHz range. The excitation mechanism of this coherent
-collective spin motion has been assigned to the ultrafast photo-
-induced modulation of the magnetocrystalline anisotropy of
-GaV4S8
-23.
-The comprehensive set of the Δθ traces clearly shows that the
-nature of the coherent and incoherent spin dynamics changes
-character depending on the location in the magnetic phase
-diagram. We first discuss the coherent oscillatory response in the
-different magnetic phases. To do this, we fit the data using a
-damped cosine oscillation, superimposed on a bi-exponential
-function that accounts for the incoherent demagnetization and
-remagnetization dynamics. We disregard the dynamics on the
-earliest timescale (up to ~40 ps) originating from ultrafast carrier
-relaxation processes [see supplementary information]. Figure 2a
-shows data taken at T = 10 K for various fields in the Cyc, SkL,
-and FM phases, along with the phenomenological model fits to
-the data (black lines). To more clearly show the coherent
-oscillatory component, we replot the data in Fig. 2b after
+> process, Δθ shows a relatively slow demagnetization, and an even
+> slower subsequent remagnetization. The demagnetization and
+> remagnetization processes also occur in the paramagnetic phase
+> slightly above TC. Because GaV4S8 is a semiconductor, the
+> demagnetization process is completed in a relatively slow time-
+> scale of ~200–400 ps, as widely observed in semiconductor
+> magnets24. In general, in semiconductors this slow demagneti-
+> zation dynamics is understood in terms of spin-lattice thermali-
+> zation, which takes place after the rapid heating of the lattice
+> system due to an efficient energy transfer from the electron sys-
+> tem to the lattice system24. An interesting observation is that at
+> 11.5 K and at a low magnetic field Δθ changes sign and takes a
+> positive value, indicating that magnetization is enhanced by the
+> photoexcitation. The origin of this lies in the peak structure of
+> magnetic susceptibility around the phase boundary between the
+> Cyc and paramagnetic phases23,42. In addition to these incoherent
+> spin dynamics, a clear oscillatory structure appears in the mag-
+> netically ordered phase with a typical period of 100–300 ps, i.e., in
+> the few GHz range. The excitation mechanism of this coherent
+> collective spin motion has been assigned to the ultrafast photo-
+> induced modulation of the magnetocrystalline anisotropy of
+> GaV4S8
+> 23.
+> The comprehensive set of the Δθ traces clearly shows that the
+> nature of the coherent and incoherent spin dynamics changes
+> character depending on the location in the magnetic phase
+> diagram. We first discuss the coherent oscillatory response in the
+> different magnetic phases. To do this, we fit the data using a
+> damped cosine oscillation, superimposed on a bi-exponential
+> function that accounts for the incoherent demagnetization and
+> remagnetization dynamics. We disregard the dynamics on the
+> earliest timescale (up to ~40 ps) originating from ultrafast carrier
+> relaxation processes [see supplementary information]. Figure 2a
+> shows data taken at T = 10 K for various fields in the Cyc, SkL,
+> and FM phases, along with the phenomenological model fits to
+> the data (black lines). To more clearly show the coherent
+> oscillatory component, we replot the data in Fig. 2b after
 
 applied normal to the (100) crystal surface so that all of the four
 possible structural domains host the same magnetic state, since
@@ -489,22 +489,22 @@ FM phase around 100 mT, which is manifested in a substantially
 higher-frequency (~13.5 GHz) coherent oscillation corresponding
 to the ferromagnetic resonance in the FM phase44.
 
-300–500 ps as seen in the traces at 30 mT and 50 mT. The trace at
-40 mT, which is near the phase boundary between the Cyc and
-SkL, is best described by the presence of two coherent oscillations
-corresponding to those adjacent phases. This time-domain
-observation of the phase coexistence is in line with the low-
-frequency AC susceptibility measurement where an extremely
-slow spin dynamics appears in the vicinity of the phase
-boundaries48.
-
-The lifetime of the coherent oscillation at T = 10 K is around
-200 ps, without significant variations for different phases [see
-also supplementary information]. On the other hand, Δθ traces
-shown in Fig. 1d show that the oscillation becomes heavily damped
-at T = 11.5 K. The temperature dependence of the lifetimes at fixed
-magnetic field is plotted in Fig. 2 f, which shows the lifetime
-becoming shorter upon increasing temperature, both for the Cyc
+> 300–500 ps as seen in the traces at 30 mT and 50 mT. The trace at
+> 40 mT, which is near the phase boundary between the Cyc and
+> SkL, is best described by the presence of two coherent oscillations
+> corresponding to those adjacent phases. This time-domain
+> observation of the phase coexistence is in line with the low-
+> frequency AC susceptibility measurement where an extremely
+> slow spin dynamics appears in the vicinity of the phase
+> boundaries48.
+>
+> The lifetime of the coherent oscillation at T = 10 K is around
+> 200 ps, without significant variations for different phases [see
+> also supplementary information]. On the other hand, Δθ traces
+> shown in Fig. 1d show that the oscillation becomes heavily damped
+> at T = 11.5 K. The temperature dependence of the lifetimes at fixed
+> magnetic field is plotted in Fig. 2 f, which shows the lifetime
+> becoming shorter upon increasing temperature, both for the Cyc
 
 A distinct feature of the skyrmion phase is observed in the
 amplitude of the coherent oscillation. Figure 2d shows the
@@ -518,18 +518,18 @@ orientation of the magnetic field33. In addition, anisotropy also
 affects the skyrmion core size. In the SkL phase, the spin system
 acquires a collective motion of the skyrmion BR mode,
 
-and SkL phases. Finally, we note that, while the frequency of the
-coherent oscillation in the SkL phase is fairly temperature
-independent, the cycloid oscillation mode shows a softening toward
-
-lower temperatures (see Fig. 2e). This may seem counterintuitive
-from the naive expectation that the frequency should scale with the
-magnetization. The Cyc phase, however, has two collective modes
-(±Q modes)49,50 which are split into a lower-frequency (lf) and
-
-higher-frequency (hf) mode, of which only the lowest mode is
-efficiently excited in this experiment23. The splitting of these modes
-is due to dipole interaction and/or magnetic anisotropy49,50, which
+> and SkL phases. Finally, we note that, while the frequency of the
+> coherent oscillation in the SkL phase is fairly temperature
+> independent, the cycloid oscillation mode shows a softening toward
+>
+> lower temperatures (see Fig. 2e). This may seem counterintuitive
+> from the naive expectation that the frequency should scale with the
+> magnetization. The Cyc phase, however, has two collective modes
+> (±Q modes)49,50 which are split into a lower-frequency (lf) and
+>
+> higher-frequency (hf) mode, of which only the lowest mode is
+> efficiently excited in this experiment23. The splitting of these modes
+> is due to dipole interaction and/or magnetic anisotropy49,50, which
 
 accompanied by the oscillating magnetization components along
 the skyrmion tube direction45,46. On the other hand, the coherent
@@ -545,30 +545,30 @@ dynamics is not only distinguished by the mode frequency but
 also by the high photoexcitation efficiency.
 In Fig. 2d, with increasing magnetic field, the amplitude
 
-both increase toward lower temperature and hence push the lf-mode
-to the lower frequency at lower temperature.
-
-Remagnetization dynamics. The coherent spin precession
-observed above shows a signature of phase coexistence across the
-magnetic phase transitions in GaV4S8. This observation indicates
-the formation of magnetic domain walls in the course of phase
-transitions, which will also exist inside the SkL/Cyc phases2,47. In
-connection with this, the incoherent remagnetization dynamics
-shows an interesting behavior. A quick inspection of the Δθ traces
-in Fig. 1 reveals that the remagnetization dynamics is slower at
-lower magnetic fields, compared to that in the higher-field FM
-phase. For a quantitative discussion on this later timescale, we
-extract the time constant of the remagnetization using an expo-
-nential fit to the Δθ traces after 1 ns. Figure 3 shows the magnetic-
-field dependence of the remagnetization time at three different
-temperatures. Here the data at low magnetic fields, where the fits
-become less reliable due to the long time constants compared to
-the experimental time window, are excluded. At 14.5 K in the
-paramagnetic (PM) phase, no characteristic dependence on the
-magnetic field is observed. However, below TC the remagnetiza-
-tion time slows down across the phase transition from the FM
-phase to the SkL phase (11.5 K and 10 K) and the Cyc phase (8 K).
-The increase of the remagnetization time reaches a factor of 1.5–2
+> both increase toward lower temperature and hence push the lf-mode
+> to the lower frequency at lower temperature.
+>
+> Remagnetization dynamics. The coherent spin precession
+> observed above shows a signature of phase coexistence across the
+> magnetic phase transitions in GaV4S8. This observation indicates
+> the formation of magnetic domain walls in the course of phase
+> transitions, which will also exist inside the SkL/Cyc phases2,47. In
+> connection with this, the incoherent remagnetization dynamics
+> shows an interesting behavior. A quick inspection of the Δθ traces
+> in Fig. 1 reveals that the remagnetization dynamics is slower at
+> lower magnetic fields, compared to that in the higher-field FM
+> phase. For a quantitative discussion on this later timescale, we
+> extract the time constant of the remagnetization using an expo-
+> nential fit to the Δθ traces after 1 ns. Figure 3 shows the magnetic-
+> field dependence of the remagnetization time at three different
+> temperatures. Here the data at low magnetic fields, where the fits
+> become less reliable due to the long time constants compared to
+> the experimental time window, are excluded. At 14.5 K in the
+> paramagnetic (PM) phase, no characteristic dependence on the
+> magnetic field is observed. However, below TC the remagnetiza-
+> tion time slows down across the phase transition from the FM
+> phase to the SkL phase (11.5 K and 10 K) and the Cyc phase (8 K).
+> The increase of the remagnetization time reaches a factor of 1.5–2
 
 strongly but continuously increases when the system undergoes
 the Cyc to SkL phase transition. It saturates with a maximum
@@ -607,8 +607,8 @@ FM FM
 
 Cyc
 
-SkL
-Cyc Cyc
+> SkL
+> Cyc Cyc
 
 1
 
@@ -616,8 +616,8 @@ SkL
 
 PM
 
-0
-0 40 80
+> 0
+> 0 40 80
 
 0 40 80
 
@@ -880,33 +880,33 @@ equation59. The Gilbert damping was set to 10−3. 20,000 timesteps of 10 fs wer
 used for the integration. The Fourier transform of the correlation function gives the
 dynamical structure factor,
 
-mj
-rð Þt mj
-r0ð Þ 0
-
-Cj r  r
-0 ð Þ¼ ; t
-
-
-mj
-rð Þt
-
-ðq; ωÞ ¼ 1
-ffiffiffiffiffi
-2π p N
+> mj
+> rð Þt mj
+> r0ð Þ 0
+>
+> Cj r  r
+> 0 ð Þ¼ ; t
+>
+>
+> mj
+> rð Þt
+>
+> ðq; ωÞ ¼ 1
+> ffiffiffiffiffi
+> 2π p N
 
 Z þ1
 
 Sj
 
-∑
-r;r0
-e
-iqðrr0
-
-e
-iωt
-Cj
+> ∑
+> r;r0
+> e
+> iqðrr0
+>
+> e
+> iωt
+> Cj
 
 Þ
 

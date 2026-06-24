@@ -197,8 +197,8 @@ s
 2
 . Then the maximum displacement is
 
-(s,f)
-0 ∆Q
+> (s,f)
+> 0 ∆Q
 
 ||mQ − mR||2 ≤ C
 
@@ -244,8 +244,8 @@ most |F| = f faulty values, let PBA(R, s) = (x, R′
 (s,f)
 0 ∆Q ≤ 2C
 
-(s,f)∆R
-f
+> (s,f)∆R
+> f
 
 ||mQ − x||2 ≤ C
 
@@ -273,12 +273,12 @@ yet still benefits from the increase in accuracy.
 
 Table 1 Replica set size. d is number of data dimensions.
 
-Algorithm n ≥
-OneShot 4f + 1
-ABA [5] 5f + 1
-IA [12] 3f + 1
-BI [3, 4] 2df + 1
-BVC [14, 19] (d + 2)f + 1
+> Algorithm n ≥
+> OneShot 4f + 1
+> ABA [5] 5f + 1
+> IA [12] 3f + 1
+> BI [3, 4] 2df + 1
+> BVC [14, 19] (d + 2)f + 1
 
 (a) Gaussian samples, Byzantine attack. (b) Exponential samples, Byzantine attack.
 

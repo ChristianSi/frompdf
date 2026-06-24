@@ -47,11 +47,11 @@ Palavras-chave.Espaço. Lugar. Filosofia. Geografias. Totalidades.
 
 1. Abertura do pensar
 
-A Natureza ama esconder-se
-Heráclito de Éfeso (550-480 a.C.)
-
-Tudo que é sólido desmancha no ar...
-Karl Marx e Friedrich Engels (Manifesto Comunista -1848)
+> A Natureza ama esconder-se
+> Heráclito de Éfeso (550-480 a.C.)
+>
+> Tudo que é sólido desmancha no ar...
+> Karl Marx e Friedrich Engels (Manifesto Comunista -1848)
 
 A relação introdutória entre espaço e filosofias sempre existiu; desde o Ocidente clássico
 espelhado, até as modernidades em curso. O que variou foram as modalidades conceituais

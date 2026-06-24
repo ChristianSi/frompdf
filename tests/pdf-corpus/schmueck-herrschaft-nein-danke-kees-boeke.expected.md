@@ -62,10 +62,10 @@ Von Jochen Schmück
 
 Prolog
 
-„So wie der Mensch die Gerechtigkeit in der Gleichheit sucht,
-sucht die Gesellscha> die Ordnung in der Anarchie. /
-Anarchie, das Fehlen eines Herrschers, eines Souveräns,
-das ist die Regierungsform, der wir uns jeden Tag mehr nähern.“
+> „So wie der Mensch die Gerechtigkeit in der Gleichheit sucht,
+> sucht die Gesellscha> die Ordnung in der Anarchie. /
+> Anarchie, das Fehlen eines Herrschers, eines Souveräns,
+> das ist die Regierungsform, der wir uns jeden Tag mehr nähern.“
 
 Pierre-Joseph Proudhon (1840)1
 Die Diskussion über neue Formen der gemeinschaftlichen Organisation ist
@@ -388,8 +388,8 @@ lieder wie das populäre Nooit-meer-oorlog! (Nie wieder Krieg!):
 
 Darin sind wir uns einig: Nicht 2ür einen Staat, nicht 2ür eine Partei.
 
-Nicht 2ür eine Klasse oder Herrscha>. Nicht 2ür ein Ziel, egal 2ür welches.
-Nie wieder Krieg.“14
+> Nicht 2ür eine Klasse oder Herrscha>. Nicht 2ür ein Ziel, egal 2ür welches.
+> Nie wieder Krieg.“14
 
 Im August 1918 war die damals sechsköp9ge Familie Boeke nach Biltho-
 ven, einem Dorf in der Nähe von Utrecht gezogen. Das Boschhuis in der
@@ -833,10 +833,10 @@ bestimmte Ordnung ohne Zwang entstehen.
 
 8. Ethische Orientierung: Inspiriert von quäkerischen Traditionen sollte
 
-moralische Urteilskra> ge2ördert werden. Handeln aus innerer Überzeu-
-gung – nicht aus Angst oder HoBnung auf Belohnung – galt als Leitprinzip
-der Werkplaats und sollte die Integrität, Empathie und Verantwortung in
-der Gemeinscha> stärken.
+> moralische Urteilskra> ge2ördert werden. Handeln aus innerer Überzeu-
+> gung – nicht aus Angst oder HoBnung auf Belohnung – galt als Leitprinzip
+> der Werkplaats und sollte die Integrität, Empathie und Verantwortung in
+> der Gemeinscha> stärken.
 
 Die Machtergreifung der Nationalsozialisten in Deutschland 1933 hatte
 weitreichende Folgen auch 2ür die Niederlande, die sich sowohl in der
@@ -930,13 +930,13 @@ komponierte er das Lied Opent de grenzen! (ÖBnet die Grenzen!), das von
 den Kindern der Werkplaats gesungen wurde:
 „ÖBnet die Grenzen, öBnet sie weit.
 
-Holland, sei oBen 2ür alle, die Leid erfahren.
-So ist es früher immer gewesen,
+> Holland, sei oBen 2ür alle, die Leid erfahren.
+> So ist es früher immer gewesen,
 
 so ist von alters her der holländische Geist.
 
-Wenn nun einmal Jesus an der Grenze stünde,
-ohne Papiere, nur ein Mensch,
+> Wenn nun einmal Jesus an der Grenze stünde,
+> ohne Papiere, nur ein Mensch,
 
 würdet ihr zu ihm sagen: „Werde nur getötet,
 
@@ -1853,32 +1853,32 @@ Mitglied einen Beschluss akzeptieren und mittragen kann, auch wenn die-
 ser nicht unbedingt auch die persönliche Lieblingslösung oder optimale
 Präferenz ist. Entscheidungen im Konsent werden in der Regel mit einem
 
-Prüfdatum und Messkriterien versehen, um zu überprüfen, inwieweit der
-gemeinsame Beschluss tatsächlich in der Praxis umgesetzt wird.
+> Prüfdatum und Messkriterien versehen, um zu überprüfen, inwieweit der
+> gemeinsame Beschluss tatsächlich in der Praxis umgesetzt wird.
 
 2. Jeder Kreis steuert sich nach dem Prinzip des sogenannten Kreisprozesses,
 
-den Endenburg aus der Kybernetik übernommen hat. Er umfasst drei wie-
-derkehrende Schritte: Leiten – gemeinsame Ziele und Rahmenbedingungen
-festlegen, Aus;ühren – die beschlossenen Maßnahmen umsetzen, und Mes-
-sen – die Ergebnisse prüfen und als Rückmeldung 2ür den nächsten Zyklus
-nutzen. Durch dieses Zusammenspiel entsteht eine kontinuierliche Lern-
-und Optimierungsschleife, die auf allen Ebenen der Organisation wirksam
-ist.
+> den Endenburg aus der Kybernetik übernommen hat. Er umfasst drei wie-
+> derkehrende Schritte: Leiten – gemeinsame Ziele und Rahmenbedingungen
+> festlegen, Aus;ühren – die beschlossenen Maßnahmen umsetzen, und Mes-
+> sen – die Ergebnisse prüfen und als Rückmeldung 2ür den nächsten Zyklus
+> nutzen. Durch dieses Zusammenspiel entsteht eine kontinuierliche Lern-
+> und Optimierungsschleife, die auf allen Ebenen der Organisation wirksam
+> ist.
 
 3. Jeder Kreis ist mit dem nächsthöheren (übergeordneten) Kreis durch eine
 
-doppelte Verknüpfung von mindestens zwei Personen (Kreisleiter:in und
-Kreisdelegierte:r) verbunden. Auf diese Weise werden Informationen und
-EinZuss in beide Richtungen weitergegeben, was Transparenz, Ausgewo-
-genheit und Anpassungs2ähigkeit 2ördert. Die Rückmeldungen der
-Delegierten müssen im übergeordneten Kreis angehört werden, wodurch
-eine oBene und kontinuierliche Feedbackschleife entsteht.
+> doppelte Verknüpfung von mindestens zwei Personen (Kreisleiter:in und
+> Kreisdelegierte:r) verbunden. Auf diese Weise werden Informationen und
+> EinZuss in beide Richtungen weitergegeben, was Transparenz, Ausgewo-
+> genheit und Anpassungs2ähigkeit 2ördert. Die Rückmeldungen der
+> Delegierten müssen im übergeordneten Kreis angehört werden, wodurch
+> eine oBene und kontinuierliche Feedbackschleife entsteht.
 
 4. Die oaene Wahl nutzt die kollektive Intelligenz der jeweiligen Kreisgruppe,
 
-um die Rollen der Funktionsträger:innen mit den am besten 2ür sie geeig-
-neten Personen zu besetzen – sichtbar und nachvollziehbar 2ür alle.
+> um die Rollen der Funktionsträger:innen mit den am besten 2ür sie geeig-
+> neten Personen zu besetzen – sichtbar und nachvollziehbar 2ür alle.
 
 Dieses Modell ermöglicht es der Organisation, als Ganzes agil zu blei-
 ben, weil Entscheidungen in ihm nicht zentral und von oben (top-down),

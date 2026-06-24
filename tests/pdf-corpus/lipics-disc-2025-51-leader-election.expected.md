@@ -239,9 +239,9 @@ variable q
 4 if q = 0 then break
 5 if q = 0 then
 
-/* if a process enters this branch, then it is not the process with minimum ID
-*/
-6 send a message on port 1
+> /* if a process enters this branch, then it is not the process with minimum ID
+> */
+> 6 send a message on port 1
 
 7 receive a message on port 1 // Wait for a message on port 1.
 8 repeat
