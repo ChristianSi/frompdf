@@ -199,8 +199,8 @@ s
 
 > (s,f)
 > 0 ∆Q
-
-||mQ − mR||2 ≤ C
+>
+> ||mQ − mR||2 ≤ C
 
 However, the contents of Q is unknown, so the bound implied by Lemma 2.2 cannot be
 directly calculated from the information available. Instead, Lemma 2.3 presents a
@@ -246,8 +246,8 @@ most |F| = f faulty values, let PBA(R, s) = (x, R′
 
 > (s,f)∆R
 > f
-
-||mQ − x||2 ≤ C
+>
+> ||mQ − x||2 ≤ C
 
 2.2 OneShot PBA Agreement and Termination
 
@@ -279,8 +279,8 @@ Table 1 Replica set size. d is number of data dimensions.
 > IA [12] 3f + 1
 > BI [3, 4] 2df + 1
 > BVC [14, 19] (d + 2)f + 1
-
-(a) Gaussian samples, Byzantine attack. (b) Exponential samples, Byzantine attack.
+>
+> (a) Gaussian samples, Byzantine attack. (b) Exponential samples, Byzantine attack.
 
 Figure 1 Empirical simulations measuring PBA’s accuracy compared to baseline algorithms given
 data distributed by a Gaussian (symmetric) and Exponential (asymmetric) distributions.

@@ -932,15 +932,15 @@ den Kindern der Werkplaats gesungen wurde:
 
 > Holland, sei oBen 2ür alle, die Leid erfahren.
 > So ist es früher immer gewesen,
-
-so ist von alters her der holländische Geist.
-
+>
+> so ist von alters her der holländische Geist.
+>
 > Wenn nun einmal Jesus an der Grenze stünde,
 > ohne Papiere, nur ein Mensch,
-
-würdet ihr zu ihm sagen: „Werde nur getötet,
-
-du bist ein Fremder, ein Flüchtling, ein Jude?“39
+>
+> würdet ihr zu ihm sagen: „Werde nur getötet,
+>
+> du bist ein Fremder, ein Flüchtling, ein Jude?“39
 
 Aus Empörung über die Zurückweisung von GeZüchteten an den Gren-
 zen gründeten Kees Boeke und Joop Westerweel40 im Jahr 1938 die Jeugd-

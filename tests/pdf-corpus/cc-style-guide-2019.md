@@ -76,8 +76,8 @@ consistently and in a cohesive manner.
 > that they create deeper meaning for audiences. And when driven by well-defined brand strategy,
 > consistent design creates cohesive experiences that effectively engage audiences with your
 > organization’s mission.”
-
-Matthew Schwarts | Founder and Executive Director of Constructive
+>
+> Matthew Schwarts | Founder and Executive Director of Constructive
 
 Below is specific language regarding CC’s mission that currently exists on the “What We Do” page of
 the website. When creating content for CC, please take into consideration this language, particularly

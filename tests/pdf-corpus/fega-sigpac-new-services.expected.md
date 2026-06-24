@@ -3,9 +3,9 @@ SECRETARIA GENERAL
 > DE RECURSOS AGRARIOS
 > Y SEGURIDAD ALIMENTARIA
 > FONDO ESPAÑOL DE
-
-MINISTERIO
-
+>
+> MINISTERIO
+>
 > DE AGRICULTURA, PESCA
 > Y ALIMENTACION
 >
@@ -321,8 +321,8 @@ Actualmente se pueden consultar listas de códigos de:
 > - Líneas de ayuda directa PDR
 > - Productos
 > - Región 2023
-
-- Elementos del paisaje tipo punto, línea y área.
+>
+> - Elementos del paisaje tipo punto, línea y área.
 
 EJEMPLO: https://sigpac-hubcloud.es/codigossigpac/cod_aprovechamiento.json
 

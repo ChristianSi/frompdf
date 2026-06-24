@@ -88,8 +88,8 @@ are:
 
 > • the freedom to share the software with your friends and neighbors, and (Freedom
 > 2)
-
-• the freedom to share the changes you make. (Freedom 3)
+>
+> • the freedom to share the changes you make. (Freedom 3)
 
 These four freedoms form the definition of free software, according to GNU Project
 (2001). Of particular interest to the topic of this paper is Freedom 0, which can be seen

@@ -275,12 +275,12 @@ e
 > 14
 > 13
 > 12
-
-6
-
-0.0
-
-Frequency (GHz)
+>
+> 6
+>
+> 0.0
+>
+> Frequency (GHz)
 
 30 mT
 40 mT
@@ -296,22 +296,22 @@ Frequency
 >
 >
 > (mdeg.)
-
-4
-
-(GHz)
-
--1.0
-
-2
-
+>
+> 4
+>
+> (GHz)
+>
+> -1.0
+>
+> 2
+>
 > Cyc
 > Sk
 >
 > Cyc
 > Sk
-
--1.5
+>
+> -1.5
 
 120 mT
 
@@ -344,10 +344,10 @@ f
 > FM
 > -0.3
 > 0.0
-
-Lifetime (ps)
-
-(arb. units)
+>
+> Lifetime (ps)
+>
+> (arb. units)
 
 30 mT
 40 mT
@@ -374,8 +374,8 @@ Cyc
 
 > Cyc
 > Sk
-
-FM SkL
+>
+> FM SkL
 
 120 mT
 
@@ -609,13 +609,13 @@ Cyc
 
 > SkL
 > Cyc Cyc
-
-1
-
-SkL
-
-PM
-
+>
+> 1
+>
+> SkL
+>
+> PM
+>
 > 0
 > 0 40 80
 
@@ -894,11 +894,11 @@ dynamical structure factor,
 > ðq; ωÞ ¼ 1
 > ffiffiffiffiffi
 > 2π p N
-
-Z þ1
-
-Sj
-
+>
+> Z þ1
+>
+> Sj
+>
 > ∑
 > r;r0
 > e
@@ -907,14 +907,14 @@ Sj
 > e
 > iωt
 > Cj
-
-Þ
-
-ðr  r0
-
-; tÞdt ð2Þ
-
-1
+>
+> Þ
+>
+> ðr  r0
+>
+> ; tÞdt ð2Þ
+>
+> 1
 
 The magnon linewidth was then obtained by fitting the peaks of the spectral
 function with Gaussians. The thermal conductivity was estimated from the
