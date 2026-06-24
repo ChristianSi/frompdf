@@ -595,9 +595,10 @@ def is_indented_blockquote_block(
     line_list: list[Line],
     body_lefts_by_page: dict[int, list[float]],
     default_font_size: float | None,
+    allow_single_line: bool = False,
 ) -> bool:
     """Return whether a block is consistently inset from its page or column margin."""
-    if len(line_list) < 2:
+    if len(line_list) < 2 and not allow_single_line:
         return False
 
     font_size = block_font_size(line_list) or default_font_size
@@ -615,6 +616,7 @@ def is_blockquote_block(
     line_list: list[Line],
     default_font_size: float | None,
     body_lefts_by_page: dict[int, list[float]],
+    follows_blockquote: bool = False,
 ) -> bool:
     """Return whether a group of lines should be rendered as a Markdown block quote."""
     if not line_list or is_footnote_like_block(line_list):
@@ -624,7 +626,12 @@ def is_blockquote_block(
     if default_font_size is not None and font_size is not None and font_size > default_font_size:
         return False
 
-    return is_indented_blockquote_block(line_list, body_lefts_by_page, default_font_size)
+    return is_indented_blockquote_block(
+        line_list,
+        body_lefts_by_page,
+        default_font_size,
+        allow_single_line=follows_blockquote,
+    )
 
 
 def markdown_block_from_lines(
@@ -632,11 +639,12 @@ def markdown_block_from_lines(
     page_number_map: dict[int, PageNumber],
     default_font_size: float | None,
     body_lefts_by_page: dict[int, list[float]],
+    follows_blockquote: bool = False,
 ) -> Block:
     """Build a Markdown block from grouped line records."""
     block_class: type[Block] = (
         BlockQuote
-        if is_blockquote_block(line_list, default_font_size, body_lefts_by_page)
+        if is_blockquote_block(line_list, default_font_size, body_lefts_by_page, follows_blockquote)
         else Paragraph
     )
     start_page = page_number_map[line_list[0].page_no]
@@ -667,7 +675,11 @@ def lines_to_markdown_blocks(
         ):
             block_list.append(
                 markdown_block_from_lines(
-                    current_lines, page_number_map, default_font_size, body_lefts_by_page
+                    current_lines,
+                    page_number_map,
+                    default_font_size,
+                    body_lefts_by_page,
+                    follows_blockquote=bool(block_list) and isinstance(block_list[-1], BlockQuote),
                 )
             )
             current_lines = []
@@ -679,7 +691,11 @@ def lines_to_markdown_blocks(
     if current_lines:
         block_list.append(
             markdown_block_from_lines(
-                current_lines, page_number_map, default_font_size, body_lefts_by_page
+                current_lines,
+                page_number_map,
+                default_font_size,
+                body_lefts_by_page,
+                follows_blockquote=bool(block_list) and isinstance(block_list[-1], BlockQuote),
             )
         )
 
