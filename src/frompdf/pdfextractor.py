@@ -519,6 +519,44 @@ def block_font_size(line_list: list[Line]) -> float | None:
     return max(size_weights.items(), key=lambda item: (item[1], item[0]))[0]
 
 
+def build_body_lefts_by_page(
+    line_list: list[Line], default_font_size: float | None
+) -> dict[int, list[float]]:
+    """Return likely body-text left edges for each page."""
+    weighted_lefts_by_page: dict[int, dict[float, int]] = defaultdict(lambda: defaultdict(int))
+
+    for line_obj in line_list:
+        if (
+            line_obj.x1 is None
+            or line_obj.font_size is None
+            or default_font_size is None
+            or not line_obj.text
+            or abs(line_obj.font_size - default_font_size) > 0.2
+        ):
+            continue
+
+        rounded_x1 = round(line_obj.x1, 1)
+        weighted_lefts_by_page[line_obj.page_no][rounded_x1] += max(len(line_obj.text), 1)
+
+    body_lefts_by_page: dict[int, list[float]] = {}
+    column_gap = max((default_font_size or 1.0) * 4.0, 40.0)
+
+    for page_no, weighted_lefts in weighted_lefts_by_page.items():
+        if not weighted_lefts:
+            continue
+
+        clusters: list[list[float]] = []
+        for x1 in sorted(weighted_lefts):
+            if not clusters or x1 - clusters[-1][-1] > column_gap:
+                clusters.append([x1])
+            else:
+                clusters[-1].append(x1)
+
+        body_lefts_by_page[page_no] = [min(cluster) for cluster in clusters]
+
+    return body_lefts_by_page
+
+
 def is_footnote_like_block(line_list: list[Line]) -> bool:
     """Return whether a small-font block looks like a bottom footnote."""
     if not line_list:
@@ -528,45 +566,78 @@ def is_footnote_like_block(line_list: list[Line]) -> bool:
     return bool(re.match(r'\s*\d+\s+', first_line.text))
 
 
-def is_indented_blockquote_block(line_list: list[Line]) -> bool:
-    """Return whether a block is consistently inset from both page margins."""
-    if not line_list:
+def indent_threshold(font_size: float | None) -> float:
+    """Return the required indentation in PDF coordinate units."""
+    if font_size is None:
+        return 6.0
+
+    return max(font_size * 0.8, 6.0)
+
+
+def is_indented_line(line_obj: Line, body_lefts: list[float], threshold: float) -> bool:
+    """Return whether a line is indented from its nearest page or column left edge."""
+    if line_obj.x1 is None:
         return False
 
-    x1_values = [line_obj.x1 for line_obj in line_list if line_obj.x1 is not None]
-    x2_values = [line_obj.x2 for line_obj in line_list if line_obj.x2 is not None]
-    if not x1_values or not x2_values:
+    if any(abs(line_obj.x1 - body_left) < threshold for body_left in body_lefts):
         return False
 
-    min_x1 = min(x1_values)
-    max_x2 = max(x2_values)
-    return min_x1 >= 58.0 and max_x2 <= 380.0
+    preceding_body_lefts = [
+        body_left for body_left in body_lefts if body_left <= line_obj.x1 - threshold
+    ]
+    if not preceding_body_lefts:
+        return False
+
+    return line_obj.x1 - max(preceding_body_lefts) >= threshold
 
 
-def is_blockquote_block(line_list: list[Line], default_font_size: float | None) -> bool:
+def is_indented_blockquote_block(
+    line_list: list[Line],
+    body_lefts_by_page: dict[int, list[float]],
+    default_font_size: float | None,
+) -> bool:
+    """Return whether a block is consistently inset from its page or column margin."""
+    if len(line_list) < 2:
+        return False
+
+    font_size = block_font_size(line_list) or default_font_size
+    threshold = indent_threshold(font_size)
+
+    for line_obj in line_list:
+        body_lefts = body_lefts_by_page.get(line_obj.page_no, [])
+        if not body_lefts or not is_indented_line(line_obj, body_lefts, threshold):
+            return False
+
+    return True
+
+
+def is_blockquote_block(
+    line_list: list[Line],
+    default_font_size: float | None,
+    body_lefts_by_page: dict[int, list[float]],
+) -> bool:
     """Return whether a group of lines should be rendered as a Markdown block quote."""
     if not line_list or is_footnote_like_block(line_list):
         return False
 
     font_size = block_font_size(line_list)
-    if (
-        default_font_size is not None
-        and font_size is not None
-        and font_size < default_font_size - 0.3
-    ):
-        return True
+    if default_font_size is not None and font_size is not None and font_size > default_font_size:
+        return False
 
-    return is_indented_blockquote_block(line_list)
+    return is_indented_blockquote_block(line_list, body_lefts_by_page, default_font_size)
 
 
 def markdown_block_from_lines(
     line_list: list[Line],
     page_number_map: dict[int, PageNumber],
     default_font_size: float | None,
+    body_lefts_by_page: dict[int, list[float]],
 ) -> Block:
     """Build a Markdown block from grouped line records."""
     block_class: type[Block] = (
-        BlockQuote if is_blockquote_block(line_list, default_font_size) else Paragraph
+        BlockQuote
+        if is_blockquote_block(line_list, default_font_size, body_lefts_by_page)
+        else Paragraph
     )
     start_page = page_number_map[line_list[0].page_no]
     end_page = page_number_map[line_list[-1].page_no]
@@ -586,6 +657,7 @@ def lines_to_markdown_blocks(
     current_page_no: int | None = None
     current_block_no: int | None = None
     default_font_size = dominant_document_font_size(line_list)
+    body_lefts_by_page = build_body_lefts_by_page(line_list, default_font_size)
 
     for line_obj in line_list:
         if (
@@ -594,7 +666,9 @@ def lines_to_markdown_blocks(
             and (line_obj.page_no != current_page_no or line_obj.block_no != current_block_no)
         ):
             block_list.append(
-                markdown_block_from_lines(current_lines, page_number_map, default_font_size)
+                markdown_block_from_lines(
+                    current_lines, page_number_map, default_font_size, body_lefts_by_page
+                )
             )
             current_lines = []
 
@@ -604,7 +678,9 @@ def lines_to_markdown_blocks(
 
     if current_lines:
         block_list.append(
-            markdown_block_from_lines(current_lines, page_number_map, default_font_size)
+            markdown_block_from_lines(
+                current_lines, page_number_map, default_font_size, body_lefts_by_page
+            )
         )
 
     return block_list
