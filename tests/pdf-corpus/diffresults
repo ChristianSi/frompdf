@@ -4,15 +4,13 @@ set -u
 cd "$(dirname "$0")" || exit 1
 shopt -s nullglob
 
-failed=0
+verbose=0
+if [[ "${1:-}" == "-v" ]]; then
+    verbose=1
+    shift
+fi
 
-for pdf_file in *.pdf; do
-    echo "Converting $pdf_file"
-    if ! frompdf "$pdf_file" >/dev/null; then
-        echo "Conversion failed: $pdf_file"
-        failed=1
-    fi
-done
+failed=0
 
 for expected_file in *.expected.*; do
     actual_file="${expected_file/.expected./.}"
@@ -23,7 +21,11 @@ for expected_file in *.expected.*; do
         continue
     fi
 
-    if ! diff -q "$expected_file" "$actual_file" >/dev/null; then
+    if [[ "$verbose" -eq 1 ]]; then
+        if ! diff "$expected_file" "$actual_file"; then
+            failed=1
+        fi
+    elif ! diff -q "$expected_file" "$actual_file" >/dev/null; then
         echo "Mismatch: $expected_file differs from $actual_file"
         failed=1
     fi

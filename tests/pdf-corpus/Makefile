@@ -1,4 +1,12 @@
-.PHONY: test tests
+.PHONY: all extract diff vdiff
 
-test tests:
-	./runtests
+all: extract diff
+
+extract:
+	./extract
+
+diff:
+	./diffresults
+
+vdiff:
+	./diffresults -v

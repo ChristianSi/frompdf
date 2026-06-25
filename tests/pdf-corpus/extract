@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+set -u
+
+cd "$(dirname "$0")" || exit 1
+shopt -s nullglob
+
+failed=0
+
+for pdf_file in *.pdf; do
+    echo "Converting $pdf_file"
+    if ! frompdf "$pdf_file" >/dev/null; then
+        echo "Conversion failed: $pdf_file"
+        failed=1
+    fi
+done
+
+exit "$failed"
