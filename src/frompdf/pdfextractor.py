@@ -45,6 +45,7 @@ class Block:
     text: str
     start_page: PageNumber
     end_page: PageNumber
+    font_size: float | None = None
 
 
 @dataclass
@@ -55,6 +56,13 @@ class Paragraph(Block):
 @dataclass
 class BlockQuote(Block):
     """A Markdown block quote."""
+
+
+@dataclass
+class Heading(Block):
+    """A Markdown heading."""
+
+    level: int = 1
 
 
 @dataclass
@@ -647,13 +655,118 @@ def markdown_block_from_lines(
         if is_blockquote_block(line_list, default_font_size, body_lefts_by_page, follows_blockquote)
         else Paragraph
     )
+    font_size = block_font_size(line_list)
     start_page = page_number_map[line_list[0].page_no]
     end_page = page_number_map[line_list[-1].page_no]
     return block_class(
         text='\n'.join(line_obj.text for line_obj in line_list),
         start_page=start_page,
         end_page=end_page,
+        font_size=font_size,
     )
+
+
+HEADING_LEVEL_THRESHOLDS = [
+    # Derived from 105% of the default font size, repeatedly multiplied by 10%,
+    # rounded to the nearest full percentage, and capped at 200%.
+    (2.00, 1),
+    (1.86, 2),
+    (1.69, 3),
+    (1.54, 4),
+    (1.40, 5),
+    (1.27, 6),
+    (1.16, 7),
+    (1.05, 8),
+]
+
+
+def initial_heading_level(block_obj: Block, default_font_size: float | None) -> int | None:
+    """Return the initial heading level for a block, if font-size heuristics match."""
+    if (
+        not isinstance(block_obj, Paragraph)
+        or default_font_size is None
+        or block_obj.font_size is None
+        or len(block_obj.text) > 250
+    ):
+        return None
+
+    font_ratio = block_obj.font_size / default_font_size
+    for threshold, level in HEADING_LEVEL_THRESHOLDS:
+        if font_ratio >= threshold:
+            return level
+
+    return None
+
+
+def compact_unused_heading_levels(block_list: list[Block]) -> None:
+    """Remove gaps in heading levels while preserving their relative order."""
+    used_levels = sorted(
+        {block_obj.level for block_obj in block_list if isinstance(block_obj, Heading)}
+    )
+    level_map = {old_level: new_level for new_level, old_level in enumerate(used_levels, start=1)}
+
+    for block_obj in block_list:
+        if isinstance(block_obj, Heading):
+            block_obj.level = level_map[block_obj.level]
+
+
+def merge_heading_level_pair(block_list: list[Block], kept_level: int) -> None:
+    """Merge kept_level + 1 into kept_level and shift deeper levels up."""
+    removed_level = kept_level + 1
+
+    for block_obj in block_list:
+        if not isinstance(block_obj, Heading):
+            continue
+        if block_obj.level == removed_level:
+            block_obj.level = kept_level
+        elif block_obj.level > removed_level:
+            block_obj.level -= 1
+
+
+def merge_extra_heading_levels(block_list: list[Block]) -> None:
+    """Merge adjacent heading levels until Markdown's six-level limit is satisfied."""
+    while True:
+        heading_counts = Counter(
+            block_obj.level for block_obj in block_list if isinstance(block_obj, Heading)
+        )
+        if len(heading_counts) <= 6:
+            return
+
+        pairs = [
+            (heading_counts[level] + heading_counts[level + 1], -level, level)
+            for level in sorted(heading_counts)
+            if level >= 2 and level + 1 in heading_counts
+        ]
+        if not pairs:
+            return
+
+        _, _, kept_level = min(pairs)
+        merge_heading_level_pair(block_list, kept_level)
+
+
+def detect_headings(block_list: list[Block], default_font_size: float | None) -> list[Block]:
+    """Convert paragraph blocks with heading-like font sizes into Heading blocks."""
+    converted_blocks: list[Block] = []
+
+    for block_obj in block_list:
+        heading_level = initial_heading_level(block_obj, default_font_size)
+        if heading_level is None:
+            converted_blocks.append(block_obj)
+            continue
+
+        converted_blocks.append(
+            Heading(
+                text=re.sub(r'\s+', ' ', block_obj.text).strip(),
+                start_page=block_obj.start_page,
+                end_page=block_obj.end_page,
+                font_size=block_obj.font_size,
+                level=heading_level,
+            )
+        )
+
+    compact_unused_heading_levels(converted_blocks)
+    merge_extra_heading_levels(converted_blocks)
+    return converted_blocks
 
 
 def lines_to_markdown_blocks(
@@ -699,7 +812,7 @@ def lines_to_markdown_blocks(
             )
         )
 
-    return block_list
+    return detect_headings(block_list, default_font_size)
 
 
 def extract_markdown(
@@ -732,7 +845,9 @@ def markdown_to_text(block_list: list[Block], output_file: TextIO) -> None:
             else:
                 output_file.write('\n\n')
 
-        if isinstance(block_obj, BlockQuote):
+        if isinstance(block_obj, Heading):
+            output_file.write(f'{"#" * block_obj.level} {block_obj.text}')
+        elif isinstance(block_obj, BlockQuote):
             output_file.write(
                 '\n'.join(f'> {line}' if line else '>' for line in block_obj.text.split('\n'))
             )
