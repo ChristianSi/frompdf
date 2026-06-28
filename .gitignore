@@ -27,6 +27,7 @@ htmlcov/
 .idea/
 .DS_Store
 *.bak
+.~lock.*#
 
 # Local environment files
 .env
