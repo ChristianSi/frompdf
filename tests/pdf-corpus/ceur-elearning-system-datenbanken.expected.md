@@ -1,26 +1,14 @@
-Interaktives Anpassungsfähiges E-Learning-System Im
+# Interaktives Anpassungsfähiges E-Learning-System Im
 
-Bereich Datenbanken
+# Bereich Datenbanken
 
-Fabian Keller
-Hochschule Harz
-Friedrichstraße 57-59
-38855 Wernigerode
-fkeller@hs-harz.de
+#### Fabian Keller Hochschule Harz Friedrichstraße 57-59 38855 Wernigerode fkeller@hs-harz.de
 
-Pia-Katharina Habekost
-Hochschule Harz
-Friedrichstraße 57-59
-38855 Wernigerode
-u36775@hs-harz.de
+#### Pia-Katharina Habekost Hochschule Harz Friedrichstraße 57-59 38855 Wernigerode u36775@hs-harz.de
 
-Kerstin Schneider
-Hochschule Harz
-Friedrichstraße 57-59
-38855 Wernigerode
-kschneider@hs-harz.de
+#### Kerstin Schneider Hochschule Harz Friedrichstraße 57-59 38855 Wernigerode kschneider@hs-harz.de
 
-ABSTRACT
+## ABSTRACT
 
 Das E-Learning-System ALEA [4] wird im Bereich Da-
 tenbanken entwickelt, weiterentwickelt und eingesetzt. Es
@@ -45,7 +33,7 @@ Interaktionen und Hilfestellungen bspw. Empfehlungen von
 multimedialen digitalen Elementen werden zur Verbesserung
 des Lernprozesses integriert.
 
-Keywords
+## Keywords
 
 Diese Komponenten und deren vielf¨altige Interaktions-
 m¨oglichkeiten werden im Folgenden thematisiert. Grund-
@@ -66,7 +54,7 @@ ten, die im folgenden Kapitel beschrieben werden. Schließ-
 lich werden die Ergebnisse zusammengefasst und ein Aus-
 blick gegeben.
 
-1. EINLEITUNG
+## 1. EINLEITUNG
 
 Der Einsatz von E-Learning-Systemen wird zunehmend
 bedeutsamer. Durch Erweiterungen der Interaktions- und
@@ -79,7 +67,7 @@ text von Leistungsermittlungen k¨onnen Hilfestellungen ein-
 geschr¨ankt werden, trotzdem sollen die Korrektur- und Ab-
 fragem¨oglichkeiten erleichtert und verbessert sein.
 
-2. GRUNDLEGENDE ASPEKTE
+## 2. GRUNDLEGENDE ASPEKTE
 
 Das Konzept ER-to-Relational-Mapping und die Norma-
 lisierung eines Relationenmodells bzw. relationalen Daten-
@@ -109,8 +97,7 @@ gesendet ohne dass die Webseite neu geladen wird. Zur Ver-
 waltung der Information uber Aufgaben, L ¨ ¨osungen, Lernen-
 de usw. werden Datenbanksysteme eingebunden.
 
-3. AUFGABENTYP ER-TO-RELATIONAL-
-MAPPING
+## 3. AUFGABENTYP ER-TO-RELATIONAL- MAPPING
 
 32nd GI-Workshop on Foundations of Databases (Grundlagen von Daten-
 banken), September 01-03, 2021, Munich, Germany.
@@ -155,7 +142,7 @@ der notwendigen Tabellen. In diesen k¨onnen durch Schalt-
 fl¨achen Tabellenbezeichnung, Spalten und Constraints hin-
 zugefugt werden. ¨
 
-3.1 Bearbeitung der Aufgaben
+## 3.1 Bearbeitung der Aufgaben
 
 Zur L¨osung der Mapping-Aufgaben gibt es fur jede Akti- ¨
 on eine entsprechende Schaltfl¨ache. Das System erlaubt es
@@ -224,9 +211,9 @@ kann diese M¨oglichkeit eingeschr¨ankt werden.
 
 Figure 1: Aktive Bearbeitung einer Spalte
 
-3.2 Prüfen der Eingaben
+## 3.2 Prüfen der Eingaben
 
-3.3 Reaktionen des Systems auf Eingaben
+## 3.3 Reaktionen des Systems auf Eingaben
 
 Ein wichtiger Aspekt der Mapping-Aufgaben ist es die
 Eingaben der Lernenden so fruh und umfangreich wie sinn- ¨
@@ -324,7 +311,7 @@ Figure 4: Toolbar mit Benachrichtigungshinweis
 
 Figure 3: Hinweis zur Umbennung einer Spalte
 
-3.4 Die Toolbar
+## 3.4 Die Toolbar
 
 Um den Lernenden weitere Funktionen zur effizienten Be-
 arbeitung der Aufgabe und Hilfestellungen aufzeigen zu k¨on-
@@ -336,7 +323,7 @@ tung der aktuellen Aufgabe.
 
 Figure 5: Toolbar mit ge¨offneten Benachrichtigungen
 
-3.5 Feedback durch die Lernenden
+## 3.5 Feedback durch die Lernenden
 
 Damit die Kommunikation und Interaktion der Lernenden
 sich nicht nur auf das System und dessen Hinweise bezieht,
@@ -351,7 +338,7 @@ dung 4 und Abbildung 5). Neben den Hinweisen zur Bear-
 beitung werden unter der Glocke zudem noch Hinweise auf
 neue Empfehlungen gegeben. Gibt es zur aktuellen Aufgabe
 
-3.6.3 Hilfetexte
+### 3.6.3 Hilfetexte
 
 da dieses dazu dient, das System an die Bedurfnisse der Ler- ¨
 nenden anzupassen und eine kontinuierliche Verbesserung
@@ -364,13 +351,13 @@ Die Hilfetexte sind Beschreibungen von Herausforderungen,
 Fragestellungen, Datenbankthematiken oder Beispiele von
 SQL-Code.
 
-3.6.4 Hilfegrafiken
+### 3.6.4 Hilfegrafiken
 
 Hilfegrafiken stellen nicht nur Datenmodelle dar, sondern
 um Zeichnungen oder Comics, die sich mit wenig Worten
 einer Datenbankthematik annehmen.
 
-3.6.5 Vordefinierte Hilfestellungen
+### 3.6.5 Vordefinierte Hilfestellungen
 
 Die Lernenden bekommen, basierend auf der Analyse des
 Systems, zu der aktuellen Situation und zur Aufgabe Hilfe-
@@ -392,7 +379,7 @@ im Rahmen der Aufgaben genutzt. Mit den Inhalten werden
 Playlisten gefullt, die den Lernenden zur Verf ¨ ugung stehen ¨
 um die Selbstlernphase zu unterstutzen. ¨
 
-3.6 Mediale Hilfestellungen
+## 3.6 Mediale Hilfestellungen
 
 Fur die Lernenden stehen verschiedene Arten von me- ¨
 dialen Hilfestellungen zur Verfugung, die st ¨ ¨andig erg¨anzt,
@@ -409,7 +396,7 @@ Fur die Icons gibt es zwei Bereiche. Die grauen Icons bein- ¨
 halten vordefinierte Hilfestellungen, wohingegen die grunen ¨
 Icons aktuell empfohlene Hilfestellungen beinhalten.
 
-3.6.6 Empfehlungen
+### 3.6.6 Empfehlungen
 
 Hilfestellungen und multimediale Elemente sollen zudem
 zunehmend vom System empfohlen werden. ALEA nutzt
@@ -417,7 +404,7 @@ verschiedene Arten von Empfehlungsalgorithmen, die st¨an-
 dig weiterentwickelt werden. Diese werden mit wachsender
 Nutzung und Datenmenge ausgebaut und verbessert.
 
-3.6.7 Metadaten
+### 3.6.7 Metadaten
 
 Ein wichtiger Aspekt fur die Zuweisung der medialen Hil- ¨
 festellungen sind die hinterlegten Metadaten. Fur mediale ¨
@@ -431,7 +418,7 @@ der Hilfestellung zu Aufgaben. Ein direkt fur diese Aufgabe ¨
 produzierter Podcast, soll in der Regel nicht als Hilfestellung
 empfohlen werden.
 
-3.6.1 Screencasts und Erklärvideos
+### 3.6.1 Screencasts und Erklärvideos
 
 Screencasts befassen sich mit der Anwendung und Nut-
 zung von Software bzw. mit den Erkl¨arungen zu L¨osun-
@@ -446,7 +433,7 @@ hensweisen und Hinweise enthalten. Neben den Screencasts
 finden die Lernenden hier zudem Erkl¨arvideos die allgemeine
 Prinzipien von Datenbanken thematisieren.
 
-3.7 Check and Submit
+## 3.7 Check and Submit
 
 Um sich den zugeh¨origen SQL-Code anzeigen zu lassen
 und zur Kontrolle der eigenen Eingaben, steht den Lernen-
@@ -461,7 +448,7 @@ Aufgabe. Eine zweite Zeichenkette wird erzeugt und bein-
 haltet HTML-Code. Dieser wird zur visuellen Darstellung
 des SQL-Codes fur die Lernenden genutzt. ¨
 
-3.6.2 Podcasts
+### 3.6.2 Podcasts
 
 Podcasts sollen, so wie die Screencasts, kompakt Informa-
 tionen vermitteln. Die Themen k¨onnen hier sowohl Aufgaben-
@@ -538,7 +525,7 @@ ihrer L¨osung. Zur Sicherheit und um Fehlklicks abzufangen
 haben, ein weiteres Fenster. In diesem erhalten die Lernen-
 den die Information, ob ihre L¨osung eine gultige L ¨ ¨osung sein
 
-4.1 Erweiterte Tabellenansicht
+## 4.1 Erweiterte Tabellenansicht
 
 k¨onnte. Ist dies der Fall, besteht die M¨oglichkeit die Aufgabe
 abzugeben.
@@ -586,7 +573,7 @@ soll die Tabelle finalisiert werden (siehe Abbildung 11).
 
 Figure 9: Abgabe einer Lernaufgabe
 
-3.8 Prüfungsmodus
+## 3.8 Prüfungsmodus
 
 Das System ist zum einen fur die Lernphase und zum ¨
 anderen fur die Pr ¨ ufungsphase gedacht. Hierf ¨ ur sieht das ¨
@@ -601,7 +588,7 @@ zweistufige Abfrage nach dem ’Submit’ bleibt zwar beste-
 hen, jedoch wird das erscheinende Fenster auf eine erneute
 Frage, ob die L¨osung abgegeben werden soll, reduziert.
 
-4.2 Erweiterte Ansichten
+## 4.2 Erweiterte Ansichten
 
 Die Komponente fur die Aufgaben zur Normalisierung ¨
 wird durch eine weitere ’Quick View’ erg¨anzt. Auf der rech-
@@ -620,7 +607,7 @@ verst¨arkte Nutzung der Komponenten und dem Anwachsen
 der Daten k¨onnen Empfehlungen und Learning Analytics
 weiter verbessert werden.
 
-4. AUFGABENTYP NORMALISIERUNG
+## 4. AUFGABENTYP NORMALISIERUNG
 
 Ein weiterer Aufgabentyp des ALEA-Systems ist die Nor-
 malisierung. Dieser Aufgabentyp nutzt die Grundfunktionen
@@ -642,7 +629,7 @@ wie auch beim ALEA-Mapping das vorgegebene Datenmo-
 dell, durch einen Klick in ein bewegliches, modales Fenster
 umwandeln oder in einen neuen Tab.
 
-Literatur
+## Literatur
 
 [1] D. Becher. DB-Normalizer. TU Munchen, 2021. ¨ https:
 //db.in.tum.de/teaching/ws2021/grundlagen/.

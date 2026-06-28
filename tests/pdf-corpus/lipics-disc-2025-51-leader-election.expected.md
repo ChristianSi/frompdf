@@ -1,8 +1,8 @@
-Brief Announcement: Non-Uniform
+# Brief Announcement: Non-Uniform
 
-Content-Oblivious Leader Election on Oriented
+# Content-Oblivious Leader Election on Oriented
 
-Asynchronous Rings
+# Asynchronous Rings
 
 Jérémie Chalopin #
 Aix Marseille Univ, CNRS, LIS, Marseille, France
@@ -63,7 +63,7 @@ Editor: Dariusz R. Kowalski; Article No. 51; pp. 51:1–51:7
 Leibniz International Proceedings in Informatics
 Schloss Dagstuhl – Leibniz-Zentrum für Informatik, Dagstuhl Publishing, Germany
 
-1 Introduction
+## 1 Introduction
 
 The field of reliable distributed computing is characterized by the study of a wide range of
 failure models, from failures affecting specific processes [4, 17] to failures affecting commu-
@@ -126,7 +126,7 @@ where in each round a process may either emit a beep to its neighbors or listen.
 is inherently synchronous. Therefore, the techniques developed for leader election in the
 beeping model [10, 11, 14] cannot be applied in content-oblivious networks.
 
-1.1 Contributions
+## 1.1 Contributions
 
 We shed new light on the message complexity of leader election in the content-oblivious
 model. Specifically, we show that a uniform algorithm, even on oriented rings, cannot elect a
@@ -162,7 +162,7 @@ on c, which is hidden in the O(·) notation.
 For space reasons, in this brief announcement, we just announce our results and describe
 the high-level ideas; see the full version of this paper for technical details.
 
-2 System Model
+## 2 System Model
 
 We consider a system composed of a set of n processes P = {p0, p1, . . . , pn−1} that commu-
 nicate on a ring network by sending messages to each other. More precisely, a process p has
@@ -213,7 +213,7 @@ last process to enter its final state is always the unique leader. This property
 composability of algorithms: once the leader enters the final state, it knows that the network
 is “at rest” and can begin sending messages for a subsequent algorithm [13, Section 1.1].
 
-3 Constant Number of Messages in One Direction
+## 3 Constant Number of Messages in One Direction
 
 We now describe an algorithm where each process sends O(UIDmin) messages in the clockwise
 direction, and just 3 messages in the counter-clockwise direction. This algorithm is of interest
@@ -281,7 +281,7 @@ non-leader process terminates after receiving three CCW messages.
 ented rings in which each process sends O(UIDmin) messages clockwise and three messages
 counterclockwise, for a total of O(nUIDmin) messages.
 
-4 An algorithm that sends O(nU log IDmin) messages
+## 4 An algorithm that sends O(nU log IDmin) messages
 
 We now describe an algorithm in which each process sends O(U log IDmin) messages. The
 algorithm uses an encoding of identifiers such that the smallest identifier is not a prefix of
@@ -328,7 +328,7 @@ the following theorem.
 ented rings in which each process sends O(U log IDmin) messages clockwise and O(log IDmin)
 messages counterclockwise, for a total of O(nU log IDmin) messages.
 
-5 Randomized Leader Election
+## 5 Randomized Leader Election
 
 In our randomized algorithm, each process samples its ID uniformly at random from the set
 {0, 1, 2, . . . , 2

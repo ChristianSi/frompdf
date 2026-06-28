@@ -1,12 +1,12 @@
-Brief Announcement:
+# Brief Announcement:
 
-Proximal Byzantine Agreement: Improved
+# Proximal Byzantine Agreement: Improved
 
-Accuracy for Fault-Tolerant Replicated
+# Accuracy for Fault-Tolerant Replicated
 
-Datastreams
+# Datastreams
 
-Roy Shadmon # Ñ
+## Roy Shadmon # Ñ
 
 University of California, Santa Cruz, CA, USA
 Owen Arden # Ñ
@@ -41,7 +41,7 @@ Digital Object Identifier 10.4230/LIPIcs.DISC.2025.64
 
 Funding Partial funding provided by 2025 Berkeley RDI AI & Decentralization Innovation Award.
 
-1 Introduction
+## 1 Introduction
 
 Reliably controlling systems and devices that interact with the physical environment is
 challenging in any context, but especially in edge networks. Volatile communication, power,
@@ -106,7 +106,7 @@ only minor losses in accuracy compared to ABA protocols that require 10× more r
 output distribution, our results indicate PBA can extract more information from observations,
 reinforcing the tradeoff [12] between high-precision agreement and statistical accuracy.
 
-2 Proximal agreement as a probability maximization
+## 2 Proximal agreement as a probability maximization
 
 Replicas participating in Approximate Byzantine Agreement (ABA) protocols (e.g.,[5, 14, 19])
 start with an arbitrary real value and reach an output solution satisfying two properties:
@@ -171,7 +171,7 @@ quorum values on a [0, 1) scale. We chose this approach after discovering that c
 geometric median and then approximating its likelihood is significantly faster than iteratively
 evaluating Pb(X = x | r) to find maximal values, and had almost no impact on accuracy.
 
-2.1 Geometric properties
+## 2.1 Geometric properties
 
 Approximation of a true value introduces a degree of uncertainty for systems that use those
 approximations to make decisions. We are unaware of any ABA protocols that estimates
@@ -249,7 +249,7 @@ most |F| = f faulty values, let PBA(R, s) = (x, R′
 >
 > ||mQ − x||2 ≤ C
 
-2.2 OneShot PBA Agreement and Termination
+## 2.2 OneShot PBA Agreement and Termination
 
 For this brief announcement, we describe OneShot PBA, a protocol that prioritizes accuracy.
 It infers the potential distances between the true value, its output, and other replica outputs
@@ -329,7 +329,7 @@ i
 
 Figure 2 Runtime benchmark (Pi Zero).
 
-3 Evaluation
+## 3 Evaluation
 
 PBA accuracy compared to baseline. We perform repeated simulations on Chameleon
 Cloud [8], comparing PBA under several quorum sizes against approximate Byzantine Vector

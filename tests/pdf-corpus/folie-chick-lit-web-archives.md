@@ -1,4 +1,4 @@
-International Journal of Digital Humanities (2021) 2:25–42
+# International Journal of Digital Humanities (2021) 2:25–42
 
 https://doi.org/10.1007/s42803-021-00031-6
 

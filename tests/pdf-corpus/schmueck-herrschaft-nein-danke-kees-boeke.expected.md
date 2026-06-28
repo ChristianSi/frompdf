@@ -31,36 +31,27 @@ Homepage: www.edition-espero.de
 Redaktionsanschri>: kontakt@edition-espero.de
 Published in Germany | ISSN (Online): 2700-1598
 
-espero
+# espero
 
-Libertäre Zeitschrift
-www.edition-espero.de
+## Libertäre Zeitschrift www.edition-espero.de
 
-Neue Folge
-Nr. 12
-Januar 2026
+#### Neue Folge Nr. 12 Januar 2026
 
-Themenschwerpunkt:
-Anarchismus und
-Pädagogik
+#### Themenschwerpunkt: Anarchismus und Pädagogik
 
-Herausgegeben
-von Markus Henning und
-Jochen Schmück
+#### Herausgegeben von Markus Henning und Jochen Schmück
 
-Libertad Verlag
-Potsdam
+#### Libertad Verlag Potsdam
 
 Der niederländische Pädagoge und christliche Anarchist Kees Boeke (1884-1966),
 der auch als der „Er9nder“ des libertären Organisationsmodells der Soziokratie gilt.
 Foto: 1939, ;uelle: Nationaal Archief, No. 119-0499, Open Source.
 
-Herrscha>? Nein danke! – Kees Boeke und das
-libertäre Organisationsmodell der Soziokratie
+### Herrscha>? Nein danke! – Kees Boeke und das libertäre Organisationsmodell der Soziokratie
 
-Von Jochen Schmück
+### Von Jochen Schmück
 
-Prolog
+#### Prolog
 
 > „So wie der Mensch die Gerechtigkeit in der Gleichheit sucht,
 > sucht die Gesellscha> die Ordnung in der Anarchie. /
@@ -149,7 +140,7 @@ herrscha>sfreie Ordnung.
 
 ⸟
 
-1. Ein christlicher Pazi9st entdeckt den Anarchismus
+#### 1. Ein christlicher Pazi9st entdeckt den Anarchismus
 
 Cornelis „Kees“ Boeke4
 wurde am 25. September 1884 in Alkmaar in der
@@ -620,8 +611,7 @@ und Bern, He> 106 (Februar 1933), S. 18-21. Sein Bericht ist eines der wenigen Z
 da2ür, dass Boekes christlich-anarchistische Aktivitäten und Projekte auch von zeitgenössi-
 schen deutschsprachigen Libertären wahrgenommen wurden.
 
-2. Die Werkplaats Kindergemeenschap – ein Labor der
-Selbstorganisation
+#### 2. Die Werkplaats Kindergemeenschap – ein Labor der Selbstorganisation
 
 Die Gründung der Werkplaats Kindergemeenschap (Werkstatt Kinderge-
 meinscha>) in Bilthoven im Jahr 1926 war eine direkte Folge von Kees Boe-
@@ -1169,8 +1159,7 @@ Wirkung entfalten sollte – das Organisationsmodell der Soziokratie.
 47  Zit. nach ebd., p. 173 (Übers. aus d. Niederl. v. Verf.).
 48  Vgl. ebd., bes. pp. 172-177.
 
-3. Das Organisationsmodell der Soziokratie im Spannungsfeld von
-Theorie und Praxis
+#### 3. Das Organisationsmodell der Soziokratie im Spannungsfeld von Theorie und Praxis
 
 Kees Boeke, der bereits den Ersten Weltkrieg als ein moralisches und zivilisa-
 torisches Versagen der „alten Welt“ wahrgenommen und sich dem christlich-
@@ -1637,7 +1626,7 @@ beschä>igen wollen.
 
 ⸟
 
-Epilog
+#### Epilog
 
 Kees Boeke hatte mit seinem Konzept der Soziokratie ein pragmatisch-anar-
 chistisches Organisationsmodell geschaBen, dessen drei Grundregeln wie
@@ -2030,7 +2019,7 @@ anarchisch, sondern auch alltagstauglich und eBektiv sind.
 *
 *
 
-Literatur
+#### Literatur
 
 Bakunin, Michael: Gesammelte Werke, Band 1, hrsg. v. Max Nettlau,
 Berlin: Verlag „Der Syndikalist“, 1921 (online).
@@ -2161,14 +2150,13 @@ nis und Tat, Lauf an der Pegnitz und Bern, He> 106, Februar 1933, S. 18-
 Das Kees Boeke und der Soziokratie gewidmete Themen-Special der niederländischen
 anarchistischen Zeitschrift De AS, vol. 14 (1986), no. 76 (Okt.-Dez.), (online | PDF).
 
-ANHANG:
+### ANHANG:
 
-Die Ordnung der Vernun> in der Gemeinscha> der
-Menschen (Mai 1945)1
+### Die Ordnung der Vernun> in der Gemeinscha> der Menschen (Mai 1945)1
 
-Von Kees Boeke
+### Von Kees Boeke
 
-1. Keine Diktatur!
+#### 1. Keine Diktatur!
 
 Die schrecklichen Jahre, die hinter uns liegen, haben uns allen sicherlich
 gelehrt (wahrscheinlich sogar den meisten der Irrege2ührten, die einst anders
@@ -2212,7 +2200,7 @@ Alles deutet also darauf hin, dass Zwang so weit wie möglich vermieden
 werden sollte, wobei die tatsächliche Ordnung und Struktur erhalten bleiben
 muss.
 
-2. Auch kein Parlamentarismus.
+#### 2. Auch kein Parlamentarismus.
 
 Müssen wir dann wieder zu den Verhältnissen vor 1940 zurückkehren, also zur
 parlamentarischen Demokratie? Ich antworte: Nein, auch diese war weit
@@ -2241,7 +2229,7 @@ lich wieder eine demokratische Regierung einzusetzen. Solange es keine
 anerkannte dritte Lösung gibt, ist es unvermeidlich, dass diese Methode
 erneut angewendet wird.
 
-3. Die dritte Lösung: Soziokratie.
+#### 3. Die dritte Lösung: Soziokratie.
 
 Es gibt jedoch eine dritte Lösung, und weil ich von ihrer Möglichkeit fest
 überzeugt bin, habe ich beschlossen, mich persönlich an alle denkenden
@@ -2317,7 +2305,7 @@ zelnen Bereichen entwickelt hat, kann etwas Ähnliches geschehen, wenn
 Vertrauen in die soziokratische Ordnung entsteht und dieses Vertrauen
 wächst.
 
-4. Die dazu notwendige Erziehung.
+#### 4. Die dazu notwendige Erziehung.
 
 Was zunächst einmal notwendig ist, ist eine bewusste Erziehung in dieser
 Richtung. In der Schule, wie wir sie heute kennen, lernt das Kind zu
@@ -2343,8 +2331,7 @@ chen Kindergemeinscha>en statt9nden, sich die Gemeinscha> nach und
 nach in der Lage zeigen wird, sich auf soziokratischem Wege zu organisie-
 ren.
 
-5. Übergang von der parlamentarischen Demokratie zur
-Soziokratie.
+#### 5. Übergang von der parlamentarischen Demokratie zur Soziokratie.
 
 Die wichtige Frage ist nun jedoch, wie die parlamentarische Ordnung, wie
 wir sie kennen und bald wiederhaben werden, in eine zunehmend soziokra-

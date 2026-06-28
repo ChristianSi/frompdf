@@ -1,5 +1,4 @@
-A Proposed Addition to Open-Source Licensing for
-Improving Freedom of Use
+# A Proposed Addition to Open-Source Licensing for Improving Freedom of Use
 
 Short paper
 
@@ -26,7 +25,7 @@ that free software remains free.
 
 Keywords: open source, free software, FOSS, licensing terms, liberty, GNU GPL
 
-1 Introduction
+# 1 Introduction
 
 1.1 Free/Libre Open Source Software
 
@@ -120,7 +119,7 @@ it. After all, the idea goes, any unwanted limitations in the software can be ch
 removed by licensees. But it can be argued that this way of securing freedom of usage
 is not strong enough to guarantee freedom 0 for everyone.
 
-2 Missing dimension of securing user freedom to run software
+# 2 Missing dimension of securing user freedom to run software
 
 2.1 User blocking is arguably allowed in open source software
 
@@ -259,7 +258,7 @@ between authors, contributors and the public, granting some freedom away from au
 and contributors in favor of the public. I’m not arguing that this should happen instead
 of what e.g. GPLv3 does — I’m only arguing it should be an explicitly stated option.
 
-3 Proposed additions, by example of GPLv3
+# 3 Proposed additions, by example of GPLv3
 
 First proposed addition to GNU GPLv3 Chapter 5. Conveying Modified Source
 Versions.
@@ -290,7 +289,7 @@ better to keep total freedom for developers when it comes to the source code, an
 include this addition or allow distribution as long as there is also a version available
 without restrictions.
 
-4 Thoughts
+# 4 Thoughts
 
 4.1 Would a license with the proposed changes still be open source?
 
@@ -396,7 +395,7 @@ restrict the use of your software by code, choose a license that clearly allows 
 restrictions; if you wish for your program to be open and freely usable, choose a license
 that disallows restricting methods.
 
-5 Conclusion
+# 5 Conclusion
 
 This paper identified user freedom to run a software as they wish as a dimension of open
 source licensing that has so far been left undefined in commonly used OS licenses. This
@@ -417,7 +416,7 @@ this paper, licensees could choose between licenses based on their own wishes, a
 contributors using freedom 0 securing licenses could be secure in the knowledge that
 the project they are working on will stay free.
 
-References
+# References
 
 Austin, J. (1885). Lectures on jurisprudence, or, The philosophy of positive law. John
 Murray.

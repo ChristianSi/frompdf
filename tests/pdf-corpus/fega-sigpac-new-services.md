@@ -13,9 +13,7 @@ SECRETARIA GENERAL
 > SUBDIRECCIÓN GENERAL
 > DE AYUDAS DIRECTAS
 
-PUBLICACIÓN DE NUEVOS SERVICIOS SIGPAC DE
-CONSULTA Y DIVULGACIÓN DE DATOS DEL SISTEMA
-INTEGRADO DE GESTIÓN Y CONTROL (SIGC)
+# PUBLICACIÓN DE NUEVOS SERVICIOS SIGPAC DE CONSULTA Y DIVULGACIÓN DE DATOS DEL SISTEMA INTEGRADO DE GESTIÓN Y CONTROL (SIGC)
 
 El SIGPAC (Sistema de Información Geográfica de Parcelas Agrícolas) es el
 sistema base y fundamental para la solicitud de todas las ayudas por superficie
@@ -66,7 +64,7 @@ las capas vectoriales publicadas en el Visor SIGPAC nacional,
 continuándose hoy día los trabajos para aumentar la visualización y obtención
 de información del SIGC.
 
-Catálogo de Servicios SIGPAC alojados en la nube: sigpac-hubcloud
+### Catálogo de Servicios SIGPAC alojados en la nube: sigpac-hubcloud
 
 Entre los diversos proyectos del FEGA, en junio de 2024 se publicó el Catálogo
 de Servicios SIGPAC: https://sigpac-hubcloud.es/, al cual se accede desde
@@ -180,9 +178,9 @@ divulgación y reutilización (o redistribución) de la información.
 
 
 
-Nuevos medios SIGPAC de divulgación de datos SIGC
+## Nuevos medios SIGPAC de divulgación de datos SIGC
 
-1. Servicio de Teselas Vectoriales (MVT) de SIGPAC
+## 1. Servicio de Teselas Vectoriales (MVT) de SIGPAC
 
 El Servicio MVT lanzado en 2024 se actualiza con la entrada en vigor de la
 campaña vigente en febrero de 2025, empezando a proporcionar datos de
@@ -201,7 +199,7 @@ datos.
 > [parametro]@3857@geojson/{z}/{x}/{y}.geojson para visualizar los datos
 > completos de la campaña anterior.
 
-2. WMS – Web Map Service de SIGPAC
+## 2. WMS – Web Map Service de SIGPAC
 
 Se trata de un servicio WMS (Web Map Service), conforme con la Directiva
 INSPIRE y la UNE-EN ISO 19128:2009, que permite acceder a información
@@ -231,7 +229,7 @@ En Ejemplos del Servicio WMS se muestran algunos usos de este servicio.
 
 Ejemplo de Visualización de recintos mediante WMS en QGIS
 
-3. Servicio de Consultas de SIGPAC
+## 3. Servicio de Consultas de SIGPAC
 
 Este servicio permite acceder a las propiedades de un recinto de forma
 estructurada (al igual que en el Visor SIGPAC se pueden consultar dichas
@@ -264,7 +262,7 @@ hubcloud.es/servicioconsultassigpac/query/recinfo/6/60/0/0/41/126/1.json
 
 Ejemplo de Respuesta a la consulta de propiedades de un recinto
 
-4. Servicio OGC API de SIGPAC
+## 4. Servicio OGC API de SIGPAC
 
 El Reglamento de Ejecución 2023/138 establece, para la categoría de datos
 Geoespaciales, que los conjuntos de datos de alto valor se pondrán a disposición
@@ -291,7 +289,7 @@ algunos usos de este servicio.
 Ejemplo de Visualización de recintos y elementos del paisaje mediante OGC API
 en QGIS
 
-5. Servicio de Listas de Códigos SIGPAC
+## 5. Servicio de Listas de Códigos SIGPAC
 
 Este servicio permite acceder a las listas controladas de códigos oficiales del
 SIGPAC. Devuelve el listado de valores posibles para un concepto concreto (por
@@ -329,7 +327,7 @@ EJEMPLO: https://sigpac-hubcloud.es/codigossigpac/cod_aprovechamiento.json
 > Ejemplo de Respuesta a la consulta de listado de códigos de tipo de
 > aprovechamiento
 
-6. Servicio de Salidas Gráficas de SIGPAC
+## 6. Servicio de Salidas Gráficas de SIGPAC
 
 Este servicio proporciona salidas gráficas en formato PDF con información
 gráfica y alfanumérica de Recintos de la campaña PAC vigente y del Cultivo
@@ -592,7 +590,7 @@ Servicio Ventajas Limitaciones Propuestas de uso
 > Gráficas
 > SIGPAC
 
-Información Histórica del SIGC
+## Información Histórica del SIGC
 
 Finalmente, se comunica que en 2024 el FEGA inició el proyecto SIGPAC de
 recuperación y adaptación de la información INSPIRE relativa al histórico del

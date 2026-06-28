@@ -1,13 +1,13 @@
 RESEARCH ARTICLE
 
-Espaçologia: filosofias na
+# Espaçologia: filosofias na
 
 REVISTA CIENTÍFICA INTER E
 TRANSDISCIPLINAR
 
-totalidade do espaço
+# totalidade do espaço
 
-Spaceology:Philosophies in the Totality of Space
+## Spaceology:Philosophies in the Totality of Space
 
 Abstract.Thought shapes space. Thus, the first Western
 philosophies hid the notion of space, with the invisibility of a
@@ -45,7 +45,7 @@ reproduction in any medium
 
 Palavras-chave.Espaço. Lugar. Filosofia. Geografias. Totalidades.
 
-1. Abertura do pensar
+### 1. Abertura do pensar
 
 > A Natureza ama esconder-se
 > Heráclito de Éfeso (550-480 a.C.)
@@ -95,7 +95,7 @@ Por fim, o espaço é dizível no próprio de seu pensamento. Convém destacar, 
 sujeito de novas emergências do pensar e desdobramentos , escalas em todos âmbitos das
 formas de conhecimento habitadas pelo espaço enquanto ponto de partida.
 
-2. A posição das ideias: o filósofo no espaço
+### 2. A posição das ideias: o filósofo no espaço
 
 Origami é dobra, desdobramento e modelamento espacial na arquitetura da superfície da
 disponibilidade das coisas em trânsito. Assim, o pensamento filosófico modelou
@@ -645,7 +645,7 @@ vivemos num mundo de filosofias que criam espaços visualizados na cabeça dos f
 que impõem gramáticas repetidas e fórmulas hipotéticas e não aplicáveis em mundos em
 colapso temporal no curso do espaço societário.
 
-3. Os espaçólogos e a totalidade
+### 3. Os espaçólogos e a totalidade
 
 Os filósofos da totalidade, ao pensarem a condição da physis (natureza), evidenciavam que
 “a natureza ama ocultar-se”, como aponta o filósofo Heráclito ao mostrar os regimes de
@@ -690,7 +690,7 @@ compreensão do uso do espaço. Diferentemente da tradição demarcada por posi�
 dogmáticas do pensar o “espaço”, ele foi tratado por diversos pensadores nos apontando
 sua importância habitada pelo pensamento.
 
-4. Os currículos espaciais
+### 4. Os currículos espaciais
 
 A palavra curriculum oriunda do latim românico ibérico ocidental sugere o significado de
 corrida, percurso, movimento, lugar onde se corre. Portanto, o espaço não é o ponto inicial
@@ -727,7 +727,7 @@ globalitarismos, já evidenciados pelo Filósofo Negro professor Doutor Milton S
 Mais profundamente, voltando nossa a premissa convidativa: o pensamento modela o
 espaço, logo é necessário o enfrentamento das ideias inacabadas.
 
-Referências Bibliográficas
+### Referências Bibliográficas
 
 BACHELARD, Gaston. La poética delespacio. Primeraedición em español. (Traducción de
 Ernestina de Champourcin). México-Buenos Aires: Fondo de Cultura Económica, 1965.

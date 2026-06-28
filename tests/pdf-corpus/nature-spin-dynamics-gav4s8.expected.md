@@ -1,12 +1,8 @@
-Slowdown of photoexcited spin dynamics in the
-non-collinear spin-ordered phases in skyrmion host
-GaV4S8
+# Slowdown of photoexcited spin dynamics in the non-collinear spin-ordered phases in skyrmion host GaV4S8
 
-Fumiya Sekiguchi, Kestutis Budzinauskas, Prashant Padmanabhan,
-Rolf B. Versteeg, Vladimir Tsurkan, István Kézsmárki, Francesco
-Foggetti, Sergey Artyukhin, Paul H. M. van Loosdrecht
+# Fumiya Sekiguchi, Kestutis Budzinauskas, Prashant Padmanabhan, Rolf B. Versteeg, Vladimir Tsurkan, István Kézsmárki, Francesco Foggetti, Sergey Artyukhin, Paul H. M. van Loosdrecht
 
-Angaben zur Veröffentlichung / Publication details:
+# Angaben zur Veröffentlichung / Publication details:
 
 Sekiguchi, Fumiya, Kestutis Budzinauskas, Prashant Padmanabhan, Rolf B.
 Versteeg, Vladimir Tsurkan, István Kézsmárki, Francesco Foggetti, Sergey
@@ -15,16 +11,13 @@ dynamics in the non-collinear spin-ordered phases in skyrmion host GaV4S8.”
 Nature Communications 13 (1): 3212.
 https://doi.org/10.1038/s41467-022-30829-z.
 
-Nutzungsbedingungen / Terms of use:
+# Nutzungsbedingungen / Terms of use:
 
-CC BY 4.0
+# CC BY 4.0
 
-Dieses Dokument wird unter folgenden Bedingungen zur Verfügung gestellt: / This document is made available under
-these conditions:
+# Dieses Dokument wird unter folgenden Bedingungen zur Verfügung gestellt: / This document is made available under these conditions:
 
-CC-BY 4.0: Creative Commons: Namensnennung
-Weitere Informationen finden Sie unter: / For more information see:
-https://creativecommons.org/licenses/by/4.0/deed.de
+# CC-BY 4.0: Creative Commons: Namensnennung Weitere Informationen finden Sie unter: / For more information see: https://creativecommons.org/licenses/by/4.0/deed.de
 
 ARTICLE
 
