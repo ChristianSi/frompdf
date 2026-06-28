@@ -12,6 +12,9 @@ from pdftext.extraction import dictionary_output
 from pdftext.schema import Line as PdfTextLine
 from pdftext.schema import Page
 
+# Require clear predominance before normalizing font-weight data to mostly_bold.
+BOLD_TEXT_RATIO_THRESHOLD = 0.75
+
 
 @dataclass
 class Line:
@@ -124,7 +127,7 @@ def dominant_font_size(line_dict: PdfTextLine) -> float | None:
 
 
 def is_mostly_bold(line_dict: PdfTextLine) -> bool:
-    """Return whether most visible text in a line uses a bold font weight."""
+    """Return whether at least 75% of visible text in a line uses a bold font weight."""
     bold_weight = 0
     total_weight = 0
 
@@ -143,7 +146,7 @@ def is_mostly_bold(line_dict: PdfTextLine) -> bool:
         if font_weight >= 600:
             bold_weight += weight
 
-    return total_weight > 0 and bold_weight / total_weight >= 0.5
+    return total_weight > 0 and bold_weight / total_weight >= BOLD_TEXT_RATIO_THRESHOLD
 
 
 def iter_lines(page_list: Sequence[Page]) -> list[Line]:
@@ -554,7 +557,7 @@ def block_font_size(line_list: list[Line]) -> float | None:
 
 
 def block_mostly_bold(line_list: list[Line]) -> bool:
-    """Return whether most visible text in a Markdown block is bold."""
+    """Return whether at least 75% of visible text in a Markdown block is bold."""
     bold_weight = 0
     total_weight = 0
 
@@ -567,7 +570,7 @@ def block_mostly_bold(line_list: list[Line]) -> bool:
         if line_obj.mostly_bold:
             bold_weight += weight
 
-    return total_weight > 0 and bold_weight / total_weight >= 0.5
+    return total_weight > 0 and bold_weight / total_weight >= BOLD_TEXT_RATIO_THRESHOLD
 
 
 def build_body_lefts_by_page(
