@@ -1,545 +1,545 @@
-text,page_no,block_no,line_no_on_page,font_size,x1,y1,x2,y2,rel_x,rel_y
-Interaktives Anpassungsfähiges E-Learning-System Im,1,1,1,17.9,70.1,71.6,539.6,89.6,,
-Bereich Datenbanken,1,2,2,17.9,213.3,91.5,396.4,109.5,143.2,19.9
-Fabian Keller,1,3,3,12.0,123.9,137.4,193.3,149.3,-89.3,45.9
-Hochschule Harz,1,3,4,10.0,120.7,149.4,196.5,159.4,-3.2,12.0
-Friedrichstraße 57-59,1,3,5,10.0,111.1,159.8,206.1,169.8,-9.6,10.5
-38855 Wernigerode,1,3,6,10.0,114.9,170.3,202.3,180.3,3.8,10.5
-fkeller@hs-harz.de,1,3,7,12.0,108.5,180.8,208.7,192.7,-6.4,10.5
-Pia-Katharina Habekost,1,4,8,12.0,241.8,137.4,368.0,149.3,133.3,-43.4
-Hochschule Harz,1,4,9,10.0,266.9,149.4,342.8,159.4,25.2,12.0
-Friedrichstraße 57-59,1,4,10,10.0,257.4,159.8,352.3,169.8,-9.6,10.5
-38855 Wernigerode,1,4,11,10.0,261.1,170.3,348.6,180.3,3.8,10.5
-u36775@hs-harz.de,1,4,12,12.0,250.6,180.8,359.1,192.7,-10.5,10.5
-Kerstin Schneider,1,5,13,12.0,404.2,137.4,498.0,149.3,153.6,-43.4
-Hochschule Harz,1,5,14,10.0,413.2,149.4,489.0,159.4,9.0,12.0
-Friedrichstraße 57-59,1,5,15,10.0,403.6,159.8,498.6,169.8,-9.6,10.5
-38855 Wernigerode,1,5,16,10.0,407.4,170.3,494.8,180.3,3.8,10.5
-kschneider@hs-harz.de,1,5,17,12.0,387.9,180.8,514.3,192.7,-19.5,10.5
-ABSTRACT,1,6,18,12.0,53.8,218.2,118.2,230.1,-334.1,37.4
-Das E-Learning-System ALEA [4] wird im Bereich Da-,1,7,19,9.0,325.8,220.4,555.8,229.3,272.0,2.2
-"tenbanken entwickelt, weiterentwickelt und eingesetzt. Es",1,7,20,9.0,316.8,230.8,555.7,239.8,-9.0,10.5
-"besteht aus verschiedenen Komponenten, die unterschied-",1,7,21,9.0,316.8,241.3,555.8,250.2,0.0,10.5
-liche Teilgebiete adressieren. Diese sollen weitestgehend mit,1,7,22,9.0,316.8,251.7,555.7,260.7,0.0,10.5
-den Lernenden interagieren und Hilfestellungen bereitstel-,1,7,23,9.0,316.8,262.2,555.8,271.2,0.0,10.5
-len. Die typischerweise in einfuhrenden Datenbanklehrver- ¨,1,7,24,9.0,316.8,272.7,555.9,282.0,0.0,10.5
-anstaltungen enthaltenen Aufgaben in den Bereichen ER-,1,7,25,9.0,316.8,283.1,555.8,292.1,-0.0,10.5
-to-Relational-Mapping und Normalisierung sind in der Re-,1,7,26,9.0,316.8,293.6,555.7,302.5,0.0,10.5
-gel sehr aufwendig zu korrigieren. Fur die Lernenden ist ein ¨,1,7,27,9.0,316.8,304.0,555.9,313.4,0.0,10.5
-Uben dieser Aufgaben jedoch sehr hilfreich. F ¨ ur das ALEA- ¨,1,7,28,9.0,316.8,312.6,555.9,323.9,0.0,8.6
-System wurden daher interaktive Komponenten fur die bei- ¨,1,7,29,9.0,316.8,325.0,555.9,334.3,-0.0,12.3
-den Bereiche entwickelt und genutzt.,1,7,30,9.0,316.8,335.4,465.2,344.4,0.0,10.5
-E-Learning-Systeme finden immer weitere Verbreitung in,1,8,31,9.0,53.8,234.8,292.8,243.8,-263.0,-100.6
-den verschiedensten Lehrbereichen. Auch im Bereich Da-,1,8,32,9.0,53.8,245.3,292.8,254.2,0.0,10.5
-tenbanken gibt es eine Vielzahl von Anwendungsgebieten.,1,8,33,9.0,53.8,255.7,292.8,264.7,0.0,10.5
-"Es werden zwei Komponenten vorgestellt, die bei der Leh-",1,8,34,9.0,53.8,266.2,292.8,275.1,0.0,10.5
-re im Rahmen von Aufgaben bezogen auf ER-to-Relational-,1,8,35,9.0,53.8,276.6,292.7,285.6,0.0,10.5
-Mapping und Normalisierung unterstutzen sollen. Vielf ¨ ¨altige,1,8,36,9.0,53.8,287.1,292.9,296.5,0.0,10.5
-Interaktionen und Hilfestellungen bspw. Empfehlungen von,1,8,37,9.0,53.8,297.6,292.8,306.5,0.0,10.5
-multimedialen digitalen Elementen werden zur Verbesserung,1,8,38,9.0,53.8,308.0,292.8,317.0,0.0,10.5
-des Lernprozesses integriert.,1,8,39,9.0,53.8,318.5,167.4,327.4,0.0,10.5
-Keywords,1,9,40,12.0,53.8,342.8,105.2,354.8,0.0,24.3
-Diese Komponenten und deren vielf¨altige Interaktions-,1,10,41,9.0,325.8,345.9,555.8,355.3,272.0,3.1
-m¨oglichkeiten werden im Folgenden thematisiert. Grund-,1,10,42,9.0,316.8,356.3,555.8,365.7,-9.0,10.5
-"E-Learning-Systeme, ER-to-Relational-Mapping, SQL-DDL,",1,11,43,9.0,53.8,359.4,294.2,368.4,-263.0,3.1
-"Normalisierung, Recommender-Systeme",1,11,44,9.0,53.8,369.9,213.6,378.8,0.0,10.5
-s¨atzliche M¨oglichkeiten zur Interaktion des E-Learning-Systems,1,12,45,9.0,316.8,366.8,567.5,376.2,263.0,-3.1
-werden hierbei veranschaulicht.,1,12,46,9.0,316.8,377.3,442.9,386.2,0.0,10.5
-Nach einer kurzen Einfuhrung in die grundlegenden Aspek- ¨,1,13,47,9.0,325.8,387.7,557.9,397.1,9.0,10.5
-te des Systems wird auf die Mapping-Aufgaben aus dem,1,13,48,9.0,316.8,398.2,555.8,407.1,-9.0,10.5
-Bereich ER-to-Relational-Mapping eingegangen. Die vielf¨al-,1,13,49,9.0,316.8,408.6,555.9,418.0,0.0,10.5
-tigen Arten der Interaktionen bei der Bearbeitung werden,1,13,50,9.0,316.8,419.1,555.8,428.1,0.0,10.5
-erl¨autert. Die Bearbeitung der Normalisierungsaufgaben er-,1,13,51,9.0,316.8,429.6,555.8,438.9,0.0,10.5
-fordert erg¨anzende Interaktionsm¨oglichkeiten und Ansich-,1,13,52,9.0,316.8,440.0,555.8,449.4,0.0,10.5
-"ten, die im folgenden Kapitel beschrieben werden. Schließ-",1,13,53,9.0,316.8,450.5,555.8,459.5,0.0,10.5
-lich werden die Ergebnisse zusammengefasst und ein Aus-,1,13,54,9.0,316.8,460.9,555.8,469.9,0.0,10.5
-blick gegeben.,1,13,55,9.0,316.8,471.4,373.3,480.4,0.0,10.5
-1. EINLEITUNG,1,14,56,12.0,53.8,394.2,151.1,406.1,-263.0,-77.2
-Der Einsatz von E-Learning-Systemen wird zunehmend,1,15,57,9.0,62.8,409.3,292.8,418.3,9.0,15.1
-bedeutsamer. Durch Erweiterungen der Interaktions- und,1,15,58,9.0,53.8,419.8,292.8,428.7,-9.0,10.5
-Feedbackm¨oglichkeiten kann die Nutzlichkeit der E-Learning- ¨,1,16,59,9.0,53.8,430.2,296.0,439.6,0.0,10.5
-Systeme verbessert werden und den Lernenden nicht nur,1,16,60,9.0,53.8,440.7,292.8,449.7,0.0,10.5
-in Selbstlernphasen Hilfestellungen und Unterstutzungsm ¨ ¨og-,1,16,61,9.0,53.8,451.1,292.9,460.5,0.0,10.5
-lichkeiten im Lernprozess zur Verfugung stellen. Im Kon- ¨,1,16,62,9.0,53.8,461.6,292.8,471.0,0.0,10.5
-text von Leistungsermittlungen k¨onnen Hilfestellungen ein-,1,16,63,9.0,53.8,472.1,292.8,481.4,0.0,10.5
-"geschr¨ankt werden, trotzdem sollen die Korrektur- und Ab-",1,16,64,9.0,53.8,482.5,292.8,491.9,0.0,10.5
-fragem¨oglichkeiten erleichtert und verbessert sein.,1,16,65,9.0,53.8,493.0,254.7,502.4,0.0,10.5
-2. GRUNDLEGENDE ASPEKTE,1,17,66,12.0,316.8,495.6,498.5,507.5,263.0,2.6
-Das Konzept ER-to-Relational-Mapping und die Norma-,1,18,67,9.0,62.8,503.4,292.7,512.4,-254.0,7.9
-lisierung eines Relationenmodells bzw. relationalen Daten-,1,18,68,9.0,53.8,513.9,292.7,522.9,-9.0,10.5
-Das ALEA-System ist ein datenbankbasiertes E-Learning-,1,19,69,9.0,325.8,510.7,555.7,519.7,272.0,-3.2
-System fur Datenbanken und besteht aus verschiedenen Kom- ¨,1,19,70,9.0,316.8,521.2,559.8,530.6,-9.0,10.5
-ponenten fur unterschiedliche Bereiche. ¨,1,19,71,9.0,316.8,531.6,474.5,541.0,-0.0,10.5
-"modells sind zwei grunds¨atzliche Gebiete, die in einfuhren- ¨",1,20,72,9.0,53.8,524.4,292.9,533.7,-263.0,-7.3
-den Lehrveranstaltung im Bereich Datenbanken behandelt,1,20,73,9.0,53.8,534.8,292.8,543.8,0.0,10.5
-werden. In den letzten Jahren wurden verst¨arkt E-Learning-,1,20,74,9.0,53.8,545.3,292.8,554.7,0.0,10.5
-"Syteme eingesetzt, sodass auch diese Gebiete von diesen Sys-",1,20,75,9.0,53.8,555.8,292.7,564.7,0.0,10.5
-temen unterstutzt werden sollten. Das E-Learning Daten- ¨,1,20,76,9.0,53.8,566.2,292.8,575.6,0.0,10.5
-bank Portal edb-Portal der TH K¨oln [3] ist ein umfangrei-,1,20,77,9.0,53.8,576.7,292.8,586.1,0.0,10.5
-ches E-Learning-Angebot fur den Bereich Datenbanken und ¨,1,20,78,9.0,53.8,587.1,292.9,596.5,0.0,10.5
-enth¨alt auch einen ER-Trainer. An der TU Munchen gibt es ¨,1,20,79,9.0,53.8,597.6,292.9,607.0,0.0,10.5
-den DB-Normalizer [1].,1,20,80,9.0,53.8,608.1,147.3,617.0,0.0,10.5
-Das System wurde haupts¨achlich mit Java und JavaS-,1,21,81,9.0,325.8,542.1,555.8,551.5,272.0,-66.0
-cript entwickelt. Als Entwurfsmuster wurde MVC2 verwen-,1,21,82,9.0,316.8,552.6,555.8,561.5,-9.0,10.5
-"det, das heißt, es gibt eine logische Trennung zwischen Logik",1,21,83,9.0,316.8,563.0,555.7,572.0,0.0,10.5
-und Anzeige. Die Anzeige basiert auf HTML5 in Kombina-,1,21,84,9.0,316.8,573.5,555.8,582.4,0.0,10.5
-"tion mit CSS und wurde mit JavaScript erweitert, um die",1,21,85,9.0,316.8,583.9,555.8,592.9,0.0,10.5
-Interaktionsm¨oglichkeiten zu erh¨ohen und verbessern. Mit-,1,21,86,9.0,316.8,594.4,555.9,603.8,0.0,10.5
-hilfe von AJAX werden nach Bedarf Daten an den Server,1,21,87,9.0,316.8,604.9,555.8,613.8,0.0,10.5
-gesendet ohne dass die Webseite neu geladen wird. Zur Ver-,1,21,88,9.0,316.8,615.3,555.8,624.3,0.0,10.5
-"waltung der Information uber Aufgaben, L ¨ ¨osungen, Lernen-",1,21,89,9.0,316.8,625.8,555.9,635.2,0.0,10.5
-de usw. werden Datenbanksysteme eingebunden.,1,21,90,9.0,316.8,636.2,512.7,645.2,-0.0,10.5
-3. AUFGABENTYP ER-TO-RELATIONAL-,1,22,91,12.0,316.8,660.4,555.9,672.4,0.0,24.2
-MAPPING,1,22,92,12.0,337.7,674.4,394.8,686.3,20.9,13.9
-32nd GI-Workshop on Foundations of Databases (Grundlagen von Daten-,1,23,93,8.0,53.8,684.2,292.9,694.6,-283.9,9.9
-"banken), September 01-03, 2021, Munich, Germany.",1,23,94,8.0,53.8,695.6,221.8,703.6,0.0,11.4
-Fur die Thematik des ER-to-Relational-Mapping ist ein ¨,1,24,95,9.0,325.8,689.5,555.7,698.9,272.0,-6.1
-"Fragentyp vorgesehen, der das Thema der Erstellung von",1,24,96,9.0,316.8,700.0,555.8,708.9,-9.0,10.5
-relationalen Datenmodellen beinhaltet auf Basis vorgegebe-,1,24,97,9.0,316.8,710.4,555.7,719.4,0.0,10.5
-Copyright © 2021 for this paper by its authors. Use permitted under Crea-,1,25,98,8.0,53.8,704.0,292.9,712.9,-263.0,-6.4
-tive Commons License Attribution 4.0 International (CC BY 4.0).,1,25,99,8.0,53.8,713.6,263.9,721.5,0.0,9.6
-ner ER-Modelle und Anforderungen. Aufgaben dieses Typs,2,1,1,9.0,53.8,56.9,292.8,65.8,,
-beinhalten die Darstellung eines konzeptuellen Datenmo-,2,1,2,9.0,53.8,67.3,292.8,76.3,0.0,10.5
-"dells, welche als Bild vorliegt, bspw. ein gezeichnetes ERM",2,1,3,9.0,53.8,77.8,292.7,86.8,0.0,10.5
-in Chen-Notation [2]. Dieses soll von den Lernenden auf ein,2,1,4,9.0,53.8,88.2,292.8,97.2,0.0,10.5
-"logisches Datenmodell, hier ein Relationenmodell, abgebil-",2,1,5,9.0,53.8,98.7,292.7,107.7,0.0,10.5
-det werden. Dazu sollen die Lernenden die entsprechenden,2,1,6,9.0,53.8,109.2,292.8,118.1,0.0,10.5
-Tabellen und Constraints definieren. Die relevanten Cons-,2,1,7,9.0,53.8,119.6,292.8,128.6,0.0,10.5
-"traints sind Not Null, Unique, Primary Key und Foreign",2,1,8,9.0,53.8,130.1,292.8,139.1,0.0,10.5
-Key.,2,1,9,9.0,53.8,140.5,71.7,149.5,0.0,10.5
-Figure 2: Beispiel von Constraints,2,2,10,9.0,369.1,130.9,503.5,139.9,315.3,-9.6
-Die Mapping-Aufgaben sind darauf ausgelegt den Lernen-,2,3,11,9.0,62.8,151.0,292.8,160.0,-306.3,20.1
-den visuell und interaktiv Wissen zu vermitteln. In diesem,2,3,12,9.0,53.8,161.5,292.8,170.4,-9.0,10.5
-Fall fungiert das System als sog. Composer zur Erstellung,2,3,13,9.0,53.8,171.9,292.7,180.9,0.0,10.5
-lisiert werden. Diese beziehen sich auf grunds¨atzliche Struk-,2,4,14,9.0,316.8,163.5,555.9,172.9,263.0,-8.4
-turen und Regeln bei den Tabellendefinitionen. Weiterhin,2,4,15,9.0,316.8,174.0,555.8,182.9,0.0,10.5
-kann der ¨aquivalente DDL-Code aus den entstandenen Re-,2,4,16,9.0,316.8,184.4,555.8,193.8,0.0,10.5
-"lationen erzeugt werden, um eine Prufung auf dem Daten- ¨",2,4,17,9.0,316.8,194.9,555.9,204.3,0.0,10.5
-bankserver auszufuhren. Dar ¨ uber hinaus k ¨ ¨onnen durch die,2,4,18,9.0,316.8,205.4,555.9,214.7,0.0,10.5
-in der Datenbank zu der Aufgabe hinterlegten Informatio-,2,4,19,9.0,316.8,215.8,555.8,224.8,0.0,10.5
-"nen weitere Prufungen durchgef ¨ uhrt werden, die sich dar- ¨",2,4,20,9.0,316.8,226.3,555.9,235.7,0.0,10.5
-uber hinaus speziell auf die Aufgabe und deren Anforde- ¨,2,4,21,9.0,316.8,236.7,555.8,246.1,-0.0,10.5
-rungen beziehen. Die Korrektheit einer L¨osung kann zwar,2,4,22,9.0,316.8,247.2,555.9,256.6,0.0,10.5
-"generell nicht automatisch entschieden werden, aber Fehler",2,4,23,9.0,316.8,257.7,555.8,266.6,0.0,10.5
-k¨onnen weitestgehend erkannt werden. Die Gestaltung der,2,4,24,9.0,316.8,268.1,555.8,277.5,0.0,10.5
-Aufgaben kann dies erleichtern.,2,4,25,9.0,316.8,278.6,443.7,287.5,0.0,10.5
-der notwendigen Tabellen. In diesen k¨onnen durch Schalt-,2,5,26,9.0,53.8,182.4,292.9,191.8,-263.0,-96.2
-"fl¨achen Tabellenbezeichnung, Spalten und Constraints hin-",2,5,27,9.0,53.8,192.9,292.8,202.2,0.0,10.5
-zugefugt werden. ¨,2,5,28,9.0,53.8,203.3,121.8,212.7,0.0,10.5
-3.1 Bearbeitung der Aufgaben,2,6,29,12.0,53.8,220.2,216.3,232.1,-0.0,16.9
-Zur L¨osung der Mapping-Aufgaben gibt es fur jede Akti- ¨,2,7,30,9.0,62.8,235.3,292.9,244.7,9.0,15.1
-on eine entsprechende Schaltfl¨ache. Das System erlaubt es,2,7,31,9.0,53.8,245.8,292.8,255.1,-9.0,10.5
-den Lernenden nicht mehrere Aktionen parallel auszufuhren. ¨,2,7,32,9.0,53.8,256.2,292.9,265.6,0.0,10.5
-"Erst nachdem eine Aktion abgeschlossen ist, kann eine neue",2,7,33,9.0,53.8,266.7,292.7,275.6,0.0,10.5
-gestartet werden. Fur diesen Zweck werden alle anderen Ak- ¨,2,7,34,9.0,53.8,277.1,292.8,286.5,0.0,10.5
-tionen durch das Deaktivieren der entsprechenden Buttons,2,7,35,9.0,53.8,287.6,292.8,296.6,-0.0,10.5
-unterbunden (siehe Abbildung 1). Wird zum Beispiel eine,2,7,36,9.0,53.8,298.1,292.8,307.0,0.0,10.5
-"neue Tabelle definiert, so muss fur die Tabelle ein Name ¨",2,7,37,9.0,53.8,308.5,292.9,317.9,0.0,10.5
-"eingegeben werden, bevor Spalten hinzugefugt werden k ¨ ¨on-",2,7,38,9.0,53.8,319.0,292.9,328.4,0.0,10.5
-nen. Wiederum muss mindestens eine Spalte zu einer Tabel-,2,7,39,9.0,53.8,329.4,292.8,338.4,0.0,10.5
-le geh¨oren damit Constraints erzeugt werden k¨onnen (siehe,2,7,40,9.0,53.8,339.9,292.9,349.3,0.0,10.5
-Abbildung 2).,2,7,41,9.0,53.8,350.4,109.7,359.3,0.0,10.5
-Bereits bei der Eingabe sind ausgew¨ahlte Strukturen und,2,8,42,9.0,325.8,289.0,555.9,298.4,272.0,-61.3
-Regeln bezogen auf die Tabellen und Constraints einzuhal-,2,8,43,9.0,316.8,299.5,555.8,308.5,-9.0,10.5
-"ten, sodass diese idealerweise von den Studierenden verin-",2,8,44,9.0,316.8,310.0,555.8,318.9,0.0,10.5
-nerlicht werden.,2,8,45,9.0,316.8,320.4,381.0,329.4,0.0,10.5
-Der Composer fungiert grundlegend als dynamisch erweiter-,2,9,46,9.0,325.8,330.9,561.8,339.9,9.0,10.5
-bares HTML-Formular. Die durch die Lernenden ausgel¨os-,2,9,47,9.0,316.8,341.3,555.9,350.7,-9.0,10.5
-ten Aktionen durchlaufen in dieser Phase nicht jedes Mal,2,9,48,9.0,316.8,351.8,555.8,360.8,-0.0,10.5
-"eine Validierungsroutine auf dem Server, wodurch Ressour-",2,9,49,9.0,316.8,362.3,555.8,371.2,0.0,10.5
-cen gespart werden.,2,9,50,9.0,316.8,372.7,396.4,381.7,0.0,10.5
-Das konzeptuelle Datenmodell ist in den Aufgabenstellun-,2,10,51,9.0,62.8,360.8,292.7,369.8,-254.0,-11.9
-gen als Bild enthalten. Dieses kann im oberen Bereich des,2,10,52,9.0,53.8,371.3,292.8,380.3,-9.0,10.5
-Systems eingeblendet werden. Damit die Lernenden zu je-,2,10,53,9.0,53.8,381.7,292.8,390.7,0.0,10.5
-der Zeit einen freien Blick auf das abzubildende ER-Modell,2,10,54,9.0,53.8,392.2,292.8,401.2,0.0,10.5
-"haben, l¨asst sich dieses durch einen Klick in einem frei be-",2,10,55,9.0,53.8,402.7,292.8,412.0,0.0,10.5
-weglichen modalen Fenster oder einem neuen Tab ¨offnen.,2,10,56,9.0,53.8,413.1,292.9,422.5,0.0,10.5
-So besteht die M¨oglichkeit auch bei gr¨oßeren Datenmodel-,2,10,57,9.0,53.8,423.6,292.8,433.0,0.0,10.5
-"len, bei deren Verarbeitung vermehrt gescrollt werden muss,",2,10,58,9.0,53.8,434.0,292.8,443.0,-0.0,10.5
-den Uberblick zu behalten. Zudem kann die Gr ¨ ¨oße des ab-,2,10,59,9.0,53.8,442.7,292.9,453.9,0.0,8.6
-gekoppelten Fensters durch Ziehen mit der Maus ver¨andert,2,10,60,9.0,53.8,455.0,292.9,464.3,0.0,12.3
-werden.,2,10,61,9.0,53.8,465.4,84.8,474.4,0.0,10.5
-Nicht alle logischen Zusammenh¨ange mussen durch das ¨,2,11,62,9.0,325.8,383.2,555.9,392.6,272.0,-82.2
-eingebundene Datenbanksystem gepruft werden. Ein Bei- ¨,2,11,63,9.0,316.8,393.6,555.9,403.0,-9.0,10.5
-spiel fur diese Art der Pr ¨ ufung ist die L ¨ ¨oschung von Spal-,2,11,64,9.0,316.8,404.1,555.9,413.5,0.0,10.5
-ten. Durch eine Routine innerhalb der JavaScript-Skripte,2,11,65,9.0,316.8,414.6,555.8,423.5,-0.0,10.5
-"wird gepruft, ob die Spalte f ¨ ur Constraints der aktuellen ¨",2,11,66,9.0,316.8,425.0,555.9,434.4,0.0,10.5
-"oder anderer Tabellen genutzt wird. Ist dies der Fall, gibt",2,11,67,9.0,316.8,435.5,555.8,444.5,0.0,10.5
-das System eine Meldung aus und der L¨oschvorgang wird,2,11,68,9.0,316.8,446.0,555.9,455.3,0.0,10.5
-abgebrochen. Die Umbenennung einer Spalte wird ebenfalls,2,11,69,9.0,316.8,456.4,555.8,465.4,0.0,10.5
-durch eine JavaScript-Routine gepruft. Dieser Vorgang wird ¨,2,11,70,9.0,316.8,466.9,555.9,476.3,0.0,10.5
-jedoch innerhalb der aktuellen Tabelle zugelassen und ein,2,11,71,9.0,316.8,477.3,555.8,486.3,0.0,10.5
-"Hinweis ausgegeben der darauf hinweist, dass andere Ta-",2,11,72,9.0,316.8,487.8,555.8,496.8,0.0,10.5
-"bellen mit dieser Spalte in Zusammenhang stehen k¨onnten,",2,11,73,9.0,316.8,498.3,555.9,507.6,0.0,10.5
-sodass eine manuelle Prufung notwendig ist. Die durch die ¨,2,11,74,9.0,316.8,508.7,555.8,518.1,0.0,10.5
-Anderung des Spaltennamens notwendigen Anpassungen in- ¨,2,11,75,9.0,316.8,517.3,555.8,528.1,-0.0,8.6
-nerhalb der Tabellendefinition werden automatisch durchge-,2,11,76,9.0,316.8,529.6,555.8,538.6,0.0,12.3
-fuhrt. Da diese ¨ Anderungen die Lernenden von relevanteren ¨,2,11,77,9.0,316.8,538.2,555.9,549.5,0.0,8.6
-Aspekten ablenken wurden. ¨,2,11,78,9.0,316.8,550.6,428.1,559.9,-0.0,12.3
-Das Zulassen von Aktionen trotz Inkonsistenz kann sinn-,2,12,79,9.0,325.8,561.0,555.8,570.0,9.0,10.5
-"voll sein. Ein Beispiel ist ein Fremdschlussel-Constraint, wel- ¨",2,12,80,9.0,316.8,571.5,555.8,580.9,-9.0,10.5
-cher angelegt wird bevor die referenzierten Spalten als Kan-,2,12,81,9.0,316.8,581.9,555.8,590.9,-0.0,10.5
-didatenschlussel (Primary Key oder NOT NULL/Unique ¨,2,12,82,9.0,316.8,592.4,555.8,601.8,0.0,10.5
-Constraints) definiert wurden. Ansonsten wurden positive ¨,2,12,83,9.0,316.8,602.9,555.9,612.2,0.0,10.5
-Aktionen zu stark von erzwungenen Reihenfolgeabh¨angig-,2,12,84,9.0,316.8,613.3,555.9,622.7,0.0,10.5
-keiten gest¨ort werden. Die Lernenden k¨onnen jederzeit den,2,12,85,9.0,316.8,623.8,555.9,633.2,0.0,10.5
-dem aktuellen Zustand entsprechenden DDL-Code uber das ¨,2,12,86,9.0,316.8,634.2,555.9,643.6,0.0,10.5
-Datenbanksystem prufen lassen. F ¨ ur Leistungsbewertungen ¨,2,12,87,9.0,316.8,644.7,555.9,654.1,0.0,10.5
-kann diese M¨oglichkeit eingeschr¨ankt werden.,2,12,88,9.0,316.8,655.2,500.0,664.5,0.0,10.5
-Figure 1: Aktive Bearbeitung einer Spalte,2,13,89,9.0,90.2,633.8,256.3,642.7,-226.6,-21.4
-3.2 Prüfen der Eingaben,2,14,90,12.0,53.8,663.9,187.6,675.9,-36.4,30.2
-3.3 Reaktionen des Systems auf Eingaben,2,15,91,12.0,316.8,674.4,537.0,686.3,263.0,10.5
-Ein wichtiger Aspekt der Mapping-Aufgaben ist es die,2,16,92,9.0,62.8,679.0,292.8,688.0,-254.0,4.7
-Eingaben der Lernenden so fruh und umfangreich wie sinn- ¨,2,16,93,9.0,53.8,689.5,292.8,698.9,-9.0,10.5
-voll und m¨oglich zu prufen. Bereits bei den Eingaben werden ¨,2,16,94,9.0,53.8,700.0,292.8,709.3,-0.0,10.5
-"clientseitige Abfragen genutzt, welche durch JavaScript rea-",2,16,95,9.0,53.8,710.4,292.7,719.4,0.0,10.5
-Jede Aktion ruft eine Reaktion hervor. Wenn die Lernen-,2,17,96,9.0,325.8,689.5,555.8,698.5,272.0,-20.9
-"den als Beispiel eine Spalte umbenennen, werden die Fol-",2,17,97,9.0,316.8,700.0,555.8,708.9,-9.0,10.5
-"gen dieser Aktion in einer Meldung visuell dargestellt, da",2,17,98,9.0,316.8,710.4,555.8,719.4,0.0,10.5
-ggfs. Anpassungen aufgrund von Abh¨angigkeiten in anderen,3,1,1,9.0,53.8,56.9,292.9,66.2,,
-Tabellen durch die Lernenden notwendig werden k¨onnen.,3,1,2,9.0,53.8,67.3,292.9,76.7,0.0,10.5
-"Hierbei wird angestrebt, dass diese Meldungen motivierend",3,1,3,9.0,53.8,77.8,292.8,86.8,0.0,10.5
-und angepasst an die Sprache der Lernenden formuliert wer-,3,1,4,9.0,53.8,88.2,292.8,97.2,0.0,10.5
-den. Die Meldungstexte k¨onnen im System angepasst wer-,3,1,5,9.0,53.8,98.7,292.8,108.1,0.0,10.5
-den. Hier bieten sich weitere M¨oglichkeiten fur intelligente ¨,3,1,6,9.0,53.8,109.2,292.9,118.5,-0.0,10.5
-Empfehlungsfunktionen. Die Lernenden durfen und sollen ¨,3,1,7,9.0,53.8,119.6,292.9,129.0,-0.0,10.5
-Fehler machen aus denen sie lernen k¨onnen. Das Wissen soll,3,1,8,9.0,53.8,130.1,292.8,139.5,-0.0,10.5
-sich durch Wiederholen verfestigen.,3,1,9,9.0,53.8,140.5,196.6,149.5,0.0,10.5
-"weiterfuhrende Informationen, so k ¨ ¨onnen diese in verschie-",3,2,10,9.0,316.8,56.9,555.9,66.2,263.0,-83.7
-"denen medialen Formen, z.B. Screencasts, Podcasts, Hilfe-",3,2,11,9.0,316.8,67.3,555.7,76.3,0.0,10.5
-"texte, Hilfegrafiken, vorliegen und abgerufen werden.",3,2,12,9.0,316.8,77.8,529.3,86.8,0.0,10.5
-"Die Farbe der Icons kann, wie auch die Ansprache oder",3,3,13,9.0,325.8,88.2,555.8,97.2,9.0,10.5
-"empfohlene Medien, durch die Empfehlungsalgorithmen an-",3,3,14,9.0,316.8,98.7,555.8,107.7,-9.0,10.5
-gepasst werden.,3,3,15,9.0,316.8,109.2,380.1,118.1,0.0,10.5
-Neben diesen Hinweisen werden zudem noch Informatio-,3,4,16,9.0,325.8,119.6,555.8,128.6,9.0,10.5
-nen zum aktuellen Bearbeitungsstand der Aufgabe gegeben.,3,4,17,9.0,316.8,130.1,555.8,139.1,-9.0,10.5
-Diese Informationen finden die Lernenden unter dem Info-,3,4,18,9.0,316.8,140.5,555.8,149.5,0.0,10.5
-Icon (siehe Abbildung 5).,3,4,19,9.0,316.8,151.0,419.0,160.0,0.0,10.5
-Fur die Mapping-Aufgaben sind diese Hinweise vorteil- ¨,3,5,20,9.0,62.8,151.0,292.8,160.4,-254.0,0.0
-"haft, um die Ubersicht ¨ uber den aktuellen Bearbeitungs- ¨",3,5,21,9.0,53.8,159.6,292.8,170.8,-9.0,8.6
-stand zu erhalten. Die Hinweise zeigen m¨ogliche Komplika-,3,5,22,9.0,53.8,171.9,292.8,181.3,0.0,12.3
-tionen auf und sollen so das Verst¨andnis der Lernenden fur ¨,3,5,23,9.0,53.8,182.4,292.9,191.8,-0.0,10.5
-logische Zusammenh¨ange innerhalb des Relationenmodells,3,5,24,9.0,53.8,192.9,292.8,202.2,-0.0,10.5
-"erh¨ohen. Deswegen kann es hilfreich, dass in den Hinweisen",3,5,25,9.0,53.8,203.3,292.8,212.7,0.0,10.5
-"angezeigt wird, dass Anderungen in der aktuellen Tabelle ¨",3,5,26,9.0,53.8,211.9,292.8,222.7,0.0,8.6
-durchaus Auswirkungen auf die Constraints anderer Tabel-,3,5,27,9.0,53.8,224.2,292.8,233.2,0.0,12.3
-len haben k¨onnten. So sind die Lernenden angehalten diese,3,5,28,9.0,53.8,234.7,292.8,244.1,0.0,10.5
-aktiv anzupassen.,3,5,29,9.0,53.8,245.2,124.9,254.1,0.0,10.5
-Wenn bspw. die L¨osung bzw. die gultigen L ¨ ¨osungen der,3,6,30,9.0,325.8,161.5,555.9,170.8,272.0,-83.7
-Aufgabe eine bestimmte Anzahl an Uniques erfordern oder,3,6,31,9.0,316.8,171.9,555.8,180.9,-9.0,10.5
-eine minimale oder maximale Anzahl an Uniques enthal-,3,6,32,9.0,316.8,182.4,555.7,191.4,0.0,10.5
-"ten durfen, kann den Lernenden mitgeteilt werden, dass die ¨",3,6,33,9.0,316.8,192.9,555.8,202.2,0.0,10.5
-Anzahl der Uniques noch nicht einer gultigen L ¨ ¨osung ent-,3,6,34,9.0,316.8,203.3,555.9,212.7,0.0,10.5
-spricht. Hierbei wird den Lernenden in der Regel keine kon-,3,6,35,9.0,316.8,213.8,555.8,222.7,0.0,10.5
-"krete Anzahl genannt, lediglich dass diese noch nicht gultig ¨",3,6,36,9.0,316.8,224.2,555.9,233.6,0.0,10.5
-ist.,3,6,37,9.0,316.8,234.7,329.1,243.7,-0.0,10.5
-"Zudem k¨onnen hier Hilfetexte erscheinen, die sich auf die",3,7,38,9.0,325.8,245.2,555.8,254.5,9.0,10.5
-Arbeitsweise der Lernenden beziehen. Bemerkt das System,3,7,39,9.0,316.8,255.6,555.8,264.6,-9.0,10.5
-z.B. dass es im Bereich der Foreign Key Constraints zu,3,7,40,9.0,316.8,266.1,555.8,275.0,0.0,10.5
-"vermehrten Interaktionen kommt, k¨onnen hier Definitionen",3,7,41,9.0,316.8,276.5,555.9,285.9,0.0,10.5
-oder Tipps zum Thema Foreign Key Constraints angezeigt,3,7,42,9.0,316.8,287.0,555.7,296.0,0.0,10.5
-werden. Dies ist abh¨angig von den eingesetzten hybriden,3,7,43,9.0,316.8,297.5,555.8,306.8,0.0,10.5
-Filter- und Empfehlungsalgorithmen.,3,7,44,9.0,316.8,307.9,466.4,316.9,0.0,10.5
-Die eben genannten Hinweise erscheinen als modale Fens-,3,8,45,9.0,62.8,255.6,292.8,264.6,-254.0,-52.3
-"ter mittig in der Browserausgabe, um die Aufmerksamkeit",3,8,46,9.0,53.8,266.1,292.7,275.0,-9.0,10.5
-der Lernenden einzufangen und die Wichtigkeit dieser An- ¨,3,8,47,9.0,53.8,274.7,292.9,285.5,0.0,8.6
-derung in den Vordergrund zu stellen (siehe Abbildung 3).,3,8,48,9.0,53.8,287.0,292.8,296.0,0.0,12.3
-Diese Hinweise sollen w¨ahrend der Bearbeitung der Aufga-,3,8,49,9.0,53.8,297.5,292.8,306.8,0.0,10.5
-be weiterhin zur Verfugung stehen und werden deshalb als ¨,3,8,50,9.0,53.8,307.9,292.8,317.3,0.0,10.5
-zeitlich sortierte Liste abrufbar uber ein ’Notification Icon’ ¨,3,8,51,9.0,53.8,318.4,292.8,327.8,0.0,10.5
-bereitgestellt. Eine Aufteilung der Listen in unterschiedli-,3,8,52,9.0,53.8,328.8,292.7,337.8,0.0,10.5
-che thematische Listen wird nach weiteren Evaluierungen,3,8,53,9.0,53.8,339.3,292.8,348.3,0.0,10.5
-"entschieden. Diejenigen Nachrichten, die seit dem letzten",3,8,54,9.0,53.8,349.8,292.8,358.7,0.0,10.5
-"Offnen der Liste durch die Lernenden hinzugekommen sind, ¨",3,8,55,9.0,53.8,358.4,292.8,369.2,0.0,8.6
-werden farblich hervorgehoben.,3,8,56,9.0,53.8,370.7,179.6,379.7,0.0,12.3
-Um den Lernenden eine sog. ’Quick View’ uber den aktuel- ¨,3,9,57,9.0,325.8,318.4,555.9,327.8,272.0,-52.3
-"len Bearbeitungsstand zu geben, befinden sich in der Toolbar",3,9,58,9.0,316.8,328.8,555.8,337.8,-9.0,10.5
-"kleine Icons, welche repr¨asentativ fur Elemente der Model- ¨",3,9,59,9.0,316.8,339.3,555.9,348.7,0.0,10.5
-lierung stehen. Dies sind von links nach rechts die Gesamtan-,3,9,60,9.0,316.8,349.8,555.8,358.7,0.0,10.5
-"zahl der aktiven Tabellen, der aktiven Spalten, der Primary",3,9,61,9.0,316.8,360.2,555.8,369.2,0.0,10.5
-"Key Constraints, der Unique Constraints, der Foreign Key",3,9,62,9.0,316.8,370.7,555.8,379.7,0.0,10.5
-Constraints und der NOT NULLs außerhalb von Primary,3,9,63,9.0,316.8,381.1,555.8,390.1,0.0,10.5
-Key Constraints (siehe Abbildung 4). Durch die Ubersicht ¨,3,9,64,9.0,316.8,389.8,555.9,400.6,0.0,8.6
-der aktuell aktiven Elemente sollen die Lernenden eine kom-,3,9,65,9.0,316.8,402.1,555.8,411.0,0.0,12.3
-pakte Ubersicht ¨ uber den aktuellen Zustand erhalten. Insbe- ¨,3,9,66,9.0,316.8,410.7,555.8,421.9,0.0,8.6
-"sondere in Ubungsphasen, in denen die Mindestanzahl oder ¨",3,9,67,9.0,316.8,421.1,555.8,432.0,0.0,10.5
-die exakte Anzahl der ben¨otigten Elemente vorgegeben sein,3,9,68,9.0,316.8,433.5,555.8,442.8,0.0,12.3
-"kann, ist diese Ansicht hilfreich um zu eruieren, wie weit",3,9,69,9.0,316.8,443.9,555.8,452.9,0.0,10.5
-sich das eigene Ergebnis vom gesuchten zumindest in diesen,3,9,70,9.0,316.8,454.4,555.8,463.3,0.0,10.5
-Aspekten unterscheidet.,3,9,71,9.0,316.8,464.8,413.3,473.8,0.0,10.5
-Der ’Notification Icon’ befindet sich in der Toolbar im,3,10,72,9.0,62.8,381.1,292.8,390.1,-254.0,-83.7
-oberen Bereich des Systems.,3,10,73,9.0,53.8,391.6,167.6,400.6,-9.0,10.5
-Figure 4: Toolbar mit Benachrichtigungshinweis,3,11,74,9.0,342.0,516.7,530.5,525.6,288.2,125.1
-Figure 3: Hinweis zur Umbennung einer Spalte,3,12,75,9.0,80.5,548.6,266.0,557.6,-261.5,31.9
-3.4 Die Toolbar,3,13,76,12.0,53.8,580.2,141.0,592.2,-26.7,31.6
-Um den Lernenden weitere Funktionen zur effizienten Be-,3,14,77,9.0,62.8,595.3,292.8,604.3,9.0,15.1
-arbeitung der Aufgabe und Hilfestellungen aufzeigen zu k¨on-,3,14,78,9.0,53.8,605.8,292.9,615.2,-9.0,10.5
-"nen, befindet sich am oberen Rand des Systems eine Tool-",3,14,79,9.0,53.8,616.3,292.8,625.2,-0.0,10.5
-"bar (siehe Abbildung 4). Diese stellt aktuelle Informationen,",3,14,80,9.0,53.8,626.7,292.7,635.7,0.0,10.5
-Hinweise und Hilfestellungen zur Verfugung. Wie bereits er- ¨,3,14,81,9.0,53.8,637.2,292.9,646.6,0.0,10.5
-w¨ahnt gibt es hier die Auflistung der Hinweise zur Bearbei-,3,14,82,9.0,53.8,647.6,292.8,657.0,0.0,10.5
-tung der aktuellen Aufgabe.,3,14,83,9.0,53.8,658.1,166.7,667.1,0.0,10.5
-Figure 5: Toolbar mit ge¨offneten Benachrichtigungen,3,15,84,9.0,331.9,614.4,540.7,623.8,278.1,-43.7
-3.5 Feedback durch die Lernenden,3,16,85,12.0,316.8,643.0,502.8,654.9,-15.1,28.6
-Damit die Kommunikation und Interaktion der Lernenden,3,17,86,9.0,325.8,658.1,555.8,667.1,9.0,15.1
-"sich nicht nur auf das System und dessen Hinweise bezieht,",3,17,87,9.0,316.8,668.6,555.8,677.5,-9.0,10.5
-gibt es die Schaltfl¨ache ’Question and Feedback’. Hier k¨on-,3,17,88,9.0,316.8,679.0,555.9,688.4,0.0,10.5
-nen die Lernenden Kontakt zu den Lehrk¨orpern aufnehmen.,3,17,89,9.0,316.8,689.5,555.9,698.9,-0.0,10.5
-Hierbei wird zwischen aufgabenpezifischen Fragen und Feed-,3,17,90,9.0,316.8,700.0,555.8,708.9,0.0,10.5
-"back unterschieden. Vor allem das Feedback ist gewunscht, ¨",3,17,91,9.0,316.8,710.4,555.9,719.8,0.0,10.5
-"Sind neue Benachrichtigungen eingetroffen, wird an dem",3,18,92,9.0,62.8,668.6,292.8,677.5,-254.0,-41.8
-Icon einer Glocke ein roter Kreis angezeigt (siehe Abbil-,3,18,93,9.0,53.8,679.0,292.7,688.0,-9.0,10.5
-dung 4 und Abbildung 5). Neben den Hinweisen zur Bear-,3,18,94,9.0,53.8,689.5,292.8,698.5,0.0,10.5
-beitung werden unter der Glocke zudem noch Hinweise auf,3,18,95,9.0,53.8,700.0,292.8,708.9,0.0,10.5
-neue Empfehlungen gegeben. Gibt es zur aktuellen Aufgabe,3,18,96,9.0,53.8,710.4,292.8,719.4,0.0,10.5
-3.6.3 Hilfetexte,4,1,1,11.0,319.6,55.4,394.8,66.3,,
-"da dieses dazu dient, das System an die Bedurfnisse der Ler- ¨",4,2,2,9.0,53.8,56.9,292.9,66.2,-265.8,1.5
-nenden anzupassen und eine kontinuierliche Verbesserung,4,2,3,9.0,53.8,67.3,292.8,76.3,0.0,10.5
-voranzutreiben (siehe Abbildung 6).,4,2,4,9.0,53.8,77.8,199.0,86.8,0.0,10.5
-"Das System ist auch darauf ausgelegt, dass die Lernen-",4,3,5,9.0,325.8,69.8,555.8,78.8,272.0,-8.0
-den gegebenenfalls nicht die M¨oglichkeit haben Audio- oder,4,3,6,9.0,316.8,80.3,555.8,89.7,-9.0,10.5
-Videoinhalte abzurufen. Hier sind die Hilfetexte nutzlich. ¨,4,3,7,9.0,316.8,90.7,555.9,100.1,0.0,10.5
-"Die Hilfetexte sind Beschreibungen von Herausforderungen,",4,3,8,9.0,316.8,101.2,555.8,110.2,0.0,10.5
-"Fragestellungen, Datenbankthematiken oder Beispiele von",4,3,9,9.0,316.8,111.7,555.7,120.6,0.0,10.5
-SQL-Code.,4,3,10,9.0,316.8,122.1,361.2,131.1,0.0,10.5
-3.6.4 Hilfegrafiken,4,4,11,11.0,319.6,139.6,409.5,150.5,2.7,17.4
-"Hilfegrafiken stellen nicht nur Datenmodelle dar, sondern",4,5,12,9.0,325.8,154.0,555.8,163.0,6.2,14.4
-"um Zeichnungen oder Comics, die sich mit wenig Worten",4,5,13,9.0,316.8,164.5,555.8,173.4,-9.0,10.5
-einer Datenbankthematik annehmen.,4,5,14,9.0,316.8,174.9,465.7,183.9,0.0,10.5
-3.6.5 Vordefinierte Hilfestellungen,4,6,15,11.0,319.6,192.4,478.2,203.3,2.7,17.4
-"Die Lernenden bekommen, basierend auf der Analyse des",4,7,16,9.0,325.8,206.8,555.8,215.8,6.2,14.4
-"Systems, zu der aktuellen Situation und zur Aufgabe Hilfe-",4,7,17,9.0,316.8,217.3,555.8,226.2,-9.0,10.5
-stellungen empfohlen. Diese k¨onnen sich dynamisch anpas-,4,7,18,9.0,316.8,227.7,555.8,237.1,0.0,10.5
-sen und mussen nicht permanent verf ¨ ugbar bleiben. Emp- ¨,4,7,19,9.0,316.8,238.2,555.9,247.6,0.0,10.5
-"fehlungen k¨onnen entfernt werden, wenn bspw. Lernende die",4,7,20,9.0,316.8,248.6,555.9,258.0,0.0,10.5
-Aufgabe wechseln oder sich der Fokus der Thematik ¨andert.,4,7,21,9.0,316.8,259.1,555.9,268.5,0.0,10.5
-Vordefinierte Inhalte beziehen sich nicht zwingend auf eine,4,7,22,9.0,325.8,269.6,555.8,278.5,9.0,10.5
-"Aufgabe im Einzelnen. Sie k¨onnen Informationen betreffen,",4,8,23,9.0,316.8,280.0,555.8,289.4,-9.0,10.5
-die wichtig sind um ein Grundverst¨andnis fur die Kursin- ¨,4,8,24,9.0,316.8,290.5,555.9,299.9,0.0,10.5
-"halte zu erlangen. Auch wenn keine Challenges aktiv sind,",4,8,25,9.0,316.8,300.9,555.8,309.9,-0.0,10.5
-k¨onnen Inhalte bereit gestellt werden.,4,8,26,9.0,316.8,311.4,469.2,320.8,0.0,10.5
-Figure 6: Feedbackfenster,4,9,27,9.0,122.6,298.0,224.0,306.9,-194.2,-13.4
-Die Gesamtheit der multimedialen Inhalte wird nicht nur,4,10,28,9.0,325.8,321.9,555.8,330.8,203.1,23.9
-im Rahmen der Aufgaben genutzt. Mit den Inhalten werden,4,10,29,9.0,316.8,332.3,555.8,341.3,-9.0,10.5
-"Playlisten gefullt, die den Lernenden zur Verf ¨ ugung stehen ¨",4,10,30,9.0,316.8,342.8,555.9,352.2,0.0,10.5
-um die Selbstlernphase zu unterstutzen. ¨,4,10,31,9.0,316.8,353.3,477.8,362.6,-0.0,10.5
-3.6 Mediale Hilfestellungen,4,11,32,12.0,53.8,327.4,201.9,339.4,-263.0,-25.8
-Fur die Lernenden stehen verschiedene Arten von me- ¨,4,12,33,9.0,62.8,342.6,292.8,351.9,9.0,15.1
-"dialen Hilfestellungen zur Verfugung, die st ¨ ¨andig erg¨anzt,",4,12,34,9.0,53.8,353.0,292.9,362.4,-9.0,10.5
-produziert und weiterentwickelt werden. Dabei handelt es,4,12,35,9.0,53.8,363.5,292.8,372.4,-0.0,10.5
-"sich um digitale Medien wie bspw. Screencasts, Erkl¨arvi-",4,12,36,9.0,53.8,373.9,292.9,383.3,0.0,10.5
-"deos, Podcasts, Hilfetexte und Hilfegrafiken. Diese Medien",4,12,37,9.0,53.8,384.4,292.8,393.4,0.0,10.5
-werden kurz gehalten und sind thematisch nicht voneinan-,4,12,38,9.0,53.8,394.9,292.8,403.8,0.0,10.5
-"der abh¨angig, k¨onnen sich aber erg¨anzen und werden ggf. in",4,12,39,9.0,53.8,405.3,292.9,414.7,0.0,10.5
-Gruppen mit oder ohne empfohlener Reihenfolge empfohlen.,4,12,40,9.0,53.8,415.8,292.8,424.8,0.0,10.5
-Uber die Icons auf der linken Seite k ¨ ¨onnen aktuell be-,4,12,41,9.0,62.8,424.4,292.9,435.6,9.0,8.6
-reitgestellte Medien abgerufen werden. Die Medien werden,4,12,42,9.0,53.8,436.7,292.8,445.7,-9.0,12.3
-in modalen Fenstern innerhalb der Anwendung aufgerufen.,4,12,43,9.0,53.8,447.2,292.8,456.1,0.0,10.5
-Fur die Icons gibt es zwei Bereiche. Die grauen Icons bein- ¨,4,12,44,9.0,53.8,457.6,292.8,467.0,0.0,10.5
-"halten vordefinierte Hilfestellungen, wohingegen die grunen ¨",4,12,45,9.0,53.8,468.1,292.9,477.5,0.0,10.5
-Icons aktuell empfohlene Hilfestellungen beinhalten.,4,12,46,9.0,53.8,478.6,263.4,487.5,-0.0,10.5
-3.6.6 Empfehlungen,4,13,47,11.0,319.6,370.7,415.6,381.6,265.8,-107.9
-Hilfestellungen und multimediale Elemente sollen zudem,4,14,48,9.0,325.8,385.1,555.8,394.1,6.2,14.4
-zunehmend vom System empfohlen werden. ALEA nutzt,4,14,49,9.0,316.8,395.6,555.8,404.6,-9.0,10.5
-"verschiedene Arten von Empfehlungsalgorithmen, die st¨an-",4,14,50,9.0,316.8,406.1,555.9,415.4,0.0,10.5
-dig weiterentwickelt werden. Diese werden mit wachsender,4,14,51,9.0,316.8,416.5,555.8,425.5,0.0,10.5
-Nutzung und Datenmenge ausgebaut und verbessert.,4,14,52,9.0,316.8,427.0,530.5,435.9,0.0,10.5
-3.6.7 Metadaten,4,15,53,11.0,319.6,444.4,399.3,455.4,2.7,17.4
-Ein wichtiger Aspekt fur die Zuweisung der medialen Hil- ¨,4,16,54,9.0,325.8,458.9,555.8,468.2,6.2,14.4
-festellungen sind die hinterlegten Metadaten. Fur mediale ¨,4,16,55,9.0,316.8,469.3,555.9,478.7,-9.0,10.5
-"Inhalte werden eine Reihe von Metadaten definiert, die es",4,16,56,9.0,316.8,479.8,555.8,488.7,-0.0,10.5
-"den Empfehlungsalgorithmen erlauben, die Inhalte den Ler-",4,16,57,9.0,316.8,490.2,555.8,499.2,0.0,10.5
-nenden zuzuordnen. Diese werden auch bei der Erstellung,4,16,58,9.0,316.8,500.7,555.8,509.7,0.0,10.5
-von Aufgaben bzw. zur Zuordnung von Aufgaben im Rah-,4,16,59,9.0,316.8,511.2,555.8,520.1,0.0,10.5
-men von Challenges zu Lernenden oder Gruppen von Ler-,4,16,60,9.0,316.8,521.6,555.8,530.6,0.0,10.5
-nenden genutzt. Dies erm¨oglicht im Vorfeld die Zuordnung,4,16,61,9.0,316.8,532.1,555.8,541.5,0.0,10.5
-der Hilfestellung zu Aufgaben. Ein direkt fur diese Aufgabe ¨,4,16,62,9.0,316.8,542.5,555.9,551.9,0.0,10.5
-"produzierter Podcast, soll in der Regel nicht als Hilfestellung",4,16,63,9.0,316.8,553.0,555.7,562.0,-0.0,10.5
-empfohlen werden.,4,16,64,9.0,316.8,563.5,392.0,572.4,0.0,10.5
-3.6.1 Screencasts und Erklärvideos,4,17,65,11.0,56.5,496.3,219.3,507.3,-260.3,-67.1
-Screencasts befassen sich mit der Anwendung und Nut-,4,18,66,9.0,62.8,510.8,292.8,519.8,6.2,14.4
-zung von Software bzw. mit den Erkl¨arungen zu L¨osun-,4,18,67,9.0,53.8,521.3,292.9,530.6,-9.0,10.5
-gen dieser Aufgabentypen. Fur die Aufgaben zum ER-to- ¨,4,18,68,9.0,53.8,531.7,292.8,541.1,0.0,10.5
-Relational-Mapping wurden bereits mehr als 50 Screencasts,4,18,69,9.0,53.8,542.2,292.7,551.1,0.0,10.5
-produziert.,4,18,70,9.0,53.8,552.6,98.0,561.6,0.0,10.5
-In kurzen aber pr¨agnanten Videos werden den Lernen-,4,19,71,9.0,62.8,563.1,292.8,572.5,9.0,10.5
-den Inhalte aus dem Bereich vermittelt. Diese Screencasts,4,19,72,9.0,53.8,573.6,292.7,582.5,-9.0,10.5
-k¨onnen sich auf Aufgaben beziehen oder allgemeine Vorge-,4,19,73,9.0,53.8,584.0,292.8,593.4,0.0,10.5
-hensweisen und Hinweise enthalten. Neben den Screencasts,4,19,74,9.0,53.8,594.5,292.8,603.4,0.0,10.5
-finden die Lernenden hier zudem Erkl¨arvideos die allgemeine,4,19,75,9.0,53.8,604.9,292.8,614.3,0.0,10.5
-Prinzipien von Datenbanken thematisieren.,4,19,76,9.0,53.8,615.4,227.9,624.4,0.0,10.5
-3.7 Check and Submit,4,20,77,12.0,316.8,580.2,438.7,592.2,263.0,-35.2
-Um sich den zugeh¨origen SQL-Code anzeigen zu lassen,4,21,78,9.0,325.8,595.3,555.8,604.7,9.0,15.1
-"und zur Kontrolle der eigenen Eingaben, steht den Lernen-",4,21,79,9.0,316.8,605.8,555.8,614.8,-9.0,10.5
-den im unteren Bereich des Systems die Schaltfl¨ache ’Check,4,21,80,9.0,316.8,616.3,555.9,625.6,0.0,10.5
-Input and Show SQL’ zur Verfugung. Zum Erzeugen des ¨,4,21,81,9.0,316.8,626.7,555.9,636.1,-0.0,10.5
-SQL-Codes wird die Check-Funktion durchlaufen. Diese baut,4,21,82,9.0,316.8,637.2,557.3,646.2,0.0,10.5
-zwei Zeichenketten zusammen. Die erste Zeichenkette kann,4,21,83,9.0,316.8,647.6,555.8,656.6,0.0,10.5
-direkt auf der Datenbank ausgefuhrt werden. Genutzt wird ¨,4,21,84,9.0,316.8,658.1,555.9,667.5,0.0,10.5
-"diese fur den Test, den die Lernenden w ¨ ¨ahrend der Bearbei-",4,21,85,9.0,316.8,668.6,555.9,677.9,-0.0,10.5
-tung machen k¨onnen und zudem fur die finale Abgabe der ¨,4,21,86,9.0,316.8,679.0,555.9,688.4,0.0,10.5
-Aufgabe. Eine zweite Zeichenkette wird erzeugt und bein-,4,21,87,9.0,316.8,689.5,555.8,698.5,0.0,10.5
-haltet HTML-Code. Dieser wird zur visuellen Darstellung,4,21,88,9.0,316.8,700.0,555.8,708.9,0.0,10.5
-des SQL-Codes fur die Lernenden genutzt. ¨,4,21,89,9.0,316.8,710.4,488.2,719.8,0.0,10.5
-3.6.2 Podcasts,4,22,90,11.0,56.5,633.2,128.1,644.2,-260.3,-77.2
-"Podcasts sollen, so wie die Screencasts, kompakt Informa-",4,23,91,9.0,62.8,647.6,292.7,656.6,6.2,14.4
-tionen vermitteln. Die Themen k¨onnen hier sowohl Aufgaben-,4,23,92,9.0,53.8,658.1,296.1,667.5,-9.0,10.5
-oder Challenge-bezogen als auch allgemeingultig sein. Die ¨,4,23,93,9.0,53.8,668.6,292.9,677.9,-0.0,10.5
-Podcasts sind Dialoge zwischen zwei oder mehreren Spre-,4,23,94,9.0,53.8,679.0,292.8,688.0,0.0,10.5
-"chenden, die ein Thema diskutieren, um den Lernenden neue",4,23,95,9.0,53.8,689.5,292.8,698.5,0.0,10.5
-Anreize zu bieten uber das Geh ¨ ¨orte nachzudenken. Auch,4,23,96,9.0,53.8,700.0,292.8,709.3,0.0,10.5
-Hilfetexte k¨onnten vorgelesen werden.,4,23,97,9.0,53.8,710.4,206.3,719.8,0.0,10.5
-de’ kopiert den angezeigten SQL-Code in die Zwischenablage,5,1,1,9.0,316.8,56.9,555.7,65.8,,
-und ’Save to Script’ bietet die M¨oglichkeit den Code als Da-,5,1,2,9.0,316.8,67.3,555.8,76.7,0.0,10.5
-tei lokal zu speichern. Damit der bereitgestellte SQL-Code,5,1,3,9.0,316.8,77.8,555.7,86.8,0.0,10.5
-von den Lernenden auf unterschiedlichen Datenbanksyste-,5,1,4,9.0,316.8,88.2,555.8,97.2,0.0,10.5
-"men genutzt werden kann, k¨onnen diese den entsprechenden",5,1,5,9.0,316.8,98.7,555.9,108.1,0.0,10.5
-Datentyp ausw¨ahlen.,5,1,6,9.0,316.8,109.2,401.4,118.5,0.0,10.5
-Die Lernenden haben die M¨oglichkeit mit der Schaltfl¨a-,5,2,7,9.0,325.8,119.6,555.9,129.0,9.0,10.5
-che ’Test on Database’ den ihren Eingaben entsprechen-,5,2,8,9.0,316.8,130.1,555.8,139.1,-9.0,10.5
-den DDL-Code direkt auf dem angebundenen Datenbank-,5,2,9,9.0,316.8,140.5,555.8,149.5,0.0,10.5
-system zu testen. Die Ruckmeldung wird in dem Check- ¨,5,2,10,9.0,316.8,151.0,555.9,160.4,0.0,10.5
-Input-Ausgabefenster ausgegeben. Hierbei wird einerseits ge-,5,3,11,9.0,316.8,161.5,557.1,170.4,-0.0,10.5
-"testet, ob die Eingaben der Lernenden einen gultigen SQL- ¨",5,3,12,9.0,316.8,171.9,555.9,181.3,0.0,10.5
-Code entsprechen. Andererseits wird die L¨osung unter Ver-,5,3,13,9.0,316.8,182.4,555.9,191.8,-0.0,10.5
-wendung der zur Aufgabe hinterlegten Informationen wei-,5,3,14,9.0,316.8,192.9,555.8,201.8,0.0,10.5
-testgehend durch das System ausgewertet. Korrekte L¨osun-,5,3,15,9.0,316.8,203.3,555.9,212.7,0.0,10.5
-gen von Aufgaben k¨onnen u. a. eine vorgegebene Anzahl von,5,3,16,9.0,316.8,213.8,555.8,223.2,0.0,10.5
-"Tabellen, Spalten, Constraints (Primary Keys, Uniques, Not",5,3,17,9.0,316.8,224.2,555.7,233.2,0.0,10.5
-"Nulls außerhalb von Primary Keys, Foreign Keys) und dar-",5,3,18,9.0,316.8,234.7,555.8,243.7,0.0,10.5
-in enthaltene Attributanzahl bzw. eine jeweilige Mindest-,5,3,19,9.0,316.8,245.2,555.8,254.1,0.0,10.5
-"und Maximalanzahl erfordern, so dass L¨osungen als falsch",5,3,20,9.0,316.8,255.6,555.9,265.0,0.0,10.5
-erkannt werden k¨onnen.,5,3,21,9.0,316.8,266.1,413.0,275.5,0.0,10.5
-Die Auswertung der Aufgabe bzgl. der Sinnhaftigkeit der,5,4,22,9.0,325.8,276.5,555.8,285.5,9.0,10.5
-"Bezeichnungen bspw. von Tabellen oder Spalten, kann und",5,4,23,9.0,316.8,287.0,555.8,296.0,-9.0,10.5
-wird dabei nicht gepruft. Jedoch kann ¨ uber das Datenbank- ¨,5,4,24,9.0,316.8,297.5,555.9,306.8,0.0,10.5
-system eine weitergehende Prufung abh ¨ ¨angig von vorliegen-,5,4,25,9.0,316.8,307.9,555.8,317.3,0.0,10.5
-den Daten zur Aufgabe durchgefuhrt werden. ¨,5,4,26,9.0,316.8,318.4,499.8,327.8,0.0,10.5
-Die Ausgabe einer Zwischenauswertung ohne wiederholte,5,5,27,9.0,325.8,328.8,555.8,337.8,9.0,10.5
-"Serveranfrage in der Toolbar ist m¨oglich, wenn die Infor-",5,5,28,9.0,316.8,339.3,555.9,348.7,-9.0,10.5
-mation zu gultigen L ¨ ¨osungsm¨oglichkeiten der Aufgabe be-,5,5,29,9.0,316.8,349.8,555.8,359.1,0.0,10.5
-zogen auf die Anzahl der Elemente eindeutig ist und Varia-,5,5,30,9.0,316.8,360.2,555.8,369.2,0.0,10.5
-tionen nur begrenzt m¨oglich sind. In der Datenbank k¨onnen,5,5,31,9.0,316.8,370.7,555.9,380.1,0.0,10.5
-auch Angaben fur Aufgaben mit verschiedenartigen L ¨ ¨osun-,5,5,32,9.0,316.8,381.1,555.9,390.5,-0.0,10.5
-gen hinterlegt und ausgewertet werden. Insbesondere wenn,5,5,33,9.0,316.8,391.6,555.8,400.6,-0.0,10.5
-"die Aufgabenstellungen komplexer werden, k¨onnen die Aus-",5,5,34,9.0,316.8,402.1,555.9,411.4,0.0,10.5
-wertungen aufw¨andiger werden. Je nachdem wie die Lernen-,5,5,35,9.0,316.8,412.5,555.8,421.9,0.0,10.5
-den ihre L¨osungen aufbauen kann sich bspw. die Anzahl der,5,5,36,9.0,316.8,423.0,555.8,432.4,0.0,10.5
-Elemente in einem Constraint unterscheiden und trotzdem,5,5,37,9.0,316.8,433.5,555.8,442.4,0.0,10.5
-eine richtige L¨osung erzeugen.,5,5,38,9.0,316.8,443.9,437.7,453.3,0.0,10.5
-Figure 7: Challenge Auswahl und Hilfemedien,5,6,39,9.0,82.6,572.6,263.9,581.6,-234.2,128.7
-Die Ansicht des DDL-Codes soll den Lernenden einen an-,5,7,40,9.0,62.8,605.8,292.8,614.8,-19.8,33.2
-deren Blick auf die eigene L¨osung verschaffen (siehe Abbil-,5,7,41,9.0,53.8,616.3,292.8,625.6,-9.0,10.5
-dung 8). Damit soll der Bezug zwischen der Planung des Re-,5,7,42,9.0,53.8,626.7,292.7,635.7,-0.0,10.5
-lationenmodells und dem Verst¨andnis der Syntax der DDL-,5,7,43,9.0,53.8,637.2,292.9,646.6,0.0,10.5
-Befehle (Data Definition Language) gest¨arkt werden.,5,7,44,9.0,53.8,647.6,267.1,657.0,0.0,10.5
-Figure 8: Ausgabe des SQL-Codes und Ruckmeldung der Da- ¨,5,8,45,9.0,316.8,640.2,555.8,649.6,263.0,-7.5
-tenbank,5,8,46,9.0,316.8,650.7,348.2,659.6,0.0,10.5
-Da die Datentypen fur die L ¨ ¨osung der Aufgabe nicht re-,5,9,47,9.0,62.8,658.1,292.8,667.5,-254.0,7.5
-"levant sind, wird auf dem Datentyp ’variable character’ ab-",5,9,48,9.0,53.8,668.6,292.7,677.5,-9.0,10.5
-"gebildet, der dem Datenbanksystem entspricht auf dem der",5,9,49,9.0,53.8,679.0,292.8,688.0,0.0,10.5
-Code ausgefuhrt wird. Um den Lernenden die M ¨ ¨oglichkeit,5,9,50,9.0,53.8,689.5,292.9,698.9,0.0,10.5
-"zu bieten den entstandenen DDL-Code zu nutzen, gibt es die",5,9,51,9.0,53.8,700.0,292.8,708.9,0.0,10.5
-Schaltfl¨achen ’Copy Code’ und ’Save to Script’. ’Copy Co-,5,9,52,9.0,53.8,710.4,292.8,719.8,0.0,10.5
-Die Schaltfl¨ache ’Submit’ fuhrt die Lernenden zur Abgabe ¨,5,10,53,9.0,325.8,668.6,555.9,677.9,272.0,-41.8
-ihrer L¨osung. Zur Sicherheit und um Fehlklicks abzufangen,5,10,54,9.0,316.8,679.0,555.8,688.4,-9.0,10.5
-"¨offnet sich, nachdem die Lernenden auf ’Submit’ gedruckt ¨",5,10,55,9.0,316.8,689.5,555.9,698.9,0.0,10.5
-"haben, ein weiteres Fenster. In diesem erhalten die Lernen-",5,10,56,9.0,316.8,700.0,555.8,708.9,0.0,10.5
-"den die Information, ob ihre L¨osung eine gultige L ¨ ¨osung sein",5,10,57,9.0,316.8,710.4,555.9,719.8,0.0,10.5
-4.1 Erweiterte Tabellenansicht,6,1,1,12.0,316.8,54.7,481.1,66.7,,
-"k¨onnte. Ist dies der Fall, besteht die M¨oglichkeit die Aufgabe",6,2,2,9.0,53.8,56.9,292.8,66.2,-263.0,2.2
-abzugeben.,6,2,3,9.0,53.8,67.3,98.5,76.3,0.0,10.5
-Fur die Bearbeitung der Aufgaben zur Normalisierung ¨,6,3,4,9.0,325.8,69.8,555.8,79.2,272.0,2.5
-wurden die Bereiche zur Definition der Tabellen durch Funk-,6,3,5,9.0,316.8,80.3,555.8,89.2,-9.0,10.5
-tionen erg¨anzt (siehe Abbildung 10). Neben den bekannten,6,3,6,9.0,316.8,90.7,555.8,100.1,0.0,10.5
-"Funktionen der Benennung, L¨oschung und Hinzufugen von ¨",6,3,7,9.0,316.8,101.2,555.9,110.6,0.0,10.5
-"Spalten und Constraints, gibt es eine Schaltfl¨ache zur De-",6,3,8,9.0,316.8,111.7,555.9,121.0,0.0,10.5
-aktivierung der Tabelle. Sobald eine Tabelle zerlegt werden,6,3,9,9.0,316.8,122.1,555.8,131.1,0.0,10.5
-"soll, muss sie deaktiviert werden. Sie wird nicht entfernt,",6,3,10,9.0,316.8,132.6,555.8,141.5,0.0,10.5
-damit der Verlauf nachvollziehbar bleibt. Die durch die Zer-,6,3,11,9.0,316.8,143.0,555.8,152.0,0.0,10.5
-legung neu entstehenden Tabellen mussen eingeben werden. ¨,6,3,12,9.0,316.8,153.5,555.9,162.9,0.0,10.5
-"Dabei soll uber ein Dropdown-Men ¨ u, welches alle inaktiven ¨",6,3,13,9.0,316.8,164.0,555.9,173.3,0.0,10.5
-"Tabellen auflistet, angegeben werden, aus welcher Tabelle",6,3,14,9.0,316.8,174.4,555.8,183.4,0.0,10.5
-eine Tabelle jeweils entstanden ist.,6,3,15,9.0,316.8,184.9,456.2,193.8,0.0,10.5
-In Lernphasen k¨onnen die Lernenden unfertige Aufgaben,6,4,16,9.0,62.8,77.8,292.8,87.2,-254.0,-107.1
-zur sp¨ateren Bearbeitung uberspringen. Anstatt einer m ¨ ¨og-,6,4,17,9.0,53.8,88.2,292.9,97.6,-9.0,10.5
-"lichen Ja/Nein-Abfrage, ob die Aufgabe abgegeben werden",6,4,18,9.0,53.8,98.7,292.8,107.7,0.0,10.5
-"soll, kann zwischen ’Zuruck zur Bearbeitung’ oder ’ ¨ Uber- ¨",6,4,19,9.0,53.8,107.3,292.9,118.5,0.0,8.6
-springen’ (siehe Abbildung 9) gew¨ahlt werden. Diese un-,6,4,20,9.0,53.8,119.6,292.9,129.0,-0.0,12.3
-fertigen Aufgaben werden nicht aus dem System entfernt.,6,4,21,9.0,53.8,130.1,292.8,139.1,0.0,10.5
-Aufgaben die als Lern- oder Testataufgaben gelten mussen ¨,6,4,22,9.0,53.8,140.5,292.9,149.9,0.0,10.5
-"solange wiederholt werden, bis die Eingabe gultig ist. In der ¨",6,4,23,9.0,53.8,151.0,292.9,160.4,0.0,10.5
-"Abbildung 7 ist zu sehen, dass eine Challenge Aufgaben zur",6,4,24,9.0,53.8,161.5,292.8,170.4,0.0,10.5
-Auswahl der Bearbeitungsreihenfolge beinhalten kann. Ei-,6,4,25,9.0,53.8,171.9,292.8,180.9,0.0,10.5
-ne Challenge bleibt bestehen bis alle Aufgaben erfolgreich,6,4,26,9.0,53.8,182.4,292.8,191.4,0.0,10.5
-bearbeitet wurden.,6,4,27,9.0,53.8,192.9,130.0,201.8,0.0,10.5
-Figure 10: Tabellendefinition mit erweiterten Funktionen,6,5,28,9.0,323.9,238.2,548.6,247.2,270.1,45.4
-Figure 11: Tabellendefinition finalisieren,6,6,29,9.0,357.0,292.3,515.6,301.2,33.1,54.0
-Die Studierenden sollen fur jede neu entstandene Tabelle ¨,6,7,30,9.0,325.8,312.6,555.9,322.0,-31.2,20.3
-die Normalform angeben. Dazu befindet sich ein Auswahl-,6,7,31,9.0,316.8,323.1,555.8,332.0,-9.0,10.5
-feld im Kopfbereich der Tabellendefinition. Die Lernenden,6,7,32,9.0,316.8,333.5,555.8,342.5,0.0,10.5
-"sollen zudem jeweils zu jeder Zerlegung angeben, aus wel-",6,7,33,9.0,316.8,344.0,555.8,352.9,0.0,10.5
-chen Grunden diese durchgef ¨ uhrt werden musste. Dazu be- ¨,6,7,34,9.0,316.8,354.4,555.9,363.8,0.0,10.5
-findet sich ein Textfeld im Fußbereich der Tabellendefinition.,6,7,35,9.0,316.8,364.9,555.8,373.9,-0.0,10.5
-"Zudem ist es erwunscht hier weitere Anmerkungen, Fragen, ¨",6,7,36,9.0,316.8,375.4,555.8,384.7,0.0,10.5
-Notizen und Feedback der Lernenden zu erhalten. Sobald,6,7,37,9.0,316.8,385.8,555.8,394.8,-0.0,10.5
-"fur eine Tabelle die geforderte Normalform erreicht wurde, ¨",6,7,38,9.0,316.8,396.3,555.8,405.7,0.0,10.5
-soll die Tabelle finalisiert werden (siehe Abbildung 11).,6,7,39,9.0,316.8,406.7,538.8,415.7,0.0,10.5
-Figure 9: Abgabe einer Lernaufgabe,6,8,40,9.0,102.0,326.9,244.6,335.9,-214.9,-79.8
-3.8 Prüfungsmodus,6,9,41,12.0,53.8,360.7,161.7,372.7,-48.2,33.8
-Das System ist zum einen fur die Lernphase und zum ¨,6,10,42,9.0,62.8,375.8,292.9,385.2,9.0,15.1
-anderen fur die Pr ¨ ufungsphase gedacht. Hierf ¨ ur sieht das ¨,6,10,43,9.0,53.8,386.3,292.9,395.7,-9.0,10.5
-"System vor, dass Funktionen, welche fur Lernphasen wich- ¨",6,10,44,9.0,53.8,396.8,292.9,406.1,0.0,10.5
-"tig sind, fur die Pr ¨ ufungen deaktiviert werden. Die Hilfe- ¨",6,10,45,9.0,53.8,407.2,292.8,416.6,0.0,10.5
-"stellungen, die sich auf Informationen zu gultigen L ¨ ¨osungen",6,10,46,9.0,53.8,417.7,292.9,427.1,0.0,10.5
-"beziehen, sind nicht verfugbar. Empfehlungen und alle da- ¨",6,10,47,9.0,53.8,428.1,292.8,437.5,0.0,10.5
-mit verbundenen Hilfsmedien sind ebenfalls nicht erreich-,6,10,48,9.0,53.8,438.6,292.8,447.6,0.0,10.5
-bar. In dem Fenster ’Check Input und Show SQL’ werden,6,10,49,9.0,53.8,449.1,292.8,458.0,0.0,10.5
-die Schaltfl¨achen auf ’Close’ und ’Submit’ reduziert. Eine,6,10,50,9.0,53.8,459.5,292.8,468.9,0.0,10.5
-zweistufige Abfrage nach dem ’Submit’ bleibt zwar beste-,6,10,51,9.0,53.8,470.0,292.7,478.9,0.0,10.5
-"hen, jedoch wird das erscheinende Fenster auf eine erneute",6,10,52,9.0,53.8,480.4,292.8,489.4,0.0,10.5
-"Frage, ob die L¨osung abgegeben werden soll, reduziert.",6,10,53,9.0,53.8,490.9,274.5,500.3,0.0,10.5
-4.2 Erweiterte Ansichten,6,11,54,12.0,316.8,423.5,452.3,435.4,263.0,-67.4
-Die Komponente fur die Aufgaben zur Normalisierung ¨,6,12,55,9.0,325.8,438.6,555.8,448.0,9.0,15.1
-wird durch eine weitere ’Quick View’ erg¨anzt. Auf der rech-,6,12,56,9.0,316.8,449.1,555.9,458.4,-9.0,10.5
-ten Seite finden die Lernenden eine Ubersicht ¨ uber die aktu- ¨,6,12,57,9.0,316.8,457.7,555.9,468.9,0.0,8.6
-ell aktiven und inaktiven Tabellen. Neben dem Tabellenna-,6,12,58,9.0,316.8,470.0,555.8,478.9,-0.0,12.3
-men sind hier auch die Spaltennamen gelistet. Ebenso k¨on-,6,12,59,9.0,316.8,480.4,555.9,489.8,0.0,10.5
-nen die Begrundungen angezeigt werden. ¨,6,12,60,9.0,316.8,490.9,481.6,500.3,-0.0,10.5
-5. ZUSAMMENFASSUNG UND AUSBLICK,6,13,61,12.0,316.8,511.6,555.9,523.5,0.0,20.7
-Komponenten zur Bearbeitung von Aufgaben zum ER-,6,13,62,9.0,325.8,526.7,555.8,535.7,9.0,15.1
-to-Relational-Mapping und zur Normalisierung werden dar-,6,13,63,9.0,316.8,537.1,555.7,546.1,-9.0,10.5
-gestellt. Vielf¨altige Interaktionen und Hilfestellungen bspw.,6,13,64,9.0,316.8,547.6,555.8,557.0,0.0,10.5
-Empfehlungen von multimedialen digitalen Elementen wer-,6,13,65,9.0,316.8,558.1,555.8,567.0,0.0,10.5
-den zur Verbesserung des Lernprozesses integriert. Durch,6,13,66,9.0,316.8,568.5,555.8,577.5,0.0,10.5
-verst¨arkte Nutzung der Komponenten und dem Anwachsen,6,13,67,9.0,316.8,579.0,555.8,588.4,0.0,10.5
-der Daten k¨onnen Empfehlungen und Learning Analytics,6,13,68,9.0,316.8,589.4,555.8,598.8,0.0,10.5
-weiter verbessert werden.,6,13,69,9.0,316.8,599.9,418.5,608.9,0.0,10.5
-4. AUFGABENTYP NORMALISIERUNG,6,14,70,12.0,53.8,517.5,281.3,529.4,-263.0,-82.5
-Ein weiterer Aufgabentyp des ALEA-Systems ist die Nor-,6,15,71,9.0,62.8,532.6,292.8,541.5,9.0,15.1
-malisierung. Dieser Aufgabentyp nutzt die Grundfunktionen,6,15,72,9.0,53.8,543.0,292.8,552.0,-9.0,10.5
-"der Mapping-Aufgaben, da Tabellen und Constraints defi-",6,15,73,9.0,53.8,553.5,292.8,562.5,0.0,10.5
-niert werden mussen. ¨,6,15,74,9.0,53.8,564.0,139.1,573.3,0.0,10.5
-In einer Aufgabenstellung zur Normalisierung erhalten die,6,16,75,9.0,62.8,574.4,292.8,583.4,9.0,10.5
-Lernenden eine oder mehrere Tabellen sowie eine Aquiva- ¨,6,16,76,9.0,53.8,583.0,292.9,593.8,-9.0,8.6
-lenzmenge zu der Menge aller fur die Tabellen g ¨ ultigen Funk- ¨,6,16,77,9.0,53.8,595.3,292.9,604.7,-0.0,12.3
-tionalen Abh¨angigkeiten. Die Normalform der Tabellen ist,6,16,78,9.0,53.8,605.8,292.8,615.2,0.0,10.5
-anzugeben. Die Tabellen sind unter Verwendung des Zerle-,6,16,79,9.0,53.8,616.3,292.8,625.2,0.0,10.5
-"gungsverfahrens in der Regel in 3NF zu uberf ¨ uhren, sofern ¨",6,16,80,9.0,53.8,626.7,292.9,636.1,0.0,10.5
-sie sich nicht in der dritten Normalform befinden. Die Ta-,6,16,81,9.0,53.8,637.2,292.8,646.2,0.0,10.5
-bellen k¨onnen in der Aufgabenstellung zur Verdeutlichung,6,16,82,9.0,53.8,647.6,292.8,657.0,0.0,10.5
-mit Daten gefullt sein. Zur besseren ¨ Ubersicht lassen sich ¨,6,16,83,9.0,53.8,656.3,292.8,667.5,0.0,8.6
-die Inhalte der Tabellen bei Bedarf aus- und einblenden.,6,16,84,9.0,53.8,668.6,292.8,677.5,-0.0,12.3
-"Die Darstellung der funktionalen Abh¨angigkeiten l¨asst sich,",6,16,85,9.0,53.8,679.0,292.9,688.4,0.0,10.5
-wie auch beim ALEA-Mapping das vorgegebene Datenmo-,6,16,86,9.0,53.8,689.5,292.7,698.5,-0.0,10.5
-"dell, durch einen Klick in ein bewegliches, modales Fenster",6,16,87,9.0,53.8,700.0,292.7,708.9,0.0,10.5
-umwandeln oder in einen neuen Tab.,6,16,88,9.0,53.8,710.4,202.6,719.4,0.0,10.5
-Literatur,6,17,89,12.0,316.8,620.6,364.6,632.5,263.0,-89.8
-"[1] D. Becher. DB-Normalizer. TU Munchen, 2021. ¨ https:",6,18,90,9.0,316.8,637.2,555.9,646.6,0.0,16.6
-//db.in.tum.de/teaching/ws2021/grundlagen/.,6,18,91,9.0,331.0,647.6,530.9,657.0,14.2,10.5
-[2] P. Chen. The-Entity-Relationship-Model. ACM transac-,6,19,92,9.0,316.8,658.1,555.9,667.1,-14.2,10.5
-"tions on database systems (TODS), 1976.",6,19,93,9.0,331.0,668.6,497.5,677.5,14.2,10.5
-[3] H. Faeskorn-Woyke and B. Bertelsmeier. EDB - Das,6,20,94,9.0,316.8,679.0,555.7,688.0,-14.2,10.5
-"eLearning Datenbank Portal der TH K¨oln., 2021.",6,20,95,9.0,331.0,689.5,529.6,698.9,14.2,10.5
-[4] K. Schneider and F. Keller. Das Daten Caf´e an der Hoch-,6,21,96,9.0,316.8,700.0,555.8,708.9,-14.2,10.5
-"schule Harz, 2021. http://datencafe.hs-harz.de/.",6,21,97,9.0,331.0,710.4,542.6,719.8,14.2,10.5
+text,page_no,block_no,line_no_on_page,font_size,x1,y1,x2,y2,rel_x,rel_y,mostly_bold
+Interaktives Anpassungsfähiges E-Learning-System Im,1,1,1,17.9,70.1,71.6,539.6,89.6,,,True
+Bereich Datenbanken,1,2,2,17.9,213.3,91.5,396.4,109.5,143.2,19.9,True
+Fabian Keller,1,3,3,12.0,123.9,137.4,193.3,149.3,-89.3,45.9,False
+Hochschule Harz,1,3,4,10.0,120.7,149.4,196.5,159.4,-3.2,12.0,False
+Friedrichstraße 57-59,1,3,5,10.0,111.1,159.8,206.1,169.8,-9.6,10.5,False
+38855 Wernigerode,1,3,6,10.0,114.9,170.3,202.3,180.3,3.8,10.5,False
+fkeller@hs-harz.de,1,3,7,12.0,108.5,180.8,208.7,192.7,-6.4,10.5,False
+Pia-Katharina Habekost,1,4,8,12.0,241.8,137.4,368.0,149.3,133.3,-43.4,False
+Hochschule Harz,1,4,9,10.0,266.9,149.4,342.8,159.4,25.2,12.0,False
+Friedrichstraße 57-59,1,4,10,10.0,257.4,159.8,352.3,169.8,-9.6,10.5,False
+38855 Wernigerode,1,4,11,10.0,261.1,170.3,348.6,180.3,3.8,10.5,False
+u36775@hs-harz.de,1,4,12,12.0,250.6,180.8,359.1,192.7,-10.5,10.5,False
+Kerstin Schneider,1,5,13,12.0,404.2,137.4,498.0,149.3,153.6,-43.4,False
+Hochschule Harz,1,5,14,10.0,413.2,149.4,489.0,159.4,9.0,12.0,False
+Friedrichstraße 57-59,1,5,15,10.0,403.6,159.8,498.6,169.8,-9.6,10.5,False
+38855 Wernigerode,1,5,16,10.0,407.4,170.3,494.8,180.3,3.8,10.5,False
+kschneider@hs-harz.de,1,5,17,12.0,387.9,180.8,514.3,192.7,-19.5,10.5,False
+ABSTRACT,1,6,18,12.0,53.8,218.2,118.2,230.1,-334.1,37.4,True
+Das E-Learning-System ALEA [4] wird im Bereich Da-,1,7,19,9.0,325.8,220.4,555.8,229.3,272.0,2.2,False
+"tenbanken entwickelt, weiterentwickelt und eingesetzt. Es",1,7,20,9.0,316.8,230.8,555.7,239.8,-9.0,10.5,False
+"besteht aus verschiedenen Komponenten, die unterschied-",1,7,21,9.0,316.8,241.3,555.8,250.2,0.0,10.5,False
+liche Teilgebiete adressieren. Diese sollen weitestgehend mit,1,7,22,9.0,316.8,251.7,555.7,260.7,0.0,10.5,False
+den Lernenden interagieren und Hilfestellungen bereitstel-,1,7,23,9.0,316.8,262.2,555.8,271.2,0.0,10.5,False
+len. Die typischerweise in einfuhrenden Datenbanklehrver- ¨,1,7,24,9.0,316.8,272.7,555.9,282.0,0.0,10.5,False
+anstaltungen enthaltenen Aufgaben in den Bereichen ER-,1,7,25,9.0,316.8,283.1,555.8,292.1,-0.0,10.5,False
+to-Relational-Mapping und Normalisierung sind in der Re-,1,7,26,9.0,316.8,293.6,555.7,302.5,0.0,10.5,False
+gel sehr aufwendig zu korrigieren. Fur die Lernenden ist ein ¨,1,7,27,9.0,316.8,304.0,555.9,313.4,0.0,10.5,False
+Uben dieser Aufgaben jedoch sehr hilfreich. F ¨ ur das ALEA- ¨,1,7,28,9.0,316.8,312.6,555.9,323.9,0.0,8.6,False
+System wurden daher interaktive Komponenten fur die bei- ¨,1,7,29,9.0,316.8,325.0,555.9,334.3,-0.0,12.3,False
+den Bereiche entwickelt und genutzt.,1,7,30,9.0,316.8,335.4,465.2,344.4,0.0,10.5,False
+E-Learning-Systeme finden immer weitere Verbreitung in,1,8,31,9.0,53.8,234.8,292.8,243.8,-263.0,-100.6,False
+den verschiedensten Lehrbereichen. Auch im Bereich Da-,1,8,32,9.0,53.8,245.3,292.8,254.2,0.0,10.5,False
+tenbanken gibt es eine Vielzahl von Anwendungsgebieten.,1,8,33,9.0,53.8,255.7,292.8,264.7,0.0,10.5,False
+"Es werden zwei Komponenten vorgestellt, die bei der Leh-",1,8,34,9.0,53.8,266.2,292.8,275.1,0.0,10.5,False
+re im Rahmen von Aufgaben bezogen auf ER-to-Relational-,1,8,35,9.0,53.8,276.6,292.7,285.6,0.0,10.5,False
+Mapping und Normalisierung unterstutzen sollen. Vielf ¨ ¨altige,1,8,36,9.0,53.8,287.1,292.9,296.5,0.0,10.5,False
+Interaktionen und Hilfestellungen bspw. Empfehlungen von,1,8,37,9.0,53.8,297.6,292.8,306.5,0.0,10.5,False
+multimedialen digitalen Elementen werden zur Verbesserung,1,8,38,9.0,53.8,308.0,292.8,317.0,0.0,10.5,False
+des Lernprozesses integriert.,1,8,39,9.0,53.8,318.5,167.4,327.4,0.0,10.5,False
+Keywords,1,9,40,12.0,53.8,342.8,105.2,354.8,0.0,24.3,True
+Diese Komponenten und deren vielf¨altige Interaktions-,1,10,41,9.0,325.8,345.9,555.8,355.3,272.0,3.1,False
+m¨oglichkeiten werden im Folgenden thematisiert. Grund-,1,10,42,9.0,316.8,356.3,555.8,365.7,-9.0,10.5,False
+"E-Learning-Systeme, ER-to-Relational-Mapping, SQL-DDL,",1,11,43,9.0,53.8,359.4,294.2,368.4,-263.0,3.1,False
+"Normalisierung, Recommender-Systeme",1,11,44,9.0,53.8,369.9,213.6,378.8,0.0,10.5,False
+s¨atzliche M¨oglichkeiten zur Interaktion des E-Learning-Systems,1,12,45,9.0,316.8,366.8,567.5,376.2,263.0,-3.1,False
+werden hierbei veranschaulicht.,1,12,46,9.0,316.8,377.3,442.9,386.2,0.0,10.5,False
+Nach einer kurzen Einfuhrung in die grundlegenden Aspek- ¨,1,13,47,9.0,325.8,387.7,557.9,397.1,9.0,10.5,False
+te des Systems wird auf die Mapping-Aufgaben aus dem,1,13,48,9.0,316.8,398.2,555.8,407.1,-9.0,10.5,False
+Bereich ER-to-Relational-Mapping eingegangen. Die vielf¨al-,1,13,49,9.0,316.8,408.6,555.9,418.0,0.0,10.5,False
+tigen Arten der Interaktionen bei der Bearbeitung werden,1,13,50,9.0,316.8,419.1,555.8,428.1,0.0,10.5,False
+erl¨autert. Die Bearbeitung der Normalisierungsaufgaben er-,1,13,51,9.0,316.8,429.6,555.8,438.9,0.0,10.5,False
+fordert erg¨anzende Interaktionsm¨oglichkeiten und Ansich-,1,13,52,9.0,316.8,440.0,555.8,449.4,0.0,10.5,False
+"ten, die im folgenden Kapitel beschrieben werden. Schließ-",1,13,53,9.0,316.8,450.5,555.8,459.5,0.0,10.5,False
+lich werden die Ergebnisse zusammengefasst und ein Aus-,1,13,54,9.0,316.8,460.9,555.8,469.9,0.0,10.5,False
+blick gegeben.,1,13,55,9.0,316.8,471.4,373.3,480.4,0.0,10.5,False
+1. EINLEITUNG,1,14,56,12.0,53.8,394.2,151.1,406.1,-263.0,-77.2,True
+Der Einsatz von E-Learning-Systemen wird zunehmend,1,15,57,9.0,62.8,409.3,292.8,418.3,9.0,15.1,False
+bedeutsamer. Durch Erweiterungen der Interaktions- und,1,15,58,9.0,53.8,419.8,292.8,428.7,-9.0,10.5,False
+Feedbackm¨oglichkeiten kann die Nutzlichkeit der E-Learning- ¨,1,16,59,9.0,53.8,430.2,296.0,439.6,0.0,10.5,False
+Systeme verbessert werden und den Lernenden nicht nur,1,16,60,9.0,53.8,440.7,292.8,449.7,0.0,10.5,False
+in Selbstlernphasen Hilfestellungen und Unterstutzungsm ¨ ¨og-,1,16,61,9.0,53.8,451.1,292.9,460.5,0.0,10.5,False
+lichkeiten im Lernprozess zur Verfugung stellen. Im Kon- ¨,1,16,62,9.0,53.8,461.6,292.8,471.0,0.0,10.5,False
+text von Leistungsermittlungen k¨onnen Hilfestellungen ein-,1,16,63,9.0,53.8,472.1,292.8,481.4,0.0,10.5,False
+"geschr¨ankt werden, trotzdem sollen die Korrektur- und Ab-",1,16,64,9.0,53.8,482.5,292.8,491.9,0.0,10.5,False
+fragem¨oglichkeiten erleichtert und verbessert sein.,1,16,65,9.0,53.8,493.0,254.7,502.4,0.0,10.5,False
+2. GRUNDLEGENDE ASPEKTE,1,17,66,12.0,316.8,495.6,498.5,507.5,263.0,2.6,True
+Das Konzept ER-to-Relational-Mapping und die Norma-,1,18,67,9.0,62.8,503.4,292.7,512.4,-254.0,7.9,False
+lisierung eines Relationenmodells bzw. relationalen Daten-,1,18,68,9.0,53.8,513.9,292.7,522.9,-9.0,10.5,False
+Das ALEA-System ist ein datenbankbasiertes E-Learning-,1,19,69,9.0,325.8,510.7,555.7,519.7,272.0,-3.2,False
+System fur Datenbanken und besteht aus verschiedenen Kom- ¨,1,19,70,9.0,316.8,521.2,559.8,530.6,-9.0,10.5,False
+ponenten fur unterschiedliche Bereiche. ¨,1,19,71,9.0,316.8,531.6,474.5,541.0,-0.0,10.5,False
+"modells sind zwei grunds¨atzliche Gebiete, die in einfuhren- ¨",1,20,72,9.0,53.8,524.4,292.9,533.7,-263.0,-7.3,False
+den Lehrveranstaltung im Bereich Datenbanken behandelt,1,20,73,9.0,53.8,534.8,292.8,543.8,0.0,10.5,False
+werden. In den letzten Jahren wurden verst¨arkt E-Learning-,1,20,74,9.0,53.8,545.3,292.8,554.7,0.0,10.5,False
+"Syteme eingesetzt, sodass auch diese Gebiete von diesen Sys-",1,20,75,9.0,53.8,555.8,292.7,564.7,0.0,10.5,False
+temen unterstutzt werden sollten. Das E-Learning Daten- ¨,1,20,76,9.0,53.8,566.2,292.8,575.6,0.0,10.5,False
+bank Portal edb-Portal der TH K¨oln [3] ist ein umfangrei-,1,20,77,9.0,53.8,576.7,292.8,586.1,0.0,10.5,False
+ches E-Learning-Angebot fur den Bereich Datenbanken und ¨,1,20,78,9.0,53.8,587.1,292.9,596.5,0.0,10.5,False
+enth¨alt auch einen ER-Trainer. An der TU Munchen gibt es ¨,1,20,79,9.0,53.8,597.6,292.9,607.0,0.0,10.5,False
+den DB-Normalizer [1].,1,20,80,9.0,53.8,608.1,147.3,617.0,0.0,10.5,False
+Das System wurde haupts¨achlich mit Java und JavaS-,1,21,81,9.0,325.8,542.1,555.8,551.5,272.0,-66.0,False
+cript entwickelt. Als Entwurfsmuster wurde MVC2 verwen-,1,21,82,9.0,316.8,552.6,555.8,561.5,-9.0,10.5,False
+"det, das heißt, es gibt eine logische Trennung zwischen Logik",1,21,83,9.0,316.8,563.0,555.7,572.0,0.0,10.5,False
+und Anzeige. Die Anzeige basiert auf HTML5 in Kombina-,1,21,84,9.0,316.8,573.5,555.8,582.4,0.0,10.5,False
+"tion mit CSS und wurde mit JavaScript erweitert, um die",1,21,85,9.0,316.8,583.9,555.8,592.9,0.0,10.5,False
+Interaktionsm¨oglichkeiten zu erh¨ohen und verbessern. Mit-,1,21,86,9.0,316.8,594.4,555.9,603.8,0.0,10.5,False
+hilfe von AJAX werden nach Bedarf Daten an den Server,1,21,87,9.0,316.8,604.9,555.8,613.8,0.0,10.5,False
+gesendet ohne dass die Webseite neu geladen wird. Zur Ver-,1,21,88,9.0,316.8,615.3,555.8,624.3,0.0,10.5,False
+"waltung der Information uber Aufgaben, L ¨ ¨osungen, Lernen-",1,21,89,9.0,316.8,625.8,555.9,635.2,0.0,10.5,False
+de usw. werden Datenbanksysteme eingebunden.,1,21,90,9.0,316.8,636.2,512.7,645.2,-0.0,10.5,False
+3. AUFGABENTYP ER-TO-RELATIONAL-,1,22,91,12.0,316.8,660.4,555.9,672.4,0.0,24.2,True
+MAPPING,1,22,92,12.0,337.7,674.4,394.8,686.3,20.9,13.9,True
+32nd GI-Workshop on Foundations of Databases (Grundlagen von Daten-,1,23,93,8.0,53.8,684.2,292.9,694.6,-283.9,9.9,False
+"banken), September 01-03, 2021, Munich, Germany.",1,23,94,8.0,53.8,695.6,221.8,703.6,0.0,11.4,False
+Fur die Thematik des ER-to-Relational-Mapping ist ein ¨,1,24,95,9.0,325.8,689.5,555.7,698.9,272.0,-6.1,False
+"Fragentyp vorgesehen, der das Thema der Erstellung von",1,24,96,9.0,316.8,700.0,555.8,708.9,-9.0,10.5,False
+relationalen Datenmodellen beinhaltet auf Basis vorgegebe-,1,24,97,9.0,316.8,710.4,555.7,719.4,0.0,10.5,False
+Copyright © 2021 for this paper by its authors. Use permitted under Crea-,1,25,98,8.0,53.8,704.0,292.9,712.9,-263.0,-6.4,False
+tive Commons License Attribution 4.0 International (CC BY 4.0).,1,25,99,8.0,53.8,713.6,263.9,721.5,0.0,9.6,False
+ner ER-Modelle und Anforderungen. Aufgaben dieses Typs,2,1,1,9.0,53.8,56.9,292.8,65.8,,,False
+beinhalten die Darstellung eines konzeptuellen Datenmo-,2,1,2,9.0,53.8,67.3,292.8,76.3,0.0,10.5,False
+"dells, welche als Bild vorliegt, bspw. ein gezeichnetes ERM",2,1,3,9.0,53.8,77.8,292.7,86.8,0.0,10.5,False
+in Chen-Notation [2]. Dieses soll von den Lernenden auf ein,2,1,4,9.0,53.8,88.2,292.8,97.2,0.0,10.5,False
+"logisches Datenmodell, hier ein Relationenmodell, abgebil-",2,1,5,9.0,53.8,98.7,292.7,107.7,0.0,10.5,False
+det werden. Dazu sollen die Lernenden die entsprechenden,2,1,6,9.0,53.8,109.2,292.8,118.1,0.0,10.5,False
+Tabellen und Constraints definieren. Die relevanten Cons-,2,1,7,9.0,53.8,119.6,292.8,128.6,0.0,10.5,False
+"traints sind Not Null, Unique, Primary Key und Foreign",2,1,8,9.0,53.8,130.1,292.8,139.1,0.0,10.5,False
+Key.,2,1,9,9.0,53.8,140.5,71.7,149.5,0.0,10.5,False
+Figure 2: Beispiel von Constraints,2,2,10,9.0,369.1,130.9,503.5,139.9,315.3,-9.6,False
+Die Mapping-Aufgaben sind darauf ausgelegt den Lernen-,2,3,11,9.0,62.8,151.0,292.8,160.0,-306.3,20.1,False
+den visuell und interaktiv Wissen zu vermitteln. In diesem,2,3,12,9.0,53.8,161.5,292.8,170.4,-9.0,10.5,False
+Fall fungiert das System als sog. Composer zur Erstellung,2,3,13,9.0,53.8,171.9,292.7,180.9,0.0,10.5,False
+lisiert werden. Diese beziehen sich auf grunds¨atzliche Struk-,2,4,14,9.0,316.8,163.5,555.9,172.9,263.0,-8.4,False
+turen und Regeln bei den Tabellendefinitionen. Weiterhin,2,4,15,9.0,316.8,174.0,555.8,182.9,0.0,10.5,False
+kann der ¨aquivalente DDL-Code aus den entstandenen Re-,2,4,16,9.0,316.8,184.4,555.8,193.8,0.0,10.5,False
+"lationen erzeugt werden, um eine Prufung auf dem Daten- ¨",2,4,17,9.0,316.8,194.9,555.9,204.3,0.0,10.5,False
+bankserver auszufuhren. Dar ¨ uber hinaus k ¨ ¨onnen durch die,2,4,18,9.0,316.8,205.4,555.9,214.7,0.0,10.5,False
+in der Datenbank zu der Aufgabe hinterlegten Informatio-,2,4,19,9.0,316.8,215.8,555.8,224.8,0.0,10.5,False
+"nen weitere Prufungen durchgef ¨ uhrt werden, die sich dar- ¨",2,4,20,9.0,316.8,226.3,555.9,235.7,0.0,10.5,False
+uber hinaus speziell auf die Aufgabe und deren Anforde- ¨,2,4,21,9.0,316.8,236.7,555.8,246.1,-0.0,10.5,False
+rungen beziehen. Die Korrektheit einer L¨osung kann zwar,2,4,22,9.0,316.8,247.2,555.9,256.6,0.0,10.5,False
+"generell nicht automatisch entschieden werden, aber Fehler",2,4,23,9.0,316.8,257.7,555.8,266.6,0.0,10.5,False
+k¨onnen weitestgehend erkannt werden. Die Gestaltung der,2,4,24,9.0,316.8,268.1,555.8,277.5,0.0,10.5,False
+Aufgaben kann dies erleichtern.,2,4,25,9.0,316.8,278.6,443.7,287.5,0.0,10.5,False
+der notwendigen Tabellen. In diesen k¨onnen durch Schalt-,2,5,26,9.0,53.8,182.4,292.9,191.8,-263.0,-96.2,False
+"fl¨achen Tabellenbezeichnung, Spalten und Constraints hin-",2,5,27,9.0,53.8,192.9,292.8,202.2,0.0,10.5,False
+zugefugt werden. ¨,2,5,28,9.0,53.8,203.3,121.8,212.7,0.0,10.5,False
+3.1 Bearbeitung der Aufgaben,2,6,29,12.0,53.8,220.2,216.3,232.1,-0.0,16.9,True
+Zur L¨osung der Mapping-Aufgaben gibt es fur jede Akti- ¨,2,7,30,9.0,62.8,235.3,292.9,244.7,9.0,15.1,False
+on eine entsprechende Schaltfl¨ache. Das System erlaubt es,2,7,31,9.0,53.8,245.8,292.8,255.1,-9.0,10.5,False
+den Lernenden nicht mehrere Aktionen parallel auszufuhren. ¨,2,7,32,9.0,53.8,256.2,292.9,265.6,0.0,10.5,False
+"Erst nachdem eine Aktion abgeschlossen ist, kann eine neue",2,7,33,9.0,53.8,266.7,292.7,275.6,0.0,10.5,False
+gestartet werden. Fur diesen Zweck werden alle anderen Ak- ¨,2,7,34,9.0,53.8,277.1,292.8,286.5,0.0,10.5,False
+tionen durch das Deaktivieren der entsprechenden Buttons,2,7,35,9.0,53.8,287.6,292.8,296.6,-0.0,10.5,False
+unterbunden (siehe Abbildung 1). Wird zum Beispiel eine,2,7,36,9.0,53.8,298.1,292.8,307.0,0.0,10.5,False
+"neue Tabelle definiert, so muss fur die Tabelle ein Name ¨",2,7,37,9.0,53.8,308.5,292.9,317.9,0.0,10.5,False
+"eingegeben werden, bevor Spalten hinzugefugt werden k ¨ ¨on-",2,7,38,9.0,53.8,319.0,292.9,328.4,0.0,10.5,False
+nen. Wiederum muss mindestens eine Spalte zu einer Tabel-,2,7,39,9.0,53.8,329.4,292.8,338.4,0.0,10.5,False
+le geh¨oren damit Constraints erzeugt werden k¨onnen (siehe,2,7,40,9.0,53.8,339.9,292.9,349.3,0.0,10.5,False
+Abbildung 2).,2,7,41,9.0,53.8,350.4,109.7,359.3,0.0,10.5,False
+Bereits bei der Eingabe sind ausgew¨ahlte Strukturen und,2,8,42,9.0,325.8,289.0,555.9,298.4,272.0,-61.3,False
+Regeln bezogen auf die Tabellen und Constraints einzuhal-,2,8,43,9.0,316.8,299.5,555.8,308.5,-9.0,10.5,False
+"ten, sodass diese idealerweise von den Studierenden verin-",2,8,44,9.0,316.8,310.0,555.8,318.9,0.0,10.5,False
+nerlicht werden.,2,8,45,9.0,316.8,320.4,381.0,329.4,0.0,10.5,False
+Der Composer fungiert grundlegend als dynamisch erweiter-,2,9,46,9.0,325.8,330.9,561.8,339.9,9.0,10.5,False
+bares HTML-Formular. Die durch die Lernenden ausgel¨os-,2,9,47,9.0,316.8,341.3,555.9,350.7,-9.0,10.5,False
+ten Aktionen durchlaufen in dieser Phase nicht jedes Mal,2,9,48,9.0,316.8,351.8,555.8,360.8,-0.0,10.5,False
+"eine Validierungsroutine auf dem Server, wodurch Ressour-",2,9,49,9.0,316.8,362.3,555.8,371.2,0.0,10.5,False
+cen gespart werden.,2,9,50,9.0,316.8,372.7,396.4,381.7,0.0,10.5,False
+Das konzeptuelle Datenmodell ist in den Aufgabenstellun-,2,10,51,9.0,62.8,360.8,292.7,369.8,-254.0,-11.9,False
+gen als Bild enthalten. Dieses kann im oberen Bereich des,2,10,52,9.0,53.8,371.3,292.8,380.3,-9.0,10.5,False
+Systems eingeblendet werden. Damit die Lernenden zu je-,2,10,53,9.0,53.8,381.7,292.8,390.7,0.0,10.5,False
+der Zeit einen freien Blick auf das abzubildende ER-Modell,2,10,54,9.0,53.8,392.2,292.8,401.2,0.0,10.5,False
+"haben, l¨asst sich dieses durch einen Klick in einem frei be-",2,10,55,9.0,53.8,402.7,292.8,412.0,0.0,10.5,False
+weglichen modalen Fenster oder einem neuen Tab ¨offnen.,2,10,56,9.0,53.8,413.1,292.9,422.5,0.0,10.5,False
+So besteht die M¨oglichkeit auch bei gr¨oßeren Datenmodel-,2,10,57,9.0,53.8,423.6,292.8,433.0,0.0,10.5,False
+"len, bei deren Verarbeitung vermehrt gescrollt werden muss,",2,10,58,9.0,53.8,434.0,292.8,443.0,-0.0,10.5,False
+den Uberblick zu behalten. Zudem kann die Gr ¨ ¨oße des ab-,2,10,59,9.0,53.8,442.7,292.9,453.9,0.0,8.6,False
+gekoppelten Fensters durch Ziehen mit der Maus ver¨andert,2,10,60,9.0,53.8,455.0,292.9,464.3,0.0,12.3,False
+werden.,2,10,61,9.0,53.8,465.4,84.8,474.4,0.0,10.5,False
+Nicht alle logischen Zusammenh¨ange mussen durch das ¨,2,11,62,9.0,325.8,383.2,555.9,392.6,272.0,-82.2,False
+eingebundene Datenbanksystem gepruft werden. Ein Bei- ¨,2,11,63,9.0,316.8,393.6,555.9,403.0,-9.0,10.5,False
+spiel fur diese Art der Pr ¨ ufung ist die L ¨ ¨oschung von Spal-,2,11,64,9.0,316.8,404.1,555.9,413.5,0.0,10.5,False
+ten. Durch eine Routine innerhalb der JavaScript-Skripte,2,11,65,9.0,316.8,414.6,555.8,423.5,-0.0,10.5,False
+"wird gepruft, ob die Spalte f ¨ ur Constraints der aktuellen ¨",2,11,66,9.0,316.8,425.0,555.9,434.4,0.0,10.5,False
+"oder anderer Tabellen genutzt wird. Ist dies der Fall, gibt",2,11,67,9.0,316.8,435.5,555.8,444.5,0.0,10.5,False
+das System eine Meldung aus und der L¨oschvorgang wird,2,11,68,9.0,316.8,446.0,555.9,455.3,0.0,10.5,False
+abgebrochen. Die Umbenennung einer Spalte wird ebenfalls,2,11,69,9.0,316.8,456.4,555.8,465.4,0.0,10.5,False
+durch eine JavaScript-Routine gepruft. Dieser Vorgang wird ¨,2,11,70,9.0,316.8,466.9,555.9,476.3,0.0,10.5,False
+jedoch innerhalb der aktuellen Tabelle zugelassen und ein,2,11,71,9.0,316.8,477.3,555.8,486.3,0.0,10.5,False
+"Hinweis ausgegeben der darauf hinweist, dass andere Ta-",2,11,72,9.0,316.8,487.8,555.8,496.8,0.0,10.5,False
+"bellen mit dieser Spalte in Zusammenhang stehen k¨onnten,",2,11,73,9.0,316.8,498.3,555.9,507.6,0.0,10.5,False
+sodass eine manuelle Prufung notwendig ist. Die durch die ¨,2,11,74,9.0,316.8,508.7,555.8,518.1,0.0,10.5,False
+Anderung des Spaltennamens notwendigen Anpassungen in- ¨,2,11,75,9.0,316.8,517.3,555.8,528.1,-0.0,8.6,False
+nerhalb der Tabellendefinition werden automatisch durchge-,2,11,76,9.0,316.8,529.6,555.8,538.6,0.0,12.3,False
+fuhrt. Da diese ¨ Anderungen die Lernenden von relevanteren ¨,2,11,77,9.0,316.8,538.2,555.9,549.5,0.0,8.6,False
+Aspekten ablenken wurden. ¨,2,11,78,9.0,316.8,550.6,428.1,559.9,-0.0,12.3,False
+Das Zulassen von Aktionen trotz Inkonsistenz kann sinn-,2,12,79,9.0,325.8,561.0,555.8,570.0,9.0,10.5,False
+"voll sein. Ein Beispiel ist ein Fremdschlussel-Constraint, wel- ¨",2,12,80,9.0,316.8,571.5,555.8,580.9,-9.0,10.5,False
+cher angelegt wird bevor die referenzierten Spalten als Kan-,2,12,81,9.0,316.8,581.9,555.8,590.9,-0.0,10.5,False
+didatenschlussel (Primary Key oder NOT NULL/Unique ¨,2,12,82,9.0,316.8,592.4,555.8,601.8,0.0,10.5,False
+Constraints) definiert wurden. Ansonsten wurden positive ¨,2,12,83,9.0,316.8,602.9,555.9,612.2,0.0,10.5,False
+Aktionen zu stark von erzwungenen Reihenfolgeabh¨angig-,2,12,84,9.0,316.8,613.3,555.9,622.7,0.0,10.5,False
+keiten gest¨ort werden. Die Lernenden k¨onnen jederzeit den,2,12,85,9.0,316.8,623.8,555.9,633.2,0.0,10.5,False
+dem aktuellen Zustand entsprechenden DDL-Code uber das ¨,2,12,86,9.0,316.8,634.2,555.9,643.6,0.0,10.5,False
+Datenbanksystem prufen lassen. F ¨ ur Leistungsbewertungen ¨,2,12,87,9.0,316.8,644.7,555.9,654.1,0.0,10.5,False
+kann diese M¨oglichkeit eingeschr¨ankt werden.,2,12,88,9.0,316.8,655.2,500.0,664.5,0.0,10.5,False
+Figure 1: Aktive Bearbeitung einer Spalte,2,13,89,9.0,90.2,633.8,256.3,642.7,-226.6,-21.4,False
+3.2 Prüfen der Eingaben,2,14,90,12.0,53.8,663.9,187.6,675.9,-36.4,30.2,True
+3.3 Reaktionen des Systems auf Eingaben,2,15,91,12.0,316.8,674.4,537.0,686.3,263.0,10.5,True
+Ein wichtiger Aspekt der Mapping-Aufgaben ist es die,2,16,92,9.0,62.8,679.0,292.8,688.0,-254.0,4.7,False
+Eingaben der Lernenden so fruh und umfangreich wie sinn- ¨,2,16,93,9.0,53.8,689.5,292.8,698.9,-9.0,10.5,False
+voll und m¨oglich zu prufen. Bereits bei den Eingaben werden ¨,2,16,94,9.0,53.8,700.0,292.8,709.3,-0.0,10.5,False
+"clientseitige Abfragen genutzt, welche durch JavaScript rea-",2,16,95,9.0,53.8,710.4,292.7,719.4,0.0,10.5,False
+Jede Aktion ruft eine Reaktion hervor. Wenn die Lernen-,2,17,96,9.0,325.8,689.5,555.8,698.5,272.0,-20.9,False
+"den als Beispiel eine Spalte umbenennen, werden die Fol-",2,17,97,9.0,316.8,700.0,555.8,708.9,-9.0,10.5,False
+"gen dieser Aktion in einer Meldung visuell dargestellt, da",2,17,98,9.0,316.8,710.4,555.8,719.4,0.0,10.5,False
+ggfs. Anpassungen aufgrund von Abh¨angigkeiten in anderen,3,1,1,9.0,53.8,56.9,292.9,66.2,,,False
+Tabellen durch die Lernenden notwendig werden k¨onnen.,3,1,2,9.0,53.8,67.3,292.9,76.7,0.0,10.5,False
+"Hierbei wird angestrebt, dass diese Meldungen motivierend",3,1,3,9.0,53.8,77.8,292.8,86.8,0.0,10.5,False
+und angepasst an die Sprache der Lernenden formuliert wer-,3,1,4,9.0,53.8,88.2,292.8,97.2,0.0,10.5,False
+den. Die Meldungstexte k¨onnen im System angepasst wer-,3,1,5,9.0,53.8,98.7,292.8,108.1,0.0,10.5,False
+den. Hier bieten sich weitere M¨oglichkeiten fur intelligente ¨,3,1,6,9.0,53.8,109.2,292.9,118.5,-0.0,10.5,False
+Empfehlungsfunktionen. Die Lernenden durfen und sollen ¨,3,1,7,9.0,53.8,119.6,292.9,129.0,-0.0,10.5,False
+Fehler machen aus denen sie lernen k¨onnen. Das Wissen soll,3,1,8,9.0,53.8,130.1,292.8,139.5,-0.0,10.5,False
+sich durch Wiederholen verfestigen.,3,1,9,9.0,53.8,140.5,196.6,149.5,0.0,10.5,False
+"weiterfuhrende Informationen, so k ¨ ¨onnen diese in verschie-",3,2,10,9.0,316.8,56.9,555.9,66.2,263.0,-83.7,False
+"denen medialen Formen, z.B. Screencasts, Podcasts, Hilfe-",3,2,11,9.0,316.8,67.3,555.7,76.3,0.0,10.5,False
+"texte, Hilfegrafiken, vorliegen und abgerufen werden.",3,2,12,9.0,316.8,77.8,529.3,86.8,0.0,10.5,False
+"Die Farbe der Icons kann, wie auch die Ansprache oder",3,3,13,9.0,325.8,88.2,555.8,97.2,9.0,10.5,False
+"empfohlene Medien, durch die Empfehlungsalgorithmen an-",3,3,14,9.0,316.8,98.7,555.8,107.7,-9.0,10.5,False
+gepasst werden.,3,3,15,9.0,316.8,109.2,380.1,118.1,0.0,10.5,False
+Neben diesen Hinweisen werden zudem noch Informatio-,3,4,16,9.0,325.8,119.6,555.8,128.6,9.0,10.5,False
+nen zum aktuellen Bearbeitungsstand der Aufgabe gegeben.,3,4,17,9.0,316.8,130.1,555.8,139.1,-9.0,10.5,False
+Diese Informationen finden die Lernenden unter dem Info-,3,4,18,9.0,316.8,140.5,555.8,149.5,0.0,10.5,False
+Icon (siehe Abbildung 5).,3,4,19,9.0,316.8,151.0,419.0,160.0,0.0,10.5,False
+Fur die Mapping-Aufgaben sind diese Hinweise vorteil- ¨,3,5,20,9.0,62.8,151.0,292.8,160.4,-254.0,0.0,False
+"haft, um die Ubersicht ¨ uber den aktuellen Bearbeitungs- ¨",3,5,21,9.0,53.8,159.6,292.8,170.8,-9.0,8.6,False
+stand zu erhalten. Die Hinweise zeigen m¨ogliche Komplika-,3,5,22,9.0,53.8,171.9,292.8,181.3,0.0,12.3,False
+tionen auf und sollen so das Verst¨andnis der Lernenden fur ¨,3,5,23,9.0,53.8,182.4,292.9,191.8,-0.0,10.5,False
+logische Zusammenh¨ange innerhalb des Relationenmodells,3,5,24,9.0,53.8,192.9,292.8,202.2,-0.0,10.5,False
+"erh¨ohen. Deswegen kann es hilfreich, dass in den Hinweisen",3,5,25,9.0,53.8,203.3,292.8,212.7,0.0,10.5,False
+"angezeigt wird, dass Anderungen in der aktuellen Tabelle ¨",3,5,26,9.0,53.8,211.9,292.8,222.7,0.0,8.6,False
+durchaus Auswirkungen auf die Constraints anderer Tabel-,3,5,27,9.0,53.8,224.2,292.8,233.2,0.0,12.3,False
+len haben k¨onnten. So sind die Lernenden angehalten diese,3,5,28,9.0,53.8,234.7,292.8,244.1,0.0,10.5,False
+aktiv anzupassen.,3,5,29,9.0,53.8,245.2,124.9,254.1,0.0,10.5,False
+Wenn bspw. die L¨osung bzw. die gultigen L ¨ ¨osungen der,3,6,30,9.0,325.8,161.5,555.9,170.8,272.0,-83.7,False
+Aufgabe eine bestimmte Anzahl an Uniques erfordern oder,3,6,31,9.0,316.8,171.9,555.8,180.9,-9.0,10.5,False
+eine minimale oder maximale Anzahl an Uniques enthal-,3,6,32,9.0,316.8,182.4,555.7,191.4,0.0,10.5,False
+"ten durfen, kann den Lernenden mitgeteilt werden, dass die ¨",3,6,33,9.0,316.8,192.9,555.8,202.2,0.0,10.5,False
+Anzahl der Uniques noch nicht einer gultigen L ¨ ¨osung ent-,3,6,34,9.0,316.8,203.3,555.9,212.7,0.0,10.5,False
+spricht. Hierbei wird den Lernenden in der Regel keine kon-,3,6,35,9.0,316.8,213.8,555.8,222.7,0.0,10.5,False
+"krete Anzahl genannt, lediglich dass diese noch nicht gultig ¨",3,6,36,9.0,316.8,224.2,555.9,233.6,0.0,10.5,False
+ist.,3,6,37,9.0,316.8,234.7,329.1,243.7,-0.0,10.5,False
+"Zudem k¨onnen hier Hilfetexte erscheinen, die sich auf die",3,7,38,9.0,325.8,245.2,555.8,254.5,9.0,10.5,False
+Arbeitsweise der Lernenden beziehen. Bemerkt das System,3,7,39,9.0,316.8,255.6,555.8,264.6,-9.0,10.5,False
+z.B. dass es im Bereich der Foreign Key Constraints zu,3,7,40,9.0,316.8,266.1,555.8,275.0,0.0,10.5,False
+"vermehrten Interaktionen kommt, k¨onnen hier Definitionen",3,7,41,9.0,316.8,276.5,555.9,285.9,0.0,10.5,False
+oder Tipps zum Thema Foreign Key Constraints angezeigt,3,7,42,9.0,316.8,287.0,555.7,296.0,0.0,10.5,False
+werden. Dies ist abh¨angig von den eingesetzten hybriden,3,7,43,9.0,316.8,297.5,555.8,306.8,0.0,10.5,False
+Filter- und Empfehlungsalgorithmen.,3,7,44,9.0,316.8,307.9,466.4,316.9,0.0,10.5,False
+Die eben genannten Hinweise erscheinen als modale Fens-,3,8,45,9.0,62.8,255.6,292.8,264.6,-254.0,-52.3,False
+"ter mittig in der Browserausgabe, um die Aufmerksamkeit",3,8,46,9.0,53.8,266.1,292.7,275.0,-9.0,10.5,False
+der Lernenden einzufangen und die Wichtigkeit dieser An- ¨,3,8,47,9.0,53.8,274.7,292.9,285.5,0.0,8.6,False
+derung in den Vordergrund zu stellen (siehe Abbildung 3).,3,8,48,9.0,53.8,287.0,292.8,296.0,0.0,12.3,False
+Diese Hinweise sollen w¨ahrend der Bearbeitung der Aufga-,3,8,49,9.0,53.8,297.5,292.8,306.8,0.0,10.5,False
+be weiterhin zur Verfugung stehen und werden deshalb als ¨,3,8,50,9.0,53.8,307.9,292.8,317.3,0.0,10.5,False
+zeitlich sortierte Liste abrufbar uber ein ’Notification Icon’ ¨,3,8,51,9.0,53.8,318.4,292.8,327.8,0.0,10.5,False
+bereitgestellt. Eine Aufteilung der Listen in unterschiedli-,3,8,52,9.0,53.8,328.8,292.7,337.8,0.0,10.5,False
+che thematische Listen wird nach weiteren Evaluierungen,3,8,53,9.0,53.8,339.3,292.8,348.3,0.0,10.5,False
+"entschieden. Diejenigen Nachrichten, die seit dem letzten",3,8,54,9.0,53.8,349.8,292.8,358.7,0.0,10.5,False
+"Offnen der Liste durch die Lernenden hinzugekommen sind, ¨",3,8,55,9.0,53.8,358.4,292.8,369.2,0.0,8.6,False
+werden farblich hervorgehoben.,3,8,56,9.0,53.8,370.7,179.6,379.7,0.0,12.3,False
+Um den Lernenden eine sog. ’Quick View’ uber den aktuel- ¨,3,9,57,9.0,325.8,318.4,555.9,327.8,272.0,-52.3,False
+"len Bearbeitungsstand zu geben, befinden sich in der Toolbar",3,9,58,9.0,316.8,328.8,555.8,337.8,-9.0,10.5,False
+"kleine Icons, welche repr¨asentativ fur Elemente der Model- ¨",3,9,59,9.0,316.8,339.3,555.9,348.7,0.0,10.5,False
+lierung stehen. Dies sind von links nach rechts die Gesamtan-,3,9,60,9.0,316.8,349.8,555.8,358.7,0.0,10.5,False
+"zahl der aktiven Tabellen, der aktiven Spalten, der Primary",3,9,61,9.0,316.8,360.2,555.8,369.2,0.0,10.5,False
+"Key Constraints, der Unique Constraints, der Foreign Key",3,9,62,9.0,316.8,370.7,555.8,379.7,0.0,10.5,False
+Constraints und der NOT NULLs außerhalb von Primary,3,9,63,9.0,316.8,381.1,555.8,390.1,0.0,10.5,False
+Key Constraints (siehe Abbildung 4). Durch die Ubersicht ¨,3,9,64,9.0,316.8,389.8,555.9,400.6,0.0,8.6,False
+der aktuell aktiven Elemente sollen die Lernenden eine kom-,3,9,65,9.0,316.8,402.1,555.8,411.0,0.0,12.3,False
+pakte Ubersicht ¨ uber den aktuellen Zustand erhalten. Insbe- ¨,3,9,66,9.0,316.8,410.7,555.8,421.9,0.0,8.6,False
+"sondere in Ubungsphasen, in denen die Mindestanzahl oder ¨",3,9,67,9.0,316.8,421.1,555.8,432.0,0.0,10.5,False
+die exakte Anzahl der ben¨otigten Elemente vorgegeben sein,3,9,68,9.0,316.8,433.5,555.8,442.8,0.0,12.3,False
+"kann, ist diese Ansicht hilfreich um zu eruieren, wie weit",3,9,69,9.0,316.8,443.9,555.8,452.9,0.0,10.5,False
+sich das eigene Ergebnis vom gesuchten zumindest in diesen,3,9,70,9.0,316.8,454.4,555.8,463.3,0.0,10.5,False
+Aspekten unterscheidet.,3,9,71,9.0,316.8,464.8,413.3,473.8,0.0,10.5,False
+Der ’Notification Icon’ befindet sich in der Toolbar im,3,10,72,9.0,62.8,381.1,292.8,390.1,-254.0,-83.7,False
+oberen Bereich des Systems.,3,10,73,9.0,53.8,391.6,167.6,400.6,-9.0,10.5,False
+Figure 4: Toolbar mit Benachrichtigungshinweis,3,11,74,9.0,342.0,516.7,530.5,525.6,288.2,125.1,False
+Figure 3: Hinweis zur Umbennung einer Spalte,3,12,75,9.0,80.5,548.6,266.0,557.6,-261.5,31.9,False
+3.4 Die Toolbar,3,13,76,12.0,53.8,580.2,141.0,592.2,-26.7,31.6,True
+Um den Lernenden weitere Funktionen zur effizienten Be-,3,14,77,9.0,62.8,595.3,292.8,604.3,9.0,15.1,False
+arbeitung der Aufgabe und Hilfestellungen aufzeigen zu k¨on-,3,14,78,9.0,53.8,605.8,292.9,615.2,-9.0,10.5,False
+"nen, befindet sich am oberen Rand des Systems eine Tool-",3,14,79,9.0,53.8,616.3,292.8,625.2,-0.0,10.5,False
+"bar (siehe Abbildung 4). Diese stellt aktuelle Informationen,",3,14,80,9.0,53.8,626.7,292.7,635.7,0.0,10.5,False
+Hinweise und Hilfestellungen zur Verfugung. Wie bereits er- ¨,3,14,81,9.0,53.8,637.2,292.9,646.6,0.0,10.5,False
+w¨ahnt gibt es hier die Auflistung der Hinweise zur Bearbei-,3,14,82,9.0,53.8,647.6,292.8,657.0,0.0,10.5,False
+tung der aktuellen Aufgabe.,3,14,83,9.0,53.8,658.1,166.7,667.1,0.0,10.5,False
+Figure 5: Toolbar mit ge¨offneten Benachrichtigungen,3,15,84,9.0,331.9,614.4,540.7,623.8,278.1,-43.7,False
+3.5 Feedback durch die Lernenden,3,16,85,12.0,316.8,643.0,502.8,654.9,-15.1,28.6,True
+Damit die Kommunikation und Interaktion der Lernenden,3,17,86,9.0,325.8,658.1,555.8,667.1,9.0,15.1,False
+"sich nicht nur auf das System und dessen Hinweise bezieht,",3,17,87,9.0,316.8,668.6,555.8,677.5,-9.0,10.5,False
+gibt es die Schaltfl¨ache ’Question and Feedback’. Hier k¨on-,3,17,88,9.0,316.8,679.0,555.9,688.4,0.0,10.5,False
+nen die Lernenden Kontakt zu den Lehrk¨orpern aufnehmen.,3,17,89,9.0,316.8,689.5,555.9,698.9,-0.0,10.5,False
+Hierbei wird zwischen aufgabenpezifischen Fragen und Feed-,3,17,90,9.0,316.8,700.0,555.8,708.9,0.0,10.5,False
+"back unterschieden. Vor allem das Feedback ist gewunscht, ¨",3,17,91,9.0,316.8,710.4,555.9,719.8,0.0,10.5,False
+"Sind neue Benachrichtigungen eingetroffen, wird an dem",3,18,92,9.0,62.8,668.6,292.8,677.5,-254.0,-41.8,False
+Icon einer Glocke ein roter Kreis angezeigt (siehe Abbil-,3,18,93,9.0,53.8,679.0,292.7,688.0,-9.0,10.5,False
+dung 4 und Abbildung 5). Neben den Hinweisen zur Bear-,3,18,94,9.0,53.8,689.5,292.8,698.5,0.0,10.5,False
+beitung werden unter der Glocke zudem noch Hinweise auf,3,18,95,9.0,53.8,700.0,292.8,708.9,0.0,10.5,False
+neue Empfehlungen gegeben. Gibt es zur aktuellen Aufgabe,3,18,96,9.0,53.8,710.4,292.8,719.4,0.0,10.5,False
+3.6.3 Hilfetexte,4,1,1,11.0,319.6,55.4,394.8,66.3,,,False
+"da dieses dazu dient, das System an die Bedurfnisse der Ler- ¨",4,2,2,9.0,53.8,56.9,292.9,66.2,-265.8,1.5,False
+nenden anzupassen und eine kontinuierliche Verbesserung,4,2,3,9.0,53.8,67.3,292.8,76.3,0.0,10.5,False
+voranzutreiben (siehe Abbildung 6).,4,2,4,9.0,53.8,77.8,199.0,86.8,0.0,10.5,False
+"Das System ist auch darauf ausgelegt, dass die Lernen-",4,3,5,9.0,325.8,69.8,555.8,78.8,272.0,-8.0,False
+den gegebenenfalls nicht die M¨oglichkeit haben Audio- oder,4,3,6,9.0,316.8,80.3,555.8,89.7,-9.0,10.5,False
+Videoinhalte abzurufen. Hier sind die Hilfetexte nutzlich. ¨,4,3,7,9.0,316.8,90.7,555.9,100.1,0.0,10.5,False
+"Die Hilfetexte sind Beschreibungen von Herausforderungen,",4,3,8,9.0,316.8,101.2,555.8,110.2,0.0,10.5,False
+"Fragestellungen, Datenbankthematiken oder Beispiele von",4,3,9,9.0,316.8,111.7,555.7,120.6,0.0,10.5,False
+SQL-Code.,4,3,10,9.0,316.8,122.1,361.2,131.1,0.0,10.5,False
+3.6.4 Hilfegrafiken,4,4,11,11.0,319.6,139.6,409.5,150.5,2.7,17.4,False
+"Hilfegrafiken stellen nicht nur Datenmodelle dar, sondern",4,5,12,9.0,325.8,154.0,555.8,163.0,6.2,14.4,False
+"um Zeichnungen oder Comics, die sich mit wenig Worten",4,5,13,9.0,316.8,164.5,555.8,173.4,-9.0,10.5,False
+einer Datenbankthematik annehmen.,4,5,14,9.0,316.8,174.9,465.7,183.9,0.0,10.5,False
+3.6.5 Vordefinierte Hilfestellungen,4,6,15,11.0,319.6,192.4,478.2,203.3,2.7,17.4,False
+"Die Lernenden bekommen, basierend auf der Analyse des",4,7,16,9.0,325.8,206.8,555.8,215.8,6.2,14.4,False
+"Systems, zu der aktuellen Situation und zur Aufgabe Hilfe-",4,7,17,9.0,316.8,217.3,555.8,226.2,-9.0,10.5,False
+stellungen empfohlen. Diese k¨onnen sich dynamisch anpas-,4,7,18,9.0,316.8,227.7,555.8,237.1,0.0,10.5,False
+sen und mussen nicht permanent verf ¨ ugbar bleiben. Emp- ¨,4,7,19,9.0,316.8,238.2,555.9,247.6,0.0,10.5,False
+"fehlungen k¨onnen entfernt werden, wenn bspw. Lernende die",4,7,20,9.0,316.8,248.6,555.9,258.0,0.0,10.5,False
+Aufgabe wechseln oder sich der Fokus der Thematik ¨andert.,4,7,21,9.0,316.8,259.1,555.9,268.5,0.0,10.5,False
+Vordefinierte Inhalte beziehen sich nicht zwingend auf eine,4,7,22,9.0,325.8,269.6,555.8,278.5,9.0,10.5,False
+"Aufgabe im Einzelnen. Sie k¨onnen Informationen betreffen,",4,8,23,9.0,316.8,280.0,555.8,289.4,-9.0,10.5,False
+die wichtig sind um ein Grundverst¨andnis fur die Kursin- ¨,4,8,24,9.0,316.8,290.5,555.9,299.9,0.0,10.5,False
+"halte zu erlangen. Auch wenn keine Challenges aktiv sind,",4,8,25,9.0,316.8,300.9,555.8,309.9,-0.0,10.5,False
+k¨onnen Inhalte bereit gestellt werden.,4,8,26,9.0,316.8,311.4,469.2,320.8,0.0,10.5,False
+Figure 6: Feedbackfenster,4,9,27,9.0,122.6,298.0,224.0,306.9,-194.2,-13.4,False
+Die Gesamtheit der multimedialen Inhalte wird nicht nur,4,10,28,9.0,325.8,321.9,555.8,330.8,203.1,23.9,False
+im Rahmen der Aufgaben genutzt. Mit den Inhalten werden,4,10,29,9.0,316.8,332.3,555.8,341.3,-9.0,10.5,False
+"Playlisten gefullt, die den Lernenden zur Verf ¨ ugung stehen ¨",4,10,30,9.0,316.8,342.8,555.9,352.2,0.0,10.5,False
+um die Selbstlernphase zu unterstutzen. ¨,4,10,31,9.0,316.8,353.3,477.8,362.6,-0.0,10.5,False
+3.6 Mediale Hilfestellungen,4,11,32,12.0,53.8,327.4,201.9,339.4,-263.0,-25.8,True
+Fur die Lernenden stehen verschiedene Arten von me- ¨,4,12,33,9.0,62.8,342.6,292.8,351.9,9.0,15.1,False
+"dialen Hilfestellungen zur Verfugung, die st ¨ ¨andig erg¨anzt,",4,12,34,9.0,53.8,353.0,292.9,362.4,-9.0,10.5,False
+produziert und weiterentwickelt werden. Dabei handelt es,4,12,35,9.0,53.8,363.5,292.8,372.4,-0.0,10.5,False
+"sich um digitale Medien wie bspw. Screencasts, Erkl¨arvi-",4,12,36,9.0,53.8,373.9,292.9,383.3,0.0,10.5,False
+"deos, Podcasts, Hilfetexte und Hilfegrafiken. Diese Medien",4,12,37,9.0,53.8,384.4,292.8,393.4,0.0,10.5,False
+werden kurz gehalten und sind thematisch nicht voneinan-,4,12,38,9.0,53.8,394.9,292.8,403.8,0.0,10.5,False
+"der abh¨angig, k¨onnen sich aber erg¨anzen und werden ggf. in",4,12,39,9.0,53.8,405.3,292.9,414.7,0.0,10.5,False
+Gruppen mit oder ohne empfohlener Reihenfolge empfohlen.,4,12,40,9.0,53.8,415.8,292.8,424.8,0.0,10.5,False
+Uber die Icons auf der linken Seite k ¨ ¨onnen aktuell be-,4,12,41,9.0,62.8,424.4,292.9,435.6,9.0,8.6,False
+reitgestellte Medien abgerufen werden. Die Medien werden,4,12,42,9.0,53.8,436.7,292.8,445.7,-9.0,12.3,False
+in modalen Fenstern innerhalb der Anwendung aufgerufen.,4,12,43,9.0,53.8,447.2,292.8,456.1,0.0,10.5,False
+Fur die Icons gibt es zwei Bereiche. Die grauen Icons bein- ¨,4,12,44,9.0,53.8,457.6,292.8,467.0,0.0,10.5,False
+"halten vordefinierte Hilfestellungen, wohingegen die grunen ¨",4,12,45,9.0,53.8,468.1,292.9,477.5,0.0,10.5,False
+Icons aktuell empfohlene Hilfestellungen beinhalten.,4,12,46,9.0,53.8,478.6,263.4,487.5,-0.0,10.5,False
+3.6.6 Empfehlungen,4,13,47,11.0,319.6,370.7,415.6,381.6,265.8,-107.9,False
+Hilfestellungen und multimediale Elemente sollen zudem,4,14,48,9.0,325.8,385.1,555.8,394.1,6.2,14.4,False
+zunehmend vom System empfohlen werden. ALEA nutzt,4,14,49,9.0,316.8,395.6,555.8,404.6,-9.0,10.5,False
+"verschiedene Arten von Empfehlungsalgorithmen, die st¨an-",4,14,50,9.0,316.8,406.1,555.9,415.4,0.0,10.5,False
+dig weiterentwickelt werden. Diese werden mit wachsender,4,14,51,9.0,316.8,416.5,555.8,425.5,0.0,10.5,False
+Nutzung und Datenmenge ausgebaut und verbessert.,4,14,52,9.0,316.8,427.0,530.5,435.9,0.0,10.5,False
+3.6.7 Metadaten,4,15,53,11.0,319.6,444.4,399.3,455.4,2.7,17.4,False
+Ein wichtiger Aspekt fur die Zuweisung der medialen Hil- ¨,4,16,54,9.0,325.8,458.9,555.8,468.2,6.2,14.4,False
+festellungen sind die hinterlegten Metadaten. Fur mediale ¨,4,16,55,9.0,316.8,469.3,555.9,478.7,-9.0,10.5,False
+"Inhalte werden eine Reihe von Metadaten definiert, die es",4,16,56,9.0,316.8,479.8,555.8,488.7,-0.0,10.5,False
+"den Empfehlungsalgorithmen erlauben, die Inhalte den Ler-",4,16,57,9.0,316.8,490.2,555.8,499.2,0.0,10.5,False
+nenden zuzuordnen. Diese werden auch bei der Erstellung,4,16,58,9.0,316.8,500.7,555.8,509.7,0.0,10.5,False
+von Aufgaben bzw. zur Zuordnung von Aufgaben im Rah-,4,16,59,9.0,316.8,511.2,555.8,520.1,0.0,10.5,False
+men von Challenges zu Lernenden oder Gruppen von Ler-,4,16,60,9.0,316.8,521.6,555.8,530.6,0.0,10.5,False
+nenden genutzt. Dies erm¨oglicht im Vorfeld die Zuordnung,4,16,61,9.0,316.8,532.1,555.8,541.5,0.0,10.5,False
+der Hilfestellung zu Aufgaben. Ein direkt fur diese Aufgabe ¨,4,16,62,9.0,316.8,542.5,555.9,551.9,0.0,10.5,False
+"produzierter Podcast, soll in der Regel nicht als Hilfestellung",4,16,63,9.0,316.8,553.0,555.7,562.0,-0.0,10.5,False
+empfohlen werden.,4,16,64,9.0,316.8,563.5,392.0,572.4,0.0,10.5,False
+3.6.1 Screencasts und Erklärvideos,4,17,65,11.0,56.5,496.3,219.3,507.3,-260.3,-67.1,False
+Screencasts befassen sich mit der Anwendung und Nut-,4,18,66,9.0,62.8,510.8,292.8,519.8,6.2,14.4,False
+zung von Software bzw. mit den Erkl¨arungen zu L¨osun-,4,18,67,9.0,53.8,521.3,292.9,530.6,-9.0,10.5,False
+gen dieser Aufgabentypen. Fur die Aufgaben zum ER-to- ¨,4,18,68,9.0,53.8,531.7,292.8,541.1,0.0,10.5,False
+Relational-Mapping wurden bereits mehr als 50 Screencasts,4,18,69,9.0,53.8,542.2,292.7,551.1,0.0,10.5,False
+produziert.,4,18,70,9.0,53.8,552.6,98.0,561.6,0.0,10.5,False
+In kurzen aber pr¨agnanten Videos werden den Lernen-,4,19,71,9.0,62.8,563.1,292.8,572.5,9.0,10.5,False
+den Inhalte aus dem Bereich vermittelt. Diese Screencasts,4,19,72,9.0,53.8,573.6,292.7,582.5,-9.0,10.5,False
+k¨onnen sich auf Aufgaben beziehen oder allgemeine Vorge-,4,19,73,9.0,53.8,584.0,292.8,593.4,0.0,10.5,False
+hensweisen und Hinweise enthalten. Neben den Screencasts,4,19,74,9.0,53.8,594.5,292.8,603.4,0.0,10.5,False
+finden die Lernenden hier zudem Erkl¨arvideos die allgemeine,4,19,75,9.0,53.8,604.9,292.8,614.3,0.0,10.5,False
+Prinzipien von Datenbanken thematisieren.,4,19,76,9.0,53.8,615.4,227.9,624.4,0.0,10.5,False
+3.7 Check and Submit,4,20,77,12.0,316.8,580.2,438.7,592.2,263.0,-35.2,True
+Um sich den zugeh¨origen SQL-Code anzeigen zu lassen,4,21,78,9.0,325.8,595.3,555.8,604.7,9.0,15.1,False
+"und zur Kontrolle der eigenen Eingaben, steht den Lernen-",4,21,79,9.0,316.8,605.8,555.8,614.8,-9.0,10.5,False
+den im unteren Bereich des Systems die Schaltfl¨ache ’Check,4,21,80,9.0,316.8,616.3,555.9,625.6,0.0,10.5,False
+Input and Show SQL’ zur Verfugung. Zum Erzeugen des ¨,4,21,81,9.0,316.8,626.7,555.9,636.1,-0.0,10.5,False
+SQL-Codes wird die Check-Funktion durchlaufen. Diese baut,4,21,82,9.0,316.8,637.2,557.3,646.2,0.0,10.5,False
+zwei Zeichenketten zusammen. Die erste Zeichenkette kann,4,21,83,9.0,316.8,647.6,555.8,656.6,0.0,10.5,False
+direkt auf der Datenbank ausgefuhrt werden. Genutzt wird ¨,4,21,84,9.0,316.8,658.1,555.9,667.5,0.0,10.5,False
+"diese fur den Test, den die Lernenden w ¨ ¨ahrend der Bearbei-",4,21,85,9.0,316.8,668.6,555.9,677.9,-0.0,10.5,False
+tung machen k¨onnen und zudem fur die finale Abgabe der ¨,4,21,86,9.0,316.8,679.0,555.9,688.4,0.0,10.5,False
+Aufgabe. Eine zweite Zeichenkette wird erzeugt und bein-,4,21,87,9.0,316.8,689.5,555.8,698.5,0.0,10.5,False
+haltet HTML-Code. Dieser wird zur visuellen Darstellung,4,21,88,9.0,316.8,700.0,555.8,708.9,0.0,10.5,False
+des SQL-Codes fur die Lernenden genutzt. ¨,4,21,89,9.0,316.8,710.4,488.2,719.8,0.0,10.5,False
+3.6.2 Podcasts,4,22,90,11.0,56.5,633.2,128.1,644.2,-260.3,-77.2,False
+"Podcasts sollen, so wie die Screencasts, kompakt Informa-",4,23,91,9.0,62.8,647.6,292.7,656.6,6.2,14.4,False
+tionen vermitteln. Die Themen k¨onnen hier sowohl Aufgaben-,4,23,92,9.0,53.8,658.1,296.1,667.5,-9.0,10.5,False
+oder Challenge-bezogen als auch allgemeingultig sein. Die ¨,4,23,93,9.0,53.8,668.6,292.9,677.9,-0.0,10.5,False
+Podcasts sind Dialoge zwischen zwei oder mehreren Spre-,4,23,94,9.0,53.8,679.0,292.8,688.0,0.0,10.5,False
+"chenden, die ein Thema diskutieren, um den Lernenden neue",4,23,95,9.0,53.8,689.5,292.8,698.5,0.0,10.5,False
+Anreize zu bieten uber das Geh ¨ ¨orte nachzudenken. Auch,4,23,96,9.0,53.8,700.0,292.8,709.3,0.0,10.5,False
+Hilfetexte k¨onnten vorgelesen werden.,4,23,97,9.0,53.8,710.4,206.3,719.8,0.0,10.5,False
+de’ kopiert den angezeigten SQL-Code in die Zwischenablage,5,1,1,9.0,316.8,56.9,555.7,65.8,,,False
+und ’Save to Script’ bietet die M¨oglichkeit den Code als Da-,5,1,2,9.0,316.8,67.3,555.8,76.7,0.0,10.5,False
+tei lokal zu speichern. Damit der bereitgestellte SQL-Code,5,1,3,9.0,316.8,77.8,555.7,86.8,0.0,10.5,False
+von den Lernenden auf unterschiedlichen Datenbanksyste-,5,1,4,9.0,316.8,88.2,555.8,97.2,0.0,10.5,False
+"men genutzt werden kann, k¨onnen diese den entsprechenden",5,1,5,9.0,316.8,98.7,555.9,108.1,0.0,10.5,False
+Datentyp ausw¨ahlen.,5,1,6,9.0,316.8,109.2,401.4,118.5,0.0,10.5,False
+Die Lernenden haben die M¨oglichkeit mit der Schaltfl¨a-,5,2,7,9.0,325.8,119.6,555.9,129.0,9.0,10.5,False
+che ’Test on Database’ den ihren Eingaben entsprechen-,5,2,8,9.0,316.8,130.1,555.8,139.1,-9.0,10.5,False
+den DDL-Code direkt auf dem angebundenen Datenbank-,5,2,9,9.0,316.8,140.5,555.8,149.5,0.0,10.5,False
+system zu testen. Die Ruckmeldung wird in dem Check- ¨,5,2,10,9.0,316.8,151.0,555.9,160.4,0.0,10.5,False
+Input-Ausgabefenster ausgegeben. Hierbei wird einerseits ge-,5,3,11,9.0,316.8,161.5,557.1,170.4,-0.0,10.5,False
+"testet, ob die Eingaben der Lernenden einen gultigen SQL- ¨",5,3,12,9.0,316.8,171.9,555.9,181.3,0.0,10.5,False
+Code entsprechen. Andererseits wird die L¨osung unter Ver-,5,3,13,9.0,316.8,182.4,555.9,191.8,-0.0,10.5,False
+wendung der zur Aufgabe hinterlegten Informationen wei-,5,3,14,9.0,316.8,192.9,555.8,201.8,0.0,10.5,False
+testgehend durch das System ausgewertet. Korrekte L¨osun-,5,3,15,9.0,316.8,203.3,555.9,212.7,0.0,10.5,False
+gen von Aufgaben k¨onnen u. a. eine vorgegebene Anzahl von,5,3,16,9.0,316.8,213.8,555.8,223.2,0.0,10.5,False
+"Tabellen, Spalten, Constraints (Primary Keys, Uniques, Not",5,3,17,9.0,316.8,224.2,555.7,233.2,0.0,10.5,False
+"Nulls außerhalb von Primary Keys, Foreign Keys) und dar-",5,3,18,9.0,316.8,234.7,555.8,243.7,0.0,10.5,False
+in enthaltene Attributanzahl bzw. eine jeweilige Mindest-,5,3,19,9.0,316.8,245.2,555.8,254.1,0.0,10.5,False
+"und Maximalanzahl erfordern, so dass L¨osungen als falsch",5,3,20,9.0,316.8,255.6,555.9,265.0,0.0,10.5,False
+erkannt werden k¨onnen.,5,3,21,9.0,316.8,266.1,413.0,275.5,0.0,10.5,False
+Die Auswertung der Aufgabe bzgl. der Sinnhaftigkeit der,5,4,22,9.0,325.8,276.5,555.8,285.5,9.0,10.5,False
+"Bezeichnungen bspw. von Tabellen oder Spalten, kann und",5,4,23,9.0,316.8,287.0,555.8,296.0,-9.0,10.5,False
+wird dabei nicht gepruft. Jedoch kann ¨ uber das Datenbank- ¨,5,4,24,9.0,316.8,297.5,555.9,306.8,0.0,10.5,False
+system eine weitergehende Prufung abh ¨ ¨angig von vorliegen-,5,4,25,9.0,316.8,307.9,555.8,317.3,0.0,10.5,False
+den Daten zur Aufgabe durchgefuhrt werden. ¨,5,4,26,9.0,316.8,318.4,499.8,327.8,0.0,10.5,False
+Die Ausgabe einer Zwischenauswertung ohne wiederholte,5,5,27,9.0,325.8,328.8,555.8,337.8,9.0,10.5,False
+"Serveranfrage in der Toolbar ist m¨oglich, wenn die Infor-",5,5,28,9.0,316.8,339.3,555.9,348.7,-9.0,10.5,False
+mation zu gultigen L ¨ ¨osungsm¨oglichkeiten der Aufgabe be-,5,5,29,9.0,316.8,349.8,555.8,359.1,0.0,10.5,False
+zogen auf die Anzahl der Elemente eindeutig ist und Varia-,5,5,30,9.0,316.8,360.2,555.8,369.2,0.0,10.5,False
+tionen nur begrenzt m¨oglich sind. In der Datenbank k¨onnen,5,5,31,9.0,316.8,370.7,555.9,380.1,0.0,10.5,False
+auch Angaben fur Aufgaben mit verschiedenartigen L ¨ ¨osun-,5,5,32,9.0,316.8,381.1,555.9,390.5,-0.0,10.5,False
+gen hinterlegt und ausgewertet werden. Insbesondere wenn,5,5,33,9.0,316.8,391.6,555.8,400.6,-0.0,10.5,False
+"die Aufgabenstellungen komplexer werden, k¨onnen die Aus-",5,5,34,9.0,316.8,402.1,555.9,411.4,0.0,10.5,False
+wertungen aufw¨andiger werden. Je nachdem wie die Lernen-,5,5,35,9.0,316.8,412.5,555.8,421.9,0.0,10.5,False
+den ihre L¨osungen aufbauen kann sich bspw. die Anzahl der,5,5,36,9.0,316.8,423.0,555.8,432.4,0.0,10.5,False
+Elemente in einem Constraint unterscheiden und trotzdem,5,5,37,9.0,316.8,433.5,555.8,442.4,0.0,10.5,False
+eine richtige L¨osung erzeugen.,5,5,38,9.0,316.8,443.9,437.7,453.3,0.0,10.5,False
+Figure 7: Challenge Auswahl und Hilfemedien,5,6,39,9.0,82.6,572.6,263.9,581.6,-234.2,128.7,False
+Die Ansicht des DDL-Codes soll den Lernenden einen an-,5,7,40,9.0,62.8,605.8,292.8,614.8,-19.8,33.2,False
+deren Blick auf die eigene L¨osung verschaffen (siehe Abbil-,5,7,41,9.0,53.8,616.3,292.8,625.6,-9.0,10.5,False
+dung 8). Damit soll der Bezug zwischen der Planung des Re-,5,7,42,9.0,53.8,626.7,292.7,635.7,-0.0,10.5,False
+lationenmodells und dem Verst¨andnis der Syntax der DDL-,5,7,43,9.0,53.8,637.2,292.9,646.6,0.0,10.5,False
+Befehle (Data Definition Language) gest¨arkt werden.,5,7,44,9.0,53.8,647.6,267.1,657.0,0.0,10.5,False
+Figure 8: Ausgabe des SQL-Codes und Ruckmeldung der Da- ¨,5,8,45,9.0,316.8,640.2,555.8,649.6,263.0,-7.5,False
+tenbank,5,8,46,9.0,316.8,650.7,348.2,659.6,0.0,10.5,False
+Da die Datentypen fur die L ¨ ¨osung der Aufgabe nicht re-,5,9,47,9.0,62.8,658.1,292.8,667.5,-254.0,7.5,False
+"levant sind, wird auf dem Datentyp ’variable character’ ab-",5,9,48,9.0,53.8,668.6,292.7,677.5,-9.0,10.5,False
+"gebildet, der dem Datenbanksystem entspricht auf dem der",5,9,49,9.0,53.8,679.0,292.8,688.0,0.0,10.5,False
+Code ausgefuhrt wird. Um den Lernenden die M ¨ ¨oglichkeit,5,9,50,9.0,53.8,689.5,292.9,698.9,0.0,10.5,False
+"zu bieten den entstandenen DDL-Code zu nutzen, gibt es die",5,9,51,9.0,53.8,700.0,292.8,708.9,0.0,10.5,False
+Schaltfl¨achen ’Copy Code’ und ’Save to Script’. ’Copy Co-,5,9,52,9.0,53.8,710.4,292.8,719.8,0.0,10.5,False
+Die Schaltfl¨ache ’Submit’ fuhrt die Lernenden zur Abgabe ¨,5,10,53,9.0,325.8,668.6,555.9,677.9,272.0,-41.8,False
+ihrer L¨osung. Zur Sicherheit und um Fehlklicks abzufangen,5,10,54,9.0,316.8,679.0,555.8,688.4,-9.0,10.5,False
+"¨offnet sich, nachdem die Lernenden auf ’Submit’ gedruckt ¨",5,10,55,9.0,316.8,689.5,555.9,698.9,0.0,10.5,False
+"haben, ein weiteres Fenster. In diesem erhalten die Lernen-",5,10,56,9.0,316.8,700.0,555.8,708.9,0.0,10.5,False
+"den die Information, ob ihre L¨osung eine gultige L ¨ ¨osung sein",5,10,57,9.0,316.8,710.4,555.9,719.8,0.0,10.5,False
+4.1 Erweiterte Tabellenansicht,6,1,1,12.0,316.8,54.7,481.1,66.7,,,True
+"k¨onnte. Ist dies der Fall, besteht die M¨oglichkeit die Aufgabe",6,2,2,9.0,53.8,56.9,292.8,66.2,-263.0,2.2,False
+abzugeben.,6,2,3,9.0,53.8,67.3,98.5,76.3,0.0,10.5,False
+Fur die Bearbeitung der Aufgaben zur Normalisierung ¨,6,3,4,9.0,325.8,69.8,555.8,79.2,272.0,2.5,False
+wurden die Bereiche zur Definition der Tabellen durch Funk-,6,3,5,9.0,316.8,80.3,555.8,89.2,-9.0,10.5,False
+tionen erg¨anzt (siehe Abbildung 10). Neben den bekannten,6,3,6,9.0,316.8,90.7,555.8,100.1,0.0,10.5,False
+"Funktionen der Benennung, L¨oschung und Hinzufugen von ¨",6,3,7,9.0,316.8,101.2,555.9,110.6,0.0,10.5,False
+"Spalten und Constraints, gibt es eine Schaltfl¨ache zur De-",6,3,8,9.0,316.8,111.7,555.9,121.0,0.0,10.5,False
+aktivierung der Tabelle. Sobald eine Tabelle zerlegt werden,6,3,9,9.0,316.8,122.1,555.8,131.1,0.0,10.5,False
+"soll, muss sie deaktiviert werden. Sie wird nicht entfernt,",6,3,10,9.0,316.8,132.6,555.8,141.5,0.0,10.5,False
+damit der Verlauf nachvollziehbar bleibt. Die durch die Zer-,6,3,11,9.0,316.8,143.0,555.8,152.0,0.0,10.5,False
+legung neu entstehenden Tabellen mussen eingeben werden. ¨,6,3,12,9.0,316.8,153.5,555.9,162.9,0.0,10.5,False
+"Dabei soll uber ein Dropdown-Men ¨ u, welches alle inaktiven ¨",6,3,13,9.0,316.8,164.0,555.9,173.3,0.0,10.5,False
+"Tabellen auflistet, angegeben werden, aus welcher Tabelle",6,3,14,9.0,316.8,174.4,555.8,183.4,0.0,10.5,False
+eine Tabelle jeweils entstanden ist.,6,3,15,9.0,316.8,184.9,456.2,193.8,0.0,10.5,False
+In Lernphasen k¨onnen die Lernenden unfertige Aufgaben,6,4,16,9.0,62.8,77.8,292.8,87.2,-254.0,-107.1,False
+zur sp¨ateren Bearbeitung uberspringen. Anstatt einer m ¨ ¨og-,6,4,17,9.0,53.8,88.2,292.9,97.6,-9.0,10.5,False
+"lichen Ja/Nein-Abfrage, ob die Aufgabe abgegeben werden",6,4,18,9.0,53.8,98.7,292.8,107.7,0.0,10.5,False
+"soll, kann zwischen ’Zuruck zur Bearbeitung’ oder ’ ¨ Uber- ¨",6,4,19,9.0,53.8,107.3,292.9,118.5,0.0,8.6,False
+springen’ (siehe Abbildung 9) gew¨ahlt werden. Diese un-,6,4,20,9.0,53.8,119.6,292.9,129.0,-0.0,12.3,False
+fertigen Aufgaben werden nicht aus dem System entfernt.,6,4,21,9.0,53.8,130.1,292.8,139.1,0.0,10.5,False
+Aufgaben die als Lern- oder Testataufgaben gelten mussen ¨,6,4,22,9.0,53.8,140.5,292.9,149.9,0.0,10.5,False
+"solange wiederholt werden, bis die Eingabe gultig ist. In der ¨",6,4,23,9.0,53.8,151.0,292.9,160.4,0.0,10.5,False
+"Abbildung 7 ist zu sehen, dass eine Challenge Aufgaben zur",6,4,24,9.0,53.8,161.5,292.8,170.4,0.0,10.5,False
+Auswahl der Bearbeitungsreihenfolge beinhalten kann. Ei-,6,4,25,9.0,53.8,171.9,292.8,180.9,0.0,10.5,False
+ne Challenge bleibt bestehen bis alle Aufgaben erfolgreich,6,4,26,9.0,53.8,182.4,292.8,191.4,0.0,10.5,False
+bearbeitet wurden.,6,4,27,9.0,53.8,192.9,130.0,201.8,0.0,10.5,False
+Figure 10: Tabellendefinition mit erweiterten Funktionen,6,5,28,9.0,323.9,238.2,548.6,247.2,270.1,45.4,False
+Figure 11: Tabellendefinition finalisieren,6,6,29,9.0,357.0,292.3,515.6,301.2,33.1,54.0,False
+Die Studierenden sollen fur jede neu entstandene Tabelle ¨,6,7,30,9.0,325.8,312.6,555.9,322.0,-31.2,20.3,False
+die Normalform angeben. Dazu befindet sich ein Auswahl-,6,7,31,9.0,316.8,323.1,555.8,332.0,-9.0,10.5,False
+feld im Kopfbereich der Tabellendefinition. Die Lernenden,6,7,32,9.0,316.8,333.5,555.8,342.5,0.0,10.5,False
+"sollen zudem jeweils zu jeder Zerlegung angeben, aus wel-",6,7,33,9.0,316.8,344.0,555.8,352.9,0.0,10.5,False
+chen Grunden diese durchgef ¨ uhrt werden musste. Dazu be- ¨,6,7,34,9.0,316.8,354.4,555.9,363.8,0.0,10.5,False
+findet sich ein Textfeld im Fußbereich der Tabellendefinition.,6,7,35,9.0,316.8,364.9,555.8,373.9,-0.0,10.5,False
+"Zudem ist es erwunscht hier weitere Anmerkungen, Fragen, ¨",6,7,36,9.0,316.8,375.4,555.8,384.7,0.0,10.5,False
+Notizen und Feedback der Lernenden zu erhalten. Sobald,6,7,37,9.0,316.8,385.8,555.8,394.8,-0.0,10.5,False
+"fur eine Tabelle die geforderte Normalform erreicht wurde, ¨",6,7,38,9.0,316.8,396.3,555.8,405.7,0.0,10.5,False
+soll die Tabelle finalisiert werden (siehe Abbildung 11).,6,7,39,9.0,316.8,406.7,538.8,415.7,0.0,10.5,False
+Figure 9: Abgabe einer Lernaufgabe,6,8,40,9.0,102.0,326.9,244.6,335.9,-214.9,-79.8,False
+3.8 Prüfungsmodus,6,9,41,12.0,53.8,360.7,161.7,372.7,-48.2,33.8,True
+Das System ist zum einen fur die Lernphase und zum ¨,6,10,42,9.0,62.8,375.8,292.9,385.2,9.0,15.1,False
+anderen fur die Pr ¨ ufungsphase gedacht. Hierf ¨ ur sieht das ¨,6,10,43,9.0,53.8,386.3,292.9,395.7,-9.0,10.5,False
+"System vor, dass Funktionen, welche fur Lernphasen wich- ¨",6,10,44,9.0,53.8,396.8,292.9,406.1,0.0,10.5,False
+"tig sind, fur die Pr ¨ ufungen deaktiviert werden. Die Hilfe- ¨",6,10,45,9.0,53.8,407.2,292.8,416.6,0.0,10.5,False
+"stellungen, die sich auf Informationen zu gultigen L ¨ ¨osungen",6,10,46,9.0,53.8,417.7,292.9,427.1,0.0,10.5,False
+"beziehen, sind nicht verfugbar. Empfehlungen und alle da- ¨",6,10,47,9.0,53.8,428.1,292.8,437.5,0.0,10.5,False
+mit verbundenen Hilfsmedien sind ebenfalls nicht erreich-,6,10,48,9.0,53.8,438.6,292.8,447.6,0.0,10.5,False
+bar. In dem Fenster ’Check Input und Show SQL’ werden,6,10,49,9.0,53.8,449.1,292.8,458.0,0.0,10.5,False
+die Schaltfl¨achen auf ’Close’ und ’Submit’ reduziert. Eine,6,10,50,9.0,53.8,459.5,292.8,468.9,0.0,10.5,False
+zweistufige Abfrage nach dem ’Submit’ bleibt zwar beste-,6,10,51,9.0,53.8,470.0,292.7,478.9,0.0,10.5,False
+"hen, jedoch wird das erscheinende Fenster auf eine erneute",6,10,52,9.0,53.8,480.4,292.8,489.4,0.0,10.5,False
+"Frage, ob die L¨osung abgegeben werden soll, reduziert.",6,10,53,9.0,53.8,490.9,274.5,500.3,0.0,10.5,False
+4.2 Erweiterte Ansichten,6,11,54,12.0,316.8,423.5,452.3,435.4,263.0,-67.4,True
+Die Komponente fur die Aufgaben zur Normalisierung ¨,6,12,55,9.0,325.8,438.6,555.8,448.0,9.0,15.1,False
+wird durch eine weitere ’Quick View’ erg¨anzt. Auf der rech-,6,12,56,9.0,316.8,449.1,555.9,458.4,-9.0,10.5,False
+ten Seite finden die Lernenden eine Ubersicht ¨ uber die aktu- ¨,6,12,57,9.0,316.8,457.7,555.9,468.9,0.0,8.6,False
+ell aktiven und inaktiven Tabellen. Neben dem Tabellenna-,6,12,58,9.0,316.8,470.0,555.8,478.9,-0.0,12.3,False
+men sind hier auch die Spaltennamen gelistet. Ebenso k¨on-,6,12,59,9.0,316.8,480.4,555.9,489.8,0.0,10.5,False
+nen die Begrundungen angezeigt werden. ¨,6,12,60,9.0,316.8,490.9,481.6,500.3,-0.0,10.5,False
+5. ZUSAMMENFASSUNG UND AUSBLICK,6,13,61,12.0,316.8,511.6,555.9,523.5,0.0,20.7,True
+Komponenten zur Bearbeitung von Aufgaben zum ER-,6,13,62,9.0,325.8,526.7,555.8,535.7,9.0,15.1,False
+to-Relational-Mapping und zur Normalisierung werden dar-,6,13,63,9.0,316.8,537.1,555.7,546.1,-9.0,10.5,False
+gestellt. Vielf¨altige Interaktionen und Hilfestellungen bspw.,6,13,64,9.0,316.8,547.6,555.8,557.0,0.0,10.5,False
+Empfehlungen von multimedialen digitalen Elementen wer-,6,13,65,9.0,316.8,558.1,555.8,567.0,0.0,10.5,False
+den zur Verbesserung des Lernprozesses integriert. Durch,6,13,66,9.0,316.8,568.5,555.8,577.5,0.0,10.5,False
+verst¨arkte Nutzung der Komponenten und dem Anwachsen,6,13,67,9.0,316.8,579.0,555.8,588.4,0.0,10.5,False
+der Daten k¨onnen Empfehlungen und Learning Analytics,6,13,68,9.0,316.8,589.4,555.8,598.8,0.0,10.5,False
+weiter verbessert werden.,6,13,69,9.0,316.8,599.9,418.5,608.9,0.0,10.5,False
+4. AUFGABENTYP NORMALISIERUNG,6,14,70,12.0,53.8,517.5,281.3,529.4,-263.0,-82.5,True
+Ein weiterer Aufgabentyp des ALEA-Systems ist die Nor-,6,15,71,9.0,62.8,532.6,292.8,541.5,9.0,15.1,False
+malisierung. Dieser Aufgabentyp nutzt die Grundfunktionen,6,15,72,9.0,53.8,543.0,292.8,552.0,-9.0,10.5,False
+"der Mapping-Aufgaben, da Tabellen und Constraints defi-",6,15,73,9.0,53.8,553.5,292.8,562.5,0.0,10.5,False
+niert werden mussen. ¨,6,15,74,9.0,53.8,564.0,139.1,573.3,0.0,10.5,False
+In einer Aufgabenstellung zur Normalisierung erhalten die,6,16,75,9.0,62.8,574.4,292.8,583.4,9.0,10.5,False
+Lernenden eine oder mehrere Tabellen sowie eine Aquiva- ¨,6,16,76,9.0,53.8,583.0,292.9,593.8,-9.0,8.6,False
+lenzmenge zu der Menge aller fur die Tabellen g ¨ ultigen Funk- ¨,6,16,77,9.0,53.8,595.3,292.9,604.7,-0.0,12.3,False
+tionalen Abh¨angigkeiten. Die Normalform der Tabellen ist,6,16,78,9.0,53.8,605.8,292.8,615.2,0.0,10.5,False
+anzugeben. Die Tabellen sind unter Verwendung des Zerle-,6,16,79,9.0,53.8,616.3,292.8,625.2,0.0,10.5,False
+"gungsverfahrens in der Regel in 3NF zu uberf ¨ uhren, sofern ¨",6,16,80,9.0,53.8,626.7,292.9,636.1,0.0,10.5,False
+sie sich nicht in der dritten Normalform befinden. Die Ta-,6,16,81,9.0,53.8,637.2,292.8,646.2,0.0,10.5,False
+bellen k¨onnen in der Aufgabenstellung zur Verdeutlichung,6,16,82,9.0,53.8,647.6,292.8,657.0,0.0,10.5,False
+mit Daten gefullt sein. Zur besseren ¨ Ubersicht lassen sich ¨,6,16,83,9.0,53.8,656.3,292.8,667.5,0.0,8.6,False
+die Inhalte der Tabellen bei Bedarf aus- und einblenden.,6,16,84,9.0,53.8,668.6,292.8,677.5,-0.0,12.3,False
+"Die Darstellung der funktionalen Abh¨angigkeiten l¨asst sich,",6,16,85,9.0,53.8,679.0,292.9,688.4,0.0,10.5,False
+wie auch beim ALEA-Mapping das vorgegebene Datenmo-,6,16,86,9.0,53.8,689.5,292.7,698.5,-0.0,10.5,False
+"dell, durch einen Klick in ein bewegliches, modales Fenster",6,16,87,9.0,53.8,700.0,292.7,708.9,0.0,10.5,False
+umwandeln oder in einen neuen Tab.,6,16,88,9.0,53.8,710.4,202.6,719.4,0.0,10.5,False
+Literatur,6,17,89,12.0,316.8,620.6,364.6,632.5,263.0,-89.8,True
+"[1] D. Becher. DB-Normalizer. TU Munchen, 2021. ¨ https:",6,18,90,9.0,316.8,637.2,555.9,646.6,0.0,16.6,False
+//db.in.tum.de/teaching/ws2021/grundlagen/.,6,18,91,9.0,331.0,647.6,530.9,657.0,14.2,10.5,False
+[2] P. Chen. The-Entity-Relationship-Model. ACM transac-,6,19,92,9.0,316.8,658.1,555.9,667.1,-14.2,10.5,False
+"tions on database systems (TODS), 1976.",6,19,93,9.0,331.0,668.6,497.5,677.5,14.2,10.5,False
+[3] H. Faeskorn-Woyke and B. Bertelsmeier. EDB - Das,6,20,94,9.0,316.8,679.0,555.7,688.0,-14.2,10.5,False
+"eLearning Datenbank Portal der TH K¨oln., 2021.",6,20,95,9.0,331.0,689.5,529.6,698.9,14.2,10.5,False
+[4] K. Schneider and F. Keller. Das Daten Caf´e an der Hoch-,6,21,96,9.0,316.8,700.0,555.8,708.9,-14.2,10.5,False
+"schule Harz, 2021. http://datencafe.hs-harz.de/.",6,21,97,9.0,331.0,710.4,542.6,719.8,14.2,10.5,False
