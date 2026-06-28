@@ -28,6 +28,7 @@ class Line:
     y2: float | None
     rel_x: float | None
     rel_y: float | None
+    mostly_bold: bool
 
 
 @dataclass
@@ -46,6 +47,7 @@ class Block:
     start_page: PageNumber
     end_page: PageNumber
     font_size: float | None = None
+    mostly_bold: bool = False
 
 
 @dataclass
@@ -121,6 +123,29 @@ def dominant_font_size(line_dict: PdfTextLine) -> float | None:
     return max(size_weights.items(), key=lambda item: (item[1], item[0]))[0]
 
 
+def is_mostly_bold(line_dict: PdfTextLine) -> bool:
+    """Return whether most visible text in a line uses a bold font weight."""
+    bold_weight = 0
+    total_weight = 0
+
+    for span_dict in line_dict.get('spans', []):
+        text_value = span_dict.get('text', '')
+        weight = len(text_value.strip())
+        if not weight:
+            continue
+
+        font_dict = span_dict.get('font', {})
+        font_weight = font_dict.get('weight')
+        if not isinstance(font_weight, int | float) or font_weight < 0:
+            continue
+
+        total_weight += weight
+        if font_weight >= 600:
+            bold_weight += weight
+
+    return total_weight > 0 and bold_weight / total_weight >= 0.5
+
+
 def iter_lines(page_list: Sequence[Page]) -> list[Line]:
     """Flatten pdftext dictionary output into a list of Line records."""
     line_list: list[Line] = []
@@ -159,6 +184,7 @@ def iter_lines(page_list: Sequence[Page]) -> list[Line]:
                     y2=round_or_none(y2),
                     rel_x=rel_x,
                     rel_y=rel_y,
+                    mostly_bold=is_mostly_bold(line_dict),
                 )
                 line_list.append(line_obj)
 
@@ -527,6 +553,23 @@ def block_font_size(line_list: list[Line]) -> float | None:
     return max(size_weights.items(), key=lambda item: (item[1], item[0]))[0]
 
 
+def block_mostly_bold(line_list: list[Line]) -> bool:
+    """Return whether most visible text in a Markdown block is bold."""
+    bold_weight = 0
+    total_weight = 0
+
+    for line_obj in line_list:
+        weight = len(line_obj.text.strip())
+        if not weight:
+            continue
+
+        total_weight += weight
+        if line_obj.mostly_bold:
+            bold_weight += weight
+
+    return total_weight > 0 and bold_weight / total_weight >= 0.5
+
+
 def build_body_lefts_by_page(
     line_list: list[Line], default_font_size: float | None
 ) -> dict[int, list[float]]:
@@ -656,6 +699,7 @@ def markdown_block_from_lines(
         else Paragraph
     )
     font_size = block_font_size(line_list)
+    mostly_bold = block_mostly_bold(line_list)
     start_page = page_number_map[line_list[0].page_no]
     end_page = page_number_map[line_list[-1].page_no]
     return block_class(
@@ -663,6 +707,7 @@ def markdown_block_from_lines(
         start_page=start_page,
         end_page=end_page,
         font_size=font_size,
+        mostly_bold=mostly_bold,
     )
 
 
@@ -760,6 +805,7 @@ def detect_headings(block_list: list[Block], default_font_size: float | None) ->
                 start_page=block_obj.start_page,
                 end_page=block_obj.end_page,
                 font_size=block_obj.font_size,
+                mostly_bold=block_obj.mostly_bold,
                 level=heading_level,
             )
         )
