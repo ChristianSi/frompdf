@@ -15,6 +15,9 @@ from pdftext.schema import Page
 # Require clear predominance before normalizing font-weight data to mostly_bold.
 BOLD_TEXT_RATIO_THRESHOLD = 0.75
 
+# Treat mostly bold blocks as slightly larger for heading detection.
+HEADING_BOLD_FONT_SIZE_MULTIPLIER = 1.08
+
 
 @dataclass
 class Line:
@@ -729,7 +732,7 @@ HEADING_LEVEL_THRESHOLDS = [
 
 
 def initial_heading_level(block_obj: Block, default_font_size: float | None) -> int | None:
-    """Return the initial heading level for a block, if font-size heuristics match."""
+    """Return the initial heading level for a block, if adjusted font-size heuristics match."""
     if (
         not isinstance(block_obj, Paragraph)
         or default_font_size is None
@@ -738,7 +741,11 @@ def initial_heading_level(block_obj: Block, default_font_size: float | None) -> 
     ):
         return None
 
-    font_ratio = block_obj.font_size / default_font_size
+    adjusted_font_size = block_obj.font_size
+    if block_obj.mostly_bold:
+        adjusted_font_size *= HEADING_BOLD_FONT_SIZE_MULTIPLIER
+
+    font_ratio = adjusted_font_size / default_font_size
     for threshold, level in HEADING_LEVEL_THRESHOLDS:
         if font_ratio >= threshold:
             return level
