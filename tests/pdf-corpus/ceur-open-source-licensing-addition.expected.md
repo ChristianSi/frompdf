@@ -27,7 +27,7 @@ Keywords: open source, free software, FOSS, licensing terms, liberty, GNU GPL
 
 # 1 Introduction
 
-1.1 Free/Libre Open Source Software
+## 1.1 Free/Libre Open Source Software
 
 Rights of ownership inherent in copyright can be granted to others using licensing.
 Open source (OS) software refers to licensing that allows licensees to freely distribute
@@ -42,7 +42,7 @@ tion can be sold as a for-profit service while the code is open), and there are 
 licenses that grant differing amounts of freedoms to stakeholders. Developers are free
 to choose a license for their work that fits with their own values.
 
-1.2 Freedom for everyone? Licenses of varying degrees of liberty
+## 1.2 Freedom for everyone? Licenses of varying degrees of liberty
 
 As with every kind of liberty in law, liberties secured through licensing come with
 opposing duties to others (Austin, 1885, p. 398). A license that protects (i.e. does not
@@ -75,7 +75,7 @@ new licenses and understand their legal ramifications. A large enough diversity 
 censes will create confusion, as it is difficult to grasp the totality of offered possibilities
 (Gomulkiewicz, 2009). It is clear that reusing shared, known licenses drives adoption.
 
-1.3 The four user freedoms of free software
+## 1.3 The four user freedoms of free software
 
 Free software ideology values the freedom of users. GNU GPL is founded on the four
 basic freedoms, which are an attempt to codify these values. The four basic freedoms
@@ -94,7 +94,7 @@ These four freedoms form the definition of free software, according to GNU Proje
 (2001). Of particular interest to the topic of this paper is Freedom 0, which can be seen
 to be at the foundation of free software.
 
-1.4 Researched dimensions of rights included in OS licenses
+## 1.4 Researched dimensions of rights included in OS licenses
 
 Lerner & Tirole (2005) conducted an empirical analysis on the determinants of license
 choice, and the scope of OS licenses on licensees freedom to use their software as
@@ -121,7 +121,7 @@ is not strong enough to guarantee freedom 0 for everyone.
 
 # 2 Missing dimension of securing user freedom to run software
 
-2.1 User blocking is arguably allowed in open source software
+## 2.1 User blocking is arguably allowed in open source software
 
 While the four freedoms should secure the public the right to use software as they
 wish, there is no clear consensus about whether these freedoms are secured merely
@@ -159,8 +159,7 @@ having multiple levels of freedom-securing licenses, especially when it comes to
 exclusive and discrete license dimensions (permissiveness and user blocking). There is
 perhaps some value in having clear options on this new dimension of user blocking.
 
-2.2 Digital divide makes it impossible for general public to secure Freedom 0
-using source code
+## 2.2 Digital divide makes it impossible for general public to secure Freedom 0 using source code
 
 The digital divide is defined as inequality between those who have access and means to
 use technology and those who do not. While these inequalities are not absolute, in that
@@ -204,7 +203,7 @@ majority is silent due to not being represented on the discussion forums of code
 opment platforms. Moreover, the walled gardens of modern mobile platforms make it
 even more complicated to distribute your own version of an applications.
 
-2.3 New ethical source licenses
+## 2.3 New ethical source licenses
 
 In past years, there has been more interest in open source licenses based on ethical
 values (Goodman-Wilson, 2020). For example, Ethical Source tries to drive licenses
@@ -221,7 +220,7 @@ ertheless serves as an example of more ethical consideration being put in licens
 well as the cultural drive for more restrictive measures in licensing — more restrictive
 for the public, securing more rights for the licensers (i.e. limiting what others do).
 
-2.4 Examination of GNU GPLv3
+## 2.4 Examination of GNU GPLv3
 
 GNU GPL is founded on the four basic freedoms listed in the introduction. The li-
 cense has been formulated to secure these freedoms through the sharing of source code.
@@ -260,8 +259,7 @@ of what e.g. GPLv3 does — I’m only arguing it should be an explicitly stated
 
 # 3 Proposed additions, by example of GPLv3
 
-First proposed addition to GNU GPLv3 Chapter 5. Conveying Modified Source
-Versions.
+## First proposed addition to GNU GPLv3 Chapter 5. Conveying Modified Source Versions.
 
 e) The work must not include any methods or additional protections for restricting the
 use of the work by particular persons, groups or fields of endeavor.
@@ -270,7 +268,7 @@ This addition would disallow the use of DRM (digital rights management) that tar
 gets persons or groups. Censorship systems such as domain blocking and network-
 based DRM would also fall under this category.
 
-Second proposed addition to GNU GPLv3 chapter 6. Conveying Non-Source Forms
+## Second proposed addition to GNU GPLv3 chapter 6. Conveying Non-Source Forms
 
 > 1. Any object code conveyed must not include extra blocking methods aimed at dis-
 > criminating agains persons, groups or fields of endeavor specified in Chapter
@@ -291,7 +289,7 @@ without restrictions.
 
 # 4 Thoughts
 
-4.1 Would a license with the proposed changes still be open source?
+## 4.1 Would a license with the proposed changes still be open source?
 
 The proposals would sign away more rights from contributors, should they wish to
 restrict the right of usage by the public. It could be argued that such licensing is no
@@ -306,7 +304,7 @@ censes family. Nevertheless, such a distinction is somewhat semantic in nature. 
 cure issue is whether more weight is put on the rights of the developers (both original
 licencers and new licensees) or the public (end-users, whether developers or not).
 
-4.2 Proposed changes are arguably in line with GNU values
+## 4.2 Proposed changes are arguably in line with GNU values
 
 GNU GPL is based on the four basic freedoms of users, and as articulated by Stallman
 (2013), freedom 0 ”means that the distribution of the software does not restrict how
@@ -343,9 +341,9 @@ would further protect users from new discriminatory restriction methods. As such
 should not be a replacement license but a complementary one or a completely new
 license.
 
-4.3 Comparisons with similar end-user freedoms not included in GPLv3
+## 4.3 Comparisons with similar end-user freedoms not included in GPLv3
 
-Money for nothing
+## Money for nothing
 
 GNU GPL explicitly allows selling copies of free software5
 . This provides a good
@@ -353,7 +351,7 @@ example of how ’free’ in free software refers to liberty (of code) and not c
 tribution). The proposed changes do limit freedom to work with the code, which could
 bear further examination to ensure that this does not create unforeseen problems.
 
-Limiting usage through DRM
+## Limiting usage through DRM
 
 Perhaps the closest thing to the proposed changes is the use of DRM, which is explicitly
 allowed under GPLv3 licensing6
@@ -362,7 +360,7 @@ allowed under GPLv3 licensing6
 tivoization or law, and a case could be made that similar protection is provided by
 modern mobile app distribution platforms, which should be included in similar fashion.
 
-Voters are not allowed to change open source code in voting machines
+## Voters are not allowed to change open source code in voting machines
 
 The GPL FAQ gives an example of voting machine users not being allowed to change
 the code running on voting machines. Such abilities to control running software are not
@@ -374,7 +372,7 @@ binary software. The FAQ also states that ”voting is a very special case”, s
 cability of these thoughts on software in general and distribution of mobile applications
 specifically is arguable.
 
-4.4 Possible problems
+## 4.4 Possible problems
 
 The proposed changes should be scrutinized by the open-source community and, specif-
 ically, legal experts, to make sure that their scope is as-intended. Without sufficient legal

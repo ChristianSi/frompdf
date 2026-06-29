@@ -1,356 +1,356 @@
-text,page_no,block_no,line_no_on_page,font_size,x1,y1,x2,y2,rel_x,rel_y,mostly_bold
-Brief Announcement: Non-Uniform,1,1,1,17.2,90.7,75.9,369.2,93.1,,,True
-Content-Oblivious Leader Election on Oriented,1,2,2,17.2,90.7,97.8,460.5,115.0,0.0,21.9,True
-Asynchronous Rings,1,3,3,17.2,90.1,119.7,247.3,136.9,-0.6,21.9,True
-Jérémie Chalopin #,1,4,4,12.0,90.4,147.1,207.0,159.0,0.3,27.4,False
-"Aix Marseille Univ, CNRS, LIS, Marseille, France",1,4,5,9.0,90.4,161.4,291.5,170.4,0.0,14.3,False
-Yi-Jun Chang #,1,4,6,12.0,90.2,176.5,186.3,188.4,-0.2,15.1,False
-"National University of Singapore, Singapore",1,4,7,9.0,90.7,190.8,268.1,199.8,0.5,14.3,False
-Lyuting Chen #,1,4,8,12.0,90.7,205.9,185.3,217.8,0.0,15.1,False
-"National University of Singapore, Singapore",1,4,9,9.0,90.7,220.2,268.1,229.2,0.0,14.3,False
-Giuseppe A. Di Luna #,1,4,10,12.0,90.7,235.2,229.8,247.2,0.0,15.1,False
-"DIAG, Sapienza University of Rome, Italy",1,4,11,9.0,90.7,249.6,261.5,258.5,0.0,14.3,False
-Haoran Zhou #,1,4,12,12.0,90.7,264.6,181.8,276.6,0.0,15.1,False
-"National University of Singapore, Singapore",1,4,13,9.0,90.7,279.0,268.1,287.9,0.0,14.3,False
-Abstract,1,5,14,10.5,114.8,300.8,155.7,311.3,24.1,21.9,True
-"In this paper, we study the leader election problem in oriented ring networks under content-oblivious",1,5,15,9.0,90.7,316.4,487.4,325.4,-24.1,15.6,False
-"asynchronous message-passing systems, where an adversary may arbitrarily corrupt message contents.",1,5,16,9.0,90.7,328.4,489.1,337.3,0.0,12.0,False
-Frei et al. (DISC 2024) recently presented a uniform terminating leader election algorithm for,1,5,17,9.0,105.7,340.3,487.4,349.3,14.9,11.9,False
-"oriented rings in this setting, with message complexity O(nIDmax) on a ring of size n, where IDmax",1,5,18,9.0,90.0,352.3,487.2,361.6,-15.7,12.0,False
-is the largest identifier in the system.,1,5,19,9.0,90.7,364.2,240.9,373.2,0.7,12.0,False
-"In this paper, we investigate the message complexity of leader election in this model, showing",1,6,20,9.0,105.7,376.1,487.3,385.2,14.9,11.9,False
-that no uniform algorithm can solve the problem if each process is limited to sending a constant,1,6,21,9.0,90.7,388.0,487.5,397.2,-14.9,11.9,False
-number of messages in one direction.,1,6,22,9.0,90.7,400.1,239.3,409.1,0.0,12.1,False
-"Interestingly, this limitation hinges on the uniformity assumption. In the non-uniform setting",1,7,23,9.0,105.7,412.0,487.5,421.0,14.9,11.9,False
-– where processes know an upper bound U ≥ n on the ring size – we present an algorithm with,1,7,24,9.0,88.9,423.9,487.4,433.0,-16.8,11.9,False
-"message complexity O(nUIDmin), in which each process sends O(UIDmin) messages clockwise and",1,7,25,9.0,90.7,435.9,487.5,445.3,1.8,12.0,False
-"only three messages counter-clockwise. Here, IDmin is the smallest identifier in the system. This",1,7,26,9.0,90.7,447.8,487.4,457.2,0.0,11.9,False
-dependence on the identifiers compares favorably with the dependence on IDmax of Frei et al. (DISC,1,7,27,9.0,90.7,459.9,487.6,469.2,0.0,12.1,False
-2024).,1,7,28,9.0,90.5,471.8,115.0,480.8,-0.2,12.0,False
-We also show a non-uniform algorithm where each process sends O(U log IDmin) messages in one,1,8,29,9.0,105.7,483.8,487.6,493.1,15.2,11.9,False
-"direction and O(log IDmin) in the other. The factor log IDmin is optimal, matching the lower bound",1,8,30,9.0,90.7,495.7,487.5,505.0,-14.9,12.0,False
-of Frei et al. (DISC 2024).,1,8,31,9.0,90.7,507.7,196.6,516.7,0.0,12.0,False
-"Finally, in the anonymous setting, we propose a randomized algorithm where each process sends",1,9,32,9.0,105.7,519.7,487.3,528.6,14.9,12.0,False
-"only O(log2 U) messages, with a success probability of 1 − U",1,9,33,9.0,90.7,530.1,334.7,540.6,-14.9,10.5,False
-−c,1,9,34,6.0,335.7,530.0,344.8,536.1,245.0,-0.1,False
-.,1,9,35,9.0,345.3,531.6,347.8,540.6,9.6,1.6,False
-2012 ACM Subject Classification Theory of computation → Distributed algorithms,1,10,36,9.0,90.7,551.8,430.8,560.9,-254.6,20.2,False
-"Keywords and phrases Content-Oblivious Networks, Leader Election, Oriented Rings, Asynchronous",1,11,37,9.0,90.7,572.2,487.4,581.2,0.0,20.4,False
-Systems,1,11,38,9.0,90.7,584.2,123.3,593.2,0.0,12.0,False
-Digital Object Identifier 10.4230/LIPIcs.DISC.2025.51,1,12,39,9.0,90.7,604.5,312.0,613.5,0.0,20.3,False
-Related Version Full Version: https://arxiv.org/abs/2509.19187,1,13,40,9.0,90.7,624.8,367.7,634.3,0.0,20.3,False
-"Funding This work has been partially supported by ANR project DUCAT (ANR-20-CE48-0006), by",1,14,41,9.0,90.7,646.2,487.7,655.1,0.0,21.3,False
-"the Ministry of Education, Singapore, under its Academic Research Fund Tier 1 (24-1323-A0001),",1,14,42,9.0,90.7,659.1,488.5,668.1,0.0,12.9,False
-and by the Italian MUR National Recovery and Resilience Plan funded by the European Union -,1,14,43,9.0,90.7,672.0,488.8,681.1,0.0,12.9,False
-NextGenerationEU through projects SERICS (PE00000014).,1,14,44,9.0,90.7,685.0,336.0,694.0,0.0,13.1,False
-"© Jérémie Chalopin, Yi-Jun Chang, Lyuting Chen, Giuseppe A. Di Luna, and Haoran Zhou;",1,15,45,7.0,134.3,739.1,456.2,746.1,43.6,54.0,False
-licensed under Creative Commons License CC-BY 4.0,1,15,46,7.0,134.3,747.0,321.7,754.0,0.0,8.0,False
-39th International Symposium on Distributed Computing (DISC 2025).,1,15,47,7.0,90.5,755.0,340.1,762.0,-43.8,8.0,False
-Editor: Dariusz R. Kowalski; Article No. 51; pp. 51:1–51:7,1,15,48,7.0,90.7,763.0,291.7,770.0,0.2,8.0,False
-Leibniz International Proceedings in Informatics,1,15,49,7.0,158.4,771.0,327.1,777.9,67.7,8.0,False
-"Schloss Dagstuhl – Leibniz-Zentrum für Informatik, Dagstuhl Publishing, Germany",1,15,50,7.0,158.4,778.9,448.6,785.9,0.0,8.0,False
-51:2 Content-Oblivious Leader Election on Oriented Rings,2,1,1,10.5,66.2,62.2,362.3,72.7,,,True
-1 Introduction,2,2,2,12.0,112.7,100.7,204.6,112.7,46.5,38.5,True
-The field of reliable distributed computing is characterized by the study of a wide range of,2,3,3,10.0,107.4,133.1,504.2,143.1,-5.3,32.4,False
-"failure models, from failures affecting specific processes [4, 17] to failures affecting commu-",2,3,4,10.0,107.7,146.0,506.1,156.1,0.4,12.9,False
-"nication channels, such as message omission failures, message addition failures or message",2,3,5,10.0,107.7,158.9,504.2,169.0,0.0,12.9,False
-"corruptions [19]. In a recent paper, Censor-Hillel et al. [7] introduced a new interesting failure",2,3,6,10.0,107.7,172.0,504.5,181.9,0.0,13.1,False
-"model for channels: the fully-defective asynchronous network. In this model, processes do",2,3,7,10.0,107.7,184.8,504.1,194.9,0.0,12.8,False
-"not fail, but all messages in transit may be arbitrarily corrupted by an adversary. While the",2,3,8,10.0,107.7,197.9,504.2,207.8,0.0,13.1,False
-"adversary can alter the content of any message, it cannot create or destroy messages.",2,3,9,10.0,107.7,210.8,478.8,220.8,0.0,13.0,False
-"This model is content-oblivious, meaning that messages carry no reliable content, not",2,4,10,10.0,122.7,228.0,504.5,238.1,14.9,17.1,False
-even the identity of the sender. The only information a message conveys is its existence.,2,4,11,10.0,107.7,241.1,492.7,251.0,-14.9,13.1,False
-"Surprisingly, Censor-Hillel et al. [7] showed that if a leader process is initially known",2,4,12,10.0,122.7,258.2,504.3,268.3,14.9,17.1,False
-"and the topology is 2-edge-connected, it is possible to simulate a reliable, uncorrupted",2,4,13,10.0,107.7,271.1,504.2,281.3,-14.9,13.0,False
-"message-passing network, even in asynchronous settings, within this fully-defective model.",2,4,14,10.0,107.7,284.2,500.0,294.2,0.0,13.1,False
-This result makes studying leader election algorithms for this model particularly com-,2,4,15,10.0,122.7,301.3,505.8,311.5,14.9,17.1,False
-"pelling: if a leader can be elected in a certain topology, with an algorithm that is terminating",2,4,16,10.0,107.7,314.5,504.3,324.4,-14.9,13.1,False
-and where it is possible to distinguish in some way the messages of the leader election,2,4,17,10.0,107.7,327.2,504.2,337.4,0.0,12.8,False
-"algorithm, then on such topology any asynchronous algorithm can be simulated even if all",2,4,18,10.0,107.7,340.3,504.2,350.3,0.0,13.0,False
-"messages are arbitrarily corrupted. In this regard, Censor-Hillel et al. [7] conjectured that",2,4,19,10.0,107.7,353.2,504.7,363.3,0.0,12.9,False
-electing a leader was impossible in content-oblivious model and thus that having a leader,2,4,20,10.0,107.7,366.1,504.4,376.3,0.0,12.9,False
-was a necessary requirement. We stress that electing a leader is a fundamental problem in,2,4,21,10.0,107.4,379.1,504.2,389.2,-0.4,13.0,False
-"the classical message-passing setting, and it has been extensively studied in systems with",2,4,22,10.0,107.7,392.0,504.1,402.2,0.4,12.9,False
-"unique identifiers [1, 12, 16, 18] and in anonymous networks [2, 3, 8, 21].",2,4,23,10.0,107.7,405.1,424.0,415.1,0.0,13.1,False
-Frei et al. [13] disproved the aforementioned conjecture for a notable family of 2-edge-,2,5,24,10.0,122.7,422.2,505.9,432.4,14.9,17.1,False
-"connected networks: oriented ring topologies. In an oriented ring, processes have a common",2,5,25,10.0,107.7,435.3,504.3,445.3,-14.9,13.1,False
-"notion of clockwise and counter-clockwise direction. More specifically, Frei et al. [13] proposed",2,5,26,10.0,107.7,448.3,504.6,458.2,0.0,13.0,False
-"a quiescently terminating leader election algorithm with a message complexity of O(nIDmax),",2,5,27,10.0,107.7,461.2,506.0,472.0,0.0,12.9,False
-where IDmax is the maximum identifier in the system. The quiescent termination of the,2,5,28,10.0,107.4,474.0,504.2,485.0,-0.4,12.8,False
-algorithm allows it to be composed with the simulator of Censor-Hillel et al. [7] and thus,2,5,29,10.0,107.7,487.0,504.5,497.1,0.4,13.0,False
-implies that the presence of unique identifiers is enough to simulate any asynchronous,2,5,30,10.0,107.7,499.9,504.2,510.1,0.0,13.0,False
-algorithm on a content-oblivious oriented ring.,2,5,31,10.0,107.7,513.0,310.8,523.0,0.0,13.1,False
-"Additionally, Frei et al. [13] proved that, for any uniform algorithm, there exists an",2,6,32,10.0,122.7,530.2,504.3,540.3,14.9,17.1,False
-identifier assignment under which the algorithm must send Ω,2,6,33,10.0,107.7,543.3,361.9,553.2,-14.9,13.1,False
-,2,6,34,10.0,363.5,542.3,368.0,552.3,255.7,-0.9,False
-n log IDmax,2,6,35,10.0,368.0,541.5,411.2,553.2,4.6,-0.8,False
-n,2,6,36,7.0,399.1,549.0,404.0,556.0,31.1,7.5,False
-,2,6,37,10.0,412.9,542.3,417.5,552.3,13.8,-6.7,False
-messages. Although,2,6,38,10.0,419.8,543.3,504.6,553.2,6.9,0.9,False
-"originally established for the uniform setting, this lower bound can be extended to the non-",2,7,39,10.0,107.7,556.2,505.8,566.2,-312.1,13.0,False
-"uniform setting, even when the exact value of n is known; see the full version of the paper",2,7,40,10.0,107.7,569.1,504.6,579.2,0.0,12.9,False
-for details.,2,7,41,10.0,107.7,582.1,154.0,592.1,0.0,13.0,False
-"In anonymous systems, where processes lack identifiers, Frei et al. [13] showed a randomized",2,8,42,10.0,122.7,599.4,504.6,609.4,14.9,17.3,False
-leader election algorithm using n,2,8,43,10.0,107.7,612.3,247.9,622.3,-14.9,12.9,False
-O(c,2,8,44,7.0,247.9,611.1,260.8,618.0,140.1,-1.3,False
-2,2,8,45,5.0,260.8,609.6,264.2,614.6,12.9,-1.4,False
-) messages and succeeding with probability 1 − n,2,8,46,10.0,264.7,611.1,474.0,622.3,3.9,1.5,False
-−c,2,8,47,7.0,474.0,611.0,483.8,618.0,209.3,-0.1,False
-", but",2,8,48,10.0,484.3,612.3,504.9,622.3,10.3,1.4,False
-"without explicit termination. In fact, Itai and Rodeh [15] proved that no uniform algorithm",2,8,49,10.0,107.4,625.3,504.5,635.3,-376.9,13.0,False
-can both elect a leader and guarantee explicit termination in anonymous systems without,2,8,50,10.0,107.7,638.1,504.4,648.2,0.4,12.8,False
-additional assumptions. We stress that the lack of explicit termination does not allow the,2,8,51,10.0,107.7,651.1,504.1,661.2,0.0,13.0,False
-composition of this algorithm with the simulator of Censor-Hillel et al. [7].,2,8,52,10.0,107.7,664.1,432.8,674.1,0.0,13.1,False
-"Finally, we want to mention the related line of research of the beeping model [5, 6, 9, 20],",2,9,53,10.0,122.7,681.4,506.0,691.4,14.9,17.3,False
-where in each round a process may either emit a beep to its neighbors or listen. This model,2,9,54,10.0,107.4,694.4,504.2,704.3,-15.3,13.0,False
-"is inherently synchronous. Therefore, the techniques developed for leader election in the",2,9,55,10.0,107.7,707.2,504.1,717.3,0.4,12.8,False
-"beeping model [10, 11, 14] cannot be applied in content-oblivious networks.",2,9,56,10.0,107.7,720.3,436.0,730.2,0.0,13.1,False
-"J. Chalopin, Y.-J. Chang, L. Chen, G. A. Di Luna, and H. Zhou 51:3",3,1,1,10.5,90.7,62.2,532.8,72.7,,,True
-1.1 Contributions,3,2,2,12.0,90.7,99.4,194.3,111.3,0.0,37.1,True
-We shed new light on the message complexity of leader election in the content-oblivious,3,3,3,10.0,90.2,124.9,487.2,135.0,-0.5,25.5,False
-"model. Specifically, we show that a uniform algorithm, even on oriented rings, cannot elect a",3,3,4,10.0,90.7,138.0,487.3,148.0,0.5,13.1,False
-leader while sending only a constant number of messages in a single direction.,3,3,5,10.0,90.7,150.9,430.6,160.9,0.0,13.0,False
-"Interestingly, we show that non-uniform algorithms, where processes know an upper",3,3,6,10.0,105.7,166.3,487.4,176.4,14.9,15.3,False
-"bound U on the network size n, can circumvent this impossibility result.",3,3,7,10.0,90.7,179.4,406.6,189.3,-14.9,13.1,False
-"In particular, we present an algorithm for oriented rings (Section 3) that elects a leader",3,3,8,10.0,105.7,194.9,487.4,204.8,14.9,15.5,False
-by sending O(nUIDmin) messages in the clockwise direction and where each process sends,3,3,9,10.0,90.7,207.7,487.3,218.6,-14.9,12.8,False
-just three messages in the counter-clockwise direction. Here IDmin is the minimum identifier,3,3,10,10.0,90.7,220.7,487.7,231.5,0.0,13.1,False
-in the system. We also present a non-uniform algorithm for oriented rings (Section 4),3,3,11,10.0,90.7,233.5,488.3,243.7,0.0,12.8,False
-that sends O(nU log IDmin) messages in one direction and O(n log IDmin) messages in the,3,3,12,10.0,90.7,246.5,487.5,257.5,0.0,13.0,False
-other. We stress that the factor log IDmin of our algorithm is optimal. This follows from,3,3,13,10.0,90.7,259.5,487.5,270.4,0.0,13.0,False
-"the aforementioned lower bound of Frei et al. [13], which shows the necessity of logarithmic",3,3,14,10.0,90.7,272.6,487.4,282.5,0.0,13.1,False
-dependency on the values of the identifiers. Our result implies that Θ(log IDmin) is the tight,3,3,15,10.0,90.7,285.5,487.6,296.3,0.0,12.9,False
-message complexity for constant-size instances.,3,3,16,10.0,90.7,298.5,295.9,308.4,0.0,13.0,False
-The key technical novelty in our non-uniform algorithms is the design of a global syn-,3,4,17,10.0,105.7,313.8,488.8,323.9,14.9,15.3,False
-chronization mechanism that leverages the known upper bound on the network size to keep,3,4,18,10.0,90.7,326.9,487.2,336.9,-14.9,13.1,False
-processes partially synchronized across algorithmic phases. This mechanism enables processes,3,4,19,10.0,90.7,339.8,487.2,349.8,0.0,13.0,False
-"to compare their identifiers bit by bit, leading to an algorithm whose complexity depends",3,4,20,10.0,90.7,352.6,487.1,362.8,0.0,12.8,False
-only on the size of the identifiers (and not on their values).,3,4,21,10.0,90.7,365.7,348.0,375.7,0.0,13.1,False
-"Regarding anonymous networks, with non-uniformity at hand, the aforementioned impos-",3,5,22,10.0,105.7,381.2,488.9,391.2,14.9,15.5,False
-sibility result of Itai and Rodeh [15] no longer applies. This allows us to create a randomized,3,5,23,10.0,90.7,394.2,487.4,404.1,-14.9,13.0,False
-"algorithm (Section 5) that, with probability at least 1 − U",3,5,24,10.0,90.7,407.0,337.0,417.1,0.0,12.8,False
-−c,3,5,25,7.0,338.1,405.7,347.9,412.8,247.4,-1.2,False
-", is quiescently terminating. The",3,5,26,10.0,348.4,407.1,487.5,417.1,10.3,1.4,False
-algorithm has message complexity O(n log2 U). In contrast to the randomized approach of,3,5,27,10.0,90.7,418.0,487.4,430.1,-257.6,10.9,False
-"Frei et al. [13], whose message complexity has an inherent exponential dependence on c, our",3,5,28,10.0,90.7,433.0,487.8,443.0,0.0,15.0,False
-algorithm achieves near-linear message complexity with only a multiplicative dependence,3,5,29,10.0,90.7,445.8,487.1,456.0,0.0,12.8,False
-"on c, which is hidden in the O(·) notation.",3,5,30,10.0,90.7,458.8,275.9,468.9,0.0,13.0,False
-"For space reasons, in this brief announcement, we just announce our results and describe",3,6,31,10.0,105.7,474.4,487.2,484.4,14.9,15.6,False
-the high-level ideas; see the full version of this paper for technical details.,3,6,32,10.0,90.7,487.4,411.4,497.3,-14.9,13.0,False
-2 System Model,3,7,33,12.0,95.7,528.2,198.8,540.1,5.0,40.8,True
-"We consider a system composed of a set of n processes P = {p0, p1, . . . , pn−1} that commu-",3,8,34,10.0,90.2,557.1,489.2,568.1,-5.5,29.0,False
-"nicate on a ring network by sending messages to each other. More precisely, a process p has",3,8,35,10.0,90.7,570.2,487.6,580.2,0.5,13.1,False
-"two local communication ports: port 0 and port 1. By means of a specific port, a process is",3,8,36,10.0,90.7,583.2,487.4,593.1,0.0,13.0,False
-able to send messages to and receive messages from one of its neighbors.,3,8,37,10.0,90.7,596.1,406.5,606.1,0.0,13.0,False
-"When the system is not anonymous, processes have unique identifiers that are arbitrarily",3,8,38,10.0,105.7,611.6,487.6,621.6,14.9,15.5,False
-selected from N.,3,8,39,10.0,90.7,622.4,161.4,634.5,-14.9,10.8,False
-"We assume an asynchronous system; that is, each message has an unpredictable delay",3,9,40,10.0,105.7,639.9,487.7,650.0,14.9,17.5,False
-"that is finite but unbounded. A message cannot be lost. Messages are buffered, in the sense",3,9,41,10.0,90.7,653.0,487.2,662.9,-14.9,13.1,False
-"that if several messages are delivered to a process at the same time, they are stored in a",3,9,42,10.0,90.7,665.8,487.2,675.9,0.0,12.8,False
-local buffer and can then be retrieved by the destination process at its discretion. The local,3,9,43,10.0,90.7,678.9,487.2,688.9,0.0,13.1,False
-"computation time at each process may be arbitrary but bounded, and processes do not share",3,9,44,10.0,90.7,691.8,487.3,701.8,0.0,13.0,False
-a notion of common time.,3,9,45,10.0,90.7,704.8,203.3,714.8,0.0,13.0,False
-Processes are correct and do not experience any kind of failure.,3,10,46,10.0,105.7,720.3,382.0,730.2,14.9,15.5,False
-D I S C 2 0 2 5,3,11,47,10.0,494.9,769.2,554.5,779.1,389.3,48.9,True
-51:4 Content-Oblivious Leader Election on Oriented Rings,4,1,1,10.5,66.2,62.2,362.3,72.7,,,True
-"Content-Oblivious Algorithms. Since we are interested in content-oblivious algorithms, we",4,2,2,10.0,107.7,100.9,504.6,110.9,41.5,38.7,False
-"assume that messages do not carry any information apart from their existence. That is, each",4,2,3,10.0,107.7,113.9,504.3,123.9,0.0,13.0,False
-message is an empty string (a pulse [13]) and a process only observes the local port number,4,2,4,10.0,107.7,126.8,504.6,136.8,0.0,13.0,False
-on which the message is received.,4,2,5,10.0,107.7,139.8,253.1,149.8,0.0,13.0,False
-Oriented Rings. We consider oriented rings. A ring is oriented if processes share a common,4,3,6,10.0,107.7,167.2,504.5,177.2,0.0,27.4,False
-"notion of clockwise (CW) and counter-clockwise (CCW) orientation. More precisely, consider",4,3,7,10.0,107.7,180.2,504.6,190.2,0.0,13.0,False
-"a ring (p0, p1, . . . , pn−1) for each j ∈ [0, n − 1], at process pj , port 0 leads to pj+1 and port 1",4,3,8,10.0,107.7,193.0,505.7,203.9,0.0,12.8,False
-leads to pj−1 (where indices are taken modulo n). We will say that a message is traveling in,4,3,9,10.0,107.7,206.1,504.5,216.9,0.0,13.1,False
-"the clockwise direction if it is sent on port 0 and received on port 1 (i.e., a message goes",4,3,10,10.0,107.7,218.9,504.5,229.1,0.0,12.8,False
-"from pi to pi+1); conversely, a message travels in the counter-clockwise direction if it is sent",4,3,11,10.0,107.7,232.0,504.5,242.8,0.0,13.1,False
-on port 1 and received on port 0.,4,3,12,10.0,107.7,245.0,252.8,254.9,0.0,13.0,False
-Uniform and Non-Uniform Algorithms. An algorithm is uniform if it works for all possible,4,4,13,10.0,107.7,272.4,504.5,282.4,0.0,27.4,False
-"network sizes; i.e., processes do not know the total number of processes n or a bound on it.",4,4,14,10.0,107.7,285.3,506.4,295.3,0.0,13.0,False
-An algorithm is non-uniform if processes know an upper bound U ≥ n.,4,4,15,10.0,107.3,298.2,418.0,308.3,-0.4,12.8,False
-Message Complexity. We measure the performance of our algorithms by their message,4,5,16,10.0,107.7,325.6,504.5,335.8,0.4,27.4,False
-complexity. That is the number of all messages sent. We further discriminate between the,4,5,17,10.0,106.9,338.6,504.2,348.7,-0.8,13.0,False
-numbers of clockwise messages and counter-clockwise messages sent by each process.,4,5,18,10.0,107.7,351.7,476.7,361.6,0.8,13.1,False
-"Leader Election Problem. In this problem, processes must elect one of them as the leader",4,6,19,10.0,107.7,379.1,504.4,389.1,0.0,27.4,False
-"and all others are designated as non-leader processes. We consider terminating leader election,",4,6,20,10.0,107.7,392.0,506.0,402.0,0.0,13.0,False
-"in the sense that every process must eventually enter either a Leader or Non-Leader state,",4,6,21,10.0,107.7,405.0,505.9,415.5,0.0,12.9,False
-"and both of these states are final – meaning no further state changes are possible, and the",4,6,22,10.0,107.7,417.9,504.2,427.9,0.0,12.9,False
-process terminates the execution of the algorithm.,4,6,23,10.0,107.7,430.9,326.6,440.9,0.0,13.0,False
-"Moreover, we require that once the last process enters its final state, there are no messages",4,7,24,10.0,122.7,444.0,504.2,453.9,14.9,13.1,False
-"in transit in the network. This is known as quiescent termination [13]. In our algorithms, the",4,7,25,10.0,107.7,456.9,504.5,466.9,-14.9,13.0,False
-last process to enter its final state is always the unique leader. This property enables easy,4,7,26,10.0,107.7,469.8,504.5,479.9,0.0,12.9,False
-"composability of algorithms: once the leader enters the final state, it knows that the network",4,7,27,10.0,107.7,482.8,504.5,492.8,0.0,13.0,False
-"is “at rest” and can begin sending messages for a subsequent algorithm [13, Section 1.1].",4,7,28,10.0,107.7,495.8,493.1,505.7,0.0,13.0,False
-3 Constant Number of Messages in One Direction,4,8,29,12.0,112.7,523.7,401.8,535.7,5.0,27.9,True
-We now describe an algorithm where each process sends O(UIDmin) messages in the clockwise,4,9,30,10.0,107.2,548.3,504.5,559.1,-5.5,24.6,False
-"direction, and just 3 messages in the counter-clockwise direction. This algorithm is of interest",4,9,31,10.0,107.7,561.2,504.5,571.2,0.5,13.0,False
-as it shows that our claim below needs the uniformity assumption:,4,9,32,10.0,107.7,574.2,397.8,584.2,0.0,13.0,False
-▶ Theorem 1. For any uniform leader election algorithm and any bound b ∈ N there exists,4,10,33,10.0,107.7,593.2,504.5,605.4,0.0,19.0,False
-an oriented ring where at least one process sends more than b messages in each direction.,4,10,34,10.0,107.0,608.4,496.6,618.3,-0.8,15.1,False
-"The Constant Direction Algorithm, pseudocode in Algorithm 1, starts in a competing",4,11,35,10.0,122.7,629.5,504.2,639.6,15.7,21.1,False
-"phase. In the competing phase, blue lines, a process p with identifier ID performs a loop of",4,11,36,10.0,107.7,642.5,504.5,652.5,-14.9,13.1,False
-"UID iterations. In each iteration, the process sends a message in the CW direction and waits",4,11,37,10.0,107.7,655.5,504.3,665.5,0.0,13.0,False
-for a message from the CW direction. This phase synchronizes the processes so that the,4,11,38,10.0,107.7,668.3,504.2,678.5,0.0,12.8,False
-indices of any two processes in the phase loop can differ by at most n − 1. The process with,4,11,39,10.0,107.7,681.3,504.6,691.4,0.0,13.0,False
-the minimum identifier will be the only one to end the competing phase by completing the,4,11,40,10.0,107.7,694.4,504.2,704.3,0.0,13.1,False
-prescribed number of iterations.,4,11,41,10.0,107.7,707.3,247.0,717.3,0.0,13.0,False
-"J. Chalopin, Y.-J. Chang, L. Chen, G. A. Di Luna, and H. Zhou 51:5",5,1,1,10.5,90.7,62.2,532.8,72.7,,,True
-"Algorithm 1 Constant Direction Algorithm(ID,boundOnSize).",5,2,2,9.0,104.7,102.5,353.2,111.5,13.9,40.3,False
-1 for i ← 1 to boundOnSize ∗ ID do,5,2,3,8.5,96.6,118.4,235.2,127.0,-8.1,15.9,False
-2 send a message on port 0,5,2,4,8.5,97.0,128.0,219.9,136.5,0.4,9.6,False
-3 receive a message on port q // Wait for a message and store the port number in,5,3,5,8.5,97.0,137.5,472.6,146.4,-0.0,9.5,False
-variable q,5,3,6,8.5,125.8,146.9,169.7,155.8,28.8,9.5,False
-4 if q = 0 then break,5,3,7,8.5,97.0,156.4,203.7,164.9,-28.8,9.5,False
-5 if q = 0 then,5,3,8,8.5,96.6,169.7,158.1,178.2,-0.4,13.3,False
-"/* if a process enters this branch, then it is not the process with minimum ID",5,4,9,8.5,120.6,179.2,467.2,188.1,24.0,9.5,False
-*/,5,4,10,8.5,133.4,189.1,142.3,197.5,12.9,9.9,False
-6 send a message on port 1,5,4,11,8.5,97.0,198.1,219.9,206.6,-36.5,9.0,False
-7 receive a message on port 1 // Wait for a message on port 1.,5,5,12,8.5,97.0,207.5,472.6,216.5,0.0,9.5,False
-8 repeat,5,5,13,8.5,97.0,217.0,148.9,225.5,0.0,9.5,False
-9 receive a message on port q,5,5,14,8.5,97.4,226.5,245.2,235.0,0.4,9.5,False
-10 send a message on port 1 − q,5,5,15,8.5,93.3,235.8,249.7,244.4,-4.1,9.4,False
-11 until received two messages on port 0,5,5,16,8.5,92.9,246.4,264.8,254.9,-0.4,10.6,False
-12 return Non-Leader,5,5,17,8.5,92.9,255.9,196.3,264.8,0.0,9.5,False
-13 else,5,5,18,8.5,92.5,266.3,121.6,274.8,-0.4,10.5,False
-/* only the process with minimum ID enters this branch */,5,6,19,8.5,120.6,275.8,473.5,284.7,28.0,9.5,False
-14 send a message on port 1,5,6,20,8.5,92.9,285.2,219.9,293.7,-27.6,9.5,False
-15 receive a message on port 0,5,6,21,8.5,92.9,294.7,230.3,303.2,0.0,9.5,False
-16 send a message on port 1,5,6,22,8.5,92.9,304.2,219.9,312.7,-0.0,9.5,False
-17 repeat,5,6,23,8.5,92.9,313.6,148.9,322.1,0.0,9.5,False
-18 receive a message on port q,5,6,24,8.5,93.3,323.1,245.2,331.6,0.4,9.5,False
-19 if q = 1 then,5,6,25,8.5,93.3,332.6,188.7,341.1,-0.0,9.5,False
-20 send a message on port 0,5,6,26,8.5,93.7,342.0,250.5,350.5,0.4,9.5,False
-21 until q = 0,5,6,27,8.5,92.9,356.3,164.3,364.8,-0.8,14.3,False
-22 send a message on port 1,5,6,28,8.5,92.9,365.8,219.9,374.3,0.0,9.5,False
-23 receive a message on port 0,5,6,29,8.5,92.9,375.3,230.3,383.7,0.0,9.5,False
-24 return Leader,5,6,30,8.5,92.9,384.7,178.5,393.6,-0.0,9.5,False
-"This process then enters the termination detection phase (green lines). In this phase, the",5,7,31,10.0,105.7,426.1,487.2,436.1,12.7,41.4,False
-process first sends a message CCW to inform all other processes that they are not leaders.,5,7,32,10.0,90.7,439.0,489.1,449.1,-14.9,12.9,False
-"Once this message returns, it sends a second CCW message while starting to relay CW",5,7,33,10.0,90.7,451.9,487.7,462.0,0.0,12.9,False
-messages; when this second message will be received back the process will know that all,5,7,34,10.0,90.7,464.8,487.2,475.0,0.0,13.0,False
-"CW messages in the network are eliminated. Finally, once the second message is received, it",5,7,35,10.0,90.7,477.9,487.5,487.9,0.0,13.1,False
-sends a third and final CCW message to terminate the algorithm.,5,7,36,10.0,90.7,490.9,377.7,500.8,0.0,13.0,False
-A process whose identifier is not the minimum will enter the relay phase (red lines) upon,5,8,37,10.0,105.7,503.9,487.3,513.9,14.9,13.1,False
-"receiving and relaying a message from the CCW direction. In the relay phase, the process",5,8,38,10.0,90.7,516.8,487.2,526.9,-14.9,12.9,False
-"first waits to receive a CW message, in order to eliminate the CW message it sent during",5,8,39,10.0,90.7,529.7,487.2,539.8,0.0,12.9,False
-"the competing phase, and afterwards it relays both CCW and CW messages it receives. A",5,8,40,10.0,90.7,542.7,487.6,552.8,0.0,13.0,False
-non-leader process terminates after receiving three CCW messages.,5,8,41,10.0,90.7,555.7,383.7,565.7,0.0,13.0,False
-▶ Theorem 2. There exists a quiescently terminating leader election algorithm for ori-,5,9,42,10.0,90.7,574.8,488.4,587.0,0.0,19.0,False
-ented rings in which each process sends O(UIDmin) messages clockwise and three messages,5,9,43,10.0,89.9,589.8,487.4,600.7,-0.8,15.0,False
-"counterclockwise, for a total of O(nUIDmin) messages.",5,9,44,10.0,89.9,602.9,325.6,613.7,0.0,13.0,False
-4 An algorithm that sends O(nU log IDmin) messages,5,10,45,12.0,95.7,630.8,404.5,643.7,5.8,27.9,True
-We now describe an algorithm in which each process sends O(U log IDmin) messages. The,5,11,46,10.0,90.2,655.3,487.5,666.2,-5.5,24.5,False
-algorithm uses an encoding of identifiers such that the smallest identifier is not a prefix of,5,11,47,10.0,90.7,668.3,487.1,678.4,0.5,13.0,False
-"any other identifier, and the last bit of every encoded identifier is 0. To achieve this, given",5,11,48,10.0,90.7,681.3,487.5,691.3,0.0,13.0,False
-"an identifier ID of bit length ℓ, we encode it as 1",5,11,49,10.0,90.7,694.3,301.9,704.2,0.0,13.0,False
-ℓ0 · ID · 0.,5,11,50,10.0,301.9,693.0,342.9,704.2,211.2,-1.3,False
-The algorithm elects the process with the minimum identifier and proceeds in elimination,5,11,51,10.0,105.7,707.3,487.3,717.3,-196.3,14.3,False
-"rounds. In each round, active processes compare a specific bit of their (encoded) identifiers,",5,11,52,10.0,90.7,720.3,488.5,730.2,-14.9,13.0,False
-eliminating all processes that do not have the minimum bit at that position.,5,11,53,10.0,90.7,733.2,423.8,743.2,0.0,13.0,False
-D I S C 2 0 2 5,5,12,54,10.0,494.9,769.2,554.5,779.1,404.2,35.9,True
-51:6 Content-Oblivious Leader Election on Oriented Rings,6,1,1,10.5,66.2,62.2,362.3,72.7,,,True
-The bound U on the network size is used to synchronize processes across different rounds,6,2,2,10.0,122.7,100.9,504.3,110.9,56.5,38.7,False
-"of the algorithm. When an active process enters a round, it begins the Synchronization phase.",6,2,3,10.0,107.7,113.9,506.5,123.9,-14.9,13.0,False
-"In this phase, each active process sends and receives messages in the CW direction for U steps.",6,2,4,10.0,107.7,126.8,506.5,136.8,0.0,12.9,False
-"Then, processes with bit 0 send and receive one message in the CCW direction, blocking",6,2,5,10.0,107.4,139.6,504.3,149.8,-0.4,12.8,False
-"messages in the CW direction (this is the Zero Signaling phase). Meanwhile, processes with",6,2,6,10.0,107.7,152.8,504.5,162.7,0.4,13.1,False
-bit 1 attempt to continue sending and receiving messages in the CW direction for another U,6,2,7,10.0,107.7,165.7,503.5,175.7,0.0,12.9,False
-"steps. However, they become inactive if they receive a CCW message, indicating the presence",6,2,8,10.0,107.7,178.7,504.2,188.6,0.0,13.0,False
-of a process with bit 0 (this is the No-Zero Checking phase).,6,2,9,10.0,107.7,191.6,371.3,201.6,0.0,13.0,False
-The rationale for these phases is to ensure that processes with bit 1 proceed to the next,6,2,10,10.0,122.7,204.6,504.8,214.5,14.9,13.0,False
-round in the active state if and only if no process with bit 0 exists in the current round.,6,2,11,10.0,107.7,217.4,506.3,227.5,-14.9,12.8,False
-"Indeed, when processes with bit 0 stop propagating CW messages, the processes with bit 1",6,2,12,10.0,107.7,230.4,505.6,240.4,0.0,13.1,False
-are prevented from completing their No-Zero Checking phase.,6,2,13,10.0,107.7,243.4,376.4,253.4,0.0,13.0,False
-"Conversely, a process with bit 0 in a given round remains active. The Synchronization",6,2,14,10.0,122.7,256.2,504.5,266.4,14.9,12.8,False
-phase described above ensures that once an active process completes this phase for a new,6,2,15,10.0,107.7,269.2,504.6,279.3,-14.9,12.9,False
-"round, all active processes have completed the previous round and are in the Synchronization",6,2,16,10.0,107.7,282.3,504.6,292.2,0.0,13.1,False
-phase of the current round.,6,2,17,10.0,107.7,295.2,226.6,305.2,0.0,13.0,False
-"An inactive process relays messages, and while doing so, it eliminates the first CW message",6,3,18,10.0,122.7,308.2,504.3,318.1,14.9,13.0,False
-"it receives. This guarantees that, once all inactive processes have eliminated one message, the",6,3,19,10.0,107.7,321.1,504.2,331.1,-14.9,13.0,False
-"total number of messages in the network equals the number of active processes. Therefore,",6,3,20,10.0,107.7,334.0,505.6,344.0,0.0,12.9,False
-"once all processes except the one with the minimum identifier have been eliminated, only a",6,3,21,10.0,107.7,347.0,504.2,357.0,0.0,13.0,False
-single message remains in the network.,6,3,22,10.0,107.7,360.0,276.9,369.9,0.0,13.0,False
-"The algorithm terminates after |IDmin| = O(log IDmin) rounds. At this point, the only",6,4,23,10.0,122.7,372.8,504.8,383.7,14.9,12.8,False
-remaining active process is the one with the minimum identifier. This process can detect,6,4,24,10.0,107.7,385.7,504.4,395.9,-14.9,13.0,False
-"this locally and communicates it to all other processes (which are, by construction, inactive)",6,4,25,10.0,107.7,398.8,505.4,408.8,0.0,13.1,False
-by sending an additional message in the CCW direction (this is the Termination phase).,6,4,26,10.0,107.7,411.8,494.1,421.7,0.0,13.0,False
-All other processes detect termination when they receive two consecutive messages in,6,4,27,10.0,122.7,424.6,504.2,434.7,14.9,12.8,False
-the CCW direction: the first sent during the Zero Signaling phase by the process with the,6,4,28,10.0,107.7,437.6,504.5,447.7,-14.9,13.0,False
-"minimum identifier, and the second sent during the Termination phase. Therefore, we have",6,4,29,10.0,107.7,450.6,504.5,460.6,0.0,13.0,False
-the following theorem.,6,4,30,10.0,107.7,463.6,205.1,473.5,0.0,13.0,False
-▶ Theorem 3. There exists a quiescently terminating leader election algorithm for ori-,6,5,31,10.0,107.7,479.9,505.4,492.1,0.0,16.3,False
-ented rings in which each process sends O(U log IDmin) messages clockwise and O(log IDmin),6,5,32,10.0,106.9,495.1,505.7,505.9,-0.8,15.1,False
-"messages counterclockwise, for a total of O(nU log IDmin) messages.",6,5,33,10.0,107.1,508.0,401.7,518.8,0.2,13.0,False
-5 Randomized Leader Election,6,6,34,12.0,112.7,534.9,293.1,546.8,5.6,26.9,True
-"In our randomized algorithm, each process samples its ID uniformly at random from the set",6,7,35,10.0,107.7,559.3,504.7,569.2,-5.0,24.4,False
-"{0, 1, 2, . . . , 2",6,7,36,10.0,107.7,572.1,163.3,582.2,0.0,12.8,False
-⌈c1 log U⌉ − 1}. With probability at least 1 − U,6,7,37,10.0,163.2,570.8,359.8,582.2,55.5,-1.2,False
-2−c1,6,7,38,7.0,360.9,570.8,378.0,578.5,197.7,0.0,False
-", all processes receive distinct",6,7,39,10.0,379.0,572.2,504.8,582.2,18.1,1.4,False
-identifiers. The bit-by-bit comparison algorithm from Section 4 is then executed using these,6,7,40,10.0,107.7,585.2,504.2,595.1,-271.3,13.0,False
-random identifiers.,6,7,41,10.0,107.7,598.1,189.4,608.1,0.0,13.0,False
-"This sampling strategy yields a useful property: for any fixed bit index i, every maximal",6,8,42,10.0,122.7,611.1,504.5,621.0,14.9,12.9,False
-consecutive sequence of processes whose bit ID[i] equals 1 has length at most ⌈c2 log U⌉,6,8,43,10.0,107.7,623.9,504.6,634.8,-14.9,12.8,False
-with probability at least 1 − U,6,8,44,10.0,107.4,636.8,248.2,647.0,-0.4,13.0,False
-1−c2,6,8,45,7.0,249.3,635.6,266.4,643.2,141.9,-1.2,False
-. This property reduces the number of steps in the,6,8,46,10.0,267.4,636.8,504.3,647.0,18.1,1.2,False
-Synchronization and No-Zero Checking phases of the algorithm in Section 4 from U to,6,9,47,10.0,107.2,649.8,504.6,659.9,-160.2,13.0,False
-"⌈c2 log U⌉, thereby improving the message complexity and establishing our final theorem.",6,9,48,10.0,107.7,662.7,496.1,673.7,0.5,13.0,False
-"▶ Theorem 4. For any constant c > 0, there exists a randomized quiescently terminating",6,9,49,10.0,107.7,679.2,504.3,691.4,0.0,16.5,False
-leader election algorithm for anonymous oriented rings with a success probability of 1 −,6,9,50,10.0,107.1,694.2,504.6,704.4,-0.6,15.0,False
-U,6,9,51,10.0,107.7,707.3,114.5,717.3,0.6,13.1,False
-−c,6,9,52,7.0,115.6,705.9,125.4,713.0,7.9,-1.4,False
-in which each process sends O(log2 U) messages clockwise and O(log U) messages,6,9,53,10.0,130.8,705.3,504.5,717.3,15.2,-0.7,False
-"counterclockwise, for a total of O(n log2 U) messages.",6,9,54,10.0,106.9,718.2,339.6,730.2,-23.9,13.0,False
-"J. Chalopin, Y.-J. Chang, L. Chen, G. A. Di Luna, and H. Zhou 51:7",7,1,1,10.5,90.7,62.2,532.8,72.7,,,True
-References,7,2,2,10.0,114.8,102.6,163.9,112.6,24.1,40.4,True
-"1 H. Attiya and J. L. Welch. Distributed Computing: Fundamentals, Simulations, and Advanced",7,2,3,9.0,96.7,119.2,487.1,128.2,-18.1,16.5,False
-"Topics. Wiley, 2004.",7,2,4,9.0,113.4,131.2,195.5,140.1,16.6,12.0,False
-"2 P. Boldi, S. Shammah, S. Vigna, B. Codenotti, P. Gemmell, and J. Simon. Symmetry breaking",7,2,5,9.0,96.7,143.1,487.4,152.1,-16.6,11.9,False
-"in anonymous networks: Characterizations. In ISTCS 1996, pages 16–26, 1996.",7,2,6,9.0,114.8,155.1,434.5,164.0,18.1,12.0,False
-"3 P. Boldi and S. Vigna. Fibrations of graphs. Discrete Mathematics, 243(1):21–66, 2002.",7,2,7,9.0,96.7,166.9,489.2,176.0,-18.1,11.8,False
-doi:10.1016/S0012-365X(00)00455-6.,7,2,8,9.0,114.8,179.0,273.7,188.4,18.1,12.1,False
-"4 C. Cachin, R. Guerraoui, and L. Rodrigues. Introduction to Reliable and Secure Distributed",7,2,9,9.0,96.7,190.9,487.1,199.9,-18.1,11.9,False
-"Programming. Springer, 2011.",7,2,10,9.0,114.3,202.9,234.9,211.9,17.6,12.0,False
-"5 A. Casteigts, Y. Métivier, J.M. Robson, and A. Zemmari. Counting in one-hop beeping",7,2,11,9.0,96.7,214.7,487.3,223.8,-17.6,11.8,False
-"networks. Theoretical Computer Science, 780:20–28, 2019. doi:10.1016/J.TCS.2019.02.009.",7,2,12,9.0,114.8,226.8,489.3,236.2,18.1,12.1,False
-"6 A. Casteigts, Y. Métivier, J.M. Robson, and A. Zemmari. Design patterns in beeping",7,2,13,9.0,96.7,238.6,487.3,247.8,-18.1,11.8,False
-"algorithms: Examples, emulation, and analysis. Information and Computation, 264:32–51,",7,2,14,9.0,114.8,250.6,488.8,259.7,18.1,12.0,False
-2019. doi:10.1016/J.IC.2018.10.001.,7,2,15,9.0,114.6,262.7,274.0,272.1,-0.2,12.1,False
-"7 K. Censor-Hillel, S. Cohen, R. Gelles, and G. Sela. Distributed computations in fully-defective",7,2,16,9.0,96.7,274.6,487.4,283.6,-17.8,11.9,False
-"networks. Distributed Computing, 36(4):501–528, 2023. doi:10.1007/S00446-023-00452-2.",7,2,17,9.0,114.8,286.6,485.6,296.0,18.1,12.0,False
-"8 J. Chalopin, E. Godard, and Y. Métivier. Election in partially anonymous networks with",7,2,18,9.0,96.7,298.4,487.3,307.5,-18.1,11.8,False
-"arbitrary knowledge in message passing systems. Distributed Computing, 25(4):297–311, 2012.",7,2,19,9.0,114.8,310.5,489.2,319.5,18.1,12.1,False
-doi:10.1007/S00446-012-0163-Y.,7,2,20,9.0,114.8,322.4,255.4,331.9,0.0,12.0,False
-"9 A. Cornejo and F. Kuhn. Deploying wireless networks with beeps. In DISC 2010, vol-",7,2,21,9.0,96.7,334.3,489.1,343.4,-18.1,11.8,False
-"ume 6343 of Lecture Notes in Comput. Sci., pages 148–162. Springer, 2010. doi:10.1007/",7,2,22,9.0,114.8,346.2,488.5,355.8,18.1,12.0,False
-978-3-642-15763-9_15.,7,2,23,9.0,114.8,358.3,213.5,367.7,0.0,12.1,False
-10 A. Czumaj and P. Davies. Leader election in multi-hop radio networks. Theoretical Computer,7,2,24,9.0,91.8,370.2,487.4,379.2,-23.0,11.9,False
-"Science, 792:2–11, 2019. doi:10.1016/J.TCS.2019.02.027.",7,2,25,9.0,114.3,382.2,354.2,391.6,22.5,12.0,False
-"11 F. Dufoulon, J. Burman, and J. Beauquier. Beeping a deterministic time-optimal leader election.",7,2,26,9.0,91.8,394.2,489.1,403.1,-22.5,11.9,False
-"In DISC 2018, volume 121 of LIPIcs, pages 20:1–20:17. Schloss Dagstuhl – Leibniz-Zentrum",7,2,27,9.0,114.8,406.1,487.3,415.1,23.0,11.9,False
-"für Informatik, 2018. doi:10.4230/LIPICS.DISC.2018.20.",7,2,28,9.0,114.8,418.1,351.4,427.5,0.0,12.0,False
-"12 P. Flocchini, E. Kranakis, D. Krizanc, F. L. Luccio, and N. Santoro. Sorting and election in",7,2,29,9.0,91.8,430.0,487.2,439.0,-23.0,11.9,False
-"anonymous asynchronous rings. Journal of Parallel and Distributed Computing, 64(2):254–265,",7,2,30,9.0,114.8,442.0,488.8,451.0,23.0,12.0,False
-2004. doi:10.1016/J.JPDC.2003.11.007.,7,2,31,9.0,114.6,453.9,283.4,463.4,-0.2,12.0,False
-"13 F. Frei, R. Gelles, A. Ghazy, and A. Nolin. Content-oblivious leader election on rings. In",7,2,32,9.0,91.8,465.8,487.3,474.9,-22.8,11.8,False
-"DISC 2024, volume 319, pages 26:1–26:20. Schloss Dagstuhl – Leibniz-Zentrum für Informatik,",7,2,33,9.0,114.3,477.9,488.6,486.8,22.5,12.1,False
-2024. doi:10.4230/LIPICS.DISC.2024.26.,7,2,34,9.0,114.6,489.8,288.1,499.2,0.3,12.0,False
-"14 K.-T. Förster, J. Seidel, and R. Wattenhofer. Deterministic leader election in multi-hop",7,2,35,9.0,91.8,501.6,487.3,510.8,-22.8,11.8,False
-"beeping networks. In DISC 2014, volume 8784 of Lecture Notes in Comput. Sci., pages",7,2,36,9.0,114.8,513.6,487.5,522.7,23.0,12.0,False
-"212–226. Springer, 2014.",7,2,37,9.0,114.6,525.7,212.8,534.6,-0.2,12.1,False
-"15 Alon Itai and Michael Rodeh. Symmetry breaking in distributed networks. Inf. Comput.,",7,2,38,9.0,91.8,537.5,488.8,546.6,-22.8,11.8,False
-"88(1):60–87, July 1990. doi:10.1016/0890-5401(90)90004-2.",7,2,39,9.0,114.8,549.6,366.6,559.0,23.0,12.1,False
-"16 S. Kutten, W. K. Moses Jr., G. Pandurangan, and D. Peleg. Singularly optimal randomized",7,2,40,9.0,91.8,561.5,487.3,570.5,-23.0,11.9,False
-"leader election. In DISC 2020, volume 179 of LIPIcs, pages 22:1–22:18, 2020. doi:10.4230/",7,2,41,9.0,114.8,573.5,488.5,582.9,23.0,11.9,False
-LIPICS.DISC.2020.22.,7,2,42,9.0,114.8,585.5,206.8,594.9,0.0,12.0,False
-17 M. Raynal. Fault-Tolerant Message-Passing Distributed Systems: An Algorithmic Approach.,7,2,43,9.0,91.8,597.3,489.3,606.4,-23.0,11.9,False
-"Springer, 2018.",7,2,44,9.0,114.8,609.4,175.2,618.3,23.0,12.0,False
-"18 N. Santoro. Design and Analysis of Distributed Algorithms. John Wiley & Sons, 2007.",7,2,45,9.0,91.8,621.3,463.0,630.3,-23.0,11.9,False
-"19 N. Santoro and P. Widmayer. Time is not a healer. In STACS 1989, volume 349 of Lecture",7,2,46,9.0,91.8,633.2,487.5,642.3,0.0,11.9,False
-"Notes in Comput. Sci., pages 304–313. Springer, 1989. doi:10.1007/BFB0028994.",7,2,47,9.0,114.3,645.2,443.5,654.6,22.5,12.1,False
-20 R. Vacus and I Ziccardi. Minimalist leader election under weak communication. In PODC,7,2,48,9.0,91.8,657.0,487.1,666.2,-22.5,11.8,False
-"2025. ACM, 2025.",7,2,49,9.0,114.2,669.1,187.0,678.1,22.4,12.1,False
-21 M. Yamashita and T. Kameda. Computing on anonymous networks: Part I - Characterizing,7,2,50,9.0,91.8,681.1,487.3,690.1,-22.4,11.9,False
-"the solvable cases. IEEE Transactions on Parallel and Distributed Systems, 7(1):69–89, 1996.",7,2,51,9.0,114.8,693.1,489.2,702.0,23.0,12.0,False
-doi:10.1109/71.481599.,7,2,52,9.0,114.8,705.0,216.2,714.4,0.0,12.0,False
-D I S C 2 0 2 5,7,3,53,10.0,494.9,769.2,554.5,779.1,380.1,64.2,True
+text,page_no,block_no,line_no_on_page,font_size,x1,y1,x2,y2,rel_x,rel_y,avg_weight
+Brief Announcement: Non-Uniform,1,1,1,17.2,90.7,75.9,369.2,93.1,,,680.0
+Content-Oblivious Leader Election on Oriented,1,2,2,17.2,90.7,97.8,460.5,115.0,0.0,21.9,680.0
+Asynchronous Rings,1,3,3,17.2,90.1,119.7,247.3,136.9,-0.6,21.9,680.0
+Jérémie Chalopin #,1,4,4,12.0,90.4,147.1,207.0,159.0,0.3,27.4,540.6
+"Aix Marseille Univ, CNRS, LIS, Marseille, France",1,4,5,9.0,90.4,161.4,291.5,170.4,0.0,14.3,450.0
+Yi-Jun Chang #,1,4,6,12.0,90.2,176.5,186.3,188.4,-0.2,15.1,539.2
+"National University of Singapore, Singapore",1,4,7,9.0,90.7,190.8,268.1,199.8,0.5,14.3,450.0
+Lyuting Chen #,1,4,8,12.0,90.7,205.9,185.3,217.8,0.0,15.1,539.2
+"National University of Singapore, Singapore",1,4,9,9.0,90.7,220.2,268.1,229.2,0.0,14.3,450.0
+Giuseppe A. Di Luna #,1,4,10,12.0,90.7,235.2,229.8,247.2,0.0,15.1,541.2
+"DIAG, Sapienza University of Rome, Italy",1,4,11,9.0,90.7,249.6,261.5,258.5,0.0,14.3,450.0
+Haoran Zhou #,1,4,12,12.0,90.7,264.6,181.8,276.6,0.0,15.1,538.8
+"National University of Singapore, Singapore",1,4,13,9.0,90.7,279.0,268.1,287.9,0.0,14.3,450.0
+Abstract,1,5,14,10.5,114.8,300.8,155.7,311.3,24.1,21.9,680.0
+"In this paper, we study the leader election problem in oriented ring networks under content-oblivious",1,5,15,9.0,90.7,316.4,487.4,325.4,-24.1,15.6,450.0
+"asynchronous message-passing systems, where an adversary may arbitrarily corrupt message contents.",1,5,16,9.0,90.7,328.4,489.1,337.3,0.0,12.0,450.0
+Frei et al. (DISC 2024) recently presented a uniform terminating leader election algorithm for,1,5,17,9.0,105.7,340.3,487.4,349.3,14.9,11.9,450.0
+"oriented rings in this setting, with message complexity O(nIDmax) on a ring of size n, where IDmax",1,5,18,9.0,90.0,352.3,487.2,361.6,-15.7,12.0,428.3
+is the largest identifier in the system.,1,5,19,9.0,90.7,364.2,240.9,373.2,0.7,12.0,450.0
+"In this paper, we investigate the message complexity of leader election in this model, showing",1,6,20,9.0,105.7,376.1,487.3,385.2,14.9,11.9,450.0
+that no uniform algorithm can solve the problem if each process is limited to sending a constant,1,6,21,9.0,90.7,388.0,487.5,397.2,-14.9,11.9,450.0
+number of messages in one direction.,1,6,22,9.0,90.7,400.1,239.3,409.1,0.0,12.1,450.0
+"Interestingly, this limitation hinges on the uniformity assumption. In the non-uniform setting",1,7,23,9.0,105.7,412.0,487.5,421.0,14.9,11.9,420.8
+– where processes know an upper bound U ≥ n on the ring size – we present an algorithm with,1,7,24,9.0,88.9,423.9,487.4,433.0,-16.8,11.9,440.2
+"message complexity O(nUIDmin), in which each process sends O(UIDmin) messages clockwise and",1,7,25,9.0,90.7,435.9,487.5,445.3,1.8,12.0,431.4
+"only three messages counter-clockwise. Here, IDmin is the smallest identifier in the system. This",1,7,26,9.0,90.7,447.8,487.4,457.2,0.0,11.9,449.5
+dependence on the identifiers compares favorably with the dependence on IDmax of Frei et al. (DISC,1,7,27,9.0,90.7,459.9,487.6,469.2,0.0,12.1,449.5
+2024).,1,7,28,9.0,90.5,471.8,115.0,480.8,-0.2,12.0,450.0
+We also show a non-uniform algorithm where each process sends O(U log IDmin) messages in one,1,8,29,9.0,105.7,483.8,487.6,493.1,15.2,11.9,442.4
+"direction and O(log IDmin) in the other. The factor log IDmin is optimal, matching the lower bound",1,8,30,9.0,90.7,495.7,487.5,505.0,-14.9,12.0,436.0
+of Frei et al. (DISC 2024).,1,8,31,9.0,90.7,507.7,196.6,516.7,0.0,12.0,450.0
+"Finally, in the anonymous setting, we propose a randomized algorithm where each process sends",1,9,32,9.0,105.7,519.7,487.3,528.6,14.9,12.0,450.0
+"only O(log2 U) messages, with a success probability of 1 − U",1,9,33,9.0,90.7,530.1,334.7,540.6,-14.9,10.5,427.8
+−c,1,9,34,6.0,335.7,530.0,344.8,536.1,245.0,-0.1,222.5
+.,1,9,35,9.0,345.3,531.6,347.8,540.6,9.6,1.6,450.0
+2012 ACM Subject Classification Theory of computation → Distributed algorithms,1,10,36,9.0,90.7,551.8,430.8,560.9,-254.6,20.2,541.9
+"Keywords and phrases Content-Oblivious Networks, Leader Election, Oriented Rings, Asynchronous",1,11,37,9.0,90.7,572.2,487.4,581.2,0.0,20.4,499.5
+Systems,1,11,38,9.0,90.7,584.2,123.3,593.2,0.0,12.0,450.0
+Digital Object Identifier 10.4230/LIPIcs.DISC.2025.51,1,12,39,9.0,90.7,604.5,312.0,613.5,0.0,20.3,560.6
+Related Version Full Version: https://arxiv.org/abs/2509.19187,1,13,40,9.0,90.7,624.8,367.7,634.3,0.0,20.3,439.8
+"Funding This work has been partially supported by ANR project DUCAT (ANR-20-CE48-0006), by",1,14,41,9.0,90.7,646.2,487.7,655.1,0.0,21.3,468.1
+"the Ministry of Education, Singapore, under its Academic Research Fund Tier 1 (24-1323-A0001),",1,14,42,9.0,90.7,659.1,488.5,668.1,0.0,12.9,450.0
+and by the Italian MUR National Recovery and Resilience Plan funded by the European Union -,1,14,43,9.0,90.7,672.0,488.8,681.1,0.0,12.9,450.0
+NextGenerationEU through projects SERICS (PE00000014).,1,14,44,9.0,90.7,685.0,336.0,694.0,0.0,13.1,450.0
+"© Jérémie Chalopin, Yi-Jun Chang, Lyuting Chen, Giuseppe A. Di Luna, and Haoran Zhou;",1,15,45,7.0,134.3,739.1,456.2,746.1,43.6,54.0,395.0
+licensed under Creative Commons License CC-BY 4.0,1,15,46,7.0,134.3,747.0,321.7,754.0,0.0,8.0,395.0
+39th International Symposium on Distributed Computing (DISC 2025).,1,15,47,7.0,90.5,755.0,340.1,762.0,-43.8,8.0,395.0
+Editor: Dariusz R. Kowalski; Article No. 51; pp. 51:1–51:7,1,15,48,7.0,90.7,763.0,291.7,770.0,0.2,8.0,395.0
+Leibniz International Proceedings in Informatics,1,15,49,7.0,158.4,771.0,327.1,777.9,67.7,8.0,395.0
+"Schloss Dagstuhl – Leibniz-Zentrum für Informatik, Dagstuhl Publishing, Germany",1,15,50,7.0,158.4,778.9,448.6,785.9,0.0,8.0,395.0
+51:2 Content-Oblivious Leader Election on Oriented Rings,2,1,1,10.5,66.2,62.2,362.3,72.7,,,680.0
+1 Introduction,2,2,2,12.0,112.7,100.7,204.6,112.7,46.5,38.5,680.0
+The field of reliable distributed computing is characterized by the study of a wide range of,2,3,3,10.0,107.4,133.1,504.2,143.1,-5.3,32.4,345.0
+"failure models, from failures affecting specific processes [4, 17] to failures affecting commu-",2,3,4,10.0,107.7,146.0,506.1,156.1,0.4,12.9,345.0
+"nication channels, such as message omission failures, message addition failures or message",2,3,5,10.0,107.7,158.9,504.2,169.0,0.0,12.9,345.0
+"corruptions [19]. In a recent paper, Censor-Hillel et al. [7] introduced a new interesting failure",2,3,6,10.0,107.7,172.0,504.5,181.9,0.0,13.1,345.0
+"model for channels: the fully-defective asynchronous network. In this model, processes do",2,3,7,10.0,107.7,184.8,504.1,194.9,0.0,12.8,345.0
+"not fail, but all messages in transit may be arbitrarily corrupted by an adversary. While the",2,3,8,10.0,107.7,197.9,504.2,207.8,0.0,13.1,345.0
+"adversary can alter the content of any message, it cannot create or destroy messages.",2,3,9,10.0,107.7,210.8,478.8,220.8,0.0,13.0,345.0
+"This model is content-oblivious, meaning that messages carry no reliable content, not",2,4,10,10.0,122.7,228.0,504.5,238.1,14.9,17.1,345.0
+even the identity of the sender. The only information a message conveys is its existence.,2,4,11,10.0,107.7,241.1,492.7,251.0,-14.9,13.1,345.0
+"Surprisingly, Censor-Hillel et al. [7] showed that if a leader process is initially known",2,4,12,10.0,122.7,258.2,504.3,268.3,14.9,17.1,345.0
+"and the topology is 2-edge-connected, it is possible to simulate a reliable, uncorrupted",2,4,13,10.0,107.7,271.1,504.2,281.3,-14.9,13.0,345.0
+"message-passing network, even in asynchronous settings, within this fully-defective model.",2,4,14,10.0,107.7,284.2,500.0,294.2,0.0,13.1,345.0
+This result makes studying leader election algorithms for this model particularly com-,2,4,15,10.0,122.7,301.3,505.8,311.5,14.9,17.1,345.0
+"pelling: if a leader can be elected in a certain topology, with an algorithm that is terminating",2,4,16,10.0,107.7,314.5,504.3,324.4,-14.9,13.1,345.0
+and where it is possible to distinguish in some way the messages of the leader election,2,4,17,10.0,107.7,327.2,504.2,337.4,0.0,12.8,345.0
+"algorithm, then on such topology any asynchronous algorithm can be simulated even if all",2,4,18,10.0,107.7,340.3,504.2,350.3,0.0,13.0,345.0
+"messages are arbitrarily corrupted. In this regard, Censor-Hillel et al. [7] conjectured that",2,4,19,10.0,107.7,353.2,504.7,363.3,0.0,12.9,345.0
+electing a leader was impossible in content-oblivious model and thus that having a leader,2,4,20,10.0,107.7,366.1,504.4,376.3,0.0,12.9,345.0
+was a necessary requirement. We stress that electing a leader is a fundamental problem in,2,4,21,10.0,107.4,379.1,504.2,389.2,-0.4,13.0,345.0
+"the classical message-passing setting, and it has been extensively studied in systems with",2,4,22,10.0,107.7,392.0,504.1,402.2,0.4,12.9,345.0
+"unique identifiers [1, 12, 16, 18] and in anonymous networks [2, 3, 8, 21].",2,4,23,10.0,107.7,405.1,424.0,415.1,0.0,13.1,345.0
+Frei et al. [13] disproved the aforementioned conjecture for a notable family of 2-edge-,2,5,24,10.0,122.7,422.2,505.9,432.4,14.9,17.1,345.0
+"connected networks: oriented ring topologies. In an oriented ring, processes have a common",2,5,25,10.0,107.7,435.3,504.3,445.3,-14.9,13.1,345.0
+"notion of clockwise and counter-clockwise direction. More specifically, Frei et al. [13] proposed",2,5,26,10.0,107.7,448.3,504.6,458.2,0.0,13.0,345.0
+"a quiescently terminating leader election algorithm with a message complexity of O(nIDmax),",2,5,27,10.0,107.7,461.2,506.0,472.0,0.0,12.9,346.7
+where IDmax is the maximum identifier in the system. The quiescent termination of the,2,5,28,10.0,107.4,474.0,504.2,485.0,-0.4,12.8,347.9
+algorithm allows it to be composed with the simulator of Censor-Hillel et al. [7] and thus,2,5,29,10.0,107.7,487.0,504.5,497.1,0.4,13.0,345.0
+implies that the presence of unique identifiers is enough to simulate any asynchronous,2,5,30,10.0,107.7,499.9,504.2,510.1,0.0,13.0,345.0
+algorithm on a content-oblivious oriented ring.,2,5,31,10.0,107.7,513.0,310.8,523.0,0.0,13.1,345.0
+"Additionally, Frei et al. [13] proved that, for any uniform algorithm, there exists an",2,6,32,10.0,122.7,530.2,504.3,540.3,14.9,17.1,345.0
+identifier assignment under which the algorithm must send Ω,2,6,33,10.0,107.7,543.3,361.9,553.2,-14.9,13.1,345.0
+,2,6,34,10.0,363.5,542.3,368.0,552.3,255.7,-0.9,
+n log IDmax,2,6,35,10.0,368.0,541.5,411.2,553.2,4.6,-0.8,421.7
+n,2,6,36,7.0,399.1,549.0,404.0,556.0,31.1,7.5,360.0
+,2,6,37,10.0,412.9,542.3,417.5,552.3,13.8,-6.7,
+messages. Although,2,6,38,10.0,419.8,543.3,504.6,553.2,6.9,0.9,345.0
+"originally established for the uniform setting, this lower bound can be extended to the non-",2,7,39,10.0,107.7,556.2,505.8,566.2,-312.1,13.0,345.0
+"uniform setting, even when the exact value of n is known; see the full version of the paper",2,7,40,10.0,107.7,569.1,504.6,579.2,0.0,12.9,340.7
+for details.,2,7,41,10.0,107.7,582.1,154.0,592.1,0.0,13.0,345.0
+"In anonymous systems, where processes lack identifiers, Frei et al. [13] showed a randomized",2,8,42,10.0,122.7,599.4,504.6,609.4,14.9,17.3,345.0
+leader election algorithm using n,2,8,43,10.0,107.7,612.3,247.9,622.3,-14.9,12.9,343.6
+O(c,2,8,44,7.0,247.9,611.1,260.8,618.0,140.1,-1.3,371.7
+2,2,8,45,5.0,260.8,609.6,264.2,614.6,12.9,-1.4,530.0
+) messages and succeeding with probability 1 − n,2,8,46,10.0,264.7,611.1,474.0,622.3,3.9,1.5,341.8
+−c,2,8,47,7.0,474.0,611.0,483.8,618.0,209.3,-0.1,302.5
+", but",2,8,48,10.0,484.3,612.3,504.9,622.3,10.3,1.4,345.0
+"without explicit termination. In fact, Itai and Rodeh [15] proved that no uniform algorithm",2,8,49,10.0,107.4,625.3,504.5,635.3,-376.9,13.0,345.0
+can both elect a leader and guarantee explicit termination in anonymous systems without,2,8,50,10.0,107.7,638.1,504.4,648.2,0.4,12.8,345.0
+additional assumptions. We stress that the lack of explicit termination does not allow the,2,8,51,10.0,107.7,651.1,504.1,661.2,0.0,13.0,345.0
+composition of this algorithm with the simulator of Censor-Hillel et al. [7].,2,8,52,10.0,107.7,664.1,432.8,674.1,0.0,13.1,345.0
+"Finally, we want to mention the related line of research of the beeping model [5, 6, 9, 20],",2,9,53,10.0,122.7,681.4,506.0,691.4,14.9,17.3,345.0
+where in each round a process may either emit a beep to its neighbors or listen. This model,2,9,54,10.0,107.4,694.4,504.2,704.3,-15.3,13.0,345.0
+"is inherently synchronous. Therefore, the techniques developed for leader election in the",2,9,55,10.0,107.7,707.2,504.1,717.3,0.4,12.8,345.0
+"beeping model [10, 11, 14] cannot be applied in content-oblivious networks.",2,9,56,10.0,107.7,720.3,436.0,730.2,0.0,13.1,345.0
+"J. Chalopin, Y.-J. Chang, L. Chen, G. A. Di Luna, and H. Zhou 51:3",3,1,1,10.5,90.7,62.2,532.8,72.7,,,680.0
+1.1 Contributions,3,2,2,12.0,90.7,99.4,194.3,111.3,0.0,37.1,680.0
+We shed new light on the message complexity of leader election in the content-oblivious,3,3,3,10.0,90.2,124.9,487.2,135.0,-0.5,25.5,345.0
+"model. Specifically, we show that a uniform algorithm, even on oriented rings, cannot elect a",3,3,4,10.0,90.7,138.0,487.3,148.0,0.5,13.1,345.0
+leader while sending only a constant number of messages in a single direction.,3,3,5,10.0,90.7,150.9,430.6,160.9,0.0,13.0,345.0
+"Interestingly, we show that non-uniform algorithms, where processes know an upper",3,3,6,10.0,105.7,166.3,487.4,176.4,14.9,15.3,345.0
+"bound U on the network size n, can circumvent this impossibility result.",3,3,7,10.0,90.7,179.4,406.6,189.3,-14.9,13.1,343.7
+"In particular, we present an algorithm for oriented rings (Section 3) that elects a leader",3,3,8,10.0,105.7,194.9,487.4,204.8,14.9,15.5,345.0
+by sending O(nUIDmin) messages in the clockwise direction and where each process sends,3,3,9,10.0,90.7,207.7,487.3,218.6,-14.9,12.8,346.2
+just three messages in the counter-clockwise direction. Here IDmin is the minimum identifier,3,3,10,10.0,90.7,220.7,487.7,231.5,0.0,13.1,346.5
+in the system. We also present a non-uniform algorithm for oriented rings (Section 4),3,3,11,10.0,90.7,233.5,488.3,243.7,0.0,12.8,345.0
+that sends O(nU log IDmin) messages in one direction and O(n log IDmin) messages in the,3,3,12,10.0,90.7,246.5,487.5,257.5,0.0,13.0,348.2
+other. We stress that the factor log IDmin of our algorithm is optimal. This follows from,3,3,13,10.0,90.7,259.5,487.5,270.4,0.0,13.0,342.5
+"the aforementioned lower bound of Frei et al. [13], which shows the necessity of logarithmic",3,3,14,10.0,90.7,272.6,487.4,282.5,0.0,13.1,345.0
+dependency on the values of the identifiers. Our result implies that Θ(log IDmin) is the tight,3,3,15,10.0,90.7,285.5,487.6,296.3,0.0,12.9,344.1
+message complexity for constant-size instances.,3,3,16,10.0,90.7,298.5,295.9,308.4,0.0,13.0,345.0
+The key technical novelty in our non-uniform algorithms is the design of a global syn-,3,4,17,10.0,105.7,313.8,488.8,323.9,14.9,15.3,345.0
+chronization mechanism that leverages the known upper bound on the network size to keep,3,4,18,10.0,90.7,326.9,487.2,336.9,-14.9,13.1,345.0
+processes partially synchronized across algorithmic phases. This mechanism enables processes,3,4,19,10.0,90.7,339.8,487.2,349.8,0.0,13.0,345.0
+"to compare their identifiers bit by bit, leading to an algorithm whose complexity depends",3,4,20,10.0,90.7,352.6,487.1,362.8,0.0,12.8,345.0
+only on the size of the identifiers (and not on their values).,3,4,21,10.0,90.7,365.7,348.0,375.7,0.0,13.1,345.0
+"Regarding anonymous networks, with non-uniformity at hand, the aforementioned impos-",3,5,22,10.0,105.7,381.2,488.9,391.2,14.9,15.5,345.0
+sibility result of Itai and Rodeh [15] no longer applies. This allows us to create a randomized,3,5,23,10.0,90.7,394.2,487.4,404.1,-14.9,13.0,345.0
+"algorithm (Section 5) that, with probability at least 1 − U",3,5,24,10.0,90.7,407.0,337.0,417.1,0.0,12.8,341.5
+−c,3,5,25,7.0,338.1,405.7,347.9,412.8,247.4,-1.2,302.5
+", is quiescently terminating. The",3,5,26,10.0,348.4,407.1,487.5,417.1,10.3,1.4,345.0
+algorithm has message complexity O(n log2 U). In contrast to the randomized approach of,3,5,27,10.0,90.7,418.0,487.4,430.1,-257.6,10.9,344.0
+"Frei et al. [13], whose message complexity has an inherent exponential dependence on c, our",3,5,28,10.0,90.7,433.0,487.8,443.0,0.0,15.0,344.5
+algorithm achieves near-linear message complexity with only a multiplicative dependence,3,5,29,10.0,90.7,445.8,487.1,456.0,0.0,12.8,345.0
+"on c, which is hidden in the O(·) notation.",3,5,30,10.0,90.7,458.8,275.9,468.9,0.0,13.0,339.1
+"For space reasons, in this brief announcement, we just announce our results and describe",3,6,31,10.0,105.7,474.4,487.2,484.4,14.9,15.6,345.0
+the high-level ideas; see the full version of this paper for technical details.,3,6,32,10.0,90.7,487.4,411.4,497.3,-14.9,13.0,345.0
+2 System Model,3,7,33,12.0,95.7,528.2,198.8,540.1,5.0,40.8,680.0
+"We consider a system composed of a set of n processes P = {p0, p1, . . . , pn−1} that commu-",3,8,34,10.0,90.2,557.1,489.2,568.1,-5.5,29.0,333.5
+"nicate on a ring network by sending messages to each other. More precisely, a process p has",3,8,35,10.0,90.7,570.2,487.6,580.2,0.5,13.1,344.5
+"two local communication ports: port 0 and port 1. By means of a specific port, a process is",3,8,36,10.0,90.7,583.2,487.4,593.1,0.0,13.0,345.0
+able to send messages to and receive messages from one of its neighbors.,3,8,37,10.0,90.7,596.1,406.5,606.1,0.0,13.0,345.0
+"When the system is not anonymous, processes have unique identifiers that are arbitrarily",3,8,38,10.0,105.7,611.6,487.6,621.6,14.9,15.5,345.0
+selected from N.,3,8,39,10.0,90.7,622.4,161.4,634.5,-14.9,10.8,335.3
+"We assume an asynchronous system; that is, each message has an unpredictable delay",3,9,40,10.0,105.7,639.9,487.7,650.0,14.9,17.5,329.8
+"that is finite but unbounded. A message cannot be lost. Messages are buffered, in the sense",3,9,41,10.0,90.7,653.0,487.2,662.9,-14.9,13.1,345.0
+"that if several messages are delivered to a process at the same time, they are stored in a",3,9,42,10.0,90.7,665.8,487.2,675.9,0.0,12.8,345.0
+local buffer and can then be retrieved by the destination process at its discretion. The local,3,9,43,10.0,90.7,678.9,487.2,688.9,0.0,13.1,345.0
+"computation time at each process may be arbitrary but bounded, and processes do not share",3,9,44,10.0,90.7,691.8,487.3,701.8,0.0,13.0,345.0
+a notion of common time.,3,9,45,10.0,90.7,704.8,203.3,714.8,0.0,13.0,345.0
+Processes are correct and do not experience any kind of failure.,3,10,46,10.0,105.7,720.3,382.0,730.2,14.9,15.5,345.0
+D I S C 2 0 2 5,3,11,47,10.0,494.9,769.2,554.5,779.1,389.3,48.9,680.0
+51:4 Content-Oblivious Leader Election on Oriented Rings,4,1,1,10.5,66.2,62.2,362.3,72.7,,,680.0
+"Content-Oblivious Algorithms. Since we are interested in content-oblivious algorithms, we",4,2,2,10.0,107.7,100.9,504.6,110.9,41.5,38.7,435.7
+"assume that messages do not carry any information apart from their existence. That is, each",4,2,3,10.0,107.7,113.9,504.3,123.9,0.0,13.0,345.0
+message is an empty string (a pulse [13]) and a process only observes the local port number,4,2,4,10.0,107.7,126.8,504.6,136.8,0.0,13.0,341.3
+on which the message is received.,4,2,5,10.0,107.7,139.8,253.1,149.8,0.0,13.0,345.0
+Oriented Rings. We consider oriented rings. A ring is oriented if processes share a common,4,3,6,10.0,107.7,167.2,504.5,177.2,0.0,27.4,396.8
+"notion of clockwise (CW) and counter-clockwise (CCW) orientation. More precisely, consider",4,3,7,10.0,107.7,180.2,504.6,190.2,0.0,13.0,325.3
+"a ring (p0, p1, . . . , pn−1) for each j ∈ [0, n − 1], at process pj , port 0 leads to pj+1 and port 1",4,3,8,10.0,107.7,193.0,505.7,203.9,0.0,12.8,333.2
+leads to pj−1 (where indices are taken modulo n). We will say that a message is traveling in,4,3,9,10.0,107.7,206.1,504.5,216.9,0.0,13.1,343.6
+"the clockwise direction if it is sent on port 0 and received on port 1 (i.e., a message goes",4,3,10,10.0,107.7,218.9,504.5,229.1,0.0,12.8,345.0
+"from pi to pi+1); conversely, a message travels in the counter-clockwise direction if it is sent",4,3,11,10.0,107.7,232.0,504.5,242.8,0.0,13.1,345.4
+on port 1 and received on port 0.,4,3,12,10.0,107.7,245.0,252.8,254.9,0.0,13.0,345.0
+Uniform and Non-Uniform Algorithms. An algorithm is uniform if it works for all possible,4,4,13,10.0,107.7,272.4,504.5,282.4,0.0,27.4,477.6
+"network sizes; i.e., processes do not know the total number of processes n or a bound on it.",4,4,14,10.0,107.7,285.3,506.4,295.3,0.0,13.0,344.5
+An algorithm is non-uniform if processes know an upper bound U ≥ n.,4,4,15,10.0,107.3,298.2,418.0,308.3,-0.4,12.8,329.7
+Message Complexity. We measure the performance of our algorithms by their message,4,5,16,10.0,107.7,325.6,504.5,335.8,0.4,27.4,419.8
+complexity. That is the number of all messages sent. We further discriminate between the,4,5,17,10.0,106.9,338.6,504.2,348.7,-0.8,13.0,337.6
+numbers of clockwise messages and counter-clockwise messages sent by each process.,4,5,18,10.0,107.7,351.7,476.7,361.6,0.8,13.1,345.0
+"Leader Election Problem. In this problem, processes must elect one of them as the leader",4,6,19,10.0,107.7,379.1,504.4,389.1,0.0,27.4,434.0
+"and all others are designated as non-leader processes. We consider terminating leader election,",4,6,20,10.0,107.7,392.0,506.0,402.0,0.0,13.0,318.9
+"in the sense that every process must eventually enter either a Leader or Non-Leader state,",4,6,21,10.0,107.7,405.0,505.9,415.5,0.0,12.9,345.0
+"and both of these states are final – meaning no further state changes are possible, and the",4,6,22,10.0,107.7,417.9,504.2,427.9,0.0,12.9,345.0
+process terminates the execution of the algorithm.,4,6,23,10.0,107.7,430.9,326.6,440.9,0.0,13.0,345.0
+"Moreover, we require that once the last process enters its final state, there are no messages",4,7,24,10.0,122.7,444.0,504.2,453.9,14.9,13.1,345.0
+"in transit in the network. This is known as quiescent termination [13]. In our algorithms, the",4,7,25,10.0,107.7,456.9,504.5,466.9,-14.9,13.0,330.2
+last process to enter its final state is always the unique leader. This property enables easy,4,7,26,10.0,107.7,469.8,504.5,479.9,0.0,12.9,345.0
+"composability of algorithms: once the leader enters the final state, it knows that the network",4,7,27,10.0,107.7,482.8,504.5,492.8,0.0,13.0,345.0
+"is “at rest” and can begin sending messages for a subsequent algorithm [13, Section 1.1].",4,7,28,10.0,107.7,495.8,493.1,505.7,0.0,13.0,345.0
+3 Constant Number of Messages in One Direction,4,8,29,12.0,112.7,523.7,401.8,535.7,5.0,27.9,680.0
+We now describe an algorithm where each process sends O(UIDmin) messages in the clockwise,4,9,30,10.0,107.2,548.3,504.5,559.1,-5.5,24.6,346.7
+"direction, and just 3 messages in the counter-clockwise direction. This algorithm is of interest",4,9,31,10.0,107.7,561.2,504.5,571.2,0.5,13.0,345.0
+as it shows that our claim below needs the uniformity assumption:,4,9,32,10.0,107.7,574.2,397.8,584.2,0.0,13.0,345.0
+▶ Theorem 1. For any uniform leader election algorithm and any bound b ∈ N there exists,4,10,33,10.0,107.7,593.2,504.5,605.4,0.0,19.0,326.7
+an oriented ring where at least one process sends more than b messages in each direction.,4,10,34,10.0,107.0,608.4,496.6,618.3,-0.8,15.1,280.2
+"The Constant Direction Algorithm, pseudocode in Algorithm 1, starts in a competing",4,11,35,10.0,122.7,629.5,504.2,639.6,15.7,21.1,345.0
+"phase. In the competing phase, blue lines, a process p with identifier ID performs a loop of",4,11,36,10.0,107.7,642.5,504.5,652.5,-14.9,13.1,345.5
+"UID iterations. In each iteration, the process sends a message in the CW direction and waits",4,11,37,10.0,107.7,655.5,504.3,665.5,0.0,13.0,345.5
+for a message from the CW direction. This phase synchronizes the processes so that the,4,11,38,10.0,107.7,668.3,504.2,678.5,0.0,12.8,345.0
+indices of any two processes in the phase loop can differ by at most n − 1. The process with,4,11,39,10.0,107.7,681.3,504.6,691.4,0.0,13.0,342.9
+the minimum identifier will be the only one to end the competing phase by completing the,4,11,40,10.0,107.7,694.4,504.2,704.3,0.0,13.1,345.0
+prescribed number of iterations.,4,11,41,10.0,107.7,707.3,247.0,717.3,0.0,13.0,345.0
+"J. Chalopin, Y.-J. Chang, L. Chen, G. A. Di Luna, and H. Zhou 51:5",5,1,1,10.5,90.7,62.2,532.8,72.7,,,680.0
+"Algorithm 1 Constant Direction Algorithm(ID,boundOnSize).",5,2,2,9.0,104.7,102.5,353.2,111.5,13.9,40.3,502.1
+1 for i ← 1 to boundOnSize ∗ ID do,5,2,3,8.5,96.6,118.4,235.2,127.0,-8.1,15.9,480.2
+2 send a message on port 0,5,2,4,8.5,97.0,128.0,219.9,136.5,0.4,9.6,482.2
+3 receive a message on port q // Wait for a message and store the port number in,5,3,5,8.5,97.0,137.5,472.6,146.4,-0.0,9.5,408.9
+variable q,5,3,6,8.5,125.8,146.9,169.7,155.8,28.8,9.5,344.4
+4 if q = 0 then break,5,3,7,8.5,97.0,156.4,203.7,164.9,-28.8,9.5,538.8
+5 if q = 0 then,5,3,8,8.5,96.6,169.7,158.1,178.2,-0.4,13.3,513.6
+"/* if a process enters this branch, then it is not the process with minimum ID",5,4,9,8.5,120.6,179.2,467.2,188.1,24.0,9.5,372.9
+*/,5,4,10,8.5,133.4,189.1,142.3,197.5,12.9,9.9,370.0
+6 send a message on port 1,5,4,11,8.5,97.0,198.1,219.9,206.6,-36.5,9.0,482.2
+7 receive a message on port 1 // Wait for a message on port 1.,5,5,12,8.5,97.0,207.5,472.6,216.5,0.0,9.5,429.0
+8 repeat,5,5,13,8.5,97.0,217.0,148.9,225.5,0.0,9.5,594.3
+9 receive a message on port q,5,5,14,8.5,97.4,226.5,245.2,235.0,0.4,9.5,482.1
+10 send a message on port 1 − q,5,5,15,8.5,93.3,235.8,249.7,244.4,-4.1,9.4,465.2
+11 until received two messages on port 0,5,5,16,8.5,92.9,246.4,264.8,254.9,-0.4,10.6,381.1
+12 return Non-Leader,5,5,17,8.5,92.9,255.9,196.3,264.8,0.0,9.5,472.8
+13 else,5,5,18,8.5,92.5,266.3,121.6,274.8,-0.4,10.5,606.7
+/* only the process with minimum ID enters this branch */,5,6,19,8.5,120.6,275.8,473.5,284.7,28.0,9.5,374.1
+14 send a message on port 1,5,6,20,8.5,92.9,285.2,219.9,293.7,-27.6,9.5,489.2
+15 receive a message on port 0,5,6,21,8.5,92.9,294.7,230.3,303.2,0.0,9.5,499.8
+16 send a message on port 1,5,6,22,8.5,92.9,304.2,219.9,312.7,-0.0,9.5,489.2
+17 repeat,5,6,23,8.5,92.9,313.6,148.9,322.1,0.0,9.5,601.2
+18 receive a message on port q,5,6,24,8.5,93.3,323.1,245.2,331.6,0.4,9.5,488.3
+19 if q = 1 then,5,6,25,8.5,93.3,332.6,188.7,341.1,-0.0,9.5,525.0
+20 send a message on port 0,5,6,26,8.5,93.7,342.0,250.5,350.5,0.4,9.5,489.2
+21 until q = 0,5,6,27,8.5,92.9,356.3,164.3,364.8,-0.8,14.3,519.5
+22 send a message on port 1,5,6,28,8.5,92.9,365.8,219.9,374.3,0.0,9.5,489.2
+23 receive a message on port 0,5,6,29,8.5,92.9,375.3,230.3,383.7,0.0,9.5,499.8
+24 return Leader,5,6,30,8.5,92.9,384.7,178.5,393.6,-0.0,9.5,502.1
+"This process then enters the termination detection phase (green lines). In this phase, the",5,7,31,10.0,105.7,426.1,487.2,436.1,12.7,41.4,345.0
+process first sends a message CCW to inform all other processes that they are not leaders.,5,7,32,10.0,90.7,439.0,489.1,449.1,-14.9,12.9,345.0
+"Once this message returns, it sends a second CCW message while starting to relay CW",5,7,33,10.0,90.7,451.9,487.7,462.0,0.0,12.9,345.0
+messages; when this second message will be received back the process will know that all,5,7,34,10.0,90.7,464.8,487.2,475.0,0.0,13.0,345.0
+"CW messages in the network are eliminated. Finally, once the second message is received, it",5,7,35,10.0,90.7,477.9,487.5,487.9,0.0,13.1,345.0
+sends a third and final CCW message to terminate the algorithm.,5,7,36,10.0,90.7,490.9,377.7,500.8,0.0,13.0,345.0
+A process whose identifier is not the minimum will enter the relay phase (red lines) upon,5,8,37,10.0,105.7,503.9,487.3,513.9,14.9,13.1,345.0
+"receiving and relaying a message from the CCW direction. In the relay phase, the process",5,8,38,10.0,90.7,516.8,487.2,526.9,-14.9,12.9,345.0
+"first waits to receive a CW message, in order to eliminate the CW message it sent during",5,8,39,10.0,90.7,529.7,487.2,539.8,0.0,12.9,345.0
+"the competing phase, and afterwards it relays both CCW and CW messages it receives. A",5,8,40,10.0,90.7,542.7,487.6,552.8,0.0,13.0,345.0
+non-leader process terminates after receiving three CCW messages.,5,8,41,10.0,90.7,555.7,383.7,565.7,0.0,13.0,345.0
+▶ Theorem 2. There exists a quiescently terminating leader election algorithm for ori-,5,9,42,10.0,90.7,574.8,488.4,587.0,0.0,19.0,326.7
+ented rings in which each process sends O(UIDmin) messages clockwise and three messages,5,9,43,10.0,89.9,589.8,487.4,600.7,-0.8,15.0,288.6
+"counterclockwise, for a total of O(nUIDmin) messages.",5,9,44,10.0,89.9,602.9,325.6,613.7,0.0,13.0,294.8
+4 An algorithm that sends O(nU log IDmin) messages,5,10,45,12.0,95.7,630.8,404.5,643.7,5.8,27.9,650.7
+We now describe an algorithm in which each process sends O(U log IDmin) messages. The,5,11,46,10.0,90.2,655.3,487.5,666.2,-5.5,24.5,346.9
+algorithm uses an encoding of identifiers such that the smallest identifier is not a prefix of,5,11,47,10.0,90.7,668.3,487.1,678.4,0.5,13.0,345.0
+"any other identifier, and the last bit of every encoded identifier is 0. To achieve this, given",5,11,48,10.0,90.7,681.3,487.5,691.3,0.0,13.0,345.0
+"an identifier ID of bit length ℓ, we encode it as 1",5,11,49,10.0,90.7,694.3,301.9,704.2,0.0,13.0,346.0
+ℓ0 · ID · 0.,5,11,50,10.0,301.9,693.0,342.9,704.2,211.2,-1.3,321.9
+The algorithm elects the process with the minimum identifier and proceeds in elimination,5,11,51,10.0,105.7,707.3,487.3,717.3,-196.3,14.3,345.0
+"rounds. In each round, active processes compare a specific bit of their (encoded) identifiers,",5,11,52,10.0,90.7,720.3,488.5,730.2,-14.9,13.0,345.0
+eliminating all processes that do not have the minimum bit at that position.,5,11,53,10.0,90.7,733.2,423.8,743.2,0.0,13.0,345.0
+D I S C 2 0 2 5,5,12,54,10.0,494.9,769.2,554.5,779.1,404.2,35.9,680.0
+51:6 Content-Oblivious Leader Election on Oriented Rings,6,1,1,10.5,66.2,62.2,362.3,72.7,,,680.0
+The bound U on the network size is used to synchronize processes across different rounds,6,2,2,10.0,122.7,100.9,504.3,110.9,56.5,38.7,344.5
+"of the algorithm. When an active process enters a round, it begins the Synchronization phase.",6,2,3,10.0,107.7,113.9,506.5,123.9,-14.9,13.0,330.2
+"In this phase, each active process sends and receives messages in the CW direction for U steps.",6,2,4,10.0,107.7,126.8,506.5,136.8,0.0,12.9,344.5
+"Then, processes with bit 0 send and receive one message in the CCW direction, blocking",6,2,5,10.0,107.4,139.6,504.3,149.8,-0.4,12.8,345.0
+"messages in the CW direction (this is the Zero Signaling phase). Meanwhile, processes with",6,2,6,10.0,107.7,152.8,504.5,162.7,0.4,13.1,330.4
+bit 1 attempt to continue sending and receiving messages in the CW direction for another U,6,2,7,10.0,107.7,165.7,503.5,175.7,0.0,12.9,344.5
+"steps. However, they become inactive if they receive a CCW message, indicating the presence",6,2,8,10.0,107.7,178.7,504.2,188.6,0.0,13.0,345.0
+of a process with bit 0 (this is the No-Zero Checking phase).,6,2,9,10.0,107.7,191.6,371.3,201.6,0.0,13.0,320.3
+The rationale for these phases is to ensure that processes with bit 1 proceed to the next,6,2,10,10.0,122.7,204.6,504.8,214.5,14.9,13.0,345.0
+round in the active state if and only if no process with bit 0 exists in the current round.,6,2,11,10.0,107.7,217.4,506.3,227.5,-14.9,12.8,345.0
+"Indeed, when processes with bit 0 stop propagating CW messages, the processes with bit 1",6,2,12,10.0,107.7,230.4,505.6,240.4,0.0,13.1,345.0
+are prevented from completing their No-Zero Checking phase.,6,2,13,10.0,107.7,243.4,376.4,253.4,0.0,13.0,320.3
+"Conversely, a process with bit 0 in a given round remains active. The Synchronization",6,2,14,10.0,122.7,256.2,504.5,266.4,14.9,12.8,333.1
+phase described above ensures that once an active process completes this phase for a new,6,2,15,10.0,107.7,269.2,504.6,279.3,-14.9,12.9,341.3
+"round, all active processes have completed the previous round and are in the Synchronization",6,2,16,10.0,107.7,282.3,504.6,292.2,0.0,13.1,334.3
+phase of the current round.,6,2,17,10.0,107.7,295.2,226.6,305.2,0.0,13.0,332.5
+"An inactive process relays messages, and while doing so, it eliminates the first CW message",6,3,18,10.0,122.7,308.2,504.3,318.1,14.9,13.0,345.0
+"it receives. This guarantees that, once all inactive processes have eliminated one message, the",6,3,19,10.0,107.7,321.1,504.2,331.1,-14.9,13.0,345.0
+"total number of messages in the network equals the number of active processes. Therefore,",6,3,20,10.0,107.7,334.0,505.6,344.0,0.0,12.9,345.0
+"once all processes except the one with the minimum identifier have been eliminated, only a",6,3,21,10.0,107.7,347.0,504.2,357.0,0.0,13.0,345.0
+single message remains in the network.,6,3,22,10.0,107.7,360.0,276.9,369.9,0.0,13.0,345.0
+"The algorithm terminates after |IDmin| = O(log IDmin) rounds. At this point, the only",6,4,23,10.0,122.7,372.8,504.8,383.7,14.9,12.8,346.8
+remaining active process is the one with the minimum identifier. This process can detect,6,4,24,10.0,107.7,385.7,504.4,395.9,-14.9,13.0,345.0
+"this locally and communicates it to all other processes (which are, by construction, inactive)",6,4,25,10.0,107.7,398.8,505.4,408.8,0.0,13.1,345.0
+by sending an additional message in the CCW direction (this is the Termination phase).,6,4,26,10.0,107.7,411.8,494.1,421.7,0.0,13.0,332.0
+All other processes detect termination when they receive two consecutive messages in,6,4,27,10.0,122.7,424.6,504.2,434.7,14.9,12.8,345.0
+the CCW direction: the first sent during the Zero Signaling phase by the process with the,6,4,28,10.0,107.7,437.6,504.5,447.7,-14.9,13.0,330.1
+"minimum identifier, and the second sent during the Termination phase. Therefore, we have",6,4,29,10.0,107.7,450.6,504.5,460.6,0.0,13.0,332.3
+the following theorem.,6,4,30,10.0,107.7,463.6,205.1,473.5,0.0,13.0,345.0
+▶ Theorem 3. There exists a quiescently terminating leader election algorithm for ori-,6,5,31,10.0,107.7,479.9,505.4,492.1,0.0,16.3,326.7
+ented rings in which each process sends O(U log IDmin) messages clockwise and O(log IDmin),6,5,32,10.0,106.9,495.1,505.7,505.9,-0.8,15.1,301.9
+"messages counterclockwise, for a total of O(nU log IDmin) messages.",6,5,33,10.0,107.1,508.0,401.7,518.8,0.2,13.0,295.1
+5 Randomized Leader Election,6,6,34,12.0,112.7,534.9,293.1,546.8,5.6,26.9,680.0
+"In our randomized algorithm, each process samples its ID uniformly at random from the set",6,7,35,10.0,107.7,559.3,504.7,569.2,-5.0,24.4,346.0
+"{0, 1, 2, . . . , 2",6,7,36,10.0,107.7,572.1,163.3,582.2,0.0,12.8,305.0
+⌈c1 log U⌉ − 1}. With probability at least 1 − U,6,7,37,10.0,163.2,570.8,359.8,582.2,55.5,-1.2,337.3
+2−c1,6,7,38,7.0,360.9,570.8,378.0,578.5,197.7,0.0,382.5
+", all processes receive distinct",6,7,39,10.0,379.0,572.2,504.8,582.2,18.1,1.4,345.0
+identifiers. The bit-by-bit comparison algorithm from Section 4 is then executed using these,6,7,40,10.0,107.7,585.2,504.2,595.1,-271.3,13.0,345.0
+random identifiers.,6,7,41,10.0,107.7,598.1,189.4,608.1,0.0,13.0,345.0
+"This sampling strategy yields a useful property: for any fixed bit index i, every maximal",6,8,42,10.0,122.7,611.1,504.5,621.0,14.9,12.9,344.5
+consecutive sequence of processes whose bit ID[i] equals 1 has length at most ⌈c2 log U⌉,6,8,43,10.0,107.7,623.9,504.6,634.8,-14.9,12.8,341.5
+with probability at least 1 − U,6,8,44,10.0,107.4,636.8,248.2,647.0,-0.4,13.0,338.2
+1−c2,6,8,45,7.0,249.3,635.6,266.4,643.2,141.9,-1.2,382.5
+. This property reduces the number of steps in the,6,8,46,10.0,267.4,636.8,504.3,647.0,18.1,1.2,345.0
+Synchronization and No-Zero Checking phases of the algorithm in Section 4 from U to,6,9,47,10.0,107.2,649.8,504.6,659.9,-160.2,13.0,317.9
+"⌈c2 log U⌉, thereby improving the message complexity and establishing our final theorem.",6,9,48,10.0,107.7,662.7,496.1,673.7,0.5,13.0,341.2
+"▶ Theorem 4. For any constant c > 0, there exists a randomized quiescently terminating",6,9,49,10.0,107.7,679.2,504.3,691.4,0.0,16.5,329.3
+leader election algorithm for anonymous oriented rings with a success probability of 1 −,6,9,50,10.0,107.1,694.2,504.6,704.4,-0.6,15.0,279.8
+U,6,9,51,10.0,107.7,707.3,114.5,717.3,0.6,13.1,300.0
+−c,6,9,52,7.0,115.6,705.9,125.4,713.0,7.9,-1.4,302.5
+in which each process sends O(log2 U) messages clockwise and O(log U) messages,6,9,53,10.0,130.8,705.3,504.5,717.3,15.2,-0.7,291.7
+"counterclockwise, for a total of O(n log2 U) messages.",6,9,54,10.0,106.9,718.2,339.6,730.2,-23.9,13.0,290.0
+"J. Chalopin, Y.-J. Chang, L. Chen, G. A. Di Luna, and H. Zhou 51:7",7,1,1,10.5,90.7,62.2,532.8,72.7,,,680.0
+References,7,2,2,10.0,114.8,102.6,163.9,112.6,24.1,40.4,680.0
+"1 H. Attiya and J. L. Welch. Distributed Computing: Fundamentals, Simulations, and Advanced",7,2,3,9.0,96.7,119.2,487.1,128.2,-18.1,16.5,365.5
+"Topics. Wiley, 2004.",7,2,4,9.0,113.4,131.2,195.5,140.1,16.6,12.0,412.5
+"2 P. Boldi, S. Shammah, S. Vigna, B. Codenotti, P. Gemmell, and J. Simon. Symmetry breaking",7,2,5,9.0,96.7,143.1,487.4,152.1,-16.6,11.9,452.6
+"in anonymous networks: Characterizations. In ISTCS 1996, pages 16–26, 1996.",7,2,6,9.0,114.8,155.1,434.5,164.0,18.1,12.0,433.1
+"3 P. Boldi and S. Vigna. Fibrations of graphs. Discrete Mathematics, 243(1):21–66, 2002.",7,2,7,9.0,96.7,166.9,489.2,176.0,-18.1,11.8,423.6
+doi:10.1016/S0012-365X(00)00455-6.,7,2,8,9.0,114.8,179.0,273.7,188.4,18.1,12.1,372.4
+"4 C. Cachin, R. Guerraoui, and L. Rodrigues. Introduction to Reliable and Secure Distributed",7,2,9,9.0,96.7,190.9,487.1,199.9,-18.1,11.9,387.3
+"Programming. Springer, 2011.",7,2,10,9.0,114.3,202.9,234.9,211.9,17.6,12.0,400.9
+"5 A. Casteigts, Y. Métivier, J.M. Robson, and A. Zemmari. Counting in one-hop beeping",7,2,11,9.0,96.7,214.7,487.3,223.8,-17.6,11.8,452.7
+"networks. Theoretical Computer Science, 780:20–28, 2019. doi:10.1016/J.TCS.2019.02.009.",7,2,12,9.0,114.8,226.8,489.3,236.2,18.1,12.1,381.5
+"6 A. Casteigts, Y. Métivier, J.M. Robson, and A. Zemmari. Design patterns in beeping",7,2,13,9.0,96.7,238.6,487.3,247.8,-18.1,11.8,452.8
+"algorithms: Examples, emulation, and analysis. Information and Computation, 264:32–51,",7,2,14,9.0,114.8,250.6,488.8,259.7,18.1,12.0,410.3
+2019. doi:10.1016/J.IC.2018.10.001.,7,2,15,9.0,114.6,262.7,274.0,272.1,-0.2,12.1,384.1
+"7 K. Censor-Hillel, S. Cohen, R. Gelles, and G. Sela. Distributed computations in fully-defective",7,2,16,9.0,96.7,274.6,487.4,283.6,-17.8,11.9,452.4
+"networks. Distributed Computing, 36(4):501–528, 2023. doi:10.1007/S00446-023-00452-2.",7,2,17,9.0,114.8,286.6,485.6,296.0,18.1,12.0,389.5
+"8 J. Chalopin, E. Godard, and Y. Métivier. Election in partially anonymous networks with",7,2,18,9.0,96.7,298.4,487.3,307.5,-18.1,11.8,452.6
+"arbitrary knowledge in message passing systems. Distributed Computing, 25(4):297–311, 2012.",7,2,19,9.0,114.8,310.5,489.2,319.5,18.1,12.1,420.8
+doi:10.1007/S00446-012-0163-Y.,7,2,20,9.0,114.8,322.4,255.4,331.9,0.0,12.0,372.7
+"9 A. Cornejo and F. Kuhn. Deploying wireless networks with beeps. In DISC 2010, vol-",7,2,21,9.0,96.7,334.3,489.1,343.4,-18.1,11.8,439.1
+"ume 6343 of Lecture Notes in Comput. Sci., pages 148–162. Springer, 2010. doi:10.1007/",7,2,22,9.0,114.8,346.2,488.5,355.8,18.1,12.0,395.4
+978-3-642-15763-9_15.,7,2,23,9.0,114.8,358.3,213.5,367.7,0.0,12.1,373.8
+10 A. Czumaj and P. Davies. Leader election in multi-hop radio networks. Theoretical Computer,7,2,24,9.0,91.8,370.2,487.4,379.2,-23.0,11.9,427.6
+"Science, 792:2–11, 2019. doi:10.1016/J.TCS.2019.02.027.",7,2,25,9.0,114.3,382.2,354.2,391.6,22.5,12.0,390.8
+"11 F. Dufoulon, J. Burman, and J. Beauquier. Beeping a deterministic time-optimal leader election.",7,2,26,9.0,91.8,394.2,489.1,403.1,-22.5,11.9,454.7
+"In DISC 2018, volume 121 of LIPIcs, pages 20:1–20:17. Schloss Dagstuhl – Leibniz-Zentrum",7,2,27,9.0,114.8,406.1,487.3,415.1,23.0,11.9,428.2
+"für Informatik, 2018. doi:10.4230/LIPICS.DISC.2018.20.",7,2,28,9.0,114.8,418.1,351.4,427.5,0.0,12.0,403.2
+"12 P. Flocchini, E. Kranakis, D. Krizanc, F. L. Luccio, and N. Santoro. Sorting and election in",7,2,29,9.0,91.8,430.0,487.2,439.0,-23.0,11.9,454.9
+"anonymous asynchronous rings. Journal of Parallel and Distributed Computing, 64(2):254–265,",7,2,30,9.0,114.8,442.0,488.8,451.0,23.0,12.0,387.5
+2004. doi:10.1016/J.JPDC.2003.11.007.,7,2,31,9.0,114.6,453.9,283.4,463.4,-0.2,12.0,383.3
+"13 F. Frei, R. Gelles, A. Ghazy, and A. Nolin. Content-oblivious leader election on rings. In",7,2,32,9.0,91.8,465.8,487.3,474.9,-22.8,11.8,455.0
+"DISC 2024, volume 319, pages 26:1–26:20. Schloss Dagstuhl – Leibniz-Zentrum für Informatik,",7,2,33,9.0,114.3,477.9,488.6,486.8,22.5,12.1,437.6
+2024. doi:10.4230/LIPICS.DISC.2024.26.,7,2,34,9.0,114.6,489.8,288.1,499.2,0.3,12.0,383.0
+"14 K.-T. Förster, J. Seidel, and R. Wattenhofer. Deterministic leader election in multi-hop",7,2,35,9.0,91.8,501.6,487.3,510.8,-22.8,11.8,455.1
+"beeping networks. In DISC 2014, volume 8784 of Lecture Notes in Comput. Sci., pages",7,2,36,9.0,114.8,513.6,487.5,522.7,23.0,12.0,391.4
+"212–226. Springer, 2014.",7,2,37,9.0,114.6,525.7,212.8,534.6,-0.2,12.1,450.0
+"15 Alon Itai and Michael Rodeh. Symmetry breaking in distributed networks. Inf. Comput.,",7,2,38,9.0,91.8,537.5,488.8,546.6,-22.8,11.8,437.9
+"88(1):60–87, July 1990. doi:10.1016/0890-5401(90)90004-2.",7,2,39,9.0,114.8,549.6,366.6,559.0,23.0,12.1,404.3
+"16 S. Kutten, W. K. Moses Jr., G. Pandurangan, and D. Peleg. Singularly optimal randomized",7,2,40,9.0,91.8,561.5,487.3,570.5,-23.0,11.9,455.2
+"leader election. In DISC 2020, volume 179 of LIPIcs, pages 22:1–22:18, 2020. doi:10.4230/",7,2,41,9.0,114.8,573.5,488.5,582.9,23.0,11.9,417.0
+LIPICS.DISC.2020.22.,7,2,42,9.0,114.8,585.5,206.8,594.9,0.0,12.0,374.0
+17 M. Raynal. Fault-Tolerant Message-Passing Distributed Systems: An Algorithmic Approach.,7,2,43,9.0,91.8,597.3,489.3,606.4,-23.0,11.9,348.7
+"Springer, 2018.",7,2,44,9.0,114.8,609.4,175.2,618.3,23.0,12.0,450.0
+"18 N. Santoro. Design and Analysis of Distributed Algorithms. John Wiley & Sons, 2007.",7,2,45,9.0,91.8,621.3,463.0,630.3,-23.0,11.9,388.5
+"19 N. Santoro and P. Widmayer. Time is not a healer. In STACS 1989, volume 349 of Lecture",7,2,46,9.0,91.8,633.2,487.5,642.3,0.0,11.9,430.6
+"Notes in Comput. Sci., pages 304–313. Springer, 1989. doi:10.1007/BFB0028994.",7,2,47,9.0,114.3,645.2,443.5,654.6,22.5,12.1,392.3
+20 R. Vacus and I Ziccardi. Minimalist leader election under weak communication. In PODC,7,2,48,9.0,91.8,657.0,487.1,666.2,-22.5,11.8,449.5
+"2025. ACM, 2025.",7,2,49,9.0,114.2,669.1,187.0,678.1,22.4,12.1,418.8
+21 M. Yamashita and T. Kameda. Computing on anonymous networks: Part I - Characterizing,7,2,50,9.0,91.8,681.1,487.3,690.1,-22.4,11.9,455.3
+"the solvable cases. IEEE Transactions on Parallel and Distributed Systems, 7(1):69–89, 1996.",7,2,51,9.0,114.8,693.1,489.2,702.0,23.0,12.0,377.2
+doi:10.1109/71.481599.,7,2,52,9.0,114.8,705.0,216.2,714.4,0.0,12.0,373.6
+D I S C 2 0 2 5,7,3,53,10.0,494.9,769.2,554.5,779.1,380.1,64.2,680.0

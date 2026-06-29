@@ -119,7 +119,7 @@ Tabellen und Constraints definieren. Die relevanten Cons-
 traints sind Not Null, Unique, Primary Key und Foreign
 Key.
 
-Figure 2: Beispiel von Constraints
+#### Figure 2: Beispiel von Constraints
 
 Die Mapping-Aufgaben sind darauf ausgelegt den Lernen-
 den visuell und interaktiv Wissen zu vermitteln. In diesem
@@ -209,7 +209,7 @@ dem aktuellen Zustand entsprechenden DDL-Code uber das ¨
 Datenbanksystem prufen lassen. F ¨ ur Leistungsbewertungen ¨
 kann diese M¨oglichkeit eingeschr¨ankt werden.
 
-Figure 1: Aktive Bearbeitung einer Spalte
+#### Figure 1: Aktive Bearbeitung einer Spalte
 
 ## 3.2 Prüfen der Eingaben
 
@@ -307,9 +307,9 @@ Aspekten unterscheidet.
 Der ’Notification Icon’ befindet sich in der Toolbar im
 oberen Bereich des Systems.
 
-Figure 4: Toolbar mit Benachrichtigungshinweis
+#### Figure 4: Toolbar mit Benachrichtigungshinweis
 
-Figure 3: Hinweis zur Umbennung einer Spalte
+#### Figure 3: Hinweis zur Umbennung einer Spalte
 
 ## 3.4 Die Toolbar
 
@@ -321,7 +321,7 @@ Hinweise und Hilfestellungen zur Verfugung. Wie bereits er- ¨
 w¨ahnt gibt es hier die Auflistung der Hinweise zur Bearbei-
 tung der aktuellen Aufgabe.
 
-Figure 5: Toolbar mit ge¨offneten Benachrichtigungen
+#### Figure 5: Toolbar mit ge¨offneten Benachrichtigungen
 
 ## 3.5 Feedback durch die Lernenden
 
@@ -372,7 +372,7 @@ die wichtig sind um ein Grundverst¨andnis fur die Kursin- ¨
 halte zu erlangen. Auch wenn keine Challenges aktiv sind,
 k¨onnen Inhalte bereit gestellt werden.
 
-Figure 6: Feedbackfenster
+#### Figure 6: Feedbackfenster
 
 Die Gesamtheit der multimedialen Inhalte wird nicht nur
 im Rahmen der Aufgaben genutzt. Mit den Inhalten werden
@@ -501,7 +501,7 @@ den ihre L¨osungen aufbauen kann sich bspw. die Anzahl der
 Elemente in einem Constraint unterscheiden und trotzdem
 eine richtige L¨osung erzeugen.
 
-Figure 7: Challenge Auswahl und Hilfemedien
+#### Figure 7: Challenge Auswahl und Hilfemedien
 
 Die Ansicht des DDL-Codes soll den Lernenden einen an-
 deren Blick auf die eigene L¨osung verschaffen (siehe Abbil-
@@ -509,8 +509,7 @@ dung 8). Damit soll der Bezug zwischen der Planung des Re-
 lationenmodells und dem Verst¨andnis der Syntax der DDL-
 Befehle (Data Definition Language) gest¨arkt werden.
 
-Figure 8: Ausgabe des SQL-Codes und Ruckmeldung der Da- ¨
-tenbank
+#### Figure 8: Ausgabe des SQL-Codes und Ruckmeldung der Da- ¨ tenbank
 
 Da die Datentypen fur die L ¨ ¨osung der Aufgabe nicht re-
 levant sind, wird auf dem Datentyp ’variable character’ ab-
@@ -556,9 +555,9 @@ Auswahl der Bearbeitungsreihenfolge beinhalten kann. Ei-
 ne Challenge bleibt bestehen bis alle Aufgaben erfolgreich
 bearbeitet wurden.
 
-Figure 10: Tabellendefinition mit erweiterten Funktionen
+#### Figure 10: Tabellendefinition mit erweiterten Funktionen
 
-Figure 11: Tabellendefinition finalisieren
+#### Figure 11: Tabellendefinition finalisieren
 
 Die Studierenden sollen fur jede neu entstandene Tabelle ¨
 die Normalform angeben. Dazu befindet sich ein Auswahl-
@@ -571,7 +570,7 @@ Notizen und Feedback der Lernenden zu erhalten. Sobald
 fur eine Tabelle die geforderte Normalform erreicht wurde, ¨
 soll die Tabelle finalisiert werden (siehe Abbildung 11).
 
-Figure 9: Abgabe einer Lernaufgabe
+#### Figure 9: Abgabe einer Lernaufgabe
 
 ## 3.8 Prüfungsmodus
 

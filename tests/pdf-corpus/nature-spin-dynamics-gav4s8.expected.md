@@ -19,25 +19,21 @@ https://doi.org/10.1038/s41467-022-30829-z.
 
 # CC-BY 4.0: Creative Commons: Namensnennung Weitere Informationen finden Sie unter: / For more information see: https://creativecommons.org/licenses/by/4.0/deed.de
 
-ARTICLE
+## ARTICLE
 
-https://doi.org/10.1038/s41467-022-30829-z OPEN
+## https://doi.org/10.1038/s41467-022-30829-z OPEN
 
-Slowdown of photoexcited spin dynamics in the
+## Slowdown of photoexcited spin dynamics in the
 
-non-collinear spin-ordered phases in skyrmion
+## non-collinear spin-ordered phases in skyrmion
 
-host GaV4S8
+## host GaV4S8
 
-Fumiya Sekiguchi 1✉, Kestutis Budzinauskas1
+## Fumiya Sekiguchi 1✉, Kestutis Budzinauskas1
 
-, Prashant Padmanabhan 1
-, Rolf B. Versteeg 1
-,
-Vladimir Tsurkan2,3, István Kézsmárki 2, Francesco Foggetti4,5, Sergey Artyukhin 4 &
-Paul H. M. van Loosdrecht 1✉
+## , Prashant Padmanabhan 1 , Rolf B. Versteeg 1 , Vladimir Tsurkan2,3, István Kézsmárki 2, Francesco Foggetti4,5, Sergey Artyukhin 4 & Paul H. M. van Loosdrecht 1✉
 
-1234567890():,;
+## 1234567890():,;
 
 > Formation of magnetic order alters the character of spin excitations, which then affects
 > transport properties. We investigate the photoexcited ultrafast spin dynamics in different
@@ -117,7 +113,7 @@ Therefore, detailed investigation of the coherent magnons
 depending on the nature of skyrmion ordering is highly
 demanded for the coherent photocontrol of skyrmions.
 
-Results
+## Results
 
 > Magnetic properties and phase diagram of GaV4S8. GaV4S8 is a
 > multiferroic semiconductor from the lacunar spinel family, with a
@@ -151,59 +147,11 @@ example, a heat valve effect has been demonstrated in sandwich
 nanostructures with ferromagnetic and non-magnetic layers32. As
 mentioned earlier, the nature of magnon modes is modified by
 
-a b c
+## a b c
 
-0
+## 0
 
-0
-
-> -
->
->
-> (mdeg.)
->
-> -
->
->
-> (mdeg.)
-
-30 mT
-40 mT
-50 mT
-70 mT
-80 mT
-
-20 mT
-40 mT
-60 mT
-
--1
-
--1
-
-Magnetic Field (mT)
-
-Paramagnet
-
-120 mT
-
-120 mT
-
--2
-
-8 K 10 K
-
--2
-
-d e
-
-0
-
-0
-
-20 mT
-40 mT
-50 mT
+## 0
 
 > -
 >
@@ -215,45 +163,79 @@ d e
 >
 > (mdeg.)
 
-30 mT
-60 mT
+## 30 mT 40 mT 50 mT 70 mT 80 mT
 
--1
+## 20 mT 40 mT 60 mT
 
--1
+## -1
 
-100 mT
-110 mT
-120 mT
+## -1
 
-100 mT
-150 mT
+## Magnetic Field (mT)
 
-Cyc
+## Paramagnet
 
--2
+## 120 mT
 
--2
+## 120 mT
 
-11.5 K 14.5 K
+## -2
 
-0 1000 2000
-Time (ps)
+## 8 K 10 K
 
-0 1000 2000
-Time (ps)
+## -2
 
-Temperature (K)
+## d e
+
+## 0
+
+## 0
+
+## 20 mT 40 mT 50 mT
+
+> -
+>
+>
+> (mdeg.)
+>
+> -
+>
+>
+> (mdeg.)
+
+## 30 mT 60 mT
+
+## -1
+
+## -1
+
+## 100 mT 110 mT 120 mT
+
+## 100 mT 150 mT
+
+## Cyc
+
+## -2
+
+## -2
+
+## 11.5 K 14.5 K
+
+## 0 1000 2000 Time (ps)
+
+## 0 1000 2000 Time (ps)
+
+## Temperature (K)
 
 Fig. 1 Photoinduced Δθ dynamics in the different magnetic phases of GaV4S8. a Magnetic phase diagram of GaV4S8. Vertical dashed lines indicate the
 temperatures where trMOKE measurements were performed. b–e Δθ traces under different external magnetic fields at 8 K, 10 K, 11.5 K, and 14.5 K,
 respectively.
 
-a
+## a
 
-c
+## c
 
-e
+## e
 
 > SkL
 > FM
@@ -275,15 +257,11 @@ e
 >
 > Frequency (GHz)
 
-30 mT
-40 mT
-50 mT
-60 mT
-75 mT
+## 30 mT 40 mT 50 mT 60 mT 75 mT
 
-Frequency
+## Frequency
 
--0.5
+## -0.5
 
 > -
 >
@@ -306,31 +284,29 @@ Frequency
 >
 > -1.5
 
-120 mT
+## 120 mT
 
-FM
+## FM
 
--2.0
+## -2.0
 
-Cyc
+## Cyc
 
-0
+## 0
 
-8 10 12
-Temperature (K)
+## 8 10 12 Temperature (K)
 
-200 400 600 800
-Time (ps)
+## 200 400 600 800 Time (ps)
 
-b
+## b
 
-d
+## d
 
-f
+## f
 
-300
+## 300
 
-1.2
+## 1.2
 
 > Cyc
 > Sk
@@ -342,51 +318,45 @@ f
 >
 > (arb. units)
 
-30 mT
-40 mT
-50 mT
-60 mT
-75 mT
+## 30 mT 40 mT 50 mT 60 mT 75 mT
 
 > -
 >
 >
 > (mdeg.)
 
-Amplitude
+## Amplitude
 
-200
+## 200
 
-0.8
+## 0.8
 
-Cyc
+## Cyc
 
-100
+## 100
 
-0.4
+## 0.4
 
 > Cyc
 > Sk
 >
 > FM SkL
 
-120 mT
+## 120 mT
 
-0
+## 0
 
-0.0
+## 0.0
 
-8 10 12
+## 8 10 12
 
-0 40 80 120
-Magnetic Field (mT)
+## 0 40 80 120 Magnetic Field (mT)
 
-200 400 600 800
-Time (ps)
+## 200 400 600 800 Time (ps)
 
-Temperature (K)
+## Temperature (K)
 
-Fig. 2 Coherent spin precession in the FM, SkL, and Cyc phases. a Δθ traces in the first 800 ps shown with fit curves (black solid lines) at 10 K.
+## Fig. 2 Coherent spin precession in the FM, SkL, and Cyc phases. a Δθ traces in the first 800 ps shown with fit curves (black solid lines) at 10 K.
 
 b Coherent oscillatory component of the data shown in a. c, d Magnetic-field dependence of the frequency and amplitude of the coherent oscillation. The
 blue-shaded areas are guides to the eye indicating where the magnetic phase transition occurs. e, f Temperature dependence of the frequency and lifetime
@@ -578,27 +548,27 @@ coexistence can also be visually identified in Δθ traces. In Figs. 2a
 and 2b, the trace at 40 mT shows a small amplitude second
 oscillation, which is expected to form a dip structure around
 
-4
+## 4
 
-Recovery time (ns)
+## Recovery time (ns)
 
-8 K
+## 8 K
 
-10 K
+## 10 K
 
-11.5 K
+## 11.5 K
 
-14.5 K
+## 14.5 K
 
-3
+## 3
 
-FM
+## FM
 
-FM FM
+## FM FM
 
-2
+## 2
 
-Cyc
+## Cyc
 
 > SkL
 > Cyc Cyc
@@ -612,23 +582,21 @@ Cyc
 > 0
 > 0 40 80
 
-0 40 80
+## 0 40 80
 
-0 40 80
+## 0 40 80
 
-0 50 100 150
+## 0 50 100 150
 
-Magnetic Field (mT)
+## Magnetic Field (mT)
 
 Fig. 3 Change of the remagnetization across the magnetic phase transition. Time constant of the remagnetization process at 8 K, 10 K, 11.5 K, and 14.5 K
 are plotted. The blue-shaded areas are guides to the eye indicating the magnetic phase transition. Error bars are the standard deviation of the fitting
 parameters.
 
-depending on the temperature, which is remarkable considering
-that it is triggered by a small change of magnetic field in a single
-material.
+## depending on the temperature, which is remarkable considering that it is triggered by a small change of magnetic field in a single material.
 
-be limited. In other words, since the spin texture in all the considered
+## be limited. In other words, since the spin texture in all the considered
 
 phases is essentially ferromagnetic on a unit cell length scale, the
 magnon modes in the SkL and Cyc phases are not expected to have
@@ -700,12 +668,9 @@ FM state, dislocations in the SkL phase and domain walls in the
 Cyc are formed because the spiral states with different wave
 vector orientations are degenerate2,23,33,47. Such a magnetic
 
-of magnetic domain boundaries, as for instance has been reported for
-the helimagnetic insulator Cu2OSeO3
-51.
+## of magnetic domain boundaries, as for instance has been reported for the helimagnetic insulator Cu2OSeO3 51.
 
-In addition to the reduced mean free path, the magnon velocity
-also depends on the magnetic phase. Because the SkL and Cyc phase
+## In addition to the reduced mean free path, the magnon velocity also depends on the magnetic phase. Because the SkL and Cyc phase
 
 in GaV4S8 have a long spin periodicity (the SkL (Cyc) periodicity is
 ~22 nm (~18 nm)), the Brillouin Zone of the magnon dispersion
@@ -759,9 +724,9 @@ Such domain-wall driven thermal conductivity decrease is analogous
 to that observed in ferroelectric Pb(Zr0.3Ti0.7)O3, where a decrease of
 phonon thermal conductivity of 11% has been achieved by
 
-The magnon thermal conductivity is given by κ ¼ ∑i
+## The magnon thermal conductivity is given by κ ¼ ∑i
 
-civi
+## civi
 
 Moreover, there are other magnetic-phase-dependent parameters
 affecting the remagnetization dynamics, namely the spin heat
@@ -782,12 +747,11 @@ spin modulation with q ~ 0 on the phonon velocity is considered to
 Fig. 4 Simulated spin texture and magnon spectra. a Representative spin textures and b magnon spectral functions, obtained from atomistic spin
 dynamics simulations of GaV4S8 at T = 12 K and magnetic field magnitudes, as indicated at the top of each panel.
 
-between 800 and 850 °C. Perfect truncated octahedron-like samples with shiny faces
-and dimension up to 5 mm were obtained after 2 month of transport.
+## between 800 and 850 °C. Perfect truncated octahedron-like samples with shiny faces and dimension up to 5 mm were obtained after 2 month of transport.
 
-3.0
+## 3.0
 
-q
+## q
 
 Magnetic properties were measured by a SQUID magnetometer (MPMS 5,
 Quantum Design) in the temperature range 1.8–400 K in magnetic fields up to 5 T.
@@ -796,20 +760,19 @@ done using the data on derivatives dM/dH, taking the singularity points as the
 phase boundaries between the cycloidal (Cyc), skyrmion (SkL), and ferromagnetic
 (FM) phases33.
 
-(arb. units)
+## (arb. units)
 
-Peak width
+## Peak width
 
-2.0
+## 2.0
 
-1.0
+## 1.0
 
-0.0
+## 0.0
 
-Time-resolved magneto-optical Kerr effect experiment. The experiments were
-performed with a Yb:KGW regenerative amplified laser as main light
+## Time-resolved magneto-optical Kerr effect experiment. The experiments were performed with a Yb:KGW regenerative amplified laser as main light
 
-0 40 80 120
+## 0 40 80 120
 
 source (Pharos) with the repetition rate of 100 kHz. Infrared output of a non-
 collinear optical parametric amplifier (800 nm, 40 fs) and the second harmonic
@@ -821,7 +784,7 @@ GaV4S8 band gap of ~0.35 eV39,40. The pump-induced transient change of the Kerr
 rotation angle of the probe pulse, Δθ, was measured. The sample temperature and
 external magnetic field were controlled with a superconducting-magnetic cryostat.
 
-Magnetic field (mT)
+## Magnetic field (mT)
 
 Fig. 5 Magnon peak width extracted from simulated spectral functions. A
 Gaussian fit of magnon peaks is performed on the cuts of the magnon
@@ -829,8 +792,7 @@ spectral function S(q, ω = 8 meV) and the magnon peak width δq is
 determined. Plotted is the magnetic field dependence. The blue-shaded
 areas are guides to the eye indicating the magnetic phase transition.
 
-manipulating the domain structure by means of external electric
-field57.
+## manipulating the domain structure by means of external electric field57.
 
 Modelling of the spin texture and calculation of the magnon spectra. To
 reproduce the Cyc-SkL-FM sequence of magnetic phases, we used UppASD code58
@@ -909,15 +871,11 @@ dynamical structure factor,
 >
 > 1
 
-The magnon linewidth was then obtained by fitting the peaks of the spectral
-function with Gaussians. The thermal conductivity was estimated from the
-linewidth as explained in the main text.
+## The magnon linewidth was then obtained by fitting the peaks of the spectral function with Gaussians. The thermal conductivity was estimated from the linewidth as explained in the main text.
 
-Data availability
-The data that support the findings of this study are available from the authors upon
-reasonable request.
+## Data availability The data that support the findings of this study are available from the authors upon reasonable request.
 
-Methods
+## Methods
 
 Sample preparation and characterization of the magnetic properties. GaV4S8
 single crystals have been grown by the chemical transport reactions method in a way
@@ -926,19 +884,15 @@ crystalline powder was used. The polycrystals were prepared by solid state react
 using high-purity elements: Ga (99.9999%), V (99.5%) and S (99.999%). The iodine was
 utilized as the transport agent. The crystal growth was performed at temperatures
 
-Code availability
+## Code availability
 
-The codes that support the calculations of this study are available from the authors upon
-reasonable request.
+## The codes that support the calculations of this study are available from the authors upon reasonable request.
 
-Received: 10 August 2021; Accepted: 20 May 2022;
+## Received: 10 August 2021; Accepted: 20 May 2022;
 
-35. Geirhos, K. et al. Macroscopic manifestation of domain-wall magnetism and
-magnetoelectric effect in a Néel-type skyrmion host. npj Quantum Mater. 5,
-44 (2020).
+## 35. Geirhos, K. et al. Macroscopic manifestation of domain-wall magnetism and magnetoelectric effect in a Néel-type skyrmion host. npj Quantum Mater. 5, 44 (2020).
 
-36. Ehlers, D. et al. Exchange anisotropy in the skyrmion host GaV4S8. J. Phys.
-Condens. Matter 29, 065803 (2017).
+## 36. Ehlers, D. et al. Exchange anisotropy in the skyrmion host GaV4S8. J. Phys. Condens. Matter 29, 065803 (2017).
 
 37. Leonov, A. O. & Kézsmárki, I. Skyrmion robustness in noncentrosymmetric
 magnets with axial symmetry: The role of anisotropy and tilted magnetic
@@ -951,13 +905,11 @@ Phonons and electronic transitions. Phys. Rev. B 96, 144302 (2017).
 of lacunar spinels with a breathing pyrochlore lattice structure. Phys. Rev. B
 101, 075118 (2020).
 
-References
+## References
 
-1. Mühlbauer, S. et al. Skyrmion Lattice in a Chiral Magnet. Science 323, 915–919
-(2009).
+## 1. Mühlbauer, S. et al. Skyrmion Lattice in a Chiral Magnet. Science 323, 915–919 (2009).
 
-2. Yu, X. Z. et al. Real-space observation of a two-dimensional skyrmion crystal.
-Nature 465, 901–904 (2010).
+## 2. Yu, X. Z. et al. Real-space observation of a two-dimensional skyrmion crystal. Nature 465, 901–904 (2010).
 
 3. Heinze, S. et al. Spontaneous atomic-scale magnetic skyrmion lattice in two
 dimensions. Nat. Phys. 7, 713–718 (2011).
@@ -976,18 +928,13 @@ anomaly in MnSi under pressure. Phys. Rev. Lett. 102, 186601 (2009).
 7. Schulz, T. et al. Emergent electrodynamics of skyrmions in a chiral magnet.
 Nat. Phys. 8, 301–304 (2012).
 
-43. Ehlers, D. et al. Skyrmion dynamics under uniaxial anisotropy. Phys. Rev. B
-94, 014406 (2016).
+## 43. Ehlers, D. et al. Skyrmion dynamics under uniaxial anisotropy. Phys. Rev. B 94, 014406 (2016).
 
-44. Okamura, Y. et al. Microwave directional dichroism resonant with spin
-excitations in the polar ferromagnet GaV4S8. Phys. Rev. Lett. 122, 057202
-(2019).
+## 44. Okamura, Y. et al. Microwave directional dichroism resonant with spin excitations in the polar ferromagnet GaV4S8. Phys. Rev. Lett. 122, 057202 (2019).
 
-8. Nagaosa, N. & Tokura, Y. Emergent electromagnetism in solids. Phys. Scr.
-T146, 14020 (2012).
+## 8. Nagaosa, N. & Tokura, Y. Emergent electromagnetism in solids. Phys. Scr. T146, 14020 (2012).
 
-9. Fert, A., Cros, V. & Sampaio, J. Skyrmions on the track. Nat. Nanotechnol. 8,
-152 (2013).
+## 9. Fert, A., Cros, V. & Sampaio, J. Skyrmions on the track. Nat. Nanotechnol. 8, 152 (2013).
 
 45. Onose, Y., Okamura, Y., Seki, S., Ishiwata, S. & Tokura, Y. Observation of
 magnetic excitations of skyrmion crystal in a helimagnetic insulator
@@ -998,27 +945,17 @@ Skyrmion crystals. Phys. Rev. Lett. 108, 017601 (2012).
 by cryo-Lorentz transmission electron microscopy. Proc. Natl Acad. Sci. 112,
 14212–14217 (2015).
 
-10. Tomasello, R. et al. A strategy for the design of skyrmion racetrack memories.
-Sci. Rep. 4, 6784 (2014).
+## 10. Tomasello, R. et al. A strategy for the design of skyrmion racetrack memories. Sci. Rep. 4, 6784 (2014).
 
-11. Yu, G. et al. Room-temperature skyrmion shift device for memory application.
-Nano Lett. 17, 261–268 (2017).
+## 11. Yu, G. et al. Room-temperature skyrmion shift device for memory application. Nano Lett. 17, 261–268 (2017).
 
-12. Koshibae, W. & Nagaosa, N. Creation of skyrmions and antiskyrmions by
-local heating. Nat. Commun. 5, 5148 (2014).
-13. Jiang, W. et al. Blowing magnetic skyrmion bubbles. Science 349, 283
-LP–283286 (2015).
+## 12. Koshibae, W. & Nagaosa, N. Creation of skyrmions and antiskyrmions by local heating. Nat. Commun. 5, 5148 (2014). 13. Jiang, W. et al. Blowing magnetic skyrmion bubbles. Science 349, 283 LP–283286 (2015).
 
-48. Butykai, Á. et al. Relaxation dynamics of modulated magnetic phases in the
-skyrmion host GaV4S8: An ac magnetic susceptibility study. Phys. Rev. B 96,
-104430 (2017).
+## 48. Butykai, Á. et al. Relaxation dynamics of modulated magnetic phases in the skyrmion host GaV4S8: An ac magnetic susceptibility study. Phys. Rev. B 96, 104430 (2017).
 
-14. Ogawa, N., Seki, S. & Tokura, Y. Ultrafast optical excitation of magnetic
-skyrmions. Sci. Rep. 5, 9552 (2015).
+## 14. Ogawa, N., Seki, S. & Tokura, Y. Ultrafast optical excitation of magnetic skyrmions. Sci. Rep. 5, 9552 (2015).
 
-49. Schwarze, T. et al. Universal helimagnon and skyrmion excitations in metallic,
-semiconducting and insulating chiral magnets. Nat. Mater. 14, 478–483
-(2015).
+## 49. Schwarze, T. et al. Universal helimagnon and skyrmion excitations in metallic, semiconducting and insulating chiral magnets. Nat. Mater. 14, 478–483 (2015).
 
 15. Oike, H. et al. Interplay between topological and thermodynamic stability in a
 metastable magnetic skyrmion lattice. Nat. Phys. 12, 62–66 (2016).
@@ -1052,8 +989,7 @@ neutron scattering. Phys. Rev. Lett. 115, 097203 (2015).
 54. Dornes, C. et al. The ultrafast Einstein-de Haas effect. Nature 565, 209–212
 (2019).
 
-55. Widmann, S. et al. On the multiferroic skyrmion-host GaV4S8. Philos. Mag.
-97, 3428–3445 (2017).
+## 55. Widmann, S. et al. On the multiferroic skyrmion-host GaV4S8. Philos. Mag. 97, 3428–3445 (2017).
 
 56. Nikolaev, S. A. & Solovyev, I. V. Microscopic theory of electric polarization
 induced by skyrmionic order in GaV4S8. Phys. Rev. B 99, 100401(R) (2019).
@@ -1061,14 +997,9 @@ induced by skyrmionic order in GaV4S8. Phys. Rev. B 99, 100401(R) (2019).
 conductivity via reconfigurable interfaces in ferroelectric thin films. Nano Lett.
 15, 1791–1795 (2015).
 
-24. Kirilyuk, A., Kimel, A. V. & Rasing, T. Ultrafast optical manipulation of
-magnetic order. Rev. Mod. Phys. 82, 2731–2784 (2010).
-25. Kampfrath, T. et al. Coherent terahertz control of antiferromagnetic spin
-waves. Nat. Photonics 5, 31–34 (2011).
+## 24. Kirilyuk, A., Kimel, A. V. & Rasing, T. Ultrafast optical manipulation of magnetic order. Rev. Mod. Phys. 82, 2731–2784 (2010). 25. Kampfrath, T. et al. Coherent terahertz control of antiferromagnetic spin waves. Nat. Photonics 5, 31–34 (2011).
 
-58. Skubic, B., Hellsvik, J., Nordström, L. & Eriksson, O. A method for atomistic
-spin dynamics simulations: implementation and examples. J. Phys. Condens.
-Matter 20, 315203 (2008).
+## 58. Skubic, B., Hellsvik, J., Nordström, L. & Eriksson, O. A method for atomistic spin dynamics simulations: implementation and examples. J. Phys. Condens. Matter 20, 315203 (2008).
 
 26. Radu, I. et al. Transient ferromagnetic-like state mediating ultrafast reversal of
 antiferromagnetically coupled spins. Nature 472, 205 (2011).
@@ -1084,10 +1015,9 @@ order in the cluster Mott insulator Cu2OSeO3. Phys. Rev. B 100, 064401 (2019).
 31. Bauer, G. E. W., Saitoh, E. & van Wees, B. J. Spin caloritronics. Nat. Mater. 11,
 391–399 (2012).
 
-59. Landau, L. & Lifshitz, E. On the theory of the dispersion of magnetic
-permeability in ferromagnetic bodies. Phys. Z. Sowjetunion 8, 153 (1935).
+## 59. Landau, L. & Lifshitz, E. On the theory of the dispersion of magnetic permeability in ferromagnetic bodies. Phys. Z. Sowjetunion 8, 153 (1935).
 
-Acknowledgements
+## Acknowledgements
 
 We thank Y. Mukai, D. Ehlers and V. Kocsis for fruitful discussions. The work is
 supported by the Deutsche Forschungsgemeinschaft (DFG, German Research Founda-
@@ -1104,7 +1034,7 @@ polar magnetic semiconductor GaV4S8. Nat. Mater. 14, 1116–1122 (2015).
 34. Butykai, Á. et al. Characteristics of ferroelectric-ferroelastic domains in Néel-
 type skyrmion host GaV4S8. Sci. Rep. 7, 44663 (2017).
 
-Author contributions
+## Author contributions
 
 F.S. performed time-resolved Kerr effect experiments with the support from K.B. and
 P.P.F.S. analyzed the data with R.B. and P.v.L.V.T. grew and characterized the GaV4S8
@@ -1112,15 +1042,13 @@ single crystals. V.T. and I.K. performed the magnetometry study and determined t
 magnetic phase diagrams. S.A. and F.F. performed theoretical calculations. F.S. wrote the
 paper with input from all authors. F.S. and P.v.L. conceived the project.
 
-Funding
+## Funding
 
-Publisher’s note Springer Nature remains neutral with regard to jurisdictional claims in
-published maps and institutional affiliations.
+## Publisher’s note Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations.
 
-Open Access funding enabled and organized by Projekt DEAL.
+## Open Access funding enabled and organized by Projekt DEAL.
 
-Competing interests
-The authors declare no competing interests.
+## Competing interests The authors declare no competing interests.
 
 Open Access This article is licensed under a Creative Commons
 Attribution 4.0 International License, which permits use, sharing,
@@ -1134,17 +1062,14 @@ regulation or exceeds the permitted use, you will need to obtain permission dire
 the copyright holder. To view a copy of this license, visit http://creativecommons.org/
 licenses/by/4.0/.
 
-Additional information
+## Additional information
 
-Supplementary information The online version contains supplementary material
-available at https://doi.org/10.1038/s41467-022-30829-z.
+## Supplementary information The online version contains supplementary material available at https://doi.org/10.1038/s41467-022-30829-z.
 
-Correspondence and requests for materials should be addressed to Fumiya Sekiguchi or
-Paul H. M. van Loosdrecht.
+## Correspondence and requests for materials should be addressed to Fumiya Sekiguchi or Paul H. M. van Loosdrecht.
 
-Peer review information Nature Communications thanks the anonymous reviewer(s) for
-their contribution to the peer review of this work.
+## Peer review information Nature Communications thanks the anonymous reviewer(s) for their contribution to the peer review of this work.
 
-Reprints and permission information is available at http://www.nature.com/reprints
+## Reprints and permission information is available at http://www.nature.com/reprints
 
-© The Author(s) 2022
+## © The Author(s) 2022

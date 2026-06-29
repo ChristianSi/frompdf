@@ -1,13 +1,8 @@
-Style Guide | 2019
+# Style Guide | 2019
 
-Photographer: Heather Hazzan; Wardrobe:
-Ronald Burton; Props: Campbell Pearson;
-Hair: Hide Suzuki; Makeup: Deanna Melluso
-at See Management. Shot on location at
-One Medical. (CC BY)
+# Photographer: Heather Hazzan; Wardrobe: Ronald Burton; Props: Campbell Pearson; Hair: Hide Suzuki; Makeup: Deanna Melluso at See Management. Shot on location at One Medical. (CC BY)
 
-Creative Commons Style Guide | 2019
-by Victoria Heath
+# Creative Commons Style Guide | 2019 by Victoria Heath
 
 Except where otherwise noted, this document is published under a Creative Commons Attribution
 4.0 International license, (CC BY 4.0).
@@ -20,10 +15,9 @@ in any reasonable manner, but not in any way that suggests the licensor endorses
 No additional restrictions — You may not apply legal terms or technological measures that legally
 restrict others from doing anything the license permits.
 
-Bulding a Vibrant, Collaborative
-Global Commons
+# Bulding a Vibrant, Collaborative Global Commons
 
-Table of Contents —
+# Table of Contents —
 
 Introduction 3 - 4
 Mood Board 5
@@ -46,7 +40,7 @@ Punctuation
 Referencing and Licensing
 Writing Tips
 
-Introduction —
+# Introduction —
 
 Crafting, standardizing, and maintaining a consistent style is essential to establishing and
 promoting an organization’s brand. As with any organization, Creative Commons’ (CC) brand
@@ -60,7 +54,7 @@ should also not be considered final and/or comprehensive, it’s the beginning o
 to flesh out, define, and standardize CC’s style in order to portray CC’s brand more clearly and
 consistently.
 
-Who should use this guide?
+# Who should use this guide?
 
 This document should be used by any person responsible for creating communication materials
 and/ or visual assets for CC, including graphic designers, video editors, developers, and
@@ -84,7 +78,7 @@ the website. When creating content for CC, please take into consideration this l
 if discussing CC’s work with audiences who may be unfamiliar. Although this language does not
 need to be followed exactly, we strongly encourage you to follow it as closely as possible.
 
-Our Mission
+# Our Mission
 
 Creative Commons is a nonprofit organization dedicated to building a globally-accessible public
 commons of knowledge and culture. We make it easier for people to share their creative and
@@ -92,7 +86,7 @@ academic work, as well as to access and build upon the work of others. By helpin
 organizations share knowledge and creativity, we aim to build a more equitable, accessible, and
 innovative world.
 
-Our Work
+# Our Work
 
 In order to achieve our mission, we:
 
@@ -115,16 +109,16 @@ experts in creating and engaging with openly-licensed works
 artists, technologists, legal experts, and activists to promote the power of open licensing and
 global access
 
-Our Brand Tagline
+# Our Brand Tagline
 
 Building a vibrant, collaborative global commons
 
 Mood Board —
 CC is vibrant, creative, collaborative, innovative, and global.
 
-Brand Identity —
+# Brand Identity —
 
-Logo(s)
+# Logo(s)
 
 Creative Commons has one primary logo:
 
@@ -134,7 +128,7 @@ The above logos can be used in any of the colors found in the color palette. How
 ensure that the logos are clearly displayed, we recommend using the colors tomato (#ed592f), dark
 slate gray (#333333), black, or white. You can download these logos on our website, here.
 
-Things to avoid:
+# Things to avoid:
 
 • Do not reproduce the logo in any other colors outside of the brand’s primary colors, except for
 black and white (when necessary)
@@ -149,7 +143,7 @@ logo, please refer to our detailed “Policies” page—which also includes our
 Learn more about the history and inspiration behind CC’s logo in “A Masterwork in Simplicity: The Story
 of the CC Logo.”
 
-Font(s)
+# Font(s)
 
 Primary Font: Source Sans Pro
 Source Sans Pro | Source Sans Pro | Source Sans Pro
@@ -177,7 +171,7 @@ design collective based in Germany and Chile to replace Akzidenz Grotesk—the o
 logo. You can download the font from our “Downloads” page.
 Learn more about this font in “Introducing CC Accidenz Commons: An Open Licensed Font.”
 
-Color Palette
+# Color Palette
 
 Creative Commons’ color palette reflects the vibrant nature of the digital space in which we
 operate, and the diverse community we engage with. These colors should be used—in various
@@ -187,7 +181,7 @@ accessibility requirements and design best practices, particularly with such bol
 For a guide on how to pair different colors together, including contrast requirements, read “Effective
 Use of Color” by the University of Washington.
 
-Tomato
+# Tomato
 
 Dark Slate Gray
 Hex: #333333
@@ -201,9 +195,9 @@ CMYK: 0 58 75 7
 
 CMYK: 0 0 0 80
 
-Gold
+# Gold
 
-Orange
+# Orange
 
 Hex: #efbe00
 RGB: 239 190 0
@@ -239,7 +233,7 @@ not be accurate, therefore in order to achieve the best
 possible results in printing, use CMYK and consult
 with the printer.
 
-Visuals
+# Visuals
 
 Creative Commons’ (CC) visuals, including graphic design elements, should reflect the diversity,
 vibrancy, and creativity of the global commons.
@@ -265,9 +259,9 @@ searchable; alternative text describing the image, for accessibility; and a capt
 the image is published under (including a hyperlink), as well as the name of the photographer and/or
 graphic designer.
 
-Publications Style —
+# Publications Style —
 
-Tone
+# Tone
 
 Creative Commons’ tone should be clear, informed, and professional, yet witty and relatable—
 reflecting CC’s staff and broader community.
@@ -279,7 +273,7 @@ be aware of the language, concepts, and theories behind CC’s work (e.g., globa
 domain, open culture, etc.). The audience’s knowledge and experience should always be taken into
 consideration.
 
-Creative Commons’ Specific Language
+# Creative Commons’ Specific Language
 
 Creative Commons’ possessive
 
@@ -300,8 +294,7 @@ Network” and the “CC Network” are preferred over the “Network.”
 Finally, there should always be a “the” before the noun, e.g., “The CC Global Network consists of
 over 400 members...” or “We encourage anyone to join the CC Network, it’s free!”
 
-Abbreviations
-CC Licenses
+# Abbreviations CC Licenses
 
 CC licenses should be displayed consistently, therefore please keep in mind the following:
 • License abbreviations should be in all caps
@@ -328,7 +321,7 @@ Dates
 Use the international standard with the year in front of the month, followed by the day
 E.g., 2019-10-22 or 2019 Oct 22
 
-Acronyms
+# Acronyms
 
 With first instances, always spell out the entire name followed by the acronym in parenthesis.
 The acronym alone may be used in all other instances.
@@ -353,8 +346,7 @@ Spelling
 CC officially uses American English—please refer to the “British and American spelling” guide by
 Oxford Dictionaries for help.
 
-Punctuation
-Colon
+# Punctuation Colon
 
 Use a colon, rather than a comma, to introduce a direct quotation that is longer than a short
 sentence. Capitalize the first word of a quoted sentence.
@@ -406,8 +398,7 @@ E.g. Advocates for net neutrality arrived en masse at Capitol Hill.
 Do not italicize words written in a different alphabet. Include an italicized transliterated version of
 the word in parentheses or in a footnote.
 
-Creative Commons Style Guide | 2019
-by Victoria Heath
+# Creative Commons Style Guide | 2019 by Victoria Heath
 
 2019, by Creative Commons.
 
