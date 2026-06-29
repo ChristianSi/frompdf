@@ -6,17 +6,18 @@ from collections import Counter, defaultdict
 from collections.abc import Sequence
 from dataclasses import asdict, dataclass
 from pathlib import Path
+from statistics import median
 from typing import TextIO
 
 from pdftext.extraction import dictionary_output
 from pdftext.schema import Line as PdfTextLine
 from pdftext.schema import Page
 
-# Require clear predominance before normalizing font-weight data to mostly_bold.
-BOLD_TEXT_RATIO_THRESHOLD = 0.75
+# Treat clearly heavier font weights as slightly larger for heading detection.
+HEADING_WEIGHT_FONT_SIZE_MULTIPLIER = 1.08
 
-# Treat mostly bold blocks as slightly larger for heading detection.
-HEADING_BOLD_FONT_SIZE_MULTIPLIER = 1.08
+# A block must be at least 40% heavier than the document median to get the boost.
+HEADING_WEIGHT_BOOST_THRESHOLD = 1.4
 
 
 @dataclass
@@ -34,7 +35,7 @@ class Line:
     y2: float | None
     rel_x: float | None
     rel_y: float | None
-    mostly_bold: bool
+    avg_weight: float | None
 
 
 @dataclass
@@ -53,7 +54,7 @@ class Block:
     start_page: PageNumber
     end_page: PageNumber
     font_size: float | None = None
-    mostly_bold: bool = False
+    avg_weight: float | None = None
 
 
 @dataclass
@@ -129,9 +130,9 @@ def dominant_font_size(line_dict: PdfTextLine) -> float | None:
     return max(size_weights.items(), key=lambda item: (item[1], item[0]))[0]
 
 
-def is_mostly_bold(line_dict: PdfTextLine) -> bool:
-    """Return whether at least 75% of visible text in a line uses a bold font weight."""
-    bold_weight = 0
+def average_font_weight(line_dict: PdfTextLine) -> float | None:
+    """Return the length-weighted average font weight for visible text in a line."""
+    weighted_sum = 0.0
     total_weight = 0
 
     for span_dict in line_dict.get('spans', []):
@@ -145,11 +146,13 @@ def is_mostly_bold(line_dict: PdfTextLine) -> bool:
         if not isinstance(font_weight, int | float) or font_weight < 0:
             continue
 
+        weighted_sum += float(font_weight) * weight
         total_weight += weight
-        if font_weight >= 600:
-            bold_weight += weight
 
-    return total_weight > 0 and bold_weight / total_weight >= BOLD_TEXT_RATIO_THRESHOLD
+    if not total_weight:
+        return None
+
+    return round(weighted_sum / total_weight, 1)
 
 
 def iter_lines(page_list: Sequence[Page]) -> list[Line]:
@@ -190,7 +193,7 @@ def iter_lines(page_list: Sequence[Page]) -> list[Line]:
                     y2=round_or_none(y2),
                     rel_x=rel_x,
                     rel_y=rel_y,
-                    mostly_bold=is_mostly_bold(line_dict),
+                    avg_weight=average_font_weight(line_dict),
                 )
                 line_list.append(line_obj)
 
@@ -544,6 +547,15 @@ def dominant_document_font_size(line_list: list[Line]) -> float | None:
     return max(size_weights.items(), key=lambda item: (item[1], item[0]))[0]
 
 
+def document_median_avg_weight(line_list: list[Line]) -> float | None:
+    """Return the median line average font weight, ignoring lines without usable weight data."""
+    weight_list = [line_obj.avg_weight for line_obj in line_list if line_obj.avg_weight is not None]
+    if not weight_list:
+        return None
+
+    return float(median(weight_list))
+
+
 def block_font_size(line_list: list[Line]) -> float | None:
     """Return the dominant font size in a Markdown block."""
     size_weights: dict[float, int] = defaultdict(int)
@@ -559,21 +571,23 @@ def block_font_size(line_list: list[Line]) -> float | None:
     return max(size_weights.items(), key=lambda item: (item[1], item[0]))[0]
 
 
-def block_mostly_bold(line_list: list[Line]) -> bool:
-    """Return whether at least 75% of visible text in a Markdown block is bold."""
-    bold_weight = 0
+def block_avg_weight(line_list: list[Line]) -> float | None:
+    """Return the length-weighted average font weight in a Markdown block."""
+    weighted_sum = 0.0
     total_weight = 0
 
     for line_obj in line_list:
-        weight = len(line_obj.text.strip())
-        if not weight:
+        line_weight = len(line_obj.text.strip())
+        if not line_weight or line_obj.avg_weight is None:
             continue
 
-        total_weight += weight
-        if line_obj.mostly_bold:
-            bold_weight += weight
+        weighted_sum += line_obj.avg_weight * line_weight
+        total_weight += line_weight
 
-    return total_weight > 0 and bold_weight / total_weight >= BOLD_TEXT_RATIO_THRESHOLD
+    if not total_weight:
+        return None
+
+    return round(weighted_sum / total_weight, 1)
 
 
 def build_body_lefts_by_page(
@@ -705,7 +719,7 @@ def markdown_block_from_lines(
         else Paragraph
     )
     font_size = block_font_size(line_list)
-    mostly_bold = block_mostly_bold(line_list)
+    avg_weight = block_avg_weight(line_list)
     start_page = page_number_map[line_list[0].page_no]
     end_page = page_number_map[line_list[-1].page_no]
     return block_class(
@@ -713,7 +727,7 @@ def markdown_block_from_lines(
         start_page=start_page,
         end_page=end_page,
         font_size=font_size,
-        mostly_bold=mostly_bold,
+        avg_weight=avg_weight,
     )
 
 
@@ -731,7 +745,18 @@ HEADING_LEVEL_THRESHOLDS = [
 ]
 
 
-def initial_heading_level(block_obj: Block, default_font_size: float | None) -> int | None:
+def should_boost_heading_font_size(block_obj: Block, document_median_weight: float | None) -> bool:
+    """Return whether a block is heavy enough, relative to the document, for a heading boost."""
+    return (
+        block_obj.avg_weight is not None
+        and document_median_weight is not None
+        and block_obj.avg_weight >= document_median_weight * HEADING_WEIGHT_BOOST_THRESHOLD
+    )
+
+
+def initial_heading_level(
+    block_obj: Block, default_font_size: float | None, document_median_weight: float | None
+) -> int | None:
     """Return the initial heading level for a block, if adjusted font-size heuristics match."""
     if (
         not isinstance(block_obj, Paragraph)
@@ -742,8 +767,8 @@ def initial_heading_level(block_obj: Block, default_font_size: float | None) -> 
         return None
 
     adjusted_font_size = block_obj.font_size
-    if block_obj.mostly_bold:
-        adjusted_font_size *= HEADING_BOLD_FONT_SIZE_MULTIPLIER
+    if should_boost_heading_font_size(block_obj, document_median_weight):
+        adjusted_font_size *= HEADING_WEIGHT_FONT_SIZE_MULTIPLIER
 
     font_ratio = adjusted_font_size / default_font_size
     for threshold, level in HEADING_LEVEL_THRESHOLDS:
@@ -799,12 +824,14 @@ def merge_extra_heading_levels(block_list: list[Block]) -> None:
         merge_heading_level_pair(block_list, kept_level)
 
 
-def detect_headings(block_list: list[Block], default_font_size: float | None) -> list[Block]:
-    """Convert paragraph blocks with heading-like font sizes into Heading blocks."""
+def detect_headings(
+    block_list: list[Block], default_font_size: float | None, document_median_weight: float | None
+) -> list[Block]:
+    """Convert paragraph blocks with heading-like adjusted font sizes into Heading blocks."""
     converted_blocks: list[Block] = []
 
     for block_obj in block_list:
-        heading_level = initial_heading_level(block_obj, default_font_size)
+        heading_level = initial_heading_level(block_obj, default_font_size, document_median_weight)
         if heading_level is None:
             converted_blocks.append(block_obj)
             continue
@@ -815,7 +842,7 @@ def detect_headings(block_list: list[Block], default_font_size: float | None) ->
                 start_page=block_obj.start_page,
                 end_page=block_obj.end_page,
                 font_size=block_obj.font_size,
-                mostly_bold=block_obj.mostly_bold,
+                avg_weight=block_obj.avg_weight,
                 level=heading_level,
             )
         )
@@ -834,6 +861,7 @@ def lines_to_markdown_blocks(
     current_page_no: int | None = None
     current_block_no: int | None = None
     default_font_size = dominant_document_font_size(line_list)
+    document_median_weight = document_median_avg_weight(line_list)
     body_lefts_by_page = build_body_lefts_by_page(line_list, default_font_size)
 
     for line_obj in line_list:
@@ -868,7 +896,7 @@ def lines_to_markdown_blocks(
             )
         )
 
-    return detect_headings(block_list, default_font_size)
+    return detect_headings(block_list, default_font_size, document_median_weight)
 
 
 def extract_markdown(
