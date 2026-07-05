@@ -12,6 +12,7 @@ from typing import TextIO
 from pdftext.extraction import dictionary_output
 from pdftext.schema import Line as PdfTextLine
 from pdftext.schema import Page
+from pdftext.schema import Span as PdfTextSpan
 
 # Treat clearly heavier font weights as slightly larger for heading detection.
 HEADING_WEIGHT_FONT_SIZE_MULTIPLIER = 1.08
@@ -91,7 +92,9 @@ def round_or_none(value: float | int | None, digits: int = 1) -> float | None:
     return round(float(value), digits)
 
 
-def get_bbox(obj: PdfTextLine) -> tuple[float | None, float | None, float | None, float | None]:
+def get_bbox(
+    obj: PdfTextLine | PdfTextSpan,
+) -> tuple[float | None, float | None, float | None, float | None]:
     """Extract a 4-value bbox tuple from an object, if present."""
     bbox = obj.get('bbox')
     if not isinstance(bbox, list | tuple) or len(bbox) != 4:
@@ -104,25 +107,54 @@ def get_bbox(obj: PdfTextLine) -> tuple[float | None, float | None, float | None
         return None, None, None, None
 
 
+def bbox_height(obj: PdfTextLine | PdfTextSpan) -> float | None:
+    """Return a usable bbox height, if present."""
+    _, y1, _, y2 = get_bbox(obj)
+    if y1 is None or y2 is None:
+        return None
+
+    height = abs(y2 - y1)
+    if height <= 1.0:
+        return None
+
+    return height
+
+
+def effective_span_font_size(span_dict: PdfTextSpan) -> float | None:
+    """Return reported font size, falling back to bbox height for placeholder size 1.0."""
+    font_dict = span_dict.get('font', {})
+    size_value = font_dict.get('size')
+    if size_value is None:
+        return None
+
+    try:
+        size_float = float(size_value)
+    except (TypeError, ValueError):
+        return None
+
+    # Some PDFs report every readable font as size 1.0; in that case bbox height
+    # is the better available proxy for the visually rendered size.
+    if size_float <= 1.0:
+        return bbox_height(span_dict)
+
+    return size_float
+
+
 def dominant_font_size(line_dict: PdfTextLine) -> float | None:
     """Return the dominant font size for a line, weighted by text length."""
     size_weights: dict[float, int] = defaultdict(int)
 
     for span_dict in line_dict.get('spans', []):
-        font_dict = span_dict.get('font', {})
-        size_value = font_dict.get('size')
         text_value = span_dict.get('text', '')
-
-        if size_value is None:
+        weight = len(text_value.strip())
+        if not weight:
             continue
 
-        try:
-            size_float = round(float(size_value), 1)
-        except (TypeError, ValueError):
+        size_float = effective_span_font_size(span_dict)
+        if size_float is None:
             continue
 
-        weight = max(len(text_value), 1)
-        size_weights[size_float] += weight
+        size_weights[round(size_float, 1)] += weight
 
     if not size_weights:
         return None
