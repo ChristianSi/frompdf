@@ -17,33 +17,32 @@ Short, freely licensed PDF files for testing the conversion.
   difusión de datos SIGC en el Catálogo de Servicios
   SIGPAC](https://www.fega.gob.es/sites/default/files/files/document/250923-AD-Nota_Catalogo_Nube_Nuevos_Servicios_SIGPAC.pdf)"
   by Fondo Español de Garantía Agraria (FEGA); license: CC-BY-4.0.
-- folie-chick-lit-web-archives.pdf: "[Recovering contemporary genre
-  histories – the development of chick lit as seen through the internet
-  archive's wayback machine and wikipedia's history
+- folie-chick-lit-web-archives.pdf: "[Recovering contemporary genre histories
+  – the development of chick lit as seen through the internet archive's
+  wayback machine and wikipedia's history
   page](https://link.springer.com/article/10.1007/s42803-021-00031-6)" by
   Sandra Folie; license: CC-BY-4.0.
 - intertrans-espacologia.pdf: "[Espaçologia: filosofias na totalidade do
   espaço](https://revistas.hcte.ufrj.br/index.php/intertrans/article/download/249/205/)"
   by Wallace Lopes; license: CC-BY-4.0.
-- lipics-disc-2025-51-leader-election.pdf: "[Brief Announcement:
-  Non-Uniform Content-Oblivious Leader Election on Oriented Asynchronous
+- lipics-disc-2025-51-leader-election.pdf: "[Brief Announcement: Non-Uniform
+  Content-Oblivious Leader Election on Oriented Asynchronous
   Rings](https://drops.dagstuhl.de/storage/00lipics/lipics-vol356-disc2025/LIPIcs.DISC.2025.51/LIPIcs.DISC.2025.51.pdf)"
   by Jérémie Chalopin, Yi-Jun Chang, Lyuting Chen, Giuseppe A. Di Luna, and
   Haoran Zhou; license: CC-BY-4.0.
-- lipics-disc-2025-64-byzantine-agreement.pdf: "[Brief Announcement:
-  Proximal Byzantine Agreement: Improved Accuracy for Fault-Tolerant
-  Replicated
+- lipics-disc-2025-64-byzantine-agreement.pdf: "[Brief Announcement: Proximal
+  Byzantine Agreement: Improved Accuracy for Fault-Tolerant Replicated
   Datastreams](https://drops.dagstuhl.de/storage/00lipics/lipics-vol356-disc2025/LIPIcs.DISC.2025.64/LIPIcs.DISC.2025.64.pdf)"
   by Roy Shadmon and Owen Arden; license: CC-BY-4.0.
-- nature-spin-dynamics-gav4s8.pdf: "[Slowdown of photoexcited spin dynamics
-  in the non-collinear spin-ordered phases in skyrmion host
+- nature-spin-dynamics-gav4s8.pdf: "[Slowdown of photoexcited spin dynamics in
+  the non-collinear spin-ordered phases in skyrmion host
   GaV4S8](https://opus.bibliothek.uni-augsburg.de/opus4/files/96777/s41467-022-30829-z.pdf)"
   by Fumiya Sekiguchi, Kestutis Budzinauskas, Prashant Padmanabhan, Rolf B.
   Versteeg, Vladimir Tsurkan, István Kézsmárki, Francesco Foggetti, Sergey
   Artyukhin, and Paul H. M. van Loosdrecht; license: CC-BY-4.0.
-- schmueck-herrschaft-nein-danke-kees-boeke.pdf: "[Herrschaft? Nein danke!
-  – Kees Boeke und das libertäre Organisationsmodell der
+- schmueck-herrschaft-nein-danke-kees-boeke.pdf: "[Herrschaft? Nein danke! –
+  Kees Boeke und das libertäre Organisationsmodell der
   Soziokratie](https://www.academia.edu/145922611/Herrschaft_Nein_danke_Kees_Boeke_and_das_libert%C3%A4re_Organisationsmodell_der_Soziokratie)"
   by Jochen Schmück, from [espero, Nr.
-  12](https://www.edition-espero.de/espero-nr-12-januar-2026/), pp.
-  161–223; shared with the author's permission.
+  12](https://www.edition-espero.de/espero-nr-12-januar-2026/), pp. 161–223;
+  shared with the author's permission.
