@@ -29,12 +29,13 @@ The project uses Ruff and basedpyright. Important local style settings are in
 
 - Python line length: `100`
 - Python quote style: single quotes
-- Markdown prose line length: about `78`
-- Ruff lint rules: `E`, `F`, `I`, `UP`, `B`
+- Ruff lint rules: `E`/`F` for pycodestyle and Pyflakes checks, `I` for
+  import sorting, `UP` for Python syntax upgrades, and `B` for bugbear checks
 - basedpyright mode: `standard`
 
-Markdown exceptions are fine for code blocks, tables, URLs, literal paths, and
-generated output.
+Custom-written Markdown files in the repository should usually be wrapped at
+78 characters. Headings, code blocks, tables, URLs, literal paths, and
+generated output may be longer.
 
 Before considering a code change done, run:
 
