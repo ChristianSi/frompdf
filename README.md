@@ -84,7 +84,7 @@ visible page numbers were detected.
 
 ## Limitations
 
-PDFs do not contain Markdown structure directly, so most higher-level
+PDFs do not contain document structure directly, so most higher-level
 structure has to be inferred. Current limitations include:
 
 - heading detection is heuristic and can miss headings or over-detect short
@@ -108,6 +108,7 @@ Planned next improvements include:
 - better detection of paragraph boundaries, including merging paragraphs that
   span more than one page
 - correction of font-encoding and ligature-related text extraction errors
+- additional output formats such as HTML, EPUB, ODT, and DOCX
 
 ## Development
 
