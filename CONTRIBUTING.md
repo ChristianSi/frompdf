@@ -3,7 +3,7 @@
 This project is early and heuristic-heavy. Good changes are usually small,
 easy to inspect, and checked against real PDFs.
 
-These notes are for human contributors and coding agents.
+These notes are for contributors working on the project.
 
 ## Development Setup
 
@@ -89,7 +89,7 @@ generated files are useful for visual inspection and debugging.
 ## Working With Corpus Outputs
 
 Be careful with generated corpus files. They are often used for manual
-comparison and may contain uncommitted user changes.
+comparison, not only automated pass/fail testing.
 
 Do not regenerate or overwrite corpus outputs unless that is part of the task.
 For quick checks, copy a PDF to `/tmp` and run `frompdf` there:
@@ -140,11 +140,3 @@ The current pipeline is roughly:
 6. Assemble lines into Markdown blocks.
 7. Detect block quotes and headings.
 8. Serialize Markdown to `.md`.
-
-## Git Hygiene
-
-The repository may contain unrelated local changes. Do not revert changes you
-did not make unless the owner explicitly asks for that.
-
-Keep changes scoped. Avoid unrelated refactors while tuning extraction
-behavior.

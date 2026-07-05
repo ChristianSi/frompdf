@@ -6,6 +6,7 @@ Agent-specific caveats:
 
 - Do not regenerate or overwrite files in `tests/pdf-corpus` unless the task
   explicitly calls for it. Use `/tmp` for quick conversion checks.
-- Preserve unrelated user changes in the working tree.
+- The working tree may contain unrelated user changes. Preserve them unless
+  the user explicitly asks you to modify or revert them.
 - Keep heuristic changes narrow and verify them against at least the PDFs
   mentioned in the task.
