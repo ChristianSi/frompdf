@@ -82,10 +82,10 @@ implies that the presence of unique identifiers is enough to simulate any asynch
 algorithm on a content-oblivious oriented ring.,2,5,31,10.0,107.7,513.0,310.8,523.0,0.0,13.1,345.0
 "Additionally, Frei et al. [13] proved that, for any uniform algorithm, there exists an",2,6,32,10.0,122.7,530.2,504.3,540.3,14.9,17.1,345.0
 identifier assignment under which the algorithm must send Ω,2,6,33,10.0,107.7,543.3,361.9,553.2,-14.9,13.1,345.0
-,2,6,34,10.0,363.5,542.3,368.0,552.3,255.7,-0.9,
+,2,6,34,,363.5,542.3,368.0,552.3,255.7,-0.9,
 n log IDmax,2,6,35,10.0,368.0,541.5,411.2,553.2,4.6,-0.8,421.7
 n,2,6,36,7.0,399.1,549.0,404.0,556.0,31.1,7.5,360.0
-,2,6,37,10.0,412.9,542.3,417.5,552.3,13.8,-6.7,
+,2,6,37,,412.9,542.3,417.5,552.3,13.8,-6.7,
 messages. Although,2,6,38,10.0,419.8,543.3,504.6,553.2,6.9,0.9,345.0
 "originally established for the uniform setting, this lower bound can be extended to the non-",2,7,39,10.0,107.7,556.2,505.8,566.2,-312.1,13.0,345.0
 "uniform setting, even when the exact value of n is known; see the full version of the paper",2,7,40,10.0,107.7,569.1,504.6,579.2,0.0,12.9,340.7
