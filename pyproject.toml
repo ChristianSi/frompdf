@@ -5,7 +5,8 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "frompdf"
 version = "0.1.0"
-description = "Extract text from PDFs and write structured outputs"
+description = "Extract structured text from PDFs"
+readme = "README.md"
 requires-python = ">=3.11"
 license = "MIT"
 license-files = ["LICENSE.txt"]
@@ -28,6 +29,12 @@ dependencies = [
     "pdftext",
 ]
 
+[project.optional-dependencies]
+dev = [
+    "basedpyright",
+    "ruff",
+]
+
 [project.scripts]
 frompdf = "frompdf.pdfextractor:main"
 
@@ -36,12 +43,15 @@ package-dir = {"" = "src"}
 
 [tool.setuptools.packages.find]
 where = ["src"]
+namespaces = true
 
 [tool.basedpyright]
+pythonVersion = "3.11"
 typeCheckingMode = "standard"
 
 [tool.ruff]
 line-length = 100
+target-version = "py311"
 
 [tool.ruff.format]
 quote-style = "single"
