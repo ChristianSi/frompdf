@@ -22,7 +22,7 @@ for expected_file in *.expected.*; do
     fi
 
     if [[ "$verbose" -eq 1 ]]; then
-        if ! diff "$expected_file" "$actual_file"; then
+        if ! diff -U 1 "$expected_file" "$actual_file"; then
             failed=1
         fi
     elif ! diff -q "$expected_file" "$actual_file" >/dev/null; then
