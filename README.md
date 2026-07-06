@@ -1,12 +1,24 @@
 # frompdf
 
-frompdf is a small CLI tool for extracting readable Markdown from PDFs.
+frompdf is a simple CLI tool for extracting structured text from PDFs.
 
-The project is intentionally heuristic and corpus-driven. It uses `pdftext` to
-get text, line, font, and position data from a PDF, then assembles that into
-Markdown blocks. The current focus is not perfect PDF conversion; it is a
-practical pipeline that exposes enough intermediate data to debug and steadily
-improve the conversion rules.
+The initial and primary output format is Markdown, with additional output
+formats planned. frompdf uses robust heuristics to detect paragraphs, headings
+at various levels, block quotes, and other document features. Running headers
+and footers are detected and removed, while page numbers can optionally be
+exported as metadata.
+
+These heuristics can never be perfect, but they should often provide a
+useful approximation of the actual document content — one that is more
+useful than plain text extraction for
+[RAG](https://en.wikipedia.org/wiki/Retrieval-augmented_generation) and
+similar workflows, or for turning read-only PDFs into editable structured
+text.
+
+While ML-based alternatives such as [Docling](https://www.docling.ai/) may
+handle some details better, they are slower and have considerably higher
+computational overhead. frompdf's heuristics will not get every detail right,
+but they are fast, robust, and easy to run locally.
 
 ## What frompdf does right now
 
