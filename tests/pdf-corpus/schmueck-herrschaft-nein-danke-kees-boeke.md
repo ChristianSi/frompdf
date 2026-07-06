@@ -35,7 +35,9 @@ Published in Germany | ISSN (Online): 2700-1598
 
 ## Libertäre Zeitschrift www.edition-espero.de
 
-#### Neue Folge Nr. 12 Januar 2026
+#### Neue Folge Nr. 12
+
+#### Januar 2026
 
 #### Themenschwerpunkt: Anarchismus und Pädagogik
 
@@ -661,6 +663,7 @@ der Kinder von sechs auf 49, während sich die Zahl der Mitarbeitenden von
 sechs auf 24 vervierfachte. Dieses Verhältnis ermöglichte eine besonders
 intensive Begleitung und enge Beziehungsarbeit mit den Kindern und
 Jugendlichen. Zwischen 1933 und 1945 erlebte das Projekt eine Phase dyna-
+
 mischen Wachstums. Die Zahl der Kinder und Jugendlichen stieg in der
 Werkplaats bis auf über 200 an. Gleichzeitig verschlechterte sich jedoch das
 Verhältnis zwischen den Kindern und den sie betreuenden Erwachsenen. Es

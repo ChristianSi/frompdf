@@ -101,13 +101,12 @@ de usw. werden Datenbanksysteme eingebunden.
 
 32nd GI-Workshop on Foundations of Databases (Grundlagen von Daten-
 banken), September 01-03, 2021, Munich, Germany.
+Copyright © 2021 for this paper by its authors. Use permitted under Crea-
+tive Commons License Attribution 4.0 International (CC BY 4.0).
 
 Fur die Thematik des ER-to-Relational-Mapping ist ein ¨
 Fragentyp vorgesehen, der das Thema der Erstellung von
 relationalen Datenmodellen beinhaltet auf Basis vorgegebe-
-
-Copyright © 2021 for this paper by its authors. Use permitted under Crea-
-tive Commons License Attribution 4.0 International (CC BY 4.0).
 
 ner ER-Modelle und Anforderungen. Aufgaben dieses Typs
 beinhalten die Darstellung eines konzeptuellen Datenmo-
@@ -124,6 +123,9 @@ Key.
 Die Mapping-Aufgaben sind darauf ausgelegt den Lernen-
 den visuell und interaktiv Wissen zu vermitteln. In diesem
 Fall fungiert das System als sog. Composer zur Erstellung
+der notwendigen Tabellen. In diesen k¨onnen durch Schalt-
+fl¨achen Tabellenbezeichnung, Spalten und Constraints hin-
+zugefugt werden. ¨
 
 lisiert werden. Diese beziehen sich auf grunds¨atzliche Struk-
 turen und Regeln bei den Tabellendefinitionen. Weiterhin
@@ -137,10 +139,6 @@ rungen beziehen. Die Korrektheit einer L¨osung kann zwar
 generell nicht automatisch entschieden werden, aber Fehler
 k¨onnen weitestgehend erkannt werden. Die Gestaltung der
 Aufgaben kann dies erleichtern.
-
-der notwendigen Tabellen. In diesen k¨onnen durch Schalt-
-fl¨achen Tabellenbezeichnung, Spalten und Constraints hin-
-zugefugt werden. ¨
 
 ## 3.1 Bearbeitung der Aufgaben
 
@@ -335,6 +333,7 @@ back unterschieden. Vor allem das Feedback ist gewunscht, ¨
 Sind neue Benachrichtigungen eingetroffen, wird an dem
 Icon einer Glocke ein roter Kreis angezeigt (siehe Abbil-
 dung 4 und Abbildung 5). Neben den Hinweisen zur Bear-
+
 beitung werden unter der Glocke zudem noch Hinweise auf
 neue Empfehlungen gegeben. Gibt es zur aktuellen Aufgabe
 
@@ -389,12 +388,6 @@ deos, Podcasts, Hilfetexte und Hilfegrafiken. Diese Medien
 werden kurz gehalten und sind thematisch nicht voneinan-
 der abh¨angig, k¨onnen sich aber erg¨anzen und werden ggf. in
 Gruppen mit oder ohne empfohlener Reihenfolge empfohlen.
-Uber die Icons auf der linken Seite k ¨ ¨onnen aktuell be-
-reitgestellte Medien abgerufen werden. Die Medien werden
-in modalen Fenstern innerhalb der Anwendung aufgerufen.
-Fur die Icons gibt es zwei Bereiche. Die grauen Icons bein- ¨
-halten vordefinierte Hilfestellungen, wohingegen die grunen ¨
-Icons aktuell empfohlene Hilfestellungen beinhalten.
 
 ### 3.6.6 Empfehlungen
 
@@ -403,6 +396,13 @@ zunehmend vom System empfohlen werden. ALEA nutzt
 verschiedene Arten von Empfehlungsalgorithmen, die st¨an-
 dig weiterentwickelt werden. Diese werden mit wachsender
 Nutzung und Datenmenge ausgebaut und verbessert.
+
+Uber die Icons auf der linken Seite k ¨ ¨onnen aktuell be-
+reitgestellte Medien abgerufen werden. Die Medien werden
+in modalen Fenstern innerhalb der Anwendung aufgerufen.
+Fur die Icons gibt es zwei Bereiche. Die grauen Icons bein- ¨
+halten vordefinierte Hilfestellungen, wohingegen die grunen ¨
+Icons aktuell empfohlene Hilfestellungen beinhalten.
 
 ### 3.6.7 Metadaten
 

@@ -1,566 +1,566 @@
 text,page_no,block_no,line_no_on_page,font_size,x1,y1,x2,y2,rel_x,rel_y,avg_weight
-SECRETARIA GENERAL,1,1,1,7.0,450.8,39.7,530.8,46.6,,,220.0
-DE RECURSOS AGRARIOS,1,2,2,7.0,450.8,47.0,540.9,54.0,0.0,7.3,220.0
-Y SEGURIDAD ALIMENTARIA,1,2,3,7.0,450.8,54.9,547.4,61.9,0.0,7.9,220.0
-FONDO ESPAÑOL DE,1,2,4,7.0,450.8,70.8,524.6,77.7,0.0,15.8,220.0
-MINISTERIO,1,3,5,9.0,132.0,57.5,187.1,66.5,-318.8,-13.3,220.0
-"DE AGRICULTURA, PESCA",1,4,6,9.0,132.0,67.8,247.0,76.8,0.0,10.3,220.0
-Y ALIMENTACION,1,4,7,9.0,132.0,78.2,210.6,87.2,0.0,10.5,220.0
-GARANTÍA AGRARIA O.A.,1,5,8,7.0,450.8,78.1,535.8,85.1,318.8,-0.1,220.0
-SUBDIRECCIÓN GENERAL,1,5,9,7.0,450.8,92.6,537.9,99.6,0.0,14.5,220.0
-DE AYUDAS DIRECTAS,1,5,10,7.0,450.8,99.8,526.7,106.8,0.0,7.2,220.0
-PUBLICACIÓN DE NUEVOS SERVICIOS SIGPAC DE,1,6,11,16.0,100.8,142.1,494.6,158.0,-350.0,42.3,235.0
-CONSULTA Y DIVULGACIÓN DE DATOS DEL SISTEMA,1,6,12,16.0,87.9,160.4,511.8,176.4,-13.0,18.4,235.0
-INTEGRADO DE GESTIÓN Y CONTROL (SIGC),1,6,13,16.0,121.7,178.8,473.6,194.7,33.8,18.4,235.0
-El SIGPAC (Sistema de Información Geográfica de Parcelas Agrícolas) es el,1,7,14,12.0,85.1,228.9,513.7,240.9,-36.6,50.1,220.0
-sistema base y fundamental para la solicitud de todas las ayudas por superficie,1,7,15,12.0,85.1,242.7,510.2,254.7,0.0,13.8,220.0
-"de la Política Agrícola Común (PAC), para que el agricultor pueda facilitar la",1,7,16,12.0,85.1,256.6,513.4,268.6,0.0,13.8,220.0
-información sobre datos de superficies y cultivos conforme al Sistema de,1,7,17,12.0,85.1,270.4,513.6,282.4,0.0,13.8,220.0
-"Información de Explotaciones Agrarias (SIEX). Asimismo, es la pieza clave del",1,7,18,12.0,85.1,284.2,513.6,296.2,0.0,13.8,220.0
-"Sistema Integrado de Gestión y Control (SIGC), constituyendo un registro oficial",1,7,19,12.0,85.1,298.0,513.6,310.0,0.0,13.8,220.0
-"de actualización continua, dependiente del FEGA y de las Consejerías de",1,7,20,12.0,85.1,311.8,513.4,323.8,0.0,13.8,220.0
-Agricultura de las comunidades autónomas (CCAA). Se basa en ortofotos áreas1,1,7,21,12.0,85.1,324.8,510.4,337.6,0.0,13.1,220.0
-y en el parcelario de Catastro2,1,7,22,12.0,85.1,338.6,256.0,351.4,0.0,13.8,220.0
-", permitiendo identificar de manera gráfica las",1,7,23,12.0,256.0,339.4,513.5,351.4,170.9,0.7,220.0
-parcelas declaradas o inscritas de agricultores y ganaderos en el marco de la,1,7,24,12.0,85.1,353.2,513.1,365.2,-170.9,13.8,220.0
-PAC.,1,7,25,12.0,85.1,367.0,113.2,379.0,0.0,13.8,220.0
-"Desarrollado desde el 2000, desde su implantación en 2005 el SIGPAC ha",1,8,26,12.0,85.1,394.6,513.7,406.6,0.0,27.6,222.3
-"ofrecido servicios fundamentales a agricultores, ganaderos y a la sociedad en",1,8,27,12.0,85.1,408.4,513.5,420.4,0.0,13.8,220.0
-general en la difusión de datos de los 71 millones de recintos (parcelas de,1,8,28,12.0,85.1,422.2,513.7,434.2,0.0,13.8,220.0
-"referencia para las ayudas conforme a normativa de la Unión Europea, UE) de",1,8,29,12.0,85.1,436.0,513.3,448.0,0.0,13.8,220.0
-forma abierta y libre. Se ha convertido así en el mayor proyecto de digitalización,1,8,30,12.0,85.1,449.8,513.3,461.8,0.0,13.8,220.0
-cartográfica en España para el sector agrario.,1,8,31,12.0,85.1,463.6,328.5,475.6,0.0,13.8,220.0
-España fue pionera en la UE en la visualización de datos del Sistema de,1,9,32,12.0,85.1,491.2,513.7,503.2,0.0,27.6,220.0
-Información de Parcelas Agrícolas mediante la publicación en 2005 del Visor,1,9,33,12.0,85.1,505.0,513.7,517.0,0.0,13.8,221.0
-"SIGPAC, al que dos años más tarde se sumó el WMS (Web Map Service, 2007).",1,9,34,12.0,85.1,518.8,513.7,530.8,0.0,13.8,222.8
-"Junto al servicio de descargas masivas ATOM, lanzado a finales del 2020,",1,9,35,12.0,85.1,532.6,513.7,544.6,0.0,13.8,221.7
-"podemos considerar estos tres servicios, como los 3 medios SIGPAC",1,9,36,12.0,85.1,546.4,513.7,558.4,0.0,13.8,220.0
-"tradicionales de difusión de datos del SIGC, los cuales responden a la Directiva",1,9,37,12.0,85.1,560.2,513.5,572.2,0.0,13.8,220.0
-2007/2/CE INSPIRE.,1,9,38,12.0,85.1,574.0,196.6,586.0,0.0,13.8,220.0
-La información almacenada en SIGPAC corresponde a 56 capas gráficas (ráster),1,10,39,12.0,85.1,601.6,513.7,613.6,0.0,27.6,220.0
-"y 64 capas alfanuméricas (vectoriales). De ellas, actualmente se encuentran",1,10,40,12.0,85.1,615.4,513.2,627.4,0.0,13.8,220.0
-"publicadas en el Visor 21 capas vectoriales y diversas capas gráficas, de las",1,10,41,12.0,85.1,629.2,513.2,641.2,0.0,13.8,220.0
-"cuales: 6 capas vectoriales fueron generadas y publicadas entre 2021 y 2022,",1,10,42,12.0,85.1,643.0,510.4,655.0,0.0,13.8,222.3
-"de cara a la reforma de la PAC del 2023, y 2 más entre 2023 y 2024,",1,10,43,12.0,85.1,656.8,513.7,668.8,0.0,13.8,222.5
-incrementándose así en esos cuatro años en un 50% el número de capas,1,10,44,12.0,85.1,670.6,513.5,682.6,0.0,13.8,220.0
-"vectoriales públicas, respecto a las existentes entre el 2000-2020, al ascender",1,10,45,12.0,85.1,684.4,513.5,696.4,0.0,13.8,220.0
-"1 Ortofotos (imágenes aéreas) del Plan Nacional de Ortofotografía Aérea (PNOA), coordinado",1,11,46,10.0,85.1,719.1,502.7,729.3,0.0,34.7,220.0
-por el Instituto Geográfico Nacional (Ministerio de Transportes y Movilidad Sostenible) en,1,11,47,10.0,85.1,730.8,482.5,740.8,0.0,11.7,220.0
-cooperación con el FEGA.,1,11,48,10.0,85.1,742.3,201.8,752.3,0.0,11.5,220.0
-2 Mapas de referencia de todo el territorio nacional del Catastro (Ministerio de Hacienda).,1,12,49,10.0,85.1,753.7,479.5,763.8,0.0,11.3,220.0
-www.fega.gob.es,1,13,50,7.0,88.6,777.7,135.8,784.7,3.5,24.0,200.0
-"C/ Beneficiencia , 8",1,14,51,7.0,510.3,777.7,566.3,784.7,421.8,0.0,200.0
-Página 1 de 13 28004 MADRID,1,14,52,7.0,283.0,785.9,558.3,794.1,-227.3,8.2,210.4
-sg.ayudasdirectas@fega.es,1,15,53,7.0,88.6,785.9,162.5,792.8,-194.4,0.0,200.0
-,1,16,54,,85.1,805.1,88.4,817.1,-3.5,19.3,
-de 14 a 213,2,1,1,12.0,85.1,71.8,153.4,84.5,,,220.0
-"las capas vectoriales publicadas en el Visor SIGPAC nacional,",2,1,2,12.0,159.1,72.5,513.7,84.5,74.0,0.7,220.0
-continuándose hoy día los trabajos para aumentar la visualización y obtención,2,1,3,12.0,85.1,86.4,513.6,98.4,-74.0,13.8,220.0
-de información del SIGC.,2,1,4,12.0,85.1,100.2,219.0,112.2,0.0,13.8,220.0
-Catálogo de Servicios SIGPAC alojados en la nube: sigpac-hubcloud,2,2,5,13.0,85.1,127.8,510.3,140.8,0.0,27.7,235.0
-"Entre los diversos proyectos del FEGA, en junio de 2024 se publicó el Catálogo",2,3,6,12.0,85.1,156.4,513.7,168.4,0.0,28.6,221.6
-"de Servicios SIGPAC: https://sigpac-hubcloud.es/, al cual se accede desde",2,3,7,12.0,85.1,170.2,513.6,182.2,0.0,13.8,229.9
-"el sitio SIGPAC de la Web del FEGA, pinchando en el nuevo icono de Servicios",2,3,8,12.0,85.1,184.0,513.4,196.0,0.0,13.8,220.0
-SIGPAC en la nube:,2,3,9,12.0,85.1,197.8,193.2,209.8,0.0,13.8,220.0
-En este Catálogo se alojan nuevos medios SIGPAC de difusión de datos SIGC,2,4,10,12.0,85.1,320.6,513.6,332.6,0.0,122.8,220.0
-con los que el FEGA continúa ampliando su abanico de servicios y su labor,2,4,11,12.0,85.1,334.4,513.2,346.4,0.0,13.8,220.0
-"divulgativa, como son: el Servicio de Teselas Vectoriales (MVT) de SIGPAC, el",2,4,12,12.0,85.1,348.2,510.5,360.2,0.0,13.8,220.0
-Servicio OGC API de SIGPAC y el Servicio de Listas de Códigos SIGPAC; otros,2,4,13,12.0,85.1,362.0,513.7,374.0,0.0,13.8,220.0
-"medios SIGPAC que solo estaban a disposición de las CCAA, como el Servicio",2,4,14,12.0,85.1,375.8,513.7,387.8,0.0,13.8,220.0
-de Consultas de SIGPAC y el Servicio de Salidas Gráficas SIGPAC. También,2,4,15,12.0,85.1,389.6,513.6,401.6,0.0,13.8,220.0
-aloja y se irán migrando al mismo el resto de medios de difusión del SIGPAC de,2,4,16,12.0,85.1,403.4,513.6,415.4,0.0,13.8,220.0
-"datos SIGC que estén actualmente, bien a únicamente disposición de las",2,4,17,12.0,85.1,417.2,513.6,429.2,0.0,13.8,220.0
-comunidades autónomas para su gestión de la PAC y se consideren de interés,2,4,18,12.0,85.1,431.1,513.5,443.1,0.0,13.8,220.0
-"al público en general, o bien a disposición pública y cuyo contenido será el mismo",2,4,19,12.0,85.1,444.9,513.7,456.9,0.0,13.8,220.0
-"al de los ya existentes (los 3 tradicionales citados), como es el nuevo WMS (Web",2,4,20,12.0,85.1,458.6,513.7,470.7,0.0,13.8,220.0
-"Map Service) de SIGPAC, ya disponible, o próximamente el Servicio de",2,4,21,12.0,85.1,472.5,513.4,484.5,0.0,13.8,220.0
-"Descargas masivas ATOM, a nivel provincial, y a futuro también el Visor",2,4,22,12.0,85.1,486.3,513.3,498.3,0.0,13.8,220.0
-SIGPAC.,2,4,23,12.0,85.1,500.1,133.9,512.1,0.0,13.8,220.0
-Entre las ventajas de esta migración de servicios a la nube4 se han considerado,2,5,24,12.0,85.1,526.9,513.6,539.7,0.0,26.9,221.6
-aspectos económicos (reducción de costes de mantenimiento y por uso de,2,5,25,12.0,85.1,541.5,513.4,553.5,0.0,14.5,220.0
-espacio de Servidores) y operativos (rápida respuesta en momentos de alta,2,5,26,12.0,85.1,555.3,513.6,567.3,0.0,13.8,220.0
-demanda; autonomía técnica y operativa; menor sobrecarga para los servicios,2,5,27,12.0,85.1,569.1,513.5,581.1,0.0,13.8,220.0
-"asociados al Visor, evitándose errores en dichos servicios por peticiones",2,5,28,12.0,85.1,582.9,513.5,594.9,0.0,13.8,220.0
-incorrectas; menor exposición a riesgos de seguridad y vulnerabilidades por,2,5,29,12.0,85.1,596.7,513.7,608.7,0.0,13.8,220.0
-adopción de medidas de seguridad; implementación más efectiva de estadísticas,2,5,30,12.0,85.1,610.5,513.2,622.5,0.0,13.8,220.0
-de utilización).,2,5,31,12.0,85.1,624.3,161.9,636.3,0.0,13.8,220.0
-"3 Si bien se suman 8 capas nuevas a las 14 existentes en 2020 en el Visor, deja de publicarse",2,6,32,10.0,85.1,682.3,505.1,692.4,0.0,58.0,220.0
-la capa SIE (superficies de interés ecológico) al ser derogada por normativa comunitaria.,2,6,33,10.0,85.1,694.0,478.5,703.9,0.0,11.7,220.0
-4 Requiere mantener los servicios SIGPAC publicados y disponer del entorno y del espacio en,2,7,34,10.0,85.1,705.3,504.9,715.5,0.0,11.3,220.0
-la nube necesarios para el procesamiento y almacenamiento de los datos a publicar.,2,7,35,10.0,85.1,717.0,460.4,727.0,0.0,11.7,220.0
-Página 2 de 13,2,8,36,7.0,274.1,736.3,321.1,743.2,189.0,19.2,220.0
-www.fega.gob.es,2,9,37,7.0,88.6,758.2,135.8,765.1,-185.5,21.9,200.0
-"C/ Beneficiencia , 8",2,10,38,7.0,510.3,758.2,566.3,765.1,421.8,0.0,200.0
-28004 MADRID,2,10,39,7.0,510.3,766.3,558.3,773.3,0.0,8.2,200.0
-sg.ayudasdirectas@fega.es,2,11,40,7.0,88.6,766.3,162.5,773.3,-421.8,0.0,200.0
-,2,12,41,,85.1,785.6,88.4,797.6,-3.5,19.2,
-Respondiendo a las demandas y necesidades del sector empresarial y,3,1,1,12.0,85.1,72.5,513.5,84.5,,,220.0
-"académico, tanto de visualización como de servir de complemento en el",3,1,2,12.0,85.1,86.4,513.5,98.4,0.0,13.8,220.0
-"desarrollo de aplicaciones informáticas, y abierto al resto de agentes del sector",3,1,3,12.0,85.1,100.2,513.6,112.2,0.0,13.8,220.0
-"agrario (agricultores, ganaderos, entidades colaboradoras y Administraciones",3,1,4,12.0,85.1,114.0,513.3,126.0,0.0,13.8,220.0
-"Públicas), en el primer semestre de 2024, se publicó en la nube el primero de",3,1,5,12.0,85.1,127.8,513.4,139.8,0.0,13.8,220.0
-estos nuevos servicios: el Servicio de Teselas Vectoriales de SIGPAC (MVT),3,1,6,12.0,85.1,141.6,491.8,153.6,0.0,13.8,220.6
-5,3,1,7,8.0,491.7,140.8,496.2,148.9,406.6,-0.7,220.0
-. Y,3,1,8,12.0,496.2,141.6,513.7,153.6,4.4,0.7,220.0
-entre junio de 2024 y agosto de 2025 se han publicado otros cinco servicios,3,1,9,12.0,85.1,155.4,513.6,167.4,-411.1,13.8,224.4
-en el Catálogo de Servicios SIGPAC.,3,1,10,12.0,85.1,169.2,293.9,181.2,0.0,13.8,234.6
-En la línea de mejora continua y ampliación con futuros servicios6 de difusión,3,2,11,12.0,85.1,196.0,513.6,208.8,0.0,26.9,223.4
-"del SIGPAC (de datos SIGC), puestos a disposición de todos los usuarios en una",3,2,12,12.0,85.1,210.6,513.6,222.6,0.0,14.5,220.0
-"misma dirección en la nube, se prevé que la migración y ampliación de servicios",3,2,13,12.0,85.1,224.4,513.5,236.4,0.0,13.8,220.0
-"esté finalizada a lo largo del 2027. Incluirá, entre otros, el citado Servicio de",3,2,14,12.0,85.1,238.2,510.4,250.2,0.0,13.8,220.8
-Descargas masivas ATOM a nivel de cada una de las 50 provincias o nivel,3,2,15,12.0,85.1,252.0,513.6,264.0,0.0,13.8,220.0
-determinado por el tamaño de ficheros (a diferencia de las actuales descargas,3,2,16,12.0,85.1,265.8,513.4,277.8,0.0,13.8,220.0
-"por cada uno de los más de 8.000 términos municipales), o el actual Visor",3,2,17,12.0,85.1,279.6,513.5,291.6,0.0,13.8,220.0
-SIGPAC.,3,2,18,12.0,85.1,293.4,133.9,305.4,0.0,13.8,220.0
-En esta Nota se informa de los seis servicios actualmente publicados. Para el,3,3,19,12.0,85.1,321.0,513.4,333.0,0.0,27.6,220.0
-"Servicio de Teselas Vectoriales, únicamente se comentan algunos cambios",3,3,20,12.0,85.1,334.8,513.6,346.8,0.0,13.8,220.0
-respecto de la información que se proporcionó en la anterior Nota WEB del,3,3,21,12.0,85.1,348.6,513.6,360.6,0.0,13.8,220.0
-Servicio MVT de Sigpac.,3,3,22,12.0,85.1,362.4,216.5,374.4,0.0,13.8,220.0
-1. Servicio de Teselas Vectoriales (MVT) de SIGPAC,3,4,23,12.0,103.1,390.0,390.6,402.0,18.0,27.6,220.0
-2. WMS – Web Map Service de SIGPAC7,3,4,24,12.0,103.1,403.0,328.4,415.8,0.0,13.1,220.0
-3. Servicio de Consultas de SIGPAC,3,4,25,12.0,103.1,417.6,302.5,429.6,0.0,14.5,220.0
-4. Servicio OGC API de SIGPAC,3,4,26,12.0,103.1,431.4,282.5,443.4,0.0,13.8,220.0
-5. Servicio de Listas de Códigos SIGPAC,3,4,27,12.0,103.1,445.2,327.8,457.2,0.0,13.8,220.0
-6. Servicio de Salidas Gráficas de SIGPAC,3,4,28,12.0,103.1,459.0,336.5,471.0,0.0,13.8,220.0
-La información del SIGC que se distribuye mediante los nuevos servicios,3,5,29,12.0,85.1,486.6,513.7,498.6,-18.0,27.6,220.0
-descritos en esta Nota8,3,5,30,12.0,85.1,499.7,209.1,512.4,0.0,13.1,220.0
-tiene la consideración de datos específicos de alto valor,3,5,31,12.0,212.4,500.4,513.4,512.4,127.3,0.7,220.0
-"(HVD)9 y, como se establece en el Reglamento de Ejecución 2023/138 de datos",3,6,32,12.0,85.1,513.5,513.4,526.2,-127.3,13.1,220.0
-"de alto valor (high value dataset, HVD), es publicada bajo las condiciones de",3,6,33,12.0,85.1,528.0,513.4,540.0,0.0,14.5,220.0
-5 Se informó del Servicio MVT mediante la Nota web divulgativa Nuevo Servicio de TESELAS,3,7,34,10.0,85.1,567.3,502.2,577.4,0.0,39.3,220.0
-VECTORIALES del SIGPAC.,3,7,35,10.0,85.1,579.0,214.6,588.9,0.0,11.7,220.0
-"6 Los futuros servicios en la nube (Descargas masivas ATOM, Visor SIGPAC, etc.) sustituirán a",3,8,36,10.0,85.1,590.3,510.5,600.5,0.0,11.3,220.0
-"los similares instalados en los servidores del MAPA o FEGA, tal como está ocurriendo con el",3,8,37,10.0,85.1,602.0,499.0,612.0,0.0,11.7,220.0
-Servicio WMS SIGPAC.,3,8,38,10.0,85.1,613.5,191.1,623.4,0.0,11.4,220.0
-7 Este servicio coexistirá transitoriamente con el WMS tradicional qué se deshabilitará a finales,3,9,39,10.0,85.1,624.8,510.4,634.9,0.0,11.3,221.4
-del 2025 (https://wms.mapa.gob.es/sigpac/wms).,3,9,40,10.0,85.1,636.5,303.1,646.5,0.0,11.7,222.7
-8 Así como la que puede descargarse mediante el Servicio ATOM y una parte de la que,3,10,41,10.0,85.1,647.8,475.5,658.0,0.0,11.3,220.0
-proporciona el Visor SIGPAC Nacional: cartografía de Recintos y Elementos del paisaje de la,3,10,42,10.0,85.1,659.5,500.8,669.5,0.0,11.7,220.0
-"campaña PAC vigente; y la cartografía de los Recintos, Elementos del paisaje y Cultivo",3,10,43,10.0,85.1,670.9,474.7,680.9,0.0,11.4,220.0
-declarado de la campaña anterior.,3,10,44,10.0,85.1,682.5,236.5,692.4,0.0,11.5,220.0
-9 El Reglamento HVD no requiere para la categoría Geoespacial ofrecer versiones históricas de,3,11,45,10.0,85.1,693.8,511.7,703.9,0.0,11.3,220.0
-los conjuntos de datos disponibles. El FEGA se compromete a facilitar sus conjuntos de datos,3,11,46,10.0,85.1,705.5,504.0,715.5,0.0,11.7,220.0
-HVD más actualizados (campaña agrícola actual) y también su versión de la campaña anterior.,3,11,47,10.0,85.1,717.0,506.8,727.0,0.0,11.5,220.0
-Página 3 de 13,3,12,48,7.0,274.1,736.3,321.1,743.2,189.0,19.2,220.0
-www.fega.gob.es,3,13,49,7.0,88.6,758.2,135.8,765.1,-185.5,21.9,200.0
-sg.ayudasdirectas@fega.es,3,13,50,7.0,88.6,766.3,162.5,773.3,0.0,8.2,200.0
-"C/ Beneficiencia , 8",3,14,51,7.0,510.3,758.2,566.3,765.1,421.8,-8.2,200.0
-28004 MADRID,3,14,52,7.0,510.3,766.3,558.3,773.3,0.0,8.2,200.0
-,3,15,53,,85.1,785.6,88.4,797.6,-425.2,19.2,
-reutilización de la información distribuida que estable la licencia pública Creative,4,1,1,12.0,85.1,72.5,513.7,84.5,,,220.0
-"Commons, Atribución/Reconocimiento Internacional (CC BY 4.0).",4,1,2,12.0,85.1,86.4,513.7,98.4,0.0,13.8,220.0
-"Complementariamente, el documento Términos de uso de la información de alto",4,1,3,12.0,85.1,100.2,513.5,112.2,0.0,13.8,220.0
-valor del SIGC informa de las condiciones para la redistribución de la información,4,1,4,12.0,85.1,114.0,513.4,126.0,0.0,13.8,220.0
-divulgada.,4,1,5,12.0,85.1,127.8,139.9,139.8,0.0,13.8,220.0
-Tanto para la información del SIGC considerada HVD como para el resto de la,4,2,6,12.0,85.1,155.4,513.7,167.4,0.0,27.6,220.0
-"información SIGPAC u otra información geoespacial del SIGC, en el sitio",4,2,7,12.0,85.1,169.2,513.7,181.2,0.0,13.8,220.0
-"SIGPAC de la Web del FEGA, dentro del apartado de Condiciones de uso de la",4,2,8,12.0,85.1,182.9,513.5,195.0,0.0,13.8,220.0
-"información del SIGPAC, se accede al Acuerdo de Distribución de la Mesa del",4,2,9,12.0,85.1,196.7,513.7,208.8,0.0,13.8,220.0
-"Sistema de Gestión y Control (SGC) que establece los criterios de consulta,",4,2,10,12.0,85.1,210.6,513.5,222.6,0.0,13.8,220.0
-divulgación y reutilización (o redistribución) de la información.,4,2,11,12.0,85.1,224.4,412.1,236.4,0.0,13.8,220.0
-Página 4 de 13,4,3,12,7.0,274.1,736.3,321.1,743.2,189.0,511.9,220.0
-www.fega.gob.es,4,4,13,7.0,88.6,758.2,135.8,765.1,-185.5,21.9,200.0
-"C/ Beneficiencia , 8",4,5,14,7.0,510.3,758.2,566.3,765.1,421.8,0.0,200.0
-28004 MADRID,4,5,15,7.0,510.3,766.3,558.3,773.3,0.0,8.2,200.0
-sg.ayudasdirectas@fega.es,4,6,16,7.0,88.6,766.3,162.5,773.3,-421.8,0.0,200.0
-,4,7,17,,85.1,785.6,88.4,797.6,-3.5,19.2,
-Nuevos medios SIGPAC de divulgación de datos SIGC,5,1,1,14.0,85.1,72.7,447.4,86.7,,,235.0
-1. Servicio de Teselas Vectoriales (MVT) de SIGPAC,5,2,2,14.0,103.1,116.4,435.3,130.4,18.0,43.7,220.0
-El Servicio MVT lanzado en 2024 se actualiza con la entrada en vigor de la,5,3,3,12.0,85.1,220.0,513.5,232.0,-18.0,103.7,220.0
-"campaña vigente en febrero de 2025, empezando a proporcionar datos de",5,3,4,12.0,85.1,233.8,513.5,245.8,0.0,13.8,220.0
-"Recintos y Elementos del paisaje de la campaña anterior. Además, sigue",5,3,5,12.0,85.1,247.6,513.7,259.6,0.0,13.8,220.0
-proporcionando dichos datos para la campaña vigente y la capa de Cultivos,5,3,6,12.0,85.1,261.5,513.7,273.5,0.0,13.8,220.0
-declarados de la campaña anterior que ya se proporcionaban.,5,3,7,12.0,85.1,275.3,415.1,287.3,0.0,13.8,220.0
-Presenta 2 URL para que las aplicaciones GIS10 se configuren para mostrar sus,5,4,8,12.0,85.1,302.1,513.7,314.9,0.0,26.9,220.0
-datos.,5,4,9,12.0,85.1,316.7,121.2,328.7,0.0,14.5,220.0
-- https://sigpac-hubcloud.es/mvt/[parametro]@3857@geojson/,5,5,10,12.0,103.1,330.5,447.6,342.5,18.0,13.8,220.0
-{z}/{x}/{y}.geojson: para mostrar los datos de la campaña vigente.,5,5,11,12.0,121.1,344.3,472.2,356.3,18.0,13.8,220.0
-También la capa Cultivo declarado de la campaña anterior.,5,5,12,12.0,121.1,358.1,435.1,370.1,0.0,13.8,220.0
-- https://sigpac-hubcloud.es/mvt/anterior/,5,5,13,12.0,103.1,371.9,334.7,383.9,-18.0,13.8,222.9
-[parametro]@3857@geojson/{z}/{x}/{y}.geojson para visualizar los datos,5,6,14,12.0,121.1,385.7,508.5,397.7,18.0,13.8,220.0
-completos de la campaña anterior.,5,6,15,12.0,121.1,399.5,305.1,411.5,0.0,13.8,220.0
-2. WMS – Web Map Service de SIGPAC,5,7,16,14.0,103.1,441.0,361.6,455.1,-18.0,41.6,220.0
-"Se trata de un servicio WMS (Web Map Service), conforme con la Directiva",5,8,17,12.0,85.1,570.4,513.7,582.4,-18.0,129.3,220.0
-"INSPIRE y la UNE-EN ISO 19128:2009, que permite acceder a información",5,8,18,12.0,85.1,584.2,510.4,596.2,0.0,13.8,220.0
-georreferenciada de manera dinámica y estandarizada.,5,8,19,12.0,85.1,598.0,382.5,610.0,0.0,13.8,220.0
-Este servicio facilita la interoperabilidad y la integración con otras aplicaciones,5,9,20,12.0,85.1,625.6,513.3,637.6,0.0,27.6,220.0
-mediante la generación de mapas de forma dinámica a partir de coordenadas,5,9,21,12.0,85.1,639.4,513.1,651.4,0.0,13.8,220.0
-geográficas en formato de imagen como PNG o JPEG. Permite visualizar y,5,9,22,12.0,85.1,653.2,513.6,665.2,0.0,13.8,220.0
-10 GIS (Geographic Information System) o SIG (Sistemas de Información Geográfica) son,5,10,23,10.0,85.1,693.8,483.5,703.9,0.0,40.6,220.0
-"herramientas informáticas (públicas o privadas) que permiten gestionar, analizar y visualizar",5,10,24,10.0,85.1,705.5,495.7,715.5,0.0,11.7,220.0
-datos geográficos: QGIS (software de código abierto); ArcGIS (software comercial); etc.,5,10,25,10.0,85.1,717.0,473.6,727.0,0.0,11.5,220.0
-Página 5 de 13,5,11,26,7.0,274.1,736.3,321.1,743.2,189.0,19.2,220.0
-www.fega.gob.es,5,12,27,7.0,88.6,758.2,135.8,765.1,-185.5,21.9,200.0
-sg.ayudasdirectas@fega.es,5,12,28,7.0,88.6,766.3,162.5,773.3,0.0,8.2,200.0
-"C/ Beneficiencia , 8",5,13,29,7.0,510.3,758.2,566.3,765.1,421.8,-8.2,200.0
-28004 MADRID,5,13,30,7.0,510.3,766.3,558.3,773.3,0.0,8.2,200.0
-,5,14,31,,85.1,785.6,88.4,797.6,-425.2,19.2,
-consultar la cartografía de los Recintos y los Elementos del paisaje de la,6,1,1,12.0,85.1,72.5,513.5,84.5,,,220.0
-campaña PAC vigente y la cartografía del Cultivo declarado de la campaña,6,1,2,12.0,85.1,86.4,513.5,98.4,0.0,13.8,220.0
-anterior.,6,1,3,12.0,85.1,100.2,129.2,112.2,0.0,13.8,220.0
-El contenido del servicio puede cargarse en un software SIG o embeberse dentro,6,2,4,12.0,85.1,114.0,513.3,126.0,0.0,13.8,220.0
-de un visualizador o geoportal11 empleando la nueva URL https://sigpac-,6,2,5,12.0,85.1,127.0,510.5,139.8,0.0,13.1,220.0
-"hubcloud.es/wms. Soporta un total de tres consultas (GetCapabilites, GetMap y",6,2,6,12.0,85.1,141.6,513.3,153.6,0.0,14.5,220.0
-GetFeatureInfo). El contenido es el mismo que el mostrado en la URL tradicional,6,2,7,12.0,85.1,155.4,510.3,167.4,0.0,13.8,220.0
-"https://wms.mapa.gob.es/sigpac/wms, que se deshabilitará a finales del 2025.",6,2,8,12.0,85.1,169.2,499.6,181.2,0.0,13.8,220.0
-En Ejemplos del Servicio WMS se muestran algunos usos de este servicio.,6,3,9,12.0,85.1,196.8,483.8,208.8,0.0,27.6,220.0
-Ejemplo de Visualización de recintos mediante WMS en QGIS,6,4,10,11.0,137.2,391.2,458.1,402.3,52.1,194.5,235.0
-3. Servicio de Consultas de SIGPAC,6,5,11,14.0,103.1,431.8,332.7,445.8,-34.1,40.5,220.0
-Este servicio permite acceder a las propiedades de un recinto de forma,6,6,12,12.0,85.1,543.6,513.6,555.6,-18.0,111.8,220.0
-estructurada (al igual que en el Visor SIGPAC se pueden consultar dichas,6,6,13,12.0,85.1,557.4,513.2,569.4,0.0,13.8,220.0
-"propiedades y obtener un informe en formato PDF), pudiendo almacenar su",6,6,14,12.0,85.1,571.2,513.5,583.2,0.0,13.8,220.0
-respuesta o emplearla dentro de otros desarrollos informáticos.,6,6,15,12.0,85.1,585.0,421.2,597.0,0.0,13.8,220.0
-"Por tanto, se trata de un servicio de consultas basado en la infraestructura del",6,7,16,12.0,85.1,612.6,513.5,624.6,0.0,27.6,220.0
-Visor SIGPAC que permite obtener información de la campaña vigente en,6,7,17,12.0,85.1,626.4,513.7,638.4,0.0,13.8,220.0
-formatos JSON y GEOJSON. Las consultas se realizan mediante peticiones,6,7,18,12.0,85.1,640.2,513.4,652.2,0.0,13.8,220.0
-HTTP de tipo REST (Representational state transfer).,6,7,19,12.0,85.1,654.0,370.0,666.0,0.0,13.8,220.0
-11 Ejemplo: GeoPortal del MAPA: https://sig.mapama.gob.es/geoportal/,6,8,20,10.0,85.1,716.8,399.0,727.0,0.0,62.8,220.0
-Página 6 de 13,6,9,21,7.0,274.1,736.3,321.1,743.2,189.0,19.4,220.0
-www.fega.gob.es,6,10,22,7.0,88.6,758.2,135.8,765.1,-185.5,21.9,200.0
-sg.ayudasdirectas@fega.es,6,10,23,7.0,88.6,766.3,162.5,773.3,0.0,8.2,200.0
-"C/ Beneficiencia , 8",6,11,24,7.0,510.3,758.2,566.3,765.1,421.8,-8.2,200.0
-28004 MADRID,6,11,25,7.0,510.3,766.3,558.3,773.3,0.0,8.2,200.0
-,6,12,26,,85.1,785.6,88.4,797.6,-425.2,19.2,
-"Actualmente pueden realizarse un total de 11 consultas diferentes, entre las que",7,1,1,12.0,85.1,72.5,513.2,84.5,,,220.0
-destacan:,7,1,2,12.0,85.1,86.4,137.2,98.4,0.0,13.8,220.0
-- Propiedades de un recinto por códigos SIGPAC o coordenadas.,7,2,3,12.0,103.1,114.0,461.1,126.0,18.0,27.6,220.0
-- Centroide de un recinto por códigos SIGPAC.,7,2,4,12.0,103.1,127.8,363.3,139.8,0.0,13.8,220.0
-- Referencia SIGPAC de un recinto a partir de coordenadas.,7,2,5,12.0,103.1,141.6,433.9,153.6,0.0,13.8,220.0
-- Referencia Catastral de una parcela a partir de referencia SIGPAC.,7,2,6,12.0,103.1,155.4,479.3,167.4,0.0,13.8,220.0
-- Propiedades de los recintos contenidos en una parcela SIGPAC.,7,2,7,12.0,103.1,169.2,465.2,181.2,0.0,13.8,220.0
-"- Intersecciones de un recinto con diferentes capas (Red Natura,",7,2,8,12.0,103.1,183.0,513.2,195.0,0.0,13.8,220.0
-"Montanera, Fitosanitarios, Nitratos o Pastos Permanentes).",7,2,9,12.0,121.1,196.8,436.5,208.8,18.0,13.8,220.0
-EJEMPLO: https://sigpac-,7,3,10,12.0,85.1,224.4,219.2,236.4,-36.0,27.6,225.2
-hubcloud.es/servicioconsultassigpac/query/recinfo/6/60/0/0/41/126/1.json,7,4,11,12.0,85.1,238.2,473.9,250.2,0.0,13.8,220.0
-Ejemplo de Respuesta a la consulta de propiedades de un recinto,7,5,12,11.0,125.9,471.1,469.5,482.1,40.8,232.9,235.0
-4. Servicio OGC API de SIGPAC,7,6,13,14.0,103.1,511.7,309.4,525.8,-22.8,40.6,220.0
-"El Reglamento de Ejecución 2023/138 establece, para la categoría de datos",7,7,14,12.0,85.1,643.1,513.3,655.1,-18.0,131.4,220.0
-"Geoespaciales, que los conjuntos de datos de alto valor se pondrán a disposición",7,7,15,12.0,85.1,656.9,513.6,668.9,0.0,13.8,220.0
-"para su reutilización, entre otras, con las siguientes condiciones:",7,7,16,12.0,85.1,670.7,427.9,682.7,0.0,13.8,220.0
-- licencia Creative Commons BY 4.0 u otra menos restrictiva.,7,8,17,12.0,103.1,698.3,437.9,710.3,18.0,27.6,220.0
-"- formato abierto, legible por máquina y documentado públicamente;",7,8,18,12.0,103.1,712.1,476.3,724.1,0.0,13.8,220.0
-Página 7 de 13,7,9,19,7.0,274.1,736.3,321.1,743.2,171.0,24.1,220.0
-www.fega.gob.es,7,10,20,7.0,88.6,758.2,135.8,765.1,-185.5,21.9,200.0
-sg.ayudasdirectas@fega.es,7,10,21,7.0,88.6,766.3,162.5,773.3,0.0,8.2,200.0
-"C/ Beneficiencia , 8",7,11,22,7.0,510.3,758.2,566.3,765.1,421.8,-8.2,200.0
-28004 MADRID,7,11,23,7.0,510.3,766.3,558.3,773.3,0.0,8.2,200.0
-,7,12,24,,85.1,785.6,88.4,797.6,-425.2,19.2,
-- mediante interfaces de programación de aplicaciones (API).,8,1,1,12.0,103.1,72.5,442.5,84.5,,,220.0
-"Conforme a estas directrices, el servicio OGC API de SIGPAC, mediante la URL",8,2,2,12.0,85.1,100.2,513.6,112.2,-18.0,27.6,220.0
-"https://sigpac-hubcloud.es/ogcapi y siguiendo el estándar OGC API Features,",8,2,3,12.0,85.1,114.0,510.4,126.0,0.0,13.8,220.0
-permite consultar geometrías12 y propiedades de las capas Recinto y Elementos,8,2,4,12.0,85.1,127.0,513.6,139.8,0.0,13.1,220.0
-del paisaje de la campaña PAC vigente y Cultivo declarado de la campaña,8,2,5,12.0,85.1,141.6,513.5,153.6,0.0,14.5,220.0
-anterior.,8,2,6,12.0,85.1,155.4,129.2,167.4,0.0,13.8,220.0
-En la web se proporciona documentación detallada para facilitar su integración y,8,3,7,12.0,85.1,183.0,513.3,195.0,0.0,27.6,220.0
-uso por parte de desarrolladores y usuarios interesados en los datos,8,3,8,12.0,85.1,196.8,513.2,208.8,0.0,13.8,220.0
-geoespaciales del SIGC. En Ejemplos del Servicio OGC API se muestran,8,3,9,12.0,85.1,210.6,513.6,222.6,0.0,13.8,220.0
-algunos usos de este servicio.,8,3,10,12.0,85.1,224.4,245.7,236.4,0.0,13.8,220.0
-Ejemplo de Visualización de recintos y elementos del paisaje mediante OGC API,8,4,11,11.0,87.6,401.0,510.5,412.0,2.5,176.6,235.0
-en QGIS,8,4,12,11.0,275.9,413.6,319.5,424.6,188.3,12.6,235.0
-5. Servicio de Listas de Códigos SIGPAC,8,5,13,14.0,103.1,454.2,362.3,468.3,-172.8,40.7,220.0
-Este servicio permite acceder a las listas controladas de códigos oficiales del,8,6,14,12.0,85.1,555.3,513.5,567.3,-18.0,101.0,220.0
-SIGPAC. Devuelve el listado de valores posibles para un concepto concreto (por,8,6,15,12.0,85.1,569.1,513.7,581.1,0.0,13.8,220.0
-"ejemplo, valores de provincias, municipios o usos SIGPAC, entre otros).",8,6,16,12.0,85.1,582.9,468.6,594.9,0.0,13.8,220.0
-"Mediante una petición HTTP, se puede consultar la lista de valores posibles que",8,7,17,12.0,85.1,610.5,513.4,622.5,0.0,27.6,220.0
-"puede tener un atributo o concepto concreto de las capas Recinto, Elementos",8,7,18,12.0,85.1,624.3,513.1,636.3,0.0,13.8,220.0
-del paisaje o Cultivo declarado. La respuesta se obtiene en formato JSON. De,8,7,19,12.0,85.1,638.1,513.2,650.1,0.0,13.8,220.0
-"igual forma que el servicio de Consultas SIGPAC, este servicio es fácilmente",8,7,20,12.0,85.1,651.9,513.4,663.9,0.0,13.8,220.0
-integrable en multitud de desarrollos informáticos de empresas u otros usuarios.,8,7,21,12.0,85.1,665.7,510.0,677.7,0.0,13.8,220.0
-12 Las geometrías están representadas en el sistema de referencia WGS 84 con orden de eje,8,8,22,10.0,85.1,705.3,501.5,715.5,0.0,39.6,220.0
-de longitud/latitud,8,8,23,10.0,85.1,717.0,163.3,727.0,0.0,11.7,220.0
-Página 8 de 13,8,9,24,7.0,274.1,736.3,321.1,743.2,189.0,19.2,220.0
-www.fega.gob.es,8,10,25,7.0,88.6,758.2,135.8,765.1,-185.5,21.9,200.0
-sg.ayudasdirectas@fega.es,8,10,26,7.0,88.6,766.3,162.5,773.3,0.0,8.2,200.0
-"C/ Beneficiencia , 8",8,11,27,7.0,510.3,758.2,566.3,765.1,421.8,-8.2,200.0
-28004 MADRID,8,11,28,7.0,510.3,766.3,558.3,773.3,0.0,8.2,200.0
-,8,12,29,,85.1,785.6,88.4,797.6,-425.2,19.2,
-Actualmente se pueden consultar listas de códigos de:,9,1,1,12.0,85.1,72.5,375.1,84.5,,,220.0
-- Provincias,9,2,2,12.0,103.1,100.2,176.5,112.2,18.0,27.6,220.0
-- Municipios,9,2,3,12.0,103.1,114.0,177.8,126.0,0.0,13.8,220.0
-- Usos SIGPAC,9,2,4,12.0,103.1,127.8,197.2,139.8,0.0,13.8,220.0
-- Tipo de aprovechamiento,9,3,5,12.0,103.1,141.6,256.5,153.6,0.0,13.8,220.0
-- Incidencias,9,3,6,12.0,103.1,155.4,181.2,167.4,0.0,13.8,220.0
-- Líneas de ayuda directa,9,4,7,12.0,103.1,169.2,249.1,181.2,0.0,13.8,220.0
-- Líneas de ayuda directa PDR,9,4,8,12.0,103.1,183.0,277.9,195.0,0.0,13.8,220.0
-- Productos,9,4,9,12.0,103.1,196.8,175.2,208.8,0.0,13.8,220.0
-- Región 2023,9,4,10,12.0,103.1,210.6,189.2,222.6,0.0,13.8,220.0
-"- Elementos del paisaje tipo punto, línea y área.",9,5,11,12.0,103.1,224.4,367.0,236.4,0.0,13.8,220.0
-EJEMPLO: https://sigpac-hubcloud.es/codigossigpac/cod_aprovechamiento.json,9,6,12,12.0,85.1,252.0,510.1,264.0,-18.0,27.6,221.6
-Ejemplo de Respuesta a la consulta de listado de códigos de tipo de,9,7,13,11.0,118.8,355.8,479.5,366.9,33.7,103.9,235.0
-aprovechamiento,9,7,14,11.0,252.2,368.6,343.4,379.6,133.4,12.7,235.0
-6. Servicio de Salidas Gráficas de SIGPAC,9,8,15,14.0,103.1,409.1,372.5,423.1,-149.1,40.5,220.0
-Este servicio proporciona salidas gráficas en formato PDF con información,9,9,16,12.0,85.1,529.5,513.6,541.5,-18.0,120.4,220.0
-gráfica y alfanumérica de Recintos de la campaña PAC vigente y del Cultivo,9,9,17,12.0,85.1,543.3,513.2,555.3,0.0,13.8,220.0
-declarado de la campaña anterior. La generación y presentación de la salida,9,9,18,12.0,85.1,557.1,513.2,569.1,0.0,13.8,220.0
-"gráfica se lleva a cabo desde el navegador de internet, siendo éste el encargado",9,9,19,12.0,85.1,570.9,513.3,582.9,0.0,13.8,220.0
-de obtener todo lo necesario para la generación de dicha salida gráfica.,9,9,20,12.0,85.1,584.7,465.7,596.7,0.0,13.8,220.0
-El componente de generación de salidas gráficas puede llamarse de dos modos:,9,10,21,12.0,85.1,612.3,510.2,624.3,0.0,27.6,220.0
-"Incrustación del componente (es decir, inserción de un elemento script en el",9,10,22,12.0,85.1,626.1,513.4,638.1,0.0,13.8,220.0
-archivo HTML de la aplicación anfitriona) o Invocación mediante una URL (URL,9,10,23,12.0,85.1,639.9,513.3,651.9,0.0,13.8,220.0
-"a la que se le pasan una serie de parámetros, como provincia, municipio, parcela,",9,10,24,12.0,85.1,653.7,513.5,665.7,0.0,13.8,220.0
-"recinto, etc., para generar directamente salidas gráficas). Una API (Interfaz de",9,10,25,12.0,85.1,667.5,513.6,679.5,0.0,13.8,220.0
-Programación de Aplicaciones) permite establecer la comunicación entre dicho,9,10,26,12.0,85.1,681.3,510.4,693.3,0.0,13.8,220.0
-componente y el navegador web.,9,10,27,12.0,85.1,695.1,261.8,707.1,0.0,13.8,220.0
-Página 9 de 13,9,11,28,7.0,274.1,736.3,321.1,743.2,189.0,41.2,220.0
-www.fega.gob.es,9,12,29,7.0,88.6,758.2,135.8,765.1,-185.5,21.9,200.0
-sg.ayudasdirectas@fega.es,9,12,30,7.0,88.6,766.3,162.5,773.3,0.0,8.2,200.0
-"C/ Beneficiencia , 8",9,13,31,7.0,510.3,758.2,566.3,765.1,421.8,-8.2,200.0
-28004 MADRID,9,13,32,7.0,510.3,766.3,558.3,773.3,0.0,8.2,200.0
-,9,14,33,,85.1,785.6,88.4,797.6,-425.2,19.2,
-En Ejemplos Salida Gráfica SIGPAC se recogen algunos para los dos modos.,10,1,1,12.0,85.1,72.5,513.5,84.5,,,220.0
-"Así, en los de Salida Gráfica SIGPAC - Llamada URL se puede ver una llamada",10,1,2,12.0,85.1,86.3,513.5,98.4,0.0,13.8,220.0
-tipo a la capa de cultivo declarado:,10,1,3,12.0,85.1,100.2,269.9,112.2,0.0,13.8,220.0
-"https://sigpac-hubcloud.es/salidasgraficassigpac/?declaracion/37/108/37010166/1, que",10,2,4,11.0,85.1,114.0,513.7,126.0,0.0,13.8,220.0
-proporciona un PDF descargable similar al que ofrece el Visor SIGPAC.,10,2,5,12.0,85.1,127.8,467.4,139.8,0.0,13.8,220.0
-Ejemplo de pdf descargable de cultivo declarado,10,3,6,11.0,169.9,434.0,425.4,445.0,84.8,306.2,235.0
-"A continuación, se recoge una Tabla resumen orientativa de los tradicionales y",10,4,7,12.0,85.1,502.0,513.4,514.0,-84.8,68.0,220.0
-nuevos medios de difusión SIGPAC de datos SIGC:,10,4,8,12.0,85.1,515.8,361.5,527.8,0.0,13.8,220.0
-Tabla resumen de los medios de difusión SIGPAC de datos SIGC,10,5,9,12.0,112.6,543.4,482.7,555.4,27.5,27.6,235.0
-Servicio Ventajas Limitaciones Propuestas de uso,10,6,10,11.0,97.0,586.1,507.1,597.2,-15.6,42.8,235.0
-- Interfaz sencilla e,10,7,11,11.0,156.5,603.4,251.9,614.5,59.5,17.3,220.0
-intuitiva,10,7,12,11.0,156.5,616.1,193.8,627.1,0.0,12.6,220.0
-- No permite,10,8,13,11.0,282.4,603.4,346.1,614.5,125.9,-12.6,220.0
-automatización,10,8,14,11.0,282.4,616.1,356.5,627.1,0.0,12.6,220.0
-- Consulta rápida de,10,8,15,11.0,402.9,603.4,505.1,614.5,120.5,-12.6,220.0
-parcelas y recintos,10,8,16,11.0,402.9,616.1,494.7,627.1,0.0,12.6,220.0
-- Información SIGPAC,10,8,17,11.0,156.5,629.3,268.4,640.3,-246.4,13.2,220.0
-de Campaña PAC - Limitada,10,8,18,11.0,156.5,635.7,333.8,652.9,0.0,6.5,220.0
-personalización de,10,8,19,11.0,282.4,648.5,377.3,659.5,125.9,12.7,220.0
-capas,10,8,20,11.0,282.4,661.1,311.8,672.1,0.0,12.6,220.0
-- Gestión PAC.,10,8,21,11.0,402.9,635.7,479.4,646.8,120.5,-25.3,220.0
-Verificación visual de,10,8,22,11.0,402.9,648.5,509.4,659.5,0.0,12.7,220.0
-datos por técnicos - Útil para validaciones,10,8,23,11.0,156.5,655.1,492.3,672.1,-246.4,6.6,220.0
-visuales rápidas,10,8,24,11.0,156.5,667.7,235.4,678.7,0.0,12.6,220.0
-- Útil para trámites,10,8,25,11.0,156.5,680.9,249.4,691.9,0.0,13.2,220.0
-(Ayudas PAC),10,8,26,11.0,156.5,693.5,226.3,704.5,0.0,12.6,220.0
-- Requiere conexión,10,8,27,11.0,285.5,680.9,387.0,691.9,129.0,-12.6,220.0
-estable,10,8,28,11.0,282.4,693.5,317.9,704.5,-3.1,12.6,220.0
-- Formación o soporte,10,8,29,11.0,402.9,680.9,513.6,691.9,120.5,-12.6,220.0
-a usuarios externos,10,8,30,11.0,402.9,693.5,499.0,704.5,0.0,12.6,220.0
-Visor,10,9,31,11.0,104.7,642.1,135.3,653.1,-298.3,-51.4,235.0
-SIGPAC,10,9,32,11.0,97.3,654.8,139.6,665.9,-7.3,12.7,235.0
-Página 10 de 13,10,10,33,7.0,272.2,736.3,323.1,743.2,174.9,81.4,220.0
-www.fega.gob.es,10,11,34,7.0,88.6,758.2,135.8,765.1,-183.6,21.9,200.0
-sg.ayudasdirectas@fega.es,10,11,35,7.0,88.6,766.3,162.5,773.3,0.0,8.2,200.0
-"C/ Beneficiencia , 8",10,12,36,7.0,510.3,758.2,566.3,765.1,421.8,-8.2,200.0
-28004 MADRID,10,12,37,7.0,510.3,766.3,558.3,773.3,0.0,8.2,200.0
-,10,13,38,,85.1,785.6,88.4,797.6,-425.2,19.2,
-Servicio Ventajas Limitaciones Propuestas de uso,11,1,1,11.0,97.0,73.8,507.1,84.8,,,235.0
-- Acceso selectivo a,11,1,2,11.0,156.5,90.1,257.5,101.2,59.5,16.3,220.0
-datos vectoriales,11,1,3,11.0,156.5,102.7,239.0,113.8,0.0,12.6,220.0
-- Formatos de,11,2,4,11.0,156.5,116.9,228.1,127.9,0.0,14.2,220.0
-descarga: GPKG y Shp,11,2,5,11.0,156.5,129.5,271.0,140.5,0.0,12.6,220.0
-- Archivos grandes y,11,3,6,11.0,282.4,116.9,385.8,127.9,125.9,-12.6,220.0
-pesados,11,3,7,11.0,282.4,129.5,324.1,140.5,0.0,12.6,220.0
-- Repositorios,11,4,8,11.0,402.9,116.9,473.9,127.9,120.5,-12.6,220.0
-internos de datos,11,4,9,11.0,402.9,129.5,487.4,140.5,0.0,12.6,220.0
-- Requiere,11,5,10,11.0,282.4,142.7,336.8,153.7,-120.5,13.2,220.0
-almacenamiento en,11,5,11,11.0,282.4,155.3,381.6,166.3,0.0,12.6,220.0
-local,11,5,12,11.0,282.4,168.0,305.0,179.1,0.0,12.7,220.0
-- Análisis y,11,6,13,11.0,402.9,149.1,459.2,160.1,120.5,-19.0,220.0
-explotación masiva,11,6,14,11.0,402.9,161.7,496.5,172.7,0.0,12.6,220.0
-Servicio,11,7,15,11.0,97.0,155.7,142.9,166.7,-305.9,-6.0,235.0
-de,11,7,16,11.0,112.0,168.3,127.9,179.3,15.0,12.6,235.0
-descargas,11,7,17,11.0,91.2,180.9,148.8,191.9,-20.8,12.6,235.0
-ATOM,11,7,18,11.0,102.3,193.6,134.7,204.6,11.0,12.7,235.0
-- Organizado por,11,8,19,11.0,156.5,168.3,242.1,179.3,54.2,-25.3,220.0
-provincias y municipios,11,8,20,11.0,156.5,180.9,269.7,191.9,0.0,12.6,220.0
-- No tiene,11,9,21,11.0,282.4,181.1,333.2,192.1,125.9,0.2,220.0
-visualización directa y,11,9,22,11.0,282.4,193.8,392.5,204.9,0.0,12.7,220.0
-actualizada,11,9,23,11.0,282.4,206.4,338.1,217.5,0.0,12.6,220.0
-- Cruces con otras,11,9,24,11.0,402.9,187.7,495.8,198.7,120.5,-18.7,220.0
-"fuentes (catastro,",11,9,25,11.0,402.9,200.4,491.0,211.5,0.0,12.7,220.0
-"ayudas, etc.)",11,9,26,11.0,402.9,213.0,466.0,224.1,0.0,12.6,220.0
-- Ideal para análisis,11,9,27,11.0,156.5,219.6,254.9,230.7,-246.4,6.6,220.0
-masivos,11,9,28,11.0,156.5,232.2,197.0,243.3,0.0,12.6,220.0
-- Navegación poco,11,9,29,11.0,282.4,219.6,377.3,230.7,125.9,-12.6,220.0
-amigable,11,9,30,11.0,282.4,232.2,327.1,243.3,0.0,12.6,220.0
-- Visualización rápida y,11,10,31,11.0,156.5,246.4,272.7,257.4,-125.9,14.2,220.0
-fluida,11,10,32,11.0,156.5,259.1,182.8,270.2,0.0,12.7,220.0
-- No compatible con,11,11,33,11.0,282.4,267.0,383.4,278.1,125.9,7.9,220.0
-SIG clásicos,11,11,34,11.0,282.4,279.8,343.6,290.8,0.0,12.7,220.0
-- Desarrollo de,11,11,35,11.0,402.9,267.0,478.2,278.1,120.5,-12.7,220.0
-visores y aplicaciones - Ideal para entornos,11,11,36,11.0,156.5,272.2,509.9,290.8,-246.4,5.2,220.0
-web o móviles,11,11,37,11.0,156.5,284.9,226.2,296.0,0.0,12.7,220.0
-- Bajo consumo de red,11,11,38,11.0,156.5,299.2,267.2,310.2,0.0,14.3,220.0
-- Acceso selectivo a,11,11,39,11.0,156.5,313.5,257.5,324.5,0.0,14.3,220.0
-datos vectoriales - Requiere,11,11,40,11.0,156.5,326.2,340.0,337.7,0.0,12.7,220.0
-Map,11,12,41,11.0,107.4,305.8,129.5,316.8,-49.1,-20.4,235.0
-Vector,11,12,42,11.0,101.3,318.4,138.7,329.4,-6.1,12.6,235.0
-Tile (MVT),11,12,43,11.0,92.2,331.1,144.8,342.2,-9.1,12.7,235.0
-conocimientos,11,13,44,11.0,282.4,339.3,355.8,350.3,190.2,8.2,220.0
-específicos para su,11,13,45,11.0,282.4,352.0,380.2,363.0,0.0,12.7,220.0
-correcta integración,11,13,46,11.0,282.4,364.6,379.1,375.6,0.0,12.6,220.0
-- Portales web ligeros,11,13,47,11.0,402.9,326.4,511.8,337.5,120.5,-38.2,220.0
-- Integrable en SIG y responsivos,11,13,48,11.0,156.5,339.0,470.2,350.3,-246.4,12.6,220.0
-profesionales,11,13,49,11.0,156.5,352.0,222.0,363.0,0.0,13.0,220.0
-- Posibilidad de,11,13,50,11.0,156.5,365.1,234.8,376.1,0.0,13.1,220.0
-personalizar estilo,11,13,51,11.0,156.5,377.8,248.2,388.8,0.0,12.7,220.0
-cliente,11,13,52,11.0,156.5,390.4,188.3,401.4,0.0,12.6,220.0
-- Visualización en,11,13,53,11.0,406.0,371.4,495.3,382.5,249.5,-19.0,220.0
-proyectos SIG,11,13,54,11.0,402.9,384.0,472.7,395.1,-3.1,12.6,220.0
-- Integrable en SIG,11,14,55,11.0,156.5,411.2,252.5,422.2,-246.4,27.1,220.0
-profesionales,11,14,56,11.0,156.5,423.8,222.0,434.8,0.0,12.6,220.0
-"- Sólo visualización,",11,15,57,11.0,282.4,411.2,382.8,422.2,125.9,-12.6,220.0
-no descarga y edición,11,15,58,11.0,282.4,423.8,389.5,434.8,0.0,12.6,220.0
-- Visualización en,11,16,59,11.0,402.9,411.2,492.3,422.2,120.5,-12.6,220.0
-proyectos SIG,11,16,60,11.0,402.9,423.8,472.7,434.8,0.0,12.6,220.0
-WMS,11,17,61,11.0,104.9,443.8,135.0,454.9,-298.0,20.1,235.0
-(Web Map,11,17,62,11.0,92.4,456.4,147.4,467.5,-12.5,12.6,235.0
-Service),11,17,63,11.0,97.0,469.0,139.9,480.1,4.6,12.6,235.0
-- Puede ser lento a,11,18,64,11.0,282.4,450.1,378.5,461.1,185.4,-19.0,220.0
-gran escala,11,18,65,11.0,282.4,462.8,339.4,473.8,0.0,12.7,220.0
-- Apoyo en validación,11,19,66,11.0,402.9,450.1,511.2,461.1,120.5,-12.7,220.0
-espacial,11,19,67,11.0,402.9,462.8,443.3,473.8,0.0,12.7,220.0
-- Estándar OGC,11,20,68,11.0,156.5,463.3,238.5,474.3,-246.4,0.5,220.0
-interoperable,11,20,69,11.0,156.5,475.9,220.8,486.9,0.0,12.6,220.0
-- Sin personalización,11,21,70,11.0,282.4,489.1,387.6,500.1,125.9,13.2,220.0
-de estilo,11,21,71,11.0,282.4,501.7,323.5,512.7,0.0,12.6,220.0
-- Integración en,11,22,72,11.0,402.9,489.1,482.4,500.1,120.5,-12.6,220.0
-visores y aplicaciones,11,22,73,11.0,402.9,501.7,509.9,512.7,0.0,12.6,220.0
-- Consulta individual,11,23,74,11.0,282.4,535.4,384.5,546.4,-120.5,33.7,220.0
-(no masiva),11,23,75,11.0,282.4,548.0,340.0,559.0,0.0,12.6,220.0
-- Formularios de,11,23,76,11.0,402.9,522.4,486.1,533.5,120.5,-25.6,220.0
-consulta interna,11,23,77,11.0,402.9,535.0,480.7,546.1,0.0,12.6,220.0
-- Formato estructurado,11,23,78,11.0,156.5,548.2,271.5,559.3,-246.4,13.2,220.0
-(JSON/GEOJSON),11,23,79,11.0,156.5,560.8,250.0,571.9,0.0,12.6,220.0
-- Integración en flujos,11,23,80,11.0,402.9,548.2,511.2,559.3,246.4,-12.6,220.0
-de tramitación,11,23,81,11.0,402.9,560.8,472.1,571.9,0.0,12.6,220.0
-- Rápido y ligero,11,23,82,11.0,156.5,575.2,236.6,586.3,-246.4,14.4,220.0
-- No admite búsqueda,11,23,83,11.0,282.4,580.4,393.7,591.4,125.9,5.2,220.0
-espacial,11,23,84,11.0,282.4,593.0,322.8,604.0,0.0,12.6,220.0
-- Backend para,11,23,85,11.0,402.9,574.0,480.6,585.1,120.5,-19.0,220.0
-portales o,11,23,86,11.0,402.9,586.6,454.3,597.7,0.0,12.6,220.0
-aplicaciones - Reutilizable en,11,23,87,11.0,156.5,594.4,463.4,610.4,-246.4,7.8,220.0
-aplicaciones,11,23,88,11.0,156.5,607.0,217.0,618.1,0.0,12.6,220.0
-- Consulta de recintos,11,24,89,11.0,156.5,528.8,263.6,539.8,0.0,-78.2,220.0
-Servicio,11,25,90,11.0,97.0,541.9,142.9,552.9,-59.5,13.1,235.0
-de,11,25,91,11.0,112.0,554.6,127.9,565.6,15.0,12.7,235.0
-consultas,11,25,92,11.0,92.8,567.2,147.2,578.2,-19.2,12.6,235.0
-(API,11,25,93,11.0,107.4,579.9,132.5,590.9,14.6,12.7,235.0
-REST),11,25,94,11.0,101.9,592.5,135.0,603.5,-5.5,12.6,235.0
-- Más eficiente que,11,26,95,11.0,156.5,626.1,252.5,637.2,54.6,33.6,220.0
-WFS,11,26,96,11.0,156.5,638.9,181.0,649.9,0.0,12.7,220.0
-- Requiere,11,27,97,11.0,282.4,645.6,336.8,656.6,125.9,6.7,220.0
-conocimientos,11,27,98,11.0,282.4,658.3,355.8,669.3,0.0,12.7,220.0
-técnicos,11,27,99,11.0,282.4,670.9,322.9,681.9,0.0,12.6,220.0
-- Automatización de,11,27,100,11.0,402.9,639.1,503.3,650.1,120.5,-31.8,220.0
-- Compatible con consultas SIGPAC,11,27,101,11.0,156.5,651.7,494.1,663.0,-246.4,12.6,220.0
-JSON/GeoJSON,11,27,102,11.0,156.5,664.7,239.2,675.7,0.0,13.0,220.0
-OGC API -,11,28,103,11.0,91.8,658.3,145.1,669.3,-64.7,-6.4,235.0
-Features,11,28,104,11.0,95.5,670.9,141.5,681.9,3.7,12.6,235.0
-- Integración en,11,29,105,11.0,402.9,677.7,482.4,688.8,307.4,6.8,220.0
-procesos y,11,29,106,11.0,402.9,690.5,459.2,701.5,0.0,12.7,220.0
-aplicaciones,11,29,107,11.0,402.9,703.1,463.4,714.1,0.0,12.6,220.0
-- Integrable en SIG,11,30,108,11.0,156.5,684.1,252.5,695.1,-246.4,-19.0,220.0
-profesionales,11,30,109,11.0,156.5,696.7,222.0,707.7,0.0,12.6,220.0
-Página 11 de 13,11,31,110,7.0,272.2,736.3,323.1,743.2,115.7,39.6,220.0
-www.fega.gob.es,11,32,111,7.0,88.6,758.2,135.8,765.1,-183.6,21.9,200.0
-sg.ayudasdirectas@fega.es,11,32,112,7.0,88.6,766.3,162.5,773.3,0.0,8.2,200.0
-"C/ Beneficiencia , 8",11,33,113,7.0,510.3,758.2,566.3,765.1,421.8,-8.2,200.0
-28004 MADRID,11,33,114,7.0,510.3,766.3,558.3,773.3,0.0,8.2,200.0
-,11,34,115,,85.1,785.6,88.4,797.6,-425.2,19.2,
-Servicio Ventajas Limitaciones Propuestas de uso,12,1,1,11.0,97.0,73.8,507.1,84.8,,,235.0
-- Desarrollo de,12,2,2,11.0,402.9,90.1,478.2,101.2,305.9,16.3,220.0
-aplicaciones con,12,2,3,11.0,402.9,102.7,487.3,113.8,0.0,12.6,220.0
-datos SIGPAC,12,2,4,11.0,402.9,115.5,474.6,126.5,0.0,12.7,220.0
-- Acceso selectivo a,12,3,5,11.0,156.5,96.4,257.5,107.4,-246.4,-19.1,220.0
-datos vectoriales,12,3,6,11.0,156.5,109.1,239.0,120.1,0.0,12.7,220.0
-- Alta interoperabilidad - Visualización en,12,4,7,11.0,156.5,129.5,492.3,146.9,0.0,20.4,220.0
-proyectos SIG,12,4,8,11.0,402.9,142.2,472.7,153.3,246.4,12.7,220.0
-- Codificación oficial,12,5,9,11.0,156.5,156.4,257.3,167.4,-246.4,14.2,220.0
-estandarizada,12,5,10,11.0,156.5,169.0,225.7,180.0,0.0,12.6,220.0
-- Son datos sólo,12,6,11,11.0,282.4,156.4,365.1,167.4,125.9,-12.6,220.0
-alfanuméricos,12,6,12,11.0,282.4,169.0,351.1,180.0,0.0,12.6,220.0
-- Validación de datos,12,6,13,11.0,402.9,156.4,508.8,167.4,120.5,-12.6,220.0
-en formularios,12,6,14,11.0,402.9,169.0,472.7,180.0,0.0,12.6,220.0
-- Fácil integración y,12,6,15,11.0,156.5,182.2,254.9,193.2,-246.4,13.2,220.0
-validación,12,6,16,11.0,156.5,194.8,205.4,205.8,0.0,12.6,220.0
-- No es un servicio,12,6,17,11.0,282.4,182.2,376.7,193.2,125.9,-12.6,220.0
-dinámico,12,6,18,11.0,282.4,194.8,326.5,205.8,0.0,12.6,220.0
-- Mapeo e,12,6,19,11.0,402.9,182.2,455.5,193.2,120.5,-12.6,220.0
-interpretación de,12,6,20,11.0,402.9,194.8,487.9,205.8,0.0,12.6,220.0
-- Documentación clara datos SIGPAC,12,6,21,11.0,156.5,207.5,474.6,219.0,-246.4,12.7,220.0
-y mantenida,12,6,22,11.0,156.5,220.6,216.5,231.6,0.0,13.1,220.0
-- Sin visualización,12,6,23,11.0,282.4,208.0,373.6,219.0,125.9,-12.6,220.0
-directa,12,6,24,11.0,282.4,220.6,315.5,231.6,0.0,12.6,220.0
-- Compatible con,12,6,25,11.0,156.5,233.8,242.7,244.8,-125.9,13.2,220.0
-múltiples entornos,12,6,26,11.0,156.5,246.4,245.9,257.4,0.0,12.6,220.0
-- Actualización,12,6,27,11.0,282.4,233.8,357.0,244.8,125.9,-12.6,220.0
-manual periódica,12,6,28,11.0,282.4,246.4,366.3,257.4,0.0,12.6,220.0
-"- Cruce con ayudas,",12,6,29,11.0,402.9,233.8,504.5,244.8,120.5,-12.6,220.0
-"tipos de uso, etc.",12,6,30,11.0,402.9,246.4,486.1,257.4,0.0,12.6,220.0
-Listas de,12,7,31,11.0,94.6,188.8,145.4,199.8,-308.3,-57.6,235.0
-códigos,12,7,32,11.0,97.3,201.4,142.7,212.4,2.8,12.6,235.0
-SIGPAC,12,7,33,11.0,97.3,214.0,139.6,225.0,0.0,12.6,235.0
-- Obtención inmediata,12,8,34,11.0,156.5,260.6,267.2,271.6,59.2,46.6,220.0
-"de salidas gráficas,",12,8,35,11.0,156.5,273.2,253.8,284.2,0.0,12.6,220.0
-desde navegador,12,8,36,11.0,156.5,285.9,241.7,296.9,0.0,12.7,220.0
-- Consulta y descarga,12,9,37,11.0,282.4,305.3,392.5,316.4,125.9,19.4,220.0
-individual (no masiva),12,9,38,11.0,282.4,318.0,388.9,329.1,0.0,12.7,220.0
-- Integración en,12,9,39,11.0,402.9,260.6,482.4,271.6,120.5,-57.5,220.0
-procesos y,12,9,40,11.0,402.9,273.2,459.2,284.2,0.0,12.6,220.0
-aplicaciones,12,9,41,11.0,402.9,285.9,463.4,296.9,0.0,12.7,220.0
-- Proporciona,12,9,42,11.0,156.5,299.0,225.7,310.0,-246.4,13.1,220.0
-"descargas, no solo",12,9,43,11.0,156.5,311.7,252.0,322.7,0.0,12.7,220.0
-visualización - Consultas puntuales,12,9,44,11.0,156.5,318.3,512.4,335.3,0.0,6.6,220.0
-sin tener que recurrir,12,9,45,11.0,402.9,330.9,507.4,341.9,246.4,12.6,220.0
-al Visor Sigpac - Componente,12,9,46,11.0,156.5,337.5,476.3,354.5,-246.4,6.6,220.0
-incrustable en,12,9,47,11.0,156.5,350.1,228.1,361.1,0.0,12.6,220.0
-aplicaciones,12,9,48,11.0,156.5,362.8,217.0,373.8,0.0,12.7,220.0
-Salidas,12,10,49,11.0,99.1,299.0,140.9,310.0,-57.4,-63.8,235.0
-Gráficas,12,10,50,11.0,96.4,311.7,143.5,322.7,-2.8,12.7,235.0
-SIGPAC,12,10,51,11.0,97.3,324.3,139.6,335.3,1.0,12.6,235.0
-Información Histórica del SIGC,12,11,52,14.0,85.1,404.9,291.2,418.9,-12.2,80.6,235.0
-"Finalmente, se comunica que en 2024 el FEGA inició el proyecto SIGPAC de",12,12,53,12.0,85.1,448.5,513.4,460.5,0.0,43.6,220.0
-recuperación y adaptación de la información INSPIRE relativa al histórico del,12,12,54,12.0,85.1,462.3,513.6,474.3,0.0,13.8,222.6
-"SIGC desde el origen de la misma, que a nivel nacional se data en:",12,12,55,12.0,85.1,476.1,443.5,488.1,0.0,13.8,220.9
-"• Respecto de información SIGPAC (LPIS, Land Parcel Identification",12,13,56,12.0,103.1,504.2,513.6,516.4,18.0,28.2,221.2
-System): en 2005 para el caso de la capa Recintos y en 2023 para la capa,12,13,57,12.0,121.1,518.2,513.7,530.2,18.0,13.9,221.8
-Elementos del paisaje.,12,13,58,12.0,121.1,532.0,241.8,544.0,0.0,13.8,220.0
-"• Respecto de información de la Declaración Gráfica (GSA, Geo Spatial",12,14,59,12.0,103.1,546.5,513.5,558.6,-18.0,14.5,221.2
-Application): en 2020 para la capa Cultivos declarados.,12,14,60,12.0,121.1,560.4,414.8,572.4,18.0,13.9,221.2
-El objetivo es seguir aumentando la respuesta al público de los medios de,12,15,61,12.0,85.1,588.0,513.2,600.0,-36.0,27.6,220.0
-"consulta y divulgación del SIGPAC a las solicitudes de información del SIGC,",12,15,62,12.0,85.1,601.8,513.1,613.8,0.0,13.8,220.0
-incluyendo en este caso la información histórica distinta a la que ya se distribuye,12,15,63,12.0,85.1,615.6,513.3,627.6,0.0,13.8,220.0
-mediante los actuales servicios.,12,15,64,12.0,85.1,629.4,257.9,641.4,0.0,13.8,220.0
-"Desde el segundo semestre de 2024, se está proporcionando información",12,16,65,12.0,85.1,657.0,513.4,669.0,0.0,27.6,220.0
-vectorial de las referidas capas. Actualmente hay disponibles Bases de datos,12,16,66,12.0,85.1,670.8,513.5,682.8,0.0,13.8,222.2
-en formato PostGreSQL/PostGis (una por campaña) con la información vectorial,12,16,67,12.0,85.1,684.6,513.5,696.6,0.0,13.8,220.0
-histórica de las capas de datos geoespaciales del SIGC de: Recintos para las,12,16,68,12.0,85.1,698.4,513.6,710.4,0.0,13.8,220.0
-Página 12 de 13,12,17,69,7.0,272.2,736.3,323.1,743.2,187.1,37.8,220.0
-www.fega.gob.es,12,18,70,7.0,88.6,758.2,135.8,765.1,-183.6,21.9,200.0
-sg.ayudasdirectas@fega.es,12,18,71,7.0,88.6,766.3,162.5,773.3,0.0,8.2,200.0
-"C/ Beneficiencia , 8",12,19,72,7.0,510.3,758.2,566.3,765.1,421.8,-8.2,200.0
-28004 MADRID,12,19,73,7.0,510.3,766.3,558.3,773.3,0.0,8.2,200.0
-,12,20,74,,85.1,785.6,88.4,797.6,-425.2,19.2,
-campañas 2015 a 2023; Elementos del paisaje para la campaña 202313; y Cultivo,13,1,1,12.0,85.1,71.8,513.7,84.5,,,220.0
-Declarado para las campañas 2020 a 2023.,13,1,2,12.0,85.1,86.4,318.2,98.4,0.0,14.6,220.0
-Se desea que este proyecto esté finalizado a lo largo del 2026.,13,2,3,12.0,85.1,114.0,420.0,126.0,0.0,27.6,221.0
-En el citado Acuerdo de Distribución de la Mesa del Sistema de Gestión y Control,13,3,4,12.0,85.1,141.6,513.4,153.6,0.0,27.6,220.0
-"(SGC), en su ANEXO I: CLÁUSULAS GENERALES Y TÉCNICAS DE LA",13,3,5,12.0,85.1,155.4,513.3,167.4,0.0,13.8,220.0
-"LICENCIA, se recogen las condiciones generales y técnicas para la distribución",13,3,6,12.0,85.1,169.2,513.2,181.2,0.0,13.8,220.0
-de la información contenida en las capas de la base de datos del SIGPAC que,13,3,7,12.0,85.1,183.0,513.1,195.0,0.0,13.8,220.0
-no son de alto valor (CAPAS NO HVD). Para el caso de distribuciones por parte,13,3,8,12.0,85.1,196.8,513.5,208.8,0.0,13.8,220.0
-"del FEGA de información geoespacial del SIGC histórica, no disponible a través",13,3,9,12.0,85.1,210.6,513.6,222.6,0.0,13.8,220.0
-de los sistemas informáticos de consulta y divulgación del SIGPAC dispuestos al,13,3,10,12.0,85.1,224.4,513.6,236.4,0.0,13.8,220.0
-"efecto, por su contenido y/o por su periodo de vigencia, y que pueda requerir",13,3,11,12.0,85.1,238.2,513.6,250.2,0.0,13.8,220.0
-"medios de distribución extraordinarios (soportes físicos, espacio en la nube,",13,3,12,12.0,85.1,252.0,513.2,264.0,0.0,13.8,220.0
-"etc.), los usuarios o empresas peticionarias deberán dirigir sus solicitudes a la",13,3,13,12.0,85.1,265.8,513.2,277.8,0.0,13.8,220.0
-Subdirección General de Ayudas Directas del FEGA:,13,3,14,12.0,85.1,279.6,510.4,291.6,0.0,13.8,220.0
-sg.ayudasdirectas@fega.es. Tras la autorización pertinente del Subdirector/a,13,4,15,12.0,85.1,293.4,513.4,305.4,0.0,13.8,220.0
-"General de Ayudas Directas, se podrá delegar en la Empresa de Tecnologías y",13,4,16,12.0,85.1,307.2,513.1,319.2,0.0,13.8,220.0
-"Servicios Agrarios, S.A., S.M.E., M.P (TRAGSATEC) la elaboración de un",13,4,17,12.0,85.1,321.0,513.3,333.0,0.0,13.8,220.0
-"presupuesto, aplicando las tarifas públicas oficiales del Grupo TRAGSA vigentes",13,4,18,12.0,85.1,334.8,513.5,346.8,0.0,13.8,220.0
-"en ese momento, que recoja los trabajos de preparación de la información objeto",13,4,19,12.0,85.1,348.6,513.3,360.6,0.0,13.8,220.0
-de distribución y puesta a disposición de los peticionarios. Aceptado el,13,4,20,12.0,85.1,362.4,513.2,374.4,0.0,13.8,220.0
-"presupuesto por el peticionario, se elaborará y distribuirá la información",13,4,21,12.0,85.1,376.2,513.7,388.2,0.0,13.8,220.0
-solicitada.,13,4,22,12.0,85.1,390.0,138.6,402.0,0.0,13.8,220.0
-23 de Septiembre de 2025.,13,5,23,12.0,365.5,445.2,510.4,457.2,280.4,55.2,220.0
-13 Y datos regionales (de algunas CCAA) desde 2015.,13,6,24,10.0,85.1,716.8,324.3,727.0,-280.4,271.6,220.0
-Página 13 de 13,13,7,25,7.0,272.2,736.3,323.1,743.2,187.1,19.4,220.0
-www.fega.gob.es,13,8,26,7.0,88.6,758.2,135.8,765.1,-183.6,21.9,200.0
-"C/ Beneficiencia , 8",13,9,27,7.0,510.3,758.2,566.3,765.1,421.8,0.0,200.0
-28004 MADRID,13,9,28,7.0,510.3,766.3,558.3,773.3,0.0,8.2,200.0
-sg.ayudasdirectas@fega.es,13,10,29,7.0,88.6,766.3,162.5,773.3,-421.8,0.0,200.0
-,13,11,30,,85.1,785.6,88.4,797.6,-3.5,19.2,
+SECRETARIA GENERAL,1,1,1,7.0,450.8,40.3,530.8,46.8,,,220.0
+DE RECURSOS AGRARIOS,1,2,2,7.0,450.8,47.6,540.9,54.1,0.0,7.3,220.0
+Y SEGURIDAD ALIMENTARIA,1,2,3,7.0,450.8,55.5,547.4,62.0,0.0,7.9,220.0
+FONDO ESPAÑOL DE,1,2,4,7.0,450.8,70.3,524.6,77.9,0.0,14.8,220.0
+GARANTÍA AGRARIA O.A.,1,2,5,7.0,450.8,77.5,535.8,85.2,0.0,7.2,220.0
+SUBDIRECCIÓN GENERAL,1,2,6,7.0,450.8,92.0,537.9,99.7,0.0,14.5,220.0
+DE AYUDAS DIRECTAS,1,2,7,7.0,450.8,100.4,526.7,106.9,0.0,8.4,220.0
+MINISTERIO,1,3,8,9.0,132.0,58.2,187.1,66.7,-318.8,-42.2,220.0
+"DE AGRICULTURA, PESCA",1,4,9,9.0,132.0,68.5,247.0,77.0,0.0,10.3,220.0
+Y ALIMENTACION,1,4,10,9.0,132.0,79.0,210.6,87.4,0.0,10.5,220.0
+PUBLICACIÓN DE NUEVOS SERVICIOS SIGPAC DE,1,5,11,16.0,100.8,140.6,494.6,158.4,-31.2,61.6,235.0
+CONSULTA Y DIVULGACIÓN DE DATOS DEL SISTEMA,1,5,12,16.0,87.9,159.0,511.8,176.7,-13.0,18.4,235.0
+INTEGRADO DE GESTIÓN Y CONTROL (SIGC),1,5,13,16.0,121.7,177.3,473.6,195.1,33.8,18.4,235.0
+El SIGPAC (Sistema de Información Geográfica de Parcelas Agrícolas) es el,1,6,14,12.0,85.1,229.9,513.7,241.2,-36.6,52.6,220.0
+sistema base y fundamental para la solicitud de todas las ayudas por superficie,1,6,15,12.0,85.1,243.7,510.2,255.0,0.0,13.8,220.0
+"de la Política Agrícola Común (PAC), para que el agricultor pueda facilitar la",1,6,16,12.0,85.1,257.6,513.4,268.8,0.0,13.8,220.0
+información sobre datos de superficies y cultivos conforme al Sistema de,1,6,17,12.0,85.1,271.4,513.6,282.6,0.0,13.8,220.0
+"Información de Explotaciones Agrarias (SIEX). Asimismo, es la pieza clave del",1,6,18,12.0,85.1,285.2,513.6,296.4,0.0,13.8,220.0
+"Sistema Integrado de Gestión y Control (SIGC), constituyendo un registro oficial",1,6,19,12.0,85.1,299.0,513.6,310.2,0.0,13.8,220.0
+"de actualización continua, dependiente del FEGA y de las Consejerías de",1,6,20,12.0,85.1,312.8,513.4,324.0,0.0,13.8,220.0
+Agricultura de las comunidades autónomas (CCAA). Se basa en ortofotos áreas1,1,6,21,12.0,85.1,325.5,510.4,337.8,0.0,12.7,220.0
+y en el parcelario de Catastro2,1,6,22,12.0,85.1,339.3,256.0,351.6,0.0,13.8,220.0
+", permitiendo identificar de manera gráfica las",1,6,23,12.0,256.0,340.4,513.5,351.6,170.9,1.1,220.0
+parcelas declaradas o inscritas de agricultores y ganaderos en el marco de la,1,6,24,12.0,85.1,354.2,513.1,365.4,-170.9,13.8,220.0
+PAC.,1,6,25,12.0,85.1,368.0,113.2,379.2,0.0,13.8,220.0
+"Desarrollado desde el 2000, desde su implantación en 2005 el SIGPAC ha",1,7,26,12.0,85.1,395.6,513.7,406.8,0.0,27.6,222.3
+"ofrecido servicios fundamentales a agricultores, ganaderos y a la sociedad en",1,7,27,12.0,85.1,409.4,513.5,420.6,0.0,13.8,220.0
+general en la difusión de datos de los 71 millones de recintos (parcelas de,1,7,28,12.0,85.1,423.2,513.7,434.4,0.0,13.8,220.0
+"referencia para las ayudas conforme a normativa de la Unión Europea, UE) de",1,7,29,12.0,85.1,437.0,513.3,448.2,0.0,13.8,220.0
+forma abierta y libre. Se ha convertido así en el mayor proyecto de digitalización,1,7,30,12.0,85.1,450.8,513.3,462.0,0.0,13.8,220.0
+cartográfica en España para el sector agrario.,1,7,31,12.0,85.1,464.6,328.5,475.8,0.0,13.8,220.0
+España fue pionera en la UE en la visualización de datos del Sistema de,1,8,32,12.0,85.1,492.2,513.7,503.4,0.0,27.6,220.0
+Información de Parcelas Agrícolas mediante la publicación en 2005 del Visor,1,8,33,12.0,85.1,506.0,513.7,517.2,0.0,13.8,221.0
+"SIGPAC, al que dos años más tarde se sumó el WMS (Web Map Service, 2007).",1,8,34,12.0,85.1,519.8,513.7,531.0,0.0,13.8,222.8
+"Junto al servicio de descargas masivas ATOM, lanzado a finales del 2020,",1,8,35,12.0,85.1,533.6,513.7,544.8,0.0,13.8,221.7
+"podemos considerar estos tres servicios, como los 3 medios SIGPAC",1,8,36,12.0,85.1,547.4,513.7,558.6,0.0,13.8,220.0
+"tradicionales de difusión de datos del SIGC, los cuales responden a la Directiva",1,8,37,12.0,85.1,561.2,513.5,572.4,0.0,13.8,220.0
+2007/2/CE INSPIRE.,1,8,38,12.0,85.1,575.0,196.6,586.2,0.0,13.8,220.0
+La información almacenada en SIGPAC corresponde a 56 capas gráficas (ráster),1,9,39,12.0,85.1,602.6,513.7,613.8,0.0,27.6,220.0
+"y 64 capas alfanuméricas (vectoriales). De ellas, actualmente se encuentran",1,9,40,12.0,85.1,616.4,513.2,627.7,0.0,13.8,220.0
+"publicadas en el Visor 21 capas vectoriales y diversas capas gráficas, de las",1,9,41,12.0,85.1,630.2,513.2,641.5,0.0,13.8,220.0
+"cuales: 6 capas vectoriales fueron generadas y publicadas entre 2021 y 2022,",1,9,42,12.0,85.1,644.0,510.4,655.3,0.0,13.8,222.3
+"de cara a la reforma de la PAC del 2023, y 2 más entre 2023 y 2024,",1,9,43,12.0,85.1,657.8,513.7,669.1,0.0,13.8,222.5
+incrementándose así en esos cuatro años en un 50% el número de capas,1,9,44,12.0,85.1,671.6,513.5,682.9,0.0,13.8,220.0
+"vectoriales públicas, respecto a las existentes entre el 2000-2020, al ascender",1,9,45,12.0,85.1,685.4,513.5,696.7,0.0,13.8,220.0
+"1 Ortofotos (imágenes aéreas) del Plan Nacional de Ortofotografía Aérea (PNOA), coordinado",1,10,46,10.0,85.1,719.7,502.7,729.5,0.0,34.3,220.0
+por el Instituto Geográfico Nacional (Ministerio de Transportes y Movilidad Sostenible) en,1,10,47,10.0,85.1,731.6,482.5,741.0,0.0,12.0,220.0
+cooperación con el FEGA.,1,10,48,10.0,85.1,743.2,201.8,752.5,0.0,11.5,220.0
+2 Mapas de referencia de todo el territorio nacional del Catastro (Ministerio de Hacienda).,1,11,49,10.0,85.1,754.2,479.5,764.0,0.0,11.1,220.0
+www.fega.gob.es,1,12,50,7.0,88.6,778.5,135.8,784.9,3.5,24.3,200.0
+"C/ Beneficiencia , 8",1,13,51,7.0,510.3,778.5,566.3,784.9,421.8,0.0,200.0
+Página 1 de 13 28004 MADRID,1,13,52,7.0,283.0,786.6,558.3,794.2,-227.3,8.2,210.4
+sg.ayudasdirectas@fega.es,1,14,53,7.0,88.6,786.4,162.5,793.1,-194.4,-0.3,200.0
+,1,15,54,,85.1,806.1,88.4,817.4,-3.5,19.8,
+de 14 a 213,2,1,1,12.0,85.1,72.5,153.4,84.8,,,220.0
+"las capas vectoriales publicadas en el Visor SIGPAC nacional,",2,1,2,12.0,159.1,73.5,513.7,84.8,74.0,1.1,220.0
+continuándose hoy día los trabajos para aumentar la visualización y obtención,2,1,3,12.0,85.1,87.4,513.6,98.6,-74.0,13.8,220.0
+de información del SIGC.,2,1,4,12.0,85.1,101.2,219.0,112.4,0.0,13.8,220.0
+Catálogo de Servicios SIGPAC alojados en la nube: sigpac-hubcloud,2,2,5,13.0,85.1,128.9,510.3,141.1,0.0,27.7,235.0
+"Entre los diversos proyectos del FEGA, en junio de 2024 se publicó el Catálogo",2,3,6,12.0,85.1,157.4,513.7,168.7,0.0,28.5,221.6
+"de Servicios SIGPAC: https://sigpac-hubcloud.es/, al cual se accede desde",2,3,7,12.0,85.1,171.2,513.6,182.5,0.0,13.8,229.9
+"el sitio SIGPAC de la Web del FEGA, pinchando en el nuevo icono de Servicios",2,3,8,12.0,85.1,185.0,513.4,196.3,0.0,13.8,220.0
+SIGPAC en la nube:,2,3,9,12.0,85.1,198.8,193.2,210.1,0.0,13.8,220.0
+En este Catálogo se alojan nuevos medios SIGPAC de difusión de datos SIGC,2,4,10,12.0,85.1,321.6,513.6,332.9,0.0,122.8,220.0
+con los que el FEGA continúa ampliando su abanico de servicios y su labor,2,4,11,12.0,85.1,335.4,513.2,346.7,0.0,13.8,220.0
+"divulgativa, como son: el Servicio de Teselas Vectoriales (MVT) de SIGPAC, el",2,4,12,12.0,85.1,349.2,510.5,360.5,0.0,13.8,220.0
+Servicio OGC API de SIGPAC y el Servicio de Listas de Códigos SIGPAC; otros,2,4,13,12.0,85.1,363.0,513.7,374.3,0.0,13.8,220.0
+"medios SIGPAC que solo estaban a disposición de las CCAA, como el Servicio",2,4,14,12.0,85.1,376.8,513.7,388.1,0.0,13.8,220.0
+de Consultas de SIGPAC y el Servicio de Salidas Gráficas SIGPAC. También,2,4,15,12.0,85.1,390.6,513.6,401.9,0.0,13.8,220.0
+aloja y se irán migrando al mismo el resto de medios de difusión del SIGPAC de,2,4,16,12.0,85.1,404.4,513.6,415.7,0.0,13.8,220.0
+"datos SIGC que estén actualmente, bien a únicamente disposición de las",2,4,17,12.0,85.1,418.2,513.6,429.5,0.0,13.8,220.0
+comunidades autónomas para su gestión de la PAC y se consideren de interés,2,4,18,12.0,85.1,432.1,513.5,443.3,0.0,13.8,220.0
+"al público en general, o bien a disposición pública y cuyo contenido será el mismo",2,4,19,12.0,85.1,445.9,513.7,457.1,0.0,13.8,220.0
+"al de los ya existentes (los 3 tradicionales citados), como es el nuevo WMS (Web",2,4,20,12.0,85.1,459.7,513.7,470.9,0.0,13.8,220.0
+"Map Service) de SIGPAC, ya disponible, o próximamente el Servicio de",2,4,21,12.0,85.1,473.5,513.4,484.7,0.0,13.8,220.0
+"Descargas masivas ATOM, a nivel provincial, y a futuro también el Visor",2,4,22,12.0,85.1,487.2,513.3,498.5,0.0,13.8,220.0
+SIGPAC.,2,4,23,12.0,85.1,501.1,133.9,512.3,0.0,13.8,220.0
+Entre las ventajas de esta migración de servicios a la nube4 se han considerado,2,5,24,12.0,85.1,527.6,513.6,539.9,0.0,26.5,221.6
+aspectos económicos (reducción de costes de mantenimiento y por uso de,2,5,25,12.0,85.1,542.5,513.4,553.7,0.0,14.9,220.0
+espacio de Servidores) y operativos (rápida respuesta en momentos de alta,2,5,26,12.0,85.1,556.3,513.6,567.5,0.0,13.8,220.0
+demanda; autonomía técnica y operativa; menor sobrecarga para los servicios,2,5,27,12.0,85.1,570.1,513.5,581.3,0.0,13.8,220.0
+"asociados al Visor, evitándose errores en dichos servicios por peticiones",2,5,28,12.0,85.1,583.9,513.5,595.1,0.0,13.8,220.0
+incorrectas; menor exposición a riesgos de seguridad y vulnerabilidades por,2,5,29,12.0,85.1,597.7,513.7,608.9,0.0,13.8,220.0
+adopción de medidas de seguridad; implementación más efectiva de estadísticas,2,5,30,12.0,85.1,611.5,513.2,622.7,0.0,13.8,220.0
+de utilización).,2,5,31,12.0,85.1,625.3,161.9,636.5,0.0,13.8,220.0
+"3 Si bien se suman 8 capas nuevas a las 14 existentes en 2020 en el Visor, deja de publicarse",2,6,32,10.0,85.1,682.8,505.1,692.6,0.0,57.5,220.0
+la capa SIE (superficies de interés ecológico) al ser derogada por normativa comunitaria.,2,6,33,10.0,85.1,694.8,478.5,704.2,0.0,12.0,220.0
+4 Requiere mantener los servicios SIGPAC publicados y disponer del entorno y del espacio en,2,7,34,10.0,85.1,705.9,504.9,715.7,0.0,11.1,220.0
+la nube necesarios para el procesamiento y almacenamiento de los datos a publicar.,2,7,35,10.0,85.1,717.8,460.4,727.2,0.0,12.0,220.0
+Página 2 de 13,2,8,36,7.0,274.1,736.8,321.1,743.4,189.0,19.0,220.0
+www.fega.gob.es,2,9,37,7.0,88.6,758.9,135.8,765.3,-185.5,22.1,200.0
+"C/ Beneficiencia , 8",2,10,38,7.0,510.3,758.9,566.3,765.3,421.8,0.0,200.0
+28004 MADRID,2,10,39,7.0,510.3,767.1,558.3,773.5,0.0,8.2,200.0
+sg.ayudasdirectas@fega.es,2,11,40,7.0,88.6,766.8,162.5,773.5,-421.8,-0.3,200.0
+,2,12,41,,85.1,786.6,88.4,797.8,-3.5,19.7,
+Respondiendo a las demandas y necesidades del sector empresarial y,3,1,1,12.0,85.1,73.5,513.5,84.8,,,220.0
+"académico, tanto de visualización como de servir de complemento en el",3,1,2,12.0,85.1,87.4,513.5,98.6,0.0,13.8,220.0
+"desarrollo de aplicaciones informáticas, y abierto al resto de agentes del sector",3,1,3,12.0,85.1,101.2,513.6,112.4,0.0,13.8,220.0
+"agrario (agricultores, ganaderos, entidades colaboradoras y Administraciones",3,1,4,12.0,85.1,115.0,513.3,126.2,0.0,13.8,220.0
+"Públicas), en el primer semestre de 2024, se publicó en la nube el primero de",3,1,5,12.0,85.1,128.8,513.4,140.0,0.0,13.8,220.0
+estos nuevos servicios: el Servicio de Teselas Vectoriales de SIGPAC (MVT),3,1,6,12.0,85.1,142.6,491.8,153.8,0.0,13.8,220.6
+5,3,1,7,8.0,491.7,141.5,496.2,149.0,406.6,-1.1,220.0
+. Y,3,1,8,12.0,496.2,142.6,513.7,153.8,4.4,1.1,220.0
+entre junio de 2024 y agosto de 2025 se han publicado otros cinco servicios,3,1,9,12.0,85.1,156.4,513.6,167.6,-411.1,13.8,224.4
+en el Catálogo de Servicios SIGPAC.,3,1,10,12.0,85.1,170.2,293.9,181.4,0.0,13.8,234.6
+En la línea de mejora continua y ampliación con futuros servicios6 de difusión,3,2,11,12.0,85.1,196.7,513.6,209.0,0.0,26.5,223.4
+"del SIGPAC (de datos SIGC), puestos a disposición de todos los usuarios en una",3,2,12,12.0,85.1,211.6,513.6,222.8,0.0,14.9,220.0
+"misma dirección en la nube, se prevé que la migración y ampliación de servicios",3,2,13,12.0,85.1,225.4,513.5,236.6,0.0,13.8,220.0
+"esté finalizada a lo largo del 2027. Incluirá, entre otros, el citado Servicio de",3,2,14,12.0,85.1,239.2,510.4,250.4,0.0,13.8,220.8
+Descargas masivas ATOM a nivel de cada una de las 50 provincias o nivel,3,2,15,12.0,85.1,253.0,513.6,264.2,0.0,13.8,220.0
+determinado por el tamaño de ficheros (a diferencia de las actuales descargas,3,2,16,12.0,85.1,266.8,513.4,278.1,0.0,13.8,220.0
+"por cada uno de los más de 8.000 términos municipales), o el actual Visor",3,2,17,12.0,85.1,280.6,513.5,291.9,0.0,13.8,220.0
+SIGPAC.,3,2,18,12.0,85.1,294.4,133.9,305.7,0.0,13.8,220.0
+En esta Nota se informa de los seis servicios actualmente publicados. Para el,3,3,19,12.0,85.1,322.0,513.4,333.2,0.0,27.6,220.0
+"Servicio de Teselas Vectoriales, únicamente se comentan algunos cambios",3,3,20,12.0,85.1,335.8,513.6,347.0,0.0,13.8,220.0
+respecto de la información que se proporcionó en la anterior Nota WEB del,3,3,21,12.0,85.1,349.6,513.6,360.8,0.0,13.8,220.0
+Servicio MVT de Sigpac.,3,3,22,12.0,85.1,363.4,216.5,374.6,0.0,13.8,220.0
+1. Servicio de Teselas Vectoriales (MVT) de SIGPAC,3,4,23,12.0,103.1,391.0,390.6,402.2,18.0,27.6,220.0
+2. WMS – Web Map Service de SIGPAC7,3,4,24,12.0,103.1,403.7,328.4,416.0,0.0,12.7,220.0
+3. Servicio de Consultas de SIGPAC,3,4,25,12.0,103.1,418.6,302.5,429.8,0.0,14.9,220.0
+4. Servicio OGC API de SIGPAC,3,4,26,12.0,103.1,432.4,282.5,443.7,0.0,13.8,220.0
+5. Servicio de Listas de Códigos SIGPAC,3,4,27,12.0,103.1,446.2,327.8,457.5,0.0,13.8,220.0
+6. Servicio de Salidas Gráficas de SIGPAC,3,4,28,12.0,103.1,460.0,336.5,471.3,0.0,13.8,220.0
+La información del SIGC que se distribuye mediante los nuevos servicios,3,5,29,12.0,85.1,487.6,513.7,498.9,-18.0,27.6,220.0
+descritos en esta Nota8,3,5,30,12.0,85.1,500.3,209.1,512.7,0.0,12.7,220.0
+tiene la consideración de datos específicos de alto valor,3,5,31,12.0,212.4,501.4,513.4,512.7,127.3,1.1,220.0
+"(HVD)9 y, como se establece en el Reglamento de Ejecución 2023/138 de datos",3,6,32,12.0,85.1,514.1,513.4,526.5,-127.3,12.7,220.0
+"de alto valor (high value dataset, HVD), es publicada bajo las condiciones de",3,6,33,12.0,85.1,529.0,513.4,540.3,0.0,14.9,220.0
+5 Se informó del Servicio MVT mediante la Nota web divulgativa Nuevo Servicio de TESELAS,3,7,34,10.0,85.1,567.8,502.2,577.6,0.0,38.8,220.0
+VECTORIALES del SIGPAC.,3,7,35,10.0,85.1,579.8,214.6,589.2,0.0,12.0,220.0
+"6 Los futuros servicios en la nube (Descargas masivas ATOM, Visor SIGPAC, etc.) sustituirán a",3,8,36,10.0,85.1,590.9,510.5,600.7,0.0,11.1,220.0
+"los similares instalados en los servidores del MAPA o FEGA, tal como está ocurriendo con el",3,8,37,10.0,85.1,602.9,499.0,612.2,0.0,12.0,220.0
+Servicio WMS SIGPAC.,3,8,38,10.0,85.1,614.3,191.1,623.6,0.0,11.4,220.0
+7 Este servicio coexistirá transitoriamente con el WMS tradicional qué se deshabilitará a finales,3,9,39,10.0,85.1,625.3,510.4,635.2,0.0,11.1,221.4
+del 2025 (https://wms.mapa.gob.es/sigpac/wms).,3,9,40,10.0,85.1,637.3,303.1,646.7,0.0,12.0,222.7
+8 Así como la que puede descargarse mediante el Servicio ATOM y una parte de la que,3,10,41,10.0,85.1,648.4,475.5,658.2,0.0,11.1,220.0
+proporciona el Visor SIGPAC Nacional: cartografía de Recintos y Elementos del paisaje de la,3,10,42,10.0,85.1,660.4,500.8,669.7,0.0,12.0,220.0
+"campaña PAC vigente; y la cartografía de los Recintos, Elementos del paisaje y Cultivo",3,10,43,10.0,85.1,671.8,474.7,681.1,0.0,11.4,220.0
+declarado de la campaña anterior.,3,10,44,10.0,85.1,683.3,236.5,692.6,0.0,11.5,220.0
+9 El Reglamento HVD no requiere para la categoría Geoespacial ofrecer versiones históricas de,3,11,45,10.0,85.1,694.3,511.7,704.2,0.0,11.1,220.0
+los conjuntos de datos disponibles. El FEGA se compromete a facilitar sus conjuntos de datos,3,11,46,10.0,85.1,706.3,504.0,715.7,0.0,12.0,220.0
+HVD más actualizados (campaña agrícola actual) y también su versión de la campaña anterior.,3,11,47,10.0,85.1,717.8,506.8,727.2,0.0,11.5,220.0
+Página 3 de 13,3,12,48,7.0,274.1,736.8,321.1,743.4,189.0,19.0,220.0
+www.fega.gob.es,3,13,49,7.0,88.6,758.9,135.8,765.3,-185.5,22.1,200.0
+sg.ayudasdirectas@fega.es,3,13,50,7.0,88.6,766.8,162.5,773.5,0.0,7.9,200.0
+"C/ Beneficiencia , 8",3,14,51,7.0,510.3,758.9,566.3,765.3,421.8,-7.9,200.0
+28004 MADRID,3,14,52,7.0,510.3,767.1,558.3,773.5,0.0,8.2,200.0
+,3,15,53,,85.1,786.6,88.4,797.8,-425.2,19.5,
+reutilización de la información distribuida que estable la licencia pública Creative,4,1,1,12.0,85.1,73.5,513.7,84.8,,,220.0
+"Commons, Atribución/Reconocimiento Internacional (CC BY 4.0).",4,1,2,12.0,85.1,87.4,513.7,98.6,0.0,13.8,220.0
+"Complementariamente, el documento Términos de uso de la información de alto",4,1,3,12.0,85.1,101.2,513.5,112.4,0.0,13.8,220.0
+valor del SIGC informa de las condiciones para la redistribución de la información,4,1,4,12.0,85.1,115.0,513.4,126.2,0.0,13.8,220.0
+divulgada.,4,1,5,12.0,85.1,128.8,139.9,140.0,0.0,13.8,220.0
+Tanto para la información del SIGC considerada HVD como para el resto de la,4,2,6,12.0,85.1,156.4,513.7,167.6,0.0,27.6,220.0
+"información SIGPAC u otra información geoespacial del SIGC, en el sitio",4,2,7,12.0,85.1,170.2,513.7,181.4,0.0,13.8,220.0
+"SIGPAC de la Web del FEGA, dentro del apartado de Condiciones de uso de la",4,2,8,12.0,85.1,184.0,513.5,195.2,0.0,13.8,220.0
+"información del SIGPAC, se accede al Acuerdo de Distribución de la Mesa del",4,2,9,12.0,85.1,197.8,513.7,209.0,0.0,13.8,220.0
+"Sistema de Gestión y Control (SGC) que establece los criterios de consulta,",4,2,10,12.0,85.1,211.6,513.5,222.8,0.0,13.8,220.0
+divulgación y reutilización (o redistribución) de la información.,4,2,11,12.0,85.1,225.4,412.1,236.6,0.0,13.8,220.0
+Página 4 de 13,4,3,12,7.0,274.1,736.8,321.1,743.4,189.0,511.5,220.0
+www.fega.gob.es,4,4,13,7.0,88.6,758.9,135.8,765.3,-185.5,22.1,200.0
+"C/ Beneficiencia , 8",4,5,14,7.0,510.3,758.9,566.3,765.3,421.8,0.0,200.0
+28004 MADRID,4,5,15,7.0,510.3,767.1,558.3,773.5,0.0,8.2,200.0
+sg.ayudasdirectas@fega.es,4,6,16,7.0,88.6,766.8,162.5,773.5,-421.8,-0.3,200.0
+,4,7,17,,85.1,786.6,88.4,797.8,-3.5,19.7,
+Nuevos medios SIGPAC de divulgación de datos SIGC,5,1,1,14.0,85.1,73.9,447.4,87.0,,,235.0
+1. Servicio de Teselas Vectoriales (MVT) de SIGPAC,5,2,2,14.0,103.1,117.6,435.3,130.7,18.0,43.7,220.0
+El Servicio MVT lanzado en 2024 se actualiza con la entrada en vigor de la,5,3,3,12.0,85.1,221.0,513.5,232.3,-18.0,103.5,220.0
+"campaña vigente en febrero de 2025, empezando a proporcionar datos de",5,3,4,12.0,85.1,234.8,513.5,246.1,0.0,13.8,220.0
+"Recintos y Elementos del paisaje de la campaña anterior. Además, sigue",5,3,5,12.0,85.1,248.6,513.7,259.9,0.0,13.8,220.0
+proporcionando dichos datos para la campaña vigente y la capa de Cultivos,5,3,6,12.0,85.1,262.5,513.7,273.7,0.0,13.8,220.0
+declarados de la campaña anterior que ya se proporcionaban.,5,3,7,12.0,85.1,276.3,415.1,287.5,0.0,13.8,220.0
+Presenta 2 URL para que las aplicaciones GIS10 se configuren para mostrar sus,5,4,8,12.0,85.1,302.8,513.7,315.1,0.0,26.5,220.0
+datos.,5,4,9,12.0,85.1,317.7,121.2,328.9,0.0,14.9,220.0
+- https://sigpac-hubcloud.es/mvt/[parametro]@3857@geojson/,5,5,10,12.0,103.1,331.5,447.6,342.7,18.0,13.8,220.0
+{z}/{x}/{y}.geojson: para mostrar los datos de la campaña vigente.,5,5,11,12.0,121.1,345.3,472.2,356.5,18.0,13.8,220.0
+También la capa Cultivo declarado de la campaña anterior.,5,5,12,12.0,121.1,359.1,435.1,370.3,0.0,13.8,220.0
+- https://sigpac-hubcloud.es/mvt/anterior/,5,5,13,12.0,103.1,372.9,334.7,384.1,-18.0,13.8,222.9
+[parametro]@3857@geojson/{z}/{x}/{y}.geojson para visualizar los datos,5,6,14,12.0,121.1,386.7,508.5,397.9,18.0,13.8,220.0
+completos de la campaña anterior.,5,6,15,12.0,121.1,400.5,305.1,411.7,0.0,13.8,220.0
+2. WMS – Web Map Service de SIGPAC,5,7,16,14.0,103.1,442.2,361.6,455.4,-18.0,41.7,220.0
+"Se trata de un servicio WMS (Web Map Service), conforme con la Directiva",5,8,17,12.0,85.1,571.4,513.7,582.6,-18.0,129.2,220.0
+"INSPIRE y la UNE-EN ISO 19128:2009, que permite acceder a información",5,8,18,12.0,85.1,585.2,510.4,596.4,0.0,13.8,220.0
+georreferenciada de manera dinámica y estandarizada.,5,8,19,12.0,85.1,599.0,382.5,610.2,0.0,13.8,220.0
+Este servicio facilita la interoperabilidad y la integración con otras aplicaciones,5,9,20,12.0,85.1,626.6,513.3,637.9,0.0,27.6,220.0
+mediante la generación de mapas de forma dinámica a partir de coordenadas,5,9,21,12.0,85.1,640.4,513.1,651.7,0.0,13.8,220.0
+geográficas en formato de imagen como PNG o JPEG. Permite visualizar y,5,9,22,12.0,85.1,654.2,513.6,665.5,0.0,13.8,220.0
+10 GIS (Geographic Information System) o SIG (Sistemas de Información Geográfica) son,5,10,23,10.0,85.1,694.3,483.5,704.2,0.0,40.1,220.0
+"herramientas informáticas (públicas o privadas) que permiten gestionar, analizar y visualizar",5,10,24,10.0,85.1,706.3,495.7,715.7,0.0,12.0,220.0
+datos geográficos: QGIS (software de código abierto); ArcGIS (software comercial); etc.,5,10,25,10.0,85.1,717.8,473.6,727.2,0.0,11.5,220.0
+Página 5 de 13,5,11,26,7.0,274.1,736.8,321.1,743.4,189.0,19.0,220.0
+www.fega.gob.es,5,12,27,7.0,88.6,758.9,135.8,765.3,-185.5,22.1,200.0
+sg.ayudasdirectas@fega.es,5,12,28,7.0,88.6,766.8,162.5,773.5,0.0,7.9,200.0
+"C/ Beneficiencia , 8",5,13,29,7.0,510.3,758.9,566.3,765.3,421.8,-7.9,200.0
+28004 MADRID,5,13,30,7.0,510.3,767.1,558.3,773.5,0.0,8.2,200.0
+,5,14,31,,85.1,786.6,88.4,797.8,-425.2,19.5,
+consultar la cartografía de los Recintos y los Elementos del paisaje de la,6,1,1,12.0,85.1,73.5,513.5,84.8,,,220.0
+campaña PAC vigente y la cartografía del Cultivo declarado de la campaña,6,1,2,12.0,85.1,87.4,513.5,98.6,0.0,13.8,220.0
+anterior.,6,1,3,12.0,85.1,101.2,129.2,112.4,0.0,13.8,220.0
+El contenido del servicio puede cargarse en un software SIG o embeberse dentro,6,2,4,12.0,85.1,115.0,513.3,126.2,0.0,13.8,220.0
+de un visualizador o geoportal11 empleando la nueva URL https://sigpac-,6,2,5,12.0,85.1,127.7,510.5,140.0,0.0,12.7,220.0
+"hubcloud.es/wms. Soporta un total de tres consultas (GetCapabilites, GetMap y",6,2,6,12.0,85.1,142.6,513.3,153.8,0.0,14.9,220.0
+GetFeatureInfo). El contenido es el mismo que el mostrado en la URL tradicional,6,2,7,12.0,85.1,156.4,510.3,167.6,0.0,13.8,220.0
+"https://wms.mapa.gob.es/sigpac/wms, que se deshabilitará a finales del 2025.",6,2,8,12.0,85.1,170.2,499.6,181.4,0.0,13.8,220.0
+En Ejemplos del Servicio WMS se muestran algunos usos de este servicio.,6,3,9,12.0,85.1,197.8,483.8,209.0,0.0,27.6,220.0
+Ejemplo de Visualización de recintos mediante WMS en QGIS,6,4,10,11.0,137.2,392.2,458.2,402.5,52.1,194.4,235.0
+3. Servicio de Consultas de SIGPAC,6,5,11,14.0,103.1,433.0,332.7,446.1,-34.1,40.8,220.0
+Este servicio permite acceder a las propiedades de un recinto de forma,6,6,12,12.0,85.1,544.6,513.6,555.9,-18.0,111.6,220.0
+estructurada (al igual que en el Visor SIGPAC se pueden consultar dichas,6,6,13,12.0,85.1,558.4,513.2,569.7,0.0,13.8,220.0
+"propiedades y obtener un informe en formato PDF), pudiendo almacenar su",6,6,14,12.0,85.1,572.2,513.5,583.5,0.0,13.8,220.0
+respuesta o emplearla dentro de otros desarrollos informáticos.,6,6,15,12.0,85.1,586.0,421.2,597.3,0.0,13.8,220.0
+"Por tanto, se trata de un servicio de consultas basado en la infraestructura del",6,7,16,12.0,85.1,613.6,513.5,624.9,0.0,27.6,220.0
+Visor SIGPAC que permite obtener información de la campaña vigente en,6,7,17,12.0,85.1,627.4,513.7,638.7,0.0,13.8,220.0
+formatos JSON y GEOJSON. Las consultas se realizan mediante peticiones,6,7,18,12.0,85.1,641.2,513.4,652.5,0.0,13.8,220.0
+HTTP de tipo REST (Representational state transfer).,6,7,19,12.0,85.1,655.0,370.0,666.3,0.0,13.8,220.0
+11 Ejemplo: GeoPortal del MAPA: https://sig.mapama.gob.es/geoportal/,6,8,20,10.0,85.1,717.4,399.0,727.2,0.0,62.3,220.0
+Página 6 de 13,6,9,21,7.0,274.1,736.8,321.1,743.4,189.0,19.5,220.0
+www.fega.gob.es,6,10,22,7.0,88.6,758.9,135.8,765.3,-185.5,22.1,200.0
+sg.ayudasdirectas@fega.es,6,10,23,7.0,88.6,766.8,162.5,773.5,0.0,7.9,200.0
+"C/ Beneficiencia , 8",6,11,24,7.0,510.3,758.9,566.3,765.3,421.8,-7.9,200.0
+28004 MADRID,6,11,25,7.0,510.3,767.1,558.3,773.5,0.0,8.2,200.0
+,6,12,26,,85.1,786.6,88.4,797.8,-425.2,19.5,
+"Actualmente pueden realizarse un total de 11 consultas diferentes, entre las que",7,1,1,12.0,85.1,73.5,513.2,84.8,,,220.0
+destacan:,7,1,2,12.0,85.1,87.4,137.2,98.6,0.0,13.8,220.0
+- Propiedades de un recinto por códigos SIGPAC o coordenadas.,7,2,3,12.0,103.1,115.0,461.1,126.2,18.0,27.6,220.0
+- Centroide de un recinto por códigos SIGPAC.,7,2,4,12.0,103.1,128.8,363.3,140.0,0.0,13.8,220.0
+- Referencia SIGPAC de un recinto a partir de coordenadas.,7,2,5,12.0,103.1,142.6,433.9,153.8,0.0,13.8,220.0
+- Referencia Catastral de una parcela a partir de referencia SIGPAC.,7,2,6,12.0,103.1,156.4,479.3,167.6,0.0,13.8,220.0
+- Propiedades de los recintos contenidos en una parcela SIGPAC.,7,2,7,12.0,103.1,170.2,465.2,181.4,0.0,13.8,220.0
+"- Intersecciones de un recinto con diferentes capas (Red Natura,",7,2,8,12.0,103.1,184.0,513.2,195.2,0.0,13.8,220.0
+"Montanera, Fitosanitarios, Nitratos o Pastos Permanentes).",7,2,9,12.0,121.1,197.8,436.5,209.0,18.0,13.8,220.0
+EJEMPLO: https://sigpac-,7,3,10,12.0,85.1,225.4,219.2,236.6,-36.0,27.6,225.2
+hubcloud.es/servicioconsultassigpac/query/recinfo/6/60/0/0/41/126/1.json,7,4,11,12.0,85.1,239.2,473.9,250.4,0.0,13.8,220.0
+Ejemplo de Respuesta a la consulta de propiedades de un recinto,7,5,12,11.0,125.9,472.0,469.5,482.3,40.8,232.8,235.0
+4. Servicio OGC API de SIGPAC,7,6,13,14.0,103.1,512.9,309.4,526.1,-22.8,40.9,220.0
+"El Reglamento de Ejecución 2023/138 establece, para la categoría de datos",7,7,14,12.0,85.1,644.1,513.3,655.4,-18.0,131.2,220.0
+"Geoespaciales, que los conjuntos de datos de alto valor se pondrán a disposición",7,7,15,12.0,85.1,657.9,513.6,669.2,0.0,13.8,220.0
+"para su reutilización, entre otras, con las siguientes condiciones:",7,7,16,12.0,85.1,671.7,427.9,683.0,0.0,13.8,220.0
+- licencia Creative Commons BY 4.0 u otra menos restrictiva.,7,8,17,12.0,103.1,699.3,437.9,710.6,18.0,27.6,220.0
+"- formato abierto, legible por máquina y documentado públicamente;",7,8,18,12.0,103.1,713.1,476.3,724.4,0.0,13.8,220.0
+Página 7 de 13,7,9,19,7.0,274.1,736.8,321.1,743.4,171.0,23.7,220.0
+www.fega.gob.es,7,10,20,7.0,88.6,758.9,135.8,765.3,-185.5,22.1,200.0
+sg.ayudasdirectas@fega.es,7,10,21,7.0,88.6,766.8,162.5,773.5,0.0,7.9,200.0
+"C/ Beneficiencia , 8",7,11,22,7.0,510.3,758.9,566.3,765.3,421.8,-7.9,200.0
+28004 MADRID,7,11,23,7.0,510.3,767.1,558.3,773.5,0.0,8.2,200.0
+,7,12,24,,85.1,786.6,88.4,797.8,-425.2,19.5,
+- mediante interfaces de programación de aplicaciones (API).,8,1,1,12.0,103.1,73.5,442.5,84.8,,,220.0
+"Conforme a estas directrices, el servicio OGC API de SIGPAC, mediante la URL",8,2,2,12.0,85.1,101.2,513.6,112.4,-18.0,27.6,220.0
+"https://sigpac-hubcloud.es/ogcapi y siguiendo el estándar OGC API Features,",8,2,3,12.0,85.1,115.0,510.4,126.2,0.0,13.8,220.0
+permite consultar geometrías12 y propiedades de las capas Recinto y Elementos,8,2,4,12.0,85.1,127.7,513.6,140.0,0.0,12.7,220.0
+del paisaje de la campaña PAC vigente y Cultivo declarado de la campaña,8,2,5,12.0,85.1,142.6,513.5,153.8,0.0,14.9,220.0
+anterior.,8,2,6,12.0,85.1,156.4,129.2,167.6,0.0,13.8,220.0
+En la web se proporciona documentación detallada para facilitar su integración y,8,3,7,12.0,85.1,184.0,513.3,195.2,0.0,27.6,220.0
+uso por parte de desarrolladores y usuarios interesados en los datos,8,3,8,12.0,85.1,197.8,513.2,209.0,0.0,13.8,220.0
+geoespaciales del SIGC. En Ejemplos del Servicio OGC API se muestran,8,3,9,12.0,85.1,211.6,513.6,222.8,0.0,13.8,220.0
+algunos usos de este servicio.,8,3,10,12.0,85.1,225.4,245.7,236.6,0.0,13.8,220.0
+Ejemplo de Visualización de recintos y elementos del paisaje mediante OGC API,8,4,11,11.0,87.6,401.9,510.5,412.2,2.5,176.5,235.0
+en QGIS,8,4,12,11.0,275.9,414.5,319.6,424.8,188.3,12.6,235.0
+5. Servicio de Listas de Códigos SIGPAC,8,5,13,14.0,103.1,455.4,362.3,468.6,-172.8,40.9,220.0
+Este servicio permite acceder a las listas controladas de códigos oficiales del,8,6,14,12.0,85.1,556.3,513.5,567.5,-18.0,100.8,220.0
+SIGPAC. Devuelve el listado de valores posibles para un concepto concreto (por,8,6,15,12.0,85.1,570.1,513.7,581.3,0.0,13.8,220.0
+"ejemplo, valores de provincias, municipios o usos SIGPAC, entre otros).",8,6,16,12.0,85.1,583.9,468.6,595.1,0.0,13.8,220.0
+"Mediante una petición HTTP, se puede consultar la lista de valores posibles que",8,7,17,12.0,85.1,611.5,513.4,622.7,0.0,27.6,220.0
+"puede tener un atributo o concepto concreto de las capas Recinto, Elementos",8,7,18,12.0,85.1,625.3,513.1,636.5,0.0,13.8,220.0
+del paisaje o Cultivo declarado. La respuesta se obtiene en formato JSON. De,8,7,19,12.0,85.1,639.1,513.2,650.3,0.0,13.8,220.0
+"igual forma que el servicio de Consultas SIGPAC, este servicio es fácilmente",8,7,20,12.0,85.1,652.9,513.4,664.1,0.0,13.8,220.0
+integrable en multitud de desarrollos informáticos de empresas u otros usuarios.,8,7,21,12.0,85.1,666.7,510.0,677.9,0.0,13.8,220.0
+12 Las geometrías están representadas en el sistema de referencia WGS 84 con orden de eje,8,8,22,10.0,85.1,705.9,501.5,715.7,0.0,39.2,220.0
+de longitud/latitud,8,8,23,10.0,85.1,717.8,163.3,727.2,0.0,12.0,220.0
+Página 8 de 13,8,9,24,7.0,274.1,736.8,321.1,743.4,189.0,19.0,220.0
+www.fega.gob.es,8,10,25,7.0,88.6,758.9,135.8,765.3,-185.5,22.1,200.0
+sg.ayudasdirectas@fega.es,8,10,26,7.0,88.6,766.8,162.5,773.5,0.0,7.9,200.0
+"C/ Beneficiencia , 8",8,11,27,7.0,510.3,758.9,566.3,765.3,421.8,-7.9,200.0
+28004 MADRID,8,11,28,7.0,510.3,767.1,558.3,773.5,0.0,8.2,200.0
+,8,12,29,,85.1,786.6,88.4,797.8,-425.2,19.5,
+Actualmente se pueden consultar listas de códigos de:,9,1,1,12.0,85.1,73.5,375.1,84.8,,,220.0
+- Provincias,9,2,2,12.0,103.1,101.2,176.5,112.4,18.0,27.6,220.0
+- Municipios,9,2,3,12.0,103.1,115.0,177.8,126.2,0.0,13.8,220.0
+- Usos SIGPAC,9,2,4,12.0,103.1,128.8,197.2,140.0,0.0,13.8,220.0
+- Tipo de aprovechamiento,9,3,5,12.0,103.1,142.6,256.5,153.8,0.0,13.8,220.0
+- Incidencias,9,3,6,12.0,103.1,156.4,181.2,167.6,0.0,13.8,220.0
+- Líneas de ayuda directa,9,4,7,12.0,103.1,170.2,249.1,181.4,0.0,13.8,220.0
+- Líneas de ayuda directa PDR,9,4,8,12.0,103.1,184.0,277.9,195.2,0.0,13.8,220.0
+- Productos,9,4,9,12.0,103.1,197.8,175.2,209.0,0.0,13.8,220.0
+- Región 2023,9,4,10,12.0,103.1,211.6,189.2,222.8,0.0,13.8,220.0
+"- Elementos del paisaje tipo punto, línea y área.",9,5,11,12.0,103.1,225.4,367.0,236.6,0.0,13.8,220.0
+EJEMPLO: https://sigpac-hubcloud.es/codigossigpac/cod_aprovechamiento.json,9,6,12,12.0,85.1,253.0,510.1,264.2,-18.0,27.6,221.6
+Ejemplo de Respuesta a la consulta de listado de códigos de tipo de,9,7,13,11.0,118.8,356.8,479.5,367.1,33.7,103.8,235.0
+aprovechamiento,9,7,14,11.0,252.2,369.5,343.4,379.8,133.3,12.7,235.0
+6. Servicio de Salidas Gráficas de SIGPAC,9,8,15,14.0,103.1,410.3,372.5,423.4,-149.1,40.8,220.0
+Este servicio proporciona salidas gráficas en formato PDF con información,9,9,16,12.0,85.1,530.5,513.6,541.7,-18.0,120.2,220.0
+gráfica y alfanumérica de Recintos de la campaña PAC vigente y del Cultivo,9,9,17,12.0,85.1,544.3,513.2,555.5,0.0,13.8,220.0
+declarado de la campaña anterior. La generación y presentación de la salida,9,9,18,12.0,85.1,558.1,513.2,569.3,0.0,13.8,220.0
+"gráfica se lleva a cabo desde el navegador de internet, siendo éste el encargado",9,9,19,12.0,85.1,571.9,513.3,583.1,0.0,13.8,220.0
+de obtener todo lo necesario para la generación de dicha salida gráfica.,9,9,20,12.0,85.1,585.7,465.7,596.9,0.0,13.8,220.0
+El componente de generación de salidas gráficas puede llamarse de dos modos:,9,10,21,12.0,85.1,613.3,510.2,624.5,0.0,27.6,220.0
+"Incrustación del componente (es decir, inserción de un elemento script en el",9,10,22,12.0,85.1,627.1,513.4,638.3,0.0,13.8,220.0
+archivo HTML de la aplicación anfitriona) o Invocación mediante una URL (URL,9,10,23,12.0,85.1,640.9,513.3,652.1,0.0,13.8,220.0
+"a la que se le pasan una serie de parámetros, como provincia, municipio, parcela,",9,10,24,12.0,85.1,654.7,513.5,665.9,0.0,13.8,220.0
+"recinto, etc., para generar directamente salidas gráficas). Una API (Interfaz de",9,10,25,12.0,85.1,668.5,513.6,679.7,0.0,13.8,220.0
+Programación de Aplicaciones) permite establecer la comunicación entre dicho,9,10,26,12.0,85.1,682.3,510.4,693.5,0.0,13.8,220.0
+componente y el navegador web.,9,10,27,12.0,85.1,696.1,261.8,707.3,0.0,13.8,220.0
+Página 9 de 13,9,11,28,7.0,274.1,736.8,321.1,743.4,189.0,40.7,220.0
+www.fega.gob.es,9,12,29,7.0,88.6,758.9,135.8,765.3,-185.5,22.1,200.0
+sg.ayudasdirectas@fega.es,9,12,30,7.0,88.6,766.8,162.5,773.5,0.0,7.9,200.0
+"C/ Beneficiencia , 8",9,13,31,7.0,510.3,758.9,566.3,765.3,421.8,-7.9,200.0
+28004 MADRID,9,13,32,7.0,510.3,767.1,558.3,773.5,0.0,8.2,200.0
+,9,14,33,,85.1,786.6,88.4,797.8,-425.2,19.5,
+En Ejemplos Salida Gráfica SIGPAC se recogen algunos para los dos modos.,10,1,1,12.0,85.1,73.5,513.5,84.8,,,220.0
+"Así, en los de Salida Gráfica SIGPAC - Llamada URL se puede ver una llamada",10,1,2,12.0,85.1,87.4,513.5,98.6,0.0,13.8,220.0
+tipo a la capa de cultivo declarado:,10,1,3,12.0,85.1,101.2,269.9,112.4,0.0,13.8,220.0
+"https://sigpac-hubcloud.es/salidasgraficassigpac/?declaracion/37/108/37010166/1, que",10,2,4,11.0,85.1,115.0,513.7,126.2,0.0,13.8,220.0
+proporciona un PDF descargable similar al que ofrece el Visor SIGPAC.,10,2,5,12.0,85.1,128.8,467.4,140.0,0.0,13.8,220.0
+Ejemplo de pdf descargable de cultivo declarado,10,3,6,11.0,169.9,434.9,425.4,445.3,84.8,306.1,235.0
+"A continuación, se recoge una Tabla resumen orientativa de los tradicionales y",10,4,7,12.0,85.1,503.0,513.4,514.2,-84.8,68.1,220.0
+nuevos medios de difusión SIGPAC de datos SIGC:,10,4,8,12.0,85.1,516.8,361.5,528.0,0.0,13.8,220.0
+Tabla resumen de los medios de difusión SIGPAC de datos SIGC,10,5,9,12.0,112.6,544.4,482.7,555.6,27.5,27.6,235.0
+Servicio Ventajas Limitaciones Propuestas de uso,10,6,10,11.0,97.0,587.1,507.1,597.4,-15.6,42.7,235.0
+- Interfaz sencilla e,10,7,11,11.0,156.5,604.4,251.9,614.7,59.5,17.3,220.0
+intuitiva,10,7,12,11.0,156.5,617.0,193.8,627.3,0.0,12.6,220.0
+- No permite,10,8,13,11.0,282.4,604.4,346.1,614.7,125.9,-12.6,220.0
+automatización,10,8,14,11.0,282.4,617.0,356.5,627.3,0.0,12.6,220.0
+- Consulta rápida de,10,8,15,11.0,402.9,604.4,505.1,614.7,120.5,-12.6,220.0
+parcelas y recintos,10,8,16,11.0,402.9,617.0,494.7,627.3,0.0,12.6,220.0
+- Información SIGPAC,10,8,17,11.0,156.5,630.2,268.4,640.5,-246.4,13.2,220.0
+de Campaña PAC - Limitada,10,8,18,11.0,156.5,636.7,333.8,653.1,0.0,6.5,220.0
+personalización de,10,8,19,11.0,282.4,649.4,377.3,659.7,125.9,12.7,220.0
+capas,10,8,20,11.0,282.4,662.0,311.8,672.3,0.0,12.6,220.0
+- Gestión PAC.,10,8,21,11.0,402.9,636.7,479.4,647.0,120.5,-25.3,220.0
+Verificación visual de,10,8,22,11.0,402.9,649.4,509.4,659.7,0.0,12.7,220.0
+datos por técnicos - Útil para validaciones,10,8,23,11.0,156.5,654.1,492.3,672.3,-246.4,4.7,220.0
+visuales rápidas,10,8,24,11.0,156.5,668.6,235.4,678.9,0.0,14.5,220.0
+- Útil para trámites,10,8,25,11.0,156.5,679.9,249.4,692.1,0.0,11.3,220.0
+(Ayudas PAC),10,8,26,11.0,156.5,694.4,226.3,704.7,0.0,14.5,220.0
+- Requiere conexión,10,8,27,11.0,285.5,681.8,387.0,692.1,129.0,-12.6,220.0
+estable,10,8,28,11.0,282.4,694.4,317.9,704.7,-3.1,12.6,220.0
+- Formación o soporte,10,8,29,11.0,402.9,681.8,513.6,692.1,120.5,-12.6,220.0
+a usuarios externos,10,8,30,11.0,402.9,694.4,499.0,704.7,0.0,12.6,220.0
+Visor,10,9,31,11.0,104.7,643.0,135.3,653.4,-298.2,-51.4,235.0
+SIGPAC,10,9,32,11.0,97.3,655.7,139.6,666.1,-7.3,12.7,235.0
+Página 10 de 13,10,10,33,7.0,272.2,736.8,323.1,743.4,174.9,81.1,220.0
+www.fega.gob.es,10,11,34,7.0,88.6,758.9,135.8,765.3,-183.6,22.1,200.0
+sg.ayudasdirectas@fega.es,10,11,35,7.0,88.6,766.8,162.5,773.5,0.0,7.9,200.0
+"C/ Beneficiencia , 8",10,12,36,7.0,510.3,758.9,566.3,765.3,421.8,-7.9,200.0
+28004 MADRID,10,12,37,7.0,510.3,767.1,558.3,773.5,0.0,8.2,200.0
+,10,13,38,,85.1,786.6,88.4,797.8,-425.2,19.5,
+Servicio Ventajas Limitaciones Propuestas de uso,11,1,1,11.0,97.0,74.7,507.1,85.1,,,235.0
+- Acceso selectivo a,11,1,2,11.0,156.5,91.1,257.5,101.4,59.5,16.3,220.0
+datos vectoriales,11,1,3,11.0,156.5,103.7,239.0,114.0,0.0,12.6,220.0
+- Formatos de,11,2,4,11.0,156.5,117.8,228.1,128.2,0.0,14.2,220.0
+descarga: GPKG y Shp,11,2,5,11.0,156.5,130.4,271.0,140.8,0.0,12.6,220.0
+- Archivos grandes y,11,3,6,11.0,282.4,117.8,385.8,128.2,125.9,-12.6,220.0
+pesados,11,3,7,11.0,282.4,130.4,324.1,140.8,0.0,12.6,220.0
+- Repositorios,11,4,8,11.0,402.9,117.8,473.9,128.2,120.5,-12.6,220.0
+internos de datos,11,4,9,11.0,402.9,130.4,487.4,140.8,0.0,12.6,220.0
+- Requiere,11,5,10,11.0,282.4,143.6,336.8,154.0,-120.5,13.2,220.0
+almacenamiento en,11,5,11,11.0,282.4,156.2,381.6,166.6,0.0,12.6,220.0
+local,11,5,12,11.0,282.4,168.9,305.0,179.3,0.0,12.7,220.0
+- Análisis y,11,6,13,11.0,402.9,150.0,459.2,160.3,120.5,-19.0,220.0
+explotación masiva,11,6,14,11.0,402.9,162.6,496.5,172.9,0.0,12.6,220.0
+Servicio,11,7,15,11.0,97.0,156.6,142.9,166.9,-305.9,-6.0,235.0
+de,11,7,16,11.0,112.0,169.2,127.9,179.5,15.0,12.6,235.0
+descargas,11,7,17,11.0,91.2,181.8,148.8,192.1,-20.8,12.6,235.0
+ATOM,11,7,18,11.0,102.3,194.5,134.7,204.9,11.0,12.7,235.0
+- Organizado por,11,8,19,11.0,156.5,169.2,242.1,179.5,54.2,-25.3,220.0
+provincias y municipios,11,8,20,11.0,156.5,181.8,269.7,192.1,0.0,12.6,220.0
+- No tiene,11,9,21,11.0,282.4,182.0,333.2,192.4,125.9,0.2,220.0
+visualización directa y,11,9,22,11.0,282.4,194.7,392.5,205.1,0.0,12.7,220.0
+actualizada,11,9,23,11.0,282.4,207.3,338.1,217.7,0.0,12.6,220.0
+- Cruces con otras,11,9,24,11.0,402.9,188.6,495.8,199.0,120.5,-18.7,220.0
+"fuentes (catastro,",11,9,25,11.0,402.9,201.3,491.0,211.7,0.0,12.7,220.0
+"ayudas, etc.)",11,9,26,11.0,402.9,213.9,466.0,224.3,0.0,12.6,220.0
+- Ideal para análisis,11,9,27,11.0,156.5,220.5,254.9,230.9,-246.4,6.6,220.0
+masivos,11,9,28,11.0,156.5,233.1,197.0,243.5,0.0,12.6,220.0
+- Navegación poco,11,9,29,11.0,282.4,220.5,377.3,230.9,125.9,-12.6,220.0
+amigable,11,9,30,11.0,282.4,233.1,327.1,243.5,0.0,12.6,220.0
+- Visualización rápida y,11,10,31,11.0,156.5,247.3,272.7,257.7,-125.9,14.2,220.0
+fluida,11,10,32,11.0,156.5,260.1,182.8,270.4,0.0,12.8,220.0
+- No compatible con,11,11,33,11.0,282.4,268.0,383.4,278.3,125.9,7.9,220.0
+SIG clásicos,11,11,34,11.0,282.4,280.7,343.6,291.0,0.0,12.7,220.0
+- Desarrollo de,11,11,35,11.0,402.9,268.0,478.2,278.3,120.5,-12.7,220.0
+visores y aplicaciones - Ideal para entornos,11,11,36,11.0,156.5,273.1,509.9,291.0,-246.4,5.2,220.0
+web o móviles,11,11,37,11.0,156.5,285.9,226.2,296.2,0.0,12.7,220.0
+- Bajo consumo de red,11,11,38,11.0,156.5,300.1,267.2,310.5,0.0,14.3,220.0
+- Acceso selectivo a,11,11,39,11.0,156.5,314.4,257.5,324.8,0.0,14.3,220.0
+datos vectoriales - Requiere,11,11,40,11.0,156.5,327.1,340.0,338.0,0.0,12.7,220.0
+Map,11,12,41,11.0,107.4,306.7,129.5,317.1,-49.1,-20.4,235.0
+Vector,11,12,42,11.0,101.3,319.3,138.7,329.7,-6.1,12.6,235.0
+Tile (MVT),11,12,43,11.0,92.2,332.1,144.8,342.4,-9.1,12.7,235.0
+conocimientos,11,13,44,11.0,282.4,340.2,355.8,350.6,190.2,8.2,220.0
+específicos para su,11,13,45,11.0,282.4,352.9,380.2,363.3,0.0,12.7,220.0
+correcta integración,11,13,46,11.0,282.4,365.5,379.1,375.9,0.0,12.6,220.0
+- Portales web ligeros,11,13,47,11.0,402.9,327.4,511.8,337.7,120.5,-38.2,220.0
+- Integrable en SIG y responsivos,11,13,48,11.0,156.5,340.0,470.2,350.6,-246.4,12.6,220.0
+profesionales,11,13,49,11.0,156.5,352.9,222.0,363.3,0.0,13.0,220.0
+- Posibilidad de,11,13,50,11.0,156.5,366.0,234.8,376.4,0.0,13.1,220.0
+personalizar estilo,11,13,51,11.0,156.5,378.7,248.2,389.1,0.0,12.7,220.0
+cliente,11,13,52,11.0,156.5,391.3,188.3,401.7,0.0,12.6,220.0
+- Visualización en,11,13,53,11.0,406.0,372.4,495.3,382.7,249.5,-19.0,220.0
+proyectos SIG,11,13,54,11.0,402.9,385.0,472.7,395.3,-3.1,12.6,220.0
+- Integrable en SIG,11,14,55,11.0,156.5,412.1,252.5,422.4,-246.4,27.1,220.0
+profesionales,11,14,56,11.0,156.5,424.7,222.0,435.0,0.0,12.6,220.0
+"- Sólo visualización,",11,15,57,11.0,282.4,412.1,382.8,422.4,125.9,-12.6,220.0
+no descarga y edición,11,15,58,11.0,282.4,424.7,389.5,435.0,0.0,12.6,220.0
+- Visualización en,11,16,59,11.0,402.9,412.1,492.3,422.4,120.5,-12.6,220.0
+proyectos SIG,11,16,60,11.0,402.9,424.7,472.7,435.0,0.0,12.6,220.0
+WMS,11,17,61,11.0,104.9,444.8,135.0,455.1,-298.0,20.1,235.0
+(Web Map,11,17,62,11.0,92.4,457.4,147.4,467.7,-12.5,12.6,235.0
+Service),11,17,63,11.0,97.0,470.0,139.9,480.3,4.6,12.6,235.0
+- Puede ser lento a,11,18,64,11.0,282.4,451.0,378.5,461.3,185.4,-19.0,220.0
+gran escala,11,18,65,11.0,282.4,463.7,339.4,474.1,0.0,12.7,220.0
+- Apoyo en validación,11,19,66,11.0,402.9,451.0,511.2,461.3,120.5,-12.7,220.0
+espacial,11,19,67,11.0,402.9,463.7,443.3,474.1,0.0,12.7,220.0
+- Estándar OGC,11,20,68,11.0,156.5,464.2,238.5,474.5,-246.4,0.5,220.0
+interoperable,11,20,69,11.0,156.5,476.8,220.8,487.1,0.0,12.6,220.0
+- Sin personalización,11,21,70,11.0,282.4,490.0,387.6,500.3,125.9,13.2,220.0
+de estilo,11,21,71,11.0,282.4,502.6,323.5,512.9,0.0,12.6,220.0
+- Integración en,11,22,72,11.0,402.9,490.0,482.4,500.3,120.5,-12.6,220.0
+visores y aplicaciones,11,22,73,11.0,402.9,502.6,509.9,512.9,0.0,12.6,220.0
+- Consulta individual,11,23,74,11.0,282.4,536.3,384.5,546.7,-120.5,33.7,220.0
+(no masiva),11,23,75,11.0,282.4,548.9,340.0,559.3,0.0,12.6,220.0
+- Formularios de,11,23,76,11.0,402.9,523.4,486.1,533.7,120.5,-25.6,220.0
+consulta interna,11,23,77,11.0,402.9,536.0,480.7,546.3,0.0,12.6,220.0
+- Formato estructurado,11,23,78,11.0,156.5,549.2,271.5,559.5,-246.4,13.2,220.0
+(JSON/GEOJSON),11,23,79,11.0,156.5,561.7,250.0,572.1,0.0,12.6,220.0
+- Integración en flujos,11,23,80,11.0,402.9,549.2,511.2,559.5,246.4,-12.6,220.0
+de tramitación,11,23,81,11.0,402.9,561.8,472.1,572.1,0.0,12.6,220.0
+- Rápido y ligero,11,23,82,11.0,156.5,576.2,236.6,586.5,-246.4,14.4,220.0
+- No admite búsqueda,11,23,83,11.0,282.4,581.3,393.7,591.7,125.9,5.2,220.0
+espacial,11,23,84,11.0,282.4,593.9,322.8,604.3,0.0,12.6,220.0
+- Backend para,11,23,85,11.0,402.9,575.0,480.6,585.3,120.5,-19.0,220.0
+portales o,11,23,86,11.0,402.9,587.6,454.3,597.9,0.0,12.6,220.0
+aplicaciones - Reutilizable en,11,23,87,11.0,156.5,595.4,463.4,610.6,-246.4,7.8,220.0
+aplicaciones,11,23,88,11.0,156.5,608.0,217.0,618.3,0.0,12.6,220.0
+- Consulta de recintos,11,24,89,11.0,156.5,529.7,263.6,540.1,0.0,-78.2,220.0
+Servicio,11,25,90,11.0,97.0,542.8,142.9,553.1,-59.5,13.1,235.0
+de,11,25,91,11.0,112.0,555.5,127.9,565.9,15.0,12.7,235.0
+consultas,11,25,92,11.0,92.8,568.1,147.2,578.5,-19.2,12.6,235.0
+(API,11,25,93,11.0,107.4,580.8,132.5,591.2,14.6,12.7,235.0
+REST),11,25,94,11.0,101.9,593.4,135.0,603.8,-5.5,12.6,235.0
+- Más eficiente que,11,26,95,11.0,156.5,627.1,252.5,637.4,54.6,33.6,220.0
+WFS,11,26,96,11.0,156.5,639.8,181.0,650.1,0.0,12.7,220.0
+- Requiere,11,27,97,11.0,282.4,646.5,336.8,656.9,125.9,6.7,220.0
+conocimientos,11,27,98,11.0,282.4,659.2,355.8,669.6,0.0,12.7,220.0
+técnicos,11,27,99,11.0,282.4,671.8,322.9,682.2,0.0,12.6,220.0
+- Automatización de,11,27,100,11.0,402.9,640.0,503.3,650.4,120.5,-31.8,220.0
+- Compatible con consultas SIGPAC,11,27,101,11.0,156.5,652.6,494.1,663.2,-246.4,12.6,220.0
+JSON/GeoJSON,11,27,102,11.0,156.5,665.6,239.2,675.9,0.0,12.9,220.0
+OGC API -,11,28,103,11.0,91.8,659.2,145.1,669.6,-64.7,-6.3,235.0
+Features,11,28,104,11.0,95.5,671.8,141.5,682.2,3.7,12.6,235.0
+- Integración en,11,29,105,11.0,402.9,678.7,482.4,689.0,307.4,6.8,220.0
+procesos y,11,29,106,11.0,402.9,691.4,459.2,701.7,0.0,12.7,220.0
+aplicaciones,11,29,107,11.0,402.9,704.0,463.4,714.3,0.0,12.6,220.0
+- Integrable en SIG,11,30,108,11.0,156.5,685.0,252.5,695.4,-246.4,-19.0,220.0
+profesionales,11,30,109,11.0,156.5,697.6,222.0,708.0,0.0,12.6,220.0
+Página 11 de 13,11,31,110,7.0,272.2,736.8,323.1,743.4,115.7,39.2,220.0
+www.fega.gob.es,11,32,111,7.0,88.6,758.9,135.8,765.3,-183.6,22.1,200.0
+sg.ayudasdirectas@fega.es,11,32,112,7.0,88.6,766.8,162.5,773.5,0.0,7.9,200.0
+"C/ Beneficiencia , 8",11,33,113,7.0,510.3,758.9,566.3,765.3,421.8,-7.9,200.0
+28004 MADRID,11,33,114,7.0,510.3,767.1,558.3,773.5,0.0,8.2,200.0
+,11,34,115,,85.1,786.6,88.4,797.8,-425.2,19.5,
+Servicio Ventajas Limitaciones Propuestas de uso,12,1,1,11.0,97.0,74.7,507.1,85.1,,,235.0
+- Desarrollo de,12,2,2,11.0,402.9,91.1,478.2,101.4,305.9,16.3,220.0
+aplicaciones con,12,2,3,11.0,402.9,103.7,487.3,114.0,0.0,12.6,220.0
+datos SIGPAC,12,2,4,11.0,402.9,116.4,474.6,126.7,0.0,12.7,220.0
+- Acceso selectivo a,12,3,5,11.0,156.5,97.3,257.5,107.7,-246.4,-19.1,220.0
+datos vectoriales,12,3,6,11.0,156.5,110.0,239.0,120.4,0.0,12.7,220.0
+- Alta interoperabilidad - Visualización en,12,4,7,11.0,156.5,130.4,492.3,147.1,0.0,20.4,220.0
+proyectos SIG,12,4,8,11.0,402.9,143.1,472.7,153.5,246.4,12.7,220.0
+- Codificación oficial,12,5,9,11.0,156.5,157.3,257.3,167.7,-246.4,14.2,220.0
+estandarizada,12,5,10,11.0,156.5,169.9,225.7,180.3,0.0,12.6,220.0
+- Son datos sólo,12,6,11,11.0,282.4,157.3,365.1,167.7,125.9,-12.6,220.0
+alfanuméricos,12,6,12,11.0,282.4,169.9,351.1,180.3,0.0,12.6,220.0
+- Validación de datos,12,6,13,11.0,402.9,157.3,508.8,167.7,120.5,-12.6,220.0
+en formularios,12,6,14,11.0,402.9,169.9,472.7,180.3,0.0,12.6,220.0
+- Fácil integración y,12,6,15,11.0,156.5,183.1,254.9,193.5,-246.4,13.2,220.0
+validación,12,6,16,11.0,156.5,195.7,205.4,206.1,0.0,12.6,220.0
+- No es un servicio,12,6,17,11.0,282.4,183.1,376.7,193.5,125.9,-12.6,220.0
+dinámico,12,6,18,11.0,282.4,195.7,326.5,206.1,0.0,12.6,220.0
+- Mapeo e,12,6,19,11.0,402.9,183.1,455.5,193.5,120.5,-12.6,220.0
+interpretación de,12,6,20,11.0,402.9,195.7,487.9,206.1,0.0,12.6,220.0
+- Documentación clara datos SIGPAC,12,6,21,11.0,156.5,208.4,474.6,219.3,-246.4,12.7,220.0
+y mantenida,12,6,22,11.0,156.5,221.5,216.5,231.9,0.0,13.1,220.0
+- Sin visualización,12,6,23,11.0,282.4,208.9,373.6,219.3,125.9,-12.6,220.0
+directa,12,6,24,11.0,282.4,221.5,315.5,231.9,0.0,12.6,220.0
+- Compatible con,12,6,25,11.0,156.5,234.7,242.7,245.1,-125.9,13.2,220.0
+múltiples entornos,12,6,26,11.0,156.5,247.3,245.9,257.7,0.0,12.6,220.0
+- Actualización,12,6,27,11.0,282.4,234.7,357.0,245.1,125.9,-12.6,220.0
+manual periódica,12,6,28,11.0,282.4,247.3,366.3,257.7,0.0,12.6,220.0
+"- Cruce con ayudas,",12,6,29,11.0,402.9,234.7,504.5,245.1,120.5,-12.6,220.0
+"tipos de uso, etc.",12,6,30,11.0,402.9,247.3,486.1,257.7,0.0,12.6,220.0
+Listas de,12,7,31,11.0,94.6,189.7,145.4,200.1,-308.3,-57.6,235.0
+códigos,12,7,32,11.0,97.3,202.3,142.7,212.7,2.8,12.6,235.0
+SIGPAC,12,7,33,11.0,97.3,214.9,139.6,225.3,0.0,12.6,235.0
+- Obtención inmediata,12,8,34,11.0,156.5,261.5,267.2,271.8,59.2,46.6,220.0
+"de salidas gráficas,",12,8,35,11.0,156.5,274.1,253.8,284.4,0.0,12.6,220.0
+desde navegador,12,8,36,11.0,156.5,286.8,241.8,297.2,0.0,12.7,220.0
+- Consulta y descarga,12,9,37,11.0,282.4,306.3,392.5,316.6,125.9,19.4,220.0
+individual (no masiva),12,9,38,11.0,282.4,319.0,388.9,329.3,0.0,12.7,220.0
+- Integración en,12,9,39,11.0,402.9,261.5,482.4,271.8,120.5,-57.5,220.0
+procesos y,12,9,40,11.0,402.9,274.1,459.2,284.4,0.0,12.6,220.0
+aplicaciones,12,9,41,11.0,402.9,286.8,463.4,297.2,0.0,12.7,220.0
+- Proporciona,12,9,42,11.0,156.5,299.9,225.7,310.2,-246.4,13.1,220.0
+"descargas, no solo",12,9,43,11.0,156.5,312.6,252.0,323.0,0.0,12.7,220.0
+visualización - Consultas puntuales,12,9,44,11.0,156.5,319.2,512.4,335.6,0.0,6.6,220.0
+sin tener que recurrir,12,9,45,11.0,402.9,331.8,507.4,342.2,246.4,12.6,220.0
+al Visor Sigpac - Componente,12,9,46,11.0,156.5,338.4,476.3,354.8,-246.4,6.6,220.0
+incrustable en,12,9,47,11.0,156.5,351.0,228.1,361.4,0.0,12.6,220.0
+aplicaciones,12,9,48,11.0,156.5,363.7,217.0,374.1,0.0,12.7,220.0
+Salidas,12,10,49,11.0,99.1,299.9,140.9,310.2,-57.4,-63.8,235.0
+Gráficas,12,10,50,11.0,96.4,312.6,143.5,323.0,-2.8,12.7,235.0
+SIGPAC,12,10,51,11.0,97.3,325.2,139.6,335.6,1.0,12.6,235.0
+Información Histórica del SIGC,12,11,52,14.0,85.1,406.1,291.2,419.2,-12.2,80.9,235.0
+"Finalmente, se comunica que en 2024 el FEGA inició el proyecto SIGPAC de",12,12,53,12.0,85.1,449.5,513.4,460.7,0.0,43.4,220.0
+recuperación y adaptación de la información INSPIRE relativa al histórico del,12,12,54,12.0,85.1,463.3,513.6,474.5,0.0,13.8,222.6
+"SIGC desde el origen de la misma, que a nivel nacional se data en:",12,12,55,12.0,85.1,477.1,443.5,488.3,0.0,13.8,220.9
+"• Respecto de información SIGPAC (LPIS, Land Parcel Identification",12,13,56,12.0,103.1,505.4,513.6,516.7,18.0,28.3,221.2
+System): en 2005 para el caso de la capa Recintos y en 2023 para la capa,12,13,57,12.0,121.1,519.2,513.7,530.4,18.0,13.8,221.8
+Elementos del paisaje.,12,13,58,12.0,121.1,533.0,241.8,544.2,0.0,13.8,220.0
+"• Respecto de información de la Declaración Gráfica (GSA, Geo Spatial",12,14,59,12.0,103.1,547.6,513.5,558.9,-18.0,14.6,221.2
+Application): en 2020 para la capa Cultivos declarados.,12,14,60,12.0,120.9,561.4,414.8,572.7,17.8,13.8,221.2
+El objetivo es seguir aumentando la respuesta al público de los medios de,12,15,61,12.0,85.1,589.0,513.2,600.3,-35.8,27.6,220.0
+"consulta y divulgación del SIGPAC a las solicitudes de información del SIGC,",12,15,62,12.0,85.1,602.8,513.1,614.1,0.0,13.8,220.0
+incluyendo en este caso la información histórica distinta a la que ya se distribuye,12,15,63,12.0,85.1,616.6,513.3,627.9,0.0,13.8,220.0
+mediante los actuales servicios.,12,15,64,12.0,85.1,630.4,257.9,641.7,0.0,13.8,220.0
+"Desde el segundo semestre de 2024, se está proporcionando información",12,16,65,12.0,85.1,658.0,513.4,669.3,0.0,27.6,220.0
+vectorial de las referidas capas. Actualmente hay disponibles Bases de datos,12,16,66,12.0,85.1,671.8,513.5,683.1,0.0,13.8,222.2
+en formato PostGreSQL/PostGis (una por campaña) con la información vectorial,12,16,67,12.0,85.1,685.6,513.5,696.9,0.0,13.8,220.0
+histórica de las capas de datos geoespaciales del SIGC de: Recintos para las,12,16,68,12.0,85.1,699.4,513.6,710.7,0.0,13.8,220.0
+Página 12 de 13,12,17,69,7.0,272.2,736.8,323.1,743.4,187.1,37.4,220.0
+www.fega.gob.es,12,18,70,7.0,88.6,758.9,135.8,765.3,-183.6,22.1,200.0
+sg.ayudasdirectas@fega.es,12,18,71,7.0,88.6,766.8,162.5,773.5,0.0,7.9,200.0
+"C/ Beneficiencia , 8",12,19,72,7.0,510.3,758.9,566.3,765.3,421.8,-7.9,200.0
+28004 MADRID,12,19,73,7.0,510.3,767.1,558.3,773.5,0.0,8.2,200.0
+,12,20,74,,85.1,786.6,88.4,797.8,-425.2,19.5,
+campañas 2015 a 2023; Elementos del paisaje para la campaña 202313; y Cultivo,13,1,1,12.0,85.1,72.5,513.7,84.8,,,220.0
+Declarado para las campañas 2020 a 2023.,13,1,2,12.0,85.1,87.4,318.2,98.6,0.0,14.9,220.0
+Se desea que este proyecto esté finalizado a lo largo del 2026.,13,2,3,12.0,85.1,115.0,420.0,126.2,0.0,27.6,221.0
+En el citado Acuerdo de Distribución de la Mesa del Sistema de Gestión y Control,13,3,4,12.0,85.1,142.6,513.4,153.8,0.0,27.6,220.0
+"(SGC), en su ANEXO I: CLÁUSULAS GENERALES Y TÉCNICAS DE LA",13,3,5,12.0,85.1,154.3,513.3,167.6,0.0,11.8,220.0
+"LICENCIA, se recogen las condiciones generales y técnicas para la distribución",13,3,6,12.0,85.1,170.2,513.2,181.4,0.0,15.8,220.0
+de la información contenida en las capas de la base de datos del SIGPAC que,13,3,7,12.0,85.1,184.0,513.1,195.2,0.0,13.8,220.0
+no son de alto valor (CAPAS NO HVD). Para el caso de distribuciones por parte,13,3,8,12.0,85.1,197.8,513.5,209.0,0.0,13.8,220.0
+"del FEGA de información geoespacial del SIGC histórica, no disponible a través",13,3,9,12.0,85.1,211.6,513.6,222.8,0.0,13.8,220.0
+de los sistemas informáticos de consulta y divulgación del SIGPAC dispuestos al,13,3,10,12.0,85.1,225.4,513.6,236.6,0.0,13.8,220.0
+"efecto, por su contenido y/o por su periodo de vigencia, y que pueda requerir",13,3,11,12.0,85.1,239.2,513.6,250.4,0.0,13.8,220.0
+"medios de distribución extraordinarios (soportes físicos, espacio en la nube,",13,3,12,12.0,85.1,253.0,513.2,264.2,0.0,13.8,220.0
+"etc.), los usuarios o empresas peticionarias deberán dirigir sus solicitudes a la",13,3,13,12.0,85.1,266.8,513.2,278.1,0.0,13.8,220.0
+Subdirección General de Ayudas Directas del FEGA:,13,3,14,12.0,85.1,280.6,510.4,291.9,0.0,13.8,220.0
+sg.ayudasdirectas@fega.es. Tras la autorización pertinente del Subdirector/a,13,4,15,12.0,85.1,294.4,513.4,305.7,0.0,13.8,220.0
+"General de Ayudas Directas, se podrá delegar en la Empresa de Tecnologías y",13,4,16,12.0,85.1,308.2,513.1,319.5,0.0,13.8,220.0
+"Servicios Agrarios, S.A., S.M.E., M.P (TRAGSATEC) la elaboración de un",13,4,17,12.0,85.1,322.0,513.3,333.2,0.0,13.8,220.0
+"presupuesto, aplicando las tarifas públicas oficiales del Grupo TRAGSA vigentes",13,4,18,12.0,85.1,335.8,513.5,347.0,0.0,13.8,220.0
+"en ese momento, que recoja los trabajos de preparación de la información objeto",13,4,19,12.0,85.1,349.6,513.3,360.8,0.0,13.8,220.0
+de distribución y puesta a disposición de los peticionarios. Aceptado el,13,4,20,12.0,85.1,363.4,513.2,374.6,0.0,13.8,220.0
+"presupuesto por el peticionario, se elaborará y distribuirá la información",13,4,21,12.0,85.1,377.2,513.7,388.4,0.0,13.8,220.0
+solicitada.,13,4,22,12.0,85.1,391.0,138.6,402.2,0.0,13.8,220.0
+23 de Septiembre de 2025.,13,5,23,12.0,365.5,446.2,510.4,457.5,280.4,55.2,220.0
+13 Y datos regionales (de algunas CCAA) desde 2015.,13,6,24,10.0,85.1,717.4,324.3,727.2,-280.4,271.2,220.0
+Página 13 de 13,13,7,25,7.0,272.2,736.8,323.1,743.4,187.1,19.5,220.0
+www.fega.gob.es,13,8,26,7.0,88.6,758.9,135.8,765.3,-183.6,22.1,200.0
+"C/ Beneficiencia , 8",13,9,27,7.0,510.3,758.9,566.3,765.3,421.8,0.0,200.0
+28004 MADRID,13,9,28,7.0,510.3,767.1,558.3,773.5,0.0,8.2,200.0
+sg.ayudasdirectas@fega.es,13,10,29,7.0,88.6,766.8,162.5,773.5,-421.8,-0.3,200.0
+,13,11,30,,85.1,786.6,88.4,797.8,-3.5,19.7,

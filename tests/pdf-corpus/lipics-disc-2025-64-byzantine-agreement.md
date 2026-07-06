@@ -136,9 +136,9 @@ values were nonfaulty. Selecting the highest-probability vˆ conditioned on the 
 r, ensures that if any (minority of) values in r turn out to be faulty, then the quorum r (and
 thus the inferred vˆ) is at least a likely as a quorum containing only nonfaulty values. At a
 high level, this process is described by the probability maximization in Def. 2.1.
+
 ▶ Definition 2.1 (Proximal Byzantine Value Selection). For received values R ⊆ R
 n and
-
 quorum size s, select a set r from the s-sized subsets of R, and a value x that maximizes the
 likelihood that x is the true value given observations in r.
 PBA(R, s) ≜ argmax
@@ -197,10 +197,9 @@ s
 2
 . Then the maximum displacement is
 
+> ||mQ − mR||2 ≤ C
 > (s,f)
 > 0 ∆Q
->
-> ||mQ − mR||2 ≤ C
 
 However, the contents of Q is unknown, so the bound implied by Lemma 2.2 cannot be
 directly calculated from the information available. Instead, Lemma 2.3 presents a
@@ -222,11 +221,14 @@ f
 The computable displacement is used to compute the region guarantee for a given PBA
 result. The fact that PBA only produces outputs with region guarantees containing the true
 output is our instantiation of an accuracy [12] property.
-▶ Definition 2.4 (Region Guarantee). For any set R ⊆ R
+
 d
 , |R| > s + f where s > f, define
 R(f,x) ⊆ R by removing the f elements of R furthest from x. Let ∆R
 f = maxri∈R(f,Gm(R)) ||ri −
+
+▶ Definition 2.4 (Region Guarantee). For any set R ⊆ R
+
 Gm(R)||2. The region guarantee RG(R, s, f) is a d-dimensional ball centered at x with radius
 2C
 (s,f)∆R
@@ -237,6 +239,7 @@ f
 most |F| = f faulty values, let PBA(R, s) = (x, R′
 ). Then Gm(Q) ∈ RG(R, s, f) and
 
+||mQ − x||2 ≤ C
 (s,f)
 0 ∆R
 ′
@@ -246,8 +249,6 @@ most |F| = f faulty values, let PBA(R, s) = (x, R′
 
 > (s,f)∆R
 > f
->
-> ||mQ − x||2 ≤ C
 
 ## 2.2 OneShot PBA Agreement and Termination
 

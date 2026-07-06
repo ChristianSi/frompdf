@@ -154,6 +154,7 @@ sibility result of Itai and Rodeh [15] no longer applies. This allows us to crea
 algorithm (Section 5) that, with probability at least 1 − U
 −c
 , is quiescently terminating. The
+
 algorithm has message complexity O(n log2 U). In contrast to the randomized approach of
 Frei et al. [13], whose message complexity has an inherent exponential dependence on c, our
 algorithm achieves near-linear message complexity with only a multiplicative dependence

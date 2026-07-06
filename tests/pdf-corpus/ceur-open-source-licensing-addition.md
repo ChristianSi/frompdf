@@ -131,6 +131,7 @@ distributed programs include hard-coded (embedded in the source code) functions 
 explicitly block users based on their affilitation (see Naskali, 2020). Affected users
 are unable to use the program without modifying the code and rebuilding the program.
 While Freedom 0 does not mean that application developers should be forced to add
+
 in functionalities for their users or that developers are in violation of GPL licensing if
 their programs fail to run with some inputs (GNU Project, 2001), it is something else
 entirely when a function that selectively identifies certain user groups and stops the
@@ -153,6 +154,7 @@ The technological industry has been moving towards permissive licenses, that all
 for parts of the source code to be republished under closed licenses. Johnson (2021)
 data shows that while permissive licenses were used in 41% of open source licenses
 in 2012, in 2020 that number has risen to 76%. While it could be argued that as non-
+
 permissive licenses get less popular, the need for licenses that secure more freedoms for
 the end-users lessens, it does not necessarily follow. In fact, there is little downside to
 having multiple levels of freedom-securing licenses, especially when it comes to non-

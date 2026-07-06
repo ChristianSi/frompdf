@@ -91,15 +91,12 @@ In order to achieve our mission, we:
 organization in the world a free, simple, and standardized way to grant copyright permissions
 for creative and academic works; ensure proper attribution; and allow others to copy, distribute,
 and make use of those works
-
 • Work closely with major institutions to ensure the correct use and implementation of CC licenses
 and CC-licensed content
-
 • Support the CC Global Network, a community initiative working to increase the volume, breadth,
 and quality of openly-available knowledge worldwide
 • Develop technology like CC Search that makes openly-licensed material easier to discover and
 use
-
 • Offer the Creative Commons Certificate, an in-depth course for people interested in becoming
 experts in creating and engaging with openly-licensed works
 • Produce CC Summit, an annual event that brings together an international group of educators,
@@ -125,7 +122,7 @@ The above logos can be used in any of the colors found in the color palette. How
 ensure that the logos are clearly displayed, we recommend using the colors tomato (#ed592f), dark
 slate gray (#333333), black, or white. You can download these logos on our website, here.
 
-#### Things to avoid:
+##### Things to avoid:
 
 • Do not reproduce the logo in any other colors outside of the brand’s primary colors, except for
 black and white (when necessary)
@@ -178,29 +175,25 @@ accessibility requirements and design best practices, particularly with such bol
 For a guide on how to pair different colors together, including contrast requirements, read “Effective
 Use of Color” by the University of Washington.
 
-#### Tomato
-
-Dark Slate Gray
-Hex: #333333
-RGB: 51 51 51
-HSL: 0 0 20
-
+Tomato
 Hex: #ed592f
 RGB: 237 89 47
 HSL: 13 84 55
 CMYK: 0 58 75 7
 
+Dark Slate Gray
+Hex: #333333
+RGB: 51 51 51
+HSL: 0 0 20
 CMYK: 0 0 0 80
 
-#### Gold
-
-#### Orange
-
+Gold
 Hex: #efbe00
 RGB: 239 190 0
 HSL: 47 100 46
 CMYK: 0 19 94 6
 
+Orange
 Hex: #fb7729
 RGB: 251 119 41
 HSL: 22 96 57
@@ -224,8 +217,7 @@ RGB: 60 92 153
 HSL: 219 43 41
 CMYK: 36 24 0 40
 
-Please note: Any colors reproduced in print may
-
+> Please note: Any colors reproduced in print may
 > not be accurate, therefore in order to achieve the best
 > possible results in printing, use CMYK and consult
 > with the printer.
@@ -398,7 +390,6 @@ the word in parentheses or in a footnote.
 ### Creative Commons Style Guide | 2019 by Victoria Heath
 
 2019, by Creative Commons.
-
 Except where otherwise noted, this document is published under a Creative Commons
 Attribution 4.0 International license, (CC BY 4.0).
 
@@ -417,7 +408,6 @@ Middle-left: Pearce, Andrea. (2019, March). Creative Commons Mosaic. Retrieved f
 uploads/2019/10/55517442_10156985356362777_2465421492599390208_o.jpg. Licensed under CC BY.
 Middle-right-top: (2018, May 08). State of the Commons 2017. Retrieved from: stateof.creativecommons.org/Licensed under CC
 BY.
-
 Middle-right-bottom: Burg, Sebastiaan ter. (2019, May 09). CC Global Summit 2019. Retrieved from: flickr.com/photos/
 creativecommons/47959635406/in/album-72157708726481004/ Licensed under CC BY.
 Bottom-left: (2018, May 08). State of the Commons 2017. Retrieved from: stateof.creativecommons.org/Licensed under CC BY.
