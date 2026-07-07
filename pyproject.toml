@@ -28,7 +28,7 @@ classifiers = [
     "Topic :: Utilities",
 ]
 dependencies = [
-    "pdftext",
+    "pdftext>=0.7.0",
 ]
 
 [project.optional-dependencies]
