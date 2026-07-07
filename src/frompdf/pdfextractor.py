@@ -981,7 +981,7 @@ def dump_text(block_list: list[Block], output_path: Path) -> None:
 
 def main() -> int:
     """Run the command-line interface."""
-    parser = argparse.ArgumentParser(description='Extract line records from a PDF using pdftext.')
+    parser = argparse.ArgumentParser(description='Convert a PDF document to structured Markdown.')
     parser.add_argument('pdf_file', type=Path, help='Path to the input PDF file')
     args = parser.parse_args()
 
