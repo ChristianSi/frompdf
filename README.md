@@ -20,6 +20,11 @@ handle some details better, they are slower and have considerably higher
 computational overhead. frompdf's heuristics will not get every detail right,
 but they are fast, robust, and easy to run locally.
 
+frompdf is released under the permissive MIT License. This can make it easier
+to use, modify, and integrate than tools based on
+[PyMuPDF](https://pymupdf.readthedocs.io/en/latest/), which is available under
+the GNU AGPL or a commercial license.
+
 ## What frompdf does right now
 
 The current version provides one command:
