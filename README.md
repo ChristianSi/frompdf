@@ -29,11 +29,14 @@ GNU AGPL or a commercial license.
 
 The current version provides one command:
 
-- `frompdf file.pdf` - extract Markdown and diagnostic CSV files from a PDF
+- `frompdf file.pdf` - extract Markdown from a PDF
 
 For an input named `file.pdf`, the command writes:
 
 - `file.md` - Markdown output
+
+With diagnostic options, it can also write:
+
 - `file-lines.csv` - extracted line records with page, block, geometry, font
   size, and weight data
 - `file-pagenos.csv` - visible page numbers detected in headers or footers, if
@@ -90,14 +93,25 @@ frompdf ./document.pdf
 Example output:
 
 ```text
-document-lines.csv
-document-pagenos.csv
-document.md
+document.md written
 ```
 
-The command currently has no CLI options. It always writes the line CSV when
-called through the script entry point. It writes the page-number CSV only when
-visible page numbers were detected.
+Write diagnostic CSV files as well:
+
+```bash
+frompdf --dump-lines --dump-pagenos ./document.pdf
+```
+
+Example output:
+
+```text
+document-lines.csv written
+document-pagenos.csv written
+document.md written
+```
+
+`--dump-lines` writes the extracted line records. `--dump-pagenos` writes the
+page-number CSV only when visible page numbers were detected.
 
 ## Limitations
 
