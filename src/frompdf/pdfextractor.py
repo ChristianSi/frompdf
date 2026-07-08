@@ -306,15 +306,16 @@ def dump_page_numbers(page_number_list: list[PageNumber], output_path: Path) -> 
 
 def candidate_zone(line_obj: Line, page_height: float) -> str | None:
     """Return the header/footer zone for a line, if it is near a page edge."""
-    if line_obj.y1 is None:
+    if line_obj.y1 is None or line_obj.y2 is None:
         return None
 
-    header_end = max(80.0, page_height * 0.10)
-    footer_start = page_height - max(120.0, page_height * 0.15)
+    edge_zone_size = max(120.0, page_height * 0.20)
+    header_end = edge_zone_size
+    footer_start = page_height - edge_zone_size
 
     if line_obj.y1 <= header_end:
         return 'header'
-    if line_obj.y1 >= footer_start:
+    if line_obj.y2 >= footer_start:
         return 'footer'
     return None
 
@@ -408,7 +409,7 @@ def edge_visible_page_label(text: str, edge: str) -> str | None:
     if compound_match:
         return compound_match.group(1)
 
-    plain_match = re.search(r'\b(\d+)\s*$', text)
+    plain_match = re.search(r'(?:^|\s)(\d+)\s*$', text)
     if plain_match:
         return plain_match.group(1)
     return None
@@ -450,30 +451,41 @@ def infer_repeated_page_numbers(
 
 def infer_edge_page_numbers(candidate_list: list[HeaderFooterCandidate]) -> dict[int, str]:
     """Infer visible page numbers printed at the start or end of edge lines."""
-    numbers_by_position: dict[tuple[str, str], list[tuple[int, str]]] = defaultdict(list)
+    labels_by_page_and_position: dict[tuple[str, str], dict[int, set[str]]] = defaultdict(
+        lambda: defaultdict(set)
+    )
     page_numbers: dict[int, str] = {}
 
     for candidate in candidate_list:
         for edge in ['start', 'end']:
             visible = edge_visible_page_label(candidate.line.text, edge)
             if visible is not None:
-                numbers_by_position[(candidate.zone, edge)].append(
-                    (candidate.line.page_no, visible)
+                labels_by_page_and_position[(candidate.zone, edge)][candidate.line.page_no].add(
+                    visible
                 )
 
-    for raw_and_visible in numbers_by_position.values():
-        offsets = Counter(
-            visible_page_label_sort_number(visible) - raw for raw, visible in raw_and_visible
-        )
+    for labels_by_page in labels_by_page_and_position.values():
+        offsets: Counter[int] = Counter()
+        for raw, visible_labels in labels_by_page.items():
+            page_offsets = {
+                visible_page_label_sort_number(visible) - raw for visible in visible_labels
+            }
+            offsets.update(page_offsets)
         if not offsets:
             continue
 
         offset, offset_count = offsets.most_common(1)[0]
-        if offset_count < max(3, len(raw_and_visible) * 2 // 3):
+        if offset_count < max(3, len(labels_by_page) * 2 // 3):
             continue
 
-        for raw, visible in raw_and_visible:
-            if visible_page_label_sort_number(visible) - raw == offset:
+        for raw, visible_labels in labels_by_page.items():
+            matching_labels = sorted(
+                visible
+                for visible in visible_labels
+                if visible_page_label_sort_number(visible) - raw == offset
+            )
+            if matching_labels:
+                visible = matching_labels[0]
                 page_numbers.setdefault(raw, visible)
 
     return page_numbers
