@@ -22,8 +22,8 @@ but they are fast, robust, and easy to run locally.
 
 frompdf is released under the permissive MIT License. This can make it easier
 to use, modify, and integrate than tools based on
-[PyMuPDF](https://pymupdf.readthedocs.io/en/latest/), which is available under
-the GNU AGPL or a commercial license.
+[PyMuPDF](https://github.com/pymupdf/PyMuPDF), which is available under the
+GNU AGPL or a commercial license.
 
 ## What frompdf does right now
 
