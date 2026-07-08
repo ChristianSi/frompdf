@@ -85,6 +85,14 @@ class HeaderFooterCandidate:
     normalized: str
 
 
+@dataclass
+class PageTextSpan:
+    """The vertical extent of visible text on one page."""
+
+    top: float
+    bottom: float
+
+
 def round_or_none(value: float | int | None, digits: int = 1) -> float | None:
     """Round a numeric value, or return None."""
     if value is None:
@@ -304,40 +312,65 @@ def dump_page_numbers(page_number_list: list[PageNumber], output_path: Path) -> 
                 writer.writerow(asdict(page_number))
 
 
-def candidate_zone(line_obj: Line, page_height: float) -> str | None:
-    """Return the header/footer zone for a line, if it is near a page edge."""
+def page_text_spans(line_list: list[Line]) -> dict[int, PageTextSpan]:
+    """Return the vertical text span on each page."""
+    tops_by_page: dict[int, list[float]] = defaultdict(list)
+    bottoms_by_page: dict[int, list[float]] = defaultdict(list)
+
+    for line_obj in line_list:
+        if not line_obj.text or line_obj.y1 is None or line_obj.y2 is None:
+            continue
+        tops_by_page[line_obj.page_no].append(min(line_obj.y1, line_obj.y2))
+        bottoms_by_page[line_obj.page_no].append(max(line_obj.y1, line_obj.y2))
+
+    return {
+        page_no: PageTextSpan(top=min(tops), bottom=max(bottoms))
+        for page_no, tops in tops_by_page.items()
+        if tops and (bottoms := bottoms_by_page.get(page_no))
+    }
+
+
+def candidate_zone(line_obj: Line, text_span: PageTextSpan) -> str | None:
+    """Return the header/footer zone for a line, if it is near the text span edge."""
     if line_obj.y1 is None or line_obj.y2 is None:
         return None
 
-    edge_zone_size = max(120.0, page_height * 0.20)
-    header_end = edge_zone_size
-    footer_start = page_height - edge_zone_size
+    text_height = text_span.bottom - text_span.top
+    if text_height <= 0:
+        return None
 
-    if line_obj.y1 <= header_end:
+    edge_zone_size = max(40.0, text_height * 0.08)
+    header_end = text_span.top + edge_zone_size
+    footer_start = text_span.bottom - edge_zone_size
+    in_header_zone = line_obj.y1 <= header_end
+    in_footer_zone = line_obj.y2 >= footer_start
+
+    if in_header_zone and in_footer_zone:
+        line_center = (line_obj.y1 + line_obj.y2) / 2
+        text_center = (text_span.top + text_span.bottom) / 2
+        return 'header' if line_center <= text_center else 'footer'
+
+    if in_header_zone:
         return 'header'
-    if line_obj.y2 >= footer_start:
+    if in_footer_zone:
         return 'footer'
     return None
 
 
-def iter_header_footer_candidates(
-    line_list: list[Line], page_list: Sequence[Page]
-) -> list[HeaderFooterCandidate]:
+def iter_header_footer_candidates(line_list: list[Line]) -> list[HeaderFooterCandidate]:
     """Return non-empty lines in likely header and footer zones."""
-    page_heights = {
-        page_no: float(page_dict['height']) for page_no, page_dict in enumerate(page_list, start=1)
-    }
+    text_spans = page_text_spans(line_list)
     candidate_list: list[HeaderFooterCandidate] = []
 
     for index, line_obj in enumerate(line_list):
         if not line_obj.text:
             continue
 
-        page_height = page_heights.get(line_obj.page_no)
-        if page_height is None:
+        text_span = text_spans.get(line_obj.page_no)
+        if text_span is None:
             continue
 
-        zone = candidate_zone(line_obj, page_height)
+        zone = candidate_zone(line_obj, text_span)
         if zone is None:
             continue
 
@@ -531,7 +564,7 @@ def remove_headers_and_footers(
     line_list: list[Line], page_list: Sequence[Page]
 ) -> tuple[list[Line], list[PageNumber]]:
     """Remove repeated header/footer lines and collect visible page numbers."""
-    candidate_list = iter_header_footer_candidates(line_list, page_list)
+    candidate_list = iter_header_footer_candidates(line_list)
     repeated_keys = repeated_header_footer_keys(candidate_list, len(page_list))
     excluded_indices: set[int] = set()
     visible_by_raw = infer_repeated_page_numbers(candidate_list, repeated_keys)
