@@ -1042,11 +1042,11 @@ def main() -> int:
     block_list = extract_markdown(input_path, dump_lines=True, dump_pagenos=True)
     dump_text(block_list, text_output_path)
 
-    print(csv_output_path)
+    print(f'{csv_output_path} written')
     pagenos_output_path = build_pagenos_output_path(input_path)
     if pagenos_output_path.exists():
-        print(pagenos_output_path)
-    print(text_output_path)
+        print(f'{pagenos_output_path} written')
+    print(f'{text_output_path} written')
     return 0
 
 
