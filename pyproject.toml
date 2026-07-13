@@ -31,10 +31,17 @@ dependencies = [
     "pdftext>=0.7.0",
 ]
 
+[project.urls]
+Homepage = "https://github.com/ChristianSi/frompdf"
+Repository = "https://github.com/ChristianSi/frompdf"
+Issues = "https://github.com/ChristianSi/frompdf/issues"
+
 [project.optional-dependencies]
 dev = [
     "basedpyright",
+    "build",
     "ruff",
+    "twine",
 ]
 
 [project.scripts]
@@ -45,7 +52,6 @@ package-dir = {"" = "src"}
 
 [tool.setuptools.packages.find]
 where = ["src"]
-namespaces = true
 
 [tool.basedpyright]
 pythonVersion = "3.11"
