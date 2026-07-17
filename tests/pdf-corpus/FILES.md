@@ -22,6 +22,9 @@ Short, freely licensed PDF files for testing the conversion.
   wayback machine and wikipedia's history
   page](https://link.springer.com/article/10.1007/s42803-021-00031-6)" by
   Sandra Folie; license: CC-BY-4.0.
+- graf-domestic-cooks-work.pdf: "[Domestic Cooks' Work toward Moroccan Beldi
+  Foods in Uncertain Times](https://d-nb.info/1383462364/34)" by Katharina
+  Graf; license: CC-BY-4.0.
 - intertrans-espacologia.pdf: "[Espaçologia: filosofias na totalidade do
   espaço](https://revistas.hcte.ufrj.br/index.php/intertrans/article/download/249/205/)"
   by Wallace Lopes; license: CC-BY-4.0.
