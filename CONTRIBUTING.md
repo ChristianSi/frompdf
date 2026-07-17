@@ -41,15 +41,15 @@ Before considering a code change done, run:
 
 ```bash
 basedpyright
-python -m py_compile src/frompdf/pdfextractor.py
-ruff format --check src/frompdf/pdfextractor.py
-ruff check src/frompdf/pdfextractor.py
+python -m compileall -q src/frompdf
+ruff format --check src/frompdf
+ruff check src/frompdf
 ```
 
 If formatting is needed:
 
 ```bash
-ruff format src/frompdf/pdfextractor.py
+ruff format src/frompdf
 ```
 
 ## Testing With The PDF Corpus
@@ -119,7 +119,16 @@ signals that make sense in other documents too.
 
 ## Implementation Notes
 
-The main implementation currently lives in `src/frompdf/pdfextractor.py`.
+The implementation is split into focused modules under `src/frompdf`:
+
+- `models.py` defines line, page-number, and Markdown block records.
+- `lines.py` flattens `pdftext` output and extracts line geometry and
+  typography.
+- `page_edges.py` detects headers, footers, and visible page numbers.
+- `blocks.py` groups lines and detects block quotes and headings.
+- `output.py` writes diagnostic CSV files and Markdown output.
+- `pipeline.py` coordinates extraction and classification.
+- `cli.py` implements the command-line interface.
 
 Important concepts:
 

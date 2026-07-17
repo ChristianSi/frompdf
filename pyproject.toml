@@ -45,7 +45,7 @@ dev = [
 ]
 
 [project.scripts]
-frompdf = "frompdf.pdfextractor:main"
+frompdf = "frompdf.cli:main"
 
 [tool.setuptools]
 package-dir = {"" = "src"}
@@ -54,6 +54,7 @@ package-dir = {"" = "src"}
 where = ["src"]
 
 [tool.basedpyright]
+include = ["src"]
 pythonVersion = "3.11"
 typeCheckingMode = "standard"
 
