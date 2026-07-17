@@ -66,17 +66,40 @@ the visible page number for each block.
 
 ## Installation
 
-For local use from a checkout of this repository:
+### Install the latest release from PyPI
+
+Install the latest published version with `pip`:
+
+```bash
+pip install frompdf
+```
+
+For an isolated command-line installation, use `uv`:
+
+```bash
+uv tool install frompdf
+```
+
+Alternatively, use `pipx`:
+
+```bash
+pipx install frompdf
+```
+
+All three options make the `frompdf` command available in your environment.
+
+### Install from a repository checkout
+
+From a checkout of this repository, install the package in editable mode:
 
 ```bash
 pip install -e .
 ```
 
-That installs the package in editable mode and makes the `frompdf` command
-available in the active Python environment.
+This makes the `frompdf` command use your local source code, including any
+changes you make.
 
-If you prefer `pipx` for command-line tools, use editable mode when installing
-from a local checkout so the command sees local code changes:
+To use `pipx` with a local checkout, install in editable mode as well:
 
 ```bash
 pipx install -e .
