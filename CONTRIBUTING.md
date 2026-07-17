@@ -121,24 +121,25 @@ signals that make sense in other documents too.
 
 The implementation is split into focused modules under `src/frompdf`:
 
-- `models.py` defines line, page-number, and Markdown block records.
+- `blocks.py` groups lines and detects block quotes and headings.
+- `cli.py` implements the command-line interface.
 - `lines.py` flattens `pdftext` output and extracts line geometry and
   typography.
-- `page_edges.py` detects headers, footers, and visible page numbers.
-- `blocks.py` groups lines and detects block quotes and headings.
+- `models.py` defines line, page-number, and Markdown block records.
 - `output.py` writes diagnostic CSV files and Markdown output.
+- `page_edges.py` detects headers, footers, and visible page numbers.
 - `pipeline.py` coordinates extraction and classification.
-- `cli.py` implements the command-line interface.
 
 Important concepts:
 
-- `Line` is a flattened record from `pdftext` output.
-- `PageNumber` stores the raw page number and optional visible page number.
-- `Block` is the base Markdown block type.
-- `Paragraph`, `BlockQuote`, and `Heading` are currently supported block
-  subclasses.
-- `extract_markdown` returns a list of blocks.
-- `markdown_to_text` serializes blocks as Markdown.
+- `Line` in `models.py` is a flattened record from `pdftext` output.
+- `PageNumber` in `models.py` stores the raw page number and optional visible
+  page number.
+- `Block` in `models.py` is the base Markdown block type.
+- `Paragraph`, `BlockQuote`, and `Heading` in `models.py` are currently
+  supported block subclasses.
+- `extract_markdown` in `pipeline.py` returns a list of blocks.
+- `markdown_to_text` in `output.py` serializes blocks as Markdown.
 
 The current pipeline is roughly:
 
