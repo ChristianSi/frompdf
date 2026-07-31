@@ -21,7 +21,7 @@ def main() -> int:
     parser.add_argument(
         '--dump-pagenos',
         action='store_true',
-        help='Write detected visible page numbers to a CSV file',
+        help='Write raw and visible page numbers to a CSV file',
     )
     parser.add_argument('pdf_file', type=Path, help='Path to the input PDF file')
     args = parser.parse_args()
@@ -44,9 +44,7 @@ def main() -> int:
     if args.dump_lines:
         print(f'{build_csv_output_path(input_path)} written')
     if args.dump_pagenos:
-        pagenos_output_path = build_pagenos_output_path(input_path)
-        if pagenos_output_path.exists():
-            print(f'{pagenos_output_path} written')
+        print(f'{build_pagenos_output_path(input_path)} written')
     print(f'{text_output_path} written')
     return 0
 

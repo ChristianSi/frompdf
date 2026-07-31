@@ -11,7 +11,11 @@ from frompdf.output import (
     dump_csv,
     dump_page_numbers,
 )
-from frompdf.page_edges import build_page_number_map, remove_headers_and_footers
+from frompdf.page_edges import (
+    build_page_number_map,
+    complete_page_numbers,
+    remove_headers_and_footers,
+)
 
 
 def extract_markdown(
@@ -25,9 +29,10 @@ def extract_markdown(
     if dump_lines:
         dump_csv(line_list, build_csv_output_path(input_path))
 
-    filtered_lines, page_number_list = remove_headers_and_footers(line_list, page_list)
+    filtered_lines, detected_page_number_list = remove_headers_and_footers(line_list, page_list)
+    page_number_list = complete_page_numbers(len(page_list), detected_page_number_list)
 
-    if dump_pagenos and any(page_number.visible is not None for page_number in page_number_list):
+    if dump_pagenos:
         dump_page_numbers(page_number_list, build_pagenos_output_path(input_path))
 
     page_number_map = build_page_number_map(len(page_list), page_number_list)

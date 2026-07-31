@@ -42,14 +42,15 @@ Before considering a code change done, run:
 ```bash
 basedpyright
 python -m compileall -q src/frompdf
-ruff format --check src/frompdf
-ruff check src/frompdf
+python -m unittest discover -s tests
+ruff format --check src tests
+ruff check src tests
 ```
 
 If formatting is needed:
 
 ```bash
-ruff format src/frompdf
+ruff format src tests
 ```
 
 ## Testing With The PDF Corpus

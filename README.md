@@ -39,8 +39,8 @@ With diagnostic options, it can also write:
 
 - `file-lines.csv` - extracted line records with page, block, geometry, font
   size, and weight data
-- `file-pagenos.csv` - visible page numbers detected in headers or footers, if
-  any are found
+- `file-pagenos.csv` - raw PDF page numbers mapped to detected or safely
+  inferred visible page labels
 
 If `file.md` already exists, frompdf renames it to `file.md.bak` before
 writing the new output. Overwriting an existing `.bak` file is allowed.
@@ -133,8 +133,10 @@ document-pagenos.csv written
 document.md written
 ```
 
-`--dump-lines` writes the extracted line records. `--dump-pagenos` writes the
-page-number CSV only when visible page numbers were detected.
+`--dump-lines` writes the extracted line records. `--dump-pagenos` always
+writes one mapping row per PDF page. Missing visible labels are written as
+`?`; gaps are filled when surrounding Arabic or Roman page labels determine
+an unambiguous value.
 
 ## Limitations
 

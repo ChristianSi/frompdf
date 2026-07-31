@@ -2,13 +2,23 @@ import re
 from collections import Counter, defaultdict
 from collections.abc import Sequence
 from dataclasses import dataclass
+from typing import Literal
 
 from pdftext.schema import Page
 
 from frompdf.models import Line, PageNumber
 
-VISIBLE_PAGE_LABEL_PATTERN = r'(?:[A-Za-z]+|\d+)[:-]\d+|\d+'
-COMPOUND_VISIBLE_PAGE_LABEL_PATTERN = r'(?:[A-Za-z]+|\d+)[:-]\d+'
+ROMAN_NUMERAL_PATTERN = r'[IVXLCDMivxlcdm]+'
+PLAIN_VISIBLE_PAGE_LABEL_PATTERN = rf'(?:\d+|{ROMAN_NUMERAL_PATTERN})'
+COMPOUND_VISIBLE_PAGE_LABEL_PATTERN = rf'(?:[A-Za-z]+|\d+)[:-]{PLAIN_VISIBLE_PAGE_LABEL_PATTERN}'
+VISIBLE_PAGE_LABEL_PATTERN = (
+    rf'(?:{COMPOUND_VISIBLE_PAGE_LABEL_PATTERN}|{PLAIN_VISIBLE_PAGE_LABEL_PATTERN})'
+)
+VALID_ROMAN_NUMERAL_PATTERN = re.compile(
+    r'M{0,3}(?:CM|CD|D?C{0,3})(?:XC|XL|L?X{0,3})(?:IX|IV|V?I{0,3})',
+    flags=re.IGNORECASE,
+)
+ROMAN_NUMERAL_VALUES = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
 
 
 @dataclass
@@ -27,6 +37,115 @@ class PageTextSpan:
 
     top: float
     bottom: float
+
+
+@dataclass(frozen=True)
+class ParsedPageLabel:
+    """A visible page label split into its stable prefix and numeric suffix."""
+
+    prefix: str
+    number: int
+    numeral_system: Literal['arabic', 'roman']
+    uppercase: bool = False
+    width: int = 1
+
+
+def roman_to_int(text: str) -> int | None:
+    """Return the value of a canonical Roman numeral, ignoring case."""
+    if not text or not VALID_ROMAN_NUMERAL_PATTERN.fullmatch(text):
+        return None
+
+    total = 0
+    previous_value = 0
+    for character in reversed(text.upper()):
+        value = ROMAN_NUMERAL_VALUES[character]
+        if value < previous_value:
+            total -= value
+        else:
+            total += value
+            previous_value = value
+    return total
+
+
+def int_to_roman(value: int, uppercase: bool) -> str | None:
+    """Return a canonical Roman numeral for a value from 1 through 3999."""
+    if value < 1 or value > 3999:
+        return None
+
+    parts: list[str] = []
+    remainder = value
+    for number, numeral in [
+        (1000, 'M'),
+        (900, 'CM'),
+        (500, 'D'),
+        (400, 'CD'),
+        (100, 'C'),
+        (90, 'XC'),
+        (50, 'L'),
+        (40, 'XL'),
+        (10, 'X'),
+        (9, 'IX'),
+        (5, 'V'),
+        (4, 'IV'),
+        (1, 'I'),
+    ]:
+        count, remainder = divmod(remainder, number)
+        parts.append(numeral * count)
+
+    result = ''.join(parts)
+    return result if uppercase else result.lower()
+
+
+def parse_visible_page_label(label: str) -> ParsedPageLabel | None:
+    """Parse an Arabic or Roman page label, with an optional compound prefix."""
+    match = re.fullmatch(
+        rf'(?P<prefix>(?:[A-Za-z]+|\d+)[:-])?(?P<number>{PLAIN_VISIBLE_PAGE_LABEL_PATTERN})',
+        label,
+    )
+    if match is None:
+        return None
+
+    prefix = match.group('prefix') or ''
+    number_text = match.group('number')
+    if number_text.isdigit():
+        number = int(number_text)
+        if number < 1:
+            return None
+        return ParsedPageLabel(
+            prefix=prefix,
+            number=number,
+            numeral_system='arabic',
+            width=len(number_text) if number_text.startswith('0') else 1,
+        )
+
+    number = roman_to_int(number_text)
+    if number is None:
+        return None
+    return ParsedPageLabel(
+        prefix=prefix,
+        number=number,
+        numeral_system='roman',
+        uppercase=number_text.isupper(),
+    )
+
+
+def format_visible_page_label(label: ParsedPageLabel, number: int) -> str | None:
+    """Format a changed numeric suffix using an existing label's style."""
+    if number < 1:
+        return None
+
+    if label.numeral_system == 'arabic':
+        suffix = str(number).zfill(label.width)
+    else:
+        suffix = int_to_roman(number, label.uppercase)
+        if suffix is None:
+            return None
+    return f'{label.prefix}{suffix}'
+
+
+def page_label_sequences_match(left: ParsedPageLabel, right: ParsedPageLabel) -> bool:
+    """Return whether two labels can safely belong to the same sequence."""
+    return left.prefix == right.prefix and left.numeral_system == right.numeral_system
 
 
 def normalize_header_footer_text(text: str) -> str:
@@ -52,7 +171,7 @@ def normalize_header_footer_text(text: str) -> str:
 def normalize_roman_numeral(match: re.Match[str]) -> str:
     """Normalize plausible Roman numerals without rewriting every single letter."""
     text = match.group(0)
-    if len(text) == 1 and text not in {'i', 'v', 'x'}:
+    if roman_to_int(text) is None:
         return text
     return '$ROMAN'
 
@@ -152,14 +271,17 @@ def explicit_visible_page_number(text: str) -> str | None:
         flags=re.IGNORECASE,
     )
     if match:
-        return match.group(1)
+        visible = match.group(1)
+        if parse_visible_page_label(visible) is not None:
+            return visible
 
     return None
 
 
-def visible_page_label_sort_number(label: str) -> int:
+def visible_page_label_sort_number(label: str) -> int | None:
     """Return the numeric part that should track raw page order."""
-    return int(label.rsplit(':', 1)[-1].rsplit('-', 1)[-1])
+    parsed_label = parse_visible_page_label(label)
+    return parsed_label.number if parsed_label is not None else None
 
 
 def is_compound_visible_page_label(label: str) -> bool:
@@ -172,20 +294,28 @@ def edge_visible_page_label(text: str, edge: str) -> str | None:
     if edge == 'start':
         compound_match = re.match(rf'\s*({COMPOUND_VISIBLE_PAGE_LABEL_PATTERN})\b', text)
         if compound_match:
-            return compound_match.group(1)
+            visible = compound_match.group(1)
+            if parse_visible_page_label(visible) is not None:
+                return visible
 
-        plain_match = re.fullmatch(r'\s*(\d+)\s*', text)
+        plain_match = re.fullmatch(rf'\s*({PLAIN_VISIBLE_PAGE_LABEL_PATTERN})\s*', text)
         if plain_match:
-            return plain_match.group(1)
+            visible = plain_match.group(1)
+            if parse_visible_page_label(visible) is not None:
+                return visible
         return None
 
     compound_match = re.search(rf'\b({COMPOUND_VISIBLE_PAGE_LABEL_PATTERN})\s*$', text)
     if compound_match:
-        return compound_match.group(1)
+        visible = compound_match.group(1)
+        if parse_visible_page_label(visible) is not None:
+            return visible
 
-    plain_match = re.search(r'(?:^|\s)(\d+)\s*$', text)
+    plain_match = re.search(rf'(?:^|\s)({PLAIN_VISIBLE_PAGE_LABEL_PATTERN})\s*$', text)
     if plain_match:
-        return plain_match.group(1)
+        visible = plain_match.group(1)
+        if parse_visible_page_label(visible) is not None:
+            return visible
     return None
 
 
@@ -202,22 +332,29 @@ def infer_repeated_page_numbers(
             candidates_by_key[key].append(candidate)
 
     for repeated_candidates in candidates_by_key.values():
-        numbers_by_position: dict[int, list[tuple[int, str]]] = defaultdict(list)
+        labels_by_position: dict[tuple[int, str], list[tuple[int, str, int]]] = defaultdict(list)
         for candidate in repeated_candidates:
-            for position, match in enumerate(re.finditer(r'\d+', candidate.line.text)):
-                numbers_by_position[position].append((candidate.line.page_no, match.group(0)))
+            matches = re.finditer(rf'\b{PLAIN_VISIBLE_PAGE_LABEL_PATTERN}\b', candidate.line.text)
+            for position, match in enumerate(matches):
+                visible = match.group(0)
+                parsed_label = parse_visible_page_label(visible)
+                if parsed_label is None:
+                    continue
+                labels_by_position[(position, parsed_label.numeral_system)].append(
+                    (candidate.line.page_no, visible, parsed_label.number)
+                )
 
-        for raw_and_visible in numbers_by_position.values():
-            offsets = Counter(int(visible) - raw for raw, visible in raw_and_visible)
+        for raw_visible_and_number in labels_by_position.values():
+            offsets = Counter(number - raw for raw, _, number in raw_visible_and_number)
             if not offsets:
                 continue
 
             offset, offset_count = offsets.most_common(1)[0]
-            if offset_count < max(3, len(raw_and_visible) * 2 // 3):
+            if offset_count < max(3, len(raw_visible_and_number) * 2 // 3):
                 continue
 
-            for raw, visible in raw_and_visible:
-                if int(visible) - raw == offset:
+            for raw, visible, number in raw_visible_and_number:
+                if number - raw == offset:
                     page_numbers.setdefault(raw, visible)
 
     return page_numbers
@@ -241,9 +378,11 @@ def infer_edge_page_numbers(candidate_list: list[HeaderFooterCandidate]) -> dict
     for labels_by_page in labels_by_page_and_position.values():
         offsets: Counter[int] = Counter()
         for raw, visible_labels in labels_by_page.items():
-            page_offsets = {
-                visible_page_label_sort_number(visible) - raw for visible in visible_labels
-            }
+            page_offsets = set()
+            for visible in visible_labels:
+                sort_number = visible_page_label_sort_number(visible)
+                if sort_number is not None:
+                    page_offsets.add(sort_number - raw)
             offsets.update(page_offsets)
         if not offsets:
             continue
@@ -253,11 +392,12 @@ def infer_edge_page_numbers(candidate_list: list[HeaderFooterCandidate]) -> dict
             continue
 
         for raw, visible_labels in labels_by_page.items():
-            matching_labels = sorted(
-                visible
-                for visible in visible_labels
-                if visible_page_label_sort_number(visible) - raw == offset
-            )
+            matching_labels = []
+            for visible in visible_labels:
+                sort_number = visible_page_label_sort_number(visible)
+                if sort_number is not None and sort_number - raw == offset:
+                    matching_labels.append(visible)
+            matching_labels.sort()
             if matching_labels:
                 visible = matching_labels[0]
                 page_numbers.setdefault(raw, visible)
@@ -336,6 +476,62 @@ def remove_headers_and_footers(
     ]
 
     return filtered_lines, page_number_list
+
+
+def complete_page_numbers(
+    page_count: int, detected_page_number_list: list[PageNumber]
+) -> list[PageNumber]:
+    """Return every raw page, filling only unambiguous visible-number gaps."""
+    detected_by_raw = {
+        page_number.raw: page_number.visible
+        for page_number in detected_page_number_list
+        if 1 <= page_number.raw <= page_count and page_number.visible is not None
+    }
+    completed_by_raw: dict[int, str | None] = {
+        raw: detected_by_raw.get(raw) for raw in range(1, page_count + 1)
+    }
+    detected_items = sorted(detected_by_raw.items())
+
+    if detected_items:
+        first_raw, first_visible = detected_items[0]
+        first_label = parse_visible_page_label(first_visible)
+        if first_label is not None and not first_label.prefix:
+            for raw in range(1, first_raw):
+                guessed = format_visible_page_label(
+                    first_label, first_label.number - (first_raw - raw)
+                )
+                if guessed is not None:
+                    completed_by_raw[raw] = guessed
+
+        last_raw, last_visible = detected_items[-1]
+        last_label = parse_visible_page_label(last_visible)
+        if last_label is not None and not last_label.prefix:
+            for raw in range(last_raw + 1, page_count + 1):
+                guessed = format_visible_page_label(
+                    last_label, last_label.number + (raw - last_raw)
+                )
+                if guessed is not None:
+                    completed_by_raw[raw] = guessed
+
+    for (left_raw, left_visible), (right_raw, right_visible) in zip(
+        detected_items, detected_items[1:], strict=False
+    ):
+        left_label = parse_visible_page_label(left_visible)
+        right_label = parse_visible_page_label(right_visible)
+        if (
+            left_label is None
+            or right_label is None
+            or not page_label_sequences_match(left_label, right_label)
+            or right_label.number - left_label.number != right_raw - left_raw
+        ):
+            continue
+
+        for raw in range(left_raw + 1, right_raw):
+            guessed = format_visible_page_label(left_label, left_label.number + (raw - left_raw))
+            if guessed is not None:
+                completed_by_raw[raw] = guessed
+
+    return [PageNumber(raw=raw, visible=completed_by_raw[raw]) for raw in range(1, page_count + 1)]
 
 
 def build_page_number_map(

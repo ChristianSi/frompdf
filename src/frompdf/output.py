@@ -38,13 +38,17 @@ def backup_existing_file(output_path: Path) -> None:
 
 
 def dump_page_numbers(page_number_list: list[PageNumber], output_path: Path) -> None:
-    """Write visible page numbers as CSV with a header row."""
+    """Write raw and visible page numbers as CSV with a header row."""
     with output_path.open('w', encoding='utf-8', newline='') as output_file:
         writer = csv.DictWriter(output_file, fieldnames=['raw', 'visible'])
         writer.writeheader()
         for page_number in page_number_list:
-            if page_number.visible is not None:
-                writer.writerow(asdict(page_number))
+            writer.writerow(
+                {
+                    'raw': page_number.raw,
+                    'visible': page_number.visible if page_number.visible is not None else '?',
+                }
+            )
 
 
 def markdown_to_text(block_list: list[Block], output_file: TextIO) -> None:
