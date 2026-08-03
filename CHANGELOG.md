@@ -1,0 +1,29 @@
+# Changelog
+
+All notable, user-visible changes to frompdf are documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
+and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [Unreleased]
+
+### Added
+
+- Inference of missing Arabic and Roman visible page labels when the
+  surrounding sequence is unambiguous.
+
+### Changed
+
+- `--dump-pagenos` now always writes one row per PDF page, using `?` where no
+  visible page label can be detected or safely inferred.
+
+## 0.1.0 - 2026-07-09
+
+### Added
+
+- Initial release.
+- PDF-to-Markdown extraction of paragraphs, headings, and indented block
+  quotes.
+- Detection and removal of repeated headers and footers.
+- Tracking of raw PDF page numbers and detected visible page labels.
+- Optional line-level and page-number diagnostic CSV files.

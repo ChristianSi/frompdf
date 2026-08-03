@@ -53,6 +53,10 @@ If formatting is needed:
 ruff format src tests
 ```
 
+Add notable user-facing changes to the `Unreleased` section of `CHANGELOG.md`.
+When preparing a release, rename that section to the new version and release
+date, then add a fresh `Unreleased` section above it.
+
 ## Testing With The PDF Corpus
 
 The semi-manual corpus lives in `tests/pdf-corpus`.

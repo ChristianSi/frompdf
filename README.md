@@ -172,6 +172,9 @@ Planned next improvements include:
 See [CONTRIBUTING.md](CONTRIBUTING.md) for development setup, style rules,
 testing commands, and guidance for contributors and coding agents.
 
+Release history and unreleased changes are recorded in
+[CHANGELOG.md](CHANGELOG.md).
+
 ## License
 
 frompdf is distributed under the MIT license. See [LICENSE.txt](LICENSE.txt).
