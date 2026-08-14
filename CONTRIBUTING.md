@@ -69,6 +69,23 @@ make
 This Makefile is independent of the corpus conversion targets in
 `tests/pdf-corpus`.
 
+## Adding Unit Tests
+
+There is no need to redundantly unit-test high-level extraction behavior that
+is already covered by comparisons against expected files in `tests/pdf-corpus`.
+Instead, add focused unit tests for helper functions, especially for corner
+cases and details that high-level PDF-based tests might not cover.
+
+When adding unit tests:
+
+- Include both positive cases and conservative negative cases for heuristics.
+- Prefer small synthetic fixtures that make the relevant inputs and expected
+  behavior easy to understand.
+- Keep tests deterministic and use temporary directories for generated files;
+  do not write into `tests/pdf-corpus`.
+- Follow the existing `unittest` structure and use descriptive test names.
+- Run `cd tests && make` before submitting changes.
+
 ## Testing With The PDF Corpus
 
 The semi-manual corpus lives in `tests/pdf-corpus`.
