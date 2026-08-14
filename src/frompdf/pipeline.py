@@ -3,7 +3,7 @@ from pathlib import Path
 from pdftext.extraction import dictionary_output
 
 from frompdf.blocks import lines_to_markdown_blocks
-from frompdf.lines import iter_lines
+from frompdf.lines import iter_lines, normalize_detached_diacritics
 from frompdf.models import Block
 from frompdf.output import (
     build_csv_output_path,
@@ -23,7 +23,8 @@ def extract_markdown(
 ) -> list[Block]:
     """Extract Markdown blocks from a PDF."""
     input_path = Path(input_file_name)
-    page_list = dictionary_output(str(input_path), sort=True)
+    page_list = dictionary_output(str(input_path), sort=True, keep_chars=True)
+    normalize_detached_diacritics(page_list)
     line_list = iter_lines(page_list)
 
     if dump_lines:

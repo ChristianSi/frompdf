@@ -14,6 +14,8 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
 
 ### Changed
 
+- Detached, geometrically positioned diacritics from older TeX-generated PDFs
+  are now combined with their base letters before line text is assembled.
 - `--dump-pagenos` now always writes one row per PDF page, using `?` where no
   visible page label can be detected or safely inferred.
 
