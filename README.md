@@ -175,6 +175,13 @@ testing commands, and guidance for contributors and coding agents.
 Release history and unreleased changes are recorded in
 [CHANGELOG.md](CHANGELOG.md).
 
+## Acknowledgements
+
+Development of frompdf has benefited from assistance by
+[ChatGPT](https://chatgpt.com/) and
+[Codex](https://learn.chatgpt.com/docs/codex/ide), including support with
+coding, testing, and documentation.
+
 ## License
 
 frompdf is distributed under the MIT license. See [LICENSE.txt](LICENSE.txt).
