@@ -57,6 +57,18 @@ Add notable user-facing changes to the `Unreleased` section of `CHANGELOG.md`.
 When preparing a release, rename that section to the new version and release
 date, then add a fresh `Unreleased` section above it.
 
+## Running Unit Tests
+
+The complete unit test suite can also be run from the `tests` directory:
+
+```bash
+cd tests
+make
+```
+
+This Makefile is independent of the corpus conversion targets in
+`tests/pdf-corpus`.
+
 ## Testing With The PDF Corpus
 
 The semi-manual corpus lives in `tests/pdf-corpus`.
