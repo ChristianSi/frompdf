@@ -16,6 +16,7 @@ from frompdf.page_edges import (
     complete_page_numbers,
     remove_headers_and_footers,
 )
+from frompdf.reading_order import order_lines_for_reading
 
 
 def extract_markdown(
@@ -31,6 +32,7 @@ def extract_markdown(
         dump_csv(line_list, build_csv_output_path(input_path))
 
     filtered_lines, detected_page_number_list = remove_headers_and_footers(line_list, page_list)
+    filtered_lines = order_lines_for_reading(filtered_lines)
     page_number_list = complete_page_numbers(len(page_list), detected_page_number_list)
 
     if dump_pagenos:

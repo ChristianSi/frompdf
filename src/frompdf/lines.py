@@ -1,3 +1,4 @@
+import re
 from collections import defaultdict
 from collections.abc import Sequence
 from difflib import SequenceMatcher
@@ -25,6 +26,11 @@ SPACING_TO_COMBINING = {
     '^': '\u0302',
     '~': '\u0303',
 }
+
+BOLD_FONT_NAME_PATTERN = re.compile(
+    r'(?:bold|black|heavy|semi[- ]?bold|demi[- ]?bold|[.+_-](?:b|bd|sb)(?:it)?$)',
+    flags=re.IGNORECASE,
+)
 
 
 def round_or_none(value: float | int | None, digits: int = 1) -> float | None:
@@ -366,6 +372,13 @@ def average_font_weight(line_dict: PdfTextLine) -> float | None:
         font_weight = font_dict.get('weight')
         if not isinstance(font_weight, int | float) or font_weight < 0:
             continue
+
+        # Some embedded fonts report weight 0 for every span even though their
+        # names retain a conventional bold marker such as `.B` or `-Bold`.
+        font_name = font_dict.get('name')
+        if font_weight == 0 and isinstance(font_name, str):
+            if BOLD_FONT_NAME_PATTERN.search(font_name):
+                font_weight = 700
 
         weighted_sum += float(font_weight) * weight
         total_weight += weight

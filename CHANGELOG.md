@@ -14,6 +14,10 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
 
 ### Changed
 
+- Multi-column page regions are now ordered column by column while full-width
+  and ambiguous regions retain their existing order.
+- Bold embedded-font names are used when PDFs report zero font weights, while
+  slightly enlarged multiline metadata blocks no longer become headings.
 - Detached, geometrically positioned diacritics from older TeX-generated PDFs
   are now combined with their base letters before line text is assembled.
 - `--dump-pagenos` now always writes one row per PDF page, using `?` where no

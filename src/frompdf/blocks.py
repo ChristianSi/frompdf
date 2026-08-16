@@ -10,6 +10,16 @@ HEADING_WEIGHT_FONT_SIZE_MULTIPLIER = 1.08
 # A block must be at least 40% heavier than the document median to get the boost.
 HEADING_WEIGHT_BOOST_THRESHOLD = 1.4
 
+# When the document median is zero, only an almost entirely bold block should
+# receive the boost. Lower averages usually indicate a bold lead-in followed by
+# ordinary paragraph text.
+ZERO_MEDIAN_HEADING_MIN_WEIGHT = 600.0
+
+# Long multiline blocks only count as headings when their size is clearly distinct
+# from body text. This keeps compact author/address cards as paragraphs.
+MULTILINE_HEADING_LINE_THRESHOLD = 4
+MULTILINE_HEADING_MIN_FONT_RATIO = 1.16
+
 HEADING_LEVEL_THRESHOLDS = [
     # Derived from 105% of the default font size, repeatedly multiplied by 10%,
     # rounded to the nearest full percentage, and capped at 200%.
@@ -225,11 +235,11 @@ def markdown_block_from_lines(
 
 def should_boost_heading_font_size(block_obj: Block, document_median_weight: float | None) -> bool:
     """Return whether a block is heavy enough, relative to the document, for a heading boost."""
-    return (
-        block_obj.avg_weight is not None
-        and document_median_weight is not None
-        and block_obj.avg_weight >= document_median_weight * HEADING_WEIGHT_BOOST_THRESHOLD
-    )
+    if block_obj.avg_weight is None or document_median_weight is None:
+        return False
+    if document_median_weight <= 0:
+        return block_obj.avg_weight >= ZERO_MEDIAN_HEADING_MIN_WEIGHT
+    return block_obj.avg_weight >= document_median_weight * HEADING_WEIGHT_BOOST_THRESHOLD
 
 
 def initial_heading_level(
@@ -249,6 +259,13 @@ def initial_heading_level(
         adjusted_font_size *= HEADING_WEIGHT_FONT_SIZE_MULTIPLIER
 
     font_ratio = adjusted_font_size / default_font_size
+    visible_line_count = sum(bool(line.strip()) for line in block_obj.text.split('\n'))
+    if (
+        visible_line_count >= MULTILINE_HEADING_LINE_THRESHOLD
+        and font_ratio < MULTILINE_HEADING_MIN_FONT_RATIO
+    ):
+        return None
+
     for threshold, level in HEADING_LEVEL_THRESHOLDS:
         if font_ratio >= threshold:
             return level
