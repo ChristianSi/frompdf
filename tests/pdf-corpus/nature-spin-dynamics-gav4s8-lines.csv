@@ -20,7 +20,7 @@ CC-BY 4.0: Creative Commons: Namensnennung,1,8,18,6.0,89.3,802.8,252.9,808.8,0.0
 Weitere Informationen finden Sie unter: / For more information see:,1,8,19,6.0,89.3,809.7,296.4,815.8,0.0,7.0,435.0
 https://creativecommons.org/licenses/by/4.0/deed.de,1,8,20,6.0,89.3,816.7,249.4,822.8,0.0,7.0,435.0
 ARTICLE,2,1,1,12.5,43.6,129.9,95.0,142.4,,,0.0
-https://doi.org/10.1038/s41467-022-30829-z OPEN,2,2,2,7.2,46.6,150.9,264.1,159.6,3.0,20.9,0.0
+https://doi.org/10.1038/s41467-022-30829-z OPEN,2,2,2,7.2,46.6,150.9,264.1,159.6,3.0,20.9,60.9
 Slowdown of photoexcited spin dynamics in the,2,3,3,21.5,43.6,170.6,526.0,192.1,-3.0,19.8,0.0
 non-collinear spin-ordered phases in skyrmion,2,4,4,21.5,43.6,196.5,509.0,218.0,0.0,25.9,0.0
 host GaV4S8,2,5,5,24.1,43.6,222.4,171.4,246.4,0.0,25.9,0.0
@@ -46,7 +46,7 @@ the step toward ultrafast photocontrol of the magnets with novel spin orders.,2,
 "1 II. Physikalisches Institut, Universität zu Köln, Zülpicher Str. 77, D-50937 Köln, Germany. 2 Experimental Physics V, Center for Electronic Correlations",2,10,25,7.1,43.6,700.5,540.3,709.4,0.0,203.4,0.0
 "and Magnetism, University of Augsburg, 86159 Augsburg, Germany. 3 Institute of Applied Physics, MD 2028 Chișinău, Republic of Moldova. 4 Istituto",2,10,26,7.1,43.6,709.9,540.8,720.0,-0.0,9.4,0.0
 "Italiano di Tecnologia, Via Morego 30, 16163 Genova, Italy. 5Dipartimento di Fisica, Università di Genova, Via Dodecaneso, 33, 16146 Genova, Italy. ✉email: sekiguchi.fumiya.2n@kyoto-u.ac.jp; pvl@ph2.uni-koeln.de",2,10,27,7.1,43.6,720.4,534.0,739.3,-0.0,10.5,0.0
-NATURE COMMUNICATIONS | (2022) 13:3212 | https://doi.org/10.1038/s41467-022-30829-z | www.nature.com/naturecommunications 1,2,11,28,6.2,43.6,751.1,551.7,759.3,0.0,30.6,0.0
+NATURE COMMUNICATIONS | (2022) 13:3212 | https://doi.org/10.1038/s41467-022-30829-z | www.nature.com/naturecommunications 1,2,11,28,6.2,43.6,751.1,551.7,759.3,0.0,30.6,5.8
 ARTICLE NATURE COMMUNICATIONS | https://doi.org/10.1038/s41467-022-30829-z,3,1,1,7.3,43.6,17.5,551.7,30.0,,,0.0
 I,3,2,2,45.1,43.6,41.8,54.6,86.9,-0.0,24.3,0.0
 "n spin systems several types of interactions can coexist, and",3,2,3,9.2,55.4,51.2,291.6,60.3,11.8,9.3,0.0
@@ -106,7 +106,7 @@ bation and the oscillating moment of the specific magnon mode.,3,6,55,9.2,43.6,3
 depending on the nature of skyrmion ordering is highly,3,6,57,9.2,43.6,385.9,291.8,395.1,0.0,10.5,0.0
 demanded for the coherent photocontrol of skyrmions.,3,6,58,9.2,43.6,396.4,256.2,405.5,0.0,10.4,0.0
 Results,3,7,59,8.6,303.6,294.1,333.6,302.6,260.0,-102.3,0.0
-Magnetic properties and phase diagram of GaV4S8. GaV4S8 is a,3,8,60,9.7,303.6,304.6,551.7,314.5,0.0,10.6,0.0
+Magnetic properties and phase diagram of GaV4S8. GaV4S8 is a,3,8,60,9.7,303.6,304.6,551.7,314.5,0.0,10.6,557.6
 "multiferroic semiconductor from the lacunar spinel family, with a",3,8,61,9.2,303.6,315.1,551.7,324.2,0.0,10.4,0.0
 non-chiral polar crystal structure. The magnetic phase diagram of,3,9,62,9.2,303.6,325.6,552.6,334.7,0.0,10.5,0.0
 GaV4S8 is shown in Fig. 1a; below the Curie temperature of TC,3,9,63,9.1,303.6,336.0,551.7,345.9,0.0,10.4,0.0
@@ -136,7 +136,7 @@ magnetic systems gave rise to the field of spin caloritronics31. For,3,10,86,9.2
 "example, a heat valve effect has been demonstrated in sandwich",3,10,87,9.1,43.6,480.1,291.6,489.2,-0.0,12.0,0.0
 nanostructures with ferromagnetic and non-magnetic layers32. As,3,10,88,9.2,43.6,489.0,291.7,499.7,0.0,8.9,0.0
 "mentioned earlier, the nature of magnon modes is modified by",3,10,89,9.2,43.6,501.0,291.9,510.2,0.0,12.0,0.0
-a bc,3,11,90,7.6,53.2,526.0,406.3,533.6,9.6,25.0,0.0
+a bc,3,11,90,7.6,53.2,526.0,406.3,533.6,9.6,25.0,700.0
 0,3,12,91,7.9,412.9,528.0,417.6,535.9,359.7,1.9,0.0
 0,3,13,92,7.9,264.3,528.2,269.1,536.1,-148.6,0.2,0.0
 (mdeg.),3,14,93,28.6,251.2,544.0,259.2,572.6,-13.1,15.8,0.0
@@ -170,7 +170,7 @@ Paramagnet,3,22,109,57.6,221.8,572.4,231.7,630.0,161.0,8.7,0.0
 -2,3,30,121,7.9,261.5,585.2,269.1,593.1,-255.1,2.9,0.0
 -2,3,31,122,7.9,410.0,584.9,417.6,592.9,148.6,-0.2,0.0
 8 K 10 K,3,32,123,8.8,335.5,585.6,497.3,594.5,-74.5,0.7,0.0
-de,3,33,124,7.6,252.2,603.8,406.3,611.4,-83.4,18.2,0.0
+de,3,33,124,7.6,252.2,603.8,406.3,611.4,-83.4,18.2,700.0
 0,3,34,125,7.9,264.3,608.3,269.1,616.2,12.2,4.4,0.0
 0,3,35,126,7.9,412.9,608.4,417.6,616.4,148.6,0.2,0.0
 20 mT,3,36,127,6.2,366.8,619.9,387.6,626.1,-46.1,11.5,0.0
@@ -209,11 +209,11 @@ Temperature (K),3,54,159,8.9,126.2,691.7,194.8,700.6,-319.4,-1.7,0.0
 Fig. 1 Photoinduced Δθ dynamics in the different magnetic phases of GaV4S8.a Magnetic phase diagram of GaV4S8. Vertical dashed lines indicate the,3,55,160,8.0,43.6,709.3,551.7,720.1,-82.6,17.6,0.0
 "temperatures where trMOKE measurements were performed. b–e Δθ traces under different external magnetic fields at 8 K, 10 K, 11.5 K, and 14.5 K,",3,55,161,7.2,43.6,719.9,537.9,730.2,-0.0,10.6,0.0
 respectively.,3,55,162,7.2,43.6,732.0,84.7,739.2,-0.0,12.1,0.0
-2 NATURE COMMUNICATIONS | (2022) 13:3212 | https://doi.org/10.1038/s41467-022-30829-z | www.nature.com/naturecommunications,3,56,163,6.2,43.6,751.1,494.9,759.3,0.0,19.1,0.0
+2 NATURE COMMUNICATIONS | (2022) 13:3212 | https://doi.org/10.1038/s41467-022-30829-z | www.nature.com/naturecommunications,3,56,163,6.2,43.6,751.1,494.9,759.3,0.0,19.1,5.8
 NATURE COMMUNICATIONS | https://doi.org/10.1038/s41467-022-30829-z ARTICLE,4,1,1,7.3,43.6,17.5,551.7,30.0,,,0.0
-a,4,2,2,8.7,54.9,53.1,61.5,61.8,11.3,35.6,0.0
-c,4,3,3,8.7,240.3,53.1,246.9,61.8,185.4,0.0,0.0
-e,4,4,4,8.7,415.0,53.1,421.6,61.8,174.7,0.0,0.0
+a,4,2,2,8.7,54.9,53.1,61.5,61.8,11.3,35.6,700.0
+c,4,3,3,8.7,240.3,53.1,246.9,61.8,185.4,0.0,700.0
+e,4,4,4,8.7,415.0,53.1,421.6,61.8,174.7,0.0,700.0
 SkL,4,5,5,10.2,321.7,110.4,340.4,120.5,-93.3,57.2,0.0
 FM,4,5,6,10.0,350.7,80.4,366.3,90.4,29.0,-30.0,0.0
 6,4,5,7,9.1,276.1,95.9,281.5,105.0,-74.6,15.5,0.0
@@ -264,9 +264,9 @@ Cyc,4,26,48,10.2,286.7,129.9,305.3,140.1,-90.2,3.1,0.0
 Temperature (K),4,29,52,9.2,461.5,153.8,533.1,162.9,-2.4,12.7,0.0
 200 400 600 800,4,30,53,9.1,96.6,145.9,185.6,155.0,-364.9,-7.9,0.0
 Time (ps),4,30,54,9.2,110.7,157.5,151.9,166.6,14.1,11.6,0.0
-b,4,31,55,8.7,54.6,174.8,61.9,183.5,-56.1,17.3,0.0
-d,4,32,56,8.7,240.0,174.8,247.2,183.5,185.4,0.0,0.0
-f,4,33,57,8.7,416.1,174.6,420.4,183.3,176.1,-0.2,0.0
+b,4,31,55,8.7,54.6,174.8,61.9,183.5,-56.1,17.3,700.0
+d,4,32,56,8.7,240.0,174.8,247.2,183.5,185.4,0.0,700.0
+f,4,33,57,8.7,416.1,174.6,420.4,183.3,176.1,-0.2,700.0
 300,4,34,58,9.1,432.5,176.9,448.8,186.0,16.4,2.3,0.0
 1.2,4,35,59,9.1,264.9,179.4,278.4,188.4,-167.6,2.4,0.0
 Cyc,4,36,60,7.1,377.1,191.2,392.2,198.3,112.2,11.8,0.0
@@ -372,7 +372,7 @@ where the response is linear in pump fluence (~30 μJ/cm2 on the,4,65,157,9.1,43
 "respectively. The pump pulse was linearly polarized, with the",4,65,160,9.2,43.6,559.2,291.7,568.4,0.0,10.4,0.0
 photon energy (1.55 eV) well above the GaV4S8 band gap of,4,65,161,9.9,43.6,569.7,292.5,579.6,0.0,10.5,0.0
 "~0.35 eV39,40.",4,65,162,9.1,43.6,578.7,95.4,589.3,0.0,8.9,0.0
-Coherent spin precession. Figures 1b–e show the photoinduced,4,66,163,9.1,43.6,604.5,291.6,614.8,0.0,25.8,0.0
+Coherent spin precession. Figures 1b–e show the photoinduced,4,66,163,9.1,43.6,604.5,291.6,614.8,0.0,25.8,284.7
 "transient change of the Kerr rotation angle of the probe pulse, Δθ,",4,66,164,9.2,43.6,615.3,291.7,625.3,-0.0,10.8,0.0
 for the magnetic fields ranging from 20–150 mT and four fixed,4,66,165,9.2,43.6,625.4,291.6,635.7,-0.0,10.1,0.0
 temperatures as indicated by the dashed vertical lines in the phase,4,66,166,9.2,43.6,637.0,291.7,646.1,0.0,11.6,0.0
@@ -385,7 +385,7 @@ fast demagnetization stems from the photoexcited carrier,4,66,172,9.2,43.6,699.7
 "relaxation process, where magnons are created either through",4,66,173,9.2,43.6,710.2,291.6,719.4,0.0,10.5,0.0
 direct electron-magnon scattering or by the phonons emitted,4,66,174,9.2,43.6,720.6,291.7,729.8,0.0,10.4,0.0
 during non-radiative carrier relaxation process41. After this initial,4,66,175,9.2,43.6,729.6,291.7,740.3,0.0,8.9,0.0
-NATURE COMMUNICATIONS | (2022) 13:3212 | https://doi.org/10.1038/s41467-022-30829-z | www.nature.com/naturecommunications 3,4,67,176,6.2,43.6,751.1,551.7,759.3,-0.0,21.5,0.0
+NATURE COMMUNICATIONS | (2022) 13:3212 | https://doi.org/10.1038/s41467-022-30829-z | www.nature.com/naturecommunications 3,4,67,176,6.2,43.6,751.1,551.7,759.3,-0.0,21.5,5.8
 ARTICLE NATURE COMMUNICATIONS | https://doi.org/10.1038/s41467-022-30829-z,5,1,1,7.3,43.6,17.5,551.7,30.0,,,0.0
 300–500 ps as seen in the traces at 30 mT and 50 mT. The trace at,5,2,2,9.1,303.6,50.0,551.7,60.3,260.0,32.5,0.0
 "40 mT, which is near the phase boundary between the Cyc and",5,2,3,9.2,303.6,61.6,551.7,70.8,0.0,11.6,0.0
@@ -449,7 +449,7 @@ phases such an efficient excitation does not occur. This,5,12,60,9.1,43.6,375.4,
 observation demonstrates that the skyrmion-specific coherent,5,12,61,9.2,43.6,385.9,291.6,395.1,0.0,10.5,0.0
 dynamics is not only distinguished by the mode frequency but,5,12,62,9.2,43.6,396.4,291.7,405.5,0.0,10.4,0.0
 also by the high photoexcitation efficiency.,5,12,63,9.2,43.6,406.9,208.5,416.0,0.0,10.5,0.0
-Remagnetization dynamics. The coherent spin precession,5,13,64,9.1,303.6,354.5,551.7,363.6,260.0,-52.3,0.0
+Remagnetization dynamics. The coherent spin precession,5,13,64,9.1,303.6,354.5,551.7,363.6,260.0,-52.3,311.1
 observed above shows a signature of phase coexistence across the,5,13,65,9.2,303.6,365.0,551.6,374.2,0.0,10.5,0.0
 magnetic phase transitions in GaV4S8. This observation indicates,5,13,66,9.9,303.6,375.4,551.7,385.3,0.0,10.4,0.0
 the formation of magnetic domain walls in the course of phase,5,13,67,9.2,303.6,385.9,551.7,395.1,-0.0,10.5,0.0
@@ -511,7 +511,7 @@ Magnetic Field (mT),5,37,122,8.8,265.2,692.5,348.6,701.3,-126.0,15.5,0.0
 "Fig. 3 Change of the remagnetization across the magnetic phase transition. Time constant of the remagnetization process at 8 K, 10 K, 11.5 K, and 14.5 K",5,38,123,7.2,43.6,711.0,551.7,718.3,-221.6,18.5,0.0
 are plotted. The blue-shaded areas are guides to the eye indicating the magnetic phase transition. Error bars are the standard deviation of the fitting,5,38,124,7.2,43.6,721.0,543.2,728.8,0.0,9.9,0.0
 parameters.,5,38,125,7.2,43.6,732.0,82.8,739.2,0.0,11.0,0.0
-4 NATURE COMMUNICATIONS | (2022) 13:3212 | https://doi.org/10.1038/s41467-022-30829-z | www.nature.com/naturecommunications,5,39,126,6.2,43.6,751.1,494.9,759.3,-0.0,19.1,0.0
+4 NATURE COMMUNICATIONS | (2022) 13:3212 | https://doi.org/10.1038/s41467-022-30829-z | www.nature.com/naturecommunications,5,39,126,6.2,43.6,751.1,494.9,759.3,-0.0,19.1,5.8
 NATURE COMMUNICATIONS | https://doi.org/10.1038/s41467-022-30829-z ARTICLE,6,1,1,7.3,43.6,17.5,551.7,30.0,,,0.0
 "depending on the temperature, which is remarkable considering",6,2,2,9.2,43.6,51.2,291.7,60.3,0.0,33.7,0.0
 that it is triggered by a small change of magnetic field in a single,6,2,3,9.2,43.6,61.6,291.6,70.8,0.0,10.5,0.0
@@ -650,7 +650,7 @@ collinear SkL and Cyc phase compared to the FM phase is robust.,6,17,135,9.2,303
 Such domain-wall driven thermal conductivity decrease is analogous,6,17,136,9.2,303.6,702.6,551.7,711.7,0.0,10.4,0.0
 "to that observed in ferroelectric Pb(Zr0.3Ti0.7)O3, where a decrease of",6,18,137,9.8,303.6,713.0,552.6,722.9,0.0,10.5,0.0
 phonon thermal conductivity of 11% has been achieved by,6,18,138,9.2,303.6,723.5,551.8,732.6,0.0,10.4,0.0
-NATURE COMMUNICATIONS | (2022) 13:3212 | https://doi.org/10.1038/s41467-022-30829-z | www.nature.com/naturecommunications 5,6,19,139,6.2,43.6,751.1,551.7,759.3,-260.0,27.6,0.0
+NATURE COMMUNICATIONS | (2022) 13:3212 | https://doi.org/10.1038/s41467-022-30829-z | www.nature.com/naturecommunications 5,6,19,139,6.2,43.6,751.1,551.7,759.3,-260.0,27.6,5.8
 ARTICLE NATURE COMMUNICATIONS | https://doi.org/10.1038/s41467-022-30829-z,7,1,1,7.3,43.6,17.5,551.7,30.0,,,0.0
 "Fig. 4 Simulated spin texture and magnon spectra. a Representative spin textures and b magnon spectral functions, obtained from atomistic spin",7,2,2,7.2,43.6,226.9,536.6,234.2,-0.0,209.4,0.0
 "dynamics simulations of GaV4S8 at T = 12 K and magnetic field magnitudes, as indicated at the top of each panel.",7,2,3,7.2,43.6,235.6,426.1,245.4,-0.0,8.7,0.0
@@ -724,7 +724,7 @@ mj,7,20,70,8.3,470.6,523.9,484.8,534.1,427.0,-128.1,0.0
 r0ðÞ 0,7,20,71,12.4,483.5,526.2,496.1,538.6,12.9,2.3,0.0
 ð1Þ,7,20,72,12.4,496.1,525.1,551.7,538.1,12.6,-1.0,0.0
 of the Cartesian component j of the magnetization mj,7,20,73,7.2,313.6,536.6,477.5,546.1,-182.5,11.5,0.0
-rðÞt at the position r and,7,20,74,7.2,476.2,538.9,551.6,551.3,162.6,2.2,0.0
+rðÞt at the position r and,7,20,74,7.2,476.2,538.9,551.6,551.3,162.6,2.2,30.4
 time t. The magnetization mj,7,20,75,7.2,303.6,546.7,389.6,556.3,-172.6,7.9,0.0
 rðÞt was obtained by integration of the Landau–Lifshitz,7,20,76,7.2,388.3,548.1,551.6,561.4,84.7,1.4,0.0
 "equation59. The Gilbert damping was set to 10−3. 20,000 timesteps of 10 fs were",7,20,77,7.2,303.6,554.9,548.7,564.7,-84.7,6.7,0.0
@@ -770,135 +770,135 @@ utilized as the transport agent. The crystal growth was performed at temperature
 Code availability,7,35,117,8.6,303.6,706.8,371.5,715.4,260.0,-25.7,0.0
 The codes that support the calculations of this study are available from the authors upon,7,36,118,6.8,303.6,717.4,551.6,724.1,0.0,10.5,0.0
 reasonable request.,7,36,119,6.7,303.6,726.1,357.2,732.8,0.0,8.7,0.0
-6 NATURE COMMUNICATIONS | (2022) 13:3212 | https://doi.org/10.1038/s41467-022-30829-z | www.nature.com/naturecommunications,7,37,120,6.2,43.6,751.1,494.9,759.3,-260.0,25.0,0.0
+6 NATURE COMMUNICATIONS | (2022) 13:3212 | https://doi.org/10.1038/s41467-022-30829-z | www.nature.com/naturecommunications,7,37,120,6.2,43.6,751.1,494.9,759.3,-260.0,25.0,5.8
 NATURE COMMUNICATIONS | https://doi.org/10.1038/s41467-022-30829-z ARTICLE,8,1,1,7.3,43.6,17.5,551.7,30.0,,,0.0
 Received: 10 August 2021; Accepted: 20 May 2022;,8,2,2,8.7,43.6,51.5,230.1,60.2,-0.0,34.0,0.0
 "35. Geirhos, K. et al. Macroscopic manifestation of domain-wall magnetism and",8,3,3,7.2,303.6,52.6,551.3,59.8,260.0,1.1,0.0
-"magnetoelectric effect in a Néel-type skyrmion host. npj Quantum Mater. 5,",8,3,4,7.2,318.2,61.3,551.0,68.5,14.6,8.7,0.0
+"magnetoelectric effect in a Néel-type skyrmion host. npj Quantum Mater. 5,",8,3,4,7.2,318.2,61.3,551.0,68.5,14.6,8.7,9.7
 44 (2020).,8,3,5,7.2,318.2,70.0,349.0,77.2,0.0,8.7,0.0
 "36. Ehlers, D. et al. Exchange anisotropy in the skyrmion host GaV4S8. J. Phys.",8,4,6,7.8,303.6,78.8,548.3,86.6,-14.6,8.7,0.0
-"Condens. Matter 29, 065803 (2017).",8,4,7,7.2,318.2,87.5,427.3,94.7,14.6,8.7,0.0
+"Condens. Matter 29, 065803 (2017).",8,4,7,7.2,318.2,87.5,427.3,94.7,14.6,8.7,42.4
 "37. Leonov, A. O. & Kézsmárki, I. Skyrmion robustness in noncentrosymmetric",8,5,8,7.2,303.6,96.2,550.0,103.4,-14.6,8.7,0.0
 magnets with axial symmetry: The role of anisotropy and tilted magnetic,8,5,9,7.2,318.2,104.9,541.3,112.1,14.6,8.7,0.0
-"fields. Phys. Rev. B 96, 214413 (2017).",8,5,10,7.2,318.2,113.6,434.2,120.9,0.0,8.7,0.0
+"fields. Phys. Rev. B 96, 214413 (2017).",8,5,10,7.2,318.2,113.6,434.2,120.9,0.0,8.7,37.8
 "38. Leonov, A. O. & Kézsmárki, I. Asymmetric isolated skyrmions in polar",8,5,11,7.2,303.6,122.4,535.5,129.6,-14.6,8.7,0.0
-"magnets with easy-plane anisotropy. Phys. Rev. B 96, 014423 (2017).",8,5,12,7.2,318.2,131.0,527.5,138.3,14.6,8.7,0.0
+"magnets with easy-plane anisotropy. Phys. Rev. B 96, 014423 (2017).",8,5,12,7.2,318.2,131.0,527.5,138.3,14.6,8.7,21.5
 "39. Reschke, S. et al. Optical conductivity in multiferroic GaV4S8 and GeV4S8:",8,5,13,7.8,303.6,139.8,545.0,147.6,-14.6,8.7,0.0
-"Phonons and electronic transitions. Phys. Rev. B 96, 144302 (2017).",8,5,14,7.2,318.2,148.5,524.6,155.7,14.6,8.7,0.0
+"Phonons and electronic transitions. Phys. Rev. B 96, 144302 (2017).",8,5,14,7.2,318.2,148.5,524.6,155.7,14.6,8.7,21.5
 "40. Reschke, S. et al. Lattice dynamics and electronic excitations in a large family",8,5,15,7.2,303.6,157.2,551.8,164.5,-14.6,8.7,0.0
 of lacunar spinels with a breathing pyrochlore lattice structure. Phys. Rev. B,8,5,16,7.2,318.2,165.9,549.8,173.1,14.6,8.7,0.0
-"101, 075118 (2020).",8,5,17,7.2,318.2,174.6,378.7,181.8,0.0,8.7,0.0
+"101, 075118 (2020).",8,5,17,7.2,318.2,174.6,378.7,181.8,0.0,8.7,110.5
 References,8,6,18,8.6,43.6,106.4,88.6,115.0,-274.6,-68.2,0.0
-"1. Mühlbauer, S. et al. Skyrmion Lattice in a Chiral Magnet. Science 323, 915–919",8,7,19,7.2,43.6,115.7,291.6,123.9,0.0,9.3,0.0
+"1. Mühlbauer, S. et al. Skyrmion Lattice in a Chiral Magnet. Science 323, 915–919",8,7,19,7.2,43.6,115.7,291.6,123.9,0.0,9.3,26.6
 (2009).,8,7,20,7.2,57.9,125.3,79.0,132.5,14.3,9.6,0.0
 "2. Yu, X. Z. et al. Real-space observation of a two-dimensional skyrmion crystal.",8,8,21,7.2,43.6,134.0,291.7,141.3,-14.3,8.7,0.0
-"Nature 465, 901–904 (2010).",8,8,22,7.2,57.9,141.9,145.5,150.0,14.3,7.8,0.0
+"Nature 465, 901–904 (2010).",8,8,22,7.2,57.9,141.9,145.5,150.0,14.3,7.8,80.8
 "3. Heinze, S. et al. Spontaneous atomic-scale magnetic skyrmion lattice in two",8,9,23,7.2,43.6,151.5,288.7,158.7,-14.3,9.6,0.0
-"dimensions. Nat. Phys. 7, 713–718 (2011).",8,9,24,7.2,57.9,159.3,186.3,167.4,14.3,7.8,0.0
+"dimensions. Nat. Phys. 7, 713–718 (2011).",8,9,24,7.2,57.9,159.3,186.3,167.4,14.3,7.8,17.9
 "4. Nagaosa, N. & Tokura, Y. Topological properties and dynamics of magnetic",8,9,25,7.2,43.6,168.9,290.3,176.1,-14.3,9.6,0.0
-"skyrmions. Nat. Nano 8, 899–911 (2013).",8,9,26,7.2,57.9,176.7,184.1,184.9,14.3,7.8,0.0
+"skyrmions. Nat. Nano 8, 899–911 (2013).",8,9,26,7.2,57.9,176.7,184.1,184.9,14.3,7.8,18.9
 "5. Neubauer, A. et al. Topological hall effect in the a phase of MnSi. Phys. Rev.",8,9,27,7.2,43.6,186.4,291.6,193.6,-14.3,9.6,0.0
-"Lett. 102, 186602 (2009).",8,9,28,7.2,57.9,195.0,134.0,202.2,14.3,8.7,0.0
+"Lett. 102, 186602 (2009).",8,9,28,7.2,57.9,195.0,134.0,202.2,14.3,8.7,87.5
 "41. Ogasawara, T. et al. General features of photoinduced spin dynamics in",8,10,29,7.2,303.6,183.4,528.2,190.6,245.7,-11.7,0.0
-"ferromagnetic and ferrimagnetic compounds. Phys. Rev. Lett. 94, 087202 (2005).",8,10,30,7.2,318.2,192.1,551.7,199.3,14.6,8.7,0.0
+"ferromagnetic and ferrimagnetic compounds. Phys. Rev. Lett. 94, 087202 (2005).",8,10,30,7.2,318.2,192.1,551.7,199.3,14.6,8.7,18.4
 "42. Ruff, E. et al. Multiferroicity and skyrmions carrying electric polarization in",8,10,31,7.2,303.6,200.8,549.5,208.0,-14.6,8.7,0.0
-"GaV4S8. Sci. Adv. 1, e1500916 (2015).",8,10,32,7.2,318.2,209.5,433.2,217.3,14.6,8.7,0.0
+"GaV4S8. Sci. Adv. 1, e1500916 (2015).",8,10,32,7.2,318.2,209.5,433.2,217.3,14.6,8.7,20.0
 "6. Lee, M., Kang, W., Onose, Y., Tokura, Y. & Ong, N. P. Unusual Hall Effect",8,11,33,7.2,43.6,203.8,288.9,211.0,-274.6,-5.7,0.0
-"anomaly in MnSi under pressure. Phys. Rev. Lett. 102, 186601 (2009).",8,11,34,7.2,57.9,212.5,271.3,219.7,14.3,8.7,0.0
+"anomaly in MnSi under pressure. Phys. Rev. Lett. 102, 186601 (2009).",8,11,34,7.2,57.9,212.5,271.3,219.7,14.3,8.7,31.8
 "7. Schulz, T. et al. Emergent electrodynamics of skyrmions in a chiral magnet.",8,11,35,7.2,43.6,221.2,289.2,228.5,-14.3,8.7,0.0
-"Nat. Phys. 8, 301–304 (2012).",8,11,36,7.2,57.9,229.0,147.9,237.1,14.3,7.8,0.0
+"Nat. Phys. 8, 301–304 (2012).",8,11,36,7.2,57.9,229.0,147.9,237.1,14.3,7.8,25.0
 "43. Ehlers, D. et al. Skyrmion dynamics under uniaxial anisotropy. Phys. Rev. B",8,12,37,7.2,303.6,218.2,549.8,225.5,245.7,-10.8,0.0
-"94, 014406 (2016).",8,12,38,7.2,318.2,227.0,375.0,234.2,14.6,8.7,0.0
+"94, 014406 (2016).",8,12,38,7.2,318.2,227.0,375.0,234.2,14.6,8.7,77.8
 "44. Okamura, Y. et al. Microwave directional dichroism resonant with spin",8,13,39,7.2,303.6,235.7,536.1,242.9,-14.6,8.7,0.0
-"excitations in the polar ferromagnet GaV4S8. Phys. Rev. Lett. 122, 057202",8,13,40,7.8,318.2,244.4,542.3,252.2,14.6,8.7,0.0
+"excitations in the polar ferromagnet GaV4S8. Phys. Rev. Lett. 122, 057202",8,13,40,7.8,318.2,244.4,542.3,252.2,14.6,8.7,29.6
 (2019).,8,13,41,7.2,318.2,253.1,339.4,260.3,-0.0,8.7,0.0
 "8. Nagaosa, N. & Tokura, Y. Emergent electromagnetism in solids. Phys. Scr.",8,14,42,7.2,43.6,238.6,284.5,245.9,-274.6,-14.5,0.0
-"T146, 14020 (2012).",8,14,43,7.2,57.9,247.4,119.5,254.6,14.3,8.7,0.0
-"9. Fert, A., Cros, V. & Sampaio, J. Skyrmions on the track. Nat. Nanotechnol. 8,",8,15,44,7.2,43.6,256.1,291.7,263.3,-14.3,8.7,0.0
+"T146, 14020 (2012).",8,14,43,7.2,57.9,247.4,119.5,254.6,14.3,8.7,147.4
+"9. Fert, A., Cros, V. & Sampaio, J. Skyrmions on the track. Nat. Nanotechnol. 8,",8,15,44,7.2,43.6,256.1,291.7,263.3,-14.3,8.7,9.0
 152 (2013).,8,15,45,7.2,57.9,264.8,92.2,272.0,14.3,8.7,0.0
 "45. Onose, Y., Okamura, Y., Seki, S., Ishiwata, S. & Tokura, Y. Observation of",8,16,46,7.2,303.6,261.8,545.7,269.0,245.7,-3.0,0.0
 magnetic excitations of skyrmion crystal in a helimagnetic insulator,8,16,47,7.2,318.2,270.6,524.9,277.8,14.6,8.7,0.0
-"Cu2OSeO3. Phys. Rev. Lett. 109, 037603 (2012).",8,16,48,7.2,318.2,279.2,463.1,287.0,0.0,8.7,0.0
+"Cu2OSeO3. Phys. Rev. Lett. 109, 037603 (2012).",8,16,48,7.2,318.2,279.2,463.1,287.0,0.0,8.7,47.7
 "46. Mochizuki, M. Spin-wave modes and their intense excitation effects in",8,16,49,7.2,303.6,288.0,533.5,295.2,-14.6,8.7,0.0
-"Skyrmion crystals. Phys. Rev. Lett. 108, 017601 (2012).",8,16,50,7.2,318.2,296.7,485.0,303.9,14.6,8.7,0.0
+"Skyrmion crystals. Phys. Rev. Lett. 108, 017601 (2012).",8,16,50,7.2,318.2,296.7,485.0,303.9,14.6,8.7,39.6
 "47. Rajeswari, J. et al. Filming the formation and fluctuation of skyrmion domains",8,16,51,7.2,303.6,305.4,551.7,312.7,-14.6,8.7,0.0
-"by cryo-Lorentz transmission electron microscopy. Proc. Natl Acad. Sci. 112,",8,16,52,7.2,318.2,314.1,551.7,321.3,14.6,8.7,0.0
+"by cryo-Lorentz transmission electron microscopy. Proc. Natl Acad. Sci. 112,",8,16,52,7.2,318.2,314.1,551.7,321.3,14.6,8.7,28.4
 14212–14217 (2015).,8,16,53,7.2,318.2,321.9,381.5,330.0,0.0,7.8,0.0
 "10. Tomasello, R. et al. A strategy for the design of skyrmion racetrack memories.",8,17,54,7.2,43.6,273.5,291.6,280.7,-274.6,-48.4,0.0
-"Sci. Rep. 4, 6784 (2014).",8,17,55,7.2,58.2,282.2,131.6,289.4,14.6,8.7,0.0
+"Sci. Rep. 4, 6784 (2014).",8,17,55,7.2,58.2,282.2,131.6,289.4,14.6,8.7,29.2
 "11. Yu, G. et al. Room-temperature skyrmion shift device for memory application.",8,18,56,7.2,43.6,291.0,291.6,298.2,-14.6,8.7,0.0
-"Nano Lett. 17, 261–268 (2017).",8,18,57,7.2,58.2,298.8,153.2,306.9,14.6,7.8,0.0
+"Nano Lett. 17, 261–268 (2017).",8,18,57,7.2,58.2,298.8,153.2,306.9,14.6,7.8,48.3
 "12. Koshibae, W. & Nagaosa, N. Creation of skyrmions and antiskyrmions by",8,19,58,7.2,43.6,308.4,284.7,315.6,-14.6,9.6,0.0
-"local heating. Nat. Commun. 5, 5148 (2014).",8,19,59,7.2,58.2,317.1,193.9,324.3,14.6,8.7,0.0
-"13. Jiang, W. et al. Blowing magnetic skyrmion bubbles. Science 349, 283",8,19,60,7.2,43.6,325.8,270.0,333.1,-14.6,8.7,0.0
+"local heating. Nat. Commun. 5, 5148 (2014).",8,19,59,7.2,58.2,317.1,193.9,324.3,14.6,8.7,17.1
+"13. Jiang, W. et al. Blowing magnetic skyrmion bubbles. Science 349, 283",8,19,60,7.2,43.6,325.8,270.0,333.1,-14.6,8.7,30.0
 LP–283286 (2015).,8,19,61,7.2,58.2,333.7,115.3,341.8,14.6,7.8,0.0
 "48. Butykai, Á. et al. Relaxation dynamics of modulated magnetic phases in the",8,20,62,8.0,303.6,330.8,549.5,338.8,245.4,-2.8,0.0
-"skyrmion host GaV4S8: An ac magnetic susceptibility study. Phys. Rev. B 96,",8,20,63,7.8,318.2,340.3,551.7,348.1,14.6,9.5,0.0
+"skyrmion host GaV4S8: An ac magnetic susceptibility study. Phys. Rev. B 96,",8,20,63,7.8,318.2,340.3,551.7,348.1,14.6,9.5,19.2
 104430 (2017).,8,20,64,7.2,318.2,349.0,363.3,356.2,0.0,8.7,0.0
 "14. Ogawa, N., Seki, S. & Tokura, Y. Ultrafast optical excitation of magnetic",8,21,65,7.2,43.6,343.2,279.3,350.5,-274.6,-5.7,0.0
-"skyrmions. Sci. Rep. 5, 9552 (2015).",8,21,66,7.2,58.2,352.0,166.9,359.2,14.6,8.7,0.0
+"skyrmions. Sci. Rep. 5, 9552 (2015).",8,21,66,7.2,58.2,352.0,166.9,359.2,14.6,8.7,20.6
 "49. Schwarze, T. et al. Universal helimagnon and skyrmion excitations in metallic,",8,22,67,7.2,303.6,357.7,551.6,364.9,245.4,5.7,0.0
-"semiconducting and insulating chiral magnets. Nat. Mater. 14, 478–483",8,22,68,7.2,318.2,365.5,536.8,373.7,14.6,7.8,0.0
+"semiconducting and insulating chiral magnets. Nat. Mater. 14, 478–483",8,22,68,7.2,318.2,365.5,536.8,373.7,14.6,7.8,20.9
 (2015).,8,22,69,7.2,318.2,375.2,339.4,382.3,0.0,9.6,0.0
 "15. Oike, H. et al. Interplay between topological and thermodynamic stability in a",8,23,70,7.2,43.6,360.7,291.7,367.9,-274.6,-14.5,0.0
-"metastable magnetic skyrmion lattice. Nat. Phys. 12, 62–66 (2016).",8,23,71,7.2,58.2,368.5,261.6,376.7,14.6,7.8,0.0
+"metastable magnetic skyrmion lattice. Nat. Phys. 12, 62–66 (2016).",8,23,71,7.2,58.2,368.5,261.6,376.7,14.6,7.8,21.9
 "16. Woo, S. et al. Spin-orbit torque-driven skyrmion dynamics revealed by time-",8,23,72,7.2,43.6,378.1,291.6,385.3,-14.6,9.6,0.0
-"resolved X-ray microscopy. Nat. Commun. 8, 15573 (2017).",8,23,73,7.2,58.2,386.8,240.1,394.1,14.6,8.7,0.0
+"resolved X-ray microscopy. Nat. Commun. 8, 15573 (2017).",8,23,73,7.2,58.2,386.8,240.1,394.1,14.6,8.7,13.0
 "17. Finazzi, M. et al. Laser-Induced magnetic nanostructures with tunable",8,23,74,7.2,43.6,395.6,271.7,402.8,-14.6,8.7,0.0
-"topological properties. Phys. Rev. Lett. 110, 177205 (2013).",8,23,75,7.2,58.2,404.3,236.7,411.5,14.6,8.7,0.0
+"topological properties. Phys. Rev. Lett. 110, 177205 (2013).",8,23,75,7.2,58.2,404.3,236.7,411.5,14.6,8.7,36.2
 "18. Eggebrecht, T. et al. Light-induced metastable magnetic texture uncovered by",8,23,76,7.2,43.6,413.0,291.8,420.3,-14.6,8.7,0.0
-"in situ Lorentz microscopy. Phys. Rev. Lett. 118, 097203 (2017).",8,23,77,7.2,58.2,421.7,253.0,428.9,14.6,8.7,0.0
+"in situ Lorentz microscopy. Phys. Rev. Lett. 118, 097203 (2017).",8,23,77,7.2,58.2,421.7,253.0,428.9,14.6,8.7,33.9
 "19. Fujita, H. & Sato, M. Ultrafast generation of skyrmionic defects with vortex",8,23,78,7.2,43.6,430.4,289.2,437.7,-14.6,8.7,0.0
-"beams: Printing laser profiles on magnets. Phys. Rev. B 95, 054421 (2017).",8,23,79,7.2,58.2,439.2,284.8,446.4,14.6,8.7,0.0
+"beams: Printing laser profiles on magnets. Phys. Rev. B 95, 054421 (2017).",8,23,79,7.2,58.2,439.2,284.8,446.4,14.6,8.7,19.4
 "20. Berruto, G. et al. Laser-induced skyrmion writing and erasing in an ultrafast cryo-",8,23,80,7.2,43.6,447.9,291.8,455.1,-14.6,8.7,0.0
-"lorentz transmission electron microscope. Phys. Rev. Lett. 120, 117201 (2018).",8,23,81,7.2,58.2,456.6,285.9,463.8,14.6,8.7,0.0
+"lorentz transmission electron microscope. Phys. Rev. Lett. 120, 117201 (2018).",8,23,81,7.2,58.2,456.6,285.9,463.8,14.6,8.7,27.6
 "21. Je, S.-G. et al. Creation of magnetic skyrmion bubble lattices by ultrafast laser",8,23,82,7.2,43.6,465.3,291.7,472.5,-14.6,8.7,0.0
-"in ultrathin films. Nano Lett. 18, 7362–7371 (2018).",8,23,83,7.2,58.2,473.1,216.4,481.2,14.6,7.8,0.0
+"in ultrathin films. Nano Lett. 18, 7362–7371 (2018).",8,23,83,7.2,58.2,473.1,216.4,481.2,14.6,7.8,28.6
 "22. Taguchi, K., Ohe, J. & Tatara, G. Ultrafast magnetic vortex core switching driven",8,23,84,7.2,43.6,482.8,291.6,490.0,-14.6,9.6,0.0
-"by the topological inverse Faraday effect. Phys. Rev. Lett. 109, 127204 (2012).",8,23,85,7.2,58.2,491.4,283.9,498.7,14.6,8.7,0.0
+"by the topological inverse Faraday effect. Phys. Rev. Lett. 109, 127204 (2012).",8,23,85,7.2,58.2,491.4,283.9,498.7,14.6,8.7,27.3
 "23. Padmanabhan, P. et al. Optically driven collective spin excitations and",8,23,86,7.2,43.6,500.2,273.1,507.4,-14.6,8.7,0.0
 magnetization dynamics in the Néel-type Skyrmion Host GaV4S8. Phys. Rev.,8,23,87,7.8,58.2,508.9,291.6,516.7,14.6,8.7,0.0
-"Lett. 122, 107203 (2019).",8,23,88,7.2,58.2,517.6,134.3,524.8,0.0,8.7,0.0
+"Lett. 122, 107203 (2019).",8,23,88,7.2,58.2,517.6,134.3,524.8,0.0,8.7,87.5
 "50. Garst, M., Waizner, J. & Grundler, D. Collective spin excitations of helices and",8,24,89,7.2,303.6,383.9,551.7,391.1,245.4,-133.7,0.0
 magnetic skyrmions: review and perspectives of magnonics in non-,8,24,90,7.2,318.2,392.6,523.6,399.8,14.6,8.7,0.0
-"centrosymmetric magnets. J. Phys. D. Appl. Phys. 50, 293002 (2017).",8,24,91,7.2,318.2,401.3,526.8,408.5,0.0,8.7,0.0
+"centrosymmetric magnets. J. Phys. D. Appl. Phys. 50, 293002 (2017).",8,24,91,7.2,318.2,401.3,526.8,408.5,0.0,8.7,21.5
 "51. Prasai, N. et al. Spin phases of the helimagnetic insulator Cu2OSeO3 probed by",8,24,92,7.8,303.6,410.0,551.8,417.8,-14.6,8.7,0.0
-"magnon heat conduction. Phys. Rev. B 99, 020403(R) (2019).",8,24,93,7.2,318.2,418.8,504.4,426.0,14.6,8.7,0.0
+"magnon heat conduction. Phys. Rev. B 99, 020403(R) (2019).",8,24,93,7.2,318.2,418.8,504.4,426.0,14.6,8.7,25.0
 "52. Janoschek, M. et al. Helimagnon bands as universal excitations of chiral",8,24,94,7.2,303.6,427.4,538.0,434.7,-14.6,8.7,0.0
-"magnets. Phys. Rev. B 81, 214436 (2010).",8,24,95,7.2,318.2,436.2,443.5,443.4,14.6,8.7,0.0
+"magnets. Phys. Rev. B 81, 214436 (2010).",8,24,95,7.2,318.2,436.2,443.5,443.4,14.6,8.7,36.8
 "53. Kugler, M. et al. Band structure of helimagnons in MnSi resolved by inelastic",8,24,96,7.2,303.6,444.9,551.6,452.1,-14.6,8.7,0.0
-"neutron scattering. Phys. Rev. Lett. 115, 097203 (2015).",8,24,97,7.2,318.2,453.6,486.5,460.9,14.6,8.7,0.0
-"54. Dornes, C. et al. The ultrafast Einstein-de Haas effect. Nature 565, 209–212",8,24,98,7.2,303.6,461.4,549.4,469.5,-14.6,7.8,0.0
+"neutron scattering. Phys. Rev. Lett. 115, 097203 (2015).",8,24,97,7.2,318.2,453.6,486.5,460.9,14.6,8.7,38.9
+"54. Dornes, C. et al. The ultrafast Einstein-de Haas effect. Nature 565, 209–212",8,24,98,7.2,303.6,461.4,549.4,469.5,-14.6,7.8,26.9
 (2019).,8,24,99,7.2,318.2,471.0,339.4,478.2,14.6,9.6,0.0
 "55. Widmann, S. et al. On the multiferroic skyrmion-host GaV4S8. Philos. Mag.",8,25,100,7.8,303.6,479.8,549.6,487.6,-14.6,8.7,0.0
-"97, 3428–3445 (2017).",8,25,101,7.2,318.2,487.6,385.9,495.7,14.6,7.8,0.0
+"97, 3428–3445 (2017).",8,25,101,7.2,318.2,487.6,385.9,495.7,14.6,7.8,66.7
 "56. Nikolaev, S. A. & Solovyev, I. V. Microscopic theory of electric polarization",8,26,102,7.2,303.6,497.2,548.8,504.4,-14.6,9.6,0.0
-"induced by skyrmionic order in GaV4S8. Phys. Rev. B 99, 100401(R) (2019).",8,26,103,7.8,318.2,505.9,550.2,513.7,14.6,8.7,0.0
+"induced by skyrmionic order in GaV4S8. Phys. Rev. B 99, 100401(R) (2019).",8,26,103,7.8,318.2,505.9,550.2,513.7,14.6,8.7,19.7
 "57. Ihlefeld, J. F. et al. Room-temperature voltage tunable phonon thermal",8,26,104,7.2,303.6,514.6,533.8,521.9,-14.6,8.7,0.0
 conductivity via reconfigurable interfaces in ferroelectric thin films. Nano Lett.,8,26,105,7.2,318.2,523.4,551.7,530.6,14.6,8.7,0.0
-"15, 1791–1795 (2015).",8,26,106,7.2,318.2,531.2,385.9,539.3,0.0,7.8,0.0
+"15, 1791–1795 (2015).",8,26,106,7.2,318.2,531.2,385.9,539.3,0.0,7.8,66.7
 "24. Kirilyuk, A., Kimel, A. V. & Rasing, T. Ultrafast optical manipulation of",8,27,107,7.2,43.6,526.3,279.6,533.5,-274.6,-4.9,0.0
-"magnetic order. Rev. Mod. Phys. 82, 2731–2784 (2010).",8,27,108,7.2,58.2,534.1,226.8,542.3,14.6,7.8,0.0
+"magnetic order. Rev. Mod. Phys. 82, 2731–2784 (2010).",8,27,108,7.2,58.2,534.1,226.8,542.3,14.6,7.8,27.5
 "25. Kampfrath, T. et al. Coherent terahertz control of antiferromagnetic spin",8,27,109,7.2,43.6,543.8,281.1,551.0,-14.6,9.6,0.0
-"waves. Nat. Photonics 5, 31–34 (2011).",8,27,110,7.2,58.2,551.6,175.9,559.7,14.6,7.8,0.0
+"waves. Nat. Photonics 5, 31–34 (2011).",8,27,110,7.2,58.2,551.6,175.9,559.7,14.6,7.8,19.4
 "58. Skubic, B., Hellsvik, J., Nordström, L. & Eriksson, O. A method for atomistic",8,28,111,7.2,303.6,540.8,551.7,547.9,245.4,-10.8,0.0
 spin dynamics simulations: implementation and examples. J. Phys. Condens.,8,28,112,7.2,318.2,549.5,550.0,556.7,14.6,8.7,0.0
-"Matter 20, 315203 (2008).",8,28,113,7.2,318.2,558.2,397.9,565.4,-0.0,8.7,0.0
+"Matter 20, 315203 (2008).",8,28,113,7.2,318.2,558.2,397.9,565.4,-0.0,8.7,58.3
 "26. Radu, I. et al. Transient ferromagnetic-like state mediating ultrafast reversal of",8,29,114,7.2,43.6,561.2,292.4,568.5,-274.6,3.0,0.0
-"antiferromagnetically coupled spins. Nature 472, 205 (2011).",8,29,115,7.2,58.2,569.9,242.9,577.1,14.6,8.7,0.0
+"antiferromagnetically coupled spins. Nature 472, 205 (2011).",8,29,115,7.2,58.2,569.9,242.9,577.1,14.6,8.7,36.2
 "27. Kurihara, T. et al. Macroscopic magnetization control by symmetry breaking",8,29,116,7.2,43.6,578.6,291.7,585.9,-14.6,8.7,0.0
 of photoinduced spin reorientation with intense terahertz magnetic near field.,8,29,117,7.2,58.2,587.4,291.6,594.6,14.6,8.7,0.0
-"Phys. Rev. Lett. 120, 107202 (2018).",8,29,118,7.2,58.2,596.1,167.1,603.3,0.0,8.7,0.0
+"Phys. Rev. Lett. 120, 107202 (2018).",8,29,118,7.2,58.2,596.1,167.1,603.3,0.0,8.7,60.0
 "28. Schlauderer, S. et al. Temporal and spectral fingerprints of ultrafast all-",8,29,119,7.2,43.6,604.8,275.7,612.0,-14.6,8.7,0.0
-"coherent spin switching. Nature 569, 383–387 (2019).",8,29,120,7.2,58.2,612.6,222.1,620.7,14.6,7.8,0.0
+"coherent spin switching. Nature 569, 383–387 (2019).",8,29,120,7.2,58.2,612.6,222.1,620.7,14.6,7.8,42.0
 "29. Langner, M. C. et al. Nonlinear ultrafast spin scattering in the Skyrmion Phase",8,29,121,7.2,43.6,622.2,291.7,629.5,-14.6,9.6,0.0
-"of Cu2OSeO3. Phys. Rev. Lett. 119, 107204 (2017).",8,29,122,7.2,58.2,631.0,211.4,638.8,14.6,8.7,0.0
+"of Cu2OSeO3. Phys. Rev. Lett. 119, 107204 (2017).",8,29,122,7.2,58.2,631.0,211.4,638.8,14.6,8.7,44.7
 "30. Versteeg, R. B. et al. Coupled dynamics of long-range and cluster-internal spin",8,29,123,7.2,43.6,639.6,288.9,646.9,-14.6,8.7,0.0
-"order in the cluster Mott insulator Cu2OSeO3. Phys. Rev. B 100, 064401 (2019).",8,29,124,7.8,58.2,648.4,291.7,656.2,14.6,8.7,0.0
-"31. Bauer, G. E. W., Saitoh, E. & van Wees, B. J. Spin caloritronics. Nat. Mater. 11,",8,29,125,7.2,43.6,657.1,291.7,664.3,-14.6,8.7,0.0
+"order in the cluster Mott insulator Cu2OSeO3. Phys. Rev. B 100, 064401 (2019).",8,29,124,7.8,58.2,648.4,291.7,656.2,14.6,8.7,27.6
+"31. Bauer, G. E. W., Saitoh, E. & van Wees, B. J. Spin caloritronics. Nat. Mater. 11,",8,29,125,7.2,43.6,657.1,291.7,664.3,-14.6,8.7,16.9
 391–399 (2012).,8,29,126,7.2,58.2,664.9,107.1,673.0,14.6,7.8,0.0
 "59. Landau, L. & Lifshitz, E. On the theory of the dispersion of magnetic",8,30,127,7.2,303.6,567.0,530.0,574.2,245.4,-98.0,0.0
-"permeability in ferromagnetic bodies. Phys. Z. Sowjetunion 8, 153 (1935).",8,30,128,7.2,318.2,575.6,541.9,582.9,14.6,8.7,0.0
+"permeability in ferromagnetic bodies. Phys. Z. Sowjetunion 8, 153 (1935).",8,30,128,7.2,318.2,575.6,541.9,582.9,14.6,8.7,9.9
 Acknowledgements,8,31,129,8.6,303.6,605.9,383.0,614.4,-14.6,30.2,0.0
 "We thank Y. Mukai, D. Ehlers and V. Kocsis for fruitful discussions. The work is",8,32,130,6.7,303.6,616.4,536.2,623.1,0.0,10.5,0.0
 "supported by the Deutsche Forschungsgemeinschaft (DFG, German Research Founda-",8,32,131,6.8,303.6,625.1,549.4,631.9,0.0,8.7,0.0
@@ -908,7 +908,7 @@ tion) via the project No. 277146847-CRC1238: Control and Dynamics of Quantum,8,3
 "via the DFG Priority Program SPP2137, Skyrmionics, under Grant No. KE 2370/1-1.",8,32,135,6.8,303.6,660.0,545.7,666.7,-0.0,8.7,0.0
 "32. Dejene, F. K., Flipse, J., Bauer, G. E. W. & van Wees, B. J. Spin heat",8,33,136,7.2,43.6,674.5,267.1,681.7,-260.0,14.5,0.0
 accumulation and spin-dependent temperatures in nanopillar spin valves. Nat.,8,33,137,7.2,58.2,683.2,291.6,690.4,14.6,8.7,0.0
-"Phys. 9, 636–639 (2013).",8,33,138,7.2,58.2,691.1,132.9,699.2,0.0,7.8,0.0
+"Phys. 9, 636–639 (2013).",8,33,138,7.2,58.2,691.1,132.9,699.2,0.0,7.8,30.4
 Author contributions,8,34,139,8.6,303.6,687.4,388.9,696.0,245.4,-3.6,0.0
 F.S. performed time-resolved Kerr effect experiments with the support from K.B. and,8,35,140,6.7,303.6,698.0,546.9,704.7,0.0,10.6,0.0
 P.P.F.S. analyzed the data with R.B. and P.v.L.V.T. grew and characterized the GaV4S8,8,35,141,7.3,303.6,706.8,550.0,714.0,0.0,8.7,0.0
@@ -916,18 +916,18 @@ single crystals. V.T. and I.K. performed the magnetometry study and determined t
 magnetic phase diagrams. S.A. and F.F. performed theoretical calculations. F.S. wrote the,8,35,143,6.8,303.6,724.2,551.7,730.9,0.0,8.7,0.0
 paper with input from all authors. F.S. and P.v.L. conceived the project.,8,35,144,6.8,303.6,732.9,508.3,739.7,0.0,8.7,0.0
 "33. Kezsmarki, I. et al. Néel-type skyrmion lattice with confined orientation in the",8,36,145,7.2,43.6,700.7,291.7,707.9,-260.0,-32.2,0.0
-"polar magnetic semiconductor GaV4S8. Nat. Mater. 14, 1116–1122 (2015).",8,36,146,7.8,58.2,708.5,285.0,717.2,14.6,7.8,0.0
+"polar magnetic semiconductor GaV4S8. Nat. Mater. 14, 1116–1122 (2015).",8,36,146,7.8,58.2,708.5,285.0,717.2,14.6,7.8,20.6
 "34. Butykai, Á. et al. Characteristics of ferroelectric-ferroelastic domains in Néel-",8,36,147,8.0,43.6,717.4,291.6,725.3,-14.6,8.8,0.0
-"type skyrmion host GaV4S8. Sci. Rep. 7, 44663 (2017).",8,36,148,7.8,58.2,726.8,223.2,734.6,14.6,9.5,0.0
-NATURE COMMUNICATIONS | (2022) 13:3212 | https://doi.org/10.1038/s41467-022-30829-z | www.nature.com/naturecommunications 7,8,37,149,6.2,43.6,751.1,551.7,759.3,-14.6,24.2,0.0
+"type skyrmion host GaV4S8. Sci. Rep. 7, 44663 (2017).",8,36,148,7.8,58.2,726.8,223.2,734.6,14.6,9.5,13.7
+NATURE COMMUNICATIONS | (2022) 13:3212 | https://doi.org/10.1038/s41467-022-30829-z | www.nature.com/naturecommunications 7,8,37,149,6.2,43.6,751.1,551.7,759.3,-14.6,24.2,5.8
 ARTICLE NATURE COMMUNICATIONS | https://doi.org/10.1038/s41467-022-30829-z,9,1,1,7.3,43.6,17.5,551.7,30.0,,,0.0
 Funding,9,2,2,8.6,43.6,51.1,76.0,59.6,-0.0,33.6,0.0
-Publisher’s note Springer Nature remains neutral with regard to jurisdictional claims in,9,3,3,6.8,303.6,52.2,551.7,59.7,260.0,1.1,0.0
+Publisher’s note Springer Nature remains neutral with regard to jurisdictional claims in,9,3,3,6.8,303.6,52.2,551.7,59.7,260.0,1.1,120.7
 published maps and institutional affiliations.,9,3,4,6.7,303.6,61.7,429.9,68.4,0.0,9.5,0.0
 Open Access funding enabled and organized by Projekt DEAL.,9,4,5,6.8,43.6,61.7,223.5,68.4,-260.0,0.0,0.0
 Competing interests,9,5,6,8.6,43.6,82.2,126.6,90.8,-0.0,20.6,0.0
 The authors declare no competing interests.,9,5,7,6.8,43.6,92.8,168.5,99.5,0.0,10.5,0.0
-Open Access This article is licensed under a Creative Commons,9,6,8,6.7,350.0,91.1,551.6,97.8,306.4,-1.7,0.0
+Open Access This article is licensed under a Creative Commons,9,6,8,6.7,350.0,91.1,551.6,97.8,306.4,-1.7,128.3
 "Attribution 4.0 International License, which permits use, sharing,",9,6,9,6.8,350.0,100.0,551.6,106.8,0.0,9.0,0.0
 "adaptation, distribution and reproduction in any medium or format, as long as you give",9,6,10,6.8,303.6,109.0,551.7,115.8,-46.4,9.0,0.0
 "appropriate credit to the original author(s) and the source, provide a link to the Creative",9,6,11,6.8,303.6,118.0,551.6,124.7,0.0,9.0,0.0
@@ -939,12 +939,12 @@ article’s Creative Commons license and your intended use is not permitted by s
 "the copyright holder. To view a copy of this license, visit http://creativecommons.org/",9,6,17,6.8,303.6,171.8,551.6,178.5,0.0,9.0,0.0
 licenses/by/4.0/.,9,6,18,6.8,303.6,180.7,348.0,187.5,0.0,9.0,0.0
 Additional information,9,7,19,8.6,43.6,113.4,136.2,121.9,-260.0,-67.3,0.0
-Supplementary information The online version contains supplementary material,9,8,20,6.8,43.6,124.0,276.0,130.7,0.0,10.6,0.0
+Supplementary information The online version contains supplementary material,9,8,20,6.8,43.6,124.0,276.0,130.7,0.0,10.6,233.3
 available at https://doi.org/10.1038/s41467-022-30829-z.,9,8,21,6.8,43.6,132.6,201.4,139.4,0.0,8.7,0.0
-Correspondence and requests for materials should be addressed to Fumiya Sekiguchi or,9,9,22,6.8,43.6,150.1,291.6,156.9,0.0,17.5,0.0
+Correspondence and requests for materials should be addressed to Fumiya Sekiguchi or,9,9,22,6.8,43.6,150.1,291.6,156.9,0.0,17.5,118.1
 Paul H. M. van Loosdrecht.,9,9,23,6.7,43.6,158.8,122.5,165.5,0.0,8.7,0.0
-Peer review information Nature Communications thanks the anonymous reviewer(s) for,9,10,24,6.8,43.6,176.2,291.6,183.0,0.0,17.4,0.0
+Peer review information Nature Communications thanks the anonymous reviewer(s) for,9,10,24,6.8,43.6,176.2,291.6,183.0,0.0,17.4,201.2
 their contribution to the peer review of this work.,9,10,25,6.7,43.6,185.0,186.2,191.7,0.0,8.7,0.0
-Reprints and permission information is available at http://www.nature.com/reprints,9,11,26,6.7,43.6,202.4,286.4,209.1,0.0,17.4,0.0
+Reprints and permission information is available at http://www.nature.com/reprints,9,11,26,6.7,43.6,202.4,286.4,209.1,0.0,17.4,306.2
 © The Author(s) 2022,9,12,27,6.7,303.6,204.6,367.4,211.4,260.0,2.3,0.0
-8 NATURE COMMUNICATIONS | (2022) 13:3212 | https://doi.org/10.1038/s41467-022-30829-z | www.nature.com/naturecommunications,9,13,28,6.2,43.6,751.1,494.9,759.3,-260.0,546.4,0.0
+8 NATURE COMMUNICATIONS | (2022) 13:3212 | https://doi.org/10.1038/s41467-022-30829-z | www.nature.com/naturecommunications,9,13,28,6.2,43.6,751.1,494.9,759.3,-260.0,546.4,5.8

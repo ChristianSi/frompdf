@@ -181,23 +181,11 @@ RGB: 237 89 47
 HSL: 13 84 55
 CMYK: 0 58 75 7
 
-Dark Slate Gray
-Hex: #333333
-RGB: 51 51 51
-HSL: 0 0 20
-CMYK: 0 0 0 80
-
 Gold
 Hex: #efbe00
 RGB: 239 190 0
 HSL: 47 100 46
 CMYK: 0 19 94 6
-
-Orange
-Hex: #fb7729
-RGB: 251 119 41
-HSL: 22 96 57
-CMYK: 0 52 82 2
 
 Forest Green
 Hex: #04a635
@@ -205,17 +193,29 @@ RGB: 4 166 53
 HSL: 138 95 33
 CMYK: 64 0 44 35
 
-Dark Turquoise
-Hex: #05b5da
-RGB: 5 181 218
-HSL: 190 95 43
-CMYK: 84 15 0 15
-
 Dark Slate Blue
 Hex: #3c5c99
 RGB: 60 92 153
 HSL: 219 43 41
 CMYK: 36 24 0 40
+
+Dark Slate Gray
+Hex: #333333
+RGB: 51 51 51
+HSL: 0 0 20
+CMYK: 0 0 0 80
+
+Orange
+Hex: #fb7729
+RGB: 251 119 41
+HSL: 22 96 57
+CMYK: 0 52 82 2
+
+Dark Turquoise
+Hex: #05b5da
+RGB: 5 181 218
+HSL: 190 95 43
+CMYK: 84 15 0 15
 
 > Please note: Any colors reproduced in print may
 > not be accurate, therefore in order to achieve the best

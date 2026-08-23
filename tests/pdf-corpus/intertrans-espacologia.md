@@ -1,9 +1,27 @@
+REVISTA CIENTÍFICA INTER E
+TRANSDISCIPLINAR
+
+Wallace Lopes
+
+Laboratório Espaço, IPPUR/UFRJ.
+wartelopes@yahoo.com.br
+ORCID: 0000-0001-8031-5851
+
+RECEIVED 09/04/21
+ACEPTED 13/04/21
+PUBLISHED 25/05/21
+
+OPEN ACCESS
+PEER-REVIEWED
+
+Copyright: ©2020 Creative Commons
+Attribution License CC BY 4.0, which
+permits unrestricted use, distribution, and
+reproduction in any medium
+
 RESEARCH ARTICLE
 
 # Espaçologia: filosofias na
-
-REVISTA CIENTÍFICA INTER E
-TRANSDISCIPLINAR
 
 # totalidade do espaço
 
@@ -17,16 +35,6 @@ protagonist and epistemic tool of philosophies in space, which
 are all in dispute in the clipping of moving totalities movement.
 Keywords.Spaces.Place. Philosophy. Geographies. Totalities.
 
-Wallace Lopes
-
-Laboratório Espaço, IPPUR/UFRJ.
-wartelopes@yahoo.com.br
-ORCID: 0000-0001-8031-5851
-
-RECEIVED 09/04/21
-ACEPTED 13/04/21
-PUBLISHED 25/05/21
-
 Resumo. O pensamento modela o espaço. Assim, as primeiras
 filosofias ocidentais ocultaram a noção de espaço ocorrendo
 uma invisibilidade de um novo campo do pensar espacial. Por
@@ -34,14 +42,6 @@ sua vez, este ensaio é uma aventura do pensar aberto ao erguer
 a Espaçologia enquanto protagonista e ferramenta epistêmica
 das filosofias no espaço, que se colocam em disputa no recorte
 das totalidades em movimento.
-
-OPEN ACCESS
-PEER-REVIEWED
-
-Copyright: ©2020 Creative Commons
-Attribution License CC BY 4.0, which
-permits unrestricted use, distribution, and
-reproduction in any medium
 
 Palavras-chave.Espaço. Lugar. Filosofia. Geografias. Totalidades.
 

@@ -1,7 +1,7 @@
 text,page_no,block_no,line_no_on_page,font_size,x1,y1,x2,y2,rel_x,rel_y,avg_weight
 International Journal of Digital Humanities (2021) 2:25–42,1,1,1,8.0,51.0,35.4,227.9,42.8,,,400.0
 https://doi.org/10.1007/s42803-021-00031-6,1,2,2,7.3,51.0,44.2,181.9,51.5,0.0,8.8,0.0
-ORIGINAL PAPER Open Access,1,3,3,5.7,53.9,60.1,385.3,67.5,2.8,15.9,0.0
+ORIGINAL PAPER Open Access,1,3,3,5.7,53.9,60.1,385.3,67.5,2.8,15.9,308.0
 Recovering contemporary genre histories,1,4,4,11.9,51.0,95.2,263.0,107.2,-2.8,35.1,0.0
 – the development of chick lit as seen,1,4,5,11.9,51.0,108.3,249.3,122.0,0.0,13.0,0.0
 through the internet archive’s wayback machine,1,5,6,11.8,51.0,123.2,301.3,137.1,0.0,14.9,0.0
@@ -9,7 +9,7 @@ and wikipedia’s history page,1,5,7,11.9,51.0,138.2,199.4,152.0,0.0,15.0,0.0
 Sandra Folie1,1,6,8,7.2,51.0,168.5,108.5,177.7,-0.0,30.3,0.0
 Received: 21 August 2020 /Accepted: 11 February 2021 / Published online: 11 May 2021,1,7,9,7.3,51.0,197.9,317.6,205.5,0.0,29.4,154.7
 # The Author(s) 2021,1,8,10,7.3,51.0,206.5,119.0,215.0,0.0,8.6,0.0
-Abstract,1,9,11,9.2,51.0,238.0,87.6,247.2,0.0,31.5,0.0
+Abstract,1,9,11,9.2,51.0,238.0,87.6,247.2,0.0,31.5,700.0
 "In the perception of literary scholars, the investigation of genre histories is still closely",1,10,12,9.1,51.0,250.1,388.3,259.2,0.0,12.1,0.0
 "linked to ‘offline’ archival work. However, the Internet has been publicly accessible",1,10,13,9.1,51.0,260.6,388.4,271.2,0.0,10.5,0.0
 "since 1991, and over the last thirty years, numerous new literary genres have emerged.",1,10,14,9.1,51.0,274.1,388.4,283.1,0.0,13.4,0.0
@@ -27,7 +27,7 @@ reconstruction of contemporary genre histories. An analysis of both the first ex
 challenge some of the narratives that have long dominated chick lit research.,1,10,26,9.1,51.0,417.6,352.3,426.6,0.0,12.0,0.0
 Keywords Genre history . Chick lit . Internet archive . Wayback machine . Fan websites.,1,11,27,9.0,51.0,439.4,387.2,450.5,0.0,21.8,0.0
 Wikipedia,1,11,28,9.0,51.0,453.4,91.4,462.4,0.0,13.9,0.0
-1 Introduction,1,12,29,10.1,51.0,488.4,120.3,498.5,-0.0,35.0,0.0
+1 Introduction,1,12,29,10.1,51.0,488.4,120.3,498.5,-0.0,35.0,700.0
 "With genre history, one inevitably thinks of good old ‘dusty’ archival work. In literary",1,13,30,9.1,51.0,511.7,388.4,522.3,-0.0,23.3,0.0
 "studies, archives and libraries are still most often imagined as physical spaces and often",1,13,31,9.1,51.0,525.1,388.3,534.2,0.0,13.4,0.0
 * Sandra Folie,1,14,32,7.6,51.0,564.5,108.7,573.8,-0.0,39.4,0.0
@@ -97,8 +97,8 @@ of the Wikipedia article on chick lit (2004–now) will challenge some of the na
 "definitions of the chick lit genre published online. On a more general level, the aim of",3,5,13,9.1,51.0,191.1,389.5,200.1,0.0,12.0,0.0
 this paper is to present a critical comparative approach to the inclusion of archived web,3,5,14,9.0,51.0,203.1,388.3,212.1,0.0,12.0,0.0
 sources in the study of contemporary literary genres.,3,5,15,9.1,51.0,215.0,258.0,224.1,0.0,12.0,0.0
-2 Early definitions of chick lit or the not so unquestioning adoration,3,6,16,10.3,51.0,249.8,382.9,260.1,0.0,34.8,0.0
-of its fans,3,6,17,10.2,51.0,261.8,98.9,272.0,0.0,12.0,0.0
+2 Early definitions of chick lit or the not so unquestioning adoration,3,6,16,10.3,51.0,249.8,382.9,260.1,0.0,34.8,700.0
+of its fans,3,6,17,10.2,51.0,261.8,98.9,272.0,0.0,12.0,700.0
 When chick lit began to develop into a genre in the second half of the 1990s and early,3,7,18,9.1,51.0,286.7,388.3,295.8,-0.0,24.9,0.0
 "2000s, journalists, fans, and Wikipedians were the first to comment on it, often online.",3,7,19,9.1,51.0,298.7,388.3,307.7,0.0,12.0,0.0
 "Research, or at least the published research results, came much later. Annette Peitz,",3,7,20,9.0,51.0,310.6,388.4,319.7,0.0,12.0,0.0
@@ -149,7 +149,7 @@ instead of professionals) have changed. In the case of the two fan websites and,
 "their continuous preoccupation with the genre, which extends from the time of the",4,3,19,9.1,51.0,262.8,388.3,271.9,0.0,12.0,0.0
 genre’s creation and consolidation until after its alleged ‘death’.,4,3,20,9.1,51.0,273.3,301.7,283.9,0.0,10.5,0.0
 6,4,3,21,6.0,301.5,272.6,305.3,278.6,250.5,-0.7,0.0
-2.1 Digitally archived chick lit fan websites,4,4,22,9.3,51.0,298.5,227.1,307.8,-250.5,25.8,0.0
+2.1 Digitally archived chick lit fan websites,4,4,22,9.3,51.0,298.5,227.1,307.8,-250.5,25.8,700.0
 The British chicklit.co.uk was online from 2002 to 2014. A search with the Internet,4,5,23,9.0,51.0,322.5,388.5,331.5,0.0,24.1,0.0
 Archive’s Wayback Machine reveals that from the very beginning the genre was,4,5,24,9.1,51.0,333.0,388.4,343.6,-0.0,10.5,0.0
 defined as entertaining or very marketable “contemporary women’s fiction” (“Home,4,5,25,9.1,51.0,345.0,388.4,355.6,0.0,12.0,0.0
@@ -221,7 +221,7 @@ chicklitbooks.com). This makes these archived websites remarkable sources for,5,
 30 International Journal of Digital Humanities,6,1,1,8.0,51.0,35.2,388.5,42.6,,,400.0
 "negotiations of the genre (connection to other cultural artifacts and media, defense",6,2,2,9.1,51.0,59.5,388.3,68.6,0.0,24.4,0.0
 "mechanisms, differentiation from other genres).",6,2,3,9.1,51.0,71.5,237.4,80.6,0.0,12.0,0.0
-2.2 Academic sources as a basis for comparison,6,3,4,9.2,51.0,95.2,246.2,104.4,0.0,23.7,0.0
+2.2 Academic sources as a basis for comparison,6,3,4,9.2,51.0,95.2,246.2,104.4,0.0,23.7,700.0
 The early definitions on the archived websites overall make a balanced impression and,6,4,5,9.1,51.0,119.3,388.4,128.4,0.0,24.1,0.0
 "do not seem like the “unquestioning adoration” (Ferriss & Young, 2006, 1) of fans. In",6,4,6,9.1,51.0,129.8,388.4,140.3,0.0,10.4,0.0
 "fact, they are relatively consistent with early academic attempts at definition and what",6,4,7,9.1,51.0,143.2,388.5,152.3,-0.0,13.4,0.0
@@ -248,7 +248,7 @@ about the misadventures of contemporary unmarried working women in their 20s,6,7
 "quate boyfriends, and tyrannical bosses while consoling themselves with shop-",6,7,28,9.1,62.4,406.3,377.0,415.4,0.0,12.0,0.0
 "ping trips, chocolate, and erotic daydreams. The stories are commonly told in the",6,7,29,9.1,62.3,418.2,377.0,427.3,-0.0,11.9,0.0
 first person in tones of humorous self-deprecation. As the boom in this kind of,6,8,30,9.0,62.4,430.2,378.2,439.2,0.0,12.0,0.0
-"fiction, sometimes referred to as chic fic, continued into the early 21st century,",6,8,31,9.1,62.4,442.2,377.1,451.2,0.0,12.0,0.0
+"fiction, sometimes referred to as chic fic, continued into the early 21st century,",6,8,31,9.1,62.4,442.2,377.1,451.2,0.0,12.0,69.1
 "new subgenres emerged, including ‘nanny lit’ and ‘mommy lit’. (Baldick, 2015a,",6,8,32,9.1,62.4,452.6,377.0,463.2,0.0,10.5,0.0
 "[2008], 57–58; emphasis in original)",6,8,33,9.1,62.4,464.6,206.2,475.2,0.0,12.0,0.0
 Considering that this is an article in a prestigious academic dictionary and not,6,9,34,9.1,51.0,490.0,388.4,499.1,-11.3,25.4,0.0
@@ -286,7 +286,7 @@ This rather subversive use of the term ‘chick lit’ is completely omitted in 
 "2006, 7). With the words “Now, it seems men are getting in on the act […]” (“ladlit”,1",7,3,22,9.1,51.0,285.3,388.3,295.8,0.0,12.0,0.0
 "June 2003), chicklit.co.uk had similarly commented on the emergence of lad lit, one of",7,4,23,9.1,51.0,298.7,389.6,307.8,0.0,13.4,0.0
 several subgenres to which they dedicated a subpage.,7,4,24,9.1,51.0,310.7,259.3,319.7,0.0,12.0,0.0
-2.3 Wikipedia’s history page and chick lit,7,5,25,9.2,51.0,332.9,220.2,343.6,0.0,22.3,0.0
+2.3 Wikipedia’s history page and chick lit,7,5,25,9.2,51.0,332.9,220.2,343.6,0.0,22.3,683.3
 An important correction to the idiosyncratic genre history in the Oxford Dictionary of,7,6,26,9.1,51.0,358.5,390.4,367.5,-0.0,25.5,0.0
 "Literary Terms can be found in Wikipedia, the free encyclopedia that, according to its",7,6,27,9.1,50.7,370.4,388.3,379.5,-0.3,12.0,0.0
 "slogan, “anyone can edit” and that today provides over six million articles in the",7,7,28,9.1,51.0,380.9,388.3,391.5,0.3,10.5,0.0
@@ -514,9 +514,9 @@ the great advantages of web sources such as fan websites and Wikipedia,11,3,14,9
 compared to academic print and digital publications is that they regularly,11,3,15,9.1,51.0,215.0,388.3,224.1,0.0,12.0,0.0
 "update and revise their content. Thanks to web archives, researchers are able",11,3,16,9.0,51.0,226.9,388.4,236.0,0.0,11.9,0.0
 to trace and critically evaluate these developments.,11,3,17,9.1,51.0,238.9,268.9,247.9,0.0,12.0,0.0
-3 The evolution of the chick lit definition or the transparency of web,11,4,18,10.3,51.0,273.8,385.6,284.1,0.0,34.9,0.0
-archives,11,4,19,10.1,51.0,285.8,90.5,295.9,0.0,12.1,0.0
-3.1 Chick lit as women’s fiction,11,5,20,9.1,51.0,309.0,179.7,319.6,-0.0,23.2,0.0
+3 The evolution of the chick lit definition or the transparency of web,11,4,18,10.3,51.0,273.8,385.6,284.1,0.0,34.9,700.0
+archives,11,4,19,10.1,51.0,285.8,90.5,295.9,0.0,12.1,700.0
+3.1 Chick lit as women’s fiction,11,5,20,9.1,51.0,309.0,179.7,319.6,-0.0,23.2,678.1
 "In the early attempts to define the genre, the focus was mainly on a kind of ‘pure’ chick",11,6,21,9.1,51.0,333.0,388.4,343.6,0.0,24.0,0.0
 "lit of the early 2000s. However, especially the fan websites, which initially tried to",11,6,22,9.1,51.0,346.5,388.4,355.5,-0.0,13.4,0.0
 identify chick lit as an independent genre and distinguish it from romance and women’s,11,6,23,9.1,51.0,356.9,388.3,367.5,0.0,10.5,0.0
@@ -572,7 +572,7 @@ Wikipedia article has been constantly revised and updated since 2004. Initially,
 "narrowly defined as popular fiction, genre fiction, or a subcategory of women’s",12,8,31,9.1,51.0,416.7,388.3,427.3,0.0,10.4,0.0
 "fiction aimed at a limited target group of young women (see extracts in Table 1), the",12,8,32,9.1,51.0,430.2,388.3,439.2,-0.0,13.4,0.0
 current definition is very broad:,12,8,33,9.1,51.0,442.1,175.9,451.2,0.0,12.0,0.0
-"Chick lit or chick literature is genre fiction, which “consists of heroine-centered",12,9,34,9.0,62.3,464.6,377.1,475.1,11.3,22.4,0.0
+"Chick lit or chick literature is genre fiction, which “consists of heroine-centered",12,9,34,9.0,62.3,464.6,377.1,475.1,11.3,22.4,221.5
 narratives that focus on the trials and tribulations of their individual protago-,12,9,35,9.1,62.3,478.0,377.1,487.1,0.0,13.4,0.0
 nists”[1]. The genre often addresses issues of modern womanhood – from roman-,12,9,36,9.8,62.3,488.5,377.1,499.1,0.0,10.5,0.0
 tic relationships to female friendships to matters in the workplace – in humorous,12,9,37,9.0,62.4,500.4,377.1,511.0,0.0,12.0,0.0
@@ -599,7 +599,7 @@ two academic articles are recommended under the sub-heading “Further Reading�
 June 2020c). Although Wikipedia articles are never finished and tend to improve over,13,4,14,9.1,51.0,203.1,388.6,212.1,0.0,13.4,0.0
 "time, an analysis of the history page can also reveal notable exceptions to this general",13,4,15,9.1,51.0,215.0,388.3,224.1,0.0,12.0,0.0
 upward trend of quality.,13,4,16,9.1,51.0,226.9,146.2,236.0,0.0,11.9,0.0
-3.2 Gender and racial bias,13,5,17,9.1,51.0,250.7,158.5,259.8,0.0,23.8,0.0
+3.2 Gender and racial bias,13,5,17,9.1,51.0,250.7,158.5,259.8,0.0,23.8,700.0
 While chicklitbooks.com stressed that chick lit was literature for and/or about women,13,6,18,9.0,51.0,274.8,388.4,283.8,0.0,24.0,0.0
 "and chicklit.co.uk emphasized the ‘by and about women’, the definition on Wikipedia",13,6,19,9.0,51.0,285.3,388.4,295.8,0.0,10.5,0.0
 "since 2009 has focused on the gender of the narrators and protagonists, who, as is",13,6,20,9.1,51.0,298.7,388.4,307.8,-0.0,13.4,0.0
@@ -685,7 +685,7 @@ longer regularly maintained and updated in the years before – a time when wome
 "research. This justification or excuse, however, no longer applies to the editors of the",15,3,10,9.1,51.0,155.2,388.3,164.3,0.0,12.0,0.0
 "Wikipedia article on chick lit, because in recent years the diversity of the genre has",15,3,11,9.1,51.0,167.2,388.3,176.2,0.0,12.0,0.0
 been increasingly addressed and researched (see Hurt [ed.] 2019a).,15,3,12,9.1,51.0,179.1,314.0,188.2,-0.0,12.0,0.0
-4 Conclusion and outlook,15,4,13,10.1,51.0,214.1,175.2,224.2,0.0,35.0,0.0
+4 Conclusion and outlook,15,4,13,10.1,51.0,214.1,175.2,224.2,0.0,35.0,700.0
 "Based on the case study of chick lit, this article showed how web archives such as the",15,5,14,9.1,51.0,238.9,388.3,247.9,-0.0,24.7,0.0
 Internet Archive and Wikipedia’s history page can be productive tools to research,15,5,15,9.1,51.0,249.3,388.4,259.9,0.0,10.5,0.0
 "contemporary genre histories in the digital age. For chick lit, the claim that statements",15,5,16,9.1,51.0,262.8,388.4,271.8,0.0,13.4,0.0
@@ -722,8 +722,8 @@ one possible and very evident example of a whole range of fields of application 
 Humanities – but also the digital formats and archives themselves. The more re-,16,2,2,9.1,51.0,58.1,388.4,68.6,0.0,22.9,0.0
 "searchers participate, e.g. by writing and editing Wikipedia articles or by suggesting",16,2,3,9.1,51.0,71.5,388.4,80.6,-0.0,13.4,0.0
 "websites for filing in the Internet Archive, the better web archives can support research.",16,2,4,9.1,51.0,83.5,388.3,92.5,0.0,12.0,0.0
-Acknowledgements Open access funding provided by University of Vienna.,16,3,5,7.2,51.0,120.7,297.7,128.0,0.0,37.3,0.0
-"Open Access This article is licensed under a Creative Commons Attribution 4.0 International License, which",16,4,6,7.2,51.0,149.1,388.5,156.3,0.0,28.3,0.0
+Acknowledgements Open access funding provided by University of Vienna.,16,3,5,7.2,51.0,120.7,297.7,128.0,0.0,37.3,162.3
+"Open Access This article is licensed under a Creative Commons Attribution 4.0 International License, which",16,4,6,7.2,51.0,149.1,388.5,156.3,0.0,28.3,73.3
 "permits use, sharing, adaptation, distribution and reproduction in any medium or format, as long as you give",16,4,7,7.2,51.0,158.6,388.5,165.8,-0.0,9.5,0.0
 "appropriate credit to the original author(s) and the source, provide a link to the Creative Commons licence, and",16,4,8,7.2,51.0,168.0,388.4,175.3,0.0,9.5,0.0
 indicate if changes were made. The images or other third party material in this article are included in the,16,4,9,7.2,51.0,177.5,388.5,184.7,0.0,9.5,0.0
@@ -731,7 +731,7 @@ indicate if changes were made. The images or other third party material in this 
 included in the article's Creative Commons licence and your intended use is not permitted by statutory,16,4,11,7.2,51.0,196.4,388.4,203.7,0.0,9.5,0.0
 "regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder.",16,4,12,7.2,51.0,205.9,388.4,213.1,0.0,9.5,0.0
 "To view a copy of this licence, visit http://creativecommons.org/licenses/by/4.0/.",16,4,13,7.2,51.0,215.4,301.4,222.6,0.0,9.5,0.0
-References,16,5,14,10.2,51.0,249.3,103.1,259.5,0.0,34.0,0.0
+References,16,5,14,10.2,51.0,249.3,103.1,259.5,0.0,34.0,700.0
 "Assmann, A. (2009). Archive im Wandel der Mediengeschichte. In K. Ebeling & S. Günzel (Eds.),",16,6,15,7.2,51.0,275.6,388.3,282.9,-0.0,26.3,0.0
 "Archivologie. Theorien des Archivs in Philosophie, Medien und Künsten (pp. 165–175). Kadmos.",16,6,16,7.2,64.6,283.9,369.4,292.4,13.5,8.3,0.0
 "Baldick, C. (2015a). Chick lit [2008]. In C. Baldick (Ed.), The Oxford dictionary of literary terms (pp. 57–58).",16,6,17,7.2,51.0,294.2,388.4,302.7,-13.5,10.3,0.0
