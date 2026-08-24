@@ -22,16 +22,23 @@ def is_word_continuation(char: str) -> bool:
 
 def canonical_word(word: str) -> str:
     """Return the case-folded dictionary representation of one word."""
+    return normalize('NFC', exact_word(word).casefold())
+
+
+def exact_word(word: str) -> str:
+    """Return the case-preserving normalized representation of one word."""
     normalized = normalize('NFC', word)
-    normalized = ''.join(
-        '' if char == SOFT_HYPHEN else '-' if char in VISIBLE_WORD_HYPHENS else char
-        for char in normalized
+    return normalize(
+        'NFC',
+        ''.join(
+            '' if char == SOFT_HYPHEN else '-' if char in VISIBLE_WORD_HYPHENS else char
+            for char in normalized
+        ),
     )
-    return normalize('NFC', normalized.casefold())
 
 
-def words_in_text(text: str) -> Iterable[str]:
-    """Yield words while retaining only word-internal hyphens."""
+def exact_words_in_text(text: str) -> Iterable[str]:
+    """Yield case-preserving words while retaining only word-internal hyphens."""
     char_index = 0
 
     while char_index < len(text):
@@ -58,12 +65,34 @@ def words_in_text(text: str) -> Iterable[str]:
                 continue
             break
 
-        yield canonical_word(''.join(word_chars))
+        yield exact_word(''.join(word_chars))
+
+
+def words_in_text(text: str) -> Iterable[str]:
+    """Yield case-folded words while retaining only word-internal hyphens."""
+    return (canonical_word(word) for word in exact_words_in_text(text))
 
 
 def document_word_counts(line_texts: Iterable[str]) -> Counter[str]:
     """Count normalized words in the unmodified document text."""
     return Counter(word for text in line_texts for word in words_in_text(text))
+
+
+def is_mixed_case_word(word: str) -> bool:
+    """Return whether a word has lowercase letters and an uppercase inner letter."""
+    return any(char.islower() for char in word) and any(
+        char_index > 0 and char.isupper() for char_index, char in enumerate(word)
+    )
+
+
+def document_mixed_case_words(line_texts: Iterable[str]) -> set[str]:
+    """Collect exact-case camelCase and PascalCase words from the document."""
+    return {
+        word
+        for text in line_texts
+        for word in exact_words_in_text(text)
+        if is_mixed_case_word(word)
+    }
 
 
 def strip_leading_wrapping_punctuation(text: str) -> str:
@@ -78,37 +107,44 @@ def strip_leading_wrapping_punctuation(text: str) -> str:
     return text[first_word_index:]
 
 
-def strip_trailing_punctuation(text: str) -> str:
-    """Strip punctuation following a continuation fragment."""
-    core_end = len(text)
-    while (
-        core_end
-        and category(text[core_end - 1]).startswith('P')
-        and text[core_end - 1] not in WORD_HYPHENS
-    ):
-        core_end -= 1
-    return text[:core_end]
+def initial_lexical_fragment(text: str) -> str | None:
+    """Return a token's initial word fragment without attached annotations."""
+    if not text or not is_word_base(text[0]):
+        return None
+
+    fragment_end = 1
+    while fragment_end < len(text):
+        char = text[fragment_end]
+        if is_word_continuation(char) or category(char).startswith('S'):
+            fragment_end += 1
+            continue
+        if (
+            char in WORD_HYPHENS
+            and fragment_end + 1 < len(text)
+            and is_word_base(text[fragment_end + 1])
+        ):
+            fragment_end += 1
+            continue
+        break
+
+    return text[:fragment_end]
+
+
+def exact_dictionary_candidate(fragment: str) -> str | None:
+    """Return an exact-case key when a candidate is exactly one lexical word."""
+    word_list = list(exact_words_in_text(fragment))
+    normalized_fragment = exact_word(fragment)
+    if len(word_list) != 1 or word_list[0] != normalized_fragment:
+        return None
+    return word_list[0]
 
 
 def dictionary_candidate(fragment: str) -> str | None:
     """Return a dictionary key when a candidate is exactly one lexical word."""
-    word_list = list(words_in_text(fragment))
-    if len(word_list) != 1:
+    exact_candidate = exact_dictionary_candidate(fragment)
+    if exact_candidate is None:
         return None
-
-    # Reject candidates containing separators that the tokenizer would silently
-    # split or discard. They can still be handled conservatively by the fallback
-    # rules, but must not produce false exact-document matches.
-    comparable_chars = ''.join(
-        char
-        for char in normalize('NFC', fragment)
-        if is_word_continuation(char) or char in WORD_HYPHENS
-    )
-    if canonical_word(comparable_chars) != word_list[0]:
-        return None
-    if len(comparable_chars) != len(normalize('NFC', fragment)):
-        return None
-    return word_list[0]
+    return canonical_word(exact_candidate)
 
 
 def is_all_caps(text: str) -> bool:
@@ -129,8 +165,16 @@ def should_keep_boundary_hyphen(
     right_fragment: str,
     boundary_hyphen: str,
     word_counts: Counter[str],
+    mixed_case_words: set[str],
 ) -> bool:
     """Decide whether a line-boundary hyphen belongs to the complete word."""
+    combined_word = left_fragment + right_fragment
+    if right_fragment[0].isupper() and not is_all_caps(combined_word):
+        exact_candidate = exact_dictionary_candidate(combined_word)
+        if exact_candidate is not None and exact_candidate in mixed_case_words:
+            return False
+        return boundary_hyphen != SOFT_HYPHEN
+
     unhyphenated_key = dictionary_candidate(left_fragment + right_fragment)
     hyphenated_key = dictionary_candidate(left_fragment + '-' + right_fragment)
     unhyphenated_count = word_counts[unhyphenated_key] if unhyphenated_key is not None else 0
@@ -147,9 +191,6 @@ def should_keep_boundary_hyphen(
     if any(char in VISIBLE_WORD_HYPHENS for char in left_fragment + right_fragment):
         return True
 
-    combined_word = left_fragment + right_fragment
-    if right_fragment[0].isupper() and not is_all_caps(combined_word):
-        return True
     return contains_nonletter(combined_word)
 
 
@@ -174,18 +215,16 @@ def split_boundary_fragments(left_line: str, right_line: str) -> tuple[str, str,
     if not stripped_right_line:
         return None
     raw_right_token = stripped_right_line.split(maxsplit=1)[0]
-    right_fragment = strip_trailing_punctuation(raw_right_token)
-    if (
-        not right_fragment
-        or not is_word_base(right_fragment[0])
-        or not any(is_word_base(char) for char in right_fragment)
-    ):
+    right_fragment = initial_lexical_fragment(raw_right_token)
+    if right_fragment is None:
         return None
 
     return left_fragment, right_fragment, left_line[-1], raw_right_token
 
 
-def unhyphenate_block_lines(line_texts: Iterable[str], word_counts: Counter[str]) -> str:
+def unhyphenate_block_lines(
+    line_texts: Iterable[str], word_counts: Counter[str], mixed_case_words: set[str]
+) -> str:
     """Resolve wrapped words within one Markdown block and retain its line breaks."""
     rewritten_lines = list(line_texts)
     consumed_line_indexes: set[int] = set()
@@ -199,7 +238,11 @@ def unhyphenate_block_lines(line_texts: Iterable[str], word_counts: Counter[str]
 
         left_fragment, right_fragment, boundary_hyphen, raw_right_token = fragments
         keep_hyphen = should_keep_boundary_hyphen(
-            left_fragment, right_fragment, boundary_hyphen, word_counts
+            left_fragment,
+            right_fragment,
+            boundary_hyphen,
+            word_counts,
+            mixed_case_words,
         )
         if keep_hyphen:
             rewritten_lines[line_index] += raw_right_token

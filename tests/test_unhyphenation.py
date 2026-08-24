@@ -3,12 +3,21 @@ from collections import Counter
 
 from frompdf.blocks import lines_to_markdown_blocks
 from frompdf.models import Line, PageNumber
-from frompdf.unhyphenation import document_word_counts, unhyphenate_block_lines
+from frompdf.unhyphenation import (
+    document_mixed_case_words,
+    document_word_counts,
+    unhyphenate_block_lines,
+)
 
 
 def resolve(lines: list[str], evidence: str = '') -> str:
     """Resolve a synthetic block using words from separate document evidence."""
-    return unhyphenate_block_lines(lines, document_word_counts([evidence]))
+    evidence_lines = [evidence]
+    return unhyphenate_block_lines(
+        lines,
+        document_word_counts(evidence_lines),
+        document_mixed_case_words(evidence_lines),
+    )
 
 
 def text_line(text: str, block_no: int, line_no: int) -> Line:
@@ -66,6 +75,19 @@ class DocumentEvidenceTests(unittest.TestCase):
 
         self.assertEqual(result, 'Visit the OnlineShop\ntoday.')
 
+    def test_case_folded_evidence_does_not_override_capitalization_fallback(self) -> None:
+        result = resolve(
+            ['the Konsent-', 'Prinzip requires consent'],
+            evidence='Konsentprinzip',
+        )
+
+        self.assertEqual(result, 'the Konsent-Prinzip\nrequires consent')
+
+    def test_exact_mixed_case_evidence_removes_hyphen_before_capital(self) -> None:
+        result = resolve(['the Java-', 'Script runtime'], evidence='JavaScript')
+
+        self.assertEqual(result, 'the JavaScript\nruntime')
+
     def test_dictionary_keeps_internal_hyphens_and_ignores_surrounding_punctuation(self) -> None:
         counts = document_word_counts(['(E-Learning-Systeme), E‑Learning‑Systeme!'])
 
@@ -115,6 +137,17 @@ class BoundaryRewriteTests(unittest.TestCase):
         result = resolve(['While, tradi-', 'tionally, licenses differed.'])
 
         self.assertEqual(result, 'While, traditionally,\nlicenses differed.')
+
+    def test_ignores_quote_and_footnote_suffix_when_deciding(self) -> None:
+        result = resolve(
+            ['their individual protago-', 'nists”[1]. The genre continues.'],
+            evidence='protagonists',
+        )
+
+        self.assertEqual(
+            result,
+            'their individual protagonists”[1].\nThe genre continues.',
+        )
 
     def test_removes_consumed_empty_physical_line(self) -> None:
         result = resolve(['These modifica-', 'tions', 'remain useful.'])
