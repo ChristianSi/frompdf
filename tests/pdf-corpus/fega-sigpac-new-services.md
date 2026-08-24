@@ -219,8 +219,8 @@ campaña PAC vigente y la cartografía del Cultivo declarado de la campaña
 anterior.
 
 El contenido del servicio puede cargarse en un software SIG o embeberse dentro
-de un visualizador o geoportal11 empleando la nueva URL https://sigpac-
-hubcloud.es/wms. Soporta un total de tres consultas (GetCapabilites, GetMap y
+de un visualizador o geoportal11 empleando la nueva URL https://sigpac-hubcloud.es/wms.
+Soporta un total de tres consultas (GetCapabilites, GetMap y
 GetFeatureInfo). El contenido es el mismo que el mostrado en la URL tradicional
 https://wms.mapa.gob.es/sigpac/wms, que se deshabilitará a finales del 2025.
 

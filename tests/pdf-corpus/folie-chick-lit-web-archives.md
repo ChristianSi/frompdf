@@ -54,8 +54,8 @@ ones; anthologies or catalogues reflecting networks parallel to those in the Wes
 personal papers of forgotten writers, editors, and curators;” (2012, 510). What this list
 of possible archival sources omits, is that many of these materials have now been
 digitized and can be accessed online, albeit sometimes with restrictions that vary
-according to academic affiliation or location. Although the Internet has great demo-
-cratic potential, its distribution and accessibility – about 57% of the world’s population
+according to academic affiliation or location. Although the Internet has great democratic
+potential, its distribution and accessibility – about 57% of the world’s population
 was online in 2019 – is still very unevenly spread across the globe and across different
 social classes (Kemp, 2019). In principle, however, the Internet has been publicly
 accessible since 1991.
@@ -73,8 +73,8 @@ and often have not made these records available for free use; publishers and the
 imprints, if they have not disappeared, have meanwhile updated their websites several
 times; and Wikipedia, as a collaboratively developed project, is constantly changing
 anyway. According to Aleida Assmann, the Internet and the archive are complementary
-institutions: “the archive fulfills the desire for reliable material preservation and long-
-term storage of information; the Internet fulfills the desire for an acceleration of the data
+institutions: “the archive fulfills the desire for reliable material preservation and longterm
+storage of information; the Internet fulfills the desire for an acceleration of the data
 flow and lightning-fast and targeted access to information.”
 1 (2009, 174; my transl.)
 
@@ -166,8 +166,8 @@ used these sources because no better ones were available yet; references remaine
 mostly anecdotal and selective and were in no way systematic. If the websites had not
 been archived and made accessible either by the Internet Archive and its Wayback
 Machine or by Wikipedia’s history page, their content – with the exception of a few
-second hand quotations5 – would have been lost for research today. Since the Human-
-ities have so far not given much attention to non-academic web sources, this ‘loss’ may
+second hand quotations5 – would have been lost for research today. Since the Humanities
+have so far not given much attention to non-academic web sources, this ‘loss’ may
 not seem particularly relevant at first. However, in literary and cultural studies, and
 especially in genre history, the first mentions and definitions of a genre are considered
 highly relevant. I would argue that this convention does not have to be ignored just
@@ -291,9 +291,9 @@ the article, Chris Baldick, defines chick lit as
 > fiction of that time. The defining model for the genre was Helen Fielding’s comic
 > novel Bridget Jones’s Diary (1996) [...]. Chick-lit novels are written by women
 > about the misadventures of contemporary unmarried working women in their 20s
-> or 30s who struggle with multiple pressures from reproachful mothers, inade-
-> quate boyfriends, and tyrannical bosses while consoling themselves with shop-
-> ping trips, chocolate, and erotic daydreams. The stories are commonly told in the
+> or 30s who struggle with multiple pressures from reproachful mothers, inadequate
+> boyfriends, and tyrannical bosses while consoling themselves with shopping
+> trips, chocolate, and erotic daydreams. The stories are commonly told in the
 >
 > first person in tones of humorous self-deprecation. As the boom in this kind of
 > fiction, sometimes referred to as chic fic, continued into the early 21st century,
@@ -302,8 +302,8 @@ the article, Chris Baldick, defines chick lit as
 
 Considering that this is an article in a prestigious academic dictionary and not
 the intervention of a literary critic, one can only wonder about the inherent
-national and male chauvinism. The latter is even more evident in the corre-
-sponding article on “lad lit”, in which Baldick writes that “[s]ince British lad lit
+national and male chauvinism. The latter is even more evident in the corresponding
+article on “lad lit”, in which Baldick writes that “[s]ince British lad lit
 arrived in the USA slightly later than the more successful first wave of chick
 lit, it was mistakenly believed to be a backlash against the Bridget Jones
 phenomenon; in fact the correct answer to the question ‘which came first, the
@@ -415,8 +415,8 @@ and try to prevent certain people from editing.” (Wikipedia: “Wikipedia”, 
 
 11 The position of administrator is the lowest level of volunteer stewardship and includes some additional
 rights such as deleting pages or preventing articles from being changed (e.g. disputes, vandalism). For more
-information on administrators and other forms of volunteer stewardship see Wikipedia: “Wikipedia: Admin-
-istration”, 21 Aug. 2020k.
+information on administrators and other forms of volunteer stewardship see Wikipedia: “Wikipedia: Administration”,
+21 Aug. 2020k.
 
 12 My translation. German original: “Überhaupt überschreitet sie die Grenzen eines altertümlichen
 Bildungskanons und nimmt sich dem Zeitgeist, der Popkultur und den Subkulturen von Geeks, Nerds und
@@ -482,8 +482,8 @@ anthology was not chick lit as we know it
 today, and the term was used ironically.
 However James Wolcott’s 1996 article in
 The New Yorker “Hear Me Purr” co-opted
-“chick lit” to define the trend of “girlish-
-ness” evident in the writing of female
+“chick lit” to define the trend of “girlishness”
+evident in the writing of female
 newspaper columnists at that time. This is
 significant, as major chick lit works such as
 Helen Fielding’sBridget Jones’s Diaryand
@@ -496,9 +496,9 @@ edited anthology Chick Lit: Postfeminist
 Fiction, published in 1995. The genre was
 defined as a type of post-feminist or
 second-wave feminism that went beyond
-female-as-victim to include fiction that cov-
-ered the breadth of female experiences, in-
-cluding love, courtship and gender. The
+female-as-victim to include fiction that covered
+the breadth of female experiences, including
+love, courtship and gender. The
 collection emphasized experimental work,
 including violent, perverse and sexual
 
@@ -516,8 +516,8 @@ that time. Works such as Helen Fielding’s
 Bridget Jones’s Diary and Candace
 
 Bushnell’s Sex and the City are examples of
-such work that helped establish contempo-
-rary connotations of the term.
+such work that helped establish contemporary
+connotations of the term.
 2008 Chick lit is a term used to denote genre fiction
 within women’s fiction written for and
 marketed to young women, especially
@@ -538,14 +538,14 @@ Postfeminist Fiction. The genre was defined
 as a type of post-feminist or second-wave
 feminism that went beyond female-as-victim
 to include fiction that covered the breadth of
-female experiences, including love, court-
-ship and gender. The collection emphasized
-experimental work, including violent, per-
-verse and sexual themes. James Wolcott’s
+female experiences, including love, courtship
+and gender. The collection emphasized
+experimental work, including violent, perverse
+and sexual themes. James Wolcott’s
 1996 article in The New Yorker “Hear Me
-Purr” co-opted the term “chick lit” to pro-
-scribe what he called the trend of “girlish-
-ness” evident in the writing of female
+Purr” co-opted the term “chick lit” to proscribe
+what he called the trend of “girlishness”
+evident in the writing of female
 newspaper columnists at that time. Works
 such as Helen Fielding’sBridget Jones’s
 Diaryand Candace Bushnell’sSex and the
@@ -579,8 +579,8 @@ response to Mazza and DeShell’s call for
 “postfeminist writing.” [reference: Mazza &
 DeShell, 1995]
 
-which “consists of heroine-centered narra-
-tive that focus on the trials and tribulations
+which “consists of heroine-centered narrative
+that focus on the trials and tribulations
 of their individual protagonists.” [reference:
 Smith, 2008]
 
@@ -593,8 +593,8 @@ years to develop. This is not possible with academic publishing. Although
 tertiary sources are occasionally revised and expanded, the extent of such
 revisions usually depends on the resources of the editors and authors, which
 may be very limited, especially if their involvement with the topic in question
-dates back several years. The Oxford Dictionary of Literary Terms, for exam-
-ple, was reprinted in 2015. However, the revisions did not affect the article on
+dates back several years. The Oxford Dictionary of Literary Terms, for example,
+was reprinted in 2015. However, the revisions did not affect the article on
 
 chick lit, which was left exactly as it was originally published in 2008. One of
 the great advantages of web sources such as fan websites and Wikipedia
@@ -629,12 +629,12 @@ openness and flexibility of chick lit:
 in Wikipedia (Wikipedia: “Gender bias on Wikipedia”, 12 July 2020e); a racial bias has also been criticized
 (Wikipedia: “Racial bias on Wikipedia”, 30 July 2020j).
 
-15 The Wikipedia article on “the neutral point of view” (NPOV) defines it as “representing fairly, proportion-
-ately, and, as far as possible, without editorial bias, all the significant views that have been published by
+15 The Wikipedia article on “the neutral point of view” (NPOV) defines it as “representing fairly, proportionately,
+and, as far as possible, without editorial bias, all the significant views that have been published by
 reliable sources on a topic.” (Wikipedia: “Neutral point of view”, 12 July 2020f)
 
-> bit more personal and realistic. The plots can range from being very light and fast-
-> paced to being extraordinarily deep, thought-provoking and/or moving.
+> bit more personal and realistic. The plots can range from being very light and fastpaced
+> to being extraordinarily deep, thought-provoking and/or moving.
 
 In 2007, chicklit.co.uk also distanced itself from its earlier definition of the genre. The
 owner of the website, Paula Gardner, pointed out that “pure chicklit […] has changed
@@ -651,8 +651,8 @@ a tendency to define chick lit more inclusively, quasi-synonymously with women�
 
 fiction (2016, 70). What distinguishes Missler from other chick lit scholars so far is that
 she already came to her conclusions by including chick lit blogs in her research and by
-conducting a special survey among bloggers. However, neither Wikipedia nor fan-
-websites such as chicklitbooks.com and chicklit.co.uk, which at that time were already
+conducting a special survey among bloggers. However, neither Wikipedia nor fanwebsites
+such as chicklitbooks.com and chicklit.co.uk, which at that time were already
 offline and only accessible via the Internet Archive, were part of her analysis.
 
 Yet the free encyclopedia in particular represents one of the most suitable websites
@@ -673,9 +673,9 @@ fiction aimed at a limited target group of young women (see extracts in Table 1)
 current definition is very broad:
 
 > Chick lit or chick literature is genre fiction, which “consists of heroine-centered
-> narratives that focus on the trials and tribulations of their individual protago-
-> nists”[1]. The genre often addresses issues of modern womanhood – from roman-
-> tic relationships to female friendships to matters in the workplace – in humorous
+> narratives that focus on the trials and tribulations of their individual protago-nists”[1].
+> The genre often addresses issues of modern womanhood – from romantic
+> relationships to female friendships to matters in the workplace – in humorous
 > and lighthearted ways[2]. At its onset, chick lit’s protagonists tended to be “single,
 > white, heterosexual, British and American women in their late twenties and early
 > thirties, living in metropolitan areas”[1] (22 June 2020c; emphasis and footnotes in
@@ -797,8 +797,8 @@ Lit. This page was under construction from July 2012 and did not go online anymo
 For the fan websites, however, the deficit with regard to the diversity of the chick lit
 genre can be partly excused by the fact that they were not obliged to take a ‘neutral’ and
 balanced position in the first place. Moreover, they went offline in 2014/15 and were no
-longer regularly maintained and updated in the years before – a time when women-of-
-color chick lit had already existed for two decades, but was not yet widely discussed in
+longer regularly maintained and updated in the years before – a time when women-of-color
+chick lit had already existed for two decades, but was not yet widely discussed in
 research. This justification or excuse, however, no longer applies to the editors of the
 Wikipedia article on chick lit, because in recent years the diversity of the genre has
 been increasingly addressed and researched (see Hurt [ed.] 2019a).
@@ -834,15 +834,15 @@ not seem to be exempt from the racial bias of Wikipedia, which, in the case of c
 also overlaps with a delay in academic research regarding women-of-color chick lit and
 global variants of the genre.
 
-It could be very productive in the future if the relationship between academia, non-
-academic web sources and web archives was to be strengthened; and if not only
+It could be very productive in the future if the relationship between academia, non-academic
+web sources and web archives was to be strengthened; and if not only
 academic material would find its way into digital formats and archives – as has been
 the case for many years in Wikipedia – but conversely also web content into research.
 This would not only enrich research – and the histories of contemporary genres is only
 one possible and very evident example of a whole range of fields of application in the
 
-Humanities – but also the digital formats and archives themselves. The more re-
-searchers participate, e.g. by writing and editing Wikipedia articles or by suggesting
+Humanities – but also the digital formats and archives themselves. The more researchers
+participate, e.g. by writing and editing Wikipedia articles or by suggesting
 websites for filing in the Internet Archive, the better web archives can support research.
 
 Acknowledgements Open access funding provided by University of Vienna.
@@ -900,8 +900,8 @@ chicklitbooks.com/. Accessed 21 July 2020.
 Chicklitbooks.com. (22 Sept. 2012). What is chick lit?. https://web.archive.org/web/20120922045224/http://
 chicklitbooks.com/what-is-chick-lit/. Accessed 21 July 2020.
 Coburn, J. (2012). The decline of chick lit. The San Diego Union-Tribune. http://web.archive.org/web/
-20200920133413/https://www.sandiegouniontribune.com/entertainment/books/sdut-the-decline-of-
-chick-lit-2012feb11-story.html. Accessed 20 Sept. 2020.
+20200920133413/https://www.sandiegouniontribune.com/entertainment/books/sdut-the-decline-of-chick-lit-2012feb11-story.html.
+Accessed 20 Sept. 2020.
 Ferriss, S. & Young, M. (2006). Introduction. In S. Ferriss & M. Young (Eds.), Chick lit: the new woman’s
 fiction (pp. 1–13). Routledge.
 
@@ -931,8 +931,8 @@ Routledge.
 Peitz, A. (2010). Chick lit: Genrekonstituierende Untersuchungen unter anglo-amerikanischem Einfluss.
 Frankfurt am Main et al.: Peter Lang.
 Sherwin, A. (2011). Have we fallen out of love with chick lit? Independent. https://web.archive.org/web/
-20191110095214/https://www.independent.co.uk/arts-entertainment/books/features/have-we-fallen-out-
-of-love-with-chick-lit-2361445.html. Accessed 16 Sept. 2020.
+20191110095214/https://www.independent.co.uk/arts-entertainment/books/features/have-we-fallen-out-of-love-with-chick-lit-2361445.html.
+Accessed 16 Sept. 2020.
 Smith, C. J. (2008). Cosmopolitan culture and consumerism in Chick lit. Routledge.
 Staff & Agencies. (2001). Bainbridge denounces chick-lit as “froth”. The Guardian. https://web.archive.org/
 web/20190411232047/https://www.theguardian.com/books/2001/aug/23/bookerprize2001.bookerprize.

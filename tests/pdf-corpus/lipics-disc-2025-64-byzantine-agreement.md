@@ -50,8 +50,8 @@ often more vulnerable to malicious manipulation than those in secure, monitored 
 These realities complicate the coherent design of sensor data-processing pipelines, distributed
 control systems, and multi-agent robotics applications – scenarios that are functionally similar
 but operationally require ad hoc mitigation techniques to tolerate deployment conditions.
-The growing demand for such systems spans consumer-facing devices such as home-
-automation sensors and controls, personal health monitoring devices and drug-delivery
+The growing demand for such systems spans consumer-facing devices such as homeautomation
+sensors and controls, personal health monitoring devices and drug-delivery
 systems, and automotive telemetry and safety systems, as well as industrial and agricultural
 platforms for monitoring and controlling mechanical, physical, and biological processes. In
 all of these domains, the quality and reliability of sensor and sensor-derived data is central
@@ -158,8 +158,8 @@ distributions [15, 16], and remains robust even when <
 2
 of the samples are arbitrarily
 
-corrupted. We compare the conditional likelihoods P(x | r) for each r and x with a similarity-
-based approximation of conditional probabilities [2]. This is necessary for multidimensional
+corrupted. We compare the conditional likelihoods P(x | r) for each r and x with a similaritybased
+approximation of conditional probabilities [2]. This is necessary for multidimensional
 data since the covariance matrix is unknown, but is a reasonable approach since each nonfaulty
 replica output is an approximation of the same underlying value.
 
@@ -265,8 +265,8 @@ where s ≥ 2f +1, so termination for the asynchronous case requires at least n 
 replicas. Otherwise, f faulty replicas could withhold values without being distinguished from
 f nonfaulty replicas experiencing a network partition, and halt progress.
 
-PBA OneShot’s requirements on replica set size compare favorably to other ABA proto-
-cols (Table 1), particularly when considering its lack of dependency on data dimensionality
+PBA OneShot’s requirements on replica set size compare favorably to other ABA protocols
+(Table 1), particularly when considering its lack of dependency on data dimensionality
 and weak assumptions regarding the range of correct values. Unlike prior work that tend to
 improve accuracy with more replicas, a distinguishing characteristic of PBA value selection is
 that more replicas are not required to ensure the safety or liveness properties of the system,
@@ -375,8 +375,8 @@ the system may not withstand Byzantine attack. Even without an attack, the proto
 fail to terminate.
 
 Our empirical results against BVC reinforces that PBA offers a compelling trade-off: it
-maintains competitive accuracy while substantially reducing computational cost. Beyond per-
-formance, PBA also provides robust fault tolerance and accurate agreement with significantly
+maintains competitive accuracy while substantially reducing computational cost. Beyond performance,
+PBA also provides robust fault tolerance and accurate agreement with significantly
 fewer replica outputs. Notably, PBA’s minimum required number of replicas and quorum
 size are independent of d; in contrast to BVC, whose replica requirements scale significantly
 with d. Under-provisioned PBA systems instead have more uncertainty, but the amount
@@ -391,8 +391,8 @@ May 2016. doi:10.1145/2898984.
 
 2 Sergey Blok, Douglas Medin, and Daniel Osherson. Probability from similarity. In AAAI
 Spring Symposium on Logical Formalization of Commonsense Reasoning, pages 36–42, 2003.
-3 Richard Ree Brooks and S. Sitharama Iyengar. Optimal matching algorithm for multidimen-
-sional sensor readings. In Sensor Fusion and Networked Robotics VIII, volume 2589. SPIE,
+3 Richard Ree Brooks and S. Sitharama Iyengar. Optimal matching algorithm for multidimensional
+sensor readings. In Sensor Fusion and Networked Robotics VIII, volume 2589. SPIE,
 September 1995. doi:10.1117/12.220948.
 
 4 R.R. Brooks and S.S. Iyengar. Robust distributed computing and sensing algorithm. Computer,

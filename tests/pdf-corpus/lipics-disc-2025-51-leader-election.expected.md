@@ -66,8 +66,8 @@ Schloss Dagstuhl – Leibniz-Zentrum für Informatik, Dagstuhl Publishing, Germa
 ## 1 Introduction
 
 The field of reliable distributed computing is characterized by the study of a wide range of
-failure models, from failures affecting specific processes [4, 17] to failures affecting commu-
-nication channels, such as message omission failures, message addition failures or message
+failure models, from failures affecting specific processes [4, 17] to failures affecting communication
+channels, such as message omission failures, message addition failures or message
 corruptions [19]. In a recent paper, Censor-Hillel et al. [7] introduced a new interesting failure
 model for channels: the fully-defective asynchronous network. In this model, processes do
 not fail, but all messages in transit may be arbitrarily corrupted by an adversary. While the
@@ -78,8 +78,8 @@ even the identity of the sender. The only information a message conveys is its e
 Surprisingly, Censor-Hillel et al. [7] showed that if a leader process is initially known
 and the topology is 2-edge-connected, it is possible to simulate a reliable, uncorrupted
 message-passing network, even in asynchronous settings, within this fully-defective model.
-This result makes studying leader election algorithms for this model particularly com-
-pelling: if a leader can be elected in a certain topology, with an algorithm that is terminating
+This result makes studying leader election algorithms for this model particularly compelling:
+if a leader can be elected in a certain topology, with an algorithm that is terminating
 and where it is possible to distinguish in some way the messages of the leader election
 algorithm, then on such topology any asynchronous algorithm can be simulated even if all
 messages are arbitrarily corrupted. In this regard, Censor-Hillel et al. [7] conjectured that
@@ -88,8 +88,8 @@ was a necessary requirement. We stress that electing a leader is a fundamental p
 the classical message-passing setting, and it has been extensively studied in systems with
 unique identifiers [1, 12, 16, 18] and in anonymous networks [2, 3, 8, 21].
 
-Frei et al. [13] disproved the aforementioned conjecture for a notable family of 2-edge-
-connected networks: oriented ring topologies. In an oriented ring, processes have a common
+Frei et al. [13] disproved the aforementioned conjecture for a notable family of 2-edge-connected
+networks: oriented ring topologies. In an oriented ring, processes have a common
 notion of clockwise and counter-clockwise direction. More specifically, Frei et al. [13] proposed
 a quiescently terminating leader election algorithm with a message complexity of O(nIDmax),
 where IDmax is the maximum identifier in the system. The quiescent termination of the
@@ -105,8 +105,8 @@ n
 
 messages. Although
 
-originally established for the uniform setting, this lower bound can be extended to the non-
-uniform setting, even when the exact value of n is known; see the full version of the paper
+originally established for the uniform setting, this lower bound can be extended to the non-uniform
+setting, even when the exact value of n is known; see the full version of the paper
 for details.
 
 In anonymous systems, where processes lack identifiers, Frei et al. [13] showed a randomized
@@ -143,14 +143,14 @@ the aforementioned lower bound of Frei et al. [13], which shows the necessity of
 dependency on the values of the identifiers. Our result implies that Θ(log IDmin) is the tight
 message complexity for constant-size instances.
 
-The key technical novelty in our non-uniform algorithms is the design of a global syn-
-chronization mechanism that leverages the known upper bound on the network size to keep
+The key technical novelty in our non-uniform algorithms is the design of a global synchronization
+mechanism that leverages the known upper bound on the network size to keep
 processes partially synchronized across algorithmic phases. This mechanism enables processes
 to compare their identifiers bit by bit, leading to an algorithm whose complexity depends
 only on the size of the identifiers (and not on their values).
 
-Regarding anonymous networks, with non-uniformity at hand, the aforementioned impos-
-sibility result of Itai and Rodeh [15] no longer applies. This allows us to create a randomized
+Regarding anonymous networks, with non-uniformity at hand, the aforementioned impossibility
+result of Itai and Rodeh [15] no longer applies. This allows us to create a randomized
 algorithm (Section 5) that, with probability at least 1 − U
 −c
 , is quiescently terminating. The
@@ -165,8 +165,8 @@ the high-level ideas; see the full version of this paper for technical details.
 
 ## 2 System Model
 
-We consider a system composed of a set of n processes P = {p0, p1, . . . , pn−1} that commu-
-nicate on a ring network by sending messages to each other. More precisely, a process p has
+We consider a system composed of a set of n processes P = {p0, p1, . . . , pn−1} that communicate
+on a ring network by sending messages to each other. More precisely, a process p has
 two local communication ports: port 0 and port 1. By means of a specific port, a process is
 able to send messages to and receive messages from one of its neighbors.
 When the system is not anonymous, processes have unique identifiers that are arbitrarily
@@ -278,8 +278,8 @@ first waits to receive a CW message, in order to eliminate the CW message it sen
 the competing phase, and afterwards it relays both CCW and CW messages it receives. A
 non-leader process terminates after receiving three CCW messages.
 
-▶ Theorem 2. There exists a quiescently terminating leader election algorithm for ori-
-ented rings in which each process sends O(UIDmin) messages clockwise and three messages
+▶ Theorem 2. There exists a quiescently terminating leader election algorithm for oriented
+rings in which each process sends O(UIDmin) messages clockwise and three messages
 counterclockwise, for a total of O(nUIDmin) messages.
 
 ## 4 An algorithm that sends O(nU log IDmin) messages
@@ -325,8 +325,8 @@ the CCW direction: the first sent during the Zero Signaling phase by the process
 minimum identifier, and the second sent during the Termination phase. Therefore, we have
 the following theorem.
 
-▶ Theorem 3. There exists a quiescently terminating leader election algorithm for ori-
-ented rings in which each process sends O(U log IDmin) messages clockwise and O(log IDmin)
+▶ Theorem 3. There exists a quiescently terminating leader election algorithm for oriented
+rings in which each process sends O(U log IDmin) messages clockwise and O(log IDmin)
 messages counterclockwise, for a total of O(nU log IDmin) messages.
 
 ## 5 Randomized Leader Election
@@ -373,8 +373,8 @@ networks. Distributed Computing, 36(4):501–528, 2023. doi:10.1007/S00446-023-0
 8 J. Chalopin, E. Godard, and Y. Métivier. Election in partially anonymous networks with
 arbitrary knowledge in message passing systems. Distributed Computing, 25(4):297–311, 2012.
 doi:10.1007/S00446-012-0163-Y.
-9 A. Cornejo and F. Kuhn. Deploying wireless networks with beeps. In DISC 2010, vol-
-ume 6343 of Lecture Notes in Comput. Sci., pages 148–162. Springer, 2010. doi:10.1007/
+9 A. Cornejo and F. Kuhn. Deploying wireless networks with beeps. In DISC 2010, volume
+6343 of Lecture Notes in Comput. Sci., pages 148–162. Springer, 2010. doi:10.1007/
 978-3-642-15763-9_15.
 10 A. Czumaj and P. Davies. Leader election in multi-hop radio networks. Theoretical Computer
 Science, 792:2–11, 2019. doi:10.1016/J.TCS.2019.02.027.

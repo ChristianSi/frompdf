@@ -349,8 +349,8 @@ Use commas between the elements of a series, and the Oxford comma before the las
 in a list of items.
 Em-dash
 Appears as a longer dash (— not -), and does not include spaces.
-E.g. “To compensate for this lack of data, researchers must often rely on data collected by non-
-government entities—which are typically kept behind expensive paywalls.”
+E.g. “To compensate for this lack of data, researchers must often rely on data collected by nongovernment
+entities—which are typically kept behind expensive paywalls.”
 Referencing and Licensing
 
 For printed documents, CC follows the American Psychological Association (APA) style, and utilizes
@@ -402,8 +402,8 @@ photos/selfmagazine/48546126237/in/album-72157710332198661/. Licensed under CC B
 
 Page Five
 
-Top: Pombeiro, João. (2019, May). Creative Commons Global Summit Logo 2019. Retrieved from: creativecommons.org/wp-
-content/uploads/2019/08/2019_CC_GlobalSummit_logo.jpg. Licensed under CC BY.
+Top: Pombeiro, João. (2019, May). Creative Commons Global Summit Logo 2019. Retrieved from: creativecommons.org/wp-content/uploads/2019/08/2019_CC_GlobalSummit_logo.jpg.
+Licensed under CC BY.
 Middle-left: Pearce, Andrea. (2019, March). Creative Commons Mosaic. Retrieved from: creativecommons.org/wp-content/
 uploads/2019/10/55517442_10156985356362777_2465421492599390208_o.jpg. Licensed under CC BY.
 Middle-right-top: (2018, May 08). State of the Commons 2017. Retrieved from: stateof.creativecommons.org/Licensed under CC
