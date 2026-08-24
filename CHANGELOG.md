@@ -14,6 +14,9 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
 
 ### Changed
 
+- Words split by line-final hyphens are now rejoined within detected blocks,
+  using document-wide spelling evidence and conservative fallback heuristics
+  to retain lexical hyphens.
 - Multi-column page regions are now ordered column by column while full-width
   and ambiguous regions retain their existing order.
 - Bold embedded-font names are used when PDFs report zero font weights, while

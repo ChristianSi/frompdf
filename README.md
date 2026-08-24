@@ -55,6 +55,7 @@ frompdf currently detects and serializes:
 - block quotes, based on indentation
 - repeated headers and footers, which are removed from the Markdown output
 - visible page numbers found in removed headers or footers
+- document-aware unhyphenation of words split across lines within a block
 
 The internal block model tracks the raw PDF page number and, when available,
 the visible page number for each block.
@@ -160,7 +161,6 @@ why a specific line or block was classified the way it was.
 Planned next improvements include:
 
 - detection of lists, footnotes, and preformatted blocks
-- dehyphenation of words split across line breaks
 - better detection of paragraph boundaries, including merging paragraphs that
   span more than one page
 - correction of font-encoding and ligature-related text extraction errors
