@@ -3,6 +3,7 @@ from collections import Counter, defaultdict
 from statistics import median
 
 from frompdf.models import Block, BlockQuote, Heading, Line, PageNumber, Paragraph
+from frompdf.unhyphenation import document_word_counts, unhyphenate_block_lines
 
 # Treat clearly heavier font weights as slightly larger for heading detection.
 HEADING_WEIGHT_FONT_SIZE_MULTIPLIER = 1.08
@@ -212,6 +213,7 @@ def markdown_block_from_lines(
     page_number_map: dict[int, PageNumber],
     default_font_size: float | None,
     body_lefts_by_page: dict[int, list[float]],
+    word_counts: Counter[str],
     follows_blockquote: bool = False,
 ) -> Block:
     """Build a Markdown block from grouped line records."""
@@ -225,7 +227,7 @@ def markdown_block_from_lines(
     start_page = page_number_map[line_list[0].page_no]
     end_page = page_number_map[line_list[-1].page_no]
     return block_class(
-        text='\n'.join(line_obj.text for line_obj in line_list),
+        text=unhyphenate_block_lines((line_obj.text for line_obj in line_list), word_counts),
         start_page=start_page,
         end_page=end_page,
         font_size=font_size,
@@ -358,6 +360,7 @@ def lines_to_markdown_blocks(
     default_font_size = dominant_document_font_size(line_list)
     document_median_weight = document_median_avg_weight(line_list)
     body_lefts_by_page = build_body_lefts_by_page(line_list, default_font_size)
+    word_counts = document_word_counts(line_obj.text for line_obj in line_list)
 
     for line_obj in line_list:
         if (
@@ -371,6 +374,7 @@ def lines_to_markdown_blocks(
                     page_number_map,
                     default_font_size,
                     body_lefts_by_page,
+                    word_counts,
                     follows_blockquote=bool(block_list) and isinstance(block_list[-1], BlockQuote),
                 )
             )
@@ -387,6 +391,7 @@ def lines_to_markdown_blocks(
                 page_number_map,
                 default_font_size,
                 body_lefts_by_page,
+                word_counts,
                 follows_blockquote=bool(block_list) and isinstance(block_list[-1], BlockQuote),
             )
         )
