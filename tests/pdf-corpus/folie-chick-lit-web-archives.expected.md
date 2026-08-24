@@ -673,7 +673,7 @@ fiction aimed at a limited target group of young women (see extracts in Table 1)
 current definition is very broad:
 
 > Chick lit or chick literature is genre fiction, which “consists of heroine-centered
-> narratives that focus on the trials and tribulations of their individual protago-nists”[1].
+> narratives that focus on the trials and tribulations of their individual protagonists”[1].
 > The genre often addresses issues of modern womanhood – from romantic
 > relationships to female friendships to matters in the workplace – in humorous
 > and lighthearted ways[2]. At its onset, chick lit’s protagonists tended to be “single,

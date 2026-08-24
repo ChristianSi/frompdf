@@ -441,7 +441,7 @@ unregulated domestic market, the latter serves as a shock absorber for the highl
 competitive global market (Boeckler and Berndt 2014), resulting in unpredictable
 availabilities, poor quality, and price deformations in the domestic market.
 In this context, beldi foods are increasingly hard to come by.
-The vignette provides a glimpse of the difficulties that low-income Mo-roccans—rural
+The vignette provides a glimpse of the difficulties that low-income Moroccans—rural
 and urban—face in provisioning, preparing, and consuming
 foods that are tasty, healthy, and meaningful to them. Low-income women like
 Fatimzahra invest a lot of work in sourcing and preparing beldi foods, yet in

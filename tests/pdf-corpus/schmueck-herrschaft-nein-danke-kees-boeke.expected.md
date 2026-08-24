@@ -789,7 +789,7 @@ eingebunden, meist im Rahmen der wöchentlichen „Bespreking“
 bearbeitet und soziale Normen aus gemeinsamen Verständigungsprozessen
 abgeleitet.
 
-4. Hierarchiefreie Kultur ohne Strafen: Kinder wurden als „Werker“ (Ar-beiter:in),
+4. Hierarchiefreie Kultur ohne Strafen: Kinder wurden als „Werker“ (Arbeiter:in),
 Erwachsene als „Medewerkers“ (Mitarbeiter:in) bezeichnet; man
 duzte sich und sprach sich mit Vornamen an. Regelverstöße führten nicht
 zu Sanktionen, sondern wurden in der sog. „Ronde“ (Runde) besprochen,
@@ -1841,7 +1841,7 @@ funktionieren als ein miteinander verzahntes und agierendes System:
 
 1. Das Konsentprinzip ersetzt das in Boekes Modell der Soziokratie bestehende
 Konsensprinzip, bei dem eine grundlegende Übereinstimmung der
-Meinungen angestrebt wurde. Das von Endenburg eingeführte KonsentPrinzip
+Meinungen angestrebt wurde. Das von Endenburg eingeführte Konsent-Prinzip
 erfordert lediglich, dass kein schwerwiegender Einwand gegen einen
 Beschluss vorliegt. Der Beschluss muss im persönlichen Toleranzbereich
 liegen, der den Spielraum des Vertretbaren umreißt, innerhalb dessen ein
