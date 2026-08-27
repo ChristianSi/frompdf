@@ -167,6 +167,11 @@ class BoundaryRewriteTests(unittest.TestCase):
 
         self.assertEqual(result, 'unfinished-\n“quoted text”')
 
+    def test_keeps_coordination_hyphen_before_conjunction(self) -> None:
+        result = resolve(['Organisations-', 'und Zwangsmittel'])
+
+        self.assertEqual(result, 'Organisations-\nund Zwangsmittel')
+
     def test_does_not_merge_across_markdown_blocks(self) -> None:
         lines = [
             text_line('first paragraph ends with unfinished-', block_no=1, line_no=1),

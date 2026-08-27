@@ -162,8 +162,7 @@ why a specific line or block was classified the way it was.
 Planned next improvements include:
 
 - detection of lists, footnotes, and preformatted blocks
-- better detection of paragraph boundaries, including merging paragraphs that
-  span more than one page
+- merging paragraphs that span more than one page
 - correction of font-encoding and ligature-related text extraction errors
 - better support for multi-column PDFs
 - additional output formats such as HTML, EPUB, ODT, and DOCX

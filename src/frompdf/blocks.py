@@ -3,6 +3,7 @@ from collections import Counter, defaultdict
 from statistics import median
 
 from frompdf.models import Block, BlockQuote, Heading, Line, PageNumber, Paragraph
+from frompdf.segmentation import segment_lines
 from frompdf.unhyphenation import (
     document_mixed_case_words,
     document_word_counts,
@@ -24,6 +25,8 @@ ZERO_MEDIAN_HEADING_MIN_WEIGHT = 600.0
 # from body text. This keeps compact author/address cards as paragraphs.
 MULTILINE_HEADING_LINE_THRESHOLD = 4
 MULTILINE_HEADING_MIN_FONT_RATIO = 1.16
+
+BLOCKQUOTE_ATTRIBUTION_PATTERN = re.compile(r'(?:\(\d{4}\)|\b\d{4})\D*\d*$')
 
 HEADING_LEVEL_THRESHOLDS = [
     # Derived from 105% of the default font size, repeatedly multiplied by 10%,
@@ -199,6 +202,12 @@ def is_blockquote_block(
     """Return whether a group of lines should be rendered as a Markdown block quote."""
     if not line_list or is_footnote_like_block(line_list):
         return False
+    if (
+        len(line_list) == 1
+        and follows_blockquote
+        and BLOCKQUOTE_ATTRIBUTION_PATTERN.search(line_list[0].text.rstrip())
+    ):
+        return False
 
     font_size = block_font_size(line_list)
     if default_font_size is not None and font_size is not None and font_size > default_font_size:
@@ -361,39 +370,13 @@ def lines_to_markdown_blocks(
 ) -> list[Block]:
     """Convert line records into Markdown blocks."""
     block_list: list[Block] = []
-    current_lines: list[Line] = []
-    current_page_no: int | None = None
-    current_block_no: int | None = None
     default_font_size = dominant_document_font_size(line_list)
     document_median_weight = document_median_avg_weight(line_list)
     body_lefts_by_page = build_body_lefts_by_page(line_list, default_font_size)
     word_counts = document_word_counts(line_obj.text for line_obj in line_list)
     mixed_case_words = document_mixed_case_words(line_obj.text for line_obj in line_list)
 
-    for line_obj in line_list:
-        if (
-            current_page_no is not None
-            and current_block_no is not None
-            and (line_obj.page_no != current_page_no or line_obj.block_no != current_block_no)
-        ):
-            block_list.append(
-                markdown_block_from_lines(
-                    current_lines,
-                    page_number_map,
-                    default_font_size,
-                    body_lefts_by_page,
-                    word_counts,
-                    mixed_case_words,
-                    follows_blockquote=bool(block_list) and isinstance(block_list[-1], BlockQuote),
-                )
-            )
-            current_lines = []
-
-        current_lines.append(line_obj)
-        current_page_no = line_obj.page_no
-        current_block_no = line_obj.block_no
-
-    if current_lines:
+    for current_lines in segment_lines(line_list):
         block_list.append(
             markdown_block_from_lines(
                 current_lines,

@@ -17,6 +17,7 @@ class Line:
     rel_x: float | None
     rel_y: float | None
     avg_weight: float | None
+    font_name: str | None = None
 
 
 @dataclass

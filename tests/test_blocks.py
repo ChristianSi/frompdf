@@ -4,7 +4,7 @@ from typing import cast
 from pdftext.schema import Line as PdfTextLine
 
 from frompdf.blocks import initial_heading_level, should_boost_heading_font_size
-from frompdf.lines import average_font_weight
+from frompdf.lines import average_font_weight, dominant_font_name
 from frompdf.models import PageNumber, Paragraph
 
 
@@ -20,6 +20,19 @@ def paragraph(text: str, font_size: float, avg_weight: float | None = None) -> P
 
 
 class HeadingDetectionTests(unittest.TestCase):
+    def test_extracts_dominant_font_name_by_visible_text_length(self) -> None:
+        line = cast(
+            PdfTextLine,
+            {
+                'spans': [
+                    {'text': 'Main text', 'font': {'name': 'Body'}},
+                    {'text': '1', 'font': {'name': 'Superscript'}},
+                ]
+            },
+        )
+
+        self.assertEqual(dominant_font_name(line), 'Body')
+
     def test_infers_bold_weight_from_embedded_font_name(self) -> None:
         line = cast(
             PdfTextLine,

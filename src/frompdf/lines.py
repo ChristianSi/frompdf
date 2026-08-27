@@ -357,6 +357,24 @@ def dominant_font_size(line_dict: PdfTextLine) -> float | None:
     return max(size_weights.items(), key=lambda item: (item[1], item[0]))[0]
 
 
+def dominant_font_name(line_dict: PdfTextLine) -> str | None:
+    """Return the font name used for most of the visible text in a line."""
+    name_weights: dict[str, int] = defaultdict(int)
+
+    for span_dict in line_dict.get('spans', []):
+        text_value = span_dict.get('text', '')
+        weight = len(text_value.strip())
+        font_name = span_dict.get('font', {}).get('name')
+        if not weight or not isinstance(font_name, str) or not font_name:
+            continue
+        name_weights[font_name] += weight
+
+    if not name_weights:
+        return None
+
+    return max(name_weights.items(), key=lambda item: (item[1], item[0]))[0]
+
+
 def average_font_weight(line_dict: PdfTextLine) -> float | None:
     """Return the length-weighted average font weight for visible text in a line."""
     weighted_sum = 0.0
@@ -428,6 +446,7 @@ def iter_lines(page_list: Sequence[Page]) -> list[Line]:
                     rel_x=rel_x,
                     rel_y=rel_y,
                     avg_weight=average_font_weight(line_dict),
+                    font_name=dominant_font_name(line_dict),
                 )
                 line_list.append(line_obj)
 

@@ -12,6 +12,11 @@ EN_DASH = '\u2013'
 EM_DASH = '\u2014'
 LINE_FINAL_DASHES = {EN_DASH, EM_DASH}
 
+# A line-final hyphen before these common conjunctions is usually a deliberate
+# coordination hyphen (for example, "Organisations- und Zwangsmittel"), not a
+# word broken by line wrapping.
+STANDALONE_CONJUNCTIONS = {'and', 'e', 'et', 'oder', 'or', 'und', 'y'}
+
 
 def is_word_base(char: str) -> bool:
     """Return whether a character can begin a dictionary word."""
@@ -258,6 +263,8 @@ def split_boundary_fragments(left_line: str, right_line: str) -> tuple[str, str,
     raw_right_token, _ = token_parts
     right_fragment = initial_lexical_fragment(raw_right_token)
     if right_fragment is None:
+        return None
+    if right_fragment.casefold() in STANDALONE_CONJUNCTIONS:
         return None
 
     return left_fragment, right_fragment, left_line[-1], raw_right_token
