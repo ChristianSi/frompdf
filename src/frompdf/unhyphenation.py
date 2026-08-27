@@ -8,6 +8,9 @@ from unicodedata import category, normalize
 VISIBLE_WORD_HYPHENS = {'-', '\u2010', '\u2011'}
 SOFT_HYPHEN = '\u00ad'
 WORD_HYPHENS = VISIBLE_WORD_HYPHENS | {SOFT_HYPHEN}
+EN_DASH = '\u2013'
+EM_DASH = '\u2014'
+LINE_FINAL_DASHES = {EN_DASH, EM_DASH}
 
 
 def is_word_base(char: str) -> bool:
@@ -194,6 +197,44 @@ def should_keep_boundary_hyphen(
     return contains_nonletter(combined_word)
 
 
+def split_first_token(line: str) -> tuple[str, str] | None:
+    """Return a line's first token and the remaining text."""
+    stripped_line = line.lstrip()
+    if not stripped_line:
+        return None
+
+    first_token = stripped_line.split(maxsplit=1)[0]
+    remainder = stripped_line[len(first_token) :].lstrip()
+    return first_token, remainder
+
+
+def unspaced_dash_token(left_line: str, right_line: str) -> tuple[str, str] | None:
+    """Return the token to move across an unspaced en/em-dash boundary."""
+    token_parts = split_first_token(right_line)
+    if token_parts is None:
+        return None
+
+    first_token, remainder = token_parts
+    if (
+        len(left_line) >= 2
+        and left_line[-1] in LINE_FINAL_DASHES
+        and left_line[-2].isalnum()
+        and first_token[0].isalnum()
+    ):
+        return first_token, remainder
+
+    if (
+        left_line
+        and left_line[-1].isalnum()
+        and len(first_token) >= 2
+        and first_token[0] == EM_DASH
+        and first_token[1].isalnum()
+    ):
+        return first_token, remainder
+
+    return None
+
+
 def split_boundary_fragments(left_line: str, right_line: str) -> tuple[str, str, str, str] | None:
     """Return the fragments and right token at an eligible line boundary."""
     if not left_line or left_line[-1] not in WORD_HYPHENS:
@@ -211,10 +252,10 @@ def split_boundary_fragments(left_line: str, right_line: str) -> tuple[str, str,
     if not left_fragment or not any(is_word_base(char) for char in left_fragment):
         return None
 
-    stripped_right_line = right_line.lstrip()
-    if not stripped_right_line:
+    token_parts = split_first_token(right_line)
+    if token_parts is None:
         return None
-    raw_right_token = stripped_right_line.split(maxsplit=1)[0]
+    raw_right_token, _ = token_parts
     right_fragment = initial_lexical_fragment(raw_right_token)
     if right_fragment is None:
         return None
@@ -225,11 +266,24 @@ def split_boundary_fragments(left_line: str, right_line: str) -> tuple[str, str,
 def unhyphenate_block_lines(
     line_texts: Iterable[str], word_counts: Counter[str], mixed_case_words: set[str]
 ) -> str:
-    """Resolve wrapped words within one Markdown block and retain its line breaks."""
+    """Normalize wrapped words and unspaced dashes within one Markdown block."""
     rewritten_lines = list(line_texts)
     consumed_line_indexes: set[int] = set()
 
-    for line_index in range(len(rewritten_lines) - 1):
+    # Work upward so resolving one boundary cannot consume a line before its
+    # boundary with the following line has been considered.
+    for line_index in range(len(rewritten_lines) - 2, -1, -1):
+        dash_parts = unspaced_dash_token(
+            rewritten_lines[line_index], rewritten_lines[line_index + 1]
+        )
+        if dash_parts is not None:
+            dash_token, right_remainder = dash_parts
+            rewritten_lines[line_index] += dash_token
+            rewritten_lines[line_index + 1] = right_remainder
+            if not right_remainder:
+                consumed_line_indexes.add(line_index + 1)
+            continue
+
         fragments = split_boundary_fragments(
             rewritten_lines[line_index], rewritten_lines[line_index + 1]
         )
@@ -249,7 +303,9 @@ def unhyphenate_block_lines(
         else:
             rewritten_lines[line_index] = rewritten_lines[line_index][:-1] + raw_right_token
 
-        right_remainder = rewritten_lines[line_index + 1].lstrip()[len(raw_right_token) :].lstrip()
+        token_parts = split_first_token(rewritten_lines[line_index + 1])
+        assert token_parts is not None
+        _, right_remainder = token_parts
         rewritten_lines[line_index + 1] = right_remainder
         if not right_remainder:
             consumed_line_indexes.add(line_index + 1)

@@ -56,6 +56,7 @@ frompdf currently detects and serializes:
 - repeated headers and footers, which are removed from the Markdown output
 - visible page numbers found in removed headers or footers
 - document-aware unhyphenation of words split across lines within a block
+- normalization of unspaced en and em dashes split across lines within a block
 
 The internal block model tracks the raw PDF page number and, when available,
 the visible page number for each block.

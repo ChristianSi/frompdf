@@ -181,5 +181,54 @@ class BoundaryRewriteTests(unittest.TestCase):
         )
 
 
+class UnspacedDashTests(unittest.TestCase):
+    def test_moves_token_after_line_final_en_dash(self) -> None:
+        result = resolve(['Collaboration (pp. 25–', '28). https://example.test/'])
+
+        self.assertEqual(result, 'Collaboration (pp. 25–28).\nhttps://example.test/')
+
+    def test_moves_token_after_line_final_em_dash(self) -> None:
+        result = resolve(['witty and relatable—', 'reflecting the broader community.'])
+
+        self.assertEqual(result, 'witty and relatable—reflecting\nthe broader community.')
+
+    def test_moves_line_initial_em_dash_and_its_token_upward(self) -> None:
+        result = resolve(['witty and relatable', '—reflecting the broader community.'])
+
+        self.assertEqual(result, 'witty and relatable—reflecting\nthe broader community.')
+
+    def test_leaves_spaced_and_non_alphanumeric_dash_boundaries_unchanged(self) -> None:
+        cases = [
+            (['word –', 'next'], 'word –\nnext'),
+            (['word—', '“next'], 'word—\n“next'),
+            (['word', '— next'], 'word\n— next'),
+            (['word', '–next'], 'word\n–next'),
+            (['word!—', 'next'], 'word!—\nnext'),
+            (['word', '—(next'], 'word\n—(next'),
+        ]
+
+        for lines, expected in cases:
+            with self.subTest(lines=lines):
+                self.assertEqual(resolve(lines), expected)
+
+    def test_resolves_neighboring_hyphen_and_dash_boundaries_bottom_up(self) -> None:
+        result = resolve(['foo-', 'bar—', 'baz remains.'])
+
+        self.assertEqual(result, 'foobar—baz\nremains.')
+
+    def test_does_not_move_dash_token_across_markdown_blocks(self) -> None:
+        lines = [
+            text_line('first block ends—', block_no=1, line_no=1),
+            text_line('next block begins', block_no=2, line_no=2),
+        ]
+
+        blocks = lines_to_markdown_blocks(lines, {1: PageNumber(raw=1, visible=None)})
+
+        self.assertEqual(
+            [block.text for block in blocks],
+            ['first block ends—', 'next block begins'],
+        )
+
+
 if __name__ == '__main__':
     unittest.main()
