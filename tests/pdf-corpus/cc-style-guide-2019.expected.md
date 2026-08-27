@@ -463,6 +463,5 @@ creativecommons/47959607413/in/album-72157708726481004/ Licensed under CC BY.
 Page Nine
 
 Left, Middle, and Right: Heath, Victoria. (2019, September 29). An Explanation of Creative Commons. Retrieved
-
 from: canva.com/design/DADm40hSwIU/9yEhtLnl5O1WMKbx8JSSkA/view?utm_content=DADm40hSwIU&utm_
 campaign=designshare&utm_medium=link&utm_source=viewer. Licensed under CC BY-NC-ND 4.0.

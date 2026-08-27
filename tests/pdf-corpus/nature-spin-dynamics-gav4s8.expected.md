@@ -448,7 +448,6 @@ photon energy (1.55 eV) well above the GaV4S8 band gap of
 ~0.35 eV39,40.
 
 Coherent spin precession. Figures 1b–e show the photoinduced
-
 transient change of the Kerr rotation angle of the probe pulse, Δθ,
 for the magnetic fields ranging from 20–150 mT and four fixed
 temperatures as indicated by the dashed vertical lines in the phase
@@ -1143,7 +1142,6 @@ The authors declare no competing interests.
 Additional information
 
 Supplementary information The online version contains supplementary material
-
 available at https://doi.org/10.1038/s41467-022-30829-z.
 
 Correspondence and requests for materials should be addressed to Fumiya Sekiguchi or

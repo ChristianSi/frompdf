@@ -72,7 +72,6 @@ SIGPAC en la nube:
 
 En este Catálogo se alojan nuevos medios SIGPAC de difusión de datos SIGC
 con los que el FEGA continúa ampliando su abanico de servicios y su labor
-
 divulgativa, como son: el Servicio de Teselas Vectoriales (MVT) de SIGPAC, el
 Servicio OGC API de SIGPAC y el Servicio de Listas de Códigos SIGPAC; otros
 medios SIGPAC que solo estaban a disposición de las CCAA, como el Servicio

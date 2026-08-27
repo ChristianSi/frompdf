@@ -702,7 +702,6 @@ Ernestina de Champourcin). México-Buenos Aires: Fondo de Cultura Económica, 19
 304p. (Breviarios; 183).
 
 BESSE, Jean-Marc. Ver a Terra: seis ensaios sobre a paisagem e a geografia. 1ª reimp. da 1ª
-
 ed. (Tradução Vladimir Bartalini) São Paulo: Perspectiva, 2014. 110p. (Coleção Estudos; 230)
 
 BUTTIMER, Anne. Aprendendo o Dinamismo do Mundo Vivido. In: CHRISTOFOLETTI,
@@ -712,7 +711,6 @@ DARDEL, Eric. O Homem e a Terra: natureza da realidade geográfica. (Tradução 
 Holzer) São Paulo: Perspectiva, 2011. 159p. (Estudos; 292)
 
 JAMMER, Max. Conceito de espaço: a história das teorias do espaço na física. Tradução de
-
 Tradução por Vera Ribeiro. 1ª. ed. Rio de Janeiro: Contraponto: PUC-Rio, 2010.
 
 FOUCAULT, Michel (1986), “Of other spaces”. Diacrities, v.16, no.1.Baltimore.
@@ -737,7 +735,6 @@ prestigiamentospseudocríticos do espaço social). Terra Livre, São Paulo, n. 5
 1988.
 
 DE SOUSA ALVES, V. M. (1959). Conhecimento Metafísico do Espaço e do Tempo. Braga:
-
 Faculdade de Filosofia.
 
 DE SOUSA ALVES, V. M. (1998). Ensaio de Filosofia das Ciências. Braga: Publicações da

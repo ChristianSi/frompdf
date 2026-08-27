@@ -255,7 +255,6 @@ Familie von Schokoladenfabrikanten8
 verwandte Seele. Im Sommer 1911 verlobten sie sich, um noch im selben
 
 7 Democracy as it might be; first published in May 1945 by Kees Boeke (1884-1966), edited by
-
 Beatrice C. Boeke, in: worldteacher.faithweb.com (online), (Übers. aus d. Engl. v. Verf.).
 
 8 Die englische Schokoladenfirma Cadbury Bros. Ltd. wurde 1824 durch den Quäker John
@@ -408,7 +407,6 @@ und Mathematiker Pierre Cérésole ernannt. Kurze Zeit später wurde das
 Sekretariat der Christlichen Internationale nach London verlegt und mit dem
 
 Versöhnungsbund zum Internationalen Versöhnungsbund (engl. International
-
 Fellowship of Reconciliation, IFOR) vereinigt. Ihr folgte die Konferenz des
 Internationalen Versöhnungsbundes im Sommer 1920 ebenfalls in Bilthoven,
 bei der – angeregt von Pierre Cérésole – der Service Civil International entstand,
@@ -504,14 +502,12 @@ jener Zeit wie folgt:
 immer mehr den Feind (...) und es ist nicht verwunderlich, dass ich schließlich
 
 18 Siehe Rudolf Jans: Tolstoj in Nederland, Diss., Bussum: Uitgeverij Paul Brand NV, 1952
-
 (online) sowie Hans Ramaer: Anarchisme in Domineesland. Continuiteit en Verandering van een
 politieke Beweging, in: de AS – Jaarboek Anarchisme 2007, vol. 36 (2008), no. 161/162 (zommer),
 pp. 54-62 (online | PDF).
 
-19 Die Reinlevenbeweging (Bewegung des Reinen Lebens) war eine von 1901 bis 1929 beste-
-
-hende christlich-anarchistische Bewegung in den Niederlanden, die ein Leben nach Prinzipien
+19 Die Reinlevenbeweging (Bewegung des Reinen Lebens) war eine von 1901 bis 1929 bestehende
+christlich-anarchistische Bewegung in den Niederlanden, die ein Leben nach Prinzipien
 der „Reinheit in Worten und Taten“ anstrebte, insbesondere in sexuellen Fragen. In
 Anlehnung an die Ideen von Lew Tolstoi lehnte die Bewegung Prostitution, Selbstbefriedigung,
 Homosexualität, Neo-Malthusianismus sowie jede sexuelle Handlung ab, bei der nicht
@@ -768,9 +764,8 @@ Planung („budgeting time“).
 31 Anfänglich wurden in der Werkplaats selbstkorrigierende Materialien und kleine Tests
 genutzt, die die Kinder freiwillig zur Selbsteinschätzung und Dokumentation ihrer Lernfort-
 
-2. Ganzheitliches Lernen – mit Kopf, Herz und Hand: Wissen wurde nicht abs-
-
-trakt vermittelt, sondern durch praktische Erfahrungen, handwerkliches
+2. Ganzheitliches Lernen – mit Kopf, Herz und Hand: Wissen wurde nicht abstrakt
+vermittelt, sondern durch praktische Erfahrungen, handwerkliches
 Tun, künstlerische Ausdrucksformen und Naturerlebnisse. Kognitive, emotionale
 und körperliche Dimensionen galten als untrennbar verbunden.
 3. Demokratische Teilhabe und Gemeinschaft: Alle Mitglieder der Schule –
@@ -781,9 +776,8 @@ eingebunden, meist im Rahmen der wöchentlichen „Bespreking“
 bearbeitet und soziale Normen aus gemeinsamen Verständigungsprozessen
 abgeleitet.
 
-4. Hierarchiefreie Kultur ohne Strafen: Kinder wurden als „Werker“ (Ar-
-
-beiter:in), Erwachsene als „Medewerkers“ (Mitarbeiter:in) bezeichnet; man
+4. Hierarchiefreie Kultur ohne Strafen: Kinder wurden als „Werker“ (Arbeiter:in),
+Erwachsene als „Medewerkers“ (Mitarbeiter:in) bezeichnet; man
 duzte sich und sprach sich mit Vornamen an. Regelverstöße führten nicht
 zu Sanktionen, sondern wurden in der sog. „Ronde“ (Runde) besprochen,
 um Einsicht und gemeinsames Verantwortungsbewusstsein zu fördern.
@@ -796,7 +790,6 @@ Werkplaats sollte auch die erste Schule in den Niederlanden sein, in der
 Kinder und Jugendliche mit Behinderungen willkommen waren.
 
 6. Naturverbundenheit und bewusste Lebensweise: Ökologischer Gartenbau,
-
 Lernen im Freien, sportliche Betätigung und ein einfacher, gesunder
 Lebensstil prägten den Alltag der Werkplaats.
 
@@ -1006,7 +999,6 @@ Diplom-System eingeführt, das sich an den etablierten Abschlussniveaus
 und Jahrgangsstufen des staatlichen Schulwesens orientierte.
 
 Um Ostern 1935 wurde die Werkgemeenschap voor Vernieuwing van
-
 Opvoeding en Onderwijs (WVO, Arbeitsgemeinschaft für die Erneuerung
 von Erziehung und Bildung) gegründet, deren Vorsitzender Kees Boeke
 wurde. Ein Jahr später wurde die WVO als niederländische Sektion der New
@@ -1165,9 +1157,8 @@ Weltkrieges in seiner Forderung nach einer grundlegenden gesellschaftlichen
 Neuordnung bestätigt. Er betrachtete es als seine Aufgabe, den „neuen Geist“
 der Werkplaats Kindergemeenschap zu verbreiten und für eine „vernünftige
 Ordnung“ der Menschheit insgesamt einzutreten. Im Mai 1945, unmittelbar
-nach Kriegsende, veröffentlichte er seine bereits in der Besatzungszeit ver-
-
-fasste Broschüre Die Ordnung der Vernunft in der Gemeinschaft der Men-schen49
+nach Kriegsende, veröffentlichte er seine bereits in der Besatzungszeit verfasste
+Broschüre Die Ordnung der Vernunft in der Gemeinschaft der Men-schen49
 , in der er seine Vision einer auf gemeinschaftlicher Selbstverwaltung
 basierenden demokratischen Nachkriegsordnung skizzierte. Darin
 verwendete er auch erstmals den Begriff Soziokratie, um dem in der Werkplaats
@@ -1348,12 +1339,10 @@ Begriff Soziokratie selbst geprägt zu haben.59 Aufgrund der Ähnlichkeiten
 57 Ebd. (Übers. aus d. Engl. v. Verf.).
 
 58 James E. Fleming: The Role of Government in a Free Society: The Conception of Lester Frank
-
 Ward, in: Social Forces, vol. 24 (1946), no. 3 (March), pp. 257-266 [hier: pp. 263-264], (Übers.
 aus d. Engl. v. Verf.).
 
 59 So in seinem 1949 veröffentlichten Aufsatz Der Bilthoven Werkplaats und seine Soziokratie,
-
 in dem er schreibt: „Soziokratie ist ein Ausdruck, den ich selbst geprägt habe, um unsere Art,
 das Leben der Gemeinschaft zu ordnen, zu kennzeichnen, eine Art, die mehr auf Vereinbarung
 als auf Mehrheitsbestimmung beruht.“ (In: Bildung und Erziehung, Jg. 2 [1949], Nr. 8
@@ -1656,10 +1645,8 @@ jedoch zu Spaltungen führen. Siehe hierzu auch Peter Seyferth: Konsens oder Meh
 Über demokratische Entscheidungsverfahren als politischer Modus der Anarchie, in:
 Widerspruch, Nr. 57 (2013), S. 87–98. In diesem Zusammenhang soll ein weiteres libertäres
 Organisationsmodell nicht unerwähnt bleiben: die Demarchie, also die Entscheidungsfindung
-
 per Los. Siehe dazu Siegbert Wolf: John Burnheims „Demarchie“ – Ein libertäres Gegenmodell zu
 staatszentrierter Herrschaftsordnung, in: espero (N. F.), Nr. 11 (Juni 2025), S. 239–255
-
 (online | PDF).
 
 69 So unterschied sich die niederländische Provo-Bewegung der 1960er-Jahre von den übrigen
@@ -1878,9 +1865,8 @@ immer auf einer breiten Wissensbasis getroffen werden, die
 die kollektive Intelligenz des Unternehmens nutzbar macht und in der alle
 Beteiligten die Verantwortung für ihre Umsetzung mittragen.
 
-Die Belastbarkeit der Soziokratischen Kreisorganisationsmethode offen-
-
-barte sich 1976 in der Schiffsbaukrise in den Niederlanden, die – ausgelöst
+Die Belastbarkeit der Soziokratischen Kreisorganisationsmethode offenbarte
+sich 1976 in der Schiffsbaukrise in den Niederlanden, die – ausgelöst
 durch einen globalen Nachfragerückgang und die wachsende Konkurrenz
 aus Asien – auch die Firma Endenburg Elektrotechniek mit voller Wucht
 traf. Eine Entlassung von 60 Beschäftigten, zum Großteil aus der Schiffsbauabteilung,
@@ -1928,9 +1914,8 @@ von ihm entwickelten Soziokratischen Kreisorganisationsmethode um ein
 Organisationskonzept, dass seine anarchistischen Wurzeln nicht verleugnen
 kann.
 
-Die von Endenburg entwickelte Soziokratische Kreisorganisations-
-
-methode findet heute weltweit in Organisationen wie Unternehmen, Schulen,
+Die von Endenburg entwickelte Soziokratische Kreisorganisationsmethode
+findet heute weltweit in Organisationen wie Unternehmen, Schulen,
 NGOs und anderen Gemeinschaften (wie z. B. einem buddhistischen
 Kloster) seine Anwendung. Sie bildete auch die theoretische Grundlage für
 die Weiterentwicklung moderner soziokratischer Ansätze der Selbstorganisation,
@@ -1981,9 +1966,8 @@ autoritäres Organisationsmodell sich mit zunehmender Annäherung an die
 der institutionellen und ideologischen Grenzen des traditionellen Anarchismus wirksam
 wird – insbesondere im alltäglichen Gebrauch anarchistischer Prinzipien und Methoden. Vgl.
 
-Tomás Ibáñez: Das Wunder der Einheit in der Vielfalt. Ein kurzer Überblick über den Anarchis-
-
-mus vor, während und nach Venedig ’84, in: espero (N.F.), Nr. 11 (Juli 2025), S. 11-20 [hier bes.
+Tomás Ibáñez: Das Wunder der Einheit in der Vielfalt. Ein kurzer Überblick über den Anarchismus
+vor, während und nach Venedig ’84, in: espero (N.F.), Nr. 11 (Juli 2025), S. 11-20 [hier bes.
 S. 18 ff.], (online | PDF). Eine vergleichbare Konzeption findet sich bei der libertären französischen
 Philosophin Catherine Malabou, die hierfür den Begriff des De-facto-Anarchismus verwendet.
 Vgl. Catherine Malabou: Künstlicher Anarchismus: Eine Antwort auf die Künstliche
@@ -1999,7 +1983,6 @@ macht deutlich, dass die Idee der gelebten Anarchie im Alltag der Menschen angek
 
 81 Siehe Jochen Schmück: Science goes Anarchy! Die „gelebte Anarchie“ der Open-Science-Bewe-gung
 und ihre verborgenen ideologischen Wurzeln im traditionellen Anarchismus, in: espero
-
 (N.F.), Nr. 8 (Januar 2024), S. 99-182 (online | PDF).
 
 82 Siehe Schmück: Wenn Anarchie auf Algorithmen trifft, a. a. O. (Vgl. Anm. 74).
@@ -2032,13 +2015,11 @@ Boeke, Kees: Der Bilthoven Werkplaats und seine Soziokratie, in: Bildung
 und Erziehung, Jg. 2 (1949), Nr. 8 (August), S. 590-595.
 
 Boeke, Kees: Democracy as it might be; first published in May 1945 by
-
-> Kees Boeke (1884-1966), edited by Beatrice C. Boeke, in: worldteacher.
-> faithweb.com (online).
+Kees Boeke (1884-1966), edited by Beatrice C. Boeke, in: worldteacher.
+faithweb.com (online).
 
 Boeke, Kees: Redelijke Ordening van de Mensengemeenschap, 2. überarb.
 Aufl. (1967), Nachdruck in: de AS (De Sociokratie van Kees Boeke),
-
 vol. 40 (1986), no. 76, pp. 18-45 (dt. Übers. Die Ordnung der Vernunft in
 der Gemeinschaft der Menschen, hier im Anhang auf S. 217-223).
 Buck, John A. and Gerard Endenburg: The Creative Forces of Self-Organization,
@@ -2047,7 +2028,6 @@ Original: 2003, revised version, Rotterdam: Sociocratic Center,
 
 Buck, John A. und Gerard Endenburg: Die Kreativen Kräfte der Selbstorganisation,
 Rotterdam: Sociocratisch Centrum, 2005 (online | PDF).
-
 Buck, John and Sharon Villines: We the People: Consenting to a Deeper
 Democracy. A Guide to Sociocratic Principles and Methods, Washington
 D. C.: Sociocracy. Info, 2007.
@@ -2070,13 +2050,11 @@ sommige anarchisten en sommigerechtsgeleerden, Zwolle: W.E.J. Tjeenk
 Willink, 1986.
 
 Holterman, Thom: Redelijk ordenen bij Kees Boeke, in: de AS – De
-
-> Sociokratie van Kees Boeke, vol. 14 (1986), no. 76 (Okt.-Dec.), pp. 6-7
-> (online | PDF).
+Sociokratie van Kees Boeke, vol. 14 (1986), no. 76 (Okt.-Dec.), pp. 6-7
+(online | PDF).
 
 Hooghiemstra, Daniela A.: De geest in dit huis is liefderijk. Het leven en
 De Werkplaats van Kees Boeke (1884-1966), Amsterdam: Universiteit van
-
 Amsterdam (Thesis), Utrecht, Amsterdam, Antwerpen: Uitgeverij De
 Arbeiderspers, 2013 (online | PDF).
 Jans, Rudolf: Tolstoj in Nederland (Diss.), Bussum: Uitgeverij Paul Brand
@@ -2090,10 +2068,8 @@ Anarchismus in Amerika (1827-1908), 2 Bde., Hamburg: Verlag der
 Mackay-Gesellschaft, 1980.
 Morsch, Corneos J. J. A.: Met de moed van de hoop: studies over de
 vernieuwing van opvoeding, onderwijs en maatschappij in Nederland in
-
-> de periode tussen ± 1930 en 1984, Diss. an der Katholieke Universiteit te
-> Nijmegen, 1984 (online | PDF).
-
+de periode tussen ± 1930 en 1984, Diss. an der Katholieke Universiteit te
+Nijmegen, 1984 (online | PDF).
 Proudhon, Pierre-Joseph: Qu'est-ce que la propriété ? Ou Recherches sur le
 principe du droit et du gouvernement, Paris: J.-F. Brocard, 1840, pp. 234-235
 (online | PDF).
@@ -2119,10 +2095,9 @@ als politischer Modus der Anarchie, in: Widerspruch,
 Nr. 57 (2013), S. 87-98 (online).
 
 Schmück, Jochen: Science goes Anarchy! Die „gelebte Anarchie“ der Open-Science-Bewegung
-und ihre verborgenen ideologischen Wurzeln im tradi-
-
-> tionellen Anarchismus, in: espero (N.F.), Nr. 8 (Januar 2024), S. 99-182
-> (online | PDF).
+und ihre verborgenen ideologischen Wurzeln im traditionellen
+Anarchismus, in: espero (N.F.), Nr. 8 (Januar 2024), S. 99-182
+(online | PDF).
 
 Schmück, Jochen: Wenn Anarchie auf Algorithmen trifft – Libertäre
 Reflexionen über die natürliche und Künstliche Intelligenz, in: espero
@@ -2146,7 +2121,6 @@ Ward, Lester Frank: The psychic factors in civilization, Boston: Ginn &
 Company, 1893.
 Wolf, Siegbert: John Burnheims „Demarchie“ – Ein libertäres Gegenmodell
 zu staatszentrierter Herrschaftsordnung, in: espero (N.F.), Nr. 11 (Juni
-
 2025), S. 239-255 (online | PDF).
 Yarros, Victor S.: Sociocracy – What is it?, in: Liberty, vol. 16 (1904),
 no. 1, Boston, Mass., 1904, p. 2-3.
@@ -2209,7 +2183,6 @@ muss.
 #### 2. Auch kein Parlamentarismus.
 
 Müssen wir dann wieder zu den Verhältnissen vor 1940 zurückkehren, also zur
-
 parlamentarischen Demokratie? Ich antworte: Nein, auch diese war weit
 vom Ideal entfernt. Es hat sich gezeigt, dass sie zu einer schrecklichen Spaltung
 der Gemeinschaft unseres Volkes durch Parteien führt, einer Spaltung,

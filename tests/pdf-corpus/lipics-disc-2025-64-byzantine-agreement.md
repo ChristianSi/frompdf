@@ -448,7 +448,6 @@ Mean Estimation. SIAM Journal on Mathematics of Data Science, 6(2), June 2024. d
 2015.
 
 18 Roy Shadmon and Owen Arden. Enhancing accuracy in approximate byzantine agreement with
-
 bayesian inference. In 55th Annual IEEE/IFIP International Conference on Dependable Systems
 and Networks - Supplemental Volume (DSN-S), 2025. doi:10.1109/DSN-S65789.2025.00064.
 19 Nitin H Vaidya and Vijay K Garg. Byzantine vector consensus in complete graphs. In Proc.
