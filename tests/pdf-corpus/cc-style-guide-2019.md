@@ -6,7 +6,9 @@ Hair: Hide Suzuki; Makeup: Deanna Melluso
 at See Management. Shot on location at
 One Medical. (CC BY)
 
-### Creative Commons Style Guide | 2019 by Victoria Heath
+### Creative Commons Style Guide | 2019
+
+by Victoria Heath
 
 Except where otherwise noted, this document is published under a Creative Commons Attribution
 4.0 International license, (CC BY 4.0).
@@ -139,30 +141,40 @@ of the CC Logo.”
 
 ### Font(s)
 
-Primary Font: Source Sans Pro
+##### Primary Font: Source Sans Pro
+
 Source Sans Pro | Source Sans Pro | Source Sans Pro
+
 “Source Sans Pro is an open-source grotesque typeface designed by Paul D. Hunt for Adobe
 Systems...The slightly condensed letterforms of Source Sans Pro make it ideal for user interfaces
 where space is a concern. It’s available in a full set of six weights with corresponding italics.”
+
 This font is particularly easy to read, both on the web and in print. Therefore, it should be used as
 the primary font for correspondence and communications.
+
 Source: Source Sans Pro. (2019). Retrieved from typewolf.com/site-of-the-day/fonts/source-sans-pro
 Secondary Font: Roboto
-Roboto | Roboto | Roboto
+
+##### Roboto | Roboto | Roboto
 
 “Roboto is an open-source, grotesque sans-serif typeface designed by Christian Robertson in 2011
 and released through Google...it renders crisply on screens and is very legible, even at smaller sizes.
 Roboto is the default font used in Google Maps and Google+.”
+
 Similar to Source Sans Pro, Roboto is also easy to read. Therefore, it can be used for correspondence
 and communications when desired.
+
 Source: Roboto. (2019). Retrieved from typewolf.com/site-of-the-day/fonts/roboto
-Secondary Font: CC Accidenz Commons
+
+##### Secondary Font: CC Accidenz Commons
+
 CC Accidenz Commons
 
 CC Accidenz Commons is an open-licensed font designed specifically for Creative Commons and
 can be used and/or remixed by anyone. It was designed in 2018 by Archetypo, a research and type
 design collective based in Germany and Chile to replace Akzidenz Grotesk—the original font in CC’s
 logo. You can download the font from our “Downloads” page.
+
 Learn more about this font in “Introducing CC Accidenz Commons: An Open Licensed Font.”
 
 ### Color Palette
@@ -268,6 +280,7 @@ Creative Commons’ possessive
 
 When using Creative Commons as a possessive noun, the apostrophe should appear as Creative
 Commons’ rather than Creative Commons’s.
+
 The Creative Commons’ Global Summit
 
 For consistency and clarity, referring to the “CC Global Summit” or the “CC Summit” are preferred
@@ -276,23 +289,31 @@ not know what the CC Global Summit is.
 
 Finally, there should always be a “the” before the noun, e.g., “The CC Global Summit will be held in
 Lisbon, Portugal...” or “Members loved attending the CC Summit last year.”
+
 The Creative Commons Global Network
 
 Similar to the CC Global Summit, consistency is important. Therefore, referring to the “CC Global
 Network” and the “CC Network” are preferred over the “Network.”
+
 Finally, there should always be a “the” before the noun, e.g., “The CC Global Network consists of
 over 400 members...” or “We encourage anyone to join the CC Network, it’s free!”
 
-### Abbreviations CC Licenses
+### Abbreviations
+
+CC Licenses
 
 CC licenses should be displayed consistently, therefore please keep in mind the following:
 • License abbreviations should be in all caps
 • Individual clauses (e.g., BY, NC, etc.) should be strung together with a hyphen.
+
 For example: CC BY-NC-ND
 • Modifiers (e.g. CC) should not be followed by a hyphen.
 For example: CC BY
+
 For more guidance, follow the examples displayed at the top of each license’s webpage.
+
 Academic degrees
+
 Do not use periods for education degrees; therefore, use PhD, BA, BSc, MBA
 Titles
 Do not use periods in title abbreviations that appear in upper case
@@ -300,6 +321,7 @@ E.g., CEO
 Use periods in title abbreviations that appear in upper and lower case
 E.g., Dr.
 Ordinals
+
 Do not use st, nd, rd, or th to follow a number in a date
 E.g., 3 May 2012 instead of 3rd May 2012
 Times
@@ -314,23 +336,31 @@ E.g., 2019-10-22 or 2019 Oct 22
 
 With first instances, always spell out the entire name followed by the acronym in parenthesis.
 The acronym alone may be used in all other instances.
+
 E.g., “Creative Commons (CC) is a nonprofit...”
+
 In general, headings should not include acronyms. However, when they are used in a heading, it
 is not necessary to spell them out and list the acronym. Instead, spell out the acronym in the first
 paragraph or wherever the heading first appears in the piece.
-Titles and Capitalization
+
+### Titles and Capitalization
+
 General Rules
+
 Capitalize all proper names, trade names, government departments, and agencies of
 government, as well as names of associations, companies, clubs, religions, languages, nations,
 races, places, and addresses.
+
 CC also follows “title case,” which is a capitalization style that has been traditionally used for a range
 of works, from books and movies to academic research papers.
+
 To help you capitalize titles correctly, check out the “Title Case Converter” tool.
 Numbers
 
 Always spell out the numbers 0-9 in full, and use numerals for numbers 10 or greater, unless the
 number starts a sentence.
-Spelling
+
+### Spelling
 
 CC officially uses American English—please refer to the “British and American spelling” guide by
 Oxford Dictionaries for help.
@@ -339,6 +369,7 @@ Oxford Dictionaries for help.
 
 Use a colon, rather than a comma, to introduce a direct quotation that is longer than a short
 sentence. Capitalize the first word of a quoted sentence.
+
 Semicolon in a list
 
 A list that is separated by semi-olons rather than commas will be introduced by a colon and will
@@ -349,14 +380,18 @@ Use commas between the elements of a series, and the Oxford comma before the las
 in a list of items.
 Em-dash
 Appears as a longer dash (— not -), and does not include spaces.
+
 E.g. “To compensate for this lack of data, researchers must often rely on data collected by nongovernment
 entities—which are typically kept behind expensive paywalls.”
-Referencing and Licensing
+
+### Referencing and Licensing
 
 For printed documents, CC follows the American Psychological Association (APA) style, and utilizes
 footnotes or endnotes instead of in-text citations. For more information on APA, please see this link
 to Chegg’s EasyBib’s website.
+
 For digital content, references should be directly linked via hyperlinks, when possible.
+
 Finally, any content created and/or published by CC should also clearly indicate (and link to)
 whichever CC license it is published under, and follow the attribution requirements under that
 license. All CC licenses can be found via “Share Your License.”
@@ -364,26 +399,35 @@ license. All CC licenses can be found via “Share Your License.”
 Writing Tips
 “To be”
 Avoid overusing the verb “to be.” Instead, utilize the active tense.
+
 E.g., “It is important that net neutrality survives.” Instead say, “Net neutrality should survive.”
 For more examples, check out “Avoid Unecessary ‘To Be’ verbs,” by Writing Commons.
+
 Keep it Short and Concise
+
 Keep sentences short and to the point, particularly when explaining complex topics. Be wary of
 long paragraphs, particulary for articles or blog posts published online—adding spaces between 2-4
 sentence paragraphs helps with accessibility and engagement.
+
 Avoid Jargon
 
 Avoid industry (or academic) jargon or terminology, particularly when writing for non-academic
 and/or industry-specific audiences. Remember to write with your audience in mind, and explain any
 potentially confusing terms, acronyms, or references.
+
 Embrace Lists
 
 Use bullet points or numbers to convey lengthy information. More specifically, use numbered lists if
 there is a sequence to the information.
+
 Non-English Words
+
 Words from a language other than English should appear in italics unless they are commonly
 used in English.
+
 E.g. Millions of Muslims travel to Mecca for hajj (or pilgrimage) each year.
 E.g. Advocates for net neutrality arrived en masse at Capitol Hill.
+
 Do not italicize words written in a different alphabet. Include an italicized transliterated version of
 the word in parentheses or in a footnote.
 
@@ -419,5 +463,6 @@ creativecommons/47959607413/in/album-72157708726481004/ Licensed under CC BY.
 Page Nine
 
 Left, Middle, and Right: Heath, Victoria. (2019, September 29). An Explanation of Creative Commons. Retrieved
+
 from: canva.com/design/DADm40hSwIU/9yEhtLnl5O1WMKbx8JSSkA/view?utm_content=DADm40hSwIU&utm_
 campaign=designshare&utm_medium=link&utm_source=viewer. Licensed under CC BY-NC-ND 4.0.

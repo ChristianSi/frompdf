@@ -4,11 +4,11 @@ MINISTERIO
 > Y ALIMENTACION
 >
 > SECRETARIA GENERAL
->
 > DE RECURSOS AGRARIOS
 > Y SEGURIDAD ALIMENTARIA
 > FONDO ESPAÑOL DE
 > GARANTÍA AGRARIA O.A.
+>
 > SUBDIRECCIÓN GENERAL
 > DE AYUDAS DIRECTAS
 
@@ -72,6 +72,7 @@ SIGPAC en la nube:
 
 En este Catálogo se alojan nuevos medios SIGPAC de difusión de datos SIGC
 con los que el FEGA continúa ampliando su abanico de servicios y su labor
+
 divulgativa, como son: el Servicio de Teselas Vectoriales (MVT) de SIGPAC, el
 Servicio OGC API de SIGPAC y el Servicio de Listas de Códigos SIGPAC; otros
 medios SIGPAC que solo estaban a disposición de las CCAA, como el Servicio
@@ -255,9 +256,7 @@ destacan:
 > - Intersecciones de un recinto con diferentes capas (Red Natura,
 > Montanera, Fitosanitarios, Nitratos o Pastos Permanentes).
 
-EJEMPLO: https://sigpac-
-
-hubcloud.es/servicioconsultassigpac/query/recinfo/6/60/0/0/41/126/1.json
+EJEMPLO: https://sigpac-hubcloud.es/servicioconsultassigpac/query/recinfo/6/60/0/0/41/126/1.json
 
 Ejemplo de Respuesta a la consulta de propiedades de un recinto
 
@@ -630,7 +629,6 @@ efecto, por su contenido y/o por su periodo de vigencia, y que pueda requerir
 medios de distribución extraordinarios (soportes físicos, espacio en la nube,
 etc.), los usuarios o empresas peticionarias deberán dirigir sus solicitudes a la
 Subdirección General de Ayudas Directas del FEGA:
-
 sg.ayudasdirectas@fega.es. Tras la autorización pertinente del Subdirector/a
 General de Ayudas Directas, se podrá delegar en la Empresa de Tecnologías y
 Servicios Agrarios, S.A., S.M.E., M.P (TRAGSATEC) la elaboración de un

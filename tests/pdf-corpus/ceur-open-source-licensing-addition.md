@@ -10,9 +10,8 @@ Turku, Finland
 
 juhani.naskali@utu.fi
 
-Abstract. This paper identifies an often overlooked dimension of open source li-
-
-censing, that of users being able to run distributed software freely and without discrimination,
+Abstract. This paper identifies an often overlooked dimension of open source licensing,
+that of users being able to run distributed software freely and without discrimination,
 and suggests additions that would further secure freedom 0 to end
 users — the freedom for the user to use software however they wish. While, traditionally,
 open source licenses have left developers free to work with their code in
@@ -131,7 +130,6 @@ distributed programs include hard-coded (embedded in the source code) functions 
 explicitly block users based on their affilitation (see Naskali, 2020). Affected users
 are unable to use the program without modifying the code and rebuilding the program.
 While Freedom 0 does not mean that application developers should be forced to add
-
 in functionalities for their users or that developers are in violation of GPL licensing if
 their programs fail to run with some inputs (GNU Project, 2001), it is something else
 entirely when a function that selectively identifies certain user groups and stops the
@@ -153,9 +151,8 @@ it can be said to be in accordance of the licensing terms.
 The technological industry has been moving towards permissive licenses, that allow
 for parts of the source code to be republished under closed licenses. Johnson (2021)
 data shows that while permissive licenses were used in 41% of open source licenses
-in 2012, in 2020 that number has risen to 76%. While it could be argued that as non-
-
-permissive licenses get less popular, the need for licenses that secure more freedoms for
+in 2012, in 2020 that number has risen to 76%. While it could be argued that as non-permissive
+licenses get less popular, the need for licenses that secure more freedoms for
 the end-users lessens, it does not necessarily follow. In fact, there is little downside to
 having multiple levels of freedom-securing licenses, especially when it comes to nonexclusive
 and discrete license dimensions (permissiveness and user blocking). There is
@@ -226,6 +223,7 @@ for the public, securing more rights for the licensers (i.e. limiting what other
 
 GNU GPL is founded on the four basic freedoms listed in the introduction. The license
 has been formulated to secure these freedoms through the sharing of source code.
+
 1https://ethicalsource.dev/licenses/
 
 2https://github.com/EthicalSource/ethicalsource.dev
@@ -246,6 +244,7 @@ GPLv3 (GNU, 2007) is used as an example in this paper because it is explicitly
 founded on the four basic (user) freedoms and is one of the most freedom-securing and
 well-known OS licenses. Nevertheless, the proposed changes could be built on top of
 any number of licenses or formulated as a new license with a completely different name.
+
 GPL and open-source licenses currently do not include protections for users to run
 the distributed binaries without impediments. It must be understood that this is not necessarily
 a bad thing. Not securing these liberties ensures more freedom to the licensers
@@ -328,6 +327,7 @@ not secured for all users without additions such as the ones proposed.
 
 In comparison, the proposed changes would be clearly in conflict with the values
 of some other ethics-based licenses that explicitly restrict the use of software, e.g. the
+
 3While Android allows the installation of apk files outside Play Store, the option is off by default and can
 be difficult to do without technical skills.
 
@@ -336,6 +336,7 @@ that forbids use related to things such as slavery, gambling, tobacco,
 hate speech or discrimination. This is not a problem, as a wider selection of licenses
 ensures that people can choose how their software is shared and used. The proposed
 additions would not affect those who choose not to use a license that includes them.
+
 Arguably, the proposed changes would go well together with a new version of GNU
 GPL. Just as GPLv2 was updated to GPLv3 to protect user freedom from tivoization,
 laws prohibiting free software and discriminatory patent deals, these new additions
@@ -380,9 +381,10 @@ The proposed changes should be scrutinized by the open-source community and, spe
 legal experts, to make sure that their scope is as-intended. Without sufficient legal
 expertise, it is possible that there are large unintended consequences, and these should
 be found out and eliminated before releasing a full license.
-4https://github.com/raisely/NoHarm/
-5https://www.gnu.org/philosophy/selling.html
-6https://www.gnu.org/licenses/gpl-faq.htmlDRMProhibited
+
+> 4https://github.com/raisely/NoHarm/
+> 5https://www.gnu.org/philosophy/selling.html
+> 6https://www.gnu.org/licenses/gpl-faq.htmlDRMProhibited
 
 The proposed changes do limit the freedoms of contributors significantly. It might
 be possible to limit these freedoms less, while still protecting the public freedom of
@@ -434,8 +436,9 @@ Gomulkiewicz, R. W. (2009). Open source license proliferation: Helpful diversity
 hopeless confusion. Wash. UJL & Pol’y, 30, 261.
 
 Goodman-Wilson, D. (2020). Open source is broken. FOSDEM. Brussels, Belgium.
-Retrieved from https://mirrors.dotsrc.org/fosdem/2020/UB5.230/
-ethicsoss.webm
+
+> Retrieved from https://mirrors.dotsrc.org/fosdem/2020/UB5.230/
+> ethicsoss.webm
 
 Hofmann, G., Riehle, D., Kolassa, C., & Mauerer, W. (2013). A dual model of open
 source license growth. In IFIP International Conference on Open Source Systems,
@@ -461,8 +464,9 @@ Schoettle, H. (2019). Open source license compliance-why and how? Computer, 52(8
 63–67.
 
 Stallman, R. (2013). Why programs must not limit the freedom to run them.
-Retrieved from https://www.gnu.org/philosophy/
-programs-must-not-limit-freedom-to-run.html
+
+> Retrieved from https://www.gnu.org/philosophy/
+> programs-must-not-limit-freedom-to-run.html
 
 Tusky (2019). Tusky pull request #1303 · tuskyapp/tusky.
 Retrieved from https://github.com/tuskyapp/Tusky/pull/1303/

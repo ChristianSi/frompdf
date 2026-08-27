@@ -1,8 +1,6 @@
 # Brief Announcement: Non-Uniform
 
-# Content-Oblivious Leader Election on Oriented
-
-# Asynchronous Rings
+# Content-Oblivious Leader Election on Oriented Asynchronous Rings
 
 Jérémie Chalopin #
 Aix Marseille Univ, CNRS, LIS, Marseille, France
@@ -15,9 +13,11 @@ DIAG, Sapienza University of Rome, Italy
 Haoran Zhou #
 National University of Singapore, Singapore
 
-Abstract
+### Abstract
+
 In this paper, we study the leader election problem in oriented ring networks under content-oblivious
 asynchronous message-passing systems, where an adversary may arbitrarily corrupt message contents.
+
 Frei et al. (DISC 2024) recently presented a uniform terminating leader election algorithm for
 oriented rings in this setting, with message complexity O(nIDmax) on a ring of size n, where IDmax
 is the largest identifier in the system.
@@ -75,9 +75,11 @@ adversary can alter the content of any message, it cannot create or destroy mess
 
 This model is content-oblivious, meaning that messages carry no reliable content, not
 even the identity of the sender. The only information a message conveys is its existence.
+
 Surprisingly, Censor-Hillel et al. [7] showed that if a leader process is initially known
 and the topology is 2-edge-connected, it is possible to simulate a reliable, uncorrupted
 message-passing network, even in asynchronous settings, within this fully-defective model.
+
 This result makes studying leader election algorithms for this model particularly compelling:
 if a leader can be elected in a certain topology, with an algorithm that is terminating
 and where it is possible to distinguish in some way the messages of the leader election
@@ -131,8 +133,10 @@ beeping model [10, 11, 14] cannot be applied in content-oblivious networks.
 We shed new light on the message complexity of leader election in the content-oblivious
 model. Specifically, we show that a uniform algorithm, even on oriented rings, cannot elect a
 leader while sending only a constant number of messages in a single direction.
+
 Interestingly, we show that non-uniform algorithms, where processes know an upper
 bound U on the network size n, can circumvent this impossibility result.
+
 In particular, we present an algorithm for oriented rings (Section 3) that elects a leader
 by sending O(nUIDmin) messages in the clockwise direction and where each process sends
 just three messages in the counter-clockwise direction. Here IDmin is the minimum identifier
@@ -169,6 +173,7 @@ We consider a system composed of a set of n processes P = {p0, p1, . . . , pn−
 on a ring network by sending messages to each other. More precisely, a process p has
 two local communication ports: port 0 and port 1. By means of a specific port, a process is
 able to send messages to and receive messages from one of its neighbors.
+
 When the system is not anonymous, processes have unique identifiers that are arbitrarily
 selected from N.
 
@@ -232,6 +237,7 @@ the minimum identifier will be the only one to end the competing phase by comple
 prescribed number of iterations.
 
 Algorithm 1 Constant Direction Algorithm(ID,boundOnSize).
+
 1 for i ← 1 to boundOnSize ∗ ID do
 2 send a message on port 0
 
@@ -289,6 +295,7 @@ algorithm uses an encoding of identifiers such that the smallest identifier is n
 any other identifier, and the last bit of every encoded identifier is 0. To achieve this, given
 an identifier ID of bit length ℓ, we encode it as 1
 ℓ0 · ID · 0.
+
 The algorithm elects the process with the minimum identifier and proceeds in elimination
 rounds. In each round, active processes compare a specific bit of their (encoded) identifiers,
 eliminating all processes that do not have the minimum bit at that position.
@@ -301,10 +308,12 @@ messages in the CW direction (this is the Zero Signaling phase). Meanwhile, proc
 bit 1 attempt to continue sending and receiving messages in the CW direction for another U
 steps. However, they become inactive if they receive a CCW message, indicating the presence
 of a process with bit 0 (this is the No-Zero Checking phase).
+
 The rationale for these phases is to ensure that processes with bit 1 proceed to the next
 round in the active state if and only if no process with bit 0 exists in the current round.
 Indeed, when processes with bit 0 stop propagating CW messages, the processes with bit 1
 are prevented from completing their No-Zero Checking phase.
+
 Conversely, a process with bit 0 in a given round remains active. The Synchronization
 phase described above ensures that once an active process completes this phase for a new
 round, all active processes have completed the previous round and are in the Synchronization
@@ -320,6 +329,7 @@ The algorithm terminates after |IDmin| = O(log IDmin) rounds. At this point, the
 remaining active process is the one with the minimum identifier. This process can detect
 this locally and communicates it to all other processes (which are, by construction, inactive)
 by sending an additional message in the CCW direction (this is the Termination phase).
+
 All other processes detect termination when they receive two consecutive messages in
 the CCW direction: the first sent during the Zero Signaling phase by the process with the
 minimum identifier, and the second sent during the Termination phase. Therefore, we have
@@ -347,6 +357,7 @@ with probability at least 1 − U
 
 Synchronization and No-Zero Checking phases of the algorithm in Section 4 from U to
 ⌈c2 log U⌉, thereby improving the message complexity and establishing our final theorem.
+
 ▶ Theorem 4. For any constant c > 0, there exists a randomized quiescently terminating
 leader election algorithm for anonymous oriented rings with a success probability of 1 −
 U

@@ -41,7 +41,6 @@ Normalisierung, Recommender-Systeme
 
 Der Einsatz von E-Learning-Systemen wird zunehmend
 bedeutsamer. Durch Erweiterungen der Interaktions- und
-
 Feedbackmöglichkeiten kann die Nützlichkeit der E-Learning-Systeme
 verbessert werden und den Lernenden nicht nur
 in Selbstlernphasen Hilfestellungen und Unterstützungsmöglichkeiten
@@ -51,9 +50,8 @@ werden, trotzdem sollen die Korrektur- und Abfragemöglichkeiten
 erleichtert und verbessert sein.
 
 Das Konzept ER-to-Relational-Mapping und die Normalisierung
-eines Relationenmodells bzw. relationalen Daten-
-
-modells sind zwei grundsätzliche Gebiete, die in einführenden
+eines Relationenmodells bzw. relationalen Datenmodells
+sind zwei grundsätzliche Gebiete, die in einführenden
 Lehrveranstaltung im Bereich Datenbanken behandelt
 werden. In den letzten Jahren wurden verstärkt E-Learning-Syteme
 eingesetzt, sodass auch diese Gebiete von diesen Systemen
@@ -82,9 +80,8 @@ wurden daher interaktive Komponenten für die beiden
 Bereiche entwickelt und genutzt.
 
 Diese Komponenten und deren vielfältige Interaktionsmöglichkeiten
-werden im Folgenden thematisiert. Grund-
-
-sätzliche Möglichkeiten zur Interaktion des E-Learning-Systems
+werden im Folgenden thematisiert. Grundsätzliche
+Möglichkeiten zur Interaktion des E-Learning-Systems
 werden hierbei veranschaulicht.
 
 Nach einer kurzen Einführung in die grundlegenden Aspekte
@@ -285,9 +282,8 @@ der aktuellen Aufgabe.
 
 Sind neue Benachrichtigungen eingetroffen, wird an dem
 Icon einer Glocke ein roter Kreis angezeigt (siehe Abbildung
-4 und Abbildung 5). Neben den Hinweisen zur Bear-
-
-beitung werden unter der Glocke zudem noch Hinweise auf
+4 und Abbildung 5). Neben den Hinweisen zur Bearbeitung
+werden unter der Glocke zudem noch Hinweise auf
 neue Empfehlungen gegeben. Gibt es zur aktuellen Aufgabe
 
 weiterführende Informationen, so können diese in verschiedenen
@@ -391,8 +387,8 @@ Prinzipien von Datenbanken thematisieren.
 ### 3.6.2 Podcasts
 
 Podcasts sollen, so wie die Screencasts, kompakt Informationen
-vermitteln. Die Themen können hier sowohl Aufgabenoder
-Challenge-bezogen als auch allgemeingültig sein. Die
+vermitteln. Die Themen können hier sowohl Aufgaben-
+oder Challenge-bezogen als auch allgemeingültig sein. Die
 Podcasts sind Dialoge zwischen zwei oder mehreren Sprechenden,
 die ein Thema diskutieren, um den Lernenden neue
 Anreize zu bieten über das Gehörte nachzudenken. Auch
@@ -421,6 +417,7 @@ empfohlen. Diese können sich dynamisch anpassen
 und müssen nicht permanent verfügbar bleiben. Empfehlungen
 können entfernt werden, wenn bspw. Lernende die
 Aufgabe wechseln oder sich der Fokus der Thematik ändert.
+
 Vordefinierte Inhalte beziehen sich nicht zwingend auf eine
 
 Aufgabe im Einzelnen. Sie können Informationen betreffen,
@@ -495,9 +492,8 @@ Datentyp auswählen.
 Die Lernenden haben die Möglichkeit mit der Schaltfläche
 ’Test on Database’ den ihren Eingaben entsprechenden
 DDL-Code direkt auf dem angebundenen Datenbanksystem
-zu testen. Die Rückmeldung wird in dem Check-
-
-Input-Ausgabefenster ausgegeben. Hierbei wird einerseits getestet,
+zu testen. Die Rückmeldung wird in dem Check-Input-Ausgabefenster
+ausgegeben. Hierbei wird einerseits getestet,
 ob die Eingaben der Lernenden einen gültigen SQL-Code
 entsprechen. Andererseits wird die Lösung unter Verwendung
 der zur Aufgabe hinterlegten Informationen weitestgehend
@@ -505,8 +501,8 @@ durch das System ausgewertet. Korrekte Lösungen
 von Aufgaben können u. a. eine vorgegebene Anzahl von
 Tabellen, Spalten, Constraints (Primary Keys, Uniques, Not
 Nulls außerhalb von Primary Keys, Foreign Keys) und darin
-enthaltene Attributanzahl bzw. eine jeweilige Mindestund
-Maximalanzahl erfordern, so dass Lösungen als falsch
+enthaltene Attributanzahl bzw. eine jeweilige Mindest-
+und Maximalanzahl erfordern, so dass Lösungen als falsch
 erkannt werden können.
 
 Die Auswertung der Aufgabe bzgl. der Sinnhaftigkeit der
@@ -630,7 +626,8 @@ aktiven und inaktiven Tabellen. Neben dem Tabellennamen
 sind hier auch die Spaltennamen gelistet. Ebenso können
 die Begründungen angezeigt werden.
 
-5. ZUSAMMENFASSUNG UND AUSBLICK
+## 5. ZUSAMMENFASSUNG UND AUSBLICK
+
 Komponenten zur Bearbeitung von Aufgaben zum ER-to-Relational-Mapping
 und zur Normalisierung werden dargestellt.
 Vielfältige Interaktionen und Hilfestellungen bspw.

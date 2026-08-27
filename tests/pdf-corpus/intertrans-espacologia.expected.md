@@ -12,6 +12,7 @@ ACEPTED 13/04/21
 PUBLISHED 25/05/21
 
 OPEN ACCESS
+
 PEER-REVIEWED
 
 Copyright: ©2020 Creative Commons
@@ -21,9 +22,7 @@ reproduction in any medium
 
 RESEARCH ARTICLE
 
-# Espaçologia: filosofias na
-
-# totalidade do espaço
+# Espaçologia: filosofias na totalidade do espaço
 
 ## Spaceology:Philosophies in the Totality of Space
 
@@ -33,6 +32,7 @@ new field of spatial thinking occurring. Conversely, this article is
 an adventure of open thinking, by raising Spacology as the
 protagonist and epistemic tool of philosophies in space, which
 are all in dispute in the clipping of moving totalities movement.
+
 Keywords.Spaces.Place. Philosophy. Geographies. Totalities.
 
 Resumo. O pensamento modela o espaço. Assim, as primeiras
@@ -58,11 +58,9 @@ espelhado, até as modernidades em curso. O que variou foram as modalidades conc
 que cada pensador estabeleceu, demarcando todo o peso de uma tradição, separando o
 
 espaço enquanto protagonista modelador de um pensamento que não foi considerado. Do
-
 ponto de vista tradicional, o pensamento passou um aprisionamento filosófico em
 detrimento aos diversos campos epistêmicos, impondo um único modo pensar: o espaço
 como conceituador de categorias, problemas e de uma gramatica própria seus
-
 conhecimentos ocultados por cada pensador. Portanto, os aparatos teóricos de cada
 disciplina traduziram categorias sobre o espaço o pondo como auxiliar de perguntas
 originais, ou seja, cada pensador aprisionou ideias e noções sobre o espaço, caindo então
@@ -91,6 +89,7 @@ educados por uma atopia (ausência de lugar- espaço) e acronia (ausências do t
 espaço) sem referencia espacial do corpo na espacialidade de sua experiência próprio nas
 culturas, ou seja, somos (des) espacializados como consequência da fragmentação da
 totalidade na compressão espaço-temporal em regimentos e gramaticas espaciais fechadas.
+
 Por fim, o espaço é dizível no próprio de seu pensamento. Convém destacar, a Espaçologia
 sujeito de novas emergências do pensar e desdobramentos , escalas em todos âmbitos das
 formas de conhecimento habitadas pelo espaço enquanto ponto de partida.
@@ -104,13 +103,11 @@ constructos de ideias na produção de currículos espaciais na história do pen
 outra forma, o pensamento antecede os problemas espaciais em torno dele. É na dobra
 que consiste a fissura de elementos ainda não iluminados pelo exercício do pensar. De uma
 superfície plana, o deslize forçado do agir externo para o interno, o volume da densidade
-
 da forma se faz origami. O pensamento espacial não é dialético, como o platônico) ou em
 espiral, como o hegeliano, e sim dobras pensando com o barroco de Aleijadinho: o
 desdobramento da dobra realizada na superfície criando formas visíveis, mas modeladas
 por um conjunto de uma família de conceito, se faz no real concreto a véspera de coisas
 ainda não cristalizadas na paisagem do pensamento. A partir daí para cada dobra, o origami
-
 espacial nos revela o universo íntimo de particular de ações do pensamento em curso. O
 espaço guardaria nele uma infinidade de origamis já alertadas pela física quântica. Tudo é
 pensamento, logo tudo é espaço: ação primeira das condições realizáveis da ação humana
@@ -139,7 +136,6 @@ filosófica.
 
 Existe, entretanto, no cartografar filosófico, o posicionamento das ideias na cunhagem de
 conceitos. Categorias e problemas são tarefas elevadas que exigem daquele/a que pensar
-
 as condições ontológicas da produção existente na maneira em que a forma do espaço
 material se dá e que propõem investigações e aberturas de horizontes em busca de uma
 horizontologia - problemática que nos induz horizontes conflituais nos territórios do
@@ -152,10 +148,8 @@ positivistas dogmáticos, na crença na verdade da ação do pensar separada do 
 técnica, revelando o pensamento fora da totalidade e desprendido do mundo material,
 baseado nas igrejas platônicas fundadas por falantes da filosofia e repetido em ideias
 fraudadas de tradição. De tal modo, é preciso que as filosofias do espaço voltem se
-
 comprometer com as questões de suas realidades espaciais, territoriais e regionais em
 múltiplas escalas. Assim, o conceito de espaço foi apartado da totalidade e esvaziado por
-
 menções abstratas como um verbete físico e geográfico não palpável pela ação empírica
 dos atores históricos no seu agir diário. Não existe “o espaço” enquanto um ente abstrato e
 universal fora da forma, e sim, horizontologias e visões epistêmica do conceito de espaço
@@ -170,7 +164,6 @@ espaço. Geógrafos não são responsáveis por traduzirem o que há por trás d
 no momento que os mesmos atravessam outras gramáticas conceituais e ecologias de
 saberes tornam-se espaçólogos, pensadores que investigam o que faz o espaço se
 materializado de ideias camuflado no penhor da realidade. A realidade-espaço no ocidente
-
 obedece a regras espaciais produzidas por ideias universais das estruturas do ocidente. Em
 suma, o ocidente enquanto recorte da totalidade partida ou recortada inventou visões de
 espaço e regras dogmáticas em si mesmas.
@@ -186,7 +179,6 @@ pensadores do espaço.
 Portanto, a Espaçologia não estaria isolada e com falta de objetos e questões, pois quando
 as ciências positivas do século XIX declaram guerra epistêmica contra uma única matriz
 filosófica onde se pensara o todo e a totalidade, as mesmas configuram metodologias e
-
 campos a priori de seus saberes originais, ocultando o espaço como sub-conceito. O
 engano da cegueira Tiresiana estaria na crença positivista de que os conceitos e campos
 ecológico dos saberes surgem desprendidos de uma ambiência e atmosfera espacial. A
@@ -257,24 +249,20 @@ físicos manteriam os conhecimentos guardados e instaurados pela alquimia dos an
 filósofos originários, - a natureza neste momento se entende enquanto totalidade (Unidade
 perfeita) gerada por noções medievais (deus como forma imanente). A totalidade, - então
 natureza naturante – natural, se manifestaria na multiplicidade das coisas. O espaço,
-
 natureza e ideias formam imagens de um mundo sem forma. Não haveria no primeiro
 momento a idéia de espaço separado do todo aberto. Este todo aberto é o estado
-
 embrionário de mundo e espaço, pois ambos são frutos da linguagem e técnica. O
 animal-homem ocidental produz no uso da técnica (Cultura) sua própriacondição e
 estrutura as bases primeiras de seu rompimento entre natureza e cultura. Nesse primeiro
 momento, natureza e cultura não se separam, pois o meio é o próprio homem mergulhado
 de totalidade. O pensamento modela o espaço como forma primeira do existir. Assim, no
 momento em que o homem dito enquanto moderno manipula o uso do espaço com as
-
 ferramentas da técnica, sua ausência de naturalidade do natural vai exigir uma ruptura
 artificial com o todo, mas de fato o mesmo homem experimentaria uma ilusão de que fora
 apartado do todo da totalidade. Totalidade e todo não se fragmentam: estariam fundados
 no mesmo estado de coisas, onde o pensamento acusaria outra natureza ontológica
 (natureza e cultura) e estaria em atribuições epistêmicas separadas do todo original.
 Homem, natureza, mundo e espaço estariam organizados pelos interesses estratégicos,
-
 pela ação racional racionalizante do homem impondo uma nova realidade ou natureza do
 espaço. Tudo é meramente uma ficção do homem racional embriagado por ideias de
 modernidade.
@@ -343,13 +331,11 @@ emergencial dos atores que habitam o espaço.
 No fim do século XIX, pela primeira vez, foi possível ver um mundo em que o
 passado, inclusive o passado no presente, se cristaliza na duração de narrativas totalitárias
 nas extremidades de uma sociedade radicalizada por identidades fechadas em si mesmas:
-
 aceleramentos históricos conduzidos por grupos totalitários na condução da matriz
 ocidental, ou seja, uma única forma até então de ocidente absoluto e fechado aos
 interesses desse novo ocidente estruturado por velhos hábitos. Dessa forma, as
 extremidades evocadas pelas identidades nacionais criaram naquele período barreiras
 identitárias forjadas por ideias absolutas e, sobretudo, raciais. O resultado desse cenário foi
-
 o sufocamento de identidades minoritárias e o extermínio de povos. Em concomitância, a
 forma Estado enquanto éthos-político cria uma noção de identidade nacional de modo
 isolado, incorporando ideologias raciais no projeto de sociedade.
@@ -357,7 +343,6 @@ isolado, incorporando ideologias raciais no projeto de sociedade.
 Em vista disso, como sobreviver e criar redes estratégicas diante de um mundo forjado de
 novo? Ainda é possível ler as gramáticas conceituais de modo isolado diante de uma
 sociedade que emerge com novos adventos espaciais? Como ler, compreender e gerar
-
 análise do imediatismo do imediato? Como ler o Ocidente a partir de dentro para fora?
 Somos realmente ocidentais (ou quase ocidentais) nesta formação societária?
 
@@ -387,7 +372,6 @@ espacial? Se os que produzem espaço foram exterminados do processo espacial ext
 condição de realidade do espaço, como há uma geografia humana? O espaço também não
 seria uma relação dialética entre o dentro e o fora? Se não há o endo (dentro), como há o
 de fora? As qualidades funcionais determinam as estruturas do interno imposto por
-
 realidades espaciais de estrutura racional e racial do de fora? Por sua vez, as formas do
 espaço não possuem uma natureza concreta apenas, mas uma natureza concreto-abstrata;
 tornam-se concretas a partir do uso das coisas habitadas por ideias filosóficas em disputa
@@ -399,7 +383,6 @@ A geografia, história, sociologia, literatura, economia, antropologia, física,
 cinema, arquitetura, planejamento já possuem seus objetos, signos, conceitos e ações
 curriculares do espaço; agora chegou a vez de o espaço pensar suas próprias questões
 espaciais de maneira própria e singular. Milton Santos, no livro A natureza do espaço
-
 (1987), assinala que, no final do século XVIII, tivemos uma revolução epistemológica em
 que todas as áreas de conhecimento se libertaram da filosofia hegeliana, construindo
 disciplinas de conhecimento com objetos próprios de sua espacialidade. O espaço torna-se
@@ -420,7 +403,6 @@ planejamento urbano produziram ao longo dos séculos aprisionamentos espaciais e
 epistêmicos de uma única forma de entender o espaço como objeto categórico estático,
 porém este ainda não se tornou uma ferramenta autônoma de ler-se a partir de conceitos
 próprios, oriundos de si mesmo. A espaçologia traria para o núcleo de questões formas
-
 autônomas dos indivíduos espaciais que recriam suas matrizes epistêmicas e propõem
 novas lógicas de rede.
 
@@ -438,21 +420,17 @@ questões do que é o próprio contido nele mesmo. Os conceitos, categorias, obj
 problemas não estariam isolados e reféns de qualidades epistemológicas de outras
 disciplinas. Assim, o espaço se libertaria enquanto campo autônomo e criador de
 problemas originais oriundos de sua matriz conceitual, não havendo demarcações e prisões
-
 dogmáticas ratificadas em lógicas estruturais prontas, delimitadas, lineares e servis, já
 introduzidas no movimento espaçológico de Milton Santos. Dessa forma, teríamos, no final
-
 do século XX, explosões epistemológicas do conceito de espaço emergidas pelos de baixo, o
 que ele evidencia como uma outra globalização vinda de lógicas não-binárias e não
 correspondentes aos modelos globalitaristas.
 
 Tal questão já encontra abertura de horizonte no filósofo Michel Foucault (1926-1984), que
 escreveu, em sua estadia na Tunísia, em 1967, um texto denominado Outros Espaços,
-
 publicado sob a sua autorização apenas em 1984. Nesse escrito, o autor desenvolve um
 conceito inteiramente original: o de heterotopia. Esta ideia consiste em explicar a
 confluência dos espaços na sociedade, isto é, uma proposta de se pensar o entorno a partir
-
 das diferentes residências temáticas (hospitais, escolas, bibliotecas, etc.) que são
 alicerçadas nele e que descrevem uma relação em que estes mesmos lugares predominam
 uns sobre os outros e sobre a vida dos indivíduos. Assim, nesse texto, ele mostra que o
@@ -460,7 +438,6 @@ espaço do outro foi esquecido pela cultura ocidental.
 
 A palavra heterotopia é composta do prefixo héteros, que tem origem no grego e significa
 “o diferente” e está ligada à palavra alter (“outro”). Já a palavra tópos significa “lugar”,
-
 “espaço”. Então, heterotopia significa o espaço do outro. Em busca do uno, do universal e
 do mesmo, a razão ocidental afastou o outro, a diferença, a multiplicidade. Desse modo, o
 empreendimento filosófico de Foucault foi resgatar os espaços do outro, os quais o
@@ -481,13 +458,11 @@ o autor, a sociedade produz heterotopias. Ainda, chama estes outros lugares com 
 denominação de heterotopia de desvio, ou seja, aqueles comportamentos que estão fora
 
 do que a sociedade aceita e impõe às condutas. São nestes espaços que, para Foucault,
-
 estão contidos os conflitos e tensões que se exercem pelas relações de poder de uma
 sociedade determinada.
 
 Ao pensar sobre o final do século XIX, Michel Foucault problematiza que no Ocidente
 moderno tivemos grandes revoluções epistemológicas das matrizes de ordem ocidental,
-
 quando a totalidade do pensamento, até então contida na filosofia, se fragmentou criando
 ontologias, campos e ferramentas próprias. Deste modo, revela a possibilidade de um novo
 conceito para entender os novos fenômenos do espaço geográfico, nomeando-o
@@ -503,14 +478,12 @@ totalidade?
 Por outro lado, se tomarmos a geografia a partir de um conjunto de escrituras na produção
 espaço – nas raízes geo (terra) e grafia (escrita) – por que não partirmos do próprio espaço
 para pensarmos suas outras grafias (escritas/escrituras) na filosofia, física, economia,
-
 sociologia, arquitetura, política, antropologia, arte, biologia, teatro, cinema e, até mesmo, o
 samba? Se os geógrafos se detiveram sobre os fenômenos geográficos no tecido do espaço,
 por que os espaçólogos não se dedicaram a pensar os fenômenos espaciais do próprio
 espaço em si e correlacionados a todas as disciplinas, questionando, por exemplo, quais os
 impactos do conceito de espaço do cubismo geométrico e analítico na pintura de Pablo
 Picasso? Picasso seria um espaçólogo ao introduzir uma nova categoria geométrica de
-
 espaço tridimensional na pintura contemporânea moderna ocidental do século XX, assim
 como Aleijadinho, com seus anjos distorcidos no Barroco singular brasileiro?O problema
 central não estaria em pensar os diversos currículos espaciais aglutinados numa ciência do
@@ -532,7 +505,6 @@ investigatórios por uma filosofia do espaço brasileiro de modo próprio e orig
 
 Por sua vez, os “filósofos acadêmicos brasileiros”, alienados de sua condição
 espacial-histórica por pensarem como europeus, reproduzem espaços psíquicos de
-
 paisagem do pensamento fora do todo sem totalidade; exemplo disso é nunca terem
 colocado como questão ontológica o fato de um povo negro, escravizado por 400 anos em
 uma matriz espacial excludente, ter sido capaz de criar saídas estratégicas e de narrar sua
@@ -562,7 +534,6 @@ uma ideia de identidade fixa e determinista (origem, meio e finalidades) na qual
 inseridos, acredito que seja impossível evitar que continuemos a lastimar as perdas de
 sentido originário e histórico de seus atores sociais em suas realidades individuais. Há que
 se abrir uma nova dimensão de sentido espacial que suscite investigações filosóficas de
-
 novas geografias. É possível pressupor que esta espacialização do pensamento produza um
 grande choque, mas não se trata de um desastre, e sim de uma variação que admite novas
 concepções, culminando em novas fronteiras, necessárias para uma nova partida, um novo
@@ -595,10 +566,8 @@ de cada pensador. Por isto, um conceito apenas concreto não revela os níveis g
 dos confrontos das formas sem formas.
 
 Nas tensões de cada século, os filósofos, ao produzirem seus conceitos e suas máquinas
-
 oculares, nos mostram que a disputa dos conceitos se configura a filosofia como um
 território de batalhas. Os conceitos e seus filhos estão em guerra desde seu nascimento:
-
 Filosofias como campo de guerra de conceitos, exigindo de cada pensador uma sistêmica
 vocabular e gramatical os modos de nomear os fenômenos do uso do real. Certamente
 estas máquinas oculares evidenciam o uso dos conceitos constituindo de modo empírico
@@ -618,7 +587,6 @@ violenta na produção de novas mentalidades.
 Em particular, o nascimento ocular de cada conceito requer produções de novos planos de
 mentalidades e de consciência. Exemplo disto, o filósofo Karl Marx não produz conceitos
 para compreensão de uma sociedade burguesa e industrial do século XIX, e sim para o
-
 entendimento do edifício teatral do golpe cognitivo dado pela burguesia, criando um
 mundo de recursos ilimitados para si mesmo. Indo pela mesma via nas eras das
 modernidades em confronto, teria diversos projetos conceituais da ideia de homem,
@@ -641,7 +609,6 @@ Sob esta relação, as máquinas oculares dos conceitos nos induzem a pensar de 
 única a partir de sentenças e premissas coloniais e descoloniais, exercidas pelo sistema
 matricial de cada filósofo no conjunto de materialidades históricas e espaciais. Portanto,
 vivemos num mundo de filosofias que criam espaços visualizados na cabeça dos filósofos,
-
 que impõem gramáticas repetidas e fórmulas hipotéticas e não aplicáveis em mundos em
 colapso temporal no curso do espaço societário.
 
@@ -694,7 +661,6 @@ sua importância habitada pelo pensamento.
 
 A palavra curriculum oriunda do latim românico ibérico ocidental sugere o significado de
 corrida, percurso, movimento, lugar onde se corre. Portanto, o espaço não é o ponto inicial
-
 ou a finalidade analítica do processo, e sim fluxos transescalares de linhas e formas não
 demarcadas pela cristalização de ideias objetivadas em coisas. Com o avanço da questão
 em aberto, os espaçólogos em campos distintos evidenciam e nos mostram os elementos
@@ -721,9 +687,11 @@ códigos traduzidos em nossa materialidade corpórea que criam níveis de consci
 alienantes. Se a primeira dimensão espacial é o recorte do entendimento do corpo, as
 disciplinas curriculares do espaço nos aprisionam em conclaves de repetições cognitivas de
 não entendermos o uso do espaço no corpo e em nossas formas de viver e agir.
+
 Por fim, não é possível justificar uma única filosofia no espaço, e sim a insurgência de
 atores espaciais que estão emergindo numa explosão de espaço reinventada por novos
 globalitarismos, já evidenciados pelo Filósofo Negro professor Doutor Milton Santos.
+
 Mais profundamente, voltando nossa a premissa convidativa: o pensamento modela o
 espaço, logo é necessário o enfrentamento das ideias inacabadas.
 
@@ -734,6 +702,7 @@ Ernestina de Champourcin). México-Buenos Aires: Fondo de Cultura Económica, 19
 304p. (Breviarios; 183).
 
 BESSE, Jean-Marc. Ver a Terra: seis ensaios sobre a paisagem e a geografia. 1ª reimp. da 1ª
+
 ed. (Tradução Vladimir Bartalini) São Paulo: Perspectiva, 2014. 110p. (Coleção Estudos; 230)
 
 BUTTIMER, Anne. Aprendendo o Dinamismo do Mundo Vivido. In: CHRISTOFOLETTI,
@@ -743,6 +712,7 @@ DARDEL, Eric. O Homem e a Terra: natureza da realidade geográfica. (Tradução 
 Holzer) São Paulo: Perspectiva, 2011. 159p. (Estudos; 292)
 
 JAMMER, Max. Conceito de espaço: a história das teorias do espaço na física. Tradução de
+
 Tradução por Vera Ribeiro. 1ª. ed. Rio de Janeiro: Contraponto: PUC-Rio, 2010.
 
 FOUCAULT, Michel (1986), “Of other spaces”. Diacrities, v.16, no.1.Baltimore.
@@ -767,6 +737,7 @@ prestigiamentospseudocríticos do espaço social). Terra Livre, São Paulo, n. 5
 1988.
 
 DE SOUSA ALVES, V. M. (1959). Conhecimento Metafísico do Espaço e do Tempo. Braga:
+
 Faculdade de Filosofia.
 
 DE SOUSA ALVES, V. M. (1998). Ensaio de Filosofia das Ciências. Braga: Publicações da

@@ -13,7 +13,8 @@ Owen Arden # Ñ
 
 University of California, Santa Cruz, CA, USA
 
-Abstract
+### Abstract
+
 Approximate Byzantine Agreement (ABA) protocols enable nonfaulty replicas with different initial
 values to derive a values within a ϵ-neighborhood of each other, despite the presence of Byzantine
 behavior. While they give strong guarantees for this ϵ-agreement property, they tend to have weaker
@@ -50,6 +51,7 @@ often more vulnerable to malicious manipulation than those in secure, monitored 
 These realities complicate the coherent design of sensor data-processing pipelines, distributed
 control systems, and multi-agent robotics applications – scenarios that are functionally similar
 but operationally require ad hoc mitigation techniques to tolerate deployment conditions.
+
 The growing demand for such systems spans consumer-facing devices such as homeautomation
 sensors and controls, personal health monitoring devices and drug-delivery
 systems, and automotive telemetry and safety systems, as well as industrial and agricultural
@@ -93,6 +95,7 @@ protocol, Proximal Byzantine Agreement (PBA), uses a novel value selection proce
 replicas select outputs based on the messages they receive, that borrows techniques from
 robust statistics [7]. As long as a majority of these messages are stochastically distributed,
 the influence of arbitrarily selected values on the inference process is limited to a fixed bound.
+
 This brief announcement reports on progress following our initial evaluation [18] of the
 feasibility of this value selection technique. Previously, only one-dimensional, normally
 distributed distributions were explored, and probabilistic protocol properties were described
@@ -102,7 +105,6 @@ These evaluations indicate a surprising degree of scalability with respect to di
 only minor losses in accuracy compared to ABA protocols that require 10× more replicas and
 4× to 124× more computation time per agreement decision, even at relatively low dimensions
 (d = 4 to d = 18). Since each additional output offers more information from the unknown
-
 output distribution, our results indicate PBA can extract more information from observations,
 reinforcing the tradeoff [12] between high-precision agreement and statistical accuracy.
 
@@ -141,6 +143,7 @@ high level, this process is described by the probability maximization in Def. 2.
 n and
 quorum size s, select a set r from the s-sized subsets of R, and a value x that maximizes the
 likelihood that x is the true value given observations in r.
+
 PBA(R, s) ≜ argmax
 r∈[R]
 s
@@ -384,7 +387,8 @@ is characterized by region guarantees. This scalable perfomance and graceful, pr
 degradation indicate promise for both large-scale and resource-constrained sensor-based
 control systems and datastream processing applications.
 
-References
+### References
+
 1 Buke Ao, Yongcai Wang, Lu Yu, Richard R. Brooks, and S. S. Iyengar. On Precision Bound
 of Distributed Fault-Tolerant Sensor Fusion Algorithms. ACM Computing Surveys (CSUR),
 May 2016. doi:10.1145/2898984.
@@ -444,6 +448,7 @@ Mean Estimation. SIAM Journal on Mathematics of Data Science, 6(2), June 2024. d
 2015.
 
 18 Roy Shadmon and Owen Arden. Enhancing accuracy in approximate byzantine agreement with
+
 bayesian inference. In 55th Annual IEEE/IFIP International Conference on Dependable Systems
 and Networks - Supplemental Volume (DSN-S), 2025. doi:10.1109/DSN-S65789.2025.00064.
 19 Nitin H Vaidya and Vijay K Garg. Byzantine vector consensus in complete graphs. In Proc.
