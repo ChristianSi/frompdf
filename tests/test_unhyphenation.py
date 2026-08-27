@@ -215,6 +215,8 @@ class BoundaryRewriteTests(unittest.TestCase):
         self.assertEqual(result, 'grand\ntotal')
 
     def test_internal_hyphen_excludes_learned_coordination(self) -> None:
+        # The synthetic same-line evidence deliberately teaches ``Software`` as
+        # a link token; the internal hyphen in ``Open-Source`` must still veto it.
         result = resolve(
             ['Open-Source-', 'Software remains'],
             evidence='Data- Software systems',
