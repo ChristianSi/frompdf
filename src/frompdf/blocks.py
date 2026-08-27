@@ -5,6 +5,7 @@ from statistics import median
 from frompdf.models import Block, BlockQuote, Heading, Line, PageNumber, Paragraph
 from frompdf.segmentation import segment_lines
 from frompdf.unhyphenation import (
+    document_coordination_tokens,
     document_mixed_case_words,
     document_word_counts,
     unhyphenate_block_lines,
@@ -228,6 +229,7 @@ def markdown_block_from_lines(
     body_lefts_by_page: dict[int, list[float]],
     word_counts: Counter[str],
     mixed_case_words: set[str],
+    coordination_tokens: set[str],
     follows_blockquote: bool = False,
 ) -> Block:
     """Build a Markdown block from grouped line records."""
@@ -242,7 +244,10 @@ def markdown_block_from_lines(
     end_page = page_number_map[line_list[-1].page_no]
     return block_class(
         text=unhyphenate_block_lines(
-            (line_obj.text for line_obj in line_list), word_counts, mixed_case_words
+            (line_obj.text for line_obj in line_list),
+            word_counts,
+            mixed_case_words,
+            coordination_tokens,
         ),
         start_page=start_page,
         end_page=end_page,
@@ -375,6 +380,7 @@ def lines_to_markdown_blocks(
     body_lefts_by_page = build_body_lefts_by_page(line_list, default_font_size)
     word_counts = document_word_counts(line_obj.text for line_obj in line_list)
     mixed_case_words = document_mixed_case_words(line_obj.text for line_obj in line_list)
+    coordination_tokens = document_coordination_tokens(line_obj.text for line_obj in line_list)
 
     for current_lines in segment_lines(line_list):
         block_list.append(
@@ -385,6 +391,7 @@ def lines_to_markdown_blocks(
                 body_lefts_by_page,
                 word_counts,
                 mixed_case_words,
+                coordination_tokens,
                 follows_blockquote=bool(block_list) and isinstance(block_list[-1], BlockQuote),
             )
         )

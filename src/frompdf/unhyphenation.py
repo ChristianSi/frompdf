@@ -12,11 +12,6 @@ EN_DASH = '\u2013'
 EM_DASH = '\u2014'
 LINE_FINAL_DASHES = {EN_DASH, EM_DASH}
 
-# A line-final hyphen before these common conjunctions is usually a deliberate
-# coordination hyphen (for example, "Organisations- und Zwangsmittel"), not a
-# word broken by line wrapping.
-STANDALONE_CONJUNCTIONS = {'and', 'e', 'et', 'oder', 'or', 'und', 'y'}
-
 
 def is_word_base(char: str) -> bool:
     """Return whether a character can begin a dictionary word."""
@@ -101,6 +96,36 @@ def document_mixed_case_words(line_texts: Iterable[str]) -> set[str]:
         for word in exact_words_in_text(text)
         if is_mixed_case_word(word)
     }
+
+
+def document_coordination_tokens(line_texts: Iterable[str]) -> set[str]:
+    """Learn link words from explicit same-line forms such as ``input- and output``."""
+    coordination_tokens: set[str] = set()
+
+    for text in line_texts:
+        tokens = text.split()
+        for left_token, link_token, following_token in zip(
+            tokens, tokens[1:], tokens[2:], strict=False
+        ):
+            if not left_token or left_token[-1] not in WORD_HYPHENS:
+                continue
+
+            left_fragment = strip_leading_wrapping_punctuation(left_token[:-1])
+            exact_link_token = exact_dictionary_candidate(link_token)
+            following_fragment = initial_lexical_fragment(
+                strip_leading_wrapping_punctuation(following_token)
+            )
+            if (
+                exact_dictionary_candidate(left_fragment) is None
+                or exact_link_token is None
+                or following_fragment is None
+                or any(char in WORD_HYPHENS for char in left_fragment + exact_link_token)
+            ):
+                continue
+
+            coordination_tokens.add(canonical_word(exact_link_token))
+
+    return coordination_tokens
 
 
 def strip_leading_wrapping_punctuation(text: str) -> str:
@@ -202,6 +227,36 @@ def should_keep_boundary_hyphen(
     return contains_nonletter(combined_word)
 
 
+def is_learned_coordination_boundary(
+    left_fragment: str,
+    right_fragment: str,
+    word_counts: Counter[str],
+    coordination_tokens: set[str],
+) -> bool:
+    """Return whether a learned coordinator should remain after a line-final hyphen."""
+    if canonical_word(right_fragment) not in coordination_tokens:
+        return False
+    if any(char in WORD_HYPHENS for char in left_fragment + right_fragment):
+        return False
+
+    left_key = dictionary_candidate(left_fragment)
+    right_key = dictionary_candidate(right_fragment)
+    if (
+        left_key is None
+        or right_key is None
+        or not word_counts[left_key]
+        or not word_counts[right_key]
+    ):
+        return False
+
+    unhyphenated_key = dictionary_candidate(left_fragment + right_fragment)
+    hyphenated_key = dictionary_candidate(left_fragment + '-' + right_fragment)
+    return not (
+        (unhyphenated_key is not None and word_counts[unhyphenated_key])
+        or (hyphenated_key is not None and word_counts[hyphenated_key])
+    )
+
+
 def split_first_token(line: str) -> tuple[str, str] | None:
     """Return a line's first token and the remaining text."""
     stripped_line = line.lstrip()
@@ -264,14 +319,15 @@ def split_boundary_fragments(left_line: str, right_line: str) -> tuple[str, str,
     right_fragment = initial_lexical_fragment(raw_right_token)
     if right_fragment is None:
         return None
-    if right_fragment.casefold() in STANDALONE_CONJUNCTIONS:
-        return None
 
     return left_fragment, right_fragment, left_line[-1], raw_right_token
 
 
 def unhyphenate_block_lines(
-    line_texts: Iterable[str], word_counts: Counter[str], mixed_case_words: set[str]
+    line_texts: Iterable[str],
+    word_counts: Counter[str],
+    mixed_case_words: set[str],
+    coordination_tokens: set[str],
 ) -> str:
     """Normalize wrapped words and unspaced dashes within one Markdown block."""
     rewritten_lines = list(line_texts)
@@ -298,6 +354,14 @@ def unhyphenate_block_lines(
             continue
 
         left_fragment, right_fragment, boundary_hyphen, raw_right_token = fragments
+        if is_learned_coordination_boundary(
+            left_fragment,
+            right_fragment,
+            word_counts,
+            coordination_tokens,
+        ):
+            continue
+
         keep_hyphen = should_keep_boundary_hyphen(
             left_fragment,
             right_fragment,

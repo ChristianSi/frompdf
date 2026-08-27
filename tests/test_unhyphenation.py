@@ -4,6 +4,7 @@ from collections import Counter
 from frompdf.blocks import lines_to_markdown_blocks
 from frompdf.models import Line, PageNumber
 from frompdf.unhyphenation import (
+    document_coordination_tokens,
     document_mixed_case_words,
     document_word_counts,
     unhyphenate_block_lines,
@@ -11,12 +12,14 @@ from frompdf.unhyphenation import (
 
 
 def resolve(lines: list[str], evidence: str = '') -> str:
-    """Resolve a synthetic block using words from separate document evidence."""
+    """Resolve a synthetic block using its lines and separate document evidence."""
     evidence_lines = [evidence]
+    all_lines = [*lines, *evidence_lines]
     return unhyphenate_block_lines(
         lines,
-        document_word_counts(evidence_lines),
-        document_mixed_case_words(evidence_lines),
+        document_word_counts(all_lines),
+        document_mixed_case_words(all_lines),
+        document_coordination_tokens(all_lines),
     )
 
 
@@ -39,6 +42,18 @@ def text_line(text: str, block_no: int, line_no: int) -> Line:
 
 
 class DocumentEvidenceTests(unittest.TestCase):
+    def test_learns_coordination_tokens_only_from_same_line_patterns(self) -> None:
+        tokens = document_coordination_tokens(
+            [
+                'Korrektur- und Abfragemöglichkeiten',
+                'middle- and upper-income',
+                'Aufgaben-',
+                'oder Challenge-bezogen',
+            ]
+        )
+
+        self.assertEqual(tokens, {'and', 'und'})
+
     def test_unhyphenated_document_form_wins_case_insensitively(self) -> None:
         result = resolve(
             ['This prevents dis-', 'crimination in licensing.'],
@@ -168,9 +183,44 @@ class BoundaryRewriteTests(unittest.TestCase):
         self.assertEqual(result, 'unfinished-\n“quoted text”')
 
     def test_keeps_coordination_hyphen_before_conjunction(self) -> None:
-        result = resolve(['Organisations-', 'und Zwangsmittel'])
+        result = resolve(
+            ['Organisations-', 'und Zwangsmittel'],
+            evidence='Korrektur- und Abfragemöglichkeiten',
+        )
 
         self.assertEqual(result, 'Organisations-\nund Zwangsmittel')
+
+    def test_keeps_coordination_hyphen_before_learned_english_token(self) -> None:
+        result = resolve(
+            ['middle-', 'and upper-income'],
+            evidence='lower- and middle-income',
+        )
+
+        self.assertEqual(result, 'middle-\nand upper-income')
+
+    def test_frequent_word_is_not_assumed_to_be_a_coordinator(self) -> None:
+        result = resolve(
+            ['bei-', 'den Bereichen'],
+            evidence='den den den den den den den den den den',
+        )
+
+        self.assertEqual(result, 'beiden\nBereichen')
+
+    def test_combined_word_evidence_precedes_learned_coordination(self) -> None:
+        result = resolve(
+            ['gr-', 'and total'],
+            evidence='grand lower- and middle-income',
+        )
+
+        self.assertEqual(result, 'grand\ntotal')
+
+    def test_internal_hyphen_excludes_learned_coordination(self) -> None:
+        result = resolve(
+            ['Open-Source-', 'Software remains'],
+            evidence='Data- Software systems',
+        )
+
+        self.assertEqual(result, 'Open-Source-Software\nremains')
 
     def test_does_not_merge_across_markdown_blocks(self) -> None:
         lines = [

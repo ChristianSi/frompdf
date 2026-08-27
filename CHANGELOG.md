@@ -18,7 +18,8 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
   typography, line spacing, indentation, alignment, and line-length evidence.
 - Words split by line-final hyphens are now rejoined within detected blocks,
   using document-wide spelling evidence and conservative fallback heuristics
-  to retain lexical hyphens.
+  to retain lexical hyphens. Coordination hyphens are preserved using link
+  words learned from explicit same-line patterns in the document.
 - Unspaced en and em dashes split across lines are now rejoined within detected
   blocks.
 - Multi-column page regions are now ordered column by column while full-width
