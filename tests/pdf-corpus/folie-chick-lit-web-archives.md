@@ -943,8 +943,8 @@ Wozniak, J. Nemitz, & U. Rohwedder (Eds.), Wikipedia und Geschichtswissenschaft 
 Gruyter.
 
 West, A. G., & Lee, I. (2011). What wikipedia deletes: characterizing dangerous collaborative content. In
-WikiSym ‘11: Proceedings of the 7th International Symposium on Wikis and Open Collaboration (pp. 25–
-28). https://doi.org/10.1145/2038558.2038563.
+WikiSym ‘11: Proceedings of the 7th International Symposium on Wikis and Open Collaboration (pp. 25–28).
+https://doi.org/10.1145/2038558.2038563.
 Wikipedia. (22 July 2004). Chick lit. https://en.wikipedia.org/w/index.php?title=Chick_lit&oldid=4789452.
 Accessed 21 July 2020.
 

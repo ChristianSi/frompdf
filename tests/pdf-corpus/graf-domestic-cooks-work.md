@@ -248,8 +248,8 @@ storing, and preparing food in a beldi way is predominantly female.
 Since Hajja returned from the hajj in mid-November the riad was always full.
 Family members from all over Morocco but especially from Hajja’s bled honored
 the newly minted Hajja (honorary name given to returnees from the hajj) with
-their visit. While every visiting party brought food and drinks as is customary—
-usually industrially produced sugar cones, milk, coffee, tea, or fresh fruits—as
+their visit. While every visiting party brought food and drinks as is customary—usually
+industrially produced sugar cones, milk, coffee, tea, or fresh fruits—as
 hosts we also prepared lots of meals. My role during that month-long celebration
 was to shop and process foods. I was not surprised when I saw several new
 bags of food in the khazin one day, which Hajja kept locked with a key that she

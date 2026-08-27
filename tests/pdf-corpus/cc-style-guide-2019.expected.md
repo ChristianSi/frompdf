@@ -252,8 +252,8 @@ graphic designer.
 
 ### Tone
 
-Creative Commons’ tone should be clear, informed, and professional, yet witty and relatable—
-reflecting CC’s staff and broader community.
+Creative Commons’ tone should be clear, informed, and professional, yet witty and relatable—reflecting
+CC’s staff and broader community.
 
 All communication materials, particularly blog posts, should reflect this tone but also embody the
 unique qualities of the specific author’s writing style. These materials should also use language
