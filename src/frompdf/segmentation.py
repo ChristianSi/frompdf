@@ -32,6 +32,13 @@ MIN_COLUMN_LINES = 5
 SENTENCE_END_PATTERN = re.compile(r'[.!?…][’”\'"\]\)}»›]*(?:\d+)?$')
 WORD_BREAK_HYPHEN_PATTERN = re.compile(r'\w[-\u00ad]$')
 FONT_SUBSET_PREFIX_PATTERN = re.compile(r'^[A-Z]{6}\+')
+FONT_FACE_SUFFIX_PATTERN = re.compile(
+    r'(?:[-_.](?:black|bold|bolditalic|bolditalicmt|boldmt|boldoblique|book|bookitalic|'
+    r'demibold|heavy|italic|italicmt|light|medi|medium|mediumitalic|oblique|regular|'
+    r'regu|reguital|semibold|thin|b|bd|bi|i|it|sb)(?:\+\d+)?)$',
+    flags=re.IGNORECASE,
+)
+ATTACHED_FONT_VENDOR_SUFFIX_PATTERN = re.compile(r'(?<![\s-])MT$', flags=re.IGNORECASE)
 
 
 @dataclass(frozen=True)
@@ -77,8 +84,18 @@ def close_font_size(left: float | None, right: float | None) -> bool:
     return abs(left - right) <= max(0.3, max(left, right) * 0.04)
 
 
+def normalized_font_family(font_name: str | None) -> str | None:
+    """Normalize a PDF font name to its family, ignoring face and vendor suffixes."""
+    if font_name is None:
+        return None
+    family_name = FONT_SUBSET_PREFIX_PATTERN.sub('', font_name)
+    family_name = FONT_FACE_SUFFIX_PATTERN.sub('', family_name)
+    family_name = ATTACHED_FONT_VENDOR_SUFFIX_PATTERN.sub('', family_name)
+    return family_name.casefold()
+
+
 def normalized_font_name(font_name: str | None) -> str | None:
-    """Normalize embedded subset prefixes while retaining meaningful style suffixes."""
+    """Normalize an exact PDF font face name for conservative compatibility checks."""
     if font_name is None:
         return None
     return FONT_SUBSET_PREFIX_PATTERN.sub('', font_name).casefold()
@@ -114,17 +131,11 @@ def significant_size_change(left: Line, right: Line) -> bool:
 
 
 def significant_style_change(left: Line, right: Line) -> bool:
-    """Return whether dominant size, weight, or font family clearly changes."""
+    """Return whether dominant size or font family clearly changes."""
     if significant_size_change(left, right):
         return True
-    if (
-        left.avg_weight is not None
-        and right.avg_weight is not None
-        and abs(left.avg_weight - right.avg_weight) >= FONT_WEIGHT_BREAK
-    ):
-        return True
-    left_name = normalized_font_name(left.font_name)
-    right_name = normalized_font_name(right.font_name)
+    left_name = normalized_font_family(left.font_name)
+    right_name = normalized_font_family(right.font_name)
     return left_name is not None and right_name is not None and left_name != right_name
 
 

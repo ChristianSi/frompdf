@@ -1,7 +1,7 @@
 import unittest
 
 from frompdf.models import Line
-from frompdf.segmentation import segment_lines
+from frompdf.segmentation import normalized_font_family, segment_lines
 
 
 def line(
@@ -42,6 +42,15 @@ def group_texts(line_list: list[Line]) -> list[list[str]]:
 
 
 class ParagraphSegmentationTests(unittest.TestCase):
+    def test_font_family_normalization_ignores_face_but_not_family(self) -> None:
+        self.assertEqual(normalized_font_family('Calibri-Bold'), 'calibri')
+        self.assertEqual(normalized_font_family('Arial-BoldItalicMT'), 'arial')
+        self.assertEqual(normalized_font_family('ArialMT'), 'arial')
+        self.assertNotEqual(
+            normalized_font_family('Arial-BoldMT'),
+            normalized_font_family('Times New Roman'),
+        )
+
     def test_merges_spurious_pdftext_break_in_continuous_full_lines(self) -> None:
         lines = [
             line('opening line remains full and', 1),
@@ -117,10 +126,16 @@ class ParagraphSegmentationTests(unittest.TestCase):
             ],
         )
 
-    def test_splits_same_size_bold_heading_from_body(self) -> None:
+    def test_splits_same_size_heading_in_distinct_font_family(self) -> None:
         lines = [
             line('previous body line', 1),
-            line('BOLD DISPLAY HEADING', 2, block_no=2, avg_weight=700.0, font_name='Body-Bold'),
+            line(
+                'BOLD DISPLAY HEADING',
+                2,
+                block_no=2,
+                avg_weight=700.0,
+                font_name='Display-Bold',
+            ),
             line('body opening after heading', 3, block_no=2),
             line('body continuation after heading', 4, block_no=2),
             line('body ending.', 5, block_no=2, x2=100.0),
@@ -130,6 +145,41 @@ class ParagraphSegmentationTests(unittest.TestCase):
 
         self.assertEqual(groups[1], ['BOLD DISPLAY HEADING'])
         self.assertEqual(groups[2][0], 'body opening after heading')
+
+    def test_does_not_split_bold_title_from_bibliography_continuation(self) -> None:
+        lines = [
+            line('previous reference opening', 1, block_no=1),
+            line('previous reference continuation', 2, block_no=1),
+            line('previous reference ending.', 3, block_no=1, x2=110.0),
+            line(
+                'BESSE, Jean-Marc. Ver a Terra: seis ensaios sobre a paisagem',
+                4,
+                block_no=2,
+                y1=60.0,
+                avg_weight=296.1,
+                font_name='Calibri-Bold',
+            ),
+            line(
+                'ed. (Tradução Vladimir Bartalini) São Paulo: Perspectiva, 2014.',
+                5,
+                block_no=2,
+                y1=72.0,
+                avg_weight=225.0,
+                font_name='Calibri',
+            ),
+            line('next reference opening', 6, block_no=3, y1=96.0),
+            line('next reference ending.', 7, block_no=3, y1=108.0, x2=110.0),
+        ]
+
+        groups = group_texts(lines)
+
+        self.assertIn(
+            [
+                'BESSE, Jean-Marc. Ver a Terra: seis ensaios sobre a paisagem',
+                'ed. (Tradução Vladimir Bartalini) São Paulo: Perspectiva, 2014.',
+            ],
+            groups,
+        )
 
     def test_merges_open_right_aligned_run_but_not_its_attribution(self) -> None:
         lines = [
