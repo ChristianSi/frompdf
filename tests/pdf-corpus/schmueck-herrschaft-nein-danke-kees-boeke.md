@@ -61,8 +61,8 @@ Foto: 1939, Quelle: Nationaal Archief, No. 119-0499, Open Source.
 > sucht die Gesellschaft die Ordnung in der Anarchie. /
 > Anarchie, das Fehlen eines Herrschers, eines Souveräns,
 > das ist die Regierungsform, der wir uns jeden Tag mehr nähern.“
-
-Pierre-Joseph Proudhon (1840)1
+>
+> Pierre-Joseph Proudhon (1840)1
 
 Die Diskussion über neue Formen der gemeinschaftlichen Organisation ist
 heute aktueller denn je. Sei es in Debatten über selbstverwaltete Unternehmen,
