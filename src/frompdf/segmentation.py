@@ -13,7 +13,10 @@ MARGIN_TOLERANCE_EM = 0.3
 LEFT_EDGE_CLUSTER_TOLERANCE_EM = 0.2
 
 # Hanging-indent regions need repeated evidence in both directions. A single
-# indented run is more likely to be a quote than a bibliography layout.
+# indented run is more likely to be a quote than a bibliography layout. Their
+# wider limit accommodates list labels whose bounding boxes extend left of the
+# aligned reference text, without broadening ordinary first-line indentation.
+MAX_HANGING_INDENT_EM = 4.0
 MIN_HANGING_EDGE_LINES = 3
 MIN_HANGING_START_TO_CONTINUATION_TRANSITIONS = 2
 MIN_HANGING_CONTINUATION_TO_START_TRANSITIONS = 2
@@ -355,7 +358,7 @@ def build_hanging_indents(
 
     hanging_indents: list[HangingIndentContext] = []
     min_indent = font_size * MIN_FIRST_LINE_INDENT_EM
-    max_indent = font_size * MAX_FIRST_LINE_INDENT_EM
+    max_indent = font_size * MAX_HANGING_INDENT_EM
 
     for column in columns:
         column_lines = lines_by_column.get(column.left, [])
@@ -423,11 +426,17 @@ def build_hanging_indents(
         if candidates:
             selected_regions: list[HangingIndentContext] = []
             for _, candidate in sorted(candidates, key=lambda item: item[0], reverse=True):
-                overlaps_selected = any(
-                    candidate.y_min <= selected.y_max and selected.y_min <= candidate.y_max
+                # Right-aligned list labels can create several first-line edges while
+                # their text shares one continuation edge (for example, items 9 and 10).
+                overlaps_incompatible = any(
+                    candidate.y_min <= selected.y_max
+                    and selected.y_min <= candidate.y_max
+                    and not near_left_edge(
+                        candidate.continuation_left, selected.continuation_left, font_size
+                    )
                     for selected in selected_regions
                 )
-                if not overlaps_selected:
+                if not overlaps_incompatible:
                     selected_regions.append(candidate)
             hanging_indents.extend(selected_regions)
 
@@ -544,31 +553,28 @@ def has_normal_advance(left: Line, right: Line, context: PageContext) -> bool:
     return 0 < ratio <= normal + NORMAL_ADVANCE_TOLERANCE_EM
 
 
-def hanging_indent_for_boundary(
+def hanging_indents_for_boundary(
     left: Line, right: Line, context: PageContext
-) -> HangingIndentContext | None:
-    """Return the learned hanging-indent pattern shared by two adjacent lines."""
+) -> tuple[HangingIndentContext, ...]:
+    """Return learned hanging-indent patterns shared by two adjacent lines."""
     left_column = column_for_line(left, context)
     right_column = column_for_line(right, context)
     if left_column is None or right_column != left_column:
-        return None
+        return ()
     if left.y1 is None or right.y1 is None:
-        return None
+        return ()
     region_tolerance = context.font_size * 2.5
 
-    return next(
-        (
-            hanging_indent
-            for hanging_indent in context.hanging_indents
-            if hanging_indent.column_left == left_column.left
-            and hanging_indent.y_min - region_tolerance
-            <= left.y1
-            <= hanging_indent.y_max + region_tolerance
-            and hanging_indent.y_min - region_tolerance
-            <= right.y1
-            <= hanging_indent.y_max + region_tolerance
-        ),
-        None,
+    return tuple(
+        hanging_indent
+        for hanging_indent in context.hanging_indents
+        if hanging_indent.column_left == left_column.left
+        and hanging_indent.y_min - region_tolerance
+        <= left.y1
+        <= hanging_indent.y_max + region_tolerance
+        and hanging_indent.y_min - region_tolerance
+        <= right.y1
+        <= hanging_indent.y_max + region_tolerance
     )
 
 
@@ -583,15 +589,14 @@ def continues_hanging_indent_paragraph(previous: Line, current: Line, context: P
     ):
         return False
 
-    hanging_indent = hanging_indent_for_boundary(previous, current, context)
-    if hanging_indent is None:
-        return False
     font_size = current.font_size or context.font_size
-    previous_uses_known_edge = near_left_edge(
-        previous.x1, hanging_indent.start_left, font_size
-    ) or near_left_edge(previous.x1, hanging_indent.continuation_left, font_size)
-    return previous_uses_known_edge and near_left_edge(
-        current.x1, hanging_indent.continuation_left, font_size
+    return any(
+        (
+            near_left_edge(previous.x1, hanging_indent.start_left, font_size)
+            or near_left_edge(previous.x1, hanging_indent.continuation_left, font_size)
+        )
+        and near_left_edge(current.x1, hanging_indent.continuation_left, font_size)
+        for hanging_indent in hanging_indents_for_boundary(previous, current, context)
     )
 
 
@@ -605,16 +610,16 @@ def begins_hanging_indent_paragraph(previous: Line, current: Line, context: Page
     ):
         return False
 
-    hanging_indent = hanging_indent_for_boundary(previous, current, context)
-    if hanging_indent is None:
-        return False
     font_size = current.font_size or context.font_size
-    previous_uses_known_edge = near_left_edge(
-        previous.x1, hanging_indent.start_left, font_size
-    ) or near_left_edge(previous.x1, hanging_indent.continuation_left, font_size)
-    if not previous_uses_known_edge or not near_left_edge(
-        current.x1, hanging_indent.start_left, font_size
-    ):
+    matching_pattern = any(
+        (
+            near_left_edge(previous.x1, hanging_indent.start_left, font_size)
+            or near_left_edge(previous.x1, hanging_indent.continuation_left, font_size)
+        )
+        and near_left_edge(current.x1, hanging_indent.start_left, font_size)
+        for hanging_indent in hanging_indents_for_boundary(previous, current, context)
+    )
+    if not matching_pattern:
         return False
 
     ratio = advance_ratio(previous, current)

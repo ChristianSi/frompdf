@@ -117,6 +117,57 @@ class ParagraphSegmentationTests(unittest.TestCase):
             ],
         )
 
+    def test_learns_wide_hanging_indent(self) -> None:
+        lines = [
+            line('10 First reference starts after a wide label', 1),
+            line('and continues at the aligned text margin', 2, x1=55.0),
+            line('with another continuation line.', 3, x1=55.0, x2=150.0),
+            line('11 Second reference starts after a wide label', 4),
+            line('and continues at the aligned text margin', 5, x1=55.0),
+            line('with another continuation line.', 6, x1=55.0, x2=150.0),
+            line('12 Third reference starts after a wide label', 7),
+            line('and ends at the aligned text margin.', 8, x1=55.0, x2=150.0),
+        ]
+
+        groups = group_texts(lines)
+
+        self.assertEqual([len(group) for group in groups], [3, 3, 2])
+
+    def test_keeps_compatible_hanging_indents_when_label_width_changes(self) -> None:
+        lines = [
+            line('7 First reference starts after a narrow label', 1, x1=25.0),
+            line('and continues at the aligned text margin', 2, x1=55.0),
+            line('with another continuation line.', 3, x1=55.0, x2=150.0),
+            line('8 Second reference starts after a narrow label', 4, x1=25.0),
+            line('and continues at the aligned text margin', 5, x1=55.0),
+            line('with another continuation line.', 6, x1=55.0, x2=150.0),
+            line('9 Third reference starts after a narrow label', 7, x1=25.0),
+            line('and ends at the aligned text margin.', 8, x1=55.0, x2=150.0),
+            line('10 Fourth reference starts after a wide label', 9),
+            line('and continues at the aligned text margin', 10, x1=55.0),
+            line('with another continuation line.', 11, x1=55.0, x2=150.0),
+            line('11 Fifth reference starts after a wide label', 12),
+            line('and continues at the aligned text margin', 13, x1=55.0),
+            line('with another continuation line.', 14, x1=55.0, x2=150.0),
+            line('12 Sixth reference starts after a wide label', 15),
+            line('and ends at the aligned text margin.', 16, x1=55.0, x2=150.0),
+        ]
+
+        groups = group_texts(lines)
+
+        self.assertEqual([len(group) for group in groups], [3, 3, 2, 3, 3, 2])
+
+    def test_does_not_treat_wide_inset_as_first_line_indent(self) -> None:
+        lines = [
+            line('body opening line', 1),
+            line('body ending.', 2, x2=105.0),
+            line('wide inset remains in the same paragraph', 3, x1=55.0),
+            line('then returns to the body margin', 4),
+            line('and continues normally.', 5, x2=140.0),
+        ]
+
+        self.assertEqual(len(group_texts(lines)), 1)
+
     def test_does_not_learn_one_indented_quote_run_as_hanging_indent(self) -> None:
         lines = [
             line('body opening line', 1),
