@@ -153,16 +153,28 @@ signals that make sense in other documents too.
 
 ## Implementation Notes
 
+Keep this section in sync when a change adds or removes modules, changes the
+core records or block types, or alters the pipeline stages described below.
+
 The implementation is split into focused modules under `src/frompdf`:
 
-- `blocks.py` groups lines and detects block quotes and headings.
+- `blocks.py` turns segmented lines into blocks, classifies block quotes and
+  headings, and coordinates within-block text repair.
 - `cli.py` implements the command-line interface.
-- `lines.py` flattens `pdftext` output and extracts line geometry and
-  typography.
+- `lines.py` repairs detached diacritics, flattens `pdftext` output, and
+  extracts line geometry and typography.
 - `models.py` defines line, page-number, and Markdown block records.
-- `output.py` writes diagnostic CSV files and Markdown output.
-- `page_edges.py` detects headers, footers, and visible page numbers.
+- `output.py` writes diagnostic line and page-number CSV files and serializes
+  Markdown output.
+- `page_edges.py` detects and removes headers and footers, extracts visible
+  page labels, and safely completes unambiguous label sequences.
 - `pipeline.py` coordinates extraction and classification.
+- `reading_order.py` orders intact `pdftext` blocks within page regions and
+  detected columns.
+- `segmentation.py` combines `pdftext` block hints with page-local geometry
+  and typography to find Markdown block boundaries.
+- `unhyphenation.py` repairs words and unspaced dashes split across physical
+  lines, using document-wide evidence where available.
 
 Important concepts:
 
@@ -178,10 +190,16 @@ Important concepts:
 The current pipeline is roughly:
 
 1. Extract raw `pdftext` page data.
-2. Flatten it into line records.
-3. Optionally dump `-lines.csv`.
-4. Detect and remove repeated headers and footers.
-5. Extract visible page numbers from removed header/footer content.
-6. Assemble lines into Markdown blocks.
-7. Detect block quotes and headings.
-8. Serialize Markdown to `.md`.
+2. Repair detached, geometrically positioned diacritics in the raw data.
+3. Flatten the result into line records with geometry and typography.
+4. Optionally dump the unfiltered line records to `-lines.csv`.
+5. Detect and remove headers and footers, collecting visible page labels.
+6. Order the remaining lines by page region and detected column.
+7. Safely complete unambiguous page-label sequences and optionally dump them
+   to `-pagenos.csv`.
+8. Segment each page into blocks using `pdftext` hints, geometry, typography,
+   indentation, and line-spacing evidence.
+9. Build paragraph or block-quote records and repair words and unspaced dashes
+   split across physical lines within each block.
+10. Reclassify heading-like paragraphs and normalize their heading levels.
+11. Serialize the blocks as Markdown in `.md`.
