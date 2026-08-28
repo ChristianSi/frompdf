@@ -395,32 +395,44 @@ doi:10.1007/S00446-012-0163-Y.
 9 A. Cornejo and F. Kuhn. Deploying wireless networks with beeps. In DISC 2010, volume
 6343 of Lecture Notes in Comput. Sci., pages 148–162. Springer, 2010. doi:10.1007/
 978-3-642-15763-9_15.
+
 10 A. Czumaj and P. Davies. Leader election in multi-hop radio networks. Theoretical Computer
 Science, 792:2–11, 2019. doi:10.1016/J.TCS.2019.02.027.
+
 11 F. Dufoulon, J. Burman, and J. Beauquier. Beeping a deterministic time-optimal leader election.
 In DISC 2018, volume 121 of LIPIcs, pages 20:1–20:17. Schloss Dagstuhl – Leibniz-Zentrum
 für Informatik, 2018. doi:10.4230/LIPICS.DISC.2018.20.
+
 12 P. Flocchini, E. Kranakis, D. Krizanc, F. L. Luccio, and N. Santoro. Sorting and election in
 anonymous asynchronous rings. Journal of Parallel and Distributed Computing, 64(2):254–265,
 2004. doi:10.1016/J.JPDC.2003.11.007.
+
 13 F. Frei, R. Gelles, A. Ghazy, and A. Nolin. Content-oblivious leader election on rings. In
 DISC 2024, volume 319, pages 26:1–26:20. Schloss Dagstuhl – Leibniz-Zentrum für Informatik,
 2024. doi:10.4230/LIPICS.DISC.2024.26.
+
 14 K.-T. Förster, J. Seidel, and R. Wattenhofer. Deterministic leader election in multi-hop
 beeping networks. In DISC 2014, volume 8784 of Lecture Notes in Comput. Sci., pages
 212–226. Springer, 2014.
+
 15 Alon Itai and Michael Rodeh. Symmetry breaking in distributed networks. Inf. Comput.,
 88(1):60–87, July 1990. doi:10.1016/0890-5401(90)90004-2.
+
 16 S. Kutten, W. K. Moses Jr., G. Pandurangan, and D. Peleg. Singularly optimal randomized
 leader election. In DISC 2020, volume 179 of LIPIcs, pages 22:1–22:18, 2020. doi:10.4230/
 LIPICS.DISC.2020.22.
+
 17 M. Raynal. Fault-Tolerant Message-Passing Distributed Systems: An Algorithmic Approach.
 Springer, 2018.
+
 18 N. Santoro. Design and Analysis of Distributed Algorithms. John Wiley & Sons, 2007.
+
 19 N. Santoro and P. Widmayer. Time is not a healer. In STACS 1989, volume 349 of Lecture
 Notes in Comput. Sci., pages 304–313. Springer, 1989. doi:10.1007/BFB0028994.
+
 20 R. Vacus and I Ziccardi. Minimalist leader election under weak communication. In PODC
 2025. ACM, 2025.
+
 21 M. Yamashita and T. Kameda. Computing on anonymous networks: Part I - Characterizing
 the solvable cases. IEEE Transactions on Parallel and Distributed Systems, 7(1):69–89, 1996.
 doi:10.1109/71.481599.

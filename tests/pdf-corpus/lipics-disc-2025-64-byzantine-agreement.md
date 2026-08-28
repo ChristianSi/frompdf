@@ -426,6 +426,7 @@ doi:10.1145/2402.322398.
 
 10 Leslie Lamport and P. M. Melliar-Smith. Byzantine clock synchronization. In Principles of
 Distributed Computing (PODC), 1984. doi:10.1145/800222.806737.
+
 11 Hendrik P. Lopuhaa and Peter J. Rousseeuw. Breakdown Points of Affine Equivariant
 Estimators of Multivariate Location and Covariance Matrices. The Annals of Statistics, 19(1),
 March 1991. doi:10.1214/aos/1176347978.
@@ -440,6 +441,7 @@ Computer Systems, 8(4), November 1990. doi:10.1145/128733.128735.
 14 Hammurabi Mendes and Maurice Herlihy. Multidimensional approximate agreement in
 Byzantine asynchronous systems. In Proceedings of the Forty-Fifth Annual ACM Symposium
 on Theory of Computing. ACM, June 2013. doi:10.1145/2488608.2488657.
+
 15 Stanislav Minsker. Geometric median and robust estimation in Banach spaces. Bernoulli,
 21(4), November 2015. doi:10.3150/14-BEJ645.
 
@@ -453,5 +455,6 @@ Mean Estimation. SIAM Journal on Mathematics of Data Science, 6(2), June 2024. d
 18 Roy Shadmon and Owen Arden. Enhancing accuracy in approximate byzantine agreement with
 bayesian inference. In 55th Annual IEEE/IFIP International Conference on Dependable Systems
 and Networks - Supplemental Volume (DSN-S), 2025. doi:10.1109/DSN-S65789.2025.00064.
+
 19 Nitin H Vaidya and Vijay K Garg. Byzantine vector consensus in complete graphs. In Proc.
 of the 2013 ACM Symposium on Principles of Distributed Computing, 2013.
