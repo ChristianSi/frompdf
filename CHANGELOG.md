@@ -14,6 +14,7 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
 
 ### Changed
 
+- Indented attributions following block quotes now remain part of the quote.
 - Paragraph boundaries now combine `pdftext` block hints with page-local
   font size and family, line spacing, indentation, alignment, and line-length
   evidence. New boundaries are not introduced solely by changes between font

@@ -27,8 +27,6 @@ ZERO_MEDIAN_HEADING_MIN_WEIGHT = 600.0
 MULTILINE_HEADING_LINE_THRESHOLD = 4
 MULTILINE_HEADING_MIN_FONT_RATIO = 1.16
 
-BLOCKQUOTE_ATTRIBUTION_PATTERN = re.compile(r'(?:\(\d{4}\)|\b\d{4})\D*\d*$')
-
 HEADING_LEVEL_THRESHOLDS = [
     # Derived from 105% of the default font size, repeatedly multiplied by 10%,
     # rounded to the nearest full percentage, and capped at 200%.
@@ -203,13 +201,6 @@ def is_blockquote_block(
     """Return whether a group of lines should be rendered as a Markdown block quote."""
     if not line_list or is_footnote_like_block(line_list):
         return False
-    if (
-        len(line_list) == 1
-        and follows_blockquote
-        and BLOCKQUOTE_ATTRIBUTION_PATTERN.search(line_list[0].text.rstrip())
-    ):
-        return False
-
     font_size = block_font_size(line_list)
     if default_font_size is not None and font_size is not None and font_size > default_font_size:
         return False

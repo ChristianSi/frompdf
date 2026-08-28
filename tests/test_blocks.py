@@ -3,9 +3,13 @@ from typing import cast
 
 from pdftext.schema import Line as PdfTextLine
 
-from frompdf.blocks import initial_heading_level, should_boost_heading_font_size
+from frompdf.blocks import (
+    initial_heading_level,
+    is_blockquote_block,
+    should_boost_heading_font_size,
+)
 from frompdf.lines import average_font_weight, dominant_font_name
-from frompdf.models import PageNumber, Paragraph
+from frompdf.models import Line, PageNumber, Paragraph
 
 
 def paragraph(text: str, font_size: float, avg_weight: float | None = None) -> Paragraph:
@@ -17,6 +21,49 @@ def paragraph(text: str, font_size: float, avg_weight: float | None = None) -> P
         font_size=font_size,
         avg_weight=avg_weight,
     )
+
+
+def positioned_line(text: str, x1: float) -> Line:
+    return Line(
+        text=text,
+        page_no=1,
+        block_no=1,
+        line_no_on_page=1,
+        font_size=8.5,
+        x1=x1,
+        y1=10.0,
+        x2=200.0,
+        y2=18.5,
+        rel_x=None,
+        rel_y=None,
+        avg_weight=400.0,
+        font_name='Body-Italic',
+    )
+
+
+class BlockQuoteDetectionTests(unittest.TestCase):
+    def test_indented_attribution_after_blockquote_remains_quoted(self) -> None:
+        attribution = positioned_line('Pierre-Joseph Proudhon (1840)1', x1=145.0)
+
+        self.assertTrue(
+            is_blockquote_block(
+                [attribution],
+                default_font_size=10.5,
+                body_lefts_by_page={1: [42.5]},
+                follows_blockquote=True,
+            )
+        )
+
+    def test_single_indented_line_without_preceding_blockquote_is_not_quoted(self) -> None:
+        ordinary_line = positioned_line('Founded in 1840', x1=60.0)
+
+        self.assertFalse(
+            is_blockquote_block(
+                [ordinary_line],
+                default_font_size=10.5,
+                body_lefts_by_page={1: [42.5]},
+            )
+        )
 
 
 class HeadingDetectionTests(unittest.TestCase):
