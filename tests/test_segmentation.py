@@ -1,7 +1,7 @@
 import unittest
 
 from frompdf.models import Line
-from frompdf.segmentation import normalized_font_family, segment_lines
+from frompdf.segmentation import build_page_context, normalized_font_family, segment_lines
 
 
 def line(
@@ -86,6 +86,76 @@ class ParagraphSegmentationTests(unittest.TestCase):
 
         self.assertEqual(len(groups), 2)
         self.assertEqual(groups[1][0], 'Second paragraph has a first-line indent')
+
+    def test_segments_repeated_hanging_indent_paragraphs(self) -> None:
+        lines = [
+            line('First reference starts at the outer margin', 1, block_no=1),
+            line('and continues at the hanging margin', 2, block_no=2, x1=32.0),
+            line('2021-06-07.', 3, block_no=3, x1=32.0, x2=80.0),
+            line('Retrieved from https://example.test', 4, block_no=4, x1=32.0),
+            line('Second reference starts at the outer margin', 5, block_no=4),
+            line('and continues at the hanging margin', 6, block_no=4, x1=32.0),
+            line('for another continuation line.', 7, block_no=4, x1=32.0, x2=150.0),
+            line('Third reference starts at the outer margin', 8, block_no=4),
+            line('and ends at the hanging margin.', 9, block_no=4, x1=32.0, x2=150.0),
+            line('with one more continuation line.', 10, block_no=4, x1=32.0, x2=150.0),
+            line('Fourth reference fits on one line.', 11, block_no=4, x2=140.0),
+            line('Fifth reference also fits on one line.', 12, block_no=4, x2=150.0),
+        ]
+
+        groups = group_texts(lines)
+
+        self.assertEqual([len(group) for group in groups], [4, 3, 3, 1, 1])
+        self.assertEqual(
+            [group[0] for group in groups],
+            [
+                'First reference starts at the outer margin',
+                'Second reference starts at the outer margin',
+                'Third reference starts at the outer margin',
+                'Fourth reference fits on one line.',
+                'Fifth reference also fits on one line.',
+            ],
+        )
+
+    def test_does_not_learn_one_indented_quote_run_as_hanging_indent(self) -> None:
+        lines = [
+            line('body opening line', 1),
+            line('body continuation line', 2),
+            line('body ending.', 3, x2=110.0),
+            line('quoted opening line', 4, block_no=2, x1=32.0),
+            line('quoted continuation one', 5, block_no=2, x1=32.0),
+            line('quoted continuation two', 6, block_no=2, x1=32.0),
+            line('quoted continuation three', 7, block_no=2, x1=32.0),
+            line('quoted continuation four', 8, block_no=2, x1=32.0),
+            line('quoted ending.', 9, block_no=2, x1=32.0, x2=150.0),
+            line('body resumes here', 10, block_no=3),
+            line('body continues normally.', 11, block_no=3, x2=140.0),
+        ]
+
+        self.assertEqual(build_page_context(lines).hanging_indents, ())
+
+    def test_limits_hanging_indent_to_reference_region_after_quote(self) -> None:
+        lines = [
+            line('quoted opening line', 1, block_no=1, x1=32.0),
+            line('quoted continuation one', 2, block_no=1, x1=32.0),
+            line('quoted continuation two', 3, block_no=1, x1=32.0),
+            line('quoted continuation three', 4, block_no=1, x1=32.0),
+            line('quoted ending.', 5, block_no=1, x1=32.0, x2=150.0),
+            line('References', 6, block_no=2, y1=100.0, font_size=12.0),
+            line('First reference at the outer margin', 7, block_no=3, y1=130.0),
+            line('first continuation line', 8, block_no=3, y1=142.0, x1=32.0),
+            line('another continuation line', 9, block_no=3, y1=154.0, x1=32.0),
+            line('Second reference at the outer margin', 10, block_no=3, y1=166.0),
+            line('second continuation line', 11, block_no=3, y1=178.0, x1=32.0),
+            line('another continuation line', 12, block_no=3, y1=190.0, x1=32.0),
+            line('Third reference at the outer margin', 13, block_no=3, y1=202.0),
+            line('third continuation line', 14, block_no=3, y1=214.0, x1=32.0),
+        ]
+
+        hanging_indents = build_page_context(lines).hanging_indents
+
+        self.assertEqual(len(hanging_indents), 1)
+        self.assertGreaterEqual(hanging_indents[0].y_min, 130.0)
 
     def test_splits_on_unusually_large_vertical_advance(self) -> None:
         lines = [

@@ -18,6 +18,9 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
   font size and family, line spacing, indentation, alignment, and line-length
   evidence. New boundaries are not introduced solely by changes between font
   faces such as regular and bold.
+- Repeated hanging-indent regions are now learned per page and column, so
+  outdented first lines start paragraphs while indented reference continuations
+  remain attached.
 - Words split by line-final hyphens are now rejoined within detected blocks,
   using document-wide spelling evidence and conservative fallback heuristics
   to retain lexical hyphens. Coordination hyphens are preserved using link
