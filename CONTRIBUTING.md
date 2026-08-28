@@ -5,7 +5,7 @@ easy to inspect, and checked against real PDFs.
 
 These notes are for contributors working on the project.
 
-## Development Setup
+## Development setup
 
 Use Python 3.11 or newer.
 
@@ -22,7 +22,7 @@ code changes to be picked up:
 pipx install -e .
 ```
 
-## Coding Style
+## Coding style
 
 The project uses Ruff and basedpyright. Important local style settings are in
 `pyproject.toml`:
@@ -36,6 +36,9 @@ The project uses Ruff and basedpyright. Important local style settings are in
 Custom-written Markdown files in the repository should usually be wrapped at
 78 characters. Headings, code blocks, tables, URLs, literal paths, and
 generated output may be longer.
+
+Use sentence case for Markdown headings, retaining the standard capitalization
+of proper nouns and acronyms.
 
 Before considering a code change done, run:
 
@@ -57,7 +60,7 @@ Add notable user-facing changes to the `Unreleased` section of `CHANGELOG.md`.
 When preparing a release, rename that section to the new version and release
 date, then add a fresh `Unreleased` section above it.
 
-## Running Unit Tests
+## Running unit tests
 
 The complete unit test suite can also be run from the `tests` directory:
 
@@ -69,7 +72,7 @@ make
 This Makefile is independent of the corpus conversion targets in
 `tests/pdf-corpus`.
 
-## Adding Unit Tests
+## Adding unit tests
 
 There is no need to redundantly unit-test high-level extraction behavior that
 is already covered by comparisons against expected files in `tests/pdf-corpus`.
@@ -86,7 +89,7 @@ When adding unit tests:
 - Follow the existing `unittest` structure and use descriptive test names.
 - Run `cd tests && make` before submitting changes.
 
-## Testing With The PDF Corpus
+## Testing with the PDF corpus
 
 The semi-manual corpus lives in `tests/pdf-corpus`.
 
@@ -121,7 +124,7 @@ file.md
 Only files with expected counterparts are checked by `make diff`. Other
 generated files are useful for visual inspection and debugging.
 
-## Working With Corpus Outputs
+## Working with corpus outputs
 
 Be careful with generated corpus files. They are often used for manual
 comparison, not only automated pass/fail testing.
@@ -134,7 +137,7 @@ cp tests/pdf-corpus/example.pdf /tmp/example.pdf
 frompdf /tmp/example.pdf
 ```
 
-## Heuristic Guidelines
+## Heuristic guidelines
 
 Prefer conservative recognition. Missing a heading, quote, or special block is
 usually easier to fix later than incorrectly converting ordinary body text.
@@ -151,7 +154,7 @@ When changing a heuristic:
 Avoid adding broad rules based on one PDF unless the rule is guarded by
 signals that make sense in other documents too.
 
-## Implementation Notes
+## Implementation notes
 
 Keep this section in sync when a change adds or removes modules, changes the
 core records or block types, or alters the pipeline stages described below.

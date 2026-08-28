@@ -45,7 +45,7 @@ With diagnostic options, it can also write:
 If `file.md` already exists, frompdf renames it to `file.md.bak` before
 writing the new output. Overwriting an existing `.bak` file is allowed.
 
-## Current Markdown Features
+## Current Markdown features
 
 frompdf currently detects and serializes:
 
@@ -157,7 +157,7 @@ structure has to be inferred. Current limitations include:
 The diagnostic CSV files are part of the workflow: they make it easier to see
 why a specific line or block was classified the way it was.
 
-## Planned Direction
+## Planned direction
 
 Planned next improvements include:
 
