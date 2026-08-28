@@ -960,13 +960,16 @@ Nature 465, 901–904 (2010).
 
 3. Heinze, S. et al. Spontaneous atomic-scale magnetic skyrmion lattice in two
 dimensions. Nat. Phys. 7, 713–718 (2011).
+
 4. Nagaosa, N. & Tokura, Y. Topological properties and dynamics of magnetic
 skyrmions. Nat. Nano 8, 899–911 (2013).
+
 5. Neubauer, A. et al. Topological hall effect in the a phase of MnSi. Phys. Rev.
 Lett. 102, 186602 (2009).
 
 6. Lee, M., Kang, W., Onose, Y., Tokura, Y. & Ong, N. P. Unusual Hall Effect
 anomaly in MnSi under pressure. Phys. Rev. Lett. 102, 186601 (2009).
+
 7. Schulz, T. et al. Emergent electrodynamics of skyrmions in a chiral magnet.
 Nat. Phys. 8, 301–304 (2012).
 
@@ -980,11 +983,11 @@ T146, 14020 (2012).
 Sci. Rep. 4, 6784 (2014).
 
 11. Yu, G. et al. Room-temperature skyrmion shift device for memory application.
-
 Nano Lett. 17, 261–268 (2017).
 
 12. Koshibae, W. & Nagaosa, N. Creation of skyrmions and antiskyrmions by
 local heating. Nat. Commun. 5, 5148 (2014).
+
 13. Jiang, W. et al. Blowing magnetic skyrmion bubbles. Science 349, 283
 LP–283286 (2015).
 
@@ -993,40 +996,54 @@ skyrmions. Sci. Rep. 5, 9552 (2015).
 
 15. Oike, H. et al. Interplay between topological and thermodynamic stability in a
 metastable magnetic skyrmion lattice. Nat. Phys. 12, 62–66 (2016).
+
 16. Woo, S. et al. Spin-orbit torque-driven skyrmion dynamics revealed by time-resolved
 X-ray microscopy. Nat. Commun. 8, 15573 (2017).
+
 17. Finazzi, M. et al. Laser-Induced magnetic nanostructures with tunable
 topological properties. Phys. Rev. Lett. 110, 177205 (2013).
+
 18. Eggebrecht, T. et al. Light-induced metastable magnetic texture uncovered by
 in situ Lorentz microscopy. Phys. Rev. Lett. 118, 097203 (2017).
+
 19. Fujita, H. & Sato, M. Ultrafast generation of skyrmionic defects with vortex
 beams: Printing laser profiles on magnets. Phys. Rev. B 95, 054421 (2017).
+
 20. Berruto, G. et al. Laser-induced skyrmion writing and erasing in an ultrafast cryo-lorentz
 transmission electron microscope. Phys. Rev. Lett. 120, 117201 (2018).
+
 21. Je, S.-G. et al. Creation of magnetic skyrmion bubble lattices by ultrafast laser
 in ultrathin films. Nano Lett. 18, 7362–7371 (2018).
+
 22. Taguchi, K., Ohe, J. & Tatara, G. Ultrafast magnetic vortex core switching driven
 by the topological inverse Faraday effect. Phys. Rev. Lett. 109, 127204 (2012).
+
 23. Padmanabhan, P. et al. Optically driven collective spin excitations and
 magnetization dynamics in the Néel-type Skyrmion Host GaV4S8. Phys. Rev.
 Lett. 122, 107203 (2019).
 
 24. Kirilyuk, A., Kimel, A. V. & Rasing, T. Ultrafast optical manipulation of
 magnetic order. Rev. Mod. Phys. 82, 2731–2784 (2010).
+
 25. Kampfrath, T. et al. Coherent terahertz control of antiferromagnetic spin
 waves. Nat. Photonics 5, 31–34 (2011).
 
 26. Radu, I. et al. Transient ferromagnetic-like state mediating ultrafast reversal of
 antiferromagnetically coupled spins. Nature 472, 205 (2011).
+
 27. Kurihara, T. et al. Macroscopic magnetization control by symmetry breaking
 of photoinduced spin reorientation with intense terahertz magnetic near field.
 Phys. Rev. Lett. 120, 107202 (2018).
+
 28. Schlauderer, S. et al. Temporal and spectral fingerprints of ultrafast allcoherent
 spin switching. Nature 569, 383–387 (2019).
+
 29. Langner, M. C. et al. Nonlinear ultrafast spin scattering in the Skyrmion Phase
 of Cu2OSeO3. Phys. Rev. Lett. 119, 107204 (2017).
+
 30. Versteeg, R. B. et al. Coupled dynamics of long-range and cluster-internal spin
 order in the cluster Mott insulator Cu2OSeO3. Phys. Rev. B 100, 064401 (2019).
+
 31. Bauer, G. E. W., Saitoh, E. & van Wees, B. J. Spin caloritronics. Nat. Mater. 11,
 391–399 (2012).
 
@@ -1036,6 +1053,7 @@ Phys. 9, 636–639 (2013).
 
 33. Kezsmarki, I. et al. Néel-type skyrmion lattice with confined orientation in the
 polar magnetic semiconductor GaV4S8. Nat. Mater. 14, 1116–1122 (2015).
+
 34. Butykai, Á. et al. Characteristics of ferroelectric-ferroelastic domains in Néel-type
 skyrmion host GaV4S8. Sci. Rep. 7, 44663 (2017).
 
@@ -1044,22 +1062,25 @@ magnetoelectric effect in a Néel-type skyrmion host. npj Quantum Mater. 5,
 44 (2020).
 
 36. Ehlers, D. et al. Exchange anisotropy in the skyrmion host GaV4S8. J. Phys.
-
 Condens. Matter 29, 065803 (2017).
 
 37. Leonov, A. O. & Kézsmárki, I. Skyrmion robustness in noncentrosymmetric
 magnets with axial symmetry: The role of anisotropy and tilted magnetic
 fields. Phys. Rev. B 96, 214413 (2017).
+
 38. Leonov, A. O. & Kézsmárki, I. Asymmetric isolated skyrmions in polar
 magnets with easy-plane anisotropy. Phys. Rev. B 96, 014423 (2017).
+
 39. Reschke, S. et al. Optical conductivity in multiferroic GaV4S8 and GeV4S8:
 Phonons and electronic transitions. Phys. Rev. B 96, 144302 (2017).
+
 40. Reschke, S. et al. Lattice dynamics and electronic excitations in a large family
 of lacunar spinels with a breathing pyrochlore lattice structure. Phys. Rev. B
 101, 075118 (2020).
 
 41. Ogasawara, T. et al. General features of photoinduced spin dynamics in
 ferromagnetic and ferrimagnetic compounds. Phys. Rev. Lett. 94, 087202 (2005).
+
 42. Ruff, E. et al. Multiferroicity and skyrmions carrying electric polarization in
 GaV4S8. Sci. Adv. 1, e1500916 (2015).
 
@@ -1073,8 +1094,10 @@ excitations in the polar ferromagnet GaV4S8. Phys. Rev. Lett. 122, 057202
 45. Onose, Y., Okamura, Y., Seki, S., Ishiwata, S. & Tokura, Y. Observation of
 magnetic excitations of skyrmion crystal in a helimagnetic insulator
 Cu2OSeO3. Phys. Rev. Lett. 109, 037603 (2012).
+
 46. Mochizuki, M. Spin-wave modes and their intense excitation effects in
 Skyrmion crystals. Phys. Rev. Lett. 108, 017601 (2012).
+
 47. Rajeswari, J. et al. Filming the formation and fluctuation of skyrmion domains
 by cryo-Lorentz transmission electron microscopy. Proc. Natl Acad. Sci. 112,
 14212–14217 (2015).
@@ -1090,12 +1113,16 @@ semiconducting and insulating chiral magnets. Nat. Mater. 14, 478–483
 50. Garst, M., Waizner, J. & Grundler, D. Collective spin excitations of helices and
 magnetic skyrmions: review and perspectives of magnonics in noncentrosymmetric
 magnets. J. Phys. D. Appl. Phys. 50, 293002 (2017).
+
 51. Prasai, N. et al. Spin phases of the helimagnetic insulator Cu2OSeO3 probed by
 magnon heat conduction. Phys. Rev. B 99, 020403(R) (2019).
+
 52. Janoschek, M. et al. Helimagnon bands as universal excitations of chiral
 magnets. Phys. Rev. B 81, 214436 (2010).
+
 53. Kugler, M. et al. Band structure of helimagnons in MnSi resolved by inelastic
 neutron scattering. Phys. Rev. Lett. 115, 097203 (2015).
+
 54. Dornes, C. et al. The ultrafast Einstein-de Haas effect. Nature 565, 209–212
 (2019).
 
@@ -1104,6 +1131,7 @@ neutron scattering. Phys. Rev. Lett. 115, 097203 (2015).
 
 56. Nikolaev, S. A. & Solovyev, I. V. Microscopic theory of electric polarization
 induced by skyrmionic order in GaV4S8. Phys. Rev. B 99, 100401(R) (2019).
+
 57. Ihlefeld, J. F. et al. Room-temperature voltage tunable phonon thermal
 conductivity via reconfigurable interfaces in ferroelectric thin films. Nano Lett.
 15, 1791–1795 (2015).

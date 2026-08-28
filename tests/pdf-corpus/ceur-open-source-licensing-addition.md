@@ -436,9 +436,8 @@ Gomulkiewicz, R. W. (2009). Open source license proliferation: Helpful diversity
 hopeless confusion. Wash. UJL & Pol’y, 30, 261.
 
 Goodman-Wilson, D. (2020). Open source is broken. FOSDEM. Brussels, Belgium.
-
-> Retrieved from https://mirrors.dotsrc.org/fosdem/2020/UB5.230/
-> ethicsoss.webm
+Retrieved from https://mirrors.dotsrc.org/fosdem/2020/UB5.230/
+ethicsoss.webm
 
 Hofmann, G., Riehle, D., Kolassa, C., & Mauerer, W. (2013). A dual model of open
 source license growth. In IFIP International Conference on Open Source Systems,
@@ -446,9 +445,8 @@ source license growth. In IFIP International Conference on Open Source Systems,
 
 Johnson, P. (2021). Open source licenses in 2021: Trends and predictions. Accessed
 2021-06-07.
-
-> Retrieved from https://www.whitesourcesoftware.com/resources/blog/
-> open-source-licenses-trends-and-predictions
+Retrieved from https://www.whitesourcesoftware.com/resources/blog/
+open-source-licenses-trends-and-predictions
 
 Lerner, J., & Tirole, J. (2005). The scope of open source licensing. Journal of Law,
 Economics, and Organization, 21(1), 20–56.
@@ -464,9 +462,8 @@ Schoettle, H. (2019). Open source license compliance-why and how? Computer, 52(8
 63–67.
 
 Stallman, R. (2013). Why programs must not limit the freedom to run them.
-
-> Retrieved from https://www.gnu.org/philosophy/
-> programs-must-not-limit-freedom-to-run.html
+Retrieved from https://www.gnu.org/philosophy/
+programs-must-not-limit-freedom-to-run.html
 
 Tusky (2019). Tusky pull request #1303 · tuskyapp/tusky.
 Retrieved from https://github.com/tuskyapp/Tusky/pull/1303/

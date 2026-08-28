@@ -368,22 +368,30 @@ counterclockwise, for a total of O(n log2 U) messages.
 References
 1 H. Attiya and J. L. Welch. Distributed Computing: Fundamentals, Simulations, and Advanced
 Topics. Wiley, 2004.
+
 2 P. Boldi, S. Shammah, S. Vigna, B. Codenotti, P. Gemmell, and J. Simon. Symmetry breaking
 in anonymous networks: Characterizations. In ISTCS 1996, pages 16–26, 1996.
+
 3 P. Boldi and S. Vigna. Fibrations of graphs. Discrete Mathematics, 243(1):21–66, 2002.
 doi:10.1016/S0012-365X(00)00455-6.
+
 4 C. Cachin, R. Guerraoui, and L. Rodrigues. Introduction to Reliable and Secure Distributed
 Programming. Springer, 2011.
+
 5 A. Casteigts, Y. Métivier, J.M. Robson, and A. Zemmari. Counting in one-hop beeping
 networks. Theoretical Computer Science, 780:20–28, 2019. doi:10.1016/J.TCS.2019.02.009.
+
 6 A. Casteigts, Y. Métivier, J.M. Robson, and A. Zemmari. Design patterns in beeping
 algorithms: Examples, emulation, and analysis. Information and Computation, 264:32–51,
 2019. doi:10.1016/J.IC.2018.10.001.
+
 7 K. Censor-Hillel, S. Cohen, R. Gelles, and G. Sela. Distributed computations in fully-defective
 networks. Distributed Computing, 36(4):501–528, 2023. doi:10.1007/S00446-023-00452-2.
+
 8 J. Chalopin, E. Godard, and Y. Métivier. Election in partially anonymous networks with
 arbitrary knowledge in message passing systems. Distributed Computing, 25(4):297–311, 2012.
 doi:10.1007/S00446-012-0163-Y.
+
 9 A. Cornejo and F. Kuhn. Deploying wireless networks with beeps. In DISC 2010, volume
 6343 of Lecture Notes in Comput. Sci., pages 148–162. Springer, 2010. doi:10.1007/
 978-3-642-15763-9_15.

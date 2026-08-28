@@ -828,8 +828,8 @@ To view a copy of this licence, visit http://creativecommons.org/licenses/by/4.0
 
 Assmann, A. (2009). Archive im Wandel der Mediengeschichte. In K. Ebeling & S. Günzel (Eds.),
 Archivologie. Theorien des Archivs in Philosophie, Medien und Künsten (pp. 165–175). Kadmos.
-Baldick, C. (2015a). Chick lit [2008]. In C. Baldick (Ed.), The Oxford dictionary of literary terms (pp. 57–58).
 
+Baldick, C. (2015a). Chick lit [2008]. In C. Baldick (Ed.), The Oxford dictionary of literary terms (pp. 57–58).
 4th ed. Oxford UP.
 
 Baldick, C. (2015b) Lad lit [2008]. In C. Baldick (Ed.), The oxford dictionary of literary terms (p. 195). 4th ed.
@@ -844,76 +844,95 @@ Sprach- und Literaturwissenschaft (pp. 212–227). Facultas.
 
 Chicklit.co.uk. (6 Nov. 2002). Home and competitions. https://web.archive.org/web/20021106194720/http://
 www.chicklit.co.uk:80/. Accessed 21 July 2020.
+
 Chicklit.co.uk. (1 June 2003). Ladlit. https://web.archive.org/web/20030601232145/http://chicklit.co.uk:80/
 ladlit.asp. Accessed 29 July 2020.
+
 Chicklit.co.uk. (3 Feb. 2006). Home. https://web.archive.org/web/20060203215126/http://www.chicklit.co.
-
 uk:80/articles/. Accessed 21 July 2020.
-Chicklit.co.uk. (15 July 2007). About us. https://web.archive.org/web/20070715153700/http://www.chicklit.
 
+Chicklit.co.uk. (15 July 2007). About us. https://web.archive.org/web/20070715153700/http://www.chicklit.
 co.uk/articles/about_us.asp. Accessed 21 July 2020.
+
 Chicklitbooks.com. (11 Oct. 2003). Frequently asked questions. https://web.archive.org/web/
 20031011005846/http://chicklitbooks.com:80/faq.html. Accessed 21 July 2020.
-Chicklitbooks.com. (16 June 2004a). Home. https://web.archive.org/web/20040616015212/http://www.
 
+Chicklitbooks.com. (16 June 2004a). Home. https://web.archive.org/web/20040616015212/http://www.
 chicklitbooks.com/. Accessed 21 July 2020.
+
 Chicklitbooks.com. (9 Dec. 2004b). What is chick lit?. https://web.archive.org/web/20041209172906/http://
 www.chicklitbooks.com:80/whatis.php. Accessed 21 July 2020.
+
 Chicklitbooks.com. (9 Feb. 2005a). What is chick lit?. https://web.archive.org/web/20050209084737/http://
 chicklitbooks.com:80/whatis.php. Accessed 21 July 2020.
-Chicklitbooks.com. (3 June 2005b). Home. https://web.archive.org/web/20050603075624/http://www.
 
+Chicklitbooks.com. (3 June 2005b). Home. https://web.archive.org/web/20050603075624/http://www.
 chicklitbooks.com/. Accessed 21 July 2020.
+
 Chicklitbooks.com. (25 Nov. 2005c). Multicultural chick lit. http://web.archive.org/web/20051125124151/
 http://chicklitbooks.com/all/multiculturallit.php. Accessed 1 Aug. 2020.
-Chicklitbooks.com. (14 Oct. 2006). Home. https://web.archive.org/web/20061014035302/, http://www.
 
+Chicklitbooks.com. (14 Oct. 2006). Home. https://web.archive.org/web/20061014035302/, http://www.
 chicklitbooks.com/. Accessed 21 July 2020.
+
 Chicklitbooks.com. (1 Aug. 2009). Home. https://web.archive.org/web/20090801114026/http://www.
 chicklitbooks.com/. Accessed 21 July 2020.
 
 Chicklitbooks.com. (22 Sept. 2012). What is chick lit?. https://web.archive.org/web/20120922045224/http://
 chicklitbooks.com/what-is-chick-lit/. Accessed 21 July 2020.
+
 Coburn, J. (2012). The decline of chick lit. The San Diego Union-Tribune. http://web.archive.org/web/
 20200920133413/https://www.sandiegouniontribune.com/entertainment/books/sdut-the-decline-of-chick-lit-2012feb11-story.html.
 Accessed 20 Sept. 2020.
+
 Ferriss, S. & Young, M. (2006). Introduction. In S. Ferriss & M. Young (Eds.), Chick lit: the new woman’s
 fiction (pp. 1–13). Routledge.
 
 Ferriss, S. & Young, M. (2008). Introduction. Chick flicks and chick culture. In S. Ferriss & M. Young (Eds.),
 Chick flicks: contemporary women at the movies (pp. 1–25). Routledge.
+
 Friedman, S. (2012). World modernisms, world literature, and comparativity. In M. A. Wollaeger & M.
 Eatough (Eds.), The Oxford Handbook of Global Modernisms (pp. 499–525). Oxford UP.
+
 Gunne, S. (2016). World-literature, world-systems, and Irish Chick lit. In J. Habjan & F. Imlinger (Eds.),
 Globalizing literary genres: Literature, History, Modernity (pp. 241–253). Routledge.
+
 Hooten, J. L. (2007). In the classroom or in the bedroom (Review of Ferriss & Young (Eds.), Chick lit: The
 new woman’s fiction 2006). JASNA News, 23(1), 21.
+
 Hube, C., Fischer, F., Jöschke, R., Lauer G., Thomsen, M. R. (2017). World literature according to wikipedia:
 Introduction to a DBpedia-based framework. arXiv.org. https://arxiv.org/abs/1701.00991.
+
 Hurt, E. (Ed.). (2019a). Theorizing ethnicity and nationality in the chick lit genre. Routledge.
+
 Hurt, E. (Ed.) (2019b). The white Terry McMillan. Centering black women within chick lit’s genealogy. In E.
 Hurt (Ed.), Theorizing ethnicity and nationality in the Chick lit genre (pp. 150–174). Routledge.
+
 Kemp, S. (2019). Digital 2019: Global digital overview. https://web.archive.org/web/20200908213048/
 https://datareportal.com/reports/digital-2019-global-digital-overview. Accessed 16 Sept. 2020.
+
 Mazza, C. (1995). What is postfeminist fiction? In C. Mazza & J. DeShell (Eds.), Chick-lit: postfeminist fiction
 (pp. 8–9). Carbondale: Fiction collective 2.
-Mazza, C. (2006). Who’s laughing now? A short history of Chick lit and the perversion of a genre. In: S.
 
+Mazza, C. (2006). Who’s laughing now? A short history of Chick lit and the perversion of a genre. In: S.
 Ferriss & M. Young (Eds.), Chick lit: the new woman’s fiction (pp. 17–28). Routledge.
+
 Mazza, C. & DeShell, J. (Eds.) (1995). Chick-lit: postfeminist fiction. carbondale: fiction collective 2.
+
 Missler, H. (2016). The cultural politics of Chick lit: Popular fiction, Postfeminism and representation.
 Routledge.
 
 Peitz, A. (2010). Chick lit: Genrekonstituierende Untersuchungen unter anglo-amerikanischem Einfluss.
-
 Frankfurt am Main et al.: Peter Lang.
+
 Sherwin, A. (2011). Have we fallen out of love with chick lit? Independent. https://web.archive.org/web/
 20191110095214/https://www.independent.co.uk/arts-entertainment/books/features/have-we-fallen-out-of-love-with-chick-lit-2361445.html.
 Accessed 16 Sept. 2020.
+
 Smith, C. J. (2008). Cosmopolitan culture and consumerism in Chick lit. Routledge.
+
 Staff & Agencies. (2001). Bainbridge denounces chick-lit as “froth”. The Guardian. https://web.archive.org/
 web/20190411232047/https://www.theguardian.com/books/2001/aug/23/bookerprize2001.bookerprize.
-
 Accessed 16 Sept. 2020.
 
 Van Dijk, Z. (2015). Die Wikipedia – das ideale Hilfsmittel für den Einstieg in ein historisches Thema? In T.
@@ -923,67 +942,82 @@ Gruyter.
 West, A. G., & Lee, I. (2011). What wikipedia deletes: characterizing dangerous collaborative content. In
 WikiSym ‘11: Proceedings of the 7th International Symposium on Wikis and Open Collaboration (pp. 25–28).
 https://doi.org/10.1145/2038558.2038563.
-Wikipedia. (22 July 2004). Chick lit. https://en.wikipedia.org/w/index.php?title=Chick_lit&oldid=4789452.
 
+Wikipedia. (22 July 2004). Chick lit. https://en.wikipedia.org/w/index.php?title=Chick_lit&oldid=4789452.
 Accessed 21 July 2020.
 
 Wikipedia. (15.12.2005). Chick lit. https://en.wikipedia.org/w/index.php?title=Chick_lit&oldid=31493513.
-
 Accessed 23 July 2020.
 
 Wikipedia. (3 Jan. 2006a). Talk: chick lit (sec. 5: connotations and origin of term). https://en.wikipedia.org/w/
 index.php?title=Talk:Chick_lit&oldid=969364576. Accessed 30 July 2020.
-Wikipedia. (4 May 2006b). Chick lit. https://en.wikipedia.org/w/index.php?title=Chick_lit&oldid=51523959.
 
+Wikipedia. (4 May 2006b). Chick lit. https://en.wikipedia.org/w/index.php?title=Chick_lit&oldid=51523959.
 Accessed 21 July 2020.
 
 Wikipedia. (16 Dec. 2006c). Chick lit. https://en.wikipedia.org/w/index.php?title=Chick_lit&oldid=
 94749285. Accessed 21 July 2020.
+
 Wikipedia. (24 Dec. 2007). Chick lit. https://en.wikipedia.org/w/index.php?title=Chick_lit&oldid=
 179885812. Accessed 23 July 2020.
+
 Wikipedia. (25 Dec. 2008). Chick lit. https://en.wikipedia.org/w/index.php?title=Chick_lit&oldid=
 260030886. Accessed 23 July 2020.
 
 Wikipedia. (27 Dec. 2009). Chick lit. https://en.wikipedia.org/w/index.php?title=Chick_lit&oldid=
 334179241. Accessed 23 July 2020.
-Wikipedia. (30 Oct. 2011). Chick lit. https://en.wikipedia.org/w/index.php?title=Chick_lit&oldid=458064897.
 
+Wikipedia. (30 Oct. 2011). Chick lit. https://en.wikipedia.org/w/index.php?title=Chick_lit&oldid=458064897.
 Accessed 23 July 2020.
 
 Wikipedia. (11 Feb. 2014). Chick lit. https://en.wikipedia.org/w/index.php?title=Chick_lit&oldid=
 594999667. Accessed 21 July 2020.
+
 Wikipedia. (13 Jan. 2015a). Talk: chick lit (sec. 19: Which PC halfwit wrote the ‘criticism’ section?). https://
 en.wikipedia.org/w/index.php?title=Talk:Chick_lit&oldid=969364576. Accessed 30 July 2020.
+
 Wikipedia. (10 Dec. 2015b). Chick lit. https://en.wikipedia.org/w/index.php?title=Chick_lit&oldid=
 694622566. Accessed 23 July 2020.
+
 Wikipedia. (10 Dec. 2015c). Chick lit: revision history. https://en.wikipedia.org/w/index.php?title=Chick_
 lit&offset=20170920193653%7C801616364&action=history. Accessed 30 July 2020.
-Wikipedia. (7 Dec. 2016). Chick lit. https://en.wikipedia.org/w/index.php?title=Chick_lit&oldid=753512396.
 
+Wikipedia. (7 Dec. 2016). Chick lit. https://en.wikipedia.org/w/index.php?title=Chick_lit&oldid=753512396.
 Accessed 23 July 2020.
 
 Wikipedia. (21 April 2020a). Researching with Wikipedia. https://en.wikipedia.org/w/index.php?title=
 Wikipedia:Researching_with_Wikipedia&oldid=952202689. Accessed 23 July 2020.
+
 Wikipedia. (11 July 2020b). Wikipedia: notability. https://en.wikipedia.org/w/index.php?title=Wikipedia:
 Notability&oldid=967201154. Accessed 16 Sept. 2020.
+
 Wikipedia. (22 June 2020c). Chick lit. https://en.wikipedia.org/w/index.php?title=Chick_lit&oldid=
 963866005. Accessed 21 July 2020.
+
 Wikipedia. (22 June 2020d). Chick lit, authorship. https://xtools.wmflabs.org/authorship/en.wikipedia.org/
 Chick%20lit. Accessed 1 Aug 2020.
+
 Wikipedia. (12 July 2020e). Gender bias on Wikipedia. https://en.wikipedia.org/w/index.php?title=Gender_
 bias_on_Wikipedia&oldid=967296726. Accessed 30 July 2020.
+
 Wikipedia. (12 July 2020f). Neutral point of view. https://en.wikipedia.org/w/index.php?title=Wikipedia:
 Neutral_point_of_view&oldid=967336587. Accessed 30 July 2020.
+
 Wikipedia. (20 July 2020g). Wikipedia. https://en.wikipedia.org/w/index.php?title=Wikipedia&oldid=
 968545007. Accessed 21 July 2020.
+
 Wikipedia. (24 July 2020h). Wikipedians. https://en.wikipedia.org/w/index.php?title=Wikipedia:
 Wikipedians&oldid=969260024#Demographics. Accessed 30 July 2020.
+
 Wikipedia. (29 July 2020i). Wikipedia: etiquette. https://en.wikipedia.org/w/index.php?title=Wikipedia:
 Etiquette&oldid=970206082. Accessed 1 Aug. 2020.
+
 Wikipedia. (30 July 2020j). Racial bias on Wikipedia. https://en.wikipedia.org/w/index.php?title=Racial_
 bias_on_Wikipedia&oldid=965571790. Accessed 1 Aug. 2020.
+
 Wikipedia. (21 Aug. 2020k). Wikipedia: administration. https://en.wikipedia.org/w/index.php?title=
 Wikipedia:Administration&oldid=974249589. Accessed 16 Sept. 2020.
+
 Wojcik, P. & Picard, S. (2019). Klassiker@wikipedia. Klassikforschung und Digital Humanities. Ein
 Kommentar zur Studie World Literature According to Wikipedia. In S. Matuschek, S. Picard, P.
 Wojcik & M. Wolting (Eds.), Klassik als kulturelle Praxis: Funktional, intermedial, transkulturell

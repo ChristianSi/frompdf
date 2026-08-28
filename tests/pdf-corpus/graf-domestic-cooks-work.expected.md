@@ -567,10 +567,12 @@ be described as a terroir-like concept. Simenel (2010) even argues that rural Mo
 accord more value to their terroir than rural societies in France. However, as soon as a
 person or foods travel (including the ethnographer), the notion of terroir quickly loses its
 analytical capacity to explain relations between people, foods taste, and place in Morocco.
+
 8. Associations of taste with class are commonplace across class-divided societies. Based on
 Bourdieu’s notion of class distinction in French society, Wilk (1999) provides a useful
 comparative perspective on how tastes for certain foods—for example, lobster—were
 linked to colonial-era class identities in Belize.
+
 9. Indeed, see Butler 2013.
 
 References
@@ -578,62 +580,84 @@ References
 Akesbi, Najib. 2014. “Which Agricultural Policy for Which Food Security in Morocco?” In
 Seasonal Workers in Mediterranean Agriculture: The Social Costs of Eating Fresh, edited by
 Jörg Gertel and Ruth S. Sippel, 167–74. London: Routledge.
+
 Amine, Abdelmajid, and Najoua Lazzaoui. 2011. “Shoppers’ Reactions to Modern Food Retailing
 Systems in an Emerging Country: The Case of Morocco.” International Journal of
 Retail & Distribution Management 29(8): 562–81.
+
 Boeckler, Marc, and Christian Berndt. 2014. “B/ordering the Mediterranean: Free Trade,
 Fresh Fruits and Fluid Fixity.” In Seasonal Workers in Mediterranean Agriculture: The Social
 Costs of Eating Fresh, edited by Jörg Gertel and Ruth S. Sippel, 23–35. London: Routledge.
+
 Butler, Julie. 2013. “World Olive Oil Production Drops by a Quarter, Council Predicts.” Olive
 Oil Times, 11 March. Retrieved 6 June 2024 from https://www.oliveoiltimes.com/
 business/world-olive-oil-production-drops/33212.
+
 Codron, Jean-Marie, Zouhair Bouhsina, Fatiha Fort, Emilie Coudel, and Aurelie Puech. 2004.
 “Supermarkets in Low-Income Mediterranean Countries: Impact on Horticulture Systems.”
 Development Policy Review 22(5): 587–602.
+
 Graf, Katharina. 2015. “Beldi Matters: Negotiating Proper Food in Urban Moroccan Food
 Consumption and Preparation.” In Halal Matters: Islam, Politics and Markets in Global
 Perspective, edited by Florence Bergeaud-Blackler, Johan Fischer, and John Lever, 72–90.
-
 London: Routledge.
+
 ———. 2018. “Cereal Citizens: Crafting Bread and Belonging in Urbanising Morocco.”
 Paideuma 64: 244–77.
+
 ———. 2024. Food and Families in the Making: Knowledge Reproduction and Political Economy
 of Cooking in Morocco. New York: Berghahn.
+
 Grasseni, Cristina. 2016. The Heritage Arena: Reinventing Cheese in the Italian Alps. New York:
 Berghahn.
+
 Grasseni, Cristina, and Heather Paxson. 2014. “Introducing a Special Issue on the Reinvention
 of Food: Connections and Mediations.” With Jim Bingen, Amy J. Cohen, Susanne Freidberg,
 and Harry G. West. Gastronomica 14(4): 1–6.
+
 Jazi, Salima. 2014. “Les valeurs de consommation bio et ‘beldi’ au Maroc.” Revue Marocaine de
 Recherche en Management et Marketing 9–10 (Janvier-Decembre): 209–23.
+
 Jonas, Joana. 2023. “Being Beldi: The Value and Prospects of the Rif Terroir.” Anthropology of
 Food 17: online. URL: https://journals.openedition.org/aof/14137.
+
 Montgomery, Mary. 2016. Personal communication, 6 June. London.
 
 Lambarraa-Lehnhardt, Fatima, Rico Ihle, and Hajar Elyoubi. 2021. “How Successful Is Origin
 Labeling in a Developing Country Context? Moroccan Consumers’ Preferences towards
 Local Products.” Sustainability 13: 8433.
+
 Paxson, Heather. 2013. The Life of Cheese: Crafting Food and Value in America. Berkeley: University
 of California Press.
+
 Rachik, Hassan. 1997. “Roumi et beldi: Reflexions sur la perception de l’occidental à travers
 une dichotomie locale.” Égypte/Monde Arabe 30–31: 293–302.
+
 Sarter, Gilles. 2004. “Entre beldi et roumi: Préférences des consommateurs urbains et production
 de poulets au Maroc.” Cahiers Agricultures 13: 75–78.
+
 Simenel, Romain. 2010. “Beldi/roumi: Une conception Marocaine du produit de terroir, l’ex-emple
 des Ait Ba’Amran de la région de Sidi Ifni.” Hespéris-Tamuda 45: 167–76.
+
 Sippel, Ruth S. 2014. Export(t)räume: Bruchzonen marokkanischer Landwirtschaft. Bielefeld:
 Transcript.
+
 Swearingen, Will D. 1987. Moroccan Mirages: Agrarian Dreams and Deceptions, 1912–1986.
 Princeton, NJ: Princeton University Press.
+
 Trubek, Amy B. 2008. The Taste of Place: A Cultural Journey into Terroir. Berkeley: University
 of California Press.
+
 West, Harry G. 2013 “Appellations and Indications of Origin, Terroir, and the Social Construction
 and Contestation of Place-Named Foods.” In The Handbook of Food Research, edited
 by Anne Murcott, Warren Belasco, and Peter Jackson, 209–28. London: Bloomsbury.
+
 ———. 2022. “Terroir Products: A Moveable Heritage Feast?” Review of Agriculture, Food &
 Environmental Studies 103(1): 1–27.
+
 Wilk, Richard. 1999. “‘Real Belizean Food’: Building Local Identity in the Transnational Caribbean.”
 American Anthropologist 101(2): 244–55.
+
 Zirari, Hayat. 2020. “Entre alimentation (makla) et nutrition (taghdia): Arbitrages et réinvention
 au quotidien des pratiques alimentaires en contexte urbain.” Hespéris-Tamuda 55(4):
 385–407.

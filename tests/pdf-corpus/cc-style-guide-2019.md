@@ -93,14 +93,19 @@ In order to achieve our mission, we:
 organization in the world a free, simple, and standardized way to grant copyright permissions
 for creative and academic works; ensure proper attribution; and allow others to copy, distribute,
 and make use of those works
+
 • Work closely with major institutions to ensure the correct use and implementation of CC licenses
 and CC-licensed content
+
 • Support the CC Global Network, a community initiative working to increase the volume, breadth,
 and quality of openly-available knowledge worldwide
+
 • Develop technology like CC Search that makes openly-licensed material easier to discover and
 use
+
 • Offer the Creative Commons Certificate, an in-depth course for people interested in becoming
 experts in creating and engaging with openly-licensed works
+
 • Produce CC Summit, an annual event that brings together an international group of educators,
 artists, technologists, legal experts, and activists to promote the power of open licensing and
 global access

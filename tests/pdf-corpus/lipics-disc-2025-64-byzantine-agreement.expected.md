@@ -395,6 +395,7 @@ May 2016. doi:10.1145/2898984.
 
 2 Sergey Blok, Douglas Medin, and Daniel Osherson. Probability from similarity. In AAAI
 Spring Symposium on Logical Formalization of Commonsense Reasoning, pages 36–42, 2003.
+
 3 Richard Ree Brooks and S. Sitharama Iyengar. Optimal matching algorithm for multidimensional
 sensor readings. In Sensor Fusion and Networked Robotics VIII, volume 2589. SPIE,
 September 1995. doi:10.1117/12.220948.
@@ -410,7 +411,9 @@ Reaching approximate agreement in the presence of faults. Journal of The Acm, 33
 the Strategyproofness of the Geometric Median. In Proceedings of The 26th International
 Conference on Artificial Intelligence and Statistics. PMLR, April 2023. URL: https://
 proceedings.mlr.press/v206/el-mhamdi23a.html.
+
 7 Peter J. Huber and Elvezio M. Ronchetti. Robust Statistics. Wiley, 2011.
+
 8 Kate Keahey, Jason Anderson, Zhuo Zhen, Pierre Riteau, Paul Ruth, Dan Stanzione, Mert
 Cevik, Jacob Colleran, Haryadi S. Gunawi, Cody Hammock, Joe Mambretti, Alexander
 Barnes, François Halbach, Alex Rocha, and Joe Stubbs. Lessons learned from the chameleon
