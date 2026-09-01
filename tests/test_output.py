@@ -27,7 +27,7 @@ class MarkdownOutputTests(unittest.TestCase):
         self.assertEqual(
             output.getvalue(),
             '## <<PAGE:1>>Title\n\n'
-            '> <<PAGE:2|51:2>>Quoted\n'
+            '> <<PAGE:2|LABEL:51:2>>Quoted\n'
             '> text\n\n'
             'More text\n\n'
             '<<PAGE:3>>Last page\n',

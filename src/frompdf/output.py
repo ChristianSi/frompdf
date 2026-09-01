@@ -54,7 +54,7 @@ def dump_page_numbers(page_number_list: list[PageNumber], output_path: Path) -> 
 def format_page_marker(page_number: PageNumber) -> str:
     """Format a Markdown page marker from raw and visible page numbers."""
     visible_suffix = (
-        f'|{page_number.visible}'
+        f'|LABEL:{page_number.visible}'
         if page_number.visible is not None and page_number.visible != str(page_number.raw)
         else ''
     )

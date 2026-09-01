@@ -133,10 +133,11 @@ frompdf -m ./document.pdf
 
 Each source page starts with a marker such as `<<PAGE:7>>`, containing its raw
 PDF page number. When a different visible page label was detected or safely
-inferred, the marker includes that label too, as in `<<PAGE:7|9>>`. The pipe
-separates the raw number from the visible label, so compound visible labels
-remain clear, as in `<<PAGE:2|51:2>>`. Markers are placed after Markdown
-prefixes such as `## ` for headings and `> ` for block quotes.
+inferred, the marker includes that label too, as in `<<PAGE:7|LABEL:9>>`.
+The `LABEL:` field distinguishes the visible label from the raw page number,
+including for compound visible labels such as `<<PAGE:2|LABEL:51:2>>`.
+Markers are placed after Markdown prefixes such as `## ` for headings and
+`> ` for block quotes.
 
 ### Diagnostic options
 
