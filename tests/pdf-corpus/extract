@@ -8,7 +8,7 @@ failed=0
 
 for pdf_file in *.pdf; do
     echo "Converting $pdf_file"
-    if ! frompdf --dump-lines --dump-pagenos "$pdf_file" >/dev/null; then
+    if ! frompdf --dump-lines --dump-pagenos --page-markers "$pdf_file" >/dev/null; then
         echo "Conversion failed: $pdf_file"
         failed=1
     fi

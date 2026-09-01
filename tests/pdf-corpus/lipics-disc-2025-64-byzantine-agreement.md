@@ -1,4 +1,4 @@
-# Brief Announcement:
+# <<PAGE:1>>Brief Announcement:
 
 # Proximal Byzantine Agreement: Improved
 
@@ -67,7 +67,7 @@ Leibniz International Proceedings in Informatics
 
 Schloss Dagstuhl – Leibniz-Zentrum für Informatik, Dagstuhl Publishing, Germany
 
-to effective operation. When that data is delayed, missing, or corrupted – whether from
+<<PAGE:2|64:2>>to effective operation. When that data is delayed, missing, or corrupted – whether from
 environmental noise, hardware faults, or malicious interference – the consequences can range
 from suboptimal performance to catastrophic, even unsafe, failures.
 
@@ -120,7 +120,7 @@ Mahaney and Schneider [12] distinguish Inexact Agreement (IA) from classical ABA
 redefining the validity property in terms of accuracy. Outputs are instead bound by their
 distance to a true value vˆ, which each nonfaulty replica’s initial value vi approximates.
 
-Our work concerns a new class of protocols that make an additional assumption, often
+<<PAGE:3|64:3>>Our work concerns a new class of protocols that make an additional assumption, often
 satisfied by the underlying data processed by IA systems. Stochastic Byzantine Agreement
 (SBA) protocols require that vˆ and nonfaulty vi are – or can be effectively approximated as
 being – distributed according to probability distributions. No assumptions are made about
@@ -187,7 +187,7 @@ output is an important feature of PBA protocols.
 
 In a sense, the strong assumptions of existing IA protocols [12, 4, 3] act as inputs about uncertainty.
 
-A well-known result [11] is that the displacement of the geometric median Gm(Q) of a
+<<PAGE:4|64:4>>A well-known result [11] is that the displacement of the geometric median Gm(Q) of a
 set of nonfaulty values is bounded when up to |F| < |Q| faulty values are added to the set.
 
 ▶ Lemma 2.2 (Theoretical maximum displacement [6, 11]). Let R = Q ∪ F, |Q| = s and
@@ -275,7 +275,7 @@ improve accuracy with more replicas, a distinguishing characteristic of PBA valu
 that more replicas are not required to ensure the safety or liveness properties of the system,
 yet still benefits from the increase in accuracy.
 
-Table 1 Replica set size. d is number of data dimensions.
+<<PAGE:5|64:5>>Table 1 Replica set size. d is number of data dimensions.
 
 > Algorithm n ≥
 > OneShot 4f + 1
@@ -331,7 +331,7 @@ j
 
 i
 
-Figure 2 Runtime benchmark (Pi Zero).
+<<PAGE:6|64:6>>Figure 2 Runtime benchmark (Pi Zero).
 
 ## 3 Evaluation
 
@@ -372,7 +372,7 @@ f = 1, d > 5 (with similar performance at lower d), and more than 4× faster at 
 In all f = 2, d = 4 scenarios, PBA significantly outperforms BVC (124×). While BI also
 exhibits scalable runtime in high-dimensional settings, each replica must produce outputs
 
-with a known error range that contains the true value, and that must also intersect the
+<<PAGE:7|64:7>>with a known error range that contains the true value, and that must also intersect the
 ranges of all other nonfaulty nodes. If these invariants are violated by any nonfaulty replica,
 the system may not withstand Byzantine attack. Even without an attack, the protocol could
 fail to terminate.
@@ -438,7 +438,7 @@ doi:10.1145/323596.323618.
 13 Keith Marzullo. Tolerating failures of continuous-valued sensors. ACM Transactions on
 Computer Systems, 8(4), November 1990. doi:10.1145/128733.128735.
 
-14 Hammurabi Mendes and Maurice Herlihy. Multidimensional approximate agreement in
+<<PAGE:8|64:8>>14 Hammurabi Mendes and Maurice Herlihy. Multidimensional approximate agreement in
 Byzantine asynchronous systems. In Proceedings of the Forty-Fifth Annual ACM Symposium
 on Theory of Computing. ACM, June 2013. doi:10.1145/2488608.2488657.
 

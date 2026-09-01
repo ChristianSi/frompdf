@@ -1,4 +1,4 @@
-MINISTERIO
+<<PAGE:1>>MINISTERIO
 
 > DE AGRICULTURA, PESCA
 > Y ALIMENTACION
@@ -58,7 +58,7 @@ cooperación con el FEGA.
 
 
 
-de 14 a 213
+<<PAGE:2>>de 14 a 213
 las capas vectoriales publicadas en el Visor SIGPAC nacional,
 continuándose hoy día los trabajos para aumentar la visualización y obtención
 de información del SIGC.
@@ -102,7 +102,7 @@ la nube necesarios para el procesamiento y almacenamiento de los datos a publica
 
 
 
-Respondiendo a las demandas y necesidades del sector empresarial y
+<<PAGE:3>>Respondiendo a las demandas y necesidades del sector empresarial y
 académico, tanto de visualización como de servir de complemento en el
 desarrollo de aplicaciones informáticas, y abierto al resto de agentes del sector
 agrario (agricultores, ganaderos, entidades colaboradoras y Administraciones
@@ -162,7 +162,7 @@ HVD más actualizados (campaña agrícola actual) y también su versión de la c
 
 
 
-reutilización de la información distribuida que estable la licencia pública Creative
+<<PAGE:4>>reutilización de la información distribuida que estable la licencia pública Creative
 Commons, Atribución/Reconocimiento Internacional (CC BY 4.0).
 Complementariamente, el documento Términos de uso de la información de alto
 valor del SIGC informa de las condiciones para la redistribución de la información
@@ -177,7 +177,7 @@ divulgación y reutilización (o redistribución) de la información.
 
 
 
-## Nuevos medios SIGPAC de divulgación de datos SIGC
+## <<PAGE:5>>Nuevos medios SIGPAC de divulgación de datos SIGC
 
 ## 1. Servicio de Teselas Vectoriales (MVT) de SIGPAC
 
@@ -214,7 +214,7 @@ datos geográficos: QGIS (software de código abierto); ArcGIS (software comerci
 
 
 
-consultar la cartografía de los Recintos y los Elementos del paisaje de la
+<<PAGE:6>>consultar la cartografía de los Recintos y los Elementos del paisaje de la
 campaña PAC vigente y la cartografía del Cultivo declarado de la campaña
 anterior.
 
@@ -244,7 +244,7 @@ HTTP de tipo REST (Representational state transfer).
 
 
 
-Actualmente pueden realizarse un total de 11 consultas diferentes, entre las que
+<<PAGE:7>>Actualmente pueden realizarse un total de 11 consultas diferentes, entre las que
 destacan:
 
 > - Propiedades de un recinto por códigos SIGPAC o coordenadas.
@@ -270,7 +270,7 @@ para su reutilización, entre otras, con las siguientes condiciones:
 
 
 
-- mediante interfaces de programación de aplicaciones (API).
+<<PAGE:8>>- mediante interfaces de programación de aplicaciones (API).
 
 Conforme a estas directrices, el servicio OGC API de SIGPAC, mediante la URL
 https://sigpac-hubcloud.es/ogcapi y siguiendo el estándar OGC API Features,
@@ -303,7 +303,7 @@ de longitud/latitud
 
 
 
-Actualmente se pueden consultar listas de códigos de:
+<<PAGE:9>>Actualmente se pueden consultar listas de códigos de:
 
 > - Provincias
 > - Municipios
@@ -342,7 +342,7 @@ componente y el navegador web.
 
 
 
-En Ejemplos Salida Gráfica SIGPAC se recogen algunos para los dos modos.
+<<PAGE:10>>En Ejemplos Salida Gráfica SIGPAC se recogen algunos para los dos modos.
 Así, en los de Salida Gráfica SIGPAC - Llamada URL se puede ver una llamada
 tipo a la capa de cultivo declarado:
 
@@ -385,7 +385,7 @@ Servicio Ventajas Limitaciones Propuestas de uso
 
 
 
-Servicio Ventajas Limitaciones Propuestas de uso
+<<PAGE:11>>Servicio Ventajas Limitaciones Propuestas de uso
 - Acceso selectivo a
 datos vectoriales
 
@@ -526,7 +526,7 @@ profesionales
 
 
 
-Servicio Ventajas Limitaciones Propuestas de uso
+<<PAGE:12>>Servicio Ventajas Limitaciones Propuestas de uso
 
 > - Desarrollo de
 > aplicaciones con
@@ -612,7 +612,7 @@ histórica de las capas de datos geoespaciales del SIGC de: Recintos para las
 
 
 
-campañas 2015 a 2023; Elementos del paisaje para la campaña 202313; y Cultivo
+<<PAGE:13>>campañas 2015 a 2023; Elementos del paisaje para la campaña 202313; y Cultivo
 Declarado para las campañas 2020 a 2023.
 
 Se desea que este proyecto esté finalizado a lo largo del 2026.

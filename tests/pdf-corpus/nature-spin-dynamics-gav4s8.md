@@ -1,4 +1,4 @@
-## Slowdown of photoexcited spin dynamics in the non-collinear spin-ordered phases in skyrmion host GaV4S8
+## <<PAGE:1>>Slowdown of photoexcited spin dynamics in the non-collinear spin-ordered phases in skyrmion host GaV4S8
 
 ### Fumiya Sekiguchi, Kestutis Budzinauskas, Prashant Padmanabhan, Rolf B. Versteeg, Vladimir Tsurkan, István Kézsmárki, Francesco Foggetti, Sergey Artyukhin, Paul H. M. van Loosdrecht
 
@@ -22,7 +22,7 @@ CC-BY 4.0: Creative Commons: Namensnennung
 Weitere Informationen finden Sie unter: / For more information see:
 https://creativecommons.org/licenses/by/4.0/deed.de
 
-### ARTICLE
+### <<PAGE:2|1>>ARTICLE
 
 https://doi.org/10.1038/s41467-022-30829-z OPEN
 
@@ -53,7 +53,7 @@ the step toward ultrafast photocontrol of the magnets with novel spin orders.
 and Magnetism, University of Augsburg, 86159 Augsburg, Germany. 3 Institute of Applied Physics, MD 2028 Chișinău, Republic of Moldova. 4 Istituto
 Italiano di Tecnologia, Via Morego 30, 16163 Genova, Italy. 5Dipartimento di Fisica, Università di Genova, Via Dodecaneso, 33, 16146 Genova, Italy. ✉email: sekiguchi.fumiya.2n@kyoto-u.ac.jp; pvl@ph2.uni-koeln.de
 
-I
+<<PAGE:3|2>>I
 n spin systems several types of interactions can coexist, and
 the competition among them sometimes results in the formation
 of novel spin ordering, which determines the static and
@@ -263,7 +263,7 @@ Fig. 1 Photoinduced Δθ dynamics in the different magnetic phases of GaV4S8.a M
 temperatures where trMOKE measurements were performed. b–e Δθ traces under different external magnetic fields at 8 K, 10 K, 11.5 K, and 14.5 K,
 respectively.
 
-a
+<<PAGE:4|3>>a
 
 c
 
@@ -499,7 +499,7 @@ during non-radiative carrier relaxation process41. After this initial
 > the data (black lines). To more clearly show the coherent
 > oscillatory component, we replot the data in Fig. 2b after
 
-subtracting the incoherent component. The magnetic-field
+<<PAGE:5|4>>subtracting the incoherent component. The magnetic-field
 dependence of the oscillation frequency is shown in Fig. 2c. At
 low magnetic fields in the Cyc phase, the frequency of the
 oscillation lies around ~4.7 GHz, which drops to ~3.5 GHz near
@@ -651,7 +651,7 @@ Fig. 3 Change of the remagnetization across the magnetic phase transition. Time 
 are plotted. The blue-shaded areas are guides to the eye indicating the magnetic phase transition. Error bars are the standard deviation of the fitting
 parameters.
 
-depending on the temperature, which is remarkable considering
+<<PAGE:6|5>>depending on the temperature, which is remarkable considering
 that it is triggered by a small change of magnetic field in a single
 material.
 
@@ -797,7 +797,7 @@ Such domain-wall driven thermal conductivity decrease is analogous
 
 ##### to that observed in ferroelectric Pb(Zr0.3Ti0.7)O3, where a decrease of phonon thermal conductivity of 11% has been achieved by
 
-Fig. 4 Simulated spin texture and magnon spectra. a Representative spin textures and b magnon spectral functions, obtained from atomistic spin
+<<PAGE:7|6>>Fig. 4 Simulated spin texture and magnon spectra. a Representative spin textures and b magnon spectral functions, obtained from atomistic spin
 dynamics simulations of GaV4S8 at T = 12 K and magnetic field magnitudes, as indicated at the top of each panel.
 
 3.0
@@ -948,7 +948,7 @@ ffiffiffiffiffi
 > The codes that support the calculations of this study are available from the authors upon
 > reasonable request.
 
-Received: 10 August 2021; Accepted: 20 May 2022;
+<<PAGE:8|7>>Received: 10 August 2021; Accepted: 20 May 2022;
 
 References
 
@@ -1160,7 +1160,7 @@ single crystals. V.T. and I.K. performed the magnetometry study and determined t
 magnetic phase diagrams. S.A. and F.F. performed theoretical calculations. F.S. wrote the
 paper with input from all authors. F.S. and P.v.L. conceived the project.
 
-Funding
+<<PAGE:9|8>>Funding
 
 Open Access funding enabled and organized by Projekt DEAL.
 

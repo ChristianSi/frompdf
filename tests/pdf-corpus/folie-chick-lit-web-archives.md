@@ -1,4 +1,4 @@
-International Journal of Digital Humanities (2021) 2:25–42
+<<PAGE:1|25>>International Journal of Digital Humanities (2021) 2:25–42
 
 https://doi.org/10.1007/s42803-021-00031-6
 
@@ -46,7 +46,7 @@ sandra.folie@univie.ac.at
 
 1 Department of Comparative Literature, University of Vienna, Vienna, Austria
 
-compared to archaeological activities. Susan Stanford Friedman, for example, employs
+<<PAGE:2|26>>compared to archaeological activities. Susan Stanford Friedman, for example, employs
 the metaphor of recovery for “locating long unavailable texts buried in the bowels of
 libraries and collections; little magazines even more ephemeral than the better known
 ones; anthologies or catalogues reflecting networks parallel to those in the West;
@@ -100,7 +100,7 @@ to individuals (i.e. contact information).” (West & Lee, 2011, 1).
 
 Regarding the inclusion of the history page in literary research, see also Börner and Kopf (2018, 216–219).
 
-‘literature’) that is usually not discussed in the feature pages of prestigious newspapers
+<<PAGE:3|27>>‘literature’) that is usually not discussed in the feature pages of prestigious newspapers
 and magazines but has a strong fan base which is very active online.3
 
 In this paper, I will use the chick lit genre, which emerged in the second half of the
@@ -150,7 +150,7 @@ strongly on who reviews the article before publication.
 allgemein verständlich bestimmen” (Peitz, 2010, 27–28), “bevor akademische Quellen wissenschaftlich darauf
 eingehen können” (ibid., 28/footnote 29).
 
-and, with an online presence of over a decade, also the most durable ones. Wikipedia
+<<PAGE:4|28>>and, with an online presence of over a decade, also the most durable ones. Wikipedia
 can look back on an even longer online presence. Although the article on chick lit was
 published in 2004, two to three years later than the fan websites, it is still available
 online today.
@@ -201,7 +201,7 @@ give a complete URL either, but at least the title of the subpage and the access
 ‘What is Chick Lit?’ (21.01.2007)” or “Wikipedia (16.02.2006)”, which makes it easier to track her references.
 6 The ‘death’ of the genre was increasingly postulated from 2011 onwards (cf. Coburn, 2012; Sherwin, 2011).
 
-such as fashion, beauty, personal hygiene, nutrition, but also other media such as film
+<<PAGE:5|29>>such as fashion, beauty, personal hygiene, nutrition, but also other media such as film
 and music were included. These focal points, which went beyond literature and were
 presented as modern female everyday practices, make it possible to draw conclusions
 about the settings in chick lit and thus implicitly contribute to the definition of the
@@ -252,7 +252,7 @@ place chick lit in a larger cultural (esp. chicklit.co.uk) or literary historica
 chicklitbooks.com). This makes these archived websites remarkable sources for
 academic genre research, as they not only demonstrate early, but also nuanced
 
-negotiations of the genre (connection to other cultural artifacts and media, defense
+<<PAGE:6|30>>negotiations of the genre (connection to other cultural artifacts and media, defense
 mechanisms, differentiation from other genres).
 
 ### 2.2 Academic sources as a basis for comparison
@@ -300,7 +300,7 @@ First, the US-American counterpart to Bridget Jones’s Diary, Candace
 Bushnell’s Sex and the City (1996), can hardly be called an imitation. On the
 one hand, the narrative situation and the constellation of characters in the latter
 
-differs substantially from the diary-writing Bridget in Fielding’s novel7
+<<PAGE:7|31>>differs substantially from the diary-writing Bridget in Fielding’s novel7
 ; on the
 other, Bushnell’s column, which was published in the New York Observer from
 1994 to 1996 and formed the basis for her novel, appeared one year before
@@ -351,7 +351,7 @@ diary entries of the title character and narrator Bridget.
 already in use in the 1980s for Elaine Showalter’s course on the Female Literary Tradition at Princeton
 University (see Betterton, 1988, 113).
 
-By comparing the different versions of the Wikipedia article on chick lit (see extracts in
+<<PAGE:8|32>>By comparing the different versions of the Wikipedia article on chick lit (see extracts in
 Table 1), it becomes clear that Baldick could have already consulted Wikipedia, while
 writing his encyclopedia article. His primarily student readership, who were most certainly
 often reminded not to rely on Wikipedia, would also have found some valuable advice there.
@@ -411,7 +411,7 @@ with their observation that the canon is not only reproduced in Wikipedia, but a
 statistics show that the range of authors tends to be more contemporary and also more diverse in terms of
 nationality and gender (2019, 163–164).
 
-Table 1 The development of the Wikipedia article on chick lit (2004–2020)
+<<PAGE:9|33>>Table 1 The development of the Wikipedia article on chick lit (2004–2020)
 
 Date Minimum Definition (first sentence) Information on the origin of the term
 
@@ -488,7 +488,7 @@ term “chick lit” to proscribe what he called
 the trend of “girlishness” evident in the
 writing of female newspaper columnists at
 
-Table 1 (continued)
+<<PAGE:10|34>>Table 1 (continued)
 
 Date Minimum Definition (first sentence) Information on the origin of the term
 
@@ -563,7 +563,7 @@ that focus on the trials and tribulations
 of their individual protagonists.” [reference:
 Smith, 2008]
 
-## structural inequalities such as gender and racial bias,14 there is more space for new, less
+## <<PAGE:11|35>>structural inequalities such as gender and racial bias,14 there is more space for new, less
 
 established, and also anti-canonical topics, which, according to the encyclopedia’s
 guidelines, should be described “from a neutral point of view (NPOV)” (Wikipedia:
@@ -611,7 +611,7 @@ in Wikipedia (Wikipedia: “Gender bias on Wikipedia”, 12 July 2020e); a racia
 and, as far as possible, without editorial bias, all the significant views that have been published by
 reliable sources on a topic.” (Wikipedia: “Neutral point of view”, 12 July 2020f)
 
-> bit more personal and realistic. The plots can range from being very light and fastpaced
+> <<PAGE:12|36>>bit more personal and realistic. The plots can range from being very light and fastpaced
 > to being extraordinarily deep, thought-provoking and/or moving.
 
 In 2007, chicklit.co.uk also distanced itself from its earlier definition of the genre. The
@@ -659,7 +659,7 @@ current definition is very broad:
 50% of the text mass was written by two authors with the nicknames Mrthbtn11 (36.9%) and
 Madelynleighe13 (18.7%). (Wikipedia: "Chick lit, Authorship", 22 June 2020d)
 
-Compared to the first definition on Wikipedia, in which chick lit was identified as a
+<<PAGE:13|37>>Compared to the first definition on Wikipedia, in which chick lit was identified as a
 “slightly uncomplimentary term” (22 July 2004) in the first sentence, the promotion
 from ‘lit’ to ‘literature’ is particularily striking. Thus, similar to chicklitbooks.com, the
 genre is granted a certain qualitative spectrum. The fact that the current Wikipedia
@@ -708,7 +708,7 @@ women of color such as African American, Latin American and Asian American
 authors or chick lit from the global South. And while the misinformation that “British
 author Catherine Alliott’s The Old Girl Network (1994) was the start of the chick lit
 
-genre” (22 June 2020c) has persisted for some time now (since 18 Jan. 2018, to be
+<<PAGE:14|38>>genre” (22 June 2020c) has persisted for some time now (since 18 Jan. 2018, to be
 exact), the important role of African American chick lit or sistah lit – and in particular
 Terry McMillan’s novel Waiting to Exhale (1992) – for the genre’s genealogy still has
 not been addressed (Hurt, 2019b). On 26 September 2013 an editor named Jcross 12
@@ -758,7 +758,7 @@ the formal weaknesses to the author, and then to jointly improve it.
 While chicklit.co.uk never put a focus on women-of-color chick lit, chicklitbook.com
 from 2005 to 2012 had a subpage titled “Multicultural Chick Lit” about books “with
 
-heroines from all different nationalities and from different cultures” (25 Nov. 2005c),
+<<PAGE:15|39>>heroines from all different nationalities and from different cultures” (25 Nov. 2005c),
 
 divided into Indian Chick Lit, Latina Lit, Asian Chick Lit, and African-American Chick
 
@@ -809,7 +809,7 @@ the case for many years in Wikipedia – but conversely also web content into re
 This would not only enrich research – and the histories of contemporary genres is only
 one possible and very evident example of a whole range of fields of application in the
 
-Humanities – but also the digital formats and archives themselves. The more researchers
+<<PAGE:16|40>>Humanities – but also the digital formats and archives themselves. The more researchers
 participate, e.g. by writing and editing Wikipedia articles or by suggesting
 websites for filing in the Internet Archive, the better web archives can support research.
 
@@ -878,7 +878,7 @@ chicklitbooks.com/. Accessed 21 July 2020.
 Chicklitbooks.com. (1 Aug. 2009). Home. https://web.archive.org/web/20090801114026/http://www.
 chicklitbooks.com/. Accessed 21 July 2020.
 
-Chicklitbooks.com. (22 Sept. 2012). What is chick lit?. https://web.archive.org/web/20120922045224/http://
+<<PAGE:17|41>>Chicklitbooks.com. (22 Sept. 2012). What is chick lit?. https://web.archive.org/web/20120922045224/http://
 chicklitbooks.com/what-is-chick-lit/. Accessed 21 July 2020.
 
 Coburn, J. (2012). The decline of chick lit. The San Diego Union-Tribune. http://web.archive.org/web/
@@ -964,7 +964,7 @@ Wikipedia. (24 Dec. 2007). Chick lit. https://en.wikipedia.org/w/index.php?title
 Wikipedia. (25 Dec. 2008). Chick lit. https://en.wikipedia.org/w/index.php?title=Chick_lit&oldid=
 260030886. Accessed 23 July 2020.
 
-Wikipedia. (27 Dec. 2009). Chick lit. https://en.wikipedia.org/w/index.php?title=Chick_lit&oldid=
+<<PAGE:18|42>>Wikipedia. (27 Dec. 2009). Chick lit. https://en.wikipedia.org/w/index.php?title=Chick_lit&oldid=
 334179241. Accessed 23 July 2020.
 
 Wikipedia. (30 Oct. 2011). Chick lit. https://en.wikipedia.org/w/index.php?title=Chick_lit&oldid=458064897.

@@ -1,4 +1,4 @@
-# Brief Announcement: Non-Uniform
+# <<PAGE:1>>Brief Announcement: Non-Uniform
 
 # Content-Oblivious Leader Election on Oriented Asynchronous Rings
 
@@ -63,7 +63,7 @@ Editor: Dariusz R. Kowalski; Article No. 51; pp. 51:1–51:7
 Leibniz International Proceedings in Informatics
 Schloss Dagstuhl – Leibniz-Zentrum für Informatik, Dagstuhl Publishing, Germany
 
-## 1 Introduction
+## <<PAGE:2|51:2>>1 Introduction
 
 The field of reliable distributed computing is characterized by the study of a wide range of
 failure models, from failures affecting specific processes [4, 17] to failures affecting communication
@@ -128,7 +128,7 @@ where in each round a process may either emit a beep to its neighbors or listen.
 is inherently synchronous. Therefore, the techniques developed for leader election in the
 beeping model [10, 11, 14] cannot be applied in content-oblivious networks.
 
-## 1.1 Contributions
+## <<PAGE:3|51:3>>1.1 Contributions
 
 We shed new light on the message complexity of leader election in the content-oblivious
 model. Specifically, we show that a uniform algorithm, even on oriented rings, cannot elect a
@@ -186,7 +186,7 @@ a notion of common time.
 
 Processes are correct and do not experience any kind of failure.
 
-Content-Oblivious Algorithms. Since we are interested in content-oblivious algorithms, we
+<<PAGE:4|51:4>>Content-Oblivious Algorithms. Since we are interested in content-oblivious algorithms, we
 assume that messages do not carry any information apart from their existence. That is, each
 message is an empty string (a pulse [13]) and a process only observes the local port number
 on which the message is received.
@@ -236,7 +236,7 @@ indices of any two processes in the phase loop can differ by at most n − 1. Th
 the minimum identifier will be the only one to end the competing phase by completing the
 prescribed number of iterations.
 
-Algorithm 1 Constant Direction Algorithm(ID,boundOnSize).
+<<PAGE:5|51:5>>Algorithm 1 Constant Direction Algorithm(ID,boundOnSize).
 
 1 for i ← 1 to boundOnSize ∗ ID do
 2 send a message on port 0
@@ -300,7 +300,7 @@ The algorithm elects the process with the minimum identifier and proceeds in eli
 rounds. In each round, active processes compare a specific bit of their (encoded) identifiers,
 eliminating all processes that do not have the minimum bit at that position.
 
-The bound U on the network size is used to synchronize processes across different rounds
+<<PAGE:6|51:6>>The bound U on the network size is used to synchronize processes across different rounds
 of the algorithm. When an active process enters a round, it begins the Synchronization phase.
 In this phase, each active process sends and receives messages in the CW direction for U steps.
 Then, processes with bit 0 send and receive one message in the CCW direction, blocking
@@ -365,7 +365,7 @@ U
 in which each process sends O(log2 U) messages clockwise and O(log U) messages
 counterclockwise, for a total of O(n log2 U) messages.
 
-References
+<<PAGE:7|51:7>>References
 1 H. Attiya and J. L. Welch. Distributed Computing: Fundamentals, Simulations, and Advanced
 Topics. Wiley, 2004.
 
