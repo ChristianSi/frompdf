@@ -14,6 +14,12 @@ def main() -> int:
     """Run the command-line interface."""
     parser = argparse.ArgumentParser(description='Convert a PDF document to structured Markdown.')
     parser.add_argument(
+        '-m',
+        '--page-markers',
+        action='store_true',
+        help='Embed raw and visible page numbers in the Markdown output',
+    )
+    parser.add_argument(
         '--dump-lines',
         action='store_true',
         help='Write extracted line records to a CSV file',
@@ -22,11 +28,6 @@ def main() -> int:
         '--dump-pagenos',
         action='store_true',
         help='Write raw and visible page numbers to a CSV file',
-    )
-    parser.add_argument(
-        '--page-markers',
-        action='store_true',
-        help='Embed raw and visible page numbers in the Markdown output',
     )
     parser.add_argument('pdf_file', type=Path, help='Path to the input PDF file')
     args = parser.parse_args()

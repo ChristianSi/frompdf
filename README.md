@@ -122,7 +122,25 @@ Example output:
 document.md written
 ```
 
-Write diagnostic CSV files as well:
+### Page markers
+
+Use `-m` or its long form `--page-markers` to embed page boundaries in the
+Markdown itself:
+
+```bash
+frompdf -m ./document.pdf
+```
+
+Each source page starts with a marker such as `<<PAGE:7>>`, containing its raw
+PDF page number. When a different visible page label was detected or safely
+inferred, the marker includes that label too, as in `<<PAGE:7|9>>`. The pipe
+separates the raw number from the visible label, so compound visible labels
+remain clear, as in `<<PAGE:2|51:2>>`. Markers are placed after Markdown
+prefixes such as `## ` for headings and `> ` for block quotes.
+
+### Diagnostic options
+
+Write diagnostic CSV files with `--dump-lines` and `--dump-pagenos`:
 
 ```bash
 frompdf --dump-lines --dump-pagenos ./document.pdf
@@ -139,22 +157,9 @@ document.md written
 `--dump-lines` writes the extracted line records. `--dump-pagenos` always
 writes one mapping row per PDF page. Missing visible labels are written as
 `?`; gaps are filled when surrounding Arabic or Roman page labels determine
-an unambiguous value.
-
-Use `--page-markers` to embed page boundaries in the Markdown itself:
-
-```bash
-frompdf --page-markers ./document.pdf
-```
-
-Each source page starts with a marker such as `<<PAGE:7>>`, containing its raw
-PDF page number. When a different visible page label was detected or safely
-inferred, the marker includes that label too, as in `<<PAGE:7|9>>`. The pipe
-separates the raw number from the visible label, so compound visible labels
-remain clear, as in `<<PAGE:2|51:2>>`. Markers are
-placed after Markdown prefixes such as `## ` for headings and `> ` for block
-quotes. This option is independent of `--dump-pagenos`; either option can be
-used without the other, and both use the same page-number mapping.
+an unambiguous value. The page-marker and diagnostic options are independent;
+they can be combined or used separately, and `--page-markers` and
+`--dump-pagenos` use the same page-number mapping.
 
 ## Limitations
 
