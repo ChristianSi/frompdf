@@ -1,4 +1,4 @@
-# <<PAGE:1|132>>A Proposed Addition to Open-Source Licensing for Improving Freedom of Use
+# <<PAGE:1|LABEL:132>>A Proposed Addition to Open-Source Licensing for Improving Freedom of Use
 
 Short paper
 
@@ -24,7 +24,7 @@ that free software remains free.
 
 Keywords: open source, free software, FOSS, licensing terms, liberty, GNU GPL
 
-# <<PAGE:2|133>>1 Introduction
+# <<PAGE:2|LABEL:133>>1 Introduction
 
 ## 1.1 Free/Libre Open Source Software
 
@@ -74,7 +74,7 @@ new licenses and understand their legal ramifications. A large enough diversity 
 will create confusion, as it is difficult to grasp the totality of offered possibilities
 (Gomulkiewicz, 2009). It is clear that reusing shared, known licenses drives adoption.
 
-## <<PAGE:3|134>>1.3 The four user freedoms of free software
+## <<PAGE:3|LABEL:134>>1.3 The four user freedoms of free software
 
 Free software ideology values the freedom of users. GNU GPL is founded on the four
 basic freedoms, which are an attempt to codify these values. The four basic freedoms
@@ -125,7 +125,7 @@ is not strong enough to guarantee freedom 0 for everyone.
 While the four freedoms should secure the public the right to use software as they
 wish, there is no clear consensus about whether these freedoms are secured merely
 
-<<PAGE:4|135>>by sharing the source-code. An effective example of this can be seen in cases where
+<<PAGE:4|LABEL:135>>by sharing the source-code. An effective example of this can be seen in cases where
 distributed programs include hard-coded (embedded in the source code) functions that
 explicitly block users based on their affilitation (see Naskali, 2020). Affected users
 are unable to use the program without modifying the code and rebuilding the program.
@@ -174,7 +174,7 @@ skills have the freedom to use such software, and voice their opinions reliably 
 2020). This means that for any individuals not possessing the required programming
 skills to circumvent blocking functionality, Freedom 0 is not secured unless someone
 
-<<PAGE:5|136>>more skilled goes through the effort of removing said functionality and redistributing
+<<PAGE:5|LABEL:136>>more skilled goes through the effort of removing said functionality and redistributing
 the unblocked version of the software.
 
 If code is introduced in an open source project with the goal of blocking certain
@@ -228,7 +228,7 @@ has been formulated to secure these freedoms through the sharing of source code.
 
 2https://github.com/EthicalSource/ethicalsource.dev
 
-<<PAGE:6|137>>Distribution agreements have been consciously left outside this license, presumably because
+<<PAGE:6|LABEL:137>>Distribution agreements have been consciously left outside this license, presumably because
 user freedom is secured through the availability of the code, even in the case of
 closed or paid binary distribution.
 
@@ -279,7 +279,7 @@ The object of this addition would be to secure Freedom 0 when using conveyed
 non-source forms (i.e. binaries). This would (most importantly) include mobile apps
 downloaded from official app stores.
 
-<<PAGE:7|138>>This addition might be redundant with the previous addition blocking the use of said
+<<PAGE:7|LABEL:138>>This addition might be redundant with the previous addition blocking the use of said
 blocking methods in the source code. It is included here to facilitate discussion, as the
 main part of the addressed problem is caused by distributed binaries, especially in the
 walled-gardens of mobile app stores. Perhaps it would be best to only target the source
@@ -331,7 +331,7 @@ of some other ethics-based licenses that explicitly restrict the use of software
 3While Android allows the installation of apk files outside Play Store, the option is off by default and can
 be difficult to do without technical skills.
 
-<<PAGE:8|139>>NoHarm license4
+<<PAGE:8|LABEL:139>>NoHarm license4
 that forbids use related to things such as slavery, gambling, tobacco,
 hate speech or discrimination. This is not a problem, as a wider selection of licenses
 ensures that people can choose how their software is shared and used. The proposed
@@ -386,7 +386,7 @@ be found out and eliminated before releasing a full license.
 > 5https://www.gnu.org/philosophy/selling.html
 > 6https://www.gnu.org/licenses/gpl-faq.htmlDRMProhibited
 
-<<PAGE:9|140>>The proposed changes do limit the freedoms of contributors significantly. It might
+<<PAGE:9|LABEL:140>>The proposed changes do limit the freedoms of contributors significantly. It might
 be possible to limit these freedoms less, while still protecting the public freedom of
 use, by e.g. requiring the conveying of non-source forms without the listed protection
 methods. This would allow contributors to release code and binaries with discriminating
@@ -418,7 +418,7 @@ this paper, licensees could choose between licenses based on their own wishes, a
 contributors using freedom 0 securing licenses could be secure in the knowledge that
 the project they are working on will stay free.
 
-# <<PAGE:10|141>>References
+# <<PAGE:10|LABEL:141>>References
 
 Austin, J. (1885). Lectures on jurisprudence, or, The philosophy of positive law. John
 Murray.

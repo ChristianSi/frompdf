@@ -21,9 +21,9 @@ in any reasonable manner, but not in any way that suggests the licensor endorses
 No additional restrictions — You may not apply legal terms or technological measures that legally
 restrict others from doing anything the license permits.
 
-## <<PAGE:3|1>>Bulding a Vibrant, Collaborative Global Commons
+## <<PAGE:3|LABEL:1>>Bulding a Vibrant, Collaborative Global Commons
 
-## <<PAGE:4|2>>Table of Contents —
+## <<PAGE:4|LABEL:2>>Table of Contents —
 
 #### Introduction 3 - 4 Mood Board 5 Brand Identity 6 - 9 Logo(s) Font(s) Color Palette Visual Elements
 
@@ -39,7 +39,7 @@ Punctuation
 Referencing and Licensing
 Writing Tips
 
-## <<PAGE:5|3>>Introduction —
+## <<PAGE:5|LABEL:3>>Introduction —
 
 Crafting, standardizing, and maintaining a consistent style is essential to establishing and
 promoting an organization’s brand. As with any organization, Creative Commons’ (CC) brand
@@ -72,7 +72,7 @@ consistently and in a cohesive manner.
 >
 > Matthew Schwarts | Founder and Executive Director of Constructive
 
-<<PAGE:6|4>>Below is specific language regarding CC’s mission that currently exists on the “What We Do” page of
+<<PAGE:6|LABEL:4>>Below is specific language regarding CC’s mission that currently exists on the “What We Do” page of
 the website. When creating content for CC, please take into consideration this language, particularly
 if discussing CC’s work with audiences who may be unfamiliar. Although this language does not
 need to be followed exactly, we strongly encourage you to follow it as closely as possible.
@@ -114,10 +114,10 @@ global access
 
 Building a vibrant, collaborative global commons
 
-<<PAGE:7|5>>Mood Board —
+<<PAGE:7|LABEL:5>>Mood Board —
 CC is vibrant, creative, collaborative, innovative, and global.
 
-## <<PAGE:8|6>>Brand Identity —
+## <<PAGE:8|LABEL:6>>Brand Identity —
 
 ### Logo(s)
 
@@ -144,7 +144,7 @@ logo, please refer to our detailed “Policies” page—which also includes our
 Learn more about the history and inspiration behind CC’s logo in “A Masterwork in Simplicity: The Story
 of the CC Logo.”
 
-### <<PAGE:9|7>>Font(s)
+### <<PAGE:9|LABEL:7>>Font(s)
 
 ##### Primary Font: Source Sans Pro
 
@@ -182,7 +182,7 @@ logo. You can download the font from our “Downloads” page.
 
 Learn more about this font in “Introducing CC Accidenz Commons: An Open Licensed Font.”
 
-### <<PAGE:10|8>>Color Palette
+### <<PAGE:10|LABEL:8>>Color Palette
 
 Creative Commons’ color palette reflects the vibrant nature of the digital space in which we
 operate, and the diverse community we engage with. These colors should be used—in various
@@ -239,7 +239,7 @@ CMYK: 84 15 0 15
 > possible results in printing, use CMYK and consult
 > with the printer.
 
-### <<PAGE:11|9>>Visuals
+### <<PAGE:11|LABEL:9>>Visuals
 
 Creative Commons’ (CC) visuals, including graphic design elements, should reflect the diversity,
 vibrancy, and creativity of the global commons.
@@ -265,7 +265,7 @@ searchable; alternative text describing the image, for accessibility; and a capt
 the image is published under (including a hyperlink), as well as the name of the photographer and/or
 graphic designer.
 
-## <<PAGE:12|10>>Publications Style —
+## <<PAGE:12|LABEL:10>>Publications Style —
 
 ### Tone
 
@@ -303,7 +303,7 @@ Network” and the “CC Network” are preferred over the “Network.”
 Finally, there should always be a “the” before the noun, e.g., “The CC Global Network consists of
 over 400 members...” or “We encourage anyone to join the CC Network, it’s free!”
 
-### <<PAGE:13|11>>Abbreviations
+### <<PAGE:13|LABEL:11>>Abbreviations
 
 CC Licenses
 
@@ -337,7 +337,7 @@ Dates
 Use the international standard with the year in front of the month, followed by the day
 E.g., 2019-10-22 or 2019 Oct 22
 
-### <<PAGE:14|12>>Acronyms
+### <<PAGE:14|LABEL:12>>Acronyms
 
 With first instances, always spell out the entire name followed by the acronym in parenthesis.
 The acronym alone may be used in all other instances.
@@ -370,7 +370,7 @@ number starts a sentence.
 CC officially uses American English—please refer to the “British and American spelling” guide by
 Oxford Dictionaries for help.
 
-### <<PAGE:15|13>>Punctuation Colon
+### <<PAGE:15|LABEL:13>>Punctuation Colon
 
 Use a colon, rather than a comma, to introduce a direct quotation that is longer than a short
 sentence. Capitalize the first word of a quoted sentence.
@@ -401,7 +401,7 @@ Finally, any content created and/or published by CC should also clearly indicate
 whichever CC license it is published under, and follow the attribution requirements under that
 license. All CC licenses can be found via “Share Your License.”
 
-<<PAGE:16|14>>Writing Tips
+<<PAGE:16|LABEL:14>>Writing Tips
 “To be”
 Avoid overusing the verb “to be.” Instead, utilize the active tense.
 
@@ -436,7 +436,7 @@ E.g. Advocates for net neutrality arrived en masse at Capitol Hill.
 Do not italicize words written in a different alphabet. Include an italicized transliterated version of
 the word in parentheses or in a footnote.
 
-### <<PAGE:17|15>>Creative Commons Style Guide | 2019 by Victoria Heath
+### <<PAGE:17|LABEL:15>>Creative Commons Style Guide | 2019 by Victoria Heath
 
 2019, by Creative Commons.
 Except where otherwise noted, this document is published under a Creative Commons
