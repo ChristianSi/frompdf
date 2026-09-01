@@ -11,6 +11,9 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
 
 - Inference of missing Arabic and Roman visible page labels when the
   surrounding sequence is unambiguous.
+- A `--page-markers` option that embeds raw and visible PDF page numbers at
+  page boundaries in Markdown output, using `|` to separate raw numbers from
+  visible labels.
 
 ### Changed
 

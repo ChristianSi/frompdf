@@ -51,8 +51,22 @@ def dump_page_numbers(page_number_list: list[PageNumber], output_path: Path) -> 
             )
 
 
-def markdown_to_text(block_list: list[Block], output_file: TextIO) -> None:
+def format_page_marker(page_number: PageNumber) -> str:
+    """Format a Markdown page marker from raw and visible page numbers."""
+    visible_suffix = (
+        f'|{page_number.visible}'
+        if page_number.visible is not None and page_number.visible != str(page_number.raw)
+        else ''
+    )
+    return f'<<PAGE:{page_number.raw}{visible_suffix}>>'
+
+
+def markdown_to_text(
+    block_list: list[Block], output_file: TextIO, page_markers: bool = False
+) -> None:
     """Write Markdown blocks as readable plain text."""
+    previous_page: PageNumber | None = None
+
     for block_index, block_obj in enumerate(block_list):
         if block_index:
             previous_block = block_list[block_index - 1]
@@ -61,19 +75,26 @@ def markdown_to_text(block_list: list[Block], output_file: TextIO) -> None:
             else:
                 output_file.write('\n\n')
 
+        marker = ''
+        if page_markers and (
+            previous_page is None or block_obj.start_page.raw != previous_page.raw
+        ):
+            marker = format_page_marker(block_obj.start_page)
+
         if isinstance(block_obj, Heading):
-            output_file.write(f'{"#" * block_obj.level} {block_obj.text}')
+            output_file.write(f'{"#" * block_obj.level} {marker}{block_obj.text}')
         elif isinstance(block_obj, BlockQuote):
-            output_file.write(
-                '\n'.join(f'> {line}' if line else '>' for line in block_obj.text.split('\n'))
-            )
+            quote_lines = block_obj.text.split('\n')
+            quote_lines[0] = f'{marker}{quote_lines[0]}'
+            output_file.write('\n'.join(f'> {line}' if line else '>' for line in quote_lines))
         else:
-            output_file.write(block_obj.text)
+            output_file.write(f'{marker}{block_obj.text}')
+        previous_page = block_obj.end_page
     output_file.write('\n')
 
 
-def dump_text(block_list: list[Block], output_path: Path) -> None:
+def dump_text(block_list: list[Block], output_path: Path, page_markers: bool = False) -> None:
     """Write Markdown blocks as readable plain text."""
     backup_existing_file(output_path)
     with output_path.open('w', encoding='utf-8') as output_file:
-        markdown_to_text(block_list, output_file)
+        markdown_to_text(block_list, output_file, page_markers=page_markers)

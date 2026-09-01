@@ -55,6 +55,7 @@ frompdf currently detects and serializes:
 - block quotes, based on indentation
 - repeated headers and footers, which are removed from the Markdown output
 - visible page numbers found in removed headers or footers
+- optional page-boundary markers embedded in the Markdown output
 - document-aware unhyphenation of words split across lines within a block
 - normalization of unspaced en and em dashes split across lines within a block
 
@@ -139,6 +140,21 @@ document.md written
 writes one mapping row per PDF page. Missing visible labels are written as
 `?`; gaps are filled when surrounding Arabic or Roman page labels determine
 an unambiguous value.
+
+Use `--page-markers` to embed page boundaries in the Markdown itself:
+
+```bash
+frompdf --page-markers ./document.pdf
+```
+
+Each source page starts with a marker such as `<<PAGE:7>>`, containing its raw
+PDF page number. When a different visible page label was detected or safely
+inferred, the marker includes that label too, as in `<<PAGE:7|9>>`. The pipe
+separates the raw number from the visible label, so compound visible labels
+remain clear, as in `<<PAGE:2|51:2>>`. Markers are
+placed after Markdown prefixes such as `## ` for headings and `> ` for block
+quotes. This option is independent of `--dump-pagenos`; either option can be
+used without the other, and both use the same page-number mapping.
 
 ## Limitations
 

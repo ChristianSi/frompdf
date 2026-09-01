@@ -23,6 +23,11 @@ def main() -> int:
         action='store_true',
         help='Write raw and visible page numbers to a CSV file',
     )
+    parser.add_argument(
+        '--page-markers',
+        action='store_true',
+        help='Embed raw and visible page numbers in the Markdown output',
+    )
     parser.add_argument('pdf_file', type=Path, help='Path to the input PDF file')
     args = parser.parse_args()
 
@@ -39,7 +44,7 @@ def main() -> int:
         dump_lines=args.dump_lines,
         dump_pagenos=args.dump_pagenos,
     )
-    dump_text(block_list, text_output_path)
+    dump_text(block_list, text_output_path, page_markers=args.page_markers)
 
     if args.dump_lines:
         print(f'{build_csv_output_path(input_path)} written')
