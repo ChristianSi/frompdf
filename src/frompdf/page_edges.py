@@ -19,6 +19,7 @@ VALID_ROMAN_NUMERAL_PATTERN = re.compile(
     flags=re.IGNORECASE,
 )
 ROMAN_NUMERAL_VALUES = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
+FOOTER_SUFFIX_NOISE_PATTERN = re.compile(r'(?:\$(?:NUM|ROMAN))+(?:[.)])?|[a-z0-9]{1,4}(?:[.)])?')
 
 
 @dataclass
@@ -255,12 +256,63 @@ def repeated_header_footer_keys(
 ) -> set[tuple[str, str]]:
     """Return normalized header/footer texts that repeat on enough pages."""
     pages_by_key: dict[tuple[str, str], set[int]] = defaultdict(set)
-    threshold = max(3, (page_count + 3) // 4)
 
     for candidate in candidate_list:
         pages_by_key[(candidate.zone, candidate.normalized)].add(candidate.line.page_no)
 
-    return {key for key, page_set in pages_by_key.items() if len(page_set) >= threshold}
+    repeated_keys: set[tuple[str, str]] = set()
+    for key, page_set in pages_by_key.items():
+        if len(page_set) < 3:
+            continue
+
+        first_page = min(page_set)
+        last_page = max(page_set)
+        page_span = last_page - first_page + 1
+
+        # Running matter often changes at section boundaries and alternates on
+        # recto/verso pages. Measure repetition over the pages where this exact
+        # text can plausibly occur instead of over the entire document.
+        if all(page_no % 2 == first_page % 2 for page_no in page_set):
+            relevant_page_count = (last_page - first_page) // 2 + 1
+        else:
+            relevant_page_count = page_span
+
+        threshold = max(3, (relevant_page_count + 3) // 4)
+        if len(page_set) >= threshold:
+            repeated_keys.add(key)
+
+    return repeated_keys
+
+
+def repeated_footer_text_bases(repeated_keys: set[tuple[str, str]]) -> set[str]:
+    """Return stable textual parts of repeated footer lines."""
+    bases: set[str] = set()
+    for zone, normalized in repeated_keys:
+        if zone != 'footer':
+            continue
+
+        base = re.sub(r'\s+\$(?:NUM|ROMAN)$', '', normalized)
+        # A textual stem prevents the repeated page-number key itself from
+        # becoming a family that absorbs unrelated numeric footer lines.
+        if re.search(r'[a-z]{3}', base):
+            bases.add(base)
+    return bases
+
+
+def matches_repeated_footer_text(candidate: HeaderFooterCandidate, bases: set[str]) -> bool:
+    """Return whether a footer is a conservative OCR variant of repeated text."""
+    if candidate.zone != 'footer':
+        return False
+
+    for base in bases:
+        if candidate.normalized == base:
+            return True
+        prefix = f'{base} '
+        if candidate.normalized.startswith(prefix):
+            suffix = candidate.normalized[len(prefix) :]
+            if FOOTER_SUFFIX_NOISE_PATTERN.fullmatch(suffix):
+                return True
+    return False
 
 
 def explicit_visible_page_number(text: str) -> str | None:
@@ -365,6 +417,9 @@ def infer_edge_page_numbers(candidate_list: list[HeaderFooterCandidate]) -> dict
     labels_by_page_and_position: dict[tuple[str, str], dict[int, set[str]]] = defaultdict(
         lambda: defaultdict(set)
     )
+    pooled_roman_labels_by_zone: dict[str, dict[int, set[str]]] = defaultdict(
+        lambda: defaultdict(set)
+    )
     page_numbers: dict[int, str] = {}
 
     for candidate in candidate_list:
@@ -374,6 +429,9 @@ def infer_edge_page_numbers(candidate_list: list[HeaderFooterCandidate]) -> dict
                 labels_by_page_and_position[(candidate.zone, edge)][candidate.line.page_no].add(
                     visible
                 )
+                parsed_label = parse_visible_page_label(visible)
+                if parsed_label is not None and parsed_label.numeral_system == 'roman':
+                    pooled_roman_labels_by_zone[candidate.zone][candidate.line.page_no].add(visible)
 
     for labels_by_page in labels_by_page_and_position.values():
         offsets: Counter[int] = Counter()
@@ -400,6 +458,35 @@ def infer_edge_page_numbers(candidate_list: list[HeaderFooterCandidate]) -> dict
             matching_labels.sort()
             if matching_labels:
                 visible = matching_labels[0]
+                page_numbers.setdefault(raw, visible)
+
+    # Roman numbers commonly alternate between the outer left and right page
+    # edges. The tiny glyphs are especially prone to OCR loss, so allow two
+    # nearby, agreeing canonical labels to establish an offset across edges.
+    # Keep the relaxed rule local and Roman-only to avoid treating arbitrary
+    # Arabic numbers at the bottom of short pages as pagination.
+    for labels_by_page in pooled_roman_labels_by_zone.values():
+        labels_by_offset: dict[int, list[tuple[int, str, int]]] = defaultdict(list)
+        for raw, visible_labels in labels_by_page.items():
+            for visible in visible_labels:
+                parsed_label = parse_visible_page_label(visible)
+                if parsed_label is not None:
+                    labels_by_offset[parsed_label.number - raw].append(
+                        (raw, visible, parsed_label.number)
+                    )
+
+        for matching_labels in labels_by_offset.values():
+            matching_pages = {raw for raw, _, _ in matching_labels}
+            if len(matching_pages) < 2:
+                continue
+            first_raw = min(matching_pages)
+            last_raw = max(matching_pages)
+            if last_raw - first_raw > 8 or first_raw % 2 == last_raw % 2:
+                continue
+            if min(number for _, _, number in matching_labels) < 4:
+                continue
+
+            for raw, visible, _ in sorted(matching_labels):
                 page_numbers.setdefault(raw, visible)
 
     return page_numbers
@@ -447,6 +534,7 @@ def remove_headers_and_footers(
     """Remove repeated header/footer lines and collect visible page numbers."""
     candidate_list = iter_header_footer_candidates(line_list)
     repeated_keys = repeated_header_footer_keys(candidate_list, len(page_list))
+    repeated_footer_bases = repeated_footer_text_bases(repeated_keys)
     excluded_indices: set[int] = set()
     visible_by_raw = infer_repeated_page_numbers(candidate_list, repeated_keys)
     visible_by_raw.update(infer_edge_page_numbers(candidate_list))
@@ -456,7 +544,11 @@ def remove_headers_and_footers(
         explicit_visible = explicit_visible_page_number(candidate.line.text)
         inferred_visible = visible_by_raw.get(candidate.line.page_no)
 
-        if key in repeated_keys or explicit_visible is not None:
+        if (
+            key in repeated_keys
+            or matches_repeated_footer_text(candidate, repeated_footer_bases)
+            or explicit_visible is not None
+        ):
             excluded_indices.add(candidate.index)
         elif inferred_visible is not None and has_edge_page_number(
             candidate.line.text, inferred_visible
@@ -492,24 +584,47 @@ def complete_page_numbers(
     }
     detected_items = sorted(detected_by_raw.items())
 
-    if detected_items:
-        first_raw, first_visible = detected_items[0]
-        first_label = parse_visible_page_label(first_visible)
-        if first_label is not None and not first_label.prefix:
-            for raw in range(1, first_raw):
-                guessed = format_visible_page_label(
-                    first_label, first_label.number - (first_raw - raw)
-                )
-                if guessed is not None:
-                    completed_by_raw[raw] = guessed
+    sequence_groups: dict[
+        tuple[str, Literal['arabic', 'roman'], int], list[tuple[int, ParsedPageLabel]]
+    ] = defaultdict(list)
+    for raw, visible in detected_items:
+        label = parse_visible_page_label(visible)
+        if label is not None and not label.prefix:
+            sequence_groups[(label.prefix, label.numeral_system, label.number - raw)].append(
+                (raw, label)
+            )
 
-        last_raw, last_visible = detected_items[-1]
-        last_label = parse_visible_page_label(last_visible)
-        if last_label is not None and not last_label.prefix:
-            for raw in range(last_raw + 1, page_count + 1):
-                guessed = format_visible_page_label(
-                    last_label, last_label.number + (raw - last_raw)
-                )
+    ordered_group_items = sorted(
+        sequence_groups.items(), key=lambda item: min(raw for raw, _ in item[1])
+    )
+    ordered_groups = [group for _, group in ordered_group_items]
+    sequence_starts = [
+        1 - (label.number - raw) for raw, label in (group[0] for group in ordered_groups)
+    ]
+    starts_are_unambiguous = all(
+        left_start < right_start
+        for left_start, right_start in zip(sequence_starts, sequence_starts[1:], strict=False)
+    )
+    systems_change_at_boundaries = all(
+        left_key[1] != right_key[1]
+        for (left_key, _), (right_key, _) in zip(
+            ordered_group_items, ordered_group_items[1:], strict=False
+        )
+    )
+
+    if len(ordered_groups) == 1 or (starts_are_unambiguous and systems_change_at_boundaries):
+        for index, group in enumerate(ordered_groups):
+            first_raw, first_label = min(group, key=lambda item: item[0])
+            offset = first_label.number - first_raw
+            sequence_start = max(1, 1 - offset)
+            sequence_end = page_count
+            if index + 1 < len(sequence_starts):
+                sequence_end = min(sequence_end, sequence_starts[index + 1] - 1)
+
+            for raw in range(sequence_start, sequence_end + 1):
+                if completed_by_raw[raw] is not None:
+                    continue
+                guessed = format_visible_page_label(first_label, raw + offset)
                 if guessed is not None:
                     completed_by_raw[raw] = guessed
 

@@ -17,6 +17,9 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
 
 ### Changed
 
+- Running footer detection now measures repetition within local page ranges
+  and alternating recto/verso pages, tolerates short OCR-damaged page-label
+  suffixes, and can join nearby Roman-number anchors across opposite edges.
 - Indented attributions following block quotes now remain part of the quote.
 - Paragraph boundaries now combine `pdftext` block hints with page-local
   font size and family, line spacing, indentation, alignment, and line-length
