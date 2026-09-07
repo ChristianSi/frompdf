@@ -142,32 +142,17 @@ can move backward in page order and can occur inside a continued note.
 
 ### Footnotes
 
-Detected numbered footnotes are removed from the body and collected in a
-`## Notes` section. If a number repeats or decreases, it starts a new group;
-each group then gets its own `### Notes` section. Original numeric labels
-are preserved, including gaps and sequences that start above 1.
+Detected footnotes are collected in an endnote-style "Notes" section, or
+several sections if numbering restarts. Notes are printed as ordered lists
+with their original numbers. Each group is usually placed before a following
+major section, after all its notes have appeared. If no suitable section
+heading follows, the group is placed at the document end.
 
 Choose a different section title with `--notes-title`:
 
 ```bash
 frompdf --notes-title Anmerkungen -m ./document.pdf
 ```
-
-Each group is placed after its last note, before the next `##` heading. If
-none follows, placement falls back to the next `###` heading, then deeper
-levels, or finally the document end. This preference is independent of the
-generated Notes heading level.
-
-Notes use compact ordered lists, preserving source line breaks with indented
-continuation lines, apart from the usual hyphenation repair. Additional
-paragraphs are retained when recognized. Open notes can continue across
-adjacent pages; with page markers enabled, their source-page changes appear
-within the list item. A word repaired across a page boundary stays on its
-starting page; the next page marker precedes the remaining text on the next
-line. Existing endnotes introduced by a title are left in place. Detection
-is conservative and relies on smaller text, spacing, and
-position below body text; unusual layouts and unnumbered notes may remain in
-the body.
 
 ### Diagnostic options
 
