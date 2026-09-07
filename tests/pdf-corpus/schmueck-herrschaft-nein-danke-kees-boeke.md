@@ -1600,87 +1600,468 @@ anarchistischen Zeitschrift De AS, vol. 14 (1986), no. 76 (Okt.-Dez.), (online |
 
 ### <<PAGE:5|LABEL:161>>Notes
 
-1. Pierre-Joseph Proudhon: Qu'est-ce que la propriété ? Ou Recherches sur le principe du droit et du gouvernement, Paris: J.-F. Brocard, 1840, pp. 234-235 (online | PDF), (Übers. aus d. Franz. v. Verf.).
-2. So war die Anarchie nach Auffassung des kanadischen Anthropologen Harold Barclay (1924-2017) als soziale Organisationsform durchaus kein seltenes Phänomen in der Geschichte der Menschheit, sondern „im Gegenteil eine durchaus verbreitete Form von Gemeinwesen oder politischer Organisation“, die „für nahezu die gesamte menschliche <<PAGE:6|LABEL:162>>Geschichte charakteristisch“ war (Harold Barclay: Völker ohne Regierung. Eine Anthropologie der Anarchie, Berlin: Libertad Verlag [= Edition Schwarze Kirschen; 6], 1985, S. 9).
-3. Der in der jüngeren anarchistischen Theoriediskussion häufiger verwendete Begriff der präfigurativen Praxis bzw. präfigurativen Politik besagt, dass die Art und Weise, wie wir uns in der Gegenwart organisieren, die Art von Gesellschaft widerspiegeln sollte, die wir in der Zukunft anstreben. Es geht bei diesem pragmatisch-anarchistischen Ansatz darum, die gewünschten Werte und Strukturen einer zukünftigen Gesellschaft schon heute in unserem eigenen Handeln und in unseren eigenen Organisationen zu verkörpern. Siehe hierzu Uri Gordon: Präfigurative Politik – die Katastrophe und die Hoffnung, in: espero (N.F.), Nr. 4 (Januar 2022), S. 87-125 (online | PDF).
-4. <<PAGE:8|LABEL:164>>Was die Biografie von Kees Boeke angeht, so stützt sich der vorliegende Beitrag vor allem auf die folgenden Quellen: Daniela A. Hooghiemstra: De geest in dit huis is liefderijk: het leven en De Werkplaats van Kees Boeke (1884-1966), [Diss. Universiteit van Amsterdam], Utrecht / Amsterdam / Antwerpen: Uitgeverij De Arbeiderspers, 2013 (online | PDF); Hans Jan Kuipers: De Wereld als Werkplaats. Over de vorming van Kees Boeke en Beatrice Cadbury, Amsterdam: Stichting beheer IISG, 1992 sowie die Einleitung von Julia Boeke zum Archief Werkplaats Kindergemeenschap (Bilthoven), (1921-) 1926-1954 (-1986), Amsterdam: Internationaal Instituut voor Sociale Geschiedenis, 1990, pp. 3-10.
-5. Die Hogere Burgerschool (HBS; deutsch: „Höhere Bürgerschule“) war von 1863 bis 1974 ein Schultyp in den Niederlanden und ihren damaligen Kolonien. Er entsprach in etwa der früheren Oberschule in Deutschland und war Teil der voruniversitären Ausbildung im Sekundarbereich.
-6. <<PAGE:9|LABEL:165>>Die Quäker, die sich selbst auch als „Religiöse Gesellschaft der Freunde“ bezeichnen, sind eine seit Mitte des 17. Jahrhunderts bestehende christliche Glaubensgemeinschaft ohne festes Glaubensbekenntnis oder dogmatische Vorgaben. Ihr zentrales Leitmotiv ist der unmittelbare Zugang zu Gott, den sie als das „Innere Licht“ bezeichnen – eine göttliche Stimme im Herzen jedes Menschen. Die Ablehnung von Klerus, starren Lehrsystemen und ritualisierter religiöser Praxis verweist auf ihr Verständnis von Kirche als einer egalitären Gemeinschaft von Gläubigen und nicht als einer hierarchischen Institution. Somit lässt sich das Quäkertum als eine nicht-hierarchische, mystisch geprägte Variante des Christentums charakterisieren, die sich durch eine pazifistische Grundhaltung, soziales Engagement und die Betonung individueller Gotteserfahrung auszeichnet.
-7. <<PAGE:10|LABEL:166>>Democracy as it might be; first published in May 1945 by Kees Boeke (1884-1966), edited by Beatrice C. Boeke, in: worldteacher.faithweb.com (online), (Übers. aus d. Engl. v. Verf.).
-8. Die englische Schokoladenfirma Cadbury Bros. Ltd. wurde 1824 durch den Quäker John Cadbury in Birmingham gegründet. Ursprünglich standen vor allem Trinkschokolade, Tee und Kaffee im Angebot der Firma. Der Quäker-Glaube und seine ethischen Grundsätze haben das Unternehmen maßgeblich geprägt, erkennbar beispielsweise daran, dass die Firma ihren Arbeiter:innen nicht nur Arbeit, sondern auch ein gesundes und sicheres Wohnumfeld anbot. So wurde Ende des 19. Jahrhunderts die Cadbury-Werkssiedlung Bournville nahe der Fabrik in Birmingham gegründet, um den Arbeiter:innen der Firma ein Leben im Grünen zu ermöglichen. Ursprünglich begann die Siedlung mit 16 Häuschen für Vorarbeiter, wuchs aber bald an auf über 300 Cottages mit Schulen, Sportanlagen, Läden, Parks und einem Teich. Bei der Gestaltung der Siedlung wurden Prinzipien der Gartenstadtbewegung berücksichtigt, mit der Anlage von großzügigen Gärten, in denen die Bewohner Obst und Gemüse anbauen konnten.
-9. <<PAGE:11|LABEL:167>>Die 1914 gegründete International Fellowship of Reconciliation (IFOR) – Internationaler Versöhnungsbund – ist eine christliche Friedensbewegung, die sich zu einem globalen Netzwerk für Gewaltfreiheit entwickelt hat. Heute umfasst die IFOR über 65 Mitgliedsorganisationen in rund 40 Ländern und engagiert sich weltweit für Friedenserziehung, Menschenrechte und <<PAGE:12|LABEL:168>>Abrüstung. IFOR zählt zu den bedeutendsten Akteuren der zivilgesellschaftlichen Friedensarbeit und besitzt Beraterstatus bei den Vereinten Nationen.
-10. Eduard Bernstein (1850-1932) war ein deutscher Sozialdemokrat und gilt als Begründer des Revisionismus innerhalb der SPD. Während des Ersten Weltkriegs kritisierte er die Kriegspolitik der deutschen Regierung sowie die Burgfriedenspolitik seiner eigenen Partei und deren Zustimmung zu den Kriegskrediten. Zwar hatte auch er am 4. August 1914 der Kriegsfinanzierung zugestimmt, doch bereits wenige Wochen später bedauerte er dies als schweren Fehler. Er entwickelte sich zum prominenten Vertreter des Pazifismus innerhalb der sozialdemokratischen Bewegung.
+1. Pierre-Joseph Proudhon: Qu'est-ce que la propriété ? Ou Recherches sur le principe du droit et
+   du gouvernement, Paris: J.-F. Brocard, 1840, pp. 234-235 (online | PDF), (Übers. aus d. Franz. v.
+   Verf.).
+2. So war die Anarchie nach Auffassung des kanadischen Anthropologen Harold Barclay
+   (1924-2017) als soziale Organisationsform durchaus kein seltenes Phänomen in der
+   Geschichte der Menschheit, sondern „im Gegenteil eine durchaus verbreitete Form von
+   Gemeinwesen oder politischer Organisation“, die „für nahezu die gesamte menschliche
+   <<PAGE:6|LABEL:162>>Geschichte charakteristisch“ war (Harold Barclay: Völker ohne Regierung. Eine Anthropologie
+   der Anarchie, Berlin: Libertad Verlag [= Edition Schwarze Kirschen; 6], 1985, S. 9).
+3. Der in der jüngeren anarchistischen Theoriediskussion häufiger verwendete Begriff der
+   präfigurativen Praxis bzw. präfigurativen Politik besagt, dass die Art und Weise, wie wir uns in
+   der Gegenwart organisieren, die Art von Gesellschaft widerspiegeln sollte, die wir in der
+   Zukunft anstreben. Es geht bei diesem pragmatisch-anarchistischen Ansatz darum, die
+   gewünschten Werte und Strukturen einer zukünftigen Gesellschaft schon heute in unserem
+   eigenen Handeln und in unseren eigenen Organisationen zu verkörpern. Siehe hierzu Uri
+   Gordon: Präfigurative Politik – die Katastrophe und die Hoffnung, in: espero (N.F.), Nr. 4 (Januar
+   2022), S. 87-125 (online | PDF).
+4. <<PAGE:8|LABEL:164>>Was die Biografie von Kees Boeke angeht, so stützt sich der vorliegende Beitrag vor allem
+   auf die folgenden Quellen: Daniela A. Hooghiemstra: De geest in dit huis is liefderijk: het leven
+   en De Werkplaats van Kees Boeke (1884-1966), [Diss. Universiteit van Amsterdam], Utrecht /
+   Amsterdam / Antwerpen: Uitgeverij De Arbeiderspers, 2013 (online | PDF); Hans Jan Kuipers:
+   De Wereld als Werkplaats. Over de vorming van Kees Boeke en Beatrice Cadbury, Amsterdam:
+   Stichting beheer IISG, 1992 sowie die Einleitung von Julia Boeke zum Archief Werkplaats
+   Kindergemeenschap (Bilthoven), (1921-) 1926-1954 (-1986), Amsterdam: Internationaal Instituut
+   voor Sociale Geschiedenis, 1990, pp. 3-10.
+5. Die Hogere Burgerschool (HBS; deutsch: „Höhere Bürgerschule“) war von 1863 bis 1974 ein
+   Schultyp in den Niederlanden und ihren damaligen Kolonien. Er entsprach in etwa der früheren
+   Oberschule in Deutschland und war Teil der voruniversitären Ausbildung im Sekundarbereich.
+6. <<PAGE:9|LABEL:165>>Die Quäker, die sich selbst auch als „Religiöse Gesellschaft der Freunde“ bezeichnen, sind
+   eine seit Mitte des 17. Jahrhunderts bestehende christliche Glaubensgemeinschaft ohne festes
+   Glaubensbekenntnis oder dogmatische Vorgaben. Ihr zentrales Leitmotiv ist der unmittelbare
+   Zugang zu Gott, den sie als das „Innere Licht“ bezeichnen – eine göttliche Stimme im Herzen
+   jedes Menschen. Die Ablehnung von Klerus, starren Lehrsystemen und ritualisierter religiöser
+   Praxis verweist auf ihr Verständnis von Kirche als einer egalitären Gemeinschaft von
+   Gläubigen und nicht als einer hierarchischen Institution. Somit lässt sich das Quäkertum als
+   eine nicht-hierarchische, mystisch geprägte Variante des Christentums charakterisieren, die
+   sich durch eine pazifistische Grundhaltung, soziales Engagement und die Betonung individueller
+   Gotteserfahrung auszeichnet.
+7. <<PAGE:10|LABEL:166>>Democracy as it might be; first published in May 1945 by Kees Boeke (1884-1966), edited by
+   Beatrice C. Boeke, in: worldteacher.faithweb.com (online), (Übers. aus d. Engl. v. Verf.).
+8. Die englische Schokoladenfirma Cadbury Bros. Ltd. wurde 1824 durch den Quäker John
+   Cadbury in Birmingham gegründet. Ursprünglich standen vor allem Trinkschokolade, Tee
+   und Kaffee im Angebot der Firma. Der Quäker-Glaube und seine ethischen Grundsätze haben
+   das Unternehmen maßgeblich geprägt, erkennbar beispielsweise daran, dass die Firma ihren
+   Arbeiter:innen nicht nur Arbeit, sondern auch ein gesundes und sicheres Wohnumfeld anbot.
+   So wurde Ende des 19. Jahrhunderts die Cadbury-Werkssiedlung Bournville nahe der Fabrik
+   in Birmingham gegründet, um den Arbeiter:innen der Firma ein Leben im Grünen zu ermöglichen.
+   Ursprünglich begann die Siedlung mit 16 Häuschen für Vorarbeiter, wuchs aber bald
+   an auf über 300 Cottages mit Schulen, Sportanlagen, Läden, Parks und einem Teich. Bei der
+   Gestaltung der Siedlung wurden Prinzipien der Gartenstadtbewegung berücksichtigt, mit der
+   Anlage von großzügigen Gärten, in denen die Bewohner Obst und Gemüse anbauen konnten.
+9. <<PAGE:11|LABEL:167>>Die 1914 gegründete International Fellowship of Reconciliation (IFOR) – Internationaler Versöhnungsbund
+   – ist eine christliche Friedensbewegung, die sich zu einem globalen Netzwerk
+   für Gewaltfreiheit entwickelt hat. Heute umfasst die IFOR über 65 Mitgliedsorganisationen in
+   rund 40 Ländern und engagiert sich weltweit für Friedenserziehung, Menschenrechte und
+   <<PAGE:12|LABEL:168>>Abrüstung. IFOR zählt zu den bedeutendsten Akteuren der zivilgesellschaftlichen Friedensarbeit
+   und besitzt Beraterstatus bei den Vereinten Nationen.
+10. Eduard Bernstein (1850-1932) war ein deutscher Sozialdemokrat und gilt als Begründer des
+    Revisionismus innerhalb der SPD. Während des Ersten Weltkriegs kritisierte er die Kriegspolitik
+    der deutschen Regierung sowie die Burgfriedenspolitik seiner eigenen Partei und
+    deren Zustimmung zu den Kriegskrediten. Zwar hatte auch er am 4. August 1914 der Kriegsfinanzierung
+    zugestimmt, doch bereits wenige Wochen später bedauerte er dies als schweren
+    Fehler. Er entwickelte sich zum prominenten Vertreter des Pazifismus innerhalb der sozialdemokratischen
+    Bewegung.
 11. Vgl. Kuipers: De Wereld als Werkplaats, a. a. O. (vgl. Anm. 4), p. 133.
 12. Zit. nach ebd., p. 135 (Übers. aus d. Niederl. v. Verf.).
-13. <<PAGE:13|LABEL:169>>Der Defence of the Realm Act (DORA) von 1914 verlieh der britischen Regierung im Ersten Weltkrieg weitreichende Befugnisse zur Steuerung des öffentlichen Lebens und zur Sicherung des Krieges, darunter Zensur, Einschränkungen im Alltag und Kontrolle der Industrie. Das Gesetz ermöglichte Eingriffe wie die Beschlagnahme von Eigentum, die Einschränkung von Streiks und die Einführung zahlreicher anderer Verbote. Zudem schränkte der DORA auch die Redefreiheit ein, um Kriegsgegner, wie die Boekes, zum Schweigen zu bringen.
-14. Zit. nach Hans Ramaer: De piramide der tirannie. Anarchisten in Nederland, Amsterdam: Wetenschappelijke Uitgeverij, 1977, p. 51 (Übers. aus d. Niederl. v. Verf.).
-15. <<PAGE:15|LABEL:171>>Clara Gertrud Wichmann (1885-1922) war eine niederländische Juristin, Feministin, Anarchistin und Antimilitaristin. Bereits in jungen Jahren engagierte sie sich für Fragen der sozialen Gerechtigkeit. Sie war Mitbegründerin des Bundes religiöser Anarcho-Kommunisten (BRAC), der einen kosmischen Humanismus propagierte, worunter „ein Gemeinschaftsgefühl“ verstanden wurde, „[…] das sich nicht auf eine eigene Gruppe oder Klasse beschränkt, sondern sich auf die Menschheit ausdehnt und schließlich zu einem Gefühl der Einheit mit dem gesamten Universum wird“ (zit. nach Ramaer: De piramide der tirannie, a. a. O. [vgl. Anm. 14], p. 47). Im Zentrum ihres Wirkens stand die Kritik am Strafrecht, das sie nicht als Instrument der Vergeltung, sondern als „Wissenschaft der sozialen Pädagogik“ verstand. Dementsprechend forderte sie konsequent die Abschaffung der Gefängnisstrafe. Zudem setzte sie sich für gewaltfreien Widerstand und eine „mentale Verteidigungsfähigkeit“ der Gesellschaft ein. Vgl. auch Hans Ramaer and Thom Holterman: Clara Wichmann and the End of Criminal Law, in: The Raven, vol. 6 (1993), no. 22 (April-June), pp. 143-151 (online | PDF).
-16. Lodewijk van Mierop (1876-1930) war ein niederländischer anarchistischer Autor, Pazifist und Antimilitarist, der zusammen mit Felix Ortt als einer der einflussreichsten Repräsentanten des christlichen Anarchismus in den Niederlanden gilt. Er engagierte sich in von Tolstoi inspirierten christlich-anarchistischen Gemeinschaftsprojekten und gründete Zeitschriften wie Tegen Leugen en Geweld (Gegen Lügen und Gewalt). Als radikaler Gegner des Militarismus unterzeichnete er 1915 das „Manifest für Wehrdienstverweigerung“, wofür er eine Gefängnisstrafe verbüßen musste. Lodewijk van Mierop veröffentlichte unter den Pseudonymen „Homo“ und „Laborator“.
-17. Gemeinsam mit Lodewijk van Mierop gab Kees Boeke 1920 De Vergetenen (Die Vergessenen) heraus, eine Sammlung von Artikeln, Briefen und Zeichnungen über die Situation in Gefängnissen und Haftanstalten.
-18. <<PAGE:16|LABEL:172>>Siehe Rudolf Jans: Tolstoj in Nederland, Diss., Bussum: Uitgeverij Paul Brand NV, 1952 (online) sowie Hans Ramaer: Anarchisme in Domineesland. Continuiteit en Verandering van een politieke Beweging, in: de AS – Jaarboek Anarchisme 2007, vol. 36 (2008), no. 161/162 (zommer), pp. 54-62 (online | PDF).
-19. Die Reinlevenbeweging (Bewegung des Reinen Lebens) war eine von 1901 bis 1929 bestehende christlich-anarchistische Bewegung in den Niederlanden, die ein Leben nach Prinzipien der „Reinheit in Worten und Taten“ anstrebte, insbesondere in sexuellen Fragen. In Anlehnung an die Ideen von Lew Tolstoi lehnte die Bewegung Prostitution, Selbstbefriedigung, Homosexualität, Neo-Malthusianismus sowie jede sexuelle Handlung ab, bei der nicht die Fortpflanzung im Vordergrund stand. Stattdessen trat sie für eine „höchste Liebesgemeinschaft“ innerhalb der lebenslangen Ehe ein, die auf der Gleichberechtigung der Geschlechter, aber auch auf einer traditionellen Rollenverteilung beruhte. Siehe Annemiek de Groot: De Lust tot Last. De Rein Leven Beweging als pionier in de strijd om de nieuwe mens, in: Groniek. Historisch tijdschrift, Nr. 120 (maart 1993), pp. 55-64 (online | PDF) sowie Leony van der Splinter: Dertig jaar streven naar rein leven. De Rein Leven Beweging in Nederland (1901-1931), Diss, Leiden: Universiteit Leiden, 1986. (online | PDF).
-20. <<PAGE:17|LABEL:173>>Zit. nach Kuipers: De Wereld als Werkplaats, a. a. O. (vgl. Anm. 4), p. 48 (Übers. aus d. Niederl. v. Verf.).
+13. <<PAGE:13|LABEL:169>>Der Defence of the Realm Act (DORA) von 1914 verlieh der britischen Regierung im Ersten
+    Weltkrieg weitreichende Befugnisse zur Steuerung des öffentlichen Lebens und zur Sicherung
+    des Krieges, darunter Zensur, Einschränkungen im Alltag und Kontrolle der Industrie. Das
+    Gesetz ermöglichte Eingriffe wie die Beschlagnahme von Eigentum, die Einschränkung von
+    Streiks und die Einführung zahlreicher anderer Verbote. Zudem schränkte der DORA auch
+    die Redefreiheit ein, um Kriegsgegner, wie die Boekes, zum Schweigen zu bringen.
+14. Zit. nach Hans Ramaer: De piramide der tirannie. Anarchisten in Nederland, Amsterdam:
+    Wetenschappelijke Uitgeverij, 1977, p. 51 (Übers. aus d. Niederl. v. Verf.).
+15. <<PAGE:15|LABEL:171>>Clara Gertrud Wichmann (1885-1922) war eine niederländische Juristin, Feministin, Anarchistin
+    und Antimilitaristin. Bereits in jungen Jahren engagierte sie sich für Fragen der sozialen
+    Gerechtigkeit. Sie war Mitbegründerin des Bundes religiöser Anarcho-Kommunisten
+    (BRAC), der einen kosmischen Humanismus propagierte, worunter „ein Gemeinschaftsgefühl“
+    verstanden wurde, „[…] das sich nicht auf eine eigene Gruppe oder Klasse beschränkt, sondern
+    sich auf die Menschheit ausdehnt und schließlich zu einem Gefühl der Einheit mit dem
+    gesamten Universum wird“ (zit. nach Ramaer: De piramide der tirannie, a. a. O. [vgl. Anm. 14],
+    p. 47). Im Zentrum ihres Wirkens stand die Kritik am Strafrecht, das sie nicht als Instrument
+    der Vergeltung, sondern als „Wissenschaft der sozialen Pädagogik“ verstand. Dementsprechend
+    forderte sie konsequent die Abschaffung der Gefängnisstrafe. Zudem setzte sie sich für
+    gewaltfreien Widerstand und eine „mentale Verteidigungsfähigkeit“ der Gesellschaft ein. Vgl.
+    auch Hans Ramaer and Thom Holterman: Clara Wichmann and the End of Criminal Law, in:
+    The Raven, vol. 6 (1993), no. 22 (April-June), pp. 143-151 (online | PDF).
+16. Lodewijk van Mierop (1876-1930) war ein niederländischer anarchistischer Autor, Pazifist
+    und Antimilitarist, der zusammen mit Felix Ortt als einer der einflussreichsten Repräsentanten
+    des christlichen Anarchismus in den Niederlanden gilt. Er engagierte sich in von Tolstoi
+    inspirierten christlich-anarchistischen Gemeinschaftsprojekten und gründete Zeitschriften
+    wie Tegen Leugen en Geweld (Gegen Lügen und Gewalt). Als radikaler Gegner des Militarismus
+    unterzeichnete er 1915 das „Manifest für Wehrdienstverweigerung“, wofür er eine
+    Gefängnisstrafe verbüßen musste. Lodewijk van Mierop veröffentlichte unter den Pseudonymen
+    „Homo“ und „Laborator“.
+17. Gemeinsam mit Lodewijk van Mierop gab Kees Boeke 1920 De Vergetenen (Die Vergessenen)
+    heraus, eine Sammlung von Artikeln, Briefen und Zeichnungen über die Situation in
+    Gefängnissen und Haftanstalten.
+18. <<PAGE:16|LABEL:172>>Siehe Rudolf Jans: Tolstoj in Nederland, Diss., Bussum: Uitgeverij Paul Brand NV, 1952
+    (online) sowie Hans Ramaer: Anarchisme in Domineesland. Continuiteit en Verandering van een
+    politieke Beweging, in: de AS – Jaarboek Anarchisme 2007, vol. 36 (2008), no. 161/162 (zommer),
+    pp. 54-62 (online | PDF).
+19. Die Reinlevenbeweging (Bewegung des Reinen Lebens) war eine von 1901 bis 1929 bestehende
+    christlich-anarchistische Bewegung in den Niederlanden, die ein Leben nach Prinzipien
+    der „Reinheit in Worten und Taten“ anstrebte, insbesondere in sexuellen Fragen. In
+    Anlehnung an die Ideen von Lew Tolstoi lehnte die Bewegung Prostitution, Selbstbefriedigung,
+    Homosexualität, Neo-Malthusianismus sowie jede sexuelle Handlung ab, bei der nicht
+    die Fortpflanzung im Vordergrund stand. Stattdessen trat sie für eine „höchste Liebesgemeinschaft“
+    innerhalb der lebenslangen Ehe ein, die auf der Gleichberechtigung der Geschlechter,
+    aber auch auf einer traditionellen Rollenverteilung beruhte. Siehe Annemiek de Groot: De
+    Lust tot Last. De Rein Leven Beweging als pionier in de strijd om de nieuwe mens, in: Groniek.
+    Historisch tijdschrift, Nr. 120 (maart 1993), pp. 55-64 (online | PDF) sowie Leony van der
+    Splinter: Dertig jaar streven naar rein leven. De Rein Leven Beweging in Nederland (1901-1931),
+    Diss, Leiden: Universiteit Leiden, 1986. (online | PDF).
+20. <<PAGE:17|LABEL:173>>Zit. nach Kuipers: De Wereld als Werkplaats, a. a. O. (vgl. Anm. 4), p. 48 (Übers. aus d. Niederl.
+    v. Verf.).
 21. Vgl. Hooghiemstra: De geest in dit huis is liefderijk, a. a. O. (vgl. Anm. 4), pp. 128-130.
-22. Zit. nach Kuipers: De Wereld als Werkplaats, a. a. O. (vgl. Anm. 4), p. 146 (Übers. aus d. Niederl. v. Verf.).
+22. Zit. nach Kuipers: De Wereld als Werkplaats, a. a. O. (vgl. Anm. 4), p. 146 (Übers. aus d. Niederl.
+    v. Verf.).
 23. <<PAGE:18|LABEL:174>>Vgl. Hooghiemstra: De geest in dit huis is liefderijk, a. a. O. (vgl. Anm. 4), p. 134.
-24. Siehe hierzu auch den Bericht des libertären Schweizer Freiwirtschaftlers und Lebensreformers Werner Zimmermann (1893-1982), der Kees Boeke 1932 in Bilthoven besucht hatte, in: Ders. [W. Z.]: Kees Boeke, in: TAU. Monatsblätter für Erkenntnis und Tat, Lauf an der Pegnitz und Bern, Heft 106 (Februar 1933), S. 18-21. Sein Bericht ist eines der wenigen Zeugnisse dafür, dass Boekes christlich-anarchistische Aktivitäten und Projekte auch von zeitgenössischen deutschsprachigen Libertären wahrgenommen wurden.
-25. <<PAGE:19|LABEL:175>>Überwiegend wird in den zum Thema vorliegenden Quellen der 6. Januar 1926 als das Datum genannt, an dem die Boekes ihre Kinder privat in ihrem Wohnzimmer zu unterrichten begannen, was auch als das Gründungsdatum der Werkplaats Kindergemeenschap gilt. Kuipers zufolge verließen die Töchter der Boekes jedoch bereits im Spätsommer 1925 die öffentliche Schule in Bilthoven und wurden seitdem privat von einer ehemaligen Montessori-Lehrerin unterrichtet. Vgl. Kuipers: De Wereld als Werkplaats, a. a. O. (vgl. Anm. 4), p. 13.
+24. Siehe hierzu auch den Bericht des libertären Schweizer Freiwirtschaftlers und Lebensreformers
+    Werner Zimmermann (1893-1982), der Kees Boeke 1932 in Bilthoven besucht hatte, in:
+    Ders. [W. Z.]: Kees Boeke, in: TAU. Monatsblätter für Erkenntnis und Tat, Lauf an der Pegnitz
+    und Bern, Heft 106 (Februar 1933), S. 18-21. Sein Bericht ist eines der wenigen Zeugnisse
+    dafür, dass Boekes christlich-anarchistische Aktivitäten und Projekte auch von zeitgenössischen
+    deutschsprachigen Libertären wahrgenommen wurden.
+25. <<PAGE:19|LABEL:175>>Überwiegend wird in den zum Thema vorliegenden Quellen der 6. Januar 1926 als das
+    Datum genannt, an dem die Boekes ihre Kinder privat in ihrem Wohnzimmer zu unterrichten
+    begannen, was auch als das Gründungsdatum der Werkplaats Kindergemeenschap gilt. Kuipers
+    zufolge verließen die Töchter der Boekes jedoch bereits im Spätsommer 1925 die öffentliche
+    Schule in Bilthoven und wurden seitdem privat von einer ehemaligen Montessori-Lehrerin
+    unterrichtet. Vgl. Kuipers: De Wereld als Werkplaats, a. a. O. (vgl. Anm. 4), p. 13.
 26. Zit. nach ebd., p. 25 (Übers. aus d. Niederl. v. Verf.).
 27. <<PAGE:21|LABEL:177>>Die statistischen Angaben nach ebd., pp. 15-17.
-28. Der im Jahr 1922 gegründete Boeke-Trust verwaltete die Aktien aus Betty Cadburys Firmenanteilen an der Schokoladenfabrik ihrer Familie, der Cadbury Bros. Ltd., und stellte die Erträge für wohltätige, friedens- und bildungspolitische Zwecke sowie für die Ausbildung der Boeke-Kinder bereit. Er finanzierte den Bau des Schulgebäudes und zweier Wohnhäuser der Werkplaats, förderte die Mitarbeitenden und sicherte zugleich diskret den Lebensunterhalt der Familie Boeke sowie die Deckung außergewöhnlicher Kosten, etwa für Krankenhausaufenthalte oder Reisen.
-29. <<PAGE:22|LABEL:178>>Maria Montessori (1870-1952) wurde in Italien geboren und war eine der ersten Ärztinnen des Landes. Auf Basis medizinischer, anthropologischer und psychologischer Studien entwickelte sie ein pädagogisches Konzept, das die Selbstständigkeit, Eigenaktivität und individuelle Entwicklung des Kindes in den Mittelpunkt stellt. Ihre Beobachtungen mündeten in der Idee vorbereiteter Lernumgebungen, in denen Freiheit und Struktur didaktisch reflektiert miteinander verbunden sind. Bis heute gilt Montessori als bedeutende Wegbereiterin einer kindzentrierten Pädagogik, die auf Respekt, Vertrauen und die Entfaltung individueller Potenziale ausgerichtet ist. Kees Boeke ließ sich von Montessoris Ideen inspirieren und engagierte sich noch vor der Gründung der Werkplaats an der seit 1919 bestehenden Montessori-Schule in Bilthoven, wo er in enger Abstimmung mit Montessori den Vorschulbereich gestaltete. Montessori, die 1936 in die Niederlande zog und dort bis zu ihrem Lebensende blieb, begegnete der Werkplaats, die auch ihr Enkel Rolando besuchte, mit großer Wertschätzung. Sie sah in dem Projekt eine wesentlich authentischere Verwirklichung ihrer pädagogischen Ideale als in vielen anderen Einrichtungen, die ihren Namen trugen. Vgl. Hooghiemstra: De geest in dit huis is liefderijk, a. a. O. (vgl. Anm. 4), p. 193.
-30. <<PAGE:23|LABEL:179>>Helen Parkhurst (1886-1973) war eine amerikanische Reformpädagogin, die den Dalton-Plan entwickelte, der das selbstständige und eigenverantwortliche Lernen in den Mittelpunkt stellte. Ausgangspunkt war ihr Unterricht an einer Landschule, wo sie eine Klasse mit stark unterschiedlichen Altersgruppen durch eigenständige Lernaufgaben („assignments“) und fachspezifische Lernumgebungen („laboratories“) förderte. Der Dalton-Plan verzichtet auf Frontalunterricht und betont stattdessen die Selbststeuerung der Schüler hinsichtlich Lernzeit, Inhalt und Sozialform. Zentral sind die Prinzipien Freiheit, Kooperation und eigenverantwortliche Planung („budgeting time“).
-31. Anfänglich wurden in der Werkplaats selbstkorrigierende Materialien und kleine Tests genutzt, die die Kinder freiwillig zur Selbsteinschätzung und Dokumentation ihrer Lernfort<<PAGE:24|LABEL:180>>schritte verwendeten. Trotz der generellen Ablehnung traditioneller Prüfungen wurde allerdings, insbesondere nach einer ernüchternden Erfahrung im Jahr 1933, bei der nur zwei von vier Werkplaats-Schülern die staatliche Mulo-Prüfung bestanden, ein eigenes Prüfungssystem (Proevenstelsel) eingeführt, um als Alternative zu den verhassten Examina und ohne den Druck traditioneller Prüfungen den Fortschritt der Schüler kontrollieren zu können.
-32. In der Werkplaats bedeutete die dialogische Aushandlung, dass Konflikte und Regeln in gemeinsamen Versammlungen der gesamten Schulgemeinschaft offen besprochen wurden, um im gegenseitigen Austausch eine einvernehmliche Lösung zu finden. Auf diese Weise sollten sich soziale Normen aus dem offenen Dialog aller Beteiligten entwickeln und eine selbstbestimmte Ordnung ohne Zwang entstehen.
-33. <<PAGE:25|LABEL:181>>Drei Jahre später wurde Carel Goseling (geb. 1891) selbst Opfer der Nazis. Im September 1940 wurde er zusammen mit mehr als hundert anderen prominenten Niederländern als sogenannte „Indien-Geiseln“ verhaftet und ins KZ Buchenwald deportiert. Dort starb Goseling im April 1941 an den Folgen der schrecklichen Bedingungen seiner Lagerhaft. Mit der Geiselnahme wollten die Nazis die Kolonialregierung im unbesetzten Niederländisch-Indien (dem heutigen Indonesien) dazu bewegen, die Lage der dort nach Kriegsausbruch internierten fast 2.400 Deutschen zu verbessern, die dort unmittelbar nach der Kapitulation der Niederlande im Mai 1940 durch den niederländischen Generalgouverneur vorsorglich interniert worden waren.
-34. Hein Herbers (1895-1968) war ein deutscher sozialistischer Pazifist, Pädagoge und Publizist. Nach dem Ersten Weltkrieg wurde er zu einem überzeugten Gegner von Militarismus <<PAGE:26|LABEL:182>>und Nationalismus. Nach der Machtübernahme der Nationalsozialisten floh Herbers 1934 ins niederländische Exil, wo er maßgeblich am Aufbau der Werkplaats Kindergemeenschap in Bilthoven mitwirkte. Auch während des Krieges blieb er im Untergrund aktiv. Bis zu seinem Tod lebte Herbers in Bilthoven und engagierte sich dort gegen die Wiederbewaffnung der Bundesrepublik Deutschland sowie gegen die NATO.
-35. Hermann Walther von der Dunk (1928-2018) war ein angesehener niederländischer Historiker und Kulturwissenschaftler deutscher Herkunft. Bis 1990 wirkte er als Professor an der Universität Utrecht und erforschte die europäische Kulturgeschichte sowie die deutschniederländischen Beziehungen. Er wuchs in Bilthoven im reformpädagogischen Umfeld des Werkplaats-Projekts auf, eine Erfahrung, die sein Interesse an gesellschaftlichem Wandel und Pädagogik nachhaltig geprägt hat.
-36. Später erinnerte sich Rudolf de Jong wie folgt an seine Zeit als Werkplaats-Schüler: „Es war eine besondere Schule mit eigenen – größtenteils ungeschriebenen – Regeln. Viel Verantwortung für die Kinder, die Arbeiter, viel Selbstständigkeit in deinem eigenen Tempo, viel Kreativität, vor allem Musik. Ich fand es dort wunderbar, aber heute blicke ich kritischer auf das System zurück. Unbewusst wurde einem doch ein Konformismus aufgezwungen. Ich glaube nicht an einen Schultyp, der für alle Kinder ideal ist.“ (Rudolf de Jong: „Ik ben een Possibilistisch Anarchist”, in: de AS, vol. 40 [2012], no. 180 [Winter 2012], pp. 2-11 [hier nach p. 4], [online | PDF], [Übers. aus d. Niederl. v. Verf.]).
-37. So hatte Kees Boeke seit den frühen 1920er-Jahren seine Kritik nicht nur gegen den Staat, sondern auch direkt gegen die Monarchie gerichtet. In einem 1923 verfassten Offenen Brief an Königin Wilhelmina sprach er zwar seine persönliche Wertschätzung für sie aus, verwarf jedoch entschieden die von ihr verkörperte Institution der Monarchie. Er forderte sie auf, freiwillig auf äußere Macht zu verzichten, um dadurch als Mensch größere moralische Autorität <<PAGE:27|LABEL:183>>– als die „Königin der Herzen“ – zu gewinnen. Wenige Jahre später äußerte er zudem den Wunsch, dass Prinzessin Juliana niemals den Thron besteigen möge. Umso erstaunlicher war es, dass die Kronprinzessin trotz Boekes kompromissloser antimonarchistischer Haltung ab September 1945 ihre Töchter in Boekes Werkplaats zur Schule schickte.
-38. Zit. nach Hooghiemstra: De geest in dit huis is liefderijk, a. a. O. (vgl. Anm. 4), (Übers. aus d. Niederl. v. Verf.).
+28. Der im Jahr 1922 gegründete Boeke-Trust verwaltete die Aktien aus Betty Cadburys Firmenanteilen
+    an der Schokoladenfabrik ihrer Familie, der Cadbury Bros. Ltd., und stellte die
+    Erträge für wohltätige, friedens- und bildungspolitische Zwecke sowie für die Ausbildung der
+    Boeke-Kinder bereit. Er finanzierte den Bau des Schulgebäudes und zweier Wohnhäuser der
+    Werkplaats, förderte die Mitarbeitenden und sicherte zugleich diskret den Lebensunterhalt
+    der Familie Boeke sowie die Deckung außergewöhnlicher Kosten, etwa für Krankenhausaufenthalte
+    oder Reisen.
+29. <<PAGE:22|LABEL:178>>Maria Montessori (1870-1952) wurde in Italien geboren und war eine der ersten Ärztinnen
+    des Landes. Auf Basis medizinischer, anthropologischer und psychologischer Studien entwickelte
+    sie ein pädagogisches Konzept, das die Selbstständigkeit, Eigenaktivität und individuelle
+    Entwicklung des Kindes in den Mittelpunkt stellt. Ihre Beobachtungen mündeten in der Idee
+    vorbereiteter Lernumgebungen, in denen Freiheit und Struktur didaktisch reflektiert miteinander
+    verbunden sind. Bis heute gilt Montessori als bedeutende Wegbereiterin einer kindzentrierten
+    Pädagogik, die auf Respekt, Vertrauen und die Entfaltung individueller Potenziale
+    ausgerichtet ist. Kees Boeke ließ sich von Montessoris Ideen inspirieren und engagierte sich
+    noch vor der Gründung der Werkplaats an der seit 1919 bestehenden Montessori-Schule in
+    Bilthoven, wo er in enger Abstimmung mit Montessori den Vorschulbereich gestaltete. Montessori,
+    die 1936 in die Niederlande zog und dort bis zu ihrem Lebensende blieb, begegnete
+    der Werkplaats, die auch ihr Enkel Rolando besuchte, mit großer Wertschätzung. Sie sah in
+    dem Projekt eine wesentlich authentischere Verwirklichung ihrer pädagogischen Ideale als in
+    vielen anderen Einrichtungen, die ihren Namen trugen. Vgl. Hooghiemstra: De geest in dit
+    huis is liefderijk, a. a. O. (vgl. Anm. 4), p. 193.
+30. <<PAGE:23|LABEL:179>>Helen Parkhurst (1886-1973) war eine amerikanische Reformpädagogin, die den Dalton-Plan
+    entwickelte, der das selbstständige und eigenverantwortliche Lernen in den Mittelpunkt
+    stellte. Ausgangspunkt war ihr Unterricht an einer Landschule, wo sie eine Klasse mit stark
+    unterschiedlichen Altersgruppen durch eigenständige Lernaufgaben („assignments“) und
+    fachspezifische Lernumgebungen („laboratories“) förderte. Der Dalton-Plan verzichtet auf
+    Frontalunterricht und betont stattdessen die Selbststeuerung der Schüler hinsichtlich Lernzeit,
+    Inhalt und Sozialform. Zentral sind die Prinzipien Freiheit, Kooperation und eigenverantwortliche
+    Planung („budgeting time“).
+31. Anfänglich wurden in der Werkplaats selbstkorrigierende Materialien und kleine Tests
+    genutzt, die die Kinder freiwillig zur Selbsteinschätzung und Dokumentation ihrer Lernfortschritte
+    <<PAGE:24|LABEL:180>>verwendeten. Trotz der generellen Ablehnung traditioneller Prüfungen wurde allerdings,
+    insbesondere nach einer ernüchternden Erfahrung im Jahr 1933, bei der nur zwei von
+    vier Werkplaats-Schülern die staatliche Mulo-Prüfung bestanden, ein eigenes Prüfungssystem
+    (Proevenstelsel) eingeführt, um als Alternative zu den verhassten Examina und ohne den
+    Druck traditioneller Prüfungen den Fortschritt der Schüler kontrollieren zu können.
+32. In der Werkplaats bedeutete die dialogische Aushandlung, dass Konflikte und Regeln in
+    gemeinsamen Versammlungen der gesamten Schulgemeinschaft offen besprochen wurden, um
+    im gegenseitigen Austausch eine einvernehmliche Lösung zu finden. Auf diese Weise sollten
+    sich soziale Normen aus dem offenen Dialog aller Beteiligten entwickeln und eine selbstbestimmte
+    Ordnung ohne Zwang entstehen.
+33. <<PAGE:25|LABEL:181>>Drei Jahre später wurde Carel Goseling (geb. 1891) selbst Opfer der Nazis. Im September 1940
+    wurde er zusammen mit mehr als hundert anderen prominenten Niederländern als sogenannte
+    „Indien-Geiseln“ verhaftet und ins KZ Buchenwald deportiert. Dort starb Goseling im April 1941
+    an den Folgen der schrecklichen Bedingungen seiner Lagerhaft. Mit der Geiselnahme wollten
+    die Nazis die Kolonialregierung im unbesetzten Niederländisch-Indien (dem heutigen Indonesien)
+    dazu bewegen, die Lage der dort nach Kriegsausbruch internierten fast 2.400 Deutschen zu
+    verbessern, die dort unmittelbar nach der Kapitulation der Niederlande im Mai 1940 durch den
+    niederländischen Generalgouverneur vorsorglich interniert worden waren.
+34. Hein Herbers (1895-1968) war ein deutscher sozialistischer Pazifist, Pädagoge und Publizist.
+    Nach dem Ersten Weltkrieg wurde er zu einem überzeugten Gegner von Militarismus
+    <<PAGE:26|LABEL:182>>und Nationalismus. Nach der Machtübernahme der Nationalsozialisten floh Herbers 1934 ins
+    niederländische Exil, wo er maßgeblich am Aufbau der Werkplaats Kindergemeenschap in
+    Bilthoven mitwirkte. Auch während des Krieges blieb er im Untergrund aktiv. Bis zu seinem
+    Tod lebte Herbers in Bilthoven und engagierte sich dort gegen die Wiederbewaffnung der
+    Bundesrepublik Deutschland sowie gegen die NATO.
+35. Hermann Walther von der Dunk (1928-2018) war ein angesehener niederländischer Historiker
+    und Kulturwissenschaftler deutscher Herkunft. Bis 1990 wirkte er als Professor an der
+    Universität Utrecht und erforschte die europäische Kulturgeschichte sowie die deutschniederländischen
+    Beziehungen. Er wuchs in Bilthoven im reformpädagogischen Umfeld des
+    Werkplaats-Projekts auf, eine Erfahrung, die sein Interesse an gesellschaftlichem Wandel und
+    Pädagogik nachhaltig geprägt hat.
+36. Später erinnerte sich Rudolf de Jong wie folgt an seine Zeit als Werkplaats-Schüler: „Es
+    war eine besondere Schule mit eigenen – größtenteils ungeschriebenen – Regeln. Viel Verantwortung
+    für die Kinder, die Arbeiter, viel Selbstständigkeit in deinem eigenen Tempo, viel
+    Kreativität, vor allem Musik. Ich fand es dort wunderbar, aber heute blicke ich kritischer auf
+    das System zurück. Unbewusst wurde einem doch ein Konformismus aufgezwungen. Ich
+    glaube nicht an einen Schultyp, der für alle Kinder ideal ist.“ (Rudolf de Jong: „Ik ben een Possibilistisch
+    Anarchist”, in: de AS, vol. 40 [2012], no. 180 [Winter 2012], pp. 2-11 [hier nach p. 4],
+    [online | PDF], [Übers. aus d. Niederl. v. Verf.]).
+37. So hatte Kees Boeke seit den frühen 1920er-Jahren seine Kritik nicht nur gegen den Staat,
+    sondern auch direkt gegen die Monarchie gerichtet. In einem 1923 verfassten Offenen Brief
+    an Königin Wilhelmina sprach er zwar seine persönliche Wertschätzung für sie aus, verwarf
+    jedoch entschieden die von ihr verkörperte Institution der Monarchie. Er forderte sie auf, freiwillig
+    auf äußere Macht zu verzichten, um dadurch als Mensch größere moralische Autorität
+    <<PAGE:27|LABEL:183>>– als die „Königin der Herzen“ – zu gewinnen. Wenige Jahre später äußerte er zudem den
+    Wunsch, dass Prinzessin Juliana niemals den Thron besteigen möge. Umso erstaunlicher war
+    es, dass die Kronprinzessin trotz Boekes kompromissloser antimonarchistischer Haltung ab
+    September 1945 ihre Töchter in Boekes Werkplaats zur Schule schickte.
+38. Zit. nach Hooghiemstra: De geest in dit huis is liefderijk, a. a. O. (vgl. Anm. 4), (Übers. aus d.
+    Niederl. v. Verf.).
 39. Zit. nach ebd., p. 204 (Übers. aus d. Niederl. v. Verf.).
-40. Johan (Joop) Gerard Westerweel (1899-1944) war ein niederländischer Pädagoge und überzeugter Pazifist. Ab 1932 unterrichtete er an der Werkplaats Kindergemeenschap in Bilthoven und engagierte sich dort in der Flüchtlingshilfe. Ideologische Spannungen mit Kees Boeke führten im März 1940 zu seinem Austritt. Nach seinem Wechsel an eine Montessori-Schule in Rotterdam verstärkte er sein Engagement im antifaschistischen Widerstand. Gemeinsam mit seiner Frau Wilhelmina („Wil“ oder „Willie“) Bosdriesz leitete er die nach ihm benannte Westerweel-Gruppe, die ab Sommer 1942 jüdischen Kindern und Jugendlichen, vor allem aus Polen und Deutschland, zur Flucht verhalf. In der Gruppe arbeiteten Juden und Nichtjuden eng zusammen, um Verstecke, Papiere und Fluchtwege für rund 300 bis 400 Menschen zu organisieren, von denen viele gerettet wurden. Westerweel wurde am 10. März 1944 bei einem Fluchtversuch verhaftet, in Rotterdam schwer gefoltert – ohne seine Mitstreiter zu verraten – und am 11. August 1944 im KZ Herzogenbusch hingerichtet. Seine Frau überlebte die Lagerhaft. 1964 ehrte Yad <<PAGE:28|LABEL:184>>Vashem beide als „Gerechte unter den Völkern“. Siehe Arie Hazekamp: De bezielende Kracht van Joop Westerweel, in: de AS – Nederlandse Anarchisten tijdens de duitse Bezetting, vol. 46 (2018), no. 202 (najaar), pp. 4-9 (online | PDF).
-41. Bouke Koning (1915-1998) stammte aus einer sozialistischen Arbeiterfamilie in Friesland. Unter dem Einfluss von Bart de Ligt wurde er zu einem pazifistischen Anarchisten und verweigerte 1934 den Militärdienst. Ende der 1930er-Jahre kam er zur Werkplaats Kindergemeenschap von Kees Boeke, wo er als Gärtner arbeitete und zugleich eine zentrale Rolle im Widerstand gegen die deutsche Besatzung übernahm. Er war eng mit der Westerweel-Gruppe verbunden, half jüdischen Untergetauchten und versorgte Widerstandsnetzwerke mit Lebensmitteln, Bonkarten und gefälschten Dokumenten. 1944 wurde er zusammen mit Joop Westerweel verhaftet und durchlief mehrere Konzentrationslager, bis er im Mai 1945 von der Roten Armee aus dem KZ Ravensbrück befreit wurde, körperlich schwer gezeichnet von der Lagerhaft und an TBC erkrankt. Nach einer längeren Phase der Rekonvaleszenz, in der er sein Lehrerdiplom erwarb, nahm er Mitte der 1950er-Jahre eine Tätigkeit als Schulleiter auf, musste diese jedoch nach nur wenigen Jahren aufgrund der Spätfolgen seiner KZ-Haft vorzeitig aufgeben. Vgl. Hazekamp: De bezielende Kracht van Joop Westerweel, a. a. O. (vgl. Anm. 40), p. 8.
-42. Vgl. Hooghiemstra: De geest in dit huis is liefderijk, a. a. O. (vgl. Anm. 4), bes. Kapitel 6: Oorlog, pp. 201-251.
-43. <<PAGE:29|LABEL:185>>Die Mitarbeiter:innen hatten keinen Anspruch auf ein reguläres Gehalt, sondern waren auf das angewiesen, was die Werkplaats gerade zur Verfügung stellen konnte.
-44. Die New Education Fellowship (NEF) war eine internationale Organisation, die sich für eine Erneuerung des Bildungswesens einsetzte. Kees Boeke hatte bereits vor der Gründung der niederländischen Sektion Kontakte zur NEF und ihrer Vorgängerorganisation, der Fraternity in Education. Er nahm seit den frühen 1930er-Jahren an fast allen wichtigen Bildungskonferenzen in Europa teil.
-45. <<PAGE:32|LABEL:188>>Zit. nach Hooghiemstra: De geest in dit huis is liefderijk, a. a. O. (vgl. Anm. 4), p. 180 (Übers. aus d. Niederl. v. Verf.).
-46. Die von Kees und Betty Boeke aus der Lehre des „Reinen Lebens“ abgeleitete puritanische Haltung hatte in der Werkplaats eine Atmosphäre sexueller Unterdrückung entstehen lassen – eine Haltung, die so gar nicht zu dem Prinzip der Selbstbestimmung passen wollte, das im Zentrum der Werkplaats-Pädagogik stand und eigentlich die Eigenständigkeit der jungen Lernenden fördern sollte. Laut Boekes eigener Tochter Candia galt selbst „das Knutschen im Fahrradschuppen“ in den Augen ihres Vaters fast als ein „Verbrechen gegen die Menschlichkeit“. Und ihr Sohn Daniël schilderte einen anderen Vorfall, der bezeichnend für die repressive Sexualmoral in der Werkplaats war. Nachdem bekannt geworden war, dass er und einige Freunde mit Mädchen in einem Heuhaufen geschlafen hatten, versammelte Kees die „Schuldigen“ und hielt ihnen eine Standpauke. Er erklärte, dass körperlicher Kontakt, der nicht auf Zärtlichkeit und Liebe, sondern nur auf sexueller Anziehung beruhe, „falsch“ sei. Vgl. Hooghiemstra: De geest in dit huis is liefderijk, a. a. O. (vgl. Anm. 4), p. 208 (Übers. aus d. Niederl. v. Verf.).
+40. Johan (Joop) Gerard Westerweel (1899-1944) war ein niederländischer Pädagoge und überzeugter
+    Pazifist. Ab 1932 unterrichtete er an der Werkplaats Kindergemeenschap in Bilthoven
+    und engagierte sich dort in der Flüchtlingshilfe. Ideologische Spannungen mit Kees Boeke
+    führten im März 1940 zu seinem Austritt. Nach seinem Wechsel an eine Montessori-Schule in
+    Rotterdam verstärkte er sein Engagement im antifaschistischen Widerstand. Gemeinsam mit
+    seiner Frau Wilhelmina („Wil“ oder „Willie“) Bosdriesz leitete er die nach ihm benannte Westerweel-Gruppe,
+    die ab Sommer 1942 jüdischen Kindern und Jugendlichen, vor allem aus Polen
+    und Deutschland, zur Flucht verhalf. In der Gruppe arbeiteten Juden und Nichtjuden eng zusammen,
+    um Verstecke, Papiere und Fluchtwege für rund 300 bis 400 Menschen zu organisieren, von
+    denen viele gerettet wurden. Westerweel wurde am 10. März 1944 bei einem Fluchtversuch verhaftet,
+    in Rotterdam schwer gefoltert – ohne seine Mitstreiter zu verraten – und am 11. August
+    1944 im KZ Herzogenbusch hingerichtet. Seine Frau überlebte die Lagerhaft. 1964 ehrte Yad
+    <<PAGE:28|LABEL:184>>Vashem beide als „Gerechte unter den Völkern“. Siehe Arie Hazekamp: De bezielende Kracht van
+    Joop Westerweel, in: de AS – Nederlandse Anarchisten tijdens de duitse Bezetting, vol. 46 (2018),
+    no. 202 (najaar), pp. 4-9 (online | PDF).
+41. Bouke Koning (1915-1998) stammte aus einer sozialistischen Arbeiterfamilie in Friesland.
+    Unter dem Einfluss von Bart de Ligt wurde er zu einem pazifistischen Anarchisten und verweigerte
+    1934 den Militärdienst. Ende der 1930er-Jahre kam er zur Werkplaats Kindergemeenschap
+    von Kees Boeke, wo er als Gärtner arbeitete und zugleich eine zentrale Rolle im Widerstand
+    gegen die deutsche Besatzung übernahm. Er war eng mit der Westerweel-Gruppe verbunden,
+    half jüdischen Untergetauchten und versorgte Widerstandsnetzwerke mit Lebensmitteln,
+    Bonkarten und gefälschten Dokumenten. 1944 wurde er zusammen mit Joop Westerweel verhaftet
+    und durchlief mehrere Konzentrationslager, bis er im Mai 1945 von der Roten Armee
+    aus dem KZ Ravensbrück befreit wurde, körperlich schwer gezeichnet von der Lagerhaft und
+    an TBC erkrankt. Nach einer längeren Phase der Rekonvaleszenz, in der er sein Lehrerdiplom
+    erwarb, nahm er Mitte der 1950er-Jahre eine Tätigkeit als Schulleiter auf, musste diese jedoch
+    nach nur wenigen Jahren aufgrund der Spätfolgen seiner KZ-Haft vorzeitig aufgeben. Vgl.
+    Hazekamp: De bezielende Kracht van Joop Westerweel, a. a. O. (vgl. Anm. 40), p. 8.
+42. Vgl. Hooghiemstra: De geest in dit huis is liefderijk, a. a. O. (vgl. Anm. 4), bes. Kapitel 6: Oorlog,
+    pp. 201-251.
+43. <<PAGE:29|LABEL:185>>Die Mitarbeiter:innen hatten keinen Anspruch auf ein reguläres Gehalt, sondern waren auf
+    das angewiesen, was die Werkplaats gerade zur Verfügung stellen konnte.
+44. Die New Education Fellowship (NEF) war eine internationale Organisation, die sich für eine
+    Erneuerung des Bildungswesens einsetzte. Kees Boeke hatte bereits vor der Gründung der
+    niederländischen Sektion Kontakte zur NEF und ihrer Vorgängerorganisation, der Fraternity
+    in Education. Er nahm seit den frühen 1930er-Jahren an fast allen wichtigen Bildungskonferenzen
+    in Europa teil.
+45. <<PAGE:32|LABEL:188>>Zit. nach Hooghiemstra: De geest in dit huis is liefderijk, a. a. O. (vgl. Anm. 4), p. 180 (Übers.
+    aus d. Niederl. v. Verf.).
+46. Die von Kees und Betty Boeke aus der Lehre des „Reinen Lebens“ abgeleitete puritanische
+    Haltung hatte in der Werkplaats eine Atmosphäre sexueller Unterdrückung entstehen lassen –
+    eine Haltung, die so gar nicht zu dem Prinzip der Selbstbestimmung passen wollte, das im Zentrum
+    der Werkplaats-Pädagogik stand und eigentlich die Eigenständigkeit der jungen Lernenden
+    fördern sollte. Laut Boekes eigener Tochter Candia galt selbst „das Knutschen im Fahrradschuppen“
+    in den Augen ihres Vaters fast als ein „Verbrechen gegen die Menschlichkeit“. Und
+    ihr Sohn Daniël schilderte einen anderen Vorfall, der bezeichnend für die repressive Sexualmoral
+    in der Werkplaats war. Nachdem bekannt geworden war, dass er und einige Freunde mit
+    Mädchen in einem Heuhaufen geschlafen hatten, versammelte Kees die „Schuldigen“ und hielt
+    ihnen eine Standpauke. Er erklärte, dass körperlicher Kontakt, der nicht auf Zärtlichkeit und
+    Liebe, sondern nur auf sexueller Anziehung beruhe, „falsch“ sei. Vgl. Hooghiemstra: De geest in
+    dit huis is liefderijk, a. a. O. (vgl. Anm. 4), p. 208 (Übers. aus d. Niederl. v. Verf.).
 47. <<PAGE:33|LABEL:189>>Zit. nach ebd., p. 173 (Übers. aus d. Niederl. v. Verf.).
 48. Vgl. ebd., bes. pp. 172-177.
-49. <<PAGE:34|LABEL:190>>Kees Boeke: Redelijke Ordening van de Mensengemeenschap, 2. überarb. Aufl. (1967), neu abgedruckt, in: de AS – De Sociokratie van Kees Boeke, vol. 14 (1986), no. 76, pp. 18-45; dt. Übersetzung Die Ordnung der Vernunft in der Gemeinschaft der Menschen, hier im Dokumentenanhang auf S. 217-223.
-50. Lester Frank Ward (1841-1913) war ein US-amerikanischer Paläobotaniker und Soziologe. Er gilt als Begründer der Soziologie in den USA. Ward wuchs in ärmlichen Verhältnissen auf, war Autodidakt und studierte später neben seiner Arbeit im US-Schatzamt an der George Washington University (damals Columbian College). Seine wichtigste Schrift Dynamic Sociology <<PAGE:35|LABEL:191>>erschien 1883, vor seiner Berufung 1906 zum Professor für Soziologie an der Brown University. Er war erster Präsident der 1905 gegründeten American Sociological Association. Ward trat für wissenschaftlich begründeten Fortschritt ein und glaubte, dass Armut und soziale Not durch staatliche Eingriffe, Bildung und Wissenschaft verringert werden könnten. Dem Sozialdarwinismus seiner Zeit stellte er die Idee entgegen, gesellschaftliche Entwicklungen gezielt zu steuern. Er verstand Soziologie als Werkzeug zur Verbesserung sozialer Zustände und entwickelte dafür sein Konzept der Soziokratie.
-51. Lester Frank Ward entwickelte sein Konzept der Soziokratie vor allem in folgenden Werken: Dynamic Sociology (1883), The Psychic Factors of Civilization (1893), Pure Sociology (1903) und Applied Sociology (1906).
-52. Zit. nach Samuel Chugerman: Lester F. Ward: The American Aristotle. A Summary and Interpretation of his Sociology, New York: Octagon Books, 1965, pp. 326-327 (Übers. aus d. Engl. v. Verf.).
-53. <<PAGE:36|LABEL:192>>Lester Frank Ward: The psychic factors in civilization, Boston: Ginn & Company, 1893, p. 323 (Übers. aus d. Engl. v. Verf.).
-54. Lester Frank Ward: Dynamic sociology or applied social science, D. Appleton & Company, 1883, 1897, vol. II, pp. 234-235 (online | PDF), (Übers. aus d. Engl. v. Verf.).
-55. <<PAGE:37|LABEL:193>>Victor S. Yarros (1865-1956) zählt zu den bekannten Theoretikern des US-amerikanischen Individualanarchismus des späten 19. und frühen 20. Jahrhunderts. Als enger Mitarbeiter und zeitweiser Herausgeber von Benjamin Tuckers Zeitschrift Liberty prägte er maßgeblich die intellektuellen Debatten dieser Bewegung. Mit Schriften wie Anarchism: Its Aims and Methods (1887) verteidigte er einen philosophischen Anarchismus, der individuelle Souveränität gegenüber staatlicher Gewalt und Anmaßung in den Mittelpunkt stellte. In den Auseinandersetzungen der individualistischen „Boston-Anarchists“ der 1890er-Jahre wandte er sich entschieden gegen die aufkommende Theorie des Stirnerschen Egoismus und trat – wie auch Gertrude B. Kelly und Lysander Spooner – für eine naturrechtliche Begründung des Anarchismus ein. Siehe auch die Studie von James J. Martin: Männer gegen den Staat. Die Vertreter des individualistischen Anarchismus in Amerika (1827–1908), Hamburg: Verlag der Mackay-Gesellschaft, 1980, Bd. 2, bes. S. 391-399.
-56. Victor S. Yarros: Sociocracy and government, in: Liberty, vol. 13 (1899), no. 17 (March), pp. 2-3.
+49. <<PAGE:34|LABEL:190>>Kees Boeke: Redelijke Ordening van de Mensengemeenschap, 2. überarb. Aufl. (1967), neu
+    abgedruckt, in: de AS – De Sociokratie van Kees Boeke, vol. 14 (1986), no. 76, pp. 18-45; dt.
+    Übersetzung Die Ordnung der Vernunft in der Gemeinschaft der Menschen, hier im Dokumentenanhang
+    auf S. 217-223.
+50. Lester Frank Ward (1841-1913) war ein US-amerikanischer Paläobotaniker und Soziologe. Er
+    gilt als Begründer der Soziologie in den USA. Ward wuchs in ärmlichen Verhältnissen auf, war
+    Autodidakt und studierte später neben seiner Arbeit im US-Schatzamt an der George Washington
+    University (damals Columbian College). Seine wichtigste Schrift Dynamic Sociology
+    <<PAGE:35|LABEL:191>>erschien 1883, vor seiner Berufung 1906 zum Professor für Soziologie an der Brown University.
+    Er war erster Präsident der 1905 gegründeten American Sociological Association. Ward
+    trat für wissenschaftlich begründeten Fortschritt ein und glaubte, dass Armut und soziale Not
+    durch staatliche Eingriffe, Bildung und Wissenschaft verringert werden könnten. Dem Sozialdarwinismus
+    seiner Zeit stellte er die Idee entgegen, gesellschaftliche Entwicklungen gezielt
+    zu steuern. Er verstand Soziologie als Werkzeug zur Verbesserung sozialer Zustände und entwickelte
+    dafür sein Konzept der Soziokratie.
+51. Lester Frank Ward entwickelte sein Konzept der Soziokratie vor allem in folgenden Werken:
+    Dynamic Sociology (1883), The Psychic Factors of Civilization (1893), Pure Sociology (1903)
+    und Applied Sociology (1906).
+52. Zit. nach Samuel Chugerman: Lester F. Ward: The American Aristotle. A Summary and Interpretation
+    of his Sociology, New York: Octagon Books, 1965, pp. 326-327 (Übers. aus d. Engl. v.
+    Verf.).
+53. <<PAGE:36|LABEL:192>>Lester Frank Ward: The psychic factors in civilization, Boston: Ginn & Company, 1893,
+    p. 323 (Übers. aus d. Engl. v. Verf.).
+54. Lester Frank Ward: Dynamic sociology or applied social science, D. Appleton & Company,
+    1883, 1897, vol. II, pp. 234-235 (online | PDF), (Übers. aus d. Engl. v. Verf.).
+55. <<PAGE:37|LABEL:193>>Victor S. Yarros (1865-1956) zählt zu den bekannten Theoretikern des US-amerikanischen
+    Individualanarchismus des späten 19. und frühen 20. Jahrhunderts. Als enger Mitarbeiter und
+    zeitweiser Herausgeber von Benjamin Tuckers Zeitschrift Liberty prägte er maßgeblich die
+    intellektuellen Debatten dieser Bewegung. Mit Schriften wie Anarchism: Its Aims and Methods
+    (1887) verteidigte er einen philosophischen Anarchismus, der individuelle Souveränität
+    gegenüber staatlicher Gewalt und Anmaßung in den Mittelpunkt stellte. In den Auseinandersetzungen
+    der individualistischen „Boston-Anarchists“ der 1890er-Jahre wandte er sich entschieden
+    gegen die aufkommende Theorie des Stirnerschen Egoismus und trat – wie auch
+    Gertrude B. Kelly und Lysander Spooner – für eine naturrechtliche Begründung des Anarchismus
+    ein. Siehe auch die Studie von James J. Martin: Männer gegen den Staat. Die Vertreter des
+    individualistischen Anarchismus in Amerika (1827–1908), Hamburg: Verlag der Mackay-Gesellschaft,
+    1980, Bd. 2, bes. S. 391-399.
+56. Victor S. Yarros: Sociocracy and government, in: Liberty, vol. 13 (1899), no. 17 (March),
+    pp. 2-3.
 57. <<PAGE:38|LABEL:194>>Ebd. (Übers. aus d. Engl. v. Verf.).
-58. James E. Fleming: The Role of Government in a Free Society: The Conception of Lester Frank Ward, in: Social Forces, vol. 24 (1946), no. 3 (March), pp. 257-266 [hier: pp. 263-264], (Übers. aus d. Engl. v. Verf.).
-59. So in seinem 1949 veröffentlichten Aufsatz Der Bilthoven Werkplaats und seine Soziokratie, in dem er schreibt: „Soziokratie ist ein Ausdruck, den ich selbst geprägt habe, um unsere Art, das Leben der Gemeinschaft zu ordnen, zu kennzeichnen, eine Art, die mehr auf Vereinbarung als auf Mehrheitsbestimmung beruht.“ (In: Bildung und Erziehung, Jg. 2 [1949], Nr. 8 [August], S. 590). Boeke erklärt allerdings nicht, warum er sich für diesen Begriff entschieden hat, und die Ähnlichkeit, die sein Konzept der Soziokratie mit dem Modell von Lester Frank Ward aufweist, spricht dafür, dass er den Begriff Soziokratie auch von Ward übernommen hat. Später, in einem 1967 veröffentlichten Nachtrag zu seiner Redelijke Ordening van de Mensengemeenschap (1945) lässt Boeke erkennen, dass er inzwischen die Wahl des Begriffes „Soziokratie“ nicht mehr als besonders glücklich empfand: „Einige werden bedauern, dass in diesem Wort eine lateinische Form mit einer griechischen kombiniert ist. In unserer Sprache gibt es jedoch bereits mehrere solcher Kombinationen, die sich etabliert haben, und außerdem drückt der Begriff klar aus, was er bedeuten soll. Oft wird sehr abfällig über den Parlamen<<PAGE:39|LABEL:195>>tarismus gesprochen, ohne dass eine bessere Alternative angeboten wird.“ (Kees Boeke: Redelijke Ordening van de Mensengemeenschap, a. a. O. [vgl. Anm. 49], pp. 18-45 [hier nach p. 20], [Übers. aus d. Niederl. v. Verf.]).
-60. <<PAGE:41|LABEL:197>>So unterscheidet Michail Bakunin (1814-1876), der Begründer des revolutionären kollektivistischen Anarchismus, deutlich zwischen zwei Arten von Autorität: Die eine gründet auf Wissen, Erfahrung und bestimmten Fähigkeiten – zum Beispiel die Autorität eines Arztes in medizinischen Fragen oder die eines Ingenieurs bei technischen Problemen. Diese Form von Autorität entsteht nicht durch Zwang, sondern durch die freiwillige Anerkennung anderer, die auf Einsicht und Vertrauen basiert. Sie ist für Bakunin legitim, solange sie auf gegenseitigem Einverständnis beruht, jederzeit überprüft werden kann und auch abgelehnt werden darf. Ganz anders verhält es sich mit der politischen Autorität: Sie stützt sich auf Institutionen, Gesetze und äußeren Zwang. Sie verlangt Gehorsam, egal ob er vernünftig erscheint oder nicht, und führt damit unweigerlich zu Herrschaft und Unterdrückung. Vgl. Michael Bakunin: Gott und der Staat, in: Ders.: Gesammelte Werke, Band 1, hrsg. v. Max Nettlau, Berlin: Verlag „Der Syndikalist“, 1921, S. 110-112 (online).
-61. Boeke: Redelijke Ordening van de Mensengemeenschap, a. a. O. (vgl. Anm. 49), p. 14 (Übers. aus d. Niederl. v. Verf.).
-62. <<PAGE:42|LABEL:198>>Onderwijs-vernieuwing. Rapport aangeboden aan de Nederlandse regering door de vernieuwingsraad voor het onderwijs, Den Haag, 1946.
-63. Bereits in den 1930er-Jahren entwickelte Kees Boeke die Idee einer International Children’s Community (ICC) als weltumspannende Fortsetzung seines Werkplaats-Projekts. Diese Internationale Kindergemeinschaft sollte Zweigstellen in verschiedenen Ländern haben und Kinder im Geist des friedlichen Zusammenlebens erziehen – jenseits von Nationalität, Ethnie und Religion; vgl. Kees Boeke: Bilthoven, Holland's International Children's Community, in: The Clearing House, vol. 13 (1938), no. 2 (Oct.), pp. 106-108. Nach dem Zweiten Weltkrieg gründete Boeke 1945 die ICC offiziell und stellte das Projekt auf seinen Auslandsreisen vor, unter ande<<PAGE:43|LABEL:199>>rem 1946 in Australien und den USA. Auch spätere Vorhaben, wie der Plan der Boekes, 1954/55 im Libanon ein Kinderzentrum für arabische Flüchtlingskinder zu errichten, zielten auf die Verwirklichung einer selbstorganisierten Internationalen Kindergemeinschaft als Keimzelle einer neuen, weltweiten Kultur des Friedens ab.
-64. Kees Boeke: Der Bilthoven Werkplaats und seine Soziokratie, in: Bildung und Erziehung, Jg. 2 (1949), Nr. 8 (August), S. 590-595.
+58. James E. Fleming: The Role of Government in a Free Society: The Conception of Lester Frank
+    Ward, in: Social Forces, vol. 24 (1946), no. 3 (March), pp. 257-266 [hier: pp. 263-264], (Übers.
+    aus d. Engl. v. Verf.).
+59. So in seinem 1949 veröffentlichten Aufsatz Der Bilthoven Werkplaats und seine Soziokratie,
+    in dem er schreibt: „Soziokratie ist ein Ausdruck, den ich selbst geprägt habe, um unsere Art,
+    das Leben der Gemeinschaft zu ordnen, zu kennzeichnen, eine Art, die mehr auf Vereinbarung
+    als auf Mehrheitsbestimmung beruht.“ (In: Bildung und Erziehung, Jg. 2 [1949], Nr. 8
+    [August], S. 590). Boeke erklärt allerdings nicht, warum er sich für diesen Begriff entschieden
+    hat, und die Ähnlichkeit, die sein Konzept der Soziokratie mit dem Modell von Lester Frank
+    Ward aufweist, spricht dafür, dass er den Begriff Soziokratie auch von Ward übernommen
+    hat. Später, in einem 1967 veröffentlichten Nachtrag zu seiner Redelijke Ordening van de Mensengemeenschap
+    (1945) lässt Boeke erkennen, dass er inzwischen die Wahl des Begriffes
+    „Soziokratie“ nicht mehr als besonders glücklich empfand: „Einige werden bedauern, dass in
+    diesem Wort eine lateinische Form mit einer griechischen kombiniert ist. In unserer Sprache
+    gibt es jedoch bereits mehrere solcher Kombinationen, die sich etabliert haben, und außerdem
+    drückt der Begriff klar aus, was er bedeuten soll. Oft wird sehr abfällig über den Parlamentarismus
+    <<PAGE:39|LABEL:195>>gesprochen, ohne dass eine bessere Alternative angeboten wird.“ (Kees Boeke:
+    Redelijke Ordening van de Mensengemeenschap, a. a. O. [vgl. Anm. 49], pp. 18-45 [hier nach
+    p. 20], [Übers. aus d. Niederl. v. Verf.]).
+60. <<PAGE:41|LABEL:197>>So unterscheidet Michail Bakunin (1814-1876), der Begründer des revolutionären kollektivistischen
+    Anarchismus, deutlich zwischen zwei Arten von Autorität: Die eine gründet auf
+    Wissen, Erfahrung und bestimmten Fähigkeiten – zum Beispiel die Autorität eines Arztes in
+    medizinischen Fragen oder die eines Ingenieurs bei technischen Problemen. Diese Form von
+    Autorität entsteht nicht durch Zwang, sondern durch die freiwillige Anerkennung anderer,
+    die auf Einsicht und Vertrauen basiert. Sie ist für Bakunin legitim, solange sie auf gegenseitigem
+    Einverständnis beruht, jederzeit überprüft werden kann und auch abgelehnt werden
+    darf. Ganz anders verhält es sich mit der politischen Autorität: Sie stützt sich auf Institutionen,
+    Gesetze und äußeren Zwang. Sie verlangt Gehorsam, egal ob er vernünftig erscheint
+    oder nicht, und führt damit unweigerlich zu Herrschaft und Unterdrückung. Vgl. Michael
+    Bakunin: Gott und der Staat, in: Ders.: Gesammelte Werke, Band 1, hrsg. v. Max Nettlau, Berlin:
+    Verlag „Der Syndikalist“, 1921, S. 110-112 (online).
+61. Boeke: Redelijke Ordening van de Mensengemeenschap, a. a. O. (vgl. Anm. 49), p. 14 (Übers.
+    aus d. Niederl. v. Verf.).
+62. <<PAGE:42|LABEL:198>>Onderwijs-vernieuwing. Rapport aangeboden aan de Nederlandse regering door de vernieuwingsraad
+    voor het onderwijs, Den Haag, 1946.
+63. Bereits in den 1930er-Jahren entwickelte Kees Boeke die Idee einer International Children’s
+    Community (ICC) als weltumspannende Fortsetzung seines Werkplaats-Projekts. Diese Internationale
+    Kindergemeinschaft sollte Zweigstellen in verschiedenen Ländern haben und Kinder
+    im Geist des friedlichen Zusammenlebens erziehen – jenseits von Nationalität, Ethnie
+    und Religion; vgl. Kees Boeke: Bilthoven, Holland's International Children's Community, in: The
+    Clearing House, vol. 13 (1938), no. 2 (Oct.), pp. 106-108. Nach dem Zweiten Weltkrieg gründete
+    Boeke 1945 die ICC offiziell und stellte das Projekt auf seinen Auslandsreisen vor, unter anderem
+    <<PAGE:43|LABEL:199>>1946 in Australien und den USA. Auch spätere Vorhaben, wie der Plan der Boekes,
+    1954/55 im Libanon ein Kinderzentrum für arabische Flüchtlingskinder zu errichten, zielten
+    auf die Verwirklichung einer selbstorganisierten Internationalen Kindergemeinschaft als
+    Keimzelle einer neuen, weltweiten Kultur des Friedens ab.
+64. Kees Boeke: Der Bilthoven Werkplaats und seine Soziokratie, in: Bildung und Erziehung, Jg. 2
+    (1949), Nr. 8 (August), S. 590-595.
 65. Ebd., S. 594 f.
-66. <<PAGE:44|LABEL:200>>Die Pacifistisch Socialistische Partij (PSP) war eine von 1957 bis 1991 bestehende niederländische Partei mit pazifistisch-sozialistischer und christlich inspirierter Ausrichtung. Sie wurde von Henk van Steenis und der „Aktionsgruppe zur Gründung einer Partei auf antimilitaristischer und sozialistischer Basis“ begründet, um einen „dritten Weg“ zwischen Sozialdemokratie (PvdA) und Kommunismus (CPN) zu beschreiten. Die Partei setzte sich entschieden gegen Militarismus, Atomwaffen und für soziale Gerechtigkeit, Minderheitenschutz sowie eine progressive Steuerpolitik ein. 1991 ging die PSP in der neuen Partei GroenLinks auf.
-67. Zit. nach Corneos J. J. A. Morsch: Met de moed van de hoop: studies over de vernieuwing van opvoeding, onderwijs en maatschappij in Nederland in de periode tussen ± 1930 en 1984, Diss. an der Katholieke Universiteit te Nijmegen, 1984 (online | PDF).
-68. <<PAGE:46|LABEL:202>>Anarchistische Bewegungen organisieren sich heute meist ähnlich, wie es bereits die Bewegungen des klassischen Anarchismus gemacht haben, in horizontalen, dezentralen Strukturen, in denen autonome Gruppen, Vollversammlungen und Sprecherräte zusammenwirken. Dabei sind Delegierte lediglich Mandatsträger ohne eigene Machtbefugnis. Entscheidungen werden zumeist durch Konsensverfahren getroffen, die auf gleichberechtigter Beteiligung und Integration unterschiedlicher Perspektiven beruhen. In großen Gruppen dienen oft modifizierte Konsensformen mit hohen Quoren als Rückfalloption, wenn keine Einigung erzielt werden kann. Für den Anarchismus ist das Prinzip der Freiwilligkeit grundlegend. Es schützt Individuen und Minderheiten davor, gegen ihren Willen zu etwas gezwungen zu werden. Dies kann im Extremfall jedoch zu Spaltungen führen. Siehe hierzu auch Peter Seyferth: Konsens oder Mehrheitsprinzip? Über demokratische Entscheidungsverfahren als politischer Modus der Anarchie, in: Widerspruch, Nr. 57 (2013), S. 87–98. In diesem Zusammenhang soll ein weiteres libertäres Organisationsmodell nicht unerwähnt bleiben: die Demarchie, also die Entscheidungsfindung per Los. Siehe dazu Siegbert Wolf: John Burnheims „Demarchie“ – Ein libertäres Gegenmodell zu staatszentrierter Herrschaftsordnung, in: espero (N. F.), Nr. 11 (Juni 2025), S. 239–255 (online | PDF).
-69. So unterschied sich die niederländische Provo-Bewegung der 1960er-Jahre von den übrigen Bewegungen des globalen Neo-Anarchismus vor allem durch ihren pragmatisch-spielerischen Ansatz, der weniger auf den revolutionären Umsturz als auf konkrete anarchistische Alltagsaktionen setzte. Mit Happenings, satirischen Provokationen und „Weißen Plänen“ – etwa für kostenlose Weiße Fahrräder – versuchten die Provos, die urbane Lebensqualität direkt zu verbessern und Autoritäten auf humorvolle Weise bloßzustellen. So entstand ein experimenteller anarchistischer Versuch, die Anarchie im Hier und Jetzt real erfahrbar zu machen.
-70. <<PAGE:47|LABEL:203>>Siehe De AS mit dem Themenschwerpunkt De Sociokratie van Kees Boeke, vol. 14 (1986), no. 76 (Okt.-Dec.), (online | PDF).
-71. Thom Holterman: Redelijk ordenen bij Kees Boeke, in: Ebd., p. 6 (Übers. aus d. Niederl. v. Verf.).
-72. So Thom Holterman am 25. August 2025 in einer E-Mail, in der er dem Verfasser mitteilte: „Das Konzept der Soziokratie (in seiner allgemeinen Organisationsform plus der Konsensidee) habe ich ‚übernommen‘. . . (so habe ich es auch in meiner Dissertation von 1986 verarbeitet, als ein Element libertärer Natur im Rahmen meiner Konvergenzidee in Bezug auf ‚Recht‘ und ‚politische Organisation‘)”. Siehe auch Thom Holterman: Recht en politieke organisatie. Een onderzoek naar convergentie in opvattingen omtrent recht en politieke organisatie bij sommige anarchisten en sommigerechtsgeleerden, Zwolle: W.E.J. Tjeenk Willink, 1986.
-73. <<PAGE:48|LABEL:204>>Holterman: Redelijk ordenen bij Kees Boeke, a. a. O. (vgl. Anm. 71), p. 6 (Übers. aus d. Niederl. v. Verf.).
-74. Siehe Jochen Schmück: Wenn Anarchie auf Algorithmen trifft – Libertäre Reflexionen über die natürliche und Künstliche Intelligenz, darin besonders den Exkurs: Wie William Grey Walter mit seinen Roboter-Schildkröten das anarcho-kybernetische Konzept der kollektiven Intelligenz ohne Herrschaft entdeckte, in: espero (N.F.), Nr. 11 (Juli 2025), S. 43-53 (online | PDF) sowie Thomas Swann: Die anarchistische Kybernetik der Gegenseitigen Hilfe. Selbstorganisation in und nach der Coronavirus-Krise, in: espero (N.F.), Nr. 2 (Januar 2021), S. 149-163 (online | PDF) und Ders.: Anarchist Cybernetics, Bristol: University Press, 2020.
-75. <<PAGE:49|LABEL:205>>Die Systemtheorie ist eine Theorie, die Gesellschaft als ein komplexes Netzwerk aus voneinander abgegrenzten, sich selbst regulierenden (autopoietischen) Systemen, wie etwa dem Sozial-, Wirtschafts- oder Bildungssystem, versteht. Aus libertärer Sicht betont die Systemtheorie die Eigenständigkeit und Freiheit dieser sozialen Subsysteme gegenüber staatlicher Einmischung und normativen Vorgaben. Gesellschaftlicher Wandel wird demnach als das Ergebnis von Dynamiken innerhalb dieser Systeme interpretiert und nicht als Folge zentraler Steuerung.
-76. Eine detaillierte Beschreibung der Unterschiede zwischen der klassischen Firmenstruktur nach dem Top-Down-Prinzip und der Soziokratischen Kreisorganisationsmethode mit ihrem Bottom-Up-Prinzip findet sich in: John A. Buck and Gerard Endenburg: The Creative Forces of Self-Organization, Original: 2003, überarb. Fassung, Rotterdam: Sociocratic Center, 2012 (online | PDF).
-77. Anna und Gerardus Endenburg waren zwei linke Aktivist:innen mit egalitären und sozialistischen Prinzipien, die nach dem Zweiten Weltkrieg stark an Reformen in Industrie und Management interessiert waren. 1945 gründeten sie in Rotterdam ihr Elektrotechnikunternehmen, das von Beginn an als betriebswirtschaftliches „Labor“ diente, um egalitäre und sozialistische Prinzipien praktisch zu testen und, wenn sie wirtschaftlich tragfähig waren, umzusetzen. Vgl. John Buck and Sharon Villines: We the People: Consenting to a Deeper Democracy. A Guide to Sociocratic Principles and Methods, Washington D. C.: Sociocracy. Info, 2007, pp. 38-39.
-78. <<PAGE:52|LABEL:208>>Zit. nach: Christian Rüther: Soziokratie – Ein Organisationsmodell. Grundlagen, Methoden und Praxis (Master-Thesis 2010), Norderstedt: BoD, 2017, S. 163 (online | PDF). Vgl. auch die (anonymisierte) Beschreibung der Vorgänge in John A. Buck und Gerard Endenburg: Die Kreativen Kräfte der Selbstorganisation, Rotterdam: Sociocratisch Centrum, 2005, S. 12-14 (online | PDF).
-79. <<PAGE:53|LABEL:209>>Zu Gerard Endenburgs wichtigsten Werken zählen Sociocratie, een redelijk ideaal (1974/75); Sociocratie, de organisatie van de besluitvorming (1981); Sociocratisch Manifest (1984), Sociocracy as Social Design (Sociocratie als Sociaal Ontwerp in Theorie en Praktijk, 1992/1997/1998); sowie Kennis, Macht en Overmacht: De lerende organisatie, in het bijzonder de sociocratische kringorganisatie (1998). In deutscher Übersetzung liegt der folgende Titel vor: John A. Buck und Gerard Endenburg: Die Kreativen Kräfte der Selbstorganisation, a. a. O. (vgl. Anm. 78).
-80. <<PAGE:54|LABEL:210>>Dieser von Ibáñez eingeführte Begriff beschreibt eine Form des Anarchismus, die außerhalb der institutionellen und ideologischen Grenzen des traditionellen Anarchismus wirksam wird – insbesondere im alltäglichen Gebrauch anarchistischer Prinzipien und Methoden. Vgl. Tomás Ibáñez: Das Wunder der Einheit in der Vielfalt. Ein kurzer Überblick über den Anarchismus vor, während und nach Venedig ’84, in: espero (N.F.), Nr. 11 (Juli 2025), S. 11-20 [hier bes. S. 18 ff.], (online | PDF). Eine vergleichbare Konzeption findet sich bei der libertären französischen Philosophin Catherine Malabou, die hierfür den Begriff des De-facto-Anarchismus verwendet. Vgl. Catherine Malabou: Künstlicher Anarchismus: Eine Antwort auf die Künstliche Intelligenz, in: espero (N.F.), Nr. 11 (Juli 2025), S. 89-103 [hier bes. S. 91 f.], (online | PDF). Beide Begriffe zielen darauf ab, neuartige Erscheinungsformen anarchistischen Agierens zu erfassen, die sich jenseits der etablierten anarchistischen Bewegungen im gesellschaftlichen Handeln bemerkbar machen. Während jedoch der extramurale Anarchismus nach Ibáñez auch in seiner sozialen Ausrichtung den Idealen des klassischen Anarchismus verpflichtet bleibt, tendiert der De-facto-Anarchismus – zumindest in den von Malabou angeführten Beispielen – in Richtung eines libertären Denkens, das eine deutliche Nähe zum anarchokapitalistischen Ideenspektrum aufweist. Egal aus welcher Perspektive man dieses Phänomen betrachtet, es macht deutlich, dass die Idee der gelebten Anarchie im Alltag der Menschen angekommen ist.
-81. Siehe Jochen Schmück: Science goes Anarchy! Die „gelebte Anarchie“ der Open-Science-Bewe-gung und ihre verborgenen ideologischen Wurzeln im traditionellen Anarchismus, in: espero (N.F.), Nr. 8 (Januar 2024), S. 99-182 (online | PDF).
+66. <<PAGE:44|LABEL:200>>Die Pacifistisch Socialistische Partij (PSP) war eine von 1957 bis 1991 bestehende niederländische
+    Partei mit pazifistisch-sozialistischer und christlich inspirierter Ausrichtung. Sie wurde
+    von Henk van Steenis und der „Aktionsgruppe zur Gründung einer Partei auf antimilitaristischer
+    und sozialistischer Basis“ begründet, um einen „dritten Weg“ zwischen Sozialdemokratie
+    (PvdA) und Kommunismus (CPN) zu beschreiten. Die Partei setzte sich entschieden gegen
+    Militarismus, Atomwaffen und für soziale Gerechtigkeit, Minderheitenschutz sowie eine progressive
+    Steuerpolitik ein. 1991 ging die PSP in der neuen Partei GroenLinks auf.
+67. Zit. nach Corneos J. J. A. Morsch: Met de moed van de hoop: studies over de vernieuwing van
+    opvoeding, onderwijs en maatschappij in Nederland in de periode tussen ± 1930 en 1984, Diss. an
+    der Katholieke Universiteit te Nijmegen, 1984 (online | PDF).
+68. <<PAGE:46|LABEL:202>>Anarchistische Bewegungen organisieren sich heute meist ähnlich, wie es bereits die Bewegungen
+    des klassischen Anarchismus gemacht haben, in horizontalen, dezentralen Strukturen,
+    in denen autonome Gruppen, Vollversammlungen und Sprecherräte zusammenwirken. Dabei
+    sind Delegierte lediglich Mandatsträger ohne eigene Machtbefugnis. Entscheidungen werden
+    zumeist durch Konsensverfahren getroffen, die auf gleichberechtigter Beteiligung und Integration
+    unterschiedlicher Perspektiven beruhen. In großen Gruppen dienen oft modifizierte Konsensformen
+    mit hohen Quoren als Rückfalloption, wenn keine Einigung erzielt werden kann.
+    Für den Anarchismus ist das Prinzip der Freiwilligkeit grundlegend. Es schützt Individuen und
+    Minderheiten davor, gegen ihren Willen zu etwas gezwungen zu werden. Dies kann im Extremfall
+    jedoch zu Spaltungen führen. Siehe hierzu auch Peter Seyferth: Konsens oder Mehrheitsprinzip?
+    Über demokratische Entscheidungsverfahren als politischer Modus der Anarchie, in:
+    Widerspruch, Nr. 57 (2013), S. 87–98. In diesem Zusammenhang soll ein weiteres libertäres
+    Organisationsmodell nicht unerwähnt bleiben: die Demarchie, also die Entscheidungsfindung
+    per Los. Siehe dazu Siegbert Wolf: John Burnheims „Demarchie“ – Ein libertäres Gegenmodell zu
+    staatszentrierter Herrschaftsordnung, in: espero (N. F.), Nr. 11 (Juni 2025), S. 239–255
+    (online | PDF).
+69. So unterschied sich die niederländische Provo-Bewegung der 1960er-Jahre von den übrigen
+    Bewegungen des globalen Neo-Anarchismus vor allem durch ihren pragmatisch-spielerischen
+    Ansatz, der weniger auf den revolutionären Umsturz als auf konkrete anarchistische Alltagsaktionen
+    setzte. Mit Happenings, satirischen Provokationen und „Weißen Plänen“ – etwa für
+    kostenlose Weiße Fahrräder – versuchten die Provos, die urbane Lebensqualität direkt zu verbessern
+    und Autoritäten auf humorvolle Weise bloßzustellen. So entstand ein experimenteller anarchistischer
+    Versuch, die Anarchie im Hier und Jetzt real erfahrbar zu machen.
+70. <<PAGE:47|LABEL:203>>Siehe De AS mit dem Themenschwerpunkt De Sociokratie van Kees Boeke, vol. 14 (1986),
+    no. 76 (Okt.-Dec.), (online | PDF).
+71. Thom Holterman: Redelijk ordenen bij Kees Boeke, in: Ebd., p. 6 (Übers. aus d. Niederl. v.
+    Verf.).
+72. So Thom Holterman am 25. August 2025 in einer E-Mail, in der er dem Verfasser mitteilte:
+    „Das Konzept der Soziokratie (in seiner allgemeinen Organisationsform plus der Konsensidee)
+    habe ich ‚übernommen‘. . . (so habe ich es auch in meiner Dissertation von 1986 verarbeitet,
+    als ein Element libertärer Natur im Rahmen meiner Konvergenzidee in Bezug auf ‚Recht‘ und
+    ‚politische Organisation‘)”. Siehe auch Thom Holterman: Recht en politieke organisatie. Een
+    onderzoek naar convergentie in opvattingen omtrent recht en politieke organisatie bij sommige
+    anarchisten en sommigerechtsgeleerden, Zwolle: W.E.J. Tjeenk Willink, 1986.
+73. <<PAGE:48|LABEL:204>>Holterman: Redelijk ordenen bij Kees Boeke, a. a. O. (vgl. Anm. 71), p. 6 (Übers. aus d.
+    Niederl. v. Verf.).
+74. Siehe Jochen Schmück: Wenn Anarchie auf Algorithmen trifft – Libertäre Reflexionen über
+    die natürliche und Künstliche Intelligenz, darin besonders den Exkurs: Wie William Grey Walter
+    mit seinen Roboter-Schildkröten das anarcho-kybernetische Konzept der kollektiven Intelligenz
+    ohne Herrschaft entdeckte, in: espero (N.F.), Nr. 11 (Juli 2025), S. 43-53 (online | PDF) sowie
+    Thomas Swann: Die anarchistische Kybernetik der Gegenseitigen Hilfe. Selbstorganisation in
+    und nach der Coronavirus-Krise, in: espero (N.F.), Nr. 2 (Januar 2021), S. 149-163 (online | PDF)
+    und Ders.: Anarchist Cybernetics, Bristol: University Press, 2020.
+75. <<PAGE:49|LABEL:205>>Die Systemtheorie ist eine Theorie, die Gesellschaft als ein komplexes Netzwerk aus voneinander
+    abgegrenzten, sich selbst regulierenden (autopoietischen) Systemen, wie etwa dem
+    Sozial-, Wirtschafts- oder Bildungssystem, versteht. Aus libertärer Sicht betont die Systemtheorie
+    die Eigenständigkeit und Freiheit dieser sozialen Subsysteme gegenüber staatlicher Einmischung
+    und normativen Vorgaben. Gesellschaftlicher Wandel wird demnach als das Ergebnis
+    von Dynamiken innerhalb dieser Systeme interpretiert und nicht als Folge zentraler Steuerung.
+76. Eine detaillierte Beschreibung der Unterschiede zwischen der klassischen Firmenstruktur
+    nach dem Top-Down-Prinzip und der Soziokratischen Kreisorganisationsmethode mit ihrem
+    Bottom-Up-Prinzip findet sich in: John A. Buck and Gerard Endenburg: The Creative Forces of
+    Self-Organization, Original: 2003, überarb. Fassung, Rotterdam: Sociocratic Center, 2012
+    (online | PDF).
+77. Anna und Gerardus Endenburg waren zwei linke Aktivist:innen mit egalitären und sozialistischen
+    Prinzipien, die nach dem Zweiten Weltkrieg stark an Reformen in Industrie und Management
+    interessiert waren. 1945 gründeten sie in Rotterdam ihr Elektrotechnikunternehmen,
+    das von Beginn an als betriebswirtschaftliches „Labor“ diente, um egalitäre und sozialistische
+    Prinzipien praktisch zu testen und, wenn sie wirtschaftlich tragfähig waren, umzusetzen. Vgl.
+    John Buck and Sharon Villines: We the People: Consenting to a Deeper Democracy. A Guide to
+    Sociocratic Principles and Methods, Washington D. C.: Sociocracy. Info, 2007, pp. 38-39.
+78. <<PAGE:52|LABEL:208>>Zit. nach: Christian Rüther: Soziokratie – Ein Organisationsmodell. Grundlagen, Methoden und
+    Praxis (Master-Thesis 2010), Norderstedt: BoD, 2017, S. 163 (online | PDF). Vgl. auch die
+    (anonymisierte) Beschreibung der Vorgänge in John A. Buck und Gerard Endenburg: Die
+    Kreativen Kräfte der Selbstorganisation, Rotterdam: Sociocratisch Centrum, 2005, S. 12-14
+    (online | PDF).
+79. <<PAGE:53|LABEL:209>>Zu Gerard Endenburgs wichtigsten Werken zählen Sociocratie, een redelijk ideaal (1974/75);
+    Sociocratie, de organisatie van de besluitvorming (1981); Sociocratisch Manifest (1984),
+    Sociocracy as Social Design (Sociocratie als Sociaal Ontwerp in Theorie en Praktijk,
+    1992/1997/1998); sowie Kennis, Macht en Overmacht: De lerende organisatie, in het bijzonder de
+    sociocratische kringorganisatie (1998). In deutscher Übersetzung liegt der folgende Titel vor:
+    John A. Buck und Gerard Endenburg: Die Kreativen Kräfte der Selbstorganisation, a. a. O. (vgl.
+    Anm. 78).
+80. <<PAGE:54|LABEL:210>>Dieser von Ibáñez eingeführte Begriff beschreibt eine Form des Anarchismus, die außerhalb
+    der institutionellen und ideologischen Grenzen des traditionellen Anarchismus wirksam
+    wird – insbesondere im alltäglichen Gebrauch anarchistischer Prinzipien und Methoden. Vgl.
+    Tomás Ibáñez: Das Wunder der Einheit in der Vielfalt. Ein kurzer Überblick über den Anarchismus
+    vor, während und nach Venedig ’84, in: espero (N.F.), Nr. 11 (Juli 2025), S. 11-20 [hier bes.
+    S. 18 ff.], (online | PDF). Eine vergleichbare Konzeption findet sich bei der libertären französischen
+    Philosophin Catherine Malabou, die hierfür den Begriff des De-facto-Anarchismus verwendet.
+    Vgl. Catherine Malabou: Künstlicher Anarchismus: Eine Antwort auf die Künstliche
+    Intelligenz, in: espero (N.F.), Nr. 11 (Juli 2025), S. 89-103 [hier bes. S. 91 f.], (online | PDF). Beide
+    Begriffe zielen darauf ab, neuartige Erscheinungsformen anarchistischen Agierens zu erfassen,
+    die sich jenseits der etablierten anarchistischen Bewegungen im gesellschaftlichen Handeln
+    bemerkbar machen. Während jedoch der extramurale Anarchismus nach Ibáñez auch in
+    seiner sozialen Ausrichtung den Idealen des klassischen Anarchismus verpflichtet bleibt, tendiert
+    der De-facto-Anarchismus – zumindest in den von Malabou angeführten Beispielen – in
+    Richtung eines libertären Denkens, das eine deutliche Nähe zum anarchokapitalistischen
+    Ideenspektrum aufweist. Egal aus welcher Perspektive man dieses Phänomen betrachtet, es
+    macht deutlich, dass die Idee der gelebten Anarchie im Alltag der Menschen angekommen ist.
+81. Siehe Jochen Schmück: Science goes Anarchy! Die „gelebte Anarchie“ der Open-Science-Bewe-gung
+    und ihre verborgenen ideologischen Wurzeln im traditionellen Anarchismus, in: espero
+    (N.F.), Nr. 8 (Januar 2024), S. 99-182 (online | PDF).
 82. Siehe Schmück: Wenn Anarchie auf Algorithmen trifft, a. a. O. (Vgl. Anm. 74).
 
 ### <<PAGE:61|LABEL:217>>ANHANG:
@@ -1731,7 +2112,9 @@ muss.
 
 ### <<PAGE:61|LABEL:217>>Notes
 
-1. Kees Boeke: Redelijke Ordening van de Mensengemeenschap, 2. überarb. Aufl. (1967), neu abgedruckt, in: de AS – De Sociokratie van Kees Boeke, vol. 14 (1986), no. 76, pp. 12-17 (Übers. aus d. Niederl. v. Jochen Schmück).
+1. Kees Boeke: Redelijke Ordening van de Mensengemeenschap, 2. überarb. Aufl. (1967), neu
+   abgedruckt, in: de AS – De Sociokratie van Kees Boeke, vol. 14 (1986), no. 76, pp. 12-17 (Übers.
+   aus d. Niederl. v. Jochen Schmück).
 
 #### <<PAGE:62|LABEL:218>>2. Auch kein Parlamentarismus.
 
