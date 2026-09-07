@@ -50,12 +50,6 @@ de cara a la reforma de la PAC del 2023, y 2 más entre 2023 y 2024,
 incrementándose así en esos cuatro años en un 50% el número de capas
 vectoriales públicas, respecto a las existentes entre el 2000-2020, al ascender
 
-1 Ortofotos (imágenes aéreas) del Plan Nacional de Ortofotografía Aérea (PNOA), coordinado
-por el Instituto Geográfico Nacional (Ministerio de Transportes y Movilidad Sostenible) en
-cooperación con el FEGA.
-
-2 Mapas de referencia de todo el territorio nacional del Catastro (Ministerio de Hacienda).
-
 
 
 <<PAGE:2>>de 14 a 213
@@ -93,12 +87,6 @@ asociados al Visor, evitándose errores en dichos servicios por peticiones
 incorrectas; menor exposición a riesgos de seguridad y vulnerabilidades por
 adopción de medidas de seguridad; implementación más efectiva de estadísticas
 de utilización).
-
-3 Si bien se suman 8 capas nuevas a las 14 existentes en 2020 en el Visor, deja de publicarse
-la capa SIE (superficies de interés ecológico) al ser derogada por normativa comunitaria.
-
-4 Requiere mantener los servicios SIGPAC publicados y disponer del entorno y del espacio en
-la nube necesarios para el procesamiento y almacenamiento de los datos a publicar.
 
 
 
@@ -140,25 +128,6 @@ tiene la consideración de datos específicos de alto valor
 
 (HVD)9 y, como se establece en el Reglamento de Ejecución 2023/138 de datos
 de alto valor (high value dataset, HVD), es publicada bajo las condiciones de
-
-5 Se informó del Servicio MVT mediante la Nota web divulgativa Nuevo Servicio de TESELAS
-VECTORIALES del SIGPAC.
-
-6 Los futuros servicios en la nube (Descargas masivas ATOM, Visor SIGPAC, etc.) sustituirán a
-los similares instalados en los servidores del MAPA o FEGA, tal como está ocurriendo con el
-Servicio WMS SIGPAC.
-
-7 Este servicio coexistirá transitoriamente con el WMS tradicional qué se deshabilitará a finales
-del 2025 (https://wms.mapa.gob.es/sigpac/wms).
-
-8 Así como la que puede descargarse mediante el Servicio ATOM y una parte de la que
-proporciona el Visor SIGPAC Nacional: cartografía de Recintos y Elementos del paisaje de la
-campaña PAC vigente; y la cartografía de los Recintos, Elementos del paisaje y Cultivo
-declarado de la campaña anterior.
-
-9 El Reglamento HVD no requiere para la categoría Geoespacial ofrecer versiones históricas de
-los conjuntos de datos disponibles. El FEGA se compromete a facilitar sus conjuntos de datos
-HVD más actualizados (campaña agrícola actual) y también su versión de la campaña anterior.
 
 
 
@@ -208,10 +177,6 @@ Este servicio facilita la interoperabilidad y la integración con otras aplicaci
 mediante la generación de mapas de forma dinámica a partir de coordenadas
 geográficas en formato de imagen como PNG o JPEG. Permite visualizar y
 
-10 GIS (Geographic Information System) o SIG (Sistemas de Información Geográfica) son
-herramientas informáticas (públicas o privadas) que permiten gestionar, analizar y visualizar
-datos geográficos: QGIS (software de código abierto); ArcGIS (software comercial); etc.
-
 
 
 <<PAGE:6>>consultar la cartografía de los Recintos y los Elementos del paisaje de la
@@ -239,8 +204,6 @@ Por tanto, se trata de un servicio de consultas basado en la infraestructura del
 Visor SIGPAC que permite obtener información de la campaña vigente en
 formatos JSON y GEOJSON. Las consultas se realizan mediante peticiones
 HTTP de tipo REST (Representational state transfer).
-
-11 Ejemplo: GeoPortal del MAPA: https://sig.mapama.gob.es/geoportal/
 
 
 
@@ -297,9 +260,6 @@ puede tener un atributo o concepto concreto de las capas Recinto, Elementos
 del paisaje o Cultivo declarado. La respuesta se obtiene en formato JSON. De
 igual forma que el servicio de Consultas SIGPAC, este servicio es fácilmente
 integrable en multitud de desarrollos informáticos de empresas u otros usuarios.
-
-12 Las geometrías están representadas en el sistema de referencia WGS 84 con orden de eje
-de longitud/latitud
 
 
 
@@ -639,6 +599,20 @@ solicitada.
 
 23 de Septiembre de 2025.
 
-13 Y datos regionales (de algunas CCAA) desde 2015.
 
 
+## <<PAGE:1>>Notes
+
+1. Ortofotos (imágenes aéreas) del Plan Nacional de Ortofotografía Aérea (PNOA), coordinado por el Instituto Geográfico Nacional (Ministerio de Transportes y Movilidad Sostenible) en cooperación con el FEGA.
+2. Mapas de referencia de todo el territorio nacional del Catastro (Ministerio de Hacienda).
+3. <<PAGE:2>>Si bien se suman 8 capas nuevas a las 14 existentes en 2020 en el Visor, deja de publicarse la capa SIE (superficies de interés ecológico) al ser derogada por normativa comunitaria.
+4. Requiere mantener los servicios SIGPAC publicados y disponer del entorno y del espacio en la nube necesarios para el procesamiento y almacenamiento de los datos a publicar.
+5. <<PAGE:3>>Se informó del Servicio MVT mediante la Nota web divulgativa Nuevo Servicio de TESELAS VECTORIALES del SIGPAC.
+6. Los futuros servicios en la nube (Descargas masivas ATOM, Visor SIGPAC, etc.) sustituirán a los similares instalados en los servidores del MAPA o FEGA, tal como está ocurriendo con el Servicio WMS SIGPAC.
+7. Este servicio coexistirá transitoriamente con el WMS tradicional qué se deshabilitará a finales del 2025 (https://wms.mapa.gob.es/sigpac/wms).
+8. Así como la que puede descargarse mediante el Servicio ATOM y una parte de la que proporciona el Visor SIGPAC Nacional: cartografía de Recintos y Elementos del paisaje de la campaña PAC vigente; y la cartografía de los Recintos, Elementos del paisaje y Cultivo declarado de la campaña anterior.
+9. El Reglamento HVD no requiere para la categoría Geoespacial ofrecer versiones históricas de los conjuntos de datos disponibles. El FEGA se compromete a facilitar sus conjuntos de datos HVD más actualizados (campaña agrícola actual) y también su versión de la campaña anterior.
+10. <<PAGE:5>>GIS (Geographic Information System) o SIG (Sistemas de Información Geográfica) son herramientas informáticas (públicas o privadas) que permiten gestionar, analizar y visualizar datos geográficos: QGIS (software de código abierto); ArcGIS (software comercial); etc.
+11. <<PAGE:6>>Ejemplo: GeoPortal del MAPA: https://sig.mapama.gob.es/geoportal/
+12. <<PAGE:8>>Las geometrías están representadas en el sistema de referencia WGS 84 con orden de eje de longitud/latitud
+13. <<PAGE:13>>Y datos regionales (de algunas CCAA) desde 2015.

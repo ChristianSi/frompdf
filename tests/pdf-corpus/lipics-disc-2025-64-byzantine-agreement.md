@@ -183,10 +183,6 @@ In many scenarios, it may be better to perform no action at
 all than to act on very uncertain data. Therefore, calculating a concrete guarantee on each
 output is an important feature of PBA protocols.
 
-1
-
-In a sense, the strong assumptions of existing IA protocols [12, 4, 3] act as inputs about uncertainty.
-
 <<PAGE:4|LABEL:64:4>>A well-known result [11] is that the displacement of the geometric median Gm(Q) of a
 set of nonfaulty values is bounded when up to |F| < |Q| faulty values are added to the set.
 
@@ -253,7 +249,11 @@ most |F| = f faulty values, let PBA(R, s) = (x, R′
 > (s,f)∆R
 > f
 
-## 2.2 OneShot PBA Agreement and Termination
+## <<PAGE:3|LABEL:64:3>>Notes
+
+1. In a sense, the strong assumptions of existing IA protocols [12, 4, 3] act as inputs about uncertainty.
+
+## <<PAGE:4|LABEL:64:4>>2.2 OneShot PBA Agreement and Termination
 
 For this brief announcement, we describe OneShot PBA, a protocol that prioritizes accuracy.
 It infers the potential distances between the true value, its output, and other replica outputs
