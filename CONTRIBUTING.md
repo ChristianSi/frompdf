@@ -164,6 +164,8 @@ The implementation is split into focused modules under `src/frompdf`:
 - `blocks.py` turns segmented lines into blocks, classifies block quotes and
   headings, and coordinates within-block text repair.
 - `cli.py` implements the command-line interface.
+- `footnotes.py` detects numbered bottom notes, assembles continuations with
+  page-aware text, and places numeric groups in Notes sections.
 - `lines.py` repairs detached diacritics, flattens `pdftext` output, and
   extracts line geometry and typography.
 - `models.py` defines line, page-number, and Markdown block records.
@@ -185,8 +187,9 @@ Important concepts:
 - `PageNumber` in `models.py` stores the raw page number and optional visible
   page number.
 - `Block` in `models.py` is the base Markdown block type.
-- `Paragraph`, `BlockQuote`, and `Heading` in `models.py` are currently
-  supported block subclasses.
+- `Paragraph`, `BlockQuote`, `Heading`, and `Footnote` in `models.py` are
+  supported block subclasses. `NoteFragment` retains the source page and
+  preceding whitespace of each piece of a note.
 - `extract_markdown` in `pipeline.py` returns a list of blocks.
 - `markdown_to_text` in `output.py` serializes blocks as Markdown.
 
@@ -200,9 +203,14 @@ The current pipeline is roughly:
 6. Order the remaining lines by page region and detected column.
 7. Safely complete unambiguous page-label sequences and optionally dump them
    to `-pagenos.csv`.
-8. Segment each page into blocks using `pdftext` hints, geometry, typography,
-   indentation, and line-spacing evidence.
-9. Build paragraph or block-quote records and repair words and unspaced dashes
-   split across physical lines within each block.
-10. Reclassify heading-like paragraphs and normalize their heading levels.
-11. Serialize the blocks as Markdown in `.md`.
+8. Detect and extract numbered footnote regions using typography and geometry,
+   assembling supported paragraph and adjacent-page continuations.
+9. Segment each page's body into blocks using `pdftext` hints, geometry,
+   typography, indentation, and line-spacing evidence.
+10. Build paragraph or block-quote records and repair words and unspaced dashes
+    split across physical lines within each block.
+11. Reclassify heading-like paragraphs and normalize their heading levels.
+12. Repair note text while retaining source-page boundaries, group notes when
+    numbering restarts, and insert Notes sections at following heading
+    boundaries.
+13. Serialize the blocks as Markdown in `.md`, including compact numbered notes.

@@ -20,6 +20,11 @@ def main() -> int:
         help='Embed raw and visible page numbers in the Markdown output',
     )
     parser.add_argument(
+        '--notes-title',
+        default='Notes',
+        help='Title for collected footnotes (default: Notes)',
+    )
+    parser.add_argument(
         '--dump-lines',
         action='store_true',
         help='Write extracted line records to a CSV file',
@@ -44,6 +49,7 @@ def main() -> int:
         input_path,
         dump_lines=args.dump_lines,
         dump_pagenos=args.dump_pagenos,
+        notes_title=args.notes_title,
     )
     dump_text(block_list, text_output_path, page_markers=args.page_markers)
 

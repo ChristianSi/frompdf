@@ -137,7 +137,33 @@ inferred, the marker includes that label too, as in `<<PAGE:7|LABEL:9>>`.
 The `LABEL:` field distinguishes the visible label from the raw page number,
 including for compound visible labels such as `<<PAGE:2|LABEL:51:2>>`.
 Markers are placed after Markdown prefixes such as `## ` for headings and
-`> ` for block quotes.
+`> ` for block quotes. Collected notes retain their source pages, so markers
+can move backward in page order and can occur inside a continued note.
+
+### Footnotes
+
+Detected numbered footnotes are removed from the body and collected in a
+`## Notes` section. If a number repeats or decreases, it starts a new group;
+each group then gets its own `### Notes` section. Original numeric labels
+are preserved, including gaps and sequences that start above 1.
+
+Choose a different section title with `--notes-title`:
+
+```bash
+frompdf --notes-title Anmerkungen -m ./document.pdf
+```
+
+Each group is placed after its last note, before the next `##` heading. If
+none follows, placement falls back to the next `###` heading, then deeper
+levels, or finally the document end. This preference is independent of the
+generated Notes heading level.
+
+Notes use compact ordered lists, retaining additional paragraphs when
+recognized. Open notes can continue across adjacent pages; with page markers
+enabled, their source-page changes appear within the list item. Existing
+endnotes introduced by a title are left in place. Detection is conservative
+and relies on smaller text, spacing, and position below body text; unusual
+layouts and unnumbered notes may remain in the body.
 
 ### Diagnostic options
 
@@ -170,7 +196,7 @@ structure has to be inferred. Current limitations include:
 - heading detection is heuristic and can miss headings or over-detect short
   emphasized text
 - block quote detection is conservative and currently relies on indentation
-- lists, tables, captions, footnotes, and code blocks are not modeled as
+- general lists, tables, captions, and code blocks are not modeled as
   dedicated block types yet
 - multi-column and heavily designed PDFs can still produce awkward reading
   order
@@ -183,7 +209,7 @@ why a specific line or block was classified the way it was.
 
 Planned next improvements include:
 
-- detection of lists, footnotes, and preformatted blocks
+- detection of general lists and preformatted blocks
 - merging paragraphs that span more than one page
 - correction of font-encoding and ligature-related text extraction errors
 - better support for multi-column PDFs

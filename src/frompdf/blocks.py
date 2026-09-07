@@ -2,6 +2,7 @@ import re
 from collections import Counter, defaultdict
 from statistics import median
 
+from frompdf.footnotes import build_footnote, extract_footnotes, place_footnotes
 from frompdf.models import Block, BlockQuote, Heading, Line, PageNumber, Paragraph
 from frompdf.segmentation import segment_lines
 from frompdf.unhyphenation import (
@@ -362,7 +363,7 @@ def detect_headings(
 
 
 def lines_to_markdown_blocks(
-    line_list: list[Line], page_number_map: dict[int, PageNumber]
+    line_list: list[Line], page_number_map: dict[int, PageNumber], notes_title: str = 'Notes'
 ) -> list[Block]:
     """Convert line records into Markdown blocks."""
     block_list: list[Block] = []
@@ -372,8 +373,12 @@ def lines_to_markdown_blocks(
     word_counts = document_word_counts(line_obj.text for line_obj in line_list)
     mixed_case_words = document_mixed_case_words(line_obj.text for line_obj in line_list)
     coordination_tokens = document_coordination_tokens(line_obj.text for line_obj in line_list)
+    source_positions = {id(line): index for index, line in enumerate(line_list)}
+    body_lines, notes = extract_footnotes(line_list, default_font_size)
+    block_positions: list[int] = []
 
-    for current_lines in segment_lines(line_list):
+    for current_lines in segment_lines(body_lines):
+        block_positions.append(source_positions[id(current_lines[0])])
         block_list.append(
             markdown_block_from_lines(
                 current_lines,
@@ -387,4 +392,16 @@ def lines_to_markdown_blocks(
             )
         )
 
-    return detect_headings(block_list, default_font_size, document_median_weight)
+    block_list = detect_headings(block_list, default_font_size, document_median_weight)
+    positioned_blocks = list(zip(block_positions, block_list, strict=True))
+    positioned_blocks.extend(
+        (
+            note.end_index,
+            build_footnote(
+                note, page_number_map, word_counts, mixed_case_words, coordination_tokens
+            ),
+        )
+        for note in notes
+    )
+    positioned_blocks.sort(key=lambda item: item[0])
+    return place_footnotes([block for _, block in positioned_blocks], notes_title)

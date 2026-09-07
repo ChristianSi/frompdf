@@ -9,6 +9,10 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
 
 ### Added
 
+- Numbered footnotes are collected into Notes sections, with separate groups
+  when numbering restarts, original list labels, and a `--notes-title` option.
+  Recognized continuation paragraphs and notes spanning adjacent pages retain
+  their text and source-page markers. Existing endnotes are left in place.
 - Inference of missing Arabic and Roman visible page labels when the
   surrounding sequence is unambiguous.
 - A `-m`/`--page-markers` option that embeds raw and visible PDF page numbers

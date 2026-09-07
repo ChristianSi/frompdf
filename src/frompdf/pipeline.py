@@ -20,7 +20,10 @@ from frompdf.reading_order import order_lines_for_reading
 
 
 def extract_markdown(
-    input_file_name: str | Path, dump_lines: bool = False, dump_pagenos: bool = False
+    input_file_name: str | Path,
+    dump_lines: bool = False,
+    dump_pagenos: bool = False,
+    notes_title: str = 'Notes',
 ) -> list[Block]:
     """Extract Markdown blocks from a PDF."""
     input_path = Path(input_file_name)
@@ -39,4 +42,4 @@ def extract_markdown(
         dump_page_numbers(page_number_list, build_pagenos_output_path(input_path))
 
     page_number_map = build_page_number_map(len(page_list), page_number_list)
-    return lines_to_markdown_blocks(filtered_lines, page_number_map)
+    return lines_to_markdown_blocks(filtered_lines, page_number_map, notes_title)

@@ -3,7 +3,7 @@ from dataclasses import asdict
 from pathlib import Path
 from typing import TextIO
 
-from frompdf.models import Block, BlockQuote, Heading, Line, PageNumber
+from frompdf.models import Block, BlockQuote, Footnote, Heading, Line, NoteFragment, PageNumber
 
 
 def dump_csv(line_list: list[Line], output_path: Path) -> None:
@@ -72,6 +72,8 @@ def markdown_to_text(
             previous_block = block_list[block_index - 1]
             if isinstance(previous_block, BlockQuote) and isinstance(block_obj, BlockQuote):
                 output_file.write('\n>\n')
+            elif isinstance(previous_block, Footnote) and isinstance(block_obj, Footnote):
+                output_file.write('\n')
             else:
                 output_file.write('\n\n')
 
@@ -81,7 +83,20 @@ def markdown_to_text(
         ):
             marker = format_page_marker(block_obj.start_page)
 
-        if isinstance(block_obj, Heading):
+        if isinstance(block_obj, Footnote):
+            prefix = f'{block_obj.label}. '
+            output_file.write(prefix)
+            fragments = block_obj.fragments or [NoteFragment(block_obj.text, block_obj.start_page)]
+            for fragment in fragments:
+                marker = ''
+                if page_markers and (
+                    previous_page is None or fragment.page.raw != previous_page.raw
+                ):
+                    marker = format_page_marker(fragment.page)
+                output_file.write(fragment.separator.replace('\n\n', '\n\n' + ' ' * len(prefix)))
+                output_file.write(marker + fragment.text.replace('\n', '\n' + ' ' * len(prefix)))
+                previous_page = fragment.page
+        elif isinstance(block_obj, Heading):
             output_file.write(f'{"#" * block_obj.level} {marker}{block_obj.text}')
         elif isinstance(block_obj, BlockQuote):
             quote_lines = block_obj.text.split('\n')

@@ -1,4 +1,4 @@
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 
 
 @dataclass
@@ -54,3 +54,20 @@ class Heading(Block):
     """A Markdown heading."""
 
     level: int = 1
+
+
+@dataclass
+class NoteFragment:
+    """A piece of a note, retaining its source page and preceding whitespace."""
+
+    text: str
+    page: PageNumber
+    separator: str = ''
+
+
+@dataclass
+class Footnote(Block):
+    """A numbered note with page-aware text, later moved to a Notes section."""
+
+    label: str = '1'
+    fragments: list[NoteFragment] = field(default_factory=list)
