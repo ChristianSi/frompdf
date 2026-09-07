@@ -180,7 +180,79 @@ class FootnotePlacementTests(unittest.TestCase):
 
 
 class FootnoteTextTests(unittest.TestCase):
-    def test_page_markers_inside_repaired_words_and_paragraphs(self) -> None:
+    def test_preserves_three_source_lines_with_list_indentation(self) -> None:
+        page = PageNumber(1, None)
+        detected = DetectedNote(
+            '12',
+            [
+                [
+                    line('The first line of a note', 100),
+                    line('continues on the second line', 110),
+                    line('and ends on the third.', 120),
+                ]
+            ],
+        )
+        built = build_footnote(detected, {1: page}, Counter(), set(), set())
+        output = io.StringIO()
+        markdown_to_text([built, note('15')], output)
+        self.assertEqual(
+            output.getvalue(),
+            '12. The first line of a note\n'
+            '    continues on the second line\n'
+            '    and ends on the third.\n'
+            '15. Note 15\n',
+        )
+
+    def test_repairs_hyphenation_without_reflowing_remaining_lines(self) -> None:
+        pages = {1: PageNumber(1, None), 2: PageNumber(2, None)}
+        for continuation_page in [1, 2]:
+            with self.subTest(continuation_page=continuation_page):
+                detected = DetectedNote(
+                    '1',
+                    [
+                        [
+                            line('An opening line', 90),
+                            line('with inter-', 100),
+                            line('national evidence', 110, page=continuation_page),
+                            line('on a final line.', 120, page=continuation_page),
+                        ]
+                    ],
+                )
+                built = build_footnote(detected, pages, Counter({'international': 2}), set(), set())
+                self.assertEqual(
+                    built.text, 'An opening line\nwith international\nevidence\non a final line.'
+                )
+
+    def test_keeps_following_line_when_a_cross_page_repair_consumes_one_word_line(self) -> None:
+        pages = {1: PageNumber(1, None), 2: PageNumber(2, None)}
+        detected = DetectedNote(
+            '1',
+            [
+                [
+                    line('Some inter-', 100),
+                    line('national', 100, page=2),
+                    line('evidence follows.', 110, page=2),
+                ]
+            ],
+        )
+        built = build_footnote(detected, pages, Counter({'international': 2}), set(), set())
+        output = io.StringIO()
+        markdown_to_text([built], output, page_markers=True)
+        self.assertEqual(
+            output.getvalue(), '1. <<PAGE:1>>Some international\n   <<PAGE:2>>evidence follows.\n'
+        )
+
+    def test_defers_marker_to_next_note_when_repair_consumes_whole_page_fragment(self) -> None:
+        pages = {1: PageNumber(1, None), 2: PageNumber(2, None)}
+        detected = DetectedNote('1', [[line('Some inter-', 100), line('national', 100, page=2)]])
+        built = build_footnote(detected, pages, Counter({'international': 2}), set(), set())
+        output = io.StringIO()
+        markdown_to_text([built, note('2', 2)], output, page_markers=True)
+        self.assertEqual(
+            output.getvalue(), '1. <<PAGE:1>>Some international\n2. <<PAGE:2>>Note 2\n'
+        )
+
+    def test_page_markers_follow_repaired_words_and_preserve_paragraphs(self) -> None:
         pages = {1: PageNumber(1, '7'), 2: PageNumber(2, '8'), 3: PageNumber(3, '9')}
         detected = DetectedNote(
             '12',
@@ -190,7 +262,7 @@ class FootnoteTextTests(unittest.TestCase):
             ],
         )
         built = build_footnote(detected, pages, Counter({'international': 2}), set(), set())
-        self.assertEqual(built.text, 'Some international evidence.\n\nA second paragraph.')
+        self.assertEqual(built.text, 'Some international\nevidence.\n\nA second paragraph.')
         blocks = [
             Paragraph('Body.', pages[3], pages[3]),
             Heading('Notes', pages[1], pages[1], level=2),
@@ -204,7 +276,7 @@ class FootnoteTextTests(unittest.TestCase):
             output.getvalue(),
             '<<PAGE:3|LABEL:9>>Body.\n\n'
             '## <<PAGE:1|LABEL:7>>Notes\n\n'
-            '12. Some inter<<PAGE:2|LABEL:8>>national evidence.\n\n'
+            '12. Some international\n    <<PAGE:2|LABEL:8>>evidence.\n\n'
             '    A second paragraph.\n15. Note 15\n\n'
             '## <<PAGE:3|LABEL:9>>References\n',
         )
@@ -212,20 +284,32 @@ class FootnoteTextTests(unittest.TestCase):
         markdown_to_text([built, note('15', 2)], output)
         self.assertEqual(
             output.getvalue(),
-            '12. Some international evidence.\n\n    A second paragraph.\n15. Note 15\n',
+            '12. Some international\n    evidence.\n\n    A second paragraph.\n15. Note 15\n',
         )
 
-    def test_cross_page_lexical_hyphen_and_ordinary_space(self) -> None:
+    def test_cross_page_lexical_hyphen_and_ordinary_line_break(self) -> None:
         pages = {1: PageNumber(1, None), 2: PageNumber(2, None)}
         for left, right, expected in [
-            ('A well-', 'known result.', 'A well-known result.'),
-            ('Some ordinary', 'continuation text.', 'Some ordinary continuation text.'),
+            ('A well-', 'known result.', 'A well-known\nresult.'),
+            ('Some ordinary', 'continuation text.', 'Some ordinary\ncontinuation text.'),
         ]:
             with self.subTest(left=left):
                 detected = DetectedNote('1', [[line(left, 100), line(right, 100, page=2)]])
                 built = build_footnote(detected, pages, Counter({'well-known': 2}), set(), set())
                 self.assertEqual(built.text, expected)
                 self.assertEqual(len(built.fragments), 2)
+                output = io.StringIO()
+                markdown_to_text([built], output, page_markers=True)
+                if left == 'Some ordinary':
+                    self.assertEqual(
+                        output.getvalue(),
+                        '1. <<PAGE:1>>Some ordinary\n   <<PAGE:2>>continuation text.\n',
+                    )
+                else:
+                    self.assertEqual(
+                        output.getvalue(),
+                        '1. <<PAGE:1>>A well-known\n   <<PAGE:2>>result.\n',
+                    )
 
 
 if __name__ == '__main__':

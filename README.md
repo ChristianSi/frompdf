@@ -158,12 +158,16 @@ none follows, placement falls back to the next `###` heading, then deeper
 levels, or finally the document end. This preference is independent of the
 generated Notes heading level.
 
-Notes use compact ordered lists, retaining additional paragraphs when
-recognized. Open notes can continue across adjacent pages; with page markers
-enabled, their source-page changes appear within the list item. Existing
-endnotes introduced by a title are left in place. Detection is conservative
-and relies on smaller text, spacing, and position below body text; unusual
-layouts and unnumbered notes may remain in the body.
+Notes use compact ordered lists, preserving source line breaks with indented
+continuation lines, apart from the usual hyphenation repair. Additional
+paragraphs are retained when recognized. Open notes can continue across
+adjacent pages; with page markers enabled, their source-page changes appear
+within the list item. A word repaired across a page boundary stays on its
+starting page; the next page marker precedes the remaining text on the next
+line. Existing endnotes introduced by a title are left in place. Detection
+is conservative and relies on smaller text, spacing, and
+position below body text; unusual layouts and unnumbered notes may remain in
+the body.
 
 ### Diagnostic options
 

@@ -235,7 +235,7 @@ def build_footnote(
     mixed_case_words: set[str],
     coordination_tokens: set[str],
 ) -> Footnote:
-    """Repair note text while preserving page boundaries, even within split words."""
+    """Repair note text, attributing joined words to the page where they start."""
     fragments: list[NoteFragment] = []
     for paragraph in note.paragraphs:
         page_lines: list[list[Line]] = []
@@ -244,28 +244,30 @@ def build_footnote(
                 page_lines.append([])
             page_lines[-1].append(line)
         for index, lines in enumerate(page_lines):
-            text = ' '.join(
-                unhyphenate_block_lines(
-                    (line.text for line in lines),
-                    word_counts,
-                    mixed_case_words,
-                    coordination_tokens,
-                ).split()
+            text = unhyphenate_block_lines(
+                (line.text for line in lines),
+                word_counts,
+                mixed_case_words,
+                coordination_tokens,
             )
-            separator = ('\n\n' if fragments else '') if index == 0 else ' '
+            separator = ('\n\n' if fragments else '') if index == 0 else '\n'
             if index:
                 previous = fragments[-1]
+                left_line = previous.text.rsplit('\n', 1)[-1]
+                right_line, line_break, remainder = text.partition('\n')
                 repaired = unhyphenate_block_lines(
-                    [previous.text, text], word_counts, mixed_case_words, coordination_tokens
+                    [left_line, right_line], word_counts, mixed_case_words, coordination_tokens
                 )
-                if repaired != previous.text + '\n' + text:
-                    # Repair moves the next token onto the preceding physical line.
-                    # Split it back at its source boundary so the page marker can
-                    # appear inside a word without changing unmarked output.
-                    boundary = len(previous.text) - (not repaired.startswith(previous.text))
-                    previous.text = repaired[:boundary]
-                    text = ' '.join(repaired[boundary:].split())
-                    separator = ''
+                if repaired != left_line + '\n' + right_line:
+                    # Keep the complete repaired word on its starting page. The
+                    # next page marker belongs before the remaining text instead.
+                    joined_line, _, right_remainder = repaired.partition('\n')
+                    previous.text = previous.text[: -len(left_line)] + joined_line
+                    text = right_remainder + (line_break if right_remainder else '') + remainder
+                    if not text:
+                        # If repair consumed the entire page fragment, defer the
+                        # marker until another fragment or block has text to emit.
+                        continue
             fragments.append(NoteFragment(text, page_numbers[lines[0].page_no], separator))
     return Footnote(
         text=''.join(fragment.separator + fragment.text for fragment in fragments),

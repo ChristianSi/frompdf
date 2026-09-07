@@ -93,7 +93,9 @@ def markdown_to_text(
                     previous_page is None or fragment.page.raw != previous_page.raw
                 ):
                     marker = format_page_marker(fragment.page)
-                output_file.write(fragment.separator.replace('\n\n', '\n\n' + ' ' * len(prefix)))
+                output_file.write(fragment.separator)
+                if fragment.separator.endswith('\n'):
+                    output_file.write(' ' * len(prefix))
                 output_file.write(marker + fragment.text.replace('\n', '\n' + ' ' * len(prefix)))
                 previous_page = fragment.page
         elif isinstance(block_obj, Heading):
