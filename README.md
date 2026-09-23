@@ -25,7 +25,7 @@ to use, modify, and integrate than tools based on
 [PyMuPDF](https://github.com/pymupdf/PyMuPDF), which is available under the
 GNU AGPL or a commercial license.
 
-## What frompdf does right now
+## What frompdf does
 
 The current version provides one command:
 
@@ -43,7 +43,7 @@ With diagnostic options, it can also write:
   inferred visible page labels
 
 If `file.md` already exists, frompdf renames it to `file.md.bak` before
-writing the new output. Overwriting an existing `.bak` file is allowed.
+writing the new output.
 
 ## Current Markdown features
 
