@@ -1,6 +1,7 @@
 import csv
 import tempfile
 import unittest
+from dataclasses import replace
 from pathlib import Path
 
 from frompdf.models import Line, PageNumber
@@ -10,10 +11,13 @@ from frompdf.page_edges import (
     complete_page_numbers,
     edge_visible_page_label,
     explicit_visible_page_number,
+    has_edge_page_number,
     infer_edge_page_numbers,
     matches_repeated_footer_text,
     normalize_header_footer_text,
     parse_visible_page_label,
+    recover_ocr_footer_numbers,
+    remove_headers_and_footers,
     repeated_footer_text_bases,
     repeated_header_footer_keys,
 )
@@ -49,12 +53,41 @@ class CompletePageNumbersTests(unittest.TestCase):
             page_number.visible for page_number in complete_page_numbers(page_count, page_numbers)
         ]
 
-    def test_counts_backward_without_going_below_one(self) -> None:
-        self.assertEqual(self.complete(4, (4, '2')), [None, None, '1', '2'])
+    def test_does_not_extrapolate_backward_from_a_single_anchor(self) -> None:
+        self.assertEqual(self.complete(4, (4, '2')), [None, None, None, '2'])
 
-    def test_counts_forward_to_end_of_document(self) -> None:
+    def test_extrapolates_established_sequence_to_document_edges(self) -> None:
         self.assertEqual(
-            self.complete(10, (9, '11')), ['3', '4', '5', '6', '7', '8', '9', '10', '11', '12']
+            self.complete(10, (8, '10'), (9, '11')),
+            ['3', '4', '5', '6', '7', '8', '9', '10', '11', '12'],
+        )
+
+    def test_infers_opening_page_from_following_labels(self) -> None:
+        self.assertEqual(self.complete(4, (2, '26'), (3, '27')), ['25', '26', '27', '28'])
+
+    def test_backward_extrapolation_never_goes_below_one(self) -> None:
+        self.assertEqual(self.complete(5, (4, '2'), (5, '3')), [None, None, '1', '2', '3'])
+
+    def test_extrapolates_using_nearest_numeral_style(self) -> None:
+        self.assertEqual(self.complete(4, (2, 'IV'), (3, 'v')), ['III', 'IV', 'v', 'vi'])
+        self.assertEqual(
+            self.complete(4, (2, 'A:02'), (3, 'A:03')), ['A:01', 'A:02', 'A:03', 'A:04']
+        )
+
+    def test_extrapolates_separate_edge_sequences_but_keeps_conflicting_gap_unknown(self) -> None:
+        self.assertEqual(
+            self.complete(8, (2, 'xviii'), (3, 'xix'), (6, '2'), (7, '3')),
+            ['xvii', 'xviii', 'xix', None, None, '2', '3', '4'],
+        )
+
+    def test_does_not_skip_nearer_conflicting_or_duplicate_anchors_at_edges(self) -> None:
+        self.assertEqual(
+            self.complete(7, (2, '10'), (3, '23'), (4, '24'), (6, '40')),
+            [None, '10', '23', '24', None, '40', None],
+        )
+        self.assertEqual(
+            self.complete(6, (2, '10'), (3, '10'), (4, '11'), (5, '11')),
+            [None, '10', '10', '11', '11', None],
         )
 
     def test_fills_gap_when_both_anchors_agree(self) -> None:
@@ -96,18 +129,30 @@ class CompletePageNumbersTests(unittest.TestCase):
             ['A:v', 'A:vi', 'A:VII'],
         )
 
-    def test_extends_plain_roman_sequence_at_edges(self) -> None:
-        self.assertEqual(self.complete(4, (2, 'IV')), ['III', 'IV', 'V', 'VI'])
-        self.assertEqual(self.complete(4, (4, 'ii')), [None, None, 'i', 'ii'])
+    def test_does_not_extend_plain_roman_sequence_at_edges(self) -> None:
+        self.assertEqual(self.complete(4, (2, 'IV')), [None, 'IV', None, None])
+        self.assertEqual(self.complete(4, (4, 'ii')), [None, None, None, 'ii'])
 
     def test_does_not_mix_roman_and_arabic_labels(self) -> None:
         self.assertEqual(self.complete(3, (1, 'v'), (3, '7')), ['v', None, '7'])
 
-    def test_extends_adjacent_unambiguous_numbering_systems(self) -> None:
+    def test_leaves_unnumbered_pages_between_numbering_systems(self) -> None:
         self.assertEqual(
             self.complete(8, (2, 'XIV'), (5, '1'), (8, '4')),
-            ['XIII', 'XIV', 'XV', 'XVI', '1', '2', '3', '4'],
+            [None, 'XIV', None, None, '1', '2', '3', '4'],
         )
+
+    def test_preserves_duplicates_and_fills_only_within_the_new_run(self) -> None:
+        self.assertEqual(
+            self.complete(5, (1, '10'), (2, '11'), (3, '11'), (5, '13')),
+            ['10', '11', '11', '12', '13'],
+        )
+
+    def test_fills_long_gaps_when_predictions_agree(self) -> None:
+        self.assertEqual(self.complete(12, (1, '10'), (12, '21')), [str(n) for n in range(10, 22)])
+
+    def test_leaves_long_gaps_when_predictions_disagree(self) -> None:
+        self.assertEqual(self.complete(12, (1, '10'), (12, '22')), ['10'] + [None] * 10 + ['22'])
 
 
 class RepeatedFooterTests(unittest.TestCase):
@@ -148,6 +193,60 @@ class RepeatedFooterTests(unittest.TestCase):
 
 
 class EdgePageNumberInferenceTests(unittest.TestCase):
+    def test_keeps_short_excerpts_after_local_pagination_is_established(self) -> None:
+        labels = ['10', '23', '24', '25', '63', '64', '65', '99', '100', '116']
+        candidates = [candidate(raw, label) for raw, label in enumerate(labels, 1)]
+        self.assertEqual(infer_edge_page_numbers(candidates), dict(enumerate(labels, 1)))
+
+    def test_pools_changing_headers_and_retains_duplicate_pages(self) -> None:
+        texts = ['2 Permission', 'Dedication 3', '4 Prologue', 'Book i 5', 'Book i 5', '6 Book i']
+        candidates = [candidate(raw, text, 'header') for raw, text in enumerate(texts, 1)]
+        self.assertEqual(
+            infer_edge_page_numbers(candidates), {1: '2', 2: '3', 3: '4', 4: '5', 5: '5', 6: '6'}
+        )
+
+    def test_does_not_mix_numeral_systems_or_count_chapter_numbers(self) -> None:
+        texts = ['xviii Preface', 'Preface xix', 'xx Preface', '2 Book i', 'Book i 3', '4 Book i']
+        candidates = [candidate(raw, text, 'header') for raw, text in enumerate(texts, 1)]
+        self.assertEqual(
+            infer_edge_page_numbers(candidates),
+            {1: 'xviii', 2: 'xix', 3: 'xx', 4: '2', 5: '3', 6: '4'},
+        )
+
+    def test_rejects_constant_years_and_chapter_numbers(self) -> None:
+        candidates = [candidate(raw, '2025 Book i', 'header') for raw in range(1, 7)]
+        self.assertEqual(infer_edge_page_numbers(candidates), {})
+
+    def test_does_not_count_both_ends_or_repeated_lines_as_distinct_pages(self) -> None:
+        self.assertEqual(infer_edge_page_numbers([candidate(1, '10')] * 3), {})
+        self.assertEqual(infer_edge_page_numbers([candidate(1, '10'), candidate(2, '11')]), {})
+
+    def test_rejects_conflicting_numeric_slots(self) -> None:
+        candidates = [candidate(raw, f'{raw} Chapter {raw + 10}') for raw in range(1, 4)]
+        self.assertEqual(infer_edge_page_numbers(candidates), {})
+
+    def test_requires_shared_geometry_for_changing_titles(self) -> None:
+        candidates = [candidate(raw, f'{raw} Title {chr(65 + raw)}') for raw in range(1, 4)]
+        for raw, item in enumerate(candidates):
+            item.line.y1 = 500.0 + raw * 20
+            item.line.y2 = 510.0 + raw * 20
+        self.assertEqual(infer_edge_page_numbers(candidates), {})
+
+    def test_requires_shared_font_for_changing_titles(self) -> None:
+        candidates = [candidate(raw, f'{raw} Title {chr(65 + raw)}') for raw in range(1, 4)]
+        for raw, item in enumerate(candidates):
+            item.line.font_name = str(raw)
+        self.assertEqual(infer_edge_page_numbers(candidates), {})
+
+    def test_does_not_learn_a_body_sequence_inside_edge_zones(self) -> None:
+        candidates = [candidate(raw, str(raw)) for raw in range(1, 4)]
+        for raw in range(1, 4):
+            outside = candidate(raw, 'Publisher')
+            outside.line.y1 = 610.0
+            outside.line.y2 = 620.0
+            candidates.append(outside)
+        self.assertEqual(infer_edge_page_numbers(candidates), {})
+
     def test_pools_nearby_agreeing_roman_labels_across_page_edges(self) -> None:
         candidates = [
             candidate(2, 'iv'),
@@ -164,6 +263,18 @@ class EdgePageNumberInferenceTests(unittest.TestCase):
 
 
 class PageLabelDetectionTests(unittest.TestCase):
+    def test_accepts_plain_labels_at_both_edges(self) -> None:
+        for visible in ['2', 'xviii', 'A:2']:
+            self.assertEqual(edge_visible_page_label(f'{visible} Title', 'start'), visible)
+            self.assertEqual(edge_visible_page_label(f'Title {visible}', 'end'), visible)
+            self.assertTrue(has_edge_page_number(f'{visible} Title', visible))
+            self.assertTrue(has_edge_page_number(f'Title {visible}', visible))
+
+    def test_rejects_numbered_list_punctuation_and_partial_words(self) -> None:
+        for text in ['2. A note', '2) A note', '2nd edition', 'civil rights']:
+            self.assertIsNone(edge_visible_page_label(text, 'start'))
+            self.assertFalse(has_edge_page_number(text, '2'))
+
     def test_detects_roman_page_labels(self) -> None:
         self.assertEqual(explicit_visible_page_number('Page iv'), 'iv')
         self.assertEqual(edge_visible_page_label('VII', 'start'), 'VII')
@@ -171,6 +282,61 @@ class PageLabelDetectionTests(unittest.TestCase):
     def test_rejects_noncanonical_roman_letter_words(self) -> None:
         self.assertIsNone(parse_visible_page_label('civil'))
         self.assertIsNone(explicit_visible_page_number('Page civil'))
+
+
+class FooterOCRTests(unittest.TestCase):
+    def test_recovers_only_folios_corroborated_by_adjacent_printed_numbers(self) -> None:
+        candidates = [candidate(1, '10'), candidate(2, 'IT'), candidate(3, '23')]
+        visible = {1: '10', 3: '23'}
+        self.assertEqual(recover_ocr_footer_numbers(candidates, visible), {2})
+        self.assertEqual(visible, {1: '10', 2: '11', 3: '23'})
+        visible = {1: '100'}
+        self.assertEqual(
+            recover_ocr_footer_numbers([candidate(1, '100'), candidate(2, 'IOI')], visible), {2}
+        )
+        self.assertEqual(visible[2], '101')
+
+    def test_does_not_chain_ocr_guesses(self) -> None:
+        candidates = [candidate(1, '10'), candidate(2, 'II'), candidate(3, 'I2')]
+        visible = {1: '10'}
+        self.assertEqual(recover_ocr_footer_numbers(candidates, visible), {2})
+        self.assertNotIn(3, visible)
+
+    def test_rejects_uncorroborated_or_misaligned_ocr(self) -> None:
+        for text, offset in [('IT', 0.0), ('IOI', 100.0), ('Title', 0.0)]:
+            damaged = candidate(2, text)
+            damaged.line.x1 += offset
+            damaged.line.x2 += offset
+            visible = {1: '100'}
+            self.assertEqual(
+                recover_ocr_footer_numbers([candidate(1, '100'), damaged], visible), set()
+            )
+            self.assertEqual(visible, {1: '100'})
+
+
+class HeaderFooterRemovalTests(unittest.TestCase):
+    def test_keeps_a_note_starting_with_the_page_number(self) -> None:
+        lines = []
+        for raw in range(1, 4):
+            footer = candidate(raw, str(raw)).line
+            lines.extend(
+                [
+                    replace(footer, text=f'Body text {chr(65 + raw)}', y1=100.0, y2=110.0),
+                    replace(
+                        footer,
+                        text=f'{raw} A different reference {chr(65 + raw)}.',
+                        y1=550.0,
+                        y2=560.0,
+                    ),
+                    footer,
+                ]
+            )
+        filtered, numbers = remove_headers_and_footers(lines, [])
+        self.assertEqual([number.visible for number in numbers], ['1', '2', '3'])
+        self.assertEqual(len(filtered), 6)
+        self.assertTrue(
+            all(line.text.startswith('Body text') or 'reference' in line.text for line in filtered)
+        )
 
 
 class DumpPageNumbersTests(unittest.TestCase):

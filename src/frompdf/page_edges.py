@@ -330,17 +330,6 @@ def explicit_visible_page_number(text: str) -> str | None:
     return None
 
 
-def visible_page_label_sort_number(label: str) -> int | None:
-    """Return the numeric part that should track raw page order."""
-    parsed_label = parse_visible_page_label(label)
-    return parsed_label.number if parsed_label is not None else None
-
-
-def is_compound_visible_page_label(label: str) -> bool:
-    """Return whether a visible page label has a section/article prefix."""
-    return bool(re.fullmatch(COMPOUND_VISIBLE_PAGE_LABEL_PATTERN, label))
-
-
 def edge_visible_page_label(text: str, edge: str) -> str | None:
     """Return a visible page label at the requested edge of a line."""
     if edge == 'start':
@@ -350,7 +339,7 @@ def edge_visible_page_label(text: str, edge: str) -> str | None:
             if parse_visible_page_label(visible) is not None:
                 return visible
 
-        plain_match = re.fullmatch(rf'\s*({PLAIN_VISIBLE_PAGE_LABEL_PATTERN})\s*', text)
+        plain_match = re.match(rf'\s*({PLAIN_VISIBLE_PAGE_LABEL_PATTERN})(?=\s|$)', text)
         if plain_match:
             visible = plain_match.group(1)
             if parse_visible_page_label(visible) is not None:
@@ -412,96 +401,199 @@ def infer_repeated_page_numbers(
     return page_numbers
 
 
-def infer_edge_page_numbers(candidate_list: list[HeaderFooterCandidate]) -> dict[int, str]:
-    """Infer visible page numbers printed at the start or end of edge lines."""
-    labels_by_page_and_position: dict[tuple[str, str], dict[int, set[str]]] = defaultdict(
-        lambda: defaultdict(set)
-    )
-    pooled_roman_labels_by_zone: dict[str, dict[int, set[str]]] = defaultdict(
-        lambda: defaultdict(set)
-    )
-    page_numbers: dict[int, str] = {}
-
+def outermost_edge_candidates(
+    candidate_list: list[HeaderFooterCandidate],
+) -> list[HeaderFooterCandidate]:
+    """Limit layout-based inference to the outermost text row in each zone."""
+    edges: dict[tuple[int, str], float] = {}
     for candidate in candidate_list:
+        y = candidate.line.y1 if candidate.zone == 'header' else candidate.line.y2
+        if y is None:
+            continue
+        key = (candidate.line.page_no, candidate.zone)
+        if key not in edges:
+            edges[key] = y
+        elif candidate.zone == 'header':
+            edges[key] = min(edges[key], y)
+        else:
+            edges[key] = max(edges[key], y)
+
+    result = []
+    for candidate in candidate_list:
+        y = candidate.line.y1 if candidate.zone == 'header' else candidate.line.y2
+        if y is not None and abs(y - edges[(candidate.line.page_no, candidate.zone)]) <= 3.0:
+            result.append(candidate)
+    return result
+
+
+def page_label_layouts_match(left: HeaderFooterCandidate, right: HeaderFooterCandidate) -> bool:
+    """Compare running-label rows, allowing scan jitter for number-only lines."""
+    if left.zone != right.zone or left.line.y1 is None or right.line.y1 is None:
+        return False
+    standalone = all(
+        re.fullmatch(VISIBLE_PAGE_LABEL_PATTERN, candidate.line.text.strip())
+        for candidate in (left, right)
+    )
+    # Scanned standalone folios have less stable bounding boxes than text
+    # headers. Changing header titles must share both a row and a font.
+    tolerance = 20.0 if standalone else 3.0
+    if abs(left.line.y1 - right.line.y1) > tolerance:
+        return False
+    return (
+        standalone
+        or left.line.font_name == right.line.font_name
+        or left.line.text.strip().isdigit()
+        or right.line.text.strip().isdigit()
+    )
+
+
+def infer_edge_page_numbers(candidate_list: list[HeaderFooterCandidate]) -> dict[int, str]:
+    """Recognize local pagination, then retain labels across jumps and duplicates."""
+    labels: list[tuple[HeaderFooterCandidate, str, ParsedPageLabel, str]] = []
+    labels_by_raw: dict[int, list[tuple[HeaderFooterCandidate, ParsedPageLabel]]] = defaultdict(
+        list
+    )
+    for candidate in outermost_edge_candidates(candidate_list):
         for edge in ['start', 'end']:
             visible = edge_visible_page_label(candidate.line.text, edge)
-            if visible is not None:
-                labels_by_page_and_position[(candidate.zone, edge)][candidate.line.page_no].add(
-                    visible
-                )
-                parsed_label = parse_visible_page_label(visible)
-                if parsed_label is not None and parsed_label.numeral_system == 'roman':
-                    pooled_roman_labels_by_zone[candidate.zone][candidate.line.page_no].add(visible)
+            parsed = parse_visible_page_label(visible) if visible is not None else None
+            if visible is not None and parsed is not None:
+                labels.append((candidate, visible, parsed, edge))
+                labels_by_raw[candidate.line.page_no].append((candidate, parsed))
 
-    for labels_by_page in labels_by_page_and_position.values():
-        offsets: Counter[int] = Counter()
-        for raw, visible_labels in labels_by_page.items():
-            page_offsets = set()
-            for visible in visible_labels:
-                sort_number = visible_page_label_sort_number(visible)
-                if sort_number is not None:
-                    page_offsets.add(sort_number - raw)
-            offsets.update(page_offsets)
-        if not offsets:
+    supported: set[int] = set()
+    for index, (candidate, _, parsed, _) in enumerate(labels):
+        raw = candidate.line.page_no
+        agreeing_pages = set()
+        for other_raw in range(raw - 8, raw + 9):
+            for other, other_label in labels_by_raw.get(other_raw, []):
+                if (
+                    page_label_sequences_match(parsed, other_label)
+                    and other_label.number - other_raw == parsed.number - raw
+                    and page_label_layouts_match(candidate, other)
+                ):
+                    agreeing_pages.add(other_raw)
+
+        # Three distinct pages in an eight-page span establish a local run.
+        # Opposite-parity Roman labels retain the existing two-anchor allowance.
+        for first in sorted(agreeing_pages):
+            window = {page for page in agreeing_pages if first <= page <= first + 8}
+            if raw not in window:
+                continue
+            roman_pair = (
+                parsed.numeral_system == 'roman'
+                and min(parsed.number + page - raw for page in window) >= 4
+                and any(page % 2 != raw % 2 for page in window)
+            )
+            if len(window) >= 3 or roman_pair:
+                supported.add(index)
+                break
+
+    recognized = set(supported)
+    for index, (candidate, _, parsed, edge) in enumerate(labels):
+        if index in supported:
             continue
-
-        offset, offset_count = offsets.most_common(1)[0]
-        if offset_count < max(3, len(labels_by_page) * 2 // 3):
-            continue
-
-        for raw, visible_labels in labels_by_page.items():
-            matching_labels = []
-            for visible in visible_labels:
-                sort_number = visible_page_label_sort_number(visible)
-                if sort_number is not None and sort_number - raw == offset:
-                    matching_labels.append(visible)
-            matching_labels.sort()
-            if matching_labels:
-                visible = matching_labels[0]
-                page_numbers.setdefault(raw, visible)
-
-    # Roman numbers commonly alternate between the outer left and right page
-    # edges. The tiny glyphs are especially prone to OCR loss, so allow two
-    # nearby, agreeing canonical labels to establish an offset across edges.
-    # Keep the relaxed rule local and Roman-only to avoid treating arbitrary
-    # Arabic numbers at the bottom of short pages as pagination.
-    for labels_by_page in pooled_roman_labels_by_zone.values():
-        labels_by_offset: dict[int, list[tuple[int, str, int]]] = defaultdict(list)
-        for raw, visible_labels in labels_by_page.items():
-            for visible in visible_labels:
-                parsed_label = parse_visible_page_label(visible)
-                if parsed_label is not None:
-                    labels_by_offset[parsed_label.number - raw].append(
-                        (raw, visible, parsed_label.number)
-                    )
-
-        for matching_labels in labels_by_offset.values():
-            matching_pages = {raw for raw, _, _ in matching_labels}
-            if len(matching_pages) < 2:
+        # Once a numeric slot in repeated running matter is established, a
+        # different offset need not invalidate its readable labels. Use only
+        # original anchors here so one accepted outlier cannot grow a family.
+        layout_anchors = [
+            (other, other_label, other_edge)
+            for other_index in supported
+            for other, _, other_label, other_edge in [labels[other_index]]
+            if page_label_sequences_match(parsed, other_label)
+            and page_label_layouts_match(candidate, other)
+        ]
+        raw = candidate.line.page_no
+        family = [
+            (other.line.page_no, other_label.number)
+            for other, other_label, other_edge in layout_anchors
+            if candidate.normalized == other.normalized and edge == other_edge
+        ]
+        nearby = [
+            (other.line.page_no, other_label.number)
+            for other, other_label, _ in layout_anchors
+            if abs(other.line.page_no - raw) <= 8
+        ]
+        # Repeated text can support jumps. Changing titles can share nearby
+        # layout evidence, but may only advance with page order (or repeat a
+        # number on a duplicate page), not introduce an arbitrary jump.
+        for anchors, allow_jumps in [(family, True), (nearby, False)]:
+            if len({page for page, _ in anchors}) < 3:
                 continue
-            first_raw = min(matching_pages)
-            last_raw = max(matching_pages)
-            if last_raw - first_raw > 8 or first_raw % 2 == last_raw % 2:
-                continue
-            if min(number for _, _, number in matching_labels) < 4:
-                continue
+            before = [(page, number) for page, number in anchors if page < raw]
+            after = [(page, number) for page, number in anchors if page > raw]
+            if before:
+                page, number = max(before)
+                if parsed.number < number or (
+                    not allow_jumps and parsed.number - number > raw - page
+                ):
+                    continue
+            if after:
+                page, number = min(after)
+                if parsed.number > number or (
+                    not allow_jumps and number - parsed.number > page - raw
+                ):
+                    continue
+            recognized.add(index)
+            break
 
-            for raw, visible, _ in sorted(matching_labels):
-                page_numbers.setdefault(raw, visible)
-
-    return page_numbers
+    labels_by_page: dict[int, set[str]] = defaultdict(set)
+    for index in recognized:
+        candidate, visible, _, _ = labels[index]
+        labels_by_page[candidate.line.page_no].add(visible)
+    return {raw: next(iter(values)) for raw, values in labels_by_page.items() if len(values) == 1}
 
 
 def has_edge_page_number(text: str, visible: str) -> bool:
     """Return whether a line starts or ends with a known visible page number."""
-    if is_compound_visible_page_label(visible):
-        return bool(re.search(rf'^\s*{re.escape(visible)}\b', text)) or bool(
-            re.search(rf'\b{re.escape(visible)}\s*$', text)
-        )
+    return any(edge_visible_page_label(text, edge) == visible for edge in ['start', 'end'])
 
-    return bool(re.fullmatch(rf'\s*{re.escape(visible)}\s*', text)) or bool(
-        re.search(rf'\b{re.escape(visible)}\s*$', text)
-    )
+
+def recover_ocr_footer_numbers(
+    candidate_list: list[HeaderFooterCandidate], visible_by_raw: dict[int, str]
+) -> set[int]:
+    """Recover isolated OCR folios only when an adjacent Arabic label agrees."""
+    standalone_by_page = {
+        candidate.line.page_no: candidate
+        for candidate in outermost_edge_candidates(candidate_list)
+        if candidate.zone == 'footer'
+        and candidate.line.text.strip() == visible_by_raw.get(candidate.line.page_no)
+        and candidate.line.text.strip().isdigit()
+    }
+    recovered: set[int] = set()
+    for candidate in outermost_edge_candidates(candidate_list):
+        raw = candidate.line.page_no
+        text = candidate.line.text.strip()
+        if (
+            candidate.zone != 'footer'
+            or raw in visible_by_raw
+            or not re.fullmatch(r'[0-9IOilT]{1,6}', text)
+            or text.isdigit()
+        ):
+            continue
+        visible = text.translate(str.maketrans({'I': '1', 'O': '0', 'i': '1', 'l': '1', 'T': '1'}))
+        if int(visible) < 1:
+            continue
+        for other_raw in [raw - 1, raw + 1]:
+            other = standalone_by_page.get(other_raw)
+            if other is None or candidate.line.y1 is None or other.line.y1 is None:
+                continue
+            x1, x2 = candidate.line.x1, candidate.line.x2
+            other_x1, other_x2 = other.line.x1, other.line.x2
+            if x1 is None or x2 is None or other_x1 is None or other_x2 is None:
+                continue
+            # Use the same scan tolerance as standalone readable folios. The
+            # substitution must also advance by exactly one from a real label.
+            if (
+                abs(candidate.line.y1 - other.line.y1) <= 20.0
+                and abs((x1 + x2 - other_x1 - other_x2) / 2) <= 20.0
+                and candidate.line.font_name == other.line.font_name
+                and int(visible) - int(other.line.text.strip()) == raw - other_raw
+            ):
+                visible_by_raw[raw] = visible
+                recovered.add(candidate.index)
+                break
+    return recovered
 
 
 def add_same_baseline_footer_companions(
@@ -535,9 +627,11 @@ def remove_headers_and_footers(
     candidate_list = iter_header_footer_candidates(line_list)
     repeated_keys = repeated_header_footer_keys(candidate_list, len(page_list))
     repeated_footer_bases = repeated_footer_text_bases(repeated_keys)
+    outermost_indices = {candidate.index for candidate in outermost_edge_candidates(candidate_list)}
     excluded_indices: set[int] = set()
     visible_by_raw = infer_repeated_page_numbers(candidate_list, repeated_keys)
     visible_by_raw.update(infer_edge_page_numbers(candidate_list))
+    excluded_indices.update(recover_ocr_footer_numbers(candidate_list, visible_by_raw))
 
     for candidate in candidate_list:
         key = (candidate.zone, candidate.normalized)
@@ -550,8 +644,10 @@ def remove_headers_and_footers(
             or explicit_visible is not None
         ):
             excluded_indices.add(candidate.index)
-        elif inferred_visible is not None and has_edge_page_number(
-            candidate.line.text, inferred_visible
+        elif (
+            candidate.index in outermost_indices
+            and inferred_visible is not None
+            and has_edge_page_number(candidate.line.text, inferred_visible)
         ):
             excluded_indices.add(candidate.index)
 
@@ -584,52 +680,12 @@ def complete_page_numbers(
     }
     detected_items = sorted(detected_by_raw.items())
 
-    sequence_groups: dict[
-        tuple[str, Literal['arabic', 'roman'], int], list[tuple[int, ParsedPageLabel]]
-    ] = defaultdict(list)
-    for raw, visible in detected_items:
-        label = parse_visible_page_label(visible)
-        if label is not None and not label.prefix:
-            sequence_groups[(label.prefix, label.numeral_system, label.number - raw)].append(
-                (raw, label)
-            )
-
-    ordered_group_items = sorted(
-        sequence_groups.items(), key=lambda item: min(raw for raw, _ in item[1])
-    )
-    ordered_groups = [group for _, group in ordered_group_items]
-    sequence_starts = [
-        1 - (label.number - raw) for raw, label in (group[0] for group in ordered_groups)
-    ]
-    starts_are_unambiguous = all(
-        left_start < right_start
-        for left_start, right_start in zip(sequence_starts, sequence_starts[1:], strict=False)
-    )
-    systems_change_at_boundaries = all(
-        left_key[1] != right_key[1]
-        for (left_key, _), (right_key, _) in zip(
-            ordered_group_items, ordered_group_items[1:], strict=False
-        )
-    )
-
-    if len(ordered_groups) == 1 or (starts_are_unambiguous and systems_change_at_boundaries):
-        for index, group in enumerate(ordered_groups):
-            first_raw, first_label = min(group, key=lambda item: item[0])
-            offset = first_label.number - first_raw
-            sequence_start = max(1, 1 - offset)
-            sequence_end = page_count
-            if index + 1 < len(sequence_starts):
-                sequence_end = min(sequence_end, sequence_starts[index + 1] - 1)
-
-            for raw in range(sequence_start, sequence_end + 1):
-                if completed_by_raw[raw] is not None:
-                    continue
-                guessed = format_visible_page_label(first_label, raw + offset)
-                if guessed is not None:
-                    completed_by_raw[raw] = guessed
-
-    for (left_raw, left_visible), (right_raw, right_visible) in zip(
-        detected_items, detected_items[1:], strict=False
+    # Compare adjacent printed anchors: disagreement leaves the whole gap
+    # unknown, even if a more distant sequence would supply a plausible label.
+    # At document edges only one side supplies evidence. The nearest pair must
+    # establish a sequence before we extrapolate it; a lone label is not enough.
+    for index, ((left_raw, left_visible), (right_raw, right_visible)) in enumerate(
+        zip(detected_items, detected_items[1:], strict=False)
     ):
         left_label = parse_visible_page_label(left_visible)
         right_label = parse_visible_page_label(right_visible)
@@ -641,8 +697,17 @@ def complete_page_numbers(
         ):
             continue
 
-        for raw in range(left_raw + 1, right_raw):
-            guessed = format_visible_page_label(left_label, left_label.number + (raw - left_raw))
+        start = 1 if index == 0 else left_raw + 1
+        end = page_count + 1 if index == len(detected_items) - 2 else right_raw
+        for raw in range(start, end):
+            if completed_by_raw[raw] is not None:
+                continue
+            anchor_raw, anchor_label = (
+                (right_raw, right_label) if raw > right_raw else (left_raw, left_label)
+            )
+            guessed = format_visible_page_label(
+                anchor_label, anchor_label.number + (raw - anchor_raw)
+            )
             if guessed is not None:
                 completed_by_raw[raw] = guessed
 

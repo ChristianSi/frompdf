@@ -21,6 +21,10 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
 
 ### Changed
 
+- Missing page labels are filled when the nearest printed labels on either
+  side predict the same numbering. At document edges, an agreeing pair of
+  printed labels supports backward or forward extrapolation. Conflicting
+  predictions across excerpt jumps or numbering changes remain unknown.
 - Running footer detection now measures repetition within local page ranges
   and alternating recto/verso pages, tolerates short OCR-damaged page-label
   suffixes, and can join nearby Roman-number anchors across opposite edges.
