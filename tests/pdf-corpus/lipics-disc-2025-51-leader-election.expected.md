@@ -1,4 +1,4 @@
-# <<PAGE:1>>Brief Announcement: Non-Uniform
+# <<PAGE:1|LABEL:51:1>>Brief Announcement: Non-Uniform
 
 # Content-Oblivious Leader Election on Oriented Asynchronous Rings
 

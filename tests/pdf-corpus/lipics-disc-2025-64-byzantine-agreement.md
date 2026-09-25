@@ -1,4 +1,4 @@
-# <<PAGE:1>>Brief Announcement:
+# <<PAGE:1|LABEL:64:1>>Brief Announcement:
 
 # Proximal Byzantine Agreement: Improved
 
