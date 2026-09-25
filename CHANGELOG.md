@@ -21,6 +21,7 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
 
 ### Changed
 
+- Header and footer detection is now more robust.
 - Missing page labels are filled when the nearest printed labels on either
   side predict the same numbering. At document edges, an agreeing pair of
   printed labels supports backward or forward extrapolation. Conflicting

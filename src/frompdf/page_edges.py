@@ -2,6 +2,7 @@ import re
 from collections import Counter, defaultdict
 from collections.abc import Sequence
 from dataclasses import dataclass
+from statistics import median
 from typing import Literal
 
 from pdftext.schema import Page
@@ -20,6 +21,7 @@ VALID_ROMAN_NUMERAL_PATTERN = re.compile(
 )
 ROMAN_NUMERAL_VALUES = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
 FOOTER_SUFFIX_NOISE_PATTERN = re.compile(r'(?:\$(?:NUM|ROMAN))+(?:[.)])?|[a-z0-9]{1,4}(?:[.)])?')
+NUMBERED_NOTE_PATTERN = re.compile(r'\s*\d+[.)](?:\s|$)')
 
 
 @dataclass
@@ -297,6 +299,118 @@ def repeated_footer_text_bases(repeated_keys: set[tuple[str, str]]) -> set[str]:
         if re.search(r'[a-z]{3}', base):
             bases.add(base)
     return bases
+
+
+def separated_edge_candidates(
+    line_list: list[Line], candidate_list: list[HeaderFooterCandidate], page_count: int
+) -> list[HeaderFooterCandidate]:
+    """Require repeated running text to be separated from inward body text."""
+    provisional_keys = repeated_header_footer_keys(candidate_list, page_count)
+    repeated_zones = {
+        candidate.index: candidate.zone
+        for candidate in candidate_list
+        if (candidate.zone, candidate.normalized) in provisional_keys
+        # Adjacent numbered notes must remain spacing evidence, even when
+        # several of them recur. They cannot form a multi-line running footer.
+        and not NUMBERED_NOTE_PATTERN.match(candidate.line.text)
+    }
+    lines_by_page: dict[int, list[tuple[int, Line]]] = defaultdict(list)
+    for index, line in enumerate(line_list):
+        if line.text and line.y1 is not None and line.y2 is not None:
+            lines_by_page[line.page_no].append((index, line))
+
+    separated = []
+    for candidate in candidate_list:
+        line = candidate.line
+        if line.y1 is None or line.y2 is None:
+            continue
+        if candidate.zone == 'footer' and NUMBERED_NOTE_PATTERN.match(line.text):
+            # A first note may be separated from the body by a generous gap.
+            # Repetition alone still must not turn a numbered note into a footer.
+            continue
+        inward_gaps = []
+        for index, other in lines_by_page[line.page_no]:
+            assert other.y1 is not None and other.y2 is not None
+            if repeated_zones.get(index) == candidate.zone:
+                # Measure a repeated multi-line footer/header against the body,
+                # rather than against its own tightly spaced component rows.
+                continue
+            if candidate.zone == 'header' and other.y1 > line.y1 + 3.0:
+                inward_gaps.append(other.y1 - line.y2)
+            elif candidate.zone == 'footer' and other.y1 < line.y1 - 3.0:
+                inward_gaps.append(line.y1 - other.y2)
+
+        # Ordinary text and notes often leave only 2–3 points between glyph
+        # boxes. Require at least four points and half the running-text size.
+        size = line.font_size or (line.y2 - line.y1)
+        if inward_gaps and min(inward_gaps) >= max(4.0, size * 0.5):
+            separated.append(candidate)
+    return separated
+
+
+def matching_running_header_indices(
+    line_list: list[Line],
+    candidate_list: list[HeaderFooterCandidate],
+    repeated_keys: set[tuple[str, str]],
+) -> set[int]:
+    """Recognize changing uppercase titles in an established running-header layout."""
+    sizes_by_page: dict[int, list[float]] = defaultdict(list)
+    tops_by_page: dict[int, float] = {}
+    for line in line_list:
+        if not line.text:
+            continue
+        if line.font_size is not None and line.font_size > 0:
+            sizes_by_page[line.page_no].append(line.font_size)
+        if line.y1 is not None:
+            tops_by_page[line.page_no] = min(tops_by_page.get(line.page_no, line.y1), line.y1)
+    body_sizes = {page: median(sizes) for page, sizes in sizes_by_page.items()}
+
+    headers = []
+    for candidate in candidate_list:
+        line = candidate.line
+        # Learn only compact, multiword capitals smaller than the page's usual
+        # text. This excludes terse section names and enlarged chapter headings;
+        # the height allowance accommodates noisy single-line OCR boxes.
+        if (
+            candidate.zone == 'header'
+            and line.y1 is not None
+            and line.y2 is not None
+            and line.x1 is not None
+            and line.x2 is not None
+            and line.font_size is not None
+            and line.font_name is not None
+            and line.text.isupper()
+            and len(re.findall(r'[^\W\d_]+', line.text)) >= 3
+            and line.y1 <= tops_by_page[line.page_no] + 3.0
+            and line.y2 - line.y1 <= line.font_size * 1.6
+            and line.font_size <= body_sizes.get(line.page_no, 0.0) * 0.9
+        ):
+            headers.append(candidate)
+    seeds = [
+        candidate for candidate in headers if ('header', candidate.normalized) in repeated_keys
+    ]
+    matched = set()
+    for candidate in headers:
+        line = candidate.line
+        assert line.y1 is not None and line.x1 is not None and line.x2 is not None
+        assert line.font_size is not None
+        supporting_pages = set()
+        for seed in seeds:
+            other = seed.line
+            assert other.y1 is not None and other.x1 is not None and other.x2 is not None
+            assert other.font_size is not None
+            # Compare position and type, not wording: running titles change at
+            # chapter boundaries and OCR can vary apostrophes within one title.
+            if (
+                line.font_name == other.font_name
+                and abs(line.font_size - other.font_size) <= 1.0
+                and abs(line.y1 - other.y1) <= 3.0
+                and abs((line.x1 + line.x2 - other.x1 - other.x2) / 2) <= line.font_size
+            ):
+                supporting_pages.add(other.page_no)
+        if len(supporting_pages) >= 3:
+            matched.add(candidate.index)
+    return matched
 
 
 def matches_repeated_footer_text(candidate: HeaderFooterCandidate, bases: set[str]) -> bool:
@@ -625,11 +739,15 @@ def remove_headers_and_footers(
 ) -> tuple[list[Line], list[PageNumber]]:
     """Remove repeated header/footer lines and collect visible page numbers."""
     candidate_list = iter_header_footer_candidates(line_list)
-    repeated_keys = repeated_header_footer_keys(candidate_list, len(page_list))
+    separated_candidates = separated_edge_candidates(line_list, candidate_list, len(page_list))
+    separated_indices = {candidate.index for candidate in separated_candidates}
+    repeated_keys = repeated_header_footer_keys(separated_candidates, len(page_list))
     repeated_footer_bases = repeated_footer_text_bases(repeated_keys)
     outermost_indices = {candidate.index for candidate in outermost_edge_candidates(candidate_list)}
-    excluded_indices: set[int] = set()
-    visible_by_raw = infer_repeated_page_numbers(candidate_list, repeated_keys)
+    excluded_indices = matching_running_header_indices(
+        line_list, separated_candidates, repeated_keys
+    )
+    visible_by_raw = infer_repeated_page_numbers(separated_candidates, repeated_keys)
     visible_by_raw.update(infer_edge_page_numbers(candidate_list))
     excluded_indices.update(recover_ocr_footer_numbers(candidate_list, visible_by_raw))
 
@@ -639,10 +757,12 @@ def remove_headers_and_footers(
         inferred_visible = visible_by_raw.get(candidate.line.page_no)
 
         if (
-            key in repeated_keys
-            or matches_repeated_footer_text(candidate, repeated_footer_bases)
-            or explicit_visible is not None
-        ):
+            candidate.index in separated_indices
+            and (
+                key in repeated_keys
+                or matches_repeated_footer_text(candidate, repeated_footer_bases)
+            )
+        ) or explicit_visible is not None:
             excluded_indices.add(candidate.index)
         elif (
             candidate.index in outermost_indices

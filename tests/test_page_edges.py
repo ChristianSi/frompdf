@@ -315,6 +315,162 @@ class FooterOCRTests(unittest.TestCase):
 
 
 class HeaderFooterRemovalTests(unittest.TestCase):
+    def test_keeps_repeated_text_tightly_spaced_below_body_lines(self) -> None:
+        lines = []
+        for raw in range(1, 5):
+            template = candidate(raw, '').line
+            lines.extend(
+                [
+                    replace(
+                        template, text=f'Opening paragraph {chr(70 + raw)}', y1=100.0, y2=110.0
+                    ),
+                    replace(
+                        template, text=f'Closing discussion {chr(70 + raw)}', y1=550.0, y2=558.0
+                    ),
+                    replace(template, text='Repeated unnumbered reference.', y1=561.5, y2=569.5),
+                ]
+            )
+        filtered, numbers = remove_headers_and_footers(lines, [])
+        self.assertEqual(filtered, lines)
+        self.assertEqual(numbers, [])
+
+    def test_keeps_repeated_numbered_notes_even_when_first_note_is_separated(self) -> None:
+        lines = []
+        for raw in range(1, 5):
+            template = candidate(raw, '').line
+            lines.extend(
+                [
+                    replace(
+                        template, text=f'Opening paragraph {chr(70 + raw)}', y1=100.0, y2=110.0
+                    ),
+                    replace(
+                        template, text=f'Closing discussion {chr(70 + raw)}', y1=510.0, y2=518.0
+                    ),
+                    replace(template, text='1. A recurring source.', y1=550.0, y2=558.0),
+                    replace(template, text='2. Another recurring source.', y1=561.5, y2=569.5),
+                ]
+            )
+        filtered, numbers = remove_headers_and_footers(lines, [])
+        self.assertEqual(filtered, lines)
+        self.assertEqual(numbers, [])
+
+    def test_removes_separated_multiline_footers_with_tight_internal_spacing(self) -> None:
+        lines = []
+        body = []
+        for raw in range(1, 4):
+            template = candidate(raw, '').line
+            paragraph = replace(
+                template, text=f'Body discussion {chr(70 + raw)}', y1=500.0, y2=510.0
+            )
+            body.append(paragraph)
+            lines.extend(
+                [
+                    paragraph,
+                    replace(template, text='Copyright Example Publisher', y1=550.0, y2=558.0),
+                    replace(template, text='Use permitted under the license.', y1=558.0, y2=566.0),
+                ]
+            )
+        filtered, _ = remove_headers_and_footers(lines, [])
+        self.assertEqual(filtered, body)
+
+    def test_keeps_repeated_header_text_touching_body_lines(self) -> None:
+        lines = []
+        for raw in range(1, 4):
+            template = candidate(raw, '').line
+            lines.extend(
+                [
+                    replace(template, text='A REPEATED TEXT LINE', y1=20.0, y2=28.0),
+                    replace(
+                        template, text=f'Continuing discussion {chr(70 + raw)}', y1=31.5, y2=41.5
+                    ),
+                    replace(
+                        template, text=f'Closing paragraph {chr(70 + raw)}', y1=200.0, y2=210.0
+                    ),
+                ]
+            )
+        filtered, _ = remove_headers_and_footers(lines, [])
+        self.assertEqual(filtered, lines)
+
+    def test_learns_running_titles_without_removing_section_headings(self) -> None:
+        template = replace(candidate(1, '').line, font_name='BookRoman', x1=100.0, x2=300.0)
+        seed_lines = []
+        for raw in range(1, 4):
+            seed_lines.extend(
+                [
+                    replace(
+                        template, page_no=raw, text='THE REPEATED RUNNING TITLE', y1=20.0, y2=28.0
+                    ),
+                    replace(
+                        template,
+                        page_no=raw,
+                        text=f'Body discussion {chr(70 + raw)}',
+                        y1=36.0,
+                        y2=46.0,
+                        font_size=10.0,
+                    ),
+                    replace(
+                        template,
+                        page_no=raw,
+                        text=f'More discussion {chr(70 + raw)}',
+                        y1=50.0,
+                        y2=60.0,
+                        font_size=10.0,
+                    ),
+                    replace(
+                        template,
+                        page_no=raw,
+                        text=f'Closing paragraph {chr(70 + raw)}',
+                        y1=200.0,
+                        y2=210.0,
+                        font_size=10.0,
+                    ),
+                ]
+            )
+        title = replace(template, page_no=4, text='THE SHORT LIVED TITLE', y1=20.0, y2=28.0)
+        cases = [
+            (title, 8.0, False),
+            (replace(title, text='FROM NATURE S SLAVES TO NATURE’S CHILDREN'), 8.0, False),
+            (replace(title, text='INTRODUCTION'), 8.0, True),
+            (replace(title, font_size=14.0, y2=34.0), 8.0, True),
+            (replace(title, font_name='ChapterBold'), 8.0, True),
+            (replace(title, y1=60.0, y2=68.0), 8.0, True),
+            (replace(title, x1=20.0, x2=220.0), 8.0, True),
+            (title, 3.5, True),
+        ]
+        for heading, gap, should_keep in cases:
+            with self.subTest(heading=heading, gap=gap):
+                assert heading.y2 is not None
+                body_top = heading.y2 + gap
+                body = [
+                    replace(
+                        template,
+                        page_no=4,
+                        text='New body discussion',
+                        y1=body_top,
+                        y2=body_top + 10,
+                        font_size=10.0,
+                    ),
+                    replace(
+                        template,
+                        page_no=4,
+                        text='More new discussion',
+                        y1=body_top + 14,
+                        y2=body_top + 24,
+                        font_size=10.0,
+                    ),
+                    replace(
+                        template,
+                        page_no=4,
+                        text='Closing discussion',
+                        y1=200.0,
+                        y2=210.0,
+                        font_size=10.0,
+                    ),
+                ]
+                filtered, _ = remove_headers_and_footers(seed_lines + [heading] + body, [])
+                self.assertEqual(heading in filtered, should_keep)
+                self.assertTrue(all(line in filtered for line in body))
+
     def test_keeps_a_note_starting_with_the_page_number(self) -> None:
         lines = []
         for raw in range(1, 4):
