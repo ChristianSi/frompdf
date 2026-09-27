@@ -142,11 +142,21 @@ can move backward in page order and can occur inside a continued note.
 
 ### Footnotes
 
-Detected footnotes are collected in an endnote-style "Notes" section, or
-several sections if numbering restarts. Notes are printed as ordered lists
-with their original numbers. Each group is usually placed before a following
-major section, after all its notes have appeared. If no suitable section
-heading follows, the group is placed at the document end.
+Detected footnotes are collected in endnote-style "Notes" sections, with
+their original numbers. A single uninterrupted numbering sequence is placed
+at the document end under H2. When numbering restarts, each group prefers a
+following heading at the level of the shallowest section it covers. This
+keeps notes spanning several sections out of individual subsections.
+
+A boundary before the next group starts takes priority over a later major
+heading. Nearby restarts can also place old notes before a mid-page heading
+above their footnote area. Without a following heading, notes go at the end.
+
+Generated headings default to H2 for one Notes section or H3 for several.
+Before a deeper heading, Notes matches that level so the following section
+does not become its child (H4 before H4, for example). A trailing group among
+several uses at least the level of the sections it covers. Groups sharing a
+destination share one Notes heading, with separate lists to preserve restarts.
 
 Choose a different section title with `--notes-title`:
 

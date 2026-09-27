@@ -21,6 +21,13 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
 
 ### Changed
 
+- A single uninterrupted footnote sequence is collected at the document end
+  under H2. Multiple groups prefer section boundaries reflecting their scope,
+  without skipping boundaries associated with numbering restarts. Notes
+  titles default to H2/H3 and match deeper following headings when needed to
+  prevent accidental parentage. Nearby restarts can place old notes before a
+  mid-page heading above their footnote area. Groups sharing a boundary use
+  one Notes title with separate lists, retaining original numbers and pages.
 - Centered uppercase and small-cap titles can now be recognized from their
   typography and surrounding layout even when their extracted size is below
   body size. Confirmed titles stay together across extraction blocks and take

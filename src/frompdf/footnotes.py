@@ -279,42 +279,109 @@ def build_footnote(
     )
 
 
+def note_group_scope_level(blocks: list[Block], group: list[tuple[int, Footnote]]) -> int:
+    """Find the shallowest section covered by a continuous numbering sequence."""
+    first, last = group[0][0], group[-1][0]
+    initial_level = next(
+        (block.level for block in reversed(blocks[:first]) if isinstance(block, Heading)),
+        2,
+    )
+    return min(
+        [initial_level]
+        + [block.level for block in blocks[first:last] if isinstance(block, Heading)]
+    )
+
+
+def note_group_destination(
+    blocks: list[Block],
+    group: list[tuple[int, Footnote]],
+    next_note: tuple[int, Footnote] | None,
+    scope_level: int,
+) -> int:
+    """Prefer a boundary at the group's scope without skipping a new note section."""
+    first_index, first_note = group[0]
+    last_index, last_note = group[-1]
+    boundaries = [
+        (index, block.level)
+        for index, block in enumerate(blocks[last_index + 1 :], start=last_index + 1)
+        if isinstance(block, Heading)
+    ]
+    # A heading between this group's last note and a restarted group's first
+    # note is a closing opportunity. Do not skip it to reach a larger heading
+    # after the new group has begun (which would accumulate adjacent Notes).
+    before_restart = [item for item in boundaries if next_note and item[0] < next_note[0]]
+    candidates = before_restart or boundaries
+    destination = next(
+        (index for index, level in candidates if level <= scope_level),
+        candidates[0][0] if candidates else len(blocks),
+    )
+    # A numbering restart on this or the next page can belong to a heading
+    # above the old group's final bottom notes. Do not move an isolated group
+    # backwards on page coincidence alone, or before its own opening heading.
+    last_page = last_note.end_page.raw
+    if next_note is None or not last_page <= next_note[1].start_page.raw <= last_page + 1:
+        return destination
+    for index in range(last_index - 1, -1, -1):
+        boundary = blocks[index]
+        if not isinstance(boundary, Heading) or boundary.start_page.raw != last_page:
+            continue
+        if first_index < index:
+            return index
+        # Excerpts can start with continuing labels (for example 5–8) below a
+        # mid-page heading, with the new section's 1–3 only on the next page.
+        # Require prose before that heading on the same page as extra evidence.
+        if int(first_note.label) > 1 and any(
+            not isinstance(previous, Footnote | Heading) and previous.end_page.raw == last_page
+            for previous in blocks[:index]
+        ):
+            return index
+    return destination
+
+
 def place_footnotes(blocks: list[Block], title: str = 'Notes') -> list[Block]:
-    """Place each numeric group after its last note, preferring H2 boundaries."""
-    groups: list[list[Footnote]] = []
-    last_positions: list[int] = []
+    """Place numeric groups at section boundaries, sharing one title per boundary."""
+    groups: list[list[tuple[int, Footnote]]] = []
     for index, block in enumerate(blocks):
         if not isinstance(block, Footnote):
             continue
-        if not groups or int(block.label) <= int(groups[-1][-1].label):
+        if not groups or int(block.label) <= int(groups[-1][-1][1].label):
             groups.append([])
-            last_positions.append(index)
-        groups[-1].append(block)
-        last_positions[-1] = index
-    insertions: dict[int, list[Block]] = defaultdict(list)
-    for group, last in zip(groups, last_positions, strict=True):
-        destination = len(blocks)
-        for level in range(2, 7):
-            destination = next(
-                (
-                    index
-                    for index, following in enumerate(blocks[last + 1 :], start=last + 1)
-                    if isinstance(following, Heading) and following.level == level
-                ),
-                len(blocks),
-            )
-            if destination < len(blocks):
-                break
-        insertions[destination].append(
-            Heading(
-                title, group[0].start_page, group[0].start_page, level=2 if len(groups) == 1 else 3
-            )
+        groups[-1].append((index, block))
+    insertions: dict[int, list[Footnote]] = defaultdict(list)
+    insertion_scopes: dict[int, int] = {}
+    previous_destination = 0
+    for index, group in enumerate(groups):
+        next_note = groups[index + 1][0] if index + 1 < len(groups) else None
+        scope_level = note_group_scope_level(blocks, group)
+        # One uninterrupted sequence is document-wide endmatter, independent
+        # of the size of the final body heading.
+        destination = (
+            len(blocks)
+            if len(groups) == 1
+            else note_group_destination(blocks, group, next_note, scope_level)
         )
-        insertions[destination].extend(group)
+        # Ambiguous same-page restarts must never reverse the source order of
+        # note groups. Share a later boundary when their evidence conflicts.
+        destination = max(previous_destination, destination)
+        previous_destination = destination
+        insertions[destination].extend(note for _, note in group)
+        insertion_scopes[destination] = min(
+            insertion_scopes.get(destination, scope_level), scope_level
+        )
+    default_level = 2 if len(insertions) == 1 else 3
     result: list[Block] = []
-    for index, block in enumerate(blocks):
-        result.extend(insertions.get(index, []))
-        if not isinstance(block, Footnote):
-            result.append(block)
-    result.extend(insertions.get(len(blocks), []))
+    for index in range(len(blocks) + 1):
+        if notes := insertions.get(index):
+            following = blocks[index] if index < len(blocks) else None
+            level = default_level
+            if isinstance(following, Heading):
+                # Equal levels suffice to prevent the next section becoming a
+                # child of Notes; do not force Notes into the last subsection.
+                level = max(level, following.level)
+            elif len(insertions) > 1:
+                level = max(level, insertion_scopes[index])
+            result.append(Heading(title, notes[0].start_page, notes[0].start_page, level=level))
+            result.extend(notes)
+        if index < len(blocks) and not isinstance(blocks[index], Footnote):
+            result.append(blocks[index])
     return result

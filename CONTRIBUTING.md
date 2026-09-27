@@ -216,6 +216,12 @@ The current pipeline is roughly:
     candidates, which take precedence over block quotes, and normalize their
     heading levels.
 12. Repair note text while retaining source-page boundaries, group notes when
-    numbering restarts, and insert Notes sections at following heading
-    boundaries.
+    numbering restarts, and place a single sequence at the document end.
+    Multiple groups prefer boundaries matching the sections they cover,
+    limited by intervening restart boundaries. Nearby restarts can associate
+    old notes with a preceding mid-page boundary. Groups sharing a boundary
+    share one Notes title. Default H2/H3 Notes titles match a deeper following
+    heading when necessary to prevent accidental parentage.
 13. Serialize the blocks as Markdown in `.md`, including compact numbered notes.
+    Restarted lists sharing a Notes section are separated by an empty HTML
+    comment so Markdown renderers preserve their starting numbers.

@@ -73,7 +73,12 @@ def markdown_to_text(
             if isinstance(previous_block, BlockQuote) and isinstance(block_obj, BlockQuote):
                 output_file.write('\n>\n')
             elif isinstance(previous_block, Footnote) and isinstance(block_obj, Footnote):
-                output_file.write('\n')
+                # Restarted groups may share a Notes section. Separate their
+                # lists so Markdown renderers retain the new starting number.
+                if int(block_obj.label) <= int(previous_block.label):
+                    output_file.write('\n\n<!-- -->\n\n')
+                else:
+                    output_file.write('\n')
             else:
                 output_file.write('\n\n')
 

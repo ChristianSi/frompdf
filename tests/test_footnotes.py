@@ -4,7 +4,7 @@ from collections import Counter
 from dataclasses import replace
 
 from frompdf.footnotes import DetectedNote, build_footnote, extract_footnotes, place_footnotes
-from frompdf.models import Footnote, Heading, Line, PageNumber, Paragraph
+from frompdf.models import Footnote, Heading, Line, NoteFragment, PageNumber, Paragraph
 from frompdf.output import markdown_to_text
 
 
@@ -30,8 +30,8 @@ def note(label: str, page: int = 1) -> Footnote:
     return Footnote('Note ' + label, source, source, label=label)
 
 
-def heading(text: str, level: int = 2) -> Heading:
-    source = PageNumber(1, None)
+def heading(text: str, level: int = 2, page: int = 1) -> Heading:
+    source = PageNumber(page, None)
     return Heading(text, source, source, level=level)
 
 
@@ -133,46 +133,201 @@ class FootnoteDetectionTests(unittest.TestCase):
 
 
 class FootnotePlacementTests(unittest.TestCase):
-    def test_waits_until_whole_group_is_read_and_prefers_h2(self) -> None:
+    def test_single_numbering_sequence_is_document_endmatter_at_h2(self) -> None:
         first, last = note('4'), note('8', 2)
         intermediate = heading('Intermediate')
-        subsection, references = heading('Subsection', 3), heading('References')
+        subsection, references = heading('Subsection', 3, 3), heading('References', page=4)
         blocks = place_footnotes([first, intermediate, last, subsection, references])
         self.assertEqual(
             [b.text for b in blocks],
-            ['Intermediate', 'Subsection', 'Notes', 'Note 4', 'Note 8', 'References'],
+            ['Intermediate', 'Subsection', 'References', 'Notes', 'Note 4', 'Note 8'],
         )
-        self.assertEqual(blocks[2], heading('Notes'))
+        self.assertEqual(blocks[3], heading('Notes', 2))
 
-    def test_equal_or_smaller_labels_start_groups_with_h3_titles(self) -> None:
+    def test_continuous_notes_covering_major_sections_wait_for_major_boundary(self) -> None:
+        first, last = note('1'), note('2', 2)
+        initial = heading('Initial subsection', 3)
+        major = heading('Another major section', 2, 2)
+        minor = heading('Later subsection', 3, 3)
+        conclusion = heading('Conclusion', 2, 4)
+        restarted = note('1', 4)
+        result = place_footnotes([initial, first, major, last, minor, conclusion, restarted])
+        self.assertEqual(
+            result,
+            [
+                initial,
+                major,
+                minor,
+                heading('Notes', 3),
+                first,
+                last,
+                conclusion,
+                heading('Notes', 3, 4),
+                restarted,
+            ],
+        )
+
+    def test_notes_covering_h4_sections_can_be_siblings_before_h4_bibliography(self) -> None:
+        initial = heading('Prologue', 4)
+        chapter = heading('Chapter', 4, 2)
+        bibliography = heading('Bibliography', 4, 3)
+        appendix = heading('Appendix', 3, 4)
+        appendix_section = heading('Appendix section', 4, 4)
+        first, last, restarted = note('1'), note('2', 2), note('1', 4)
+        result = place_footnotes(
+            [initial, first, chapter, last, bibliography, appendix, appendix_section, restarted]
+        )
+        self.assertEqual(
+            result[result.index(bibliography) - 3 : result.index(bibliography)],
+            [heading('Notes', 4), first, last],
+        )
+        self.assertEqual(result[-2:], [heading('Notes', 4, 4), restarted])
+
+    def test_restart_boundary_prevents_waiting_for_a_later_major_heading(self) -> None:
+        initial = heading('Major section', 2)
+        next_section = heading('New numbered section', 4, 2)
+        conclusion = heading('Conclusion', 2, 3)
+        first, restarted = note('1'), note('1', 2)
+        result = place_footnotes([initial, first, next_section, restarted, conclusion])
+        self.assertEqual(result[:4], [initial, heading('Notes', 4), first, next_section])
+
+    def test_equal_or_smaller_labels_share_one_title_at_the_same_boundary(self) -> None:
         source = [note('4'), note('7'), note('7'), note('2'), heading('References')]
         blocks = place_footnotes(source, 'Anmerkungen')
         titles = [b for b in blocks if isinstance(b, Heading) and b.text == 'Anmerkungen']
-        self.assertEqual(len(titles), 3)
-        self.assertTrue(all(b.level == 3 for b in titles))
+        self.assertEqual(len(titles), 1)
+        self.assertTrue(all(b.level == 2 for b in titles))
         self.assertEqual([b.label for b in blocks if isinstance(b, Footnote)], ['4', '7', '7', '2'])
 
-    def test_restart_can_precede_the_first_groups_insertion_boundary(self) -> None:
+    def test_restart_without_a_section_boundary_does_not_create_adjacent_titles(self) -> None:
         boundary = heading('Next section')
         blocks = place_footnotes([note('1'), note('1', 2), boundary])
+        self.assertEqual([b.text for b in blocks], ['Notes', 'Note 1', 'Note 1', 'Next section'])
+
+    def test_notes_need_not_be_children_but_cannot_parent_the_following_section(self) -> None:
+        for previous_level, following_level in [(4, 4), (4, 2), (2, 4), (1, 1), (5, 3), (6, 4)]:
+            with self.subTest(previous=previous_level, following=following_level):
+                previous = heading('Current section', previous_level)
+                following = heading('Next section', following_level, 2)
+                result = place_footnotes([previous, note('1'), following, note('1', 2)])
+                self.assertEqual(result[1], heading('Notes', max(3, following_level)))
+                self.assertIsInstance(result[2], Footnote)
+                self.assertIs(result[3], following)
+
+    def test_restart_before_any_heading_level_including_h6_needs_no_extra_level(self) -> None:
+        for level in [1, 2, 3, 4, 5, 6]:
+            with self.subTest(level=level):
+                boundary = heading('Next section', level, 2)
+                result = place_footnotes([note('1'), boundary, note('1', 2)])
+                self.assertIs(result[2], boundary)
+                self.assertIsInstance(result[1], Footnote)
+                self.assertEqual(result[0], heading('Notes', max(3, level)))
+
+    def test_single_notes_section_at_document_end_does_not_inherit_last_heading_level(self) -> None:
+        paragraph = Paragraph('Last body paragraph.', PageNumber(1, None), PageNumber(1, None))
+        for initial in [[], [heading('Chapter', 4)], [heading('Small subsection', 6)]]:
+            result = place_footnotes(initial + [note('1'), paragraph])
+            self.assertEqual(
+                [b.text for b in result[-3:]], ['Last body paragraph.', 'Notes', 'Note 1']
+            )
+            self.assertEqual(result[-2], heading('Notes', 2))
+
+    def test_same_page_restart_moves_old_notes_before_the_midpage_heading(self) -> None:
+        first = note('1', 29)
+        old_end = [note('11', 32), note('12', 32)]
+        new_notes = [note('1', 32), note('2', 33)]
+        chapter_one = heading('Chapter one', 4, 29)
+        chapter_two = heading('Chapter two', 4, 32)
+        chapter_three = heading('Chapter three', 4, 35)
+        result = place_footnotes(
+            [chapter_one, first, chapter_two, *old_end, *new_notes, chapter_three]
+        )
         self.assertEqual(
-            [b.text for b in blocks], ['Notes', 'Note 1', 'Notes', 'Note 1', 'Next section']
+            result,
+            [
+                chapter_one,
+                heading('Notes', 4, 29),
+                first,
+                *old_end,
+                chapter_two,
+                heading('Notes', 4, 32),
+                *new_notes,
+                chapter_three,
+            ],
         )
 
-    def test_falls_back_by_heading_level_then_to_document_end(self) -> None:
-        for level in [3, 4, 5, 6]:
-            with self.subTest(level=level):
-                boundary = heading('Next section', level)
-                deeper = heading('Deeper subsection', min(level + 1, 6))
-                source = [note('1'), deeper, boundary] if level < 6 else [note('1'), boundary]
-                result = place_footnotes(source)
-                self.assertIs(result[-1], boundary)
-                self.assertIsInstance(result[-2], Footnote)
-        paragraph = Paragraph('Last body paragraph.', PageNumber(1, None), PageNumber(1, None))
+    def test_same_page_coincidence_without_restart_does_not_move_notes_backwards(self) -> None:
+        first, last = note('1'), note('2', 2)
+        middle, following = heading('Subsection', 4, 2), heading('Following', 4, 3)
+        result = place_footnotes([heading('Chapter', 4), first, middle, last, following])
+        self.assertLess(result.index(middle), result.index(first))
+        self.assertLess(result.index(following), result.index(last))
+
+    def test_restart_does_not_move_a_group_before_its_own_opening_heading(self) -> None:
+        first, second = heading('First chapter', 4), heading('Second chapter', 4, 2)
+        result = place_footnotes([first, note('1'), second, note('1', 2)])
         self.assertEqual(
-            [b.text for b in place_footnotes([note('1'), paragraph])],
-            ['Last body paragraph.', 'Notes', 'Note 1'],
+            result,
+            [first, heading('Notes', 4), note('1'), second, heading('Notes', 4, 2), note('1', 2)],
         )
+
+    def test_continuing_labels_above_next_page_restart_need_preheading_prose(self) -> None:
+        page = PageNumber(43, None)
+        prose = Paragraph('End of preceding chapter.', page, page)
+        boundary, following = heading('Chapter five', 4, 43), heading('Chapter six', 4, 45)
+        old, new = note('5', 43), note('1', 44)
+        result = place_footnotes([prose, boundary, old, new, following])
+        self.assertEqual(
+            result,
+            [
+                prose,
+                heading('Notes', 4, 43),
+                old,
+                boundary,
+                heading('Notes', 4, 44),
+                new,
+                following,
+            ],
+        )
+        without_prose = place_footnotes([boundary, old, new, following])
+        self.assertEqual(without_prose, [boundary, heading('Notes', 4, 43), old, new, following])
+
+    def test_distant_restart_does_not_pull_notes_before_an_earlier_heading(self) -> None:
+        boundary, following = heading('Subsection', 4, 2), heading('Following', 4, 4)
+        first, last, restarted = note('1'), note('2', 2), note('1', 4)
+        result = place_footnotes([first, boundary, last, following, restarted])
+        self.assertLess(result.index(boundary), result.index(first))
+        self.assertLess(result.index(last), result.index(following))
+
+    def test_ambiguous_restarts_never_reverse_note_order(self) -> None:
+        page = PageNumber(1, None)
+        prose = Paragraph('Text before the heading.', page, page)
+        notes = [note('1'), note('2'), note('2'), note('1')]
+        result = place_footnotes([prose, heading('Section'), *notes, heading('Next')])
+        self.assertEqual([id(b) for b in result if isinstance(b, Footnote)], [id(b) for b in notes])
+        self.assertEqual(sum(isinstance(b, Heading) and b.text == 'Notes' for b in result), 1)
+
+    def test_cross_page_note_keeps_its_fragments_when_moved_before_a_heading(self) -> None:
+        first, last, restarted = note('1'), note('2', 2), note('1', 3)
+        last.end_page = PageNumber(3, None)
+        fragments = [
+            NoteFragment('Some text', last.start_page),
+            NoteFragment('continued.', last.end_page, '\n'),
+        ]
+        last.fragments = fragments
+        middle, following = heading('Section two', 4, 3), heading('Section three', 4, 4)
+        result = place_footnotes(
+            [heading('Section one', 4), first, middle, last, restarted, following]
+        )
+        self.assertIs(result[result.index(middle) - 1], last)
+        self.assertEqual(last.end_page.raw, 3)
+        self.assertIs(last.fragments, fragments)
+
+    def test_existing_notes_heading_is_not_merged_or_releveled(self) -> None:
+        existing = heading('Notes', 2, 2)
+        result = place_footnotes([heading('Chapter'), note('1'), existing])
+        self.assertIs(result[1], existing)
+        self.assertEqual(existing.level, 2)
 
     def test_no_notes_leaves_blocks_untouched(self) -> None:
         blocks = [heading('Existing title', 5)]
@@ -180,6 +335,21 @@ class FootnotePlacementTests(unittest.TestCase):
 
 
 class FootnoteTextTests(unittest.TestCase):
+    def test_restarted_groups_share_a_title_but_render_as_separate_numbered_lists(self) -> None:
+        blocks = place_footnotes(
+            [note('4'), note('7'), note('7', 2), note('2', 2), heading('Next section', 2, 3)],
+            'Anmerkungen',
+        )
+        output = io.StringIO()
+        markdown_to_text(blocks, output, page_markers=True)
+        self.assertEqual(
+            output.getvalue(),
+            '## <<PAGE:1>>Anmerkungen\n\n'
+            '4. Note 4\n7. Note 7\n\n<!-- -->\n\n'
+            '7. <<PAGE:2>>Note 7\n\n<!-- -->\n\n2. Note 2\n\n'
+            '## <<PAGE:3>>Next section\n',
+        )
+
     def test_preserves_three_source_lines_with_list_indentation(self) -> None:
         page = PageNumber(1, None)
         detected = DetectedNote(
