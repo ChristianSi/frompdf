@@ -3,6 +3,7 @@ from collections import Counter, defaultdict
 from statistics import median
 
 from frompdf.footnotes import build_footnote, extract_footnotes, place_footnotes
+from frompdf.heading_candidates import find_typographic_heading_lines
 from frompdf.models import Block, BlockQuote, Heading, Line, PageNumber, Paragraph
 from frompdf.segmentation import segment_lines
 from frompdf.unhyphenation import (
@@ -223,11 +224,15 @@ def markdown_block_from_lines(
     mixed_case_words: set[str],
     coordination_tokens: set[str],
     follows_blockquote: bool = False,
+    typographic_heading: bool = False,
 ) -> Block:
     """Build a Markdown block from grouped line records."""
     block_class: type[Block] = (
         BlockQuote
-        if is_blockquote_block(line_list, default_font_size, body_lefts_by_page, follows_blockquote)
+        if not typographic_heading
+        and is_blockquote_block(
+            line_list, default_font_size, body_lefts_by_page, follows_blockquote
+        )
         else Paragraph
     )
     font_size = block_font_size(line_list)
@@ -335,13 +340,21 @@ def merge_extra_heading_levels(block_list: list[Block]) -> None:
 
 
 def detect_headings(
-    block_list: list[Block], default_font_size: float | None, document_median_weight: float | None
+    block_list: list[Block],
+    default_font_size: float | None,
+    document_median_weight: float | None,
+    typographic_heading_indices: set[int] | None = None,
 ) -> list[Block]:
-    """Convert paragraph blocks with heading-like adjusted font sizes into Heading blocks."""
+    """Recognize headings from adjusted sizes or confirmed source-line evidence."""
     converted_blocks: list[Block] = []
+    typographic_heading_indices = typographic_heading_indices or set()
 
-    for block_obj in block_list:
+    for index, block_obj in enumerate(block_list):
         heading_level = initial_heading_level(block_obj, default_font_size, document_median_weight)
+        if heading_level is None and index in typographic_heading_indices:
+            # Use the smallest existing heading tier. Glyph heights in small-cap
+            # fonts should not create arbitrary extra levels below body text.
+            heading_level = HEADING_LEVEL_THRESHOLDS[-1][1]
         if heading_level is None:
             converted_blocks.append(block_obj)
             continue
@@ -375,9 +388,14 @@ def lines_to_markdown_blocks(
     coordination_tokens = document_coordination_tokens(line_obj.text for line_obj in line_list)
     source_positions = {id(line): index for index, line in enumerate(line_list)}
     body_lines, notes = extract_footnotes(line_list, default_font_size)
+    heading_lines = find_typographic_heading_lines(body_lines)
+    typographic_heading_indices: set[int] = set()
     block_positions: list[int] = []
 
-    for current_lines in segment_lines(body_lines):
+    for current_lines in segment_lines(body_lines, heading_lines):
+        typographic_heading = id(current_lines[0]) in heading_lines
+        if typographic_heading:
+            typographic_heading_indices.add(len(block_list))
         block_positions.append(source_positions[id(current_lines[0])])
         block_list.append(
             markdown_block_from_lines(
@@ -389,10 +407,13 @@ def lines_to_markdown_blocks(
                 mixed_case_words,
                 coordination_tokens,
                 follows_blockquote=bool(block_list) and isinstance(block_list[-1], BlockQuote),
+                typographic_heading=typographic_heading,
             )
         )
 
-    block_list = detect_headings(block_list, default_font_size, document_median_weight)
+    block_list = detect_headings(
+        block_list, default_font_size, document_median_weight, typographic_heading_indices
+    )
     positioned_blocks = list(zip(block_positions, block_list, strict=True))
     positioned_blocks.extend(
         (

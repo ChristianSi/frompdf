@@ -795,24 +795,35 @@ def should_start_new_group(
     return pdftext_break
 
 
-def segment_page(line_list: list[Line]) -> list[list[Line]]:
-    """Segment one ordered page into visually supported Markdown block groups."""
+def segment_page(
+    line_list: list[Line], heading_lines: dict[int, int] | None = None
+) -> list[list[Line]]:
+    """Segment a page; heading_lines maps confirmed line IDs to their title's first ID."""
     if not line_list:
         return []
     context = build_page_context(line_list)
+    heading_lines = heading_lines or {}
     groups: list[list[Line]] = [[line_list[0]]]
 
     for index, current in enumerate(line_list[1:], start=1):
         preceding = line_list[index - 2] if index >= 2 else None
         previous = line_list[index - 1]
         following = line_list[index + 1] if index + 1 < len(line_list) else None
-        if should_start_new_group(preceding, previous, current, following, context):
+        previous_heading = heading_lines.get(id(previous))
+        current_heading = heading_lines.get(id(current))
+        if previous_heading is not None or current_heading is not None:
+            starts_group = previous_heading != current_heading
+        else:
+            starts_group = should_start_new_group(preceding, previous, current, following, context)
+        if starts_group:
             groups.append([])
         groups[-1].append(current)
     return groups
 
 
-def segment_lines(line_list: list[Line]) -> list[list[Line]]:
+def segment_lines(
+    line_list: list[Line], heading_lines: dict[int, int] | None = None
+) -> list[list[Line]]:
     """Segment ordered lines without ever joining text across page boundaries."""
     groups: list[list[Line]] = []
     current_page: list[Line] = []
@@ -820,10 +831,10 @@ def segment_lines(line_list: list[Line]) -> list[list[Line]]:
 
     for line_obj in line_list:
         if current_page_no is not None and line_obj.page_no != current_page_no:
-            groups.extend(segment_page(current_page))
+            groups.extend(segment_page(current_page, heading_lines))
             current_page = []
         current_page.append(line_obj)
         current_page_no = line_obj.page_no
 
-    groups.extend(segment_page(current_page))
+    groups.extend(segment_page(current_page, heading_lines))
     return groups

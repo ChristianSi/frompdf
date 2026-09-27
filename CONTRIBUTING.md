@@ -166,6 +166,8 @@ The implementation is split into focused modules under `src/frompdf`:
 - `cli.py` implements the command-line interface.
 - `footnotes.py` detects numbered bottom notes, assembles continuations with
   page-aware text, and places numeric groups in Notes sections.
+- `heading_candidates.py` identifies compact centered titles using caps or
+  italic styling, established body columns, and surrounding whitespace.
 - `lines.py` repairs detached diacritics, flattens `pdftext` output, and
   extracts line geometry and typography.
 - `models.py` defines line, page-number, and Markdown block records.
@@ -206,10 +208,13 @@ The current pipeline is roughly:
 8. Detect and extract numbered footnote regions using typography and geometry,
    assembling supported paragraph and adjacent-page continuations.
 9. Segment each page's body into blocks using `pdftext` hints, geometry,
-   typography, indentation, and line-spacing evidence.
+   typography, indentation, and line-spacing evidence. Confirmed centered
+   title candidates override boundaries only at and within those titles.
 10. Build paragraph or block-quote records and repair words and unspaced dashes
     split across physical lines within each block.
-11. Reclassify heading-like paragraphs and normalize their heading levels.
+11. Reclassify heading-like paragraphs using size and confirmed title
+    candidates, which take precedence over block quotes, and normalize their
+    heading levels.
 12. Repair note text while retaining source-page boundaries, group notes when
     numbering restarts, and insert Notes sections at following heading
     boundaries.

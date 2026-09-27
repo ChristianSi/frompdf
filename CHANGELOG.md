@@ -21,6 +21,12 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
 
 ### Changed
 
+- Centered uppercase and small-cap titles can now be recognized from their
+  typography and surrounding layout even when their extracted size is below
+  body size. Confirmed titles stay together across extraction blocks and take
+  precedence over block quotes. Short centered italic labels above smaller
+  notes or references are separated from the following text and recognized
+  as headings.
 - Header and footer detection is now more robust.
 - Missing page labels are filled when the nearest printed labels on either
   side predict the same numbering. At document edges, an agreeing pair of
