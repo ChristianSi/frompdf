@@ -249,11 +249,7 @@ most |F| = f faulty values, let PBA(R, s) = (x, R′
 > (s,f)∆R
 > f
 
-## <<PAGE:3|LABEL:64:3>>Notes
-
-1. In a sense, the strong assumptions of existing IA protocols [12, 4, 3] act as inputs about uncertainty.
-
-## <<PAGE:4|LABEL:64:4>>2.2 OneShot PBA Agreement and Termination
+## 2.2 OneShot PBA Agreement and Termination
 
 For this brief announcement, we describe OneShot PBA, a protocol that prioritizes accuracy.
 It infers the potential distances between the true value, its output, and other replica outputs
@@ -458,3 +454,7 @@ and Networks - Supplemental Volume (DSN-S), 2025. doi:10.1109/DSN-S65789.2025.00
 
 19 Nitin H Vaidya and Vijay K Garg. Byzantine vector consensus in complete graphs. In Proc.
 of the 2013 ACM Symposium on Principles of Distributed Computing, 2013.
+
+## <<PAGE:3|LABEL:64:3>>Notes
+
+1. In a sense, the strong assumptions of existing IA protocols [12, 4, 3] act as inputs about uncertainty.

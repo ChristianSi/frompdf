@@ -902,13 +902,7 @@ equation59. The Gilbert damping was set to 10−3. 20,000 timesteps of 10 fs wer
 used for the integration. The Fourier transform of the correlation function gives the
 dynamical structure factor,
 
-## <<PAGE:2|LABEL:1>>Notes
-
-1. II. Physikalisches Institut, Universität zu Köln, Zülpicher Str. 77, D-50937 Köln, Germany. 2 Experimental Physics V, Center for Electronic Correlations
-   and Magnetism, University of Augsburg, 86159 Augsburg, Germany. 3 Institute of Applied Physics, MD 2028 Chișinău, Republic of Moldova. 4 Istituto
-   Italiano di Tecnologia, Via Morego 30, 16163 Genova, Italy. 5Dipartimento di Fisica, Università di Genova, Via Dodecaneso, 33, 16146 Genova, Italy. ✉email: sekiguchi.fumiya.2n@kyoto-u.ac.jp; pvl@ph2.uni-koeln.de
-
-### <<PAGE:7|LABEL:6>>mj rðÞt mj r0ðÞ 0
+### mj rðÞt mj r0ðÞ 0
 
 ### Cj r r 0 ð Þ¼ ; t
 
@@ -1198,3 +1192,9 @@ the copyright holder. To view a copy of this license, visit http://creativecommo
 licenses/by/4.0/.
 
 © The Author(s) 2022
+
+## <<PAGE:2|LABEL:1>>Notes
+
+1. II. Physikalisches Institut, Universität zu Köln, Zülpicher Str. 77, D-50937 Köln, Germany. 2 Experimental Physics V, Center for Electronic Correlations
+   and Magnetism, University of Augsburg, 86159 Augsburg, Germany. 3 Institute of Applied Physics, MD 2028 Chișinău, Republic of Moldova. 4 Istituto
+   Italiano di Tecnologia, Via Morego 30, 16163 Genova, Italy. 5Dipartimento di Fisica, Università di Genova, Via Dodecaneso, 33, 16146 Genova, Italy. ✉email: sekiguchi.fumiya.2n@kyoto-u.ac.jp; pvl@ph2.uni-koeln.de

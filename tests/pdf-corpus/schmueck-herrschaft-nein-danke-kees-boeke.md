@@ -1446,159 +1446,7 @@ anarchisch, sondern auch alltagstauglich und effektiv sind.
 *
 *
 
-#### <<PAGE:56|LABEL:212>>Literatur
-
-Bakunin, Michael: Gesammelte Werke, Band 1, hrsg. v. Max Nettlau,
-Berlin: Verlag „Der Syndikalist“, 1921 (online).
-
-Barclay, Harold: Völker ohne Regierung. Eine Anthropologie der Anarchie,
-Berlin: Libertad Verlag (= Edition Schwarze Kirschen; 6), 1985.
-
-Boeke, Julia: Inleiding, in: Archief Werkplaats Kindergemeenschap
-(Bilthoven). (1921-) 1926-1954 (-1986), Amsterdam: IISG, 1990, pp. 3-10.
-
-Boeke, Kees: Bilthoven, Holland’s International Children’s Community,
-in: The Clearing House, vol. 13 (1938), no. 2 (Oct.), pp. 106-108.
-
-Boeke, Kees: Der Bilthoven Werkplaats und seine Soziokratie, in: Bildung
-und Erziehung, Jg. 2 (1949), Nr. 8 (August), S. 590-595.
-
-Boeke, Kees: Democracy as it might be; first published in May 1945 by
-Kees Boeke (1884-1966), edited by Beatrice C. Boeke, in: worldteacher.
-faithweb.com (online).
-
-Boeke, Kees: Redelijke Ordening van de Mensengemeenschap, 2. überarb.
-Aufl. (1967), Nachdruck in: de AS (De Sociokratie van Kees Boeke),
-vol. 40 (1986), no. 76, pp. 18-45 (dt. Übers. Die Ordnung der Vernunft in
-der Gemeinschaft der Menschen, hier im Anhang auf S. 217-223).
-
-Buck, John A. and Gerard Endenburg: The Creative Forces of Self-Organization,
-Original: 2003, revised version, Rotterdam: Sociocratic Center,
-2012 (online | PDF).
-
-Buck, John A. und Gerard Endenburg: Die Kreativen Kräfte der Selbstorganisation,
-Rotterdam: Sociocratisch Centrum, 2005 (online | PDF).
-
-Buck, John and Sharon Villines: We the People: Consenting to a Deeper
-Democracy. A Guide to Sociocratic Principles and Methods, Washington
-D. C.: Sociocracy. Info, 2007.
-
-Chugerman, Samuel: Lester F. Ward: The American Aristotle. A Summary
-and Interpretation of his Sociology, New York: Octagon Books, 1965.
-
-Fleming, James E.: The Sociocratic Theory of Lester Frank Ward, in:
-Social Forces, vol. 24 (1946), no. 3 (March), pp. 257–266.
-
-Groot, Annemiek de: De Lust tot Last. De Rein Leven Beweging als
-pionier in de strijd om de nieuwe mens, in: Groniek. Historisch tijdschrift,
-Nr. 120 (maart 1993), pp. 55-64 (online | PDF).
-
-<<PAGE:57|LABEL:213>>Hazekamp, Arie: De bezielende Kracht van Joop Westerweel, in: de AS –
-Nederlandse Anarchisten tijdens de duitse Bezetting, vol. 46 (2018), no. 202
-(najaar), pp. 4-9 (online | PDF).
-
-Holterman, Thom: Recht en politieke organisatie, Een onderzoek naar
-convergentie in opvattingen omtrent recht en politieke organisatie bij
-sommige anarchisten en sommigerechtsgeleerden, Zwolle: W.E.J. Tjeenk
-Willink, 1986.
-
-Holterman, Thom: Redelijk ordenen bij Kees Boeke, in: de AS – De
-Sociokratie van Kees Boeke, vol. 14 (1986), no. 76 (Okt.-Dec.), pp. 6-7
-(online | PDF).
-
-Hooghiemstra, Daniela A.: De geest in dit huis is liefderijk. Het leven en
-De Werkplaats van Kees Boeke (1884-1966), Amsterdam: Universiteit van
-Amsterdam (Thesis), Utrecht, Amsterdam, Antwerpen: Uitgeverij De
-Arbeiderspers, 2013 (online | PDF).
-
-Jans, Rudolf: Tolstoj in Nederland (Diss.), Bussum: Uitgeverij Paul Brand
-NV., 1952 (online).
-
-Jong, Rudolf de: „Ik ben een Possibilistisch Anarchist”, in: de AS, vol. 40
-(2012), no. 180 (Winter 2012), pp. 2-11 (online | PDF).
-
-Kuipers, Hans Jan: De Wereld als Werkplaats. Over de vorming von Kees
-Boeke und Beatrice Cadbury, Amsterdam: Stichting beheer IISG, 1992.
-
-Martin, James J.: Männer gegen den Staat. Die Vertreter des individualistischen
-Anarchismus in Amerika (1827-1908), 2 Bde., Hamburg: Verlag der
-Mackay-Gesellschaft, 1980.
-
-Morsch, Corneos J. J. A.: Met de moed van de hoop: studies over de
-vernieuwing van opvoeding, onderwijs en maatschappij in Nederland in
-de periode tussen ± 1930 en 1984, Diss. an der Katholieke Universiteit te
-Nijmegen, 1984 (online | PDF).
-
-Proudhon, Pierre-Joseph: Qu'est-ce que la propriété ? Ou Recherches sur le
-principe du droit et du gouvernement, Paris: J.-F. Brocard, 1840, pp. 234-235
-(online | PDF).
-
-Ramaer, Hans: Anarchisme in Domineesland. Continuiteit en Verandering
-van een politieke Beweging, in: de AS – Jaarboek Anarchisme 2007, vol. 36
-(2008), no. 161/162 (zommer), pp. 54-62 (online | PDF).
-
-<<PAGE:58|LABEL:214>>Ramaer, Hans and Thom Holterman: Clara Wichmann and the End of
-Criminal Law, in: The Raven, vol. 6 (1993), no. 22 (April-June), pp. 143-151
-(online | PDF).
-
-Ramaer, Hans: Het religieus-anarchisme van Kees Boeke, in: de AS, vol. 14
-(1986), no. 76 (Okt.-Dec.), p. 2-5 (online | PDF).
-
-Ramaer, Hans: De piramide der tirannie. Anarchisten in Nederland,
-Amsterdam: Wetenschappelijke Uitgeverij, 1977.
-
-Rüther, Christian: Soziokratie – Ein Organisationsmodell. Grundlagen,
-Methoden und Praxis, (Master-Thesis 2010), Norderstedt: BoD, 2017
-(online | PDF).
-
-Seyferth, Peter: Konsens oder Mehrheitsprinzip? Über demokratische Entscheidungsverfahren
-als politischer Modus der Anarchie, in: Widerspruch,
-Nr. 57 (2013), S. 87-98 (online).
-
-Schmück, Jochen: Science goes Anarchy! Die „gelebte Anarchie“ der Open-Science-Bewegung
-und ihre verborgenen ideologischen Wurzeln im traditionellen
-Anarchismus, in: espero (N.F.), Nr. 8 (Januar 2024), S. 99-182
-(online | PDF).
-
-Schmück, Jochen: Wenn Anarchie auf Algorithmen trifft – Libertäre
-Reflexionen über die natürliche und Künstliche Intelligenz, in: espero
-(N.F.), Nr. 11 (Juli 2025), S. 43-53 (online | PDF).
-
-Splinter, Leony van der: Dertig jaar streven naar rein leven. De Rein
-Leven Beweging in Nederland (1901-1931), Diss, Leiden: Universiteit
-Leiden, 1986 (online | PDF).
-
-Swann, Thomas: Anarchist Cybernetics. Control and Communication in
-Radical Politics, Bristol: University Press, 2020.
-
-Swann, Thomas: Die anarchistische Kybernetik der Gegenseitigen Hilfe.
-Selbstorganisation in und nach der Coronavirus-Krise, in: espero (N.F.),
-Nr. 2 (Januar 2021), S. 149-163 (online | PDF).
-
-Tomás Ibáñez: Das Wunder der Einheit in der Vielfalt. Ein kurzer Überblick
-über den Anarchismus vor, während und nach Venedig ’84, in: espero
-(N.F.), Nr. 11 (Juli 2025), S. 11-20 (online | PDF).
-
-Ward, Lester Frank: Dynamic sociology or applied social science, D.
-Appleton & Company, 1883, 1897, vol. II (online | PDF).
-
-<<PAGE:59|LABEL:215>>Ward, Lester Frank: The psychic factors in civilization, Boston: Ginn &
-Company, 1893.
-
-Wolf, Siegbert: John Burnheims „Demarchie“ – Ein libertäres Gegenmodell
-zu staatszentrierter Herrschaftsordnung, in: espero (N.F.), Nr. 11 (Juni
-2025), S. 239-255 (online | PDF).
-
-Yarros, Victor S.: Sociocracy – What is it?, in: Liberty, vol. 16 (1904),
-no. 1, Boston, Mass., 1904, p. 2-3.
-
-Zimmermann, Werner: Kees Boeke, in: TAU. Monatsblätter für Erkenntnis
-und Tat, Lauf an der Pegnitz und Bern, Heft 106, Februar 1933, S. 18-21.
-
-<<PAGE:60|LABEL:216>>Das Kees Boeke und der Soziokratie gewidmete Themen-Special der niederländischen
-anarchistischen Zeitschrift De AS, vol. 14 (1986), no. 76 (Okt.-Dez.), (online | PDF).
-
-### <<PAGE:5|LABEL:161>>Notes
+#### <<PAGE:5|LABEL:161>>Notes
 
 1. Pierre-Joseph Proudhon: Qu'est-ce que la propriété ? Ou Recherches sur le principe du droit et
    du gouvernement, Paris: J.-F. Brocard, 1840, pp. 234-235 (online | PDF), (Übers. aus d. Franz. v.
@@ -2064,6 +1912,158 @@ anarchistischen Zeitschrift De AS, vol. 14 (1986), no. 76 (Okt.-Dez.), (online |
     (N.F.), Nr. 8 (Januar 2024), S. 99-182 (online | PDF).
 82. Siehe Schmück: Wenn Anarchie auf Algorithmen trifft, a. a. O. (Vgl. Anm. 74).
 
+#### <<PAGE:56|LABEL:212>>Literatur
+
+Bakunin, Michael: Gesammelte Werke, Band 1, hrsg. v. Max Nettlau,
+Berlin: Verlag „Der Syndikalist“, 1921 (online).
+
+Barclay, Harold: Völker ohne Regierung. Eine Anthropologie der Anarchie,
+Berlin: Libertad Verlag (= Edition Schwarze Kirschen; 6), 1985.
+
+Boeke, Julia: Inleiding, in: Archief Werkplaats Kindergemeenschap
+(Bilthoven). (1921-) 1926-1954 (-1986), Amsterdam: IISG, 1990, pp. 3-10.
+
+Boeke, Kees: Bilthoven, Holland’s International Children’s Community,
+in: The Clearing House, vol. 13 (1938), no. 2 (Oct.), pp. 106-108.
+
+Boeke, Kees: Der Bilthoven Werkplaats und seine Soziokratie, in: Bildung
+und Erziehung, Jg. 2 (1949), Nr. 8 (August), S. 590-595.
+
+Boeke, Kees: Democracy as it might be; first published in May 1945 by
+Kees Boeke (1884-1966), edited by Beatrice C. Boeke, in: worldteacher.
+faithweb.com (online).
+
+Boeke, Kees: Redelijke Ordening van de Mensengemeenschap, 2. überarb.
+Aufl. (1967), Nachdruck in: de AS (De Sociokratie van Kees Boeke),
+vol. 40 (1986), no. 76, pp. 18-45 (dt. Übers. Die Ordnung der Vernunft in
+der Gemeinschaft der Menschen, hier im Anhang auf S. 217-223).
+
+Buck, John A. and Gerard Endenburg: The Creative Forces of Self-Organization,
+Original: 2003, revised version, Rotterdam: Sociocratic Center,
+2012 (online | PDF).
+
+Buck, John A. und Gerard Endenburg: Die Kreativen Kräfte der Selbstorganisation,
+Rotterdam: Sociocratisch Centrum, 2005 (online | PDF).
+
+Buck, John and Sharon Villines: We the People: Consenting to a Deeper
+Democracy. A Guide to Sociocratic Principles and Methods, Washington
+D. C.: Sociocracy. Info, 2007.
+
+Chugerman, Samuel: Lester F. Ward: The American Aristotle. A Summary
+and Interpretation of his Sociology, New York: Octagon Books, 1965.
+
+Fleming, James E.: The Sociocratic Theory of Lester Frank Ward, in:
+Social Forces, vol. 24 (1946), no. 3 (March), pp. 257–266.
+
+Groot, Annemiek de: De Lust tot Last. De Rein Leven Beweging als
+pionier in de strijd om de nieuwe mens, in: Groniek. Historisch tijdschrift,
+Nr. 120 (maart 1993), pp. 55-64 (online | PDF).
+
+<<PAGE:57|LABEL:213>>Hazekamp, Arie: De bezielende Kracht van Joop Westerweel, in: de AS –
+Nederlandse Anarchisten tijdens de duitse Bezetting, vol. 46 (2018), no. 202
+(najaar), pp. 4-9 (online | PDF).
+
+Holterman, Thom: Recht en politieke organisatie, Een onderzoek naar
+convergentie in opvattingen omtrent recht en politieke organisatie bij
+sommige anarchisten en sommigerechtsgeleerden, Zwolle: W.E.J. Tjeenk
+Willink, 1986.
+
+Holterman, Thom: Redelijk ordenen bij Kees Boeke, in: de AS – De
+Sociokratie van Kees Boeke, vol. 14 (1986), no. 76 (Okt.-Dec.), pp. 6-7
+(online | PDF).
+
+Hooghiemstra, Daniela A.: De geest in dit huis is liefderijk. Het leven en
+De Werkplaats van Kees Boeke (1884-1966), Amsterdam: Universiteit van
+Amsterdam (Thesis), Utrecht, Amsterdam, Antwerpen: Uitgeverij De
+Arbeiderspers, 2013 (online | PDF).
+
+Jans, Rudolf: Tolstoj in Nederland (Diss.), Bussum: Uitgeverij Paul Brand
+NV., 1952 (online).
+
+Jong, Rudolf de: „Ik ben een Possibilistisch Anarchist”, in: de AS, vol. 40
+(2012), no. 180 (Winter 2012), pp. 2-11 (online | PDF).
+
+Kuipers, Hans Jan: De Wereld als Werkplaats. Over de vorming von Kees
+Boeke und Beatrice Cadbury, Amsterdam: Stichting beheer IISG, 1992.
+
+Martin, James J.: Männer gegen den Staat. Die Vertreter des individualistischen
+Anarchismus in Amerika (1827-1908), 2 Bde., Hamburg: Verlag der
+Mackay-Gesellschaft, 1980.
+
+Morsch, Corneos J. J. A.: Met de moed van de hoop: studies over de
+vernieuwing van opvoeding, onderwijs en maatschappij in Nederland in
+de periode tussen ± 1930 en 1984, Diss. an der Katholieke Universiteit te
+Nijmegen, 1984 (online | PDF).
+
+Proudhon, Pierre-Joseph: Qu'est-ce que la propriété ? Ou Recherches sur le
+principe du droit et du gouvernement, Paris: J.-F. Brocard, 1840, pp. 234-235
+(online | PDF).
+
+Ramaer, Hans: Anarchisme in Domineesland. Continuiteit en Verandering
+van een politieke Beweging, in: de AS – Jaarboek Anarchisme 2007, vol. 36
+(2008), no. 161/162 (zommer), pp. 54-62 (online | PDF).
+
+<<PAGE:58|LABEL:214>>Ramaer, Hans and Thom Holterman: Clara Wichmann and the End of
+Criminal Law, in: The Raven, vol. 6 (1993), no. 22 (April-June), pp. 143-151
+(online | PDF).
+
+Ramaer, Hans: Het religieus-anarchisme van Kees Boeke, in: de AS, vol. 14
+(1986), no. 76 (Okt.-Dec.), p. 2-5 (online | PDF).
+
+Ramaer, Hans: De piramide der tirannie. Anarchisten in Nederland,
+Amsterdam: Wetenschappelijke Uitgeverij, 1977.
+
+Rüther, Christian: Soziokratie – Ein Organisationsmodell. Grundlagen,
+Methoden und Praxis, (Master-Thesis 2010), Norderstedt: BoD, 2017
+(online | PDF).
+
+Seyferth, Peter: Konsens oder Mehrheitsprinzip? Über demokratische Entscheidungsverfahren
+als politischer Modus der Anarchie, in: Widerspruch,
+Nr. 57 (2013), S. 87-98 (online).
+
+Schmück, Jochen: Science goes Anarchy! Die „gelebte Anarchie“ der Open-Science-Bewegung
+und ihre verborgenen ideologischen Wurzeln im traditionellen
+Anarchismus, in: espero (N.F.), Nr. 8 (Januar 2024), S. 99-182
+(online | PDF).
+
+Schmück, Jochen: Wenn Anarchie auf Algorithmen trifft – Libertäre
+Reflexionen über die natürliche und Künstliche Intelligenz, in: espero
+(N.F.), Nr. 11 (Juli 2025), S. 43-53 (online | PDF).
+
+Splinter, Leony van der: Dertig jaar streven naar rein leven. De Rein
+Leven Beweging in Nederland (1901-1931), Diss, Leiden: Universiteit
+Leiden, 1986 (online | PDF).
+
+Swann, Thomas: Anarchist Cybernetics. Control and Communication in
+Radical Politics, Bristol: University Press, 2020.
+
+Swann, Thomas: Die anarchistische Kybernetik der Gegenseitigen Hilfe.
+Selbstorganisation in und nach der Coronavirus-Krise, in: espero (N.F.),
+Nr. 2 (Januar 2021), S. 149-163 (online | PDF).
+
+Tomás Ibáñez: Das Wunder der Einheit in der Vielfalt. Ein kurzer Überblick
+über den Anarchismus vor, während und nach Venedig ’84, in: espero
+(N.F.), Nr. 11 (Juli 2025), S. 11-20 (online | PDF).
+
+Ward, Lester Frank: Dynamic sociology or applied social science, D.
+Appleton & Company, 1883, 1897, vol. II (online | PDF).
+
+<<PAGE:59|LABEL:215>>Ward, Lester Frank: The psychic factors in civilization, Boston: Ginn &
+Company, 1893.
+
+Wolf, Siegbert: John Burnheims „Demarchie“ – Ein libertäres Gegenmodell
+zu staatszentrierter Herrschaftsordnung, in: espero (N.F.), Nr. 11 (Juni
+2025), S. 239-255 (online | PDF).
+
+Yarros, Victor S.: Sociocracy – What is it?, in: Liberty, vol. 16 (1904),
+no. 1, Boston, Mass., 1904, p. 2-3.
+
+Zimmermann, Werner: Kees Boeke, in: TAU. Monatsblätter für Erkenntnis
+und Tat, Lauf an der Pegnitz und Bern, Heft 106, Februar 1933, S. 18-21.
+
+<<PAGE:60|LABEL:216>>Das Kees Boeke und der Soziokratie gewidmete Themen-Special der niederländischen
+anarchistischen Zeitschrift De AS, vol. 14 (1986), no. 76 (Okt.-Dez.), (online | PDF).
+
 ### <<PAGE:61|LABEL:217>>ANHANG:
 
 ### Die Ordnung der Vernunft in der Gemeinschaft der Menschen (Mai 1945)1
@@ -2110,7 +2110,7 @@ Alles deutet also darauf hin, dass Zwang so weit wie möglich vermieden
 werden sollte, wobei die tatsächliche Ordnung und Struktur erhalten bleiben
 muss.
 
-### <<PAGE:61|LABEL:217>>Notes
+#### <<PAGE:61|LABEL:217>>Notes
 
 1. Kees Boeke: Redelijke Ordening van de Mensengemeenschap, 2. überarb. Aufl. (1967), neu
    abgedruckt, in: de AS – De Sociokratie van Kees Boeke, vol. 14 (1986), no. 76, pp. 12-17 (Übers.
