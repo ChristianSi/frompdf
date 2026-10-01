@@ -58,6 +58,7 @@ frompdf currently detects and serializes:
 - optional page-boundary markers embedded in the Markdown output
 - document-aware unhyphenation of words split across lines within a block
 - normalization of unspaced en and em dashes split across lines within a block
+- inline superscripts and subscripts, preserved as `<sup>` and `<sub>` tags
 
 The internal block model tracks the raw PDF page number and, when available,
 the visible page number for each block.
@@ -186,6 +187,20 @@ writes one mapping row per PDF page. Missing visible labels are written as
 an unambiguous value. The page-marker and diagnostic options are independent;
 they can be combined or used separately, and `--page-markers` and
 `--dump-pagenos` use the same page-number mapping.
+
+### Superscripts and subscripts
+
+Small, raised or lowered characters in running text retain their position
+using inline HTML tags, for example `text<sup>2</sup>` and
+`GaV<sub>4</sub>S<sub>8</sub>`. Rendering these tags requires a Markdown viewer
+that allows HTML. Detected footnote labels are still written as ordinary
+numbered list markers, such as `2. `.
+
+Detection uses character size and position relative to nearby ordinary text,
+including when a PDF reports placeholder font sizes or mixes scripts into
+ordinary spans. Recognition is conservative; standalone scripts and complex
+stacked mathematical notation may remain plain text. Diagnostic line CSVs
+retain plain text and include `scripts` ranges with decoded character offsets.
 
 ## Limitations
 

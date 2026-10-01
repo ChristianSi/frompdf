@@ -2,6 +2,8 @@ from collections import Counter
 from collections.abc import Iterable
 from unicodedata import category, normalize
 
+from frompdf.scripts import AnnotatedText, join_annotated_texts
+
 # These characters can represent a hyphen within an extracted word. Other dash
 # and minus characters are deliberately excluded because they generally express
 # punctuation or mathematical operators instead of word joining.
@@ -330,6 +332,21 @@ def unhyphenate_block_lines(
     coordination_tokens: set[str],
 ) -> str:
     """Normalize wrapped words and unspaced dashes within one Markdown block."""
+    return unhyphenate_annotated_lines(
+        (AnnotatedText(text) for text in line_texts),
+        word_counts,
+        mixed_case_words,
+        coordination_tokens,
+    ).text
+
+
+def unhyphenate_annotated_lines(
+    line_texts: Iterable[AnnotatedText],
+    word_counts: Counter[str],
+    mixed_case_words: set[str],
+    coordination_tokens: set[str],
+) -> AnnotatedText:
+    """Repair boundaries using plain text, moving annotations with the source tokens."""
     rewritten_lines = list(line_texts)
     consumed_line_indexes: set[int] = set()
 
@@ -337,18 +354,20 @@ def unhyphenate_block_lines(
     # boundary with the following line has been considered.
     for line_index in range(len(rewritten_lines) - 2, -1, -1):
         dash_parts = unspaced_dash_token(
-            rewritten_lines[line_index], rewritten_lines[line_index + 1]
+            rewritten_lines[line_index].text, rewritten_lines[line_index + 1].text
         )
         if dash_parts is not None:
             dash_token, right_remainder = dash_parts
-            rewritten_lines[line_index] += dash_token
-            rewritten_lines[line_index + 1] = right_remainder
+            right = rewritten_lines[line_index + 1]
+            token_start = len(right.text) - len(right.text.lstrip())
+            rewritten_lines[line_index] += right.slice(token_start, token_start + len(dash_token))
+            rewritten_lines[line_index + 1] = right.slice(len(right.text) - len(right_remainder))
             if not right_remainder:
                 consumed_line_indexes.add(line_index + 1)
             continue
 
         fragments = split_boundary_fragments(
-            rewritten_lines[line_index], rewritten_lines[line_index + 1]
+            rewritten_lines[line_index].text, rewritten_lines[line_index + 1].text
         )
         if fragments is None:
             continue
@@ -369,20 +388,24 @@ def unhyphenate_block_lines(
             word_counts,
             mixed_case_words,
         )
-        if keep_hyphen:
-            rewritten_lines[line_index] += raw_right_token
-        else:
-            rewritten_lines[line_index] = rewritten_lines[line_index][:-1] + raw_right_token
+        right = rewritten_lines[line_index + 1]
+        token_start = len(right.text) - len(right.text.lstrip())
+        token = right.slice(token_start, token_start + len(raw_right_token))
+        left = rewritten_lines[line_index]
+        rewritten_lines[line_index] = (left if keep_hyphen else left.slice(0, -1)) + token
 
-        token_parts = split_first_token(rewritten_lines[line_index + 1])
+        token_parts = split_first_token(right.text)
         assert token_parts is not None
         _, right_remainder = token_parts
-        rewritten_lines[line_index + 1] = right_remainder
+        rewritten_lines[line_index + 1] = right.slice(len(right.text) - len(right_remainder))
         if not right_remainder:
             consumed_line_indexes.add(line_index + 1)
 
-    return '\n'.join(
-        line_text
-        for line_index, line_text in enumerate(rewritten_lines)
-        if line_index not in consumed_line_indexes or line_text
+    return join_annotated_texts(
+        (
+            line_text
+            for line_index, line_text in enumerate(rewritten_lines)
+            if line_index not in consumed_line_indexes or line_text.text
+        ),
+        '\n',
     )

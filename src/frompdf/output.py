@@ -4,6 +4,7 @@ from pathlib import Path
 from typing import TextIO
 
 from frompdf.models import Block, BlockQuote, Footnote, Heading, Line, NoteFragment, PageNumber
+from frompdf.scripts import render_scripts
 
 
 def dump_csv(line_list: list[Line], output_path: Path) -> None:
@@ -91,7 +92,9 @@ def markdown_to_text(
         if isinstance(block_obj, Footnote):
             prefix = f'{block_obj.label}. '
             output_file.write(prefix)
-            fragments = block_obj.fragments or [NoteFragment(block_obj.text, block_obj.start_page)]
+            fragments = block_obj.fragments or [
+                NoteFragment(block_obj.text, block_obj.start_page, scripts=block_obj.scripts)
+            ]
             for fragment in fragments:
                 marker = ''
                 if page_markers and (
@@ -101,16 +104,18 @@ def markdown_to_text(
                 output_file.write(fragment.separator)
                 if fragment.separator.endswith('\n'):
                     output_file.write(' ' * len(prefix))
-                output_file.write(marker + fragment.text.replace('\n', '\n' + ' ' * len(prefix)))
+                text = render_scripts(fragment.text, fragment.scripts)
+                output_file.write(marker + text.replace('\n', '\n' + ' ' * len(prefix)))
                 previous_page = fragment.page
         elif isinstance(block_obj, Heading):
-            output_file.write(f'{"#" * block_obj.level} {marker}{block_obj.text}')
+            text = render_scripts(block_obj.text, block_obj.scripts)
+            output_file.write(f'{"#" * block_obj.level} {marker}{text}')
         elif isinstance(block_obj, BlockQuote):
-            quote_lines = block_obj.text.split('\n')
+            quote_lines = render_scripts(block_obj.text, block_obj.scripts).split('\n')
             quote_lines[0] = f'{marker}{quote_lines[0]}'
             output_file.write('\n'.join(f'> {line}' if line else '>' for line in quote_lines))
         else:
-            output_file.write(f'{marker}{block_obj.text}')
+            output_file.write(marker + render_scripts(block_obj.text, block_obj.scripts))
         previous_page = block_obj.end_page
     output_file.write('\n')
 

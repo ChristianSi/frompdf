@@ -1,8 +1,8 @@
 import re
-from collections import defaultdict
+from collections import Counter, defaultdict
 from collections.abc import Sequence
 from difflib import SequenceMatcher
-from unicodedata import category, normalize
+from unicodedata import category, name, normalize
 
 from pdftext.schema import (
     Char as PdfTextChar,
@@ -17,7 +17,8 @@ from pdftext.schema import (
     Span as PdfTextSpan,
 )
 
-from frompdf.models import Line
+from frompdf.models import Line, ScriptRange
+from frompdf.scripts import AnnotatedText
 
 SPACING_TO_COMBINING = {
     '¨': '\u0308',
@@ -407,6 +408,143 @@ def average_font_weight(line_dict: PdfTextLine) -> float | None:
     return round(weighted_sum / total_weight, 1)
 
 
+# Require at least a 15% size reduction and a center shift of 15% of the
+# neighboring ordinary glyph height. Graf's raised markers shift by only 17%;
+# Nature's lowered formula digits have a size ratio of about two-thirds.
+SCRIPT_MAX_SIZE_RATIO = 0.85
+SCRIPT_MIN_CENTER_SHIFT = 0.15
+SCRIPT_PUNCTUATION = frozenset('.*,;:+−–-=()[]<>/†‡')
+
+
+def line_script_ranges(
+    line_dict: PdfTextLine, neighbors: Sequence[PdfTextLine] = ()
+) -> tuple[ScriptRange, ...]:
+    """Recognize small shifted glyphs, including those inside ordinary spans."""
+    # Entries retain decoded offsets, not raw character indices: ligatures and
+    # CRLF normalization can make those differ. Detached accents are repaired
+    # before this function is called.
+    glyphs: list[tuple[int, int, PdfTextChar, tuple[float, float, float, float], float]] = []
+    offset = 0
+    for span in line_dict.get('spans', []):
+        ranges = span_char_text_ranges(span)
+        for char in span.get('chars', []):
+            char_text = char.get('char', '')
+            if not char_text or not all(c.isalnum() or c in SCRIPT_PUNCTUATION for c in char_text):
+                continue
+            if abs(float(char.get('rotation', 0))) > 0.1 or id(char) not in ranges:
+                continue
+            x1, y1, x2, y2 = get_bbox(char)
+            if x1 is None or y1 is None or x2 is None or y2 is None or x2 <= x1 or y2 <= y1:
+                continue
+            size = float(char.get('font', {}).get('size', 1) or 1)
+            start, end = ranges[id(char)]
+            glyphs.append((offset + start, offset + end, char, (x1, y1, x2, y2), size))
+        offset += len(span.get('text', ''))
+
+    ordinary = [g for g in glyphs if g[2].get('char', '').isalnum()]
+    if not ordinary:
+        return ()
+    # Only use reported sizes when all visible alphanumerics have real sizes.
+    # Nature reports size 1.0 even for differently scaled characters.
+    real_sizes = all(g[4] > 1 for g in ordinary)
+    sizes = Counter(round(g[4] if real_sizes else g[3][3] - g[3][1], 1) for g in ordinary)
+    dominant = max(sizes, key=lambda size: (sizes[size], size))
+    if dominant <= 0:
+        return ()
+    references = [
+        g
+        for g in ordinary
+        if abs((g[4] if real_sizes else g[3][3] - g[3][1]) - dominant) <= dominant * 0.08
+    ]
+    if not references:
+        return ()
+    runs: list[ScriptRange] = []
+    for start, end, char, box, size in glyphs:
+        candidate_size = size if real_sizes else box[3] - box[1]
+        if candidate_size > dominant * SCRIPT_MAX_SIZE_RATIO:
+            continue
+        reference = min(
+            references,
+            key=lambda g: abs((g[3][0] + g[3][2]) / 2 - (box[0] + box[2]) / 2),
+        )
+        ref_box = reference[3]
+        height = ref_box[3] - ref_box[1]
+        horizontal_gap = max(0.0, ref_box[0] - box[2], box[0] - ref_box[2])
+        if horizontal_gap > height * 6:
+            continue
+        shift = ((box[1] + box[3]) - (ref_box[1] + ref_box[3])) / (2 * height)
+        # A smaller character sitting on the ordinary baseline (e.g. small
+        # caps) is not a subscript. Validate direction independently of pdftext
+        # flags, which sometimes mislabel lowered C/j as superscripts.
+        if (
+            -0.8 <= shift <= -SCRIPT_MIN_CENTER_SHIFT
+            and box[1] <= ref_box[1] + height * 0.08
+            and box[3] < ref_box[3] - height * 0.15
+        ):
+            kind = 'sup'
+        elif (
+            SCRIPT_MIN_CENTER_SHIFT <= shift <= 0.8
+            and box[3] > ref_box[3] + height * 0.04
+            and box[1] > ref_box[1] + height * 0.15
+        ):
+            kind = 'sub'
+        else:
+            continue
+        # Do not apply another script level to an already encoded script glyph.
+        if any('SUPERSCRIPT' in name(c, '') or 'SUBSCRIPT' in name(c, '') for c in char['char']):
+            continue
+        runs.append(ScriptRange(start, end, kind))
+    # A small numerator can look like an inline superscript. Reject only the
+    # touching script group when another extraction line is stacked immediately
+    # above/below it, preserving unrelated scripts elsewhere on the same line.
+    groups: list[list[ScriptRange]] = []
+    for run in runs:
+        if not groups or groups[-1][-1].end != run.start or groups[-1][-1].kind != run.kind:
+            groups.append([])
+        groups[-1].append(run)
+    kept: list[ScriptRange] = []
+    for group in groups:
+        boxes = [g[3] for g in glyphs if group[0].start <= g[0] < group[-1].end]
+        script_box = (
+            min(b[0] for b in boxes),
+            min(b[1] for b in boxes),
+            max(b[2] for b in boxes),
+            max(b[3] for b in boxes),
+        )
+        if not has_stacked_text(line_dict, neighbors, script_box, group[0]):
+            kept.extend(group)
+    return tuple(kept)
+
+
+def has_stacked_text(
+    line: PdfTextLine,
+    neighbors: Sequence[PdfTextLine],
+    script_box: tuple[float, float, float, float],
+    run: ScriptRange,
+) -> bool:
+    """Avoid interpreting the numerator of a vertically stacked fraction as a script."""
+    x1, y1, x2, y2 = get_bbox(line)
+    if x1 is None or y1 is None or x2 is None or y2 is None:
+        return False
+    for neighbor in neighbors:
+        if neighbor is line:
+            continue
+        nx1, ny1, nx2, ny2 = get_bbox(neighbor)
+        if nx1 is None or ny1 is None or nx2 is None or ny2 is None:
+            continue
+        if min(script_box[2], nx2) <= max(script_box[0], nx1):
+            continue
+        gap = ny1 - script_box[3] if run.kind == 'sup' else script_box[1] - ny2
+        if not 0 <= gap <= (y2 - y1) * 0.3:
+            continue
+        # Numerator/denominator centers are much closer than consecutive prose
+        # lines. Ignore nearly identical baselines, which can be split blocks.
+        distance = abs((y1 + y2 - ny1 - ny2) / 2)
+        if min(y2 - y1, ny2 - ny1) * 0.1 < distance < max(y2 - y1, ny2 - ny1) * 0.6:
+            return True
+    return False
+
+
 def iter_lines(page_list: Sequence[Page]) -> list[Line]:
     """Flatten pdftext dictionary output into a list of Line records."""
     line_list: list[Line] = []
@@ -420,9 +558,14 @@ def iter_lines(page_list: Sequence[Page]) -> list[Line]:
             for line_dict in block_dict.get('lines', []):
                 line_no_on_page += 1
 
-                text_value = ''.join(
+                raw_text = ''.join(
                     span_dict.get('text', '') for span_dict in line_dict.get('spans', [])
-                ).strip()
+                )
+                text_value = raw_text.strip()
+                scripts = line_script_ranges(line_dict, block_dict.get('lines', []))
+                annotated = AnnotatedText(raw_text, scripts).slice(
+                    len(raw_text) - len(raw_text.lstrip()), len(raw_text.rstrip())
+                )
 
                 x1, y1, x2, y2 = get_bbox(line_dict)
 
@@ -447,6 +590,7 @@ def iter_lines(page_list: Sequence[Page]) -> list[Line]:
                     rel_y=rel_y,
                     avg_weight=average_font_weight(line_dict),
                     font_name=dominant_font_name(line_dict),
+                    scripts=annotated.scripts,
                 )
                 line_list.append(line_obj)
 

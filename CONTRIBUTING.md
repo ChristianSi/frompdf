@@ -169,7 +169,7 @@ The implementation is split into focused modules under `src/frompdf`:
 - `heading_candidates.py` identifies compact centered titles using caps or
   italic styling, established body columns, and surrounding whitespace.
 - `lines.py` repairs detached diacritics, flattens `pdftext` output, and
-  extracts line geometry and typography.
+  extracts line geometry, typography, and inline script ranges.
 - `models.py` defines line, page-number, and Markdown block records.
 - `output.py` writes diagnostic line and page-number CSV files and serializes
   Markdown output.
@@ -180,12 +180,16 @@ The implementation is split into focused modules under `src/frompdf`:
   detected columns.
 - `segmentation.py` combines `pdftext` block hints with page-local geometry
   and typography to find Markdown block boundaries.
+- `scripts.py` slices and joins annotated plain text, preserving inline script
+  ranges through text repair, and renders `<sup>`/`<sub>` tags at serialization.
 - `unhyphenation.py` repairs words and unspaced dashes split across physical
   lines, using document-wide evidence where available.
 
 Important concepts:
 
 - `Line` in `models.py` is a flattened record from `pdftext` output.
+- `ScriptRange` records superscript/subscript offsets in decoded plain text.
+  Lines, blocks, and note fragments retain these ranges until serialization.
 - `PageNumber` in `models.py` stores the raw page number and optional visible
   page number.
 - `Block` in `models.py` is the base Markdown block type.
@@ -199,7 +203,8 @@ The current pipeline is roughly:
 
 1. Extract raw `pdftext` page data.
 2. Repair detached, geometrically positioned diacritics in the raw data.
-3. Flatten the result into line records with geometry and typography.
+3. Flatten the result into line records with geometry, typography, and
+   conservative character-level superscript/subscript annotations.
 4. Optionally dump the unfiltered line records to `-lines.csv`.
 5. Detect and remove headers and footers, collecting visible page labels.
 6. Order the remaining lines by page region and detected column.
@@ -211,7 +216,7 @@ The current pipeline is roughly:
    typography, indentation, and line-spacing evidence. Confirmed centered
    title candidates override boundaries only at and within those titles.
 10. Build paragraph or block-quote records and repair words and unspaced dashes
-    split across physical lines within each block.
+    split across physical lines within each block, preserving script ranges.
 11. Reclassify heading-like paragraphs using size and confirmed title
     candidates, which take precedence over block quotes, and normalize their
     heading levels.
@@ -223,5 +228,7 @@ The current pipeline is roughly:
     share one Notes title. Default H2/H3 Notes titles match a deeper following
     heading when necessary to prevent accidental parentage.
 13. Serialize the blocks as Markdown in `.md`, including compact numbered notes.
+    Inline scripts become `<sup>`/`<sub>` tags; consumed footnote labels remain
+    ordinary list markers.
     Restarted lists sharing a Notes section are separated by an empty HTML
     comment so Markdown renderers preserve their starting numbers.

@@ -5,12 +5,13 @@ from statistics import median
 from frompdf.footnotes import build_footnote, extract_footnotes, place_footnotes
 from frompdf.heading_candidates import find_typographic_heading_lines
 from frompdf.models import Block, BlockQuote, Heading, Line, PageNumber, Paragraph
+from frompdf.scripts import AnnotatedText, collapse_annotated_whitespace
 from frompdf.segmentation import segment_lines
 from frompdf.unhyphenation import (
     document_coordination_tokens,
     document_mixed_case_words,
     document_word_counts,
-    unhyphenate_block_lines,
+    unhyphenate_annotated_lines,
 )
 
 # Treat clearly heavier font weights as slightly larger for heading detection.
@@ -239,13 +240,15 @@ def markdown_block_from_lines(
     avg_weight = block_avg_weight(line_list)
     start_page = page_number_map[line_list[0].page_no]
     end_page = page_number_map[line_list[-1].page_no]
+    annotated = unhyphenate_annotated_lines(
+        (AnnotatedText(line.text, line.scripts) for line in line_list),
+        word_counts,
+        mixed_case_words,
+        coordination_tokens,
+    )
     return block_class(
-        text=unhyphenate_block_lines(
-            (line_obj.text for line_obj in line_list),
-            word_counts,
-            mixed_case_words,
-            coordination_tokens,
-        ),
+        text=annotated.text,
+        scripts=annotated.scripts,
         start_page=start_page,
         end_page=end_page,
         font_size=font_size,
@@ -359,9 +362,11 @@ def detect_headings(
             converted_blocks.append(block_obj)
             continue
 
+        annotated = collapse_annotated_whitespace(AnnotatedText(block_obj.text, block_obj.scripts))
         converted_blocks.append(
             Heading(
-                text=re.sub(r'\s+', ' ', block_obj.text).strip(),
+                text=annotated.text,
+                scripts=annotated.scripts,
                 start_page=block_obj.start_page,
                 end_page=block_obj.end_page,
                 font_size=block_obj.font_size,

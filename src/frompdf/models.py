@@ -1,4 +1,14 @@
 from dataclasses import dataclass, field
+from typing import Literal
+
+
+@dataclass(frozen=True)
+class ScriptRange:
+    """A superscript or subscript range in decoded plain text."""
+
+    start: int
+    end: int
+    kind: Literal['sup', 'sub']
 
 
 @dataclass
@@ -18,6 +28,7 @@ class Line:
     rel_y: float | None
     avg_weight: float | None
     font_name: str | None = None
+    scripts: tuple[ScriptRange, ...] = field(default=(), kw_only=True)
 
 
 @dataclass
@@ -37,6 +48,7 @@ class Block:
     end_page: PageNumber
     font_size: float | None = None
     avg_weight: float | None = None
+    scripts: tuple[ScriptRange, ...] = field(default=(), kw_only=True)
 
 
 @dataclass
@@ -63,6 +75,7 @@ class NoteFragment:
     text: str
     page: PageNumber
     separator: str = ''
+    scripts: tuple[ScriptRange, ...] = field(default=(), kw_only=True)
 
 
 @dataclass

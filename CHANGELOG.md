@@ -9,6 +9,10 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
 
 ### Added
 
+- Inline superscripts and subscripts are detected from character geometry and
+  preserved as `<sup>` and `<sub>` tags in Markdown, including footnote and
+  citation markers, chemical formulas, and mathematical indices. Detected
+  footnote labels remain ordinary numbered list markers.
 - Numbered footnotes are collected into Notes sections, with separate groups
   when numbering restarts, original list labels, and a `--notes-title` option.
   Recognized continuation paragraphs and notes spanning adjacent pages retain
