@@ -206,8 +206,8 @@ even more complicated to distribute your own version of an applications.
 
 In past years, there has been more interest in open source licenses based on ethical
 values (Goodman-Wilson, 2020). For example, Ethical Source tries to drive licenses
-that prevent software use for harm1
-and their GitHub repository’s2 first commit was
+that prevent software use for harm<sup>1</sup>
+and their GitHub repository’s<sup>2</sup> first commit was
 made in 2019.
 
 Notably, such licenses cannot be considered open source, as restricting the use
@@ -224,9 +224,9 @@ for the public, securing more rights for the licensers (i.e. limiting what other
 GNU GPL is founded on the four basic freedoms listed in the introduction. The license
 has been formulated to secure these freedoms through the sharing of source code.
 
-1https://ethicalsource.dev/licenses/
+<sup>1</sup>https://ethicalsource.dev/licenses/
 
-2https://github.com/EthicalSource/ethicalsource.dev
+<sup>2</sup>https://github.com/EthicalSource/ethicalsource.dev
 
 <<PAGE:6|LABEL:137>>Distribution agreements have been consciously left outside this license, presumably because
 user freedom is secured through the availability of the code, even in the case of
@@ -317,7 +317,7 @@ The digital divide mentioned in chapter 2.2 makes it imperative that user freedo
 be guaranteed, moreso when development and distribution options get more difficult.
 Mobile application distributions systems are perhaps a special case when it comes to
 software distribution, as they mostly rely on ”walled gardens”, a centralized distribution
-system in the form of app stores3
+system in the form of app stores<sup>3</sup>
 . Installing your own version of an application requires
 at the very least a development environment dedicated to the chosen platform and a
 high level of technical know-how; possibly also payment to the required distribution
@@ -328,10 +328,10 @@ not secured for all users without additions such as the ones proposed.
 In comparison, the proposed changes would be clearly in conflict with the values
 of some other ethics-based licenses that explicitly restrict the use of software, e.g. the
 
-3While Android allows the installation of apk files outside Play Store, the option is off by default and can
+<sup>3</sup>While Android allows the installation of apk files outside Play Store, the option is off by default and can
 be difficult to do without technical skills.
 
-<<PAGE:8|LABEL:139>>NoHarm license4
+<<PAGE:8|LABEL:139>>NoHarm license<sup>4</sup>
 that forbids use related to things such as slavery, gambling, tobacco,
 hate speech or discrimination. This is not a problem, as a wider selection of licenses
 ensures that people can choose how their software is shared and used. The proposed
@@ -348,7 +348,7 @@ license.
 
 ## Money for nothing
 
-GNU GPL explicitly allows selling copies of free software5
+GNU GPL explicitly allows selling copies of free software<sup>5</sup>
 . This provides a good
 example of how ’free’ in free software refers to liberty (of code) and not cost (of distribution).
 The proposed changes do limit freedom to work with the code, which could
@@ -357,7 +357,7 @@ bear further examination to ensure that this does not create unforeseen problems
 ## Limiting usage through DRM
 
 Perhaps the closest thing to the proposed changes is the use of DRM, which is explicitly
-allowed under GPLv3 licensing6
+allowed under GPLv3 licensing<sup>6</sup>
 . But even DRM is disallowed when protected by
 
 tivoization or law, and a case could be made that similar protection is provided by
@@ -382,9 +382,9 @@ legal experts, to make sure that their scope is as-intended. Without sufficient 
 expertise, it is possible that there are large unintended consequences, and these should
 be found out and eliminated before releasing a full license.
 
-> 4https://github.com/raisely/NoHarm/
-> 5https://www.gnu.org/philosophy/selling.html
-> 6https://www.gnu.org/licenses/gpl-faq.htmlDRMProhibited
+> <sup>4</sup>https://github.com/raisely/NoHarm/
+> <sup>5</sup>https://www.gnu.org/philosophy/selling.html
+> <sup>6</sup>https://www.gnu.org/licenses/gpl-faq.htmlDRMProhibited
 
 <<PAGE:9|LABEL:140>>The proposed changes do limit the freedoms of contributors significantly. It might
 be possible to limit these freedoms less, while still protecting the public freedom of

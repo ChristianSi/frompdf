@@ -28,17 +28,17 @@ https://doi.org/10.1038/s41467-022-30829-z OPEN
 
 # Slowdown of photoexcited spin dynamics in the non-collinear spin-ordered phases in skyrmion
 
-# host GaV4S8
+# host GaV<sub>4</sub>S<sub>8</sub>
 
-### Fumiya Sekiguchi 1✉, Kestutis Budzinauskas1
+### Fumiya Sekiguchi <sup>1</sup>✉, Kestutis Budzinauskas<sup>1</sup>
 
-### , Prashant Padmanabhan 1 , Rolf B. Versteeg 1 , Vladimir Tsurkan2,3, István Kézsmárki 2, Francesco Foggetti4,5, Sergey Artyukhin 4 & Paul H. M. van Loosdrecht 1✉
+### , Prashant Padmanabhan <sup>1</sup> , Rolf B. Versteeg <sup>1</sup> , Vladimir Tsurkan<sup>2,3</sup>, István Kézsmárki <sup>2</sup>, Francesco Foggetti<sup>4,5</sup>, Sergey Artyukhin <sup>4</sup> & Paul H. M. van Loosdrecht <sup>1</sup>✉
 
 # 1234567890():,;
 
 Formation of magnetic order alters the character of spin excitations, which then affects
 transport properties. We investigate the photoexcited ultrafast spin dynamics in different
-magnetic phases in Néel-type skyrmion host GaV4S8 with time-resolved magneto-optical
+magnetic phases in Néel-type skyrmion host GaV<sub>4</sub>S<sub>8</sub> with time-resolved magneto-optical
 Kerr effect experiments. The coherent spin precession, whose amplitude is enhanced in the
 skyrmion-lattice phase, shows a signature of phase coexistence across the magnetic phase
 transitions. The incoherent spin relaxation dynamics slows down by a factor of two in the
@@ -56,13 +56,13 @@ of novel spin ordering, which determines the static and
 dynamic magnetic properties. A prominent example is the skyrmion
 state that originates from the presence of the symmetric
 and anti-symmetric spin interactions, such as ferromagnetic
-exchange and Dzyaloshinskii-Moriya interaction1–4. Magnetic
+exchange and Dzyaloshinskii-Moriya interaction<sup>1–4</sup>. Magnetic
 skyrmions, which are particle-like spin textures with a nontrivial
 topology, have been investigated extensively over the past decade
 for their novel fundamental properties, including emergent electrodynamics
-leading to a topological Hall effect5–8 as well as their
+leading to a topological Hall effect<sup>5–8</sup> as well as their
 potential as an information carrier of the future memory
-devices9–11. Importantly, formation of magnetic orders modifies
+devices<sup>9–11</sup>. Importantly, formation of magnetic orders modifies
 the character of elementary excitations, e.g., their energies, velocities,
 and lifetimes, that determine the dynamic properties of the
 spin system. This is crucial for the skyrmion device development,
@@ -70,14 +70,14 @@ or spintronic information processing in general, because working
 principle of the memory devices, such as writing, deleting, and
 transfer of the skyrmions necessitate dynamic perturbations of
 the magnetic order. Consequently, the interest in the nonequilibrium
-skyrmion phenomena is currently emerging12–23.
+skyrmion phenomena is currently emerging<sup>12–23</sup>.
 
 It is of particular interest to drive skyrmions utilizing optical
 technologies. To date, several methods for the optical manipulation
-of magnetic order have been established24–28, and have
-recently been extended to skyrmion hosts14,17–23. It is demonstrated
+of magnetic order have been established<sup>24–28</sup>, and have
+recently been extended to skyrmion hosts<sup>14,17–23</sup>. It is demonstrated
 that coherent spin precession can be triggered in
-skyrmion-host materials by ultrafast optical pulses14,23. The
+skyrmion-host materials by ultrafast optical pulses<sup>14,23</sup>. The
 excitation efficiency of coherent magnons depends on the geometrical
 relation between the photoexcitation and spin ordering,
 i.e., the coupling strength of the photoinduced magnetic perturbation
@@ -88,13 +88,13 @@ demanded for the coherent photocontrol of skyrmions.
 
 Furthermore, laser-based time-resolved studies also shed light
 on the thermal properties of the spin system through the observation
-of incoherent relaxation dynamics24,29,30. The ability to
+of incoherent relaxation dynamics<sup>24,29,30</sup>. The ability to
 control thermal currents is of paramount importance, especially
 for realizing prospective high-density spintronic information
 processing units. Investigations into means to control heat flow in
-magnetic systems gave rise to the field of spin caloritronics31. For
+magnetic systems gave rise to the field of spin caloritronics<sup>31</sup>. For
 example, a heat valve effect has been demonstrated in sandwich
-nanostructures with ferromagnetic and non-magnetic layers32. As
+nanostructures with ferromagnetic and non-magnetic layers<sup>32</sup>. As
 mentioned earlier, the nature of magnon modes is modified by
 
 the spin ordering, that can affect the thermal transport properties.
@@ -103,13 +103,13 @@ conductivity remains hitherto largely unexplored.
 
 In this study, we investigate dynamic behavior of the spin
 system with different magnetic orders of the bulk Néel-type
-skyrmion host material GaV4S8, by performing time-resolved
+skyrmion host material GaV<sub>4</sub>S<sub>8</sub>, by performing time-resolved
 magneto-optical Kerr effect (trMOKE) experiment across the
 magnetic phase diagram, i.e., the ferromagnetic (FM) phase,
 skyrmion-lattice (SkL) phase and cycloid (Cyc) phase. It is previously
-reported that the coherent spin precession in GaV4S8 can
+reported that the coherent spin precession in GaV<sub>4</sub>S<sub>8</sub> can
 be optically driven by the sudden suppression of magnetic
-anisotropy23. Here, we show that the amplitude of this coherent
+anisotropy<sup>23</sup>. Here, we show that the amplitude of this coherent
 spin motion is enhanced in the SkL phase owing to the efficient
 coupling between the photoinduced magnetic perturbation and
 the skyrmion breathing mode. Furthermore, the incoherent
@@ -123,27 +123,27 @@ spin precession experiments.
 
 Results
 
-##### Magnetic properties and phase diagram of GaV4S8. GaV4S8 is a
+##### Magnetic properties and phase diagram of GaV<sub>4</sub>S<sub>8</sub>. GaV<sub>4</sub>S<sub>8</sub> is a
 
 multiferroic semiconductor from the lacunar spinel family, with a
 non-chiral polar crystal structure. The magnetic phase diagram of
-GaV4S8 is shown in Fig. 1a; below the Curie temperature of TC
+GaV<sub>4</sub>S<sub>8</sub> is shown in Fig. 1a; below the Curie temperature of T<sub>C</sub>
 ~13 K, the Cyc phase and SkL phase appear in addition to the FM
-phase33. The SkL phase in GaV4S8 extends over a wide region in
+phase<sup>33</sup>. The SkL phase in GaV<sub>4</sub>S<sub>8</sub> extends over a wide region in
 the phase diagram, which facilitate the study of the dynamical
 properties of the skyrmions. Below ~44 K, a cooperative Jahn-Teller
 distortion along one of the cubic body diagonal axes drives
 a transition from a cubic to polar rhombohedral structure,
 resulting in the formation of a submicron-thick lamella-type
-multi-domain structure33,34. We note that in the sister compound,
-GaV4Se8, the polar structural domain walls were recently
+multi-domain structure<sup>33,34</sup>. We note that in the sister compound,
+GaV<sub>4</sub>Se<sub>8</sub>, the polar structural domain walls were recently
 reported to host twisted magnetic states different from those in
-the interior of the domains35. In the rhombohedral phase of
-GaV4S8, uniaxial anisotropy develops with the magnetic easy axis
+the interior of the domains<sup>35</sup>. In the rhombohedral phase of
+GaV<sub>4</sub>S<sub>8</sub>, uniaxial anisotropy develops with the magnetic easy axis
 parallel to the polar rhombohedral axes, being either of the cubic
-<111> axes33,34,36. The temperature dependence of this anisotropy
+<111> axes<sup>33,34,36</sup>. The temperature dependence of this anisotropy
 has been investigated by electron spin resonance (ESR)
-spectroscopy below the magnetic ordering temperature, TC ~13
+spectroscopy below the magnetic ordering temperature, T<sub>C</sub> ~13
 
 a bc
 
@@ -255,7 +255,7 @@ Time (ps)
 
 Temperature (K)
 
-Fig. 1 Photoinduced Δθ dynamics in the different magnetic phases of GaV4S8.a Magnetic phase diagram of GaV4S8. Vertical dashed lines indicate the
+Fig. 1 Photoinduced Δθ dynamics in the different magnetic phases of GaV<sub>4</sub>S<sub>8</sub>.a Magnetic phase diagram of GaV<sub>4</sub>S<sub>8</sub>. Vertical dashed lines indicate the
 temperatures where trMOKE measurements were performed. b–e Δθ traces under different external magnetic fields at 8 K, 10 K, 11.5 K, and 14.5 K,
 respectively.
 
@@ -419,10 +419,10 @@ blue-shaded areas are guides to the eye indicating where the magnetic phase tran
 of the coherent oscillation, with the magnetic field fixed at 30 mT (60 mT) for the Cyc (SkL) phase. Error bars are the standard deviation of the fitting
 parameters.
 
-K36. It was also demonstrated that the uniaxial anisotropy has a
+K<sup>36</sup>. It was also demonstrated that the uniaxial anisotropy has a
 strong impact on the stability range of the SkL phase in lacunar
-spinels33,34,37,38, and specific to GaV4S8 it confines the orientation
-of the skyrmion tubes along the easy axis33,37.
+spinels<sup>33,34,37,38</sup>, and specific to GaV<sub>4</sub>S<sub>8</sub> it confines the orientation
+of the skyrmion tubes along the easy axis<sup>33,37</sup>.
 
 In the trMOKE experiments, the external magnetic field is
 applied normal to the (100) crystal surface so that all of the four
@@ -433,15 +433,15 @@ domains. Hence, these four domains contribute equally to the
 trMOKE signal. The experiments were performed with a
 Yb:KGW regenerative amplified laser as main light source, which
 provides higher pulse energy with lower repetition rate (100 kHz)
-compared to the setup in our previous work23. This enables
+compared to the setup in our previous work<sup>23</sup>. This enables
 stronger photoexcitation while minimizing heat accumulation in
 the sample. The experiments have been performed in the regime
-where the response is linear in pump fluence (~30 μJ/cm2 on the
+where the response is linear in pump fluence (~30 μJ/cm<sup>2</sup> on the
 sample surface). For the pump and probe, infrared pulses
 (800 nm, 40 fs) and visible pulses (515 nm, 270 fs) were used,
 respectively. The pump pulse was linearly polarized, with the
-photon energy (1.55 eV) well above the GaV4S8 band gap of
-~0.35 eV39,40.
+photon energy (1.55 eV) well above the GaV<sub>4</sub>S<sub>8</sub> band gap of
+~0.35 eV<sup>39,40</sup>.
 
 Coherent spin precession. Figures 1b–e show the photoinduced
 transient change of the Kerr rotation angle of the probe pulse, Δθ,
@@ -451,34 +451,34 @@ diagram Fig. 1a. The observed Δθ traces show the presence of
 several processes characterized by their timescales. First, immediately
 after photoexcitation Δθ shows a marked fast (<40 ps)
 decrease. This behavior is observed at all magnetic fields and all
-temperatures below TC as can be seen in Figs. 1b-1d. This initial
+temperatures below T<sub>C</sub> as can be seen in Figs. 1b-1d. This initial
 fast demagnetization stems from the photoexcited carrier
 relaxation process, where magnons are created either through
 direct electron-magnon scattering or by the phonons emitted
-during non-radiative carrier relaxation process41. After this initial
+during non-radiative carrier relaxation process<sup>41</sup>. After this initial
 
 > process, Δθ shows a relatively slow demagnetization, and an even
 > slower subsequent remagnetization. The demagnetization and
 > remagnetization processes also occur in the paramagnetic phase
-> slightly above TC. Because GaV4S8 is a semiconductor, the
+> slightly above T<sub>C</sub>. Because GaV<sub>4</sub>S<sub>8</sub> is a semiconductor, the
 > demagnetization process is completed in a relatively slow timescale
 > of ~200–400 ps, as widely observed in semiconductor
-> magnets24. In general, in semiconductors this slow demagnetization
+> magnets<sup>24</sup>. In general, in semiconductors this slow demagnetization
 > dynamics is understood in terms of spin-lattice thermalization,
 > which takes place after the rapid heating of the lattice
 > system due to an efficient energy transfer from the electron system
-> to the lattice system24. An interesting observation is that at
+> to the lattice system<sup>24</sup>. An interesting observation is that at
 > 11.5 K and at a low magnetic field Δθ changes sign and takes a
 > positive value, indicating that magnetization is enhanced by the
 > photoexcitation. The origin of this lies in the peak structure of
 > magnetic susceptibility around the phase boundary between the
-> Cyc and paramagnetic phases23,42. In addition to these incoherent
+> Cyc and paramagnetic phases<sup>23,42</sup>. In addition to these incoherent
 > spin dynamics, a clear oscillatory structure appears in the magnetically
 > ordered phase with a typical period of 100–300 ps, i.e., in
 > the few GHz range. The excitation mechanism of this coherent
 > collective spin motion has been assigned to the ultrafast photoinduced
 > modulation of the magnetocrystalline anisotropy of
-> GaV4S8
+> GaV<sub>4</sub>S<sub>8</sub>
 > 23.
 > The comprehensive set of the Δθ traces clearly shows that the
 > nature of the coherent and incoherent spin dynamics changes
@@ -500,13 +500,13 @@ dependence of the oscillation frequency is shown in Fig. 2c. At
 low magnetic fields in the Cyc phase, the frequency of the
 oscillation lies around ~4.7 GHz, which drops to ~3.5 GHz near
 the phase transition to the SkL phase. These frequencies, which
-have also been observed in the ESR experiments43, correspond to
+have also been observed in the ESR experiments<sup>43</sup>, correspond to
 the low-frequency collective mode in the Cyc phase, and to the
 skyrmion breathing mode in the SkL phase, respectively. Further
 increase of the magnetic field finally causes the transition to the
 FM phase around 100 mT, which is manifested in a substantially
 higher-frequency (~13.5 GHz) coherent oscillation corresponding
-to the ferromagnetic resonance in the FM phase44.
+to the ferromagnetic resonance in the FM phase<sup>44</sup>.
 
 A distinct feature of the skyrmion phase is observed in the
 amplitude of the coherent oscillation. Figure 2d shows the
@@ -514,15 +514,15 @@ magnetic-field dependence of the amplitude, where a drastic
 increase is observed inside the SkL phase. This enhanced
 amplitude in the SkL phase can be attributed to the efficient
 excitation of the breathing (BR) mode of the skyrmions. Due to
-the magnetocrystalline anisotropy, skyrmion tubes in GaV4S8
+the magnetocrystalline anisotropy, skyrmion tubes in GaV<sub>4</sub>S<sub>8</sub>
 keep co-aligned with the easy axis and do not follow the
-orientation of the magnetic field33. In addition, anisotropy also
+orientation of the magnetic field<sup>33</sup>. In addition, anisotropy also
 affects the skyrmion core size. In the SkL phase, the spin system
 acquires a collective motion of the skyrmion BR mode,
 accompanied by the oscillating magnetization components along
-the skyrmion tube direction45,46. On the other hand, the coherent
+the skyrmion tube direction<sup>45,46</sup>. On the other hand, the coherent
 spin precession is triggered by the photoinduced quench of the
-magnetocrystalline anisotropy23, as well as by the change of the gtensor
+magnetocrystalline anisotropy<sup>23</sup>, as well as by the change of the gtensor
 as the Jahn–Teller distortion is diminished by the
 photoexcitation. Therefore, the skyrmion BR mode strongly
 couples to the photoinduced anisotropy quench, resulting in the
@@ -539,7 +539,7 @@ value around 60 mT in the SkL phase, then gradually decreases as
 the system approaches the FM phase. This behavior reflects phase
 coexistence near the magnetic phase boundaries, i.e., when
 entering the SkL phase, skyrmions are created in the form of
-islands inside the Cyc (FM) phase2,47. As the system approaches
+islands inside the Cyc (FM) phase<sup>2,47</sup>. As the system approaches
 the center of the SkL phase, the fraction of the skyrmion phase
 increases, in other words the system becomes more “pure” SkL
 phase, which can be observed in the enhanced and eventually
@@ -555,7 +555,7 @@ corresponding to those adjacent phases. This time-domain
 observation of the phase coexistence is in line with the low-frequency
 AC susceptibility measurement where an extremely
 slow spin dynamics appears in the vicinity of the phase
-boundaries48.
+boundaries<sup>48</sup>.
 
 The lifetime of the coherent oscillation at T = 10 K is around
 200 ps, without significant variations for different phases [see
@@ -570,18 +570,18 @@ independent, the cycloid oscillation mode shows a softening toward
 lower temperatures (see Fig. 2e). This may seem counterintuitive
 from the naive expectation that the frequency should scale with the
 magnetization. The Cyc phase, however, has two collective modes
-(±Q modes)49,50 which are split into a lower-frequency (lf) and
+(±Q modes)<sup>49,50</sup> which are split into a lower-frequency (lf) and
 higher-frequency (hf) mode, of which only the lowest mode is
-efficiently excited in this experiment23. The splitting of these modes
-is due to dipole interaction and/or magnetic anisotropy49,50, which
+efficiently excited in this experiment<sup>23</sup>. The splitting of these modes
+is due to dipole interaction and/or magnetic anisotropy<sup>49,50</sup>, which
 both increase toward lower temperature and hence push the lf-mode
 to the lower frequency at lower temperature.
 
 Remagnetization dynamics. The coherent spin precession
 observed above shows a signature of phase coexistence across the
-magnetic phase transitions in GaV4S8. This observation indicates
+magnetic phase transitions in GaV<sub>4</sub>S<sub>8</sub>. This observation indicates
 the formation of magnetic domain walls in the course of phase
-transitions, which will also exist inside the SkL/Cyc phases2,47. In
+transitions, which will also exist inside the SkL/Cyc phases<sup>2,47</sup>. In
 connection with this, the incoherent remagnetization dynamics
 shows an interesting behavior. A quick inspection of the Δθ traces
 in Fig. 1 reveals that the remagnetization dynamics is slower at
@@ -594,7 +594,7 @@ temperatures. Here the data at low magnetic fields, where the fits
 become less reliable due to the long time constants compared to
 the experimental time window, are excluded. At 14.5 K in the
 paramagnetic (PM) phase, no characteristic dependence on the
-magnetic field is observed. However, below TC the remagnetization
+magnetic field is observed. However, below T<sub>C</sub> the remagnetization
 time slows down across the phase transition from the FM
 phase to the SkL phase (11.5 K and 10 K) and the Cyc phase (8 K).
 The increase of the remagnetization time reaches a factor of 1.5–2
@@ -659,9 +659,9 @@ consistent with the timescale estimated from the heat diffusion,
 assuming 1-dimensional diffusion of a single thermal substance.
 This assumption is reasonable considering the large photoexcitation
 spot size (~600 μm), thin penetration depth of the
-photoexcitation (<1 μm)40 and small diffusion length less than
+photoexcitation (<1 μm)<sup>40</sup> and small diffusion length less than
 few μm on the ps-ns timescale estimated using a typical value of
-thermal conductivity of 1–100 W/mK51. Therefore, we can
+thermal conductivity of 1–100 W/mK<sup>51</sup>. Therefore, we can
 attribute the slowing down of the remagnetization dynamics in
 the SkL/Cyc phases to a suppression of the thermal conductivity.
 
@@ -674,21 +674,21 @@ different orientations of wave vectors form upon the transition to the
 Cyc phase. Indeed, in the SkL phase, the spin correlation length for
 the skyrmion-lattice in-plane direction is much shorter than that for
 the skyrmion-core direction, estimated from the width of the Bragg
-peaks of small-angle neutron scattering measurements33. This
+peaks of small-angle neutron scattering measurements<sup>33</sup>. This
 confirms the existence of magnetic multi-domain structure in
-GaV4S8. These types of magnetic discontinuities lead to an enhanced
+GaV<sub>4</sub>S<sub>8</sub>. These types of magnetic discontinuities lead to an enhanced
 magnon scattering and thereby, reduce the magnon mean free path.
 As a result, the magnetic heat transport is reduced by the formation
 of magnetic domain boundaries, as for instance has been reported for
-the helimagnetic insulator Cu2OSeO3
+the helimagnetic insulator Cu<sub>2</sub>OSeO<sub>3</sub>
 51.
 
 In addition to the reduced mean free path, the magnon velocity
 also depends on the magnetic phase. Because the SkL and Cyc phase
-in GaV4S8 have a long spin periodicity (the SkL (Cyc) periodicity is
+in GaV<sub>4</sub>S<sub>8</sub> have a long spin periodicity (the SkL (Cyc) periodicity is
 ~22 nm (~18 nm)), the Brillouin Zone of the magnon dispersion
 folds into a small momentum (q) space. This results in relatively flat
-magnon branches52,53, rendering the effective magnon velocity slow.
+magnon branches<sup>52,53</sup>, rendering the effective magnon velocity slow.
 This seems qualitatively consistent with our experimental observations.
 However, such a modulation of magnon dispersion is
 prominent in the small wave vectors corresponding to the long
@@ -708,12 +708,12 @@ Moreover, there are other magnetic-phase-dependent parameters
 affecting the remagnetization dynamics, namely the spin heat
 capacity and the spin-lattice coupling. Here, the spin heat capacity
 is reported to be smaller in the SkL and Cyc phase compared to FM
-phase42, which by itself does not explain the slower recovery
+phase<sup>42</sup>, which by itself does not explain the slower recovery
 dynamics in the SkL/Cyc phase. The spin-lattice coupling can affect
 the thermal relaxation dynamics through the phonon-magnon
-scattering processes54. The efficiency of phonon-magnon scattering
+scattering processes<sup>54</sup>. The efficiency of phonon-magnon scattering
 processes depends on the character of the magnon modes, which
-changes across the magnetic phase transition55. However, the length
+changes across the magnetic phase transition<sup>55</sup>. However, the length
 scale of the spin periodicity in the SkL and Cyc phase are around
 20 nm, which is much longer than the unit cell scale. This results in
 the modulation of the magnon modes at very low frequency of ~GHz
@@ -729,14 +729,14 @@ magneto-elastic coupling induces local structural distortions at the
 magnetic domain boundaries, which enhances the phonon scattering.
 However, the contribution of this magnetization-dependent process
 to the total phonon scattering rate is expected to be limited in
-GaV4S8. Due to the modest magnitude of magnetostriction in
-GaV4S8, magnetization-induced structural distortions are tiny. In
+GaV<sub>4</sub>S<sub>8</sub>. Due to the modest magnitude of magnetostriction in
+GaV<sub>4</sub>S<sub>8</sub>, magnetization-induced structural distortions are tiny. In
 contrast, the Jahn–Teller distortion associated with the cubic to
-rhombohedral structural transition at TJT ~44 K are more drastic.
+rhombohedral structural transition at T<sub>JT</sub> ~44 K are more drastic.
 This is confirmed by the fact that the polarization change across the
 magnetic phase transition is only ~0.1 % compared to that of the
-structural transition across TJT
-42. Therefore, structural domain walls
+structural transition across T<sub>JT</sub>
+<sup>42</sup>. Therefore, structural domain walls
 associated with the Jahn–Teller distortion are expected to have a
 dominant contribution to the phonon scattering and hence on the
 phonon mean free path. Since the Jahn–Teller distortion is not
@@ -746,12 +746,12 @@ transitions. On the other hand, the magnetic domain walls
 significantly affect magnons as discussed in the following.
 
 In order to gain a better insight into the magnon-mediated
-thermal conductivity in various magnetic phases of GaV4S8, we
-simulated a microscopic spin model of GaV4S8. The dominant
-interactions in GaV4S8 are ferromagnetic intralayer and interlayer
-Heisenberg exchange coupling56. At the temperature around 12 K
+thermal conductivity in various magnetic phases of GaV<sub>4</sub>S<sub>8</sub>, we
+simulated a microscopic spin model of GaV<sub>4</sub>S<sub>8</sub>. The dominant
+interactions in GaV<sub>4</sub>S<sub>8</sub> are ferromagnetic intralayer and interlayer
+Heisenberg exchange coupling<sup>56</sup>. At the temperature around 12 K
 and high magnetic fields the FM state is stabilized. With
-decreasing magnetic field GaV4S8 enters the SkL state, which
+decreasing magnetic field GaV<sub>4</sub>S<sub>8</sub> enters the SkL state, which
 transforms into the Cyc state at even lower fields, as seen in Fig. 4.
 The details of the simulations leading to these results are
 described in the Methods Section.
@@ -760,7 +760,7 @@ The representative configurations at T = 12 K are shown in
 Fig. 4a. Whereas the spin configuration is spatially uniform in the
 FM state, dislocations in the SkL phase and domain walls in the
 Cyc are formed because the spiral states with different wave
-vector orientations are degenerate2,23,33,47. Such a magnetic
+vector orientations are degenerate<sup>2,23,33,47</sup>. Such a magnetic
 multi-domain structure results in the incoherent magnon
 excitations, which can be identified by the magnon linewidth
 increasing towards the non-collinear spin states. Figure 4b shows
@@ -770,16 +770,16 @@ the phase transitions is shown in Fig. 5. The reduction of the spin
 correlation length in the SkL and Cyc phase considerably lowers
 the magnon mean free path, encoded by the inverse width of the
 magnon lines in the spectral function.
-The magnon thermal conductivity is given by κ ¼ ∑ici
+The magnon thermal conductivity is given by κ ¼ ∑<sub>i</sub>c<sub>i</sub>
 viρi
 , where
-ci is the specific heat of mode i, vi is its velocity and ρi is the mean
+c<sub>i</sub> is the specific heat of mode i, v<sub>i</sub> is its velocity and ρ<sub>i</sub> is the mean
 free path. The latter can be estimated via the magnon spectral
-broadening as ρi ¼ 2π=δq, with the δq is the line broadening. As
-discussed earlier, ci and vi do not play a decisive role in this
+broadening as ρ<sub>i</sub> ¼ 2π=δq, with the δq is the line broadening. As
+discussed earlier, c<sub>i</sub> and v<sub>i</sub> do not play a decisive role in this
 experiment, and hence κ is inversely proportional to δq. The heat
-transfer equation reads c∂T
-∂t ¼ κ ΔT, so that the relaxation time scale
+transfer equation reads <sup>c</sup>∂<sup>T</sup>
+∂<sub>t</sub> ¼ κ ΔT, so that the relaxation time scale
 is τ -
 c = κ. Therefore, the relaxation time, inversely proportional to
 the thermal conductivity, is expected to change along the same trend
@@ -791,10 +791,10 @@ but the overall trend of decreasing thermal conductivity in the non-collinear
 SkL and Cyc phase compared to the FM phase is robust.
 Such domain-wall driven thermal conductivity decrease is analogous
 
-##### to that observed in ferroelectric Pb(Zr0.3Ti0.7)O3, where a decrease of phonon thermal conductivity of 11% has been achieved by
+##### to that observed in ferroelectric Pb(Zr<sub>0.3</sub>Ti<sub>0.7</sub>)O<sub>3</sub>, where a decrease of phonon thermal conductivity of 11% has been achieved by
 
 <<PAGE:7|LABEL:6>>Fig. 4 Simulated spin texture and magnon spectra. a Representative spin textures and b magnon spectral functions, obtained from atomistic spin
-dynamics simulations of GaV4S8 at T = 12 K and magnetic field magnitudes, as indicated at the top of each panel.
+dynamics simulations of GaV<sub>4</sub>S<sub>8</sub> at T = 12 K and magnetic field magnitudes, as indicated at the top of each panel.
 
 3.0
 
@@ -824,10 +824,10 @@ determined. Plotted is the magnetic field dependence. The blue-shaded
 areas are guides to the eye indicating the magnetic phase transition.
 
 manipulating the domain structure by means of external electric
-field57.
+field<sup>57</sup>.
 
 To summarize, we investigated the ultrafast spin dynamics in
-different magnetic phases in GaV4S8 by using time-resolved MOKE
+different magnetic phases in GaV<sub>4</sub>S<sub>8</sub> by using time-resolved MOKE
 experiments. The formation of skyrmions manifests itself not only in
 the frequency change of the collective mode, but also in the enhanced
 excitation efficiency of the coherent spin oscillation. The field
@@ -848,10 +848,10 @@ materials with novel spin correlations.
 
 Methods
 
-Sample preparation and characterization of the magnetic properties. GaV4S8
+Sample preparation and characterization of the magnetic properties. GaV<sub>4</sub>S<sub>8</sub>
 
 single crystals have been grown by the chemical transport reactions method in a way
-similar to Ref. 55. As starting material for growth, the preliminary synthesized polycrystalline
+similar to Ref. <sup>55</sup>. As starting material for growth, the preliminary synthesized polycrystalline
 powder was used. The polycrystals were prepared by solid state reactions
 using high-purity elements: Ga (99.9999%), V (99.5%) and S (99.999%). The iodine was
 utilized as the transport agent. The crystal growth was performed at temperatures
@@ -864,7 +864,7 @@ utilized as the transport agent. The crystal growth was performed at temperature
 > Mapping of the magnetic phases shown in phase diagram, Fig. 1a of the paper, was
 > done using the data on derivatives dM/dH, taking the singularity points as the
 > phase boundaries between the cycloidal (Cyc), skyrmion (SkL), and ferromagnetic
-> (FM) phases33.
+> (FM) phases<sup>33</sup>.
 >
 > Time-resolved magneto-optical Kerr effect experiment. The experiments were
 >
@@ -876,42 +876,42 @@ utilized as the transport agent. The crystal growth was performed at temperature
 > probe pulse, respectively. The spot size of the focused pump pulses on the sample
 > was ~600 μm in diameter, larger than that of the probe pulse ~250 μm. The pump
 > pulse was linearly polarized, whose photon energy (1.55 eV) lies well above the
-> GaV4S8 band gap of ~0.35 eV39,40. The pump-induced transient change of the Kerr
+> GaV<sub>4</sub>S<sub>8</sub> band gap of ~0.35 eV<sup>39,40</sup>. The pump-induced transient change of the Kerr
 > rotation angle of the probe pulse, Δθ, was measured. The sample temperature and
 > external magnetic field were controlled with a superconducting-magnetic cryostat.
 >
 > Modelling of the spin texture and calculation of the magnon spectra. To
 >
-> reproduce the Cyc-SkL-FM sequence of magnetic phases, we used UppASD code58
+> reproduce the Cyc-SkL-FM sequence of magnetic phases, we used UppASD code<sup>58</sup>
 > to perform Monte-Carlo (MC) simulations using 72*72*1 supercells, and 100,000
 > Metropolis MC steps for each combination of temperature and magnetic field. The
-> parameters of the magnetic Hamiltonian were adopted from Ref. 56. Particularly,
+> parameters of the magnetic Hamiltonian were adopted from Ref. <sup>56</sup>. Particularly,
 > we used the set of constants, obtained using superexchange theory. In order to
 > compute magnon spectra, the MC calculations were followed by spin dynamics
-> simulations using the UppASD program58. The magnon spectral function, evaluated
+> simulations using the UppASD program<sup>58</sup>. The magnon spectral function, evaluated
 > numerically from the time-dependent correlation function
 
-mj
-r0ðÞ 0
-ð1Þ
-of the Cartesian component j of the magnetization mj
-rðÞt at the position r and
-time t. The magnetization mj
-rðÞt was obtained by integration of the Landau–Lifshitz
-equation59. The Gilbert damping was set to 10−3. 20,000 timesteps of 10 fs were
+m<sup>j</sup>
+r0ðÞ <sup>0</sup>
+ð<sup>1</sup>Þ
+of the Cartesian component j of the magnetization m<sup>j</sup>
+<sub>r</sub>ðÞt at the position r and
+time t. The magnetization m<sup>j</sup>
+<sub>r</sub>ðÞt was obtained by integration of the Landau–Lifshitz
+equation<sup>59</sup>. The Gilbert damping was set to 10−<sup>3</sup>. 20,000 timesteps of 10 fs were
 used for the integration. The Fourier transform of the correlation function gives the
 dynamical structure factor,
 
-### mj rðÞt mj r0ðÞ 0
+### m<sup>j</sup> rðÞ<sup>t</sup> <sup>mj</sup> r0ðÞ <sup>0</sup>
 
-### Cj r r 0 ð Þ¼ ; t
+### C<sup>j</sup> r r <sup>0</sup> ð Þ¼ <sup>;</sup> <sup>t</sup>
 
-### mj rðÞt
+### m<sup>j</sup> rðÞ<sup>t</sup>
 
 > Z þ1
 > 1
 
-ðq; ωÞ¼ 1
+ð<sup>q;</sup> <sup>ω</sup>Þ¼ 1
 ffiffiffiffiffi
 2π p N
 
@@ -926,13 +926,13 @@ ffiffiffiffiffi
 > function with Gaussians. The thermal conductivity was estimated from the
 > linewidth as explained in the main text.
 >
-> Sj
+> S<sup>j</sup>
 >
 > Þ
 >
 > e
 > iωt
-> Cj
+> C<sup>j</sup>
 >
 > Data availability
 >
@@ -1015,7 +1015,7 @@ in ultrathin films. Nano Lett. 18, 7362–7371 (2018).
 by the topological inverse Faraday effect. Phys. Rev. Lett. 109, 127204 (2012).
 
 23. Padmanabhan, P. et al. Optically driven collective spin excitations and
-magnetization dynamics in the Néel-type Skyrmion Host GaV4S8. Phys. Rev.
+magnetization dynamics in the Néel-type Skyrmion Host GaV<sub>4</sub>S<sub>8</sub>. Phys. Rev.
 Lett. 122, 107203 (2019).
 
 24. Kirilyuk, A., Kimel, A. V. & Rasing, T. Ultrafast optical manipulation of
@@ -1035,10 +1035,10 @@ Phys. Rev. Lett. 120, 107202 (2018).
 spin switching. Nature 569, 383–387 (2019).
 
 29. Langner, M. C. et al. Nonlinear ultrafast spin scattering in the Skyrmion Phase
-of Cu2OSeO3. Phys. Rev. Lett. 119, 107204 (2017).
+of Cu<sub>2</sub>OSeO<sub>3</sub>. Phys. Rev. Lett. 119, 107204 (2017).
 
 30. Versteeg, R. B. et al. Coupled dynamics of long-range and cluster-internal spin
-order in the cluster Mott insulator Cu2OSeO3. Phys. Rev. B 100, 064401 (2019).
+order in the cluster Mott insulator Cu<sub>2</sub>OSeO<sub>3</sub>. Phys. Rev. B 100, 064401 (2019).
 
 31. Bauer, G. E. W., Saitoh, E. & van Wees, B. J. Spin caloritronics. Nat. Mater. 11,
 391–399 (2012).
@@ -1048,16 +1048,16 @@ accumulation and spin-dependent temperatures in nanopillar spin valves. Nat.
 Phys. 9, 636–639 (2013).
 
 33. Kezsmarki, I. et al. Néel-type skyrmion lattice with confined orientation in the
-polar magnetic semiconductor GaV4S8. Nat. Mater. 14, 1116–1122 (2015).
+polar magnetic semiconductor GaV<sub>4</sub>S<sub>8</sub>. Nat. Mater. 14, 1116–1122 (2015).
 
 34. Butykai, Á. et al. Characteristics of ferroelectric-ferroelastic domains in Néel-type
-skyrmion host GaV4S8. Sci. Rep. 7, 44663 (2017).
+skyrmion host GaV<sub>4</sub>S<sub>8</sub>. Sci. Rep. 7, 44663 (2017).
 
 35. Geirhos, K. et al. Macroscopic manifestation of domain-wall magnetism and
 magnetoelectric effect in a Néel-type skyrmion host. npj Quantum Mater. 5,
 44 (2020).
 
-36. Ehlers, D. et al. Exchange anisotropy in the skyrmion host GaV4S8. J. Phys.
+36. Ehlers, D. et al. Exchange anisotropy in the skyrmion host GaV<sub>4</sub>S<sub>8</sub>. J. Phys.
 Condens. Matter 29, 065803 (2017).
 
 37. Leonov, A. O. & Kézsmárki, I. Skyrmion robustness in noncentrosymmetric
@@ -1067,7 +1067,7 @@ fields. Phys. Rev. B 96, 214413 (2017).
 38. Leonov, A. O. & Kézsmárki, I. Asymmetric isolated skyrmions in polar
 magnets with easy-plane anisotropy. Phys. Rev. B 96, 014423 (2017).
 
-39. Reschke, S. et al. Optical conductivity in multiferroic GaV4S8 and GeV4S8:
+39. Reschke, S. et al. Optical conductivity in multiferroic GaV<sub>4</sub>S<sub>8</sub> and GeV<sub>4</sub>S<sub>8</sub>:
 Phonons and electronic transitions. Phys. Rev. B 96, 144302 (2017).
 
 40. Reschke, S. et al. Lattice dynamics and electronic excitations in a large family
@@ -1078,18 +1078,18 @@ of lacunar spinels with a breathing pyrochlore lattice structure. Phys. Rev. B
 ferromagnetic and ferrimagnetic compounds. Phys. Rev. Lett. 94, 087202 (2005).
 
 42. Ruff, E. et al. Multiferroicity and skyrmions carrying electric polarization in
-GaV4S8. Sci. Adv. 1, e1500916 (2015).
+GaV<sub>4</sub>S<sub>8</sub>. Sci. Adv. 1, e1500916 (2015).
 
 43. Ehlers, D. et al. Skyrmion dynamics under uniaxial anisotropy. Phys. Rev. B
 94, 014406 (2016).
 
 44. Okamura, Y. et al. Microwave directional dichroism resonant with spin
-excitations in the polar ferromagnet GaV4S8. Phys. Rev. Lett. 122, 057202
+excitations in the polar ferromagnet GaV<sub>4</sub>S<sub>8</sub>. Phys. Rev. Lett. 122, 057202
 (2019).
 
 45. Onose, Y., Okamura, Y., Seki, S., Ishiwata, S. & Tokura, Y. Observation of
 magnetic excitations of skyrmion crystal in a helimagnetic insulator
-Cu2OSeO3. Phys. Rev. Lett. 109, 037603 (2012).
+Cu<sub>2</sub>OSeO<sub>3</sub>. Phys. Rev. Lett. 109, 037603 (2012).
 
 46. Mochizuki, M. Spin-wave modes and their intense excitation effects in
 Skyrmion crystals. Phys. Rev. Lett. 108, 017601 (2012).
@@ -1099,7 +1099,7 @@ by cryo-Lorentz transmission electron microscopy. Proc. Natl Acad. Sci. 112,
 14212–14217 (2015).
 
 48. Butykai, Á. et al. Relaxation dynamics of modulated magnetic phases in the
-skyrmion host GaV4S8: An ac magnetic susceptibility study. Phys. Rev. B 96,
+skyrmion host GaV<sub>4</sub>S<sub>8</sub>: An ac magnetic susceptibility study. Phys. Rev. B 96,
 104430 (2017).
 
 49. Schwarze, T. et al. Universal helimagnon and skyrmion excitations in metallic,
@@ -1110,7 +1110,7 @@ semiconducting and insulating chiral magnets. Nat. Mater. 14, 478–483
 magnetic skyrmions: review and perspectives of magnonics in noncentrosymmetric
 magnets. J. Phys. D. Appl. Phys. 50, 293002 (2017).
 
-51. Prasai, N. et al. Spin phases of the helimagnetic insulator Cu2OSeO3 probed by
+51. Prasai, N. et al. Spin phases of the helimagnetic insulator Cu<sub>2</sub>OSeO<sub>3</sub> probed by
 magnon heat conduction. Phys. Rev. B 99, 020403(R) (2019).
 
 52. Janoschek, M. et al. Helimagnon bands as universal excitations of chiral
@@ -1122,11 +1122,11 @@ neutron scattering. Phys. Rev. Lett. 115, 097203 (2015).
 54. Dornes, C. et al. The ultrafast Einstein-de Haas effect. Nature 565, 209–212
 (2019).
 
-55. Widmann, S. et al. On the multiferroic skyrmion-host GaV4S8. Philos. Mag.
+55. Widmann, S. et al. On the multiferroic skyrmion-host GaV<sub>4</sub>S<sub>8</sub>. Philos. Mag.
 97, 3428–3445 (2017).
 
 56. Nikolaev, S. A. & Solovyev, I. V. Microscopic theory of electric polarization
-induced by skyrmionic order in GaV4S8. Phys. Rev. B 99, 100401(R) (2019).
+induced by skyrmionic order in GaV<sub>4</sub>S<sub>8</sub>. Phys. Rev. B 99, 100401(R) (2019).
 
 57. Ihlefeld, J. F. et al. Room-temperature voltage tunable phonon thermal
 conductivity via reconfigurable interfaces in ferroelectric thin films. Nano Lett.
@@ -1151,7 +1151,7 @@ via the DFG Priority Program SPP2137, Skyrmionics, under Grant No. KE 2370/1-1.
 Author contributions
 
 F.S. performed time-resolved Kerr effect experiments with the support from K.B. and
-P.P.F.S. analyzed the data with R.B. and P.v.L.V.T. grew and characterized the GaV4S8
+P.P.F.S. analyzed the data with R.B. and P.v.L.V.T. grew and characterized the GaV<sub>4</sub>S<sub>8</sub>
 single crystals. V.T. and I.K. performed the magnetometry study and determined the
 magnetic phase diagrams. S.A. and F.F. performed theoretical calculations. F.S. wrote the
 paper with input from all authors. F.S. and P.v.L. conceived the project.
@@ -1195,6 +1195,6 @@ licenses/by/4.0/.
 
 ## <<PAGE:2|LABEL:1>>Notes
 
-1. II. Physikalisches Institut, Universität zu Köln, Zülpicher Str. 77, D-50937 Köln, Germany. 2 Experimental Physics V, Center for Electronic Correlations
-   and Magnetism, University of Augsburg, 86159 Augsburg, Germany. 3 Institute of Applied Physics, MD 2028 Chișinău, Republic of Moldova. 4 Istituto
+1. II. Physikalisches Institut, Universität zu Köln, Zülpicher Str. 77, D-50937 Köln, Germany. <sup>2</sup> Experimental Physics V, Center for Electronic Correlations
+   and Magnetism, University of Augsburg, 86159 Augsburg, Germany. <sup>3</sup> Institute of Applied Physics, MD 2028 Chișinău, Republic of Moldova. <sup>4</sup> Istituto
    Italiano di Tecnologia, Via Morego 30, 16163 Genova, Italy. 5Dipartimento di Fisica, Università di Genova, Via Dodecaneso, 33, 16146 Genova, Italy. ✉email: sekiguchi.fumiya.2n@kyoto-u.ac.jp; pvl@ph2.uni-koeln.de

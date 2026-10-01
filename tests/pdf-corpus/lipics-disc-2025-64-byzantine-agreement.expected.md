@@ -118,21 +118,21 @@ start with an arbitrary real value and reach an output solution satisfying two p
 
 Mahaney and Schneider [12] distinguish Inexact Agreement (IA) from classical ABA by
 redefining the validity property in terms of accuracy. Outputs are instead bound by their
-distance to a true value vˆ, which each nonfaulty replica’s initial value vi approximates.
+distance to a true value vˆ, which each nonfaulty replica’s initial value v<sub>i</sub> approximates.
 
 <<PAGE:3|LABEL:64:3>>Our work concerns a new class of protocols that make an additional assumption, often
 satisfied by the underlying data processed by IA systems. Stochastic Byzantine Agreement
-(SBA) protocols require that vˆ and nonfaulty vi are – or can be effectively approximated as
+(SBA) protocols require that vˆ and nonfaulty v<sub>i</sub> are – or can be effectively approximated as
 being – distributed according to probability distributions. No assumptions are made about
 the nature of Byzantine values. The two distributions are distinct and potentially unknown,
-but correlated since vis approximate vˆ. SBA protocols also satisfy ϵ-agreement, but ϵ in SBA
+but correlated since v<sub>i</sub>s approximate vˆ. SBA protocols also satisfy ϵ-agreement, but ϵ in SBA
 is larger than the ϵ values in classical ABA protocols. This difference in ϵ-agreement is by
 design and unavoidable due to tradeoffs between accuracy and high-precision agreement [12].
 The goals of these protocols are close enough that we argue ABA is an appropriate umbrella
 term, with IA and SBA refining properties 1 and 2 as described above.
 
 The key characteristic of our SBA protocol, Proximal Byzantine Agreement (PBA), is
-that each replica uses the set R of received values vi ∈ R to find a quorum of values r and
+that each replica uses the set R of received values v<sub>i</sub> ∈ R to find a quorum of values r and
 a candidate vˆ such that vˆ would be the most likely true value if we knew that the quorum
 values were nonfaulty. Selecting the highest-probability vˆ conditioned on the observations in
 r, ensures that if any (minority of) values in r turn out to be faulty, then the quorum r (and
@@ -140,7 +140,7 @@ thus the inferred vˆ) is at least a likely as a quorum containing only nonfault
 high level, this process is described by the probability maximization in Def. 2.1.
 
 ▶ Definition 2.1 (Proximal Byzantine Value Selection). For received values R ⊆ R
-n and
+<sup>n</sup> and
 quorum size s, select a set r from the s-sized subsets of R, and a value x that maximizes the
 likelihood that x is the true value given observations in r.
 
@@ -178,7 +178,7 @@ evaluating Pb(X = x | r) to find maximal values, and had almost no impact on acc
 
 Approximation of a true value introduces a degree of uncertainty for systems that use those
 approximations to make decisions. We are unaware of any ABA protocols that estimates
-the uncertainty of its outputs.1
+the uncertainty of its outputs.<sup>1</sup>
 In many scenarios, it may be better to perform no action at
 all than to act on very uncertain data. Therefore, calculating a concrete guarantee on each
 output is an important feature of PBA protocols.
@@ -187,16 +187,16 @@ output is an important feature of PBA protocols.
 set of nonfaulty values is bounded when up to |F| < |Q| faulty values are added to the set.
 
 ▶ Lemma 2.2 (Theoretical maximum displacement [6, 11]). Let R = Q ∪ F, |Q| = s and
-|F| = f such that s > f with geometric medians Gm(Q) = mQ and Gm(R) = mR. Let
-∆Q = maxqi∈Q ||qi − Gm(Q)||2 and C
+|F| = f such that s > f with geometric medians Gm(Q) = m<sub>Q</sub> and Gm(R) = m<sub>R</sub>. Let
+∆<sup>Q</sup> = max<sub>qi</sub>∈<sub>Q</sub> ||q<sub>i</sub> − Gm(Q)||<sub>2</sub> and C
 (s,f)
 0 = √ s
 s
-2−f
+<sup>2</sup>−f
 2
 . Then the maximum displacement is
 
-> ||mQ − mR||2 ≤ C
+> ||m<sub>Q</sub> − m<sub>R</sub>||<sub>2</sub> ≤ C
 > (s,f)
 > 0 ∆Q
 
@@ -206,7 +206,7 @@ computable bound guaranteed to contain the geometric median of the nonfaulty val
 is based only on the received values and the system parameters (i.e., n, f, and s).
 
 ▶ Lemma 2.3 (Computable maximum displacement). Let R = Q ∪ F, |Q| = s and |F| = f
-such that s > 2f with Gm(Q) = mQ and Gm(R) = mR, and C
+such that s > 2f with Gm(Q) = m<sub>Q</sub> and Gm(R) = m<sub>R</sub>, and C
 (s,f) = √ s
 2sf−f
 2
@@ -215,7 +215,7 @@ such that s > 2f with Gm(Q) = mQ and Gm(R) = mR, and C
 (s,f)∆R
 f
 
-||mQ − mR||2 ≤ C
+||m<sub>Q</sub> − m<sub>R</sub>||<sub>2</sub> ≤ C
 
 The computable displacement is used to compute the region guarantee for a given PBA
 result. The fact that PBA only produces outputs with region guarantees containing the true
@@ -223,12 +223,12 @@ output is our instantiation of an accuracy [12] property.
 
 d
 , |R| > s + f where s > f, define
-R(f,x) ⊆ R by removing the f elements of R furthest from x. Let ∆R
+R<sup>(f,x)</sup> ⊆ R by removing the f elements of R furthest from x. Let ∆<sup>R</sup>
 f = maxri∈R(f,Gm(R)) ||ri −
 
 ▶ Definition 2.4 (Region Guarantee). For any set R ⊆ R
 
-Gm(R)||2. The region guarantee RG(R, s, f) is a d-dimensional ball centered at x with radius
+Gm(R)||<sub>2</sub>. The region guarantee RG(R, s, f) is a d-dimensional ball centered at x with radius
 2C
 (s,f)∆R
 f
@@ -238,13 +238,13 @@ f
 most |F| = f faulty values, let PBA(R, s) = (x, R′
 ). Then Gm(Q) ∈ RG(R, s, f) and
 
-||mQ − x||2 ≤ C
+||m<sub>Q</sub> − x||<sub>2</sub> ≤ C
 (s,f)
 0 ∆R
 ′
 + C
 (s,f)
-0 ∆Q ≤ 2C
+0 ∆<sup>Q</sup> ≤ 2C
 
 > (s,f)∆R
 > f
@@ -302,26 +302,26 @@ the only consumer of replica outputs, as is often the case in industrial control
 contrast, note that accuracy (Lemma 2.5) only requires quorum membership to be more
 than twice the number of faulty replicas.
 
-▶ Lemma 2.6 (Agreement). For any Ri = (Qi ∪ F
+▶ Lemma 2.6 (Agreement). For any R<sup>i</sup> = (Q<sup>i</sup> ∪ F
 
-) ⊆ R = (Q ∪ F), let r = |Ri
-|, s = |Qi
+) ⊆ R = (Q ∪ F), let r = |R<sup>i</sup>
+|, s = |Q<sup>i</sup>
 |,
-f = |F|, and PBA(Ri
-, s) = (xi
-, Ri
+f = |F|, and PBA(R<sup>i</sup>
+, s) = (x<sub>i</sub>
+, R<sup>i</sup>
 ∗
 ). If s > l
 |R|
 2
 m
 and r ≥ s + f, then for any other subset
-Rj = (Qj ∪ F
+R<sup>j</sup> = (Q<sup>j</sup> ∪ F
 j
-) ⊆ R where |Rj
-| ≥ r and PBA(Rj
-, s) = (xj , Rj
-∗), ||xi − xj || ≤ 2C
+) ⊆ R where |R<sup>j</sup>
+| ≥ r and PBA(R<sup>j</sup>
+, s) = (x<sub>j</sub> , R<sup>j</sup>
+∗), ||x<sub>i</sub> − x<sub>j</sub> || ≤ 2C
 (s,f)
 0 ∆Q.
 
@@ -334,13 +334,13 @@ i
 PBA accuracy compared to baseline. We perform repeated simulations on Chameleon
 Cloud [8], comparing PBA under several quorum sizes against approximate Byzantine Vector
 Consensus (BVC) [19] and Brooks-Iyengar (BI) [4]. Here we present only the Byzantine attack
-scenario. Each trial samples n − f d-dimensional replica outputs xi from a random Gaussian
+scenario. Each trial samples n − f d-dimensional replica outputs x<sub>i</sub> from a random Gaussian
 or Exponential distribution (with a fixed, low variance) and multiplies each element-wise
-by a noise vector yi
+by a noise vector y<sub>i</sub>
 independently sampled from an error distribution with E[Y ] = 1 and
 
 (uniformly-sampled) standard deviation from 0.01 to 0.09. We compute the agreement vector
-of each protocol and report the median percent error with respect to xi across 1000 trials.
+of each protocol and report the median percent error with respect to x<sub>i</sub> across 1000 trials.
 
 Figure 1a compares results when n − f outputs are sampled from a Gaussian distribution
 under an optimal Byzantine attack with f = 1. While BVC remains highly robust, PBA

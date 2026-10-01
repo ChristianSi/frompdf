@@ -21,8 +21,8 @@ información sobre datos de superficies y cultivos conforme al Sistema de
 Información de Explotaciones Agrarias (SIEX). Asimismo, es la pieza clave del
 Sistema Integrado de Gestión y Control (SIGC), constituyendo un registro oficial
 de actualización continua, dependiente del FEGA y de las Consejerías de
-Agricultura de las comunidades autónomas (CCAA). Se basa en ortofotos áreas1
-y en el parcelario de Catastro2
+Agricultura de las comunidades autónomas (CCAA). Se basa en ortofotos áreas<sup>1</sup>
+y en el parcelario de Catastro<sup>2</sup>
 , permitiendo identificar de manera gráfica las
 parcelas declaradas o inscritas de agricultores y ganaderos en el marco de la
 PAC.
@@ -52,7 +52,7 @@ vectoriales públicas, respecto a las existentes entre el 2000-2020, al ascender
 
 
 
-<<PAGE:2>>de 14 a 213
+<<PAGE:2>>de 14 a 21<sup>3</sup>
 las capas vectoriales publicadas en el Visor SIGPAC nacional,
 continuándose hoy día los trabajos para aumentar la visualización y obtención
 de información del SIGC.
@@ -79,7 +79,7 @@ Map Service) de SIGPAC, ya disponible, o próximamente el Servicio de
 Descargas masivas ATOM, a nivel provincial, y a futuro también el Visor
 SIGPAC.
 
-Entre las ventajas de esta migración de servicios a la nube4 se han considerado
+Entre las ventajas de esta migración de servicios a la nube<sup>4</sup> se han considerado
 aspectos económicos (reducción de costes de mantenimiento y por uso de
 espacio de Servidores) y operativos (rápida respuesta en momentos de alta
 demanda; autonomía técnica y operativa; menor sobrecarga para los servicios
@@ -101,7 +101,7 @@ estos nuevos servicios: el Servicio de Teselas Vectoriales de SIGPAC (MVT)
 entre junio de 2024 y agosto de 2025 se han publicado otros cinco servicios
 en el Catálogo de Servicios SIGPAC.
 
-En la línea de mejora continua y ampliación con futuros servicios6 de difusión
+En la línea de mejora continua y ampliación con futuros servicios<sup>6</sup> de difusión
 del SIGPAC (de datos SIGC), puestos a disposición de todos los usuarios en una
 misma dirección en la nube, se prevé que la migración y ampliación de servicios
 esté finalizada a lo largo del 2027. Incluirá, entre otros, el citado Servicio de
@@ -116,17 +116,17 @@ respecto de la información que se proporcionó en la anterior Nota WEB del
 Servicio MVT de Sigpac.
 
 > 1. Servicio de Teselas Vectoriales (MVT) de SIGPAC
-> 2. WMS – Web Map Service de SIGPAC7
+> 2. WMS – Web Map Service de SIGPAC<sup>7</sup>
 > 3. Servicio de Consultas de SIGPAC
 > 4. Servicio OGC API de SIGPAC
 > 5. Servicio de Listas de Códigos SIGPAC
 > 6. Servicio de Salidas Gráficas de SIGPAC
 
 La información del SIGC que se distribuye mediante los nuevos servicios
-descritos en esta Nota8
+descritos en esta Nota<sup>8</sup>
 tiene la consideración de datos específicos de alto valor
 
-(HVD)9 y, como se establece en el Reglamento de Ejecución 2023/138 de datos
+(HVD)<sup>9</sup> y, como se establece en el Reglamento de Ejecución 2023/138 de datos
 de alto valor (high value dataset, HVD), es publicada bajo las condiciones de
 
 
@@ -156,7 +156,7 @@ Recintos y Elementos del paisaje de la campaña anterior. Además, sigue
 proporcionando dichos datos para la campaña vigente y la capa de Cultivos
 declarados de la campaña anterior que ya se proporcionaban.
 
-Presenta 2 URL para que las aplicaciones GIS10 se configuren para mostrar sus
+Presenta 2 URL para que las aplicaciones GIS<sup>10</sup> se configuren para mostrar sus
 datos.
 
 > - https://sigpac-hubcloud.es/mvt/[parametro]@3857@geojson/
@@ -184,7 +184,7 @@ campaña PAC vigente y la cartografía del Cultivo declarado de la campaña
 anterior.
 
 El contenido del servicio puede cargarse en un software SIG o embeberse dentro
-de un visualizador o geoportal11 empleando la nueva URL https://sigpac-hubcloud.es/wms.
+de un visualizador o geoportal<sup>11</sup> empleando la nueva URL https://sigpac-hubcloud.es/wms.
 Soporta un total de tres consultas (GetCapabilites, GetMap y
 GetFeatureInfo). El contenido es el mismo que el mostrado en la URL tradicional
 https://wms.mapa.gob.es/sigpac/wms, que se deshabilitará a finales del 2025.
@@ -237,7 +237,7 @@ para su reutilización, entre otras, con las siguientes condiciones:
 
 Conforme a estas directrices, el servicio OGC API de SIGPAC, mediante la URL
 https://sigpac-hubcloud.es/ogcapi y siguiendo el estándar OGC API Features,
-permite consultar geometrías12 y propiedades de las capas Recinto y Elementos
+permite consultar geometrías<sup>12</sup> y propiedades de las capas Recinto y Elementos
 del paisaje de la campaña PAC vigente y Cultivo declarado de la campaña
 anterior.
 
@@ -572,7 +572,7 @@ histórica de las capas de datos geoespaciales del SIGC de: Recintos para las
 
 
 
-<<PAGE:13>>campañas 2015 a 2023; Elementos del paisaje para la campaña 202313; y Cultivo
+<<PAGE:13>>campañas 2015 a 2023; Elementos del paisaje para la campaña 2023<sup>13</sup>; y Cultivo
 Declarado para las campañas 2020 a 2023.
 
 Se desea que este proyecto esté finalizado a lo largo del 2026.

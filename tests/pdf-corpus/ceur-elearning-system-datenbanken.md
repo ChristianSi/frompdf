@@ -61,7 +61,7 @@ E-Learning-Angebot für den Bereich Datenbanken und
 enthält auch einen ER-Trainer. An der TU München gibt es
 den DB-Normalizer [1].
 
-32nd GI-Workshop on Foundations of Databases (Grundlagen von Datenbanken),
+32<sup>nd</sup> GI-Workshop on Foundations of Databases (Grundlagen von Datenbanken),
 September 01-03, 2021, Munich, Germany.
 Copyright © 2021 for this paper by its authors. Use permitted under Creative
 Commons License Attribution 4.0 International (CC BY 4.0).

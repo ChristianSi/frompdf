@@ -11,7 +11,7 @@ Katharina Graf
 I was about to finish writing fieldnotes in my room on the first floor when I heard
 someone shuffle across the courtyard of the riad (house arranged around a courtyard).
 The house was otherwise quiet. I decided to have a look. Fatimzahra rested
-or prayed in her room, but Hajja’s door was ajar, her room empty.1
+or prayed in her room, but Hajja’s door was ajar, her room empty.<sup>1</sup>
 I found her
 sitting on the ground in front of a big suitcase in the small khazin (storage room).
 Around her lay jars, plastic boxes, and bags filled with food: olives, spices, dates,
@@ -47,7 +47,7 @@ moment, a moment that I could have easily missed. Hajja did not think that this
 was interesting for my research, yet she evidently cared deeply about some of the
 foods she processed and packed for her imminent journey. They would keep her
 tethered to home and strengthen her while traveling to a faraway place; a journey
-she did not expect to return from.2
+she did not expect to return from.<sup>2</sup>
 On that day I began to learn how low-income
 urban Moroccans think, talk, and feel about the connections between food, taste,
 and place in the context of movement over space and time. While beldi is a universal
@@ -63,7 +63,7 @@ of beldi. Beldi (literally of/from the country) denotes food from one’s place
 of origin but also homemade or artisanal food products, and helps low-income
 cooks to determine food quality from multiple angles. Although geographical origin
 labels do exist in Morocco, they target foreign markets and are unaffordable
-for most low-income consumers.3
+for most low-income consumers.<sup>3</sup>
 Quite like domaće ham in Istria (Colquhoun,
 this volume), real beldi food cannot be purchased in a supermarket. As an analytic
 tool, beldi helps us to note the embodied and intimate perspectives of low-income
@@ -123,7 +123,7 @@ food market that systematically undermines domestic food security.
 
 Beldi begins with individual people, and so does my methodology. Between September
 and December 2012 I lived and worked with Hajja and her family as part
-of a year-long apprenticeship to three different domestic Marrakshi cooks.4
+of a year-long apprenticeship to three different domestic Marrakshi cooks.<sup>4</sup>
 Between
 2016 and 2018 I complemented this fieldwork with ethnographic research
 
@@ -153,7 +153,7 @@ studio flat in a lower-middle-class suburb of Marrakesh. Like most other low-inc
 families who are not destitute, Hajja and her family would not describe
 themselves as poor. Indeed, when her husband was still alive, her family fared
 much better, as the fading beauty of their riad in the medina (historic city center)
-testified.5
+testified.<sup>5</sup>
 Hajja’s husband was a local notable (sherif) and once a respected figure
 in the neighborhood. She often reminisced about the early days of their marriage
 when they hosted lavish meals featuring high-priced Soussi specialties like saffron
@@ -197,7 +197,7 @@ colonialism in Morocco some two thousand years ago), beldi slots into this
 what beldi and rumi mean, and if and how a product can be labeled one or
 the other, that the pair is such a useful index in this unregulated context. From
 an urban perspective, according to ethnobotanist Mohamed el Haouz, there are
-three regular features of beldi foods.6
+three regular features of beldi foods.<sup>6</sup>
 First, beldi and rumi denote origin or provenance,
 including the specific “ecology of production” (Paxson 2013; West 2013)
 from the perspective of the speaker. Beldi means quite literally from one’s village,
@@ -214,7 +214,7 @@ texture, and rumi a smooth, homogenous, and pleasing one.
 Despite these fairly widespread features, their meanings and uses vary according
 to material and social context. In fact, research around beldi/rumi produces
 different results depending on where and with whom the research took place (see,
-e.g., Sarter 2004; Simenel 2010; Zirari 2020; Jonas 2023).7
+e.g., Sarter 2004; Simenel 2010; Zirari 2020; Jonas 2023).<sup>7</sup>
 Also, as the features
 of taste and texture highlight, beldi does not always index good food, and rumi
 
@@ -345,7 +345,7 @@ and class. Rachik’s (1997) description of beldi and rumi furniture and fashion
 middle- and upper-income urban homes is suggestive. Whereas low tables and
 cushions are described as beldi or Moroccan, high tables and chairs are described
 as rumi or European. The former tends to be associated with working-class taste,
-the latter with middle-class tastes and lifestyles.8
+the latter with middle-class tastes and lifestyles.<sup>8</sup>
 Montgomery (2016) describes a
 similar association with regards to Moroccan and European dishes: while European
 or rumi dishes such as vegetable creams or pastas are considered to be urban
@@ -422,7 +422,7 @@ When I later asked her to explain the situation to me, she replied, “It was th
 Americans’ fault.” From one of her acquaintances near the city of Beni Mellal,
 an olive producer, she found out that American buyers had come to Morocco
 to buy unprocessed olives, because “abroad” the harvest had not been good that
-year.9
+year.<sup>9</sup>
 She mentioned that fresh Moroccan produce fetched a higher price when
 sold abroad and that, to make matters worse, this also drove up domestic prices.
 Whereas Hajja lauded the technological changes that eased some of her daily

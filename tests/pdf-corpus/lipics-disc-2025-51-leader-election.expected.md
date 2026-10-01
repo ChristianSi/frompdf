@@ -19,7 +19,7 @@ In this paper, we study the leader election problem in oriented ring networks un
 asynchronous message-passing systems, where an adversary may arbitrarily corrupt message contents.
 
 Frei et al. (DISC 2024) recently presented a uniform terminating leader election algorithm for
-oriented rings in this setting, with message complexity O(nIDmax) on a ring of size n, where IDmax
+oriented rings in this setting, with message complexity O(nID<sub>max</sub>) on a ring of size n, where ID<sub>max</sub>
 is the largest identifier in the system.
 
 In this paper, we investigate the message complexity of leader election in this model, showing
@@ -28,17 +28,17 @@ number of messages in one direction.
 
 Interestingly, this limitation hinges on the uniformity assumption. In the non-uniform setting
 – where processes know an upper bound U ≥ n on the ring size – we present an algorithm with
-message complexity O(nUIDmin), in which each process sends O(UIDmin) messages clockwise and
-only three messages counter-clockwise. Here, IDmin is the smallest identifier in the system. This
-dependence on the identifiers compares favorably with the dependence on IDmax of Frei et al. (DISC
+message complexity O(nUID<sub>min</sub>), in which each process sends O(UID<sub>min</sub>) messages clockwise and
+only three messages counter-clockwise. Here, ID<sub>min</sub> is the smallest identifier in the system. This
+dependence on the identifiers compares favorably with the dependence on ID<sub>max</sub> of Frei et al. (DISC
 2024).
 
-We also show a non-uniform algorithm where each process sends O(U log IDmin) messages in one
-direction and O(log IDmin) in the other. The factor log IDmin is optimal, matching the lower bound
+We also show a non-uniform algorithm where each process sends O(U log ID<sub>min</sub>) messages in one
+direction and O(log ID<sub>min</sub>) in the other. The factor log ID<sub>min</sub> is optimal, matching the lower bound
 of Frei et al. (DISC 2024).
 
 Finally, in the anonymous setting, we propose a randomized algorithm where each process sends
-only O(log2 U) messages, with a success probability of 1 − U
+only O(log<sup>2</sup> U) messages, with a success probability of 1 − U
 −c
 .
 
@@ -93,8 +93,8 @@ unique identifiers [1, 12, 16, 18] and in anonymous networks [2, 3, 8, 21].
 Frei et al. [13] disproved the aforementioned conjecture for a notable family of 2-edge-connected
 networks: oriented ring topologies. In an oriented ring, processes have a common
 notion of clockwise and counter-clockwise direction. More specifically, Frei et al. [13] proposed
-a quiescently terminating leader election algorithm with a message complexity of O(nIDmax),
-where IDmax is the maximum identifier in the system. The quiescent termination of the
+a quiescently terminating leader election algorithm with a message complexity of O(nID<sub>max</sub>),
+where ID<sub>max</sub> is the maximum identifier in the system. The quiescent termination of the
 algorithm allows it to be composed with the simulator of Censor-Hillel et al. [7] and thus
 implies that the presence of unique identifiers is enough to simulate any asynchronous
 algorithm on a content-oblivious oriented ring.
@@ -115,7 +115,7 @@ In anonymous systems, where processes lack identifiers, Frei et al. [13] showed 
 leader election algorithm using n
 O(c
 2
-) messages and succeeding with probability 1 − n
+<sup>)</sup> messages and succeeding with probability 1 − n
 −c
 , but
 without explicit termination. In fact, Itai and Rodeh [15] proved that no uniform algorithm
@@ -138,13 +138,13 @@ Interestingly, we show that non-uniform algorithms, where processes know an uppe
 bound U on the network size n, can circumvent this impossibility result.
 
 In particular, we present an algorithm for oriented rings (Section 3) that elects a leader
-by sending O(nUIDmin) messages in the clockwise direction and where each process sends
-just three messages in the counter-clockwise direction. Here IDmin is the minimum identifier
+by sending O(nUID<sub>min</sub>) messages in the clockwise direction and where each process sends
+just three messages in the counter-clockwise direction. Here ID<sub>min</sub> is the minimum identifier
 in the system. We also present a non-uniform algorithm for oriented rings (Section 4)
-that sends O(nU log IDmin) messages in one direction and O(n log IDmin) messages in the
-other. We stress that the factor log IDmin of our algorithm is optimal. This follows from
+that sends O(nU log ID<sub>min</sub>) messages in one direction and O(n log ID<sub>min</sub>) messages in the
+other. We stress that the factor log ID<sub>min</sub> of our algorithm is optimal. This follows from
 the aforementioned lower bound of Frei et al. [13], which shows the necessity of logarithmic
-dependency on the values of the identifiers. Our result implies that Θ(log IDmin) is the tight
+dependency on the values of the identifiers. Our result implies that Θ(log ID<sub>min</sub>) is the tight
 message complexity for constant-size instances.
 
 The key technical novelty in our non-uniform algorithms is the design of a global synchronization
@@ -159,7 +159,7 @@ algorithm (Section 5) that, with probability at least 1 − U
 −c
 , is quiescently terminating. The
 
-algorithm has message complexity O(n log2 U). In contrast to the randomized approach of
+algorithm has message complexity O(n log<sup>2</sup> U). In contrast to the randomized approach of
 Frei et al. [13], whose message complexity has an inherent exponential dependence on c, our
 algorithm achieves near-linear message complexity with only a multiplicative dependence
 on c, which is hidden in the O(·) notation.
@@ -169,7 +169,7 @@ the high-level ideas; see the full version of this paper for technical details.
 
 ## 2 System Model
 
-We consider a system composed of a set of n processes P = {p0, p1, . . . , pn−1} that communicate
+We consider a system composed of a set of n processes P = {p<sub>0</sub>, p<sub>1</sub>, . . . , p<sub>n−1</sub>} that communicate
 on a ring network by sending messages to each other. More precisely, a process p has
 two local communication ports: port 0 and port 1. By means of a specific port, a process is
 able to send messages to and receive messages from one of its neighbors.
@@ -193,10 +193,10 @@ on which the message is received.
 
 Oriented Rings. We consider oriented rings. A ring is oriented if processes share a common
 notion of clockwise (CW) and counter-clockwise (CCW) orientation. More precisely, consider
-a ring (p0, p1, . . . , pn−1) for each j ∈ [0, n − 1], at process pj , port 0 leads to pj+1 and port 1
-leads to pj−1 (where indices are taken modulo n). We will say that a message is traveling in
+a ring (p<sub>0</sub>, p<sub>1</sub>, . . . , p<sub>n−1</sub>) for each j ∈ [0, n − 1], at process p<sub>j</sub> , port 0 leads to p<sub>j+1</sub> and port 1
+leads to p<sub>j−1</sub> (where indices are taken modulo n). We will say that a message is traveling in
 the clockwise direction if it is sent on port 0 and received on port 1 (i.e., a message goes
-from pi to pi+1); conversely, a message travels in the counter-clockwise direction if it is sent
+from p<sub>i</sub> to p<sub>i+1</sub>); conversely, a message travels in the counter-clockwise direction if it is sent
 on port 1 and received on port 0.
 
 Uniform and Non-Uniform Algorithms. An algorithm is uniform if it works for all possible
@@ -221,7 +221,7 @@ is “at rest” and can begin sending messages for a subsequent algorithm [13, 
 
 ## 3 Constant Number of Messages in One Direction
 
-We now describe an algorithm where each process sends O(UIDmin) messages in the clockwise
+We now describe an algorithm where each process sends O(UID<sub>min</sub>) messages in the clockwise
 direction, and just 3 messages in the counter-clockwise direction. This algorithm is of interest
 as it shows that our claim below needs the uniformity assumption:
 
@@ -285,16 +285,16 @@ the competing phase, and afterwards it relays both CCW and CW messages it receiv
 non-leader process terminates after receiving three CCW messages.
 
 ▶ Theorem 2. There exists a quiescently terminating leader election algorithm for oriented
-rings in which each process sends O(UIDmin) messages clockwise and three messages
-counterclockwise, for a total of O(nUIDmin) messages.
+rings in which each process sends O(UID<sub>min</sub>) messages clockwise and three messages
+counterclockwise, for a total of O(nUID<sub>min</sub>) messages.
 
-## 4 An algorithm that sends O(nU log IDmin) messages
+## 4 An algorithm that sends O(nU log ID<sub>min</sub>) messages
 
-We now describe an algorithm in which each process sends O(U log IDmin) messages. The
+We now describe an algorithm in which each process sends O(U log ID<sub>min</sub>) messages. The
 algorithm uses an encoding of identifiers such that the smallest identifier is not a prefix of
 any other identifier, and the last bit of every encoded identifier is 0. To achieve this, given
 an identifier ID of bit length ℓ, we encode it as 1
-ℓ0 · ID · 0.
+<sup>ℓ</sup>0 · ID · 0.
 
 The algorithm elects the process with the minimum identifier and proceeds in elimination
 rounds. In each round, active processes compare a specific bit of their (encoded) identifiers,
@@ -325,7 +325,7 @@ total number of messages in the network equals the number of active processes. T
 once all processes except the one with the minimum identifier have been eliminated, only a
 single message remains in the network.
 
-The algorithm terminates after |IDmin| = O(log IDmin) rounds. At this point, the only
+The algorithm terminates after |ID<sub>min</sub>| = O(log ID<sub>min</sub>) rounds. At this point, the only
 remaining active process is the one with the minimum identifier. This process can detect
 this locally and communicates it to all other processes (which are, by construction, inactive)
 by sending an additional message in the CCW direction (this is the Termination phase).
@@ -336,34 +336,34 @@ minimum identifier, and the second sent during the Termination phase. Therefore,
 the following theorem.
 
 ▶ Theorem 3. There exists a quiescently terminating leader election algorithm for oriented
-rings in which each process sends O(U log IDmin) messages clockwise and O(log IDmin)
-messages counterclockwise, for a total of O(nU log IDmin) messages.
+rings in which each process sends O(U log ID<sub>min</sub>) messages clockwise and O(log ID<sub>min</sub>)
+messages counterclockwise, for a total of O(nU log ID<sub>min</sub>) messages.
 
 ## 5 Randomized Leader Election
 
 In our randomized algorithm, each process samples its ID uniformly at random from the set
 {0, 1, 2, . . . , 2
-⌈c1 log U⌉ − 1}. With probability at least 1 − U
-2−c1
+⌈<sup>c</sup>1 <sup>log</sup> <sup>U</sup>⌉ − 1}. With probability at least 1 − U
+2−c<sub>1</sub>
 , all processes receive distinct
 identifiers. The bit-by-bit comparison algorithm from Section 4 is then executed using these
 random identifiers.
 
 This sampling strategy yields a useful property: for any fixed bit index i, every maximal
-consecutive sequence of processes whose bit ID[i] equals 1 has length at most ⌈c2 log U⌉
+consecutive sequence of processes whose bit ID[i] equals 1 has length at most ⌈c<sub>2</sub> log U⌉
 with probability at least 1 − U
-1−c2
+1−c<sub>2</sub>
 . This property reduces the number of steps in the
 
 Synchronization and No-Zero Checking phases of the algorithm in Section 4 from U to
-⌈c2 log U⌉, thereby improving the message complexity and establishing our final theorem.
+⌈c<sub>2</sub> log U⌉, thereby improving the message complexity and establishing our final theorem.
 
 ▶ Theorem 4. For any constant c > 0, there exists a randomized quiescently terminating
 leader election algorithm for anonymous oriented rings with a success probability of 1 −
 U
 −c
-in which each process sends O(log2 U) messages clockwise and O(log U) messages
-counterclockwise, for a total of O(n log2 U) messages.
+in which each process sends O(log<sup>2</sup> U) messages clockwise and O(log U) messages
+counterclockwise, for a total of O(n log<sup>2</sup> U) messages.
 
 <<PAGE:7|LABEL:51:7>>References
 1 H. Attiya and J. L. Welch. Distributed Computing: Fundamentals, Simulations, and Advanced
