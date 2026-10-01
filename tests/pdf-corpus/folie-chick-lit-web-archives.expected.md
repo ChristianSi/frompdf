@@ -575,12 +575,12 @@ fiction aimed at a limited target group of young women (see extracts in Table 1)
 current definition is very broad:
 
 > Chick lit or chick literature is genre fiction, which “consists of heroine-centered
-> narratives that focus on the trials and tribulations of their individual protagonists”<sup>&#91;1&#93;</sup>.
+> narratives that focus on the trials and tribulations of their individual protagonists”<sup>[1]</sup>.
 > The genre often addresses issues of modern womanhood – from romantic
 > relationships to female friendships to matters in the workplace – in humorous
-> and lighthearted ways<sup>&#91;2&#93;</sup>. At its onset, chick lit’s protagonists tended to be “single,
+> and lighthearted ways<sup>[2]</sup>. At its onset, chick lit’s protagonists tended to be “single,
 > white, heterosexual, British and American women in their late twenties and early
-> thirties, living in metropolitan areas”<sup>&#91;1&#93;</sup> (22 June 2020c; emphasis and footnotes in
+> thirties, living in metropolitan areas”<sup>[1]</sup> (22 June 2020c; emphasis and footnotes in
 > the original)
 
 <<PAGE:13|LABEL:37>>Compared to the first definition on Wikipedia, in which chick lit was identified as a
@@ -640,17 +640,17 @@ added a new section entitled “Criticism” to the chick lit article, in which 
 the whiteness not only of the genre, but also of the discourse that surrounds it:
 
 > Common criticism that arises from this genre is the emphasis of western liberal
-> views<sup>&#91;7&#93;</sup>. The plot typically centers on a ‘white’ woman’s narrative of the issues that
-> surround her<sup>&#91;8&#93;</sup>. Critics argue that these stories often reflect a fixation on consumerism
+> views<sup>[7]</sup>. The plot typically centers on a ‘white’ woman’s narrative of the issues that
+> surround her<sup>[8]</sup>. Critics argue that these stories often reflect a fixation on consumerism
 > of [sic] designer brands and sexuality rather than addressing global issues such as
-> equality<sup>&#91;9&#93;</sup>. Although there are subsections of this genre that include protagonist [sic]
+> equality<sup>[9]</sup>. Although there are subsections of this genre that include protagonist [sic]
 > of various ethnicities, cultures, and backgrounds, these generally fall second to the
-> dominant ‘white’ chick lit<sup>&#91;10&#93;</sup>.[…] (emphasis and footnotes in the original)
+> dominant ‘white’ chick lit<sup>[10]</sup>.[…] (emphasis and footnotes in the original)
 
 The section ends with the statement that “[t]he women of color genre of chick lit is
 becoming increasingly important as it presents questions regarding the issues these
 women must deal with that relate to race, the state and political economy, even if it is in
-a fictional sense<sup>&#91;14&#93;</sup>” (ibid.). This critical addition to the article was backed up by a
+a fictional sense<sup>[14]</sup>” (ibid.). This critical addition to the article was backed up by a
 trustworthy academic source: Pamela Butler’s and Jigna Desai’s acclaimed article
 Manolos, Marriage, and Mantras: Chick-Lit Criticism and Transnational Feminism
 (2008), published in the prestigious interdisciplinary journal Meridians: Feminism,
