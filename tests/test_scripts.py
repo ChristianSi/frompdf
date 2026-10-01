@@ -242,6 +242,9 @@ class ScriptAnnotationTests(unittest.TestCase):
             render_scripts('<&*', (ScriptRange(0, 3, 'sup'),)), '<sup>&lt;&amp;&#42;</sup>'
         )
 
+    def test_citation_brackets_are_preserved_literally(self) -> None:
+        self.assertEqual(render_scripts('[10]', (ScriptRange(0, 4, 'sup'),)), '<sup>[10]</sup>')
+
 
 if __name__ == '__main__':
     unittest.main()

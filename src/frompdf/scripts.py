@@ -72,8 +72,9 @@ def render_scripts(text: str, scripts: tuple[ScriptRange, ...]) -> str:
         parts.append(text[offset : run.start])
         content = escape(text[run.start : run.end], quote=False)
         # Inline HTML contents are still parsed as Markdown. Keep math/marker
-        # characters literal rather than accidentally starting emphasis or links.
-        for char in '\\`*_[]':
+        # characters literal rather than accidentally starting emphasis or code.
+        # Keep citation brackets readable in the Markdown source.
+        for char in '\\`*_':
             content = content.replace(char, f'&#{ord(char)};')
         parts.append(f'<{run.kind}>{content}</{run.kind}>')
         offset = run.end
