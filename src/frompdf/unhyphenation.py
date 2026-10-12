@@ -78,6 +78,16 @@ def words_in_text(text: str) -> Iterable[str]:
     return (canonical_word(word) for word in exact_words_in_text(text))
 
 
+def spelling_evidence_text(value: AnnotatedText) -> str:
+    """Exclude superscripts and subscripts from document spelling evidence."""
+    chars = list(value.text)
+    for run in value.scripts:
+        # Spaces prevent joining unrelated fragments across excluded text.
+        # Only the evidence changes; the annotated source retains every character.
+        chars[run.start : run.end] = ' ' * (run.end - run.start)
+    return ''.join(chars)
+
+
 def document_word_counts(line_texts: Iterable[str]) -> Counter[str]:
     """Count normalized words in the unmodified document text."""
     return Counter(word for text in line_texts for word in words_in_text(text))

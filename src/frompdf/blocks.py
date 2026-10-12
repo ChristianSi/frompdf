@@ -11,6 +11,7 @@ from frompdf.unhyphenation import (
     document_coordination_tokens,
     document_mixed_case_words,
     document_word_counts,
+    spelling_evidence_text,
     unhyphenate_annotated_lines,
 )
 
@@ -388,9 +389,12 @@ def lines_to_markdown_blocks(
     default_font_size = dominant_document_font_size(line_list)
     document_median_weight = document_median_avg_weight(line_list)
     body_lefts_by_page = build_body_lefts_by_page(line_list, default_font_size)
-    word_counts = document_word_counts(line_obj.text for line_obj in line_list)
-    mixed_case_words = document_mixed_case_words(line_obj.text for line_obj in line_list)
-    coordination_tokens = document_coordination_tokens(line_obj.text for line_obj in line_list)
+    evidence_texts = [
+        spelling_evidence_text(AnnotatedText(line.text, line.scripts)) for line in line_list
+    ]
+    word_counts = document_word_counts(evidence_texts)
+    mixed_case_words = document_mixed_case_words(evidence_texts)
+    coordination_tokens = document_coordination_tokens(evidence_texts)
     source_positions = {id(line): index for index, line in enumerate(line_list)}
     body_lines, notes = extract_footnotes(line_list, default_font_size)
     heading_lines = find_typographic_heading_lines(body_lines)

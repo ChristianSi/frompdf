@@ -2,11 +2,13 @@ import unittest
 from collections import Counter
 
 from frompdf.blocks import lines_to_markdown_blocks
-from frompdf.models import Line, PageNumber
+from frompdf.models import Line, PageNumber, ScriptRange
+from frompdf.scripts import AnnotatedText
 from frompdf.unhyphenation import (
     document_coordination_tokens,
     document_mixed_case_words,
     document_word_counts,
+    spelling_evidence_text,
     unhyphenate_block_lines,
 )
 
@@ -107,6 +109,48 @@ class DocumentEvidenceTests(unittest.TestCase):
         counts = document_word_counts(['(E-Learning-Systeme), E‑Learning‑Systeme!'])
 
         self.assertEqual(counts, Counter({'e-learning-systeme': 2}))
+
+    def test_superscript_suffix_is_separated_from_spelling_evidence(self) -> None:
+        value = AnnotatedText(
+            'Open-Science-Bewegung81 oder',
+            (ScriptRange(21, 22, 'sup'), ScriptRange(22, 23, 'sup')),
+        )
+
+        counts = document_word_counts([spelling_evidence_text(value)])
+
+        self.assertEqual(counts, Counter({'open-science-bewegung': 1, 'oder': 1}))
+        self.assertEqual(value.text, 'Open-Science-Bewegung81 oder')
+
+    def test_spelling_evidence_preserves_unannotated_digits(self) -> None:
+        self.assertEqual(spelling_evidence_text(AnnotatedText('COVID19')), 'COVID19')
+
+    def test_all_script_text_is_excluded_without_joining_surrounding_words(self) -> None:
+        cases = [
+            (
+                AnnotatedText('GaV4S8', (ScriptRange(3, 4, 'sub'), ScriptRange(5, 6, 'sub'))),
+                Counter({'gav': 1, 's': 1}),
+            ),
+            (AnnotatedText('32nd', (ScriptRange(2, 4, 'sup'),)), Counter({'32': 1})),
+            (AnnotatedText('x2y', (ScriptRange(1, 2, 'sup'),)), Counter({'x': 1, 'y': 1})),
+            (AnnotatedText('wordabc', (ScriptRange(4, 7, 'sub'),)), Counter({'word': 1})),
+        ]
+        for value, expected in cases:
+            with self.subTest(value=value):
+                self.assertEqual(document_word_counts([spelling_evidence_text(value)]), expected)
+
+    def test_scripted_document_evidence_overrides_internal_hyphen_fallback(self) -> None:
+        lines = [
+            text_line('Open-Science-Bewe-', block_no=1, line_no=1),
+            text_line('gung und mehr.', block_no=1, line_no=2),
+            text_line('Open-Science-Bewegung81 oder', block_no=2, line_no=3),
+        ]
+        lines[-1].scripts = (ScriptRange(21, 22, 'sup'), ScriptRange(22, 23, 'sup'))
+
+        blocks = lines_to_markdown_blocks(lines, {1: PageNumber(raw=1, visible=None)})
+
+        self.assertEqual(blocks[0].text, 'Open-Science-Bewegung\nund mehr.')
+        self.assertEqual(blocks[1].text, lines[-1].text)
+        self.assertEqual(blocks[1].scripts, lines[-1].scripts)
 
     def test_dictionary_does_not_join_words_across_arbitrary_punctuation(self) -> None:
         counts = document_word_counts(['foo/bar'])
