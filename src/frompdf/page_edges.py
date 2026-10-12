@@ -2,6 +2,7 @@ import re
 from collections import Counter, defaultdict
 from collections.abc import Sequence
 from dataclasses import dataclass
+from itertools import pairwise
 from statistics import median
 from typing import Literal
 
@@ -805,7 +806,7 @@ def complete_page_numbers(
     # At document edges only one side supplies evidence. The nearest pair must
     # establish a sequence before we extrapolate it; a lone label is not enough.
     for index, ((left_raw, left_visible), (right_raw, right_visible)) in enumerate(
-        zip(detected_items, detected_items[1:], strict=False)
+        pairwise(detected_items)
     ):
         left_label = parse_visible_page_label(left_visible)
         right_label = parse_visible_page_label(right_visible)

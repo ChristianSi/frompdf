@@ -1,6 +1,7 @@
 import re
 from collections import defaultdict
 from dataclasses import dataclass
+from itertools import pairwise
 from statistics import median
 
 from frompdf.models import Line
@@ -283,7 +284,7 @@ def hanging_transition_counts(
     continuation_to_start = 0
     continuation_runs = 0
 
-    for left, right in zip(line_list, line_list[1:], strict=False):
+    for left, right in pairwise(line_list):
         if left.y1 is None or right.y1 is None:
             continue
         advance = right.y1 - left.y1
@@ -459,7 +460,7 @@ def same_physical_line(left: Line, right: Line) -> bool:
 def normal_advance_ratios(line_list: list[Line]) -> list[float]:
     """Return plausible ordinary line advances from the already ordered page."""
     ratios: list[float] = []
-    for left, right in zip(line_list, line_list[1:], strict=False):
+    for left, right in pairwise(line_list):
         if (
             left.y1 is None
             or right.y1 is None
