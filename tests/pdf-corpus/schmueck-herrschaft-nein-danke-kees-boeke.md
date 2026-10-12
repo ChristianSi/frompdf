@@ -1907,7 +1907,7 @@ anarchisch, sondern auch alltagstauglich und effektiv sind.
     Richtung eines libertären Denkens, das eine deutliche Nähe zum anarchokapitalistischen
     Ideenspektrum aufweist. Egal aus welcher Perspektive man dieses Phänomen betrachtet, es
     macht deutlich, dass die Idee der gelebten Anarchie im Alltag der Menschen angekommen ist.
-81. Siehe Jochen Schmück: Science goes Anarchy! Die „gelebte Anarchie“ der Open-Science-Bewe-gung
+81. Siehe Jochen Schmück: Science goes Anarchy! Die „gelebte Anarchie“ der Open-Science-Bewegung
     und ihre verborgenen ideologischen Wurzeln im traditionellen Anarchismus, in: espero
     (N.F.), Nr. 8 (Januar 2024), S. 99-182 (online | PDF).
 82. Siehe Schmück: Wenn Anarchie auf Algorithmen trifft, a. a. O. (Vgl. Anm. 74).
