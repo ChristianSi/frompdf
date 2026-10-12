@@ -69,6 +69,11 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
 - `--dump-pagenos` now always writes one row per PDF page, using `?` where no
   visible page label can be detected or safely inferred.
 
+### Fixed
+
+- Whitespace-only lines reported by `pdftext` no longer produce empty blocks
+  or stray empty lines in the Markdown output, nor split paragraphs.
+
 ## 0.1.0 - 2026-07-09
 
 ### Added

@@ -34,6 +34,9 @@ def extract_markdown(
     if dump_lines:
         dump_csv(line_list, build_csv_output_path(input_path))
 
+    # pdftext can report whitespace-only lines, which would otherwise end up as
+    # empty blocks or trailing empty lines within blocks.
+    line_list = [line_obj for line_obj in line_list if line_obj.text]
     filtered_lines, detected_page_number_list = remove_headers_and_footers(line_list, page_list)
     filtered_lines = order_lines_for_reading(filtered_lines)
     page_number_list = complete_page_numbers(len(page_list), detected_page_number_list)
