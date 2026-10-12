@@ -50,8 +50,6 @@ de cara a la reforma de la PAC del 2023, y 2 más entre 2023 y 2024,
 incrementándose así en esos cuatro años en un 50% el número de capas
 vectoriales públicas, respecto a las existentes entre el 2000-2020, al ascender
 
-
-
 <<PAGE:2>>de 14 a 21<sup>3</sup>
 las capas vectoriales publicadas en el Visor SIGPAC nacional,
 continuándose hoy día los trabajos para aumentar la visualización y obtención
@@ -87,8 +85,6 @@ asociados al Visor, evitándose errores en dichos servicios por peticiones
 incorrectas; menor exposición a riesgos de seguridad y vulnerabilidades por
 adopción de medidas de seguridad; implementación más efectiva de estadísticas
 de utilización).
-
-
 
 <<PAGE:3>>Respondiendo a las demandas y necesidades del sector empresarial y
 académico, tanto de visualización como de servir de complemento en el
@@ -129,8 +125,6 @@ tiene la consideración de datos específicos de alto valor
 (HVD)<sup>9</sup> y, como se establece en el Reglamento de Ejecución 2023/138 de datos
 de alto valor (high value dataset, HVD), es publicada bajo las condiciones de
 
-
-
 <<PAGE:4>>reutilización de la información distribuida que estable la licencia pública Creative
 Commons, Atribución/Reconocimiento Internacional (CC BY 4.0).
 Complementariamente, el documento Términos de uso de la información de alto
@@ -143,8 +137,6 @@ SIGPAC de la Web del FEGA, dentro del apartado de Condiciones de uso de la
 información del SIGPAC, se accede al Acuerdo de Distribución de la Mesa del
 Sistema de Gestión y Control (SGC) que establece los criterios de consulta,
 divulgación y reutilización (o redistribución) de la información.
-
-
 
 ## <<PAGE:5>>Nuevos medios SIGPAC de divulgación de datos SIGC
 
@@ -177,8 +169,6 @@ Este servicio facilita la interoperabilidad y la integración con otras aplicaci
 mediante la generación de mapas de forma dinámica a partir de coordenadas
 geográficas en formato de imagen como PNG o JPEG. Permite visualizar y
 
-
-
 <<PAGE:6>>consultar la cartografía de los Recintos y los Elementos del paisaje de la
 campaña PAC vigente y la cartografía del Cultivo declarado de la campaña
 anterior.
@@ -205,8 +195,6 @@ Visor SIGPAC que permite obtener información de la campaña vigente en
 formatos JSON y GEOJSON. Las consultas se realizan mediante peticiones
 HTTP de tipo REST (Representational state transfer).
 
-
-
 <<PAGE:7>>Actualmente pueden realizarse un total de 11 consultas diferentes, entre las que
 destacan:
 
@@ -230,10 +218,8 @@ para su reutilización, entre otras, con las siguientes condiciones:
 
 > - licencia Creative Commons BY 4.0 u otra menos restrictiva.
 > - formato abierto, legible por máquina y documentado públicamente;
-
-
-
-<<PAGE:8>>- mediante interfaces de programación de aplicaciones (API).
+>
+> <<PAGE:8>>- mediante interfaces de programación de aplicaciones (API).
 
 Conforme a estas directrices, el servicio OGC API de SIGPAC, mediante la URL
 https://sigpac-hubcloud.es/ogcapi y siguiendo el estándar OGC API Features,
@@ -260,8 +246,6 @@ puede tener un atributo o concepto concreto de las capas Recinto, Elementos
 del paisaje o Cultivo declarado. La respuesta se obtiene en formato JSON. De
 igual forma que el servicio de Consultas SIGPAC, este servicio es fácilmente
 integrable en multitud de desarrollos informáticos de empresas u otros usuarios.
-
-
 
 <<PAGE:9>>Actualmente se pueden consultar listas de códigos de:
 
@@ -299,8 +283,6 @@ a la que se le pasan una serie de parámetros, como provincia, municipio, parcel
 recinto, etc., para generar directamente salidas gráficas). Una API (Interfaz de
 Programación de Aplicaciones) permite establecer la comunicación entre dicho
 componente y el navegador web.
-
-
 
 <<PAGE:10>>En Ejemplos Salida Gráfica SIGPAC se recogen algunos para los dos modos.
 Así, en los de Salida Gráfica SIGPAC - Llamada URL se puede ver una llamada
@@ -342,8 +324,6 @@ Servicio Ventajas Limitaciones Propuestas de uso
 >
 > Visor
 > SIGPAC
-
-
 
 <<PAGE:11>>Servicio Ventajas Limitaciones Propuestas de uso
 - Acceso selectivo a
@@ -484,8 +464,6 @@ aplicaciones
 - Integrable en SIG
 profesionales
 
-
-
 <<PAGE:12>>Servicio Ventajas Limitaciones Propuestas de uso
 
 > - Desarrollo de
@@ -570,8 +548,6 @@ vectorial de las referidas capas. Actualmente hay disponibles Bases de datos
 en formato PostGreSQL/PostGis (una por campaña) con la información vectorial
 histórica de las capas de datos geoespaciales del SIGC de: Recintos para las
 
-
-
 <<PAGE:13>>campañas 2015 a 2023; Elementos del paisaje para la campaña 2023<sup>13</sup>; y Cultivo
 Declarado para las campañas 2020 a 2023.
 
@@ -598,8 +574,6 @@ presupuesto por el peticionario, se elaborará y distribuirá la información
 solicitada.
 
 23 de Septiembre de 2025.
-
-
 
 ## <<PAGE:1>>Notes
 

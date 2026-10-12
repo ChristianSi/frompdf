@@ -101,10 +101,8 @@ algorithm on a content-oblivious oriented ring.
 
 Additionally, Frei et al. [13] proved that, for any uniform algorithm, there exists an
 identifier assignment under which the algorithm must send Ω
-
 n log IDmax
 n
-
 messages. Although
 
 originally established for the uniform setting, this lower bound can be extended to the non-uniform

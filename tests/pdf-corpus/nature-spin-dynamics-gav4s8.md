@@ -171,25 +171,13 @@ a bc
 
 # Magnetic Field (mT)
 
-
-
 # Paramagnet
 
-> -
->
->
+-
 
 120 mT
 
-> -
->
->
->
->
->
->
->
->
+-
 
 120 mT
 
@@ -229,23 +217,15 @@ de
 
 ##### Cyc
 
-> -
->
->
->
-> -
->
->
->
-> -2
->
-> -2
->
->
->
->
->
-> 11.5 K 14.5 K
+-
+
+-
+
+-2
+
+-2
+
+11.5 K 14.5 K
 
 0 1000 2000
 Time (ps)
@@ -285,8 +265,6 @@ Magnetic Field (mT)
 
 # Frequency (GHz)
 
-
-
 # Frequency
 
 -0.5
@@ -298,8 +276,6 @@ Magnetic Field (mT)
 75 mT
 
 # (mdeg.)
-
-
 
 4
 
@@ -314,14 +290,10 @@ Magnetic Field (mT)
 >
 > -
 >
->
->
 > Cyc
 > Sk
 >
 > -1.5
->
->
 
 120 mT
 
@@ -357,8 +329,6 @@ f
 
 # Lifetime (ps)
 
-
-
 # (arb. units)
 
 # (mdeg.)
@@ -369,13 +339,9 @@ f
 60 mT
 75 mT
 
-
-
 # Amplitude
 
 200
-
-
 
 0.8
 
@@ -385,16 +351,12 @@ f
 
 0.4
 
-> -
->
->
->
+-
+
 > Cyc
 > Sk
 
 ##### FM SkL
-
-
 
 120 mT
 
@@ -603,8 +565,6 @@ The increase of the remagnetization time reaches a factor of 1.5–2
 
 # Recovery time (ns)
 
-
-
 8 K
 
 10 K
@@ -801,8 +761,6 @@ dynamics simulations of GaV<sub>4</sub>S<sub>8</sub> at T = 12 K and magnetic fi
 # Peak width q
 
 # (arb. units)
-
-
 
 2.0
 
