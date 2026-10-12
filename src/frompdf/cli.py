@@ -20,6 +20,7 @@ def main() -> int:
         help='Embed raw and visible page numbers in the Markdown output',
     )
     parser.add_argument(
+        '-n',
         '--notes-title',
         default='Notes',
         help='Title for collected footnotes (default: Notes)',

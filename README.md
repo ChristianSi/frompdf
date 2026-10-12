@@ -159,10 +159,10 @@ does not become its child (H4 before H4, for example). A trailing group among
 several uses at least the level of the sections it covers. Groups sharing a
 destination share one Notes heading, with separate lists to preserve restarts.
 
-Choose a different section title with `--notes-title`:
+Choose a different section title with `-n` or its long form `--notes-title`:
 
 ```bash
-frompdf --notes-title Anmerkungen -m ./document.pdf
+frompdf -n Anmerkungen -m ./document.pdf
 ```
 
 ### Diagnostic options
