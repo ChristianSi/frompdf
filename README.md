@@ -245,9 +245,11 @@ Release history and unreleased changes are recorded in
 ## Acknowledgements
 
 Development of frompdf has benefited from assistance by
-[ChatGPT](https://chatgpt.com/) and
-[Codex](https://learn.chatgpt.com/docs/codex/ide), including support with
-coding, testing, and documentation.
+[GPT](https://developers.openai.com/api/docs/models) in
+[Codex](https://learn.chatgpt.com/docs/codex/ide) and
+[Claude Opus](https://www.anthropic.com/claude/opus) in
+[Claude Code](https://code.claude.com/docs/en/overview), including support
+with coding, testing, and documentation.
 
 ## License
 
