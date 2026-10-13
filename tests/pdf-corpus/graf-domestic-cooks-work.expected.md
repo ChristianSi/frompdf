@@ -34,7 +34,6 @@ that month-long journey to Mecca. To make her point and show me another
 beldi product, she lifted the dried black olives that she had packed already. She
 continued to explain her motivation for every item in the suitcase; many foods
 were not beldi, but she took them because she preferred their familiar taste and
-
 <<PAGE:2|LABEL:174>>quality: “During the hajj I have to eat well, it will be tiring. In Mecca the food is
 expensive and bad, they sell whatever to all the pilgrims. … I know from my last
 trip to Mecca for the ‘omra [the so-called small pilgrimage, carried out during the
@@ -81,7 +80,6 @@ and Simpson Miller (both this volume) show in similar domestic contexts.
 It is this largely hidden, gendered knowledge and work of indexing and making
 beldi foods in urban contexts that this chapter focuses on. It argues that the
 place and taste of food are not only produced by food producers, distributors,
-
 <<PAGE:3|LABEL:175>>marketers, or governments but also by domestic cooks, in particular low-income
 women. Moreover, in the broader context of poverty and economic and environmental
 decline across Morocco, writing about beldi grounds discussions “beyond
@@ -126,7 +124,6 @@ and December 2012 I lived and worked with Hajja and her family as part
 of a year-long apprenticeship to three different domestic Marrakshi cooks.<sup>4</sup>
 Between
 2016 and 2018 I complemented this fieldwork with ethnographic research
-
 <<PAGE:4|LABEL:176>>with fifteen other low-income families in the cities of Marrakesh and Beni Mellal
 during a research project on bread (Graf 2024). As opposed to more formalized
 craft work, the preparation of food is deeply entangled with other daily practices
@@ -170,7 +167,6 @@ that other Moroccans I talked to experienced over the last couple of decades.
 To understand the importance of beldi as an embodied index of quality, it is necessary
 to contextualize beldi foods in the contemporary Moroccan food system.
 In the open-air suq (market) that most low-income Moroccans frequent for their
-
 <<PAGE:5|LABEL:177>>daily food needs, quality is often unpredictable and unreliable. Except for meat
 and dairy products, most fresh foods in the domestic market are not subject
 to any control or national standards (Codron et al. 2004; Amine and Lazzaoui
@@ -217,7 +213,6 @@ different results depending on where and with whom the research took place (see,
 e.g., Sarter 2004; Simenel 2010; Zirari 2020; Jonas 2023).<sup>7</sup>
 Also, as the features
 of taste and texture highlight, beldi does not always index good food, and rumi
-
 <<PAGE:6|LABEL:178>>does not automatically mean bad food. Furthermore, not all beldi foods embody
 all three features at once, nor does a beldi product always have a rumi counterpart
 (or vice versa). Yet Hajja’s beldi lemons and olives do: they were produced on her
@@ -290,7 +285,6 @@ up and filter the remaining milk through a sieve and into another bottle, entert
 the hope to find some more lumps of butter layered on top in the morning.
 Nearly finished, Fatimzahra pointed to the casserole with the liquid and
 introduced it as ghaib, a drinkable yoghurt to which she planned to add sugar
-
 <<PAGE:8|LABEL:180>>later. She confessed with a deeply satisfied smile that she had already drank quite
 a bit of it. It was the first time she seemed genuinely happy and satisfied during
 these hard-working days following Hajja’s return from Mecca. As she walked out
@@ -361,7 +355,6 @@ and upper-income Moroccans, is indicative of this reinvention (figure 10.2; see
 also Graf 2018). While my low-income research participants, urban inhabitants
 themselves, were well aware of the above-described derogative meanings of beldi
 and generally refrained from using beldi or rumi to describe people or index “us”
-
 <<PAGE:10|LABEL:182>>versus “them,” they were also disinterested in recent reinventions of beldi as an
 equivalent to organic or local foods. None of my research participants described
 beldi as “organic” or “local.”
@@ -474,7 +467,6 @@ the present and for the future, but they also express more existential difficult
 living well and exerting agency and control in the context of globalized poverty.
 For poverty is not simply the absence of money but also of water and land, and
 of social relations; a truly poor person is one without ‘asl (roots, origin). Not
-
 <<PAGE:13|LABEL:185>>being able to make and eat beldi foods is thus both a bodily felt sense of loss of
 control and a daily reminder of one’s marginal, seemingly forgotten position in
 an unequally globalized world.
@@ -518,7 +510,6 @@ also closely connected.
 Ultimately, beldi as told through Hajja and Fatimzahra is a story of gradual decline
 and of loss, evoking common themes across a world marked by migration,
 environmental degradation, repeated financial crises, and rising levels of poverty.
-
 <<PAGE:14|LABEL:186>>At the same time, this chapter reminds us that the persistence of the concept
 of beldi and of beldi foods today is also owed to the knowledge and continuous
 work of women like Hajja and Fatimzahra who, in making beldi foods against

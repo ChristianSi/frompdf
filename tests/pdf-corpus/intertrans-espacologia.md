@@ -56,7 +56,6 @@ Palavras-chave.Espaço. Lugar. Filosofia. Geografias. Totalidades.
 A relação introdutória entre espaço e filosofias sempre existiu; desde o Ocidente clássico
 espelhado, até as modernidades em curso. O que variou foram as modalidades conceituais
 que cada pensador estabeleceu, demarcando todo o peso de uma tradição, separando o
-
 <<PAGE:2>>espaço enquanto protagonista modelador de um pensamento que não foi considerado. Do
 ponto de vista tradicional, o pensamento passou um aprisionamento filosófico em
 detrimento aos diversos campos epistêmicos, impondo um único modo pensar: o espaço
@@ -99,7 +98,6 @@ formas de conhecimento habitadas pelo espaço enquanto ponto de partida.
 Origami é dobra, desdobramento e modelamento espacial na arquitetura da superfície da
 disponibilidade das coisas em trânsito. Assim, o pensamento filosófico modelou
 constructos de ideias na produção de currículos espaciais na história do pensar. Dito de
-
 <<PAGE:3>>outra forma, o pensamento antecede os problemas espaciais em torno dele. É na dobra
 que consiste a fissura de elementos ainda não iluminados pelo exercício do pensar. De uma
 superfície plana, o deslize forçado do agir externo para o interno, o volume da densidade
@@ -186,7 +184,6 @@ tolice da gagueira aristotélica se repetiu por séculos entendendo espaço como
 extensão e proporção. Em contrapartida com o nascimento das epistemologias modernas
 ocidentais e acidentais, a Espaçologia estava no suporte do filtro conceitual. Todas as ditas
 áreas do conhecimento criaram enunciados sobre o espaço, mas o espaço não narrou suas
-
 <<PAGE:5>>relações conceituais de seus algozes.
 
 Milton Santos, Ana Clara Torres Ribeiro e Tamara Egler evidenciam a Espaçologia não como
@@ -233,7 +230,6 @@ reacionarismo kantiano: o ocidente espelhado por ideias desmaterializadas do
 concreto-objeto-real para uma deidade do mundo. A representação da natureza
 mimetizada pelo retrato da paisagem. O espaço na categoria geral da modernidade
 kantiana daria visualização aos objetos a priori retirados de um plano de mentalidades e
-
 <<PAGE:6>>dados como perfeição imperativa do mundo reconfigurado por um racionalismo bélico. O
 espaço depois de Kant assumiria um lugar mensurado por um ordenamento matemático,
 singular, homogêneo e controlado por formas intuitivas pela fé racional.
@@ -277,7 +273,6 @@ que põem o espaço enquanto objeto fundador de novas gramáticas conceituais de
 pelo suporte transdisciplinar do limite ficcional das disciplinas, onde todas partiriam do
 mesmo nascimento ontológico e conflitual de filosofias próprias. Se as ciências modernas
 na última virada espacial do século XIX e início do XX criam campos epistêmicos do saber
-
 <<PAGE:7>>do próprio, o espaço foi burlado e interditado de pensar aquilo que seja o seu próprio
 pensar original de questões oriundas de seus saberes e perguntas emergenciais de um
 campo de investigação entendida como ESPAÇOLOGIA.
@@ -323,7 +318,6 @@ diversas escalas.
 
 Portanto, a Espaçologia já existe em todos os campos do pensar, pois o conceito de espaço
 é o suporte conceitual que atravessou as diversas gramáticas curriculares sem
-
 <<PAGE:8>>necessariamente ter conceitos próprios. Assim, os conceitos do espaço se revelam no agir
 de cada pensador ao se indispor na necessidade de pensar o diálogo conflitual em atrito
 emergencial dos atores que habitam o espaço.
@@ -368,7 +362,6 @@ problemático da ideia de espaço operacionalizada por lógicas eurocêntricas. 
 ameríndios deste país são produtores de espaço no mundo das ações estruturais e
 concretas, por que não fundarmos uma endografia (dentro/interno) do ser, local, regional e
 espacial? Se os que produzem espaço foram exterminados do processo espacial externo, da
-
 <<PAGE:9>>condição de realidade do espaço, como há uma geografia humana? O espaço também não
 seria uma relação dialética entre o dentro e o fora? Se não há o endo (dentro), como há o
 de fora? As qualidades funcionais determinam as estruturas do interno imposto por
@@ -412,7 +405,6 @@ totalitária da categoria de espaço na qual a globalização se tornaria global
 única forma universalista de entendimento do mundo a partir de única concepção de
 espaço e sociedade, criando, desse modo, formas perversas e desiguais do recorte da
 totalidade. O espaço para Milton precisaria se libertar das demarcações geográficas e
-
 <<PAGE:10>>disciplinares, operando uma nova ontologia do espaço, assim chamada de espaçologia: a
 categoria de espaço para criar conceitos não a partir do olhar das disciplinas recortadas
 isoladamente, mas como sendo problema e questão de si mesmo, cunhando problemas e
@@ -456,7 +448,6 @@ heterotopia. A primeira diz respeito a lugares que não são reais, sem lugar fi
 segunda, refere-se a lugares reais, mas que estão fora dos lugares aceitos (o mesmo). Para
 o autor, a sociedade produz heterotopias. Ainda, chama estes outros lugares com a
 denominação de heterotopia de desvio, ou seja, aqueles comportamentos que estão fora
-
 <<PAGE:11>>do que a sociedade aceita e impõe às condutas. São nestes espaços que, para Foucault,
 estão contidos os conflitos e tensões que se exercem pelas relações de poder de uma
 sociedade determinada.
@@ -500,7 +491,6 @@ fenomênicos da origem do espaço racial. É esta perspectiva que nos apresentam
 professor Milton Santos e Ana Clara Torres Ribeiro: é preciso revistar o todo em suas partes
 totalizadas de espaço ao entendimento da totalidade. Creio que sob este enfoque o
 pensamento precisaria urgentemente voltar ao pensamento, elaborando novos problemas
-
 <<PAGE:12>>investigatórios por uma filosofia do espaço brasileiro de modo próprio e original.
 
 Por sua vez, os “filósofos acadêmicos brasileiros”, alienados de sua condição
@@ -590,7 +580,6 @@ para compreensão de uma sociedade burguesa e industrial do século XIX, e sim p
 entendimento do edifício teatral do golpe cognitivo dado pela burguesia, criando um
 mundo de recursos ilimitados para si mesmo. Indo pela mesma via nas eras das
 modernidades em confronto, teria diversos projetos conceituais da ideia de homem,
-
 <<PAGE:14>>sociedade, espaço e território. Se Marx não escreve para o século XIX, certamente foi
 necessário criar planos de mentalidades e gramáticas conceituais para pensar o mundo
 produzido pelo capitalismo ou capitalismos em disputa. Mesmo sendo possível datar, Karl
@@ -635,7 +624,6 @@ suas máquinas oculares e no afinamento dos conceitos.
 Por conta disto, a novidade inaugurada pelos pensadores da totalidade foi evidenciar aquilo
 que não estava dado pela ótica do olhar humano: são estes que possibilitaram a primeira
 viagem do pensamento na busca do universo das coisas insólitas regidas pela maestria da
-
 <<PAGE:15>>natureza. Exemplos disto, cada pensador da totalidade investigou os fios soltos da
 paisagem não-organizada mediada pela tarefa do pensar: o agir do pensar organiza o
 sistema de pensamento contido nas gramáticas inscritas na totalidade e por leis próprias.
@@ -680,7 +668,6 @@ cidade.
 No entanto, o currículo espacial também se reflete no corpo de cada indivíduo, produzido
 entendimentos corporais de práticas e condutas normatizadas pelas regras e códigos da
 cultura ocidental. Para cada realidade espacial, onde o Ocidente espelhado se espelha, o
-
 <<PAGE:16>>currículo espacial fruto das mentalidades, ideologias e técnicas se geografiza no âmbito do
 território corporal dos atores-sociais e espaciais. A disciplina do espaço contém nela
 códigos traduzidos em nossa materialidade corpórea que criam níveis de consciências

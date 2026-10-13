@@ -49,7 +49,6 @@ cuales: 6 capas vectoriales fueron generadas y publicadas entre 2021 y 2022,
 de cara a la reforma de la PAC del 2023, y 2 más entre 2023 y 2024,
 incrementándose así en esos cuatro años en un 50% el número de capas
 vectoriales públicas, respecto a las existentes entre el 2000-2020, al ascender
-
 <<PAGE:2>>de 14 a 21<sup>3</sup>
 las capas vectoriales publicadas en el Visor SIGPAC nacional,
 continuándose hoy día los trabajos para aumentar la visualización y obtención
@@ -124,7 +123,6 @@ tiene la consideración de datos específicos de alto valor
 
 (HVD)<sup>9</sup> y, como se establece en el Reglamento de Ejecución 2023/138 de datos
 de alto valor (high value dataset, HVD), es publicada bajo las condiciones de
-
 <<PAGE:4>>reutilización de la información distribuida que estable la licencia pública Creative
 Commons, Atribución/Reconocimiento Internacional (CC BY 4.0).
 Complementariamente, el documento Términos de uso de la información de alto
@@ -168,7 +166,6 @@ georreferenciada de manera dinámica y estandarizada.
 Este servicio facilita la interoperabilidad y la integración con otras aplicaciones
 mediante la generación de mapas de forma dinámica a partir de coordenadas
 geográficas en formato de imagen como PNG o JPEG. Permite visualizar y
-
 <<PAGE:6>>consultar la cartografía de los Recintos y los Elementos del paisaje de la
 campaña PAC vigente y la cartografía del Cultivo declarado de la campaña
 anterior.
@@ -547,7 +544,6 @@ Desde el segundo semestre de 2024, se está proporcionando información
 vectorial de las referidas capas. Actualmente hay disponibles Bases de datos
 en formato PostGreSQL/PostGis (una por campaña) con la información vectorial
 histórica de las capas de datos geoespaciales del SIGC de: Recintos para las
-
 <<PAGE:13>>campañas 2015 a 2023; Elementos del paisaje para la campaña 2023<sup>13</sup>; y Cultivo
 Declarado para las campañas 2020 a 2023.
 

@@ -367,7 +367,6 @@ where n = (d + 2)f + 1, and PBA quorum sizes set to s = n − f. PBA is faster t
 f = 1, d > 5 (with similar performance at lower d), and more than 4× faster at f = 1, d = 18.
 In all f = 2, d = 4 scenarios, PBA significantly outperforms BVC (124×). While BI also
 exhibits scalable runtime in high-dimensional settings, each replica must produce outputs
-
 <<PAGE:7|LABEL:64:7>>with a known error range that contains the true value, and that must also intersect the
 ranges of all other nonfaulty nodes. If these invariants are violated by any nonfaulty replica,
 the system may not withstand Byzantine attack. Even without an attack, the protocol could

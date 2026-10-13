@@ -124,7 +124,6 @@ is not strong enough to guarantee freedom 0 for everyone.
 
 While the four freedoms should secure the public the right to use software as they
 wish, there is no clear consensus about whether these freedoms are secured merely
-
 <<PAGE:4|LABEL:135>>by sharing the source-code. An effective example of this can be seen in cases where
 distributed programs include hard-coded (embedded in the source code) functions that
 explicitly block users based on their affilitation (see Naskali, 2020). Affected users
@@ -173,7 +172,6 @@ make it so that only those with access to computers and high-level programming
 skills have the freedom to use such software, and voice their opinions reliably (Naskali,
 2020). This means that for any individuals not possessing the required programming
 skills to circumvent blocking functionality, Freedom 0 is not secured unless someone
-
 <<PAGE:5|LABEL:136>>more skilled goes through the effort of removing said functionality and redistributing
 the unblocked version of the software.
 

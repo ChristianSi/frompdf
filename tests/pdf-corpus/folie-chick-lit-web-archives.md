@@ -87,7 +87,6 @@ relation to the field of genre history, we can thus in many cases trace the firs
 very early, mentions of new genres, their discussion and definition by fans or critics,
 and the development of Wikipedia articles about them. This applies above all to the
 examination of popular genres or ‘genre fiction’ (in contrast to ‘literary fiction’ or
-
 <<PAGE:3|LABEL:27>>‘literature’) that is usually not discussed in the feature pages of prestigious newspapers
 and magazines but has a strong fan base which is very active online.<sup>3</sup>
 
@@ -128,7 +127,6 @@ renowned authors such as Doris Lessing or Beryl Bainbridge – who called chick 
 (ibid.) – that created a strong desire among the fans to characterize it. Therefore, the
 first definitions of the genre can be found on their websites, with chicklit.co.uk (UK,
 2002–2014) and chicklitbooks.com (USA, 2003–2015) being the two most popular
-
 <<PAGE:4|LABEL:28>>and, with an online presence of over a decade, also the most durable ones. Wikipedia
 can look back on an even longer online presence. Although the article on chick lit was
 published in 2004, two to three years later than the fan websites, it is still available
@@ -171,7 +169,6 @@ actively (re)shape and combine its various forms. Accordingly, the founder of ch
 co.uk, Paula Gardner, described the website a few years after its launch as “the online
 women’s magazine that celebrates 21st century woman’s contemporary fiction and
 lifestyle” (“Home”, 3 Feb. 2006). In addition to authors and their books, lifestyle topics
-
 <<PAGE:5|LABEL:29>>such as fashion, beauty, personal hygiene, nutrition, but also other media such as film
 and music were included. These focal points, which went beyond literature and were
 presented as modern female everyday practices, make it possible to draw conclusions
@@ -222,7 +219,6 @@ Wayback Machine shows that from the very beginning the operators endeavored to
 place chick lit in a larger cultural (esp. chicklit.co.uk) or literary historical context (esp.
 chicklitbooks.com). This makes these archived websites remarkable sources for
 academic genre research, as they not only demonstrate early, but also nuanced
-
 <<PAGE:6|LABEL:30>>negotiations of the genre (connection to other cultural artifacts and media, defense
 mechanisms, differentiation from other genres).
 
@@ -270,7 +266,6 @@ chick or the lad?’ is: the lad.” (2015b[2008], 195). His argument is flawed.
 First, the US-American counterpart to Bridget Jones’s Diary, Candace
 Bushnell’s Sex and the City (1996), can hardly be called an imitation. On the
 one hand, the narrative situation and the constellation of characters in the latter
-
 <<PAGE:7|LABEL:31>>differs substantially from the diary-writing Bridget in Fielding’s novel<sup>7</sup>
 ; on the
 other, Bushnell’s column, which was published in the New York Observer from
@@ -538,7 +533,6 @@ openness and flexibility of chick lit:
 > revolve around jobs, children, motherhood, romance, fame, living in the ‘big
 > city’, friendship, dieting and much more, usually with a touch of humor thrown
 > in. Many of these books are written from a first-person viewpoint, making them a
->
 > <<PAGE:12|LABEL:36>>bit more personal and realistic. The plots can range from being very light and fastpaced
 > to being extraordinarily deep, thought-provoking and/or moving.
 
@@ -631,7 +625,6 @@ wide international spread. The current Wikipedia article does not mention chick 
 women of color such as African American, Latin American and Asian American
 authors or chick lit from the global South. And while the misinformation that “British
 author Catherine Alliott’s The Old Girl Network (1994) was the start of the chick lit
-
 <<PAGE:14|LABEL:38>>genre” (22 June 2020c) has persisted for some time now (since 18 Jan. 2018, to be
 exact), the important role of African American chick lit or sistah lit – and in particular
 Terry McMillan’s novel Waiting to Exhale (1992) – for the genre’s genealogy still has
@@ -681,7 +674,6 @@ the formal weaknesses to the author, and then to jointly improve it.
 
 While chicklit.co.uk never put a focus on women-of-color chick lit, chicklitbook.com
 from 2005 to 2012 had a subpage titled “Multicultural Chick Lit” about books “with
-
 <<PAGE:15|LABEL:39>>heroines from all different nationalities and from different cultures” (25 Nov. 2005c),
 
 divided into Indian Chick Lit, Latina Lit, Asian Chick Lit, and African-American Chick
@@ -798,7 +790,6 @@ academic material would find its way into digital formats and archives – as ha
 the case for many years in Wikipedia – but conversely also web content into research.
 This would not only enrich research – and the histories of contemporary genres is only
 one possible and very evident example of a whole range of fields of application in the
-
 <<PAGE:16|LABEL:40>>Humanities – but also the digital formats and archives themselves. The more researchers
 participate, e.g. by writing and editing Wikipedia articles or by suggesting
 websites for filing in the Internet Archive, the better web archives can support research.

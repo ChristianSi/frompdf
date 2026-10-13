@@ -115,9 +115,8 @@ usw. werden Datenbanksysteme eingebunden.
 
 Für die Thematik des ER-to-Relational-Mapping ist ein
 Fragentyp vorgesehen, der das Thema der Erstellung von
-relationalen Datenmodellen beinhaltet auf Basis vorgegebe-
-
-<<PAGE:2>>ner ER-Modelle und Anforderungen. Aufgaben dieses Typs
+relationalen Datenmodellen beinhaltet auf Basis vorgegebener
+<<PAGE:2>>ER-Modelle und Anforderungen. Aufgaben dieses Typs
 beinhalten die Darstellung eines konzeptuellen Datenmodells,
 welche als Bild vorliegt, bspw. ein gezeichnetes ERM
 in Chen-Notation [2]. Dieses soll von den Lernenden auf ein
@@ -230,7 +229,6 @@ kann diese Möglichkeit eingeschränkt werden.
 Jede Aktion ruft eine Reaktion hervor. Wenn die Lernenden
 als Beispiel eine Spalte umbenennen, werden die Folgen
 dieser Aktion in einer Meldung visuell dargestellt, da
-
 <<PAGE:3>>ggfs. Anpassungen aufgrund von Abhängigkeiten in anderen
 Tabellen durch die Lernenden notwendig werden können.
 Hierbei wird angestrebt, dass diese Meldungen motivierend
@@ -285,7 +283,6 @@ Icon einer Glocke ein roter Kreis angezeigt (siehe Abbildung
 4 und Abbildung 5). Neben den Hinweisen zur Bearbeitung
 werden unter der Glocke zudem noch Hinweise auf
 neue Empfehlungen gegeben. Gibt es zur aktuellen Aufgabe
-
 weiterführende Informationen, so können diese in verschiedenen
 medialen Formen, z.B. Screencasts, Podcasts, Hilfetexte,
 Hilfegrafiken, vorliegen und abgerufen werden.
@@ -344,7 +341,6 @@ gibt es die Schaltfläche ’Question and Feedback’. Hier können
 die Lernenden Kontakt zu den Lehrkörpern aufnehmen.
 Hierbei wird zwischen aufgabenpezifischen Fragen und Feedback
 unterschieden. Vor allem das Feedback ist gewünscht,
-
 <<PAGE:4>>da dieses dazu dient, das System an die Bedürfnisse der Lernenden
 anzupassen und eine kontinuierliche Verbesserung
 voranzutreiben (siehe Abbildung 6).
@@ -480,9 +476,8 @@ sind, wird auf dem Datentyp ’variable character’ abgebildet,
 der dem Datenbanksystem entspricht auf dem der
 Code ausgeführt wird. Um den Lernenden die Möglichkeit
 zu bieten den entstandenen DDL-Code zu nutzen, gibt es die
-Schaltflächen ’Copy Code’ und ’Save to Script’. ’Copy Co-
-
-de’ kopiert den angezeigten SQL-Code in die Zwischenablage
+Schaltflächen ’Copy Code’ und ’Save to Script’. ’Copy Code’
+kopiert den angezeigten SQL-Code in die Zwischenablage
 und ’Save to Script’ bietet die Möglichkeit den Code als Datei
 lokal zu speichern. Damit der bereitgestellte SQL-Code
 von den Lernenden auf unterschiedlichen Datenbanksystemen
@@ -531,7 +526,6 @@ ihrer Lösung. Zur Sicherheit und um Fehlklicks abzufangen
 öffnet sich, nachdem die Lernenden auf ’Submit’ gedrückt
 haben, ein weiteres Fenster. In diesem erhalten die Lernenden
 die Information, ob ihre Lösung eine gültige Lösung sein
-
 <<PAGE:6>>könnte. Ist dies der Fall, besteht die Möglichkeit die Aufgabe
 abzugeben.
 

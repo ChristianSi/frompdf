@@ -96,7 +96,6 @@ magnetic systems gave rise to the field of spin caloritronics<sup>31</sup>. For
 example, a heat valve effect has been demonstrated in sandwich
 nanostructures with ferromagnetic and non-magnetic layers<sup>32</sup>. As
 mentioned earlier, the nature of magnon modes is modified by
-
 the spin ordering, that can affect the thermal transport properties.
 However, the influence of the complex spin order on thermal
 conductivity remains hitherto largely unexplored.
@@ -509,7 +508,6 @@ saturated amplitude of the oscillation. The signature of the phase
 coexistence can also be visually identified in Δθ traces. In Figs. 2a
 and 2b, the trace at 40 mT shows a small amplitude second
 oscillation, which is expected to form a dip structure around
-
 300–500 ps as seen in the traces at 30 mT and 50 mT. The trace at
 40 mT, which is near the phase boundary between the Cyc and
 SkL, is best described by the presence of two coherent oscillations
@@ -679,7 +677,6 @@ scale of the spin periodicity in the SkL and Cyc phase are around
 the modulation of the magnon modes at very low frequency of ~GHz
 with small wave vector, as mentioned earlier. The impact of such a
 spin modulation with q ~ 0 on the phonon velocity is considered to
-
 be limited. In other words, since the spin texture in all the considered
 phases is essentially ferromagnetic on a unit cell length scale, the
 magnon modes in the SkL and Cyc phases are not expected to have
