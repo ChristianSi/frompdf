@@ -270,7 +270,7 @@ class PageAwareParagraphTests(unittest.TestCase):
         markdown_to_text(blocks, output, page_markers=True)
         self.assertEqual(
             output.getvalue().split('\n')[5:7],
-            ['this text discusses an international', '<<PAGE:2|LABEL:8>>topic on the next page'],
+            ['this text discusses an international', '<<PAGE:2|VISIBLE:8>>topic on the next page'],
         )
         output = io.StringIO()
         markdown_to_text(blocks, output)

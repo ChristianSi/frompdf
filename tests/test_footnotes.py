@@ -444,11 +444,11 @@ class FootnoteTextTests(unittest.TestCase):
         markdown_to_text(blocks, output, page_markers=True)
         self.assertEqual(
             output.getvalue(),
-            '<<PAGE:3|LABEL:9>>Body.\n\n'
-            '## <<PAGE:1|LABEL:7>>Notes\n\n'
-            '12. Some international\n    <<PAGE:2|LABEL:8>>evidence.\n\n'
+            '<<PAGE:3|VISIBLE:9>>Body.\n\n'
+            '## <<PAGE:1|VISIBLE:7>>Notes\n\n'
+            '12. Some international\n    <<PAGE:2|VISIBLE:8>>evidence.\n\n'
             '    A second paragraph.\n15. Note 15\n\n'
-            '## <<PAGE:3|LABEL:9>>References\n',
+            '## <<PAGE:3|VISIBLE:9>>References\n',
         )
         output = io.StringIO()
         markdown_to_text([built, note('15', 2)], output)
