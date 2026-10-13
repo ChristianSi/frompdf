@@ -40,6 +40,16 @@ class PageNumber:
 
 
 @dataclass
+class TextFragment:
+    """A piece of block text, retaining its source page and preceding whitespace."""
+
+    text: str
+    page: PageNumber
+    separator: str = ''
+    scripts: tuple[ScriptRange, ...] = field(default=(), kw_only=True)
+
+
+@dataclass
 class Block:
     """A Markdown block extracted from a PDF."""
 
@@ -49,6 +59,8 @@ class Block:
     font_size: float | None = None
     avg_weight: float | None = None
     scripts: tuple[ScriptRange, ...] = field(default=(), kw_only=True)
+    # Page-aware pieces of text. Blocks without them are rendered from text.
+    fragments: list[TextFragment] = field(default_factory=list, kw_only=True)
 
 
 @dataclass
@@ -69,18 +81,7 @@ class Heading(Block):
 
 
 @dataclass
-class NoteFragment:
-    """A piece of a note, retaining its source page and preceding whitespace."""
-
-    text: str
-    page: PageNumber
-    separator: str = ''
-    scripts: tuple[ScriptRange, ...] = field(default=(), kw_only=True)
-
-
-@dataclass
 class Footnote(Block):
     """A numbered note with page-aware text, later moved to a Notes section."""
 
     label: str = '1'
-    fragments: list[NoteFragment] = field(default_factory=list)

@@ -2,6 +2,15 @@ import re
 from collections import Counter, defaultdict
 from statistics import median
 
+from frompdf.continuations import (
+    PageLayout,
+    build_page_fragments,
+    build_page_layouts,
+    continues_across_boundary,
+    continues_previous_alignment,
+    document_indents_paragraphs,
+    join_fragments,
+)
 from frompdf.footnotes import build_footnote, extract_footnotes, place_footnotes
 from frompdf.heading_candidates import find_typographic_heading_lines
 from frompdf.models import Block, BlockQuote, Heading, Line, PageNumber, Paragraph
@@ -12,7 +21,6 @@ from frompdf.unhyphenation import (
     document_mixed_case_words,
     document_word_counts,
     spelling_evidence_text,
-    unhyphenate_annotated_lines,
 )
 
 # Treat clearly heavier font weights as slightly larger for heading detection.
@@ -237,24 +245,67 @@ def markdown_block_from_lines(
         )
         else Paragraph
     )
-    font_size = block_font_size(line_list)
-    avg_weight = block_avg_weight(line_list)
-    start_page = page_number_map[line_list[0].page_no]
-    end_page = page_number_map[line_list[-1].page_no]
-    annotated = unhyphenate_annotated_lines(
-        (AnnotatedText(line.text, line.scripts) for line in line_list),
-        word_counts,
-        mixed_case_words,
-        coordination_tokens,
+    fragments = build_page_fragments(
+        line_list, page_number_map, word_counts, mixed_case_words, coordination_tokens
     )
+    annotated = join_fragments(fragments)
     return block_class(
         text=annotated.text,
         scripts=annotated.scripts,
-        start_page=start_page,
-        end_page=end_page,
-        font_size=font_size,
-        avg_weight=avg_weight,
+        start_page=fragments[0].page,
+        end_page=fragments[-1].page,
+        font_size=block_font_size(line_list),
+        avg_weight=block_avg_weight(line_list),
+        fragments=fragments,
     )
+
+
+def merge_continued_groups(
+    group_list: list[list[Line]],
+    page_layouts: dict[int, PageLayout],
+    default_font_size: float | None,
+    body_lefts_by_page: dict[int, list[float]],
+    heading_lines: dict[int, int],
+) -> list[list[Line]]:
+    """Join groups continuing at the top of the next column or page.
+
+    Both parts and the joined group must agree on whether they form a block
+    quote, so a quote never absorbs ordinary paragraph text or vice versa. As an
+    exception, a continuation is not a quote merely because all of its lines
+    keep the indentation of the preceding lines, as in a hanging-indent list.
+    """
+    indented_paragraphs = document_indents_paragraphs(group_list, page_layouts)
+    merged: list[list[Line]] = []
+    for group in group_list:
+        if (
+            merged
+            and id(merged[-1][0]) not in heading_lines
+            and id(group[0]) not in heading_lines
+            and continues_across_boundary(
+                merged[-1],
+                group,
+                page_layouts,
+                indented_paragraphs,
+                merged[-2] if len(merged) > 1 else None,
+            )
+        ):
+            previous_is_quote = is_blockquote_block(
+                merged[-1], default_font_size, body_lefts_by_page
+            )
+            current_is_quote = is_blockquote_block(
+                group, default_font_size, body_lefts_by_page, previous_is_quote
+            )
+            joined = merged[-1] + group
+            if previous_is_quote == is_blockquote_block(
+                joined, default_font_size, body_lefts_by_page
+            ) and (
+                current_is_quote == previous_is_quote
+                or continues_previous_alignment(merged[-1], group, page_layouts)
+            ):
+                merged[-1] = joined
+                continue
+        merged.append(group)
+    return merged
 
 
 def should_boost_heading_font_size(block_obj: Block, document_median_weight: float | None) -> bool:
@@ -354,6 +405,10 @@ def detect_headings(
     typographic_heading_indices = typographic_heading_indices or set()
 
     for index, block_obj in enumerate(block_list):
+        if len(block_obj.fragments) > 1:
+            # Text continuing across a page boundary is not a heading.
+            converted_blocks.append(block_obj)
+            continue
         heading_level = initial_heading_level(block_obj, default_font_size, document_median_weight)
         if heading_level is None and index in typographic_heading_indices:
             # Use the smallest existing heading tier. Glyph heights in small-cap
@@ -401,7 +456,15 @@ def lines_to_markdown_blocks(
     typographic_heading_indices: set[int] = set()
     block_positions: list[int] = []
 
-    for current_lines in segment_lines(body_lines, heading_lines):
+    group_list = merge_continued_groups(
+        segment_lines(body_lines, heading_lines),
+        build_page_layouts(body_lines),
+        default_font_size,
+        body_lefts_by_page,
+        heading_lines,
+    )
+
+    for current_lines in group_list:
         typographic_heading = id(current_lines[0]) in heading_lines
         if typographic_heading:
             typographic_heading_indices.add(len(block_list))

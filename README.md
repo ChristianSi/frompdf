@@ -49,7 +49,8 @@ writing the new output.
 
 frompdf currently detects and serializes:
 
-- paragraphs
+- paragraphs, including paragraphs and block quotes continuing across column
+  and page boundaries
 - headings, based mostly on font size plus a document-relative font-weight
   boost
 - block quotes, based on indentation
@@ -138,8 +139,11 @@ inferred, the marker includes that label too, as in `<<PAGE:7|LABEL:9>>`.
 The `LABEL:` field distinguishes the visible label from the raw page number,
 including for compound visible labels such as `<<PAGE:2|LABEL:51:2>>`.
 Markers are placed after Markdown prefixes such as `## ` for headings and
-`> ` for block quotes. Collected notes retain their source pages, so markers
-can move backward in page order and can occur inside a continued note.
+`> ` for block quotes. A paragraph or block quote continuing on the next page
+contains the marker where that page's text starts; a word split across the
+boundary stays on its starting page. Collected notes retain their source
+pages, so markers can move backward in page order and can occur inside a
+continued note.
 
 ### Footnotes
 

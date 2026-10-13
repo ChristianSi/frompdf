@@ -164,6 +164,8 @@ The implementation is split into focused modules under `src/frompdf`:
 - `blocks.py` turns segmented lines into blocks, classifies block quotes and
   headings, and coordinates within-block text repair.
 - `cli.py` implements the command-line interface.
+- `continuations.py` recognizes text continuing at the top of the next column
+  or page and assembles page-aware text fragments for blocks and notes.
 - `footnotes.py` detects numbered bottom notes, assembles continuations with
   page-aware text, and places numeric groups in Notes sections.
 - `heading_candidates.py` identifies compact centered titles using caps or
@@ -189,13 +191,14 @@ Important concepts:
 
 - `Line` in `models.py` is a flattened record from `pdftext` output.
 - `ScriptRange` records superscript/subscript offsets in decoded plain text.
-  Lines, blocks, and note fragments retain these ranges until serialization.
+  Lines, blocks, and text fragments retain these ranges until serialization.
 - `PageNumber` in `models.py` stores the raw page number and optional visible
   page number.
 - `Block` in `models.py` is the base Markdown block type.
 - `Paragraph`, `BlockQuote`, `Heading`, and `Footnote` in `models.py` are
-  supported block subclasses. `NoteFragment` retains the source page and
-  preceding whitespace of each piece of a note.
+  supported block subclasses. `TextFragment` retains the source page and
+  preceding whitespace of each piece of a block's text, so page markers can
+  occur within paragraphs, block quotes, and notes.
 - `extract_markdown` in `pipeline.py` returns a list of blocks.
 - `markdown_to_text` in `output.py` serializes blocks as Markdown.
 
@@ -215,19 +218,25 @@ The current pipeline is roughly:
 9. Segment each page's body into blocks using `pdftext` hints, geometry,
    typography, indentation, and line-spacing evidence. Confirmed centered
    title candidates override boundaries only at and within those titles.
-10. Build paragraph or block-quote records and repair words and unspaced dashes
-    split across physical lines within each block, preserving script ranges.
-11. Reclassify heading-like paragraphs using size and confirmed title
+10. Join blocks continuing at the top of the next column or page. Similar
+    typography, a full last line, a non-indented first line, and consistent
+    block-quote classification are required. An open sentence, a lower-case
+    continuation, or a missing indent in a document whose paragraphs start
+    indented must additionally support the join.
+11. Build paragraph or block-quote records and repair words and unspaced dashes
+    split across physical lines within each block, preserving script ranges
+    and attributing words joined across pages to their starting page.
+12. Reclassify heading-like paragraphs using size and confirmed title
     candidates, which take precedence over block quotes, and normalize their
     heading levels.
-12. Repair note text while retaining source-page boundaries, group notes when
+13. Repair note text while retaining source-page boundaries, group notes when
     numbering restarts, and place a single sequence at the document end.
     Multiple groups prefer boundaries matching the sections they cover,
     limited by intervening restart boundaries. Nearby restarts can associate
     old notes with a preceding mid-page boundary. Groups sharing a boundary
     share one Notes title. Default H2/H3 Notes titles match a deeper following
     heading when necessary to prevent accidental parentage.
-13. Serialize the blocks as Markdown in `.md`, including compact numbered notes.
+14. Serialize the blocks as Markdown in `.md`, including compact numbered notes.
     Inline scripts become `<sup>`/`<sub>` tags; consumed footnote labels remain
     ordinary list markers.
     Restarted lists sharing a Notes section are separated by an empty HTML

@@ -17,6 +17,11 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
   when numbering restarts, original list labels, and a `--notes-title` option.
   Recognized continuation paragraphs and notes spanning adjacent pages retain
   their text and source-page markers. Existing endnotes are left in place.
+- Paragraphs and block quotes continuing at the top of the next column or page
+  are joined, using typography, line geometry, the document's paragraph
+  indentation, and weaker textual cues. Words split across the boundary are
+  repaired, and page markers are placed within the joined text after the
+  repaired word.
 - Inference of missing Arabic and Roman visible page labels when the
   surrounding sequence is unambiguous.
 - A `-m`/`--page-markers` option that embeds raw and visible PDF page numbers
@@ -27,17 +32,17 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
 
 - A single uninterrupted footnote sequence is collected at the document end
   under H2. Multiple groups prefer section boundaries reflecting their scope,
-  without skipping boundaries associated with numbering restarts. Notes
-  titles default to H2/H3 and match deeper following headings when needed to
-  prevent accidental parentage. Nearby restarts can place old notes before a
-  mid-page heading above their footnote area. Groups sharing a boundary use
-  one Notes title with separate lists, retaining original numbers and pages.
+  without skipping boundaries associated with numbering restarts. Notes titles
+  default to H2/H3 and match deeper following headings when needed to prevent
+  accidental parentage. Nearby restarts can place old notes before a mid-page
+  heading above their footnote area. Groups sharing a boundary use one Notes
+  title with separate lists, retaining original numbers and pages.
 - Centered uppercase and small-cap titles can now be recognized from their
   typography and surrounding layout even when their extracted size is below
   body size. Confirmed titles stay together across extraction blocks and take
   precedence over block quotes. Short centered italic labels above smaller
-  notes or references are separated from the following text and recognized
-  as headings.
+  notes or references are separated from the following text and recognized as
+  headings.
 - Header and footer detection is now more robust.
 - Missing page labels are filled when the nearest printed labels on either
   side predict the same numbering. At document edges, an agreeing pair of
@@ -47,19 +52,19 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
   and alternating recto/verso pages, tolerates short OCR-damaged page-label
   suffixes, and can join nearby Roman-number anchors across opposite edges.
 - Indented attributions following block quotes now remain part of the quote.
-- Paragraph boundaries now combine `pdftext` block hints with page-local
-  font size and family, line spacing, indentation, alignment, and line-length
+- Paragraph boundaries now combine `pdftext` block hints with page-local font
+  size and family, line spacing, indentation, alignment, and line-length
   evidence. New boundaries are not introduced solely by changes between font
   faces such as regular and bold.
 - Repeated hanging-indent regions are now learned per page and column, so
-  outdented first lines start paragraphs while indented reference continuations
-  remain attached.
+  outdented first lines start paragraphs while indented reference
+  continuations remain attached.
 - Words split by line-final hyphens are now rejoined within detected blocks,
   using document-wide spelling evidence and conservative fallback heuristics
   to retain lexical hyphens. Coordination hyphens are preserved using link
   words learned from explicit same-line patterns in the document.
-- Unspaced en and em dashes split across lines are now rejoined within detected
-  blocks.
+- Unspaced en and em dashes split across lines are now rejoined within
+  detected blocks.
 - Multi-column page regions are now ordered column by column while full-width
   and ambiguous regions retain their existing order.
 - Bold embedded-font names are used when PDFs report zero font weights, while

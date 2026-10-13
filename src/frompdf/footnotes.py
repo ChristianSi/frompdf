@@ -5,10 +5,10 @@ from collections import Counter, defaultdict
 from dataclasses import dataclass, field, replace
 from statistics import median
 
-from frompdf.models import Block, Footnote, Heading, Line, NoteFragment, PageNumber
-from frompdf.scripts import AnnotatedText, join_annotated_texts
+from frompdf.continuations import build_page_fragments, join_fragments
+from frompdf.models import Block, Footnote, Heading, Line, PageNumber, TextFragment
+from frompdf.scripts import AnnotatedText
 from frompdf.segmentation import close_font_size, ends_sentence
-from frompdf.unhyphenation import unhyphenate_annotated_lines
 
 # Require a visible size reduction and a lower-page region, with ordinary text
 # above it. The position is relative to the occupied page, not rel_y (which is
@@ -240,62 +240,15 @@ def build_footnote(
     coordination_tokens: set[str],
 ) -> Footnote:
     """Repair note text, attributing joined words to the page where they start."""
-    fragments: list[NoteFragment] = []
+    fragments: list[TextFragment] = []
     for paragraph in note.paragraphs:
-        page_lines: list[list[Line]] = []
-        for line in paragraph:
-            if not page_lines or page_lines[-1][-1].page_no != line.page_no:
-                page_lines.append([])
-            page_lines[-1].append(line)
-        for index, lines in enumerate(page_lines):
-            annotated = unhyphenate_annotated_lines(
-                (AnnotatedText(line.text, line.scripts) for line in lines),
-                word_counts,
-                mixed_case_words,
-                coordination_tokens,
-            )
-            separator = ('\n\n' if fragments else '') if index == 0 else '\n'
-            if index:
-                previous = fragments[-1]
-                left_line = previous.text.rsplit('\n', 1)[-1]
-                right_line, line_break, _ = annotated.text.partition('\n')
-                previous_value = AnnotatedText(previous.text, previous.scripts)
-                left_start = len(previous.text) - len(left_line)
-                repaired = unhyphenate_annotated_lines(
-                    [previous_value.slice(left_start), annotated.slice(0, len(right_line))],
-                    word_counts,
-                    mixed_case_words,
-                    coordination_tokens,
-                )
-                if repaired.text != left_line + '\n' + right_line:
-                    # Keep the complete repaired word on its starting page. The
-                    # next page marker belongs before the remaining text instead.
-                    joined_line, _, right_remainder = repaired.text.partition('\n')
-                    previous_value = previous_value.slice(0, left_start) + repaired.slice(
-                        0, len(joined_line)
-                    )
-                    previous.text, previous.scripts = previous_value.text, previous_value.scripts
-                    annotated = (
-                        repaired.slice(len(joined_line) + 1)
-                        + AnnotatedText(line_break if right_remainder else '')
-                        + annotated.slice(len(right_line) + len(line_break))
-                    )
-                    if not annotated.text:
-                        # If repair consumed the entire page fragment, defer the
-                        # marker until another fragment or block has text to emit.
-                        continue
-            fragments.append(
-                NoteFragment(
-                    annotated.text,
-                    page_numbers[lines[0].page_no],
-                    separator,
-                    scripts=annotated.scripts,
-                )
-            )
-    complete = join_annotated_texts(
-        AnnotatedText(fragment.separator) + AnnotatedText(fragment.text, fragment.scripts)
-        for fragment in fragments
-    )
+        paragraph_fragments = build_page_fragments(
+            paragraph, page_numbers, word_counts, mixed_case_words, coordination_tokens
+        )
+        if fragments:
+            paragraph_fragments[0].separator = '\n\n'
+        fragments.extend(paragraph_fragments)
+    complete = join_fragments(fragments)
     return Footnote(
         text=complete.text,
         scripts=complete.scripts,

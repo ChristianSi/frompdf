@@ -4,7 +4,7 @@ from collections import Counter
 from dataclasses import replace
 
 from frompdf.footnotes import DetectedNote, build_footnote, extract_footnotes, place_footnotes
-from frompdf.models import Footnote, Heading, Line, NoteFragment, PageNumber, Paragraph
+from frompdf.models import Footnote, Heading, Line, PageNumber, Paragraph, TextFragment
 from frompdf.output import markdown_to_text
 
 
@@ -311,8 +311,8 @@ class FootnotePlacementTests(unittest.TestCase):
         first, last, restarted = note('1'), note('2', 2), note('1', 3)
         last.end_page = PageNumber(3, None)
         fragments = [
-            NoteFragment('Some text', last.start_page),
-            NoteFragment('continued.', last.end_page, '\n'),
+            TextFragment('Some text', last.start_page),
+            TextFragment('continued.', last.end_page, '\n'),
         ]
         last.fragments = fragments
         middle, following = heading('Section two', 4, 3), heading('Section three', 4, 4)

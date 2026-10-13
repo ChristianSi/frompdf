@@ -3,7 +3,7 @@ from dataclasses import asdict
 from pathlib import Path
 from typing import TextIO
 
-from frompdf.models import Block, BlockQuote, Footnote, Heading, Line, NoteFragment, PageNumber
+from frompdf.models import Block, BlockQuote, Footnote, Heading, Line, PageNumber, TextFragment
 from frompdf.scripts import render_scripts
 
 
@@ -62,6 +62,23 @@ def format_page_marker(page_number: PageNumber) -> str:
     return f'<<PAGE:{page_number.raw}{visible_suffix}>>'
 
 
+def render_fragments(
+    block_obj: Block, previous_page: PageNumber | None, page_markers: bool = False
+) -> str:
+    """Render block text, adding page markers where its fragments change pages."""
+    fragments = block_obj.fragments or [
+        TextFragment(block_obj.text, block_obj.start_page, scripts=block_obj.scripts)
+    ]
+    parts: list[str] = []
+    for fragment in fragments:
+        marker = ''
+        if page_markers and (previous_page is None or fragment.page.raw != previous_page.raw):
+            marker = format_page_marker(fragment.page)
+        parts.append(fragment.separator + marker + render_scripts(fragment.text, fragment.scripts))
+        previous_page = fragment.page
+    return ''.join(parts)
+
+
 def markdown_to_text(
     block_list: list[Block], output_file: TextIO, page_markers: bool = False
 ) -> None:
@@ -83,39 +100,23 @@ def markdown_to_text(
             else:
                 output_file.write('\n\n')
 
-        marker = ''
-        if page_markers and (
-            previous_page is None or block_obj.start_page.raw != previous_page.raw
-        ):
-            marker = format_page_marker(block_obj.start_page)
-
+        text = render_fragments(block_obj, previous_page, page_markers)
         if isinstance(block_obj, Footnote):
             prefix = f'{block_obj.label}. '
-            output_file.write(prefix)
-            fragments = block_obj.fragments or [
-                NoteFragment(block_obj.text, block_obj.start_page, scripts=block_obj.scripts)
-            ]
-            for fragment in fragments:
-                marker = ''
-                if page_markers and (
-                    previous_page is None or fragment.page.raw != previous_page.raw
-                ):
-                    marker = format_page_marker(fragment.page)
-                output_file.write(fragment.separator)
-                if fragment.separator.endswith('\n'):
-                    output_file.write(' ' * len(prefix))
-                text = render_scripts(fragment.text, fragment.scripts)
-                output_file.write(marker + text.replace('\n', '\n' + ' ' * len(prefix)))
-                previous_page = fragment.page
+            text_lines = text.split('\n')
+            output_file.write(
+                prefix
+                + '\n'.join(
+                    text_lines[:1]
+                    + [' ' * len(prefix) + line if line else line for line in text_lines[1:]]
+                )
+            )
         elif isinstance(block_obj, Heading):
-            text = render_scripts(block_obj.text, block_obj.scripts)
-            output_file.write(f'{"#" * block_obj.level} {marker}{text}')
+            output_file.write(f'{"#" * block_obj.level} {text}')
         elif isinstance(block_obj, BlockQuote):
-            quote_lines = render_scripts(block_obj.text, block_obj.scripts).split('\n')
-            quote_lines[0] = f'{marker}{quote_lines[0]}'
-            output_file.write('\n'.join(f'> {line}' if line else '>' for line in quote_lines))
+            output_file.write('\n'.join(f'> {line}' if line else '>' for line in text.split('\n')))
         else:
-            output_file.write(marker + render_scripts(block_obj.text, block_obj.scripts))
+            output_file.write(text)
         previous_page = block_obj.end_page
     output_file.write('\n')
 
