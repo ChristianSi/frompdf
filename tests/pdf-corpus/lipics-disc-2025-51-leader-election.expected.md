@@ -45,9 +45,7 @@ direction and O(log ID<sub>min</sub>) in the other. The factor log ID<sub>min</s
 of Frei et al. (DISC 2024).
 
 Finally, in the anonymous setting, we propose a randomized algorithm where each process sends
-only O(log<sup>2</sup> U) messages, with a success probability of 1 − U
-−c
-.
+only O(log<sup>2</sup> U) messages, with a success probability of 1 − U<sup>−c</sup>.
 
 2012 ACM Subject Classification Theory of computation → Distributed algorithms
 
@@ -107,22 +105,15 @@ implies that the presence of unique identifiers is enough to simulate any asynch
 algorithm on a content-oblivious oriented ring.
 
 Additionally, Frei et al. [13] proved that, for any uniform algorithm, there exists an
-identifier assignment under which the algorithm must send Ω
-n log IDmax
+identifier assignment under which the algorithm must send Ω n log IDmax
 n
 messages. Although
-
 originally established for the uniform setting, this lower bound can be extended to the non-uniform
 setting, even when the exact value of n is known; see the full version of the paper
 for details.
 
 In anonymous systems, where processes lack identifiers, Frei et al. [13] showed a randomized
-leader election algorithm using n
-O(c
-2
-<sup>)</sup> messages and succeeding with probability 1 − n
-−c
-, but
+leader election algorithm using n<sup>O(c2)</sup> messages and succeeding with probability 1 − n<sup>−c</sup>, but
 without explicit termination. In fact, Itai and Rodeh [15] proved that no uniform algorithm
 can both elect a leader and guarantee explicit termination in anonymous systems without
 additional assumptions. We stress that the lack of explicit termination does not allow the
@@ -160,10 +151,7 @@ only on the size of the identifiers (and not on their values).
 
 Regarding anonymous networks, with non-uniformity at hand, the aforementioned impossibility
 result of Itai and Rodeh [15] no longer applies. This allows us to create a randomized
-algorithm (Section 5) that, with probability at least 1 − U
-−c
-, is quiescently terminating. The
-
+algorithm (Section 5) that, with probability at least 1 − U<sup>−c</sup>, is quiescently terminating. The
 algorithm has message complexity O(n log<sup>2</sup> U). In contrast to the randomized approach of
 Frei et al. [13], whose message complexity has an inherent exponential dependence on c, our
 algorithm achieves near-linear message complexity with only a multiplicative dependence
@@ -298,8 +286,7 @@ counterclockwise, for a total of O(nUID<sub>min</sub>) messages.
 We now describe an algorithm in which each process sends O(U log ID<sub>min</sub>) messages. The
 algorithm uses an encoding of identifiers such that the smallest identifier is not a prefix of
 any other identifier, and the last bit of every encoded identifier is 0. To achieve this, given
-an identifier ID of bit length ℓ, we encode it as 1
-<sup>ℓ</sup>0 · ID · 0.
+an identifier ID of bit length ℓ, we encode it as 1<sup>ℓ</sup>0 · ID · 0.
 
 The algorithm elects the process with the minimum identifier and proceeds in elimination
 rounds. In each round, active processes compare a specific bit of their (encoded) identifiers,
@@ -347,27 +334,19 @@ messages counterclockwise, for a total of O(nU log ID<sub>min</sub>) messages.
 ## 5 Randomized Leader Election
 
 In our randomized algorithm, each process samples its ID uniformly at random from the set
-{0, 1, 2, . . . , 2
-⌈<sup>c</sup>1 <sup>log</sup> <sup>U</sup>⌉ − 1}. With probability at least 1 − U
-2−c<sub>1</sub>
-, all processes receive distinct
+{0, 1, 2, . . . , 2⌈<sup>c</sup>1 <sup>log</sup> <sup>U</sup>⌉ − 1}. With probability at least 1 − U<sup>2−c</sup><sub>1</sub>, all processes receive distinct
 identifiers. The bit-by-bit comparison algorithm from Section 4 is then executed using these
 random identifiers.
 
 This sampling strategy yields a useful property: for any fixed bit index i, every maximal
 consecutive sequence of processes whose bit ID[i] equals 1 has length at most ⌈c<sub>2</sub> log U⌉
-with probability at least 1 − U
-1−c<sub>2</sub>
-. This property reduces the number of steps in the
-
+with probability at least 1 − U<sup>1−c</sup><sub>2</sub>. This property reduces the number of steps in the
 Synchronization and No-Zero Checking phases of the algorithm in Section 4 from U to
 ⌈c<sub>2</sub> log U⌉, thereby improving the message complexity and establishing our final theorem.
 
 ▶ Theorem 4. For any constant c > 0, there exists a randomized quiescently terminating
 leader election algorithm for anonymous oriented rings with a success probability of 1 −
-U
-−c
-in which each process sends O(log<sup>2</sup> U) messages clockwise and O(log U) messages
+U<sup>−c</sup> in which each process sends O(log<sup>2</sup> U) messages clockwise and O(log U) messages
 counterclockwise, for a total of O(n log<sup>2</sup> U) messages.
 
 ### <<PAGE:7|VISIBLE:51:7>>References

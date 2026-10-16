@@ -330,7 +330,6 @@ A major advantage of Wikipedia – especially with regard to popular genres and
 genre fiction – is that it “goes beyond the boundaries of an old-fashioned educational
 canon and embraces the zeitgeist, pop culture and the subcultures of geeks, nerds and
 all kinds of hobbyists”<sup>12</sup> (Van Dijk, 2015, 3; my transl.). This is a stark contrast to the
-
 Oxford Dictionary of Literary Terms, which includes terms from literary popular
 culture such as chick lit, but does not exactly embrace these phenomena and in fact
 may even be overly dismissive of them. Although Wikipedia also tends to reproduce an

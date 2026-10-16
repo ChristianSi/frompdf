@@ -108,7 +108,6 @@ Additionally, Frei et al. [13] proved that, for any uniform algorithm, there exi
 identifier assignment under which the algorithm must send Ω n log IDmax
 n
 messages. Although
-
 originally established for the uniform setting, this lower bound can be extended to the non-uniform
 setting, even when the exact value of n is known; see the full version of the paper
 for details.
@@ -153,7 +152,6 @@ only on the size of the identifiers (and not on their values).
 Regarding anonymous networks, with non-uniformity at hand, the aforementioned impossibility
 result of Itai and Rodeh [15] no longer applies. This allows us to create a randomized
 algorithm (Section 5) that, with probability at least 1 − U<sup>−c</sup>, is quiescently terminating. The
-
 algorithm has message complexity O(n log<sup>2</sup> U). In contrast to the randomized approach of
 Frei et al. [13], whose message complexity has an inherent exponential dependence on c, our
 algorithm achieves near-linear message complexity with only a multiplicative dependence
@@ -343,7 +341,6 @@ random identifiers.
 This sampling strategy yields a useful property: for any fixed bit index i, every maximal
 consecutive sequence of processes whose bit ID[i] equals 1 has length at most ⌈c<sub>2</sub> log U⌉
 with probability at least 1 − U<sup>1−c</sup><sub>2</sub>. This property reduces the number of steps in the
-
 Synchronization and No-Zero Checking phases of the algorithm in Section 4 from U to
 ⌈c<sub>2</sub> log U⌉, thereby improving the message complexity and establishing our final theorem.
 

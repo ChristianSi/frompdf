@@ -115,7 +115,6 @@ Servicio MVT de Sigpac.
 
 La información del SIGC que se distribuye mediante los nuevos servicios
 descritos en esta Nota<sup>8</sup> tiene la consideración de datos específicos de alto valor
-
 (HVD)<sup>9</sup> y, como se establece en el Reglamento de Ejecución 2023/138 de datos
 de alto valor (high value dataset, HVD), es publicada bajo las condiciones de
 <<PAGE:4>>reutilización de la información distribuida que estable la licencia pública Creative

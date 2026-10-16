@@ -352,7 +352,6 @@ bear further examination to ensure that this does not create unforeseen problems
 
 Perhaps the closest thing to the proposed changes is the use of DRM, which is explicitly
 allowed under GPLv3 licensing<sup>6</sup>. But even DRM is disallowed when protected by
-
 tivoization or law, and a case could be made that similar protection is provided by
 modern mobile app distribution platforms, which should be included in similar fashion.
 

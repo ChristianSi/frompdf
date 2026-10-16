@@ -30,10 +30,7 @@ https://doi.org/10.1038/s41467-022-30829-z OPEN
 
 # Slowdown of photoexcited spin dynamics in the non-collinear spin-ordered phases in skyrmion host GaV<sub>4</sub>S<sub>8</sub>
 
-**Fumiya Sekiguchi <sup>1</sup>✉, Kestutis Budzinauskas<sup>1</sup>
-, Prashant Padmanabhan <sup>1</sup>
-, Rolf B. Versteeg <sup>1</sup>
-,
+**Fumiya Sekiguchi <sup>1</sup>✉, Kestutis Budzinauskas<sup>1</sup>, Prashant Padmanabhan <sup>1</sup>, Rolf B. Versteeg <sup>1</sup>,
 Vladimir Tsurkan<sup>2,3</sup>, István Kézsmárki <sup>2</sup>, Francesco Foggetti<sup>4,5</sup>, Sergey Artyukhin <sup>4</sup> &
 Paul H. M. van Loosdrecht <sup>1</sup>✉**
 
@@ -52,8 +49,7 @@ abundance in the skyrmion-lattice/cycloid phase. These results highlight the imp
 spin structure on the ultrafast heat transport in spin systems, providing a useful insight for
 the step toward ultrafast photocontrol of the magnets with novel spin orders.
 
-<<PAGE:3|VISIBLE:2>>I
-n spin systems several types of interactions can coexist, and
+<<PAGE:3|VISIBLE:2>>In spin systems several types of interactions can coexist, and
 the competition among them sometimes results in the formation
 of novel spin ordering, which determines the static and
 dynamic magnetic properties. A prominent example is the skyrmion
@@ -442,8 +438,7 @@ during non-radiative carrier relaxation process<sup>41</sup>. After this initial
 > the few GHz range. The excitation mechanism of this coherent
 > collective spin motion has been assigned to the ultrafast photoinduced
 > modulation of the magnetocrystalline anisotropy of
-> GaV<sub>4</sub>S<sub>8</sub>
-> 23.
+> GaV<sub>4</sub>S<sub>8</sub><sup>23</sup>.
 > The comprehensive set of the Δθ traces clearly shows that the
 > nature of the coherent and incoherent spin dynamics changes
 > character depending on the location in the magnetic phase
@@ -641,8 +636,7 @@ GaV<sub>4</sub>S<sub>8</sub>. These types of magnetic discontinuities lead to an
 magnon scattering and thereby, reduce the magnon mean free path.
 As a result, the magnetic heat transport is reduced by the formation
 of magnetic domain boundaries, as for instance has been reported for
-the helimagnetic insulator Cu<sub>2</sub>OSeO<sub>3</sub>
-51.
+the helimagnetic insulator Cu<sub>2</sub>OSeO<sub>3</sub><sup>51</sup>.
 
 In addition to the reduced mean free path, the magnon velocity
 also depends on the magnetic phase. Because the SkL and Cyc phase
@@ -695,8 +689,7 @@ contrast, the Jahn–Teller distortion associated with the cubic to
 rhombohedral structural transition at T<sub>JT</sub> ~44 K are more drastic.
 This is confirmed by the fact that the polarization change across the
 magnetic phase transition is only ~0.1 % compared to that of the
-structural transition across T<sub>JT</sub>
-<sup>42</sup>. Therefore, structural domain walls
+structural transition across T<sub>JT</sub><sup>42</sup>. Therefore, structural domain walls
 associated with the Jahn–Teller distortion are expected to have a
 dominant contribution to the phonon scattering and hence on the
 phonon mean free path. Since the Jahn–Teller distortion is not
@@ -730,9 +723,7 @@ the phase transitions is shown in Fig. 5. The reduction of the spin
 correlation length in the SkL and Cyc phase considerably lowers
 the magnon mean free path, encoded by the inverse width of the
 magnon lines in the spectral function.
-The magnon thermal conductivity is given by κ ¼ ∑<sub>i</sub>c<sub>i</sub>
-viρi
-, where
+The magnon thermal conductivity is given by κ ¼ ∑<sub>i</sub>c<sub>i</sub>viρi, where
 c<sub>i</sub> is the specific heat of mode i, v<sub>i</sub> is its velocity and ρ<sub>i</sub> is the mean
 free path. The latter can be estimated via the magnon spectral
 broadening as ρ<sub>i</sub> ¼ 2π=δq, with the δq is the line broadening. As
@@ -849,22 +840,18 @@ utilized as the transport agent. The crystal growth was performed at temperature
 > simulations using the UppASD program<sup>58</sup>. The magnon spectral function, evaluated
 > numerically from the time-dependent correlation function
 
-m<sup>j</sup>
-r0ðÞ <sup>0</sup>
-ð<sup>1</sup>Þ
-of the Cartesian component j of the magnetization m<sup>j</sup>
-<sub>r</sub>ðÞt at the position r and
-time t. The magnetization m<sup>j</sup>
-<sub>r</sub>ðÞt was obtained by integration of the Landau–Lifshitz
+m<sup>j</sup>r0ðÞ <sup>0</sup> ð<sup>1</sup>Þ
+of the Cartesian component j of the magnetization m<sup>j</sup><sub>r</sub>ðÞt at the position r and
+time t. The magnetization m<sup>j</sup><sub>r</sub>ðÞt was obtained by integration of the Landau–Lifshitz
 equation<sup>59</sup>. The Gilbert damping was set to 10−<sup>3</sup>. 20,000 timesteps of 10 fs were
 used for the integration. The Fourier transform of the correlation function gives the
 dynamical structure factor,
 
-### m<sup>j</sup> rðÞ<sup>t</sup> <sup>mj</sup> r0ðÞ <sup>0</sup>
+### m<sup>j</sup>rðÞ<sup>t</sup> <sup>mj</sup>r0ðÞ <sup>0</sup>
 
 ### C<sup>j</sup> r r <sup>0</sup> ð Þ¼ <sup>;</sup> <sup>t</sup>
 
-### m<sup>j</sup> rðÞ<sup>t</sup>
+### m<sup>j</sup>rðÞ<sup>t</sup>
 
 > Z þ1
 > 1
@@ -876,11 +863,9 @@ ffiffiffiffiffi\
 
 > ∑
 > r;r0
-> e
-> iqðrr0
+> eiqðrr0
 >
-> ðr  r0
-> ; tÞdt ð2Þ
+> ðr  r0; tÞdt ð2Þ
 > The magnon linewidth was then obtained by fitting the peaks of the spectral
 > function with Gaussians. The thermal conductivity was estimated from the
 > linewidth as explained in the main text.
@@ -889,9 +874,7 @@ ffiffiffiffiffi\
 >
 > Þ
 >
-> e
-> iωt
-> C<sup>j</sup>
+> eiωtC<sup>j</sup>
 >
 > Data availability
 >

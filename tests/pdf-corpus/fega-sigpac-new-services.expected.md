@@ -22,8 +22,7 @@ Información de Explotaciones Agrarias (SIEX). Asimismo, es la pieza clave del
 Sistema Integrado de Gestión y Control (SIGC), constituyendo un registro oficial
 de actualización continua, dependiente del FEGA y de las Consejerías de
 Agricultura de las comunidades autónomas (CCAA). Se basa en ortofotos áreas<sup>1</sup>
-y en el parcelario de Catastro<sup>2</sup>
-, permitiendo identificar de manera gráfica las
+y en el parcelario de Catastro<sup>2</sup>, permitiendo identificar de manera gráfica las
 parcelas declaradas o inscritas de agricultores y ganaderos en el marco de la
 PAC.
 
@@ -49,8 +48,7 @@ cuales: 6 capas vectoriales fueron generadas y publicadas entre 2021 y 2022,
 de cara a la reforma de la PAC del 2023, y 2 más entre 2023 y 2024,
 incrementándose así en esos cuatro años en un 50% el número de capas
 vectoriales públicas, respecto a las existentes entre el 2000-2020, al ascender
-<<PAGE:2>>de 14 a 21<sup>3</sup>
-las capas vectoriales publicadas en el Visor SIGPAC nacional,
+<<PAGE:2>>de 14 a 21<sup>3</sup> las capas vectoriales publicadas en el Visor SIGPAC nacional,
 continuándose hoy día los trabajos para aumentar la visualización y obtención
 de información del SIGC.
 
@@ -90,9 +88,7 @@ académico, tanto de visualización como de servir de complemento en el
 desarrollo de aplicaciones informáticas, y abierto al resto de agentes del sector
 agrario (agricultores, ganaderos, entidades colaboradoras y Administraciones
 Públicas), en el primer semestre de 2024, se publicó en la nube el primero de
-estos nuevos servicios: el Servicio de Teselas Vectoriales de SIGPAC (MVT)
-5
-. Y
+estos nuevos servicios: el Servicio de Teselas Vectoriales de SIGPAC (MVT)<sup>5</sup>. Y
 entre junio de 2024 y agosto de 2025 se han publicado otros cinco servicios
 en el Catálogo de Servicios SIGPAC.
 
@@ -118,9 +114,7 @@ Servicio MVT de Sigpac.
 > 6. Servicio de Salidas Gráficas de SIGPAC
 
 La información del SIGC que se distribuye mediante los nuevos servicios
-descritos en esta Nota<sup>8</sup>
-tiene la consideración de datos específicos de alto valor
-
+descritos en esta Nota<sup>8</sup> tiene la consideración de datos específicos de alto valor
 (HVD)<sup>9</sup> y, como se establece en el Reglamento de Ejecución 2023/138 de datos
 de alto valor (high value dataset, HVD), es publicada bajo las condiciones de
 <<PAGE:4>>reutilización de la información distribuida que estable la licencia pública Creative

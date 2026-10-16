@@ -304,7 +304,6 @@ Consensus (BVC) [19] and Brooks-Iyengar (BI) [4]. Here we present only the Byzan
 scenario. Each trial samples n − f d-dimensional replica outputs x<sub>i</sub> from a random Gaussian
 or Exponential distribution (with a fixed, low variance) and multiplies each element-wise
 by a noise vector y<sub>i</sub> independently sampled from an error distribution with E[Y ] = 1 and
-
 (uniformly-sampled) standard deviation from 0.01 to 0.09. We compute the agreement vector
 of each protocol and report the median percent error with respect to x<sub>i</sub> across 1000 trials.
 

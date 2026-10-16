@@ -134,16 +134,13 @@ r, ensures that if any (minority of) values in r turn out to be faulty, then the
 thus the inferred vˆ) is at least a likely as a quorum containing only nonfaulty values. At a
 high level, this process is described by the probability maximization in Def. 2.1.
 
-▶ Definition 2.1 (Proximal Byzantine Value Selection). For received values R ⊆ R
-<sup>n</sup> and
+▶ Definition 2.1 (Proximal Byzantine Value Selection). For received values R ⊆ R<sup>n</sup> and
 quorum size s, select a set r from the s-sized subsets of R, and a value x that maximizes the
 likelihood that x is the true value given observations in r.
 
 PBA(R, s) ≜ argmax
-r∈[R]
-s
-x∈R
-n
+r∈[R]<sup>s</sup>
+x∈R<sup>n</sup>
 P(x | r)
 
 Our chosen approximation of Proximal Byzantine Value Selection (PBVS) uses the
@@ -151,8 +148,7 @@ geometric median of each r as a robust estimator for the expected value of the u
 distribution of observations in r, thus approximating the candidate x. Below we will just
 use PBA(R, s) to refer to our approximation of PBVS to avoid additional notation. The
 geometric median [16] is well-suited for estimating the expected value of a broad class of
-distributions [15, 16], and remains robust even when <
-1
+distributions [15, 16], and remains robust even when < 1
 2
 of the samples are arbitrarily
 
@@ -173,8 +169,7 @@ evaluating Pb(X = x | r) to find maximal values, and had almost no impact on acc
 
 Approximation of a true value introduces a degree of uncertainty for systems that use those
 approximations to make decisions. We are unaware of any ABA protocols that estimates
-the uncertainty of its outputs.<sup>1</sup>
-In many scenarios, it may be better to perform no action at
+the uncertainty of its outputs.<sup>1</sup> In many scenarios, it may be better to perform no action at
 all than to act on very uncertain data. Therefore, calculating a concrete guarantee on each
 output is an important feature of PBA protocols.
 
@@ -183,16 +178,12 @@ set of nonfaulty values is bounded when up to |F| < |Q| faulty values are added 
 
 ▶ Lemma 2.2 (Theoretical maximum displacement [6, 11]). Let R = Q ∪ F, |Q| = s and
 |F| = f such that s > f with geometric medians Gm(Q) = m<sub>Q</sub> and Gm(R) = m<sub>R</sub>. Let
-∆<sup>Q</sup> = max<sub>qi</sub>∈<sub>Q</sub> ||q<sub>i</sub> − Gm(Q)||<sub>2</sub> and C
-(s,f)
+∆<sup>Q</sup> = max<sub>qi</sub>∈<sub>Q</sub> ||q<sub>i</sub> − Gm(Q)||<sub>2</sub> and C<sup>(s,f)</sup>
 0 = √ s
-s
-<sup>2</sup>−f
-2
+s<sup>2</sup>−f2
 . Then the maximum displacement is
 
-> ||m<sub>Q</sub> − m<sub>R</sub>||<sub>2</sub> ≤ C
-> (s,f)
+> ||m<sub>Q</sub> − m<sub>R</sub>||<sub>2</sub> ≤ C(s,f)
 > 0 ∆Q
 
 However, the contents of Q is unknown, so the bound implied by Lemma 2.2 cannot be
@@ -201,10 +192,8 @@ computable bound guaranteed to contain the geometric median of the nonfaulty val
 is based only on the received values and the system parameters (i.e., n, f, and s).
 
 ▶ Lemma 2.3 (Computable maximum displacement). Let R = Q ∪ F, |Q| = s and |F| = f
-such that s > 2f with Gm(Q) = m<sub>Q</sub> and Gm(R) = m<sub>R</sub>, and C
-(s,f) = √ s
-2sf−f
-2
+such that s > 2f with Gm(Q) = m<sub>Q</sub> and Gm(R) = m<sub>R</sub>, and C<sup>(s,f)</sup> = √ s
+2sf−f<sup>2</sup>
 . Then
 
 (s,f)∆R
@@ -216,29 +205,23 @@ The computable displacement is used to compute the region guarantee for a given 
 result. The fact that PBA only produces outputs with region guarantees containing the true
 output is our instantiation of an accuracy [12] property.
 
-d
-, |R| > s + f where s > f, define
+<sup>d</sup>, |R| > s + f where s > f, define
 R<sup>(f,x)</sup> ⊆ R by removing the f elements of R furthest from x. Let ∆<sup>R</sup>
 f = maxri∈R(f,Gm(R)) ||ri −
 
 ▶ Definition 2.4 (Region Guarantee). For any set R ⊆ R
 
 Gm(R)||<sub>2</sub>. The region guarantee RG(R, s, f) is a d-dimensional ball centered at x with radius
-2C
-(s,f)∆R
+2C(s,f)∆R
 f
 .
 
 ▶ Lemma 2.5 (Accuracy). For any R = (Q ∪ F) containing |Q| = s > 2f nonfaulty and at
-most |F| = f faulty values, let PBA(R, s) = (x, R′
-). Then Gm(Q) ∈ RG(R, s, f) and
+most |F| = f faulty values, let PBA(R, s) = (x, R′). Then Gm(Q) ∈ RG(R, s, f) and
 
-||m<sub>Q</sub> − x||<sub>2</sub> ≤ C
-(s,f)
-0 ∆R
-′
-\+ C
-(s,f)
+||m<sub>Q</sub> − x||<sub>2</sub> ≤ C(s,f)
+0 ∆R′
+\+ C(s,f)
 0 ∆<sup>Q</sup> ≤ 2C
 
 > (s,f)∆R
@@ -284,8 +267,7 @@ Despite the absence of inter-replica coordination or iteration, the PBA values d
 by consumers from different subsets are bounded with respect to their distance to the true
 expected value. This bound is in terms of the displacement properties of the geometric
 median discussed in §2.1, and contingent on quorum sizes representing a sufficiently large
-fraction of the nonfaulty replicas, in this case >
-|Q|
+fraction of the nonfaulty replicas, in this case > |Q|
 2
 .
 
@@ -299,25 +281,15 @@ than twice the number of faulty replicas.
 
 ▶ Lemma 2.6 (Agreement). For any R<sup>i</sup> = (Q<sup>i</sup> ∪ F
 
-) ⊆ R = (Q ∪ F), let r = |R<sup>i</sup>
-|, s = |Q<sup>i</sup>
-|,
-f = |F|, and PBA(R<sup>i</sup>
-, s) = (x<sub>i</sub>
-, R<sup>i</sup>
+) ⊆ R = (Q ∪ F), let r = |R<sup>i</sup>|, s = |Q<sup>i</sup>|,
+f = |F|, and PBA(R<sup>i</sup>, s) = (x<sub>i</sub>, R<sup>i</sup>
 ∗
-). If s > l
-|R|
+). If s > l|R|
 2
 m
 and r ≥ s + f, then for any other subset
-R<sup>j</sup> = (Q<sup>j</sup> ∪ F
-j
-) ⊆ R where |R<sup>j</sup>
-| ≥ r and PBA(R<sup>j</sup>
-, s) = (x<sub>j</sub> , R<sup>j</sup>\
-∗), ||x<sub>i</sub> − x<sub>j</sub> || ≤ 2C
-(s,f)
+R<sup>j</sup> = (Q<sup>j</sup> ∪ F<sup>j</sup>) ⊆ R where |R<sup>j</sup>| ≥ r and PBA(R<sup>j</sup>, s) = (x<sub>j</sub> , R<sup>j</sup>\
+∗), ||x<sub>i</sub> − x<sub>j</sub> || ≤ 2C<sup>(s,f)</sup>
 0 ∆Q.
 
 i
@@ -331,9 +303,7 @@ Cloud [8], comparing PBA under several quorum sizes against approximate Byzantin
 Consensus (BVC) [19] and Brooks-Iyengar (BI) [4]. Here we present only the Byzantine attack
 scenario. Each trial samples n − f d-dimensional replica outputs x<sub>i</sub> from a random Gaussian
 or Exponential distribution (with a fixed, low variance) and multiplies each element-wise
-by a noise vector y<sub>i</sub>
-independently sampled from an error distribution with E[Y ] = 1 and
-
+by a noise vector y<sub>i</sub> independently sampled from an error distribution with E[Y ] = 1 and
 (uniformly-sampled) standard deviation from 0.01 to 0.09. We compute the agreement vector
 of each protocol and report the median percent error with respect to x<sub>i</sub> across 1000 trials.
 
