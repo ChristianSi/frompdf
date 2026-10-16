@@ -112,8 +112,8 @@ Servicio MVT de Sigpac.
 
 > 1. Servicio de Teselas Vectoriales (MVT) de SIGPAC
 > 2. WMS – Web Map Service de SIGPAC<sup>7</sup>
-> 3. Servicio de Consultas de SIGPAC
-> 4. Servicio OGC API de SIGPAC
+> 3. Servicio de Consultas de SIGPAC\
+> 4. Servicio OGC API de SIGPAC\
 > 5. Servicio de Listas de Códigos SIGPAC
 > 6. Servicio de Salidas Gráficas de SIGPAC
 
@@ -195,11 +195,11 @@ HTTP de tipo REST (Representational state transfer).
 <<PAGE:7>>Actualmente pueden realizarse un total de 11 consultas diferentes, entre las que
 destacan:
 
-> - Propiedades de un recinto por códigos SIGPAC o coordenadas.
-> - Centroide de un recinto por códigos SIGPAC.
-> - Referencia SIGPAC de un recinto a partir de coordenadas.
+> - Propiedades de un recinto por códigos SIGPAC o coordenadas.\
+> - Centroide de un recinto por códigos SIGPAC.\
+> - Referencia SIGPAC de un recinto a partir de coordenadas.\
 > - Referencia Catastral de una parcela a partir de referencia SIGPAC.
-> - Propiedades de los recintos contenidos en una parcela SIGPAC.
+> - Propiedades de los recintos contenidos en una parcela SIGPAC.\
 > - Intersecciones de un recinto con diferentes capas (Red Natura,
 > Montanera, Fitosanitarios, Nitratos o Pastos Permanentes).
 
@@ -213,7 +213,7 @@ El Reglamento de Ejecución 2023/138 establece, para la categoría de datos
 Geoespaciales, que los conjuntos de datos de alto valor se pondrán a disposición
 para su reutilización, entre otras, con las siguientes condiciones:
 
-> - licencia Creative Commons BY 4.0 u otra menos restrictiva.
+> - licencia Creative Commons BY 4.0 u otra menos restrictiva.\
 > - formato abierto, legible por máquina y documentado públicamente;
 >
 > <<PAGE:8>>- mediante interfaces de programación de aplicaciones (API).
@@ -246,16 +246,16 @@ integrable en multitud de desarrollos informáticos de empresas u otros usuarios
 
 <<PAGE:9>>Actualmente se pueden consultar listas de códigos de:
 
-> - Provincias
-> - Municipios
+> - Provincias\
+> - Municipios\
 > - Usos SIGPAC
 >
-> - Tipo de aprovechamiento
+> - Tipo de aprovechamiento\
 > - Incidencias
 >
-> - Líneas de ayuda directa
+> - Líneas de ayuda directa\
 > - Líneas de ayuda directa PDR
-> - Productos
+> - Productos\
 > - Región 2023
 >
 > - Elementos del paisaje tipo punto, línea y área.
@@ -311,8 +311,8 @@ Servicio Ventajas Limitaciones Propuestas de uso
 > - Gestión PAC.
 > Verificación visual de
 > datos por técnicos - Útil para validaciones
-> visuales rápidas
-> - Útil para trámites
+> visuales rápidas\
+> - Útil para trámites\
 > (Ayudas PAC)
 > - Requiere conexión
 > estable
@@ -368,8 +368,8 @@ fluida
 SIG clásicos
 - Desarrollo de
 visores y aplicaciones - Ideal para entornos
-web o móviles
-- Bajo consumo de red
+web o móviles\
+- Bajo consumo de red\
 - Acceso selectivo a
 datos vectoriales - Requiere
 
@@ -382,7 +382,7 @@ específicos para su
 correcta integración
 - Portales web ligeros
 - Integrable en SIG y responsivos
-profesionales
+profesionales\
 - Posibilidad de
 personalizar estilo
 cliente
@@ -421,7 +421,7 @@ visores y aplicaciones
 (no masiva)
 - Formularios de
 consulta interna
-- Formato estructurado
+- Formato estructurado\
 (JSON/GEOJSON)
 - Integración en flujos
 de tramitación
@@ -441,7 +441,7 @@ consultas
 (API
 REST)
 
-- Más eficiente que
+- Más eficiente que\
 WFS
 
 - Requiere

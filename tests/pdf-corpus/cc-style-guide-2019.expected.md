@@ -31,10 +31,10 @@ restrict others from doing anything the license permits.
 
 Creative Commons’ Specific Language
 Abbreviations
-Acronyms
+Acronyms\
 Titles and Capitalization
-Numbers
-Spelling
+Numbers\
+Spelling\
 Punctuation
 Referencing and Licensing
 Writing Tips
@@ -114,7 +114,7 @@ global access
 
 Building a vibrant, collaborative global commons
 
-<<PAGE:7|VISIBLE:5>>Mood Board —
+<<PAGE:7|VISIBLE:5>>Mood Board —\
 CC is vibrant, creative, collaborative, innovative, and global.
 
 ## <<PAGE:8|VISIBLE:6>>Brand Identity —
@@ -133,9 +133,9 @@ slate gray (#333333), black, or white. You can download these logos on our websi
 
 • Do not reproduce the logo in any other colors outside of the brand’s primary colors, except for
 black and white (when necessary)
-• Do not use multiple colors for a single logo, choose one
-• Do not add additional graphic elements: drop shadows, glow, dimension, outlines, etc.
-• Do not re-proportion the logo
+• Do not use multiple colors for a single logo, choose one\
+• Do not add additional graphic elements: drop shadows, glow, dimension, outlines, etc.\
+• Do not re-proportion the logo\
 • Do not tint the logo
 
 If you’re a part of the CC Global Network and are looking for guidance on using or adapting CC’s
@@ -192,13 +192,13 @@ accessibility requirements and design best practices, particularly with such bol
 For a guide on how to pair different colors together, including contrast requirements, read “Effective
 Use of Color” by the University of Washington.
 
-Tomato
+Tomato\
 Hex: #ed592f
 RGB: 237 89 47
 HSL: 13 84 55
 CMYK: 0 58 75 7
 
-Gold
+Gold\
 Hex: #efbe00
 RGB: 239 190 0
 HSL: 47 100 46
@@ -222,7 +222,7 @@ RGB: 51 51 51
 HSL: 0 0 20
 CMYK: 0 0 0 80
 
-Orange
+Orange\
 Hex: #fb7729
 RGB: 251 119 41
 HSL: 22 96 57
@@ -308,7 +308,7 @@ over 400 members...” or “We encourage anyone to join the CC Network, it’s 
 CC Licenses
 
 CC licenses should be displayed consistently, therefore please keep in mind the following:
-• License abbreviations should be in all caps
+• License abbreviations should be in all caps\
 • Individual clauses (e.g., BY, NC, etc.) should be strung together with a hyphen.
 
 For example: CC BY-NC-ND
@@ -319,19 +319,19 @@ For more guidance, follow the examples displayed at the top of each license’s 
 
 Academic degrees
 
-Do not use periods for education degrees; therefore, use PhD, BA, BSc, MBA
-Titles
-Do not use periods in title abbreviations that appear in upper case
-E.g., CEO
-Use periods in title abbreviations that appear in upper and lower case
-E.g., Dr.
+Do not use periods for education degrees; therefore, use PhD, BA, BSc, MBA\
+Titles\
+Do not use periods in title abbreviations that appear in upper case\
+E.g., CEO\
+Use periods in title abbreviations that appear in upper and lower case\
+E.g., Dr.\
 Ordinals
 
-Do not use st, nd, rd, or th to follow a number in a date
-E.g., 3 May 2012 instead of 3rd May 2012
-Times
-Use periods in abbreviation a.m. and p.m.
-E.g., 4:00 p.m. instead of 4pm; or 4:00–5:30 p.m.
+Do not use st, nd, rd, or th to follow a number in a date\
+E.g., 3 May 2012 instead of 3rd May 2012\
+Times\
+Use periods in abbreviation a.m. and p.m.\
+E.g., 4:00 p.m. instead of 4pm; or 4:00–5:30 p.m.\
 Dates
 
 Use the international standard with the year in front of the month, followed by the day
@@ -359,7 +359,7 @@ races, places, and addresses.
 CC also follows “title case,” which is a capitalization style that has been traditionally used for a range
 of works, from books and movies to academic research papers.
 
-To help you capitalize titles correctly, check out the “Title Case Converter” tool.
+To help you capitalize titles correctly, check out the “Title Case Converter” tool.\
 Numbers
 
 Always spell out the numbers 0-9 in full, and use numerals for numbers 10 or greater, unless the
@@ -378,12 +378,12 @@ sentence. Capitalize the first word of a quoted sentence.
 Semicolon in a list
 
 A list that is separated by semi-olons rather than commas will be introduced by a colon and will
-not use a comma after “and” in the final listing.
+not use a comma after “and” in the final listing.\
 Comma
 
 Use commas between the elements of a series, and the Oxford comma before the last “and/or”
-in a list of items.
-Em-dash
+in a list of items.\
+Em-dash\
 Appears as a longer dash (— not -), and does not include spaces.
 
 E.g. “To compensate for this lack of data, researchers must often rely on data collected by nongovernment
@@ -401,11 +401,11 @@ Finally, any content created and/or published by CC should also clearly indicate
 whichever CC license it is published under, and follow the attribution requirements under that
 license. All CC licenses can be found via “Share Your License.”
 
-<<PAGE:16|VISIBLE:14>>Writing Tips
-“To be”
+<<PAGE:16|VISIBLE:14>>Writing Tips\
+“To be”\
 Avoid overusing the verb “to be.” Instead, utilize the active tense.
 
-E.g., “It is important that net neutrality survives.” Instead say, “Net neutrality should survive.”
+E.g., “It is important that net neutrality survives.” Instead say, “Net neutrality should survive.”\
 For more examples, check out “Avoid Unecessary ‘To Be’ verbs,” by Writing Commons.
 
 Keep it Short and Concise
@@ -430,7 +430,7 @@ Non-English Words
 Words from a language other than English should appear in italics unless they are commonly
 used in English.
 
-E.g. Millions of Muslims travel to Mecca for hajj (or pilgrimage) each year.
+E.g. Millions of Muslims travel to Mecca for hajj (or pilgrimage) each year.\
 E.g. Advocates for net neutrality arrived en masse at Capitol Hill.
 
 Do not italicize words written in a different alphabet. Include an italicized transliterated version of
@@ -438,7 +438,7 @@ the word in parentheses or in a footnote.
 
 ### <<PAGE:17|VISIBLE:15>>Creative Commons Style Guide | 2019 by Victoria Heath
 
-2019, by Creative Commons.
+2019, by Creative Commons.\
 Except where otherwise noted, this document is published under a Creative Commons
 Attribution 4.0 International license, (CC BY 4.0).
 
@@ -452,16 +452,16 @@ photos/selfmagazine/48546126237/in/album-72157710332198661/. Licensed under CC B
 Page Five
 
 Top: Pombeiro, João. (2019, May). Creative Commons Global Summit Logo 2019. Retrieved from: creativecommons.org/wp-content/uploads/2019/08/2019_CC_GlobalSummit_logo.jpg.
-Licensed under CC BY.
+Licensed under CC BY.\
 Middle-left: Pearce, Andrea. (2019, March). Creative Commons Mosaic. Retrieved from: creativecommons.org/wp-content/
-uploads/2019/10/55517442_10156985356362777_2465421492599390208_o.jpg. Licensed under CC BY.
+uploads/2019/10/55517442_10156985356362777_2465421492599390208_o.jpg. Licensed under CC BY.\
 Middle-right-top: (2018, May 08). State of the Commons 2017. Retrieved from: stateof.creativecommons.org/Licensed under CC
 BY.
 Middle-right-bottom: Burg, Sebastiaan ter. (2019, May 09). CC Global Summit 2019. Retrieved from: flickr.com/photos/
-creativecommons/47959635406/in/album-72157708726481004/ Licensed under CC BY.
+creativecommons/47959635406/in/album-72157708726481004/ Licensed under CC BY.\
 Bottom-left: (2018, May 08). State of the Commons 2017. Retrieved from: stateof.creativecommons.org/Licensed under CC BY.
 Bottom-middle: Burg, Sebastiaan ter. (2019, May 09). CC Global Summit 2019. Retrieved from: flickr.com/photos/
-creativecommons/47959548163/in/album-72157708726481004/ Licensed under CC BY.
+creativecommons/47959548163/in/album-72157708726481004/ Licensed under CC BY.\
 Bottom-right: Burg, Sebastiaan ter. (2019, May 09). CC Global Summit 2019. Retrieved from: flickr.com/photos/
 creativecommons/47959607413/in/album-72157708726481004/ Licensed under CC BY.
 

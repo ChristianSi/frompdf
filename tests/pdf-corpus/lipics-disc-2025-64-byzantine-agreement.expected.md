@@ -8,7 +8,7 @@
 
 ## Roy Shadmon # Ñ
 
-University of California, Santa Cruz, CA, USA
+University of California, Santa Cruz, CA, USA\
 Owen Arden # Ñ
 
 University of California, Santa Cruz, CA, USA
@@ -273,8 +273,8 @@ yet still benefits from the increase in accuracy.
 
 <<PAGE:5|VISIBLE:64:5>>Table 1 Replica set size. d is number of data dimensions.
 
-> Algorithm n ≥
-> OneShot 4f + 1
+> Algorithm n ≥\
+> OneShot 4f + 1\
 > ABA [5] 5f + 1
 > IA [12] 3f + 1
 > BI [3, 4] 2df + 1
@@ -320,7 +320,7 @@ R<sup>j</sup> = (Q<sup>j</sup> ∪ F
 j
 ) ⊆ R where |R<sup>j</sup>
 | ≥ r and PBA(R<sup>j</sup>
-, s) = (x<sub>j</sub> , R<sup>j</sup>
+, s) = (x<sub>j</sub> , R<sup>j</sup>\
 ∗), ||x<sub>i</sub> − x<sub>j</sub> || ≤ 2C
 (s,f)
 0 ∆Q.

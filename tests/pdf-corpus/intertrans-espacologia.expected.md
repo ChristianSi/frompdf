@@ -3,12 +3,12 @@ TRANSDISCIPLINAR
 
 Wallace Lopes
 
-Laboratório Espaço, IPPUR/UFRJ.
-wartelopes@yahoo.com.br
+Laboratório Espaço, IPPUR/UFRJ.\
+wartelopes@yahoo.com.br\
 ORCID: 0000-0001-8031-5851
 
-RECEIVED 09/04/21
-ACEPTED 13/04/21
+RECEIVED 09/04/21\
+ACEPTED 13/04/21\
 PUBLISHED 25/05/21
 
 OPEN ACCESS
@@ -47,10 +47,10 @@ Palavras-chave.Espaço. Lugar. Filosofia. Geografias. Totalidades.
 
 ### 1. Abertura do pensar
 
-> A Natureza ama esconder-se
+> A Natureza ama esconder-se\
 > Heráclito de Éfeso (550-480 a.C.)
 >
-> Tudo que é sólido desmancha no ar...
+> Tudo que é sólido desmancha no ar...\
 > Karl Marx e Friedrich Engels (Manifesto Comunista -1848)
 
 A relação introdutória entre espaço e filosofias sempre existiu; desde o Ocidente clássico

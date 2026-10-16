@@ -193,7 +193,7 @@ Let me start out by telling you what Chick Lit is NOT:
 
 – Cheesy romance novels
 
-> – Bad influence on women
+> – Bad influence on women\
 > – Brain-numbing fluff
 >
 > I’m not speaking for all books with the above criteria – there are some really

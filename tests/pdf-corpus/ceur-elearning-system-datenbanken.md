@@ -2,22 +2,22 @@
 
 # Bereich Datenbanken
 
-Fabian Keller
-Hochschule Harz
-Friedrichstraße 57-59
-38855 Wernigerode
+Fabian Keller\
+Hochschule Harz\
+Friedrichstraße 57-59\
+38855 Wernigerode\
 fkeller@hs-harz.de
 
-Pia-Katharina Habekost
-Hochschule Harz
-Friedrichstraße 57-59
-38855 Wernigerode
+Pia-Katharina Habekost\
+Hochschule Harz\
+Friedrichstraße 57-59\
+38855 Wernigerode\
 u36775@hs-harz.de
 
-Kerstin Schneider
-Hochschule Harz
-Friedrichstraße 57-59
-38855 Wernigerode
+Kerstin Schneider\
+Hochschule Harz\
+Friedrichstraße 57-59\
+38855 Wernigerode\
 kschneider@hs-harz.de
 
 ## ABSTRACT
@@ -62,7 +62,7 @@ enthält auch einen ER-Trainer. An der TU München gibt es
 den DB-Normalizer [1].
 
 32<sup>nd</sup> GI-Workshop on Foundations of Databases (Grundlagen von Datenbanken),
-September 01-03, 2021, Munich, Germany.
+September 01-03, 2021, Munich, Germany.\
 Copyright © 2021 for this paper by its authors. Use permitted under Creative
 Commons License Attribution 4.0 International (CC BY 4.0).
 

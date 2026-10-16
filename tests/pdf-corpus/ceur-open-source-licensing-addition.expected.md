@@ -421,13 +421,13 @@ the project they are working on will stay free.
 Austin, J. (1885). Lectures on jurisprudence, or, The philosophy of positive law. John
 Murray.
 
-GNU (1986). Gnu’s bulletin volume 1 no.1.
+GNU (1986). Gnu’s bulletin volume 1 no.1.\
 Retrieved from https://www.gnu.org/bulletins/bull1.txt
 
-GNU (2007). Gnu general public license v3.
+GNU (2007). Gnu general public license v3.\
 Retrieved from https://www.gnu.org/licenses/gpl-3.0.html
 
-GNU Project (2001). What is free software?
+GNU Project (2001). What is free software?\
 Retrieved from https://www.gnu.org/philosophy/free-sw.html
 
 Gomulkiewicz, R. W. (2009). Open source license proliferation: Helpful diversity or
@@ -442,7 +442,7 @@ source license growth. In IFIP International Conference on Open Source Systems,
 (pp. 245–256). Springer.
 
 Johnson, P. (2021). Open source licenses in 2021: Trends and predictions. Accessed
-2021-06-07.
+2021-06-07.\
 Retrieved from https://www.whitesourcesoftware.com/resources/blog/
 open-source-licenses-trends-and-predictions
 
@@ -463,7 +463,7 @@ Stallman, R. (2013). Why programs must not limit the freedom to run them.
 Retrieved from https://www.gnu.org/philosophy/
 programs-must-not-limit-freedom-to-run.html
 
-Tusky (2019). Tusky pull request #1303 · tuskyapp/tusky.
+Tusky (2019). Tusky pull request #1303 · tuskyapp/tusky.\
 Retrieved from https://github.com/tuskyapp/Tusky/pull/1303/
 
 Van Dijk, J. A. (2006). Digital divide research, achievements and shortcomings. Poetics,

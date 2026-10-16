@@ -18,7 +18,7 @@ https://doi.org/10.1038/s41467-022-30829-z.
 Dieses Dokument wird unter folgenden Bedingungen zur Verfügung gestellt: / This document is made available under
 these conditions:
 
-CC-BY 4.0: Creative Commons: Namensnennung
+CC-BY 4.0: Creative Commons: Namensnennung\
 Weitere Informationen finden Sie unter: / For more information see:
 https://creativecommons.org/licenses/by/4.0/deed.de
 
@@ -867,7 +867,7 @@ dynamical structure factor,
 > 1
 
 ð<sup>q;</sup> <sup>ω</sup>Þ¼ 1
-ffiffiffiffiffi
+ffiffiffiffiffi\
 2π p N
 
 > ∑
@@ -1115,7 +1115,7 @@ paper with input from all authors. F.S. and P.v.L. conceived the project.
 
 Open Access funding enabled and organized by Projekt DEAL.
 
-Competing interests
+Competing interests\
 The authors declare no competing interests.
 
 Additional information

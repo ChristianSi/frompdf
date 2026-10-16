@@ -40,7 +40,7 @@ IMPRESSUM
 
 espero, Neue Folge, Nr. 12 – Version: 1.1 (Januar 2026)
 
-edition espero im Libertad Verlag, Potsdam
+edition espero im Libertad Verlag, Potsdam\
 Homepage: www.edition-espero.de
 
 Redaktionsanschrift: kontakt@edition-espero.de
@@ -58,7 +58,7 @@ Foto: 1939, Quelle: Nationaal Archief, No. 119-0499, Open Source.
 #### Prolog
 
 > „So wie der Mensch die Gerechtigkeit in der Gleichheit sucht,
-> sucht die Gesellschaft die Ordnung in der Anarchie. /
+> sucht die Gesellschaft die Ordnung in der Anarchie. /\
 > Anarchie, das Fehlen eines Herrschers, eines Souveräns,
 > das ist die Regierungsform, der wir uns jeden Tag mehr nähern.“
 >
@@ -1151,7 +1151,7 @@ Kees Boeke hatte mit seinem Konzept der Soziokratie ein pragmatisch-anar-chistis
 Organisationsmodell geschaffen, dessen drei Grundregeln wie
 folgt lauteten:
 
-1. Entscheidungsfindung durch Übereinstimmung (Konsens)
+1. Entscheidungsfindung durch Übereinstimmung (Konsens)\
 2. Selbstorganisation und Autonomie
 
 3. Struktureller Aufbau: Von unten nach oben
@@ -2249,5 +2249,5 @@ Prinzips in größerem Maßstab nur möglich sein wird, wenn und
 in dieser Richtung zu unternehmen, habe ich beschlossen, meinen
 Mitmenschen die oben aufgeführten Gedanken darzulegen.
 
-Bilthoven, 5. Mai 1945
+Bilthoven, 5. Mai 1945\
 KEES BOEKE

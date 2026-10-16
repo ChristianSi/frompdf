@@ -2,15 +2,15 @@
 
 # Content-Oblivious Leader Election on Oriented Asynchronous Rings
 
-Jérémie Chalopin #
-Aix Marseille Univ, CNRS, LIS, Marseille, France
-Yi-Jun Chang #
-National University of Singapore, Singapore
-Lyuting Chen #
-National University of Singapore, Singapore
-Giuseppe A. Di Luna #
-DIAG, Sapienza University of Rome, Italy
-Haoran Zhou #
+Jérémie Chalopin #\
+Aix Marseille Univ, CNRS, LIS, Marseille, France\
+Yi-Jun Chang #\
+National University of Singapore, Singapore\
+Lyuting Chen #\
+National University of Singapore, Singapore\
+Giuseppe A. Di Luna #\
+DIAG, Sapienza University of Rome, Italy\
+Haoran Zhou #\
 National University of Singapore, Singapore
 
 ### Abstract
@@ -60,7 +60,7 @@ NextGenerationEU through projects SERICS (PE00000014).
 licensed under Creative Commons License CC-BY 4.0
 39th International Symposium on Distributed Computing (DISC 2025).
 Editor: Dariusz R. Kowalski; Article No. 51; pp. 51:1–51:7
-Leibniz International Proceedings in Informatics
+Leibniz International Proceedings in Informatics\
 Schloss Dagstuhl – Leibniz-Zentrum für Informatik, Dagstuhl Publishing, Germany
 
 ## <<PAGE:2|VISIBLE:51:2>>1 Introduction
@@ -236,12 +236,12 @@ prescribed number of iterations.
 
 <<PAGE:5|VISIBLE:51:5>>Algorithm 1 Constant Direction Algorithm(ID,boundOnSize).
 
-1 for i ← 1 to boundOnSize ∗ ID do
+1 for i ← 1 to boundOnSize ∗ ID do\
 2 send a message on port 0
 
 3 receive a message on port q // Wait for a message and store the port number in
-variable q
-4 if q = 0 then break
+variable q\
+4 if q = 0 then break\
 5 if q = 0 then
 
 > /* if a process enters this branch, then it is not the process with minimum ID
@@ -249,24 +249,24 @@ variable q
 > 6 send a message on port 1
 
 7 receive a message on port 1 // Wait for a message on port 1.
-8 repeat
+8 repeat\
 9 receive a message on port q
-10 send a message on port 1 − q
-11 until received two messages on port 0
-12 return Non-Leader
+10 send a message on port 1 − q\
+11 until received two messages on port 0\
+12 return Non-Leader\
 13 else
 
 /* only the process with minimum ID enters this branch */
-14 send a message on port 1
-15 receive a message on port 0
-16 send a message on port 1
-17 repeat
-18 receive a message on port q
-19 if q = 1 then
-20 send a message on port 0
-21 until q = 0
-22 send a message on port 1
-23 receive a message on port 0
+14 send a message on port 1\
+15 receive a message on port 0\
+16 send a message on port 1\
+17 repeat\
+18 receive a message on port q\
+19 if q = 1 then\
+20 send a message on port 0\
+21 until q = 0\
+22 send a message on port 1\
+23 receive a message on port 0\
 24 return Leader
 
 This process then enters the termination detection phase (green lines). In this phase, the
@@ -363,7 +363,7 @@ U
 in which each process sends O(log<sup>2</sup> U) messages clockwise and O(log U) messages
 counterclockwise, for a total of O(n log<sup>2</sup> U) messages.
 
-<<PAGE:7|VISIBLE:51:7>>References
+<<PAGE:7|VISIBLE:51:7>>References\
 1 H. Attiya and J. L. Welch. Distributed Computing: Fundamentals, Simulations, and Advanced
 Topics. Wiley, 2004.
 
