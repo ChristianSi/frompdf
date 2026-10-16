@@ -12,6 +12,7 @@ from frompdf.continuations import (
     join_fragments,
 )
 from frompdf.footnotes import build_footnote, extract_footnotes, place_footnotes
+from frompdf.front_matter import format_front_matter, has_alphanumeric
 from frompdf.heading_candidates import find_typographic_heading_lines
 from frompdf.line_breaks import hard_line_break_ids
 from frompdf.models import Block, BlockQuote, Heading, Line, PageNumber, Paragraph
@@ -407,13 +408,17 @@ def detect_headings(
     document_median_weight: float | None,
     typographic_heading_indices: set[int] | None = None,
 ) -> list[Block]:
-    """Recognize headings from adjusted sizes or confirmed source-line evidence."""
+    """Recognize headings from adjusted sizes or confirmed source-line evidence.
+
+    Heading levels are compacted, but may still exceed Markdown's six levels.
+    """
     converted_blocks: list[Block] = []
     typographic_heading_indices = typographic_heading_indices or set()
 
     for index, block_obj in enumerate(block_list):
-        if len(block_obj.fragments) > 1:
-            # Text continuing across a page boundary is not a heading.
+        if len(block_obj.fragments) > 1 or not has_alphanumeric(block_obj.text):
+            # Text continuing across a page boundary is not a heading, nor are
+            # ornaments and rules without letters or digits.
             converted_blocks.append(block_obj)
             continue
         heading_level = initial_heading_level(block_obj, default_font_size, document_median_weight)
@@ -439,7 +444,6 @@ def detect_headings(
         )
 
     compact_unused_heading_levels(converted_blocks)
-    merge_extra_heading_levels(converted_blocks)
     return converted_blocks
 
 
@@ -492,10 +496,19 @@ def lines_to_markdown_blocks(
             )
         )
 
+    source_blocks = block_list
     block_list = detect_headings(
         block_list, default_font_size, document_median_weight, typographic_heading_indices
     )
-    positioned_blocks = list(zip(block_positions, block_list, strict=True))
+    dropped = format_front_matter(block_list, source_blocks)
+    positioned_blocks = [
+        (position, block_obj)
+        for index, (position, block_obj) in enumerate(zip(block_positions, block_list, strict=True))
+        if index not in dropped
+    ]
+    heading_blocks = [block_obj for _, block_obj in positioned_blocks]
+    compact_unused_heading_levels(heading_blocks)
+    merge_extra_heading_levels(heading_blocks)
     positioned_blocks.extend(
         (
             note.end_index,

@@ -9,6 +9,19 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
 
 ### Added
 
+- Subtitles, author names, and chapter labels near a document title are
+  rendered as bold paragraphs rather than taking up heading levels of their
+  own, so section headings keep the levels right below the title. This
+  applies after the document's first heading and its first top-level heading,
+  up to the body text on the same page. Subtitles are recognized by a heading
+  level used nowhere else, and author names by their capitalized words,
+  initials, and particles. Ornaments in that area, such as rows of bullets,
+  are dropped.
+- Text that Markdown would read as syntax is escaped, such as asterisks,
+  underscores outside words, and heading, quote, and list markers at line
+  starts. Escapes are limited to where they are needed. List markers at the
+  start of a block remain unescaped, so lists in the source still render as
+  lists.
 - Deliberate line breaks within paragraphs and block quotes, such as those in
   epigraphs and their attributions, author and affiliation cards, or lists of
   dates, are preserved as CommonMark hard line breaks (a trailing backslash).
@@ -37,6 +50,16 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
 
 ### Changed
 
+- Titles set in several ragged or centered lines are kept as one heading,
+  even when `pdftext` splits them into separate blocks or their extracted
+  sizes vary slightly. Fragments of one physical line in the same font face
+  are kept together despite size differences caused by superscripts.
+- A change of both font size and face after a short line now starts a new
+  block when one of the lines is larger than body text, separating author
+  names from affiliations or a heading from the following text.
+- Blocks without letters or digits never become headings.
+- Glyphs from icon fonts, such as FontAwesome e-mail and ORCID symbols next to
+  author names, are removed.
 - A single uninterrupted footnote sequence is collected at the document end
   under H2. Multiple groups prefer section boundaries reflecting their scope,
   without skipping boundaries associated with numbering restarts. Notes titles

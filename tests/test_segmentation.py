@@ -345,5 +345,169 @@ class ParagraphSegmentationTests(unittest.TestCase):
         self.assertEqual(len(group_texts(lines)), 2)
 
 
+def body_lines(first_line_no: int, count: int = 6, *, block_no: int = 9) -> list[Line]:
+    """Build an ordinary body paragraph establishing the page's rhythm and size."""
+    return [
+        line(
+            f'ordinary body text line number {index} continues',
+            first_line_no + index,
+            block_no=block_no,
+        )
+        for index in range(count - 1)
+    ] + [line('ordinary body ending.', first_line_no + count - 1, block_no=block_no, x2=110.0)]
+
+
+def display_line(
+    text: str,
+    top: float,
+    *,
+    block_no: int,
+    x1: float = 20.0,
+    x2: float = 200.0,
+    font_size: float = 18.0,
+    font_name: str = 'Title-Bold',
+) -> Line:
+    """Build a display-sized line at an explicit position."""
+    return line(
+        text,
+        int(top),
+        block_no=block_no,
+        font_size=font_size,
+        x1=x1,
+        x2=x2,
+        y1=top,
+        avg_weight=700.0,
+        font_name=font_name,
+    )
+
+
+class DisplayLineSegmentationTests(unittest.TestCase):
+    def test_joins_ragged_title_lines_across_pdftext_blocks(self) -> None:
+        lines = [
+            display_line('Brief Announcement:', 0.0, block_no=1, x2=120.0),
+            display_line('Proximal Agreement Improved', 22.0, block_no=2, x2=190.0),
+            display_line('Datastreams', 44.0, block_no=3, x2=90.0),
+            *body_lines(8),
+        ]
+
+        groups = group_texts(lines)
+
+        self.assertEqual(
+            groups[0], ['Brief Announcement:', 'Proximal Agreement Improved', 'Datastreams']
+        )
+
+    def test_joins_centered_title_lines_with_different_left_edges(self) -> None:
+        lines = [
+            display_line('Interaktives E-Learning-System Im', 0.0, block_no=1, x1=30.0, x2=210.0),
+            display_line('Bereich Datenbanken', 21.0, block_no=2, x1=70.0, x2=170.0),
+            *body_lines(8),
+        ]
+
+        self.assertEqual(
+            group_texts(lines)[0], ['Interaktives E-Learning-System Im', 'Bereich Datenbanken']
+        )
+
+    def test_keeps_display_lines_apart_in_other_faces_sizes_or_numbering(self) -> None:
+        lines = [
+            display_line('Main Title of the Paper', 0.0, block_no=1),
+            display_line('A Subtitle in Another Face', 22.0, block_no=2, font_name='Title-Regular'),
+            display_line('Much Smaller Display Line', 44.0, block_no=3, font_size=13.0),
+            display_line('Section Heading Above', 70.0, block_no=4, x2=150.0),
+            display_line('2 Numbered Section', 92.0, block_no=5),
+            *body_lines(10),
+        ]
+
+        groups = group_texts(lines)
+
+        self.assertEqual(
+            [group[0] for group in groups[:5]],
+            [
+                'Main Title of the Paper',
+                'A Subtitle in Another Face',
+                'Much Smaller Display Line',
+                'Section Heading Above',
+                '2 Numbered Section',
+            ],
+        )
+
+    def test_keeps_display_lines_apart_beyond_title_leading(self) -> None:
+        lines = [
+            display_line('First Display Line', 0.0, block_no=1),
+            display_line('Widely Separated Line', 30.0, block_no=2),
+            *body_lines(8),
+        ]
+
+        self.assertEqual(len(group_texts(lines)[0]), 1)
+
+
+class FaceChangeSegmentationTests(unittest.TestCase):
+    def test_splits_alternating_author_names_and_affiliations(self) -> None:
+        name_style = {'font_size': 12.0, 'font_name': 'Roman12-Bold', 'avg_weight': 540.0}
+        affiliation_style = {'font_size': 9.0, 'font_name': 'Roman9-Regular', 'avg_weight': 450.0}
+        lines = [
+            *body_lines(1, block_no=1),
+            line('Jane Doe', 8, block_no=2, x2=80.0, **name_style),
+            line('University of Somewhere, Country', 9, block_no=2, x2=150.0, **affiliation_style),
+            line('John Roe', 10, block_no=2, x2=80.0, **name_style),
+            line('Institute of Elsewhere, Country', 11, block_no=2, x2=150.0, **affiliation_style),
+        ]
+
+        groups = group_texts(lines)
+
+        self.assertEqual(
+            groups[1:],
+            [
+                ['Jane Doe'],
+                ['University of Somewhere, Country'],
+                ['John Roe'],
+                ['Institute of Elsewhere, Country'],
+            ],
+        )
+
+    def test_keeps_card_lines_smaller_than_body_or_in_one_face_together(self) -> None:
+        lines = [
+            *body_lines(1, block_no=1),
+            line('Jane Doe', 8, block_no=2, x2=80.0, font_size=12.0, font_name='Sans'),
+            line('Hochschule Harz', 9, block_no=2, x2=90.0, font_size=10.0, font_name='Sans'),
+            line(
+                'jane@example.org', 10, block_no=2, x2=100.0, font_size=8.0, font_name='Sans-Italic'
+            ),
+            line('ORCID 0000-0001', 11, block_no=2, x2=100.0, font_size=6.5, font_name='Sans'),
+        ]
+
+        self.assertEqual(len(group_texts(lines)), 2)
+
+
+class SameLineFragmentTests(unittest.TestCase):
+    def test_joins_same_face_fragments_despite_size_difference(self) -> None:
+        lines = [
+            *body_lines(1, block_no=1),
+            line('Jane Doe and Richard', 8, block_no=2, x2=120.0, font_size=12.0),
+            line(
+                ', John Roe and Others', 8, block_no=3, x1=120.0, x2=200.0, y1=97.0, font_size=9.5
+            ),
+        ]
+
+        self.assertEqual(group_texts(lines)[-1], ['Jane Doe and Richard', ', John Roe and Others'])
+
+    def test_keeps_same_line_fragments_in_other_faces_apart(self) -> None:
+        lines = [
+            *body_lines(1, block_no=1),
+            line('Jane Doe and Richard', 8, block_no=2, x2=120.0, font_size=12.0),
+            line(
+                'Unrelated Label Text',
+                8,
+                block_no=3,
+                x1=120.0,
+                x2=200.0,
+                y1=97.0,
+                font_size=9.5,
+                font_name='Label-Sans',
+            ),
+        ]
+
+        self.assertEqual(len(group_texts(lines)[-1]), 1)
+
+
 if __name__ == '__main__':
     unittest.main()

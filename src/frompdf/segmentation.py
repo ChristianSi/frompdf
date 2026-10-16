@@ -37,10 +37,24 @@ FONT_WEIGHT_BREAK = 200.0
 MIN_COLUMN_GAP = 40.0
 MIN_COLUMN_GAP_EM = 4.0
 
+# Lines this much larger than the page's body text are display text, such as
+# titles. Their own leading, rather than the body rhythm, shows continuation.
+# Within such a title, sizes may vary somewhat when they are estimated from
+# glyph boxes, as subscripts and descenders enlarge them.
+DISPLAY_LINE_MIN_FONT_RATIO = 1.16
+DISPLAY_LINE_MAX_SIZE_RATIO = 1.25
+DISPLAY_LINE_MAX_ADVANCE_EM = 1.4
+
+# Same-line fragments in one font face with a gap of at most half an em are
+# pieces of one run of text, even if superscripts change their extracted size.
+MAX_SAME_FACE_FRAGMENT_GAP_EM = 0.5
+
 # Sparse synthetic or highly irregular pages should retain pdftext's decisions.
 MIN_RHYTHM_SAMPLES = 3
 MIN_COLUMN_LINES = 5
 
+# Numbered headings and list items start a new block even in display type.
+NUMBERED_OR_BULLETED_START_PATTERN = re.compile(r'^(?:\d+(?:\.\d+)*\.?|[IVXLC]+\.|[•◦▪●■])\s')
 SENTENCE_END_PATTERN = re.compile(r'[.!?…][’”\'"\]\)}»›]*(?:\d+)?$')
 WORD_BREAK_HYPHEN_PATTERN = re.compile(r'\w[-\u00ad]$')
 FONT_SUBSET_PREFIX_PATTERN = re.compile(r'^[A-Z]{6}\+')
@@ -740,6 +754,76 @@ def high_confidence_continuation(left: Line, right: Line, context: PageContext) 
     return open_full_line or hyphenated_line or aligned_open_continuation(left, right, context)
 
 
+def continues_display_line(previous: Line, current: Line, context: PageContext) -> bool:
+    """Return whether current continues a title or other display text from previous.
+
+    Ragged or centered titles rarely fill their measure, so the usual evidence
+    for a continued line is missing. Instead, both lines must be clearly larger
+    than body text, share their font face and alignment, and follow the
+    title's own tight leading.
+    """
+    if (
+        previous.font_size is None
+        or current.font_size is None
+        or previous.x1 is None
+        or previous.x2 is None
+        or current.x1 is None
+        or current.x2 is None
+        or previous.y1 is None
+        or current.y1 is None
+        or not is_textual_line(previous)
+        or not is_textual_line(current)
+        or NUMBERED_OR_BULLETED_START_PATTERN.match(current.text)
+    ):
+        return False
+    smaller = min(previous.font_size, current.font_size)
+    larger = max(previous.font_size, current.font_size)
+    if (
+        smaller < context.font_size * DISPLAY_LINE_MIN_FONT_RATIO
+        or larger > smaller * DISPLAY_LINE_MAX_SIZE_RATIO
+        or normalized_font_name(previous.font_name) != normalized_font_name(current.font_name)
+        or not 0 < current.y1 - previous.y1 <= larger * DISPLAY_LINE_MAX_ADVANCE_EM
+    ):
+        return False
+    previous_center = (previous.x1 + previous.x2) / 2
+    current_center = (current.x1 + current.x2) / 2
+    return near(previous.x1, current.x1, larger) or near(previous_center, current_center, larger)
+
+
+def changes_face_after_short_line(previous: Line, current: Line, context: PageContext) -> bool:
+    """Return whether a short line is followed by text of a visibly different role.
+
+    A change of both size and face after a deliberately short line separates
+    items such as author names and affiliations, or a heading and its text, even
+    when each style lasts only one line. One of the lines must be larger than
+    body text; changes among smaller lines, as in address cards, are kept.
+    """
+    if (
+        not is_textual_line(previous)
+        or not is_textual_line(current)
+        or not significant_size_change(previous, current)
+        or normalized_font_name(previous.font_name) == normalized_font_name(current.font_name)
+    ):
+        return False
+    larger = max(previous.font_size or 0.0, current.font_size or 0.0)
+    if larger < context.font_size or not visibly_different_font_sizes(larger, context.font_size):
+        return False
+    column = column_for_line(previous, context)
+    font_size = previous.font_size or context.font_size
+    return column is not None and line_is_short(previous, column, font_size)
+
+
+def same_face_fragment(previous: Line, current: Line) -> bool:
+    """Return whether two same-line fragments adjoin in one font face."""
+    if previous.x2 is None or current.x1 is None:
+        return False
+    font_size = max(previous.font_size or 0.0, current.font_size or 0.0)
+    return (
+        normalized_font_name(previous.font_name) == normalized_font_name(current.font_name)
+        and current.x1 - previous.x2 <= font_size * MAX_SAME_FACE_FRAGMENT_GAP_EM
+    )
+
+
 def should_start_new_group(
     preceding: Line | None,
     previous: Line,
@@ -756,8 +840,11 @@ def should_start_new_group(
         return pdftext_break and not (
             is_prose_line(previous)
             and is_prose_line(current)
-            and compatible_style(previous, current)
+            and (compatible_style(previous, current) or same_face_fragment(previous, current))
         )
+    # Display lines may be centered in a different column than they start in.
+    if continues_display_line(previous, current, context):
+        return False
     if not same_flow(previous, current, context):
         return pdftext_break
 
@@ -790,6 +877,8 @@ def should_start_new_group(
         ):
             return True
         if begins_first_line_indent(previous, current, following, context):
+            return True
+        if changes_face_after_short_line(previous, current, context):
             return True
     if pdftext_break and high_confidence_continuation(previous, current, context):
         return False

@@ -166,16 +166,21 @@ The implementation is split into focused modules under `src/frompdf`:
 - `cli.py` implements the command-line interface.
 - `continuations.py` recognizes text continuing at the top of the next column
   or page and assembles page-aware text fragments for blocks and notes.
+- `escaping.py` escapes text that Markdown would otherwise read as syntax,
+  checking inline characters everywhere and block syntax at line starts.
 - `footnotes.py` detects numbered bottom notes, assembles continuations with
   page-aware text, and places numeric groups in Notes sections.
+- `front_matter.py` renders subtitles, author names, and chapter labels near
+  document titles as bold paragraphs and drops ornaments between them.
 - `heading_candidates.py` identifies compact centered titles using caps or
   italic styling, established body columns, and surrounding whitespace.
 - `line_breaks.py` recognizes deliberate line breaks within blocks, where the
   next word would have fit on the line or the font changes after a short line,
   extending them to all line ends of blocks set line by line in short
   centered lines.
-- `lines.py` repairs detached diacritics, flattens `pdftext` output, and
-  extracts line geometry, typography, and inline script ranges.
+- `lines.py` repairs detached diacritics, removes icon-font glyphs, flattens
+  `pdftext` output, and extracts line geometry, typography, and inline script
+  ranges.
 - `models.py` defines line, page-number, and Markdown block records.
 - `output.py` writes diagnostic line and page-number CSV files and serializes
   Markdown output.
@@ -199,8 +204,9 @@ Important concepts:
 - `PageNumber` in `models.py` stores the raw page number and optional visible
   page number.
 - `Block` in `models.py` is the base Markdown block type.
-- `Paragraph`, `BlockQuote`, `Heading`, and `Footnote` in `models.py` are
-  supported block subclasses. `TextFragment` retains the source page and
+- `Paragraph`, `StrongParagraph`, `BlockQuote`, `Heading`, and `Footnote` in
+  `models.py` are supported block subclasses. `StrongParagraph` is a paragraph
+  rendered in bold. `TextFragment` retains the source page and
   preceding whitespace of each piece of a block's text, so page markers can
   occur within paragraphs, block quotes, and notes.
 - `HARD_LINE_BREAK` in `models.py` marks deliberate line breaks in block text
@@ -211,7 +217,8 @@ Important concepts:
 The current pipeline is roughly:
 
 1. Extract raw `pdftext` page data.
-2. Repair detached, geometrically positioned diacritics in the raw data.
+2. Repair detached, geometrically positioned diacritics in the raw data and
+   remove glyphs from icon fonts.
 3. Flatten the result into line records with geometry, typography, and
    conservative character-level superscript/subscript annotations.
 4. Optionally dump the unfiltered line records to `-lines.csv`.
@@ -222,8 +229,11 @@ The current pipeline is roughly:
 8. Detect and extract numbered footnote regions using typography and geometry,
    assembling supported paragraph and adjacent-page continuations.
 9. Segment each page's body into blocks using `pdftext` hints, geometry,
-   typography, indentation, and line-spacing evidence. Confirmed centered
-   title candidates override boundaries only at and within those titles.
+   typography, indentation, and line-spacing evidence. Display-sized lines
+   sharing face, alignment, and tight leading stay together, as in titles,
+   while a change of both size and face after a short line, as between author
+   names and affiliations, starts a new block. Confirmed centered title
+   candidates override boundaries only at and within those titles.
 10. Join blocks continuing at the top of the next column or page. Similar
     typography, a full last line, a non-indented first line, and consistent
     block-quote classification are required. An open sentence, a lower-case
@@ -234,8 +244,11 @@ The current pipeline is roughly:
     each block, preserving script ranges and attributing words joined across
     pages to their starting page.
 12. Reclassify heading-like paragraphs using size and confirmed title
-    candidates, which take precedence over block quotes, and normalize their
-    heading levels.
+    candidates, which take precedence over block quotes. Blocks without
+    letters or digits never become headings. In the front matter following the
+    first heading and the first top-level heading, render subtitles, author
+    names, and chapter labels in bold instead and drop ornaments. Then
+    normalize heading levels.
 13. Repair note text while retaining source-page boundaries, group notes when
     numbering restarts, and place a single sequence at the document end.
     Multiple groups prefer boundaries matching the sections they cover,
@@ -244,6 +257,9 @@ The current pipeline is roughly:
     share one Notes title. Default H2/H3 Notes titles match a deeper following
     heading when necessary to prevent accidental parentage.
 14. Serialize the blocks as Markdown in `.md`, including compact numbered notes.
+    Text that Markdown would read as syntax is escaped; list markers starting
+    a block, and further items of the same kind, remain unescaped, so lists in
+    the source still render as lists.
     Inline scripts become `<sup>`/`<sub>` tags; consumed footnote labels remain
     ordinary list markers.
     Restarted lists sharing a Notes section are separated by an empty HTML

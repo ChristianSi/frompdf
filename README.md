@@ -53,6 +53,8 @@ frompdf currently detects and serializes:
   and page boundaries
 - headings, based mostly on font size plus a document-relative font-weight
   boost
+- subtitles, author names, and chapter labels near a document title, rendered
+  as bold paragraphs instead of headings
 - block quotes, based on indentation
 - repeated headers and footers, which are removed from the Markdown output
 - visible page numbers found in removed headers or footers
@@ -62,6 +64,8 @@ frompdf currently detects and serializes:
 - inline superscripts and subscripts, preserved as `<sup>` and `<sub>` tags
 - deliberate line breaks within blocks, such as in epigraphs or address
   cards, preserved as hard line breaks (a trailing backslash)
+- escaping of text that Markdown would otherwise read as syntax; list markers
+  starting a block are kept, so lists in the source render as lists
 
 The internal block model tracks the raw PDF page number and, when available,
 the visible page number for each block.

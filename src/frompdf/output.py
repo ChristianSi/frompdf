@@ -3,6 +3,7 @@ from dataclasses import asdict
 from pathlib import Path
 from typing import TextIO
 
+from frompdf.escaping import escape_markdown, shift_index
 from frompdf.models import (
     HARD_LINE_BREAK,
     Block,
@@ -11,9 +12,10 @@ from frompdf.models import (
     Heading,
     Line,
     PageNumber,
+    StrongParagraph,
     TextFragment,
 )
-from frompdf.scripts import render_scripts
+from frompdf.scripts import AnnotatedText, join_annotated_texts, render_scripts
 
 
 def dump_csv(line_list: list[Line], output_path: Path) -> None:
@@ -72,18 +74,43 @@ def format_page_marker(page_number: PageNumber) -> str:
 
 
 def render_fragments(
-    block_obj: Block, previous_page: PageNumber | None, page_markers: bool = False
+    block_obj: Block,
+    previous_page: PageNumber | None,
+    page_markers: bool = False,
+    opening: str = '',
 ) -> str:
-    """Render block text, adding page markers where its fragments change pages."""
+    """Render escaped block text, adding page markers where its fragments change pages.
+
+    The opening markup, if any, follows the first page marker, so markers stay
+    outside inline markup enclosing the whole block.
+    """
     fragments = block_obj.fragments or [
         TextFragment(block_obj.text, block_obj.start_page, scripts=block_obj.scripts)
     ]
+    # Escape the whole block at once, as syntax depends on line starts and
+    # neighboring characters across fragment boundaries.
+    escaped, insertions = escape_markdown(
+        join_annotated_texts(
+            AnnotatedText(fragment.separator) + AnnotatedText(fragment.text, fragment.scripts)
+            for fragment in fragments
+        ),
+        heading=isinstance(block_obj, Heading),
+        # Lists inside a note would be nested in the note's own list item.
+        block_list_markers=not isinstance(block_obj, Footnote),
+        block_line_start=not opening,
+    )
     parts: list[str] = []
-    for fragment in fragments:
+    offset = 0
+    for fragment_index, fragment in enumerate(fragments):
         marker = ''
         if page_markers and (previous_page is None or fragment.page.raw != previous_page.raw):
             marker = format_page_marker(fragment.page)
-        parts.append(fragment.separator + marker + render_scripts(fragment.text, fragment.scripts))
+        if not fragment_index:
+            marker += opening
+        text_start = offset + len(fragment.separator)
+        offset = text_start + len(fragment.text)
+        piece = escaped.slice(shift_index(insertions, text_start), shift_index(insertions, offset))
+        parts.append(fragment.separator + marker + render_scripts(piece.text, piece.scripts))
         previous_page = fragment.page
     # A backslash at the end of a line is CommonMark's portable hard line break.
     return ''.join(parts).replace(HARD_LINE_BREAK, '\\')
@@ -110,7 +137,10 @@ def markdown_to_text(
             else:
                 output_file.write('\n\n')
 
-        text = render_fragments(block_obj, previous_page, page_markers)
+        if isinstance(block_obj, StrongParagraph):
+            text = render_fragments(block_obj, previous_page, page_markers, opening='**') + '**'
+        else:
+            text = render_fragments(block_obj, previous_page, page_markers)
         if isinstance(block_obj, Footnote):
             prefix = f'{block_obj.label}. '
             text_lines = text.split('\n')

@@ -74,6 +74,11 @@ class Paragraph(Block):
 
 
 @dataclass
+class StrongParagraph(Paragraph):
+    """A Markdown paragraph rendered with strong emphasis, such as a subtitle or author name."""
+
+
+@dataclass
 class BlockQuote(Block):
     """A Markdown block quote."""
 

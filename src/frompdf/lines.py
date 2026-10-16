@@ -28,6 +28,13 @@ SPACING_TO_COMBINING = {
     '~': '\u0303',
 }
 
+# Icon fonts map pictograms, such as e-mail, ORCID, or home-page symbols next
+# to author names, to arbitrary letters and punctuation, so their text is noise.
+ICON_FONT_NAME_PATTERN = re.compile(
+    r'font[ _-]?awesome|academicons|material[ _-]?(?:icons|symbols)|glyphicons|ionicons',
+    flags=re.IGNORECASE,
+)
+
 BOLD_FONT_NAME_PATTERN = re.compile(
     r'(?:bold|black|heavy|semi[- ]?bold|demi[- ]?bold|[.+_-](?:b|bd|sb)(?:it)?$)',
     flags=re.IGNORECASE,
@@ -301,6 +308,34 @@ def normalize_detached_diacritics(page_list: Sequence[Page]) -> None:
 
                     for char_dict, replacement in edits.values():
                         char_dict['char'] = replacement
+
+
+def is_icon_span(span_dict: PdfTextSpan) -> bool:
+    """Return whether a span uses an icon font."""
+    font_name = span_dict.get('font', {}).get('name')
+    return isinstance(font_name, str) and bool(ICON_FONT_NAME_PATTERN.search(font_name))
+
+
+def remove_icon_glyphs(page_list: Sequence[Page]) -> None:
+    """Remove icon-font spans in place, with the space separating each from its text."""
+    for page_dict in page_list:
+        for block_dict in page_dict.get('blocks', []):
+            for line_dict in block_dict.get('lines', []):
+                spans = line_dict.get('spans', [])
+                if not any(is_icon_span(span_dict) for span_dict in spans):
+                    continue
+                kept: list[PdfTextSpan] = []
+                for index, span_dict in enumerate(spans):
+                    if not is_icon_span(span_dict):
+                        kept.append(span_dict)
+                        continue
+                    following = spans[index + 1] if index + 1 < len(spans) else None
+                    if kept and not kept[-1].get('text', '').strip():
+                        kept.pop()
+                    elif following is not None and not following.get('text', '').strip():
+                        # Only a space may separate the icon from following text.
+                        following['text'] = following.get('text', '').replace(' ', '')
+                line_dict['spans'] = kept
 
 
 def bbox_height(obj: PdfTextLine | PdfTextSpan) -> float | None:
