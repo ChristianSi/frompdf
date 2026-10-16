@@ -117,6 +117,9 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
   this way are now detected against the neighboring text, so markers such as
   `OSeO₃⁵¹.` no longer read as ordinary digits. The `-lines.csv` dump gains
   `space_before` and `space_after` columns.
+- Spurious `pdftext` block edges after such split lines no longer start a new
+  paragraph mid-sentence. The left edge of the whole visual line, rather than
+  of its last piece, now decides whether the text continues.
 
 ## 0.1.0 - 2026-07-09
 

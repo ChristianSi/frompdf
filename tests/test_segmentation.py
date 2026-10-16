@@ -1,7 +1,12 @@
 import unittest
 
 from frompdf.models import Line
-from frompdf.segmentation import build_page_context, normalized_font_family, segment_lines
+from frompdf.segmentation import (
+    build_page_context,
+    normalized_font_family,
+    segment_lines,
+    visual_line_start,
+)
 
 
 def line(
@@ -507,6 +512,32 @@ class SameLineFragmentTests(unittest.TestCase):
         ]
 
         self.assertEqual(len(group_texts(lines)[-1]), 1)
+
+    def fraction_paragraph(self, last_text: str) -> list[Line]:
+        """Build a paragraph whose fourth line holds an inline fraction before a parser edge."""
+        return [
+            line('first line of a paragraph that', 1),
+            line('continues on its second line and', 2),
+            line('on its third line, then says that', 3),
+            line('one must send', 4, x2=120.0),
+            line('n log IDmax', 4, x1=121.0, x2=150.0, y1=46.5),
+            line('n', 4, x1=140.0, x2=145.0, y1=53.5, font_size=7.0),
+            line(last_text, 4, x1=152.0),
+            line('originally established and', 5, block_no=2),
+            line('continued until its ending.', 6, block_no=2, x2=140.0),
+        ]
+
+    def test_visual_line_start_passes_stacked_fraction(self) -> None:
+        lines = self.fraction_paragraph('messages. Although')
+
+        self.assertIs(visual_line_start(lines, 6), lines[3])
+        self.assertIs(visual_line_start(lines, 3), lines[3])
+
+    def test_parser_edge_after_line_ending_in_fragments_is_overridden(self) -> None:
+        self.assertEqual(len(group_texts(self.fraction_paragraph('messages. Although'))), 1)
+
+    def test_parser_edge_after_completed_sentence_ending_in_fragments_is_kept(self) -> None:
+        self.assertEqual(len(group_texts(self.fraction_paragraph('messages. Done.'))), 2)
 
 
 if __name__ == '__main__':

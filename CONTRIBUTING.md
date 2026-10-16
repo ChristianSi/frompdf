@@ -238,7 +238,9 @@ The current pipeline is roughly:
    sharing face, alignment, and tight leading stay together, as in titles,
    while a change of both size and face after a short line, as between author
    names and affiliations, starts a new block. Confirmed centered title
-   candidates override boundaries only at and within those titles.
+   candidates override boundaries only at and within those titles. Where
+   `pdftext` starts a new block after a line split into pieces, the left edge
+   of the whole visual line decides whether the text continues.
 10. Join blocks continuing at the top of the next column or page. Similar
     typography, a full last line, a non-indented first line, and consistent
     block-quote classification are required. An open sentence, a lower-case

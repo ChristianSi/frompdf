@@ -746,8 +746,41 @@ def aligned_open_continuation(left: Line, right: Line, context: PageContext) -> 
     return both_inset and right_edges_match and not ends_sentence(left.text)
 
 
-def high_confidence_continuation(left: Line, right: Line, context: PageContext) -> bool:
-    """Return whether geometry safely overrides a spurious pdftext block edge."""
+def visual_line_start(line_list: list[Line], index: int) -> Line:
+    """Return the first piece of the visual line ending with the line at index.
+
+    Pieces share the vertical band of the last one and precede it on the left.
+    Unlike chaining same_physical_line, this also passes stacked pieces such
+    as the denominator of an inline fraction, which sits lower than the text.
+    """
+    last = line_list[index]
+    start = last
+    if last.x1 is None or last.y1 is None or last.y2 is None:
+        return start
+    font_size = max(last.font_size or 0.0, 1.0)
+    for other in reversed(line_list[:index]):
+        if (
+            other.page_no != last.page_no
+            or other.x2 is None
+            or other.y1 is None
+            or other.y2 is None
+            or other.x2 > last.x1 + font_size * 0.25
+        ):
+            break
+        overlap = min(other.y2, last.y2) - max(other.y1, last.y1)
+        if overlap < min(other.y2 - other.y1, last.y2 - last.y1) * 0.5:
+            break
+        start = other
+    return start
+
+
+def high_confidence_continuation(
+    left: Line, right: Line, context: PageContext, left_start: Line | None = None
+) -> bool:
+    """Return whether geometry safely overrides a spurious pdftext block edge.
+
+    left_start begins the visual line ending with left, if left is a later piece.
+    """
     if (
         context.rhythm_sample_count < MIN_RHYTHM_SAMPLES
         or not is_prose_line(left)
@@ -762,7 +795,7 @@ def high_confidence_continuation(left: Line, right: Line, context: PageContext) 
     if column is None or column.line_count < MIN_COLUMN_LINES:
         return False
     font_size = right.font_size or context.font_size
-    left_edges_match = near(left.x1, right.x1 or column.left, font_size)
+    left_edges_match = near((left_start or left).x1, right.x1 or column.left, font_size)
     open_full_line = (
         left_edges_match and line_is_full(left, column, font_size) and not ends_sentence(left.text)
     )
@@ -846,8 +879,12 @@ def should_start_new_group(
     current: Line,
     following: Line | None,
     context: PageContext,
+    previous_start: Line | None = None,
 ) -> bool:
-    """Decide whether current begins a new page-local Markdown block."""
+    """Decide whether current begins a new page-local Markdown block.
+
+    previous_start begins the visual line ending with previous, if different.
+    """
     if previous.page_no != current.page_no:
         return True
     pdftext_break = previous.block_no != current.block_no
@@ -896,7 +933,7 @@ def should_start_new_group(
             return True
         if changes_face_after_short_line(previous, current, context):
             return True
-    if pdftext_break and high_confidence_continuation(previous, current, context):
+    if pdftext_break and high_confidence_continuation(previous, current, context, previous_start):
         return False
     return pdftext_break
 
@@ -920,7 +957,14 @@ def segment_page(
         if previous_heading is not None or current_heading is not None:
             starts_group = previous_heading != current_heading
         else:
-            starts_group = should_start_new_group(preceding, previous, current, following, context)
+            starts_group = should_start_new_group(
+                preceding,
+                previous,
+                current,
+                following,
+                context,
+                visual_line_start(line_list, index - 1),
+            )
         if starts_group:
             groups.append([])
         groups[-1].append(current)
