@@ -13,6 +13,7 @@ from frompdf.continuations import (
 )
 from frompdf.footnotes import build_footnote, extract_footnotes, place_footnotes
 from frompdf.heading_candidates import find_typographic_heading_lines
+from frompdf.line_breaks import hard_line_break_ids
 from frompdf.models import Block, BlockQuote, Heading, Line, PageNumber, Paragraph
 from frompdf.scripts import AnnotatedText, collapse_annotated_whitespace
 from frompdf.segmentation import segment_lines
@@ -230,6 +231,7 @@ def markdown_block_from_lines(
     page_number_map: dict[int, PageNumber],
     default_font_size: float | None,
     body_lefts_by_page: dict[int, list[float]],
+    page_layouts: dict[int, PageLayout],
     word_counts: Counter[str],
     mixed_case_words: set[str],
     coordination_tokens: set[str],
@@ -246,7 +248,12 @@ def markdown_block_from_lines(
         else Paragraph
     )
     fragments = build_page_fragments(
-        line_list, page_number_map, word_counts, mixed_case_words, coordination_tokens
+        line_list,
+        page_number_map,
+        word_counts,
+        mixed_case_words,
+        coordination_tokens,
+        hard_line_break_ids(line_list, page_layouts),
     )
     annotated = join_fragments(fragments)
     return block_class(
@@ -455,10 +462,11 @@ def lines_to_markdown_blocks(
     heading_lines = find_typographic_heading_lines(body_lines)
     typographic_heading_indices: set[int] = set()
     block_positions: list[int] = []
+    page_layouts = build_page_layouts(body_lines)
 
     group_list = merge_continued_groups(
         segment_lines(body_lines, heading_lines),
-        build_page_layouts(body_lines),
+        page_layouts,
         default_font_size,
         body_lefts_by_page,
         heading_lines,
@@ -475,6 +483,7 @@ def lines_to_markdown_blocks(
                 page_number_map,
                 default_font_size,
                 body_lefts_by_page,
+                page_layouts,
                 word_counts,
                 mixed_case_words,
                 coordination_tokens,

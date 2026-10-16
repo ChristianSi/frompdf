@@ -5,7 +5,7 @@ from collections import Counter, defaultdict
 from dataclasses import dataclass
 from itertools import pairwise
 
-from frompdf.models import Line, PageNumber, TextFragment
+from frompdf.models import HARD_LINE_BREAK, Line, PageNumber, TextFragment
 from frompdf.scripts import AnnotatedText, join_annotated_texts
 from frompdf.segmentation import (
     FONT_WEIGHT_BREAK,
@@ -344,8 +344,14 @@ def build_page_fragments(
     word_counts: Counter[str],
     mixed_case_words: set[str],
     coordination_tokens: set[str],
+    hard_break_ids: set[int] | None = None,
 ) -> list[TextFragment]:
-    """Repair one block's text, attributing joined words to the page where they start."""
+    """Repair one block's text, attributing joined words to the page where they start.
+
+    Lines whose IDs are in hard_break_ids end with HARD_LINE_BREAK, which also
+    keeps words from being joined across the break.
+    """
+    hard_break_ids = hard_break_ids or set()
     page_lines: list[list[Line]] = []
     for line in line_list:
         if not page_lines or page_lines[-1][-1].page_no != line.page_no:
@@ -355,7 +361,11 @@ def build_page_fragments(
     fragments: list[TextFragment] = []
     for lines in page_lines:
         annotated = unhyphenate_annotated_lines(
-            (AnnotatedText(line.text, line.scripts) for line in lines),
+            (
+                AnnotatedText(line.text, line.scripts)
+                + AnnotatedText(HARD_LINE_BREAK if id(line) in hard_break_ids else '')
+                for line in lines
+            ),
             word_counts,
             mixed_case_words,
             coordination_tokens,

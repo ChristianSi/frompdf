@@ -170,6 +170,10 @@ The implementation is split into focused modules under `src/frompdf`:
   page-aware text, and places numeric groups in Notes sections.
 - `heading_candidates.py` identifies compact centered titles using caps or
   italic styling, established body columns, and surrounding whitespace.
+- `line_breaks.py` recognizes deliberate line breaks within blocks, where the
+  next word would have fit on the line or the font changes after a short line,
+  extending them to all line ends of blocks set line by line in short
+  centered lines.
 - `lines.py` repairs detached diacritics, flattens `pdftext` output, and
   extracts line geometry, typography, and inline script ranges.
 - `models.py` defines line, page-number, and Markdown block records.
@@ -199,6 +203,8 @@ Important concepts:
   supported block subclasses. `TextFragment` retains the source page and
   preceding whitespace of each piece of a block's text, so page markers can
   occur within paragraphs, block quotes, and notes.
+- `HARD_LINE_BREAK` in `models.py` marks deliberate line breaks in block text
+  until serialization renders them as a trailing backslash.
 - `extract_markdown` in `pipeline.py` returns a list of blocks.
 - `markdown_to_text` in `output.py` serializes blocks as Markdown.
 
@@ -223,9 +229,10 @@ The current pipeline is roughly:
     block-quote classification are required. An open sentence, a lower-case
     continuation, or a missing indent in a document whose paragraphs start
     indented must additionally support the join.
-11. Build paragraph or block-quote records and repair words and unspaced dashes
-    split across physical lines within each block, preserving script ranges
-    and attributing words joined across pages to their starting page.
+11. Build paragraph or block-quote records, mark deliberate line breaks, and
+    repair words and unspaced dashes split across other physical lines within
+    each block, preserving script ranges and attributing words joined across
+    pages to their starting page.
 12. Reclassify heading-like paragraphs using size and confirmed title
     candidates, which take precedence over block quotes, and normalize their
     heading levels.

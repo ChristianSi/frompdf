@@ -9,6 +9,13 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
 
 ### Added
 
+- Deliberate line breaks within paragraphs and block quotes, such as those in
+  epigraphs and their attributions, author and affiliation cards, or lists of
+  dates, are preserved as CommonMark hard line breaks (a trailing backslash).
+  A break counts as deliberate when the next word would have fit on the line
+  or the font changes after a clearly short line. In blocks of short centered
+  lines, such as address cards, one such break marks the other line ends as
+  deliberate too.
 - Inline superscripts and subscripts are detected from character geometry and
   preserved as `<sup>` and `<sub>` tags in Markdown, including footnote and
   citation markers, chemical formulas, and mathematical indices. Detected

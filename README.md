@@ -60,6 +60,8 @@ frompdf currently detects and serializes:
 - document-aware unhyphenation of words split across lines within a block
 - normalization of unspaced en and em dashes split across lines within a block
 - inline superscripts and subscripts, preserved as `<sup>` and `<sub>` tags
+- deliberate line breaks within blocks, such as in epigraphs or address
+  cards, preserved as hard line breaks (a trailing backslash)
 
 The internal block model tracks the raw PDF page number and, when available,
 the visible page number for each block.

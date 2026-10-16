@@ -1,6 +1,11 @@
 from dataclasses import dataclass, field
 from typing import Literal
 
+# Marks a deliberate line break in block text until Markdown serialization.
+# U+2028 LINE SEPARATOR counts as whitespace, so text normalization, such as
+# collapsing heading whitespace, treats it like any other line break.
+HARD_LINE_BREAK = ' '
+
 
 @dataclass(frozen=True)
 class ScriptRange:

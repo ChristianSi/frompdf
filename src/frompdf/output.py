@@ -3,7 +3,16 @@ from dataclasses import asdict
 from pathlib import Path
 from typing import TextIO
 
-from frompdf.models import Block, BlockQuote, Footnote, Heading, Line, PageNumber, TextFragment
+from frompdf.models import (
+    HARD_LINE_BREAK,
+    Block,
+    BlockQuote,
+    Footnote,
+    Heading,
+    Line,
+    PageNumber,
+    TextFragment,
+)
 from frompdf.scripts import render_scripts
 
 
@@ -76,7 +85,8 @@ def render_fragments(
             marker = format_page_marker(fragment.page)
         parts.append(fragment.separator + marker + render_scripts(fragment.text, fragment.scripts))
         previous_page = fragment.page
-    return ''.join(parts)
+    # A backslash at the end of a line is CommonMark's portable hard line break.
+    return ''.join(parts).replace(HARD_LINE_BREAK, '\\')
 
 
 def markdown_to_text(
