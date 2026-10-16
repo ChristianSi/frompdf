@@ -13,10 +13,11 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
   rendered as bold paragraphs rather than taking up heading levels of their
   own, so section headings keep the levels right below the title. This
   applies after the document's first heading and its first top-level heading,
-  up to the body text on the same page. Subtitles are recognized by a heading
-  level used nowhere else, and author names by their capitalized words,
-  initials, and particles. Ornaments in that area, such as rows of bullets,
-  are dropped.
+  up to the body text on the same page. The level of a heading directly
+  below the title is demoted there, as for a subtitle or author names
+  alternating with affiliations, unless it reads like a section heading and
+  is also used elsewhere. Ornaments in that area, such as rows of bullets, are
+  dropped.
 - Text that Markdown would read as syntax is escaped, such as asterisks,
   underscores outside words, and heading, quote, and list markers at line
   starts. Escapes are limited to where they are needed. List markers at the

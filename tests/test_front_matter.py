@@ -1,6 +1,6 @@
 import unittest
 
-from frompdf.front_matter import format_front_matter, is_chapter_label, looks_like_names
+from frompdf.front_matter import format_front_matter, is_chapter_label, is_section_like
 from frompdf.models import Block, Heading, PageNumber, Paragraph, ScriptRange, StrongParagraph
 
 PAGE_ONE = PageNumber(raw=1, visible=None)
@@ -33,35 +33,22 @@ def describe(block_list: list[Block]) -> list[str]:
     ]
 
 
-class NameRecognitionTests(unittest.TestCase):
-    def test_recognizes_single_names_and_name_lists(self) -> None:
-        for text in [
-            'Jérémie Chalopin',
-            'Giuseppe A. Di Luna',
-            'Rolf B. Versteeg, Paul H. M. van Loosdrecht',
-            'Yi-Jun Chang & Jean-Pierre O’Neill',
-            'Sergey Artyukhin 4 and Fumiya Sekiguchi*†✉',
-        ]:
+class HeadingClassificationTests(unittest.TestCase):
+    def test_single_words_and_numbered_headings_are_section_like(self) -> None:
+        for text in ['Abstract', 'Introduction', '1 Introduction', '2.1. Methods', 'IV. Results']:
             with self.subTest(text=text):
-                self.assertTrue(looks_like_names(paragraph(text)))
+                self.assertTrue(is_section_like(heading(text, 2)))
 
-    def test_ignores_affiliation_superscripts(self) -> None:
-        block = Paragraph('Fumiya Sekiguchi12, Kestutis Budzinauskas3', PAGE_ONE, PAGE_ONE)
-        block.scripts = (ScriptRange(16, 18, 'sup'), ScriptRange(41, 42, 'sup'))
-
-        self.assertTrue(looks_like_names(block))
-
-    def test_rejects_titles_labels_and_single_words(self) -> None:
-        for text in [
-            'Abstract',
-            'Angaben zur Veröffentlichung / Publication details:',
-            'Neue Folge Nr. 12',
-            'Money for nothing',
-            'A. B.',
-            'The Ministry of Truth and Some Other Very Long Organization Name',
-        ]:
+    def test_names_and_subtitles_are_not_section_like(self) -> None:
+        for text in ['Jérémie Chalopin', 'Spaceology: Philosophies of Space', 'Owen Arden']:
             with self.subTest(text=text):
-                self.assertFalse(looks_like_names(paragraph(text)))
+                self.assertFalse(is_section_like(heading(text, 2)))
+
+    def test_ignores_superscripts_when_counting_words(self) -> None:
+        block = Heading('Doe1', PAGE_ONE, PAGE_ONE, level=2)
+        block.scripts = (ScriptRange(3, 4, 'sup'),)
+
+        self.assertTrue(is_section_like(block))
 
     def test_recognizes_chapter_labels_but_not_numbered_titles(self) -> None:
         self.assertTrue(is_chapter_label(heading('CHAPTER 10', 1)))
@@ -136,9 +123,10 @@ class FrontMatterFormattingTests(unittest.TestCase):
             ],
         )
 
-    def test_keeps_level_when_one_of_its_front_matter_headings_is_no_name(self) -> None:
+    def test_only_the_level_directly_below_the_title_is_demoted(self) -> None:
         blocks: list[Block] = [
             heading('espero', 1),
+            heading('Libertäre Zeitschrift', 2),
             heading('Neue Folge Nr. 12', 4),
             heading('Libertad Verlag Potsdam', 4),
             paragraph(BODY_TEXT),
@@ -146,8 +134,32 @@ class FrontMatterFormattingTests(unittest.TestCase):
         ]
 
         self.assertEqual(
-            describe(formatted(blocks))[1:3], ['H4 Neue Folge Nr. 12', 'H4 Libertad Verlag Potsdam']
+            describe(formatted(blocks))[1:4],
+            ['** Libertäre Zeitschrift', 'H4 Neue Folge Nr. 12', 'H4 Libertad Verlag Potsdam'],
         )
+
+    def test_keeps_section_headings_directly_after_the_title(self) -> None:
+        for text in ['Abstract', '1 Introduction']:
+            with self.subTest(text=text):
+                blocks: list[Block] = [
+                    heading('Title', 1),
+                    heading(text, 2),
+                    paragraph(BODY_TEXT),
+                    heading('2 Methods', 2),
+                ]
+
+                self.assertEqual(describe(formatted(blocks))[1], f'H2 {text}')
+
+    def test_keeps_front_matter_headings_after_a_leading_paragraph(self) -> None:
+        blocks: list[Block] = [
+            heading('Title', 1),
+            paragraph('Short paper'),
+            heading('Jane Doe', 2),
+            paragraph(BODY_TEXT),
+            heading('Introduction', 2),
+        ]
+
+        self.assertEqual(describe(formatted(blocks))[2], 'H2 Jane Doe')
 
     def test_front_matter_ends_with_page_and_body_text(self) -> None:
         blocks: list[Block] = [

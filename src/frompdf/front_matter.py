@@ -9,23 +9,11 @@ the document's sections.
 import re
 
 from frompdf.models import Block, Heading, StrongParagraph
+from frompdf.segmentation import NUMBERED_OR_BULLETED_START_PATTERN
 
 # A paragraph this long is body text, such as an abstract, ending the front
 # matter. Bylines, affiliations, and dates are much shorter.
 MAX_FRONT_MATTER_PARAGRAPH_CHARACTERS = 200
-
-# Lowercase particles within personal names.
-NAME_PARTICLES = frozenset(
-    {'da', 'das', 'de', 'del', 'della', 'den', 'der', 'di', 'do', 'dos', 'du', 'la', 'le'}
-    | {'ten', 'ter', 'van', 'von', 'zu'}
-)
-NAME_SEPARATOR_PATTERN = re.compile(r'\s*(?:[,;&]|\band\b)\s*')
-NAME_INITIALS_PATTERN = re.compile(r'(?:[^\W\d_]\.-?)+')
-NAME_WORD_PATTERN = re.compile(r"[^\W\d_]+(?:['’-][^\W\d_]+)*")
-# Affiliation marks and symbols, such as digits, asterisks, daggers, or ✉.
-NAME_MARK_PATTERN = re.compile(r"[^\w\s.,;&'’-]|\d")
-MIN_NAME_WORDS = 2
-MAX_NAME_WORDS = 5
 
 # A label such as "CHAPTER 10" or "Part II" above the actual title.
 CHAPTER_LABEL_PATTERN = re.compile(r'[^\W\d_]{3,}\s+(?:\d+|[IVXLCDM]+)[.:]?')
@@ -37,33 +25,6 @@ def visible_text(block_obj: Block) -> str:
     for run in block_obj.scripts:
         characters[run.start : run.end] = ' ' * (run.end - run.start)
     return ' '.join(''.join(characters).split())
-
-
-def is_name_word(word: str) -> bool:
-    """Return whether a word can be part of a personal name."""
-    return (
-        word in NAME_PARTICLES
-        or bool(NAME_INITIALS_PATTERN.fullmatch(word))
-        or (len(word) >= 2 and word[0].isupper() and bool(NAME_WORD_PATTERN.fullmatch(word)))
-    )
-
-
-def looks_like_names(block_obj: Block) -> bool:
-    """Return whether a block consists of one or more personal names.
-
-    Names are separated by commas, semicolons, ampersands, or "and". Each has a
-    few capitalized words, initials, or particles, including at least one full
-    word. Affiliation marks are ignored.
-    """
-    text = NAME_MARK_PATTERN.sub(' ', visible_text(block_obj))
-    names = [name.split() for name in NAME_SEPARATOR_PATTERN.split(text)]
-    names = [words for words in names if words]
-    return bool(names) and all(
-        MIN_NAME_WORDS <= len(words) <= MAX_NAME_WORDS
-        and all(is_name_word(word) for word in words)
-        and any(word[0].isupper() and not word.endswith('.') for word in words)
-        for words in names
-    )
 
 
 def is_chapter_label(block_obj: Block) -> bool:
@@ -112,6 +73,32 @@ def front_matter_region(block_list: list[Block], title_index: int) -> list[int]:
     return region
 
 
+def is_section_like(block_obj: Block) -> bool:
+    """Return whether a heading reads like a section heading, such as "Abstract" or "1 Methods"."""
+    text = visible_text(block_obj)
+    return len(text.split()) < 2 or bool(NUMBERED_OR_BULLETED_START_PATTERN.match(text))
+
+
+def front_matter_level(block_list: list[Block], region: list[int]) -> int | None:
+    """Return the heading level of a title's front matter, if it has one.
+
+    The front matter starts with a heading directly below the title, such as a
+    subtitle or the first author name. A section heading can follow a title
+    directly as well, so its level only counts when it is used nowhere else in
+    the document, or when the heading does not read like a section heading.
+    """
+    first = block_list[region[0]] if region else None
+    if not isinstance(first, Heading):
+        return None
+    region_set = set(region)
+    level_only_here = all(
+        index in region_set
+        for index, block in enumerate(block_list)
+        if isinstance(block, Heading) and block.level == first.level
+    )
+    return first.level if level_only_here or not is_section_like(first) else None
+
+
 def strong_paragraph(source: Block) -> StrongParagraph:
     """Return a bold paragraph retaining the source block's text and line breaks."""
     return StrongParagraph(
@@ -134,10 +121,10 @@ def format_front_matter(block_list: list[Block], source_blocks: list[Block]) -> 
     should be dropped.
 
     A chapter label directly followed by a heading is demoted, and that heading
-    becomes the title. Following the title on its page, until body text or
-    another heading as high as the title, the first block is a subtitle if it is
-    a heading of a level used nowhere else in the document. A heading level is
-    demoted as a whole when all of its headings there look like personal names.
+    becomes the title. The front matter follows the title on its page, until
+    body text or another heading as high as the title. All of its headings at
+    the front-matter level, such as a subtitle or author names alternating with
+    affiliations, are demoted.
     """
     dropped: set[int] = set()
     for title_index in title_indices(block_list):
@@ -157,30 +144,11 @@ def format_front_matter(block_list: list[Block], source_blocks: list[Block]) -> 
             continue
 
         region = front_matter_region(block_list, title_index)
-        region_set = set(region)
-        level_indices: dict[int, list[int]] = {}
-        for index, block in enumerate(block_list):
-            if isinstance(block, Heading):
-                level_indices.setdefault(block.level, []).append(index)
-
-        demoted: set[int] = set()
-        first = block_list[region[0]] if region else None
-        if (
-            isinstance(first, Heading)
-            and first.level > title.level
-            and set(level_indices[first.level]) <= region_set
-        ):
-            demoted.add(region[0])
-        for level, indices in level_indices.items():
-            in_region = [index for index in indices if index in region_set]
-            if (
-                level > title.level
-                and in_region
-                and all(looks_like_names(block_list[index]) for index in in_region)
-            ):
-                demoted.update(in_region)
-        for index in demoted:
-            block_list[index] = strong_paragraph(source_blocks[index])
+        level = front_matter_level(block_list, region)
+        for index in region:
+            block = block_list[index]
+            if isinstance(block, Heading) and block.level == level:
+                block_list[index] = strong_paragraph(source_blocks[index])
         dropped.update(
             index
             for index in region
