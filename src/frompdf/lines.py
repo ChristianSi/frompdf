@@ -2,6 +2,7 @@ import re
 from collections import Counter, defaultdict
 from collections.abc import Sequence
 from difflib import SequenceMatcher
+from typing import Literal
 from unicodedata import category, name, normalize
 
 from pdftext.schema import (
@@ -19,6 +20,7 @@ from pdftext.schema import (
 
 from frompdf.models import Line, ScriptRange
 from frompdf.scripts import AnnotatedText
+from frompdf.segmentation import same_running_text_line
 
 SPACING_TO_COMBINING = {
     '¨': '\u0308',
@@ -451,14 +453,37 @@ SCRIPT_MIN_CENTER_SHIFT = 0.15
 SCRIPT_PUNCTUATION = frozenset('.*,;:+−–-=()[]<>/†‡')
 
 
-def line_script_ranges(
-    line_dict: PdfTextLine, neighbors: Sequence[PdfTextLine] = ()
-) -> tuple[ScriptRange, ...]:
-    """Recognize small shifted glyphs, including those inside ordinary spans."""
+Box = tuple[float, float, float, float]
+
+# A glyph that can be part of a script: its decoded text offsets, its pdftext
+# character, its bbox, and its reported font size.
+ScriptGlyph = tuple[int, int, PdfTextChar, Box, float]
+
+
+def positioned_box(line_dict: PdfTextLine) -> Box | None:
+    """Return a line's bbox if all of its coordinates are known."""
+    x1, y1, x2, y2 = get_bbox(line_dict)
+    if x1 is None or y1 is None or x2 is None or y2 is None:
+        return None
+    return x1, y1, x2, y2
+
+
+def union_box(boxes: Sequence[Box]) -> Box:
+    """Return the smallest box enclosing all given boxes."""
+    return (
+        min(box[0] for box in boxes),
+        min(box[1] for box in boxes),
+        max(box[2] for box in boxes),
+        max(box[3] for box in boxes),
+    )
+
+
+def script_glyphs(line_dict: PdfTextLine) -> list[ScriptGlyph]:
+    """Return the positioned glyphs of a line that could belong to a script."""
     # Entries retain decoded offsets, not raw character indices: ligatures and
     # CRLF normalization can make those differ. Detached accents are repaired
     # before this function is called.
-    glyphs: list[tuple[int, int, PdfTextChar, tuple[float, float, float, float], float]] = []
+    glyphs: list[ScriptGlyph] = []
     offset = 0
     for span in line_dict.get('spans', []):
         ranges = span_char_text_ranges(span)
@@ -475,94 +500,149 @@ def line_script_ranges(
             start, end = ranges[id(char)]
             glyphs.append((offset + start, offset + end, char, (x1, y1, x2, y2), size))
         offset += len(span.get('text', ''))
+    return glyphs
 
-    ordinary = [g for g in glyphs if g[2].get('char', '').isalnum()]
-    if not ordinary:
-        return ()
+
+def glyph_size(glyph: ScriptGlyph, real_sizes: bool) -> float:
+    """Return a glyph's reported font size, or its bbox height for placeholder sizes."""
+    box = glyph[3]
+    return glyph[4] if real_sizes else box[3] - box[1]
+
+
+def script_kind(box: Box, ref_box: Box) -> Literal['sup', 'sub'] | None:
+    """Return whether a small glyph is raised or lowered relative to an ordinary one."""
+    height = ref_box[3] - ref_box[1]
+    shift = ((box[1] + box[3]) - (ref_box[1] + ref_box[3])) / (2 * height)
+    # A smaller character sitting on the ordinary baseline (e.g. small
+    # caps) is not a subscript. Validate direction independently of pdftext
+    # flags, which sometimes mislabel lowered C/j as superscripts.
+    if (
+        -0.8 <= shift <= -SCRIPT_MIN_CENTER_SHIFT
+        and box[1] <= ref_box[1] + height * 0.08
+        and box[3] < ref_box[3] - height * 0.15
+    ):
+        return 'sup'
+    if (
+        SCRIPT_MIN_CENTER_SHIFT <= shift <= 0.8
+        and box[3] > ref_box[3] + height * 0.04
+        and box[1] > ref_box[1] + height * 0.15
+    ):
+        return 'sub'
+    return None
+
+
+def script_runs(glyphs: list[ScriptGlyph], ordinary: list[ScriptGlyph]) -> list[ScriptRange]:
+    """Return the glyphs that are small and shifted relative to the dominant ordinary ones."""
     # Only use reported sizes when all visible alphanumerics have real sizes.
     # Nature reports size 1.0 even for differently scaled characters.
     real_sizes = all(g[4] > 1 for g in ordinary)
-    sizes = Counter(round(g[4] if real_sizes else g[3][3] - g[3][1], 1) for g in ordinary)
+    sizes = Counter(round(glyph_size(g, real_sizes), 1) for g in ordinary)
     dominant = max(sizes, key=lambda size: (sizes[size], size))
     if dominant <= 0:
-        return ()
+        return []
     references = [
-        g
-        for g in ordinary
-        if abs((g[4] if real_sizes else g[3][3] - g[3][1]) - dominant) <= dominant * 0.08
+        g for g in ordinary if abs(glyph_size(g, real_sizes) - dominant) <= dominant * 0.08
     ]
-    if not references:
-        return ()
     runs: list[ScriptRange] = []
-    for start, end, char, box, size in glyphs:
-        candidate_size = size if real_sizes else box[3] - box[1]
-        if candidate_size > dominant * SCRIPT_MAX_SIZE_RATIO:
+    for glyph in glyphs:
+        start, end, char, box, _ = glyph
+        if glyph_size(glyph, real_sizes) > dominant * SCRIPT_MAX_SIZE_RATIO:
             continue
         reference = min(
             references,
             key=lambda g: abs((g[3][0] + g[3][2]) / 2 - (box[0] + box[2]) / 2),
         )
         ref_box = reference[3]
-        height = ref_box[3] - ref_box[1]
         horizontal_gap = max(0.0, ref_box[0] - box[2], box[0] - ref_box[2])
-        if horizontal_gap > height * 6:
+        if horizontal_gap > (ref_box[3] - ref_box[1]) * 6:
             continue
-        shift = ((box[1] + box[3]) - (ref_box[1] + ref_box[3])) / (2 * height)
-        # A smaller character sitting on the ordinary baseline (e.g. small
-        # caps) is not a subscript. Validate direction independently of pdftext
-        # flags, which sometimes mislabel lowered C/j as superscripts.
-        if (
-            -0.8 <= shift <= -SCRIPT_MIN_CENTER_SHIFT
-            and box[1] <= ref_box[1] + height * 0.08
-            and box[3] < ref_box[3] - height * 0.15
-        ):
-            kind = 'sup'
-        elif (
-            SCRIPT_MIN_CENTER_SHIFT <= shift <= 0.8
-            and box[3] > ref_box[3] + height * 0.04
-            and box[1] > ref_box[1] + height * 0.15
-        ):
-            kind = 'sub'
-        else:
+        kind = script_kind(box, ref_box)
+        if kind is None:
             continue
         # Do not apply another script level to an already encoded script glyph.
         if any('SUPERSCRIPT' in name(c, '') or 'SUBSCRIPT' in name(c, '') for c in char['char']):
             continue
         runs.append(ScriptRange(start, end, kind))
+    return runs
+
+
+def is_small_fragment(ordinary: list[ScriptGlyph], others: list[ScriptGlyph]) -> bool:
+    """Return whether a line's ordinary glyphs are all small next to the rest of its visual line.
+
+    Sizes are compared with the dominant size of the complete visual line, and
+    glyphs of that size must outnumber those of the fragment. A large initial,
+    such as a drop cap, therefore never makes the following text small, nor do
+    a few tall delimiters in a formula.
+    """
+    combined = ordinary + others
+    real_sizes = all(g[4] > 1 for g in combined)
+    sizes = Counter(round(glyph_size(g, real_sizes), 1) for g in combined)
+    dominant = max(sizes, key=lambda size: (sizes[size], size))
+    references = [g for g in others if abs(glyph_size(g, real_sizes) - dominant) <= dominant * 0.08]
+    return len(references) > len(ordinary) and all(
+        glyph_size(g, real_sizes) <= dominant * SCRIPT_MAX_SIZE_RATIO for g in ordinary
+    )
+
+
+def line_script_ranges(
+    line_dict: PdfTextLine,
+    neighbors: Sequence[PdfTextLine] = (),
+    same_line: Sequence[PdfTextLine] = (),
+) -> tuple[ScriptRange, ...]:
+    """Recognize small shifted glyphs, including those inside ordinary spans.
+
+    pdftext sometimes puts scripts into line records of their own. The other
+    pieces of the same visual line, given as same_line, then provide the
+    ordinary glyphs instead.
+    """
+    glyphs = script_glyphs(line_dict)
+    ordinary = [g for g in glyphs if g[2].get('char', '').isalnum()]
+    others = [
+        g for other in same_line for g in script_glyphs(other) if g[2].get('char', '').isalnum()
+    ]
+    runs = {run.start: run for run in script_runs(glyphs, ordinary)} if ordinary else {}
+    line_box = positioned_box(line_dict)
+    if others and (not ordinary or is_small_fragment(ordinary, others)):
+        # Judge the fragment against the surrounding text. Scripts of its own,
+        # such as the subscript in a superscript `2−c₁`, keep their own level
+        # unless they are scripts of the surrounding text too.
+        runs.update((run.start, run) for run in script_runs(glyphs, others))
+        # A fraction is stacked relative to the complete visual line.
+        boxes = [positioned_box(own_line) for own_line in (line_dict, *same_line)]
+        known_boxes = [box for box in boxes if box is not None]
+        line_box = union_box(known_boxes) if len(known_boxes) == len(boxes) else None
     # A small numerator can look like an inline superscript. Reject only the
     # touching script group when another extraction line is stacked immediately
     # above/below it, preserving unrelated scripts elsewhere on the same line.
     groups: list[list[ScriptRange]] = []
-    for run in runs:
+    for run in sorted(runs.values(), key=lambda run: run.start):
         if not groups or groups[-1][-1].end != run.start or groups[-1][-1].kind != run.kind:
             groups.append([])
         groups[-1].append(run)
     kept: list[ScriptRange] = []
     for group in groups:
-        boxes = [g[3] for g in glyphs if group[0].start <= g[0] < group[-1].end]
-        script_box = (
-            min(b[0] for b in boxes),
-            min(b[1] for b in boxes),
-            max(b[2] for b in boxes),
-            max(b[3] for b in boxes),
-        )
-        if not has_stacked_text(line_dict, neighbors, script_box, group[0]):
+        script_box = union_box([g[3] for g in glyphs if group[0].start <= g[0] < group[-1].end])
+        if not has_stacked_text(line_box, [line_dict, *same_line], neighbors, script_box, group[0]):
             kept.extend(group)
     return tuple(kept)
 
 
 def has_stacked_text(
-    line: PdfTextLine,
+    line_box: Box | None,
+    own_lines: Sequence[PdfTextLine],
     neighbors: Sequence[PdfTextLine],
-    script_box: tuple[float, float, float, float],
+    script_box: Box,
     run: ScriptRange,
 ) -> bool:
-    """Avoid interpreting the numerator of a vertically stacked fraction as a script."""
-    x1, y1, x2, y2 = get_bbox(line)
-    if x1 is None or y1 is None or x2 is None or y2 is None:
+    """Avoid interpreting the numerator of a vertically stacked fraction as a script.
+
+    line_box covers the visual line of the script, which consists of own_lines.
+    """
+    if line_box is None:
         return False
+    _, y1, _, y2 = line_box
     for neighbor in neighbors:
-        if neighbor is line:
+        if any(neighbor is own_line for own_line in own_lines):
             continue
         nx1, ny1, nx2, ny2 = get_bbox(neighbor)
         if nx1 is None or ny1 is None or nx2 is None or ny2 is None:
@@ -580,6 +660,13 @@ def has_stacked_text(
     return False
 
 
+def has_edge_space(raw_text: str, at_end: bool) -> bool:
+    """Return whether raw line text starts or ends with whitespace other than a line end."""
+    text = raw_text.rstrip('\r\n') if at_end else raw_text.lstrip('\r\n')
+    edge = text[-1:] if at_end else text[:1]
+    return edge.isspace()
+
+
 def iter_lines(page_list: Sequence[Page]) -> list[Line]:
     """Flatten pdftext dictionary output into a list of Line records."""
     line_list: list[Line] = []
@@ -588,6 +675,7 @@ def iter_lines(page_list: Sequence[Page]) -> list[Line]:
         previous_x1: float | None = None
         previous_y1: float | None = None
         line_no_on_page = 0
+        page_lines: list[tuple[Line, PdfTextLine, list[PdfTextLine], str]] = []
 
         for block_index, block_dict in enumerate(page_dict.get('blocks', []), start=1):
             for line_dict in block_dict.get('lines', []):
@@ -597,11 +685,6 @@ def iter_lines(page_list: Sequence[Page]) -> list[Line]:
                     span_dict.get('text', '') for span_dict in line_dict.get('spans', [])
                 )
                 text_value = raw_text.strip()
-                scripts = line_script_ranges(line_dict, block_dict.get('lines', []))
-                annotated = AnnotatedText(raw_text, scripts).slice(
-                    len(raw_text) - len(raw_text.lstrip()), len(raw_text.rstrip())
-                )
-
                 x1, y1, x2, y2 = get_bbox(line_dict)
 
                 rel_x = None
@@ -625,11 +708,29 @@ def iter_lines(page_list: Sequence[Page]) -> list[Line]:
                     rel_y=rel_y,
                     avg_weight=average_font_weight(line_dict),
                     font_name=dominant_font_name(line_dict),
-                    scripts=annotated.scripts,
+                    space_before=bool(text_value) and has_edge_space(raw_text, at_end=False),
+                    space_after=bool(text_value) and has_edge_space(raw_text, at_end=True),
                 )
-                line_list.append(line_obj)
+                page_lines.append((line_obj, line_dict, block_dict.get('lines', []), raw_text))
 
                 previous_x1 = x1
                 previous_y1 = y1
+
+        # pdftext emits the pieces of a split line of running text
+        # consecutively, though not necessarily within one block.
+        for index, (line_obj, line_dict, block_lines, raw_text) in enumerate(page_lines):
+            same_line: list[PdfTextLine] = []
+            if index > 0 and same_running_text_line(page_lines[index - 1][0], line_obj):
+                same_line.append(page_lines[index - 1][1])
+            if index + 1 < len(page_lines) and same_running_text_line(
+                line_obj, page_lines[index + 1][0]
+            ):
+                same_line.append(page_lines[index + 1][1])
+            scripts = line_script_ranges(line_dict, block_lines, same_line)
+            annotated = AnnotatedText(raw_text, scripts).slice(
+                len(raw_text) - len(raw_text.lstrip()), len(raw_text.rstrip())
+            )
+            line_obj.scripts = annotated.scripts
+            line_list.append(line_obj)
 
     return line_list

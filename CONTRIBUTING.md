@@ -198,7 +198,9 @@ The implementation is split into focused modules under `src/frompdf`:
 
 Important concepts:
 
-- `Line` in `models.py` is a flattened record from `pdftext` output.
+- `Line` in `models.py` is a flattened record from `pdftext` output. It
+  records whether `pdftext` reported whitespace at its edges, which tells
+  whether pieces of one visual line need a space between them.
 - `ScriptRange` records superscript/subscript offsets in decoded plain text.
   Lines, blocks, and text fragments retain these ranges until serialization.
 - `PageNumber` in `models.py` stores the raw page number and optional visible
@@ -220,7 +222,10 @@ The current pipeline is roughly:
 2. Repair detached, geometrically positioned diacritics in the raw data and
    remove glyphs from icon fonts.
 3. Flatten the result into line records with geometry, typography, and
-   conservative character-level superscript/subscript annotations.
+   conservative character-level superscript/subscript annotations. When
+   `pdftext` puts small glyphs into a line record of their own, the adjacent
+   pieces of the same line of running text serve as the ordinary reference
+   text.
 4. Optionally dump the unfiltered line records to `-lines.csv`.
 5. Detect and remove headers and footers, collecting visible page labels.
 6. Order the remaining lines by page region and detected column.
@@ -239,10 +244,13 @@ The current pipeline is roughly:
     block-quote classification are required. An open sentence, a lower-case
     continuation, or a missing indent in a document whose paragraphs start
     indented must additionally support the join.
-11. Build paragraph or block-quote records, mark deliberate line breaks, and
-    repair words and unspaced dashes split across other physical lines within
-    each block, preserving script ranges and attributing words joined across
-    pages to their starting page.
+11. Build paragraph or block-quote records and mark deliberate line breaks.
+    Join the pieces into which `pdftext` split a physical line with a space
+    or nothing, depending on reported whitespace and the gap between them,
+    unless they are too far apart to be running text. Then repair words and
+    unspaced dashes split across physical lines within each block, preserving
+    script ranges and attributing words joined across pages to their starting
+    page.
 12. Reclassify heading-like paragraphs using size and confirmed title
     candidates, which take precedence over block quotes. Blocks without
     letters or digits never become headings. In the front matter following the

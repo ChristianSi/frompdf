@@ -4,10 +4,11 @@ from collections import Counter
 from typing import cast
 
 from pdftext.schema import Line as PdfTextLine
+from pdftext.schema import Page
 
 from frompdf.blocks import detect_headings
 from frompdf.footnotes import DetectedNote, build_footnote, numbered_line
-from frompdf.lines import line_script_ranges
+from frompdf.lines import iter_lines, line_script_ranges
 from frompdf.models import BlockQuote, Heading, Line, PageNumber, Paragraph, ScriptRange
 from frompdf.output import markdown_to_text
 from frompdf.scripts import AnnotatedText, collapse_annotated_whitespace, render_scripts
@@ -19,15 +20,16 @@ def pdf_line(
     positions: dict[int, tuple[float, float]],
     size: float = 1,
     flagged_sup: bool = False,
+    x: float = 0,
 ) -> PdfTextLine:
-    """Put all characters in one span, with selected reduced/shifted glyphs."""
+    """Put all characters in one span, starting at x, with selected reduced/shifted glyphs."""
     chars = []
     for index, char in enumerate(text):
         top, height = positions.get(index, (10, 10))
         chars.append(
             {
                 'char': char,
-                'bbox': [index * 5, top, index * 5 + 5, top + height],
+                'bbox': [x + index * 5, top, x + index * 5 + 5, top + height],
                 'font': {'size': size if index not in positions else size * height / 10},
                 'rotation': 0,
             }
@@ -36,9 +38,9 @@ def pdf_line(
         PdfTextLine,
         {
             'bbox': [
-                0,
+                x,
                 min(c['bbox'][1] for c in chars),
-                len(text) * 5,
+                x + len(text) * 5,
                 max(c['bbox'][3] for c in chars),
             ],
             'spans': [
@@ -139,6 +141,80 @@ class ScriptDetectionTests(unittest.TestCase):
             render_scripts('n log ID text2', line_script_ranges(line, [line, denominator])),
             'n log ID text<sup>2</sup>',
         )
+
+
+class SameLineScriptDetectionTests(unittest.TestCase):
+    """Scripts that pdftext puts into line records of their own."""
+
+    def test_raised_marker_fragment_is_judged_against_preceding_text(self) -> None:
+        text = pdf_line('insulator OSeO3', {}, size=10)
+        marker = pdf_line('51.', {0: (8, 7), 1: (8, 7)}, size=10, x=75)
+
+        self.assertEqual(line_script_ranges(marker, [text, marker]), ())
+        self.assertEqual(
+            render_scripts('51.', line_script_ranges(marker, [text, marker], [text])),
+            '<sup>51</sup>.',
+        )
+
+    def test_fragment_keeps_its_own_nested_script(self) -> None:
+        text = pdf_line('probability 1 - U', {}, size=10)
+        exponent = pdf_line('−c1', {0: (7, 7), 1: (7, 7), 2: (12, 5)}, size=10, x=85)
+
+        self.assertEqual(
+            render_scripts('−c1', line_script_ranges(exponent, [text, exponent], [text])),
+            '<sup>−c</sup><sub>1</sub>',
+        )
+
+    def test_same_size_fragments_stay_plain(self) -> None:
+        text = pdf_line('Budzinauskas', {}, size=10)
+        following = pdf_line(', Prashant', {}, size=10, x=60)
+
+        self.assertEqual(line_script_ranges(following, [text, following], [text]), ())
+
+    def test_slightly_raised_smaller_fragment_stays_plain(self) -> None:
+        # In Nature's author list, sizes taken from bounding boxes differ, but
+        # the text is shifted by less than a tenth of the neighboring height.
+        text = pdf_line('Kestutis Budzinauskas', {}, size=1)
+        following = pdf_line(', Prashant', {index: (10.1, 8) for index in range(10)}, size=1, x=105)
+
+        self.assertEqual(line_script_ranges(following, [text, following], [text]), ())
+
+    def test_text_beside_a_drop_cap_stays_plain(self) -> None:
+        initial = pdf_line('I', {0: (0, 40)}, size=1)
+        text = pdf_line('n spin systems', {index: (0, 10) for index in range(14)}, size=1, x=5)
+
+        self.assertEqual(line_script_ranges(text, [initial, text], [initial]), ())
+
+    def test_fragment_beside_a_few_tall_formula_delimiters_keeps_its_own_scripts(self) -> None:
+        # Nature reports math parentheses as tall letters next to formula parts
+        # of various sizes, so they only form the dominant size by a narrow margin.
+        variable = pdf_line('mj', {0: (9, 8.3), 1: (7.8, 5.1)}, size=1)
+        argument = pdf_line('r0ðÞ', {0: (14, 5), 1: (13, 6.2), 2: (10, 12.4), 3: (10, 12.4)}, x=10)
+
+        self.assertEqual(
+            render_scripts('mj', line_script_ranges(variable, [variable, argument], [argument])),
+            'm<sup>j</sup>',
+        )
+
+    def test_numerator_fragment_of_a_stacked_fraction_stays_plain(self) -> None:
+        text = pdf_line('robust even when <', {}, size=10)
+        numerator = pdf_line('1', {0: (8, 6.2)}, size=10, x=95)
+        denominator = pdf_line('2', {0: (15.4, 6.2)}, size=10, x=95)
+
+        self.assertTrue(line_script_ranges(numerator, [text, numerator], [text]))
+        self.assertEqual(line_script_ranges(numerator, [text, numerator, denominator], [text]), ())
+
+    def test_line_records_detect_marker_in_another_pdftext_block(self) -> None:
+        text = pdf_line('insulator OSeO3', {}, size=10)
+        marker = pdf_line('51.', {0: (8, 7), 1: (8, 7)}, size=10, x=75)
+        for line in (text, marker):
+            line['spans'][0]['font'] = {'size': 10}  # type: ignore[typeddict-item]
+        page = cast(Page, {'blocks': [{'lines': [text]}, {'lines': [marker]}]})
+
+        lines = iter_lines([page])
+
+        self.assertEqual(lines[0].scripts, ())
+        self.assertEqual(render_scripts(lines[1].text, lines[1].scripts), '<sup>51</sup>.')
 
 
 class ScriptAnnotationTests(unittest.TestCase):

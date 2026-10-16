@@ -471,6 +471,22 @@ def same_physical_line(left: Line, right: Line) -> bool:
     return abs(right.y1 - left.y1) <= font_size * 0.35 and right.x1 >= left.x2 - font_size * 0.25
 
 
+# Pieces of one visual line further apart than this, relative to the larger
+# size, are not running text, such as the cells of a table row in folie or a
+# logo beside a title in intertrans.
+RUNNING_TEXT_MAX_GAP_EM = 1.0
+
+
+def same_running_text_line(left: Line, right: Line) -> bool:
+    """Return whether adjacent fragments of one visual line belong to the same running text."""
+    if not same_physical_line(left, right):
+        return False
+    assert left.x2 is not None
+    assert right.x1 is not None
+    font_size = max(left.font_size or 0.0, right.font_size or 0.0, 1.0)
+    return right.x1 - left.x2 < font_size * RUNNING_TEXT_MAX_GAP_EM
+
+
 def normal_advance_ratios(line_list: list[Line]) -> list[float]:
     """Return plausible ordinary line advances from the already ordered page."""
     ratios: list[float] = []

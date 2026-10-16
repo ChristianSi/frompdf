@@ -24,6 +24,7 @@ from frompdf.segmentation import (
     line_is_short,
     near,
     same_physical_line,
+    same_running_text_line,
     significant_style_change,
 )
 from frompdf.unhyphenation import unhyphenate_annotated_lines
@@ -52,6 +53,13 @@ COLUMN_FLOW_MAX_ADVANCE_EM = 2.0
 # suffices, while block-paragraph documents show almost none.
 MIN_INDENTED_PARAGRAPHS = 5
 MIN_INDENTED_PARAGRAPH_SHARE = 0.25
+
+# pdftext splits visual lines at superscripts, font changes, and math. Its
+# whitespace at the split usually tells whether the pieces are separate words,
+# but not always, as in ceur-open-source's `harm¹ and`, where a gap of 0.4 em
+# without a space character separates them. Touching pieces, such as `word`
+# and `¹, more`, are joined directly. Gaps are relative to the larger size.
+SAME_LINE_SPACE_GAP_EM = 0.25
 
 
 @dataclass(frozen=True)
@@ -338,6 +346,45 @@ def continues_across_boundary(
     )
 
 
+def line_separator(left: Line, right: Line) -> str:
+    """Return the text separating two consecutive lines of a block.
+
+    Pieces of one visual line are joined by a space or nothing, unless they are
+    too far apart to be running text. Other lines are separated by a newline.
+    """
+    if not same_running_text_line(left, right):
+        return '\n'
+    assert left.x2 is not None
+    assert right.x1 is not None
+    font_size = max(left.font_size or 0.0, right.font_size or 0.0, 1.0)
+    if (
+        left.space_after
+        or right.space_before
+        or right.x1 - left.x2 >= font_size * SAME_LINE_SPACE_GAP_EM
+    ):
+        return ' '
+    return ''
+
+
+def physical_line_texts(line_list: list[Line], hard_break_ids: set[int]) -> list[AnnotatedText]:
+    """Return the annotated text of each visual line, joining pdftext's pieces of it.
+
+    Lines whose IDs are in hard_break_ids end with HARD_LINE_BREAK. Since
+    deliberate breaks never separate pieces of one line, it ends the joined line.
+    """
+    texts: list[AnnotatedText] = []
+    for previous, line in zip([None, *line_list], line_list, strict=False):
+        text = AnnotatedText(line.text, line.scripts) + AnnotatedText(
+            HARD_LINE_BREAK if id(line) in hard_break_ids else ''
+        )
+        separator = '\n' if previous is None else line_separator(previous, line)
+        if separator == '\n':
+            texts.append(text)
+        else:
+            texts[-1] = texts[-1] + AnnotatedText(separator) + text
+    return texts
+
+
 def build_page_fragments(
     line_list: list[Line],
     page_numbers: dict[int, PageNumber],
@@ -361,11 +408,7 @@ def build_page_fragments(
     fragments: list[TextFragment] = []
     for lines in page_lines:
         annotated = unhyphenate_annotated_lines(
-            (
-                AnnotatedText(line.text, line.scripts)
-                + AnnotatedText(HARD_LINE_BREAK if id(line) in hard_break_ids else '')
-                for line in lines
-            ),
+            physical_line_texts(lines, hard_break_ids),
             word_counts,
             mixed_case_words,
             coordination_tokens,

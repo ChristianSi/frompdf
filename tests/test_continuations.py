@@ -1,5 +1,6 @@
 import io
 import unittest
+from collections import Counter
 from dataclasses import replace
 
 from frompdf.blocks import (
@@ -9,13 +10,17 @@ from frompdf.blocks import (
 )
 from frompdf.continuations import (
     begins_lowercase,
+    build_page_fragments,
     build_page_layouts,
     continues_across_boundary,
     document_indents_paragraphs,
     ends_open_sentence,
     is_heading_like,
+    join_fragments,
+    line_separator,
+    physical_line_texts,
 )
-from frompdf.models import BlockQuote, Line, PageNumber, Paragraph, TextFragment
+from frompdf.models import HARD_LINE_BREAK, BlockQuote, Line, PageNumber, Paragraph, TextFragment
 from frompdf.output import markdown_to_text
 
 BODY_TEXT = 'ordinary body text filling the whole column width'
@@ -286,6 +291,54 @@ class PageAwareParagraphTests(unittest.TestCase):
         output = io.StringIO()
         markdown_to_text([quote], output, page_markers=True)
         self.assertEqual(output.getvalue(), '> <<PAGE:1>>quoted text that\n> <<PAGE:2>>continues\n')
+
+
+class SameLineFragmentTests(unittest.TestCase):
+    """Joining the pieces into which pdftext splits one visual line."""
+
+    def pieces(self, gap_em: float, **flags: bool) -> tuple[Line, Line]:
+        left = line('word', 100, x1=20, x2=40)
+        right = line('more text', 100.5, x1=40 + gap_em * 10, x2=120)
+        left.space_after = flags.get('space_after', False)
+        right.space_before = flags.get('space_before', False)
+        return left, right
+
+    def test_space_character_at_either_edge_separates_touching_pieces(self) -> None:
+        self.assertEqual(line_separator(*self.pieces(0.0, space_after=True)), ' ')
+        self.assertEqual(line_separator(*self.pieces(0.0, space_before=True)), ' ')
+
+    def test_word_gap_without_space_character_separates_pieces(self) -> None:
+        self.assertEqual(line_separator(*self.pieces(0.4)), ' ')
+
+    def test_touching_pieces_are_joined_directly(self) -> None:
+        self.assertEqual(line_separator(*self.pieces(0.0)), '')
+        self.assertEqual(line_separator(*self.pieces(0.2)), '')
+
+    def test_wide_gap_and_new_lines_keep_line_breaks(self) -> None:
+        self.assertEqual(line_separator(*self.pieces(1.5, space_before=True)), '\n')
+        self.assertEqual(line_separator(line('word', 100), line('next', 112)), '\n')
+
+    def test_hard_break_ends_joined_line(self) -> None:
+        first = line('word', 100, x1=20, x2=40)
+        marker = line('1', 99, x1=40, x2=44)
+        marker.space_after = True
+        following = line('next line', 112)
+
+        texts = physical_line_texts([first, marker, following], {id(marker)})
+
+        self.assertEqual([text.text for text in texts], [f'word1{HARD_LINE_BREAK}', 'next line'])
+
+    def test_hyphen_within_a_visual_line_is_not_unhyphenated(self) -> None:
+        block = [
+            line('a well-', 100, x1=20, x2=48),
+            line('known fact', 100, x1=48, x2=88),
+            line('of inter-', 112, x2=56),
+            line('est', 124, x2=32),
+        ]
+
+        fragments = build_page_fragments(block, {1: PageNumber(1, None)}, Counter(), set(), set())
+
+        self.assertEqual(join_fragments(fragments).text, 'a well-known fact\nof interest')
 
 
 if __name__ == '__main__':

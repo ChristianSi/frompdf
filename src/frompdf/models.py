@@ -34,6 +34,10 @@ class Line:
     avg_weight: float | None
     font_name: str | None = None
     scripts: tuple[ScriptRange, ...] = field(default=(), kw_only=True)
+    # Whether pdftext reported whitespace, other than line ends, before or after
+    # the text. This tells whether fragments of one visual line need a space.
+    space_before: bool = field(default=False, kw_only=True)
+    space_after: bool = field(default=False, kw_only=True)
 
 
 @dataclass

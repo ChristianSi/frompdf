@@ -109,6 +109,14 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
 
 - Whitespace-only lines reported by `pdftext` no longer produce empty blocks
   or stray empty lines in the Markdown output, nor split paragraphs.
+- Lines that `pdftext` splits at superscripts, font changes, or math no longer
+  produce stray line breaks within paragraphs. Their pieces are joined with a
+  space where `pdftext` reports one or a word gap separates them, and directly
+  where they touch, as in `word¹, more`. Widely separated pieces, such as
+  table cells, stay on separate lines. Superscripts and subscripts split off
+  this way are now detected against the neighboring text, so markers such as
+  `OSeO₃⁵¹.` no longer read as ordinary digits. The `-lines.csv` dump gains
+  `space_before` and `space_after` columns.
 
 ## 0.1.0 - 2026-07-09
 
