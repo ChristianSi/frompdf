@@ -70,8 +70,7 @@ times; and Wikipedia, as a collaboratively developed project, is constantly chan
 anyway. According to Aleida Assmann, the Internet and the archive are complementary
 institutions: “the archive fulfills the desire for reliable material preservation and longterm
 storage of information; the Internet fulfills the desire for an acceleration of the data
-flow and lightning-fast and targeted access to information.”
-<sup>1</sup> (2009, 174; my transl.)
+flow and lightning-fast and targeted access to information.”<sup>1</sup> (2009, 174; my transl.)
 
 What many Humanities scholars do not know or, out of skepticism about the Internet as
 a ‘reliable’ academic source, simply do not consider, is that parts of the web are
@@ -144,8 +143,7 @@ because the medium (digital instead of analog) and the actors (non-professionals
 instead of professionals) have changed. In the case of the two fan websites and
 Wikipedia, moreover, it is not only their early definitions that are relevant, but also
 their continuous preoccupation with the genre, which extends from the time of the
-genre’s creation and consolidation until after its alleged ‘death’.
-6
+genre’s creation and consolidation until after its alleged ‘death’.<sup>6</sup>
 
 ### 2.1 Digitally archived chick lit fan websites
 
@@ -264,8 +262,7 @@ chick or the lad?’ is: the lad.” (2015b[2008], 195). His argument is flawed.
 First, the US-American counterpart to Bridget Jones’s Diary, Candace
 Bushnell’s Sex and the City (1996), can hardly be called an imitation. On the
 one hand, the narrative situation and the constellation of characters in the latter
-<<PAGE:7|VISIBLE:31>>differs substantially from the diary-writing Bridget in Fielding’s novel<sup>7</sup>
-; on the
+<<PAGE:7|VISIBLE:31>>differs substantially from the diary-writing Bridget in Fielding’s novel<sup>7</sup>; on the
 other, Bushnell’s column, which was published in the New York Observer from
 1994 to 1996 and formed the basis for her novel, appeared one year before
 Fielding’s column in The Independent (1995–97). Chronologically speaking, Sex
@@ -326,15 +323,13 @@ unintellectual, and cliched? Seems like the person who wrote the connotations se
 opinions about chick lit.” (“Talk: Chick lit”, 3 Jan. 2006a) Wikipedia may be a free
 encyclopedia that anyone can edit, but it has its own control mechanisms: on the one hand,
 any editor can question, modify, or delete changes to an article; on the other, there are also
-several levels of “volunteer stewardship”
-<sup>10</sup> such as the position of administrator (Wikipedia:
+several levels of “volunteer stewardship”<sup>10</sup> such as the position of administrator (Wikipedia:
 “Wikipedia”, 20 July 2020g).<sup>11</sup>
 
 A major advantage of Wikipedia – especially with regard to popular genres and
 genre fiction – is that it “goes beyond the boundaries of an old-fashioned educational
 canon and embraces the zeitgeist, pop culture and the subcultures of geeks, nerds and
-all kinds of hobbyists”
-<sup>12</sup> (Van Dijk, 2015, 3; my transl.). This is a stark contrast to the
+all kinds of hobbyists”<sup>12</sup> (Van Dijk, 2015, 3; my transl.). This is a stark contrast to the
 
 Oxford Dictionary of Literary Terms, which includes terms from literary popular
 culture such as chick lit, but does not exactly embrace these phenomena and in fact

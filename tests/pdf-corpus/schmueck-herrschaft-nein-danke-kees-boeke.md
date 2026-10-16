@@ -81,8 +81,7 @@ unrealistisch, wenn nicht sogar als verrückt.
 Dabei ist das herrschaftsfreie Organisationsprinzip alles andere als eine
 abwegige Utopie. Anthropologisch gesehen stellt die egalitäre Selbstorganisation
 sogar die älteste und nachhaltigste Form menschlichen Zusammenlebens
-dar.<sup>2</sup>
-Über den größten Teil der Menschheitsgeschichte hinweg lebten
+dar.<sup>2</sup> Über den größten Teil der Menschheitsgeschichte hinweg lebten
 <<PAGE:6|VISIBLE:162>>Gemeinschaften ohne feste Hierarchien: sie organisierten sich in Netzwerken
 gegenseitiger Hilfe, in denen Kooperation überlebenswichtig war.
 Autoritäre Systeme kamen und gingen, doch die anarchische Praxis überdauerte
@@ -107,8 +106,7 @@ Gruppen zu ermöglichen. Proudhons historisch einzigartige Bedeutung
 liegt darin, dass er die Anarchie nicht als utopisches Fernziel definierte,
 sondern als konkrete politische und ökonomische Praxis für die Realisierung
 im Hier und Jetzt – ein Konzept, das in jüngerer Zeit in den Debatten
-über eine präfigurative Praxis<sup>3</sup>
-des Anarchismus wieder neu belebt wurde.
+über eine präfigurative Praxis<sup>3</sup> des Anarchismus wieder neu belebt wurde.
 
 So wie Proudhon Mitte des 19. Jahrhunderts die Anarchie nicht als eine
 ferne Utopie, sondern als eine konkrete Ordnung für das Hier und Jetzt verstand,
@@ -124,12 +122,10 @@ herrschaftsfreie Ordnung.
 
 ### <<PAGE:8|VISIBLE:164>>1. Ein christlicher Pazifist entdeckt den Anarchismus
 
-Cornelis „Kees“ Boeke<sup>4</sup>
-wurde am 25. September 1884 in Alkmaar in der
+Cornelis „Kees“ Boeke<sup>4</sup> wurde am 25. September 1884 in Alkmaar in der
 niederländischen Provinz Noord-Holland geboren. Sein Vater, Jan Daniël
 Boeke, war Physiker und Direktor der örtlichen Hogere Burgerschool (HBS;
-deutsch: „Höhere Bürgerschule“)<sup>5</sup>
-– ein Agnostiker mit großer Faszination
+deutsch: „Höhere Bürgerschule“)<sup>5</sup> – ein Agnostiker mit großer Faszination
 für die Erscheinungen der Natur. Von ihm übernahm der junge Kees die
 Überzeugung, dass Kopf und Herz zusammengehören, dass Glaube und
 Wissenschaft keine Gegensätze sind, und dass Musik die Kraft hat, Menschen
@@ -174,8 +170,7 @@ Missionsarbeit im berüchtigten Londoner East End, wo die ärmsten
 Fabrikarbeiter:innen lebten.
 
 Über einen Kommilitonen am University College kam er im Winter 1909
-mit der Glaubensgemeinschaft der Quäker<sup>6</sup>
-in Kontakt. Sie lehnen feste
+mit der Glaubensgemeinschaft der Quäker<sup>6</sup> in Kontakt. Sie lehnen feste
 Glaubenssätze und religiöse Hierarchien ab, und nicht immer betrachten sie
 sich auch als Christen, sondern verstehen teilweise das Quäkertum als eine
 Art Universalreligion – eine Sichtweise, die später wohl auch Kees Boeke
@@ -203,8 +198,7 @@ Gemeinschaftsgefühl, die Boeke bei den Quäkern kennenlernte,
 sollte sich später in seiner pädagogischen Arbeit und in seinem Konzept der
 Soziokratie widerspiegeln. Bei den Quäkern begegnete er auch seiner späteren
 Frau Beatrice „Betty“ Cadbury, die Tochter einer angesehenen Birminghamer
-Familie von Schokoladenfabrikanten<sup>8</sup>
-. In ihr traf er eine spirituell
+Familie von Schokoladenfabrikanten<sup>8</sup>. In ihr traf er eine spirituell
 verwandte Seele. Im Sommer 1911 verlobten sie sich, um noch im selben
 <<PAGE:11|VISIBLE:167>>Jahr, am 19. Dezember, in Birmingham zu heiraten. Für Boeke bedeutete die
 Ehe zugleich auch den Abschied von einer gerade begonnenen Ingenieurslaufbahn
@@ -237,8 +231,7 @@ nun an gemeinsam mit Betty noch radikaler gegen den Krieg zu engagieren.
 Kurz nach Kriegsausbruch war 1914 von englischen Quäkern und deutschen
 Lutheranern der Versöhnungsbund (Fellowship of Reconciliation)
 gegründet worden, aus dem die heute noch bestehende International Fellowship
-of Reconciliation (IFOR) <sup>9</sup>
-hervorgegangen ist. Kees Boeke wurde Sekretär
+of Reconciliation (IFOR) <sup>9</sup> hervorgegangen ist. Kees Boeke wurde Sekretär
 <<PAGE:12|VISIBLE:168>>der Birminghamer Abteilung des Versöhnungsbundes und reiste in dessen
 Auftrag über die neutralen Niederlande nach Deutschland, wo er sechs
 Wochen lang verschiedene pazifistische und antimilitaristische Gruppen
@@ -367,8 +360,7 @@ Niederlanden eine beachtliche Anhängerschaft gefunden.<sup>18</sup> Boeke über
 wesentliche Elemente dieser tolstojanischen Tradition, darunter die
 bedingungslose Gewaltlosigkeit, die konsequente Verweigerung des Wehrdienstes
 und die Orientierung an einer von Tolstoi geprägten Sichtweise
-des „reinen Lebens“<sup>19</sup>
-.
+des „reinen Lebens“<sup>19</sup>.
 
 Die christlich-anarchistische Weltanschauung der Boekes war eng verbunden
 mit einer radikalen Ablehnung von Staat, Kapitalismus und Besitz.
@@ -417,8 +409,7 @@ Boeke immer häufiger mit Staat und Gesellschaft in Konflikt. Die Presse
 verspottete ihre Handlungen und Haltung als „Don-Quichotismus“, oder warf
 ihnen – von linker Seite – „bourgeoise Philanthropie“ vor. Der Staat stufte
 sie als staatsgefährdend ein, und 1922 wurde ihre Gruppe von einem Informanten
-der Geheimpolizei infiltriert.
-<sup>23</sup> Bei einer Wahlboykott-Demonstra-tion
+der Geheimpolizei infiltriert.<sup>23</sup> Bei einer Wahlboykott-Demonstra-tion
 in ihrem Garten kam es 1925 sogar zu einer gewalttätigen Auseinandersetzung
 mit der Polizei. Offene Türen lockten Einbrecher an, das
 Finanzamt, dem sie Steuern schuldeten, versteigerte ihren Hausrat. Schließlich
@@ -554,8 +545,7 @@ Fächer, planten ihre Arbeit eigenständig, übernahmen Aufgaben im Alltag
 und trugen die Verantwortung für das gemeinsame Leben. Verpflichtungen
 wurden als gegenseitige Absprachen verstanden, die einzuhalten waren.
 Prüfungen wurden weitgehend vermieden; stattdessen nutzte man freiwillige
-Tests und später ein selbst entwickeltes Prüfungssystem<sup>31</sup>
-.
+Tests und später ein selbst entwickeltes Prüfungssystem<sup>31</sup>.
 
 <<PAGE:24|VISIBLE:180>>2. Ganzheitliches Lernen – mit Kopf, Herz und Hand: Wissen wurde nicht abstrakt
 vermittelt, sondern durch praktische Erfahrungen, handwerkliches
@@ -821,8 +811,8 @@ Neuordnung bestätigt. Er betrachtete es als seine Aufgabe, den „neuen Geist�
 der Werkplaats Kindergemeenschap zu verbreiten und für eine „vernünftige
 Ordnung“ der Menschheit insgesamt einzutreten. Im Mai 1945, unmittelbar
 nach Kriegsende, veröffentlichte er seine bereits in der Besatzungszeit verfasste
-Broschüre Die Ordnung der Vernunft in der Gemeinschaft der Men-schen<sup>49</sup>
-, in der er seine Vision einer auf gemeinschaftlicher Selbstverwaltung
+Broschüre Die Ordnung der Vernunft in der Gemeinschaft der Men-schen<sup>49</sup>,
+in der er seine Vision einer auf gemeinschaftlicher Selbstverwaltung
 basierenden demokratischen Nachkriegsordnung skizzierte. Darin
 verwendete er auch erstmals den Begriff Soziokratie, um dem in der Werkplaats
 erprobten Modell einer gewaltfreien, konsensorientierten Basisdemokratie
@@ -1030,8 +1020,7 @@ auch den Ausdruck „Gemeinschaftsdemokratie“ verwendete:
 „Es darf jedoch keine Demokratie sein, die auf Macht beruht, sei es auch die
 Macht einer Mehrheit, sondern es muss eine echte Gemeinschaftsdemokratie
 sein, d. h. eine Ordnung der Gemeinschaft durch die Gemeinschaft, mit anderen
-Worten: die Selbstdisziplin der Gemeinschaft.“
-61
+Worten: die Selbstdisziplin der Gemeinschaft.“<sup>61</sup>
 
 Ein solches System schützt Minderheiten, integriert marginalisierte
 Stimmen und versteht Konflikte nicht als Bedrohung, sondern als ein kollektives
@@ -1073,8 +1062,7 @@ Bühne und nahm regelmäßig an internationalen Konferenzen teil,
 auf denen er sein Konzept der Soziokratie am Beispiel seiner Werkplaats-Erfahrungen
 präsentierte. Er verband dabei seine Arbeit an der Werkplaats
 in Bilthoven mit internationalen Projekten wie der New Education Fellowship
-und der International Children’s Community<sup>63</sup>
-. In verschiedenen Foren – von
+und der International Children’s Community<sup>63</sup>. In verschiedenen Foren – von
 <<PAGE:43|VISIBLE:199>>UNESCO-Tagungen bis zu den WVO-Konferenzen – setzte er sich für eine
 Reform von Bildung und Gesellschaft im Sinne seiner soziokratischen Ideen
 ein.
@@ -1409,9 +1397,7 @@ beweist, dass ein pragmatisch verstandener Anarchismus nicht an der
 Wirklichkeit scheitert, sondern im besten Fall in ihr aufgeht, sie kulturell
 verändert und neue Methoden der Organisation hervorbringt, die nicht nur
 anarchisch, sondern auch alltagstauglich und effektiv sind.
-\*
-\*
-\*
+\*\*\*
 
 ### <<PAGE:5|VISIBLE:161>>Notes
 

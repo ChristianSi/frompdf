@@ -204,8 +204,7 @@ even more complicated to distribute your own version of an applications.
 
 In past years, there has been more interest in open source licenses based on ethical
 values (Goodman-Wilson, 2020). For example, Ethical Source tries to drive licenses
-that prevent software use for harm<sup>1</sup>
-and their GitHub repository’s<sup>2</sup> first commit was
+that prevent software use for harm<sup>1</sup> and their GitHub repository’s<sup>2</sup> first commit was
 made in 2019.
 
 Notably, such licenses cannot be considered open source, as restricting the use
@@ -315,8 +314,7 @@ The digital divide mentioned in chapter 2.2 makes it imperative that user freedo
 be guaranteed, moreso when development and distribution options get more difficult.
 Mobile application distributions systems are perhaps a special case when it comes to
 software distribution, as they mostly rely on ”walled gardens”, a centralized distribution
-system in the form of app stores<sup>3</sup>
-. Installing your own version of an application requires
+system in the form of app stores<sup>3</sup>. Installing your own version of an application requires
 at the very least a development environment dedicated to the chosen platform and a
 high level of technical know-how; possibly also payment to the required distribution
 platform, if one wants to share the application or install it without resorting to developer
@@ -329,8 +327,7 @@ of some other ethics-based licenses that explicitly restrict the use of software
 <sup>3</sup>While Android allows the installation of apk files outside Play Store, the option is off by default and can
 be difficult to do without technical skills.
 
-<<PAGE:8|VISIBLE:139>>NoHarm license<sup>4</sup>
-that forbids use related to things such as slavery, gambling, tobacco,
+<<PAGE:8|VISIBLE:139>>NoHarm license<sup>4</sup> that forbids use related to things such as slavery, gambling, tobacco,
 hate speech or discrimination. This is not a problem, as a wider selection of licenses
 ensures that people can choose how their software is shared and used. The proposed
 additions would not affect those who choose not to use a license that includes them.
@@ -346,8 +343,7 @@ license.
 
 ## Money for nothing
 
-GNU GPL explicitly allows selling copies of free software<sup>5</sup>
-. This provides a good
+GNU GPL explicitly allows selling copies of free software<sup>5</sup>. This provides a good
 example of how ’free’ in free software refers to liberty (of code) and not cost (of distribution).
 The proposed changes do limit freedom to work with the code, which could
 bear further examination to ensure that this does not create unforeseen problems.
@@ -355,8 +351,7 @@ bear further examination to ensure that this does not create unforeseen problems
 ## Limiting usage through DRM
 
 Perhaps the closest thing to the proposed changes is the use of DRM, which is explicitly
-allowed under GPLv3 licensing<sup>6</sup>
-. But even DRM is disallowed when protected by
+allowed under GPLv3 licensing<sup>6</sup>. But even DRM is disallowed when protected by
 
 tivoization or law, and a case could be made that similar protection is provided by
 modern mobile app distribution platforms, which should be included in similar fashion.
