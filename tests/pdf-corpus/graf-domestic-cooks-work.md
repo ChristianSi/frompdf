@@ -1,12 +1,10 @@
-# <<PAGE:1|VISIBLE:173>>CHAPTER 10
+<<PAGE:1|VISIBLE:173>>**CHAPTER 10**
 
-## Domestic Cooks’ Work toward Moroccan Beldi Foods in Uncertain Times
+# Domestic Cooks’ Work toward Moroccan Beldi Foods in Uncertain Times
 
 Katharina Graf
 
-# •••
-
-### Introduction
+## Introduction
 
 I was about to finish writing fieldnotes in my room on the first floor when I heard
 someone shuffle across the courtyard of the riad (house arranged around a courtyard).
@@ -39,7 +37,7 @@ expensive and bad, they sell whatever to all the pilgrims. … I know from my la
 trip to Mecca for the ‘omra [the so-called small pilgrimage, carried out during the
 rest of the Islamic calendar].”
 
-***
+\*\*\*
 
 This first encounter with beldi foods took place in a very intimate and personal
 moment, a moment that I could have easily missed. Hajja did not think that this
@@ -117,7 +115,7 @@ I will also show how their increasing difficulties of doing so situates urban in
 of low income in the broader context of change of a globalizing Moroccan
 food market that systematically undermines domestic food security.
 
-### Studying Beldi Practices
+## Studying Beldi Practices
 
 Beldi begins with individual people, and so does my methodology. Between September
 and December 2012 I lived and worked with Hajja and her family as part
@@ -162,7 +160,7 @@ and the diaspora, and thus a stronger social security net than many other famili
 I know. Still, their life stories reflect the socioeconomic and environmental decline
 that other Moroccans I talked to experienced over the last couple of decades.
 
-### Beldi and Rumi Foods in a Globalizing Market
+## Beldi and Rumi Foods in a Globalizing Market
 
 To understand the importance of beldi as an embodied index of quality, it is necessary
 to contextualize beldi foods in the contemporary Moroccan food system.
@@ -247,7 +245,7 @@ kinship ties even decades after migrating to the city is shared equally among
 low-income men and women, the knowledge and work of processing, preserving,
 storing, and preparing food in a beldi way is predominantly female.
 
-### Making Beldi Foods in Low-Income Homes
+## Making Beldi Foods in Low-Income Homes
 
 Since Hajja returned from the hajj in mid-November the riad was always full.
 Family members from all over Morocco but especially from Hajja’s bled honored
@@ -293,7 +291,7 @@ meaning homemade] food is simply the best. You know what’s in there!” She
 gestured toward her tummy, rubbed it, and sighed with pleasure. For her, this
 was food as good as it gets.
 
-***
+\*\*\*
 
 Although I had spent nearly one hour with her in the kitchen—and had been
 sharing meals with her and her family for a couple of months already—I was not
@@ -392,7 +390,7 @@ fact that they can be actively made that gives my research participants their se
 of security and control in the context of rapid change. So what happens if making
 beldi foods is becoming more difficult?
 
-### Beldi Foods in the Context of Decline
+## Beldi Foods in the Context of Decline
 
 With the beginning of the olive harvest in late November, Fatimzahra was regularly
 on the phone speaking to aunts and cousins, later to acquaintances from
@@ -424,7 +422,7 @@ angered by what she described as a “sell-out” of Moroccan food products to
 wealthier foreigners like myself. She tirelessly pointed this out to me whenever
 her work to identify and make beldi foods bore no fruits.
 
-<<PAGE:12|VISIBLE:184>>***
+<<PAGE:12|VISIBLE:184>>\*\*\*
 
 Fatimzahra’s failure to find and make beldi olives further showcases the work
 invested in making beldi foods and relates it to broader social, material, and
@@ -471,7 +469,7 @@ of social relations; a truly poor person is one without ‘asl (roots, origin). 
 control and a daily reminder of one’s marginal, seemingly forgotten position in
 an unequally globalized world.
 
-### Conclusion
+## Conclusion
 
 Hajja’s suitcase full of beldi and non-beldi foods on the way to Mecca at once
 materializes and symbolizes the importance of placing and tasting foods for
@@ -519,7 +517,7 @@ to understand the past, present, and future of people and their places and taste
 “beyond terroir,” it is worth attending to less visible actors such as domestic cooks
 and their everyday work to make good food in an increasingly unequal world.
 
-### Acknowledgments
+## Acknowledgments
 
 I would like to thank my research participants for their tireless efforts of explaining
 the notion of beldi to me. It is not an exaggeration to say that without them

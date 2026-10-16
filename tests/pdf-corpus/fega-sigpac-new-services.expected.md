@@ -323,7 +323,7 @@ Servicio Ventajas Limitaciones Propuestas de uso
 > SIGPAC
 
 <<PAGE:11>>Servicio Ventajas Limitaciones Propuestas de uso
-- Acceso selectivo a
+\- Acceso selectivo a
 datos vectoriales
 
 - Formatos de
@@ -380,13 +380,13 @@ Tile (MVT)
 conocimientos
 específicos para su
 correcta integración
-- Portales web ligeros
-- Integrable en SIG y responsivos
+\- Portales web ligeros
+\- Integrable en SIG y responsivos
 profesionales\
-- Posibilidad de
+\- Posibilidad de
 personalizar estilo
 cliente
-- Visualización en
+\- Visualización en
 proyectos SIG
 
 - Integrable en SIG

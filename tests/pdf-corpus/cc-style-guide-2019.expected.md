@@ -370,7 +370,9 @@ number starts a sentence.
 CC officially uses American English—please refer to the “British and American spelling” guide by
 Oxford Dictionaries for help.
 
-### <<PAGE:15|VISIBLE:13>>Punctuation Colon
+### <<PAGE:15|VISIBLE:13>>Punctuation
+
+Colon
 
 Use a colon, rather than a comma, to introduce a direct quotation that is longer than a short
 sentence. Capitalize the first word of a quoted sentence.
@@ -401,7 +403,8 @@ Finally, any content created and/or published by CC should also clearly indicate
 whichever CC license it is published under, and follow the attribution requirements under that
 license. All CC licenses can be found via “Share Your License.”
 
-<<PAGE:16|VISIBLE:14>>Writing Tips\
+### <<PAGE:16|VISIBLE:14>>Writing Tips
+
 “To be”\
 Avoid overusing the verb “to be.” Instead, utilize the active tense.
 
@@ -436,7 +439,9 @@ E.g. Advocates for net neutrality arrived en masse at Capitol Hill.
 Do not italicize words written in a different alphabet. Include an italicized transliterated version of
 the word in parentheses or in a footnote.
 
-### <<PAGE:17|VISIBLE:15>>Creative Commons Style Guide | 2019 by Victoria Heath
+### <<PAGE:17|VISIBLE:15>>Creative Commons Style Guide | 2019
+
+by Victoria Heath
 
 2019, by Creative Commons.\
 Except where otherwise noted, this document is published under a Creative Commons
@@ -468,5 +473,5 @@ creativecommons/47959607413/in/album-72157708726481004/ Licensed under CC BY.
 Page Nine
 
 Left, Middle, and Right: Heath, Victoria. (2019, September 29). An Explanation of Creative Commons. Retrieved
-from: canva.com/design/DADm40hSwIU/9yEhtLnl5O1WMKbx8JSSkA/view?utm_content=DADm40hSwIU&utm_
+from: canva.com/design/DADm40hSwIU/9yEhtLnl5O1WMKbx8JSSkA/view?utm_content=DADm40hSwIU&utm\_
 campaign=designshare&utm_medium=link&utm_source=viewer. Licensed under CC BY-NC-ND 4.0.

@@ -1,6 +1,4 @@
-# <<PAGE:1>>Interaktives Anpassungsfähiges E-Learning-System Im
-
-# Bereich Datenbanken
+# <<PAGE:1>>Interaktives Anpassungsfähiges E-Learning-System Im Bereich Datenbanken
 
 Fabian Keller\
 Hochschule Harz\

@@ -1,16 +1,17 @@
 # <<PAGE:2|VISIBLE:158>>espero
 
-## Libertäre Zeitschrift www.edition-espero.de
+**Libertäre Zeitschrift
+www.edition-espero.de**
 
-#### Neue Folge Nr. 12
+### Neue Folge Nr. 12
 
-#### Januar 2026
+### Januar 2026
 
-#### Themenschwerpunkt: Anarchismus und Pädagogik
+### Themenschwerpunkt: Anarchismus und Pädagogik
 
-#### Herausgegeben von Markus Henning und Jochen Schmück
+### Herausgegeben von Markus Henning und Jochen Schmück
 
-#### Libertad Verlag Potsdam
+### Libertad Verlag Potsdam
 
 <<PAGE:3|VISIBLE:159>>espero – Neue Folge erscheint halbjährlich als kostenlose digitale Zeitschrift
 (E-Zine) im PDF-Format. Hierfür empfehlen wir den Adobe Reader als PDF-Viewer,
@@ -51,11 +52,11 @@ Published in Germany | ISSN (Online): 2700-1598
 der auch als der „Erfinder“ des libertären Organisationsmodells der Soziokratie gilt.
 Foto: 1939, Quelle: Nationaal Archief, No. 119-0499, Open Source.
 
-### <<PAGE:5|VISIBLE:161>>Herrschaft? Nein danke! – Kees Boeke und das libertäre Organisationsmodell der Soziokratie
+## <<PAGE:5|VISIBLE:161>>Herrschaft? Nein danke! – Kees Boeke und das libertäre Organisationsmodell der Soziokratie
 
-### Von Jochen Schmück
+## Von Jochen Schmück
 
-#### Prolog
+### Prolog
 
 > „So wie der Mensch die Gerechtigkeit in der Gleichheit sucht,
 > sucht die Gesellschaft die Ordnung in der Anarchie. /\
@@ -121,7 +122,7 @@ beschäftigen wird: die Soziokratie – ein bemerkenswertes Konzept für eine
 herrschaftsfreie Ordnung.
 ⸟
 
-#### <<PAGE:8|VISIBLE:164>>1. Ein christlicher Pazifist entdeckt den Anarchismus
+### <<PAGE:8|VISIBLE:164>>1. Ein christlicher Pazifist entdeckt den Anarchismus
 
 Cornelis „Kees“ Boeke<sup>4</sup>
 wurde am 25. September 1884 in Alkmaar in der
@@ -438,7 +439,7 @@ Referenzprojekt von Kees Boekes Organisationsprinzip der Soziokratie werden
 sollte.
 ⸟
 
-#### <<PAGE:19|VISIBLE:175>>2. Die Werkplaats Kindergemeenschap – ein Labor der Selbstorganisation
+### <<PAGE:19|VISIBLE:175>>2. Die Werkplaats Kindergemeenschap – ein Labor der Selbstorganisation
 
 Die Gründung der Werkplaats Kindergemeenschap (Werkstatt Kindergemeinschaft)
 in Bilthoven im Jahr 1926 war eine direkte Folge von Kees Boekes
@@ -810,7 +811,7 @@ entstand etwas Neues: ein Konzept, das weit über die Werkplaats hinaus
 Wirkung entfalten sollte – das Organisationsmodell der Soziokratie.
 ⸟
 
-#### <<PAGE:34|VISIBLE:190>>3. Das Organisationsmodell der Soziokratie im Spannungsfeld von Theorie und Praxis
+### <<PAGE:34|VISIBLE:190>>3. Das Organisationsmodell der Soziokratie im Spannungsfeld von Theorie und Praxis
 
 Kees Boeke, der bereits den Ersten Weltkrieg als ein moralisches und zivilisatorisches
 Versagen der „alten Welt“ wahrgenommen und sich dem christlichlibertären
@@ -1145,7 +1146,7 @@ erleben sollte, mit der wir uns im abschließenden Epilog näher
 beschäftigen wollen.
 ⸟
 
-#### <<PAGE:46|VISIBLE:202>>Epilog
+### <<PAGE:46|VISIBLE:202>>Epilog
 
 Kees Boeke hatte mit seinem Konzept der Soziokratie ein pragmatisch-anar-chistisches
 Organisationsmodell geschaffen, dessen drei Grundregeln wie
@@ -1408,11 +1409,11 @@ beweist, dass ein pragmatisch verstandener Anarchismus nicht an der
 Wirklichkeit scheitert, sondern im besten Fall in ihr aufgeht, sie kulturell
 verändert und neue Methoden der Organisation hervorbringt, die nicht nur
 anarchisch, sondern auch alltagstauglich und effektiv sind.
-*
-*
-*
+\*
+\*
+\*
 
-#### <<PAGE:5|VISIBLE:161>>Notes
+### <<PAGE:5|VISIBLE:161>>Notes
 
 1. Pierre-Joseph Proudhon: Qu'est-ce que la propriété ? Ou Recherches sur le principe du droit et
    du gouvernement, Paris: J.-F. Brocard, 1840, pp. 234-235 (online | PDF), (Übers. aus d. Franz. v.
@@ -1878,7 +1879,7 @@ anarchisch, sondern auch alltagstauglich und effektiv sind.
     (N.F.), Nr. 8 (Januar 2024), S. 99-182 (online | PDF).
 82. Siehe Schmück: Wenn Anarchie auf Algorithmen trifft, a. a. O. (Vgl. Anm. 74).
 
-#### <<PAGE:56|VISIBLE:212>>Literatur
+### <<PAGE:56|VISIBLE:212>>Literatur
 
 Bakunin, Michael: Gesammelte Werke, Band 1, hrsg. v. Max Nettlau,
 Berlin: Verlag „Der Syndikalist“, 1921 (online).
@@ -2030,13 +2031,13 @@ und Tat, Lauf an der Pegnitz und Bern, Heft 106, Februar 1933, S. 18-21.
 <<PAGE:60|VISIBLE:216>>Das Kees Boeke und der Soziokratie gewidmete Themen-Special der niederländischen
 anarchistischen Zeitschrift De AS, vol. 14 (1986), no. 76 (Okt.-Dez.), (online | PDF).
 
-### <<PAGE:61|VISIBLE:217>>ANHANG:
+## <<PAGE:61|VISIBLE:217>>ANHANG:
 
-### Die Ordnung der Vernunft in der Gemeinschaft der Menschen (Mai 1945)1
+## Die Ordnung der Vernunft in der Gemeinschaft der Menschen (Mai 1945)1
 
-### Von Kees Boeke
+## Von Kees Boeke
 
-#### 1. Keine Diktatur!
+### 1. Keine Diktatur!
 
 Die schrecklichen Jahre, die hinter uns liegen, haben uns allen sicherlich
 gelehrt (wahrscheinlich sogar den meisten der Irregeführten, die einst anders
@@ -2075,13 +2076,13 @@ Alles deutet also darauf hin, dass Zwang so weit wie möglich vermieden
 werden sollte, wobei die tatsächliche Ordnung und Struktur erhalten bleiben
 muss.
 
-#### <<PAGE:61|VISIBLE:217>>Notes
+### <<PAGE:61|VISIBLE:217>>Notes
 
 1. Kees Boeke: Redelijke Ordening van de Mensengemeenschap, 2. überarb. Aufl. (1967), neu
    abgedruckt, in: de AS – De Sociokratie van Kees Boeke, vol. 14 (1986), no. 76, pp. 12-17 (Übers.
    aus d. Niederl. v. Jochen Schmück).
 
-#### <<PAGE:62|VISIBLE:218>>2. Auch kein Parlamentarismus.
+### <<PAGE:62|VISIBLE:218>>2. Auch kein Parlamentarismus.
 
 Müssen wir dann wieder zu den Verhältnissen vor 1940 zurückkehren, also zur
 parlamentarischen Demokratie? Ich antworte: Nein, auch diese war weit
@@ -2109,7 +2110,7 @@ wieder eine demokratische Regierung einzusetzen. Solange es keine
 anerkannte dritte Lösung gibt, ist es unvermeidlich, dass diese Methode
 erneut angewendet wird.
 
-#### 3. Die dritte Lösung: Soziokratie.
+### 3. Die dritte Lösung: Soziokratie.
 
 Es gibt jedoch eine dritte Lösung, und weil ich von ihrer Möglichkeit fest
 überzeugt bin, habe ich beschlossen, mich persönlich an alle denkenden
@@ -2184,7 +2185,7 @@ Bereichen entwickelt hat, kann etwas Ähnliches geschehen, wenn
 Vertrauen in die soziokratische Ordnung entsteht und dieses Vertrauen
 wächst.
 
-#### 4. Die dazu notwendige Erziehung.
+### 4. Die dazu notwendige Erziehung.
 
 Was zunächst einmal notwendig ist, ist eine bewusste Erziehung in dieser
 Richtung. In der Schule, wie wir sie heute kennen, lernt das Kind zu
@@ -2209,7 +2210,7 @@ bietet, und dass, wenn Erziehung und Bildung statt in Schulen in solchen
 Kindergemeinschaften stattfinden, sich die Gemeinschaft nach und
 nach in der Lage zeigen wird, sich auf soziokratischem Wege zu organisieren.
 
-#### <<PAGE:66|VISIBLE:222>>5. Übergang von der parlamentarischen Demokratie zur Soziokratie.
+### <<PAGE:66|VISIBLE:222>>5. Übergang von der parlamentarischen Demokratie zur Soziokratie.
 
 Die wichtige Frage ist nun jedoch, wie die parlamentarische Ordnung, wie
 wir sie kennen und bald wiederhaben werden, in eine zunehmend soziokratische

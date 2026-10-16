@@ -4,15 +4,13 @@ https://doi.org/10.1007/s42803-021-00031-6
 
 ORIGINAL PAPER Open Access
 
-# Recovering contemporary genre histories – the development of chick lit as seen
-
-# through the internet archive’s wayback machine and wikipedia’s history page
+# Recovering contemporary genre histories – the development of chick lit as seen through the internet archive’s wayback machine and wikipedia’s history page
 
 Sandra Folie<sup>1</sup>
 
 Received: 21 August 2020 /Accepted: 11 February 2021 / Published online: 11 May 2021
 
-# The Author(s) 2021
+\# The Author(s) 2021
 
 ### Abstract
 
@@ -40,7 +38,7 @@ Wikipedia
 With genre history, one inevitably thinks of good old ‘dusty’ archival work. In literary
 studies, archives and libraries are still most often imagined as physical spaces and often
 
-* Sandra Folie
+\* Sandra Folie
 
 sandra.folie@univie.ac.at
 
@@ -960,7 +958,7 @@ en.wikipedia.org/w/index.php?title=Talk:Chick_lit&oldid=969364576. Accessed 30 J
 Wikipedia. (10 Dec. 2015b). Chick lit. https://en.wikipedia.org/w/index.php?title=Chick_lit&oldid=
 694622566. Accessed 23 July 2020.
 
-Wikipedia. (10 Dec. 2015c). Chick lit: revision history. https://en.wikipedia.org/w/index.php?title=Chick_
+Wikipedia. (10 Dec. 2015c). Chick lit: revision history. https://en.wikipedia.org/w/index.php?title=Chick\_
 lit&offset=20170920193653%7C801616364&action=history. Accessed 30 July 2020.
 
 Wikipedia. (7 Dec. 2016). Chick lit. https://en.wikipedia.org/w/index.php?title=Chick_lit&oldid=753512396.
@@ -978,7 +976,7 @@ Wikipedia. (22 June 2020c). Chick lit. https://en.wikipedia.org/w/index.php?titl
 Wikipedia. (22 June 2020d). Chick lit, authorship. https://xtools.wmflabs.org/authorship/en.wikipedia.org/
 Chick%20lit. Accessed 1 Aug 2020.
 
-Wikipedia. (12 July 2020e). Gender bias on Wikipedia. https://en.wikipedia.org/w/index.php?title=Gender_
+Wikipedia. (12 July 2020e). Gender bias on Wikipedia. https://en.wikipedia.org/w/index.php?title=Gender\_
 bias_on_Wikipedia&oldid=967296726. Accessed 30 July 2020.
 
 Wikipedia. (12 July 2020f). Neutral point of view. https://en.wikipedia.org/w/index.php?title=Wikipedia:
@@ -993,7 +991,7 @@ Wikipedians&oldid=969260024#Demographics. Accessed 30 July 2020.
 Wikipedia. (29 July 2020i). Wikipedia: etiquette. https://en.wikipedia.org/w/index.php?title=Wikipedia:
 Etiquette&oldid=970206082. Accessed 1 Aug. 2020.
 
-Wikipedia. (30 July 2020j). Racial bias on Wikipedia. https://en.wikipedia.org/w/index.php?title=Racial_
+Wikipedia. (30 July 2020j). Racial bias on Wikipedia. https://en.wikipedia.org/w/index.php?title=Racial\_
 bias_on_Wikipedia&oldid=965571790. Accessed 1 Aug. 2020.
 
 Wikipedia. (21 Aug. 2020k). Wikipedia: administration. https://en.wikipedia.org/w/index.php?title=

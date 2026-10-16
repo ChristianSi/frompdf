@@ -1,15 +1,10 @@
-# <<PAGE:1|VISIBLE:64:1>>Brief Announcement:
+# <<PAGE:1|VISIBLE:64:1>>Brief Announcement: Proximal Byzantine Agreement: Improved Accuracy for Fault-Tolerant Replicated Datastreams
 
-# Proximal Byzantine Agreement: Improved
+**Roy Shadmon**
 
-# Accuracy for Fault-Tolerant Replicated
+University of California, Santa Cruz, CA, USA
 
-# Datastreams
-
-## Roy Shadmon # Ñ
-
-University of California, Santa Cruz, CA, USA\
-Owen Arden # Ñ
+**Owen Arden**
 
 University of California, Santa Cruz, CA, USA
 
@@ -112,7 +107,7 @@ reinforcing the tradeoff [12] between high-precision agreement and statistical a
 
 Replicas participating in Approximate Byzantine Agreement (ABA) protocols (e.g.,[5, 14, 19])
 start with an arbitrary real value and reach an output solution satisfying two properties:
-1. ϵ-Agreement: all nonfaulty replicas eventually output values within ϵ of each other.
+1\. ϵ-Agreement: all nonfaulty replicas eventually output values within ϵ of each other.
 
 2. Validity: these values are bound (in some sense) by the initial values of nonfaulty replicas.
 
@@ -242,7 +237,7 @@ most |F| = f faulty values, let PBA(R, s) = (x, R′
 (s,f)
 0 ∆R
 ′
-+ C
+\+ C
 (s,f)
 0 ∆<sup>Q</sup> ≤ 2C
 

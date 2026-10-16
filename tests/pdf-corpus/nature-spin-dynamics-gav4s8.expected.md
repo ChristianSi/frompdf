@@ -1,6 +1,8 @@
 ## <<PAGE:1>>Slowdown of photoexcited spin dynamics in the non-collinear spin-ordered phases in skyrmion host GaV4S8
 
-### Fumiya Sekiguchi, Kestutis Budzinauskas, Prashant Padmanabhan, Rolf B. Versteeg, Vladimir Tsurkan, István Kézsmárki, Francesco Foggetti, Sergey Artyukhin, Paul H. M. van Loosdrecht
+**Fumiya Sekiguchi, Kestutis Budzinauskas, Prashant Padmanabhan,
+Rolf B. Versteeg, Vladimir Tsurkan, István Kézsmárki, Francesco
+Foggetti, Sergey Artyukhin, Paul H. M. van Loosdrecht**
 
 #### Angaben zur Veröffentlichung / Publication details:
 
@@ -26,13 +28,14 @@ https://creativecommons.org/licenses/by/4.0/deed.de
 
 https://doi.org/10.1038/s41467-022-30829-z OPEN
 
-# Slowdown of photoexcited spin dynamics in the non-collinear spin-ordered phases in skyrmion
+# Slowdown of photoexcited spin dynamics in the non-collinear spin-ordered phases in skyrmion host GaV<sub>4</sub>S<sub>8</sub>
 
-# host GaV<sub>4</sub>S<sub>8</sub>
-
-### Fumiya Sekiguchi <sup>1</sup>✉, Kestutis Budzinauskas<sup>1</sup>
-
-### , Prashant Padmanabhan <sup>1</sup> , Rolf B. Versteeg <sup>1</sup> , Vladimir Tsurkan<sup>2,3</sup>, István Kézsmárki <sup>2</sup>, Francesco Foggetti<sup>4,5</sup>, Sergey Artyukhin <sup>4</sup> & Paul H. M. van Loosdrecht <sup>1</sup>✉
+**Fumiya Sekiguchi <sup>1</sup>✉, Kestutis Budzinauskas<sup>1</sup>
+, Prashant Padmanabhan <sup>1</sup>
+, Rolf B. Versteeg <sup>1</sup>
+,
+Vladimir Tsurkan<sup>2,3</sup>, István Kézsmárki <sup>2</sup>, Francesco Foggetti<sup>4,5</sup>, Sergey Artyukhin <sup>4</sup> &
+Paul H. M. van Loosdrecht <sup>1</sup>✉**
 
 # 1234567890():,;
 
@@ -172,11 +175,11 @@ a bc
 
 # Paramagnet
 
--
+\-
 
 120 mT
 
--
+\-
 
 120 mT
 
@@ -216,9 +219,9 @@ de
 
 ##### Cyc
 
--
+\-
 
--
+\-
 
 -2
 
@@ -287,7 +290,7 @@ Magnetic Field (mT)
 > Cyc
 > Sk
 >
-> -
+> \-
 >
 > Cyc
 > Sk
@@ -350,7 +353,7 @@ f
 
 0.4
 
--
+\-
 
 > Cyc
 > Sk
@@ -838,7 +841,7 @@ utilized as the transport agent. The crystal growth was performed at temperature
 > Modelling of the spin texture and calculation of the magnon spectra. To
 >
 > reproduce the Cyc-SkL-FM sequence of magnetic phases, we used UppASD code<sup>58</sup>
-> to perform Monte-Carlo (MC) simulations using 72*72*1 supercells, and 100,000
+> to perform Monte-Carlo (MC) simulations using 72\*72\*1 supercells, and 100,000
 > Metropolis MC steps for each combination of temperature and magnetic field. The
 > parameters of the magnetic Hamiltonian were adopted from Ref. <sup>56</sup>. Particularly,
 > we used the set of constants, obtained using superexchange theory. In order to
@@ -866,7 +869,8 @@ dynamical structure factor,
 > Z þ1
 > 1
 
-ð<sup>q;</sup> <sup>ω</sup>Þ¼ 1
+### ð<sup>q;</sup> <sup>ω</sup>Þ¼ 1
+
 ffiffiffiffiffi\
 2π p N
 
@@ -1115,7 +1119,8 @@ paper with input from all authors. F.S. and P.v.L. conceived the project.
 
 Open Access funding enabled and organized by Projekt DEAL.
 
-Competing interests\
+Competing interests
+
 The authors declare no competing interests.
 
 Additional information
