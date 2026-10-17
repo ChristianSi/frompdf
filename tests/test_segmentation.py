@@ -1,9 +1,11 @@
 import unittest
+from dataclasses import replace
 
 from frompdf.models import Line
 from frompdf.segmentation import (
     build_page_context,
     normalized_font_family,
+    same_physical_line,
     segment_lines,
     visual_line_start,
 )
@@ -512,6 +514,27 @@ class SameLineFragmentTests(unittest.TestCase):
         ]
 
         self.assertEqual(len(group_texts(lines)[-1]), 1)
+
+    def test_tall_delimiter_shares_the_line_of_text_centered_on_it(self) -> None:
+        delimiter = replace(line('⌉', 8, x1=100.0, x2=105.0, y1=98.7), y2=116.6)
+        text = line('and r continues', 8, x1=108.0, x2=200.0, y1=102.7)
+        next_line = line('next line', 9, x1=108.0, x2=200.0, y1=114.7)
+
+        self.assertTrue(same_physical_line(delimiter, text))
+        self.assertFalse(same_physical_line(delimiter, next_line))
+
+    def test_same_size_text_continues_line_after_label_in_another_face(self) -> None:
+        lines = [
+            *body_lines(1, block_no=1),
+            line('Lemma 2.6 (Agreement). For any', 8, block_no=2, x2=120.0, font_name='Sans'),
+            line(') is a subset of all values', 8, block_no=3, x1=121.0, x2=220.0),
+            line('which ends the lemma here.', 9, block_no=3, x2=140.0),
+        ]
+
+        self.assertEqual(
+            group_texts(lines)[-1][:2],
+            ['Lemma 2.6 (Agreement). For any', ') is a subset of all values'],
+        )
 
     def fraction_paragraph(self, last_text: str) -> list[Line]:
         """Build a paragraph whose fourth line holds an inline fraction before a parser edge."""

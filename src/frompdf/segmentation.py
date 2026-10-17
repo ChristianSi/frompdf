@@ -468,7 +468,14 @@ def same_physical_line(left: Line, right: Line) -> bool:
     assert right.x1 is not None
     assert right.y1 is not None
     font_size = max(left.font_size or 0.0, right.font_size or 0.0, 1.0)
-    return abs(right.y1 - left.y1) <= font_size * 0.35 and right.x1 >= left.x2 - font_size * 0.25
+    tolerance = font_size * 0.35
+    # Tops differ at tall delimiters, which are centered on the text instead.
+    same_band = abs(right.y1 - left.y1) <= tolerance or (
+        left.y2 is not None
+        and right.y2 is not None
+        and abs((right.y1 + right.y2) - (left.y1 + left.y2)) / 2 <= tolerance
+    )
+    return same_band and right.x1 >= left.x2 - font_size * 0.25
 
 
 # Pieces of one visual line further apart than this, relative to the larger
@@ -889,6 +896,15 @@ def should_start_new_group(
         return True
     pdftext_break = previous.block_no != current.block_no
 
+    # Text continuing the same line at the same size stays in the block even
+    # in another face, as after a run-in theorem label in lipics-64.
+    if (
+        same_running_text_line(previous, current)
+        and is_prose_line(previous)
+        and is_prose_line(current)
+        and close_font_size(previous.font_size, current.font_size)
+    ):
+        return False
     if same_physical_line(previous, current):
         return pdftext_break and not (
             is_prose_line(previous)

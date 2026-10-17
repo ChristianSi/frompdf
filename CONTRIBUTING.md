@@ -178,7 +178,8 @@ The implementation is split into focused modules under `src/frompdf`:
   next word would have fit on the line or the font changes after a short line,
   extending them to all line ends of blocks set line by line in short
   centered lines.
-- `lines.py` repairs detached diacritics, removes icon-font glyphs, flattens
+- `lines.py` repairs detached diacritics, removes icon-font glyphs, decodes
+  glyphs of TeX math extension fonts, reattaches detached scripts, flattens
   `pdftext` output, and extracts line geometry, typography, and inline script
   ranges.
 - `models.py` defines line, page-number, and Markdown block records.
@@ -200,7 +201,8 @@ Important concepts:
 
 - `Line` in `models.py` is a flattened record from `pdftext` output. It
   records whether `pdftext` reported whitespace at its edges, which tells
-  whether pieces of one visual line need a space between them.
+  whether pieces of one visual line need a space between them, and whether it
+  is the denominator of an inline fraction ending the preceding record.
 - `ScriptRange` records superscript/subscript offsets in decoded plain text.
   Lines, blocks, and text fragments retain these ranges until serialization.
 - `PageNumber` in `models.py` stores the raw page number and optional visible
@@ -219,13 +221,17 @@ Important concepts:
 The current pipeline is roughly:
 
 1. Extract raw `pdftext` page data.
-2. Repair detached, geometrically positioned diacritics in the raw data and
-   remove glyphs from icon fonts.
+2. Repair detached, geometrically positioned diacritics in the raw data,
+   remove glyphs from icon fonts, and decode TeX math extension glyphs that
+   `pdftext` reports by their font codes. Move scripts that `pdftext` set
+   apart, in a block of their own or stacked below or above another script,
+   back into the line records they belong to.
 3. Flatten the result into line records with geometry, typography, and
    conservative character-level superscript/subscript annotations. When
    `pdftext` puts small glyphs into a line record of their own, the adjacent
    pieces of the same line of running text serve as the ordinary reference
-   text.
+   text. Small records centered below small text ending the preceding record,
+   with the line continuing after them, are marked as fraction denominators.
 4. Optionally dump the unfiltered line records to `-lines.csv`.
 5. Detect and remove headers and footers, collecting visible page labels.
 6. Order the remaining lines by page region and detected column.
@@ -240,7 +246,8 @@ The current pipeline is roughly:
    names and affiliations, starts a new block. Confirmed centered title
    candidates override boundaries only at and within those titles. Where
    `pdftext` starts a new block after a line split into pieces, the left edge
-   of the whole visual line decides whether the text continues.
+   of the whole visual line decides whether the text continues. Within a
+   line of running text, a new block needs a change of size, not just face.
 10. Join blocks continuing at the top of the next column or page. Similar
     typography, a full last line, a non-indented first line, and consistent
     block-quote classification are required. An open sentence, a lower-case
@@ -249,7 +256,8 @@ The current pipeline is roughly:
 11. Build paragraph or block-quote records and mark deliberate line breaks.
     Join the pieces into which `pdftext` split a physical line with a space
     or nothing, depending on reported whitespace and the gap between them,
-    unless they are too far apart to be running text. Then repair words and
+    unless they are too far apart to be running text, and append fraction
+    denominators to their numerators after a slash. Then repair words and
     unspaced dashes split across physical lines within each block, preserving
     script ranges and attributing words joined across pages to their starting
     page.

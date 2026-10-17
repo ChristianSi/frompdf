@@ -165,6 +165,16 @@ class SameLineScriptDetectionTests(unittest.TestCase):
             '<sup>−c</sup><sub>1</sub>',
         )
 
+    def test_scripts_of_the_neighboring_text_do_not_count_against_its_size(self) -> None:
+        # Four ordinary glyphs and three subscripts, as in lipics-64's `xᵢ − xⱼ ≤ 2C`.
+        text = pdf_line('xixjykC', {1: (14, 7), 3: (14, 7), 5: (14, 7)}, size=10)
+        superscript = pdf_line('(s,f)', {index: (8, 7) for index in range(5)}, size=10, x=35)
+
+        self.assertEqual(
+            render_scripts('(s,f)', line_script_ranges(superscript, [text, superscript], [text])),
+            '<sup>(s,f)</sup>',
+        )
+
     def test_same_size_fragments_stay_plain(self) -> None:
         text = pdf_line('Budzinauskas', {}, size=10)
         following = pdf_line(', Prashant', {}, size=10, x=60)

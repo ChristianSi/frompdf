@@ -59,7 +59,14 @@ MIN_INDENTED_PARAGRAPH_SHARE = 0.25
 # but not always, as in ceur-open-source's `harm¹ and`, where a gap of 0.4 em
 # without a space character separates them. Touching pieces, such as `word`
 # and `¹, more`, are joined directly. Gaps are relative to the larger size.
-SAME_LINE_SPACE_GAP_EM = 0.25
+# The threshold lies between a thin space (1/6 em) and the narrowest word
+# space of tightly justified TeX lines (about 0.22 em), as before `messages`
+# in lipics-51's `Ω(…) messages`.
+SAME_LINE_SPACE_GAP_EM = 0.2
+
+# Characters making the denominator of an inline fraction compound, such that
+# it needs parentheses after a slash.
+FRACTION_OPERATORS = frozenset('+−-±=<>×·/')
 
 
 @dataclass(frozen=True)
@@ -366,22 +373,42 @@ def line_separator(left: Line, right: Line) -> str:
     return ''
 
 
+def fraction_part(value: AnnotatedText) -> AnnotatedText:
+    """Return the denominator of an inline fraction, parenthesized if it is compound."""
+    if any(char.isspace() or char in FRACTION_OPERATORS for char in value.text):
+        return AnnotatedText('(') + value + AnnotatedText(')')
+    return value
+
+
 def physical_line_texts(line_list: list[Line], hard_break_ids: set[int]) -> list[AnnotatedText]:
     """Return the annotated text of each visual line, joining pdftext's pieces of it.
 
     Lines whose IDs are in hard_break_ids end with HARD_LINE_BREAK. Since
     deliberate breaks never separate pieces of one line, it ends the joined line.
+    The denominator of an inline fraction follows its numerator after a slash.
     """
     texts: list[AnnotatedText] = []
-    for previous, line in zip([None, *line_list], line_list, strict=False):
+    previous: Line | None = None
+    for line in line_list:
         text = AnnotatedText(line.text, line.scripts) + AnnotatedText(
             HARD_LINE_BREAK if id(line) in hard_break_ids else ''
         )
+        if (
+            line.fraction_denominator
+            and previous is not None
+            and id(previous) not in hard_break_ids
+            and previous.page_no == line.page_no
+            and previous.line_no_on_page == line.line_no_on_page - 1
+        ):
+            # The text after the fraction continues the numerator's line.
+            texts[-1] = texts[-1] + AnnotatedText('/') + fraction_part(text)
+            continue
         separator = '\n' if previous is None else line_separator(previous, line)
         if separator == '\n':
             texts.append(text)
         else:
             texts[-1] = texts[-1] + AnnotatedText(separator) + text
+        previous = line
     return texts
 
 

@@ -38,6 +38,9 @@ class Line:
     # the text. This tells whether fragments of one visual line need a space.
     space_before: bool = field(default=False, kw_only=True)
     space_after: bool = field(default=False, kw_only=True)
+    # Whether the text is the denominator of an inline fraction whose numerator
+    # ends the preceding line record.
+    fraction_denominator: bool = field(default=False, kw_only=True)
 
 
 @dataclass

@@ -61,6 +61,21 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
 - Blocks without letters or digits never become headings.
 - Glyphs from icon fonts, such as FontAwesome e-mail and ORCID symbols next to
   author names, are removed.
+- Large delimiters, operators, radicals, and wide accents from TeX math
+  extension fonts (Computer Modern and Latin Modern) are decoded when the PDF
+  lacks a Unicode mapping for them, so `Ω(n log …)` no longer loses its
+  parentheses and `P̂` no longer reads `Pb`. Pieces of extensible delimiters
+  are left unchanged.
+- Inline fractions set with the numerator above the denominator, such as
+  `IDmax/n` or `1/2` in running text, are written with a slash on one line
+  instead of spreading over three. Compound denominators are parenthesized.
+  Scripts stacked above each other, which are left-aligned rather than
+  centered, are not affected. The `-lines.csv` dump gains a
+  `fraction_denominator` column.
+- Scripts that `pdftext` separates from their line are reattached. This
+  covers a subscript set below a superscript, as in `R` with `i` above `∗`,
+  and a script that `pdftext` puts into a block of its own, which used to end
+  up after the paragraph.
 - A single uninterrupted footnote sequence is collected at the document end
   under H2. Multiple groups prefer section boundaries reflecting their scope,
   without skipping boundaries associated with numbering restarts. Notes titles
@@ -120,6 +135,10 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
 - Spurious `pdftext` block edges after such split lines no longer start a new
   paragraph mid-sentence. The left edge of the whole visual line, rather than
   of its last piece, now decides whether the text continues.
+- Text continuing a line at the same size no longer starts a new block at a
+  `pdftext` block edge just because its font face differs, as after a run-in
+  theorem label. Pieces of a line centered on a tall delimiter, rather than
+  sharing its top, now also count as one line.
 
 ## 0.1.0 - 2026-07-09
 

@@ -309,10 +309,12 @@ class SameLineFragmentTests(unittest.TestCase):
 
     def test_word_gap_without_space_character_separates_pieces(self) -> None:
         self.assertEqual(line_separator(*self.pieces(0.4)), ' ')
+        # The narrowest word spaces of tightly justified TeX lines.
+        self.assertEqual(line_separator(*self.pieces(0.22)), ' ')
 
     def test_touching_pieces_are_joined_directly(self) -> None:
         self.assertEqual(line_separator(*self.pieces(0.0)), '')
-        self.assertEqual(line_separator(*self.pieces(0.2)), '')
+        self.assertEqual(line_separator(*self.pieces(0.15)), '')
 
     def test_wide_gap_and_new_lines_keep_line_breaks(self) -> None:
         self.assertEqual(line_separator(*self.pieces(1.5, space_before=True)), '\n')
