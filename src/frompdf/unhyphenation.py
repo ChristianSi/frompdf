@@ -335,6 +335,31 @@ def split_boundary_fragments(left_line: str, right_line: str) -> tuple[str, str,
     return left_fragment, right_fragment, left_line[-1], raw_right_token
 
 
+def script_kind_at(value: AnnotatedText, index: int) -> str | None:
+    """Return the script kind of one character, or ``None`` for normal text."""
+    return next((run.kind for run in value.scripts if run.start <= index < run.end), None)
+
+
+def script_bounded_fragments(
+    left: AnnotatedText, right: AnnotatedText, left_fragment: str, right_fragment: str
+) -> tuple[str, str]:
+    """Cut boundary fragments at script changes, which delimit words like spaces do."""
+    left_end = len(left.text) - 1
+    right_start = len(right.text) - len(right.text.lstrip())
+    script_kind = script_kind_at(left, left_end - 1)
+    if script_kind != script_kind_at(right, right_start):
+        # A change at the line boundary itself leaves no word to compare.
+        return left_fragment, right_fragment
+
+    start = left_end - 1
+    while start > left_end - len(left_fragment) and script_kind_at(left, start - 1) == script_kind:
+        start -= 1
+    end = right_start + 1
+    while end < right_start + len(right_fragment) and script_kind_at(right, end) == script_kind:
+        end += 1
+    return left.text[start:left_end], right.text[right_start:end]
+
+
 def unhyphenate_block_lines(
     line_texts: Iterable[str],
     word_counts: Counter[str],
@@ -383,6 +408,13 @@ def unhyphenate_annotated_lines(
             continue
 
         left_fragment, right_fragment, boundary_hyphen, raw_right_token = fragments
+        left = rewritten_lines[line_index]
+        right = rewritten_lines[line_index + 1]
+        # The whole raw token still moves, keeping its scripts; only the
+        # spelling decision ignores attached markers such as note references.
+        left_fragment, right_fragment = script_bounded_fragments(
+            left, right, left_fragment, right_fragment
+        )
         if is_learned_coordination_boundary(
             left_fragment,
             right_fragment,
@@ -398,10 +430,8 @@ def unhyphenate_annotated_lines(
             word_counts,
             mixed_case_words,
         )
-        right = rewritten_lines[line_index + 1]
         token_start = len(right.text) - len(right.text.lstrip())
         token = right.slice(token_start, token_start + len(raw_right_token))
-        left = rewritten_lines[line_index]
         rewritten_lines[line_index] = (left if keep_hyphen else left.slice(0, -1)) + token
 
         token_parts = split_first_token(right.text)

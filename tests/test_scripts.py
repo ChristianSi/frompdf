@@ -246,8 +246,40 @@ class ScriptAnnotationTests(unittest.TestCase):
             AnnotatedText('national2 rest', (ScriptRange(8, 9, 'sup'),)),
         )
         self.assertEqual(
-            render_scripts(value.text, value.scripts), 'word2 inter-national<sup>2</sup>\nrest'
+            render_scripts(value.text, value.scripts), 'word2 international<sup>2</sup>\nrest'
         )
+
+    def test_unhyphenation_treats_script_changes_as_word_boundaries(self) -> None:
+        for left, right, counts, expected in (
+            (
+                AnnotatedText('der Men-'),
+                AnnotatedText('schen49, und', (ScriptRange(5, 7, 'sup'),)),
+                Counter({'menschen': 1}),
+                'der Menschen<sup>49</sup>,\nund',
+            ),
+            (
+                AnnotatedText('ein Mehr-'),
+                AnnotatedText('wert3 hier', (ScriptRange(4, 5, 'sup'),)),
+                Counter({'mehr-wert': 1}),
+                'ein Mehr-wert<sup>3</sup>\nhier',
+            ),
+            (
+                AnnotatedText('x2Ge-', (ScriptRange(1, 2, 'sup'),)),
+                AnnotatedText('biet'),
+                Counter({'gebiet': 1}),
+                'x<sup>2</sup>Gebiet',
+            ),
+            # A script change at the line boundary itself keeps the whole fragments.
+            (
+                AnnotatedText('Men-'),
+                AnnotatedText('schen', (ScriptRange(0, 3, 'sup'),)),
+                Counter({'menschen': 1, 'men-sch': 2}),
+                'Men<sup>sch</sup>en',
+            ),
+        ):
+            with self.subTest(left=left.text, right=right.text):
+                value = unhyphenate_annotated_lines((left, right), counts, set(), set())
+                self.assertEqual(render_scripts(value.text, value.scripts), expected)
 
     def test_unspaced_dash_repair_and_consumed_lines_preserve_annotations(self) -> None:
         value = repaired(
@@ -303,7 +335,7 @@ class ScriptAnnotationTests(unittest.TestCase):
         markdown_to_text([note], output, page_markers=True)
         self.assertEqual(
             output.getvalue(),
-            '1. <<PAGE:1>>An inter-national<sup>2</sup>\n   <<PAGE:2>>rest<sup>3</sup>.\n',
+            '1. <<PAGE:1>>An international<sup>2</sup>\n   <<PAGE:2>>rest<sup>3</sup>.\n',
         )
 
     def test_scripts_survive_heading_conversion_and_output_prefixes(self) -> None:
