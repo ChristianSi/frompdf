@@ -811,7 +811,7 @@ Neuordnung bestätigt. Er betrachtete es als seine Aufgabe, den „neuen Geist�
 der Werkplaats Kindergemeenschap zu verbreiten und für eine „vernünftige
 Ordnung“ der Menschheit insgesamt einzutreten. Im Mai 1945, unmittelbar
 nach Kriegsende, veröffentlichte er seine bereits in der Besatzungszeit verfasste
-Broschüre Die Ordnung der Vernunft in der Gemeinschaft der Men-schen<sup>49</sup>,
+Broschüre Die Ordnung der Vernunft in der Gemeinschaft der Menschen<sup>49</sup>,
 in der er seine Vision einer auf gemeinschaftlicher Selbstverwaltung
 basierenden demokratischen Nachkriegsordnung skizzierte. Darin
 verwendete er auch erstmals den Begriff Soziokratie, um dem in der Werkplaats
