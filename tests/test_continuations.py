@@ -275,11 +275,11 @@ class PageAwareParagraphTests(unittest.TestCase):
         markdown_to_text(blocks, output, page_markers=True)
         self.assertEqual(
             output.getvalue().split('\n')[5:7],
-            ['this text discusses an international', '<<PAGE:2|VISIBLE:8>>topic on the next page'],
+            ['this text discusses an international', '[[PAGE:2|VISIBLE:8]]topic on the next page'],
         )
         output = io.StringIO()
         markdown_to_text(blocks, output)
-        self.assertNotIn('<<PAGE', output.getvalue())
+        self.assertNotIn('[[PAGE', output.getvalue())
 
     def test_quote_markers_stay_inside_quote(self) -> None:
         pages = {1: PageNumber(1, None), 2: PageNumber(2, None)}
@@ -290,7 +290,7 @@ class PageAwareParagraphTests(unittest.TestCase):
         ]
         output = io.StringIO()
         markdown_to_text([quote], output, page_markers=True)
-        self.assertEqual(output.getvalue(), '> <<PAGE:1>>quoted text that\n> <<PAGE:2>>continues\n')
+        self.assertEqual(output.getvalue(), '> [[PAGE:1]]quoted text that\n> [[PAGE:2]]continues\n')
 
 
 class SameLineFragmentTests(unittest.TestCase):

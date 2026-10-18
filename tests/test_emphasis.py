@@ -300,7 +300,7 @@ class EmphasisResolutionTests(unittest.TestCase):
         block = Paragraph('one two three', page_number(1), page_number(2), fragments=fragments)
 
         self.assertEqual(
-            render(block, page_markers=True), '<<PAGE:1>>*one two* <<PAGE:2>>*three*\n'
+            render(block, page_markers=True), '[[PAGE:1]]*one two* [[PAGE:2]]*three*\n'
         )
         self.assertEqual(render(block), '*one two three*\n')
 

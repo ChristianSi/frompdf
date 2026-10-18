@@ -35,13 +35,17 @@ MAX_BLOCK_INDENT = 3
 
 
 def inline_escape_positions(
-    text: str, protected: set[int], boundaries: frozenset[int] = frozenset()
+    text: str,
+    protected: set[int],
+    boundaries: frozenset[int] = frozenset(),
+    markers: frozenset[int] = frozenset(),
 ) -> set[int]:
     """Return positions of characters that could start inline markup.
 
     boundaries are the positions where serialization inserts markup, such as
     emphasis delimiters or script tags, which neighboring characters see
-    instead of the adjacent text.
+    instead of the adjacent text. markers are the positions where page markers
+    directly precede the text.
     """
     positions: set[int] = set()
     for index, char in enumerate(text):
@@ -77,6 +81,14 @@ def inline_escape_positions(
         elif char == '<':
             # Only a tag, comment, processing instruction, or autolink can follow.
             if following in {'/', '!', '?'} or (following.isascii() and following.isalpha()):
+                positions.add(index)
+        elif char == '(':
+            # A page marker followed by a parenthesis would become a link.
+            if index in markers:
+                positions.add(index)
+        elif char == '[':
+            # Text must not read like the start of a page marker.
+            if index and text[index - 1] == '[' and text.startswith('PAGE:', index + 1):
                 positions.add(index)
     return positions
 
@@ -200,6 +212,7 @@ def escape_markdown(
     heading: bool = False,
     block_line_start: bool = True,
     block_list_markers: bool = True,
+    markers: frozenset[int] = frozenset(),
 ) -> tuple[AnnotatedText, list[int]]:
     """Insert backslashes before text that Markdown would read as syntax.
 
@@ -208,6 +221,8 @@ def escape_markdown(
     block_line_start false, the block's first line follows other markup on the
     same line. With block_list_markers, list markers with content at the start
     of the block remain unescaped, so lists in the source still render as lists.
+    markers are the positions of page markers, which a parenthesis directly
+    following them would turn into links.
 
     Script ranges are rendered as inline HTML with their own escaping, so they
     are left alone. Emphasis ranges are rendered with delimiters, which
@@ -218,7 +233,9 @@ def escape_markdown(
     text = value.text
     protected = script_positions(value)
     boundaries = frozenset(position for run in value.ranges for position in (run.start, run.end))
-    positions = inline_escape_positions(text, protected, boundaries)
+    # Emphasis opened after a page marker separates it from the text.
+    openings = {run.start for run in value.ranges if not run.is_script}
+    positions = inline_escape_positions(text, protected, boundaries, markers - openings)
     if heading:
         closing = HEADING_CLOSING_PATTERN.search(text)
         if closing and closing.start(1) not in protected:

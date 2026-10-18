@@ -335,7 +335,7 @@ class ScriptAnnotationTests(unittest.TestCase):
         markdown_to_text([note], output, page_markers=True)
         self.assertEqual(
             output.getvalue(),
-            '1. <<PAGE:1>>An international<sup>2</sup>\n   <<PAGE:2>>rest<sup>3</sup>.\n',
+            '1. [[PAGE:1]]An international<sup>2</sup>\n   [[PAGE:2]]rest<sup>3</sup>.\n',
         )
 
     def test_scripts_survive_heading_conversion_and_output_prefixes(self) -> None:
@@ -352,7 +352,7 @@ class ScriptAnnotationTests(unittest.TestCase):
         quote = BlockQuote('text\n1 next', page, page, ranges=(InlineRange(5, 6, 'sup'),))
         output = io.StringIO()
         markdown_to_text([heading, quote], output, page_markers=True)
-        self.assertIn('<<PAGE:1>>GaV<sub>4</sub>S<sub>8</sub> title', output.getvalue())
+        self.assertIn('[[PAGE:1]]GaV<sub>4</sub>S<sub>8</sub> title', output.getvalue())
         self.assertIn('> text\n> <sup>1</sup> next', output.getvalue())
 
     def test_script_content_escapes_html_and_markdown(self) -> None:

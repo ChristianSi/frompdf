@@ -35,6 +35,21 @@ class InlineEscapeTests(unittest.TestCase):
 
     def test_leaves_square_brackets_readable(self) -> None:
         self.assertEqual(escaped('see [1] and [sic]'), 'see [1] and [sic]')
+        self.assertEqual(escaped('[[sic]] [PAGE:7] [[page:7]]'), '[[sic]] [PAGE:7] [[page:7]]')
+
+    def test_escapes_text_reading_like_a_page_marker(self) -> None:
+        self.assertEqual(escaped('see [[PAGE:7]]'), 'see [\\[PAGE:7]]')
+
+    def test_escapes_parentheses_directly_following_page_markers(self) -> None:
+        value = AnnotatedText('(1990) and (x)')
+
+        self.assertEqual(escape_markdown(value, markers=frozenset({0}))[0].text, '\\(1990) and (x)')
+        self.assertEqual(escape_markdown(value, markers=frozenset({7}))[0].text, value.text)
+
+    def test_leaves_parentheses_after_page_markers_and_emphasis_openers(self) -> None:
+        value = AnnotatedText('(1990) showed', (InlineRange(0, 6, 'italic'),))
+
+        self.assertEqual(escape_markdown(value, markers=frozenset({0}))[0].text, value.text)
 
     def test_leaves_script_ranges_to_their_own_escaping(self) -> None:
         value = AnnotatedText('x*_1 *', (InlineRange(1, 4, 'sup'),))

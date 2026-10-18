@@ -71,7 +71,7 @@ def format_page_marker(page_number: PageNumber) -> str:
         if page_number.visible is not None and page_number.visible != str(page_number.raw)
         else ''
     )
-    return f'<<PAGE:{page_number.raw}{visible_suffix}>>'
+    return f'[[PAGE:{page_number.raw}{visible_suffix}]]'
 
 
 def render_fragments(
@@ -125,6 +125,8 @@ def render_fragments(
         heading=heading,
         block_list_markers=block_list_markers,
         block_line_start=block_line_start,
+        # Opening markup separates the first page marker from the text.
+        markers=frozenset(markers.keys() - ({len(fragments[0].separator)} if opening else set())),
     )
     text = render_inline(
         escaped,

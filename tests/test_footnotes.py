@@ -344,10 +344,10 @@ class FootnoteTextTests(unittest.TestCase):
         markdown_to_text(blocks, output, page_markers=True)
         self.assertEqual(
             output.getvalue(),
-            '## <<PAGE:1>>Anmerkungen\n\n'
+            '## [[PAGE:1]]Anmerkungen\n\n'
             '4. Note 4\n7. Note 7\n\n<!-- -->\n\n'
-            '7. <<PAGE:2>>Note 7\n\n<!-- -->\n\n2. Note 2\n\n'
-            '## <<PAGE:3>>Next section\n',
+            '7. [[PAGE:2]]Note 7\n\n<!-- -->\n\n2. Note 2\n\n'
+            '## [[PAGE:3]]Next section\n',
         )
 
     def test_preserves_three_source_lines_with_list_indentation(self) -> None:
@@ -409,7 +409,7 @@ class FootnoteTextTests(unittest.TestCase):
         output = io.StringIO()
         markdown_to_text([built], output, page_markers=True)
         self.assertEqual(
-            output.getvalue(), '1. <<PAGE:1>>Some international\n   <<PAGE:2>>evidence follows.\n'
+            output.getvalue(), '1. [[PAGE:1]]Some international\n   [[PAGE:2]]evidence follows.\n'
         )
 
     def test_defers_marker_to_next_note_when_repair_consumes_whole_page_fragment(self) -> None:
@@ -419,7 +419,7 @@ class FootnoteTextTests(unittest.TestCase):
         output = io.StringIO()
         markdown_to_text([built, note('2', 2)], output, page_markers=True)
         self.assertEqual(
-            output.getvalue(), '1. <<PAGE:1>>Some international\n2. <<PAGE:2>>Note 2\n'
+            output.getvalue(), '1. [[PAGE:1]]Some international\n2. [[PAGE:2]]Note 2\n'
         )
 
     def test_page_markers_follow_repaired_words_and_preserve_paragraphs(self) -> None:
@@ -444,11 +444,11 @@ class FootnoteTextTests(unittest.TestCase):
         markdown_to_text(blocks, output, page_markers=True)
         self.assertEqual(
             output.getvalue(),
-            '<<PAGE:3|VISIBLE:9>>Body.\n\n'
-            '## <<PAGE:1|VISIBLE:7>>Notes\n\n'
-            '12. Some international\n    <<PAGE:2|VISIBLE:8>>evidence.\n\n'
+            '[[PAGE:3|VISIBLE:9]]Body.\n\n'
+            '## [[PAGE:1|VISIBLE:7]]Notes\n\n'
+            '12. Some international\n    [[PAGE:2|VISIBLE:8]]evidence.\n\n'
             '    A second paragraph.\n15. Note 15\n\n'
-            '## <<PAGE:3|VISIBLE:9>>References\n',
+            '## [[PAGE:3|VISIBLE:9]]References\n',
         )
         output = io.StringIO()
         markdown_to_text([built, note('15', 2)], output)
@@ -473,12 +473,12 @@ class FootnoteTextTests(unittest.TestCase):
                 if left == 'Some ordinary':
                     self.assertEqual(
                         output.getvalue(),
-                        '1. <<PAGE:1>>Some ordinary\n   <<PAGE:2>>continuation text.\n',
+                        '1. [[PAGE:1]]Some ordinary\n   [[PAGE:2]]continuation text.\n',
                     )
                 else:
                     self.assertEqual(
                         output.getvalue(),
-                        '1. <<PAGE:1>>A well-known\n   <<PAGE:2>>result.\n',
+                        '1. [[PAGE:1]]A well-known\n   [[PAGE:2]]result.\n',
                     )
 
 

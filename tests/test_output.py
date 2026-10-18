@@ -36,11 +36,11 @@ class MarkdownOutputTests(unittest.TestCase):
 
         self.assertEqual(
             output.getvalue(),
-            '## <<PAGE:1>>Title\n\n'
-            '> <<PAGE:2|VISIBLE:51:2>>Quoted\n'
+            '## [[PAGE:1]]Title\n\n'
+            '> [[PAGE:2|VISIBLE:51:2]]Quoted\n'
             '> text\n\n'
             'More text\n\n'
-            '<<PAGE:3>>Last page\n',
+            '[[PAGE:3]]Last page\n',
         )
 
     def test_page_markers_are_disabled_by_default(self) -> None:
@@ -60,7 +60,7 @@ class MarkdownOutputTests(unittest.TestCase):
         markdown_to_text(blocks, output, page_markers=True)
 
         self.assertEqual(
-            output.getvalue(), '<<PAGE:1|VISIBLE:173>>**CHAPTER 10\\\n\\# Part \\*one\\***\n'
+            output.getvalue(), '[[PAGE:1|VISIBLE:173]]**CHAPTER 10\\\n\\# Part \\*one\\***\n'
         )
 
     def test_escapes_text_consistently_across_block_types(self) -> None:
@@ -100,7 +100,36 @@ class MarkdownOutputTests(unittest.TestCase):
 
         markdown_to_text([block], output, page_markers=True)
 
-        self.assertEqual(output.getvalue(), '<<PAGE:1>>ends here\n<<PAGE:2>>\\# continues\n')
+        self.assertEqual(output.getvalue(), '[[PAGE:1]]ends here\n[[PAGE:2]]\\# continues\n')
+
+    def test_page_markers_followed_by_parentheses_do_not_form_links(self) -> None:
+        page_one = page_number(1)
+        page_two = page_number(2, '8')
+        block = Paragraph(
+            'shown (here)\n(1990) showed',
+            page_one,
+            page_two,
+            fragments=[
+                TextFragment('shown (here)', page_one),
+                TextFragment('(1990) showed', page_two, '\n'),
+            ],
+        )
+        output = io.StringIO()
+
+        markdown_to_text([block], output, page_markers=True)
+
+        self.assertEqual(
+            output.getvalue(), '[[PAGE:1]]shown (here)\n[[PAGE:2|VISIBLE:8]]\\(1990) showed\n'
+        )
+
+    def test_opening_markup_separates_page_markers_from_parentheses(self) -> None:
+        page = page_number(1)
+        block = StrongParagraph('(Author)', page, page)
+        output = io.StringIO()
+
+        markdown_to_text([block], output, page_markers=True)
+
+        self.assertEqual(output.getvalue(), '[[PAGE:1]]**(Author)**\n')
 
     def test_escapes_around_scripts_without_escaping_their_contents_twice(self) -> None:
         page = page_number(1)

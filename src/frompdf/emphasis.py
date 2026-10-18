@@ -42,7 +42,7 @@ class RenderedText:
     """The characters that serialization renders around positions in plain text.
 
     markers are the positions of inserted text, such as page markers, which
-    starts with `<` and ends with `>`.
+    starts with `[` and ends with `]`.
     """
 
     def __init__(self, value: AnnotatedText, markers: Iterable[int] = ()) -> None:
@@ -54,11 +54,11 @@ class RenderedText:
     def char_before(self, index: int) -> str:
         """Return the rendered character ending just before a position.
 
-        Text edges act as whitespace, as at line starts. Markers and scripts
-        end in `>`, and deliberate line breaks become backslashes.
+        Text edges act as whitespace, as at line starts. Markers end in `]`,
+        scripts in `>`, and deliberate line breaks become backslashes.
         """
         if index in self.markers:
-            return '>'
+            return ']'
         if index <= 0:
             return ' '
         if index - 1 in self.script_at:
@@ -69,10 +69,11 @@ class RenderedText:
     def char_after(self, index: int) -> str:
         """Return the rendered character starting at a position.
 
-        Closing delimiters precede markers, which start with `<` like scripts.
+        Closing delimiters precede markers, which start with `[`, and scripts,
+        which start with `<`.
         """
         if index in self.markers:
-            return '<'
+            return '['
         if index >= len(self.text):
             return ' '
         if index in self.script_at:
@@ -270,7 +271,7 @@ def resolve_emphasis(
 
     Emphasis never covers or crosses cuts, such as list markers, and is split
     at markers, the positions of inserted text such as page markers, which
-    starts with `<` and ends with `>`. Display blocks, such as headings,
+    starts with `[` and ends with `]`. Display blocks, such as headings,
     already stand out: they lose bold ranges, and italic ones if they cover all
     of their text. With strong, the whole text is rendered in strong emphasis.
     """

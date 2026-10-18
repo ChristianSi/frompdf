@@ -54,8 +54,10 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
 - Inference of missing Arabic and Roman visible page labels when the
   surrounding sequence is unambiguous.
 - A `-m`/`--page-markers` option that embeds raw and visible PDF page numbers
-  at page boundaries in Markdown output, using `|VISIBLE:` to introduce visible
-  labels.
+  at page boundaries in Markdown output, as in `[[PAGE:7|VISIBLE:9]]`. The
+  markers render as plain text in Markdown viewers and HTML. A parenthesis
+  directly following a marker is escaped, so it does not form a link, as is
+  the second bracket of `[[PAGE:` in the source text.
 
 ### Changed
 

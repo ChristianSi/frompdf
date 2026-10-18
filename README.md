@@ -140,12 +140,16 @@ Markdown itself:
 frompdf -m ./document.pdf
 ```
 
-Each source page starts with a marker such as `<<PAGE:7>>`, containing its raw
+Each source page starts with a marker such as `[[PAGE:7]]`, containing its raw
 PDF page number. When a different visible page label was detected or safely
-inferred, the marker includes that label too, as in `<<PAGE:7|VISIBLE:9>>`.
+inferred, the marker includes that label too, as in `[[PAGE:7|VISIBLE:9]]`.
 The `VISIBLE:` field distinguishes the visible label from the raw page number,
 matching the `visible` column of the `-pagenos.csv` file, including for
-compound visible labels such as `<<PAGE:2|VISIBLE:51:2>>`.
+compound visible labels such as `[[PAGE:2|VISIBLE:51:2]]`.
+The markers remain visible as plain text when the Markdown is rendered. A
+parenthesis directly following a marker is escaped as `\(`, so it does not
+turn the marker into a link, and `[[PAGE:` occurring in the source text is
+escaped as `[\[PAGE:`, so it cannot be mistaken for a marker.
 Markers are placed after Markdown prefixes such as `## ` for headings and
 `> ` for block quotes. A paragraph or block quote continuing on the next page
 contains the marker where that page's text starts; a word split across the
