@@ -6,9 +6,9 @@ from frompdf.models import (
     BlockQuote,
     Footnote,
     Heading,
+    InlineRange,
     PageNumber,
     Paragraph,
-    ScriptRange,
     StrongParagraph,
     TextFragment,
 )
@@ -104,7 +104,7 @@ class MarkdownOutputTests(unittest.TestCase):
 
     def test_escapes_around_scripts_without_escaping_their_contents_twice(self) -> None:
         page = page_number(1)
-        block = Paragraph('a*b2* c', page, page, scripts=(ScriptRange(3, 5, 'sup'),))
+        block = Paragraph('a*b2* c', page, page, ranges=(InlineRange(3, 5, 'sup'),))
         output = io.StringIO()
 
         markdown_to_text([block], output)

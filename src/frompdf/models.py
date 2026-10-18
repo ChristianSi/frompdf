@@ -7,13 +7,24 @@ from typing import Literal
 HARD_LINE_BREAK = ' '
 
 
+InlineKind = Literal['sup', 'sub', 'bold', 'italic']
+
+
 @dataclass(frozen=True)
-class ScriptRange:
-    """A superscript or subscript range in decoded plain text."""
+class InlineRange:
+    """A superscript, subscript, bold, or italic range in decoded plain text.
+
+    Ranges of different kinds may overlap, such as an italic superscript.
+    """
 
     start: int
     end: int
-    kind: Literal['sup', 'sub']
+    kind: InlineKind
+
+    @property
+    def is_script(self) -> bool:
+        """Return whether the range is a superscript or subscript."""
+        return self.kind in ('sup', 'sub')
 
 
 @dataclass
@@ -33,7 +44,7 @@ class Line:
     rel_y: float | None
     avg_weight: float | None
     font_name: str | None = None
-    scripts: tuple[ScriptRange, ...] = field(default=(), kw_only=True)
+    ranges: tuple[InlineRange, ...] = field(default=(), kw_only=True)
     # Whether pdftext reported whitespace, other than line ends, before or after
     # the text. This tells whether fragments of one visual line need a space.
     space_before: bool = field(default=False, kw_only=True)
@@ -58,7 +69,7 @@ class TextFragment:
     text: str
     page: PageNumber
     separator: str = ''
-    scripts: tuple[ScriptRange, ...] = field(default=(), kw_only=True)
+    ranges: tuple[InlineRange, ...] = field(default=(), kw_only=True)
 
 
 @dataclass
@@ -70,7 +81,7 @@ class Block:
     end_page: PageNumber
     font_size: float | None = None
     avg_weight: float | None = None
-    scripts: tuple[ScriptRange, ...] = field(default=(), kw_only=True)
+    ranges: tuple[InlineRange, ...] = field(default=(), kw_only=True)
     # Page-aware pieces of text. Blocks without them are rendered from text.
     fragments: list[TextFragment] = field(default_factory=list, kw_only=True)
 

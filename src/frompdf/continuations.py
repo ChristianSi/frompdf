@@ -390,7 +390,7 @@ def physical_line_texts(line_list: list[Line], hard_break_ids: set[int]) -> list
     texts: list[AnnotatedText] = []
     previous: Line | None = None
     for line in line_list:
-        text = AnnotatedText(line.text, line.scripts) + AnnotatedText(
+        text = AnnotatedText(line.text, line.ranges) + AnnotatedText(
             HARD_LINE_BREAK if id(line) in hard_break_ids else ''
         )
         if (
@@ -444,7 +444,7 @@ def build_page_fragments(
             previous = fragments[-1]
             left_line = previous.text.rsplit('\n', 1)[-1]
             right_line, line_break, _ = annotated.text.partition('\n')
-            previous_value = AnnotatedText(previous.text, previous.scripts)
+            previous_value = AnnotatedText(previous.text, previous.ranges)
             left_start = len(previous.text) - len(left_line)
             repaired = unhyphenate_annotated_lines(
                 [previous_value.slice(left_start), annotated.slice(0, len(right_line))],
@@ -459,7 +459,7 @@ def build_page_fragments(
                 previous_value = previous_value.slice(0, left_start) + repaired.slice(
                     0, len(joined_line)
                 )
-                previous.text, previous.scripts = previous_value.text, previous_value.scripts
+                previous.text, previous.ranges = previous_value.text, previous_value.ranges
                 annotated = (
                     repaired.slice(len(joined_line) + 1)
                     + AnnotatedText(line_break if right_remainder else '')
@@ -474,7 +474,7 @@ def build_page_fragments(
                 annotated.text,
                 page_numbers[lines[0].page_no],
                 '\n' if fragments else '',
-                scripts=annotated.scripts,
+                ranges=annotated.ranges,
             )
         )
     return fragments
@@ -483,6 +483,6 @@ def build_page_fragments(
 def join_fragments(fragments: list[TextFragment]) -> AnnotatedText:
     """Return the complete text of page fragments, including their separators."""
     return join_annotated_texts(
-        AnnotatedText(fragment.separator) + AnnotatedText(fragment.text, fragment.scripts)
+        AnnotatedText(fragment.separator) + AnnotatedText(fragment.text, fragment.ranges)
         for fragment in fragments
     )

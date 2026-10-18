@@ -22,7 +22,9 @@ CHAPTER_LABEL_PATTERN = re.compile(r'[^\W\d_]{3,}\s+(?:\d+|[IVXLCDM]+)[.:]?')
 def visible_text(block_obj: Block) -> str:
     """Return block text without superscripts and subscripts, with collapsed whitespace."""
     characters = list(block_obj.text)
-    for run in block_obj.scripts:
+    for run in block_obj.ranges:
+        if not run.is_script:
+            continue
         characters[run.start : run.end] = ' ' * (run.end - run.start)
     return ' '.join(''.join(characters).split())
 
@@ -103,7 +105,7 @@ def strong_paragraph(source: Block) -> StrongParagraph:
     """Return a bold paragraph retaining the source block's text and line breaks."""
     return StrongParagraph(
         text=source.text,
-        scripts=source.scripts,
+        ranges=source.ranges,
         start_page=source.start_page,
         end_page=source.end_page,
         font_size=source.font_size,

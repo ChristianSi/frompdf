@@ -81,7 +81,9 @@ def words_in_text(text: str) -> Iterable[str]:
 def spelling_evidence_text(value: AnnotatedText) -> str:
     """Exclude superscripts and subscripts from document spelling evidence."""
     chars = list(value.text)
-    for run in value.scripts:
+    for run in value.ranges:
+        if not run.is_script:
+            continue
         # Spaces prevent joining unrelated fragments across excluded text.
         # Only the evidence changes; the annotated source retains every character.
         chars[run.start : run.end] = ' ' * (run.end - run.start)
@@ -337,7 +339,9 @@ def split_boundary_fragments(left_line: str, right_line: str) -> tuple[str, str,
 
 def script_kind_at(value: AnnotatedText, index: int) -> str | None:
     """Return the script kind of one character, or ``None`` for normal text."""
-    return next((run.kind for run in value.scripts if run.start <= index < run.end), None)
+    return next(
+        (run.kind for run in value.ranges if run.is_script and run.start <= index < run.end), None
+    )
 
 
 def script_bounded_fragments(

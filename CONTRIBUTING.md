@@ -166,8 +166,11 @@ The implementation is split into focused modules under `src/frompdf`:
 - `cli.py` implements the command-line interface.
 - `continuations.py` recognizes text continuing at the top of the next column
   or page and assembles page-aware text fragments for blocks and notes.
+- `emphasis.py` adjusts bold and italic ranges so their Markdown delimiters
+  are valid and nested, and renders scripts and emphasis together.
 - `escaping.py` escapes text that Markdown would otherwise read as syntax,
-  checking inline characters everywhere and block syntax at line starts.
+  checking inline characters everywhere and block syntax at line starts, and
+  reports the list markers it keeps.
 - `footnotes.py` detects numbered bottom notes, assembles continuations with
   page-aware text, and places numeric groups in Notes sections.
 - `front_matter.py` renders subtitles, author names, and chapter labels near
@@ -180,8 +183,8 @@ The implementation is split into focused modules under `src/frompdf`:
   centered lines.
 - `lines.py` repairs detached diacritics, removes icon-font glyphs, decodes
   glyphs of TeX math extension fonts, reattaches detached scripts, flattens
-  `pdftext` output, and extracts line geometry, typography, and inline script
-  ranges.
+  `pdftext` output, and extracts line geometry, typography, inline script
+  ranges, and bold and italic ranges.
 - `models.py` defines line, page-number, and Markdown block records.
 - `output.py` writes diagnostic line and page-number CSV files and serializes
   Markdown output.
@@ -192,7 +195,7 @@ The implementation is split into focused modules under `src/frompdf`:
   detected columns.
 - `segmentation.py` combines `pdftext` block hints with page-local geometry
   and typography to find Markdown block boundaries.
-- `scripts.py` slices and joins annotated plain text, preserving inline script
+- `scripts.py` slices and joins annotated plain text, preserving inline
   ranges through text repair, and renders `<sup>`/`<sub>` tags at serialization.
 - `unhyphenation.py` repairs words and unspaced dashes split across physical
   lines, using document-wide evidence where available.
@@ -203,8 +206,9 @@ Important concepts:
   records whether `pdftext` reported whitespace at its edges, which tells
   whether pieces of one visual line need a space between them, and whether it
   is the denominator of an inline fraction ending the preceding record.
-- `ScriptRange` records superscript/subscript offsets in decoded plain text.
-  Lines, blocks, and text fragments retain these ranges until serialization.
+- `InlineRange` records superscript, subscript, bold, or italic offsets in
+  decoded plain text. Ranges of different kinds may overlap. Lines, blocks,
+  and text fragments retain these ranges until serialization.
 - `PageNumber` in `models.py` stores the raw page number and optional visible
   page number.
 - `Block` in `models.py` is the base Markdown block type.
@@ -232,6 +236,9 @@ The current pipeline is roughly:
    pieces of the same line of running text serve as the ordinary reference
    text. Small records centered below small text ending the preceding record,
    with the line continuing after them, are marked as fraction denominators.
+   Bold and italic ranges follow font names and the italic font flag,
+   ignoring math fonts. A style covering most of the document's letters and
+   digits is its body style and is dropped.
 4. Optionally dump the unfiltered line records to `-lines.csv`.
 5. Detect and remove headers and footers, collecting visible page labels.
 6. Order the remaining lines by page region and detected column.
@@ -280,5 +287,13 @@ The current pipeline is roughly:
     the source still render as lists.
     Inline scripts become `<sup>`/`<sub>` tags; consumed footnote labels remain
     ordinary list markers.
+    Bold and italic ranges become `**`/`*` emphasis. Headings and strong
+    paragraphs drop bold, and italics covering all of their text. Ranges of
+    the same kind separated only by whitespace are merged; list markers stay
+    outside and page markers split them. Of partly overlapping ranges, the
+    shorter one loses the overlap. Punctuation, symbols, and scripts at range
+    edges move outside where a delimiter could not open or close, and
+    openers that CommonMark could read as closing the enclosing emphasis are
+    adjusted, so the delimiters render as intended.
     Restarted lists sharing a Notes section are separated by an empty HTML
     comment so Markdown renderers preserve their starting numbers.

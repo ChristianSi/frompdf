@@ -259,7 +259,7 @@ def markdown_block_from_lines(
     annotated = join_fragments(fragments)
     return block_class(
         text=annotated.text,
-        scripts=annotated.scripts,
+        ranges=annotated.ranges,
         start_page=fragments[0].page,
         end_page=fragments[-1].page,
         font_size=block_font_size(line_list),
@@ -430,11 +430,11 @@ def detect_headings(
             converted_blocks.append(block_obj)
             continue
 
-        annotated = collapse_annotated_whitespace(AnnotatedText(block_obj.text, block_obj.scripts))
+        annotated = collapse_annotated_whitespace(AnnotatedText(block_obj.text, block_obj.ranges))
         converted_blocks.append(
             Heading(
                 text=annotated.text,
-                scripts=annotated.scripts,
+                ranges=annotated.ranges,
                 start_page=block_obj.start_page,
                 end_page=block_obj.end_page,
                 font_size=block_obj.font_size,
@@ -456,7 +456,7 @@ def lines_to_markdown_blocks(
     document_median_weight = document_median_avg_weight(line_list)
     body_lefts_by_page = build_body_lefts_by_page(line_list, default_font_size)
     evidence_texts = [
-        spelling_evidence_text(AnnotatedText(line.text, line.scripts)) for line in line_list
+        spelling_evidence_text(AnnotatedText(line.text, line.ranges)) for line in line_list
     ]
     word_counts = document_word_counts(evidence_texts)
     mixed_case_words = document_mixed_case_words(evidence_texts)

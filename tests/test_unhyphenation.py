@@ -2,7 +2,7 @@ import unittest
 from collections import Counter
 
 from frompdf.blocks import lines_to_markdown_blocks
-from frompdf.models import Line, PageNumber, ScriptRange
+from frompdf.models import InlineRange, Line, PageNumber
 from frompdf.scripts import AnnotatedText
 from frompdf.unhyphenation import (
     document_coordination_tokens,
@@ -113,7 +113,7 @@ class DocumentEvidenceTests(unittest.TestCase):
     def test_superscript_suffix_is_separated_from_spelling_evidence(self) -> None:
         value = AnnotatedText(
             'Open-Science-Bewegung81 oder',
-            (ScriptRange(21, 22, 'sup'), ScriptRange(22, 23, 'sup')),
+            (InlineRange(21, 22, 'sup'), InlineRange(22, 23, 'sup')),
         )
 
         counts = document_word_counts([spelling_evidence_text(value)])
@@ -127,12 +127,12 @@ class DocumentEvidenceTests(unittest.TestCase):
     def test_all_script_text_is_excluded_without_joining_surrounding_words(self) -> None:
         cases = [
             (
-                AnnotatedText('GaV4S8', (ScriptRange(3, 4, 'sub'), ScriptRange(5, 6, 'sub'))),
+                AnnotatedText('GaV4S8', (InlineRange(3, 4, 'sub'), InlineRange(5, 6, 'sub'))),
                 Counter({'gav': 1, 's': 1}),
             ),
-            (AnnotatedText('32nd', (ScriptRange(2, 4, 'sup'),)), Counter({'32': 1})),
-            (AnnotatedText('x2y', (ScriptRange(1, 2, 'sup'),)), Counter({'x': 1, 'y': 1})),
-            (AnnotatedText('wordabc', (ScriptRange(4, 7, 'sub'),)), Counter({'word': 1})),
+            (AnnotatedText('32nd', (InlineRange(2, 4, 'sup'),)), Counter({'32': 1})),
+            (AnnotatedText('x2y', (InlineRange(1, 2, 'sup'),)), Counter({'x': 1, 'y': 1})),
+            (AnnotatedText('wordabc', (InlineRange(4, 7, 'sub'),)), Counter({'word': 1})),
         ]
         for value, expected in cases:
             with self.subTest(value=value):
@@ -144,13 +144,13 @@ class DocumentEvidenceTests(unittest.TestCase):
             text_line('gung und mehr.', block_no=1, line_no=2),
             text_line('Open-Science-Bewegung81 oder', block_no=2, line_no=3),
         ]
-        lines[-1].scripts = (ScriptRange(21, 22, 'sup'), ScriptRange(22, 23, 'sup'))
+        lines[-1].ranges = (InlineRange(21, 22, 'sup'), InlineRange(22, 23, 'sup'))
 
         blocks = lines_to_markdown_blocks(lines, {1: PageNumber(raw=1, visible=None)})
 
         self.assertEqual(blocks[0].text, 'Open-Science-Bewegung\nund mehr.')
         self.assertEqual(blocks[1].text, lines[-1].text)
-        self.assertEqual(blocks[1].scripts, lines[-1].scripts)
+        self.assertEqual(blocks[1].ranges, lines[-1].ranges)
 
     def test_dictionary_does_not_join_words_across_arbitrary_punctuation(self) -> None:
         counts = document_word_counts(['foo/bar'])

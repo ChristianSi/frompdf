@@ -1,7 +1,7 @@
 import unittest
 
 from frompdf.escaping import escape_markdown, shift_index
-from frompdf.models import HARD_LINE_BREAK, ScriptRange
+from frompdf.models import HARD_LINE_BREAK, InlineRange
 from frompdf.scripts import AnnotatedText
 
 
@@ -37,12 +37,12 @@ class InlineEscapeTests(unittest.TestCase):
         self.assertEqual(escaped('see [1] and [sic]'), 'see [1] and [sic]')
 
     def test_leaves_script_ranges_to_their_own_escaping(self) -> None:
-        value = AnnotatedText('x*_1 *', (ScriptRange(1, 4, 'sup'),))
+        value = AnnotatedText('x*_1 *', (InlineRange(1, 4, 'sup'),))
 
         result, insertions = escape_markdown(value)
 
         self.assertEqual(result.text, 'x*_1 \\*')
-        self.assertEqual(result.scripts, (ScriptRange(1, 4, 'sup'),))
+        self.assertEqual(result.ranges, (InlineRange(1, 4, 'sup'),))
         self.assertEqual(insertions, [5])
 
 

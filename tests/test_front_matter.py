@@ -1,7 +1,7 @@
 import unittest
 
 from frompdf.front_matter import format_front_matter, is_chapter_label, is_section_like
-from frompdf.models import Block, Heading, PageNumber, Paragraph, ScriptRange, StrongParagraph
+from frompdf.models import Block, Heading, InlineRange, PageNumber, Paragraph, StrongParagraph
 
 PAGE_ONE = PageNumber(raw=1, visible=None)
 PAGE_TWO = PageNumber(raw=2, visible=None)
@@ -46,7 +46,7 @@ class HeadingClassificationTests(unittest.TestCase):
 
     def test_ignores_superscripts_when_counting_words(self) -> None:
         block = Heading('Doe1', PAGE_ONE, PAGE_ONE, level=2)
-        block.scripts = (ScriptRange(3, 4, 'sup'),)
+        block.ranges = (InlineRange(3, 4, 'sup'),)
 
         self.assertTrue(is_section_like(block))
 

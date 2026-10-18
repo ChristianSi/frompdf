@@ -7,8 +7,9 @@ are only escaped where CommonMark would treat them as markup.
 import re
 import string
 from bisect import bisect_left
+from collections.abc import Iterator
 
-from frompdf.models import HARD_LINE_BREAK, ScriptRange
+from frompdf.models import HARD_LINE_BREAK, InlineRange
 from frompdf.scripts import AnnotatedText
 
 ASCII_PUNCTUATION = frozenset(string.punctuation)
@@ -33,8 +34,15 @@ LINK_DEFINITION_PATTERN = re.compile(r'\[[^\]]+\]:')
 MAX_BLOCK_INDENT = 3
 
 
-def inline_escape_positions(text: str, protected: set[int]) -> set[int]:
-    """Return positions of characters that could start inline markup."""
+def inline_escape_positions(
+    text: str, protected: set[int], boundaries: frozenset[int] = frozenset()
+) -> set[int]:
+    """Return positions of characters that could start inline markup.
+
+    boundaries are the positions where serialization inserts markup, such as
+    emphasis delimiters or script tags, which neighboring characters see
+    instead of the adjacent text.
+    """
     positions: set[int] = set()
     for index, char in enumerate(text):
         if index in protected:
@@ -46,12 +54,22 @@ def inline_escape_positions(text: str, protected: set[int]) -> set[int]:
         elif char == '\\':
             # A backslash escapes following punctuation, and one at a line
             # end would become a hard line break.
-            if not following or following in ASCII_PUNCTUATION or following in LINE_END_CHARACTERS:
+            if (
+                not following
+                or following in ASCII_PUNCTUATION
+                or following in LINE_END_CHARACTERS
+                or index + 1 in boundaries
+            ):
                 positions.add(index)
         elif char == '_':
             # Underscores between letters or digits cannot open or close emphasis.
             preceding = text[index - 1] if index else ''
-            if not (preceding.isalnum() and following.isalnum()):
+            if not (
+                preceding.isalnum()
+                and following.isalnum()
+                and index not in boundaries
+                and index + 1 not in boundaries
+            ):
                 positions.add(index)
         elif char == '&':
             if ENTITY_PATTERN.match(text, index):
@@ -104,11 +122,14 @@ def line_start_escape_position(line: str, block_start: bool, list_kind: str | No
     return None
 
 
-def block_escape_positions(
+def block_lines(
     text: str, protected: set[int], block_line_start: bool, block_list_markers: bool
-) -> set[int]:
-    """Return positions of characters that would start block syntax at line starts."""
-    positions: set[int] = set()
+) -> Iterator[tuple[int, str, bool, str | None]]:
+    """Yield the lines that could start block syntax.
+
+    Each line comes with its position after indentation, whether it starts the
+    block, and the kind of list item that the block starts with, if kept.
+    """
     list_kind: str | None = None
     line_starts = [0] + [match.end() for match in re.finditer('\n', text)]
     for line_start in line_starts:
@@ -125,10 +146,53 @@ def block_escape_positions(
         line = text[start : end if end >= 0 else len(text)].rstrip(HARD_LINE_BREAK)
         if block_start and block_list_markers:
             list_kind = list_item_kind(line)
+        yield start, line, block_start, list_kind
+
+
+def block_escape_positions(
+    text: str, protected: set[int], block_line_start: bool, block_list_markers: bool
+) -> set[int]:
+    """Return positions of characters that would start block syntax at line starts."""
+    positions: set[int] = set()
+    for start, line, block_start, list_kind in block_lines(
+        text, protected, block_line_start, block_list_markers
+    ):
         offset = line_start_escape_position(line, block_start, list_kind)
         if offset is not None:
             positions.add(start + offset)
     return positions
+
+
+def list_item_markers(
+    value: AnnotatedText, block_line_start: bool = True, block_list_markers: bool = True
+) -> list[tuple[int, int]]:
+    """Return the spans of the list markers that escaping keeps, with following whitespace.
+
+    The parameters are those of escape_markdown for a block that is no heading.
+    """
+    text = value.text
+    markers: list[tuple[int, int]] = []
+    for start, line, block_start, list_kind in block_lines(
+        text, script_positions(value), block_line_start, block_list_markers
+    ):
+        if (
+            list_kind is None
+            or list_item_kind(line) != list_kind
+            or line_start_escape_position(line, block_start, list_kind) is not None
+        ):
+            continue
+        marker = BULLET_PATTERN.match(line) or ORDERED_PATTERN.match(line)
+        assert marker is not None
+        end = start + marker.end()
+        while end < len(text) and text[end] in ' \t':
+            end += 1
+        markers.append((start, end))
+    return markers
+
+
+def script_positions(value: AnnotatedText) -> set[int]:
+    """Return the positions of characters within scripts."""
+    return {index for run in value.ranges if run.is_script for index in range(run.start, run.end)}
 
 
 def escape_markdown(
@@ -146,12 +210,15 @@ def escape_markdown(
     of the block remain unescaped, so lists in the source still render as lists.
 
     Script ranges are rendered as inline HTML with their own escaping, so they
-    are left alone. Returns the escaped text and the sorted original positions
-    before which backslashes were inserted.
+    are left alone. Emphasis ranges are rendered with delimiters, which
+    neighboring characters see instead of the adjacent text. Returns the escaped
+    text and the sorted original positions before which backslashes were
+    inserted.
     """
     text = value.text
-    protected = {index for run in value.scripts for index in range(run.start, run.end)}
-    positions = inline_escape_positions(text, protected)
+    protected = script_positions(value)
+    boundaries = frozenset(position for run in value.ranges for position in (run.start, run.end))
+    positions = inline_escape_positions(text, protected, boundaries)
     if heading:
         closing = HEADING_CLOSING_PATTERN.search(text)
         if closing and closing.start(1) not in protected:
@@ -169,11 +236,11 @@ def escape_markdown(
         pieces.append('\\')
         previous = position
     pieces.append(text[previous:])
-    scripts = tuple(
-        ScriptRange(shift_index(insertions, run.start), shift_index(insertions, run.end), run.kind)
-        for run in value.scripts
+    ranges = tuple(
+        InlineRange(shift_index(insertions, run.start), shift_index(insertions, run.end), run.kind)
+        for run in value.ranges
     )
-    return AnnotatedText(''.join(pieces), scripts), insertions
+    return AnnotatedText(''.join(pieces), ranges), insertions
 
 
 def shift_index(insertions: list[int], index: int) -> int:

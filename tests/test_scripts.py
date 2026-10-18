@@ -9,7 +9,7 @@ from pdftext.schema import Page
 from frompdf.blocks import detect_headings
 from frompdf.footnotes import DetectedNote, build_footnote, numbered_line
 from frompdf.lines import iter_lines, line_script_ranges
-from frompdf.models import BlockQuote, Heading, Line, PageNumber, Paragraph, ScriptRange
+from frompdf.models import BlockQuote, Heading, InlineRange, Line, PageNumber, Paragraph
 from frompdf.output import markdown_to_text
 from frompdf.scripts import AnnotatedText, collapse_annotated_whitespace, render_scripts
 from frompdf.unhyphenation import unhyphenate_annotated_lines
@@ -50,8 +50,8 @@ def pdf_line(
     )
 
 
-def source_line(text: str, scripts: tuple[ScriptRange, ...], page: int = 1) -> Line:
-    return Line(text, page, 1, 1, 8, 0, 100, 200, 108, None, None, 400, scripts=scripts)
+def source_line(text: str, scripts: tuple[InlineRange, ...], page: int = 1) -> Line:
+    return Line(text, page, 1, 1, 8, 0, 100, 200, 108, None, None, 400, ranges=scripts)
 
 
 def repaired(*parts: AnnotatedText) -> AnnotatedText:
@@ -223,19 +223,19 @@ class SameLineScriptDetectionTests(unittest.TestCase):
 
         lines = iter_lines([page])
 
-        self.assertEqual(lines[0].scripts, ())
-        self.assertEqual(render_scripts(lines[1].text, lines[1].scripts), '<sup>51</sup>.')
+        self.assertEqual(lines[0].ranges, ())
+        self.assertEqual(render_scripts(lines[1].text, lines[1].ranges), '<sup>51</sup>.')
 
 
 class ScriptAnnotationTests(unittest.TestCase):
     def test_slicing_clips_runs_and_whitespace_collapse_retains_heading_scripts(self) -> None:
         value = AnnotatedText(
-            '  GaV4S8\n title ', (ScriptRange(5, 6, 'sub'), ScriptRange(7, 8, 'sub'))
+            '  GaV4S8\n title ', (InlineRange(5, 6, 'sub'), InlineRange(7, 8, 'sub'))
         )
-        self.assertEqual(value.slice(5, 6), AnnotatedText('4', (ScriptRange(0, 1, 'sub'),)))
+        self.assertEqual(value.slice(5, 6), AnnotatedText('4', (InlineRange(0, 1, 'sub'),)))
         heading = collapse_annotated_whitespace(value)
         self.assertEqual(
-            render_scripts(heading.text, heading.scripts), 'GaV<sub>4</sub>S<sub>8</sub> title'
+            render_scripts(heading.text, heading.ranges), 'GaV<sub>4</sub>S<sub>8</sub> title'
         )
 
     def test_unhyphenation_moves_script_with_right_token_and_preserves_other_occurrence(
@@ -243,28 +243,28 @@ class ScriptAnnotationTests(unittest.TestCase):
     ) -> None:
         value = repaired(
             AnnotatedText('word2 inter-'),
-            AnnotatedText('national2 rest', (ScriptRange(8, 9, 'sup'),)),
+            AnnotatedText('national2 rest', (InlineRange(8, 9, 'sup'),)),
         )
         self.assertEqual(
-            render_scripts(value.text, value.scripts), 'word2 international<sup>2</sup>\nrest'
+            render_scripts(value.text, value.ranges), 'word2 international<sup>2</sup>\nrest'
         )
 
     def test_unhyphenation_treats_script_changes_as_word_boundaries(self) -> None:
         for left, right, counts, expected in (
             (
                 AnnotatedText('der Men-'),
-                AnnotatedText('schen49, und', (ScriptRange(5, 7, 'sup'),)),
+                AnnotatedText('schen49, und', (InlineRange(5, 7, 'sup'),)),
                 Counter({'menschen': 1}),
                 'der Menschen<sup>49</sup>,\nund',
             ),
             (
                 AnnotatedText('ein Mehr-'),
-                AnnotatedText('wert3 hier', (ScriptRange(4, 5, 'sup'),)),
+                AnnotatedText('wert3 hier', (InlineRange(4, 5, 'sup'),)),
                 Counter({'mehr-wert': 1}),
                 'ein Mehr-wert<sup>3</sup>\nhier',
             ),
             (
-                AnnotatedText('x2Ge-', (ScriptRange(1, 2, 'sup'),)),
+                AnnotatedText('x2Ge-', (InlineRange(1, 2, 'sup'),)),
                 AnnotatedText('biet'),
                 Counter({'gebiet': 1}),
                 'x<sup>2</sup>Gebiet',
@@ -272,24 +272,24 @@ class ScriptAnnotationTests(unittest.TestCase):
             # A script change at the line boundary itself keeps the whole fragments.
             (
                 AnnotatedText('Men-'),
-                AnnotatedText('schen', (ScriptRange(0, 3, 'sup'),)),
+                AnnotatedText('schen', (InlineRange(0, 3, 'sup'),)),
                 Counter({'menschen': 1, 'men-sch': 2}),
                 'Men<sup>sch</sup>en',
             ),
         ):
             with self.subTest(left=left.text, right=right.text):
                 value = unhyphenate_annotated_lines((left, right), counts, set(), set())
-                self.assertEqual(render_scripts(value.text, value.scripts), expected)
+                self.assertEqual(render_scripts(value.text, value.ranges), expected)
 
     def test_unspaced_dash_repair_and_consumed_lines_preserve_annotations(self) -> None:
         value = repaired(
-            AnnotatedText('word—'), AnnotatedText('other1', (ScriptRange(5, 6, 'sup'),))
+            AnnotatedText('word—'), AnnotatedText('other1', (InlineRange(5, 6, 'sup'),))
         )
-        self.assertEqual(render_scripts(value.text, value.scripts), 'word—other<sup>1</sup>')
+        self.assertEqual(render_scripts(value.text, value.ranges), 'word—other<sup>1</sup>')
 
     def test_scripted_hyphen_is_removed_with_the_source_hyphen(self) -> None:
         value = repaired(
-            AnnotatedText('inter-', (ScriptRange(5, 6, 'sup'),)), AnnotatedText('national')
+            AnnotatedText('inter-', (InlineRange(5, 6, 'sup'),)), AnnotatedText('national')
         )
         self.assertEqual(value, AnnotatedText('international'))
 
@@ -298,10 +298,10 @@ class ScriptAnnotationTests(unittest.TestCase):
         line = source_line(
             text,
             (
-                ScriptRange(0, 1, 'sup'),
-                ScriptRange(13, 14, 'sub'),
-                ScriptRange(15, 16, 'sub'),
-                ScriptRange(25, 26, 'sup'),
+                InlineRange(0, 1, 'sup'),
+                InlineRange(13, 14, 'sub'),
+                InlineRange(15, 16, 'sub'),
+                InlineRange(25, 26, 'sup'),
             ),
         )
         result = numbered_line([line], 0)
@@ -322,7 +322,7 @@ class ScriptAnnotationTests(unittest.TestCase):
     ) -> None:
         first = source_line('An inter-', ())
         second = source_line(
-            'national2 rest3.', (ScriptRange(8, 9, 'sup'), ScriptRange(14, 15, 'sup')), page=2
+            'national2 rest3.', (InlineRange(8, 9, 'sup'), InlineRange(14, 15, 'sup')), page=2
         )
         note = build_footnote(
             DetectedNote('1', [[first, second]]),
@@ -345,11 +345,11 @@ class ScriptAnnotationTests(unittest.TestCase):
             page,
             page,
             font_size=20,
-            scripts=(ScriptRange(4, 5, 'sub'), ScriptRange(6, 7, 'sub')),
+            ranges=(InlineRange(4, 5, 'sub'), InlineRange(6, 7, 'sub')),
         )
         heading = detect_headings([value], 10, 400)[0]
         self.assertIsInstance(heading, Heading)
-        quote = BlockQuote('text\n1 next', page, page, scripts=(ScriptRange(5, 6, 'sup'),))
+        quote = BlockQuote('text\n1 next', page, page, ranges=(InlineRange(5, 6, 'sup'),))
         output = io.StringIO()
         markdown_to_text([heading, quote], output, page_markers=True)
         self.assertIn('<<PAGE:1>>GaV<sub>4</sub>S<sub>8</sub> title', output.getvalue())
@@ -357,11 +357,11 @@ class ScriptAnnotationTests(unittest.TestCase):
 
     def test_script_content_escapes_html_and_markdown(self) -> None:
         self.assertEqual(
-            render_scripts('<&*', (ScriptRange(0, 3, 'sup'),)), '<sup>&lt;&amp;&#42;</sup>'
+            render_scripts('<&*', (InlineRange(0, 3, 'sup'),)), '<sup>&lt;&amp;&#42;</sup>'
         )
 
     def test_citation_brackets_are_preserved_literally(self) -> None:
-        self.assertEqual(render_scripts('[10]', (ScriptRange(0, 4, 'sup'),)), '<sup>[10]</sup>')
+        self.assertEqual(render_scripts('[10]', (InlineRange(0, 4, 'sup'),)), '<sup>[10]</sup>')
 
 
 if __name__ == '__main__':

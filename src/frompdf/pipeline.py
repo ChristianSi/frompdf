@@ -7,6 +7,7 @@ from frompdf.lines import (
     attach_stacked_scripts,
     attach_stray_scripts,
     decode_math_extension_glyphs,
+    drop_dominant_emphasis,
     iter_lines,
     normalize_detached_diacritics,
     remove_icon_glyphs,
@@ -41,6 +42,7 @@ def extract_markdown(
     attach_stray_scripts(page_list)
     attach_stacked_scripts(page_list)
     line_list = iter_lines(page_list)
+    drop_dominant_emphasis(line_list)
 
     if dump_lines:
         dump_csv(line_list, build_csv_output_path(input_path))

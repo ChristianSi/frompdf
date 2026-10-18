@@ -50,7 +50,7 @@ def page(*blocks: list[dict]) -> Page:
 
 def texts(page_obj: Page) -> list[str]:
     """Return the rendered text of each line record."""
-    return [render_scripts(line.text, line.scripts) for line in iter_lines([page_obj])]
+    return [render_scripts(line.text, line.ranges) for line in iter_lines([page_obj])]
 
 
 class StrayScriptTests(unittest.TestCase):

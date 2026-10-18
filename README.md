@@ -62,6 +62,7 @@ frompdf currently detects and serializes:
 - document-aware unhyphenation of words split across lines within a block
 - normalization of unspaced en and em dashes split across lines within a block
 - inline superscripts and subscripts, preserved as `<sup>` and `<sub>` tags
+- bold and italic text, rendered as `**bold**` and `*italic*` emphasis
 - deliberate line breaks within blocks, such as in epigraphs or address
   cards, preserved as hard line breaks (a trailing backslash)
 - escaping of text that Markdown would otherwise read as syntax; list markers
@@ -211,7 +212,28 @@ Detection uses character size and position relative to nearby ordinary text,
 including when a PDF reports placeholder font sizes or mixes scripts into
 ordinary spans. Recognition is conservative; standalone scripts and complex
 stacked mathematical notation may remain plain text. Diagnostic line CSVs
-retain plain text and include `scripts` ranges with decoded character offsets.
+retain plain text and include `ranges` with decoded character offsets, for
+scripts as well as bold and italic text.
+
+### Bold and italics
+
+Bold and italic text is recognized by font names, such as `Times-Bold` or
+`LMRoman10-Italic`, and the italic flag of PDF fonts. Math fonts are ignored,
+so TeX variables are not rendered as emphasis. A style used for most of a
+document's text is its body style and is not marked either.
+
+Bold and italic parts of paragraphs, block quotes, and notes are rendered as
+`**bold**` and `*italic*`, as are completely styled blocks. Headings and the
+bold paragraphs used for subtitles and author names never get additional bold,
+and italics covering all of their text are dropped; partial italics remain.
+
+Emphasis is adjusted where Markdown would not render it as intended. List and
+quote markers stay outside of it, and page markers interrupt it. Punctuation
+and symbols at the edges move outside where a delimiter next to a letter
+could not open or close, as in `*word*.next` rather than `*word.*next`, and
+so do scripts. Where bold and italic ranges partly overlap, the shorter one
+loses the overlap. A rare kind of opening delimiter inside a word, which
+Markdown could read as closing the surrounding emphasis, is dropped.
 
 ## Limitations
 

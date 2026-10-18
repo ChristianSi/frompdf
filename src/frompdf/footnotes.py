@@ -125,8 +125,8 @@ def numbered_line(region: list[Line], index: int) -> tuple[str, Line, int] | Non
                 return None
         # Consume the label's annotation along with its text. Remaining scripts
         # in the note body retain their positions after this slice.
-        annotated = AnnotatedText(line.text, line.scripts).slice(match.start(2))
-        return match[1], replace(line, text=annotated.text, scripts=annotated.scripts), 1
+        annotated = AnnotatedText(line.text, line.ranges).slice(match.start(2))
+        return match[1], replace(line, text=annotated.text, ranges=annotated.ranges), 1
     if not line.text.strip().isdecimal() or index + 1 >= len(region):
         return None
     following = region[index + 1]
@@ -251,7 +251,7 @@ def build_footnote(
     complete = join_fragments(fragments)
     return Footnote(
         text=complete.text,
-        scripts=complete.scripts,
+        ranges=complete.ranges,
         start_page=fragments[0].page,
         end_page=fragments[-1].page,
         font_size=note.paragraphs[0][0].font_size,

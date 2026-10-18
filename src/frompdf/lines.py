@@ -19,7 +19,7 @@ from pdftext.schema import (
     Span as PdfTextSpan,
 )
 
-from frompdf.models import Line, ScriptRange
+from frompdf.models import InlineRange, Line
 from frompdf.scripts import AnnotatedText
 from frompdf.segmentation import same_physical_line, same_running_text_line
 
@@ -73,6 +73,33 @@ BOLD_FONT_NAME_PATTERN = re.compile(
     r'(?:bold|black|heavy|semi[- ]?bold|demi[- ]?bold|[.+_-](?:b|bd|sb)(?:it)?$)',
     flags=re.IGNORECASE,
 )
+
+# Bold and italic text are recognized by font names. Reported weights are
+# unreliable: cc-style-guide's Roboto-Medium is heavier than its
+# SourceSansPro-SemiBold, and intertrans's Calibri-Italic heavier than its
+# Calibri-Bold. Beyond conventional names, this covers suffixes such as `.B`
+# with encoding variants (`AdvTTa351d857.B+20`), URW Nimbus fonts (`-Medi`,
+# `-ReguItal`), and TeX font names (CMBX10, CMTI9).
+BOLD_FACE_PATTERN = re.compile(
+    r'(?i:bold|black|heavy)|[._-](?:B|Bd|SB|Sb)(?:I|It)?(?:\+\w+)?$'
+    r'|(?i:nimbus)\w*-Medi|\b(?i:cmbx?|cmbxti|cmbxsl|sfbx|sfbi)\d'
+)
+ITALIC_FACE_PATTERN = re.compile(
+    r'(?i:italic|oblique|slant|kursiv)|Ital|It(?:MT)?(?:\+\w+)?$|[._-]B?I(?:\+\w+)?$'
+    r'|\b(?i:cmti|cmsl|cmbxti|cmbxsl|cmssi|cmitt|sfti|sfsl|sfbi|sfso)\d'
+)
+# Math fonts set variables and symbols in italics or bold, which are math
+# notation, not emphasis. Their PDF flags often mark them as italic, too.
+MATH_FONT_NAME_PATTERN = re.compile(
+    r'math|mth|symbol|\b(?:cm|lm)(?:mi|mib|sy|bsy|ex)\d|\b(?:new)?(?:r?tx|px)(?:mi|sy|ex)'
+    r'|\bms(?:am|bm)\d|\beu(?:fm|fb|rm|rb|sm|sb|ex)\d',
+    flags=re.IGNORECASE,
+)
+# The PDF font descriptor flag for italic fonts.
+ITALIC_FONT_FLAG = 64
+# A style used for most letters and digits of a document is its body style.
+# Marking it would emphasize everything.
+MAX_EMPHASIS_SHARE = 0.5
 
 
 def round_or_none(value: float | int | None, digits: int = 1) -> float | None:
@@ -559,6 +586,60 @@ def average_font_weight(line_dict: PdfTextLine) -> float | None:
     return round(weighted_sum / total_weight, 1)
 
 
+def span_emphasis_kinds(span_dict: PdfTextSpan) -> tuple[Literal['bold', 'italic'], ...]:
+    """Return whether a span's font is bold and whether it is italic, ignoring math fonts."""
+    font_dict = span_dict.get('font', {})
+    font_name = font_dict.get('name')
+    font_name = font_name if isinstance(font_name, str) else ''
+    if MATH_FONT_NAME_PATTERN.search(font_name):
+        return ()
+    kinds: list[Literal['bold', 'italic']] = []
+    if BOLD_FACE_PATTERN.search(font_name):
+        kinds.append('bold')
+    flags = font_dict.get('flags')
+    if ITALIC_FACE_PATTERN.search(font_name) or isinstance(flags, int) and flags & ITALIC_FONT_FLAG:
+        kinds.append('italic')
+    return tuple(kinds)
+
+
+def line_emphasis_ranges(line_dict: PdfTextLine) -> tuple[InlineRange, ...]:
+    """Return the bold and italic ranges of a line's text, merging those of adjacent spans."""
+    ranges: list[InlineRange] = []
+    open_runs: dict[str, InlineRange] = {}
+    offset = 0
+    for span_dict in line_dict.get('spans', []):
+        text_value = span_dict.get('text', '')
+        end = offset + len(text_value)
+        kinds = span_emphasis_kinds(span_dict) if text_value.strip() else ()
+        for kind in ('bold', 'italic'):
+            run = open_runs.get(kind)
+            if kind in kinds:
+                open_runs[kind] = InlineRange(run.start if run else offset, end, kind)
+            elif run is not None:
+                ranges.append(run)
+                del open_runs[kind]
+        offset = end
+    ranges.extend(open_runs.values())
+    return tuple(sorted(ranges, key=lambda run: run.start))
+
+
+def drop_dominant_emphasis(line_list: Sequence[Line]) -> None:
+    """Remove bold or italic ranges, in place, where that style is the document's body style."""
+    total = sum(char.isalnum() for line_obj in line_list for char in line_obj.text)
+    shares: Counter[str] = Counter()
+    for line_obj in line_list:
+        for run in line_obj.ranges:
+            if not run.is_script:
+                shares[run.kind] += sum(
+                    char.isalnum() for char in line_obj.text[run.start : run.end]
+                )
+    dominant = {kind for kind, count in shares.items() if count > total * MAX_EMPHASIS_SHARE}
+    if not dominant:
+        return
+    for line_obj in line_list:
+        line_obj.ranges = tuple(run for run in line_obj.ranges if run.kind not in dominant)
+
+
 # Require at least a 15% size reduction and a center shift of 15% of the
 # neighboring ordinary glyph height. Graf's raised markers shift by only 17%;
 # Nature's lowered formula digits have a size ratio of about two-thirds.
@@ -645,7 +726,7 @@ def script_kind(box: Box, ref_box: Box) -> Literal['sup', 'sub'] | None:
     return None
 
 
-def script_runs(glyphs: list[ScriptGlyph], ordinary: list[ScriptGlyph]) -> list[ScriptRange]:
+def script_runs(glyphs: list[ScriptGlyph], ordinary: list[ScriptGlyph]) -> list[InlineRange]:
     """Return the glyphs that are small and shifted relative to the dominant ordinary ones."""
     # Only use reported sizes when all visible alphanumerics have real sizes.
     # Nature reports size 1.0 even for differently scaled characters.
@@ -657,7 +738,7 @@ def script_runs(glyphs: list[ScriptGlyph], ordinary: list[ScriptGlyph]) -> list[
     references = [
         g for g in ordinary if abs(glyph_size(g, real_sizes) - dominant) <= dominant * 0.08
     ]
-    runs: list[ScriptRange] = []
+    runs: list[InlineRange] = []
     for glyph in glyphs:
         start, end, char, box, _ = glyph
         if glyph_size(glyph, real_sizes) > dominant * SCRIPT_MAX_SIZE_RATIO:
@@ -676,7 +757,7 @@ def script_runs(glyphs: list[ScriptGlyph], ordinary: list[ScriptGlyph]) -> list[
         # Do not apply another script level to an already encoded script glyph.
         if any('SUPERSCRIPT' in name(c, '') or 'SUBSCRIPT' in name(c, '') for c in char['char']):
             continue
-        runs.append(ScriptRange(start, end, kind))
+        runs.append(InlineRange(start, end, kind))
     return runs
 
 
@@ -702,7 +783,7 @@ def line_script_ranges(
     line_dict: PdfTextLine,
     neighbors: Sequence[PdfTextLine] = (),
     same_line: Sequence[PdfTextLine] = (),
-) -> tuple[ScriptRange, ...]:
+) -> tuple[InlineRange, ...]:
     """Recognize small shifted glyphs, including those inside ordinary spans.
 
     pdftext sometimes puts scripts into line records of their own. The other
@@ -728,12 +809,12 @@ def line_script_ranges(
     # A small numerator can look like an inline superscript. Reject only the
     # touching script group when another extraction line is stacked immediately
     # above/below it, preserving unrelated scripts elsewhere on the same line.
-    groups: list[list[ScriptRange]] = []
+    groups: list[list[InlineRange]] = []
     for run in sorted(runs.values(), key=lambda run: run.start):
         if not groups or groups[-1][-1].end != run.start or groups[-1][-1].kind != run.kind:
             groups.append([])
         groups[-1].append(run)
-    kept: list[ScriptRange] = []
+    kept: list[InlineRange] = []
     for group in groups:
         script_box = union_box([g[3] for g in glyphs if group[0].start <= g[0] < group[-1].end])
         if not has_stacked_text(line_box, [line_dict, *same_line], neighbors, script_box, group[0]):
@@ -746,7 +827,7 @@ def has_stacked_text(
     own_lines: Sequence[PdfTextLine],
     neighbors: Sequence[PdfTextLine],
     script_box: Box,
-    run: ScriptRange,
+    run: InlineRange,
 ) -> bool:
     """Avoid interpreting the numerator of a vertically stacked fraction as a script.
 
@@ -1138,10 +1219,10 @@ def iter_lines(page_list: Sequence[Page]) -> list[Line]:
             ):
                 same_line.append(page_lines[index + 1][1])
             scripts = line_script_ranges(line_dict, block_lines, same_line)
-            annotated = AnnotatedText(raw_text, scripts).slice(
+            annotated = AnnotatedText(raw_text, scripts + line_emphasis_ranges(line_dict)).slice(
                 len(raw_text) - len(raw_text.lstrip()), len(raw_text.rstrip())
             )
-            line_obj.scripts = annotated.scripts
+            line_obj.ranges = annotated.ranges
             line_obj.fraction_denominator = 0 < index < len(
                 page_lines
             ) - 1 and is_fraction_denominator(
