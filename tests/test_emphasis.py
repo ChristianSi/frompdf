@@ -107,11 +107,30 @@ class EmphasisDetectionTests(unittest.TestCase):
     def test_recognizes_italic_font_flag(self) -> None:
         self.assertEqual(kinds('F12', flags=68), ('italic',))
 
-    def test_ignores_math_italics(self) -> None:
-        self.assertEqual(kinds('LMMathItalic10-Regular', flags=68), ())
-        self.assertEqual(kinds('CMMI6', flags=68), ())
+    def test_recognizes_math_italic_fonts(self) -> None:
+        self.assertEqual(kinds('LMMathItalic10-Regular', flags=68), ('italic',))
+        self.assertEqual(kinds('CMMI6'), ('italic',))
+        self.assertEqual(kinds('ABCDEF+CMMIB10'), ('italic',))
+        self.assertEqual(kinds('LMMathItalic10-Bold', flags=68), ('bold', 'italic'))
+
+    def test_ignores_other_math_fonts(self) -> None:
         self.assertEqual(kinds('LMMathSymbols10-Regular', flags=68), ())
-        self.assertEqual(kinds('LMMathItalic10-Bold', flags=68), ())
+        self.assertEqual(kinds('CMSY10', flags=68), ())
+        self.assertEqual(kinds('CMEX10', flags=68), ())
+        self.assertEqual(kinds('MSBM10', flags=68), ())
+        self.assertEqual(kinds('SymbolMT', flags=68), ())
+
+    def test_styles_only_letters_of_math_italic_fonts(self) -> None:
+        line = font_line(
+            font_span('for ', x=0),
+            font_span('xy,2θ', 'CMMI10', flags=68, x=20),
+            font_span(' in', x=45),
+        )
+
+        self.assertEqual(
+            line_emphasis_ranges(line),
+            (InlineRange(4, 6, 'italic'), InlineRange(8, 9, 'italic')),
+        )
 
     def test_ignores_regular_and_medium_faces(self) -> None:
         self.assertEqual(kinds('Roboto-Medium'), ())

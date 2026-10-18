@@ -88,8 +88,13 @@ ITALIC_FACE_PATTERN = re.compile(
     r'(?i:italic|oblique|slant|kursiv)|Ital|It(?:MT)?(?:\+\w+)?$|[._-]B?I(?:\+\w+)?$'
     r'|\b(?i:cmti|cmsl|cmbxti|cmbxsl|cmssi|cmitt|sfti|sfsl|sfbi|sfso)\d'
 )
-# Math fonts set variables and symbols in italics or bold, which are math
-# notation, not emphasis. Their PDF flags often mark them as italic, too.
+# Math italic fonts set variables in italics, as italic text fonts would. Only
+# their letters look italic, not their digits and punctuation.
+MATH_ITALIC_FONT_NAME_PATTERN = re.compile(
+    r'math\W*italic|\b(?:cm|lm)mib?\d|\b(?:new)?(?:r?tx|px)mi', flags=re.IGNORECASE
+)
+# Other math fonts hold symbols, operators, and delimiters, which their PDF
+# flags often mark as italic although they do not look italic.
 MATH_FONT_NAME_PATTERN = re.compile(
     r'math|mth|symbol|\b(?:cm|lm)(?:mi|mib|sy|bsy|ex)\d|\b(?:new)?(?:r?tx|px)(?:mi|sy|ex)'
     r'|\bms(?:am|bm)\d|\beu(?:fm|fb|rm|rb|sm|sb|ex)\d',
@@ -586,39 +591,66 @@ def average_font_weight(line_dict: PdfTextLine) -> float | None:
     return round(weighted_sum / total_weight, 1)
 
 
+def span_font_name(span_dict: PdfTextSpan) -> str:
+    """Return a span's font name, or an empty string."""
+    font_name = span_dict.get('font', {}).get('name')
+    return font_name if isinstance(font_name, str) else ''
+
+
+def is_math_italic_span(span_dict: PdfTextSpan) -> bool:
+    """Return whether a span uses a math italic font, such as CMMI10."""
+    return bool(MATH_ITALIC_FONT_NAME_PATTERN.search(span_font_name(span_dict)))
+
+
 def span_emphasis_kinds(span_dict: PdfTextSpan) -> tuple[Literal['bold', 'italic'], ...]:
-    """Return whether a span's font is bold and whether it is italic, ignoring math fonts."""
-    font_dict = span_dict.get('font', {})
-    font_name = font_dict.get('name')
-    font_name = font_name if isinstance(font_name, str) else ''
-    if MATH_FONT_NAME_PATTERN.search(font_name):
+    """Return whether a span's font is bold and whether it is italic.
+
+    Math italic fonts are italic; other math fonts are ignored.
+    """
+    font_name = span_font_name(span_dict)
+    math_italic = is_math_italic_span(span_dict)
+    if MATH_FONT_NAME_PATTERN.search(font_name) and not math_italic:
         return ()
     kinds: list[Literal['bold', 'italic']] = []
     if BOLD_FACE_PATTERN.search(font_name):
         kinds.append('bold')
-    flags = font_dict.get('flags')
-    if ITALIC_FACE_PATTERN.search(font_name) or isinstance(flags, int) and flags & ITALIC_FONT_FLAG:
+    flags = span_dict.get('font', {}).get('flags')
+    if (
+        math_italic
+        or ITALIC_FACE_PATTERN.search(font_name)
+        or isinstance(flags, int)
+        and flags & ITALIC_FONT_FLAG
+    ):
         kinds.append('italic')
     return tuple(kinds)
 
 
 def line_emphasis_ranges(line_dict: PdfTextLine) -> tuple[InlineRange, ...]:
-    """Return the bold and italic ranges of a line's text, merging those of adjacent spans."""
+    """Return the bold and italic ranges of a line's text, merging those of adjacent spans.
+
+    Only the letters of math italic fonts are styled.
+    """
     ranges: list[InlineRange] = []
     open_runs: dict[str, InlineRange] = {}
     offset = 0
     for span_dict in line_dict.get('spans', []):
         text_value = span_dict.get('text', '')
-        end = offset + len(text_value)
         kinds = span_emphasis_kinds(span_dict) if text_value.strip() else ()
-        for kind in ('bold', 'italic'):
-            run = open_runs.get(kind)
-            if kind in kinds:
-                open_runs[kind] = InlineRange(run.start if run else offset, end, kind)
-            elif run is not None:
-                ranges.append(run)
-                del open_runs[kind]
-        offset = end
+        pieces = (
+            [(char, kinds if char.isalpha() else ()) for char in text_value]
+            if kinds and is_math_italic_span(span_dict)
+            else [(text_value, kinds)]
+        )
+        for piece, piece_kinds in pieces:
+            end = offset + len(piece)
+            for kind in ('bold', 'italic'):
+                run = open_runs.get(kind)
+                if kind in piece_kinds:
+                    open_runs[kind] = InlineRange(run.start if run else offset, end, kind)
+                elif run is not None:
+                    ranges.append(run)
+                    del open_runs[kind]
+            offset = end
     ranges.extend(open_runs.values())
     return tuple(sorted(ranges, key=lambda run: run.start))
 

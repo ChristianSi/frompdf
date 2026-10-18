@@ -236,9 +236,10 @@ The current pipeline is roughly:
    pieces of the same line of running text serve as the ordinary reference
    text. Small records centered below small text ending the preceding record,
    with the line continuing after them, are marked as fraction denominators.
-   Bold and italic ranges follow font names and the italic font flag,
-   ignoring math fonts. A style covering most of the document's letters and
-   digits is its body style and is dropped.
+   Bold and italic ranges follow font names and the italic font flag.
+   Letters in math italic fonts are italic; other math fonts are ignored. A
+   style covering most of the document's letters and digits is its body style
+   and is dropped.
 4. Optionally dump the unfiltered line records to `-lines.csv`.
 5. Detect and remove headers and footers, collecting visible page labels.
 6. Order the remaining lines by page region and detected column.

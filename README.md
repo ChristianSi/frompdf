@@ -218,9 +218,10 @@ scripts as well as bold and italic text.
 ### Bold and italics
 
 Bold and italic text is recognized by font names, such as `Times-Bold` or
-`LMRoman10-Italic`, and the italic flag of PDF fonts. Math fonts are ignored,
-so TeX variables are not rendered as emphasis. A style used for most of a
-document's text is its body style and is not marked either.
+`LMRoman10-Italic`, and the italic flag of PDF fonts. Letters in math italic
+fonts, such as TeX variables, are italic as well. Other math fonts, holding
+symbols and operators, are ignored even when flagged as italic. A style used
+for most of a document's text is its body style and is not marked either.
 
 Bold and italic parts of paragraphs, block quotes, and notes are rendered as
 `**bold**` and `*italic*`, as are completely styled blocks. Headings and the
