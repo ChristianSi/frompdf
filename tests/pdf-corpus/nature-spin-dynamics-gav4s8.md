@@ -1,4 +1,4 @@
-## <<PAGE:1>>Slowdown of photoexcited spin dynamics in the non-collinear spin-ordered phases in skyrmion host GaV4S8
+## [[PAGE:1]]Slowdown of photoexcited spin dynamics in the non-collinear spin-ordered phases in skyrmion host GaV4S8
 
 **Fumiya Sekiguchi, Kestutis Budzinauskas, Prashant Padmanabhan,
 Rolf B. Versteeg, Vladimir Tsurkan, István Kézsmárki, Francesco
@@ -24,7 +24,7 @@ these conditions:
 Weitere Informationen finden Sie unter: / For more information see:
 https://creativecommons.org/licenses/by/4.0/deed.de
 
-### <<PAGE:2|VISIBLE:1>>ARTICLE
+### [[PAGE:2|VISIBLE:1]]ARTICLE
 
 https://doi.org/10.1038/s41467-022-30829-z **OPEN**
 
@@ -49,7 +49,7 @@ abundance in the skyrmion-lattice/cycloid phase. These results highlight the imp
 spin structure on the ultrafast heat transport in spin systems, providing a useful insight for
 the step toward ultrafast photocontrol of the magnets with novel spin orders.
 
-<<PAGE:3|VISIBLE:2>>In spin systems several types of interactions can coexist, and
+[[PAGE:3|VISIBLE:2]]In spin systems several types of interactions can coexist, and
 the competition among them sometimes results in the formation
 of novel spin ordering, which determines the static and
 dynamic magnetic properties. A prominent example is the skyrmion
@@ -237,7 +237,7 @@ Fig. 1 Photoinduced **Δ*θ*** dynamics in the different magnetic phases of GaV<
 temperatures where trMOKE measurements were performed. b–e Δ*θ* traces under different external magnetic fields at 8 K, 10 K, 11.5 K, and 14.5 K,
 respectively.
 
-<<PAGE:4|VISIBLE:3>>**a**
+[[PAGE:4|VISIBLE:3]]**a**
 
 **c**
 
@@ -454,7 +454,7 @@ during non-radiative carrier relaxation process<sup>41</sup>. After this initial
 > the data (black lines). To more clearly show the coherent
 > oscillatory component, we replot the data in Fig. 2b after
 
-<<PAGE:5|VISIBLE:4>>subtracting the incoherent component. The magnetic-field
+[[PAGE:5|VISIBLE:4]]subtracting the incoherent component. The magnetic-field
 dependence of the oscillation frequency is shown in Fig. 2c. At
 low magnetic fields in the Cyc phase, the frequency of the
 oscillation lies around ~4.7 GHz, which drops to ~3.5 GHz near
@@ -603,7 +603,7 @@ Fig. 3 Change of the remagnetization across the magnetic phase transition. Time 
 are plotted. The blue-shaded areas are guides to the eye indicating the magnetic phase transition. Error bars are the standard deviation of the fitting
 parameters.
 
-<<PAGE:6|VISIBLE:5>>depending on the temperature, which is remarkable considering
+[[PAGE:6|VISIBLE:5]]depending on the temperature, which is remarkable considering
 that it is triggered by a small change of magnetic field in a single
 material.
 
@@ -744,7 +744,7 @@ Such domain-wall driven thermal conductivity decrease is analogous
 
 ##### to that observed in ferroelectric Pb(Zr<sub>0.3</sub>Ti<sub>0.7</sub>)O<sub>3</sub>, where a decrease of phonon thermal conductivity of 11% has been achieved by
 
-<<PAGE:7|VISIBLE:6>>Fig. 4 Simulated spin texture and magnon spectra. a Representative spin textures and b magnon spectral functions, obtained from atomistic spin
+[[PAGE:7|VISIBLE:6]]Fig. 4 Simulated spin texture and magnon spectra. a Representative spin textures and b magnon spectral functions, obtained from atomistic spin
 dynamics simulations of GaV<sub>4</sub>S<sub>8</sub> at *T* = 12 K and magnetic field magnitudes, as indicated at the top of each panel.
 
 3.0
@@ -886,7 +886,7 @@ ffiffiffiffiffi\
 > The codes that support the calculations of this study are available from the authors upon
 > reasonable request.
 
-<<PAGE:8|VISIBLE:7>>Received: 10 August 2021; Accepted: 20 May 2022;
+[[PAGE:8|VISIBLE:7]]Received: 10 August 2021; Accepted: 20 May 2022;
 
 References
 
@@ -1098,7 +1098,7 @@ single crystals. V.T. and I.K. performed the magnetometry study and determined t
 magnetic phase diagrams. S.A. and F.F. performed theoretical calculations. F.S. wrote the
 paper with input from all authors. F.S. and P.v.L. conceived the project.
 
-<<PAGE:9|VISIBLE:8>>Funding
+[[PAGE:9|VISIBLE:8]]Funding
 
 Open Access funding enabled and organized by Projekt DEAL.
 
@@ -1136,7 +1136,7 @@ licenses/by/4.0/.
 
 © The Author(s) 2022
 
-## <<PAGE:2|VISIBLE:1>>Notes
+## [[PAGE:2|VISIBLE:1]]Notes
 
 1. II. Physikalisches Institut, Universität zu Köln, Zülpicher Str. 77, D-50937 Köln, Germany. <sup>2</sup> Experimental Physics V, Center for Electronic Correlations
    and Magnetism, University of Augsburg, 86159 Augsburg, Germany. <sup>3</sup> Institute of Applied Physics, MD 2028 Chișinău, Republic of Moldova. <sup>4</sup> Istituto

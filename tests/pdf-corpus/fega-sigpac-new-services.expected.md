@@ -1,4 +1,4 @@
-<<PAGE:1>>MINISTERIO
+[[PAGE:1]]MINISTERIO
 
 > DE AGRICULTURA, PESCA
 > Y ALIMENTACION
@@ -48,7 +48,7 @@ cuales: 6 capas vectoriales fueron generadas y publicadas entre **2021 y 2022**,
 de cara a la reforma de la PAC del 2023, y 2 más entre **2023 y 2024**,
 incrementándose así en esos cuatro años en un 50% el número de capas
 vectoriales públicas, respecto a las existentes entre el 2000-2020, al ascender
-<<PAGE:2>>de 14 a 21<sup>3</sup> las capas vectoriales publicadas en el Visor SIGPAC nacional,
+[[PAGE:2]]de 14 a 21<sup>3</sup> las capas vectoriales publicadas en el Visor SIGPAC nacional,
 continuándose hoy día los trabajos para aumentar la visualización y obtención
 de información del SIGC.
 
@@ -83,7 +83,7 @@ incorrectas; menor exposición a riesgos de seguridad y vulnerabilidades por
 adopción de medidas de seguridad; implementación más efectiva de estadísticas
 de utilización).
 
-<<PAGE:3>>Respondiendo a las demandas y necesidades del sector empresarial y
+[[PAGE:3]]Respondiendo a las demandas y necesidades del sector empresarial y
 académico, tanto de visualización como de servir de complemento en el
 desarrollo de aplicaciones informáticas, y abierto al resto de agentes del sector
 agrario (agricultores, ganaderos, entidades colaboradoras y Administraciones
@@ -117,7 +117,7 @@ La información del SIGC que se distribuye mediante los nuevos servicios
 descritos en esta Nota<sup>8</sup> tiene la consideración de datos específicos de alto valor
 (HVD)<sup>9</sup> y, como se establece en el Reglamento de Ejecución 2023/138 de datos
 de alto valor (*high value dataset, HVD*), es publicada bajo las condiciones de
-<<PAGE:4>>reutilización de la información distribuida que estable la licencia pública Creative
+[[PAGE:4]]reutilización de la información distribuida que estable la licencia pública Creative
 Commons, Atribución/Reconocimiento Internacional (CC BY 4.0).
 Complementariamente, el documento Términos de uso de la información de alto
 valor del SIGC informa de las condiciones para la redistribución de la información
@@ -130,7 +130,7 @@ información del SIGPAC*, se accede al Acuerdo de Distribución de la Mesa del
 Sistema de Gestión y Control (SGC) que establece los criterios de consulta,
 divulgación y reutilización (o redistribución) de la información.
 
-## <<PAGE:5>>Nuevos medios SIGPAC de divulgación de datos SIGC
+## [[PAGE:5]]Nuevos medios SIGPAC de divulgación de datos SIGC
 
 ## 1. Servicio de Teselas Vectoriales (MVT) de SIGPAC
 
@@ -160,7 +160,7 @@ georreferenciada de manera dinámica y estandarizada.
 Este servicio facilita la interoperabilidad y la integración con otras aplicaciones
 mediante la generación de mapas de forma dinámica a partir de coordenadas
 geográficas en formato de imagen como PNG o JPEG. Permite visualizar y
-<<PAGE:6>>consultar la cartografía de los Recintos y los Elementos del paisaje de la
+[[PAGE:6]]consultar la cartografía de los Recintos y los Elementos del paisaje de la
 campaña PAC vigente y la cartografía del Cultivo declarado de la campaña
 anterior.
 
@@ -186,7 +186,7 @@ Visor SIGPAC que permite obtener información de la campaña vigente en
 formatos JSON y GEOJSON. Las consultas se realizan mediante peticiones
 HTTP de tipo REST (*Representational state transfer*).
 
-<<PAGE:7>>Actualmente pueden realizarse un total de 11 consultas diferentes, entre las que
+[[PAGE:7]]Actualmente pueden realizarse un total de 11 consultas diferentes, entre las que
 destacan:
 
 > - Propiedades de un recinto por códigos SIGPAC o coordenadas.\
@@ -210,7 +210,7 @@ para su reutilización, entre otras, con las siguientes condiciones:
 > - licencia Creative Commons BY 4.0 u otra menos restrictiva.\
 > - formato abierto, legible por máquina y documentado públicamente;
 >
-> <<PAGE:8>>- mediante interfaces de programación de aplicaciones (API).
+> [[PAGE:8]]- mediante interfaces de programación de aplicaciones (API).
 
 Conforme a estas directrices, el servicio OGC API de SIGPAC, mediante la URL
 https://sigpac-hubcloud.es/ogcapi y siguiendo el estándar OGC API Features,
@@ -238,7 +238,7 @@ del paisaje o Cultivo declarado. La respuesta se obtiene en formato JSON. De
 igual forma que el servicio de Consultas SIGPAC, este servicio es fácilmente
 integrable en multitud de desarrollos informáticos de empresas u otros usuarios.
 
-<<PAGE:9>>Actualmente se pueden consultar listas de códigos de:
+[[PAGE:9]]Actualmente se pueden consultar listas de códigos de:
 
 > - Provincias\
 > - Municipios\
@@ -275,7 +275,7 @@ recinto, etc., para generar directamente salidas gráficas). Una API (Interfaz d
 Programación de Aplicaciones) permite establecer la comunicación entre dicho
 componente y el navegador web.
 
-<<PAGE:10>>En Ejemplos Salida Gráfica SIGPAC se recogen algunos para los dos modos.
+[[PAGE:10]]En Ejemplos Salida Gráfica SIGPAC se recogen algunos para los dos modos.
 Así, en los de *Salida Gráfica SIGPAC - Llamada URL* se puede ver una llamada
 tipo a la capa de cultivo declarado:
 
@@ -316,7 +316,7 @@ nuevos medios de difusión SIGPAC de datos SIGC:
 > **Visor
 > SIGPAC**
 
-<<PAGE:11>>**Servicio Ventajas Limitaciones Propuestas de uso**
+[[PAGE:11]]**Servicio Ventajas Limitaciones Propuestas de uso**
 \- Acceso selectivo a
 datos vectoriales
 
@@ -455,7 +455,7 @@ aplicaciones
 - Integrable en SIG
 profesionales
 
-<<PAGE:12>>**Servicio Ventajas Limitaciones Propuestas de uso**
+[[PAGE:12]]**Servicio Ventajas Limitaciones Propuestas de uso**
 
 > - Desarrollo de
 > aplicaciones con
@@ -538,7 +538,7 @@ Desde el segundo semestre de 2024, se está proporcionando información
 vectorial de las referidas capas. **Actualmente** hay disponibles Bases de datos
 en formato PostGreSQL/PostGis (una por campaña) con la información vectorial
 histórica de las capas de datos geoespaciales del SIGC de: Recintos para las
-<<PAGE:13>>campañas 2015 a 2023; Elementos del paisaje para la campaña 2023<sup>13</sup>; y Cultivo
+[[PAGE:13]]campañas 2015 a 2023; Elementos del paisaje para la campaña 2023<sup>13</sup>; y Cultivo
 Declarado para las campañas 2020 a 2023.
 
 Se desea que este proyecto esté finalizado a lo largo del **2026**.
@@ -565,17 +565,17 @@ solicitada.
 
 23 de Septiembre de 2025.
 
-## <<PAGE:1>>Notes
+## [[PAGE:1]]Notes
 
 1. Ortofotos (imágenes aéreas) del Plan Nacional de Ortofotografía Aérea (PNOA), coordinado
    por el Instituto Geográfico Nacional (Ministerio de Transportes y Movilidad Sostenible) en
    cooperación con el FEGA.
 2. Mapas de referencia de todo el territorio nacional del Catastro (Ministerio de Hacienda).
-3. <<PAGE:2>>Si bien se suman 8 capas nuevas a las 14 existentes en 2020 en el Visor, deja de publicarse
+3. [[PAGE:2]]Si bien se suman 8 capas nuevas a las 14 existentes en 2020 en el Visor, deja de publicarse
    la capa SIE (superficies de interés ecológico) al ser derogada por normativa comunitaria.
 4. Requiere mantener los servicios SIGPAC publicados y disponer del entorno y del espacio en
    la nube necesarios para el procesamiento y almacenamiento de los datos a publicar.
-5. <<PAGE:3>>Se informó del Servicio MVT mediante la Nota web divulgativa Nuevo Servicio de TESELAS
+5. [[PAGE:3]]Se informó del Servicio MVT mediante la Nota web divulgativa Nuevo Servicio de TESELAS
    VECTORIALES del SIGPAC.
 6. Los futuros servicios en la nube (Descargas masivas ATOM, Visor SIGPAC, etc.) sustituirán a
    los similares instalados en los servidores del MAPA o FEGA, tal como está ocurriendo con el
@@ -589,10 +589,10 @@ solicitada.
 9. El Reglamento HVD no requiere para la categoría Geoespacial ofrecer versiones históricas de
    los conjuntos de datos disponibles. El FEGA se compromete a facilitar sus conjuntos de datos
    HVD más actualizados (campaña agrícola actual) y también su versión de la campaña anterior.
-10. <<PAGE:5>>GIS (Geographic Information System) o SIG (Sistemas de Información Geográfica) son
+10. [[PAGE:5]]GIS (Geographic Information System) o SIG (Sistemas de Información Geográfica) son
     herramientas informáticas (públicas o privadas) que permiten gestionar, analizar y visualizar
     datos geográficos: QGIS (software de código abierto); ArcGIS (software comercial); etc.
-11. <<PAGE:6>>Ejemplo: GeoPortal del MAPA: https://sig.mapama.gob.es/geoportal/
-12. <<PAGE:8>>Las geometrías están representadas en el sistema de referencia WGS 84 con orden de eje
+11. [[PAGE:6]]Ejemplo: GeoPortal del MAPA: https://sig.mapama.gob.es/geoportal/
+12. [[PAGE:8]]Las geometrías están representadas en el sistema de referencia WGS 84 con orden de eje
     de longitud/latitud
-13. <<PAGE:13>>Y datos regionales (de algunas CCAA) desde 2015.
+13. [[PAGE:13]]Y datos regionales (de algunas CCAA) desde 2015.

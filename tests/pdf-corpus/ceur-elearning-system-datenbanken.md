@@ -1,4 +1,4 @@
-# <<PAGE:1>>Interaktives Anpassungsfähiges E-Learning-System Im Bereich Datenbanken
+# [[PAGE:1]]Interaktives Anpassungsfähiges E-Learning-System Im Bereich Datenbanken
 
 Fabian Keller\
 Hochschule Harz\
@@ -114,7 +114,7 @@ usw. werden Datenbanksysteme eingebunden.
 Für die Thematik des ER-to-Relational-Mapping ist ein
 Fragentyp vorgesehen, der das Thema der Erstellung von
 relationalen Datenmodellen beinhaltet auf Basis vorgegebener
-<<PAGE:2>>ER-Modelle und Anforderungen. Aufgaben dieses Typs
+[[PAGE:2]]ER-Modelle und Anforderungen. Aufgaben dieses Typs
 beinhalten die Darstellung eines konzeptuellen Datenmodells,
 welche als Bild vorliegt, bspw. ein gezeichnetes ERM
 in Chen-Notation [2]. Dieses soll von den Lernenden auf ein
@@ -227,7 +227,7 @@ kann diese Möglichkeit eingeschränkt werden.
 Jede Aktion ruft eine Reaktion hervor. Wenn die Lernenden
 als Beispiel eine Spalte umbenennen, werden die Folgen
 dieser Aktion in einer Meldung visuell dargestellt, da
-<<PAGE:3>>ggfs. Anpassungen aufgrund von Abhängigkeiten in anderen
+[[PAGE:3]]ggfs. Anpassungen aufgrund von Abhängigkeiten in anderen
 Tabellen durch die Lernenden notwendig werden können.
 Hierbei wird angestrebt, dass diese Meldungen motivierend
 und angepasst an die Sprache der Lernenden formuliert werden.
@@ -339,7 +339,7 @@ gibt es die Schaltfläche ’Question and Feedback’. Hier können
 die Lernenden Kontakt zu den Lehrkörpern aufnehmen.
 Hierbei wird zwischen aufgabenpezifischen Fragen und Feedback
 unterschieden. Vor allem das Feedback ist gewünscht,
-<<PAGE:4>>da dieses dazu dient, das System an die Bedürfnisse der Lernenden
+[[PAGE:4]]da dieses dazu dient, das System an die Bedürfnisse der Lernenden
 anzupassen und eine kontinuierliche Verbesserung
 voranzutreiben (siehe Abbildung 6).
 
@@ -461,7 +461,7 @@ Aufgabe. Eine zweite Zeichenkette wird erzeugt und beinhaltet
 HTML-Code. Dieser wird zur visuellen Darstellung
 des SQL-Codes für die Lernenden genutzt.
 
-#### <<PAGE:5>>Figure 7: Challenge Auswahl und Hilfemedien
+#### [[PAGE:5]]Figure 7: Challenge Auswahl und Hilfemedien
 
 Die Ansicht des DDL-Codes soll den Lernenden einen anderen
 Blick auf die eigene Lösung verschaffen (siehe Abbildung
@@ -524,7 +524,7 @@ ihrer Lösung. Zur Sicherheit und um Fehlklicks abzufangen
 öffnet sich, nachdem die Lernenden auf ’Submit’ gedrückt
 haben, ein weiteres Fenster. In diesem erhalten die Lernenden
 die Information, ob ihre Lösung eine gültige Lösung sein
-<<PAGE:6>>könnte. Ist dies der Fall, besteht die Möglichkeit die Aufgabe
+[[PAGE:6]]könnte. Ist dies der Fall, besteht die Möglichkeit die Aufgabe
 abzugeben.
 
 In Lernphasen können die Lernenden unfertige Aufgaben

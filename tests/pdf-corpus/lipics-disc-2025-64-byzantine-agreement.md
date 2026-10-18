@@ -1,4 +1,4 @@
-# <<PAGE:1|VISIBLE:64:1>>Brief Announcement: Proximal Byzantine Agreement: Improved Accuracy for Fault-Tolerant Replicated Datastreams
+# [[PAGE:1|VISIBLE:64:1]]Brief Announcement: Proximal Byzantine Agreement: Improved Accuracy for Fault-Tolerant Replicated Datastreams
 
 **Roy Shadmon**
 
@@ -62,7 +62,7 @@ Leibniz International Proceedings in Informatics
 
 Schloss Dagstuhl – Leibniz-Zentrum für Informatik, Dagstuhl Publishing, Germany
 
-<<PAGE:2|VISIBLE:64:2>>to effective operation. When that data is delayed, missing, or corrupted – whether from
+[[PAGE:2|VISIBLE:64:2]]to effective operation. When that data is delayed, missing, or corrupted – whether from
 environmental noise, hardware faults, or malicious interference – the consequences can range
 from suboptimal performance to catastrophic, even unsafe, failures.
 
@@ -115,7 +115,7 @@ Mahaney and Schneider [12] distinguish Inexact Agreement (IA) from classical ABA
 redefining the validity property in terms of *accuracy*. Outputs are instead bound by their
 distance to a true value *v*ˆ, which each nonfaulty replica’s initial value *v<sub>i</sub>* approximates.
 
-<<PAGE:3|VISIBLE:64:3>>Our work concerns a new class of protocols that make an additional assumption, often
+[[PAGE:3|VISIBLE:64:3]]Our work concerns a new class of protocols that make an additional assumption, often
 satisfied by the underlying data processed by IA systems. Stochastic Byzantine Agreement
 (SBA) protocols require that *v*ˆ and nonfaulty *v<sub>i</sub>* are – or can be effectively approximated as
 being – distributed according to probability distributions. No assumptions are made about
@@ -171,7 +171,7 @@ the uncertainty of its outputs.<sup>1</sup> In many scenarios, it may be better 
 all than to act on very uncertain data. Therefore, calculating a concrete guarantee on each
 output is an important feature of PBA protocols.
 
-<<PAGE:4|VISIBLE:64:4>>A well-known result [11] is that the displacement of the geometric median Gm(*Q*) of a
+[[PAGE:4|VISIBLE:64:4]]A well-known result [11] is that the displacement of the geometric median Gm(*Q*) of a
 set of nonfaulty values is bounded when up to |*F*| < |*Q*| faulty values are added to the set.
 
 ▶ **Lemma 2.2** (Theoretical maximum displacement [6, 11])**.** *Let R* = *Q* ∪ *F,* |*Q*| = *s and*
@@ -242,7 +242,7 @@ improve accuracy with more replicas, a distinguishing characteristic of PBA valu
 that more replicas are not required to ensure the safety or liveness properties of the system,
 yet still benefits from the increase in accuracy.
 
-<<PAGE:5|VISIBLE:64:5>>**Table 1** Replica set size. *d* is number of data dimensions.
+[[PAGE:5|VISIBLE:64:5]]**Table 1** Replica set size. *d* is number of data dimensions.
 
 > **Algorithm** *n* ≥\
 > OneShot 4*f* + 1\
@@ -274,7 +274,7 @@ than twice the number of faulty replicas.
 f* = |*F*|*, and PBA*(*R<sup>i</sup>*, *s*) = (*x<sub>i</sub>*, *R<sup>i</sup>*<sub>∗</sub>)*. If s* > ⌈|*R*|/2⌉ *and r* ≥ *s* + *f, then for any other subset
 R<sup>j</sup>* = (*Q<sup>j</sup>* ∪ *F<sup>j</sup>*) ⊆ *R where* |*R<sup>j</sup>*| ≥ *r and PBA*(*R<sup>j</sup>*, *s*) = (*x<sub>j</sub>* , *R<sup>j</sup>*<sub>∗</sub>)*,* ||*x<sub>i</sub>* − *x<sub>j</sub>* || ≤ 2*C*<sup>(s,f)</sup><sub>0</sub> ∆*Q.*
 
-<<PAGE:6|VISIBLE:64:6>>**Figure 2** Runtime benchmark (Pi Zero).
+[[PAGE:6|VISIBLE:64:6]]**Figure 2** Runtime benchmark (Pi Zero).
 
 ## 3 Evaluation
 
@@ -312,7 +312,7 @@ where *n* = (*d* + 2)*f* + 1, and PBA quorum sizes set to *s* = *n* − *f*. PBA
 *f* = 1, *d* > 5 (with similar performance at lower *d*), and more than 4× faster at *f* = 1, *d* = 18.
 In all *f* = 2, *d* = 4 scenarios, PBA significantly outperforms BVC (124×). While BI also
 exhibits scalable runtime in high-dimensional settings, each replica must produce outputs
-<<PAGE:7|VISIBLE:64:7>>with a known error range that contains the true value, and that must also intersect the
+[[PAGE:7|VISIBLE:64:7]]with a known error range that contains the true value, and that must also intersect the
 ranges of all other nonfaulty nodes. If these invariants are violated by any nonfaulty replica,
 the system may not withstand Byzantine attack. Even without an attack, the protocol could
 fail to terminate.
@@ -378,7 +378,7 @@ doi:10.1145/323596.323618.
 **13** Keith Marzullo. Tolerating failures of continuous-valued sensors. *ACM Transactions on
 Computer Systems*, 8(4), November 1990. doi:10.1145/128733.128735.
 
-<<PAGE:8|VISIBLE:64:8>>**14** Hammurabi Mendes and Maurice Herlihy. Multidimensional approximate agreement in
+[[PAGE:8|VISIBLE:64:8]]**14** Hammurabi Mendes and Maurice Herlihy. Multidimensional approximate agreement in
 Byzantine asynchronous systems. In *Proceedings of the Forty-Fifth Annual ACM Symposium
 on Theory of Computing*. ACM, June 2013. doi:10.1145/2488608.2488657.
 
@@ -399,6 +399,6 @@ and Networks - Supplemental Volume (DSN-S)*, 2025. doi:10.1109/DSN-S65789.2025.0
 **19** Nitin H Vaidya and Vijay K Garg. Byzantine vector consensus in complete graphs. In *Proc.
 of the 2013 ACM Symposium on Principles of Distributed Computing*, 2013.
 
-## <<PAGE:3|VISIBLE:64:3>>Notes
+## [[PAGE:3|VISIBLE:64:3]]Notes
 
 1. In a sense, the strong assumptions of existing IA protocols [12, 4, 3] act as *inputs* about uncertainty.
