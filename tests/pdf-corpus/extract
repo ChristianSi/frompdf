@@ -4,14 +4,30 @@ set -u
 cd "$(dirname "$0")" || exit 1
 shopt -s nullglob
 
+# Current time in microseconds. EPOCHREALTIME uses the locale's decimal
+# separator, which may be a comma.
+now_usecs() {
+    echo "${EPOCHREALTIME/[.,]/}"
+}
+
 failed=0
+count=0
+start=$(now_usecs)
 
 for pdf_file in *.pdf; do
     echo "Converting $pdf_file"
+    count=$((count + 1))
     if ! frompdf --dump-lines --dump-pagenos --page-markers "$pdf_file" >/dev/null; then
         echo "Conversion failed: $pdf_file"
         failed=1
     fi
 done
+
+if [ "$failed" -eq 0 ]; then
+    elapsed=$(($(now_usecs) - start))
+    if [ "$count" -eq 1 ]; then noun=file; else noun=files; fi
+    printf 'Converted %d %s in %d.%02d seconds.\n' \
+        "$count" "$noun" $((elapsed / 1000000)) $((elapsed % 1000000 / 10000))
+fi
 
 exit "$failed"
