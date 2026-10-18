@@ -26,7 +26,7 @@ y en el parcelario de Catastro<sup>2</sup>, permitiendo identificar de manera gr
 parcelas declaradas o inscritas de agricultores y ganaderos en el marco de la
 PAC.
 
-Desarrollado desde el 2000, desde su implantación en 2005 el SIGPAC ha
+Desarrollado desde el 2000, desde su implantación en **2005** el **SIGPAC** ha
 ofrecido servicios fundamentales a agricultores, ganaderos y a la sociedad en
 general en la difusión de datos de los 71 millones de recintos (parcelas de
 referencia para las ayudas conforme a normativa de la Unión Europea, UE) de
@@ -34,9 +34,9 @@ forma abierta y libre. Se ha convertido así en el mayor proyecto de digitalizac
 cartográfica en España para el sector agrario.
 
 España fue pionera en la UE en la visualización de datos del Sistema de
-Información de Parcelas Agrícolas mediante la publicación en 2005 del Visor
-SIGPAC, al que dos años más tarde se sumó el WMS (Web Map Service, 2007).
-Junto al servicio de descargas masivas ATOM, lanzado a finales del 2020,
+Información de Parcelas Agrícolas mediante la publicación en 2005 del **Visor
+SIGPAC**, al que dos años más tarde se sumó el **WMS** (Web Map Service, **2007**).
+Junto al servicio de descargas masivas **ATOM**, lanzado a finales del **2020**,
 podemos considerar estos tres servicios, como los 3 medios SIGPAC
 tradicionales de difusión de datos del SIGC, los cuales responden a la Directiva
 2007/2/CE INSPIRE.
@@ -44,8 +44,8 @@ tradicionales de difusión de datos del SIGC, los cuales responden a la Directiv
 La información almacenada en SIGPAC corresponde a 56 capas gráficas (ráster)
 y 64 capas alfanuméricas (vectoriales). De ellas, actualmente se encuentran
 publicadas en el Visor 21 capas vectoriales y diversas capas gráficas, de las
-cuales: 6 capas vectoriales fueron generadas y publicadas entre 2021 y 2022,
-de cara a la reforma de la PAC del 2023, y 2 más entre 2023 y 2024,
+cuales: 6 capas vectoriales fueron generadas y publicadas entre **2021 y 2022**,
+de cara a la reforma de la PAC del 2023, y 2 más entre **2023 y 2024**,
 incrementándose así en esos cuatro años en un 50% el número de capas
 vectoriales públicas, respecto a las existentes entre el 2000-2020, al ascender
 <<PAGE:2>>de 14 a 21<sup>3</sup> las capas vectoriales publicadas en el Visor SIGPAC nacional,
@@ -54,27 +54,27 @@ de información del SIGC.
 
 ### Catálogo de Servicios SIGPAC alojados en la nube: sigpac-hubcloud
 
-Entre los diversos proyectos del FEGA, en junio de 2024 se publicó el Catálogo
-de Servicios SIGPAC: https://sigpac-hubcloud.es/, al cual se accede desde
+Entre los diversos proyectos del FEGA, en junio de 2024 se publicó el **Catálogo
+de Servicios SIGPAC: https://sigpac-hubcloud.es/**, al cual se accede desde
 el sitio SIGPAC de la Web del FEGA, pinchando en el nuevo icono de Servicios
 SIGPAC en la nube:
 
 En este Catálogo se alojan nuevos medios SIGPAC de difusión de datos SIGC
 con los que el FEGA continúa ampliando su abanico de servicios y su labor
-divulgativa, como son: el Servicio de Teselas Vectoriales (MVT) de SIGPAC, el
-Servicio OGC API de SIGPAC y el Servicio de Listas de Códigos SIGPAC; otros
-medios SIGPAC que solo estaban a disposición de las CCAA, como el Servicio
-de Consultas de SIGPAC y el Servicio de Salidas Gráficas SIGPAC. También
+divulgativa, como son: el *Servicio de Teselas Vectoriales (MVT) de SIGPAC*, el
+*Servicio OGC API de SIGPAC* y el *Servicio de Listas de Códigos SIGPAC*; otros
+medios SIGPAC que solo estaban a disposición de las CCAA, como el *Servicio
+de Consultas de SIGPAC* y el *Servicio de Salidas Gráficas SIGPAC*. También
 aloja y se irán migrando al mismo el resto de medios de difusión del SIGPAC de
 datos SIGC que estén actualmente, bien a únicamente disposición de las
 comunidades autónomas para su gestión de la PAC y se consideren de interés
 al público en general, o bien a disposición pública y cuyo contenido será el mismo
-al de los ya existentes (los 3 tradicionales citados), como es el nuevo WMS (Web
+al de los ya existentes (los 3 tradicionales citados), como es el nuevo *WMS* (Web
 Map Service) de SIGPAC, ya disponible, o próximamente el Servicio de
 Descargas masivas ATOM, a nivel provincial, y a futuro también el Visor
 SIGPAC.
 
-Entre las ventajas de esta migración de servicios a la nube<sup>4</sup> se han considerado
+Entre las **ventajas** de esta migración de servicios a la nube<sup>4</sup> se han considerado
 aspectos económicos (reducción de costes de mantenimiento y por uso de
 espacio de Servidores) y operativos (rápida respuesta en momentos de alta
 demanda; autonomía técnica y operativa; menor sobrecarga para los servicios
@@ -88,14 +88,14 @@ académico, tanto de visualización como de servir de complemento en el
 desarrollo de aplicaciones informáticas, y abierto al resto de agentes del sector
 agrario (agricultores, ganaderos, entidades colaboradoras y Administraciones
 Públicas), en el primer semestre de 2024, se publicó en la nube el primero de
-estos nuevos servicios: el Servicio de Teselas Vectoriales de SIGPAC (MVT)<sup>5</sup>. Y
-entre junio de 2024 y agosto de 2025 se han publicado otros cinco servicios
-en el Catálogo de Servicios SIGPAC.
+estos nuevos servicios: el Servicio de Teselas Vectoriales de SIGPAC (**MVT**)<sup>5</sup>. Y
+entre junio de 2024 y agosto de 2025 se han publicado **otros cinco servicios
+en el Catálogo de Servicios SIGPAC**.
 
-En la línea de mejora continua y ampliación con futuros servicios<sup>6</sup> de difusión
+En la línea de mejora continua y ampliación con **futuros servicios<sup>6</sup>** de difusión
 del SIGPAC (de datos SIGC), puestos a disposición de todos los usuarios en una
 misma dirección en la nube, se prevé que la migración y ampliación de servicios
-esté finalizada a lo largo del 2027. Incluirá, entre otros, el citado Servicio de
+esté finalizada a lo largo del **2027**. Incluirá, entre otros, el citado Servicio de
 Descargas masivas ATOM a nivel de cada una de las 50 provincias o nivel
 determinado por el tamaño de ficheros (a diferencia de las actuales descargas
 por cada uno de los más de 8.000 términos municipales), o el actual Visor
@@ -116,7 +116,7 @@ Servicio MVT de Sigpac.
 La información del SIGC que se distribuye mediante los nuevos servicios
 descritos en esta Nota<sup>8</sup> tiene la consideración de datos específicos de alto valor
 (HVD)<sup>9</sup> y, como se establece en el Reglamento de Ejecución 2023/138 de datos
-de alto valor (high value dataset, HVD), es publicada bajo las condiciones de
+de alto valor (*high value dataset, HVD*), es publicada bajo las condiciones de
 <<PAGE:4>>reutilización de la información distribuida que estable la licencia pública Creative
 Commons, Atribución/Reconocimiento Internacional (CC BY 4.0).
 Complementariamente, el documento Términos de uso de la información de alto
@@ -125,8 +125,8 @@ divulgada.
 
 Tanto para la información del SIGC considerada HVD como para el resto de la
 información SIGPAC u otra información geoespacial del SIGC, en el sitio
-SIGPAC de la Web del FEGA, dentro del apartado de Condiciones de uso de la
-información del SIGPAC, se accede al Acuerdo de Distribución de la Mesa del
+SIGPAC de la Web del FEGA, dentro del apartado de *Condiciones de uso de la
+información del SIGPAC*, se accede al Acuerdo de Distribución de la Mesa del
 Sistema de Gestión y Control (SGC) que establece los criterios de consulta,
 divulgación y reutilización (o redistribución) de la información.
 
@@ -146,7 +146,7 @@ datos.
 > - https://sigpac-hubcloud.es/mvt/[parametro]@3857@geojson/
 > {z}/{x}/{y}.geojson: para mostrar los datos de la campaña vigente.
 > También la capa Cultivo declarado de la campaña anterior.
-> - https://sigpac-hubcloud.es/mvt/anterior/
+> - https://sigpac-hubcloud.es/mvt/**anterior**/
 >
 > [parametro]@3857@geojson/{z}/{x}/{y}.geojson para visualizar los datos
 > completos de la campaña anterior.
@@ -172,7 +172,7 @@ https://wms.mapa.gob.es/sigpac/wms, que se deshabilitará a finales del 2025.
 
 En Ejemplos del Servicio WMS se muestran algunos usos de este servicio.
 
-Ejemplo de Visualización de recintos mediante WMS en QGIS
+***Ejemplo de Visualización de recintos mediante WMS en QGIS***
 
 ## 3. Servicio de Consultas de SIGPAC
 
@@ -184,7 +184,7 @@ respuesta o emplearla dentro de otros desarrollos informáticos.
 Por tanto, se trata de un servicio de consultas basado en la infraestructura del
 Visor SIGPAC que permite obtener información de la campaña vigente en
 formatos JSON y GEOJSON. Las consultas se realizan mediante peticiones
-HTTP de tipo REST (Representational state transfer).
+HTTP de tipo REST (*Representational state transfer*).
 
 <<PAGE:7>>Actualmente pueden realizarse un total de 11 consultas diferentes, entre las que
 destacan:
@@ -197,9 +197,9 @@ destacan:
 > - Intersecciones de un recinto con diferentes capas (Red Natura,
 > Montanera, Fitosanitarios, Nitratos o Pastos Permanentes).
 
-EJEMPLO: https://sigpac-hubcloud.es/servicioconsultassigpac/query/recinfo/6/60/0/0/41/126/1.json
+**EJEMPLO:** https://sigpac-hubcloud.es/servicioconsultassigpac/query/recinfo/6/60/0/0/41/126/1.json
 
-Ejemplo de Respuesta a la consulta de propiedades de un recinto
+***Ejemplo de Respuesta a la consulta de propiedades de un recinto***
 
 ## 4. Servicio OGC API de SIGPAC
 
@@ -223,8 +223,8 @@ uso por parte de desarrolladores y usuarios interesados en los datos
 geoespaciales del SIGC. En Ejemplos del Servicio OGC API se muestran
 algunos usos de este servicio.
 
-Ejemplo de Visualización de recintos y elementos del paisaje mediante OGC API
-en QGIS
+***Ejemplo de Visualización de recintos y elementos del paisaje mediante OGC API
+en QGIS***
 
 ## 5. Servicio de Listas de Códigos SIGPAC
 
@@ -254,10 +254,10 @@ integrable en multitud de desarrollos informáticos de empresas u otros usuarios
 >
 > - Elementos del paisaje tipo punto, línea y área.
 
-EJEMPLO: https://sigpac-hubcloud.es/codigossigpac/cod_aprovechamiento.json
+**EJEMPLO:** https://sigpac-hubcloud.es/codigossigpac/cod_aprovechamiento.json
 
-> Ejemplo de Respuesta a la consulta de listado de códigos de tipo de
-> aprovechamiento
+> ***Ejemplo de Respuesta a la consulta de listado de códigos de tipo de
+> aprovechamiento***
 
 ## 6. Servicio de Salidas Gráficas de SIGPAC
 
@@ -276,20 +276,20 @@ Programación de Aplicaciones) permite establecer la comunicación entre dicho
 componente y el navegador web.
 
 <<PAGE:10>>En Ejemplos Salida Gráfica SIGPAC se recogen algunos para los dos modos.
-Así, en los de Salida Gráfica SIGPAC - Llamada URL se puede ver una llamada
+Así, en los de *Salida Gráfica SIGPAC - Llamada URL* se puede ver una llamada
 tipo a la capa de cultivo declarado:
 
 https://sigpac-hubcloud.es/salidasgraficassigpac/?declaracion/37/108/37010166/1, que
 proporciona un PDF descargable similar al que ofrece el Visor SIGPAC.
 
-Ejemplo de pdf descargable de cultivo declarado
+***Ejemplo de pdf descargable de cultivo declarado***
 
 A continuación, se recoge una Tabla resumen orientativa de los tradicionales y
 nuevos medios de difusión SIGPAC de datos SIGC:
 
-Tabla resumen de los medios de difusión SIGPAC de datos SIGC
+**Tabla resumen de los medios de difusión SIGPAC de datos SIGC**
 
-Servicio Ventajas Limitaciones Propuestas de uso
+**Servicio Ventajas Limitaciones Propuestas de uso**
 
 > - Interfaz sencilla e
 > intuitiva
@@ -313,10 +313,10 @@ Servicio Ventajas Limitaciones Propuestas de uso
 > - Formación o soporte
 > a usuarios externos
 >
-> Visor
-> SIGPAC
+> **Visor
+> SIGPAC**
 
-<<PAGE:11>>Servicio Ventajas Limitaciones Propuestas de uso
+<<PAGE:11>>**Servicio Ventajas Limitaciones Propuestas de uso**
 \- Acceso selectivo a
 datos vectoriales
 
@@ -336,10 +336,10 @@ local
 - Análisis y
 explotación masiva
 
-Servicio
+**Servicio
 de
 descargas
-ATOM
+ATOM**
 
 - Organizado por
 provincias y municipios
@@ -367,9 +367,9 @@ web o móviles\
 - Acceso selectivo a
 datos vectoriales - Requiere
 
-Map
+**Map
 Vector
-Tile (MVT)
+Tile (MVT)**
 
 conocimientos
 específicos para su
@@ -392,9 +392,9 @@ no descarga y edición
 - Visualización en
 proyectos SIG
 
-WMS
+**WMS
 (Web Map
-Service)
+Service)**
 
 - Puede ser lento a
 gran escala
@@ -429,11 +429,11 @@ aplicaciones
 
 - Consulta de recintos
 
-Servicio
+**Servicio
 de
 consultas
 (API
-REST)
+REST)**
 
 - Más eficiente que\
 WFS
@@ -445,8 +445,8 @@ técnicos
 - Compatible con consultas SIGPAC
 JSON/GeoJSON
 
-OGC API -
-Features
+**OGC API -
+Features**
 
 - Integración en
 procesos y
@@ -455,7 +455,7 @@ aplicaciones
 - Integrable en SIG
 profesionales
 
-<<PAGE:12>>Servicio Ventajas Limitaciones Propuestas de uso
+<<PAGE:12>>**Servicio Ventajas Limitaciones Propuestas de uso**
 
 > - Desarrollo de
 > aplicaciones con
@@ -491,9 +491,9 @@ profesionales
 > - Cruce con ayudas,
 > tipos de uso, etc.
 >
-> Listas de
+> **Listas de
 > códigos
-> SIGPAC
+> SIGPAC**
 >
 > - Obtención inmediata
 > de salidas gráficas,
@@ -512,22 +512,22 @@ profesionales
 > incrustable en
 > aplicaciones
 >
-> Salidas
+> **Salidas
 > Gráficas
-> SIGPAC
+> SIGPAC**
 
 ## Información Histórica del SIGC
 
 Finalmente, se comunica que en 2024 el FEGA inició el proyecto SIGPAC de
-recuperación y adaptación de la información INSPIRE relativa al histórico del
-SIGC desde el origen de la misma, que a nivel nacional se data en:
+recuperación y adaptación de la información INSPIRE relativa al **histórico del
+SIGC** desde el origen de la misma, que a nivel nacional se data en:
 
-> • Respecto de información SIGPAC (LPIS, Land Parcel Identification
-> System): en 2005 para el caso de la capa Recintos y en 2023 para la capa
+> • Respecto de información SIGPAC (*LPIS, Land Parcel Identification
+> System*): en **2005** para el caso de la capa Recintos y en **2023** para la capa
 > Elementos del paisaje.
 >
-> • Respecto de información de la Declaración Gráfica (GSA, Geo Spatial
-> Application): en 2020 para la capa Cultivos declarados.
+> • Respecto de información de la Declaración Gráfica (*GSA, Geo Spatial
+> Application*): en **2020** para la capa Cultivos declarados.
 
 El objetivo es seguir aumentando la respuesta al público de los medios de
 consulta y divulgación del SIGPAC a las solicitudes de información del SIGC,
@@ -535,13 +535,13 @@ incluyendo en este caso la información histórica distinta a la que ya se distr
 mediante los actuales servicios.
 
 Desde el segundo semestre de 2024, se está proporcionando información
-vectorial de las referidas capas. Actualmente hay disponibles Bases de datos
+vectorial de las referidas capas. **Actualmente** hay disponibles Bases de datos
 en formato PostGreSQL/PostGis (una por campaña) con la información vectorial
 histórica de las capas de datos geoespaciales del SIGC de: Recintos para las
 <<PAGE:13>>campañas 2015 a 2023; Elementos del paisaje para la campaña 2023<sup>13</sup>; y Cultivo
 Declarado para las campañas 2020 a 2023.
 
-Se desea que este proyecto esté finalizado a lo largo del 2026.
+Se desea que este proyecto esté finalizado a lo largo del **2026**.
 
 En el citado Acuerdo de Distribución de la Mesa del Sistema de Gestión y Control
 (SGC), en su ANEXO I: CLÁUSULAS GENERALES Y TÉCNICAS DE LA
@@ -580,8 +580,8 @@ solicitada.
 6. Los futuros servicios en la nube (Descargas masivas ATOM, Visor SIGPAC, etc.) sustituirán a
    los similares instalados en los servidores del MAPA o FEGA, tal como está ocurriendo con el
    Servicio WMS SIGPAC.
-7. Este servicio coexistirá transitoriamente con el WMS tradicional qué se deshabilitará a finales
-   del 2025 (https://wms.mapa.gob.es/sigpac/wms).
+7. Este servicio coexistirá transitoriamente con el WMS tradicional qué se deshabilitará **a finales
+   del 2025** (https://wms.mapa.gob.es/sigpac/wms).
 8. Así como la que puede descargarse mediante el Servicio ATOM y una parte de la que
    proporciona el Visor SIGPAC Nacional: cartografía de Recintos y Elementos del paisaje de la
    campaña PAC vigente; y la cartografía de los Recintos, Elementos del paisaje y Cultivo

@@ -634,8 +634,8 @@ weiter verbessert werden.
 [1] D. Becher. DB-Normalizer. TU München, 2021. https:
 //db.in.tum.de/teaching/ws2021/grundlagen/.
 
-[2] P. Chen. The-Entity-Relationship-Model. ACM transactions
-on database systems (TODS), 1976.
+[2] P. Chen. The-Entity-Relationship-Model. *ACM transactions
+on database systems (TODS)*, 1976.
 
 [3] H. Faeskorn-Woyke and B. Bertelsmeier. EDB - Das
 eLearning Datenbank Portal der TH Köln., 2021.

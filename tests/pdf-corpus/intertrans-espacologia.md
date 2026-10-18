@@ -1,10 +1,10 @@
 <<PAGE:1>>REVISTA CIENTÍFICA INTER E
 TRANSDISCIPLINAR
 
-Wallace Lopes
+**Wallace Lopes**
 
 Laboratório Espaço, IPPUR/UFRJ.\
-wartelopes@yahoo.com.br\
+*wartelopes@yahoo.com.br*\
 ORCID: 0000-0001-8031-5851
 
 RECEIVED 09/04/21\
@@ -26,16 +26,16 @@ RESEARCH ARTICLE
 
 **Spaceology:Philosophies in the Totality of Space**
 
-Abstract.Thought shapes space. Thus, the first Western
+**Abstract**.Thought shapes space. Thus, the first Western
 philosophies hid the notion of space, with the invisibility of a
 new field of spatial thinking occurring. Conversely, this article is
 an adventure of open thinking, by raising Spacology as the
 protagonist and epistemic tool of philosophies in space, which
 are all in dispute in the clipping of moving totalities movement.
 
-Keywords.Spaces.Place. Philosophy. Geographies. Totalities.
+**Keywords**.Spaces.Place. Philosophy. Geographies. Totalities.
 
-Resumo. O pensamento modela o espaço. Assim, as primeiras
+**Resumo.** O pensamento modela o espaço. Assim, as primeiras
 filosofias ocidentais ocultaram a noção de espaço ocorrendo
 uma invisibilidade de um novo campo do pensar espacial. Por
 sua vez, este ensaio é uma aventura do pensar aberto ao erguer
@@ -43,14 +43,14 @@ a Espaçologia enquanto protagonista e ferramenta epistêmica
 das filosofias no espaço, que se colocam em disputa no recorte
 das totalidades em movimento.
 
-Palavras-chave.Espaço. Lugar. Filosofia. Geografias. Totalidades.
+**Palavras-chave**.Espaço. Lugar. Filosofia. Geografias. Totalidades.
 
 ## 1. Abertura do pensar
 
-> A Natureza ama esconder-se\
+> *A Natureza ama esconder-se*\
 > Heráclito de Éfeso (550-480 a.C.)
 >
-> Tudo que é sólido desmancha no ar...\
+> *Tudo que é sólido desmancha no ar...*\
 > Karl Marx e Friedrich Engels (Manifesto Comunista -1848)
 
 A relação introdutória entre espaço e filosofias sempre existiu; desde o Ocidente clássico
@@ -684,20 +684,20 @@ espaço, logo é necessário o enfrentamento das ideias inacabadas.
 
 ## Referências Bibliográficas
 
-BACHELARD, Gaston. La poética delespacio. Primeraedición em español. (Traducción de
+BACHELARD, Gaston. **La poética delespacio**. Primeraedición em español. (Traducción de
 Ernestina de Champourcin). México-Buenos Aires: Fondo de Cultura Económica, 1965.
 304p. (Breviarios; 183).
 
-BESSE, Jean-Marc. Ver a Terra: seis ensaios sobre a paisagem e a geografia. 1ª reimp. da 1ª
+BESSE, Jean-Marc. **Ver a Terra: seis ensaios sobre a paisagem e a geografia**. 1ª reimp. da 1ª
 ed. (Tradução Vladimir Bartalini) São Paulo: Perspectiva, 2014. 110p. (Coleção Estudos; 230)
 
 BUTTIMER, Anne. Aprendendo o Dinamismo do Mundo Vivido. In: CHRISTOFOLETTI,
-Antonio (Org.). Perspectivas da Geografia. São Paulo: Difel, 1982. 319p.
+Antonio (Org.). **Perspectivas da Geografia**. São Paulo: Difel, 1982. 319p.
 
-DARDEL, Eric. O Homem e a Terra: natureza da realidade geográfica. (Tradução de Werther
+DARDEL, Eric. **O Homem e a Terra: natureza da realidade geográfica**. (Tradução de Werther
 Holzer) São Paulo: Perspectiva, 2011. 159p. (Estudos; 292)
 
-JAMMER, Max. Conceito de espaço: a história das teorias do espaço na física. Tradução de
+JAMMER, Max. **Conceito de espaço: a história das teorias do espaço na física**. Tradução de
 Tradução por Vera Ribeiro. 1ª. ed. Rio de Janeiro: Contraponto: PUC-Rio, 2010.
 
 FOUCAULT, Michel (1986), “Of other spaces”. Diacrities, v.16, no.1.Baltimore.
@@ -711,20 +711,20 @@ Papirus, 1988 [1976].
 
 LEFEBVRE, Henri. La production de l’espace. Paris: Anthropos,1981 [1974].
 
-<<PAGE:17>>NEWTON, Isaac. Principia - Principios Matemáticos de Filosofia Natural. 1ª. ed. São Paulo:
+<<PAGE:17>>NEWTON, Isaac. **Principia - Principios Matemáticos de Filosofia Natural.** 1ª. ed. São Paulo:
 Edusp, 2002. p. 325.
 
-MERLEAU-PONTY, Maurice. Fenomenologia da Percepção. 3ª ed. (Trad. Carlos A. R. de
+MERLEAU-PONTY, Maurice. **Fenomenologia da Percepção**. 3ª ed. (Trad. Carlos A. R. de
 Moura) São Paulo: Martins Fontes, 2006. 666p. (Tópicos)
 
 SOUZA, Marcelo Lopes de. “Espaciologia”: uma objeção (Crítica aos
 prestigiamentospseudocríticos do espaço social). Terra Livre, São Paulo, n. 5, p. 21-45,
 1988.
 
-DE SOUSA ALVES, V. M. (1959). Conhecimento Metafísico do Espaço e do Tempo. Braga:
+DE SOUSA ALVES, V. M. (1959). **Conhecimento Metafísico do Espaço e do Tempo**. Braga:
 Faculdade de Filosofia.
 
-DE SOUSA ALVES, V. M. (1998). Ensaio de Filosofia das Ciências. Braga: Publicações da
+DE SOUSA ALVES, V. M. (1998). **Ensaio de Filosofia das Ciências**. Braga: Publicações da
 Faculdade de Filosofia.
 
 SANTOS, Milton. Por uma Geografia Nova: da crítica da geografia a uma geografia crítica.

@@ -70,7 +70,7 @@ consistently and in a cohesive manner.
 > consistent design creates cohesive experiences that effectively engage audiences with your
 > organization’s mission.”
 >
-> Matthew Schwarts | Founder and Executive Director of Constructive
+> **Matthew Schwarts | Founder and Executive Director of Constructive**
 
 <<PAGE:6|VISIBLE:4>>Below is specific language regarding CC’s mission that currently exists on the “What We Do” page of
 the website. When creating content for CC, please take into consideration this language, particularly
@@ -114,7 +114,7 @@ global access
 
 Building a vibrant, collaborative global commons
 
-<<PAGE:7|VISIBLE:5>>Mood Board —\
+<<PAGE:7|VISIBLE:5>>**Mood Board —**\
 CC is vibrant, creative, collaborative, innovative, and global.
 
 ## <<PAGE:8|VISIBLE:6>>Brand Identity —
@@ -138,17 +138,17 @@ black and white (when necessary)
 • Do not re-proportion the logo\
 • Do not tint the logo
 
-If you’re a part of the CC Global Network and are looking for guidance on using or adapting CC’s
-logo, please refer to our detailed “Policies” page—which also includes our trademark policy.
+**If you’re a part of the CC Global Network and are looking for guidance on using or adapting CC’s
+logo, please refer to our detailed “Policies” page—which also includes our trademark policy.**
 
-Learn more about the history and inspiration behind CC’s logo in “A Masterwork in Simplicity: The Story
-of the CC Logo.”
+*Learn more about the history and inspiration behind CC’s logo in “A Masterwork in Simplicity: The Story
+of the CC Logo.”*
 
 ### <<PAGE:9|VISIBLE:7>>Font(s)
 
 ##### Primary Font: Source Sans Pro
 
-Source Sans Pro | Source Sans Pro | Source Sans Pro
+Source Sans Pro **|** *Source Sans Pro* **| Source Sans Pro**
 
 “Source Sans Pro is an open-source grotesque typeface designed by Paul D. Hunt for Adobe
 Systems...The slightly condensed letterforms of Source Sans Pro make it ideal for user interfaces
@@ -157,10 +157,10 @@ where space is a concern. It’s available in a full set of six weights with cor
 This font is particularly easy to read, both on the web and in print. Therefore, it should be used as
 the primary font for correspondence and communications.
 
-Source: Source Sans Pro. (2019). Retrieved from typewolf.com/site-of-the-day/fonts/source-sans-pro
-Secondary Font: Roboto
+*Source: Source Sans Pro. (2019). Retrieved from typewolf.com/site-of-the-day/fonts/source-sans-pro*
+**Secondary Font: Roboto**
 
-##### Roboto | Roboto | Roboto
+##### Roboto | *Roboto* | Roboto
 
 “Roboto is an open-source, grotesque sans-serif typeface designed by Christian Robertson in 2011
 and released through Google...it renders crisply on screens and is very legible, even at smaller sizes.
@@ -169,7 +169,7 @@ Roboto is the default font used in Google Maps and Google+.”
 Similar to Source Sans Pro, Roboto is also easy to read. Therefore, it can be used for correspondence
 and communications when desired.
 
-Source: Roboto. (2019). Retrieved from typewolf.com/site-of-the-day/fonts/roboto
+*Source: Roboto. (2019). Retrieved from typewolf.com/site-of-the-day/fonts/roboto*
 
 ##### Secondary Font: CC Accidenz Commons
 
@@ -180,7 +180,7 @@ can be used and/or remixed by anyone. It was designed in 2018 by Archetypo, a re
 design collective based in Germany and Chile to replace Akzidenz Grotesk—the original font in CC’s
 logo. You can download the font from our “Downloads” page.
 
-Learn more about this font in “Introducing CC Accidenz Commons: An Open Licensed Font.”
+*Learn more about this font in “Introducing CC Accidenz Commons: An Open Licensed Font.”*
 
 ### <<PAGE:10|VISIBLE:8>>Color Palette
 
@@ -192,49 +192,49 @@ accessibility requirements and design best practices, particularly with such bol
 For a guide on how to pair different colors together, including contrast requirements, read “Effective
 Use of Color” by the University of Washington.
 
-Tomato\
+**Tomato**\
 Hex: #ed592f
 RGB: 237 89 47
 HSL: 13 84 55
 CMYK: 0 58 75 7
 
-Gold\
+**Gold**\
 Hex: #efbe00
 RGB: 239 190 0
 HSL: 47 100 46
 CMYK: 0 19 94 6
 
-Forest Green
+**Forest Green**
 Hex: #04a635
 RGB: 4 166 53
 HSL: 138 95 33
 CMYK: 64 0 44 35
 
-Dark Slate Blue
+**Dark Slate Blue**
 Hex: #3c5c99
 RGB: 60 92 153
 HSL: 219 43 41
 CMYK: 36 24 0 40
 
-Dark Slate Gray
+**Dark Slate Gray**
 Hex: #333333
 RGB: 51 51 51
 HSL: 0 0 20
 CMYK: 0 0 0 80
 
-Orange\
+**Orange**\
 Hex: #fb7729
 RGB: 251 119 41
 HSL: 22 96 57
 CMYK: 0 52 82 2
 
-Dark Turquoise
+**Dark Turquoise**
 Hex: #05b5da
 RGB: 5 181 218
 HSL: 190 95 43
 CMYK: 84 15 0 15
 
-> Please note: Any colors reproduced in print may
+> **Please note:** Any colors reproduced in print may
 > not be accurate, therefore in order to achieve the best
 > possible results in printing, use CMYK and consult
 > with the printer.
@@ -244,14 +244,14 @@ CMYK: 84 15 0 15
 Creative Commons’ (CC) visuals, including graphic design elements, should reflect the diversity,
 vibrancy, and creativity of the global commons.
 
-Photography
+**Photography**
 
 Any photo used to market CC materials or communicate key messages should be inclusive and
 reflect the real lives of CC’s community members. In other words, traditional “stock” photos are not
 welcome! Finally, CC-licensed photos should be prioritized—particularly photos taken during CC
 events, like Global Summit. Check out CC-licensed photos on Flickr, here.
 
-Graphic Design
+**Graphic Design**
 
 Design elements used in CC’s communication and marketing materials, as well as on its platforms,
 should be simple and clear, yet fun and creative. Making use of buttons, emojis, animation,
@@ -260,8 +260,8 @@ geometric designs, and the brand colors is encouraged.
 Below are some examples of how all of these elements can be combined for a single information
 campaign.
 
-Please note: When uploading images to Wordpress, be sure to add a unique title, so the image is easily
-searchable; alternative text describing the image, for accessibility; and a caption that includes the CC license
+**Please note:** When uploading images to Wordpress, be sure to add a unique *title,* so the image is easily
+searchable; *alternative text* describing the image, for accessibility; and a *caption* that includes the CC license
 the image is published under (including a hyperlink), as well as the name of the photographer and/or
 graphic designer.
 
@@ -281,31 +281,31 @@ consideration.
 
 ### Creative Commons’ Specific Language
 
-Creative Commons’ possessive
+**Creative Commons’ possessive**
 
 When using Creative Commons as a possessive noun, the apostrophe should appear as Creative
-Commons’ rather than Creative Commons’s.
+Common**s’** rather than Creative Common**s’s**.
 
-The Creative Commons’ Global Summit
+**The Creative Commons’ Global Summit**
 
-For consistency and clarity, referring to the “CC Global Summit” or the “CC Summit” are preferred
-over the “Summit” or the “Global Summit,” as these terms could be confusing for people who do
+For consistency and clarity, referring to the “**CC Global Summit**” or the “**CC Summit**” are preferred
+over the “**Summit**” or the “**Global Summit**,” as these terms could be confusing for people who do
 not know what the CC Global Summit is.
 
-Finally, there should always be a “the” before the noun, e.g., “The CC Global Summit will be held in
-Lisbon, Portugal...” or “Members loved attending the CC Summit last year.”
+Finally, there should always be a “the” before the noun, e.g., “**The** CC Global Summit will be held in
+Lisbon, Portugal...” or “Members loved attending **the** CC Summit last year.”
 
-The Creative Commons Global Network
+**The Creative Commons Global Network**
 
-Similar to the CC Global Summit, consistency is important. Therefore, referring to the “CC Global
-Network” and the “CC Network” are preferred over the “Network.”
+Similar to the CC Global Summit, consistency is important. Therefore, referring to the “**CC Global
+Network**” and the “**CC Network**” are preferred over the “**Network**.”
 
-Finally, there should always be a “the” before the noun, e.g., “The CC Global Network consists of
-over 400 members...” or “We encourage anyone to join the CC Network, it’s free!”
+Finally, there should always be a “the” before the noun, e.g., “**The** CC Global Network consists of
+over 400 members...” or “We encourage anyone to join **the** CC Network, it’s free!”
 
 ### <<PAGE:13|VISIBLE:11>>Abbreviations
 
-CC Licenses
+**CC Licenses**
 
 CC licenses should be displayed consistently, therefore please keep in mind the following:
 • License abbreviations should be in all caps\
@@ -317,22 +317,22 @@ For example: CC BY
 
 For more guidance, follow the examples displayed at the top of each license’s webpage.
 
-Academic degrees
+**Academic degrees**
 
 Do not use periods for education degrees; therefore, use PhD, BA, BSc, MBA\
-Titles\
+**Titles**\
 Do not use periods in title abbreviations that appear in upper case\
 E.g., CEO\
 Use periods in title abbreviations that appear in upper and lower case\
 E.g., Dr.\
-Ordinals
+**Ordinals**
 
 Do not use st, nd, rd, or th to follow a number in a date\
 E.g., 3 May 2012 instead of 3rd May 2012\
-Times\
+**Times**\
 Use periods in abbreviation a.m. and p.m.\
 E.g., 4:00 p.m. instead of 4pm; or 4:00–5:30 p.m.\
-Dates
+**Dates**
 
 Use the international standard with the year in front of the month, followed by the day
 E.g., 2019-10-22 or 2019 Oct 22
@@ -350,7 +350,7 @@ paragraph or wherever the heading first appears in the piece.
 
 ### Titles and Capitalization
 
-General Rules
+**General Rules**
 
 Capitalize all proper names, trade names, government departments, and agencies of
 government, as well as names of associations, companies, clubs, religions, languages, nations,
@@ -360,7 +360,7 @@ CC also follows “title case,” which is a capitalization style that has been 
 of works, from books and movies to academic research papers.
 
 To help you capitalize titles correctly, check out the “Title Case Converter” tool.\
-Numbers
+**Numbers**
 
 Always spell out the numbers 0-9 in full, and use numerals for numbers 10 or greater, unless the
 number starts a sentence.
@@ -372,20 +372,20 @@ Oxford Dictionaries for help.
 
 ### <<PAGE:15|VISIBLE:13>>Punctuation
 
-Colon
+**Colon**
 
 Use a colon, rather than a comma, to introduce a direct quotation that is longer than a short
 sentence. Capitalize the first word of a quoted sentence.
 
-Semicolon in a list
+**Semicolon in a list**
 
 A list that is separated by semi-olons rather than commas will be introduced by a colon and will
 not use a comma after “and” in the final listing.\
-Comma
+**Comma**
 
 Use commas between the elements of a series, and the Oxford comma before the last “and/or”
 in a list of items.\
-Em-dash\
+**Em-dash**\
 Appears as a longer dash (— not -), and does not include spaces.
 
 E.g. “To compensate for this lack of data, researchers must often rely on data collected by nongovernment
@@ -405,35 +405,35 @@ license. All CC licenses can be found via “Share Your License.”
 
 ### <<PAGE:16|VISIBLE:14>>Writing Tips
 
-“To be”\
+**“To be”**\
 Avoid overusing the verb “to be.” Instead, utilize the active tense.
 
 E.g., “It is important that net neutrality survives.” Instead say, “Net neutrality should survive.”\
 For more examples, check out “Avoid Unecessary ‘To Be’ verbs,” by Writing Commons.
 
-Keep it Short and Concise
+**Keep it Short and Concise**
 
 Keep sentences short and to the point, particularly when explaining complex topics. Be wary of
 long paragraphs, particulary for articles or blog posts published online—adding spaces between 2-4
 sentence paragraphs helps with accessibility and engagement.
 
-Avoid Jargon
+**Avoid Jargon**
 
 Avoid industry (or academic) jargon or terminology, particularly when writing for non-academic
 and/or industry-specific audiences. Remember to write with your audience in mind, and explain any
 potentially confusing terms, acronyms, or references.
 
-Embrace Lists
+**Embrace Lists**
 
 Use bullet points or numbers to convey lengthy information. More specifically, use numbered lists if
 there is a sequence to the information.
 
-Non-English Words
+**Non-English Words**
 
 Words from a language other than English should appear in italics unless they are commonly
 used in English.
 
-E.g. Millions of Muslims travel to Mecca for hajj (or pilgrimage) each year.\
+E.g. Millions of Muslims travel to Mecca for *hajj* (or pilgrimage) each year.\
 E.g. Advocates for net neutrality arrived en masse at Capitol Hill.
 
 Do not italicize words written in a different alphabet. Include an italicized transliterated version of
@@ -447,31 +447,31 @@ by Victoria Heath
 Except where otherwise noted, this document is published under a Creative Commons
 Attribution 4.0 International license, (CC BY 4.0).
 
-Image Credits:
+**Image Credits:**
 
-Front Cover
+**Front Cover**
 
-Hazzan, Heather. (2019, August). Young Woman Waiting in Doctor’s Office. SELF Magazine. Retrieved from: https://flickr.com/
+Hazzan, Heather. (2019, August). *Young Woman Waiting in Doctor’s Office*. SELF Magazine. Retrieved from: https://flickr.com/
 photos/selfmagazine/48546126237/in/album-72157710332198661/. Licensed under CC BY.
 
-Page Five
+**Page Five**
 
-Top: Pombeiro, João. (2019, May). Creative Commons Global Summit Logo 2019. Retrieved from: creativecommons.org/wp-content/uploads/2019/08/2019_CC_GlobalSummit_logo.jpg.
+**Top:** Pombeiro, João. (2019, May). *Creative Commons Global Summit Logo 2019*. Retrieved from: creativecommons.org/wp-content/uploads/2019/08/2019_CC_GlobalSummit_logo.jpg.
 Licensed under CC BY.\
-Middle-left: Pearce, Andrea. (2019, March). Creative Commons Mosaic. Retrieved from: creativecommons.org/wp-content/
+**Middle-left:** Pearce, Andrea. (2019, March). *Creative Commons Mosaic*. Retrieved from: creativecommons.org/wp-content/
 uploads/2019/10/55517442_10156985356362777_2465421492599390208_o.jpg. Licensed under CC BY.\
-Middle-right-top: (2018, May 08). State of the Commons 2017. Retrieved from: stateof.creativecommons.org/Licensed under CC
+**Middle-right-top:** (2018, May 08). *State of the Commons 2017*. Retrieved from: stateof.creativecommons.org/Licensed under CC
 BY.
-Middle-right-bottom: Burg, Sebastiaan ter. (2019, May 09). CC Global Summit 2019. Retrieved from: flickr.com/photos/
+**Middle-right-bottom:** Burg, Sebastiaan ter. (2019, May 09). CC *Global Summit 2019*. Retrieved from: flickr.com/photos/
 creativecommons/47959635406/in/album-72157708726481004/ Licensed under CC BY.\
-Bottom-left: (2018, May 08). State of the Commons 2017. Retrieved from: stateof.creativecommons.org/Licensed under CC BY.
-Bottom-middle: Burg, Sebastiaan ter. (2019, May 09). CC Global Summit 2019. Retrieved from: flickr.com/photos/
+**Bottom-left:** (2018, May 08). *State of the Commons 2017*. Retrieved from: stateof.creativecommons.org/Licensed under CC BY.
+**Bottom-middle:** Burg, Sebastiaan ter. (2019, May 09). CC *Global Summit 2019*. Retrieved from: flickr.com/photos/
 creativecommons/47959548163/in/album-72157708726481004/ Licensed under CC BY.\
-Bottom-right: Burg, Sebastiaan ter. (2019, May 09). CC Global Summit 2019. Retrieved from: flickr.com/photos/
+**Bottom-right:** Burg, Sebastiaan ter. (2019, May 09). CC *Global Summit 2019*. Retrieved from: flickr.com/photos/
 creativecommons/47959607413/in/album-72157708726481004/ Licensed under CC BY.
 
-Page Nine
+**Page Nine**
 
-Left, Middle, and Right: Heath, Victoria. (2019, September 29). An Explanation of Creative Commons. Retrieved
+**Left, Middle, and Right:** Heath, Victoria. (2019, September 29). *An Explanation of Creative Commons*. Retrieved
 from: canva.com/design/DADm40hSwIU/9yEhtLnl5O1WMKbx8JSSkA/view?utm_content=DADm40hSwIU&utm\_
 campaign=designshare&utm_medium=link&utm_source=viewer. Licensed under CC BY-NC-ND 4.0.

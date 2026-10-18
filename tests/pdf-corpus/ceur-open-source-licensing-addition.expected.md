@@ -10,7 +10,7 @@ Turku, Finland
 
 juhani.naskali@utu.fi
 
-Abstract. This paper identifies an often overlooked dimension of open source licensing,
+**Abstract.** This paper identifies an often overlooked dimension of open source licensing,
 that of users being able to run distributed software freely and without discrimination,
 and suggests additions that would further secure freedom 0 to end
 users — the freedom for the user to use software however they wish. While, traditionally,
@@ -22,7 +22,7 @@ versions of applications (simultaneously widening the digital divide), and thus
 a new analysis is needed on how (and which) freedoms should be secured to ensure
 that free software remains free.
 
-Keywords: open source, free software, FOSS, licensing terms, liberty, GNU GPL
+**Keywords:** open source, free software, FOSS, licensing terms, liberty, GNU GPL
 
 # <<PAGE:2|VISIBLE:133>>1 Introduction
 
@@ -259,8 +259,8 @@ of what e.g. GPLv3 does — I’m only arguing it should be an explicitly stated
 
 ## First proposed addition to GNU GPLv3 Chapter 5. Conveying Modified Source Versions.
 
-e) The work must not include any methods or additional protections for restricting the
-use of the work by particular persons, groups or fields of endeavor.
+*e) The work must not include any methods or additional protections for restricting the
+use of the work by particular persons, groups or fields of endeavor.*
 
 This addition would disallow the use of DRM (digital rights management) that targets
 persons or groups. Censorship systems such as domain blocking and networkbased
@@ -268,9 +268,9 @@ DRM would also fall under this category.
 
 ## Second proposed addition to GNU GPLv3 chapter 6. Conveying Non-Source Forms
 
-> 1. Any object code conveyed must not include extra blocking methods aimed at discriminating
+> 1. *Any object code conveyed must not include extra blocking methods aimed at discriminating
 > agains persons, groups or fields of endeavor specified in Chapter
-> 5.
+> 5.*
 
 The object of this addition would be to secure Freedom 0 when using conveyed
 non-source forms (i.e. binaries). This would (most importantly) include mobile apps
@@ -412,7 +412,7 @@ the project they are working on will stay free.
 
 # <<PAGE:10|VISIBLE:141>>References
 
-Austin, J. (1885). Lectures on jurisprudence, or, The philosophy of positive law. John
+Austin, J. (1885). *Lectures on jurisprudence, or, The philosophy of positive law*. John
 Murray.
 
 GNU (1986). Gnu’s bulletin volume 1 no.1.\
@@ -425,14 +425,14 @@ GNU Project (2001). What is free software?\
 Retrieved from https://www.gnu.org/philosophy/free-sw.html
 
 Gomulkiewicz, R. W. (2009). Open source license proliferation: Helpful diversity or
-hopeless confusion. Wash. UJL & Pol’y, 30, 261.
+hopeless confusion. *Wash. UJL & Pol’y*, *30*, 261.
 
 Goodman-Wilson, D. (2020). Open source is broken. FOSDEM. Brussels, Belgium.
 Retrieved from https://mirrors.dotsrc.org/fosdem/2020/UB5.230/
 ethicsoss.webm
 
 Hofmann, G., Riehle, D., Kolassa, C., & Mauerer, W. (2013). A dual model of open
-source license growth. In IFIP International Conference on Open Source Systems,
+source license growth. In *IFIP International Conference on Open Source Systems*,
 (pp. 245–256). Springer.
 
 Johnson, P. (2021). Open source licenses in 2021: Trends and predictions. Accessed
@@ -440,17 +440,17 @@ Johnson, P. (2021). Open source licenses in 2021: Trends and predictions. Access
 Retrieved from https://www.whitesourcesoftware.com/resources/blog/
 open-source-licenses-trends-and-predictions
 
-Lerner, J., & Tirole, J. (2005). The scope of open source licensing. Journal of Law,
-Economics, and Organization, 21(1), 20–56.
+Lerner, J., & Tirole, J. (2005). The scope of open source licensing. *Journal of Law,
+Economics, and Organization*, *21*(1), 20–56.
 
 Naskali, J. (2020). Hard-coded censorship in open source mastodon clients—how free
-is open source? Proceedings of the Conference on Technology Ethics 2020.
+is open source? *Proceedings of the Conference on Technology Ethics 2020*.
 
 Scheerder, A., van Deursen, A., & van Dijk, J. (2017). Determinants of internet skills,
 uses and outcomes. a systematic review of the second-and third-level digital divide.
-Telematics and informatics, 34(8), 1607–1624.
+*Telematics and informatics*, *34*(8), 1607–1624.
 
-Schoettle, H. (2019). Open source license compliance-why and how? Computer, 52(8),
+Schoettle, H. (2019). Open source license compliance-why and how? *Computer*, *52*(8),
 63–67.
 
 Stallman, R. (2013). Why programs must not limit the freedom to run them.
@@ -460,5 +460,5 @@ programs-must-not-limit-freedom-to-run.html
 Tusky (2019). Tusky pull request #1303 · tuskyapp/tusky.\
 Retrieved from https://github.com/tuskyapp/Tusky/pull/1303/
 
-Van Dijk, J. A. (2006). Digital divide research, achievements and shortcomings. Poetics,
-34(4-5), 221–235.
+Van Dijk, J. A. (2006). Digital divide research, achievements and shortcomings. *Poetics*,
+*34*(4-5), 221–235.

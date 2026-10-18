@@ -1,7 +1,7 @@
-text,page_no,block_no,line_no_on_page,font_size,x1,y1,x2,y2,rel_x,rel_y,avg_weight,font_name,scripts,space_before,space_after,fraction_denominator
+text,page_no,block_no,line_no_on_page,font_size,x1,y1,x2,y2,rel_x,rel_y,avg_weight,font_name,ranges,space_before,space_after,fraction_denominator
 International Journal of Digital Humanities (2021) 2:25–42,1,1,1,8.0,51.0,35.4,227.9,42.8,,,400.0,BTKAZF+MyriadProUnicSemiCondensed,(),False,False,False
 https://doi.org/10.1007/s42803-021-00031-6,1,2,2,7.3,51.0,44.2,181.9,51.5,0.0,8.8,0.0,AdvTTc488b0e6,(),False,False,False
-ORIGINAL PAPER Open Access,1,3,3,5.7,53.9,60.1,385.3,67.5,2.8,15.9,308.0,AdvTT99c4c969,(),False,False,False
+ORIGINAL PAPER Open Access,1,3,3,5.7,53.9,60.1,385.3,67.5,2.8,15.9,308.0,AdvTT99c4c969,"({'start': 15, 'end': 26, 'kind': 'bold'},)",False,False,False
 Recovering contemporary genre histories,1,4,4,11.9,51.0,95.2,263.0,107.2,-2.8,35.1,0.0,AdvTT577c760c,(),False,False,False
 – the development of chick lit as seen,1,4,5,11.9,51.0,108.3,249.3,122.0,0.0,13.0,0.0,AdvTT577c760c,(),False,False,False
 through the internet archive’s wayback machine,1,5,6,11.8,51.0,123.2,301.3,137.1,0.0,14.9,0.0,AdvTT577c760c,(),False,False,False
@@ -9,25 +9,25 @@ and wikipedia’s history page,1,5,7,11.9,51.0,138.2,199.4,152.0,0.0,15.0,0.0,Ad
 Sandra Folie1,1,6,8,7.2,51.0,168.5,108.5,177.7,-0.0,30.3,0.0,AdvTT99c4c969,"({'start': 12, 'end': 13, 'kind': 'sup'},)",False,False,False
 Received: 21 August 2020 /Accepted: 11 February 2021 / Published online: 11 May 2021,1,7,9,7.3,51.0,197.9,317.6,205.5,0.0,29.4,154.7,AdvTTc488b0e6,(),False,False,False
 # The Author(s) 2021,1,8,10,7.3,51.0,206.5,119.0,215.0,0.0,8.6,0.0,AdvTTc488b0e6,(),False,False,False
-Abstract,1,9,11,9.2,51.0,238.0,87.6,247.2,0.0,31.5,700.0,AdvTTaf7f9f4f.B,(),False,False,False
+Abstract,1,9,11,9.2,51.0,238.0,87.6,247.2,0.0,31.5,700.0,AdvTTaf7f9f4f.B,"({'start': 0, 'end': 8, 'kind': 'bold'},)",False,False,False
 "In the perception of literary scholars, the investigation of genre histories is still closely",1,10,12,9.1,51.0,250.1,388.3,259.2,0.0,12.1,0.0,AdvTT3713a231,(),False,False,False
 "linked to ‘offline’ archival work. However, the Internet has been publicly accessible",1,10,13,9.1,51.0,260.6,388.4,271.2,0.0,10.5,0.0,AdvTT3713a231,(),False,False,False
 "since 1991, and over the last thirty years, numerous new literary genres have emerged.",1,10,14,9.1,51.0,274.1,388.4,283.1,0.0,13.4,0.0,AdvTT3713a231,(),False,False,False
 "They have often been proclaimed, defined, spread, marketed, criticized, and even",1,10,15,9.1,51.0,286.0,388.3,295.1,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
 "pronounced dead online. By now, a great deal of this digital material is said to have",1,10,16,9.1,51.0,298.0,388.4,307.1,-0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
 "disappeared. What many scholars do not consider, however, is that parts of the web are",1,10,17,9.1,51.0,310.0,388.3,319.0,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
-"archived, for example by the Internet Archive and Wikipedia, which make their",1,10,18,9.0,51.0,321.9,388.5,331.0,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
-archives publicly available via the Wayback Machine and the history page respectively.,1,10,19,9.1,51.0,333.8,388.3,342.9,0.0,11.9,0.0,AdvTT3713a231,(),False,False,False
+"archived, for example by the Internet Archive and Wikipedia, which make their",1,10,18,9.0,51.0,321.9,388.5,331.0,0.0,12.0,0.0,AdvTT3713a231,"({'start': 29, 'end': 45, 'kind': 'italic'}, {'start': 50, 'end': 60, 'kind': 'italic'})",False,False,False
+archives publicly available via the Wayback Machine and the history page respectively.,1,10,19,9.1,51.0,333.8,388.3,342.9,0.0,11.9,0.0,AdvTT3713a231,"({'start': 36, 'end': 51, 'kind': 'italic'}, {'start': 60, 'end': 72, 'kind': 'italic'})",False,False,False
 This makes it possible to track early online definitions of contemporary genres and their,1,10,20,9.1,51.0,345.8,388.5,354.9,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
-"development. In this paper, I will use the chick lit genre, which emerged in the second",1,10,21,9.0,51.0,357.8,388.5,366.8,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
+"development. In this paper, I will use the chick lit genre, which emerged in the second",1,10,21,9.0,51.0,357.8,388.5,366.8,0.0,12.0,0.0,AdvTT3713a231,"({'start': 43, 'end': 52, 'kind': 'italic'},)",False,False,False
 "half of the 1990s, as a case study to show the benefits of including web archives in the",1,10,22,9.1,51.0,369.7,388.3,378.8,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
 reconstruction of contemporary genre histories. An analysis of both the first extensive,1,10,23,9.1,51.0,381.7,388.3,390.8,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
 "and long-running fan websites, which are now offline but well-documented in the",1,10,24,9.1,51.0,393.7,388.3,402.7,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
-"Internet Archive, and the history page of the Wikipedia article on chick lit will",1,10,25,9.1,51.0,405.6,388.3,414.7,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
-challenge some of the narratives that have long dominated chick lit research.,1,10,26,9.1,51.0,417.6,352.3,426.6,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
+"Internet Archive, and the history page of the Wikipedia article on chick lit will",1,10,25,9.1,51.0,405.6,388.3,414.7,0.0,12.0,0.0,AdvTT3713a231,"({'start': 67, 'end': 76, 'kind': 'italic'},)",False,False,False
+challenge some of the narratives that have long dominated chick lit research.,1,10,26,9.1,51.0,417.6,352.3,426.6,0.0,12.0,0.0,AdvTT3713a231,"({'start': 58, 'end': 67, 'kind': 'italic'},)",False,False,False
 Keywords Genre history . Chick lit . Internet archive . Wayback machine . Fan websites.,1,11,27,9.0,51.0,439.4,387.2,450.5,0.0,21.8,0.0,AdvTT3713a231,(),False,False,False
 Wikipedia,1,11,28,9.0,51.0,453.4,91.4,462.4,0.0,13.9,0.0,AdvTT3713a231,(),False,False,False
-1 Introduction,1,12,29,10.1,51.0,488.4,120.3,498.5,-0.0,35.0,700.0,AdvTTaf7f9f4f.B,(),False,False,False
+1 Introduction,1,12,29,10.1,51.0,488.4,120.3,498.5,-0.0,35.0,700.0,AdvTTaf7f9f4f.B,"({'start': 0, 'end': 14, 'kind': 'bold'},)",False,False,False
 "With genre history, one inevitably thinks of good old ‘dusty’ archival work. In literary",1,13,30,9.1,51.0,511.7,388.4,522.3,-0.0,23.3,0.0,AdvTT3713a231,(),False,False,False
 "studies, archives and libraries are still most often imagined as physical spaces and often",1,13,31,9.1,51.0,525.1,388.3,534.2,0.0,13.4,0.0,AdvTT3713a231,(),False,False,False
 * Sandra Folie,1,14,32,7.6,51.0,564.5,108.7,573.8,-0.0,39.4,0.0,AdvTT3713a231,(),False,False,False
@@ -51,7 +51,7 @@ accessible since 1991.,2,3,13,9.0,51.0,191.1,137.7,200.1,-0.0,12.0,0.0,AdvTT3713
 "they have often been proclaimed, defined, spread, marketed, criticized, and even",2,4,16,9.1,51.0,226.9,388.3,236.0,0.0,11.9,0.0,AdvTT3713a231,(),False,False,False
 pronounced dead via a wide variety of actors and media. These include fans and their,2,4,17,9.1,51.0,238.9,388.5,248.0,-0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
 "websites or blogs, online presences of newspapers, magazines, or publishing houses,",2,4,18,9.1,51.0,250.9,388.3,259.9,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
-and also the free encyclopedia Wikipedia. A great deal of digital material from the early,2,4,19,9.1,51.0,262.8,388.3,271.9,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
+and also the free encyclopedia Wikipedia. A great deal of digital material from the early,2,4,19,9.1,51.0,262.8,388.3,271.9,0.0,12.0,0.0,AdvTT3713a231,"({'start': 31, 'end': 40, 'kind': 'italic'},)",False,False,False
 2000s – a time when the Internet had already assumed an indispensable role in the book,2,4,20,9.1,51.0,273.3,388.5,283.9,-0.0,10.5,0.0,AdvTT3713a231,(),False,False,False
 sector – has now allegedly disappeared: many fans have at some point stopped running,2,4,21,9.1,51.0,285.3,388.3,295.8,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
 their websites; newspapers and magazines only started to systematically archive later,2,4,22,9.1,51.0,298.7,388.5,307.8,0.0,13.4,0.0,AdvTT3713a231,(),False,False,False
@@ -66,10 +66,10 @@ flow and lightning-fast and targeted access to information.”,2,4,29,9.1,51.0,3
 "What many Humanities scholars do not know or, out of skepticism about the Internet as",2,5,31,9.1,51.0,394.3,388.4,403.4,-237.7,14.1,0.0,AdvTT3713a231,(),False,False,False
 "a ‘reliable’ academic source, simply do not consider, is that parts of the web are",2,5,32,9.1,51.0,404.8,388.3,415.4,0.0,10.5,0.0,AdvTT3713a231,(),False,False,False
 "archived, for example by the Internet Archive, a non-profit library of free books,",2,5,33,9.1,51.0,418.2,388.4,427.2,-0.0,13.4,0.0,AdvTT3713a231,(),False,False,False
-"movies, software, music, and websites based in San Francisco. Their Wayback Machine",2,5,34,9.0,51.0,430.1,388.3,439.2,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
+"movies, software, music, and websites based in San Francisco. Their Wayback Machine",2,5,34,9.0,51.0,430.1,388.3,439.2,0.0,12.0,0.0,AdvTT3713a231,"({'start': 68, 'end': 83, 'kind': 'italic'},)",False,False,False
 "is a service which, since its launch in 2001, has allowed users to go back in time and see",2,5,35,9.1,51.0,442.1,388.3,451.2,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
 "what websites, some of which no longer exist, looked like at an earlier date. Wikipedia,",2,5,36,9.1,51.0,454.1,388.4,463.1,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
-"which was also founded in 2001, has its own built-in archive, the history page, through",2,5,37,9.0,51.0,466.0,388.3,475.1,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
+"which was also founded in 2001, has its own built-in archive, the history page, through",2,5,37,9.0,51.0,466.0,388.3,475.1,0.0,12.0,0.0,AdvTT3713a231,"({'start': 66, 'end': 78, 'kind': 'italic'},)",False,False,False
 which (almost) all versions of a Wikipedia article since its creation can be accessed.2 In,2,5,38,11.2,51.0,475.9,388.4,487.0,-0.0,9.8,0.0,AdvTT3713a231,"({'start': 86, 'end': 87, 'kind': 'sup'},)",False,False,False
 "relation to the field of genre history, we can thus in many cases trace the first, or at least",2,5,39,9.1,51.0,490.0,388.4,499.0,0.0,14.1,0.0,AdvTT3713a231,(),False,False,False
 "very early, mentions of new genres, their discussion and definition by fans or critics,",2,5,40,9.1,51.0,501.9,388.4,511.0,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
@@ -81,24 +81,24 @@ Beschleunigung des Datenflusses und blitzschnellem und gezieltem Zugriff auf Inf
 2 The “almost” refers to the possibility of deleting versions. Revision deletion “is generally reserved for edits,2,8,46,7.2,51.0,580.8,388.4,589.8,0.0,8.9,0.0,AdvTT3713a231,"({'start': 0, 'end': 1, 'kind': 'sup'},)",False,False,False
 "which: (1) present a legal liability to the host (e.g. copyright issues, defamation), or (2) present privacy threats",2,8,47,7.2,51.0,592.0,388.4,599.2,0.0,11.2,0.0,AdvTT3713a231,(),False,False,False
 "to individuals (i.e. contact information).” (West & Lee, 2011, 1).",2,8,48,7.2,51.0,600.2,253.2,608.7,0.0,8.3,0.0,AdvTT3713a231,(),False,False,False
-"Regarding the inclusion of the history page in literary research, see also Börner and Kopf (2018, 216–219).",2,9,49,7.2,56.5,609.7,388.4,618.1,5.5,9.4,0.0,AdvTT3713a231,(),False,False,False
+"Regarding the inclusion of the history page in literary research, see also Börner and Kopf (2018, 216–219).",2,9,49,7.2,56.5,609.7,388.4,618.1,5.5,9.4,0.0,AdvTT3713a231,"({'start': 31, 'end': 43, 'kind': 'italic'},)",False,False,False
 International Journal of Digital Humanities 27,3,1,1,8.0,51.0,35.2,388.5,42.6,,,400.0,BTKAZF+MyriadProUnicSemiCondensed,(),False,False,False
 ‘literature’) that is usually not discussed in the feature pages of prestigious newspapers,3,2,2,9.1,51.0,58.1,388.4,68.6,0.0,22.9,0.0,AdvTT3713a231,(),False,False,False
 and magazines but has a strong fan base which is very active online.3,3,2,3,11.2,51.0,69.4,325.4,80.6,0.0,11.3,0.0,AdvTT3713a231,"({'start': 68, 'end': 69, 'kind': 'sup'},)",False,False,False
-"In this paper, I will use the chick lit genre, which emerged in the second half of the",3,3,4,9.1,62.4,83.5,388.3,92.5,11.3,14.1,0.0,AdvTT3713a231,(),False,False,False
-1990s with bestsellers such as Helen Fielding’s Bridget Jones’s Diary and Candace,3,3,5,9.1,51.0,93.9,388.3,104.5,-11.3,10.5,0.0,AdvTT3713a231,(),False,False,False
-"Bushnell’s Sex and the City (both 1996), as a case study to show the benefits of",3,4,6,9.1,51.0,105.9,389.5,116.5,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
+"In this paper, I will use the chick lit genre, which emerged in the second half of the",3,3,4,9.1,62.4,83.5,388.3,92.5,11.3,14.1,0.0,AdvTT3713a231,"({'start': 30, 'end': 39, 'kind': 'italic'},)",False,False,False
+1990s with bestsellers such as Helen Fielding’s Bridget Jones’s Diary and Candace,3,3,5,9.1,51.0,93.9,388.3,104.5,-11.3,10.5,0.0,AdvTT3713a231,"({'start': 48, 'end': 69, 'kind': 'italic'},)",False,False,False
+"Bushnell’s Sex and the City (both 1996), as a case study to show the benefits of",3,4,6,9.1,51.0,105.9,389.5,116.5,0.0,12.0,0.0,AdvTT3713a231,"({'start': 11, 'end': 27, 'kind': 'italic'},)",False,False,False
 including web archives in the recovery of contemporary genre histories. An analysis of,3,4,7,9.1,51.0,119.4,389.5,128.4,-0.0,13.4,0.0,AdvTT3713a231,(),False,False,False
-"both the first large and long-running fan websites, chicklit.co.uk (2002–2014) and",3,4,8,9.1,51.0,129.8,388.3,140.3,-0.0,10.4,0.0,AdvTT3713a231,(),False,False,False
-"chicklitbooks.com (2003–2015), through the Wayback Machine, and the history page",3,4,9,9.1,51.0,141.7,388.4,152.3,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
+"both the first large and long-running fan websites, chicklit.co.uk (2002–2014) and",3,4,8,9.1,51.0,129.8,388.3,140.3,-0.0,10.4,0.0,AdvTT3713a231,"({'start': 52, 'end': 66, 'kind': 'italic'},)",False,False,False
+"chicklitbooks.com (2003–2015), through the Wayback Machine, and the history page",3,4,9,9.1,51.0,141.7,388.4,152.3,0.0,12.0,0.0,AdvTT3713a231,"({'start': 0, 'end': 17, 'kind': 'italic'},)",False,False,False
 of the Wikipedia article on chick lit (2004–now) will challenge some of the narratives,3,4,10,9.0,51.0,153.7,388.4,164.3,-0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
 "that have long dominated chick lit research; especially, the unquestioning adoration by",3,4,11,9.1,51.0,167.2,388.4,176.2,-0.0,13.4,0.0,AdvTT3713a231,(),False,False,False
 "fans as well as the allegedly narrow, one-sided, and therefore academically irrelevant",3,4,12,9.1,51.0,179.1,388.5,188.2,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
 "definitions of the chick lit genre published online. On a more general level, the aim of",3,5,13,9.1,51.0,191.1,389.5,200.1,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
 this paper is to present a critical comparative approach to the inclusion of archived web,3,5,14,9.0,51.0,203.1,388.3,212.1,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
 sources in the study of contemporary literary genres.,3,5,15,9.1,51.0,215.0,258.0,224.1,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
-2 Early definitions of chick lit or the not so unquestioning adoration,3,6,16,10.3,51.0,249.8,382.9,260.1,0.0,34.8,700.0,AdvTTaf7f9f4f.B,(),False,False,False
-of its fans,3,6,17,10.2,51.0,261.8,98.9,272.0,0.0,12.0,700.0,AdvTTaf7f9f4f.B,(),False,False,False
+2 Early definitions of chick lit or the not so unquestioning adoration,3,6,16,10.3,51.0,249.8,382.9,260.1,0.0,34.8,700.0,AdvTTaf7f9f4f.B,"({'start': 0, 'end': 70, 'kind': 'bold'},)",False,False,False
+of its fans,3,6,17,10.2,51.0,261.8,98.9,272.0,0.0,12.0,700.0,AdvTTaf7f9f4f.B,"({'start': 0, 'end': 11, 'kind': 'bold'},)",False,False,False
 When chick lit began to develop into a genre in the second half of the 1990s and early,3,7,18,9.1,51.0,286.7,388.3,295.8,-0.0,24.9,0.0,AdvTT3713a231,(),False,False,False
 "2000s, journalists, fans, and Wikipedians were the first to comment on it, often online.",3,7,19,9.1,51.0,298.7,388.3,307.7,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
 "Research, or at least the published research results, came much later. Annette Peitz,",3,7,20,9.0,51.0,310.6,388.4,319.7,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
@@ -115,8 +115,8 @@ was precisely the uncompromising rejection on the part of both critics and also,
 renowned authors such as Doris Lessing or Beryl Bainbridge – who called chick lit,3,8,31,9.1,51.0,440.6,388.4,451.2,0.0,10.5,0.0,AdvTT3713a231,(),False,False,False
 "“instantly forgettable” (quoted in Staff & Agencies, 2001) and “a froth sort of thing”",3,8,32,9.1,51.0,452.6,388.3,463.2,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
 "(ibid.) – that created a strong desire among the fans to characterize it. Therefore, the",3,8,33,9.1,51.0,464.6,388.3,475.1,-0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
-"first definitions of the genre can be found on their websites, with chicklit.co.uk (UK,",3,8,34,9.1,51.0,478.0,388.4,487.1,0.0,13.4,0.0,AdvTT3713a231,(),False,False,False
-"2002–2014) and chicklitbooks.com (USA, 2003–2015) being the two most popular",3,8,35,9.0,51.0,488.5,388.5,499.1,-0.0,10.5,0.0,AdvTT3713a231,(),False,False,False
+"first definitions of the genre can be found on their websites, with chicklit.co.uk (UK,",3,8,34,9.1,51.0,478.0,388.4,487.1,0.0,13.4,0.0,AdvTT3713a231,"({'start': 68, 'end': 82, 'kind': 'italic'},)",False,False,False
+"2002–2014) and chicklitbooks.com (USA, 2003–2015) being the two most popular",3,8,35,9.0,51.0,488.5,388.5,499.1,-0.0,10.5,0.0,AdvTT3713a231,"({'start': 15, 'end': 32, 'kind': 'italic'},)",False,False,False
 3 This does not mean that every new genre is equally likely to get a Wikipedia article. Wikipedia has notability,3,9,36,7.2,51.0,514.6,388.4,523.5,0.0,26.1,0.0,AdvTT3713a231,"({'start': 0, 'end': 1, 'kind': 'sup'},)",False,False,False
 "guidelines for each of its language versions, which an article must meet before it is published. One of the most",3,9,37,7.2,51.0,525.7,388.4,532.9,0.0,11.1,0.0,AdvTT3713a231,(),False,False,False
 "important guidelines is that “there must be verifiable, objective evidence that the subject has received",3,9,38,7.3,51.0,534.0,388.5,542.4,0.0,8.3,0.0,AdvTT3713a231,(),False,False,False
@@ -149,23 +149,23 @@ instead of professionals) have changed. In the case of the two fan websites and,
 "their continuous preoccupation with the genre, which extends from the time of the",4,3,19,9.1,51.0,262.8,388.3,271.9,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
 genre’s creation and consolidation until after its alleged ‘death’.,4,3,20,9.1,51.0,273.3,301.7,283.9,0.0,10.5,0.0,AdvTT3713a231,(),False,False,False
 6,4,3,21,6.0,301.5,272.6,305.3,278.6,250.5,-0.7,0.0,AdvTT3713a231,"({'start': 0, 'end': 1, 'kind': 'sup'},)",False,False,False
-2.1 Digitally archived chick lit fan websites,4,4,22,9.3,51.0,298.5,227.1,307.8,-250.5,25.8,700.0,AdvTTa351d857.B,(),False,False,False
-The British chicklit.co.uk was online from 2002 to 2014. A search with the Internet,4,5,23,9.0,51.0,322.5,388.5,331.5,0.0,24.1,0.0,AdvTT3713a231,(),False,False,False
+2.1 Digitally archived chick lit fan websites,4,4,22,9.3,51.0,298.5,227.1,307.8,-250.5,25.8,700.0,AdvTTa351d857.B,"({'start': 0, 'end': 45, 'kind': 'bold'},)",False,False,False
+The British chicklit.co.uk was online from 2002 to 2014. A search with the Internet,4,5,23,9.0,51.0,322.5,388.5,331.5,0.0,24.1,0.0,AdvTT3713a231,"({'start': 12, 'end': 26, 'kind': 'italic'},)",False,False,False
 Archive’s Wayback Machine reveals that from the very beginning the genre was,4,5,24,9.1,51.0,333.0,388.4,343.6,-0.0,10.5,0.0,AdvTT3713a231,(),False,False,False
 defined as entertaining or very marketable “contemporary women’s fiction” (“Home,4,5,25,9.1,51.0,345.0,388.4,355.6,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
 "and Competitions”, 6 Nov. 2002). The books advertised on the website mostly",4,5,26,9.1,51.0,356.9,388.4,367.5,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
 revolved around the everyday challenges of their young protagonists: the search for,4,6,27,9.1,51.0,370.4,388.5,379.5,-0.0,13.4,0.0,AdvTT3713a231,(),False,False,False
 "Mr. Right, relationship problems, family planning, self-realization, and career planning",4,6,28,9.1,51.0,382.4,388.5,391.4,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
 "(ibid.). Although the focus was on chick lit, the concept was interpreted more broadly,",4,6,29,9.1,51.0,394.3,388.5,403.4,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
-"in the sense of a chick culture, which was later defined by Ferriss and Young as “a",4,6,30,9.1,51.0,404.8,388.4,415.4,0.0,10.5,0.0,AdvTT3713a231,(),False,False,False
+"in the sense of a chick culture, which was later defined by Ferriss and Young as “a",4,6,30,9.1,51.0,404.8,388.4,415.4,0.0,10.5,0.0,AdvTT3713a231,"({'start': 18, 'end': 31, 'kind': 'italic'},)",False,False,False
 group of mostly American and British popular culture media forms focused primarily,4,6,31,9.1,51.0,418.2,388.4,427.3,-0.0,13.4,0.0,AdvTT3713a231,(),False,False,False
 "on twenty-to-thirtysomething middleclass women” (2008, 1). In addition to the popular",4,7,32,9.1,51.0,428.7,388.5,439.3,0.0,10.5,0.0,AdvTT3713a231,(),False,False,False
 "formats of chick lit, chick flick, and chick TV programming, this chick culture could",4,7,33,9.1,51.0,442.1,388.4,451.2,0.0,13.4,0.0,AdvTT3713a231,(),False,False,False
 "also be communicated via other media such as blogs, music, magazines, and even car",4,8,34,9.1,51.0,454.1,388.5,463.2,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
 "designs or energy drinks. What Ferriss and Young were missing, however, is that",4,8,35,9.1,51.0,466.1,388.5,475.1,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
 "media such as blogs and websites do not only communicate chick culture, but also",4,8,36,9.1,51.0,478.0,388.4,487.1,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
-"actively (re)shape and combine its various forms. Accordingly, the founder of chicklit.",4,8,37,9.1,51.0,490.0,388.4,499.0,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
-"co.uk, Paula Gardner, described the website a few years after its launch as “the online",4,8,38,9.1,51.0,500.5,388.4,511.0,0.0,10.5,0.0,AdvTT3713a231,(),False,False,False
+"actively (re)shape and combine its various forms. Accordingly, the founder of chicklit.",4,8,37,9.1,51.0,490.0,388.4,499.0,0.0,12.0,0.0,AdvTT3713a231,"({'start': 78, 'end': 87, 'kind': 'italic'},)",False,False,False
+"co.uk, Paula Gardner, described the website a few years after its launch as “the online",4,8,38,9.1,51.0,500.5,388.4,511.0,0.0,10.5,0.0,AdvTT3713a231,"({'start': 0, 'end': 5, 'kind': 'italic'},)",False,False,False
 women’s magazine that celebrates 21st century woman’s contemporary fiction and,4,8,39,9.1,51.0,512.4,388.4,522.9,0.0,11.9,0.0,AdvTT3713a231,(),False,False,False
 "lifestyle” (“Home”, 3 Feb. 2006). In addition to authors and their books, lifestyle topics",4,8,40,9.1,51.0,524.3,388.4,534.9,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
 "5 In the early 2000s, web sources were usually not quoted at all, or, if they were, not completely and correctly,",4,9,41,7.2,51.0,552.4,388.4,561.3,-0.0,28.0,0.0,AdvTT3713a231,"({'start': 0, 'end': 1, 'kind': 'sup'},)",False,False,False
@@ -181,17 +181,17 @@ International Journal of Digital Humanities 29,5,1,1,8.0,51.0,35.2,388.5,42.6,,,
 "presented as modern female everyday practices, make it possible to draw conclusions",5,2,4,9.1,51.0,83.5,388.3,92.5,-0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
 about the settings in chick lit and thus implicitly contribute to the definition of the,5,2,5,9.1,51.0,95.4,388.3,104.5,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
 "genre: literature by, about, and for the young woman of the twenty-first century who",5,2,6,9.1,51.0,107.4,388.3,116.5,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
-wants to be up to date in lifestyle issues and popular culture. Chicklit.co.uk did not only,5,2,7,9.1,51.0,119.4,388.4,128.4,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
+wants to be up to date in lifestyle issues and popular culture. Chicklit.co.uk did not only,5,2,7,9.1,51.0,119.4,388.4,128.4,0.0,12.0,0.0,AdvTT3713a231,"({'start': 64, 'end': 78, 'kind': 'italic'},)",False,False,False
 "provide a broad definition of chick lit as part of a chick culture, but also as a genre that",5,2,8,9.1,51.0,131.3,388.5,140.3,-0.0,11.9,0.0,AdvTT3713a231,(),False,False,False
 "narratively processes, reflects, and brings forth this culture.",5,2,9,9.1,51.0,143.2,283.2,152.3,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
 The changing mottos that preceded the start page of the American fan website,5,3,10,9.1,62.4,155.2,388.4,164.3,11.3,12.0,0.0,AdvTT3713a231,(),False,False,False
-chicklitbooks.com (2003–2015) –“It’s hip. It’s smart. It’s fun. It’s about you!” (16 June,5,3,11,9.0,51.0,165.7,388.4,176.2,-11.3,10.5,0.0,AdvTT3713a231,(),False,False,False
+chicklitbooks.com (2003–2015) –“It’s hip. It’s smart. It’s fun. It’s about you!” (16 June,5,3,11,9.0,51.0,165.7,388.4,176.2,-11.3,10.5,0.0,AdvTT3713a231,"({'start': 0, 'end': 17, 'kind': 'italic'},)",False,False,False
 "2004a), “Hip, bright literature for today’s modern woman” (3 June 2005b), “Hip, smart",5,3,12,9.0,51.0,177.6,388.4,188.2,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
 "fiction for women” (14 Oct. 2006), or “Smart, fun & modern fiction for females” (1",5,3,13,9.0,51.0,189.6,388.4,200.2,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
 Aug. 2009) – convey a similar understanding of chick lit as part of a broader chick,5,3,14,9.1,51.0,201.6,388.4,212.1,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
 "culture. However, Rian Montgomery, the website’s founder and operator from 2003 to",5,3,15,9.1,51.0,213.5,388.4,224.1,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
-"2013, also provided a concrete genre description from the first year of chicklitbooks.",5,3,16,9.1,51.0,226.9,388.5,236.0,0.0,13.4,0.0,AdvTT3713a231,(),False,False,False
-com’s existence:,5,3,17,9.0,51.0,237.4,115.7,248.0,0.0,10.5,0.0,AdvTT3713a231,(),False,False,False
+"2013, also provided a concrete genre description from the first year of chicklitbooks.",5,3,16,9.1,51.0,226.9,388.5,236.0,0.0,13.4,0.0,AdvTT3713a231,"({'start': 72, 'end': 86, 'kind': 'italic'},)",False,False,False
+com’s existence:,5,3,17,9.0,51.0,237.4,115.7,248.0,0.0,10.5,0.0,AdvTT3713a231,"({'start': 0, 'end': 3, 'kind': 'italic'},)",False,False,False
 Let me start out by telling you what Chick Lit is NOT:,5,4,18,9.1,61.8,250.9,279.3,259.9,10.7,13.4,0.0,AdvTT3713a231,(),False,False,False
 – Lame and ridiculous,5,5,19,9.0,62.3,273.3,160.0,283.9,0.5,22.4,0.0,AdvTT3713a231,(),False,False,False
 – Cheesy romance novels,5,6,20,9.1,62.3,285.3,172.6,295.8,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
@@ -215,13 +215,13 @@ at that time the plot of chick lit novels revolved largely around the protagonis
 2005a).,5,9,38,9.0,51.0,537.7,80.5,546.7,-0.0,13.4,0.0,AdvTT3713a231,(),False,False,False
 The reconstruction of early genre definitions on the fan websites with the help of the,5,10,39,9.1,62.4,549.7,388.3,558.8,11.3,12.0,0.0,AdvTT3713a231,(),False,False,False
 Wayback Machine shows that from the very beginning the operators endeavored to,5,10,40,9.1,51.0,561.7,388.4,570.7,-11.3,12.0,0.0,AdvTT3713a231,(),False,False,False
-place chick lit in a larger cultural (esp. chicklit.co.uk) or literary historical context (esp.,5,10,41,9.1,51.0,573.6,388.3,582.7,-0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
-chicklitbooks.com). This makes these archived websites remarkable sources for,5,10,42,9.0,51.0,585.6,388.4,594.6,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
+place chick lit in a larger cultural (esp. chicklit.co.uk) or literary historical context (esp.,5,10,41,9.1,51.0,573.6,388.3,582.7,-0.0,12.0,0.0,AdvTT3713a231,"({'start': 43, 'end': 57, 'kind': 'italic'},)",False,False,False
+chicklitbooks.com). This makes these archived websites remarkable sources for,5,10,42,9.0,51.0,585.6,388.4,594.6,0.0,12.0,0.0,AdvTT3713a231,"({'start': 0, 'end': 17, 'kind': 'italic'},)",False,False,False
 "academic genre research, as they not only demonstrate early, but also nuanced",5,10,43,9.1,51.0,597.6,388.3,606.6,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
 30 International Journal of Digital Humanities,6,1,1,8.0,51.0,35.2,388.5,42.6,,,400.0,BTKAZF+MyriadProUnicSemiCondensed,(),False,False,False
 "negotiations of the genre (connection to other cultural artifacts and media, defense",6,2,2,9.1,51.0,59.5,388.3,68.6,0.0,24.4,0.0,AdvTT3713a231,(),False,False,False
 "mechanisms, differentiation from other genres).",6,2,3,9.1,51.0,71.5,237.4,80.6,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
-2.2 Academic sources as a basis for comparison,6,3,4,9.2,51.0,95.2,246.2,104.4,0.0,23.7,700.0,AdvTTa351d857.B,(),False,False,False
+2.2 Academic sources as a basis for comparison,6,3,4,9.2,51.0,95.2,246.2,104.4,0.0,23.7,700.0,AdvTTa351d857.B,"({'start': 0, 'end': 46, 'kind': 'bold'},)",False,False,False
 The early definitions on the archived websites overall make a balanced impression and,6,4,5,9.1,51.0,119.3,388.4,128.4,0.0,24.1,0.0,AdvTT3713a231,(),False,False,False
 "do not seem like the “unquestioning adoration” (Ferriss & Young, 2006, 1) of fans. In",6,4,6,9.1,51.0,129.8,388.4,140.3,0.0,10.4,0.0,AdvTT3713a231,(),False,False,False
 "fact, they are relatively consistent with early academic attempts at definition and what",6,4,7,9.1,51.0,143.2,388.5,152.3,-0.0,13.4,0.0,AdvTT3713a231,(),False,False,False
@@ -232,8 +232,8 @@ who face the everyday challenges of their careers and the search for Mr. Right a
 "Overall, there seems to have been a kind of consensus among authors, fans, journalists,",6,4,12,9.1,51.0,203.0,388.4,212.1,-0.0,13.4,0.0,AdvTT3713a231,(),False,False,False
 and scholars about the central constituents of the chick lit genre. To depict such a,6,4,13,9.1,51.0,215.0,388.4,224.1,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
 "minimal definition is, in due course, the task of tertiary sources such as literary",6,4,14,9.1,51.0,226.9,388.3,236.0,0.0,11.9,0.0,AdvTT3713a231,(),False,False,False
-"encyclopedias, handbooks, or dictionaries. The chick lit article in the Oxford Dictionary",6,4,15,9.1,51.0,238.9,388.5,247.9,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
-"of Literary Terms (2008), which is probably the first academic tertiary representation of",6,5,16,9.1,51.0,250.8,389.5,259.9,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
+"encyclopedias, handbooks, or dictionaries. The chick lit article in the Oxford Dictionary",6,4,15,9.1,51.0,238.9,388.5,247.9,0.0,12.0,0.0,AdvTT3713a231,"({'start': 72, 'end': 89, 'kind': 'italic'},)",False,False,False
+"of Literary Terms (2008), which is probably the first academic tertiary representation of",6,5,16,9.1,51.0,250.8,389.5,259.9,0.0,12.0,0.0,AdvTT3713a231,"({'start': 0, 'end': 17, 'kind': 'italic'},)",False,False,False
 "the genre, however, turned out to be surprisingly biased and more reminiscent of the",6,5,17,9.1,51.0,262.8,388.3,271.9,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
 "“unmitigated disdain of critics” (2006, 1) that Ferriss and Young considered no less",6,5,18,9.1,51.0,273.3,388.4,283.9,0.0,10.5,0.0,AdvTT3713a231,(),False,False,False
 problematic for a genre definition than the one-sided adoration of its fans. The author of,6,6,19,9.1,51.0,286.7,389.6,295.8,-0.0,13.4,0.0,AdvTT3713a231,(),False,False,False
@@ -242,13 +242,13 @@ problematic for a genre definition than the one-sided adoration of its fans. The
 1990s and early 2000s and subsequently imitated in the United States and,6,7,22,9.1,62.4,334.5,377.0,343.6,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
 beyond. The term appeared from 1996 as a flippant counterpart to the lad-lit,6,7,23,9.1,62.4,346.5,377.1,355.6,-0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
 fiction of that time. The defining model for the genre was Helen Fielding’s comic,6,7,24,9.1,62.4,357.0,377.0,367.6,0.0,10.5,0.0,AdvTT3713a231,(),False,False,False
-novel Bridget Jones’s Diary (1996) [...]. Chick-lit novels are written by women,6,7,25,9.1,62.4,368.9,377.1,379.5,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
+novel Bridget Jones’s Diary (1996) [...]. Chick-lit novels are written by women,6,7,25,9.1,62.4,368.9,377.1,379.5,0.0,12.0,0.0,AdvTT3713a231,"({'start': 6, 'end': 27, 'kind': 'italic'},)",False,False,False
 about the misadventures of contemporary unmarried working women in their 20s,6,7,26,9.1,62.4,382.4,377.0,391.5,-0.0,13.4,0.0,AdvTT3713a231,(),False,False,False
 "or 30s who struggle with multiple pressures from reproachful mothers, inade-",6,7,27,9.1,62.4,394.4,377.1,403.4,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
 "quate boyfriends, and tyrannical bosses while consoling themselves with shop-",6,7,28,9.1,62.4,406.3,377.0,415.4,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
 "ping trips, chocolate, and erotic daydreams. The stories are commonly told in the",6,7,29,9.1,62.3,418.2,377.0,427.3,-0.0,11.9,0.0,AdvTT3713a231,(),False,False,False
 first person in tones of humorous self-deprecation. As the boom in this kind of,6,8,30,9.0,62.4,430.2,378.2,439.2,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
-"fiction, sometimes referred to as chic fic, continued into the early 21st century,",6,8,31,9.1,62.4,442.2,377.1,451.2,0.0,12.0,69.1,AdvTT3713a231,(),False,False,False
+"fiction, sometimes referred to as chic fic, continued into the early 21st century,",6,8,31,9.1,62.4,442.2,377.1,451.2,0.0,12.0,69.1,AdvTT3713a231,"({'start': 34, 'end': 42, 'kind': 'bold'},)",False,False,False
 "new subgenres emerged, including ‘nanny lit’ and ‘mommy lit’. (Baldick, 2015a,",6,8,32,9.1,62.4,452.6,377.0,463.2,0.0,10.5,0.0,AdvTT3713a231,(),False,False,False
 "[2008], 57–58; emphasis in original)",6,8,33,9.1,62.4,464.6,206.2,475.2,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
 Considering that this is an article in a prestigious academic dictionary and not,6,9,34,9.1,51.0,490.0,388.4,499.1,-11.3,25.4,0.0,AdvTT3713a231,(),False,False,False
@@ -259,18 +259,18 @@ arrived in the USA slightly later than the more successful first wave of chick,6
 "lit, it was mistakenly believed to be a backlash against the Bridget Jones",6,9,39,9.1,51.0,549.8,388.3,558.8,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
 "phenomenon; in fact the correct answer to the question ‘which came first, the",6,9,40,9.0,51.0,560.3,388.4,570.8,-0.0,10.5,0.0,AdvTT3713a231,(),False,False,False
 "chick or the lad?’ is: the lad.” (2015b[2008], 195). His argument is flawed.",6,9,41,9.1,51.0,572.2,388.4,582.8,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
-"First, the US-American counterpart to Bridget Jones’s Diary, Candace",6,9,42,9.0,51.0,584.2,388.4,594.8,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
-"Bushnell’s Sex and the City (1996), can hardly be called an imitation. On the",6,9,43,9.1,51.0,596.2,388.4,606.7,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
+"First, the US-American counterpart to Bridget Jones’s Diary, Candace",6,9,42,9.0,51.0,584.2,388.4,594.8,0.0,12.0,0.0,AdvTT3713a231,"({'start': 38, 'end': 59, 'kind': 'italic'},)",False,False,False
+"Bushnell’s Sex and the City (1996), can hardly be called an imitation. On the",6,9,43,9.1,51.0,596.2,388.4,606.7,0.0,12.0,0.0,AdvTT3713a231,"({'start': 11, 'end': 27, 'kind': 'italic'},)",False,False,False
 "one hand, the narrative situation and the constellation of characters in the latter",6,9,44,9.0,51.0,609.5,388.4,618.5,0.0,13.3,0.0,AdvTT3713a231,(),False,False,False
 International Journal of Digital Humanities 31,7,1,1,8.0,51.0,35.2,388.5,42.6,,,400.0,BTKAZF+MyriadProUnicSemiCondensed,(),False,False,False
 differs substantially from the diary-writing Bridget in Fielding’s novel7,7,2,2,9.1,51.0,57.4,354.3,68.6,0.0,22.3,0.0,AdvTT3713a231,"({'start': 72, 'end': 73, 'kind': 'sup'},)",False,False,False
 ; on the,7,2,3,9.0,354.3,59.5,388.3,68.5,303.3,2.1,0.0,AdvTT3713a231,(),False,False,False
-"other, Bushnell’s column, which was published in the New York Observer from",7,2,4,9.0,51.0,70.0,388.3,80.6,-303.3,10.5,0.0,AdvTT3713a231,(),False,False,False
+"other, Bushnell’s column, which was published in the New York Observer from",7,2,4,9.0,51.0,70.0,388.3,80.6,-303.3,10.5,0.0,AdvTT3713a231,"({'start': 53, 'end': 70, 'kind': 'italic'},)",False,False,False
 "1994 to 1996 and formed the basis for her novel, appeared one year before",7,2,5,9.1,51.0,83.5,388.4,92.5,0.0,13.4,0.0,AdvTT3713a231,(),False,False,False
-"Fielding’s column in The Independent (1995–97). Chronologically speaking, Sex",7,2,6,9.1,51.0,93.9,388.4,104.5,0.0,10.5,0.0,AdvTT3713a231,(),False,False,False
-and the City – and thus US-American chick lit – came first. The same applies,7,2,7,9.0,51.0,105.9,388.4,116.5,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
+"Fielding’s column in The Independent (1995–97). Chronologically speaking, Sex",7,2,6,9.1,51.0,93.9,388.4,104.5,0.0,10.5,0.0,AdvTT3713a231,"({'start': 21, 'end': 36, 'kind': 'italic'}, {'start': 74, 'end': 77, 'kind': 'italic'})",False,False,False
+and the City – and thus US-American chick lit – came first. The same applies,7,2,7,9.0,51.0,105.9,388.4,116.5,0.0,12.0,0.0,AdvTT3713a231,"({'start': 0, 'end': 12, 'kind': 'italic'},)",False,False,False
 "to the term chick lit, which the American novelists and scholars Cris Mazza",7,2,8,9.0,51.0,119.4,388.5,128.3,0.0,13.4,0.0,AdvTT3713a231,(),False,False,False
-and Jeffrey DeShell coined in their anthology Chick Lit: Postfeminist Fiction,7,2,9,9.1,51.0,131.3,388.4,140.3,0.0,11.9,0.0,AdvTT3713a231,(),False,False,False
+and Jeffrey DeShell coined in their anthology Chick Lit: Postfeminist Fiction,7,2,9,9.1,51.0,131.3,388.4,140.3,0.0,11.9,0.0,AdvTT3713a231,"({'start': 46, 'end': 77, 'kind': 'italic'},)",False,False,False
 "(1995),8 a compilation of short stories by female authors, which can be described as",7,2,10,9.1,51.0,141.1,388.4,152.3,0.0,9.8,0.0,AdvTT3713a231,"({'start': 7, 'end': 8, 'kind': 'sup'},)",False,False,False
 experimental and very different from what would later become popular as chick lit (see,7,2,11,9.1,51.0,155.2,388.4,164.2,-0.0,14.1,0.0,AdvTT3713a231,(),False,False,False
 "also Mazza, 2006). Mazza describes the aim of the anthology as a search “for something",7,2,12,9.1,51.0,165.7,388.5,176.2,0.0,10.5,0.0,AdvTT3713a231,(),False,False,False
@@ -280,15 +280,15 @@ experimental and very different from what would later become popular as chick li
 "writers can produce rather than what they’re expected to produce” (Mazza, 1995, 8).",7,2,16,9.1,51.0,213.5,388.3,224.1,0.0,10.5,0.0,AdvTT3713a231,(),False,False,False
 This rather subversive use of the term ‘chick lit’ is completely omitted in Baldick’s,7,2,17,9.0,51.0,225.4,388.3,236.0,-0.0,11.9,0.0,AdvTT3713a231,(),False,False,False
 "definition. Moreover, he mistakenly reduces the ambivalent and complex history of the",7,2,18,9.1,51.0,238.9,388.3,247.9,0.0,13.4,0.0,AdvTT3713a231,(),False,False,False
-"label to a mere commercially calculated reaction to the British lad lit; a genre, which,",7,2,19,9.1,51.0,250.8,388.4,259.9,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
+"label to a mere commercially calculated reaction to the British lad lit; a genre, which,",7,2,19,9.1,51.0,250.8,388.4,259.9,0.0,12.0,0.0,AdvTT3713a231,"({'start': 64, 'end': 71, 'kind': 'italic'},)",False,False,False
 "oddly enough, is described by other scholars as almost the reverse: “as the extent of",7,3,20,9.1,51.0,261.3,389.5,271.9,0.0,10.5,0.0,AdvTT3713a231,(),False,False,False
 "chick lit’s remarkable ability to transform itself into new varieties” (Ferriss & Young,",7,3,21,9.1,51.0,273.3,388.4,283.9,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
 "2006, 7). With the words “Now, it seems men are getting in on the act […]” (“ladlit”,1",7,3,22,9.1,51.0,285.3,388.3,295.8,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
-"June 2003), chicklit.co.uk had similarly commented on the emergence of lad lit, one of",7,4,23,9.1,51.0,298.7,389.6,307.8,0.0,13.4,0.0,AdvTT3713a231,(),False,False,False
+"June 2003), chicklit.co.uk had similarly commented on the emergence of lad lit, one of",7,4,23,9.1,51.0,298.7,389.6,307.8,0.0,13.4,0.0,AdvTT3713a231,"({'start': 12, 'end': 26, 'kind': 'italic'}, {'start': 71, 'end': 78, 'kind': 'italic'})",False,False,False
 several subgenres to which they dedicated a subpage.,7,4,24,9.1,51.0,310.7,259.3,319.7,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
-2.3 Wikipedia’s history page and chick lit,7,5,25,9.2,51.0,332.9,220.2,343.6,0.0,22.3,683.3,AdvTTa351d857.B,(),False,False,False
-An important correction to the idiosyncratic genre history in the Oxford Dictionary of,7,6,26,9.1,51.0,358.5,390.4,367.5,-0.0,25.5,0.0,AdvTT3713a231,(),False,False,False
-"Literary Terms can be found in Wikipedia, the free encyclopedia that, according to its",7,6,27,9.1,50.7,370.4,388.3,379.5,-0.3,12.0,0.0,AdvTT3713a231,(),False,False,False
+2.3 Wikipedia’s history page and chick lit,7,5,25,9.2,51.0,332.9,220.2,343.6,0.0,22.3,683.3,AdvTTa351d857.B,"({'start': 0, 'end': 42, 'kind': 'bold'},)",False,False,False
+An important correction to the idiosyncratic genre history in the Oxford Dictionary of,7,6,26,9.1,51.0,358.5,390.4,367.5,-0.0,25.5,0.0,AdvTT3713a231,"({'start': 66, 'end': 86, 'kind': 'italic'},)",False,False,False
+"Literary Terms can be found in Wikipedia, the free encyclopedia that, according to its",7,6,27,9.1,50.7,370.4,388.3,379.5,-0.3,12.0,0.0,AdvTT3713a231,"({'start': 0, 'end': 14, 'kind': 'italic'},)",False,False,False
 "slogan, “anyone can edit” and that today provides over six million articles in the",7,7,28,9.1,51.0,380.9,388.3,391.5,0.3,10.5,0.0,AdvTT3713a231,(),False,False,False
 English language version – one of them being the article on chick lit which has been,7,7,29,9.1,51.0,392.9,388.4,403.4,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
 online since 22 July 2004. This early date of publication – one to two years after the,7,7,30,9.1,51.0,404.8,388.3,415.4,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
@@ -300,11 +300,11 @@ earliest versions provide important information about the genre’s history. In 
 already implicitly referred to Mazza’s and DeShell’s subversive use of the term.,7,8,36,9.0,51.0,476.6,388.3,487.1,-0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
 "Specifically, the article points out that “‘[c]hick lit’ has also been claimed as a type",7,8,37,9.1,51.0,488.5,388.4,499.1,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
 "of ‘postfeminist’ fiction, perhaps in an attempt to rehabilitate its literary reputation” (22",7,8,38,9.1,51.0,500.4,388.3,511.1,0.0,11.9,0.0,AdvTT3713a231,(),False,False,False
-"July 2004). Then from December 2006 onwards, it directly references Chick Lit:",7,8,39,9.1,51.0,513.8,388.3,522.9,0.0,13.4,0.0,AdvTT3713a231,(),False,False,False
-"Postfeminist Fiction (Mazza & DeShell, 1995) in the section “Origins of the term”.",7,8,40,9.1,50.8,524.3,378.9,534.9,-0.2,10.5,0.0,AdvTT3713a231,(),False,False,False
+"July 2004). Then from December 2006 onwards, it directly references Chick Lit:",7,8,39,9.1,51.0,513.8,388.3,522.9,0.0,13.4,0.0,AdvTT3713a231,"({'start': 68, 'end': 78, 'kind': 'italic'},)",False,False,False
+"Postfeminist Fiction (Mazza & DeShell, 1995) in the section “Origins of the term”.",7,8,40,9.1,50.8,524.3,378.9,534.9,-0.2,10.5,0.0,AdvTT3713a231,"({'start': 0, 'end': 20, 'kind': 'italic'},)",False,False,False
 "7 In Bushnell’s book, the story is mostly narrated by an anonymous third-person narrator and not by Carrie",7,9,41,7.2,51.0,552.4,388.4,561.4,0.2,28.1,0.0,AdvTT3713a231,"({'start': 0, 'end': 1, 'kind': 'sup'},)",False,False,False
 "Bradshaw (as in the TV show); the repertoire of characters is large, going far beyond the four protagonists of",7,9,42,7.2,51.0,563.6,389.3,570.8,-0.0,11.2,0.0,AdvTT3713a231,(),False,False,False
-"the TV series. Fielding’s Bridget Jones’s Diary, on the other hand, is a first-person narrative, told through the",7,9,43,7.2,51.0,571.8,388.5,580.3,0.0,8.3,0.0,AdvTT3713a231,(),False,False,False
+"the TV series. Fielding’s Bridget Jones’s Diary, on the other hand, is a first-person narrative, told through the",7,9,43,7.2,51.0,571.8,388.5,580.3,0.0,8.3,0.0,AdvTT3713a231,"({'start': 26, 'end': 47, 'kind': 'italic'},)",False,False,False
 diary entries of the title character and narrator Bridget.,7,9,44,7.2,51.0,582.5,221.0,589.7,0.0,10.7,0.0,AdvTT3713a231,(),False,False,False
 "8 They at least coined the use of ‘chick lit’ for a kind of contemporary literary genre. However, the term was",7,10,45,7.2,51.0,590.2,388.4,599.2,-0.0,7.7,0.0,AdvTT3713a231,"({'start': 0, 'end': 1, 'kind': 'sup'},)",False,False,False
 already in use in the 1980s for Elaine Showalter’s course on the Female Literary Tradition at Princeton,7,10,46,7.2,51.0,600.2,388.4,608.7,0.0,10.0,0.0,AdvTT3713a231,(),False,False,False
@@ -322,8 +322,8 @@ chews gum and avoids serious literature” (22 July 2004) or that the term chick
 "trend of quality9 (Wikipedia: “Researching with Wikipedia”, 21 April 2020a): Both of these",8,2,11,9.0,51.0,165.0,388.3,176.2,0.0,11.3,0.0,AdvTT3713a231,"({'start': 16, 'end': 17, 'kind': 'sup'},)",False,False,False
 claims did not last long compared to the correct information regarding the origin of the term.,8,2,12,9.1,51.0,179.1,388.4,188.2,-0.0,14.1,0.0,AdvTT3713a231,(),False,False,False
 The latter addition regarding chick lit’s chocolaty sweetness disappeared after only eleven,8,2,13,9.1,51.0,189.6,388.4,200.2,0.0,10.5,0.0,AdvTT3713a231,(),False,False,False
-"days on 14 May 2006; the former was deleted on 22 April 2006, after an editor on the talk",8,3,14,9.1,51.0,203.0,388.9,212.1,0.0,13.4,0.0,AdvTT3713a231,(),False,False,False
-page – another useful tool that shows most of the article-related discussions between editors,8,3,15,9.0,49.9,213.5,388.3,224.1,-1.1,10.5,0.0,AdvTT3713a231,(),False,False,False
+"days on 14 May 2006; the former was deleted on 22 April 2006, after an editor on the talk",8,3,14,9.1,51.0,203.0,388.9,212.1,0.0,13.4,0.0,AdvTT3713a231,"({'start': 85, 'end': 89, 'kind': 'italic'},)",False,False,False
+page – another useful tool that shows most of the article-related discussions between editors,8,3,15,9.0,49.9,213.5,388.3,224.1,-1.1,10.5,0.0,AdvTT3713a231,"({'start': 0, 'end': 4, 'kind': 'italic'},)",False,False,False
 – made the following criticism: “Is there really a stereotype about the chewers of chiclet,8,4,16,9.1,50.9,225.4,388.4,236.0,1.0,11.9,0.0,AdvTT3713a231,(),False,False,False
 "gum? Why does the term chick lit imply that the people who read it avoid other literature, are",8,4,17,9.1,51.0,238.9,388.4,247.9,0.1,13.4,0.0,AdvTT3713a231,(),False,False,False
 "unintellectual, and cliched? Seems like the person who wrote the connotations section has",8,4,18,9.0,51.0,250.8,388.4,259.9,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
@@ -338,7 +338,7 @@ genre fiction – is that it “goes beyond the boundaries of an old-fashioned e
 "canon and embraces the zeitgeist, pop culture and the subcultures of geeks, nerds and",8,5,27,9.1,51.0,346.5,388.4,355.5,0.0,13.4,0.0,AdvTT3713a231,(),False,False,False
 all kinds of hobbyists”,8,5,28,9.1,51.0,356.9,139.3,367.5,0.0,10.5,0.0,AdvTT3713a231,(),False,False,False
 "12 (Van Dijk, 2015, 3; my transl.). This is a stark contrast to the",8,5,29,9.1,139.2,356.3,388.3,367.5,88.2,-0.6,0.0,AdvTT3713a231,"({'start': 0, 'end': 1, 'kind': 'sup'}, {'start': 1, 'end': 2, 'kind': 'sup'})",False,False,False
-"Oxford Dictionary of Literary Terms, which includes terms from literary popular",8,6,30,9.1,51.0,370.4,388.6,379.4,-88.2,14.1,0.0,AdvTT3713a231,(),False,False,False
+"Oxford Dictionary of Literary Terms, which includes terms from literary popular",8,6,30,9.1,51.0,370.4,388.6,379.4,-88.2,14.1,0.0,AdvTT3713a231,"({'start': 0, 'end': 35, 'kind': 'italic'},)",False,False,False
 "culture such as chick lit, but does not exactly embrace these phenomena and in fact",8,6,31,9.1,51.0,382.4,388.5,391.4,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
 may even be overly dismissive of them. Although Wikipedia also tends to reproduce an,8,6,32,9.1,51.0,394.3,388.4,403.4,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
 "existing literary canon of values (cf. Hube et al., 2017; Wojcik & Picard, 201913) and",8,6,33,9.1,51.0,404.1,388.4,415.3,0.0,9.8,0.0,AdvTT3713a231,"({'start': 79, 'end': 80, 'kind': 'sup'}, {'start': 80, 'end': 81, 'kind': 'sup'})",False,False,False
@@ -399,11 +399,11 @@ deals unconventionally with traditional,9,5,33,7.2,251.7,292.3,372.5,299.6,0.0,9
 gender. [no references],9,5,35,7.2,251.7,311.3,323.1,318.5,-0.0,9.5,0.0,AdvTT3713a231,(),False,False,False
 2006c “Chick lit” is a term used to denote genre,9,5,36,7.2,51.4,322.6,222.6,331.0,-200.2,11.3,0.0,AdvTT3713a231,(),False,False,False
 One of the first uses of the term was in the title,9,6,37,7.2,243.3,323.7,388.4,330.9,191.9,1.2,0.0,AdvTT3713a231,(),False,False,False
-of the 1995 anthology Chick Lit:,9,6,38,7.2,251.7,333.2,354.3,340.5,8.4,9.5,0.0,AdvTT3713a231,(),False,False,False
+of the 1995 anthology Chick Lit:,9,6,38,7.2,251.7,333.2,354.3,340.5,8.4,9.5,0.0,AdvTT3713a231,"({'start': 22, 'end': 32, 'kind': 'italic'},)",False,False,False
 fiction written for and marketed to young,9,7,39,7.2,100.5,333.2,229.9,340.5,-151.2,0.0,0.0,AdvTT3713a231,(),False,False,False
 "women, especially single, working women",9,7,40,7.2,100.5,342.7,233.7,349.9,0.0,9.5,0.0,AdvTT3713a231,(),False,False,False
 in their twenties and thirties. [no references],9,7,41,7.2,100.5,352.2,237.2,359.3,0.0,9.5,0.0,AdvTT3713a231,(),False,False,False
-"Postfeminist Fiction, edited by Cris Mazza",9,8,42,7.2,251.5,342.7,384.7,349.9,151.0,-9.5,0.0,AdvTT3713a231,(),False,False,False
+"Postfeminist Fiction, edited by Cris Mazza",9,8,42,7.2,251.5,342.7,384.7,349.9,151.0,-9.5,0.0,AdvTT3713a231,"({'start': 0, 'end': 20, 'kind': 'italic'},)",False,False,False
 and Jeffrey DeShell. The work in this,9,8,43,7.2,251.7,352.2,369.5,359.4,0.2,9.5,0.0,AdvTT3713a231,(),False,False,False
 anthology was not chick lit as we know it,9,8,44,7.2,251.7,361.6,382.8,368.9,-0.0,9.5,0.0,AdvTT3713a231,(),False,False,False
 "today, and the term was used ironically.",9,8,45,7.2,251.7,371.0,376.5,378.3,0.0,9.4,0.0,AdvTT3713a231,(),False,False,False
@@ -413,13 +413,13 @@ The New Yorker “Hear Me Purr” co-opted,9,8,47,7.2,251.7,388.8,386.1,397.2,0.
 ness” evident in the writing of female,9,8,49,7.2,251.7,407.7,369.4,416.2,0.0,9.5,0.0,AdvTT3713a231,(),False,False,False
 newspaper columnists at that time. This is,9,8,50,7.2,251.7,418.4,382.8,425.6,0.0,10.7,0.0,AdvTT3713a231,(),False,False,False
 "significant, as major chick lit works such as",9,8,51,7.3,251.7,427.8,388.4,435.1,0.0,9.5,0.0,AdvTT3713a231,(),False,False,False
-Helen Fielding’sBridget Jones’s Diaryand,9,8,52,7.2,251.7,436.1,382.6,444.6,0.0,8.3,0.0,AdvTT50a2f13e.I,(),False,False,False
-Candace Bushnell’sSex and the,9,8,53,7.2,251.7,445.6,349.7,454.0,0.0,9.5,0.0,AdvTT3713a231,(),False,False,False
-Cityoriginated in such columns.,9,8,54,7.2,251.7,456.2,350.4,463.5,0.0,10.7,0.0,AdvTT3713a231,(),False,False,False
+Helen Fielding’sBridget Jones’s Diaryand,9,8,52,7.2,251.7,436.1,382.6,444.6,0.0,8.3,0.0,AdvTT50a2f13e.I,"({'start': 16, 'end': 37, 'kind': 'italic'},)",False,False,False
+Candace Bushnell’sSex and the,9,8,53,7.2,251.7,445.6,349.7,454.0,0.0,9.5,0.0,AdvTT3713a231,"({'start': 18, 'end': 29, 'kind': 'italic'},)",False,False,False
+Cityoriginated in such columns.,9,8,54,7.2,251.7,456.2,350.4,463.5,0.0,10.7,0.0,AdvTT3713a231,"({'start': 0, 'end': 4, 'kind': 'italic'},)",False,False,False
 2007 unaltered The term was introduced by Cris Mazza and,9,9,55,7.2,51.4,468.7,382.9,476.0,-200.2,12.5,0.0,AdvTT3713a231,(),False,False,False
 Jeffrey DeShell as an ironic title for their,9,9,56,7.2,251.7,478.2,379.8,485.4,200.2,9.5,0.0,AdvTT3713a231,(),False,False,False
-edited anthology Chick Lit: Postfeminist,9,9,57,7.2,251.7,487.6,377.2,494.9,0.0,9.5,0.0,AdvTT50a2f13e.I,(),False,False,False
-"Fiction, published in 1995. The genre was",9,9,58,7.2,251.5,497.1,384.1,504.3,-0.2,9.4,0.0,AdvTT3713a231,(),False,False,False
+edited anthology Chick Lit: Postfeminist,9,9,57,7.2,251.7,487.6,377.2,494.9,0.0,9.5,0.0,AdvTT50a2f13e.I,"({'start': 17, 'end': 40, 'kind': 'italic'},)",False,False,False
+"Fiction, published in 1995. The genre was",9,9,58,7.2,251.5,497.1,384.1,504.3,-0.2,9.4,0.0,AdvTT3713a231,"({'start': 0, 'end': 8, 'kind': 'italic'},)",False,False,False
 defined as a type of post-feminist or,9,9,59,7.2,251.7,506.5,364.8,513.8,0.2,9.5,0.0,AdvTT3713a231,(),False,False,False
 second-wave feminism that went beyond,9,9,60,7.2,251.7,516.0,379.3,523.2,-0.0,9.5,0.0,AdvTT3713a231,(),False,False,False
 female-as-victim to include fiction that cov-,9,9,61,7.2,251.7,525.5,388.2,532.7,0.0,9.5,0.0,AdvTT3713a231,(),False,False,False
@@ -451,10 +451,10 @@ unaltered,10,5,14,7.2,243.6,146.4,272.0,153.5,143.1,-37.9,0.0,AdvTT3713a231,(),F
 The term appeared in print as early as 1988 as,10,7,17,7.2,243.5,196.7,388.4,203.9,143.0,-28.4,0.0,AdvTT3713a231,(),False,False,False
 college slang for a course titled “female,10,7,18,7.2,251.7,204.9,375.9,213.4,8.2,8.2,0.0,AdvTT3713a231,(),False,False,False
 literary tradition.” [reference: Betterton:,10,7,19,7.2,251.7,214.4,374.6,222.8,0.0,9.5,0.0,AdvTT3713a231,(),False,False,False
-"Alma Mater 1988] In 1995, Cris Mazza and",10,7,20,7.2,251.3,225.0,388.4,232.2,-0.4,10.7,0.0,AdvTT3713a231,(),False,False,False
+"Alma Mater 1988] In 1995, Cris Mazza and",10,7,20,7.2,251.3,225.0,388.4,232.2,-0.4,10.7,0.0,AdvTT3713a231,"({'start': 0, 'end': 10, 'kind': 'italic'},)",False,False,False
 Jeffrey DeShell used the term as an ironic,10,7,21,7.2,251.7,234.5,382.7,241.8,0.4,9.5,0.0,AdvTT3713a231,(),False,False,False
-title for their edited anthology Chick Lit:,10,7,22,7.2,251.7,244.0,378.4,251.2,0.0,9.5,0.0,AdvTT3713a231,(),False,False,False
-Postfeminist Fiction. The genre was defined,10,7,23,7.2,251.5,253.5,388.5,260.7,-0.2,9.5,0.0,AdvTT3713a231,(),False,False,False
+title for their edited anthology Chick Lit:,10,7,22,7.2,251.7,244.0,378.4,251.2,0.0,9.5,0.0,AdvTT3713a231,"({'start': 33, 'end': 43, 'kind': 'italic'},)",False,False,False
+Postfeminist Fiction. The genre was defined,10,7,23,7.2,251.5,253.5,388.5,260.7,-0.2,9.5,0.0,AdvTT3713a231,"({'start': 0, 'end': 20, 'kind': 'italic'},)",False,False,False
 as a type of post-feminist or second-wave,10,7,24,7.2,251.7,262.9,381.9,270.2,0.2,9.5,0.0,AdvTT3713a231,(),False,False,False
 feminism that went beyond female-as-victim,10,7,25,7.2,251.7,272.4,388.4,279.6,0.0,9.5,0.0,AdvTT3713a231,(),False,False,False
 to include fiction that covered the breadth of,10,7,26,7.2,251.7,281.9,389.3,289.0,0.0,9.5,0.0,AdvTT3713a231,(),False,False,False
@@ -467,9 +467,9 @@ Purr” co-opted the term “chick lit” to pro-,10,7,32,7.2,251.7,337.5,383.0,
 scribe what he called the trend of “girlish-,10,7,33,7.2,251.6,346.9,383.4,355.4,-0.0,9.5,0.0,AdvTT3713a231,(),False,False,False
 ness” evident in the writing of female,10,7,34,7.2,251.7,356.4,369.4,364.9,0.0,9.5,0.0,AdvTT3713a231,(),False,False,False
 newspaper columnists at that time. Works,10,7,35,7.2,251.7,367.1,382.4,374.3,0.0,10.7,0.0,AdvTT3713a231,(),False,False,False
-such as Helen Fielding’sBridget Jones’s,10,7,36,7.2,251.7,375.3,376.4,383.7,0.0,8.2,0.0,AdvTT3713a231,(),False,False,False
-Diaryand Candace Bushnell’sSex and the,10,7,37,7.2,251.4,384.8,381.1,393.2,-0.2,9.5,0.0,AdvTT3713a231,(),False,False,False
-Cityare examples of such work that helped,10,7,38,7.2,251.7,395.4,385.0,402.7,0.2,10.7,0.0,AdvTT3713a231,(),False,False,False
+such as Helen Fielding’sBridget Jones’s,10,7,36,7.2,251.7,375.3,376.4,383.7,0.0,8.2,0.0,AdvTT3713a231,"({'start': 24, 'end': 39, 'kind': 'italic'},)",False,False,False
+Diaryand Candace Bushnell’sSex and the,10,7,37,7.2,251.4,384.8,381.1,393.2,-0.2,9.5,0.0,AdvTT3713a231,"({'start': 0, 'end': 5, 'kind': 'italic'}, {'start': 27, 'end': 38, 'kind': 'italic'})",False,False,False
+Cityare examples of such work that helped,10,7,38,7.2,251.7,395.4,385.0,402.7,0.2,10.7,0.0,AdvTT3713a231,"({'start': 0, 'end': 4, 'kind': 'italic'},)",False,False,False
 establish contemporary connotations of the,10,7,39,7.2,251.7,404.9,385.2,412.1,0.0,9.5,0.0,AdvTT3713a231,(),False,False,False
 term.,10,7,40,7.2,251.7,414.3,267.5,421.5,0.0,9.5,0.0,AdvTT3713a231,(),False,False,False
 2011–2014 Chick lit is genre fiction which addresses issues,10,7,41,7.2,51.0,425.6,237.2,434.1,-200.6,11.3,0.0,AdvTT3713a231,(),False,False,False
@@ -488,7 +488,7 @@ unaltered,10,10,52,7.2,243.6,467.6,272.0,474.8,143.1,-28.4,0.0,AdvTT3713a231,(),
 Chick lit scholars note that the term was first,10,12,54,7.2,243.6,508.5,384.1,515.7,192.5,1.2,0.0,AdvTT3713a231,(),False,False,False
 used ironically in 1995 by Cris Mazza and,10,12,55,7.2,251.7,518.0,385.1,525.2,8.1,9.5,0.0,AdvTT3713a231,(),False,False,False
 Jeffrey DeShell as the title for their edited,10,12,56,7.2,251.7,527.4,382.6,534.7,-0.0,9.5,0.0,AdvTT3713a231,(),False,False,False
-"anthology Chick Lit: Postfeminist Fiction,",10,12,57,7.2,251.7,536.9,382.3,544.2,0.0,9.5,0.0,AdvTT50a2f13e.I,(),False,False,False
+"anthology Chick Lit: Postfeminist Fiction,",10,12,57,7.2,251.7,536.9,382.3,544.2,0.0,9.5,0.0,AdvTT50a2f13e.I,"({'start': 10, 'end': 41, 'kind': 'italic'},)",False,False,False
 which contains 22 short fiction pieces in,10,12,58,7.2,251.7,546.4,378.1,553.6,0.0,9.5,0.0,AdvTT3713a231,(),False,False,False
 response to Mazza and DeShell’s call for,10,12,59,7.2,251.7,554.7,380.2,563.1,0.0,8.3,0.0,AdvTT3713a231,(),False,False,False
 “postfeminist writing.” [reference: Mazza &,10,12,60,7.2,251.7,564.1,388.4,572.6,-0.0,9.5,0.0,AdvTT3713a231,(),False,False,False
@@ -507,21 +507,21 @@ years to develop. This is not possible with academic publishing. Although,11,2,7
 "tertiary sources are occasionally revised and expanded, the extent of such",11,2,8,9.1,51.0,131.3,388.3,140.3,0.0,11.9,0.0,AdvTT3713a231,(),False,False,False
 "revisions usually depends on the resources of the editors and authors, which",11,2,9,9.1,51.0,143.2,388.4,152.3,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
 "may be very limited, especially if their involvement with the topic in question",11,2,10,9.1,51.0,155.2,388.4,164.2,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
-"dates back several years. The Oxford Dictionary of Literary Terms, for exam-",11,2,11,9.1,51.0,167.2,388.3,176.2,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
+"dates back several years. The Oxford Dictionary of Literary Terms, for exam-",11,2,11,9.1,51.0,167.2,388.3,176.2,0.0,12.0,0.0,AdvTT3713a231,"({'start': 30, 'end': 65, 'kind': 'italic'},)",False,False,False
 "ple, was reprinted in 2015. However, the revisions did not affect the article on",11,2,12,9.0,51.0,179.1,388.4,188.2,-0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
 "chick lit, which was left exactly as it was originally published in 2008. One of",11,3,13,9.1,51.0,191.1,389.5,200.1,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
 the great advantages of web sources such as fan websites and Wikipedia,11,3,14,9.1,51.0,203.1,388.4,212.1,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
 compared to academic print and digital publications is that they regularly,11,3,15,9.1,51.0,215.0,388.3,224.1,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
 "update and revise their content. Thanks to web archives, researchers are able",11,3,16,9.0,51.0,226.9,388.4,236.0,0.0,11.9,0.0,AdvTT3713a231,(),False,False,False
 to trace and critically evaluate these developments.,11,3,17,9.1,51.0,238.9,268.9,247.9,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
-3 The evolution of the chick lit definition or the transparency of web,11,4,18,10.3,51.0,273.8,385.6,284.1,0.0,34.9,700.0,AdvTTaf7f9f4f.B,(),False,False,False
-archives,11,4,19,10.1,51.0,285.8,90.5,295.9,0.0,12.1,700.0,AdvTTaf7f9f4f.B,(),False,False,False
-3.1 Chick lit as women’s fiction,11,5,20,9.1,51.0,309.0,179.7,319.6,-0.0,23.2,678.1,AdvTTa351d857.B,(),False,False,False
+3 The evolution of the chick lit definition or the transparency of web,11,4,18,10.3,51.0,273.8,385.6,284.1,0.0,34.9,700.0,AdvTTaf7f9f4f.B,"({'start': 0, 'end': 70, 'kind': 'bold'},)",False,False,False
+archives,11,4,19,10.1,51.0,285.8,90.5,295.9,0.0,12.1,700.0,AdvTTaf7f9f4f.B,"({'start': 0, 'end': 8, 'kind': 'bold'},)",False,False,False
+3.1 Chick lit as women’s fiction,11,5,20,9.1,51.0,309.0,179.7,319.6,-0.0,23.2,678.1,AdvTTa351d857.B,"({'start': 0, 'end': 32, 'kind': 'bold'},)",False,False,False
 "In the early attempts to define the genre, the focus was mainly on a kind of ‘pure’ chick",11,6,21,9.1,51.0,333.0,388.4,343.6,0.0,24.0,0.0,AdvTT3713a231,(),False,False,False
 "lit of the early 2000s. However, especially the fan websites, which initially tried to",11,6,22,9.1,51.0,346.5,388.4,355.5,-0.0,13.4,0.0,AdvTT3713a231,(),False,False,False
 identify chick lit as an independent genre and distinguish it from romance and women’s,11,6,23,9.1,51.0,356.9,388.3,367.5,0.0,10.5,0.0,AdvTT3713a231,(),False,False,False
 "fiction, were quick to react to changes and continuously adapted their definition of",11,7,24,9.1,51.0,370.4,389.5,379.5,0.0,13.4,0.0,AdvTT3713a231,(),False,False,False
-"chick lit. On chicklitbooks.com, the restriction to young women in their 20s and 30s",11,7,25,9.1,51.0,382.4,388.3,391.4,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
+"chick lit. On chicklitbooks.com, the restriction to young women in their 20s and 30s",11,7,25,9.1,51.0,382.4,388.3,391.4,0.0,12.0,0.0,AdvTT3713a231,"({'start': 14, 'end': 31, 'kind': 'italic'},)",False,False,False
 "was already removed in 2004, just one year after the launch of the website: “A great",11,7,26,9.1,51.0,392.8,388.4,403.4,0.0,10.5,0.0,AdvTT3713a231,(),False,False,False
 "many of the books [...] feature young single heroines looking for love, but more and",11,7,27,9.1,51.0,406.3,388.3,415.3,0.0,13.4,0.0,AdvTT3713a231,(),False,False,False
 "more books are having married women, older women, and mothers as the main",11,7,28,9.1,51.0,418.2,388.3,427.3,0.0,11.9,0.0,AdvTT3713a231,(),False,False,False
@@ -542,12 +542,12 @@ openness and flexibility of chick lit:,11,7,31,9.1,51.0,454.1,192.7,463.1,-0.0,1
 36 International Journal of Digital Humanities,12,1,1,8.0,51.0,35.2,388.5,42.6,,,400.0,BTKAZF+MyriadProUnicSemiCondensed,(),False,False,False
 bit more personal and realistic. The plots can range from being very light and fast-,12,2,2,9.1,62.4,59.5,377.0,68.6,11.4,24.4,0.0,AdvTT3713a231,(),False,False,False
 "paced to being extraordinarily deep, thought-provoking and/or moving.",12,2,3,9.1,62.3,71.5,342.4,80.6,-0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
-"In 2007, chicklit.co.uk also distanced itself from its earlier definition of the genre. The",12,3,4,9.1,51.0,95.4,388.3,104.5,-11.3,23.9,0.0,AdvTT3713a231,(),False,False,False
+"In 2007, chicklit.co.uk also distanced itself from its earlier definition of the genre. The",12,3,4,9.1,51.0,95.4,388.3,104.5,-11.3,23.9,0.0,AdvTT3713a231,"({'start': 9, 'end': 23, 'kind': 'italic'},)",False,False,False
 "owner of the website, Paula Gardner, pointed out that “pure chicklit […] has changed",12,3,5,9.0,51.0,105.9,388.4,116.5,-0.0,10.5,0.0,AdvTT3713a231,(),False,False,False
 "so much that we now want to celebrate women’s writings and women’s lives, per se,",12,3,6,9.0,51.0,117.9,388.4,128.4,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
 "whether they fall into the traditional ‘chicklit’ category or not” (“About us”, 15 July",12,3,7,9.1,51.0,129.8,388.4,140.3,0.0,11.9,0.0,AdvTT3713a231,(),False,False,False
 2007). These altered definitions already approached the vague catch-all term of,12,4,8,9.1,51.0,143.2,389.5,152.3,0.0,13.4,0.0,AdvTT3713a231,(),False,False,False
-"women’s fiction – fiction by, about, and/or for women – that chick lit only came to",12,4,9,9.1,51.0,153.7,388.4,164.3,0.0,10.5,0.0,AdvTT3713a231,(),False,False,False
+"women’s fiction – fiction by, about, and/or for women – that chick lit only came to",12,4,9,9.1,51.0,153.7,388.4,164.3,0.0,10.5,0.0,AdvTT3713a231,"({'start': 0, 'end': 15, 'kind': 'italic'},)",False,False,False
 "be associated with in research several years later. For example, take Sorcha Gunne,",12,4,10,9.1,51.0,167.2,388.5,176.2,-0.0,13.4,0.0,AdvTT3713a231,(),False,False,False
 "who wrote about the immense global popularity of “[w]omen’s commercial fiction, or",12,5,11,9.1,51.0,177.6,388.6,188.2,0.0,10.5,0.0,AdvTT3713a231,(),False,False,False
 "‘chick lit’ as it has become known” (2016, 241) or Heike Missler, who also recognized",12,5,12,9.1,51.0,189.6,388.5,200.2,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
@@ -555,7 +555,7 @@ bit more personal and realistic. The plots can range from being very light and f
 "fiction (2016, 70). What distinguishes Missler from other chick lit scholars so far is that",12,6,14,9.1,51.0,215.0,388.5,224.1,-0.0,13.4,0.0,AdvTT3713a231,(),False,False,False
 she already came to her conclusions by including chick lit blogs in her research and by,12,6,15,9.1,51.0,226.9,388.5,236.0,0.0,11.9,0.0,AdvTT3713a231,(),False,False,False
 "conducting a special survey among bloggers. However, neither Wikipedia nor fan-",12,6,16,9.1,51.0,238.9,388.5,247.9,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
-"websites such as chicklitbooks.com and chicklit.co.uk, which at that time were already",12,6,17,9.0,51.0,250.8,388.3,259.9,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
+"websites such as chicklitbooks.com and chicklit.co.uk, which at that time were already",12,6,17,9.0,51.0,250.8,388.3,259.9,0.0,12.0,0.0,AdvTT3713a231,"({'start': 17, 'end': 34, 'kind': 'italic'}, {'start': 39, 'end': 53, 'kind': 'italic'})",False,False,False
 "offline and only accessible via the Internet Archive, were part of her analysis.",12,6,18,9.1,51.0,262.8,356.9,271.9,-0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
 Yet the free encyclopedia in particular represents one of the most suitable websites,12,7,19,9.1,62.4,274.8,388.3,283.8,11.3,12.0,0.0,AdvTT3713a231,(),False,False,False
 for tracing the evolution of chick lit or any other contemporary genre that has emerged,12,7,20,9.1,51.0,286.7,388.4,295.8,-11.3,12.0,0.0,AdvTT3713a231,(),False,False,False
@@ -567,12 +567,12 @@ the free encyclopedia has the advantage of a decidedly collaborative and dynamic
 but their number was limited – at least compared to the 84 authors of the chick lit article,12,7,26,9.0,51.0,357.0,388.3,367.6,-0.0,10.5,0.0,AdvTT3713a231,(),False,False,False
 "on Wikipedia16 (Wikipedia: “Chick lit, Authorship”, 22 June 2020d) – as was their",12,8,27,9.0,51.0,368.3,388.5,379.5,0.0,11.3,0.0,AdvTT3713a231,"({'start': 12, 'end': 13, 'kind': 'sup'}, {'start': 13, 'end': 14, 'kind': 'sup'})",False,False,False
 "influence on the exact definition of the genre, which was worded and published by the",12,8,28,9.1,51.0,382.4,388.3,391.4,-0.0,14.1,0.0,AdvTT3713a231,(),False,False,False
-"operators. While chicklit.co.uk and chicklitbooks.com both went offline in 2014/15, the",12,8,29,9.0,51.0,394.3,388.3,403.4,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
+"operators. While chicklit.co.uk and chicklitbooks.com both went offline in 2014/15, the",12,8,29,9.0,51.0,394.3,388.3,403.4,0.0,12.0,0.0,AdvTT3713a231,"({'start': 17, 'end': 31, 'kind': 'italic'}, {'start': 36, 'end': 53, 'kind': 'italic'})",False,False,False
 Wikipedia article has been constantly revised and updated since 2004. Initially,12,8,30,9.1,51.0,406.3,388.4,415.3,-0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
 "narrowly defined as popular fiction, genre fiction, or a subcategory of women’s",12,8,31,9.1,51.0,416.7,388.3,427.3,0.0,10.4,0.0,AdvTT3713a231,(),False,False,False
 "fiction aimed at a limited target group of young women (see extracts in Table 1), the",12,8,32,9.1,51.0,430.2,388.3,439.2,-0.0,13.4,0.0,AdvTT3713a231,(),False,False,False
 current definition is very broad:,12,8,33,9.1,51.0,442.1,175.9,451.2,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
-"Chick lit or chick literature is genre fiction, which “consists of heroine-centered",12,9,34,9.0,62.3,464.6,377.1,475.1,11.3,22.4,221.5,AdvTT3713a231,(),False,False,False
+"Chick lit or chick literature is genre fiction, which “consists of heroine-centered",12,9,34,9.0,62.3,464.6,377.1,475.1,11.3,22.4,221.5,AdvTT3713a231,"({'start': 0, 'end': 9, 'kind': 'bold'}, {'start': 13, 'end': 29, 'kind': 'bold'})",False,False,False
 narratives that focus on the trials and tribulations of their individual protago-,12,9,35,9.1,62.3,478.0,377.1,487.1,0.0,13.4,0.0,AdvTT3713a231,(),False,False,False
 nists”[1]. The genre often addresses issues of modern womanhood – from roman-,12,9,36,9.8,62.3,488.5,377.1,499.1,0.0,10.5,0.0,AdvTT3713a231,"({'start': 6, 'end': 7, 'kind': 'sup'}, {'start': 7, 'end': 8, 'kind': 'sup'}, {'start': 8, 'end': 9, 'kind': 'sup'})",False,False,False
 tic relationships to female friendships to matters in the workplace – in humorous,12,9,37,9.0,62.4,500.4,377.1,511.0,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
@@ -586,10 +586,10 @@ the original),12,9,41,9.1,62.4,549.7,110.2,558.8,0.0,13.4,0.0,AdvTT3713a231,(),F
 International Journal of Digital Humanities 37,13,1,1,8.0,51.0,35.2,388.5,42.6,,,400.0,BTKAZF+MyriadProUnicSemiCondensed,(),False,False,False
 "Compared to the first definition on Wikipedia, in which chick lit was identified as a",13,2,2,9.0,51.0,59.5,388.4,68.6,0.0,24.4,0.0,AdvTT3713a231,(),False,False,False
 "“slightly uncomplimentary term” (22 July 2004) in the first sentence, the promotion",13,2,3,9.0,51.0,70.0,388.3,80.6,0.0,10.5,0.0,AdvTT3713a231,(),False,False,False
-"from ‘lit’ to ‘literature’ is particularily striking. Thus, similar to chicklitbooks.com, the",13,2,4,9.1,51.0,82.0,388.3,92.6,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
+"from ‘lit’ to ‘literature’ is particularily striking. Thus, similar to chicklitbooks.com, the",13,2,4,9.1,51.0,82.0,388.3,92.6,0.0,12.0,0.0,AdvTT3713a231,"({'start': 71, 'end': 88, 'kind': 'italic'},)",False,False,False
 genre is granted a certain qualitative spectrum. The fact that the current Wikipedia,13,2,5,9.1,51.0,95.4,388.4,104.5,-0.0,13.4,0.0,AdvTT3713a231,(),False,False,False
-definition refers to two scholarly publications – Caroline Smith’s book Cosmopolitan,13,2,6,9.1,51.0,105.9,388.4,116.5,0.0,10.5,0.0,AdvTT3713a231,(),False,False,False
-Culture and Consumerism in Chick Lit (2008) [footnote 1 in the block quotation above],13,2,7,9.0,51.0,119.4,388.4,128.4,0.0,13.4,0.0,AdvTT3713a231,(),False,False,False
+definition refers to two scholarly publications – Caroline Smith’s book Cosmopolitan,13,2,6,9.1,51.0,105.9,388.4,116.5,0.0,10.5,0.0,AdvTT3713a231,"({'start': 72, 'end': 84, 'kind': 'italic'},)",False,False,False
+Culture and Consumerism in Chick Lit (2008) [footnote 1 in the block quotation above],13,2,7,9.0,51.0,119.4,388.4,128.4,0.0,13.4,0.0,AdvTT3713a231,"({'start': 0, 'end': 36, 'kind': 'italic'},)",False,False,False
 and a review by Jessica L. Hooten of Ferriss’ and Young’s chick lit anthology (Ferriss,13,2,8,9.1,51.0,129.8,388.4,140.4,0.0,10.4,0.0,AdvTT3713a231,(),False,False,False
 "& Young, 2006) [footnote 2 in the block quotation above] – already indicates that the",13,2,9,9.0,51.0,141.7,388.3,152.3,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
 editors have increasingly included scholarly literature – a development that can be,13,2,10,9.1,51.0,153.7,388.4,164.3,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
@@ -599,9 +599,9 @@ two academic articles are recommended under the sub-heading “Further Reading�
 June 2020c). Although Wikipedia articles are never finished and tend to improve over,13,4,14,9.1,51.0,203.1,388.6,212.1,0.0,13.4,0.0,AdvTT3713a231,(),False,False,False
 "time, an analysis of the history page can also reveal notable exceptions to this general",13,4,15,9.1,51.0,215.0,388.3,224.1,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
 upward trend of quality.,13,4,16,9.1,51.0,226.9,146.2,236.0,0.0,11.9,0.0,AdvTT3713a231,(),False,False,False
-3.2 Gender and racial bias,13,5,17,9.1,51.0,250.7,158.5,259.8,0.0,23.8,700.0,AdvTTa351d857.B,(),False,False,False
-While chicklitbooks.com stressed that chick lit was literature for and/or about women,13,6,18,9.0,51.0,274.8,388.4,283.8,0.0,24.0,0.0,AdvTT3713a231,(),False,False,False
-"and chicklit.co.uk emphasized the ‘by and about women’, the definition on Wikipedia",13,6,19,9.0,51.0,285.3,388.4,295.8,0.0,10.5,0.0,AdvTT3713a231,(),False,False,False
+3.2 Gender and racial bias,13,5,17,9.1,51.0,250.7,158.5,259.8,0.0,23.8,700.0,AdvTTa351d857.B,"({'start': 0, 'end': 26, 'kind': 'bold'},)",False,False,False
+While chicklitbooks.com stressed that chick lit was literature for and/or about women,13,6,18,9.0,51.0,274.8,388.4,283.8,0.0,24.0,0.0,AdvTT3713a231,"({'start': 6, 'end': 23, 'kind': 'italic'},)",False,False,False
+"and chicklit.co.uk emphasized the ‘by and about women’, the definition on Wikipedia",13,6,19,9.0,51.0,285.3,388.4,295.8,0.0,10.5,0.0,AdvTT3713a231,"({'start': 4, 'end': 18, 'kind': 'italic'},)",False,False,False
 "since 2009 has focused on the gender of the narrators and protagonists, who, as is",13,6,20,9.1,51.0,298.7,388.4,307.8,-0.0,13.4,0.0,AdvTT3713a231,(),False,False,False
 "added later in the article, can differ greatly “in ethnicity, age, social status, marital",13,6,21,9.1,51.0,309.2,388.3,319.8,0.0,10.5,0.0,AdvTT3713a231,(),False,False,False
 "status, career, and religion” (22 June 2020c). A definition that focuses more on content",13,6,22,9.0,51.0,321.1,388.4,331.7,0.0,11.9,0.0,AdvTT3713a231,(),False,False,False
@@ -628,12 +628,12 @@ over the years.,13,9,41,9.1,51.0,549.7,108.8,558.8,0.0,13.4,0.0,AdvTT3713a231,()
 wide international spread. The current Wikipedia article does not mention chick lit by,13,10,43,9.1,51.0,573.6,388.5,582.7,-11.3,13.4,0.0,AdvTT3713a231,(),False,False,False
 "women of color such as African American, Latin American and Asian American",13,10,44,9.0,51.0,585.6,388.4,594.6,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
 authors or chick lit from the global South. And while the misinformation that “British,13,10,45,9.1,51.0,596.1,388.3,606.7,0.0,10.5,0.0,AdvTT3713a231,(),False,False,False
-author Catherine Alliott’s The Old Girl Network (1994) was the start of the chick lit,13,10,46,9.0,51.0,608.0,388.4,618.6,0.0,11.9,0.0,AdvTT3713a231,(),False,False,False
+author Catherine Alliott’s The Old Girl Network (1994) was the start of the chick lit,13,10,46,9.0,51.0,608.0,388.4,618.6,0.0,11.9,0.0,AdvTT3713a231,"({'start': 27, 'end': 47, 'kind': 'italic'},)",False,False,False
 38 International Journal of Digital Humanities,14,1,1,8.0,51.0,35.2,388.5,42.6,,,400.0,BTKAZF+MyriadProUnicSemiCondensed,(),False,False,False
 "genre” (22 June 2020c) has persisted for some time now (since 18 Jan. 2018, to be",14,2,2,9.0,51.0,58.1,388.4,68.6,0.0,22.9,0.0,AdvTT3713a231,(),False,False,False
 "exact), the important role of African American chick lit or sistah lit – and in particular",14,3,3,9.0,51.0,70.0,388.6,80.6,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
-Terry McMillan’s novel Waiting to Exhale (1992) – for the genre’s genealogy still has,14,3,4,9.1,51.0,82.0,388.3,92.6,-0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
-"not been addressed (Hurt, 2019b). On 26 September 2013 an editor named Jcross 12",14,3,5,9.0,51.0,95.4,388.4,104.5,0.0,13.4,0.0,AdvTT3713a231,(),False,False,False
+Terry McMillan’s novel Waiting to Exhale (1992) – for the genre’s genealogy still has,14,3,4,9.1,51.0,82.0,388.3,92.6,-0.0,12.0,0.0,AdvTT3713a231,"({'start': 23, 'end': 40, 'kind': 'italic'},)",False,False,False
+"not been addressed (Hurt, 2019b). On 26 September 2013 an editor named Jcross 12",14,3,5,9.0,51.0,95.4,388.4,104.5,0.0,13.4,0.0,AdvTT3713a231,"({'start': 71, 'end': 80, 'kind': 'italic'},)",False,False,False
 "added a new section entitled “Criticism” to the chick lit article, in which they address",14,3,6,9.1,51.0,105.9,388.3,116.5,-0.0,10.5,0.0,AdvTT3713a231,(),False,False,False
 "the whiteness not only of the genre, but also of the discourse that surrounds it:",14,3,7,9.1,51.0,119.4,360.6,128.4,0.0,13.4,0.0,AdvTT3713a231,(),False,False,False
 Common criticism that arises from this genre is the emphasis of western liberal,14,4,8,9.1,62.4,143.2,377.0,152.3,11.3,23.9,0.0,AdvTT3713a231,(),False,False,False
@@ -648,10 +648,10 @@ becoming increasingly important as it presents questions regarding the issues th
 "women must deal with that relate to race, the state and political economy, even if it is in",14,5,17,9.1,51.0,262.8,388.4,271.8,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
 a fictional sense[14]” (ibid.). This critical addition to the article was backed up by a,14,5,18,9.1,51.0,273.3,388.4,283.8,0.0,10.5,0.0,AdvTT3713a231,"({'start': 17, 'end': 18, 'kind': 'sup'}, {'start': 18, 'end': 19, 'kind': 'sup'}, {'start': 19, 'end': 20, 'kind': 'sup'}, {'start': 20, 'end': 21, 'kind': 'sup'})",False,False,False
 trustworthy academic source: Pamela Butler’s and Jigna Desai’s acclaimed article,14,5,19,9.1,51.0,285.2,388.4,295.8,-0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
-"Manolos, Marriage, and Mantras: Chick-Lit Criticism and Transnational Feminism",14,5,20,9.1,50.7,298.7,388.4,307.7,-0.3,13.4,0.0,AdvTT50a2f13e.I,(),False,False,False
-"(2008), published in the prestigious interdisciplinary journal Meridians: Feminism,",14,5,21,9.1,51.0,310.6,388.3,319.7,0.3,12.0,0.0,AdvTT3713a231,(),False,False,False
-"Race, and Transnationalism.",14,5,22,9.0,50.8,322.5,164.4,331.5,-0.2,11.9,0.0,AdvTT50a2f13e.I,(),False,False,False
-"Two years later, however, an editor with the nickname Amakuru deleted the entire",14,6,23,9.1,62.4,334.5,388.4,343.6,11.6,12.0,0.0,AdvTT3713a231,(),False,False,False
+"Manolos, Marriage, and Mantras: Chick-Lit Criticism and Transnational Feminism",14,5,20,9.1,50.7,298.7,388.4,307.7,-0.3,13.4,0.0,AdvTT50a2f13e.I,"({'start': 0, 'end': 78, 'kind': 'italic'},)",False,False,False
+"(2008), published in the prestigious interdisciplinary journal Meridians: Feminism,",14,5,21,9.1,51.0,310.6,388.3,319.7,0.3,12.0,0.0,AdvTT3713a231,"({'start': 63, 'end': 83, 'kind': 'italic'},)",False,False,False
+"Race, and Transnationalism.",14,5,22,9.0,50.8,322.5,164.4,331.5,-0.2,11.9,0.0,AdvTT50a2f13e.I,"({'start': 0, 'end': 27, 'kind': 'italic'},)",False,False,False
+"Two years later, however, an editor with the nickname Amakuru deleted the entire",14,6,23,9.1,62.4,334.5,388.4,343.6,11.6,12.0,0.0,AdvTT3713a231,"({'start': 54, 'end': 61, 'kind': 'italic'},)",False,False,False
 "section, giving the dubious reason that “[t]his article doesn’t currently have enough",14,6,24,9.1,51.0,345.0,388.5,355.6,-11.3,10.5,0.0,AdvTT3713a231,(),False,False,False
 detail on the matter itself to warrant a detailed ‘criticism’ section” (“Chick lit: Revision,14,6,25,9.0,51.0,357.0,388.3,367.5,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
 "history”, 10 Dec. 2015c). The same editor substantiated the deletion by referring to a",14,6,26,9.1,51.0,368.9,388.4,379.5,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
@@ -671,12 +671,12 @@ under-representation of non-white people within its editor base” (Wikipedia: �
 "in accordance with the “Wikiquette” (Wikipedia: “Etiquette”, 29 July 2020i) would",14,8,40,9.0,51.1,560.2,388.5,570.8,0.0,10.5,0.0,AdvTT3713a231,(),False,False,False
 "have been to constructively critique the new paragraph on the talk page, pointing out",14,8,41,9.1,51.1,573.7,388.5,582.7,0.0,13.4,0.0,AdvTT3713a231,(),False,False,False
 "the formal weaknesses to the author, and then to jointly improve it.",14,8,42,9.1,51.1,585.6,316.1,594.7,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
-"While chicklit.co.uk never put a focus on women-of-color chick lit, chicklitbook.com",14,9,43,9.0,62.4,597.6,388.5,606.6,11.3,12.0,0.0,AdvTT3713a231,(),False,False,False
+"While chicklit.co.uk never put a focus on women-of-color chick lit, chicklitbook.com",14,9,43,9.0,62.4,597.6,388.5,606.6,11.3,12.0,0.0,AdvTT3713a231,"({'start': 6, 'end': 20, 'kind': 'italic'}, {'start': 68, 'end': 84, 'kind': 'italic'})",False,False,False
 from 2005 to 2012 had a subpage titled “Multicultural Chick Lit” about books “with,14,9,44,9.1,51.1,608.0,388.5,618.6,-11.3,10.4,0.0,AdvTT3713a231,(),False,False,False
 International Journal of Digital Humanities 39,15,1,1,8.0,51.0,35.2,388.5,42.6,,,400.0,BTKAZF+MyriadProUnicSemiCondensed,(),False,False,False
 "heroines from all different nationalities and from different cultures” (25 Nov. 2005c),",15,2,2,9.0,51.0,58.1,388.4,68.6,0.0,22.9,0.0,AdvTT3713a231,(),False,False,False
-"divided into Indian Chick Lit, Latina Lit, Asian Chick Lit, and African-American Chick",15,3,3,9.0,51.0,71.5,388.9,80.6,0.0,13.4,0.0,AdvTT50a2f13e.I,(),False,False,False
-Lit. This page was under construction from July 2012 and did not go online anymore.,15,3,4,9.1,50.7,83.5,388.4,92.5,-0.3,12.0,0.0,AdvTT3713a231,(),False,False,False
+"divided into Indian Chick Lit, Latina Lit, Asian Chick Lit, and African-American Chick",15,3,3,9.0,51.0,71.5,388.9,80.6,0.0,13.4,0.0,AdvTT50a2f13e.I,"({'start': 13, 'end': 29, 'kind': 'italic'}, {'start': 31, 'end': 41, 'kind': 'italic'}, {'start': 43, 'end': 58, 'kind': 'italic'}, {'start': 64, 'end': 86, 'kind': 'italic'})",False,False,False
+Lit. This page was under construction from July 2012 and did not go online anymore.,15,3,4,9.1,50.7,83.5,388.4,92.5,-0.3,12.0,0.0,AdvTT3713a231,"({'start': 0, 'end': 3, 'kind': 'italic'},)",False,False,False
 "For the fan websites, however, the deficit with regard to the diversity of the chick lit",15,3,5,9.1,51.0,95.4,388.4,104.5,0.3,12.0,0.0,AdvTT3713a231,(),False,False,False
 genre can be partly excused by the fact that they were not obliged to take a ‘neutral’ and,15,3,6,9.1,51.0,105.9,388.4,116.5,0.0,10.5,0.0,AdvTT3713a231,(),False,False,False
 "balanced position in the first place. Moreover, they went offline in 2014/15 and were no",15,3,7,9.1,51.0,119.4,388.4,128.4,-0.0,13.4,0.0,AdvTT3713a231,(),False,False,False
@@ -685,12 +685,12 @@ longer regularly maintained and updated in the years before – a time when wome
 "research. This justification or excuse, however, no longer applies to the editors of the",15,3,10,9.1,51.0,155.2,388.3,164.3,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
 "Wikipedia article on chick lit, because in recent years the diversity of the genre has",15,3,11,9.1,51.0,167.2,388.3,176.2,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
 been increasingly addressed and researched (see Hurt [ed.] 2019a).,15,3,12,9.1,51.0,179.1,314.0,188.2,-0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
-4 Conclusion and outlook,15,4,13,10.1,51.0,214.1,175.2,224.2,0.0,35.0,700.0,AdvTTaf7f9f4f.B,(),False,False,False
+4 Conclusion and outlook,15,4,13,10.1,51.0,214.1,175.2,224.2,0.0,35.0,700.0,AdvTTaf7f9f4f.B,"({'start': 0, 'end': 24, 'kind': 'bold'},)",False,False,False
 "Based on the case study of chick lit, this article showed how web archives such as the",15,5,14,9.1,51.0,238.9,388.3,247.9,-0.0,24.7,0.0,AdvTT3713a231,(),False,False,False
 Internet Archive and Wikipedia’s history page can be productive tools to research,15,5,15,9.1,51.0,249.3,388.4,259.9,0.0,10.5,0.0,AdvTT3713a231,(),False,False,False
 "contemporary genre histories in the digital age. For chick lit, the claim that statements",15,5,16,9.1,51.0,262.8,388.4,271.8,0.0,13.4,0.0,AdvTT3713a231,(),False,False,False
 on fan websites are not relevant for the academic study of genres can be refuted. The,15,5,17,9.1,51.0,274.8,388.3,283.8,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
-"definitions on both websites under examination, chicklit.co.uk and chicklitbooks.com,",15,5,18,9.0,51.0,286.7,388.3,295.7,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
+"definitions on both websites under examination, chicklit.co.uk and chicklitbooks.com,",15,5,18,9.0,51.0,286.7,388.3,295.7,0.0,12.0,0.0,AdvTT3713a231,"({'start': 48, 'end': 62, 'kind': 'italic'}, {'start': 67, 'end': 84, 'kind': 'italic'})",False,False,False
 proved to be balanced; they were also regularly updated and adapted to new,15,5,19,9.1,51.0,298.7,388.3,307.7,-0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
 developments such as the emergence of new subgenres and the expansion of the,15,5,20,9.1,51.0,310.6,388.3,319.7,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
 genre’s definition. This speed and flexibility is a great advantage over academic,15,5,21,9.1,51.0,321.1,388.4,331.6,0.0,10.4,0.0,AdvTT3713a231,(),False,False,False
@@ -722,8 +722,8 @@ one possible and very evident example of a whole range of fields of application 
 Humanities – but also the digital formats and archives themselves. The more re-,16,2,2,9.1,51.0,58.1,388.4,68.6,0.0,22.9,0.0,AdvTT3713a231,(),False,False,False
 "searchers participate, e.g. by writing and editing Wikipedia articles or by suggesting",16,2,3,9.1,51.0,71.5,388.4,80.6,-0.0,13.4,0.0,AdvTT3713a231,(),False,False,False
 "websites for filing in the Internet Archive, the better web archives can support research.",16,2,4,9.1,51.0,83.5,388.3,92.5,0.0,12.0,0.0,AdvTT3713a231,(),False,False,False
-Acknowledgements Open access funding provided by University of Vienna.,16,3,5,7.2,51.0,120.7,297.7,128.0,0.0,37.3,162.3,AdvTT3713a231,(),False,False,False
-"Open Access This article is licensed under a Creative Commons Attribution 4.0 International License, which",16,4,6,7.2,51.0,149.1,388.5,156.3,0.0,28.3,73.3,AdvTT3713a231,(),False,False,False
+Acknowledgements Open access funding provided by University of Vienna.,16,3,5,7.2,51.0,120.7,297.7,128.0,0.0,37.3,162.3,AdvTT3713a231,"({'start': 0, 'end': 16, 'kind': 'bold'},)",False,False,False
+"Open Access This article is licensed under a Creative Commons Attribution 4.0 International License, which",16,4,6,7.2,51.0,149.1,388.5,156.3,0.0,28.3,73.3,AdvTT3713a231,"({'start': 0, 'end': 11, 'kind': 'bold'},)",False,False,False
 "permits use, sharing, adaptation, distribution and reproduction in any medium or format, as long as you give",16,4,7,7.2,51.0,158.6,388.5,165.8,-0.0,9.5,0.0,AdvTT3713a231,(),False,False,False
 "appropriate credit to the original author(s) and the source, provide a link to the Creative Commons licence, and",16,4,8,7.2,51.0,168.0,388.4,175.3,0.0,9.5,0.0,AdvTT3713a231,(),False,False,False
 indicate if changes were made. The images or other third party material in this article are included in the,16,4,9,7.2,51.0,177.5,388.5,184.7,0.0,9.5,0.0,AdvTT3713a231,(),False,False,False
@@ -731,18 +731,18 @@ indicate if changes were made. The images or other third party material in this 
 included in the article's Creative Commons licence and your intended use is not permitted by statutory,16,4,11,7.2,51.0,196.4,388.4,203.7,0.0,9.5,0.0,AdvTT3713a231,(),False,False,False
 "regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder.",16,4,12,7.2,51.0,205.9,388.4,213.1,0.0,9.5,0.0,AdvTT3713a231,(),False,False,False
 "To view a copy of this licence, visit http://creativecommons.org/licenses/by/4.0/.",16,4,13,7.2,51.0,215.4,301.4,222.6,0.0,9.5,0.0,AdvTT3713a231,(),False,False,False
-References,16,5,14,10.2,51.0,249.3,103.1,259.5,0.0,34.0,700.0,AdvTTaf7f9f4f.B,(),False,False,False
+References,16,5,14,10.2,51.0,249.3,103.1,259.5,0.0,34.0,700.0,AdvTTaf7f9f4f.B,"({'start': 0, 'end': 10, 'kind': 'bold'},)",False,False,False
 "Assmann, A. (2009). Archive im Wandel der Mediengeschichte. In K. Ebeling & S. Günzel (Eds.),",16,6,15,7.2,51.0,275.6,388.3,282.9,-0.0,26.3,0.0,AdvTT3713a231,(),False,False,False
-"Archivologie. Theorien des Archivs in Philosophie, Medien und Künsten (pp. 165–175). Kadmos.",16,6,16,7.2,64.6,283.9,369.4,292.4,13.5,8.3,0.0,AdvTT50a2f13e.I,(),False,False,False
-"Baldick, C. (2015a). Chick lit [2008]. In C. Baldick (Ed.), The Oxford dictionary of literary terms (pp. 57–58).",16,6,17,7.2,51.0,294.2,388.4,302.7,-13.5,10.3,0.0,AdvTT3713a231,(),False,False,False
+"Archivologie. Theorien des Archivs in Philosophie, Medien und Künsten (pp. 165–175). Kadmos.",16,6,16,7.2,64.6,283.9,369.4,292.4,13.5,8.3,0.0,AdvTT50a2f13e.I,"({'start': 0, 'end': 69, 'kind': 'italic'},)",False,False,False
+"Baldick, C. (2015a). Chick lit [2008]. In C. Baldick (Ed.), The Oxford dictionary of literary terms (pp. 57–58).",16,6,17,7.2,51.0,294.2,388.4,302.7,-13.5,10.3,0.0,AdvTT3713a231,"({'start': 60, 'end': 99, 'kind': 'italic'},)",False,False,False
 4th ed. Oxford UP.,16,6,18,7.2,65.0,304.3,123.3,312.1,13.9,10.0,0.0,AdvTT3713a231,"({'start': 1, 'end': 2, 'kind': 'sup'}, {'start': 2, 'end': 3, 'kind': 'sup'})",False,False,False
-"Baldick, C. (2015b) Lad lit [2008]. In C. Baldick (Ed.), The oxford dictionary of literary terms (p. 195). 4th ed.",16,7,19,7.2,51.0,314.6,388.4,322.4,-14.0,10.3,0.0,AdvTT3713a231,"({'start': 108, 'end': 109, 'kind': 'sup'}, {'start': 109, 'end': 110, 'kind': 'sup'})",False,False,False
+"Baldick, C. (2015b) Lad lit [2008]. In C. Baldick (Ed.), The oxford dictionary of literary terms (p. 195). 4th ed.",16,7,19,7.2,51.0,314.6,388.4,322.4,-14.0,10.3,0.0,AdvTT3713a231,"({'start': 108, 'end': 109, 'kind': 'sup'}, {'start': 109, 'end': 110, 'kind': 'sup'}, {'start': 57, 'end': 96, 'kind': 'italic'})",False,False,False
 Oxford UP.,16,7,20,7.2,65.0,324.7,101.5,331.8,13.9,10.1,0.0,AdvTT3713a231,(),False,False,False
-"Betterton, D. M. (1988). Alma mater: Unusual stories and little-known facts from America’s college",16,8,21,7.2,51.0,333.7,388.4,342.2,-13.9,9.1,0.0,AdvTT50a2f13e.I,(),False,False,False
-campuses. Peterson’s Guides.,16,8,22,7.2,65.0,343.2,157.0,351.7,13.9,9.5,0.0,AdvTT3713a231,(),False,False,False
-"Börner, I., & Kopf, S. (2018). Wikipedia Studies: sprach- und literaturwissenschaftliche Zugänge zu",16,9,23,7.2,51.0,354.7,388.4,362.0,-13.9,11.5,0.0,AdvTT50a2f13e.I,(),False,False,False
-"Wikipedia. In I. Börner, W. Straub & C. Zolles (Eds.), Germanistik digital: Digital Humanities in der",16,9,24,7.2,65.0,364.2,388.6,371.4,13.9,9.5,0.0,AdvTT50a2f13e.I,(),False,False,False
-Sprach- und Literaturwissenschaft (pp. 212–227). Facultas.,16,9,25,7.2,65.0,372.5,249.9,380.9,0.0,8.3,0.0,AdvTT50a2f13e.I,(),False,False,False
+"Betterton, D. M. (1988). Alma mater: Unusual stories and little-known facts from America’s college",16,8,21,7.2,51.0,333.7,388.4,342.2,-13.9,9.1,0.0,AdvTT50a2f13e.I,"({'start': 25, 'end': 98, 'kind': 'italic'},)",False,False,False
+campuses. Peterson’s Guides.,16,8,22,7.2,65.0,343.2,157.0,351.7,13.9,9.5,0.0,AdvTT3713a231,"({'start': 0, 'end': 8, 'kind': 'italic'},)",False,False,False
+"Börner, I., & Kopf, S. (2018). Wikipedia Studies: sprach- und literaturwissenschaftliche Zugänge zu",16,9,23,7.2,51.0,354.7,388.4,362.0,-13.9,11.5,0.0,AdvTT50a2f13e.I,"({'start': 31, 'end': 99, 'kind': 'italic'},)",False,False,False
+"Wikipedia. In I. Börner, W. Straub & C. Zolles (Eds.), Germanistik digital: Digital Humanities in der",16,9,24,7.2,65.0,364.2,388.6,371.4,13.9,9.5,0.0,AdvTT50a2f13e.I,"({'start': 0, 'end': 9, 'kind': 'italic'}, {'start': 55, 'end': 101, 'kind': 'italic'})",False,False,False
+Sprach- und Literaturwissenschaft (pp. 212–227). Facultas.,16,9,25,7.2,65.0,372.5,249.9,380.9,0.0,8.3,0.0,AdvTT50a2f13e.I,"({'start': 0, 'end': 33, 'kind': 'italic'},)",False,False,False
 Chicklit.co.uk. (6 Nov. 2002). Home and competitions. https://web.archive.org/web/20021106194720/http://,16,9,26,7.2,51.0,384.0,388.4,391.2,-13.9,11.5,0.0,AdvTT3713a231,(),False,False,False
 www.chicklit.co.uk:80/. Accessed 21 July 2020.,16,9,27,7.2,65.0,393.4,215.5,400.7,13.9,9.5,0.0,AdvTT3713a231,(),False,False,False
 Chicklit.co.uk. (1 June 2003). Ladlit. https://web.archive.org/web/20030601232145/http://chicklit.co.uk:80/,16,9,28,7.2,51.0,403.7,388.4,411.0,-13.9,10.3,0.0,AdvTT3713a231,(),False,False,False
@@ -770,47 +770,47 @@ chicklitbooks.com/. Accessed 21 July 2020.,16,9,49,7.2,64.9,610.9,201.7,618.2,13
 International Journal of Digital Humanities 41,17,1,1,8.0,51.0,35.2,388.5,42.6,,,400.0,BTKAZF+MyriadProUnicSemiCondensed,(),False,False,False
 Chicklitbooks.com. (22 Sept. 2012). What is chick lit?. https://web.archive.org/web/20120922045224/http://,17,2,2,7.2,51.0,58.4,388.5,65.7,0.0,23.3,0.0,AdvTT3713a231,(),False,False,False
 chicklitbooks.com/what-is-chick-lit/. Accessed 21 July 2020.,17,2,3,7.2,65.0,67.9,253.8,75.1,13.9,9.5,0.0,AdvTT3713a231,(),False,False,False
-"Coburn, J. (2012). The decline of chick lit. The San Diego Union-Tribune. http://web.archive.org/web/",17,2,4,7.2,51.0,77.9,388.4,85.1,-13.9,10.0,0.0,AdvTT3713a231,(),False,False,False
+"Coburn, J. (2012). The decline of chick lit. The San Diego Union-Tribune. http://web.archive.org/web/",17,2,4,7.2,51.0,77.9,388.4,85.1,-13.9,10.0,0.0,AdvTT3713a231,"({'start': 19, 'end': 43, 'kind': 'italic'},)",False,False,False
 20200920133413/https://www.sandiegouniontribune.com/entertainment/books/sdut-the-decline-of-,17,2,5,7.2,65.0,87.3,388.3,94.6,13.9,9.5,0.0,AdvTT3713a231,(),False,False,False
 chick-lit-2012feb11-story.html. Accessed 20 Sept. 2020.,17,2,6,7.2,65.0,96.8,240.3,104.0,0.0,9.4,0.0,AdvTT3713a231,(),False,False,False
-"Ferriss, S. & Young, M. (2006). Introduction. In S. Ferriss & M. Young (Eds.), Chick lit: the new woman’s",17,2,7,7.2,51.0,105.5,388.4,114.0,-13.9,8.8,0.0,AdvTT3713a231,(),False,False,False
-fiction (pp. 1–13). Routledge.,17,2,8,7.2,63.6,115.0,157.1,123.5,12.6,9.5,0.0,AdvTT3713a231,(),False,False,False
+"Ferriss, S. & Young, M. (2006). Introduction. In S. Ferriss & M. Young (Eds.), Chick lit: the new woman’s",17,2,7,7.2,51.0,105.5,388.4,114.0,-13.9,8.8,0.0,AdvTT3713a231,"({'start': 79, 'end': 105, 'kind': 'italic'},)",False,False,False
+fiction (pp. 1–13). Routledge.,17,2,8,7.2,63.6,115.0,157.1,123.5,12.6,9.5,0.0,AdvTT3713a231,"({'start': 0, 'end': 7, 'kind': 'italic'},)",False,False,False
 "Ferriss, S. & Young, M. (2008). Introduction. Chick flicks and chick culture. In S. Ferriss & M. Young (Eds.),",17,3,9,7.2,51.0,126.1,388.4,133.4,-12.6,11.1,0.0,AdvTT3713a231,(),False,False,False
-Chick flicks: contemporary women at the movies (pp. 1–25). Routledge.,17,3,10,7.2,65.0,134.4,289.8,142.9,13.9,8.3,0.0,AdvTT50a2f13e.I,(),False,False,False
+Chick flicks: contemporary women at the movies (pp. 1–25). Routledge.,17,3,10,7.2,65.0,134.4,289.8,142.9,13.9,8.3,0.0,AdvTT50a2f13e.I,"({'start': 0, 'end': 46, 'kind': 'italic'},)",False,False,False
 "Friedman, S. (2012). World modernisms, world literature, and comparativity. In M. A. Wollaeger & M.",17,3,11,7.2,51.0,145.6,388.4,152.8,-14.0,11.2,0.0,AdvTT3713a231,(),False,False,False
-"Eatough (Eds.), The Oxford Handbook of Global Modernisms (pp. 499–525). Oxford UP.",17,3,12,7.2,65.0,153.9,345.6,162.3,13.9,8.3,0.0,AdvTT50a2f13e.I,(),False,False,False
+"Eatough (Eds.), The Oxford Handbook of Global Modernisms (pp. 499–525). Oxford UP.",17,3,12,7.2,65.0,153.9,345.6,162.3,13.9,8.3,0.0,AdvTT50a2f13e.I,"({'start': 16, 'end': 56, 'kind': 'italic'},)",False,False,False
 "Gunne, S. (2016). World-literature, world-systems, and Irish Chick lit. In J. Habjan & F. Imlinger (Eds.),",17,3,13,7.3,51.0,165.0,388.4,172.2,-13.9,11.1,0.0,AdvTT3713a231,(),False,False,False
-"Globalizing literary genres: Literature, History, Modernity (pp. 241–253). Routledge.",17,3,14,7.2,65.0,173.2,332.5,181.7,13.9,8.3,0.0,AdvTT50a2f13e.I,(),False,False,False
-"Hooten, J. L. (2007). In the classroom or in the bedroom (Review of Ferriss & Young (Eds.), Chick lit: The",17,3,15,7.2,51.0,184.4,388.4,191.6,-13.9,11.1,0.0,AdvTT3713a231,(),False,False,False
-"new woman’s fiction 2006). JASNA News, 23(1), 21.",17,3,16,7.2,65.0,192.6,229.6,201.1,13.9,8.3,0.0,AdvTT50a2f13e.I,(),False,False,False
+"Globalizing literary genres: Literature, History, Modernity (pp. 241–253). Routledge.",17,3,14,7.2,65.0,173.2,332.5,181.7,13.9,8.3,0.0,AdvTT50a2f13e.I,"({'start': 0, 'end': 59, 'kind': 'italic'},)",False,False,False
+"Hooten, J. L. (2007). In the classroom or in the bedroom (Review of Ferriss & Young (Eds.), Chick lit: The",17,3,15,7.2,51.0,184.4,388.4,191.6,-13.9,11.1,0.0,AdvTT3713a231,"({'start': 92, 'end': 106, 'kind': 'italic'},)",False,False,False
+"new woman’s fiction 2006). JASNA News, 23(1), 21.",17,3,16,7.2,65.0,192.6,229.6,201.1,13.9,8.3,0.0,AdvTT50a2f13e.I,"({'start': 0, 'end': 19, 'kind': 'italic'}, {'start': 27, 'end': 37, 'kind': 'italic'})",False,False,False
 "Hube, C., Fischer, F., Jöschke, R., Lauer G., Thomsen, M. R. (2017). World literature according to wikipedia:",17,3,17,7.2,51.0,203.8,388.4,211.0,-14.0,11.2,0.0,AdvTT3713a231,(),False,False,False
 Introduction to a DBpedia-based framework. arXiv.org. https://arxiv.org/abs/1701.00991.,17,3,18,7.2,65.0,213.3,342.2,220.5,13.9,9.5,0.0,AdvTT3713a231,(),False,False,False
-"Hurt, E. (Ed.). (2019a). Theorizing ethnicity and nationality in the chick lit genre. Routledge.",17,3,19,7.2,51.0,223.2,341.9,230.4,-13.9,9.9,0.0,AdvTT50a2f13e.I,(),False,False,False
+"Hurt, E. (Ed.). (2019a). Theorizing ethnicity and nationality in the chick lit genre. Routledge.",17,3,19,7.2,51.0,223.2,341.9,230.4,-13.9,9.9,0.0,AdvTT50a2f13e.I,"({'start': 25, 'end': 84, 'kind': 'italic'},)",False,False,False
 "Hurt, E. (Ed.) (2019b). The white Terry McMillan. Centering black women within chick lit’s genealogy. In E.",17,3,20,7.2,51.0,231.9,388.5,240.4,-0.0,8.7,0.0,AdvTT3713a231,(),False,False,False
-"Hurt (Ed.), Theorizing ethnicity and nationality in the Chick lit genre (pp. 150–174). Routledge.",17,3,21,7.2,65.0,241.4,365.1,249.9,13.9,9.5,0.0,AdvTT50a2f13e.I,(),False,False,False
-"Kemp, S. (2019). Digital 2019: Global digital overview. https://web.archive.org/web/20200908213048/",17,3,22,7.2,51.0,252.6,388.4,259.8,-13.9,11.2,0.0,AdvTT3713a231,(),False,False,False
+"Hurt (Ed.), Theorizing ethnicity and nationality in the Chick lit genre (pp. 150–174). Routledge.",17,3,21,7.2,65.0,241.4,365.1,249.9,13.9,9.5,0.0,AdvTT50a2f13e.I,"({'start': 12, 'end': 71, 'kind': 'italic'},)",False,False,False
+"Kemp, S. (2019). Digital 2019: Global digital overview. https://web.archive.org/web/20200908213048/",17,3,22,7.2,51.0,252.6,388.4,259.8,-13.9,11.2,0.0,AdvTT3713a231,"({'start': 17, 'end': 54, 'kind': 'italic'},)",False,False,False
 https://datareportal.com/reports/digital-2019-global-digital-overview. Accessed 16 Sept. 2020.,17,3,23,7.2,65.0,262.0,355.2,269.3,13.9,9.5,0.0,AdvTT3713a231,(),False,False,False
-"Mazza, C. (1995). What is postfeminist fiction? In C. Mazza & J. DeShell (Eds.), Chick-lit: postfeminist fiction",17,3,24,7.2,51.0,272.0,388.4,279.2,-13.9,9.9,0.0,AdvTT3713a231,(),False,False,False
+"Mazza, C. (1995). What is postfeminist fiction? In C. Mazza & J. DeShell (Eds.), Chick-lit: postfeminist fiction",17,3,24,7.2,51.0,272.0,388.4,279.2,-13.9,9.9,0.0,AdvTT3713a231,"({'start': 81, 'end': 112, 'kind': 'italic'},)",False,False,False
 (pp. 8–9). Carbondale: Fiction collective 2.,17,3,25,7.2,65.0,280.2,199.4,288.7,13.9,8.3,0.0,AdvTT3713a231,(),False,False,False
 "Mazza, C. (2006). Who’s laughing now? A short history of Chick lit and the perversion of a genre. In: S.",17,3,26,7.2,51.0,290.2,388.5,298.6,-13.9,9.9,0.0,AdvTT3713a231,(),False,False,False
-"Ferriss & M. Young (Eds.), Chick lit: the new woman’s fiction (pp. 17–28). Routledge.",17,3,27,7.2,65.0,299.6,337.3,308.1,13.9,9.5,0.0,AdvTT3713a231,(),False,False,False
+"Ferriss & M. Young (Eds.), Chick lit: the new woman’s fiction (pp. 17–28). Routledge.",17,3,27,7.2,65.0,299.6,337.3,308.1,13.9,9.5,0.0,AdvTT3713a231,"({'start': 27, 'end': 61, 'kind': 'italic'},)",False,False,False
 "Mazza, C. & DeShell, J. (Eds.) (1995). Chick-lit: postfeminist fiction. carbondale: fiction collective 2.",17,3,28,7.2,51.0,310.8,368.6,318.0,-13.9,11.2,0.0,AdvTT3713a231,(),False,False,False
-"Missler, H. (2016). The cultural politics of Chick lit: Popular fiction, Postfeminism and representation.",17,3,29,7.2,51.0,320.7,388.4,328.0,0.0,9.9,0.0,AdvTT50a2f13e.I,(),False,False,False
+"Missler, H. (2016). The cultural politics of Chick lit: Popular fiction, Postfeminism and representation.",17,3,29,7.2,51.0,320.7,388.4,328.0,0.0,9.9,0.0,AdvTT50a2f13e.I,"({'start': 20, 'end': 104, 'kind': 'italic'},)",False,False,False
 Routledge.,17,3,30,7.2,65.0,330.2,98.6,337.4,13.9,9.5,0.0,AdvTT3713a231,(),False,False,False
-"Peitz, A. (2010). Chick lit: Genrekonstituierende Untersuchungen unter anglo-amerikanischem Einfluss.",17,4,31,7.2,51.0,340.1,388.4,347.4,-13.9,9.9,0.0,AdvTT50a2f13e.I,(),False,False,False
+"Peitz, A. (2010). Chick lit: Genrekonstituierende Untersuchungen unter anglo-amerikanischem Einfluss.",17,4,31,7.2,51.0,340.1,388.4,347.4,-13.9,9.9,0.0,AdvTT50a2f13e.I,"({'start': 18, 'end': 100, 'kind': 'italic'},)",False,False,False
 Frankfurt am Main et al.: Peter Lang.,17,4,32,7.2,65.0,349.6,181.9,356.8,14.0,9.5,0.0,AdvTT3713a231,(),False,False,False
-"Sherwin, A. (2011). Have we fallen out of love with chick lit? Independent. https://web.archive.org/web/",17,4,33,7.2,51.0,359.6,388.5,366.8,-13.9,10.0,0.0,AdvTT3713a231,(),False,False,False
+"Sherwin, A. (2011). Have we fallen out of love with chick lit? Independent. https://web.archive.org/web/",17,4,33,7.2,51.0,359.6,388.5,366.8,-13.9,10.0,0.0,AdvTT3713a231,"({'start': 63, 'end': 74, 'kind': 'italic'},)",False,False,False
 20191110095214/https://www.independent.co.uk/arts-entertainment/books/features/have-we-fallen-out-,17,4,34,7.2,65.0,369.0,388.5,376.3,13.9,9.5,0.0,AdvTT3713a231,(),False,False,False
 of-love-with-chick-lit-2361445.html. Accessed 16 Sept. 2020.,17,4,35,7.2,65.0,378.5,257.3,385.7,0.0,9.5,0.0,AdvTT3713a231,(),False,False,False
-"Smith, C. J. (2008). Cosmopolitan culture and consumerism in Chick lit. Routledge.",17,4,36,7.2,51.0,388.4,314.2,395.7,-13.9,9.9,0.0,AdvTT50a2f13e.I,(),False,False,False
-Staff & Agencies. (2001). Bainbridge denounces chick-lit as “froth”. The Guardian. https://web.archive.org/,17,4,37,7.2,51.1,397.2,388.4,405.7,0.0,8.8,0.0,AdvTT3713a231,(),False,False,False
+"Smith, C. J. (2008). Cosmopolitan culture and consumerism in Chick lit. Routledge.",17,4,36,7.2,51.0,388.4,314.2,395.7,-13.9,9.9,0.0,AdvTT50a2f13e.I,"({'start': 21, 'end': 70, 'kind': 'italic'},)",False,False,False
+Staff & Agencies. (2001). Bainbridge denounces chick-lit as “froth”. The Guardian. https://web.archive.org/,17,4,37,7.2,51.1,397.2,388.4,405.7,0.0,8.8,0.0,AdvTT3713a231,"({'start': 26, 'end': 59, 'kind': 'italic'}, {'start': 60, 'end': 67, 'kind': 'italic'})",False,False,False
 web/20190411232047/https://www.theguardian.com/books/2001/aug/23/bookerprize2001.bookerprize.,17,4,38,7.2,65.0,407.8,388.3,415.0,13.9,10.6,0.0,AdvTT3713a231,(),False,False,False
 Accessed 16 Sept. 2020.,17,4,39,7.2,65.0,417.2,141.9,424.5,0.0,9.5,0.0,AdvTT3713a231,(),False,False,False
 "Van Dijk, Z. (2015). Die Wikipedia – das ideale Hilfsmittel für den Einstieg in ein historisches Thema? In T.",17,5,40,7.2,51.0,426.0,388.5,434.5,-13.9,8.8,0.0,AdvTT3713a231,(),False,False,False
-"Wozniak, J. Nemitz, & U. Rohwedder (Eds.), Wikipedia und Geschichtswissenschaft (pp. 1–13). de",17,5,41,7.2,65.0,435.5,388.4,444.0,13.9,9.5,0.0,AdvTT3713a231,(),False,False,False
+"Wozniak, J. Nemitz, & U. Rohwedder (Eds.), Wikipedia und Geschichtswissenschaft (pp. 1–13). de",17,5,41,7.2,65.0,435.5,388.4,444.0,13.9,9.5,0.0,AdvTT3713a231,"({'start': 43, 'end': 79, 'kind': 'italic'},)",False,False,False
 Gruyter.,17,5,42,7.2,65.0,446.2,90.7,453.4,0.0,10.7,0.0,AdvTT3713a231,(),False,False,False
 "West, A. G., & Lee, I. (2011). What wikipedia deletes: characterizing dangerous collaborative content. In",17,6,43,7.2,51.0,456.1,388.4,463.3,-13.9,9.9,0.0,AdvTT3713a231,(),False,False,False
-WikiSym ‘11: Proceedings of the 7th International Symposium on Wikis and Open Collaboration (pp. 25–,17,6,44,7.2,65.0,464.4,388.4,472.8,13.9,8.3,0.0,AdvTT50a2f13e.I,"({'start': 33, 'end': 34, 'kind': 'sup'}, {'start': 34, 'end': 35, 'kind': 'sup'})",False,False,False
+WikiSym ‘11: Proceedings of the 7th International Symposium on Wikis and Open Collaboration (pp. 25–,17,6,44,7.2,65.0,464.4,388.4,472.8,13.9,8.3,0.0,AdvTT50a2f13e.I,"({'start': 33, 'end': 34, 'kind': 'sup'}, {'start': 34, 'end': 35, 'kind': 'sup'}, {'start': 0, 'end': 7, 'kind': 'italic'}, {'start': 8, 'end': 35, 'kind': 'italic'}, {'start': 36, 'end': 91, 'kind': 'italic'})",False,False,False
 28). https://doi.org/10.1145/2038558.2038563.,17,6,45,7.2,65.0,475.0,209.7,482.3,0.0,10.7,0.0,AdvTT3713a231,(),False,False,False
 Wikipedia. (22 July 2004). Chick lit. https://en.wikipedia.org/w/index.php?title=Chick_lit&oldid=4789452.,17,6,46,7.2,51.0,484.9,388.4,492.2,-13.9,9.9,0.0,AdvTT3713a231,(),False,False,False
 Accessed 21 July 2020.,17,6,47,7.2,65.0,494.4,139.1,501.6,13.9,9.5,0.0,AdvTT3713a231,(),False,False,False
@@ -865,5 +865,5 @@ Wikipedia. (21 Aug. 2020k). Wikipedia: administration. https://en.wikipedia.org/
 Wikipedia:Administration&oldid=974249589. Accessed 16 Sept. 2020.,18,4,37,7.2,65.0,389.7,287.3,396.9,13.9,9.5,0.0,AdvTT3713a231,(),False,False,False
 "Wojcik, P. & Picard, S. (2019). Klassiker@wikipedia. Klassikforschung und Digital Humanities. Ein",18,4,38,7.3,51.0,399.2,388.4,406.4,-13.9,9.5,0.0,AdvTT3713a231,(),False,False,False
 "Kommentar zur Studie World Literature According to Wikipedia. In S. Matuschek, S. Picard, P.",18,4,39,7.2,65.0,408.7,388.4,415.9,13.9,9.5,0.0,AdvTT3713a231,(),False,False,False
-"Wojcik & M. Wolting (Eds.), Klassik als kulturelle Praxis: Funktional, intermedial, transkulturell",18,4,40,7.2,65.0,418.1,388.6,425.4,0.0,9.5,0.0,AdvTT50a2f13e.I,(),False,False,False
+"Wojcik & M. Wolting (Eds.), Klassik als kulturelle Praxis: Funktional, intermedial, transkulturell",18,4,40,7.2,65.0,418.1,388.6,425.4,0.0,9.5,0.0,AdvTT50a2f13e.I,"({'start': 28, 'end': 98, 'kind': 'italic'},)",False,False,False
 (pp. 149–164). de Gruyter.,18,4,41,7.2,65.0,426.4,148.7,434.9,0.0,8.3,0.0,AdvTT3713a231,(),False,False,False

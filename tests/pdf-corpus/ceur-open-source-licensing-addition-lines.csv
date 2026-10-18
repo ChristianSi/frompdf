@@ -1,14 +1,14 @@
-text,page_no,block_no,line_no_on_page,font_size,x1,y1,x2,y2,rel_x,rel_y,avg_weight,font_name,scripts,space_before,space_after,fraction_denominator
+text,page_no,block_no,line_no_on_page,font_size,x1,y1,x2,y2,rel_x,rel_y,avg_weight,font_name,ranges,space_before,space_after,fraction_denominator
 Proceedings of the Conference on Technology Ethics 2021 - Tethics 2021,1,1,1,10.0,149.6,81.7,445.7,92.8,,,0.0,TimesNewRoman,(),False,False,False
-A Proposed Addition to Open-Source Licensing for,1,2,2,12.0,166.2,153.8,428.5,164.6,16.6,72.1,700.0,NimbusRomNo9L-Medi,(),False,False,False
-Improving Freedom of Use,1,2,3,12.0,228.2,168.3,366.5,179.1,62.0,14.5,700.0,NimbusRomNo9L-Medi,(),False,False,False
+A Proposed Addition to Open-Source Licensing for,1,2,2,12.0,166.2,153.8,428.5,164.6,16.6,72.1,700.0,NimbusRomNo9L-Medi,"({'start': 0, 'end': 1, 'kind': 'bold'}, {'start': 2, 'end': 10, 'kind': 'bold'}, {'start': 11, 'end': 19, 'kind': 'bold'}, {'start': 20, 'end': 22, 'kind': 'bold'}, {'start': 23, 'end': 34, 'kind': 'bold'}, {'start': 35, 'end': 44, 'kind': 'bold'}, {'start': 45, 'end': 48, 'kind': 'bold'})",False,False,False
+Improving Freedom of Use,1,2,3,12.0,228.2,168.3,366.5,179.1,62.0,14.5,700.0,NimbusRomNo9L-Medi,"({'start': 0, 'end': 9, 'kind': 'bold'}, {'start': 10, 'end': 17, 'kind': 'bold'}, {'start': 18, 'end': 20, 'kind': 'bold'}, {'start': 21, 'end': 24, 'kind': 'bold'})",False,False,False
 Short paper,1,3,4,10.0,269.4,192.5,315.6,201.4,41.2,24.2,425.0,NimbusRomNo9L-Regu,(),False,False,False
 Juhani Naskali 0000-0002-7559-2595,1,4,5,7.4,233.5,219.0,361.3,229.8,-35.9,26.5,425.0,NimbusRomNo9L-Regu,(),False,False,False
 "Information Systems Science,",1,5,6,9.0,244.0,242.5,351.3,250.5,10.5,23.5,425.0,NimbusRomNo9L-Regu,(),False,False,False
 "Turku School of Economics, University of Turku",1,5,7,9.0,209.7,253.4,385.6,261.5,-34.3,11.0,425.0,NimbusRomNo9L-Regu,(),False,False,False
 "Turku, Finland",1,5,8,9.0,270.9,264.4,324.3,272.4,61.3,11.0,425.0,NimbusRomNo9L-Regu,(),False,False,False
 juhani.naskali@utu.fi,1,6,9,9.0,258.5,276.3,336.1,284.4,-12.4,12.0,425.0,NimbusRomNo9L-Regu,(),False,False,False
-Abstract. This paper identifies an often overlooked dimension of open source li-,1,7,10,9.0,149.4,327.1,445.9,335.2,-109.1,50.7,456.3,NimbusRomNo9L-Regu,(),False,False,False
+Abstract. This paper identifies an often overlooked dimension of open source li-,1,7,10,9.0,149.4,327.1,445.9,335.2,-109.1,50.7,456.3,NimbusRomNo9L-Regu,"({'start': 0, 'end': 9, 'kind': 'bold'},)",False,False,False
 "censing, that of users being able to run distributed software freely and without dis-",1,8,11,9.0,149.4,338.1,445.9,346.2,0.0,11.0,425.0,NimbusRomNo9L-Regu,(),False,False,False
 "crimination, and suggests additions that would further secure freedom 0 to end",1,8,12,9.0,149.4,349.1,445.9,357.1,0.0,11.0,425.0,NimbusRomNo9L-Regu,(),False,False,False
 "users — the freedom for the user to use software however they wish. While, tradi-",1,8,13,9.0,149.4,360.0,445.9,368.1,0.0,11.0,425.0,NimbusRomNo9L-Regu,(),False,False,False
@@ -19,13 +19,13 @@ Abstract. This paper identifies an often overlooked dimension of open source li-
 "fied versions of applications (simultaneously widening the digital divide), and thus",1,8,18,9.0,149.4,414.8,445.9,422.9,0.0,11.0,425.0,NimbusRomNo9L-Regu,(),False,False,False
 a new analysis is needed on how (and which) freedoms should be secured to ensure,1,8,19,9.0,149.4,425.8,445.9,433.8,0.0,11.0,425.0,NimbusRomNo9L-Regu,(),False,False,False
 that free software remains free.,1,8,20,9.0,149.4,436.7,261.1,444.8,0.0,11.0,425.0,NimbusRomNo9L-Regu,(),False,False,False
-"Keywords: open source, free software, FOSS, licensing terms, liberty, GNU GPL",1,9,21,9.0,149.4,451.6,443.5,459.7,0.0,14.9,457.6,NimbusRomNo9L-Regu,(),False,False,False
+"Keywords: open source, free software, FOSS, licensing terms, liberty, GNU GPL",1,9,21,9.0,149.4,451.6,443.5,459.7,0.0,14.9,457.6,NimbusRomNo9L-Regu,"({'start': 0, 'end': 9, 'kind': 'bold'},)",False,False,False
 Copyright © 2021 for this paper by its authors.,1,10,22,10.0,203.7,777.7,391.6,788.7,54.3,326.0,0.0,TimesNewRoman,(),False,False,False
 Use permitted under Creative Commons License Attribution 4.0 International (CC BY 4.0),1,10,23,10.0,114.0,788.7,481.2,799.8,-89.7,11.1,0.0,TimesNewRoman,(),True,False,False
 132,1,11,24,10.0,544.3,777.7,559.3,788.7,430.2,-11.1,0.0,TimesNewRoman,(),False,False,False
 Proceedings of the Conference on Technology Ethics 2021 - Tethics 2021,2,1,1,10.0,149.6,81.7,445.7,92.8,,,0.0,TimesNewRoman,(),False,False,False
-1 Introduction,2,2,2,12.0,124.5,120.0,207.3,130.7,-25.1,38.2,700.0,NimbusRomNo9L-Medi,(),False,False,False
-1.1 Free/Libre Open Source Software,2,3,3,10.0,124.5,143.6,290.3,152.6,0.0,23.6,700.0,NimbusRomNo9L-Medi,(),False,False,False
+1 Introduction,2,2,2,12.0,124.5,120.0,207.3,130.7,-25.1,38.2,700.0,NimbusRomNo9L-Medi,"({'start': 0, 'end': 14, 'kind': 'bold'},)",False,False,False
+1.1 Free/Libre Open Source Software,2,3,3,10.0,124.5,143.6,290.3,152.6,0.0,23.6,700.0,NimbusRomNo9L-Medi,"({'start': 0, 'end': 35, 'kind': 'bold'},)",False,False,False
 Rights of ownership inherent in copyright can be granted to others using licensing.,2,4,4,10.0,124.5,162.4,470.8,171.3,0.0,18.8,425.0,NimbusRomNo9L-Regu,(),False,False,False
 Open source (OS) software refers to licensing that allows licensees to freely distribute,2,4,5,10.0,124.5,174.3,470.8,183.3,0.0,12.0,425.0,NimbusRomNo9L-Regu,(),False,False,False
 software code and redistribute it along with any changes. Open source is based on the,2,4,6,10.0,124.5,186.3,470.8,195.3,0.0,12.0,425.0,NimbusRomNo9L-Regu,(),False,False,False
@@ -37,7 +37,7 @@ sized with the name FOSS or FLOSS — Free/Libre and Open Source Software. (GNU,
 "tion can be sold as a for-profit service while the code is open), and there are different",2,5,12,10.0,124.5,258.0,470.8,267.0,0.0,12.0,425.0,NimbusRomNo9L-Regu,(),False,False,False
 licenses that grant differing amounts of freedoms to stakeholders. Developers are free,2,5,13,10.0,124.5,270.0,470.8,278.9,0.0,12.0,425.0,NimbusRomNo9L-Regu,(),False,False,False
 to choose a license for their work that fits with their own values.,2,5,14,10.0,124.5,281.9,379.8,290.9,0.0,12.0,425.0,NimbusRomNo9L-Regu,(),False,False,False
-1.2 Freedom for everyone? Licenses of varying degrees of liberty,2,6,15,10.0,124.5,308.4,405.8,317.3,0.0,26.4,700.0,NimbusRomNo9L-Medi,(),False,False,False
+1.2 Freedom for everyone? Licenses of varying degrees of liberty,2,6,15,10.0,124.5,308.4,405.8,317.3,0.0,26.4,700.0,NimbusRomNo9L-Medi,"({'start': 0, 'end': 64, 'kind': 'bold'},)",False,False,False
 "As with every kind of liberty in law, liberties secured through licensing come with",2,7,16,10.0,124.5,327.1,470.8,336.1,0.0,18.8,425.0,NimbusRomNo9L-Regu,(),False,False,False
 "opposing duties to others (Austin, 1885, p. 398). A license that protects (i.e. does not",2,7,17,10.0,124.5,339.0,470.8,348.1,0.0,11.9,425.0,NimbusRomNo9L-Regu,(),False,False,False
 give away) patent rights of authors and contributors does so at the expense of end-users,2,7,18,10.0,124.5,351.0,470.8,360.0,0.0,12.0,425.0,NimbusRomNo9L-Regu,(),False,False,False
@@ -69,7 +69,7 @@ Copyright © 2021 for this paper by its authors.,2,11,43,10.0,203.7,777.7,391.6,
 Use permitted under Creative Commons License Attribution 4.0 International (CC BY 4.0),2,11,44,10.0,114.0,788.7,481.2,799.8,-89.7,11.1,0.0,TimesNewRoman,(),True,False,False
 133,2,12,45,10.0,544.3,777.7,559.3,788.7,430.2,-11.1,0.0,TimesNewRoman,(),False,False,False
 Proceedings of the Conference on Technology Ethics 2021 - Tethics 2021,3,1,1,10.0,149.6,81.7,445.7,92.8,,,0.0,TimesNewRoman,(),False,False,False
-1.3 The four user freedoms of free software,3,2,2,10.0,124.5,121.4,314.9,130.3,-25.1,39.6,700.0,NimbusRomNo9L-Medi,(),False,False,False
+1.3 The four user freedoms of free software,3,2,2,10.0,124.5,121.4,314.9,130.3,-25.1,39.6,700.0,NimbusRomNo9L-Medi,"({'start': 0, 'end': 43, 'kind': 'bold'},)",False,False,False
 Free software ideology values the freedom of users. GNU GPL is founded on the four,3,3,3,10.0,124.5,140.1,470.8,149.1,0.0,18.8,425.0,NimbusRomNo9L-Regu,(),False,False,False
 "basic freedoms, which are an attempt to codify these values. The four basic freedoms",3,3,4,10.0,124.5,152.1,470.8,161.0,0.0,12.0,425.0,NimbusRomNo9L-Regu,(),False,False,False
 are:,3,3,5,10.0,124.5,164.1,139.4,173.0,0.0,12.0,425.0,NimbusRomNo9L-Regu,(),False,False,False
@@ -81,7 +81,7 @@ are:,3,3,5,10.0,124.5,164.1,139.4,173.0,0.0,12.0,425.0,NimbusRomNo9L-Regu,(),Fal
 "These four freedoms form the definition of free software, according to GNU Project",3,8,11,10.0,139.4,278.3,470.8,287.3,-1.5,21.5,425.0,NimbusRomNo9L-Regu,(),False,False,False
 "(2001). Of particular interest to the topic of this paper is Freedom 0, which can be seen",3,8,12,10.0,124.5,290.2,470.8,299.2,-14.9,12.0,425.0,NimbusRomNo9L-Regu,(),False,False,False
 to be at the foundation of free software.,3,8,13,10.0,124.5,302.2,282.1,311.2,0.0,12.0,425.0,NimbusRomNo9L-Regu,(),False,False,False
-1.4 Researched dimensions of rights included in OS licenses,3,9,14,10.0,124.5,328.6,384.5,337.5,0.0,26.4,700.0,NimbusRomNo9L-Medi,(),False,False,False
+1.4 Researched dimensions of rights included in OS licenses,3,9,14,10.0,124.5,328.6,384.5,337.5,0.0,26.4,700.0,NimbusRomNo9L-Medi,"({'start': 0, 'end': 59, 'kind': 'bold'},)",False,False,False
 Lerner & Tirole (2005) conducted an empirical analysis on the determinants of license,3,10,15,10.0,124.5,347.3,470.8,356.3,0.0,18.7,425.0,NimbusRomNo9L-Regu,(),False,False,False
 "choice, and the scope of OS licenses on licensees freedom to use their software as",3,10,16,10.0,124.5,359.3,470.8,368.2,0.0,12.0,425.0,NimbusRomNo9L-Regu,(),False,False,False
 "they wish. They focused on two characteristics of OS licenses: copyleft, whether the",3,10,17,10.0,124.5,371.2,470.8,380.2,0.0,12.0,425.0,NimbusRomNo9L-Regu,(),False,False,False
@@ -102,8 +102,8 @@ to be covered by the sharing of the source code and the right to modify and dist
 "it. After all, the idea goes, any unwanted limitations in the software can be changed or",3,12,32,10.0,124.5,550.6,470.8,559.5,0.0,12.0,425.0,NimbusRomNo9L-Regu,(),False,False,False
 removed by licensees. But it can be argued that this way of securing freedom of usage,3,12,33,10.0,124.5,562.5,470.8,571.5,0.0,12.0,425.0,NimbusRomNo9L-Regu,(),False,False,False
 is not strong enough to guarantee freedom 0 for everyone.,3,12,34,10.0,124.5,574.5,355.4,583.5,0.0,12.0,425.0,NimbusRomNo9L-Regu,(),False,False,False
-2 Missing dimension of securing user freedom to run software,3,13,35,12.0,124.5,603.6,448.1,614.4,0.0,29.1,700.0,NimbusRomNo9L-Medi,(),False,False,False
-2.1 User blocking is arguably allowed in open source software,3,14,36,10.0,124.5,627.2,393.2,636.2,0.0,23.6,700.0,NimbusRomNo9L-Medi,(),False,False,False
+2 Missing dimension of securing user freedom to run software,3,13,35,12.0,124.5,603.6,448.1,614.4,0.0,29.1,700.0,NimbusRomNo9L-Medi,"({'start': 0, 'end': 60, 'kind': 'bold'},)",False,False,False
+2.1 User blocking is arguably allowed in open source software,3,14,36,10.0,124.5,627.2,393.2,636.2,0.0,23.6,700.0,NimbusRomNo9L-Medi,"({'start': 0, 'end': 61, 'kind': 'bold'},)",False,False,False
 While the four freedoms should secure the public the right to use software as they,3,15,37,10.0,124.5,646.0,470.8,655.0,0.0,18.8,425.0,NimbusRomNo9L-Regu,(),False,False,False
 "wish, there is no clear consensus about whether these freedoms are secured merely",3,15,38,10.0,124.5,657.9,470.8,666.9,0.0,12.0,425.0,NimbusRomNo9L-Regu,(),False,False,False
 Copyright © 2021 for this paper by its authors.,3,16,39,10.0,203.7,777.7,391.6,788.7,79.2,119.7,0.0,TimesNewRoman,(),False,False,False
@@ -140,8 +140,8 @@ data shows that while permissive licenses were used in 41% of open source licens
 "having multiple levels of freedom-securing licenses, especially when it comes to non-",4,6,29,10.0,124.5,444.2,470.8,453.2,0.0,12.0,425.0,NimbusRomNo9L-Regu,(),False,False,False
 exclusive and discrete license dimensions (permissiveness and user blocking). There is,4,6,30,10.0,124.5,456.2,470.8,465.1,0.0,12.0,425.0,NimbusRomNo9L-Regu,(),False,False,False
 perhaps some value in having clear options on this new dimension of user blocking.,4,6,31,10.0,124.5,468.1,458.0,477.1,0.0,12.0,425.0,NimbusRomNo9L-Regu,(),False,False,False
-2.2 Digital divide makes it impossible for general public to secure Freedom 0,4,7,32,10.0,124.5,494.6,470.8,503.5,0.0,26.4,700.0,NimbusRomNo9L-Medi,(),False,False,False
-using source code,4,7,33,10.0,146.9,506.5,221.4,515.5,22.4,12.0,700.0,NimbusRomNo9L-Medi,(),False,False,False
+2.2 Digital divide makes it impossible for general public to secure Freedom 0,4,7,32,10.0,124.5,494.6,470.8,503.5,0.0,26.4,700.0,NimbusRomNo9L-Medi,"({'start': 0, 'end': 77, 'kind': 'bold'},)",False,False,False
+using source code,4,7,33,10.0,146.9,506.5,221.4,515.5,22.4,12.0,700.0,NimbusRomNo9L-Medi,"({'start': 0, 'end': 17, 'kind': 'bold'},)",False,False,False
 The digital divide is defined as inequality between those who have access and means to,4,8,34,10.0,124.5,525.3,470.8,534.3,-22.4,18.8,425.0,NimbusRomNo9L-Regu,(),False,False,False
 "use technology and those who do not. While these inequalities are not absolute, in that",4,8,35,10.0,124.5,537.2,470.8,546.2,0.0,12.0,425.0,NimbusRomNo9L-Regu,(),False,False,False
 "they can be bridged, nor the division clear-cut, it is a phenomenon that clearly exists",4,8,36,10.0,124.5,549.2,470.8,558.2,0.0,12.0,425.0,NimbusRomNo9L-Regu,(),False,False,False
@@ -182,7 +182,7 @@ Digital divide makes it imperative for IT specialists to pay closer attention to
 majority is silent due to not being represented on the discussion forums of code devel-,5,5,23,10.0,124.5,372.5,470.8,381.5,0.0,12.0,425.0,NimbusRomNo9L-Regu,(),False,False,False
 "opment platforms. Moreover, the walled gardens of modern mobile platforms make it",5,5,24,10.0,124.5,384.4,470.8,393.4,0.0,12.0,425.0,NimbusRomNo9L-Regu,(),False,False,False
 even more complicated to distribute your own version of an applications.,5,5,25,10.0,124.5,396.4,414.8,405.4,0.0,12.0,425.0,NimbusRomNo9L-Regu,(),False,False,False
-2.3 New ethical source licenses,5,6,26,10.0,124.5,422.8,261.0,431.8,0.0,26.4,700.0,NimbusRomNo9L-Medi,(),False,False,False
+2.3 New ethical source licenses,5,6,26,10.0,124.5,422.8,261.0,431.8,0.0,26.4,700.0,NimbusRomNo9L-Medi,"({'start': 0, 'end': 31, 'kind': 'bold'},)",False,False,False
 "In past years, there has been more interest in open source licenses based on ethical",5,7,27,10.0,124.5,441.6,470.8,450.5,0.0,18.8,425.0,NimbusRomNo9L-Regu,(),False,False,False
 "values (Goodman-Wilson, 2020). For example, Ethical Source tries to drive licenses",5,7,28,10.0,124.5,453.5,470.8,462.5,0.0,12.0,425.0,NimbusRomNo9L-Regu,(),False,False,False
 that prevent software use for harm1,5,7,29,10.0,124.5,463.7,270.1,474.4,0.0,10.1,425.0,NimbusRomNo9L-Regu,"({'start': 34, 'end': 35, 'kind': 'sup'},)",False,False,False
@@ -196,7 +196,7 @@ Against Fields of Endeavor”. Such license is not open. This new type of licens
 "ertheless serves as an example of more ethical consideration being put in licensing, as",5,8,37,10.0,124.5,549.1,470.8,558.1,0.0,12.0,425.0,NimbusRomNo9L-Regu,(),False,False,False
 well as the cultural drive for more restrictive measures in licensing — more restrictive,5,8,38,10.0,124.5,561.1,470.8,570.1,0.0,12.0,425.0,NimbusRomNo9L-Regu,(),False,False,False
 "for the public, securing more rights for the licensers (i.e. limiting what others do).",5,8,39,10.0,124.5,573.1,450.8,582.0,0.0,12.0,425.0,NimbusRomNo9L-Regu,(),False,False,False
-2.4 Examination of GNU GPLv3,5,9,40,10.0,124.5,599.5,270.1,608.4,0.0,26.4,700.0,NimbusRomNo9L-Medi,(),False,False,False
+2.4 Examination of GNU GPLv3,5,9,40,10.0,124.5,599.5,270.1,608.4,0.0,26.4,700.0,NimbusRomNo9L-Medi,"({'start': 0, 'end': 28, 'kind': 'bold'},)",False,False,False
 GNU GPL is founded on the four basic freedoms listed in the introduction. The li-,5,10,41,10.0,124.5,618.2,470.8,627.2,0.0,18.8,425.0,NimbusRomNo9L-Regu,(),False,False,False
 cense has been formulated to secure these freedoms through the sharing of source code.,5,10,42,10.0,124.5,630.2,470.8,639.1,0.0,12.0,425.0,NimbusRomNo9L-Regu,(),False,False,False
 1https://ethicalsource.dev/licenses/,5,10,43,8.0,135.3,648.0,246.1,656.7,10.9,17.8,425.0,NimbusRomNo9L-Regu,"({'start': 0, 'end': 1, 'kind': 'sup'},)",False,False,False
@@ -230,18 +230,18 @@ proposed additions would constitute another take on how the license weighs liber
 "between authors, contributors and the public, granting some freedom away from authors",6,5,24,10.0,124.5,384.4,470.8,393.4,0.0,12.0,425.0,NimbusRomNo9L-Regu,(),False,False,False
 and contributors in favor of the public. I’m not arguing that this should happen instead,6,5,25,10.0,124.5,396.4,470.8,405.4,0.0,12.0,425.0,NimbusRomNo9L-Regu,(),False,False,False
 of what e.g. GPLv3 does — I’m only arguing it should be an explicitly stated option.,6,5,26,10.0,124.5,408.4,463.5,417.3,0.0,12.0,425.0,NimbusRomNo9L-Regu,(),False,False,False
-"3 Proposed additions, by example of GPLv3",6,6,27,12.0,124.5,437.5,356.7,448.3,0.0,29.2,700.0,NimbusRomNo9L-Medi,(),False,False,False
-First proposed addition to GNU GPLv3 Chapter 5. Conveying Modified Source,6,7,28,10.0,124.5,461.2,470.8,470.1,0.0,23.6,700.0,NimbusRomNo9L-Medi,(),False,False,False
-Versions.,6,7,29,10.0,124.5,473.1,163.1,482.1,0.0,12.0,700.0,NimbusRomNo9L-Medi,(),False,False,False
-e) The work must not include any methods or additional protections for restricting the,6,8,30,10.0,124.5,491.9,470.8,500.8,0.0,18.8,390.0,NimbusRomNo9L-ReguItal,(),False,False,False
-"use of the work by particular persons, groups or fields of endeavor.",6,8,31,10.0,124.5,503.8,391.5,512.7,0.0,12.0,390.0,NimbusRomNo9L-ReguItal,(),False,False,False
+"3 Proposed additions, by example of GPLv3",6,6,27,12.0,124.5,437.5,356.7,448.3,0.0,29.2,700.0,NimbusRomNo9L-Medi,"({'start': 0, 'end': 41, 'kind': 'bold'},)",False,False,False
+First proposed addition to GNU GPLv3 Chapter 5. Conveying Modified Source,6,7,28,10.0,124.5,461.2,470.8,470.1,0.0,23.6,700.0,NimbusRomNo9L-Medi,"({'start': 0, 'end': 73, 'kind': 'bold'},)",False,False,False
+Versions.,6,7,29,10.0,124.5,473.1,163.1,482.1,0.0,12.0,700.0,NimbusRomNo9L-Medi,"({'start': 0, 'end': 9, 'kind': 'bold'},)",False,False,False
+e) The work must not include any methods or additional protections for restricting the,6,8,30,10.0,124.5,491.9,470.8,500.8,0.0,18.8,390.0,NimbusRomNo9L-ReguItal,"({'start': 0, 'end': 86, 'kind': 'italic'},)",False,False,False
+"use of the work by particular persons, groups or fields of endeavor.",6,8,31,10.0,124.5,503.8,391.5,512.7,0.0,12.0,390.0,NimbusRomNo9L-ReguItal,"({'start': 0, 'end': 68, 'kind': 'italic'},)",False,False,False
 This addition would disallow the use of DRM (digital rights management) that tar-,6,9,32,10.0,139.4,515.8,470.8,524.8,14.9,12.0,425.0,NimbusRomNo9L-Regu,(),False,False,False
 gets persons or groups. Censorship systems such as domain blocking and network-,6,9,33,10.0,124.5,527.8,470.8,536.7,-14.9,12.0,425.0,NimbusRomNo9L-Regu,(),False,False,False
 based DRM would also fall under this category.,6,9,34,10.0,124.5,539.7,314.4,548.7,0.0,12.0,425.0,NimbusRomNo9L-Regu,(),False,False,False
-Second proposed addition to GNU GPLv3 chapter 6. Conveying Non-Source Forms,6,10,35,10.0,124.5,566.1,472.9,575.1,0.0,26.4,700.0,NimbusRomNo9L-Medi,(),False,False,False
-1. Any object code conveyed must not include extra blocking methods aimed at dis-,6,11,36,10.0,136.9,584.9,470.8,593.9,12.5,18.8,390.9,NimbusRomNo9L-ReguItal,(),False,False,False
-"criminating agains persons, groups or fields of endeavor specified in Chapter",6,11,37,10.0,149.4,596.9,471.0,605.7,12.5,12.0,390.0,NimbusRomNo9L-ReguItal,(),False,False,False
-5.,6,11,38,10.0,149.4,609.0,156.9,617.6,0.0,12.1,390.0,NimbusRomNo9L-ReguItal,(),False,False,False
+Second proposed addition to GNU GPLv3 chapter 6. Conveying Non-Source Forms,6,10,35,10.0,124.5,566.1,472.9,575.1,0.0,26.4,700.0,NimbusRomNo9L-Medi,"({'start': 0, 'end': 75, 'kind': 'bold'},)",False,False,False
+1. Any object code conveyed must not include extra blocking methods aimed at dis-,6,11,36,10.0,136.9,584.9,470.8,593.9,12.5,18.8,390.9,NimbusRomNo9L-ReguItal,"({'start': 3, 'end': 81, 'kind': 'italic'},)",False,False,False
+"criminating agains persons, groups or fields of endeavor specified in Chapter",6,11,37,10.0,149.4,596.9,471.0,605.7,12.5,12.0,390.0,NimbusRomNo9L-ReguItal,"({'start': 0, 'end': 77, 'kind': 'italic'},)",False,False,False
+5.,6,11,38,10.0,149.4,609.0,156.9,617.6,0.0,12.1,390.0,NimbusRomNo9L-ReguItal,"({'start': 0, 'end': 2, 'kind': 'italic'},)",False,False,False
 The object of this addition would be to secure Freedom 0 when using conveyed,6,12,39,10.0,139.4,630.7,470.8,639.7,-10.0,21.8,425.0,NimbusRomNo9L-Regu,(),False,False,False
 non-source forms (i.e. binaries). This would (most importantly) include mobile apps,6,12,40,10.0,124.5,642.7,470.8,651.7,-14.9,12.0,425.0,NimbusRomNo9L-Regu,(),False,False,False
 downloaded from official app stores.,6,12,41,10.0,124.5,654.7,270.4,663.6,0.0,12.0,425.0,NimbusRomNo9L-Regu,(),False,False,False
@@ -257,8 +257,8 @@ code and not widen the license to touch this part of distribution. Or perhaps it
 "better to keep total freedom for developers when it comes to the source code, and only",7,2,7,10.0,124.5,181.2,470.8,190.2,0.0,12.0,425.0,NimbusRomNo9L-Regu,(),False,False,False
 include this addition or allow distribution as long as there is also a version available,7,2,8,10.0,124.5,193.2,470.8,202.1,0.0,12.0,425.0,NimbusRomNo9L-Regu,(),False,False,False
 without restrictions.,7,2,9,10.0,124.5,205.1,204.2,214.1,0.0,12.0,425.0,NimbusRomNo9L-Regu,(),False,False,False
-4 Thoughts,7,3,10,12.0,124.5,233.8,190.9,244.5,0.0,28.6,700.0,NimbusRomNo9L-Medi,(),False,False,False
-4.1 Would a license with the proposed changes still be open source?,7,4,11,10.0,124.5,257.4,416.5,266.4,0.0,23.6,700.0,NimbusRomNo9L-Medi,(),False,False,False
+4 Thoughts,7,3,10,12.0,124.5,233.8,190.9,244.5,0.0,28.6,700.0,NimbusRomNo9L-Medi,"({'start': 0, 'end': 10, 'kind': 'bold'},)",False,False,False
+4.1 Would a license with the proposed changes still be open source?,7,4,11,10.0,124.5,257.4,416.5,266.4,0.0,23.6,700.0,NimbusRomNo9L-Medi,"({'start': 0, 'end': 67, 'kind': 'bold'},)",False,False,False
 "The proposals would sign away more rights from contributors, should they wish to",7,5,12,10.0,124.5,276.1,470.8,285.1,0.0,18.8,425.0,NimbusRomNo9L-Regu,(),False,False,False
 restrict the right of usage by the public. It could be argued that such licensing is no,7,5,13,10.0,124.5,288.1,470.8,297.1,0.0,12.0,425.0,NimbusRomNo9L-Regu,(),False,False,False
 "longer open source, or that it is less open, because use of the source code is restricted",7,5,14,10.0,124.5,300.1,470.8,309.0,0.0,12.0,425.0,NimbusRomNo9L-Regu,(),False,False,False
@@ -270,7 +270,7 @@ are given duties that correspond to ensuring the freedoms of the public.,7,5,18,
 "censes family. Nevertheless, such a distinction is somewhat semantic in nature. The",7,6,20,10.0,124.5,371.8,470.8,380.8,-14.9,12.0,425.0,NimbusRomNo9L-Regu,(),False,False,False
 cure issue is whether more weight is put on the rights of the developers (both original,7,6,21,10.0,124.5,383.7,470.8,392.7,0.0,12.0,425.0,NimbusRomNo9L-Regu,(),False,False,False
 "licencers and new licensees) or the public (end-users, whether developers or not).",7,6,22,10.0,124.5,395.7,448.4,404.7,0.0,12.0,425.0,NimbusRomNo9L-Regu,(),False,False,False
-4.2 Proposed changes are arguably in line with GNU values,7,7,23,10.0,124.5,421.6,383.2,430.6,0.0,25.9,700.0,NimbusRomNo9L-Medi,(),False,False,False
+4.2 Proposed changes are arguably in line with GNU values,7,7,23,10.0,124.5,421.6,383.2,430.6,0.0,25.9,700.0,NimbusRomNo9L-Medi,"({'start': 0, 'end': 57, 'kind': 'bold'},)",False,False,False
 "GNU GPL is based on the four basic freedoms of users, and as articulated by Stallman",7,8,24,10.0,124.5,440.3,470.8,449.3,0.0,18.8,425.0,NimbusRomNo9L-Regu,(),False,False,False
 "(2013), freedom 0 ”means that the distribution of the software does not restrict how",7,8,25,10.0,124.5,452.3,470.8,461.3,0.0,12.0,425.0,NimbusRomNo9L-Regu,(),False,False,False
 you use it”. Stallman’s example is vivid: ”Imagine selling pens with conditions about,7,8,26,10.0,124.5,464.3,470.8,473.2,0.0,12.0,425.0,NimbusRomNo9L-Regu,(),False,False,False
@@ -306,20 +306,20 @@ additions would not affect those who choose not to use a license that includes t
 "would further protect users from new discriminatory restriction methods. As such, they",8,2,10,10.0,124.5,205.1,470.8,214.1,0.0,12.0,425.0,NimbusRomNo9L-Regu,(),False,False,False
 should not be a replacement license but a complementary one or a completely new,8,2,11,10.0,124.5,217.1,470.8,226.0,0.0,12.0,425.0,NimbusRomNo9L-Regu,(),False,False,False
 license.,8,2,12,10.0,124.5,229.0,154.6,238.0,0.0,12.0,425.0,NimbusRomNo9L-Regu,(),False,False,False
-4.3 Comparisons with similar end-user freedoms not included in GPLv3,8,3,13,10.0,124.5,255.5,437.3,264.4,0.0,26.4,700.0,NimbusRomNo9L-Medi,(),False,False,False
-Money for nothing,8,4,14,10.0,124.5,274.2,203.9,283.1,0.0,18.7,700.0,NimbusRomNo9L-Medi,(),False,False,False
+4.3 Comparisons with similar end-user freedoms not included in GPLv3,8,3,13,10.0,124.5,255.5,437.3,264.4,0.0,26.4,700.0,NimbusRomNo9L-Medi,"({'start': 0, 'end': 68, 'kind': 'bold'},)",False,False,False
+Money for nothing,8,4,14,10.0,124.5,274.2,203.9,283.1,0.0,18.7,700.0,NimbusRomNo9L-Medi,"({'start': 0, 'end': 17, 'kind': 'bold'},)",False,False,False
 GNU GPL explicitly allows selling copies of free software5,8,5,15,10.0,124.5,291.0,372.8,301.9,0.0,16.9,425.0,NimbusRomNo9L-Regu,"({'start': 57, 'end': 58, 'kind': 'sup'},)",False,False,False
 . This provides a good,8,5,16,10.0,373.3,292.9,470.8,301.9,248.8,1.9,425.0,NimbusRomNo9L-Regu,(),False,False,False
 example of how ’free’ in free software refers to liberty (of code) and not cost (of dis-,8,5,17,10.0,124.5,304.9,470.8,313.8,-248.8,12.0,425.0,NimbusRomNo9L-Regu,(),False,False,False
 "tribution). The proposed changes do limit freedom to work with the code, which could",8,5,18,10.0,124.5,316.8,470.8,325.8,0.0,12.0,425.0,NimbusRomNo9L-Regu,(),False,False,False
 bear further examination to ensure that this does not create unforeseen problems.,8,5,19,10.0,124.5,328.8,446.4,337.7,0.0,12.0,425.0,NimbusRomNo9L-Regu,(),False,False,False
-Limiting usage through DRM,8,6,20,10.0,124.5,355.2,250.8,364.2,0.0,26.4,700.0,NimbusRomNo9L-Medi,(),False,False,False
+Limiting usage through DRM,8,6,20,10.0,124.5,355.2,250.8,364.2,0.0,26.4,700.0,NimbusRomNo9L-Medi,"({'start': 0, 'end': 26, 'kind': 'bold'},)",False,False,False
 "Perhaps the closest thing to the proposed changes is the use of DRM, which is explicitly",8,7,21,10.0,124.5,374.0,470.8,383.0,0.0,18.8,425.0,NimbusRomNo9L-Regu,(),False,False,False
 allowed under GPLv3 licensing6,8,7,22,10.0,124.5,384.1,258.8,394.9,0.0,10.1,425.0,NimbusRomNo9L-Regu,"({'start': 29, 'end': 30, 'kind': 'sup'},)",False,False,False
 . But even DRM is disallowed when protected by,8,7,23,10.0,259.3,385.9,470.8,394.9,134.8,1.9,425.0,NimbusRomNo9L-Regu,(),False,False,False
 "tivoization or law, and a case could be made that similar protection is provided by",8,8,24,10.0,124.5,397.9,470.8,406.9,-134.8,12.0,425.0,NimbusRomNo9L-Regu,(),False,False,False
 "modern mobile app distribution platforms, which should be included in similar fashion.",8,8,25,10.0,124.5,409.9,470.8,418.8,0.0,12.0,425.0,NimbusRomNo9L-Regu,(),False,False,False
-Voters are not allowed to change open source code in voting machines,8,9,26,10.0,124.5,436.3,419.3,445.3,0.0,26.4,700.0,NimbusRomNo9L-Medi,(),False,False,False
+Voters are not allowed to change open source code in voting machines,8,9,26,10.0,124.5,436.3,419.3,445.3,0.0,26.4,700.0,NimbusRomNo9L-Medi,"({'start': 0, 'end': 68, 'kind': 'bold'},)",False,False,False
 The GPL FAQ gives an example of voting machine users not being allowed to change,8,10,27,10.0,124.5,455.1,470.8,464.0,0.0,18.8,425.0,NimbusRomNo9L-Regu,(),False,False,False
 the code running on voting machines. Such abilities to control running software are not,8,10,28,10.0,124.5,467.0,470.8,476.0,0.0,12.0,425.0,NimbusRomNo9L-Regu,(),False,False,False
 required by GPLv3 licensing.,8,10,29,10.0,124.5,479.0,242.4,487.9,0.0,12.0,425.0,NimbusRomNo9L-Regu,(),False,False,False
@@ -328,7 +328,7 @@ required by GPLv3 licensing.,8,10,29,10.0,124.5,479.0,242.4,487.9,0.0,12.0,425.0
 "binary software. The FAQ also states that ”voting is a very special case”, so the appli-",8,11,32,10.0,124.5,514.8,470.8,523.8,0.0,12.0,425.0,NimbusRomNo9L-Regu,(),False,False,False
 cability of these thoughts on software in general and distribution of mobile applications,8,11,33,10.0,124.5,526.8,470.8,535.8,0.0,12.0,425.0,NimbusRomNo9L-Regu,(),False,False,False
 specifically is arguable.,8,11,34,10.0,124.5,538.7,218.1,547.7,0.0,12.0,425.0,NimbusRomNo9L-Regu,(),False,False,False
-4.4 Possible problems,8,12,35,10.0,124.5,565.2,223.2,574.2,0.0,26.4,700.0,NimbusRomNo9L-Medi,(),False,False,False
+4.4 Possible problems,8,12,35,10.0,124.5,565.2,223.2,574.2,0.0,26.4,700.0,NimbusRomNo9L-Medi,"({'start': 0, 'end': 21, 'kind': 'bold'},)",False,False,False
 "The proposed changes should be scrutinized by the open-source community and, specif-",8,13,36,10.0,124.5,583.9,470.8,592.9,0.0,18.8,425.0,NimbusRomNo9L-Regu,(),False,False,False
 "ically, legal experts, to make sure that their scope is as-intended. Without sufficient legal",8,13,37,10.0,124.5,595.9,470.8,604.9,0.0,12.0,425.0,NimbusRomNo9L-Regu,(),False,False,False
 "expertise, it is possible that there are large unintended consequences, and these should",8,13,38,10.0,124.5,607.9,470.8,616.8,0.0,12.0,425.0,NimbusRomNo9L-Regu,(),False,False,False
@@ -349,7 +349,7 @@ restriction methods as long as they also release versions without restricting me
 "restrict the use of your software by code, choose a license that clearly allows such",9,3,8,10.0,124.5,193.2,470.8,202.1,-14.9,12.0,425.0,NimbusRomNo9L-Regu,(),False,False,False
 "restrictions; if you wish for your program to be open and freely usable, choose a license",9,3,9,10.0,124.5,205.1,470.8,214.1,0.0,12.0,425.0,NimbusRomNo9L-Regu,(),False,False,False
 that disallows restricting methods.,9,3,10,10.0,124.5,217.1,260.9,226.0,0.0,12.0,425.0,NimbusRomNo9L-Regu,(),False,False,False
-5 Conclusion,9,4,11,12.0,124.5,246.3,199.5,257.0,0.0,29.2,700.0,NimbusRomNo9L-Medi,(),False,False,False
+5 Conclusion,9,4,11,12.0,124.5,246.3,199.5,257.0,0.0,29.2,700.0,NimbusRomNo9L-Medi,"({'start': 0, 'end': 12, 'kind': 'bold'},)",False,False,False
 This paper identified user freedom to run a software as they wish as a dimension of open,9,5,12,10.0,124.5,270.0,470.8,278.9,0.0,23.7,425.0,NimbusRomNo9L-Regu,(),False,False,False
 source licensing that has so far been left undefined in commonly used OS licenses. This,9,5,13,10.0,124.5,281.9,470.8,290.9,0.0,12.0,425.0,NimbusRomNo9L-Regu,(),False,False,False
 new dimension should perhaps be considered in scientific literature along with the more,9,5,14,10.0,124.5,293.9,470.8,302.9,0.0,12.0,425.0,NimbusRomNo9L-Regu,(),False,False,False
@@ -370,8 +370,8 @@ Copyright © 2021 for this paper by its authors.,9,8,28,10.0,203.7,777.7,391.6,7
 Use permitted under Creative Commons License Attribution 4.0 International (CC BY 4.0),9,8,29,10.0,114.0,788.7,481.2,799.8,-89.7,11.1,0.0,TimesNewRoman,(),True,False,False
 140,9,9,30,10.0,544.3,777.7,559.3,788.7,430.2,-11.1,0.0,TimesNewRoman,(),False,False,False
 Proceedings of the Conference on Technology Ethics 2021 - Tethics 2021,10,1,1,10.0,149.6,81.7,445.7,92.8,,,0.0,TimesNewRoman,(),False,False,False
-References,10,2,2,12.0,124.5,120.0,180.0,130.7,-25.1,38.2,700.0,NimbusRomNo9L-Medi,(),False,False,False
-"Austin, J. (1885). Lectures on jurisprudence, or, The philosophy of positive law. John",10,3,3,10.0,124.5,143.6,470.8,152.7,0.0,23.7,399.9,NimbusRomNo9L-ReguItal,(),False,False,False
+References,10,2,2,12.0,124.5,120.0,180.0,130.7,-25.1,38.2,700.0,NimbusRomNo9L-Medi,"({'start': 0, 'end': 10, 'kind': 'bold'},)",False,False,False
+"Austin, J. (1885). Lectures on jurisprudence, or, The philosophy of positive law. John",10,3,3,10.0,124.5,143.6,470.8,152.7,0.0,23.7,399.9,NimbusRomNo9L-ReguItal,"({'start': 19, 'end': 80, 'kind': 'italic'},)",False,False,False
 Murray.,10,3,4,10.0,134.4,155.7,166.2,164.6,10.0,12.1,425.0,NimbusRomNo9L-Regu,(),False,False,False
 GNU (1986). Gnu’s bulletin volume 1 no.1.,10,4,5,10.0,124.5,174.4,299.8,183.4,-10.0,18.7,425.0,NimbusRomNo9L-Regu,(),False,False,False
 Retrieved from https://www.gnu.org/bulletins/bull1.txt,10,4,6,10.0,134.4,186.3,401.1,195.5,10.0,11.9,366.1,CMTT10,(),False,False,False
@@ -380,33 +380,33 @@ Retrieved from https://www.gnu.org/licenses/gpl-3.0.html,10,5,8,10.0,134.4,217.1
 GNU Project (2001). What is free software?,10,6,9,10.0,124.5,236.0,301.7,244.9,-10.0,18.9,425.0,NimbusRomNo9L-Regu,(),False,False,False
 Retrieved from https://www.gnu.org/philosophy/free-sw.html,10,6,10,10.0,134.4,247.8,422.5,257.0,10.0,11.8,364.6,CMTT10,(),False,False,False
 "Gomulkiewicz, R. W. (2009). Open source license proliferation: Helpful diversity or",10,7,11,10.0,124.5,266.7,470.8,275.7,-10.0,18.9,425.0,NimbusRomNo9L-Regu,(),False,False,False
-"hopeless confusion. Wash. UJL & Pol’y, 30, 261.",10,7,12,10.0,134.4,278.7,330.8,287.6,10.0,11.9,410.2,NimbusRomNo9L-Regu,(),False,False,False
+"hopeless confusion. Wash. UJL & Pol’y, 30, 261.",10,7,12,10.0,134.4,278.7,330.8,287.6,10.0,11.9,410.2,NimbusRomNo9L-Regu,"({'start': 20, 'end': 37, 'kind': 'italic'}, {'start': 39, 'end': 41, 'kind': 'italic'})",False,False,False
 "Goodman-Wilson, D. (2020). Open source is broken. FOSDEM. Brussels, Belgium.",10,8,13,10.0,124.5,297.5,461.6,306.4,-10.0,18.8,425.0,NimbusRomNo9L-Regu,(),False,False,False
 Retrieved from https://mirrors.dotsrc.org/fosdem/2020/UB5.230/,10,8,14,10.0,134.4,309.3,470.8,318.5,10.0,11.8,363.4,CMTT10,(),False,False,False
 ethicsoss.webm,10,8,15,10.0,134.4,322.1,207.7,330.4,-0.0,12.8,345.0,CMTT10,(),False,False,False
 "Hofmann, G., Riehle, D., Kolassa, C., & Mauerer, W. (2013). A dual model of open",10,9,16,10.0,124.5,340.2,470.8,349.1,-10.0,18.1,425.0,NimbusRomNo9L-Regu,(),False,False,False
-"source license growth. In IFIP International Conference on Open Source Systems,",10,9,17,10.0,134.4,352.1,470.8,361.1,10.0,12.0,401.7,NimbusRomNo9L-ReguItal,(),False,False,False
+"source license growth. In IFIP International Conference on Open Source Systems,",10,9,17,10.0,134.4,352.1,470.8,361.1,10.0,12.0,401.7,NimbusRomNo9L-ReguItal,"({'start': 26, 'end': 78, 'kind': 'italic'},)",False,False,False
 (pp. 245–256). Springer.,10,9,18,10.0,134.4,364.0,232.1,373.1,0.0,11.9,425.0,NimbusRomNo9L-Regu,(),False,False,False
 "Johnson, P. (2021). Open source licenses in 2021: Trends and predictions. Accessed",10,10,19,10.0,124.5,382.9,470.8,391.8,-10.0,18.8,425.0,NimbusRomNo9L-Regu,(),False,False,False
 2021-06-07.,10,10,20,10.0,134.4,394.8,183.4,403.8,10.0,11.9,425.0,NimbusRomNo9L-Regu,(),False,False,False
 Retrieved from https://www.whitesourcesoftware.com/resources/blog/,10,11,21,10.0,134.4,406.7,470.8,415.9,0.0,11.9,362.2,CMTT10,(),False,False,False
 open-source-licenses-trends-and-predictions,10,11,22,10.0,134.4,419.5,361.8,427.8,0.0,12.8,345.0,CMTT10,(),False,False,False
-"Lerner, J., & Tirole, J. (2005). The scope of open source licensing. Journal of Law,",10,12,23,10.0,124.5,437.5,470.8,446.5,-10.0,18.0,418.7,NimbusRomNo9L-Regu,(),False,False,False
-"Economics, and Organization, 21(1), 20–56.",10,12,24,10.0,134.4,449.5,312.3,458.5,10.0,12.0,400.2,NimbusRomNo9L-ReguItal,(),False,False,False
+"Lerner, J., & Tirole, J. (2005). The scope of open source licensing. Journal of Law,",10,12,23,10.0,124.5,437.5,470.8,446.5,-10.0,18.0,418.7,NimbusRomNo9L-Regu,"({'start': 69, 'end': 84, 'kind': 'italic'},)",False,False,False
+"Economics, and Organization, 21(1), 20–56.",10,12,24,10.0,134.4,449.5,312.3,458.5,10.0,12.0,400.2,NimbusRomNo9L-ReguItal,"({'start': 0, 'end': 27, 'kind': 'italic'}, {'start': 29, 'end': 31, 'kind': 'italic'})",False,False,False
 "Naskali, J. (2020). Hard-coded censorship in open source mastodon clients—how free",10,13,25,10.0,124.5,468.3,470.8,477.3,-10.0,18.8,425.0,NimbusRomNo9L-Regu,(),False,False,False
-is open source? Proceedings of the Conference on Technology Ethics 2020.,10,13,26,10.0,134.4,480.3,434.9,489.2,10.0,12.0,397.9,NimbusRomNo9L-ReguItal,(),False,False,False
+is open source? Proceedings of the Conference on Technology Ethics 2020.,10,13,26,10.0,134.4,480.3,434.9,489.2,10.0,12.0,397.9,NimbusRomNo9L-ReguItal,"({'start': 16, 'end': 71, 'kind': 'italic'},)",False,False,False
 "Scheerder, A., van Deursen, A., & van Dijk, J. (2017). Determinants of internet skills,",10,14,27,10.0,124.5,499.1,470.8,508.0,-10.0,18.8,425.0,NimbusRomNo9L-Regu,(),False,False,False
 uses and outcomes. a systematic review of the second-and third-level digital divide.,10,14,28,10.0,134.4,511.0,470.8,520.0,10.0,12.0,425.0,NimbusRomNo9L-Regu,(),False,False,False
-"Telematics and informatics, 34(8), 1607–1624.",10,14,29,10.0,134.4,523.0,320.9,531.9,0.0,11.9,402.7,NimbusRomNo9L-ReguItal,(),False,False,False
-"Schoettle, H. (2019). Open source license compliance-why and how? Computer, 52(8),",10,15,30,10.0,124.5,541.8,470.8,550.7,-10.0,18.8,420.6,NimbusRomNo9L-Regu,(),False,False,False
+"Telematics and informatics, 34(8), 1607–1624.",10,14,29,10.0,134.4,523.0,320.9,531.9,0.0,11.9,402.7,NimbusRomNo9L-ReguItal,"({'start': 0, 'end': 26, 'kind': 'italic'}, {'start': 28, 'end': 30, 'kind': 'italic'})",False,False,False
+"Schoettle, H. (2019). Open source license compliance-why and how? Computer, 52(8),",10,15,30,10.0,124.5,541.8,470.8,550.7,-10.0,18.8,420.6,NimbusRomNo9L-Regu,"({'start': 66, 'end': 74, 'kind': 'italic'}, {'start': 76, 'end': 78, 'kind': 'italic'})",False,False,False
 63–67.,10,15,31,10.0,134.4,553.7,161.8,562.7,10.0,11.9,425.0,NimbusRomNo9L-Regu,(),False,False,False
 "Stallman, R. (2013). Why programs must not limit the freedom to run them.",10,16,32,10.0,124.5,572.5,428.3,581.5,-10.0,18.8,425.0,NimbusRomNo9L-Regu,(),False,False,False
 Retrieved from https://www.gnu.org/philosophy/,10,16,33,10.0,134.4,584.4,470.8,593.6,10.0,11.8,369.9,CMTT10,(),False,False,False
 programs-must-not-limit-freedom-to-run.html,10,16,34,10.0,134.4,597.1,362.3,605.5,0.0,12.7,345.0,CMTT10,(),False,False,False
 Tusky (2019). Tusky pull request #1303 · tuskyapp/tusky.,10,17,35,10.0,124.5,615.2,354.2,624.2,-10.0,18.1,425.0,NimbusRomNo9L-Regu,(),False,False,False
 Retrieved from https://github.com/tuskyapp/Tusky/pull/1303/,10,17,36,10.0,134.4,627.1,427.3,636.3,10.0,11.8,364.3,CMTT10,(),False,False,False
-"Van Dijk, J. A. (2006). Digital divide research, achievements and shortcomings. Poetics,",10,18,37,10.0,124.5,646.0,470.8,655.0,-10.0,18.9,422.2,NimbusRomNo9L-Regu,(),False,False,False
-"34(4-5), 221–235.",10,18,38,10.0,134.4,657.9,206.7,666.9,10.0,11.9,420.9,NimbusRomNo9L-Regu,(),False,False,False
+"Van Dijk, J. A. (2006). Digital divide research, achievements and shortcomings. Poetics,",10,18,37,10.0,124.5,646.0,470.8,655.0,-10.0,18.9,422.2,NimbusRomNo9L-Regu,"({'start': 80, 'end': 87, 'kind': 'italic'},)",False,False,False
+"34(4-5), 221–235.",10,18,38,10.0,134.4,657.9,206.7,666.9,10.0,11.9,420.9,NimbusRomNo9L-Regu,"({'start': 0, 'end': 2, 'kind': 'italic'},)",False,False,False
 Copyright © 2021 for this paper by its authors.,10,19,39,10.0,203.7,777.7,391.6,788.7,69.3,119.8,0.0,TimesNewRoman,(),False,False,False
 Use permitted under Creative Commons License Attribution 4.0 International (CC BY 4.0),10,19,40,10.0,114.0,788.7,481.2,799.8,-89.7,11.1,0.0,TimesNewRoman,(),True,False,False
 141,10,20,41,10.0,544.3,777.7,559.3,788.7,430.2,-11.1,0.0,TimesNewRoman,(),False,False,False

@@ -1,6 +1,6 @@
-text,page_no,block_no,line_no_on_page,font_size,x1,y1,x2,y2,rel_x,rel_y,avg_weight,font_name,scripts,space_before,space_after,fraction_denominator
-Interaktives Anpassungsfähiges E-Learning-System Im,1,1,1,17.9,70.1,72.1,539.6,89.3,,,704.0,NimbusSanL-Bold,(),False,False,False
-Bereich Datenbanken,1,2,2,17.9,213.3,92.3,396.4,109.2,143.2,20.2,704.0,NimbusSanL-Bold,(),False,False,False
+text,page_no,block_no,line_no_on_page,font_size,x1,y1,x2,y2,rel_x,rel_y,avg_weight,font_name,ranges,space_before,space_after,fraction_denominator
+Interaktives Anpassungsfähiges E-Learning-System Im,1,1,1,17.9,70.1,72.1,539.6,89.3,,,704.0,NimbusSanL-Bold,"({'start': 0, 'end': 51, 'kind': 'bold'},)",False,False,False
+Bereich Datenbanken,1,2,2,17.9,213.3,92.3,396.4,109.2,143.2,20.2,704.0,NimbusSanL-Bold,"({'start': 0, 'end': 19, 'kind': 'bold'},)",False,False,False
 Fabian Keller,1,3,3,12.0,123.9,137.9,193.3,149.1,-89.3,45.6,425.0,NimbusSanL-Regu,(),False,False,False
 Hochschule Harz,1,3,4,10.0,120.7,149.8,196.5,159.2,-3.2,11.9,425.0,NimbusSanL-Regu,(),False,False,False
 Friedrichstraße 57-59,1,3,5,10.0,111.1,160.3,206.1,169.6,-9.6,10.5,425.0,NimbusSanL-Regu,(),False,False,False
@@ -16,7 +16,7 @@ Hochschule Harz,1,5,14,10.0,413.2,149.8,489.0,159.2,9.0,12.1,425.0,NimbusSanL-Re
 Friedrichstraße 57-59,1,5,15,10.0,403.6,160.3,498.6,169.6,-9.6,10.5,425.0,NimbusSanL-Regu,(),False,False,False
 38855 Wernigerode,1,5,16,10.0,407.4,170.7,494.8,180.1,3.8,10.5,425.0,NimbusSanL-Regu,(),False,False,False
 kschneider@hs-harz.de,1,5,17,12.0,387.9,181.1,514.3,192.5,-19.5,10.4,425.0,NimbusSanL-Regu,(),False,False,False
-ABSTRACT,1,6,18,12.0,53.8,219.1,118.2,229.9,-334.1,38.0,700.0,NimbusRomNo9L-Medi,(),False,False,False
+ABSTRACT,1,6,18,12.0,53.8,219.1,118.2,229.9,-334.1,38.0,700.0,NimbusRomNo9L-Medi,"({'start': 0, 'end': 8, 'kind': 'bold'},)",False,False,False
 Das E-Learning-System ALEA [4] wird im Bereich Da-,1,7,19,9.0,325.8,220.6,555.8,229.6,272.0,1.5,370.0,CMR9,(),False,False,False
 "tenbanken entwickelt, weiterentwickelt und eingesetzt. Es",1,7,20,9.0,316.8,231.6,555.7,239.7,-9.0,11.0,370.0,CMR9,(),False,False,False
 "besteht aus verschiedenen Komponenten, die unterschied-",1,7,21,9.0,316.8,242.1,555.8,250.0,0.0,10.5,370.0,CMR9,(),False,False,False
@@ -38,7 +38,7 @@ Mapping und Normalisierung unterstützen sollen. Vielfältige,1,8,36,9.0,53.8,28
 Interaktionen und Hilfestellungen bspw. Empfehlungen von,1,8,37,9.0,53.8,298.2,292.8,306.4,-0.0,10.5,370.0,CMR9,(),False,False,False
 multimedialen digitalen Elementen werden zur Verbesserung,1,8,38,9.0,53.8,308.8,292.8,316.9,0.0,10.6,370.0,CMR9,(),False,False,False
 des Lernprozesses integriert.,1,8,39,9.0,53.8,319.3,167.4,327.3,0.0,10.5,370.0,CMR9,(),False,False,False
-Keywords,1,9,40,12.0,53.8,343.7,105.2,354.5,0.0,24.5,700.0,NimbusRomNo9L-Medi,(),False,False,False
+Keywords,1,9,40,12.0,53.8,343.7,105.2,354.5,0.0,24.5,700.0,NimbusRomNo9L-Medi,"({'start': 0, 'end': 8, 'kind': 'bold'},)",False,False,False
 Diese Komponenten und deren vielfältige Interaktions-,1,10,41,9.0,325.8,346.6,555.8,355.0,272.0,2.8,370.0,CMR9,(),False,False,False
 möglichkeiten werden im Folgenden thematisiert. Grund-,1,10,42,9.0,316.8,357.0,555.8,365.5,-9.0,10.5,370.0,CMR9,(),False,False,False
 "E-Learning-Systeme, ER-to-Relational-Mapping, SQL-DDL,",1,11,43,9.0,53.8,360.1,294.2,368.3,-263.0,3.1,370.0,CMR9,(),False,False,False
@@ -54,7 +54,7 @@ fordert ergänzende Interaktionsmöglichkeiten und Ansich-,1,13,52,9.0,316.8,440
 "ten, die im folgenden Kapitel beschrieben werden. Schließ-",1,13,53,9.0,316.8,451.2,555.8,459.3,0.0,10.6,370.0,CMR9,(),False,False,False
 lich werden die Ergebnisse zusammengefasst und ein Aus-,1,13,54,9.0,316.8,461.5,555.8,469.8,0.0,10.4,370.0,CMR9,(),False,False,False
 blick gegeben.,1,13,55,9.0,316.8,472.2,373.3,480.3,0.0,10.7,370.0,CMR9,(),False,False,False
-1. EINLEITUNG,1,14,56,12.0,53.8,395.1,151.1,405.9,-263.0,-77.1,700.0,NimbusRomNo9L-Medi,(),False,False,False
+1. EINLEITUNG,1,14,56,12.0,53.8,395.1,151.1,405.9,-263.0,-77.1,700.0,NimbusRomNo9L-Medi,"({'start': 0, 'end': 13, 'kind': 'bold'},)",False,False,False
 Der Einsatz von E-Learning-Systemen wird zunehmend,1,15,57,9.0,62.8,410.0,292.8,418.1,9.0,14.9,370.0,CMR9,(),False,False,False
 bedeutsamer. Durch Erweiterungen der Interaktions- und,1,15,58,9.0,53.8,420.5,292.8,428.6,-9.0,10.6,370.0,CMR9,(),False,False,False
 Feedbackmöglichkeiten kann die Nützlichkeit der E-Learning-,1,16,59,9.0,53.8,431.0,296.0,439.4,0.0,10.5,370.0,CMR9,(),False,True,False
@@ -64,7 +64,7 @@ lichkeiten im Lernprozess zur Verfügung stellen. Im Kon-,1,16,62,9.0,53.8,462.3
 text von Leistungsermittlungen können Hilfestellungen ein-,1,16,63,9.0,53.8,472.8,292.8,481.2,0.0,10.5,370.0,CMR9,(),False,False,False
 "geschränkt werden, trotzdem sollen die Korrektur- und Ab-",1,16,64,9.0,53.8,483.1,292.8,491.7,0.0,10.4,370.0,CMR9,(),False,False,False
 fragemöglichkeiten erleichtert und verbessert sein.,1,16,65,9.0,53.8,493.7,254.7,502.1,-0.0,10.6,370.0,CMR9,(),False,False,False
-2. GRUNDLEGENDE ASPEKTE,1,17,66,12.0,316.8,496.5,498.5,507.3,263.0,2.8,700.0,NimbusRomNo9L-Medi,(),False,False,False
+2. GRUNDLEGENDE ASPEKTE,1,17,66,12.0,316.8,496.5,498.5,507.3,263.0,2.8,700.0,NimbusRomNo9L-Medi,"({'start': 0, 'end': 23, 'kind': 'bold'},)",False,False,False
 Das Konzept ER-to-Relational-Mapping und die Norma-,1,18,67,9.0,62.8,504.2,292.7,512.3,-254.0,7.7,370.0,CMR9,(),False,False,False
 lisierung eines Relationenmodells bzw. relationalen Daten-,1,18,68,9.0,53.8,514.7,292.7,522.8,-9.0,10.5,370.0,CMR9,(),False,False,False
 Das ALEA-System ist ein datenbankbasiertes E-Learning-,1,19,69,9.0,325.8,511.3,555.7,519.6,272.0,-3.4,370.0,CMR9,(),False,False,False
@@ -89,8 +89,8 @@ hilfe von AJAX werden nach Bedarf Daten an den Server,1,21,87,9.0,316.8,605.4,55
 gesendet ohne dass die Webseite neu geladen wird. Zur Ver-,1,21,88,9.0,316.8,616.1,555.8,624.2,0.0,10.7,370.0,CMR9,(),False,False,False
 "waltung der Information über Aufgaben, Lösungen, Lernen-",1,21,89,9.0,316.8,626.4,555.9,634.9,0.0,10.3,370.0,CMR9,(),False,False,False
 de usw. werden Datenbanksysteme eingebunden.,1,21,90,9.0,316.8,637.0,512.7,645.1,0.0,10.7,370.0,CMR9,(),False,False,False
-3. AUFGABENTYP ER-TO-RELATIONAL-,1,22,91,12.0,316.8,661.3,555.9,672.1,0.0,24.3,700.0,NimbusRomNo9L-Medi,(),False,False,False
-MAPPING,1,22,92,12.0,337.7,675.3,394.8,686.0,20.9,13.9,700.0,NimbusRomNo9L-Medi,(),False,False,False
+3. AUFGABENTYP ER-TO-RELATIONAL-,1,22,91,12.0,316.8,661.3,555.9,672.1,0.0,24.3,700.0,NimbusRomNo9L-Medi,"({'start': 0, 'end': 32, 'kind': 'bold'},)",False,False,False
+MAPPING,1,22,92,12.0,337.7,675.3,394.8,686.0,20.9,13.9,700.0,NimbusRomNo9L-Medi,"({'start': 0, 'end': 7, 'kind': 'bold'},)",False,False,False
 32nd GI-Workshop on Foundations of Databases (Grundlagen von Daten-,1,23,93,8.0,53.8,684.7,292.9,694.4,-283.9,9.5,425.0,NimbusRomNo9L-Regu,"({'start': 2, 'end': 3, 'kind': 'sup'}, {'start': 3, 'end': 4, 'kind': 'sup'})",False,False,False
 "banken), September 01-03, 2021, Munich, Germany.",1,23,94,8.0,53.8,696.2,221.8,703.4,0.0,11.5,425.0,NimbusRomNo9L-Regu,(),False,False,False
 Copyright © 2021 for this paper by its authors. Use permitted under Crea-,1,23,95,8.0,53.8,702.2,292.9,713.5,0.0,6.0,422.5,NimbusRomNo9L-Regu,(),False,False,False
@@ -107,7 +107,7 @@ det werden. Dazu sollen die Lernenden die entsprechenden,2,1,6,9.0,53.8,110.0,29
 Tabellen und Constraints definieren. Die relevanten Cons-,2,1,7,9.0,53.8,120.3,292.8,128.4,0.0,10.4,370.0,CMR9,(),False,False,False
 "traints sind Not Null, Unique, Primary Key und Foreign",2,1,8,9.0,53.8,130.9,292.8,138.9,0.0,10.6,370.0,CMR9,(),False,False,False
 Key.,2,1,9,9.0,53.8,141.3,71.7,149.4,0.0,10.5,370.0,CMR9,(),False,False,False
-Figure 2: Beispiel von Constraints,2,2,10,9.0,369.1,131.7,503.5,139.7,315.3,-9.6,540.0,CMB10,(),False,False,False
+Figure 2: Beispiel von Constraints,2,2,10,9.0,369.1,131.7,503.5,139.7,315.3,-9.6,540.0,CMB10,"({'start': 0, 'end': 34, 'kind': 'bold'},)",False,False,False
 Die Mapping-Aufgaben sind darauf ausgelegt den Lernen-,2,3,11,9.0,62.8,151.6,292.8,159.9,-306.3,19.9,370.0,CMR9,(),False,False,False
 den visuell und interaktiv Wissen zu vermitteln. In diesem,2,3,12,9.0,53.8,162.3,292.8,170.2,-9.0,10.7,370.0,CMR9,(),False,False,False
 Fall fungiert das System als sog. Composer zur Erstellung,2,3,13,9.0,53.8,172.6,292.7,180.8,0.0,10.4,370.0,CMR9,(),False,False,False
@@ -126,7 +126,7 @@ rungen beziehen. Die Korrektheit einer Lösung kann zwar,2,4,25,9.0,316.8,248.0,
 "generell nicht automatisch entschieden werden, aber Fehler",2,4,26,9.0,316.8,258.4,555.8,266.5,0.0,10.5,370.0,CMR9,(),False,False,False
 können weitestgehend erkannt werden. Die Gestaltung der,2,4,27,9.0,316.8,268.8,555.8,277.3,0.0,10.4,370.0,CMR9,(),False,False,False
 Aufgaben kann dies erleichtern.,2,4,28,9.0,316.8,279.2,443.7,287.4,0.0,10.4,370.0,CMR9,(),False,False,False
-3.1 Bearbeitung der Aufgaben,2,5,29,12.0,53.8,221.1,216.3,231.8,-263.0,-58.1,700.0,NimbusRomNo9L-Medi,(),False,False,False
+3.1 Bearbeitung der Aufgaben,2,5,29,12.0,53.8,221.1,216.3,231.8,-263.0,-58.1,700.0,NimbusRomNo9L-Medi,"({'start': 0, 'end': 28, 'kind': 'bold'},)",False,False,False
 Zur Lösung der Mapping-Aufgaben gibt es für jede Akti-,2,6,30,9.0,62.8,235.9,292.9,244.5,9.0,14.8,370.0,CMR9,(),False,True,False
 on eine entsprechende Schaltfläche. Das System erlaubt es,2,6,31,9.0,53.8,246.4,292.8,254.9,-9.0,10.6,370.0,CMR9,(),False,False,False
 den Lernenden nicht mehrere Aktionen parallel auszuführen.,2,6,32,9.0,53.8,256.8,292.9,265.4,0.0,10.4,370.0,CMR9,(),False,True,False
@@ -186,9 +186,9 @@ keiten gestört werden. Die Lernenden können jederzeit den,2,11,85,9.0,316.8,62
 dem aktuellen Zustand entsprechenden DDL-Code über das,2,11,86,9.0,316.8,634.9,555.9,643.4,0.0,10.4,370.0,CMR9,(),False,True,False
 Datenbanksystem prüfen lassen. Für Leistungsbewertungen,2,11,87,9.0,316.8,645.4,555.9,653.9,0.0,10.5,370.0,CMR9,(),False,True,False
 kann diese Möglichkeit eingeschränkt werden.,2,11,88,9.0,316.8,656.0,500.0,664.3,0.0,10.6,370.0,CMR9,(),False,False,False
-Figure 1: Aktive Bearbeitung einer Spalte,2,12,89,9.0,90.2,634.5,256.3,642.6,-226.6,-21.4,540.0,CMB10,(),False,False,False
-3.2 Prüfen der Eingaben,2,13,90,12.0,53.8,664.8,187.6,675.6,-36.4,30.3,700.0,NimbusRomNo9L-Medi,(),False,False,False
-3.3 Reaktionen des Systems auf Eingaben,2,14,91,12.0,316.8,675.3,537.0,686.0,263.0,10.4,700.0,NimbusRomNo9L-Medi,(),False,False,False
+Figure 1: Aktive Bearbeitung einer Spalte,2,12,89,9.0,90.2,634.5,256.3,642.6,-226.6,-21.4,540.0,CMB10,"({'start': 0, 'end': 41, 'kind': 'bold'},)",False,False,False
+3.2 Prüfen der Eingaben,2,13,90,12.0,53.8,664.8,187.6,675.6,-36.4,30.3,700.0,NimbusRomNo9L-Medi,"({'start': 0, 'end': 23, 'kind': 'bold'},)",False,False,False
+3.3 Reaktionen des Systems auf Eingaben,2,14,91,12.0,316.8,675.3,537.0,686.0,263.0,10.4,700.0,NimbusRomNo9L-Medi,"({'start': 0, 'end': 39, 'kind': 'bold'},)",False,False,False
 Ein wichtiger Aspekt der Mapping-Aufgaben ist es die,2,15,92,9.0,62.8,679.6,292.8,687.9,-254.0,4.3,370.0,CMR9,(),False,False,False
 Eingaben der Lernenden so früh und umfangreich wie sinn-,2,15,93,9.0,53.8,690.2,292.8,698.7,-9.0,10.6,370.0,CMR9,(),False,True,False
 voll und möglich zu prüfen. Bereits bei den Eingaben werden,2,15,94,9.0,53.8,700.6,292.8,709.1,0.0,10.5,370.0,CMR9,(),False,True,False
@@ -269,9 +269,9 @@ sich das eigene Ergebnis vom gesuchten zumindest in diesen,3,9,70,9.0,316.8,455.
 Aspekten unterscheidet.,3,9,71,9.0,316.8,465.4,413.3,473.6,0.0,10.3,370.0,CMR9,(),False,False,False
 Der ’Notification Icon’ befindet sich in der Toolbar im,3,10,72,9.0,62.8,381.8,292.8,389.9,-254.0,-83.6,370.0,CMR9,(),False,False,False
 oberen Bereich des Systems.,3,10,73,9.0,53.8,392.3,167.6,400.4,-9.0,10.5,370.0,CMR9,(),False,False,False
-Figure 4: Toolbar mit Benachrichtigungshinweis,3,11,74,9.0,342.0,517.5,530.5,525.5,288.2,125.2,540.0,CMB10,(),False,False,False
-Figure 3: Hinweis zur Umbennung einer Spalte,3,12,75,9.0,80.5,549.4,266.0,557.4,-261.5,31.9,540.0,CMB10,(),False,False,False
-3.4 Die Toolbar,3,13,76,12.0,53.8,581.1,141.0,591.9,-26.7,31.8,700.0,NimbusRomNo9L-Medi,(),False,False,False
+Figure 4: Toolbar mit Benachrichtigungshinweis,3,11,74,9.0,342.0,517.5,530.5,525.5,288.2,125.2,540.0,CMB10,"({'start': 0, 'end': 46, 'kind': 'bold'},)",False,False,False
+Figure 3: Hinweis zur Umbennung einer Spalte,3,12,75,9.0,80.5,549.4,266.0,557.4,-261.5,31.9,540.0,CMB10,"({'start': 0, 'end': 44, 'kind': 'bold'},)",False,False,False
+3.4 Die Toolbar,3,13,76,12.0,53.8,581.1,141.0,591.9,-26.7,31.8,700.0,NimbusRomNo9L-Medi,"({'start': 0, 'end': 15, 'kind': 'bold'},)",False,False,False
 Um den Lernenden weitere Funktionen zur effizienten Be-,3,14,77,9.0,62.8,596.0,292.8,604.1,9.0,14.9,370.0,CMR9,(),False,False,False
 arbeitung der Aufgabe und Hilfestellungen aufzeigen zu kön-,3,14,78,9.0,53.8,606.4,292.9,615.0,-9.0,10.4,370.0,CMR9,(),False,False,False
 "nen, befindet sich am oberen Rand des Systems eine Tool-",3,14,79,9.0,53.8,617.0,292.8,625.1,0.0,10.6,370.0,CMR9,(),False,False,False
@@ -279,8 +279,8 @@ arbeitung der Aufgabe und Hilfestellungen aufzeigen zu kön-,3,14,78,9.0,53.8,60
 Hinweise und Hilfestellungen zur Verfügung. Wie bereits er-,3,14,81,9.0,53.8,637.9,292.9,646.3,0.0,10.9,370.0,CMR9,(),False,True,False
 wähnt gibt es hier die Auflistung der Hinweise zur Bearbei-,3,14,82,9.0,53.8,648.2,292.8,656.8,0.0,10.4,370.0,CMR9,(),False,False,False
 tung der aktuellen Aufgabe.,3,14,83,9.0,53.8,658.7,166.7,667.0,0.0,10.5,370.0,CMR9,(),False,False,False
-Figure 5: Toolbar mit geöffneten Benachrichtigungen,3,15,84,9.0,331.9,615.1,540.7,623.6,278.1,-43.6,540.0,CMB10,(),False,False,False
-3.5 Feedback durch die Lernenden,3,16,85,12.0,316.8,643.9,502.8,654.7,-15.1,28.8,700.0,NimbusRomNo9L-Medi,(),False,False,False
+Figure 5: Toolbar mit geöffneten Benachrichtigungen,3,15,84,9.0,331.9,615.1,540.7,623.6,278.1,-43.6,540.0,CMB10,"({'start': 0, 'end': 51, 'kind': 'bold'},)",False,False,False
+3.5 Feedback durch die Lernenden,3,16,85,12.0,316.8,643.9,502.8,654.7,-15.1,28.8,700.0,NimbusRomNo9L-Medi,"({'start': 0, 'end': 32, 'kind': 'bold'},)",False,False,False
 Damit die Kommunikation und Interaktion der Lernenden,3,17,86,9.0,325.8,658.9,555.8,666.9,9.0,15.0,370.0,CMR9,(),False,False,False
 "sich nicht nur auf das System und dessen Hinweise bezieht,",3,17,87,9.0,316.8,669.3,555.8,677.4,-9.0,10.4,370.0,CMR9,(),False,False,False
 gibt es die Schaltfläche ’Question and Feedback’. Hier kön-,3,17,88,9.0,316.8,679.7,555.9,688.2,0.0,10.5,370.0,CMR9,(),False,False,False
@@ -292,7 +292,7 @@ Icon einer Glocke ein roter Kreis angezeigt (siehe Abbil-,3,18,93,9.0,53.8,679.3
 dung 4 und Abbildung 5). Neben den Hinweisen zur Bear-,3,18,94,9.0,53.8,689.8,292.8,698.7,0.0,10.5,370.0,CMR9,(),False,False,False
 beitung werden unter der Glocke zudem noch Hinweise auf,3,19,95,9.0,53.8,700.6,293.2,708.8,0.0,10.9,370.0,CMR9,(),False,False,False
 neue Empfehlungen gegeben. Gibt es zur aktuellen Aufgabe,3,19,96,9.0,53.8,711.0,292.8,719.3,0.0,10.4,370.0,CMR9,(),False,False,False
-3.6.3 Hilfetexte,4,1,1,11.0,319.6,56.4,394.8,66.1,,,390.0,NimbusRomNo9L-ReguItal,(),False,False,False
+3.6.3 Hilfetexte,4,1,1,11.0,319.6,56.4,394.8,66.1,,,390.0,NimbusRomNo9L-ReguItal,"({'start': 0, 'end': 16, 'kind': 'italic'},)",False,False,False
 "da dieses dazu dient, das System an die Bedürfnisse der Ler-",4,2,2,9.0,53.8,57.5,292.9,66.0,-265.8,1.2,370.0,CMR9,(),False,True,False
 nenden anzupassen und eine kontinuierliche Verbesserung,4,2,3,9.0,53.8,68.1,292.8,76.2,0.0,10.6,370.0,CMR9,(),False,False,False
 voranzutreiben (siehe Abbildung 6).,4,2,4,9.0,53.8,78.1,199.0,87.0,0.0,10.0,370.0,CMR9,(),False,False,False
@@ -302,11 +302,11 @@ Videoinhalte abzurufen. Hier sind die Hilfetexte nützlich.,4,3,7,9.0,316.8,91.4
 "Die Hilfetexte sind Beschreibungen von Herausforderungen,",4,3,8,9.0,316.8,101.9,555.8,110.0,0.0,10.5,370.0,CMR9,(),False,False,False
 "Fragestellungen, Datenbankthematiken oder Beispiele von",4,3,9,9.0,316.8,112.4,555.7,120.5,0.0,10.6,370.0,CMR9,(),False,False,False
 SQL-Code.,4,3,10,9.0,316.8,122.8,361.2,130.9,0.0,10.4,370.0,CMR9,(),False,False,False
-3.6.4 Hilfegrafiken,4,4,11,11.0,319.6,140.5,409.5,150.3,2.7,17.7,390.0,NimbusRomNo9L-ReguItal,(),False,False,False
+3.6.4 Hilfegrafiken,4,4,11,11.0,319.6,140.5,409.5,150.3,2.7,17.7,390.0,NimbusRomNo9L-ReguItal,"({'start': 0, 'end': 19, 'kind': 'italic'},)",False,False,False
 "Hilfegrafiken stellen nicht nur Datenmodelle dar, sondern",4,5,12,9.0,325.8,154.7,555.8,162.8,6.2,14.1,370.0,CMR9,(),False,False,False
 "um Zeichnungen oder Comics, die sich mit wenig Worten",4,5,13,9.0,316.8,165.1,555.8,173.3,-9.0,10.5,370.0,CMR9,(),False,False,False
 einer Datenbankthematik annehmen.,4,5,14,9.0,316.8,175.7,465.7,183.7,0.0,10.6,370.0,CMR9,(),False,False,False
-3.6.5 Vordefinierte Hilfestellungen,4,6,15,11.0,319.6,193.3,478.2,203.1,2.7,17.6,390.0,NimbusRomNo9L-ReguItal,(),False,False,False
+3.6.5 Vordefinierte Hilfestellungen,4,6,15,11.0,319.6,193.3,478.2,203.1,2.7,17.6,390.0,NimbusRomNo9L-ReguItal,"({'start': 0, 'end': 35, 'kind': 'italic'},)",False,False,False
 "Die Lernenden bekommen, basierend auf der Analyse des",4,7,16,9.0,325.8,207.4,555.8,215.6,6.2,14.0,370.0,CMR9,(),False,False,False
 "Systems, zu der aktuellen Situation und zur Aufgabe Hilfe-",4,7,17,9.0,316.8,217.9,555.8,226.1,-9.0,10.5,370.0,CMR9,(),False,False,False
 stellungen empfohlen. Diese können sich dynamisch anpas-,4,7,18,9.0,316.8,228.4,555.8,236.9,0.0,10.6,370.0,CMR9,(),False,False,False
@@ -318,12 +318,12 @@ Vordefinierte Inhalte beziehen sich nicht zwingend auf eine,4,7,22,9.0,325.8,270
 die wichtig sind um ein Grundverständnis für die Kursin-,4,8,24,9.0,316.8,291.2,555.9,299.6,0.0,10.6,370.0,CMR9,(),False,True,False
 "halte zu erlangen. Auch wenn keine Challenges aktiv sind,",4,8,25,9.0,316.8,301.5,555.8,309.8,0.0,10.4,370.0,CMR9,(),False,False,False
 können Inhalte bereit gestellt werden.,4,8,26,9.0,316.8,312.2,469.2,320.6,0.0,10.7,370.0,CMR9,(),False,False,False
-Figure 6: Feedbackfenster,4,9,27,9.0,122.6,298.7,224.0,306.8,-194.2,-13.5,540.0,CMB10,(),False,False,False
+Figure 6: Feedbackfenster,4,9,27,9.0,122.6,298.7,224.0,306.8,-194.2,-13.5,540.0,CMB10,"({'start': 0, 'end': 25, 'kind': 'bold'},)",False,False,False
 Die Gesamtheit der multimedialen Inhalte wird nicht nur,4,10,28,9.0,325.8,322.6,555.8,330.6,203.1,23.8,370.0,CMR9,(),False,False,False
 im Rahmen der Aufgaben genutzt. Mit den Inhalten werden,4,10,29,9.0,316.8,332.9,555.8,341.2,-9.0,10.4,370.0,CMR9,(),False,False,False
 "Playlisten gefüllt, die den Lernenden zur Verfügung stehen",4,10,30,9.0,316.8,343.5,555.9,352.0,0.0,10.6,370.0,CMR9,(),False,True,False
 um die Selbstlernphase zu unterstützen.,4,10,31,9.0,316.8,353.9,477.8,362.4,0.0,10.5,370.0,CMR9,(),False,True,False
-3.6 Mediale Hilfestellungen,4,11,32,12.0,53.8,328.4,201.9,339.1,-263.0,-25.6,700.0,NimbusRomNo9L-Medi,(),False,False,False
+3.6 Mediale Hilfestellungen,4,11,32,12.0,53.8,328.4,201.9,339.1,-263.0,-25.6,700.0,NimbusRomNo9L-Medi,"({'start': 0, 'end': 27, 'kind': 'bold'},)",False,False,False
 Für die Lernenden stehen verschiedene Arten von me-,4,12,33,9.0,62.8,343.1,292.8,351.7,9.0,14.8,370.0,CMR9,(),False,True,False
 "dialen Hilfestellungen zur Verfügung, die ständig ergänzt,",4,12,34,9.0,53.8,353.7,292.9,362.2,-9.0,10.6,370.0,CMR9,(),False,False,False
 produziert und weiterentwickelt werden. Dabei handelt es,4,12,35,9.0,53.8,364.3,292.8,372.2,0.0,10.6,370.0,CMR9,(),False,False,False
@@ -332,7 +332,7 @@ produziert und weiterentwickelt werden. Dabei handelt es,4,12,35,9.0,53.8,364.3,
 werden kurz gehalten und sind thematisch nicht voneinan-,4,12,38,9.0,53.8,395.6,292.8,403.7,0.0,10.6,370.0,CMR9,(),False,False,False
 "der abhängig, können sich aber ergänzen und werden ggf. in",4,12,39,9.0,53.8,406.0,292.9,414.5,0.0,10.4,370.0,CMR9,(),False,False,False
 Gruppen mit oder ohne empfohlener Reihenfolge empfohlen.,4,12,40,9.0,53.8,416.5,292.8,424.6,0.0,10.5,370.0,CMR9,(),False,False,False
-3.6.6 Empfehlungen,4,13,41,11.0,319.6,371.7,415.6,381.4,265.8,-44.8,390.0,NimbusRomNo9L-ReguItal,(),False,False,False
+3.6.6 Empfehlungen,4,13,41,11.0,319.6,371.7,415.6,381.4,265.8,-44.8,390.0,NimbusRomNo9L-ReguItal,"({'start': 0, 'end': 18, 'kind': 'italic'},)",False,False,False
 Hilfestellungen und multimediale Elemente sollen zudem,4,14,42,9.0,325.8,385.8,555.8,394.0,6.2,14.1,370.0,CMR9,(),False,False,False
 zunehmend vom System empfohlen werden. ALEA nutzt,4,14,43,9.0,316.8,396.2,555.8,404.4,-9.0,10.4,370.0,CMR9,(),False,False,False
 "verschiedene Arten von Empfehlungsalgorithmen, die stän-",4,14,44,9.0,316.8,406.6,555.9,415.2,0.0,10.5,370.0,CMR9,(),False,False,False
@@ -344,7 +344,7 @@ in modalen Fenstern innerhalb der Anwendung aufgerufen.,4,15,49,9.0,53.8,447.8,2
 Für die Icons gibt es zwei Bereiche. Die grauen Icons bein-,4,15,50,9.0,53.8,458.4,292.8,466.8,0.0,10.7,370.0,CMR9,(),False,True,False
 "halten vordefinierte Hilfestellungen, wohingegen die grünen",4,15,51,9.0,53.8,468.8,292.9,477.2,0.0,10.4,370.0,CMR9,(),False,True,False
 Icons aktuell empfohlene Hilfestellungen beinhalten.,4,15,52,9.0,53.8,479.2,263.4,487.4,0.0,10.5,370.0,CMR9,(),False,False,False
-3.6.7 Metadaten,4,16,53,11.0,319.6,445.4,399.3,455.0,265.8,-33.8,390.0,NimbusRomNo9L-ReguItal,(),False,False,False
+3.6.7 Metadaten,4,16,53,11.0,319.6,445.4,399.3,455.0,265.8,-33.8,390.0,NimbusRomNo9L-ReguItal,"({'start': 0, 'end': 15, 'kind': 'italic'},)",False,False,False
 Ein wichtiger Aspekt für die Zuweisung der medialen Hil-,4,17,54,9.0,325.8,459.4,555.8,468.0,6.2,14.0,370.0,CMR9,(),False,True,False
 festellungen sind die hinterlegten Metadaten. Für mediale,4,17,55,9.0,316.8,470.0,555.9,478.5,-9.0,10.6,370.0,CMR9,(),False,True,False
 "Inhalte werden eine Reihe von Metadaten definiert, die es",4,17,56,9.0,316.8,480.5,555.8,488.5,-0.0,10.5,370.0,CMR9,(),False,False,False
@@ -356,7 +356,7 @@ nenden genutzt. Dies ermöglicht im Vorfeld die Zuordnung,4,17,61,9.0,316.8,532.
 der Hilfestellung zu Aufgaben. Ein direkt für diese Aufgabe,4,17,62,9.0,316.8,543.1,555.9,551.7,0.0,10.4,370.0,CMR9,(),False,True,False
 "produzierter Podcast, soll in der Regel nicht als Hilfestellung",4,17,63,9.0,316.8,553.7,555.7,561.8,0.0,10.6,370.0,CMR9,(),False,False,False
 empfohlen werden.,4,17,64,9.0,316.8,564.2,392.0,572.2,0.0,10.5,370.0,CMR9,(),False,False,False
-3.6.1 Screencasts und Erklärvideos,4,18,65,11.0,56.5,497.3,219.3,507.0,-260.3,-66.8,390.0,NimbusRomNo9L-ReguItal,(),False,False,False
+3.6.1 Screencasts und Erklärvideos,4,18,65,11.0,56.5,497.3,219.3,507.0,-260.3,-66.8,390.0,NimbusRomNo9L-ReguItal,"({'start': 0, 'end': 34, 'kind': 'italic'},)",False,False,False
 Screencasts befassen sich mit der Anwendung und Nut-,4,19,66,9.0,62.8,511.4,292.8,519.6,6.2,14.0,370.0,CMR9,(),False,False,False
 zung von Software bzw. mit den Erklärungen zu Lösun-,4,19,67,9.0,53.8,521.9,292.9,530.4,-9.0,10.6,370.0,CMR9,(),False,False,False
 gen dieser Aufgabentypen. Für die Aufgaben zum ER-to-,4,19,68,9.0,53.8,532.3,292.8,540.9,-0.0,10.4,370.0,CMR9,(),False,True,False
@@ -368,7 +368,7 @@ können sich auf Aufgaben beziehen oder allgemeine Vorge-,4,20,73,9.0,53.8,584.6
 hensweisen und Hinweise enthalten. Neben den Screencasts,4,20,74,9.0,53.8,595.2,292.8,603.2,0.0,10.6,370.0,CMR9,(),False,False,False
 finden die Lernenden hier zudem Erklärvideos die allgemeine,4,20,75,9.0,53.8,605.6,292.8,614.1,0.0,10.5,370.0,CMR9,(),False,False,False
 Prinzipien von Datenbanken thematisieren.,4,20,76,9.0,53.8,616.2,227.9,624.2,0.0,10.6,370.0,CMR9,(),False,False,False
-3.7 Check and Submit,4,21,77,12.0,316.8,581.1,438.7,591.9,263.0,-35.1,700.0,NimbusRomNo9L-Medi,(),False,False,False
+3.7 Check and Submit,4,21,77,12.0,316.8,581.1,438.7,591.9,263.0,-35.1,700.0,NimbusRomNo9L-Medi,"({'start': 0, 'end': 20, 'kind': 'bold'},)",False,False,False
 Um sich den zugehörigen SQL-Code anzeigen zu lassen,4,22,78,9.0,325.8,596.0,555.8,604.5,9.0,14.9,370.0,CMR9,(),False,False,False
 "und zur Kontrolle der eigenen Eingaben, steht den Lernen-",4,22,79,9.0,316.8,606.6,555.8,614.7,-9.0,10.6,370.0,CMR9,(),False,False,False
 den im unteren Bereich des Systems die Schaltfläche ’Check,4,22,80,9.0,316.8,617.0,555.9,625.4,0.0,10.4,370.0,CMR9,(),False,False,False
@@ -381,7 +381,7 @@ tung machen können und zudem für die finale Abgabe der,4,22,86,9.0,316.8,679.6
 Aufgabe. Eine zweite Zeichenkette wird erzeugt und bein-,4,22,87,9.0,316.8,690.1,555.8,698.3,0.0,10.5,370.0,CMR9,(),False,False,False
 haltet HTML-Code. Dieser wird zur visuellen Darstellung,4,22,88,9.0,316.8,700.6,555.8,708.8,0.0,10.6,370.0,CMR9,(),False,False,False
 des SQL-Codes für die Lernenden genutzt.,4,22,89,9.0,316.8,711.1,488.2,719.6,0.0,10.5,370.0,CMR9,(),False,True,False
-3.6.2 Podcasts,4,23,90,11.0,56.5,634.2,128.1,643.8,-260.3,-76.9,390.0,NimbusRomNo9L-ReguItal,(),False,False,False
+3.6.2 Podcasts,4,23,90,11.0,56.5,634.2,128.1,643.8,-260.3,-76.9,390.0,NimbusRomNo9L-ReguItal,"({'start': 0, 'end': 14, 'kind': 'italic'},)",False,False,False
 "Podcasts sollen, so wie die Screencasts, kompakt Informa-",4,24,91,9.0,62.8,648.3,292.7,656.4,6.2,14.1,370.0,CMR9,(),False,False,False
 tionen vermitteln. Die Themen können hier sowohl Aufgaben-,4,24,92,9.0,53.8,658.7,296.1,667.3,-9.0,10.4,370.0,CMR9,(),False,False,False
 oder Challenge-bezogen als auch allgemeingültig sein. Die,4,24,93,9.0,53.8,669.3,292.9,677.7,-0.0,10.6,370.0,CMR9,(),False,True,False
@@ -427,14 +427,14 @@ wertungen aufwändiger werden. Je nachdem wie die Lernen-,5,5,35,9.0,316.8,413.2
 den ihre Lösungen aufbauen kann sich bspw. die Anzahl der,5,5,36,9.0,316.8,423.6,555.8,432.2,0.0,10.4,370.0,CMR9,(),False,False,False
 Elemente in einem Constraint unterscheiden und trotzdem,5,5,37,9.0,316.8,434.1,555.8,442.2,0.0,10.6,370.0,CMR9,(),False,False,False
 eine richtige Lösung erzeugen.,5,5,38,9.0,316.8,444.7,437.7,453.1,0.0,10.6,370.0,CMR9,(),False,False,False
-Figure 7: Challenge Auswahl und Hilfemedien,5,6,39,9.0,82.6,573.4,263.9,581.4,-234.2,128.7,540.0,CMB10,(),False,False,False
+Figure 7: Challenge Auswahl und Hilfemedien,5,6,39,9.0,82.6,573.4,263.9,581.4,-234.2,128.7,540.0,CMB10,"({'start': 0, 'end': 43, 'kind': 'bold'},)",False,False,False
 Die Ansicht des DDL-Codes soll den Lernenden einen an-,5,7,40,9.0,62.8,606.4,292.8,614.6,-19.8,33.0,370.0,CMR9,(),False,False,False
 deren Blick auf die eigene Lösung verschaffen (siehe Abbil-,5,7,41,9.0,53.8,616.5,292.8,625.5,-9.0,10.2,370.0,CMR9,(),False,False,False
 dung 8). Damit soll der Bezug zwischen der Planung des Re-,5,7,42,9.0,53.8,627.0,292.7,636.0,-0.0,10.5,370.0,CMR9,(),False,False,False
 lationenmodells und dem Verständnis der Syntax der DDL-,5,7,43,9.0,53.8,637.9,292.9,646.3,0.0,10.9,370.0,CMR9,(),False,False,False
 Befehle (Data Definition Language) gestärkt werden.,5,7,44,9.0,53.8,647.9,267.1,656.9,0.0,10.1,370.0,CMR9,(),False,False,False
-Figure 8: Ausgabe des SQL-Codes und Rückmeldung der Da-,5,8,45,9.0,316.8,640.9,555.8,649.4,263.0,-7.0,540.0,CMB10,(),False,True,False
-tenbank,5,8,46,9.0,316.8,651.4,348.2,659.4,0.0,10.5,540.0,CMB10,(),False,False,False
+Figure 8: Ausgabe des SQL-Codes und Rückmeldung der Da-,5,8,45,9.0,316.8,640.9,555.8,649.4,263.0,-7.0,540.0,CMB10,"({'start': 0, 'end': 55, 'kind': 'bold'},)",False,True,False
+tenbank,5,8,46,9.0,316.8,651.4,348.2,659.4,0.0,10.5,540.0,CMB10,"({'start': 0, 'end': 7, 'kind': 'bold'},)",False,False,False
 Da die Datentypen für die Lösung der Aufgabe nicht re-,5,9,47,9.0,62.8,658.7,292.8,667.3,-254.0,7.3,370.0,CMR9,(),False,False,False
 "levant sind, wird auf dem Datentyp ’variable character’ ab-",5,9,48,9.0,53.8,669.3,292.7,677.4,-9.0,10.6,370.0,CMR9,(),False,False,False
 "gebildet, der dem Datenbanksystem entspricht auf dem der",5,9,49,9.0,53.8,679.7,292.8,687.9,0.0,10.5,370.0,CMR9,(),False,False,False
@@ -446,7 +446,7 @@ ihrer Lösung. Zur Sicherheit und um Fehlklicks abzufangen,5,10,54,9.0,316.8,679
 "öffnet sich, nachdem die Lernenden auf ’Submit’ gedrückt",5,10,55,9.0,316.8,690.2,555.9,698.7,0.0,10.5,370.0,CMR9,(),False,True,False
 "haben, ein weiteres Fenster. In diesem erhalten die Lernen-",5,10,56,9.0,316.8,700.7,555.8,708.7,0.0,10.6,370.0,CMR9,(),False,False,False
 "den die Information, ob ihre Lösung eine gültige Lösung sein",5,10,57,9.0,316.8,711.1,555.9,719.6,0.0,10.4,370.0,CMR9,(),False,False,False
-4.1 Erweiterte Tabellenansicht,6,1,1,12.0,316.8,55.6,481.1,66.4,,,700.0,NimbusRomNo9L-Medi,(),False,False,False
+4.1 Erweiterte Tabellenansicht,6,1,1,12.0,316.8,55.6,481.1,66.4,,,700.0,NimbusRomNo9L-Medi,"({'start': 0, 'end': 30, 'kind': 'bold'},)",False,False,False
 "könnte. Ist dies der Fall, besteht die Möglichkeit die Aufgabe",6,2,2,9.0,53.8,57.5,292.8,66.0,-263.0,1.8,370.0,CMR9,(),False,False,False
 abzugeben.,6,2,3,9.0,53.8,68.1,98.5,76.2,0.0,10.7,370.0,CMR9,(),False,False,False
 Für die Bearbeitung der Aufgaben zur Normalisierung,6,3,4,9.0,325.8,70.4,555.8,79.0,272.0,2.3,370.0,CMR9,(),False,True,False
@@ -473,8 +473,8 @@ Aufgaben die als Lern- oder Testataufgaben gelten müssen,6,4,22,9.0,53.8,141.1,
 Auswahl der Bearbeitungsreihenfolge beinhalten kann. Ei-,6,4,25,9.0,53.8,172.5,292.8,180.8,0.0,10.5,370.0,CMR9,(),False,False,False
 ne Challenge bleibt bestehen bis alle Aufgaben erfolgreich,6,4,26,9.0,53.8,183.0,292.8,191.2,0.0,10.5,370.0,CMR9,(),False,False,False
 bearbeitet wurden.,6,4,27,9.0,53.8,193.6,130.0,201.6,0.0,10.7,370.0,CMR9,(),False,False,False
-Figure 10: Tabellendefinition mit erweiterten Funktionen,6,5,28,9.0,323.9,239.0,548.6,247.0,270.1,45.3,540.0,CMB10,(),False,False,False
-Figure 11: Tabellendefinition finalisieren,6,6,29,9.0,357.0,293.0,515.6,301.1,33.1,54.0,540.0,CMB10,(),False,False,False
+Figure 10: Tabellendefinition mit erweiterten Funktionen,6,5,28,9.0,323.9,239.0,548.6,247.0,270.1,45.3,540.0,CMB10,"({'start': 0, 'end': 56, 'kind': 'bold'},)",False,False,False
+Figure 11: Tabellendefinition finalisieren,6,6,29,9.0,357.0,293.0,515.6,301.1,33.1,54.0,540.0,CMB10,"({'start': 0, 'end': 42, 'kind': 'bold'},)",False,False,False
 Die Studierenden sollen für jede neu entstandene Tabelle,6,7,30,9.0,325.8,313.3,555.9,321.8,-31.2,20.3,370.0,CMR9,(),False,True,False
 die Normalform angeben. Dazu befindet sich ein Auswahl-,6,7,31,9.0,316.8,323.6,555.8,331.9,-9.0,10.4,370.0,CMR9,(),False,False,False
 feld im Kopfbereich der Tabellendefinition. Die Lernenden,6,7,32,9.0,316.8,334.2,555.8,342.3,0.0,10.6,370.0,CMR9,(),False,False,False
@@ -485,8 +485,8 @@ findet sich ein Textfeld im Fußbereich der Tabellendefinition.,6,7,35,9.0,316.8
 Notizen und Feedback der Lernenden zu erhalten. Sobald,6,7,37,9.0,316.8,386.5,555.8,394.6,0.0,10.6,370.0,CMR9,(),False,False,False
 "für eine Tabelle die geforderte Normalform erreicht wurde,",6,7,38,9.0,316.8,397.0,555.8,405.4,0.0,10.5,370.0,CMR9,(),False,True,False
 soll die Tabelle finalisiert werden (siehe Abbildung 11).,6,7,39,9.0,316.8,407.0,538.8,416.0,0.0,10.1,370.0,CMR9,(),False,False,False
-Figure 9: Abgabe einer Lernaufgabe,6,8,40,9.0,102.0,327.7,244.6,335.7,-214.9,-79.4,540.0,CMB10,(),False,False,False
-3.8 Prüfungsmodus,6,9,41,12.0,53.8,361.6,161.7,372.4,-48.2,34.0,700.0,NimbusRomNo9L-Medi,(),False,False,False
+Figure 9: Abgabe einer Lernaufgabe,6,8,40,9.0,102.0,327.7,244.6,335.7,-214.9,-79.4,540.0,CMB10,"({'start': 0, 'end': 34, 'kind': 'bold'},)",False,False,False
+3.8 Prüfungsmodus,6,9,41,12.0,53.8,361.6,161.7,372.4,-48.2,34.0,700.0,NimbusRomNo9L-Medi,"({'start': 0, 'end': 17, 'kind': 'bold'},)",False,False,False
 Das System ist zum einen für die Lernphase und zum,6,10,42,9.0,62.8,376.5,292.9,385.0,9.0,14.9,370.0,CMR9,(),False,True,False
 anderen für die Prüfungsphase gedacht. Hierfür sieht das,6,10,43,9.0,53.8,387.0,292.9,395.4,-9.0,10.5,370.0,CMR9,(),False,True,False
 "System vor, dass Funktionen, welche für Lernphasen wich-",6,10,44,9.0,53.8,397.4,292.9,405.9,0.0,10.5,370.0,CMR9,(),False,True,False
@@ -499,14 +499,14 @@ die Schaltflächen auf ’Close’ und ’Submit’ reduziert. Eine,6,10,50,9.0,
 zweistufige Abfrage nach dem ’Submit’ bleibt zwar beste-,6,10,51,9.0,53.8,470.6,292.7,478.8,0.0,10.4,370.0,CMR9,(),False,False,False
 "hen, jedoch wird das erscheinende Fenster auf eine erneute",6,10,52,9.0,53.8,481.1,292.8,489.3,0.0,10.6,370.0,CMR9,(),False,False,False
 "Frage, ob die Lösung abgegeben werden soll, reduziert.",6,10,53,9.0,53.8,491.7,274.5,500.1,0.0,10.6,370.0,CMR9,(),False,False,False
-4.2 Erweiterte Ansichten,6,11,54,12.0,316.8,424.4,452.3,435.2,263.0,-67.3,700.0,NimbusRomNo9L-Medi,(),False,False,False
+4.2 Erweiterte Ansichten,6,11,54,12.0,316.8,424.4,452.3,435.2,263.0,-67.3,700.0,NimbusRomNo9L-Medi,"({'start': 0, 'end': 24, 'kind': 'bold'},)",False,False,False
 Die Komponente für die Aufgaben zur Normalisierung,6,12,55,9.0,325.8,439.2,555.8,447.8,9.0,14.8,370.0,CMR9,(),False,True,False
 wird durch eine weitere ’Quick View’ ergänzt. Auf der rech-,6,12,56,9.0,316.8,449.6,555.9,458.2,-9.0,10.5,370.0,CMR9,(),False,False,False
 ten Seite finden die Lernenden eine Übersicht über die aktu-,6,12,57,9.0,316.8,458.4,555.9,468.7,0.0,8.8,370.0,CMR9,(),False,True,False
 ell aktiven und inaktiven Tabellen. Neben dem Tabellenna-,6,12,58,9.0,316.8,470.8,555.8,478.7,-0.0,12.3,370.0,CMR9,(),False,False,False
 men sind hier auch die Spaltennamen gelistet. Ebenso kön-,6,12,59,9.0,316.8,481.1,555.9,489.6,0.0,10.4,370.0,CMR9,(),False,False,False
 nen die Begründungen angezeigt werden.,6,12,60,9.0,316.8,491.7,481.6,500.1,-0.0,10.6,370.0,CMR9,(),False,True,False
-5. ZUSAMMENFASSUNG UND AUSBLICK,6,13,61,12.0,316.8,512.5,555.9,523.2,0.0,20.8,700.0,NimbusRomNo9L-Medi,(),False,False,False
+5. ZUSAMMENFASSUNG UND AUSBLICK,6,13,61,12.0,316.8,512.5,555.9,523.2,0.0,20.8,700.0,NimbusRomNo9L-Medi,"({'start': 0, 'end': 31, 'kind': 'bold'},)",False,False,False
 Komponenten zur Bearbeitung von Aufgaben zum ER-,6,13,62,9.0,325.8,527.3,555.8,535.5,9.0,14.8,370.0,CMR9,(),False,False,False
 to-Relational-Mapping und zur Normalisierung werden dar-,6,13,63,9.0,316.8,537.9,555.7,546.0,-9.0,10.7,370.0,CMR9,(),False,False,False
 gestellt. Vielfältige Interaktionen und Hilfestellungen bspw.,6,13,64,9.0,316.8,548.3,555.8,556.8,0.0,10.4,370.0,CMR9,(),False,False,False
@@ -515,7 +515,7 @@ den zur Verbesserung des Lernprozesses integriert. Durch,6,13,66,9.0,316.8,569.3
 verstärkte Nutzung der Komponenten und dem Anwachsen,6,13,67,9.0,316.8,579.6,555.8,588.1,0.0,10.3,370.0,CMR9,(),False,False,False
 der Daten können Empfehlungen und Learning Analytics,6,13,68,9.0,316.8,590.0,555.8,598.6,0.0,10.5,370.0,CMR9,(),False,False,False
 weiter verbessert werden.,6,13,69,9.0,316.8,600.7,418.5,608.7,0.0,10.7,370.0,CMR9,(),False,False,False
-4. AUFGABENTYP NORMALISIERUNG,6,14,70,12.0,53.8,518.4,281.3,529.1,-263.0,-82.3,700.0,NimbusRomNo9L-Medi,(),False,False,False
+4. AUFGABENTYP NORMALISIERUNG,6,14,70,12.0,53.8,518.4,281.3,529.1,-263.0,-82.3,700.0,NimbusRomNo9L-Medi,"({'start': 0, 'end': 29, 'kind': 'bold'},)",False,False,False
 Ein weiterer Aufgabentyp des ALEA-Systems ist die Nor-,6,15,71,9.0,62.8,533.2,292.8,541.4,9.0,14.8,370.0,CMR9,(),False,False,False
 malisierung. Dieser Aufgabentyp nutzt die Grundfunktionen,6,15,72,9.0,53.8,543.6,292.8,551.9,-9.0,10.5,370.0,CMR9,(),False,False,False
 "der Mapping-Aufgaben, da Tabellen und Constraints defi-",6,15,73,9.0,53.8,554.1,292.8,562.3,0.0,10.5,370.0,CMR9,(),False,False,False
@@ -534,11 +534,11 @@ die Inhalte der Tabellen bei Bedarf aus- und einblenden.,6,16,84,9.0,53.8,669.3,
 wie auch beim ALEA-Mapping das vorgegebene Datenmo-,6,16,86,9.0,53.8,690.1,292.7,698.3,0.0,10.5,370.0,CMR9,(),False,False,False
 "dell, durch einen Klick in ein bewegliches, modales Fenster",6,16,87,9.0,53.8,700.7,292.7,708.8,0.0,10.7,370.0,CMR9,(),False,False,False
 umwandeln oder in einen neuen Tab.,6,16,88,9.0,53.8,711.2,202.6,719.2,0.0,10.5,370.0,CMR9,(),False,False,False
-Literatur,6,17,89,12.0,316.8,621.5,364.6,632.2,263.0,-89.7,700.0,NimbusRomNo9L-Medi,(),False,False,False
+Literatur,6,17,89,12.0,316.8,621.5,364.6,632.2,263.0,-89.7,700.0,NimbusRomNo9L-Medi,"({'start': 0, 'end': 9, 'kind': 'bold'},)",False,False,False
 "[1] D. Becher. DB-Normalizer. TU München, 2021. https:",6,18,90,9.0,316.8,637.5,555.9,646.4,0.0,16.0,370.0,CMR9,(),False,False,False
 //db.in.tum.de/teaching/ws2021/grundlagen/.,6,18,91,9.0,331.0,648.4,530.9,656.7,14.2,11.0,370.0,CMTT9,(),False,False,False
-[2] P. Chen. The-Entity-Relationship-Model. ACM transac-,6,19,92,9.0,316.8,658.4,555.9,667.3,-14.2,10.0,365.6,CMR9,(),False,False,False
-"tions on database systems (TODS), 1976.",6,19,93,9.0,331.0,668.9,497.5,677.8,14.2,10.5,353.6,CMTI9,(),False,False,False
+[2] P. Chen. The-Entity-Relationship-Model. ACM transac-,6,19,92,9.0,316.8,658.4,555.9,667.3,-14.2,10.0,365.6,CMR9,"({'start': 44, 'end': 56, 'kind': 'italic'},)",False,False,False
+"tions on database systems (TODS), 1976.",6,19,93,9.0,331.0,668.9,497.5,677.8,14.2,10.5,353.6,CMTI9,"({'start': 0, 'end': 32, 'kind': 'italic'},)",False,False,False
 [3] H. Faeskorn-Woyke and B. Bertelsmeier. EDB - Das,6,20,94,9.0,316.8,679.3,555.7,688.3,-14.2,10.5,370.0,CMR9,(),False,False,False
 "eLearning Datenbank Portal der TH Köln., 2021.",6,20,95,9.0,331.0,690.3,529.6,698.7,14.2,11.0,370.0,CMR9,(),False,False,False
 [4] K. Schneider and F. Keller. Das Daten Café an der Hoch-,6,21,96,9.0,316.8,700.2,555.8,709.2,-14.2,10.0,370.0,CMR9,(),False,False,False

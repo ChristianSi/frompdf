@@ -26,14 +26,14 @@ In this paper, we study the leader election problem in oriented ring networks un
 asynchronous message-passing systems, where an adversary may arbitrarily corrupt message contents.
 
 Frei et al. (DISC 2024) recently presented a uniform terminating leader election algorithm for
-oriented rings in this setting, with message complexity O(nID<sub>max</sub>) on a ring of size n, where ID<sub>max</sub>
+*oriented* rings in this setting, with message complexity O(nID<sub>max</sub>) on a ring of size n, where ID<sub>max</sub>
 is the largest identifier in the system.
 
 In this paper, we investigate the message complexity of leader election in this model, showing
 that no uniform algorithm can solve the problem if each process is limited to sending a constant
 number of messages in one direction.
 
-Interestingly, this limitation hinges on the uniformity assumption. In the non-uniform setting
+Interestingly, this limitation hinges on the *uniformity* assumption. In the *non-uniform* setting
 – where processes know an upper bound U ≥ n on the ring size – we present an algorithm with
 message complexity O(nUID<sub>min</sub>), in which each process sends O(UID<sub>min</sub>) messages clockwise and
 only three messages counter-clockwise. Here, ID<sub>min</sub> is the smallest identifier in the system. This
@@ -41,22 +41,22 @@ dependence on the identifiers compares favorably with the dependence on ID<sub>m
 2024).
 
 We also show a non-uniform algorithm where each process sends O(U log ID<sub>min</sub>) messages in one
-direction and O(log ID<sub>min</sub>) in the other. The factor log ID<sub>min</sub> is optimal, matching the lower bound
+direction and O(log ID<sub>min</sub>) in the other. The factor log ID<sub>min</sub> is *optimal*, matching the lower bound
 of Frei et al. (DISC 2024).
 
 Finally, in the anonymous setting, we propose a randomized algorithm where each process sends
 only O(log<sup>2</sup> U) messages, with a success probability of 1 − U<sup>−c</sup>.
 
-2012 ACM Subject Classification Theory of computation → Distributed algorithms
+**2012 ACM Subject Classification** Theory of computation → Distributed algorithms
 
-Keywords and phrases Content-Oblivious Networks, Leader Election, Oriented Rings, Asynchronous
+**Keywords and phrases** Content-Oblivious Networks, Leader Election, Oriented Rings, Asynchronous
 Systems
 
-Digital Object Identifier 10.4230/LIPIcs.DISC.2025.51
+**Digital Object Identifier** 10.4230/LIPIcs.DISC.2025.51
 
-Related Version Full Version: https://arxiv.org/abs/2509.19187
+**Related Version** *Full Version*: https://arxiv.org/abs/2509.19187
 
-Funding This work has been partially supported by ANR project DUCAT (ANR-20-CE48-0006), by
+**Funding** This work has been partially supported by ANR project DUCAT (ANR-20-CE48-0006), by
 the Ministry of Education, Singapore, under its Academic Research Fund Tier 1 (24-1323-A0001),
 and by the Italian MUR National Recovery and Resilience Plan funded by the European Union -
 NextGenerationEU through projects SERICS (PE00000014).
@@ -107,7 +107,7 @@ algorithm on a content-oblivious oriented ring.
 Additionally, Frei et al. [13] proved that, for any uniform algorithm, there exists an
 identifier assignment under which the algorithm must send Ω(n log IDmax/n) messages. Although
 originally established for the uniform setting, this lower bound can be extended to the non-uniform
-setting, even when the exact value of n is known; see the full version of the paper
+setting, even when the *exact* value of n is known; see the full version of the paper
 for details.
 
 In anonymous systems, where processes lack identifiers, Frei et al. [13] showed a randomized
@@ -136,9 +136,9 @@ by sending O(nUID<sub>min</sub>) messages in the clockwise direction and where e
 just three messages in the counter-clockwise direction. Here ID<sub>min</sub> is the minimum identifier
 in the system. We also present a non-uniform algorithm for oriented rings (Section 4)
 that sends O(nU log ID<sub>min</sub>) messages in one direction and O(n log ID<sub>min</sub>) messages in the
-other. We stress that the factor log ID<sub>min</sub> of our algorithm is optimal. This follows from
+other. We stress that the factor log ID<sub>min</sub> of our algorithm is *optimal*. This follows from
 the aforementioned lower bound of Frei et al. [13], which shows the necessity of logarithmic
-dependency on the values of the identifiers. Our result implies that Θ(log ID<sub>min</sub>) is the tight
+dependency on the values of the identifiers. Our result implies that Θ(log ID<sub>min</sub>) is the *tight*
 message complexity for constant-size instances.
 
 The key technical novelty in our non-uniform algorithms is the design of a global synchronization
@@ -168,7 +168,7 @@ able to send messages to and receive messages from one of its neighbors.
 When the system is not anonymous, processes have unique identifiers that are arbitrarily
 selected from N.
 
-We assume an asynchronous system; that is, each message has an unpredictable delay
+We assume an *asynchronous system*; that is, each message has an unpredictable delay
 that is finite but unbounded. A message cannot be lost. Messages are buffered, in the sense
 that if several messages are delivered to a process at the same time, they are stored in a
 local buffer and can then be retrieved by the destination process at its discretion. The local
@@ -177,35 +177,35 @@ a notion of common time.
 
 Processes are correct and do not experience any kind of failure.
 
-<<PAGE:4|VISIBLE:51:4>>Content-Oblivious Algorithms. Since we are interested in content-oblivious algorithms, we
+<<PAGE:4|VISIBLE:51:4>>**Content-Oblivious Algorithms.** Since we are interested in *content-oblivious algorithms*, we
 assume that messages do not carry any information apart from their existence. That is, each
-message is an empty string (a pulse [13]) and a process only observes the local port number
+message is an empty string (a *pulse* [13]) and a process only observes the local port number
 on which the message is received.
 
-Oriented Rings. We consider oriented rings. A ring is oriented if processes share a common
-notion of clockwise (CW) and counter-clockwise (CCW) orientation. More precisely, consider
+**Oriented Rings.** We consider *oriented* rings. A ring is oriented if processes share a common
+notion of *clockwise* (CW) and *counter-clockwise* (CCW) orientation. More precisely, consider
 a ring (p<sub>0</sub>, p<sub>1</sub>, . . . , p<sub>n−1</sub>) for each j ∈ [0, n − 1], at process p<sub>j</sub> , port 0 leads to p<sub>j+1</sub> and port 1
 leads to p<sub>j−1</sub> (where indices are taken modulo n). We will say that a message is traveling in
 the clockwise direction if it is sent on port 0 and received on port 1 (i.e., a message goes
 from p<sub>i</sub> to p<sub>i+1</sub>); conversely, a message travels in the counter-clockwise direction if it is sent
 on port 1 and received on port 0.
 
-Uniform and Non-Uniform Algorithms. An algorithm is uniform if it works for all possible
+**Uniform and Non-Uniform Algorithms.** An algorithm is *uniform* if it works for all possible
 network sizes; i.e., processes do not know the total number of processes n or a bound on it.
-An algorithm is non-uniform if processes know an upper bound U ≥ n.
+An algorithm is *non-uniform* if processes know an upper bound U ≥ n.
 
-Message Complexity. We measure the performance of our algorithms by their message
-complexity. That is the number of all messages sent. We further discriminate between the
+**Message Complexity.** We measure the performance of our algorithms by their *message
+complexity*. That is the number of all messages sent. We further discriminate between the
 numbers of clockwise messages and counter-clockwise messages sent by each process.
 
-Leader Election Problem. In this problem, processes must elect one of them as the leader
-and all others are designated as non-leader processes. We consider terminating leader election,
+**Leader Election Problem.** In this problem, processes must elect one of them as the *leader*
+and all others are designated as *non-leader* processes. We consider *terminating leader election*,
 in the sense that every process must eventually enter either a Leader or Non-Leader state,
 and both of these states are final – meaning no further state changes are possible, and the
 process terminates the execution of the algorithm.
 
 Moreover, we require that once the last process enters its final state, there are no messages
-in transit in the network. This is known as quiescent termination [13]. In our algorithms, the
+in transit in the network. This is known as *quiescent termination* [13]. In our algorithms, the
 last process to enter its final state is always the unique leader. This property enables easy
 composability of algorithms: once the leader enters the final state, it knows that the network
 is “at rest” and can begin sending messages for a subsequent algorithm [13, Section 1.1].
@@ -216,8 +216,8 @@ We now describe an algorithm where each process sends O(UID<sub>min</sub>) messa
 direction, and just 3 messages in the counter-clockwise direction. This algorithm is of interest
 as it shows that our claim below needs the uniformity assumption:
 
-▶ Theorem 1. For any uniform leader election algorithm and any bound b ∈ N there exists
-an oriented ring where at least one process sends more than b messages in each direction.
+▶ **Theorem 1.** *For any uniform leader election algorithm and any bound* b ∈ N *there exists
+an oriented ring where at least one process sends more than* b *messages in each direction.*
 
 The Constant Direction Algorithm, pseudocode in Algorithm 1, starts in a competing
 phase. In the competing phase, blue lines, a process p with identifier ID performs a loop of
@@ -227,40 +227,40 @@ indices of any two processes in the phase loop can differ by at most n − 1. Th
 the minimum identifier will be the only one to end the competing phase by completing the
 prescribed number of iterations.
 
-<<PAGE:5|VISIBLE:51:5>>Algorithm 1 Constant Direction Algorithm(ID,boundOnSize).
+<<PAGE:5|VISIBLE:51:5>>**Algorithm 1** Constant Direction Algorithm(ID,boundOnSize).
 
-1 for i ← 1 to boundOnSize ∗ ID do\
-2 send a message on port 0
+**1 for** i ← 1 **to** boundOnSize ∗ ID **do\
+2 send** a message on port 0
 
-3 receive a message on port q // Wait for a message and store the port number in
+**3 receive** a message on port q // Wait for a message and store the port number in
 variable q\
-4 if q = 0 then break\
-5 if q = 0 then
+**4 if** q = 0 **then break\
+5 if** q = 0 **then**
 
 > /\* if a process enters this branch, then it is not the process with minimum ID
 > \*/
-> 6 send a message on port 1
+> **6 send** a message on port 1
 
-7 receive a message on port 1 // Wait for a message on port 1.
-8 repeat\
-9 receive a message on port q
-10 send a message on port 1 − q\
-11 until received two messages on port 0\
-12 return Non-Leader\
-13 else
+**7 receive** a message on port 1 // Wait for a message on port 1.
+**8 repeat\
+9 receive** a message on port q
+**10 send** a message on port 1 − q\
+**11 until** *received two messages on port* 0\
+**12 return** Non-Leader\
+**13 else**
 
 /\* only the process with minimum ID enters this branch \*/
-14 send a message on port 1\
-15 receive a message on port 0\
-16 send a message on port 1\
-17 repeat\
-18 receive a message on port q\
-19 if q = 1 then\
-20 send a message on port 0\
-21 until q = 0\
-22 send a message on port 1\
-23 receive a message on port 0\
-24 return Leader
+**14 send** a message on port 1\
+**15 receive** a message on port 0\
+**16 send** a message on port 1\
+**17 repeat\
+18 receive** a message on port q\
+**19 if** q = 1 **then\
+20 send** a message on port 0\
+**21 until** q = 0\
+**22 send** a message on port 1\
+**23 receive** a message on port 0\
+**24 return** Leader
 
 This process then enters the termination detection phase (green lines). In this phase, the
 process first sends a message CCW to inform all other processes that they are not leaders.
@@ -275,9 +275,9 @@ first waits to receive a CW message, in order to eliminate the CW message it sen
 the competing phase, and afterwards it relays both CCW and CW messages it receives. A
 non-leader process terminates after receiving three CCW messages.
 
-▶ Theorem 2. There exists a quiescently terminating leader election algorithm for oriented
-rings in which each process sends O(UID<sub>min</sub>) messages clockwise and three messages
-counterclockwise, for a total of O(nUID<sub>min</sub>) messages.
+▶ **Theorem 2.** *There exists a quiescently terminating leader election algorithm for oriented
+rings in which each process sends* O(UID<sub>min</sub>) *messages clockwise and three messages
+counterclockwise, for a total of* O(nUID<sub>min</sub>) *messages.*
 
 ## 4 An algorithm that sends O(nU log ID<sub>min</sub>) messages
 
@@ -291,23 +291,23 @@ rounds. In each round, active processes compare a specific bit of their (encoded
 eliminating all processes that do not have the minimum bit at that position.
 
 <<PAGE:6|VISIBLE:51:6>>The bound U on the network size is used to synchronize processes across different rounds
-of the algorithm. When an active process enters a round, it begins the Synchronization phase.
+of the algorithm. When an active process enters a round, it begins the *Synchronization phase*.
 In this phase, each active process sends and receives messages in the CW direction for U steps.
 Then, processes with bit 0 send and receive one message in the CCW direction, blocking
-messages in the CW direction (this is the Zero Signaling phase). Meanwhile, processes with
+messages in the CW direction (this is the *Zero Signaling phase*). Meanwhile, processes with
 bit 1 attempt to continue sending and receiving messages in the CW direction for another U
 steps. However, they become inactive if they receive a CCW message, indicating the presence
-of a process with bit 0 (this is the No-Zero Checking phase).
+of a process with bit 0 (this is the *No-Zero Checking phase*).
 
 The rationale for these phases is to ensure that processes with bit 1 proceed to the next
 round in the active state if and only if no process with bit 0 exists in the current round.
 Indeed, when processes with bit 0 stop propagating CW messages, the processes with bit 1
-are prevented from completing their No-Zero Checking phase.
+are prevented from completing their *No-Zero Checking phase*.
 
-Conversely, a process with bit 0 in a given round remains active. The Synchronization
-phase described above ensures that once an active process completes this phase for a new
-round, all active processes have completed the previous round and are in the Synchronization
-phase of the current round.
+Conversely, a process with bit 0 in a given round remains active. The *Synchronization
+phase* described above ensures that once an active process completes this phase for a new
+round, all active processes have completed the previous round and are in the *Synchronization
+phase* of the current round.
 
 An inactive process relays messages, and while doing so, it eliminates the first CW message
 it receives. This guarantees that, once all inactive processes have eliminated one message, the
@@ -318,16 +318,16 @@ single message remains in the network.
 The algorithm terminates after |ID<sub>min</sub>| = O(log ID<sub>min</sub>) rounds. At this point, the only
 remaining active process is the one with the minimum identifier. This process can detect
 this locally and communicates it to all other processes (which are, by construction, inactive)
-by sending an additional message in the CCW direction (this is the Termination phase).
+by sending an additional message in the CCW direction (this is the *Termination phase*).
 
 All other processes detect termination when they receive two consecutive messages in
-the CCW direction: the first sent during the Zero Signaling phase by the process with the
-minimum identifier, and the second sent during the Termination phase. Therefore, we have
+the CCW direction: the first sent during the *Zero Signaling phase* by the process with the
+minimum identifier, and the second sent during the *Termination phase*. Therefore, we have
 the following theorem.
 
-▶ Theorem 3. There exists a quiescently terminating leader election algorithm for oriented
-rings in which each process sends O(U log ID<sub>min</sub>) messages clockwise and O(log ID<sub>min</sub>)
-messages counterclockwise, for a total of O(nU log ID<sub>min</sub>) messages.
+▶ **Theorem 3.** *There exists a quiescently terminating leader election algorithm for oriented
+rings in which each process sends* O(U log ID<sub>min</sub>) *messages clockwise and* O(log ID<sub>min</sub>)
+*messages counterclockwise, for a total of* O(nU log ID<sub>min</sub>) *messages.*
 
 ## 5 Randomized Leader Election
 
@@ -339,83 +339,83 @@ random identifiers.
 This sampling strategy yields a useful property: for any fixed bit index i, every maximal
 consecutive sequence of processes whose bit ID[i] equals 1 has length at most ⌈c<sub>2</sub> log U⌉
 with probability at least 1 − U<sup>1−c</sup><sub>2</sub>. This property reduces the number of steps in the
-Synchronization and No-Zero Checking phases of the algorithm in Section 4 from U to
+*Synchronization* and *No-Zero Checking* phases of the algorithm in Section 4 from U to
 ⌈c<sub>2</sub> log U⌉, thereby improving the message complexity and establishing our final theorem.
 
-▶ Theorem 4. For any constant c > 0, there exists a randomized quiescently terminating
-leader election algorithm for anonymous oriented rings with a success probability of 1 −
-U<sup>−c</sup> in which each process sends O(log<sup>2</sup> U) messages clockwise and O(log U) messages
-counterclockwise, for a total of O(n log<sup>2</sup> U) messages.
+▶ **Theorem 4.** *For any constant* c > 0, *there exists a randomized quiescently terminating
+leader election algorithm for anonymous oriented rings with a success probability of* 1 −
+U<sup>−c</sup> *in which each process sends* O(log<sup>2</sup> U) *messages clockwise and* O(log U) *messages
+counterclockwise, for a total of* O(n log<sup>2</sup> U) *messages.*
 
 ### <<PAGE:7|VISIBLE:51:7>>References
 
-1 H. Attiya and J. L. Welch. Distributed Computing: Fundamentals, Simulations, and Advanced
-Topics. Wiley, 2004.
+**1** H. Attiya and J. L. Welch. *Distributed Computing: Fundamentals, Simulations, and Advanced
+Topics*. Wiley, 2004.
 
-2 P. Boldi, S. Shammah, S. Vigna, B. Codenotti, P. Gemmell, and J. Simon. Symmetry breaking
-in anonymous networks: Characterizations. In ISTCS 1996, pages 16–26, 1996.
+**2** P. Boldi, S. Shammah, S. Vigna, B. Codenotti, P. Gemmell, and J. Simon. Symmetry breaking
+in anonymous networks: Characterizations. In *ISTCS 1996*, pages 16–26, 1996.
 
-3 P. Boldi and S. Vigna. Fibrations of graphs. Discrete Mathematics, 243(1):21–66, 2002.
+**3** P. Boldi and S. Vigna. Fibrations of graphs. *Discrete Mathematics*, 243(1):21–66, 2002.
 doi:10.1016/S0012-365X(00)00455-6.
 
-4 C. Cachin, R. Guerraoui, and L. Rodrigues. Introduction to Reliable and Secure Distributed
-Programming. Springer, 2011.
+**4** C. Cachin, R. Guerraoui, and L. Rodrigues. *Introduction to Reliable and Secure Distributed
+Programming*. Springer, 2011.
 
-5 A. Casteigts, Y. Métivier, J.M. Robson, and A. Zemmari. Counting in one-hop beeping
-networks. Theoretical Computer Science, 780:20–28, 2019. doi:10.1016/J.TCS.2019.02.009.
+**5** A. Casteigts, Y. Métivier, J.M. Robson, and A. Zemmari. Counting in one-hop beeping
+networks. *Theoretical Computer Science*, 780:20–28, 2019. doi:10.1016/J.TCS.2019.02.009.
 
-6 A. Casteigts, Y. Métivier, J.M. Robson, and A. Zemmari. Design patterns in beeping
-algorithms: Examples, emulation, and analysis. Information and Computation, 264:32–51,
+**6** A. Casteigts, Y. Métivier, J.M. Robson, and A. Zemmari. Design patterns in beeping
+algorithms: Examples, emulation, and analysis. *Information and Computation*, 264:32–51,
 2019. doi:10.1016/J.IC.2018.10.001.
 
-7 K. Censor-Hillel, S. Cohen, R. Gelles, and G. Sela. Distributed computations in fully-defective
-networks. Distributed Computing, 36(4):501–528, 2023. doi:10.1007/S00446-023-00452-2.
+**7** K. Censor-Hillel, S. Cohen, R. Gelles, and G. Sela. Distributed computations in fully-defective
+networks. *Distributed Computing*, 36(4):501–528, 2023. doi:10.1007/S00446-023-00452-2.
 
-8 J. Chalopin, E. Godard, and Y. Métivier. Election in partially anonymous networks with
-arbitrary knowledge in message passing systems. Distributed Computing, 25(4):297–311, 2012.
+**8** J. Chalopin, E. Godard, and Y. Métivier. Election in partially anonymous networks with
+arbitrary knowledge in message passing systems. *Distributed Computing*, 25(4):297–311, 2012.
 doi:10.1007/S00446-012-0163-Y.
 
-9 A. Cornejo and F. Kuhn. Deploying wireless networks with beeps. In DISC 2010, volume
-6343 of Lecture Notes in Comput. Sci., pages 148–162. Springer, 2010. doi:10.1007/
+**9** A. Cornejo and F. Kuhn. Deploying wireless networks with beeps. In *DISC 2010*, volume
+6343 of *Lecture Notes in Comput. Sci.*, pages 148–162. Springer, 2010. doi:10.1007/
 978-3-642-15763-9_15.
 
-10 A. Czumaj and P. Davies. Leader election in multi-hop radio networks. Theoretical Computer
-Science, 792:2–11, 2019. doi:10.1016/J.TCS.2019.02.027.
+**10** A. Czumaj and P. Davies. Leader election in multi-hop radio networks. *Theoretical Computer
+Science*, 792:2–11, 2019. doi:10.1016/J.TCS.2019.02.027.
 
-11 F. Dufoulon, J. Burman, and J. Beauquier. Beeping a deterministic time-optimal leader election.
-In DISC 2018, volume 121 of LIPIcs, pages 20:1–20:17. Schloss Dagstuhl – Leibniz-Zentrum
+**11** F. Dufoulon, J. Burman, and J. Beauquier. Beeping a deterministic time-optimal leader election.
+In *DISC 2018*, volume 121 of *LIPIcs*, pages 20:1–20:17. Schloss Dagstuhl – Leibniz-Zentrum
 für Informatik, 2018. doi:10.4230/LIPICS.DISC.2018.20.
 
-12 P. Flocchini, E. Kranakis, D. Krizanc, F. L. Luccio, and N. Santoro. Sorting and election in
-anonymous asynchronous rings. Journal of Parallel and Distributed Computing, 64(2):254–265,
+**12** P. Flocchini, E. Kranakis, D. Krizanc, F. L. Luccio, and N. Santoro. Sorting and election in
+anonymous asynchronous rings. *Journal of Parallel and Distributed Computing*, 64(2):254–265,
 2004. doi:10.1016/J.JPDC.2003.11.007.
 
-13 F. Frei, R. Gelles, A. Ghazy, and A. Nolin. Content-oblivious leader election on rings. In
-DISC 2024, volume 319, pages 26:1–26:20. Schloss Dagstuhl – Leibniz-Zentrum für Informatik,
+**13** F. Frei, R. Gelles, A. Ghazy, and A. Nolin. Content-oblivious leader election on rings. In
+*DISC 2024*, volume 319, pages 26:1–26:20. Schloss Dagstuhl – Leibniz-Zentrum für Informatik,
 2024. doi:10.4230/LIPICS.DISC.2024.26.
 
-14 K.-T. Förster, J. Seidel, and R. Wattenhofer. Deterministic leader election in multi-hop
-beeping networks. In DISC 2014, volume 8784 of Lecture Notes in Comput. Sci., pages
+**14** K.-T. Förster, J. Seidel, and R. Wattenhofer. Deterministic leader election in multi-hop
+beeping networks. In *DISC 2014*, volume 8784 of *Lecture Notes in Comput. Sci.*, pages
 212–226. Springer, 2014.
 
-15 Alon Itai and Michael Rodeh. Symmetry breaking in distributed networks. Inf. Comput.,
+**15** Alon Itai and Michael Rodeh. Symmetry breaking in distributed networks. *Inf. Comput.*,
 88(1):60–87, July 1990. doi:10.1016/0890-5401(90)90004-2.
 
-16 S. Kutten, W. K. Moses Jr., G. Pandurangan, and D. Peleg. Singularly optimal randomized
-leader election. In DISC 2020, volume 179 of LIPIcs, pages 22:1–22:18, 2020. doi:10.4230/
+**16** S. Kutten, W. K. Moses Jr., G. Pandurangan, and D. Peleg. Singularly optimal randomized
+leader election. In *DISC 2020*, volume 179 of *LIPIcs*, pages 22:1–22:18, 2020. doi:10.4230/
 LIPICS.DISC.2020.22.
 
-17 M. Raynal. Fault-Tolerant Message-Passing Distributed Systems: An Algorithmic Approach.
+**17** M. Raynal. *Fault-Tolerant Message-Passing Distributed Systems: An Algorithmic Approach*.
 Springer, 2018.
 
-18 N. Santoro. Design and Analysis of Distributed Algorithms. John Wiley & Sons, 2007.
+**18** N. Santoro. *Design and Analysis of Distributed Algorithms*. John Wiley & Sons, 2007.
 
-19 N. Santoro and P. Widmayer. Time is not a healer. In STACS 1989, volume 349 of Lecture
-Notes in Comput. Sci., pages 304–313. Springer, 1989. doi:10.1007/BFB0028994.
+**19** N. Santoro and P. Widmayer. Time is not a healer. In *STACS 1989*, volume 349 of *Lecture
+Notes in Comput. Sci.*, pages 304–313. Springer, 1989. doi:10.1007/BFB0028994.
 
-20 R. Vacus and I Ziccardi. Minimalist leader election under weak communication. In PODC
-2025. ACM, 2025.
+**20** R. Vacus and I Ziccardi. Minimalist leader election under weak communication. In *PODC
+2025*. ACM, 2025.
 
-21 M. Yamashita and T. Kameda. Computing on anonymous networks: Part I - Characterizing
-the solvable cases. IEEE Transactions on Parallel and Distributed Systems, 7(1):69–89, 1996.
+**21** M. Yamashita and T. Kameda. Computing on anonymous networks: Part I - Characterizing
+the solvable cases. *IEEE Transactions on Parallel and Distributed Systems*, 7(1):69–89, 1996.
 doi:10.1109/71.481599.
