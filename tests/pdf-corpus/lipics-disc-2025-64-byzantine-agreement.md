@@ -11,8 +11,8 @@ University of California, Santa Cruz, CA, USA
 ### Abstract
 
 Approximate Byzantine Agreement (ABA) protocols enable nonfaulty replicas with different initial
-values to derive a values within a ϵ-neighborhood of each other, despite the presence of Byzantine
-behavior. While they give strong guarantees for this ϵ-*agreement* property, they tend to have weaker
+values to derive a values within a *ϵ*-neighborhood of each other, despite the presence of Byzantine
+behavior. While they give strong guarantees for this *ϵ-agreement* property, they tend to have weaker
 guarantees that the derived value is *accurate* with respect to some ground truth. Worse, they often
 have impractical requirements such as large replica sets proportional to data dimensionality, or a
 priori knowledge of the maximum distance between nonfaulty values.
@@ -26,7 +26,7 @@ agreement. PBA accuracy is relative to the variance of nonfaulty values, yieldin
 accurate results for noisy data, particularly when noise is asymmetric. Our evaluations demonstrate
 this accuracy scales with data dimensionality, outperforming or only mildly underperforming methods
 that require quorums with up to 10× *more replicas* and 4× *to* 124× *more computation time* per
-agreement decision, even at relatively low dimensions (d = 4 to d = 18).
+agreement decision, even at relatively low dimensions (*d* = 4 to *d* = 18).
 
 **2012 ACM Subject Classification** Computer systems organization → Dependable and fault-tolerant
 systems and networks; Computer systems organization → Sensor networks
@@ -99,7 +99,7 @@ including evaluations comparing PBA to multiple ABA protocols on multidimensiona
 These evaluations indicate a surprising degree of scalability with respect to dimensionality:
 only minor losses in accuracy compared to ABA protocols that require 10× *more replicas* and
 4× *to* 124× *more computation time* per agreement decision, even at relatively low dimensions
-(d = 4 to d = 18). Since each additional output offers more information from the unknown
+(*d* = 4 to *d* = 18). Since each additional output offers more information from the unknown
 output distribution, our results indicate PBA can extract more information from observations,
 reinforcing the tradeoff [12] between high-precision agreement and statistical accuracy.
 
@@ -107,61 +107,61 @@ reinforcing the tradeoff [12] between high-precision agreement and statistical a
 
 Replicas participating in Approximate Byzantine Agreement (ABA) protocols (e.g.,[5, 14, 19])
 start with an arbitrary real value and reach an output solution satisfying two properties:
-**1\.** ϵ-*Agreement*: all nonfaulty replicas eventually output values within ϵ of each other.
+**1\.** *ϵ-Agreement*: all nonfaulty replicas eventually output values within *ϵ* of each other.
 
 2. *Validity*: these values are bound (in some sense) by the initial values of nonfaulty replicas.
 
 Mahaney and Schneider [12] distinguish Inexact Agreement (IA) from classical ABA by
 redefining the validity property in terms of *accuracy*. Outputs are instead bound by their
-distance to a true value vˆ, which each nonfaulty replica’s initial value v<sub>i</sub> approximates.
+distance to a true value *v*ˆ, which each nonfaulty replica’s initial value *v<sub>i</sub>* approximates.
 
 <<PAGE:3|VISIBLE:64:3>>Our work concerns a new class of protocols that make an additional assumption, often
 satisfied by the underlying data processed by IA systems. Stochastic Byzantine Agreement
-(SBA) protocols require that vˆ and nonfaulty v<sub>i</sub> are – or can be effectively approximated as
+(SBA) protocols require that *v*ˆ and nonfaulty *v<sub>i</sub>* are – or can be effectively approximated as
 being – distributed according to probability distributions. No assumptions are made about
 the nature of Byzantine values. The two distributions are distinct and potentially unknown,
-but correlated since v<sub>i</sub>s approximate vˆ. SBA protocols also satisfy ϵ-agreement, but ϵ in SBA
-is larger than the ϵ values in classical ABA protocols. This difference in ϵ-agreement is by
+but correlated since *v*<sub>i</sub>s approximate *v*ˆ. SBA protocols also satisfy *ϵ*-agreement, but *ϵ* in SBA
+is larger than the *ϵ* values in classical ABA protocols. This difference in *ϵ*-agreement is by
 design and unavoidable due to tradeoffs between accuracy and high-precision agreement [12].
 The goals of these protocols are close enough that we argue ABA is an appropriate umbrella
 term, with IA and SBA refining properties 1 and 2 as described above.
 
 The key characteristic of our SBA protocol, *Proximal Byzantine Agreement* (PBA), is
-that each replica uses the set R of received values v<sub>i</sub> ∈ R to find a quorum of values r and
-a candidate vˆ such that vˆ would be the most likely true value if we knew that the quorum
-values were nonfaulty. Selecting the highest-probability vˆ conditioned on the observations in
-r, ensures that if any (minority of) values in r turn out to be faulty, then the quorum r (and
-thus the inferred vˆ) is at least a likely as a quorum containing only nonfaulty values. At a
+that each replica uses the set *R* of received values *v<sub>i</sub>* ∈ *R* to find a quorum of values *r* and
+a candidate *v*ˆ such that *v*ˆ would be the most likely true value if we knew that the quorum
+values were nonfaulty. Selecting the highest-probability *v*ˆ conditioned on the observations in
+*r*, ensures that if any (minority of) values in *r* turn out to be faulty, then the quorum *r* (and
+thus the inferred *v*ˆ) is at least a likely as a quorum containing only nonfaulty values. At a
 high level, this process is described by the probability maximization in Def. 2.1.
 
-▶ **Definition 2.1** (Proximal Byzantine Value Selection)**.** *For received values* R ⊆ R<sup>n</sup> *and
-quorum size* s, *select a set* r *from the* s-*sized subsets of* R, *and a value* x *that maximizes the
-likelihood that* x *is the true value given observations in* r.
+▶ **Definition 2.1** (Proximal Byzantine Value Selection)**.** *For received values R* ⊆ R<sup>n</sup> *and
+quorum size s, select a set r from the s-sized subsets of R, and a value x that maximizes the
+likelihood that x is the true value given observations in r.*
 
-PBA(R, s) ≜ argmax
-r∈[R]<sup>s</sup>
-x∈R<sup>n</sup>
-P(x | r)
+PBA(*R*, *s*) ≜ argmax
+*r*∈[*R*]*<sup>s</sup>
+x*∈R<sup>n</sup>
+*P*(*x* | *r*)
 
 Our chosen approximation of Proximal Byzantine Value Selection (PBVS) uses the
-geometric median of each r as a robust estimator for the expected value of the unknown
-distribution of observations in r, thus approximating the candidate x. Below we will just
-use PBA(R, s) to refer to our approximation of PBVS to avoid additional notation. The
+geometric median of each *r* as a robust estimator for the expected value of the unknown
+distribution of observations in *r*, thus approximating the candidate *x*. Below we will just
+use PBA(*R*, *s*) to refer to our approximation of PBVS to avoid additional notation. The
 geometric median [16] is well-suited for estimating the expected value of a broad class of
 distributions [15, 16], and remains robust even when < 1/2 of the samples are arbitrarily
 
-corrupted. We compare the conditional likelihoods P(x | r) for each r and x with a similaritybased
+corrupted. We compare the conditional likelihoods *P*(*x* | *r*) for each *r* and *x* with a similaritybased
 approximation of conditional probabilities [2]. This is necessary for multidimensional
 data since the covariance matrix is unknown, but is a reasonable approach since each nonfaulty
 replica output is an approximation of the same underlying value.
 
-More specifically, for each quorum r, we compute its median x = Gm(r) and evaluate
-the likelihood P̂(x | r) using a similarity measure adapted from Blok et al. [2]. P̂(x | r)
-approximates the affect of the unknown covariance matrix and joint probability of q on
-the independent probability of x with an exponent α to score similarity between x and
+More specifically, for each quorum *r*, we compute its median *x* = Gm(*r*) and evaluate
+the likelihood *P*̂(*x* | *r*) using a similarity measure adapted from Blok et al. [2]. *P*̂(*x* | *r*)
+approximates the affect of the unknown covariance matrix and joint probability of *q* on
+the independent probability of *x* with an exponent *α* to score similarity between *x* and
 quorum values on a [0, 1) scale. We chose this approach after discovering that computing the
 geometric median and then approximating its likelihood is significantly faster than iteratively
-evaluating P̂(X = x | r) to find maximal values, and had almost no impact on accuracy.
+evaluating *P*̂(*X* = *x* | *r*) to find maximal values, and had almost no impact on accuracy.
 
 ## 2.1 Geometric properties
 
@@ -171,54 +171,54 @@ the uncertainty of its outputs.<sup>1</sup> In many scenarios, it may be better 
 all than to act on very uncertain data. Therefore, calculating a concrete guarantee on each
 output is an important feature of PBA protocols.
 
-<<PAGE:4|VISIBLE:64:4>>A well-known result [11] is that the displacement of the geometric median Gm(Q) of a
-set of nonfaulty values is bounded when up to |F| < |Q| faulty values are added to the set.
+<<PAGE:4|VISIBLE:64:4>>A well-known result [11] is that the displacement of the geometric median Gm(*Q*) of a
+set of nonfaulty values is bounded when up to |*F*| < |*Q*| faulty values are added to the set.
 
-▶ **Lemma 2.2** (Theoretical maximum displacement [6, 11])**.** *Let* R = Q ∪ F, |Q| = s *and*
-|F| = f *such that* s > f *with geometric medians Gm*(Q) = m<sub>Q</sub> *and Gm*(R) = m<sub>R</sub>*. Let*
-∆<sup>Q</sup> = max<sub>qi</sub>∈<sub>Q</sub> ||q<sub>i</sub> − *Gm*(Q)||<sub>2</sub> *and* C<sup>(s,f)</sup><sub>0</sub> = √ s
-s<sup>2</sup>−f2
+▶ **Lemma 2.2** (Theoretical maximum displacement [6, 11])**.** *Let R* = *Q* ∪ *F,* |*Q*| = *s and*
+|*F*| = *f such that s* > *f with geometric medians Gm*(*Q*) = *m<sub>Q</sub> and Gm*(*R*) = *m<sub>R</sub>. Let*
+∆<sup>Q</sup> = max<sub>qi</sub>∈<sub>Q</sub> ||*q<sub>i</sub>* − *Gm*(*Q*)||<sub>2</sub> *and C*<sup>(s,f)</sup><sub>0</sub> = √ *s
+s*<sup>2</sup>−*f*2
 *. Then the maximum displacement is*
 
-> ||m<sub>Q</sub> − m<sub>R</sub>||<sub>2</sub> ≤ C(s,f)0 ∆Q
+> ||*m<sub>Q</sub>* − *m<sub>R</sub>*||<sub>2</sub> ≤ *C*(*s*,*f*)0 ∆*Q*
 
-However, the contents of Q is unknown, so the bound implied by Lemma 2.2 cannot be
+However, the contents of *Q* is unknown, so the bound implied by Lemma 2.2 cannot be
 directly calculated from the information available. Instead, Lemma 2.3 presents a
 computable bound guaranteed to contain the geometric median of the nonfaulty values, but
-is based only on the received values and the system parameters (i.e., n, f, and s).
+is based only on the received values and the system parameters (i.e., *n*, *f*, and *s*).
 
-▶ **Lemma 2.3** (Computable maximum displacement)**.** *Let* R = Q ∪ F, |Q| = s *and* |F| = f
-*such that* s > 2f *with Gm*(Q) = m<sub>Q</sub> *and Gm*(R) = m<sub>R</sub>*, and* C<sup>(s,f)</sup> = √ s
-2sf−f<sup>2</sup>
+▶ **Lemma 2.3** (Computable maximum displacement)**.** *Let R* = *Q* ∪ *F,* |*Q*| = *s and* |*F*| = *f
+such that s* > 2*f with Gm*(*Q*) = *m<sub>Q</sub> and Gm*(*R*) = *m<sub>R</sub>, and C*<sup>(s,f)</sup> = √ *s*
+2*sf*−*f*<sup>2</sup>
 *. Then*
 
-> (s,f)∆R
-> f
+> (*s*,*f*)∆*R
+> f*
 >
-> ||m<sub>Q</sub> − m<sub>R</sub>||<sub>2</sub> ≤ C
+> ||*m<sub>Q</sub>* − *m<sub>R</sub>*||<sub>2</sub> ≤ *C*
 
 The computable displacement is used to compute the *region guarantee* for a given PBA
 result. The fact that PBA only produces outputs with region guarantees containing the true
 output is our instantiation of an *accuracy* [12] property.
 
-<sup>d</sup>*,* |R| > s + f *where* s > f, *define*
-R<sup>(f,x)</sup> ⊆ R *by removing the* f *elements of* R *furthest from* x. *Let* ∆<sup>R</sup><sub>f</sub> = maxri∈R(f,*Gm*(R)) ||ri −
+*<sup>d</sup>,* |*R*| > *s* + *f where s* > *f, define
+R*<sup>(f,x)</sup> ⊆ *R by removing the f elements of R furthest from x. Let* ∆<sup>R</sup>*<sub>f</sub>* = max*ri*∈*R*(*f*,*Gm*(*R*)) ||*ri* −
 
-▶ **Definition 2.4** (Region Guarantee)**.** *For any set* R ⊆ R
+▶ **Definition 2.4** (Region Guarantee)**.** *For any set R* ⊆ R
 
-*Gm*(R)||<sub>2</sub>*. The* region guarantee RG(R, s, f) *is a* d-*dimensional ball centered at* x *with radius*
-2C(s,f)∆R
+*Gm*(*R*)||<sub>2</sub>*. The* region guarantee *RG*(*R*, *s*, *f*) *is a d-dimensional ball centered at x with radius*
+2*C*(*s*,*f*)∆*R
 f
-*.*
+.*
 
-▶ **Lemma 2.5** (Accuracy)**.** *For any* R = (Q ∪ F) *containing* |Q| = s > 2f *nonfaulty and at
-most* |F| = f *faulty values, let PBA*(R, s) = (x, R′)*. Then Gm*(Q) ∈ RG(R, s, f) *and*
+▶ **Lemma 2.5** (Accuracy)**.** *For any R* = (*Q* ∪ *F) containing* |*Q*| = *s* > 2*f nonfaulty and at
+most* |*F*| = *f faulty values, let PBA*(*R*, *s*) = (*x*, *R*′)*. Then Gm*(*Q*) ∈ *RG*(*R*, *s*, *f*) *and*
 
-||m<sub>Q</sub> − x||<sub>2</sub> ≤ C(s,f)0 ∆R′
-\+ C(s,f)0 ∆<sup>Q</sup> ≤ 2C
+||*m<sub>Q</sub>* − *x*||<sub>2</sub> ≤ *C*(*s*,*f*)0 ∆*R*′
+\+ *C*(*s*,*f*)0 ∆<sup>Q</sup> ≤ 2*C*
 
-> (s,f)∆R
-> f
+> (*s*,*f*)∆*R
+> f*
 
 ## 2.2 OneShot PBA Agreement and Termination
 
@@ -230,10 +230,10 @@ values. Like most IA protocols [3, 4, 13], but unlike other ABA protocols [5, 12
 OneShot does not iterate to converge on a single answer. Doing so would obscure the initial
 values, sacrifice accuracy, and undermine the fidelity of the region guarantees.
 
-The termination conditions are thus straightforward: OneShot PBA requires s+f values
-where s ≥ 2f +1, so termination for the asynchronous case requires at least n ≥ s+2f ≥ 4f +1
-replicas. Otherwise, f faulty replicas could withhold values without being distinguished from
-f nonfaulty replicas experiencing a network partition, and halt progress.
+The termination conditions are thus straightforward: OneShot PBA requires *s*+*f* values
+where *s* ≥ 2*f* +1, so termination for the asynchronous case requires at least *n* ≥ *s*+2*f* ≥ 4*f* +1
+replicas. Otherwise, *f* faulty replicas could withhold values without being distinguished from
+*f* nonfaulty replicas experiencing a network partition, and halt progress.
 
 PBA OneShot’s requirements on replica set size compare favorably to other ABA protocols
 (Table 1), particularly when considering its lack of dependency on data dimensionality
@@ -242,14 +242,14 @@ improve accuracy with more replicas, a distinguishing characteristic of PBA valu
 that more replicas are not required to ensure the safety or liveness properties of the system,
 yet still benefits from the increase in accuracy.
 
-<<PAGE:5|VISIBLE:64:5>>**Table 1** Replica set size. d is number of data dimensions.
+<<PAGE:5|VISIBLE:64:5>>**Table 1** Replica set size. *d* is number of data dimensions.
 
-> **Algorithm** n ≥\
-> OneShot 4f + 1\
-> ABA [5] 5f + 1
-> IA [12] 3f + 1
-> BI [3, 4] 2df + 1
-> BVC [14, 19] (d + 2)f + 1
+> **Algorithm** *n* ≥\
+> OneShot 4*f* + 1\
+> ABA [5] 5*f* + 1
+> IA [12] 3*f* + 1
+> BI [3, 4] 2*df* + 1
+> BVC [14, 19] (*d* + 2)*f* + 1
 >
 > **(a)** Gaussian samples, Byzantine attack. **(b)** Exponential samples, Byzantine attack.
 
@@ -260,7 +260,7 @@ Despite the absence of inter-replica coordination or iteration, the PBA values d
 by consumers from different subsets are bounded with respect to their distance to the true
 expected value. This bound is in terms of the displacement properties of the geometric
 median discussed in §2.1, and contingent on quorum sizes representing a sufficiently large
-fraction of the nonfaulty replicas, in this case > |Q|/2.
+fraction of the nonfaulty replicas, in this case > |*Q*|/2.
 
 It is taken for granted in other protocols that quorums must contain at least half of all
 nonfaulty replicas since these protocols ensure all quorums intersect. We only make this
@@ -270,9 +270,9 @@ the only consumer of replica outputs, as is often the case in industrial control
 contrast, note that accuracy (Lemma 2.5) only requires quorum membership to be more
 than twice the number of faulty replicas.
 
-▶ **Lemma 2.6** (Agreement)**.** *For any* R<sup>i</sup> = (Q<sup>i</sup> ∪ F<sup>i</sup>) ⊆ R = (Q ∪ F)*, let* r = |R<sup>i</sup>|*,* s = |Q<sup>i</sup>|*,*
-f = |F|*, and PBA*(R<sup>i</sup>, s) = (x<sub>i</sub>, R<sup>i</sup><sub>∗</sub>)*. If* s > ⌈|R|/2⌉ *and* r ≥ s + f, *then for any other subset*
-R<sup>j</sup> = (Q<sup>j</sup> ∪ F<sup>j</sup>) ⊆ R *where* |R<sup>j</sup>| ≥ r *and PBA*(R<sup>j</sup>, s) = (x<sub>j</sub> , R<sup>j</sup><sub>∗</sub>)*,* ||x<sub>i</sub> − x<sub>j</sub> || ≤ 2C<sup>(s,f)</sup><sub>0</sub> ∆Q.
+▶ **Lemma 2.6** (Agreement)**.** *For any R<sup>i</sup>* = (*Q<sup>i</sup>* ∪ *F<sup>i</sup>*) ⊆ *R* = (*Q* ∪ *F*)*, let r* = |*R<sup>i</sup>*|*, s* = |*Q<sup>i</sup>*|*,
+f* = |*F*|*, and PBA*(*R<sup>i</sup>*, *s*) = (*x<sub>i</sub>*, *R<sup>i</sup>*<sub>∗</sub>)*. If s* > ⌈|*R*|/2⌉ *and r* ≥ *s* + *f, then for any other subset
+R<sup>j</sup>* = (*Q<sup>j</sup>* ∪ *F<sup>j</sup>*) ⊆ *R where* |*R<sup>j</sup>*| ≥ *r and PBA*(*R<sup>j</sup>*, *s*) = (*x<sub>j</sub>* , *R<sup>j</sup>*<sub>∗</sub>)*,* ||*x<sub>i</sub>* − *x<sub>j</sub>* || ≤ 2*C*<sup>(s,f)</sup><sub>0</sub> ∆*Q.*
 
 <<PAGE:6|VISIBLE:64:6>>**Figure 2** Runtime benchmark (Pi Zero).
 
@@ -281,22 +281,22 @@ R<sup>j</sup> = (Q<sup>j</sup> ∪ F<sup>j</sup>) ⊆ R *where* |R<sup>j</sup>| 
 **PBA accuracy compared to baseline.** We perform repeated simulations on Chameleon
 Cloud [8], comparing PBA under several quorum sizes against approximate Byzantine Vector
 Consensus (BVC) [19] and Brooks-Iyengar (BI) [4]. Here we present only the Byzantine attack
-scenario. Each trial samples n − f d-dimensional replica outputs x<sub>i</sub> from a random Gaussian
+scenario. Each trial samples *n* − *f d*-dimensional replica outputs *x<sub>i</sub>* from a random Gaussian
 or Exponential distribution (with a fixed, low variance) and multiplies each element-wise
-by a noise vector y<sub>i</sub> independently sampled from an error distribution with E[Y ] = 1 and
+by a noise vector *y<sub>i</sub>* independently sampled from an error distribution with *E*[*Y* ] = 1 and
 (uniformly-sampled) standard deviation from 0.01 to 0.09. We compute the agreement vector
-of each protocol and report the median percent error with respect to x<sub>i</sub> across 1000 trials.
+of each protocol and report the median percent error with respect to *x<sub>i</sub>* across 1000 trials.
 
-Figure 1a compares results when n − f outputs are sampled from a Gaussian distribution
-under an optimal Byzantine attack with f = 1. While BVC remains highly robust, PBA
-achieves comparable accuracy with just n = 4f + 1 = 5 (small n) outputs, versus BVC’s
-n = (d + 2)f + 1 = 13 (large n) outputs. This indicates that at least some of BVC’s accuracy
+Figure 1a compares results when *n* − *f* outputs are sampled from a Gaussian distribution
+under an optimal Byzantine attack with *f* = 1. While BVC remains highly robust, PBA
+achieves comparable accuracy with just *n* = 4*f* + 1 = 5 (small *n*) outputs, versus BVC’s
+*n* = (*d* + 2)*f* + 1 = 13 (large *n*) outputs. This indicates that at least some of BVC’s accuracy
 may result from its reliance on more samples, but any ABA protocol will improve in accuracy
 with more samples: aggregating values concentrates outputs around the true value. PBA
 approaches the true value with fewer samples (i.e., replicas) and performance overhead.
 
-In the Exponential and large n setting (n = (d+2)f+1), Figure 1b shows PBA outperforms
-all other n = 4 protocols. In the small n setting, PBA demonstrates superior accuracy to
+In the Exponential and large *n* setting (*n* = (*d*+2)*f*+1), Figure 1b shows PBA outperforms
+all other *n* = 4 protocols. In the small *n* setting, PBA demonstrates superior accuracy to
 all baselines – even in the PBA-unknown case, where the prior distribution is estimated
 as Gaussian. This accuracy advantage likely stems from PBA’s quorum selection strategy
 and agreement inference method. In contrast, the benefit other protocols received from
@@ -305,12 +305,12 @@ exponential case, an asymmetric distribution. The gap in accuracy suggests the a
 effect occurring in other protocols generalizes poorly to other distributions, whereas PBA’s
 more statistically-informed approach adapts more easily.
 
-**Runtime performance.** Figure 2 presents runtime benchmarks for f = 1 and f = 2 on
+**Runtime performance.** Figure 2 presents runtime benchmarks for *f* = 1 and *f* = 2 on
 a node hosted on a single Raspberry Pi Zero 2W. These results are based on repeated
-simulations of the PBA, BVC, and BI protocols operating on sets of n d-dimensional vectors.
-where n = (d + 2)f + 1, and PBA quorum sizes set to s = n − f. PBA is faster than BVC for
-f = 1, d > 5 (with similar performance at lower d), and more than 4× faster at f = 1, d = 18.
-In all f = 2, d = 4 scenarios, PBA significantly outperforms BVC (124×). While BI also
+simulations of the PBA, BVC, and BI protocols operating on sets of *n d*-dimensional vectors.
+where *n* = (*d* + 2)*f* + 1, and PBA quorum sizes set to *s* = *n* − *f*. PBA is faster than BVC for
+*f* = 1, *d* > 5 (with similar performance at lower *d*), and more than 4× faster at *f* = 1, *d* = 18.
+In all *f* = 2, *d* = 4 scenarios, PBA significantly outperforms BVC (124×). While BI also
 exhibits scalable runtime in high-dimensional settings, each replica must produce outputs
 <<PAGE:7|VISIBLE:64:7>>with a known error range that contains the true value, and that must also intersect the
 ranges of all other nonfaulty nodes. If these invariants are violated by any nonfaulty replica,
@@ -321,8 +321,8 @@ Our empirical results against BVC reinforces that PBA offers a compelling trade-
 maintains competitive accuracy while substantially reducing computational cost. Beyond performance,
 PBA also provides robust fault tolerance and accurate agreement with significantly
 fewer replica outputs. Notably, PBA’s minimum required number of replicas and quorum
-size are independent of d; in contrast to BVC, whose replica requirements scale significantly
-with d. Under-provisioned PBA systems instead have more uncertainty, but the amount
+size are independent of *d*; in contrast to BVC, whose replica requirements scale significantly
+with *d*. Under-provisioned PBA systems instead have more uncertainty, but the amount
 is characterized by region guarantees. This scalable perfomance and graceful, principled
 degradation indicate promise for both large-scale and resource-constrained sensor-based
 control systems and datastream processing applications.
