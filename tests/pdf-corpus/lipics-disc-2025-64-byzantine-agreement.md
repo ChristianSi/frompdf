@@ -107,8 +107,8 @@ reinforcing the tradeoff [12] between high-precision agreement and statistical a
 
 Replicas participating in Approximate Byzantine Agreement (ABA) protocols (e.g.,[5, 14, 19])
 start with an arbitrary real value and reach an output solution satisfying two properties:
-**1\.** *ϵ-Agreement*: all nonfaulty replicas eventually output values within *ϵ* of each other.
 
+1. *ϵ-Agreement*: all nonfaulty replicas eventually output values within *ϵ* of each other.
 2. *Validity*: these values are bound (in some sense) by the initial values of nonfaulty replicas.
 
 Mahaney and Schneider [12] distinguish Inexact Agreement (IA) from classical ABA by
@@ -329,75 +329,57 @@ control systems and datastream processing applications.
 
 ### References
 
-**1** Buke Ao, Yongcai Wang, Lu Yu, Richard R. Brooks, and S. S. Iyengar. On Precision Bound
-of Distributed Fault-Tolerant Sensor Fusion Algorithms. *ACM Computing Surveys (CSUR)*,
-May 2016. doi:10.1145/2898984.
-
-**2** Sergey Blok, Douglas Medin, and Daniel Osherson. Probability from similarity. In *AAAI
-Spring Symposium on Logical Formalization of Commonsense Reasoning*, pages 36–42, 2003.
-
-**3** Richard Ree Brooks and S. Sitharama Iyengar. Optimal matching algorithm for multidimensional
-sensor readings. In *Sensor Fusion and Networked Robotics VIII*, volume 2589. SPIE,
-September 1995. doi:10.1117/12.220948.
-
-**4** R.R. Brooks and S.S. Iyengar. Robust distributed computing and sensing algorithm. *Computer*,
-29(6), June 1996. doi:10.1109/2.507632.
-
-**5** Danny Dolev, Nancy A. Lynch, Shlomit S. Pinter, Eugene W. Stark, and William E. Weihl.
-Reaching approximate agreement in the presence of faults. *Journal of The Acm*, 33(3), May
-1986. doi:10.1145/5925.5931.
-
-**6** El-Mahdi El-Mhamdi, Sadegh Farhadkhani, Rachid Guerraoui, and Lê-Nguyên Hoang. On
-the Strategyproofness of the Geometric Median. In *Proceedings of The 26th International
-Conference on Artificial Intelligence and Statistics*. PMLR, April 2023. URL: https://
-proceedings.mlr.press/v206/el-mhamdi23a.html.
-
-**7** Peter J. Huber and Elvezio M. Ronchetti. *Robust Statistics*. Wiley, 2011.
-
-**8** Kate Keahey, Jason Anderson, Zhuo Zhen, Pierre Riteau, Paul Ruth, Dan Stanzione, Mert
-Cevik, Jacob Colleran, Haryadi S. Gunawi, Cody Hammock, Joe Mambretti, Alexander
-Barnes, François Halbach, Alex Rocha, and Joe Stubbs. Lessons learned from the chameleon
-testbed. In *Proceedings of the 2020 USENIX Annual Technical Conference (USENIX ATC
-’20)*. USENIX Association, July 2020. URL: https://www.usenix.org/conference/atc20/
-presentation/keahey.
-
-**9** Leslie Lamport. The weak Byzantine generals problem. *Journal of the ACM*, 30(3), 1983.
-doi:10.1145/2402.322398.
-
-**10** Leslie Lamport and P. M. Melliar-Smith. Byzantine clock synchronization. In *Principles of
-Distributed Computing (PODC)*, 1984. doi:10.1145/800222.806737.
-
-**11** Hendrik P. Lopuhaa and Peter J. Rousseeuw. Breakdown Points of Affine Equivariant
-Estimators of Multivariate Location and Covariance Matrices. *The Annals of Statistics*, 19(1),
-March 1991. doi:10.1214/aos/1176347978.
-
-**12** Stephen R. Mahaney and Fred B. Schneider. Inexact agreement: Accuracy, precision, and
-graceful degradation. In *Principles of Distributed Computing (PODC)*. ACM Press, 1985.
-doi:10.1145/323596.323618.
-
-**13** Keith Marzullo. Tolerating failures of continuous-valued sensors. *ACM Transactions on
-Computer Systems*, 8(4), November 1990. doi:10.1145/128733.128735.
-
-[[PAGE:8|VISIBLE:64:8]]**14** Hammurabi Mendes and Maurice Herlihy. Multidimensional approximate agreement in
-Byzantine asynchronous systems. In *Proceedings of the Forty-Fifth Annual ACM Symposium
-on Theory of Computing*. ACM, June 2013. doi:10.1145/2488608.2488657.
-
-**15** Stanislav Minsker. Geometric median and robust estimation in Banach spaces. *Bernoulli*,
-21(4), November 2015. doi:10.3150/14-BEJ645.
-
-**16** Stanislav Minsker and Nate Strawn. The Geometric Median and Applications to Robust
-Mean Estimation. *SIAM Journal on Mathematics of Data Science*, 6(2), June 2024. doi:
-10.1137/23M1592420.
-
-**17** Emanuel Parzen. *Stochastic Processes*. Dover Books on Mathematics. Dover Publications Inc.,
-2015.
-
-**18** Roy Shadmon and Owen Arden. Enhancing accuracy in approximate byzantine agreement with
-bayesian inference. In *55th Annual IEEE/IFIP International Conference on Dependable Systems
-and Networks - Supplemental Volume (DSN-S)*, 2025. doi:10.1109/DSN-S65789.2025.00064.
-
-**19** Nitin H Vaidya and Vijay K Garg. Byzantine vector consensus in complete graphs. In *Proc.
-of the 2013 ACM Symposium on Principles of Distributed Computing*, 2013.
+1. Buke Ao, Yongcai Wang, Lu Yu, Richard R. Brooks, and S. S. Iyengar. On Precision Bound
+   of Distributed Fault-Tolerant Sensor Fusion Algorithms. *ACM Computing Surveys (CSUR)*,
+   May 2016. doi:10.1145/2898984.
+2. Sergey Blok, Douglas Medin, and Daniel Osherson. Probability from similarity. In *AAAI
+   Spring Symposium on Logical Formalization of Commonsense Reasoning*, pages 36–42, 2003.
+3. Richard Ree Brooks and S. Sitharama Iyengar. Optimal matching algorithm for multidimensional
+   sensor readings. In *Sensor Fusion and Networked Robotics VIII*, volume 2589. SPIE,
+   September 1995. doi:10.1117/12.220948.
+4. R.R. Brooks and S.S. Iyengar. Robust distributed computing and sensing algorithm. *Computer*,
+   29(6), June 1996. doi:10.1109/2.507632.
+5. Danny Dolev, Nancy A. Lynch, Shlomit S. Pinter, Eugene W. Stark, and William E. Weihl.
+   Reaching approximate agreement in the presence of faults. *Journal of The Acm*, 33(3), May
+   1986. doi:10.1145/5925.5931.
+6. El-Mahdi El-Mhamdi, Sadegh Farhadkhani, Rachid Guerraoui, and Lê-Nguyên Hoang. On
+   the Strategyproofness of the Geometric Median. In *Proceedings of The 26th International
+   Conference on Artificial Intelligence and Statistics*. PMLR, April 2023. URL: https://
+   proceedings.mlr.press/v206/el-mhamdi23a.html.
+7. Peter J. Huber and Elvezio M. Ronchetti. *Robust Statistics*. Wiley, 2011.
+8. Kate Keahey, Jason Anderson, Zhuo Zhen, Pierre Riteau, Paul Ruth, Dan Stanzione, Mert
+   Cevik, Jacob Colleran, Haryadi S. Gunawi, Cody Hammock, Joe Mambretti, Alexander
+   Barnes, François Halbach, Alex Rocha, and Joe Stubbs. Lessons learned from the chameleon
+   testbed. In *Proceedings of the 2020 USENIX Annual Technical Conference (USENIX ATC
+   ’20)*. USENIX Association, July 2020. URL: https://www.usenix.org/conference/atc20/
+   presentation/keahey.
+9. Leslie Lamport. The weak Byzantine generals problem. *Journal of the ACM*, 30(3), 1983.
+   doi:10.1145/2402.322398.
+10. Leslie Lamport and P. M. Melliar-Smith. Byzantine clock synchronization. In *Principles of
+    Distributed Computing (PODC)*, 1984. doi:10.1145/800222.806737.
+11. Hendrik P. Lopuhaa and Peter J. Rousseeuw. Breakdown Points of Affine Equivariant
+    Estimators of Multivariate Location and Covariance Matrices. *The Annals of Statistics*, 19(1),
+    March 1991. doi:10.1214/aos/1176347978.
+12. Stephen R. Mahaney and Fred B. Schneider. Inexact agreement: Accuracy, precision, and
+    graceful degradation. In *Principles of Distributed Computing (PODC)*. ACM Press, 1985.
+    doi:10.1145/323596.323618.
+13. Keith Marzullo. Tolerating failures of continuous-valued sensors. *ACM Transactions on
+    Computer Systems*, 8(4), November 1990. doi:10.1145/128733.128735.
+14. [[PAGE:8|VISIBLE:64:8]]Hammurabi Mendes and Maurice Herlihy. Multidimensional approximate agreement in
+    Byzantine asynchronous systems. In *Proceedings of the Forty-Fifth Annual ACM Symposium
+    on Theory of Computing*. ACM, June 2013. doi:10.1145/2488608.2488657.
+15. Stanislav Minsker. Geometric median and robust estimation in Banach spaces. *Bernoulli*,
+    21(4), November 2015. doi:10.3150/14-BEJ645.
+16. Stanislav Minsker and Nate Strawn. The Geometric Median and Applications to Robust
+    Mean Estimation. *SIAM Journal on Mathematics of Data Science*, 6(2), June 2024. doi:
+    10.1137/23M1592420.
+17. Emanuel Parzen. *Stochastic Processes*. Dover Books on Mathematics. Dover Publications Inc.,
+    2015.
+18. Roy Shadmon and Owen Arden. Enhancing accuracy in approximate byzantine agreement with
+    bayesian inference. In *55th Annual IEEE/IFIP International Conference on Dependable Systems
+    and Networks - Supplemental Volume (DSN-S)*, 2025. doi:10.1109/DSN-S65789.2025.00064.
+19. Nitin H Vaidya and Vijay K Garg. Byzantine vector consensus in complete graphs. In *Proc.
+    of the 2013 ACM Symposium on Principles of Distributed Computing*, 2013.
 
 ## [[PAGE:3|VISIBLE:64:3]]Notes
 

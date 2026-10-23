@@ -540,52 +540,44 @@ Zentrum stellte. Dabei orientierte sich ihre Praxis an folgenden pädagogischen
 Leitprinzipien:
 
 1. *Selbstbestimmtes Lernen:* Im Mittelpunkt stand die Eigenständigkeit der
-Lernenden. Die Kinder und Jugendlichen waren frei in der Wahl ihrer
-Fächer, planten ihre Arbeit eigenständig, übernahmen Aufgaben im Alltag
-und trugen die Verantwortung für das gemeinsame Leben. Verpflichtungen
-wurden als gegenseitige Absprachen verstanden, die einzuhalten waren.
-Prüfungen wurden weitgehend vermieden; stattdessen nutzte man freiwillige
-Tests und später ein selbst entwickeltes Prüfungssystem<sup>31</sup>.
-
-[[PAGE:24|VISIBLE:180]]2. *Ganzheitliches Lernen – mit Kopf, Herz und Hand:* Wissen wurde nicht abstrakt
-vermittelt, sondern durch praktische Erfahrungen, handwerkliches
-Tun, künstlerische Ausdrucksformen und Naturerlebnisse. Kognitive, emotionale
-und körperliche Dimensionen galten als untrennbar verbunden.
-
+   Lernenden. Die Kinder und Jugendlichen waren frei in der Wahl ihrer
+   Fächer, planten ihre Arbeit eigenständig, übernahmen Aufgaben im Alltag
+   und trugen die Verantwortung für das gemeinsame Leben. Verpflichtungen
+   wurden als gegenseitige Absprachen verstanden, die einzuhalten waren.
+   Prüfungen wurden weitgehend vermieden; stattdessen nutzte man freiwillige
+   Tests und später ein selbst entwickeltes Prüfungssystem<sup>31</sup>.
+2. [[PAGE:24|VISIBLE:180]]*Ganzheitliches Lernen – mit Kopf, Herz und Hand:* Wissen wurde nicht abstrakt
+   vermittelt, sondern durch praktische Erfahrungen, handwerkliches
+   Tun, künstlerische Ausdrucksformen und Naturerlebnisse. Kognitive, emotionale
+   und körperliche Dimensionen galten als untrennbar verbunden.
 3. *Demokratische Teilhabe und Gemeinschaft:* Alle Mitglieder der Schule –
-Kinder, Jugendliche und Erwachsene – waren gleichberechtigt in Entscheidungsprozesse
-eingebunden, meist im Rahmen der wöchentlichen „Bespreking“
-(Besprechung). Konflikte wurden durch „dialogische Aushandlung“<sup>32</sup>
-*bearbeitet* und soziale Normen aus gemeinsamen Verständigungsprozessen
-abgeleitet.
-
+   Kinder, Jugendliche und Erwachsene – waren gleichberechtigt in Entscheidungsprozesse
+   eingebunden, meist im Rahmen der wöchentlichen „Bespreking“
+   (Besprechung). Konflikte wurden durch „dialogische Aushandlung“<sup>32</sup>
+   *bearbeitet* und soziale Normen aus gemeinsamen Verständigungsprozessen
+   abgeleitet.
 4. *Hierarchiefreie Kultur ohne Strafen:* Kinder wurden als „Werker“ (Arbeiter:in),
-Erwachsene als „Medewerkers“ (Mitarbeiter:in) bezeichnet; man
-duzte sich und sprach sich mit Vornamen an. Regelverstöße führten nicht
-zu Sanktionen, sondern wurden in der sog. „Ronde“ (Runde) besprochen,
-um Einsicht und gemeinsames Verantwortungsbewusstsein zu fördern.
-
+   Erwachsene als „Medewerkers“ (Mitarbeiter:in) bezeichnet; man
+   duzte sich und sprach sich mit Vornamen an. Regelverstöße führten nicht
+   zu Sanktionen, sondern wurden in der sog. „Ronde“ (Runde) besprochen,
+   um Einsicht und gemeinsames Verantwortungsbewusstsein zu fördern.
 5. *Inklusion und Offenheit:* Die Werkplaats war von Beginn an koedukativ,
-altersgemischt und für alle Kinder – unabhängig von Herkunft, Religion,
-Geschlecht oder körperlichen Voraussetzungen – offen. Vielfalt wurde als
-Bereicherung verstanden, Chancengerechtigkeit bewusst gefördert. Die
-Werkplaats sollte auch die erste Schule in den Niederlanden sein, in der
-Kinder und Jugendliche mit Behinderungen willkommen waren.
-
+   altersgemischt und für alle Kinder – unabhängig von Herkunft, Religion,
+   Geschlecht oder körperlichen Voraussetzungen – offen. Vielfalt wurde als
+   Bereicherung verstanden, Chancengerechtigkeit bewusst gefördert. Die
+   Werkplaats sollte auch die erste Schule in den Niederlanden sein, in der
+   Kinder und Jugendliche mit Behinderungen willkommen waren.
 6. *Naturverbundenheit und bewusste Lebensweise:* Ökologischer Gartenbau,
-Lernen im Freien, sportliche Betätigung und ein einfacher, gesunder
-Lebensstil prägten den Alltag der Werkplaats.
-
+   Lernen im Freien, sportliche Betätigung und ein einfacher, gesunder
+   Lebensstil prägten den Alltag der Werkplaats.
 7. *Pädagogische Offenheit:* Die Schule verstand sich als dynamisches Experiment,
-das Strukturen flexibel hielt, Innovation zuließ und Regeln nur bei
-Bedarf einführte. Bildung wurde als offener Forschungsprozess begriffen.
-
-[[PAGE:25|VISIBLE:181]]8. *Ethische Orientierung:* Inspiriert von quäkerischen Traditionen sollte
-
-> moralische Urteilskraft gefördert werden. Handeln aus innerer Überzeugung
-> – nicht aus Angst oder Hoffnung auf Belohnung – galt als Leitprinzip
-> der Werkplaats und sollte die Integrität, Empathie und Verantwortung in
-> der Gemeinschaft stärken.
+   das Strukturen flexibel hielt, Innovation zuließ und Regeln nur bei
+   Bedarf einführte. Bildung wurde als offener Forschungsprozess begriffen.
+8. [[PAGE:25|VISIBLE:181]]*Ethische Orientierung:* Inspiriert von quäkerischen Traditionen sollte
+   moralische Urteilskraft gefördert werden. Handeln aus innerer Überzeugung
+   – nicht aus Angst oder Hoffnung auf Belohnung – galt als Leitprinzip
+   der Werkplaats und sollte die Integrität, Empathie und Verantwortung in
+   der Gemeinschaft stärken.
 
 Die Machtergreifung der Nationalsozialisten in Deutschland 1933 hatte
 weitreichende Folgen auch für die Niederlande, die sich sowohl in der
@@ -1140,9 +1132,8 @@ Kees Boeke hatte mit seinem Konzept der Soziokratie ein pragmatisch-anar-chistis
 Organisationsmodell geschaffen, dessen drei Grundregeln wie
 folgt lauteten:
 
-1. Entscheidungsfindung durch Übereinstimmung (Konsens)\
+1. Entscheidungsfindung durch Übereinstimmung (Konsens)
 2. Selbstorganisation und Autonomie
-
 3. Struktureller Aufbau: Von unten nach oben
 
 Boekes soziokratisches Organisationsmodell enthält unverkennbar anarchistische
@@ -1260,37 +1251,34 @@ Organisationsmethode bilden kein statisches Regelwerk, sondern sie
 funktionieren als ein miteinander verzahntes und agierendes System:
 
 1. *Das Konsentprinzip* ersetzt das in Boekes Modell der Soziokratie bestehende
-*Konsensprinzip,* bei dem eine *grundlegende Übereinstimmung* der
-Meinungen angestrebt wurde. Das von Endenburg eingeführte *Konsent-Prinzip*
-erfordert lediglich, dass *kein schwerwiegender Einwand* gegen einen
-Beschluss vorliegt. Der Beschluss muss im persönlichen Toleranzbereich
-liegen, der den *Spielraum des Vertretbaren* umreißt, innerhalb dessen ein
-Mitglied einen Beschluss akzeptieren und mittragen kann, auch wenn dieser
-nicht unbedingt auch die persönliche Lieblingslösung oder optimale
-Präferenz ist. Entscheidungen im Konsent werden in der Regel mit einem
-[[PAGE:51|VISIBLE:207]]Prüfdatum und Messkriterien versehen, um zu überprüfen, inwieweit der
-gemeinsame Beschluss tatsächlich in der Praxis umgesetzt wird.
-
+   *Konsensprinzip,* bei dem eine *grundlegende Übereinstimmung* der
+   Meinungen angestrebt wurde. Das von Endenburg eingeführte *Konsent-Prinzip*
+   erfordert lediglich, dass *kein schwerwiegender Einwand* gegen einen
+   Beschluss vorliegt. Der Beschluss muss im persönlichen Toleranzbereich
+   liegen, der den *Spielraum des Vertretbaren* umreißt, innerhalb dessen ein
+   Mitglied einen Beschluss akzeptieren und mittragen kann, auch wenn dieser
+   nicht unbedingt auch die persönliche Lieblingslösung oder optimale
+   Präferenz ist. Entscheidungen im Konsent werden in der Regel mit einem
+   [[PAGE:51|VISIBLE:207]]Prüfdatum und Messkriterien versehen, um zu überprüfen, inwieweit der
+   gemeinsame Beschluss tatsächlich in der Praxis umgesetzt wird.
 2. *Jeder Kreis* steuert sich nach dem Prinzip des sogenannten Kreisprozesses,
-den Endenburg aus der Kybernetik übernommen hat. Er umfasst drei wiederkehrende
-Schritte: *Leiten* – gemeinsame Ziele und Rahmenbedingungen
-festlegen, *Ausführen* – die beschlossenen Maßnahmen umsetzen, und *Messen*
-– die Ergebnisse prüfen und als Rückmeldung für den nächsten Zyklus
-nutzen. Durch dieses Zusammenspiel entsteht eine kontinuierliche Lern-
-und Optimierungsschleife, die auf allen Ebenen der Organisation wirksam
-ist.
-
+   den Endenburg aus der Kybernetik übernommen hat. Er umfasst drei wiederkehrende
+   Schritte: *Leiten* – gemeinsame Ziele und Rahmenbedingungen
+   festlegen, *Ausführen* – die beschlossenen Maßnahmen umsetzen, und *Messen*
+   – die Ergebnisse prüfen und als Rückmeldung für den nächsten Zyklus
+   nutzen. Durch dieses Zusammenspiel entsteht eine kontinuierliche Lern-
+   und Optimierungsschleife, die auf allen Ebenen der Organisation wirksam
+   ist.
 3. Jeder Kreis ist mit dem nächsthöheren (übergeordneten) Kreis durch eine
-*doppelte Verknüpfung* von mindestens zwei Personen (Kreisleiter:in und
-Kreisdelegierte:r) verbunden. Auf diese Weise werden Informationen und
-Einfluss in beide Richtungen weitergegeben, was Transparenz, Ausgewogenheit
-und Anpassungsfähigkeit fördert. Die Rückmeldungen der
-Delegierten müssen im übergeordneten Kreis angehört werden, wodurch
-eine offene und kontinuierliche Feedbackschleife entsteht.
-
+   *doppelte Verknüpfung* von mindestens zwei Personen (Kreisleiter:in und
+   Kreisdelegierte:r) verbunden. Auf diese Weise werden Informationen und
+   Einfluss in beide Richtungen weitergegeben, was Transparenz, Ausgewogenheit
+   und Anpassungsfähigkeit fördert. Die Rückmeldungen der
+   Delegierten müssen im übergeordneten Kreis angehört werden, wodurch
+   eine offene und kontinuierliche Feedbackschleife entsteht.
 4. *Die offene Wahl* nutzt die *kollektive Intelligenz* der jeweiligen Kreisgruppe,
-um die Rollen der Funktionsträger:innen mit den am besten für sie geeigneten
-Personen zu besetzen – sichtbar und nachvollziehbar für alle.
+   um die Rollen der Funktionsträger:innen mit den am besten für sie geeigneten
+   Personen zu besetzen – sichtbar und nachvollziehbar für alle.
 
 Dieses Modell ermöglicht es der Organisation, als Ganzes agil zu bleiben,
 weil Entscheidungen in ihm nicht zentral und von oben (top-down),
@@ -1867,152 +1855,113 @@ anarchisch, sondern auch alltagstauglich und effektiv sind.
 
 ### [[PAGE:56|VISIBLE:212]]Literatur
 
-Bakunin, Michael: *Gesammelte Werke,* Band 1, hrsg. v. Max Nettlau,
-Berlin: Verlag „Der Syndikalist“, 1921 (online).
-
-Barclay, Harold: *Völker ohne Regierung. Eine Anthropologie der Anarchie,*
-Berlin: Libertad Verlag (= *Edition Schwarze Kirschen;* 6), 1985.
-
-Boeke, Julia: *Inleiding,* in: *Archief Werkplaats Kindergemeenschap
-(Bilthoven). (1921-) 1926-1954 (-1986),* Amsterdam: IISG, 1990, pp. 3-10.
-
-Boeke, Kees: *Bilthoven, Holland’s International Children’s Community,*
-in: *The Clearing House,* vol. 13 (1938), no. 2 (Oct.), pp. 106-108.
-
-Boeke, Kees: *Der Bilthoven Werkplaats und seine Soziokratie,* in: *Bildung
-und Erziehung,* Jg. 2 (1949), Nr. 8 (August), S. 590-595.
-
-Boeke, Kees: *Democracy as it might be; first published in May 1945 by
-Kees Boeke (1884-1966),* edited by Beatrice C. Boeke, in: worldteacher.
-faithweb.com (online).
-
-Boeke, Kees: *Redelijke Ordening van de Mensengemeenschap,* 2. überarb.
-Aufl. (1967), Nachdruck in: *de AS (De Sociokratie van Kees Boeke)*,
-vol. 40 (1986), no. 76, pp. 18-45 (dt. Übers. *Die Ordnung der Vernunft in
-der Gemeinschaft der Menschen,* hier im Anhang auf S. 217-223).
-
-Buck, John A. and Gerard Endenburg: *The Creative Forces of Self-Organization,*
-Original: 2003, revised version, Rotterdam: Sociocratic Center,
-2012 (online | PDF).
-
-Buck, John A. und Gerard Endenburg: *Die Kreativen Kräfte der Selbstorganisation,*
-Rotterdam: Sociocratisch Centrum, 2005 (online | PDF).
-
-Buck, John and Sharon Villines: *We the People: Consenting to a Deeper
-Democracy. A Guide to Sociocratic Principles and Methods,* Washington
-D. C.: Sociocracy. Info, 2007.
-
-Chugerman, Samuel: *Lester F. Ward: The American Aristotle. A Summary
-and Interpretation of his Sociology,* New York: Octagon Books, 1965.
-
-Fleming, James E.: *The Sociocratic Theory of Lester Frank Ward,* in:
-*Social Forces,* vol. 24 (1946), no. 3 (March), pp. 257–266.
-
-Groot, Annemiek de: *De Lust tot Last. De Rein Leven Beweging als
-pionier in de strijd om de nieuwe mens*, in: *Groniek. Historisch tijdschrift,*
-Nr. 120 (maart 1993), pp. 55-64 (online | PDF).
-
-[[PAGE:57|VISIBLE:213]]Hazekamp, Arie: *De bezielende Kracht van Joop Westerweel,* in: *de AS –
-Nederlandse Anarchisten tijdens de duitse Bezetting,* vol. 46 (2018), no. 202
-(najaar), pp. 4-9 (online | PDF).
-
-Holterman, Thom: *Recht en politieke organisatie, Een onderzoek naar
-convergentie in opvattingen omtrent recht en politieke organisatie bij
-sommige anarchisten en sommigerechtsgeleerden,* Zwolle: W.E.J. Tjeenk
-Willink, 1986.
-
-Holterman, Thom: *Redelijk ordenen bij Kees Boeke,* in: *de AS – De
-Sociokratie van Kees Boeke*, vol. 14 (1986), no. 76 (Okt.-Dec.), pp. 6-7
-(online | PDF).
-
-Hooghiemstra, *Daniela A.: De geest in dit huis is liefderijk. Het leven en
-De Werkplaats van Kees Boeke (1884-1966),* Amsterdam: Universiteit van
-Amsterdam (Thesis), Utrecht, Amsterdam, Antwerpen: Uitgeverij De
-Arbeiderspers, 2013 (online | PDF).
-
-Jans, Rudolf: *Tolstoj in Nederland* (Diss.), Bussum: Uitgeverij Paul Brand
-NV., 1952 (online).
-
-Jong, Rudolf de: *„Ik ben een Possibilistisch Anarchist”*, in: *de AS,* vol. 40
-(2012), no. 180 (Winter 2012), pp. 2-11 (online | PDF).
-
-Kuipers, Hans Jan: *De Wereld als Werkplaats. Over de vorming von Kees
-Boeke und Beatrice Cadbury,* Amsterdam: Stichting beheer IISG, 1992.
-
-Martin, James J.: *Männer gegen den Staat. Die Vertreter des individualistischen
-Anarchismus in Amerika (1827-1908),* 2 Bde., Hamburg: Verlag der
-Mackay-Gesellschaft, 1980.
-
-Morsch, Corneos J. J. A.: *Met de moed van de hoop: studies over de
-vernieuwing van opvoeding, onderwijs en maatschappij in Nederland in
-de periode tussen ± 1930 en 1984,* Diss. an der Katholieke Universiteit te
-Nijmegen, 1984 (online | PDF).
-
-Proudhon, Pierre-Joseph: *Qu'est-ce que la propriété ? Ou Recherches sur le
-principe du droit et du gouvernement,* Paris: J.-F. Brocard, 1840, pp. 234-235
-(online | PDF).
-
-Ramaer, Hans: *Anarchisme in Domineesland. Continuiteit en Verandering
-van een politieke Beweging,* in: *de AS* – *Jaarboek Anarchisme 2007,* vol. 36
-(2008), no. 161/162 (zommer), pp. 54-62 (online | PDF).
-
-[[PAGE:58|VISIBLE:214]]Ramaer, Hans and Thom Holterman: *Clara Wichmann and the End of
-Criminal Law,* in: *The Raven,* vol. 6 (1993), no. 22 (April-June), pp. 143-151
-(online | PDF).
-
-Ramaer, Hans: *Het religieus-anarchisme van Kees Boeke,* in: *de AS,* vol. 14
-(1986), no. 76 (Okt.-Dec.), p. 2-5 (online | PDF).
-
-Ramaer, Hans: *De piramide der tirannie. Anarchisten in Nederland,*
-Amsterdam: Wetenschappelijke Uitgeverij, 1977.
-
-Rüther, Christian: *Soziokratie – Ein Organisationsmodell. Grundlagen,
-Methoden und Praxis,* (Master-Thesis 2010), Norderstedt: BoD, 2017
-(online | PDF).
-
-Seyferth, Peter: *Konsens oder Mehrheitsprinzip? Über demokratische Entscheidungsverfahren
-als politischer Modus der Anarchie,* in: *Widerspruch,*
-Nr. 57 (2013), S. 87-98 (online).
-
-Schmück, Jochen: *Science goes Anarchy! Die „gelebte Anarchie“ der Open-Science-Bewegung
-und ihre verborgenen ideologischen Wurzeln im traditionellen
-Anarchismus,* in: *espero* (N.F.), Nr. 8 (Januar 2024), S. 99-182
-(online | PDF).
-
-Schmück, Jochen: *Wenn Anarchie auf Algorithmen trifft – Libertäre
-Reflexionen über die natürliche und Künstliche Intelligenz,* in: *espero*
-(N.F.), Nr. 11 (Juli 2025), S. 43-53 (online | PDF).
-
-Splinter, Leony van der: *Dertig jaar streven naar rein leven. De Rein
-Leven Beweging in Nederland (1901-1931),* Diss, Leiden: Universiteit
-Leiden, 1986 (online | PDF).
-
-Swann, Thomas: *Anarchist Cybernetics. Control and Communication in
-Radical Politics,* Bristol: University Press, 2020.
-
-Swann, Thomas: *Die anarchistische Kybernetik der Gegenseitigen Hilfe.
-Selbstorganisation in und nach der Coronavirus-Krise,* in: *espero* (N.F.),
-Nr. 2 (Januar 2021), S. 149-163 (online | PDF).
-
-Tomás Ibáñez: *Das Wunder der Einheit in der Vielfalt. Ein kurzer Überblick
-über den Anarchismus vor, während und nach Venedig ’84,* in: *espero*
-(N.F.), Nr. 11 (Juli 2025), S. 11-20 (online | PDF).
-
-Ward, Lester Frank: *Dynamic sociology or applied social science*, D.
-Appleton & Company, 1883, 1897, vol. II (online | PDF).
-
-[[PAGE:59|VISIBLE:215]]Ward, Lester Frank: *The psychic factors in civilization,* Boston: Ginn &
-Company, 1893.
-
-Wolf, Siegbert: *John Burnheims „Demarchie“ – Ein libertäres Gegenmodell
-zu staatszentrierter Herrschaftsordnung,* in: *espero* (N.F.), Nr. 11 (Juni
-2025), S. 239-255 (online | PDF).
-
-Yarros, Victor S.: *Sociocracy – What is it?,* in: *Liberty,* vol. 16 (1904),
-no. 1, Boston, Mass., 1904, p. 2-3.
-
-Zimmermann, Werner: *Kees Boeke,* in: *TAU. Monatsblätter für Erkenntnis
-und Tat,* Lauf an der Pegnitz und Bern, Heft 106, Februar 1933, S. 18-21.
+- Bakunin, Michael: *Gesammelte Werke,* Band 1, hrsg. v. Max Nettlau,
+  Berlin: Verlag „Der Syndikalist“, 1921 (online).
+- Barclay, Harold: *Völker ohne Regierung. Eine Anthropologie der Anarchie,*
+  Berlin: Libertad Verlag (= *Edition Schwarze Kirschen;* 6), 1985.
+- Boeke, Julia: *Inleiding,* in: *Archief Werkplaats Kindergemeenschap
+  (Bilthoven). (1921-) 1926-1954 (-1986),* Amsterdam: IISG, 1990, pp. 3-10.
+- Boeke, Kees: *Bilthoven, Holland’s International Children’s Community,*
+  in: *The Clearing House,* vol. 13 (1938), no. 2 (Oct.), pp. 106-108.
+- Boeke, Kees: *Der Bilthoven Werkplaats und seine Soziokratie,* in: *Bildung
+  und Erziehung,* Jg. 2 (1949), Nr. 8 (August), S. 590-595.
+- Boeke, Kees: *Democracy as it might be; first published in May 1945 by
+  Kees Boeke (1884-1966),* edited by Beatrice C. Boeke, in: worldteacher.
+  faithweb.com (online).
+- Boeke, Kees: *Redelijke Ordening van de Mensengemeenschap,* 2. überarb.
+  Aufl. (1967), Nachdruck in: *de AS (De Sociokratie van Kees Boeke)*,
+  vol. 40 (1986), no. 76, pp. 18-45 (dt. Übers. *Die Ordnung der Vernunft in
+  der Gemeinschaft der Menschen,* hier im Anhang auf S. 217-223).
+- Buck, John A. and Gerard Endenburg: *The Creative Forces of Self-Organization,*
+  Original: 2003, revised version, Rotterdam: Sociocratic Center,
+  2012 (online | PDF).
+- Buck, John A. und Gerard Endenburg: *Die Kreativen Kräfte der Selbstorganisation,*
+  Rotterdam: Sociocratisch Centrum, 2005 (online | PDF).
+- Buck, John and Sharon Villines: *We the People: Consenting to a Deeper
+  Democracy. A Guide to Sociocratic Principles and Methods,* Washington
+  D. C.: Sociocracy. Info, 2007.
+- Chugerman, Samuel: *Lester F. Ward: The American Aristotle. A Summary
+  and Interpretation of his Sociology,* New York: Octagon Books, 1965.
+- Fleming, James E.: *The Sociocratic Theory of Lester Frank Ward,* in:
+  *Social Forces,* vol. 24 (1946), no. 3 (March), pp. 257–266.
+- Groot, Annemiek de: *De Lust tot Last. De Rein Leven Beweging als
+  pionier in de strijd om de nieuwe mens*, in: *Groniek. Historisch tijdschrift,*
+  Nr. 120 (maart 1993), pp. 55-64 (online | PDF).
+- [[PAGE:57|VISIBLE:213]]Hazekamp, Arie: *De bezielende Kracht van Joop Westerweel,* in: *de AS –
+  Nederlandse Anarchisten tijdens de duitse Bezetting,* vol. 46 (2018), no. 202
+  (najaar), pp. 4-9 (online | PDF).
+- Holterman, Thom: *Recht en politieke organisatie, Een onderzoek naar
+  convergentie in opvattingen omtrent recht en politieke organisatie bij
+  sommige anarchisten en sommigerechtsgeleerden,* Zwolle: W.E.J. Tjeenk
+  Willink, 1986.
+- Holterman, Thom: *Redelijk ordenen bij Kees Boeke,* in: *de AS – De
+  Sociokratie van Kees Boeke*, vol. 14 (1986), no. 76 (Okt.-Dec.), pp. 6-7
+  (online | PDF).
+- Hooghiemstra, *Daniela A.: De geest in dit huis is liefderijk. Het leven en
+  De Werkplaats van Kees Boeke (1884-1966),* Amsterdam: Universiteit van
+  Amsterdam (Thesis), Utrecht, Amsterdam, Antwerpen: Uitgeverij De
+  Arbeiderspers, 2013 (online | PDF).
+- Jans, Rudolf: *Tolstoj in Nederland* (Diss.), Bussum: Uitgeverij Paul Brand
+  NV., 1952 (online).
+- Jong, Rudolf de: *„Ik ben een Possibilistisch Anarchist”*, in: *de AS,* vol. 40
+  (2012), no. 180 (Winter 2012), pp. 2-11 (online | PDF).
+- Kuipers, Hans Jan: *De Wereld als Werkplaats. Over de vorming von Kees
+  Boeke und Beatrice Cadbury,* Amsterdam: Stichting beheer IISG, 1992.
+- Martin, James J.: *Männer gegen den Staat. Die Vertreter des individualistischen
+  Anarchismus in Amerika (1827-1908),* 2 Bde., Hamburg: Verlag der
+  Mackay-Gesellschaft, 1980.
+- Morsch, Corneos J. J. A.: *Met de moed van de hoop: studies over de
+  vernieuwing van opvoeding, onderwijs en maatschappij in Nederland in
+  de periode tussen ± 1930 en 1984,* Diss. an der Katholieke Universiteit te
+  Nijmegen, 1984 (online | PDF).
+- Proudhon, Pierre-Joseph: *Qu'est-ce que la propriété ? Ou Recherches sur le
+  principe du droit et du gouvernement,* Paris: J.-F. Brocard, 1840, pp. 234-235
+  (online | PDF).
+- Ramaer, Hans: *Anarchisme in Domineesland. Continuiteit en Verandering
+  van een politieke Beweging,* in: *de AS* – *Jaarboek Anarchisme 2007,* vol. 36
+  (2008), no. 161/162 (zommer), pp. 54-62 (online | PDF).
+- [[PAGE:58|VISIBLE:214]]Ramaer, Hans and Thom Holterman: *Clara Wichmann and the End of
+  Criminal Law,* in: *The Raven,* vol. 6 (1993), no. 22 (April-June), pp. 143-151
+  (online | PDF).
+- Ramaer, Hans: *Het religieus-anarchisme van Kees Boeke,* in: *de AS,* vol. 14
+  (1986), no. 76 (Okt.-Dec.), p. 2-5 (online | PDF).
+- Ramaer, Hans: *De piramide der tirannie. Anarchisten in Nederland,*
+  Amsterdam: Wetenschappelijke Uitgeverij, 1977.
+- Rüther, Christian: *Soziokratie – Ein Organisationsmodell. Grundlagen,
+  Methoden und Praxis,* (Master-Thesis 2010), Norderstedt: BoD, 2017
+  (online | PDF).
+- Seyferth, Peter: *Konsens oder Mehrheitsprinzip? Über demokratische Entscheidungsverfahren
+  als politischer Modus der Anarchie,* in: *Widerspruch,*
+  Nr. 57 (2013), S. 87-98 (online).
+- Schmück, Jochen: *Science goes Anarchy! Die „gelebte Anarchie“ der Open-Science-Bewegung
+  und ihre verborgenen ideologischen Wurzeln im traditionellen
+  Anarchismus,* in: *espero* (N.F.), Nr. 8 (Januar 2024), S. 99-182
+  (online | PDF).
+- Schmück, Jochen: *Wenn Anarchie auf Algorithmen trifft – Libertäre
+  Reflexionen über die natürliche und Künstliche Intelligenz,* in: *espero*
+  (N.F.), Nr. 11 (Juli 2025), S. 43-53 (online | PDF).
+- Splinter, Leony van der: *Dertig jaar streven naar rein leven. De Rein
+  Leven Beweging in Nederland (1901-1931),* Diss, Leiden: Universiteit
+  Leiden, 1986 (online | PDF).
+- Swann, Thomas: *Anarchist Cybernetics. Control and Communication in
+  Radical Politics,* Bristol: University Press, 2020.
+- Swann, Thomas: *Die anarchistische Kybernetik der Gegenseitigen Hilfe.
+  Selbstorganisation in und nach der Coronavirus-Krise,* in: *espero* (N.F.),
+  Nr. 2 (Januar 2021), S. 149-163 (online | PDF).
+- Tomás Ibáñez: *Das Wunder der Einheit in der Vielfalt. Ein kurzer Überblick
+  über den Anarchismus vor, während und nach Venedig ’84,* in: *espero*
+  (N.F.), Nr. 11 (Juli 2025), S. 11-20 (online | PDF).
+- Ward, Lester Frank: *Dynamic sociology or applied social science*, D.
+  Appleton & Company, 1883, 1897, vol. II (online | PDF).
+- [[PAGE:59|VISIBLE:215]]Ward, Lester Frank: *The psychic factors in civilization,* Boston: Ginn &
+  Company, 1893.
+- Wolf, Siegbert: *John Burnheims „Demarchie“ – Ein libertäres Gegenmodell
+  zu staatszentrierter Herrschaftsordnung,* in: *espero* (N.F.), Nr. 11 (Juni
+  2025), S. 239-255 (online | PDF).
+- Yarros, Victor S.: *Sociocracy – What is it?,* in: *Liberty,* vol. 16 (1904),
+  no. 1, Boston, Mass., 1904, p. 2-3.
+- Zimmermann, Werner: *Kees Boeke,* in: *TAU. Monatsblätter für Erkenntnis
+  und Tat,* Lauf an der Pegnitz und Bern, Heft 106, Februar 1933, S. 18-21.
 
 [[PAGE:60|VISIBLE:216]]Das Kees Boeke und der Soziokratie gewidmete Themen-Special der niederländischen
 anarchistischen Zeitschrift *De AS,* vol. 14 (1986), no. 76 (Okt.-Dez.), (online | PDF).

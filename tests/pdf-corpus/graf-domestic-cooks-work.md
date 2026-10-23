@@ -529,30 +529,27 @@ SOAS University of London.
 
 1. All names used in this chapter are real names, in accordance with interlocutors’ consent.
 2. Dying during the hajj is considered an honorable death for elderly Muslims. Although
-Hajja was in her mid-sixties, no one in her family expected her to die during the journey.
-Yet, symbolically, all family members parted from her as if they were seeing her for the last
-time. Her safe return, one month later, was thus celebrated accordingly.
+   Hajja was in her mid-sixties, no one in her family expected her to die during the journey.
+   Yet, symbolically, all family members parted from her as if they were seeing her for the last
+   time. Her safe return, one month later, was thus celebrated accordingly.
 3. The Moroccan government has actively encouraged the production of geographical indication
-(GI) products since the early 2000s (Lambarraa-Lehnhardt, Ihle, and Elyoubi 2021).
+   (GI) products since the early 2000s (Lambarraa-Lehnhardt, Ihle, and Elyoubi 2021).
 4. I have known the family since 2007 when Fatimzahra taught me *darija*, the Moroccan
-Arabic dialect.
+   Arabic dialect.
 5. In 2019 Hajja sold the near-crumbling *riad* to a European neighbor and, together with
-Fatimzahra, bought a small purpose-built apartment near Hassan’s flat.
+   Fatimzahra, bought a small purpose-built apartment near Hassan’s flat.
 6. He was the only person I asked about *beldi* foods who defined its broad characteristics abstractly.
-All other interview partners related to *beldi* from their own embodied perspective
-and emplaced positionality.
-
-[[PAGE:15|VISIBLE:187]]7. If considering *beldi* exclusively from a rural perspective, it is less surprising why it might
-be described as a terroir-like concept. Simenel (2010) even argues that rural Moroccans
-accord more value to their terroir than rural societies in France. However, as soon as a
-person or foods travel (including the ethnographer), the notion of terroir quickly loses its
-analytical capacity to explain relations between people, foods taste, and place in Morocco.
-
+   All other interview partners related to *beldi* from their own embodied perspective
+   and emplaced positionality.
+7. [[PAGE:15|VISIBLE:187]]If considering *beldi* exclusively from a rural perspective, it is less surprising why it might
+   be described as a terroir-like concept. Simenel (2010) even argues that rural Moroccans
+   accord more value to their terroir than rural societies in France. However, as soon as a
+   person or foods travel (including the ethnographer), the notion of terroir quickly loses its
+   analytical capacity to explain relations between people, foods taste, and place in Morocco.
 8. Associations of taste with class are commonplace across class-divided societies. Based on
-Bourdieu’s notion of class distinction in French society, Wilk (1999) provides a useful
-comparative perspective on how tastes for certain foods—for example, lobster—were
-linked to colonial-era class identities in Belize.
-
+   Bourdieu’s notion of class distinction in French society, Wilk (1999) provides a useful
+   comparative perspective on how tastes for certain foods—for example, lobster—were
+   linked to colonial-era class identities in Belize.
 9. Indeed, see Butler 2013.
 
 **References**

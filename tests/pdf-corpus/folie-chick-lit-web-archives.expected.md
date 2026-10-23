@@ -185,13 +185,11 @@ com*’s existence:
 
 Let me start out by telling you what Chick Lit is NOT:
 
-– Lame and ridiculous
+- Lame and ridiculous
+- Cheesy romance novels
+- Bad influence on women
+- Brain-numbing fluff
 
-– Cheesy romance novels
-
-> – Bad influence on women\
-> – Brain-numbing fluff
->
 > I’m not speaking for all books with the above criteria – there are some really
 > bad Chick-Lit novels out there. For the most part however, the books are
 > entertaining, interesting, and many women can identify with them. The plots

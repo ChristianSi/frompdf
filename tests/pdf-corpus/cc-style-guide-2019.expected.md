@@ -89,26 +89,21 @@ innovative world.
 
 In order to achieve our mission, we:
 
-• Provide Creative Commons licenses and public domain tools that give every person and
-organization in the world a free, simple, and standardized way to grant copyright permissions
-for creative and academic works; ensure proper attribution; and allow others to copy, distribute,
-and make use of those works
-
-• Work closely with major institutions to ensure the correct use and implementation of CC licenses
-and CC-licensed content
-
-• Support the CC Global Network, a community initiative working to increase the volume, breadth,
-and quality of openly-available knowledge worldwide
-
-• Develop technology like CC Search that makes openly-licensed material easier to discover and
-use
-
-• Offer the Creative Commons Certificate, an in-depth course for people interested in becoming
-experts in creating and engaging with openly-licensed works
-
-• Produce CC Summit, an annual event that brings together an international group of educators,
-artists, technologists, legal experts, and activists to promote the power of open licensing and
-global access
+- Provide Creative Commons licenses and public domain tools that give every person and
+  organization in the world a free, simple, and standardized way to grant copyright permissions
+  for creative and academic works; ensure proper attribution; and allow others to copy, distribute,
+  and make use of those works
+- Work closely with major institutions to ensure the correct use and implementation of CC licenses
+  and CC-licensed content
+- Support the CC Global Network, a community initiative working to increase the volume, breadth,
+  and quality of openly-available knowledge worldwide
+- Develop technology like CC Search that makes openly-licensed material easier to discover and
+  use
+- Offer the Creative Commons Certificate, an in-depth course for people interested in becoming
+  experts in creating and engaging with openly-licensed works
+- Produce CC Summit, an annual event that brings together an international group of educators,
+  artists, technologists, legal experts, and activists to promote the power of open licensing and
+  global access
 
 ### Our Brand Tagline
 
@@ -131,12 +126,12 @@ slate gray (#333333), black, or white. You can download these logos on our websi
 
 ##### Things to avoid:
 
-• Do not reproduce the logo in any other colors outside of the brand’s primary colors, except for
-black and white (when necessary)
-• Do not use multiple colors for a single logo, choose one\
-• Do not add additional graphic elements: drop shadows, glow, dimension, outlines, etc.\
-• Do not re-proportion the logo\
-• Do not tint the logo
+- Do not reproduce the logo in any other colors outside of the brand’s primary colors, except for
+  black and white (when necessary)
+- Do not use multiple colors for a single logo, choose one
+- Do not add additional graphic elements: drop shadows, glow, dimension, outlines, etc.
+- Do not re-proportion the logo
+- Do not tint the logo
 
 **If you’re a part of the CC Global Network and are looking for guidance on using or adapting CC’s
 logo, please refer to our detailed “Policies” page—which also includes our trademark policy.**
@@ -308,12 +303,12 @@ over 400 members...” or “We encourage anyone to join **the** CC Network, it�
 **CC Licenses**
 
 CC licenses should be displayed consistently, therefore please keep in mind the following:
-• License abbreviations should be in all caps\
-• Individual clauses (e.g., BY, NC, etc.) should be strung together with a hyphen.
 
-For example: CC BY-NC-ND
-• Modifiers (e.g. CC) should not be followed by a hyphen.
-For example: CC BY
+- License abbreviations should be in all caps
+- Individual clauses (e.g., BY, NC, etc.) should be strung together with a hyphen.\
+  For example: CC BY-NC-ND
+- Modifiers (e.g. CC) should not be followed by a hyphen.\
+  For example: CC BY
 
 For more guidance, follow the examples displayed at the top of each license’s webpage.
 
