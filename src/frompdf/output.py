@@ -12,6 +12,7 @@ from frompdf.models import (
     Footnote,
     Heading,
     Line,
+    ListItem,
     PageNumber,
     StrongParagraph,
     TextFragment,
@@ -109,8 +110,8 @@ def render_fragments(
         inserts[first] = inserts.get(first, '') + opening
 
     heading = isinstance(block_obj, Heading)
-    # Lists inside a note would be nested in the note's own list item.
-    block_list_markers = not isinstance(block_obj, Footnote)
+    # Lists inside a note or list item would be nested in its own list item.
+    block_list_markers = not isinstance(block_obj, Footnote | ListItem)
     block_line_start = not opening
     cuts = [] if heading else list_item_markers(joined, block_line_start, block_list_markers)
     resolved = resolve_emphasis(
@@ -136,6 +137,44 @@ def render_fragments(
     return text.replace(HARD_LINE_BREAK, '\\')
 
 
+def list_family(block_obj: Block) -> str | None:
+    """Return the marker type of a list block: `-`, or the delimiter of numbered items."""
+    if isinstance(block_obj, Footnote):
+        return '.'
+    if isinstance(block_obj, ListItem):
+        return block_obj.marker[-1] if block_obj.number is not None else '-'
+    return None
+
+
+def continues_list(previous_block: Block, block_obj: Block) -> bool:
+    """Return whether a list item continues the list of the preceding item."""
+    if not isinstance(previous_block, ListItem) or not isinstance(block_obj, ListItem):
+        return False
+    if list_family(previous_block) != list_family(block_obj):
+        return False
+    previous_number = previous_block.number
+    return previous_number is None or block_obj.number == previous_number + 1
+
+
+def block_separator(previous_block: Block, block_obj: Block) -> str:
+    """Return the text separating two consecutive blocks."""
+    if isinstance(previous_block, BlockQuote) and isinstance(block_obj, BlockQuote):
+        return '\n>\n'
+    if isinstance(previous_block, Footnote) and isinstance(block_obj, Footnote):
+        # Restarted groups may share a Notes section. Separate their
+        # lists so Markdown renderers retain the new starting number.
+        if int(block_obj.label) <= int(previous_block.label):
+            return '\n\n<!-- -->\n\n'
+        return '\n'
+    if continues_list(previous_block, block_obj):
+        return '\n'
+    family = list_family(previous_block)
+    if family is not None and family == list_family(block_obj):
+        # A blank line alone would continue the list, as a loose one.
+        return '\n\n<!-- -->\n\n'
+    return '\n\n'
+
+
 def markdown_to_text(
     block_list: list[Block], output_file: TextIO, page_markers: bool = False
 ) -> None:
@@ -144,25 +183,18 @@ def markdown_to_text(
 
     for block_index, block_obj in enumerate(block_list):
         if block_index:
-            previous_block = block_list[block_index - 1]
-            if isinstance(previous_block, BlockQuote) and isinstance(block_obj, BlockQuote):
-                output_file.write('\n>\n')
-            elif isinstance(previous_block, Footnote) and isinstance(block_obj, Footnote):
-                # Restarted groups may share a Notes section. Separate their
-                # lists so Markdown renderers retain the new starting number.
-                if int(block_obj.label) <= int(previous_block.label):
-                    output_file.write('\n\n<!-- -->\n\n')
-                else:
-                    output_file.write('\n')
-            else:
-                output_file.write('\n\n')
+            output_file.write(block_separator(block_list[block_index - 1], block_obj))
 
         if isinstance(block_obj, StrongParagraph):
             text = render_fragments(block_obj, previous_page, page_markers, opening='**') + '**'
         else:
             text = render_fragments(block_obj, previous_page, page_markers)
-        if isinstance(block_obj, Footnote):
-            prefix = f'{block_obj.label}. '
+        if isinstance(block_obj, Footnote | ListItem):
+            prefix = (
+                f'{block_obj.label}. '
+                if isinstance(block_obj, Footnote)
+                else f'{block_obj.marker} '
+            )
             text_lines = text.split('\n')
             output_file.write(
                 prefix

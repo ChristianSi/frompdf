@@ -182,9 +182,13 @@ The implementation is split into focused modules under `src/frompdf`:
   extending them to all line ends of blocks set line by line in short
   centered lines.
 - `lines.py` repairs detached diacritics, removes icon-font glyphs, decodes
-  glyphs of TeX math extension fonts, reattaches detached scripts, flattens
+  glyphs of TeX math extension fonts, restores private-use bullets of symbol
+  fonts, reattaches detached scripts, flattens
   `pdftext` output, and extracts line geometry, typography, inline script
   ranges, and bold and italic ranges.
+- `lists.py` recognizes bulleted and numbered list items and their
+  continuation lines, using marker alignment, consecutive numbering, and
+  deliberate breaks before weakly marked lists.
 - `models.py` defines line, page-number, and Markdown block records.
 - `output.py` writes diagnostic line and page-number CSV files and serializes
   Markdown output.
@@ -205,16 +209,18 @@ Important concepts:
 - `Line` in `models.py` is a flattened record from `pdftext` output. It
   records whether `pdftext` reported whitespace at its edges, which tells
   whether pieces of one visual line need a space between them, and whether it
-  is the denominator of an inline fraction ending the preceding record.
+  is the denominator of an inline fraction ending the preceding record. It
+  also records where the text after its first word starts, which is where a
+  list item's text follows its marker.
 - `InlineRange` records superscript, subscript, bold, or italic offsets in
   decoded plain text. Ranges of different kinds may overlap. Lines, blocks,
   and text fragments retain these ranges until serialization.
 - `PageNumber` in `models.py` stores the raw page number and optional visible
   page number.
 - `Block` in `models.py` is the base Markdown block type.
-- `Paragraph`, `StrongParagraph`, `BlockQuote`, `Heading`, and `Footnote` in
-  `models.py` are supported block subclasses. `StrongParagraph` is a paragraph
-  rendered in bold. `TextFragment` retains the source page and
+- `Paragraph`, `StrongParagraph`, `BlockQuote`, `Heading`, `Footnote`, and
+  `ListItem` in `models.py` are supported block subclasses. `StrongParagraph`
+  is a paragraph rendered in bold. `ListItem` holds its Markdown list marker. `TextFragment` retains the source page and
   preceding whitespace of each piece of a block's text, so page markers can
   occur within paragraphs, block quotes, and notes.
 - `HARD_LINE_BREAK` in `models.py` marks deliberate line breaks in block text
@@ -227,7 +233,8 @@ The current pipeline is roughly:
 1. Extract raw `pdftext` page data.
 2. Repair detached, geometrically positioned diacritics in the raw data,
    remove glyphs from icon fonts, and decode TeX math extension glyphs that
-   `pdftext` reports by their font codes. Move scripts that `pdftext` set
+   `pdftext` reports by their font codes. Restore bullets of symbol fonts,
+   which `pdftext` drops as private-use characters. Move scripts that `pdftext` set
    apart, in a block of their own or stacked below or above another script,
    back into the line records they belong to.
 3. Flatten the result into line records with geometry, typography, and
@@ -247,21 +254,30 @@ The current pipeline is roughly:
    to `-pagenos.csv`.
 8. Detect and extract numbered footnote regions using typography and geometry,
    assembling supported paragraph and adjacent-page continuations.
-9. Segment each page's body into blocks using `pdftext` hints, geometry,
-   typography, indentation, and line-spacing evidence. Display-sized lines
-   sharing face, alignment, and tight leading stay together, as in titles,
-   while a change of both size and face after a short line, as between author
-   names and affiliations, starts a new block. Confirmed centered title
-   candidates override boundaries only at and within those titles. Where
-   `pdftext` starts a new block after a line split into pieces, the left edge
-   of the whole visual line decides whether the text continues. Within a
-   line of running text, a new block needs a change of size, not just face.
-10. Join blocks continuing at the top of the next column or page. Similar
+9. Recognize list items: lines starting with a marker, together with
+   following lines indented past it, across page boundaries. Bullet glyphs
+   suffice; dashes and numbers need at least two aligned items with
+   consecutive numbers after a deliberate break, and numbers without a
+   delimiter also continuation lines.
+10. Segment each page's body into blocks using `pdftext` hints, geometry,
+    typography, indentation, and line-spacing evidence. Display-sized lines
+    sharing face, alignment, and tight leading stay together, as in titles,
+    while a change of both size and face after a short line, as between author
+    names and affiliations, starts a new block. Confirmed centered title
+    candidates override boundaries only at and within those titles. Where
+    `pdftext` starts a new block after a line split into pieces, the left edge
+    of the whole visual line decides whether the text continues. Within a
+    line of running text, a new block needs a change of size, not just face.
+    Each list item becomes a block of its own.
+11. Join blocks continuing at the top of the next column or page. Similar
     typography, a full last line, a non-indented first line, and consistent
     block-quote classification are required. An open sentence, a lower-case
     continuation, or a missing indent in a document whose paragraphs start
-    indented must additionally support the join.
-11. Build paragraph or block-quote records and mark deliberate line breaks.
+    indented must additionally support the join. List items join exactly
+    where their recognized lines continue.
+12. Build paragraph, block-quote, or list-item records, replacing list
+    markers with Markdown ones, and mark deliberate line breaks, including
+    before lines of a list item that start right of its text.
     Join the pieces into which `pdftext` split a physical line with a space
     or nothing, depending on reported whitespace and the gap between them,
     unless they are too far apart to be running text, and append fraction
@@ -269,20 +285,20 @@ The current pipeline is roughly:
     unspaced dashes split across physical lines within each block, preserving
     script ranges and attributing words joined across pages to their starting
     page.
-12. Reclassify heading-like paragraphs using size and confirmed title
+13. Reclassify heading-like paragraphs using size and confirmed title
     candidates, which take precedence over block quotes. Blocks without
     letters or digits never become headings. In the front matter following the
     first heading and the first top-level heading, render subtitles, author
     names, and chapter labels in bold instead and drop ornaments. Then
     normalize heading levels.
-13. Repair note text while retaining source-page boundaries, group notes when
+14. Repair note text while retaining source-page boundaries, group notes when
     numbering restarts, and place a single sequence at the document end.
     Multiple groups prefer boundaries matching the sections they cover,
     limited by intervening restart boundaries. Nearby restarts can associate
     old notes with a preceding mid-page boundary. Groups sharing a boundary
     share one Notes title. Default H2/H3 Notes titles match a deeper following
     heading when necessary to prevent accidental parentage.
-14. Serialize the blocks as Markdown in `.md`, including compact numbered notes.
+15. Serialize the blocks as Markdown in `.md`, including compact numbered notes.
     Text that Markdown would read as syntax is escaped; list markers starting
     a block, and further items of the same kind, remain unescaped, so lists in
     the source still render as lists.
@@ -298,3 +314,6 @@ The current pipeline is roughly:
     adjusted, so the delimiters render as intended.
     Restarted lists sharing a Notes section are separated by an empty HTML
     comment so Markdown renderers preserve their starting numbers.
+    List items are written compactly, with page markers after the list
+    marker; adjacent lists that Markdown would merge are separated by the
+    same comment.

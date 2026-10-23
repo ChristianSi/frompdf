@@ -7,6 +7,7 @@ from frompdf.models import (
     Footnote,
     Heading,
     InlineRange,
+    ListItem,
     PageNumber,
     Paragraph,
     StrongParagraph,
@@ -130,6 +131,59 @@ class MarkdownOutputTests(unittest.TestCase):
         markdown_to_text([block], output, page_markers=True)
 
         self.assertEqual(output.getvalue(), '[[PAGE:1]]**(Author)**\n')
+
+    def test_list_items_are_dense_with_indented_continuations(self) -> None:
+        page_one = page_number(1)
+        page_two = page_number(2)
+        blocks = [
+            Paragraph('Items:', page_one, page_one),
+            ListItem('First item\nwraps', page_one, page_one, marker='9.'),
+            ListItem(
+                'Second item',
+                page_two,
+                page_two,
+                marker='10.',
+                fragments=[TextFragment('Second item', page_two)],
+            ),
+            Paragraph('After', page_two, page_two),
+        ]
+        output = io.StringIO()
+
+        markdown_to_text(blocks, output, page_markers=True)
+
+        self.assertEqual(
+            output.getvalue(),
+            '[[PAGE:1]]Items:\n\n9. First item\n   wraps\n10. [[PAGE:2]]Second item\n\nAfter\n',
+        )
+
+    def test_separates_lists_that_would_otherwise_merge(self) -> None:
+        page = page_number(1)
+
+        def render(*blocks: ListItem | Footnote) -> str:
+            output = io.StringIO()
+            markdown_to_text(list(blocks), output)
+            return output.getvalue()
+
+        self.assertEqual(
+            render(ListItem('a', page, page, marker='1.'), ListItem('b', page, page, marker='1.')),
+            '1. a\n\n<!-- -->\n\n1. b\n',
+        )
+        self.assertEqual(
+            render(ListItem('a', page, page, marker='1.'), Footnote('n', page, page, label='5')),
+            '1. a\n\n<!-- -->\n\n5. n\n',
+        )
+        self.assertEqual(
+            render(ListItem('a', page, page), ListItem('b', page, page, marker='3.')),
+            '- a\n\n3. b\n',
+        )
+
+    def test_escapes_list_markers_within_list_items(self) -> None:
+        page = page_number(1)
+        output = io.StringIO()
+
+        markdown_to_text([ListItem('- nested\n1. more', page, page)], output)
+
+        self.assertEqual(output.getvalue(), '- \\- nested\n  1\\. more\n')
 
     def test_escapes_around_scripts_without_escaping_their_contents_twice(self) -> None:
         page = page_number(1)

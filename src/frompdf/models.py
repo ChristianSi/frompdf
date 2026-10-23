@@ -52,6 +52,9 @@ class Line:
     # Whether the text is the denominator of an inline fraction whose numerator
     # ends the preceding line record.
     fraction_denominator: bool = field(default=False, kw_only=True)
+    # Where the text following the first word and its whitespace starts, as
+    # the text of a list item following its marker.
+    second_word_x1: float | None = field(default=None, kw_only=True)
 
 
 @dataclass
@@ -113,3 +116,18 @@ class Footnote(Block):
     """A numbered note with page-aware text, later moved to a Notes section."""
 
     label: str = '1'
+
+
+@dataclass
+class ListItem(Block):
+    """An item of a bulleted or numbered list, with its Markdown list marker.
+
+    The marker is `-` for bulleted items, or a number followed by `.` or `)`.
+    """
+
+    marker: str = '-'
+
+    @property
+    def number(self) -> int | None:
+        """Return the number of an ordered item."""
+        return int(self.marker[:-1]) if self.marker[0].isdigit() else None

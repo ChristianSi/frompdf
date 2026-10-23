@@ -238,6 +238,7 @@ class GroupMergeTests(unittest.TestCase):
             10.0,
             build_body_lefts_by_page(lines, 10.0),
             {},
+            {},
         )
 
     def test_quote_does_not_absorb_paragraph_continuation(self) -> None:

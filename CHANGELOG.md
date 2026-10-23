@@ -9,6 +9,16 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
 
 ### Added
 
+- Bulleted and numbered lists are rendered as compact Markdown lists, with
+  continuation lines indented to the item text. Bullet glyphs mark items on
+  their own; dashes and numbers need at least two aligned items with
+  consecutive numbers after a deliberate break, so wrapped lines starting with
+  a dash or a date are left alone. Numbers without a delimiter, as in
+  reference lists, also need hanging-indented continuation lines. Indented
+  lists are no longer block quotes, items continue across pages, and page
+  markers follow the list marker. Lines of an item starting right of its text
+  follow a hard line break. Bullets that Symbol and Wingdings fonts map
+  to private-use code points, which `pdftext` drops, are restored.
 - Subtitles, author names, and chapter labels near a document title are
   rendered as bold paragraphs rather than taking up heading levels of their
   own, so section headings keep the levels right below the title. This

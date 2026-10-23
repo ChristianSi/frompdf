@@ -1,5 +1,6 @@
 import re
 from collections import Counter, defaultdict
+from dataclasses import replace
 from statistics import median
 
 from frompdf.continuations import (
@@ -15,7 +16,8 @@ from frompdf.footnotes import build_footnote, extract_footnotes, place_footnotes
 from frompdf.front_matter import format_front_matter, has_alphanumeric
 from frompdf.heading_candidates import find_typographic_heading_lines
 from frompdf.line_breaks import hard_line_break_ids
-from frompdf.models import Block, BlockQuote, Heading, Line, PageNumber, Paragraph
+from frompdf.lists import ListMarker, find_list_items
+from frompdf.models import Block, BlockQuote, Heading, Line, ListItem, PageNumber, Paragraph
 from frompdf.scripts import AnnotatedText, collapse_annotated_whitespace
 from frompdf.segmentation import segment_lines
 from frompdf.unhyphenation import (
@@ -238,25 +240,50 @@ def markdown_block_from_lines(
     coordination_tokens: set[str],
     follows_blockquote: bool = False,
     typographic_heading: bool = False,
+    list_marker: ListMarker | None = None,
 ) -> Block:
-    """Build a Markdown block from grouped line records."""
+    """Build a Markdown block from grouped line records.
+
+    With a list marker, the lines form a list item whose first line starts
+    with that marker, which is replaced by a Markdown marker.
+    """
     block_class: type[Block] = (
         BlockQuote
         if not typographic_heading
+        and list_marker is None
         and is_blockquote_block(
             line_list, default_font_size, body_lefts_by_page, follows_blockquote
         )
         else Paragraph
     )
+    if list_marker is not None:
+        first = line_list[0]
+        item_text = AnnotatedText(first.text, first.ranges).slice(list_marker.length)
+        line_list = [replace(first, text=item_text.text, ranges=item_text.ranges), *line_list[1:]]
     fragments = build_page_fragments(
         line_list,
         page_number_map,
         word_counts,
         mixed_case_words,
         coordination_tokens,
-        hard_line_break_ids(line_list, page_layouts),
+        hard_line_break_ids(
+            line_list,
+            page_layouts,
+            line_list[0].second_word_x1 if list_marker is not None else None,
+        ),
     )
     annotated = join_fragments(fragments)
+    if list_marker is not None:
+        return ListItem(
+            text=annotated.text,
+            ranges=annotated.ranges,
+            start_page=fragments[0].page,
+            end_page=fragments[-1].page,
+            font_size=block_font_size(line_list),
+            avg_weight=block_avg_weight(line_list),
+            fragments=fragments,
+            marker=list_marker.markdown,
+        )
     return block_class(
         text=annotated.text,
         ranges=annotated.ranges,
@@ -274,6 +301,7 @@ def merge_continued_groups(
     default_font_size: float | None,
     body_lefts_by_page: dict[int, list[float]],
     heading_lines: dict[int, int],
+    list_item_lines: dict[int, int],
 ) -> list[list[Line]]:
     """Join groups continuing at the top of the next column or page.
 
@@ -281,10 +309,17 @@ def merge_continued_groups(
     quote, so a quote never absorbs ordinary paragraph text or vice versa. As an
     exception, a continuation is not a quote merely because all of its lines
     keep the indentation of the preceding lines, as in a hanging-indent list.
+    List items continue exactly where their recognized lines do.
     """
     indented_paragraphs = document_indents_paragraphs(group_list, page_layouts)
     merged: list[list[Line]] = []
     for group in group_list:
+        if merged and (id(merged[-1][0]) in list_item_lines or id(group[0]) in list_item_lines):
+            if list_item_lines.get(id(merged[-1][0])) == list_item_lines.get(id(group[0])):
+                merged[-1] = merged[-1] + group
+            else:
+                merged.append(group)
+            continue
         if (
             merged
             and id(merged[-1][0]) not in heading_lines
@@ -416,9 +451,13 @@ def detect_headings(
     typographic_heading_indices = typographic_heading_indices or set()
 
     for index, block_obj in enumerate(block_list):
-        if len(block_obj.fragments) > 1 or not has_alphanumeric(block_obj.text):
+        if (
+            len(block_obj.fragments) > 1
+            or not has_alphanumeric(block_obj.text)
+            or isinstance(block_obj, ListItem)
+        ):
             # Text continuing across a page boundary is not a heading, nor are
-            # ornaments and rules without letters or digits.
+            # list items, or ornaments and rules without letters or digits.
             converted_blocks.append(block_obj)
             continue
         heading_level = initial_heading_level(block_obj, default_font_size, document_median_weight)
@@ -467,13 +506,15 @@ def lines_to_markdown_blocks(
     typographic_heading_indices: set[int] = set()
     block_positions: list[int] = []
     page_layouts = build_page_layouts(body_lines)
+    list_items = find_list_items(body_lines, heading_lines)
 
     group_list = merge_continued_groups(
-        segment_lines(body_lines, heading_lines),
+        segment_lines(body_lines, heading_lines, list_items.item_of_line),
         page_layouts,
         default_font_size,
         body_lefts_by_page,
         heading_lines,
+        list_items.item_of_line,
     )
 
     for current_lines in group_list:
@@ -493,6 +534,7 @@ def lines_to_markdown_blocks(
                 coordination_tokens,
                 follows_blockquote=bool(block_list) and isinstance(block_list[-1], BlockQuote),
                 typographic_heading=typographic_heading,
+                list_marker=list_items.markers.get(id(current_lines[0])),
             )
         )
 

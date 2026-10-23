@@ -3,7 +3,7 @@ from typing import cast
 
 from pdftext.schema import Page
 
-from frompdf.lines import iter_lines, remove_icon_glyphs
+from frompdf.lines import iter_lines, remove_icon_glyphs, restore_private_use_bullets
 
 
 def span(text: str, font_name: str, x1: float) -> dict[str, object]:
@@ -63,6 +63,28 @@ class IconGlyphTests(unittest.TestCase):
         remove_icon_glyphs([page])
 
         self.assertEqual(iter_lines([page])[0].text, 'Jane Doe #')
+
+
+class PrivateUseBulletTests(unittest.TestCase):
+    def test_restores_symbol_font_bullets_that_pdftext_drops(self) -> None:
+        bullet = span('', 'SymbolMT', 0.0)
+        bullet['chars'] = [{'char': '\uf0b7'}]
+        page = page_with_spans([bullet, span(' ', '', 5.0), span('Bakunin', 'Serif', 18.0)])
+
+        restore_private_use_bullets([page])
+
+        self.assertEqual(iter_lines([page])[0].text, '• Bakunin')
+
+    def test_leaves_other_private_use_characters_and_fonts_alone(self) -> None:
+        other = span('', 'SymbolMT', 0.0)
+        other['chars'] = [{'char': '\uf0a7'}]
+        text_font = span('', 'Serif', 5.0)
+        text_font['chars'] = [{'char': '\uf0b7'}]
+        page = page_with_spans([other, text_font, span(' Text', 'Serif', 18.0)])
+
+        restore_private_use_bullets([page])
+
+        self.assertEqual(iter_lines([page])[0].text, 'Text')
 
 
 if __name__ == '__main__':

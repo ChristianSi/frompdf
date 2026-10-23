@@ -69,6 +69,14 @@ MATH_EXTENSION_ACCENTS: dict[int, tuple[str, str]] = {
     **dict.fromkeys(range(101, 104), ('̃', '˜')),
 }
 
+# Symbol and Wingdings fonts map their bullets to private-use code points,
+# such as U+F0B7 in schmueck's Literatur section. pdftext drops these from span
+# text as non-printable, but keeps them in its character data.
+SYMBOL_FONT_NAME_PATTERN = re.compile(r'symbol', flags=re.IGNORECASE)
+WINGDINGS_FONT_NAME_PATTERN = re.compile(r'wingdings', flags=re.IGNORECASE)
+SYMBOL_BULLETS = {'\uf0b7': '•'}
+WINGDINGS_BULLETS = {'\uf0a7': '▪', '\uf076': '❖', '\uf0d8': '➢', '\uf0fc': '✓'}
+
 BOLD_FONT_NAME_PATTERN = re.compile(
     r'(?:bold|black|heavy|semi[- ]?bold|demi[- ]?bold|[.+_-](?:b|bd|sb)(?:it)?$)',
     flags=re.IGNORECASE,
@@ -484,6 +492,39 @@ def decode_math_extension_glyphs(page_list: Sequence[Page]) -> None:
                         if char_text.strip():
                             previous_char = char
                     span_dict['text'] = ''.join(texts)
+
+
+def private_use_bullets(span_dict: PdfTextSpan) -> dict[str, str]:
+    """Return the bullets that a span's font maps to private-use code points."""
+    font_name = span_dict.get('font', {}).get('name')
+    if not isinstance(font_name, str):
+        return {}
+    if SYMBOL_FONT_NAME_PATTERN.search(font_name):
+        return SYMBOL_BULLETS
+    if WINGDINGS_FONT_NAME_PATTERN.search(font_name):
+        return WINGDINGS_BULLETS
+    return {}
+
+
+def restore_private_use_bullets(page_list: Sequence[Page]) -> None:
+    """Restore bullets that pdftext dropped from the text of symbol-font spans, in place.
+
+    Only spans without other text are restored, so text that pdftext
+    normalized is never rebuilt from its character data.
+    """
+    for page_dict in page_list:
+        for block_dict in page_dict.get('blocks', []):
+            for line_dict in block_dict.get('lines', []):
+                for span_dict in line_dict.get('spans', []):
+                    bullets = private_use_bullets(span_dict)
+                    chars = [char.get('char', '') for char in span_dict.get('chars', [])]
+                    if (
+                        bullets
+                        and chars
+                        and not span_dict.get('text', '').strip()
+                        and all(char in bullets for char in chars)
+                    ):
+                        span_dict['text'] = ''.join(bullets[char] for char in chars)
 
 
 def bbox_height(obj: PdfTextLine | PdfTextSpan) -> float | None:
@@ -1010,6 +1051,21 @@ def continued_line(
     return matches[0] if len(matches) == 1 else None
 
 
+def second_word_x1(line_dict: PdfTextLine) -> float | None:
+    """Return where the text following a line's first word and its whitespace starts."""
+    seen_word = False
+    seen_space = False
+    for span in line_dict.get('spans', []):
+        for char in span.get('chars', []):
+            if not char.get('char', '').strip():
+                seen_space = seen_word
+            elif seen_space:
+                return get_bbox(char)[0]
+            else:
+                seen_word = True
+    return None
+
+
 def visible_chars(line_dict: PdfTextLine) -> list[PdfTextChar]:
     """Return the characters of a line other than whitespace."""
     return [
@@ -1234,6 +1290,7 @@ def iter_lines(page_list: Sequence[Page]) -> list[Line]:
                     font_name=dominant_font_name(line_dict),
                     space_before=bool(text_value) and has_edge_space(raw_text, at_end=False),
                     space_after=bool(text_value) and has_edge_space(raw_text, at_end=True),
+                    second_word_x1=round_or_none(second_word_x1(line_dict)),
                 )
                 page_lines.append((line_obj, line_dict, block_dict.get('lines', []), raw_text))
 

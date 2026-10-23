@@ -177,6 +177,28 @@ class HardLineBreakTests(unittest.TestCase):
         self.assertEqual(hard_line_break_ids(block, build_page_layouts(page)), {id(block[0])})
 
 
+class ListItemLineBreakTests(unittest.TestCase):
+    def test_lines_right_of_item_text_follow_a_break(self) -> None:
+        block = [
+            line('• Clauses should be strung together with a hyphen.', 100, x1=36.0),
+            line('For example: CC BY-NC-ND', 112, x1=72.0),
+            line('wrapped item text', 124, x1=54.0),
+        ]
+        layouts = build_page_layouts(body_column() + block)
+
+        self.assertEqual(hard_line_break_ids(block, layouts, 54.0), {id(block[0])})
+        self.assertEqual(hard_line_break_ids(block, layouts), set())
+
+    def test_hanging_continuations_at_item_text_do_not_break(self) -> None:
+        block = [
+            line('• An item filling the whole line of its column', 100, x1=36.0, x2=220.0),
+            line('and continuing at the text', 112, x1=54.0),
+        ]
+        layouts = build_page_layouts(body_column() + block)
+
+        self.assertEqual(hard_line_break_ids(block, layouts, 54.5), set())
+
+
 class CenteredLineLayoutTests(unittest.TestCase):
     def test_centered_short_lines_of_differing_widths_qualify(self) -> None:
         block = card()

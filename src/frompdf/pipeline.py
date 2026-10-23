@@ -11,6 +11,7 @@ from frompdf.lines import (
     iter_lines,
     normalize_detached_diacritics,
     remove_icon_glyphs,
+    restore_private_use_bullets,
 )
 from frompdf.models import Block
 from frompdf.output import (
@@ -39,6 +40,7 @@ def extract_markdown(
     normalize_detached_diacritics(page_list)
     remove_icon_glyphs(page_list)
     decode_math_extension_glyphs(page_list)
+    restore_private_use_bullets(page_list)
     attach_stray_scripts(page_list)
     attach_stacked_scripts(page_list)
     line_list = iter_lines(page_list)

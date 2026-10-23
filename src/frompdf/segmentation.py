@@ -955,13 +955,20 @@ def should_start_new_group(
 
 
 def segment_page(
-    line_list: list[Line], heading_lines: dict[int, int] | None = None
+    line_list: list[Line],
+    heading_lines: dict[int, int] | None = None,
+    list_item_lines: dict[int, int] | None = None,
 ) -> list[list[Line]]:
-    """Segment a page; heading_lines maps confirmed line IDs to their title's first ID."""
+    """Segment a page; heading_lines maps confirmed line IDs to their title's first ID.
+
+    list_item_lines likewise maps the line IDs of list items to their first
+    line's ID, so each item becomes a group of its own.
+    """
     if not line_list:
         return []
     context = build_page_context(line_list)
     heading_lines = heading_lines or {}
+    list_item_lines = list_item_lines or {}
     groups: list[list[Line]] = [[line_list[0]]]
 
     for index, current in enumerate(line_list[1:], start=1):
@@ -970,8 +977,12 @@ def segment_page(
         following = line_list[index + 1] if index + 1 < len(line_list) else None
         previous_heading = heading_lines.get(id(previous))
         current_heading = heading_lines.get(id(current))
+        previous_item = list_item_lines.get(id(previous))
+        current_item = list_item_lines.get(id(current))
         if previous_heading is not None or current_heading is not None:
             starts_group = previous_heading != current_heading
+        elif previous_item is not None or current_item is not None:
+            starts_group = previous_item != current_item
         else:
             starts_group = should_start_new_group(
                 preceding,
@@ -988,7 +999,9 @@ def segment_page(
 
 
 def segment_lines(
-    line_list: list[Line], heading_lines: dict[int, int] | None = None
+    line_list: list[Line],
+    heading_lines: dict[int, int] | None = None,
+    list_item_lines: dict[int, int] | None = None,
 ) -> list[list[Line]]:
     """Segment ordered lines without ever joining text across page boundaries."""
     groups: list[list[Line]] = []
@@ -997,10 +1010,10 @@ def segment_lines(
 
     for line_obj in line_list:
         if current_page_no is not None and line_obj.page_no != current_page_no:
-            groups.extend(segment_page(current_page, heading_lines))
+            groups.extend(segment_page(current_page, heading_lines, list_item_lines))
             current_page = []
         current_page.append(line_obj)
         current_page_no = line_obj.page_no
 
-    groups.extend(segment_page(current_page, heading_lines))
+    groups.extend(segment_page(current_page, heading_lines, list_item_lines))
     return groups
