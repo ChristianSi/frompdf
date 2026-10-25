@@ -14,7 +14,8 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
   their own; dashes and numbers need at least two aligned items with
   consecutive numbers after a deliberate break, so wrapped lines starting with
   a dash or a date are left alone. Numbers without a delimiter, as in
-  reference lists, also need hanging-indented continuation lines. Indented
+  reference lists, also need most items to wrap onto hanging-indented
+  continuation lines, so numbered lines of algorithms are left alone. Indented
   lists are no longer block quotes, items continue across pages, and page
   markers follow the list marker. Lines of an item starting right of its text
   follow a hard line break. Bullets that Symbol and Wingdings fonts map

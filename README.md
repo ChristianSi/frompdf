@@ -213,7 +213,9 @@ wrapped lines, as with a parenthetical dash or a date such as `23. Dezember`,
 so they need at least two aligned items with consecutive numbers, and the
 first item must follow a deliberate break, such as a short line, a colon, or
 extra spacing. Numbers without a period or parenthesis, as in some reference
-lists, need at least three items and hanging-indented continuation lines.
+lists, need at least three items, most of which wrap onto hanging-indented
+continuation lines. Numbered lines of code, as in algorithms, stay as they
+are.
 
 Bullets of all kinds become `-`. Numbered items keep their numbers and use
 `.`, or `)` where the source has `3)` or `(3)`. Lists are written compactly,

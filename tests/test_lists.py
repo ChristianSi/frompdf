@@ -136,7 +136,7 @@ class ListItemTests(unittest.TestCase):
 
         self.assertEqual(item_texts(lines), [])
 
-    def test_requires_continuation_lines_for_numbers_without_delimiter(self) -> None:
+    def test_requires_mostly_wrapped_items_for_numbers_without_delimiter(self) -> None:
         single_lines = [
             *introduction(),
             *(line(f'{number} Entry', 48.0 + 12.0 * number, x2=80.0) for number in (1, 2, 3)),
@@ -147,9 +147,19 @@ class ListItemTests(unittest.TestCase):
             wrapped_lines.append(line(f'{number} Entry that wraps', 36.0 + 24.0 * number))
             wrapped_lines.append(line('onto a second line', 48.0 + 24.0 * number, x1=34.0))
         wrapped_lines.extend(closing(132.0))
+        # Like numbered lines of code, only one of three items wraps.
+        code_lines = [
+            *introduction(),
+            line('1 receive a message on port q and store', 60.0),
+            line('the port number', 72.0, x1=34.0, x2=100.0),
+            line('2 send a message', 84.0, x2=100.0),
+            line('3 return', 96.0, x2=60.0),
+            *closing(120.0),
+        ]
 
         self.assertEqual(item_texts(single_lines), [])
         self.assertEqual(len(item_texts(wrapped_lines)), 3)
+        self.assertEqual(item_texts(code_lines), [])
 
     def test_does_not_absorb_paragraph_after_spacing_or_with_other_indent(self) -> None:
         lines = [

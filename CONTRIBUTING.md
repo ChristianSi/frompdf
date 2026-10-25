@@ -258,7 +258,7 @@ The current pipeline is roughly:
    following lines indented past it, across page boundaries. Bullet glyphs
    suffice; dashes and numbers need at least two aligned items with
    consecutive numbers after a deliberate break, and numbers without a
-   delimiter also continuation lines.
+   delimiter also most items wrapping onto continuation lines.
 10. Segment each page's body into blocks using `pdftext` hints, geometry,
     typography, indentation, and line-spacing evidence. Display-sized lines
     sharing face, alignment, and tight leading stay together, as in titles,

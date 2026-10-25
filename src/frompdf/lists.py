@@ -10,6 +10,7 @@ first item.
 
 import re
 from dataclasses import dataclass, field
+from itertools import pairwise
 from typing import Literal
 
 from frompdf.models import Line
@@ -42,10 +43,13 @@ MIN_CONTINUATION_ALIGNMENT = 2.0
 # Lines starting with punctuation may protrude into the margin by up to this
 # many ems, as the quote mark starting `’20)` in lipics-64's references.
 MAX_PUNCTUATION_PROTRUSION_EM = 0.5
-# Lists marked by dashes or numbers need several items, and those numbered
-# without a delimiter, as in reference lists, also continuation lines.
+# Lists marked by dashes or numbers need several items. Numbers without a
+# delimiter label the entries of reference lists, but also the lines of
+# algorithms, such as lipics-51's Algorithm 1. Most reference entries wrap
+# onto hanging-indented continuation lines, unlike numbered lines of code.
 MIN_WEAK_ITEMS = 2
 MIN_BARE_NUMBER_ITEMS = 3
+MIN_BARE_NUMBER_WRAPPED_SHARE = 0.5
 
 MarkerKind = Literal['strong', 'weak', 'ordered', 'bare']
 
@@ -92,7 +96,6 @@ class ListRun:
     items: list[list[Line]]
     markers: list[ListMarker]
     continuation_offset: float | None = None
-    continuation_count: int = 0
 
 
 def parse_list_marker(text: str) -> ListMarker | None:
@@ -160,6 +163,11 @@ def continues_marker(run: ListRun, marker: ListMarker) -> bool:
     return last.number is None or marker.number == last.number + 1
 
 
+def wraps(item: list[Line]) -> bool:
+    """Return whether an item continues on another line than its first."""
+    return any(not same_physical_line(left, right) for left, right in pairwise(item))
+
+
 def accepted(run: ListRun) -> bool:
     """Return whether a run has enough evidence for a list."""
     kind = run.marker.kind
@@ -168,7 +176,11 @@ def accepted(run: ListRun) -> bool:
     if not run.set_off:
         return False
     if kind == 'bare':
-        return len(run.items) >= MIN_BARE_NUMBER_ITEMS and run.continuation_count > 0
+        wrapped = sum(wraps(item) for item in run.items)
+        return (
+            len(run.items) >= MIN_BARE_NUMBER_ITEMS
+            and wrapped > len(run.items) * MIN_BARE_NUMBER_WRAPPED_SHARE
+        )
     return len(run.items) >= MIN_WEAK_ITEMS
 
 
@@ -229,7 +241,6 @@ def find_list_items(line_list: list[Line], heading_lines: dict[int, int]) -> Lis
             ):
                 if run.continuation_offset is None:
                     run.continuation_offset = offset
-                run.continuation_count += 1
                 run.items[-1].append(line_obj)
                 continue
 
