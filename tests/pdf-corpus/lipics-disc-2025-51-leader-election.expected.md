@@ -229,36 +229,38 @@ prescribed number of iterations.
 
 [[PAGE:5|VISIBLE:51:5]]**Algorithm 1** Constant Direction Algorithm(ID,boundOnSize).
 
-1. **for** *i* ← 1 **to** boundOnSize ∗ ID **do**
-2. **send** a message on port 0
-3. **receive** a message on port *q* // Wait for a message and store the port number in
-   variable *q*
-4. **if** *q* = 0 **then break**
-5. **if** *q* = 0 **then**\
-   /\* if a process enters this branch, then it is not the process with minimum ID
+**1 for** *i* ← 1 **to** boundOnSize ∗ ID **do\
+2 send** a message on port 0
 
-\*/
+**3 receive** a message on port *q* // Wait for a message and store the port number in
+variable *q*\
+**4 if** *q* = 0 **then break\
+5 if** *q* = 0 **then**
 
-6. **send** a message on port 1
-7. **receive** a message on port 1 // Wait for a message on port 1.
-8. **repeat**
-9. **receive** a message on port *q*
-10. **send** a message on port 1 − *q*
-11. **until** *received two messages on port* 0
-12. **return** Non-Leader
-13. **else**\
-    /\* only the process with minimum ID enters this branch \*/
-14. **send** a message on port 1
-15. **receive** a message on port 0
-16. **send** a message on port 1
-17. **repeat**
-18. **receive** a message on port *q*
-19. **if** *q* = 1 **then**
-20. **send** a message on port 0
-21. **until** *q* = 0
-22. **send** a message on port 1
-23. **receive** a message on port 0
-24. **return** Leader
+> /\* if a process enters this branch, then it is not the process with minimum ID
+> \*/
+> **6 send** a message on port 1
+
+**7 receive** a message on port 1 // Wait for a message on port 1.
+**8 repeat\
+9 receive** a message on port *q*
+**10 send** a message on port 1 − *q*\
+**11 until** *received two messages on port* 0\
+**12 return** Non-Leader\
+**13 else**
+
+/\* only the process with minimum ID enters this branch \*/
+**14 send** a message on port 1\
+**15 receive** a message on port 0\
+**16 send** a message on port 1\
+**17 repeat\
+18 receive** a message on port *q*\
+**19 if** *q* = 1 **then\
+20 send** a message on port 0\
+**21 until** *q* = 0\
+**22 send** a message on port 1\
+**23 receive** a message on port 0\
+**24 return** Leader
 
 This process then enters the termination detection phase (green lines). In this phase, the
 process first sends a message CCW to inform all other processes that they are not leaders.
