@@ -21,6 +21,7 @@ from frompdf.models import (
     InlineKind,
     InlineRange,
     Line,
+    ListItem,
     PageNumber,
     Paragraph,
     StrongParagraph,
@@ -279,11 +280,14 @@ class EmphasisResolutionTests(unittest.TestCase):
         )
 
     def test_list_markers_stay_outside_emphasis(self) -> None:
-        text = '- First item\n  continued\n- Second'
-        self.assertEqual(
-            render(paragraph(text, (0, len(text), 'bold'))),
-            '- **First item\n  continued**\n- **Second**\n',
-        )
+        page = page_number(1)
+        first = 'First item\ncontinued'
+        blocks = [
+            ListItem(first, page, page, ranges=styled(first, (0, len(first), 'bold'))),
+            ListItem('Second', page, page, ranges=styled('Second', (0, 6, 'bold'))),
+        ]
+
+        self.assertEqual(render(*blocks), '- **First item\n  continued**\n- **Second**\n')
 
     def test_block_quotes_keep_emphasis_after_their_markers(self) -> None:
         page = page_number(1)

@@ -31,9 +31,9 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
   dropped.
 - Text that Markdown would read as syntax is escaped, such as asterisks,
   underscores outside words, and heading, quote, and list markers at line
-  starts. Escapes are limited to where they are needed. List markers at the
-  start of a block remain unescaped, so lists in the source still render as
-  lists.
+  starts. Escapes are limited to where they are needed. Text that only looks
+  like a list marker, at the start of a paragraph that was not recognized as
+  a list item, is escaped as well, so it does not become an accidental list.
 - Deliberate line breaks within paragraphs and block quotes, such as those in
   epigraphs and their attributions, author and affiliation cards, or lists of
   dates, are preserved as CommonMark hard line breaks (a trailing backslash).

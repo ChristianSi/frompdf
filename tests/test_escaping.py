@@ -74,27 +74,24 @@ class LineStartEscapeTests(unittest.TestCase):
         self.assertEqual(escaped('text\n==='), 'text\n\\===')
         self.assertEqual(escaped('==='), '===')
 
-    def test_keeps_list_markers_starting_a_block(self) -> None:
-        self.assertEqual(escaped('- item\nmore'), '- item\nmore')
-        self.assertEqual(escaped('3. item'), '3. item')
-
-    def test_keeps_sibling_list_markers_of_a_block_starting_as_list(self) -> None:
-        self.assertEqual(escaped('- one\n- two\n+ three'), '- one\n- two\n\\+ three')
-        self.assertEqual(escaped('1. one\n2. two\n1) new'), '1. one\n2. two\n1\\) new')
+    def test_escapes_list_markers_starting_a_block(self) -> None:
+        self.assertEqual(escaped('- item\nmore'), '\\- item\nmore')
+        self.assertEqual(escaped('3. item'), '3\\. item')
+        self.assertEqual(escaped('1) one\n2) two'), '1\\) one\n2) two')
 
     def test_escapes_list_markers_interrupting_a_paragraph(self) -> None:
         self.assertEqual(escaped('text\n+ C\n- item'), 'text\n\\+ C\n\\- item')
         self.assertEqual(escaped('properties:\n1. first'), 'properties:\n1\\. first')
+        self.assertEqual(escaped('- one\n- two'), '\\- one\n\\- two')
 
     def test_keeps_numbers_that_cannot_interrupt_a_paragraph(self) -> None:
         self.assertEqual(escaped('Am\n23. Dezember 1917'), 'Am\n23. Dezember 1917')
         self.assertEqual(escaped('Pages\n1.'), 'Pages\n1.')
         self.assertEqual(escaped('-1 and -2'), '-1 and -2')
 
-    def test_escapes_empty_list_items_and_list_markers_when_lists_are_not_kept(self) -> None:
+    def test_escapes_empty_list_items_at_block_start(self) -> None:
         self.assertEqual(escaped('-'), '\\-')
         self.assertEqual(escaped('2.'), '2\\.')
-        self.assertEqual(escaped('1. one', block_list_markers=False), '1\\. one')
 
     def test_checks_lines_after_hard_breaks_and_indentation(self) -> None:
         self.assertEqual(

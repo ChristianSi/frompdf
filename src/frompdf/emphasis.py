@@ -262,15 +262,13 @@ def covers_all_text(rendered: RenderedText, runs: Iterable[InlineRange]) -> bool
 
 def resolve_emphasis(
     value: AnnotatedText,
-    cuts: Iterable[tuple[int, int]] = (),
     markers: Iterable[int] = (),
     display: bool = False,
     strong: bool = False,
 ) -> AnnotatedText:
     """Return text whose bold and italic ranges render as valid, nested Markdown emphasis.
 
-    Emphasis never covers or crosses cuts, such as list markers, and is split
-    at markers, the positions of inserted text such as page markers, which
+    Emphasis is split at markers, the positions of inserted text such as page markers, which
     starts with `[` and ends with `]`. Display blocks, such as headings,
     already stand out: they lose bold ranges, and italic ones if they cover all
     of their text. With strong, the whole text is rendered in strong emphasis.
@@ -282,9 +280,7 @@ def resolve_emphasis(
         runs = [run for run in runs if run.kind == 'italic']
         if covers_all_text(rendered, runs):
             runs = []
-    runs = cut_emphasis(
-        merged_emphasis(value.text, runs), [*cuts, *((marker, marker) for marker in markers)]
-    )
+    runs = cut_emphasis(merged_emphasis(value.text, runs), ((marker, marker) for marker in markers))
     trimmed = (rendered.trimmed(run.start, run.end, run.kind) for run in runs)
     runs = without_partial_overlaps(rendered, [run for run in trimmed if run is not None])
     flanking = (rendered.flanking(run) for run in runs)

@@ -169,8 +169,7 @@ The implementation is split into focused modules under `src/frompdf`:
 - `emphasis.py` adjusts bold and italic ranges so their Markdown delimiters
   are valid and nested, and renders scripts and emphasis together.
 - `escaping.py` escapes text that Markdown would otherwise read as syntax,
-  checking inline characters everywhere and block syntax at line starts, and
-  reports the list markers it keeps.
+  checking inline characters everywhere and block syntax at line starts.
 - `footnotes.py` detects numbered bottom notes, assembles continuations with
   page-aware text, and places numeric groups in Notes sections.
 - `front_matter.py` renders subtitles, author names, and chapter labels near
@@ -299,9 +298,8 @@ The current pipeline is roughly:
     share one Notes title. Default H2/H3 Notes titles match a deeper following
     heading when necessary to prevent accidental parentage.
 15. Serialize the blocks as Markdown in `.md`, including compact numbered notes.
-    Text that Markdown would read as syntax is escaped; list markers starting
-    a block, and further items of the same kind, remain unescaped, so lists in
-    the source still render as lists.
+    Text that Markdown would read as syntax is escaped, including list
+    markers starting blocks that were not recognized as list items.
     Inline scripts become `<sup>`/`<sub>` tags; consumed footnote labels remain
     ordinary list markers.
     Bold and italic ranges become `**`/`*` emphasis. Headings and strong

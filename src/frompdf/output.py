@@ -4,7 +4,7 @@ from pathlib import Path
 from typing import TextIO
 
 from frompdf.emphasis import render_inline, resolve_emphasis
-from frompdf.escaping import escape_markdown, list_item_markers, shift_index
+from frompdf.escaping import escape_markdown, shift_index
 from frompdf.models import (
     HARD_LINE_BREAK,
     Block,
@@ -110,13 +110,8 @@ def render_fragments(
         inserts[first] = inserts.get(first, '') + opening
 
     heading = isinstance(block_obj, Heading)
-    # Lists inside a note or list item would be nested in its own list item.
-    block_list_markers = not isinstance(block_obj, Footnote | ListItem)
-    block_line_start = not opening
-    cuts = [] if heading else list_item_markers(joined, block_line_start, block_list_markers)
     resolved = resolve_emphasis(
         joined,
-        cuts,
         markers,
         display=isinstance(block_obj, Heading | StrongParagraph),
         strong=isinstance(block_obj, StrongParagraph),
@@ -124,8 +119,7 @@ def render_fragments(
     escaped, insertions = escape_markdown(
         resolved,
         heading=heading,
-        block_list_markers=block_list_markers,
-        block_line_start=block_line_start,
+        block_line_start=not opening,
         # Opening markup separates the first page marker from the text.
         markers=frozenset(markers.keys() - ({len(fragments[0].separator)} if opening else set())),
     )

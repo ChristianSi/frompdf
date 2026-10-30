@@ -66,8 +66,7 @@ frompdf currently detects and serializes:
 - bold and italic text, rendered as `**bold**` and `*italic*` emphasis
 - deliberate line breaks within blocks, such as in epigraphs or address cards,
   preserved as hard line breaks (a trailing backslash)
-- escaping of text that Markdown would otherwise read as syntax; list markers
-  starting a block are kept, so lists in the source render as lists
+- escaping of text that Markdown would otherwise read as syntax
 
 The internal block model tracks the raw PDF page number and, when available,
 the visible page number for each block.
