@@ -265,7 +265,7 @@ DRM would also fall under this category.
 
 ## Second proposed addition to GNU GPLv3 chapter 6. Conveying Non-Source Forms
 
-> 1. *Any object code conveyed must not include extra blocking methods aimed at discriminating
+> 1\. *Any object code conveyed must not include extra blocking methods aimed at discriminating
 > agains persons, groups or fields of endeavor specified in Chapter
 > 5.*
 

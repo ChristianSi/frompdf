@@ -286,26 +286,26 @@ nuevos medios de difusión SIGPAC de datos SIGC:
 
 **Servicio Ventajas Limitaciones Propuestas de uso**
 
-> - Interfaz sencilla e
+> \- Interfaz sencilla e
 > intuitiva
 >
-> - No permite
+> \- No permite
 > automatización
-> - Consulta rápida de
+> \- Consulta rápida de
 > parcelas y recintos
-> - Información SIGPAC
+> \- Información SIGPAC
 > de Campaña PAC - Limitada
 > personalización de
 > capas
-> - Gestión PAC.
+> \- Gestión PAC.
 > Verificación visual de
 > datos por técnicos - Útil para validaciones
 > visuales rápidas\
-> - Útil para trámites\
+> \- Útil para trámites\
 > (Ayudas PAC)
-> - Requiere conexión
+> \- Requiere conexión
 > estable
-> - Formación o soporte
+> \- Formación o soporte
 > a usuarios externos
 >
 > **Visor
@@ -315,20 +315,20 @@ nuevos medios de difusión SIGPAC de datos SIGC:
 \- Acceso selectivo a
 datos vectoriales
 
-- Formatos de
+\- Formatos de
 descarga: GPKG y Shp
 
-- Archivos grandes y
+\- Archivos grandes y
 pesados
 
-- Repositorios
+\- Repositorios
 internos de datos
 
-- Requiere
+\- Requiere
 almacenamiento en
 local
 
-- Análisis y
+\- Análisis y
 explotación masiva
 
 **Servicio
@@ -336,26 +336,26 @@ de
 descargas
 ATOM**
 
-- Organizado por
+\- Organizado por
 provincias y municipios
 
-- No tiene
+\- No tiene
 visualización directa y
 actualizada
-- Cruces con otras
+\- Cruces con otras
 fuentes (catastro,
 ayudas, etc.)
-- Ideal para análisis
+\- Ideal para análisis
 masivos
-- Navegación poco
+\- Navegación poco
 amigable
 
-- Visualización rápida y
+\- Visualización rápida y
 fluida
 
-- No compatible con
+\- No compatible con
 SIG clásicos
-- Desarrollo de
+\- Desarrollo de
 visores y aplicaciones - Ideal para entornos
 web o móviles
 
@@ -382,41 +382,41 @@ cliente
 \- Visualización en
 proyectos SIG
 
-- Integrable en SIG
+\- Integrable en SIG
 profesionales
 
-- Sólo visualización,
+\- Sólo visualización,
 no descarga y edición
 
-- Visualización en
+\- Visualización en
 proyectos SIG
 
 **WMS
 (Web Map
 Service)**
 
-- Puede ser lento a
+\- Puede ser lento a
 gran escala
 
-- Apoyo en validación
+\- Apoyo en validación
 espacial
 
-- Estándar OGC
+\- Estándar OGC
 interoperable
 
-- Sin personalización
+\- Sin personalización
 de estilo
 
-- Integración en
+\- Integración en
 visores y aplicaciones
 
-- Consulta individual
+\- Consulta individual
 (no masiva)
-- Formularios de
+\- Formularios de
 consulta interna
-- Formato estructurado\
+\- Formato estructurado\
 (JSON/GEOJSON)
-- Integración en flujos
+\- Integración en flujos
 de tramitación
 
 - Rápido y ligero
@@ -428,7 +428,7 @@ portales o
 aplicaciones - Reutilizable en
 aplicaciones
 
-- Consulta de recintos
+\- Consulta de recintos
 
 **Servicio
 de
@@ -436,10 +436,10 @@ consultas
 (API
 REST)**
 
-- Más eficiente que\
+\- Más eficiente que\
 WFS
 
-- Requiere
+\- Requiere
 conocimientos
 técnicos
 
@@ -451,20 +451,20 @@ JSON/GeoJSON
 **OGC API -
 Features**
 
-- Integración en
+\- Integración en
 procesos y
 aplicaciones
 
-- Integrable en SIG
+\- Integrable en SIG
 profesionales
 
 [[PAGE:12]]**Servicio Ventajas Limitaciones Propuestas de uso**
 
-> - Desarrollo de
+> \- Desarrollo de
 > aplicaciones con
 > datos SIGPAC
 >
-> - Acceso selectivo a
+> \- Acceso selectivo a
 > datos vectoriales
 
 - Alta interoperabilidad - Visualización en
@@ -473,41 +473,41 @@ profesionales
 
 estandarizada
 
-> - Son datos sólo
+> \- Son datos sólo
 > alfanuméricos
-> - Validación de datos
+> \- Validación de datos
 > en formularios
-> - Fácil integración y
+> \- Fácil integración y
 > validación
-> - No es un servicio
+> \- No es un servicio
 > dinámico
-> - Mapeo e
+> \- Mapeo e
 > interpretación de
-> - Documentación clara datos SIGPAC
+> \- Documentación clara datos SIGPAC
 > y mantenida
-> - Sin visualización
+> \- Sin visualización
 > directa
-> - Compatible con
+> \- Compatible con
 > múltiples entornos
-> - Actualización
+> \- Actualización
 > manual periódica
-> - Cruce con ayudas,
+> \- Cruce con ayudas,
 > tipos de uso, etc.
 >
 > **Listas de
 > códigos
 > SIGPAC**
 >
-> - Obtención inmediata
+> \- Obtención inmediata
 > de salidas gráficas,
 > desde navegador
 >
-> - Consulta y descarga
+> \- Consulta y descarga
 > individual (no masiva)
-> - Integración en
+> \- Integración en
 > procesos y
 > aplicaciones
-> - Proporciona
+> \- Proporciona
 > descargas, no solo
 > visualización - Consultas puntuales
 > sin tener que recurrir
