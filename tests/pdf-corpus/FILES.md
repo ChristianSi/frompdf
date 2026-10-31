@@ -13,6 +13,11 @@ Short, freely licensed PDF files for testing the conversion.
   Open-Source Licensing for Improving Freedom of
   Use](https://ceur-ws.org/Vol-3069/SP_04.pdf)" by Juhani Naskali; license:
   CC-BY-4.0.
+- ceur-semtab-2024-results.pdf: "[Results of SemTab
+  2024](https://ceur-ws.org/Vol-3889/paper0.pdf)" by Oktie Hassanzadeh1, Nora
+  Abdelmageed, Marco Cremaschi, Vincenzo Cutrona, Fabio D'Adda, Vasilis
+  Efthymiou, Benno Kruit, Elita Lobo, Nandana Mihindukulasooriya and Nhan H.
+  Pham; license: CC-BY-4.0.
 - fega-sigpac-new-services.pdf: "[Publicación de nuevos servicios SIGPAC de
   difusión de datos SIGC en el Catálogo de Servicios
   SIGPAC](https://www.fega.gob.es/sites/default/files/files/document/250923-AD-Nota_Catalogo_Nube_Nuevos_Servicios_SIGPAC.pdf)"

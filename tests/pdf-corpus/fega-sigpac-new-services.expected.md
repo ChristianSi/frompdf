@@ -284,240 +284,35 @@ nuevos medios de difusión SIGPAC de datos SIGC:
 
 **Tabla resumen de los medios de difusión SIGPAC de datos SIGC**
 
-**Servicio Ventajas Limitaciones Propuestas de uso**
+| Servicio | Ventajas | Limitaciones | Propuestas de uso |
+| --- | --- | --- | --- |
+| **Visor SIGPAC** | - Interfaz sencilla e intuitiva | - No permite automatización | - Consulta rápida de parcelas y recintos |
+|  | - Información SIGPAC de Campaña PAC<br>- Útil para validaciones visuales rápidas | - Limitada personalización de capas | - Gestión PAC. Verificación visual de datos por técnicos |
+|  | - Útil para trámites (Ayudas PAC) | - Requiere conexión estable | - Formación o soporte a usuarios externos |
 
-> \- Interfaz sencilla e
-> intuitiva
->
-> \- No permite
-> automatización
-> \- Consulta rápida de
-> parcelas y recintos
-> \- Información SIGPAC
-> de Campaña PAC - Limitada
-> personalización de
-> capas
-> \- Gestión PAC.
-> Verificación visual de
-> datos por técnicos - Útil para validaciones
-> visuales rápidas\
-> \- Útil para trámites\
-> (Ayudas PAC)
-> \- Requiere conexión
-> estable
-> \- Formación o soporte
-> a usuarios externos
->
-> **Visor
-> SIGPAC**
+| [[PAGE:11]]Servicio | Ventajas | Limitaciones | Propuestas de uso |
+| --- | --- | --- | --- |
+|  | - Acceso selectivo a datos vectoriales |  |  |
+| **Servicio de descargas ATOM** | - Formatos de descarga: GPKG y Shp | - Archivos grandes y pesados | - Repositorios internos de datos |
+|  | - Organizado por provincias y municipios<br>- Ideal para análisis masivos | - Requiere almacenamiento en local<br>- No tiene visualización directa y actualizada<br>- Navegación poco amigable | - Análisis y explotación masiva<br>- Cruces con otras fuentes (catastro, ayudas, etc.) |
+| **Map Vector Tile (MVT)** | - Visualización rápida y fluida<br>- Ideal para entornos web o móviles<br>- Bajo consumo de red | - No compatible con SIG clásicos | - Desarrollo de visores y aplicaciones |
+|  | - Acceso selectivo a datos vectoriales<br>- Integrable en SIG profesionales<br>- Posibilidad de personalizar estilo cliente | - Requiere conocimientos específicos para su correcta integración | - Portales web ligeros y responsivos<br>- Visualización en proyectos SIG |
+| **WMS (Web Map Service)** | - Integrable en SIG profesionales | - Sólo visualización, no descarga y edición | - Visualización en proyectos SIG |
+|  | - Estándar OGC interoperable | - Puede ser lento a gran escala<br>- Sin personalización de estilo | - Apoyo en validación espacial<br>- Integración en visores y aplicaciones |
+| **Servicio de consultas (API REST)** | - Consulta de recintos<br>- Formato estructurado (JSON/GEOJSON) | - Consulta individual (no masiva) | - Formularios de consulta interna<br>- Integración en flujos de tramitación |
+|  | - Rápido y ligero<br>- Reutilizable en aplicaciones | - No admite búsqueda espacial | - Backend para portales o aplicaciones |
+| **OGC API - Features** | - Más eficiente que WFS<br>- Compatible con JSON/GeoJSON | - Requiere conocimientos técnicos | - Automatización de consultas SIGPAC |
+|  | - Integrable en SIG profesionales |  | - Integración en procesos y aplicaciones |
 
-[[PAGE:11]]**Servicio Ventajas Limitaciones Propuestas de uso**
-\- Acceso selectivo a
-datos vectoriales
-
-\- Formatos de
-descarga: GPKG y Shp
-
-\- Archivos grandes y
-pesados
-
-\- Repositorios
-internos de datos
-
-\- Requiere
-almacenamiento en
-local
-
-\- Análisis y
-explotación masiva
-
-**Servicio
-de
-descargas
-ATOM**
-
-\- Organizado por
-provincias y municipios
-
-\- No tiene
-visualización directa y
-actualizada
-\- Cruces con otras
-fuentes (catastro,
-ayudas, etc.)
-\- Ideal para análisis
-masivos
-\- Navegación poco
-amigable
-
-\- Visualización rápida y
-fluida
-
-\- No compatible con
-SIG clásicos
-\- Desarrollo de
-visores y aplicaciones - Ideal para entornos
-web o móviles
-
-- Bajo consumo de red
-- Acceso selectivo a
-
-datos vectoriales - Requiere
-
-**Map
-Vector
-Tile (MVT)**
-
-conocimientos
-específicos para su
-correcta integración
-
-- Portales web ligeros
-- Integrable en SIG y responsivos
-
-profesionales\
-\- Posibilidad de
-personalizar estilo
-cliente
-\- Visualización en
-proyectos SIG
-
-\- Integrable en SIG
-profesionales
-
-\- Sólo visualización,
-no descarga y edición
-
-\- Visualización en
-proyectos SIG
-
-**WMS
-(Web Map
-Service)**
-
-\- Puede ser lento a
-gran escala
-
-\- Apoyo en validación
-espacial
-
-\- Estándar OGC
-interoperable
-
-\- Sin personalización
-de estilo
-
-\- Integración en
-visores y aplicaciones
-
-\- Consulta individual
-(no masiva)
-\- Formularios de
-consulta interna
-\- Formato estructurado\
-(JSON/GEOJSON)
-\- Integración en flujos
-de tramitación
-
-- Rápido y ligero
-- No admite búsqueda
-
-espacial
-\- Backend para
-portales o
-aplicaciones - Reutilizable en
-aplicaciones
-
-\- Consulta de recintos
-
-**Servicio
-de
-consultas
-(API
-REST)**
-
-\- Más eficiente que\
-WFS
-
-\- Requiere
-conocimientos
-técnicos
-
-- Automatización de
-- Compatible con consultas SIGPAC
-
-JSON/GeoJSON
-
-**OGC API -
-Features**
-
-\- Integración en
-procesos y
-aplicaciones
-
-\- Integrable en SIG
-profesionales
-
-[[PAGE:12]]**Servicio Ventajas Limitaciones Propuestas de uso**
-
-> \- Desarrollo de
-> aplicaciones con
-> datos SIGPAC
->
-> \- Acceso selectivo a
-> datos vectoriales
-
-- Alta interoperabilidad - Visualización en
-  proyectos SIG
-- Codificación oficial
-
-estandarizada
-
-> \- Son datos sólo
-> alfanuméricos
-> \- Validación de datos
-> en formularios
-> \- Fácil integración y
-> validación
-> \- No es un servicio
-> dinámico
-> \- Mapeo e
-> interpretación de
-> \- Documentación clara datos SIGPAC
-> y mantenida
-> \- Sin visualización
-> directa
-> \- Compatible con
-> múltiples entornos
-> \- Actualización
-> manual periódica
-> \- Cruce con ayudas,
-> tipos de uso, etc.
->
-> **Listas de
-> códigos
-> SIGPAC**
->
-> \- Obtención inmediata
-> de salidas gráficas,
-> desde navegador
->
-> \- Consulta y descarga
-> individual (no masiva)
-> \- Integración en
-> procesos y
-> aplicaciones
-> \- Proporciona
-> descargas, no solo
-> visualización - Consultas puntuales
-> sin tener que recurrir
-> al Visor Sigpac - Componente
-> incrustable en
-> aplicaciones
->
-> **Salidas
-> Gráficas
-> SIGPAC**
+| [[PAGE:12]]Servicio | Ventajas | Limitaciones | Propuestas de uso |
+| --- | --- | --- | --- |
+|  | - Acceso selectivo a datos vectoriales |  | - Desarrollo de aplicaciones con datos SIGPAC |
+|  | - Alta interoperabilidad |  | - Visualización en proyectos SIG |
+| **Listas de códigos SIGPAC** | - Codificación oficial estandarizada | - Son datos sólo alfanuméricos | - Validación de datos en formularios |
+|  | - Fácil integración y validación<br>- Documentación clara y mantenida | - No es un servicio dinámico<br>- Sin visualización directa | - Mapeo e interpretación de datos SIGPAC |
+|  | - Compatible con múltiples entornos | - Actualización manual periódica | - Cruce con ayudas, tipos de uso, etc. |
+| **Salidas Gráficas SIGPAC** | - Obtención inmediata de salidas gráficas, desde navegador | - Consulta y descarga individual (no masiva) | - Integración en procesos y aplicaciones |
+|  | - Proporciona descargas, no solo visualización<br>- Componente incrustable en aplicaciones |  | - Consultas puntuales sin tener que recurrir al Visor Sigpac |
 
 ## Información Histórica del SIGC
 

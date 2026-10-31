@@ -244,14 +244,15 @@ yet still benefits from the increase in accuracy.
 
 [[PAGE:5|VISIBLE:64:5]]**Table 1** Replica set size. *d* is number of data dimensions.
 
-> **Algorithm** *n* ≥\
-> OneShot 4*f* + 1\
-> ABA [5] 5*f* + 1
-> IA [12] 3*f* + 1
-> BI [3, 4] 2*df* + 1
-> BVC [14, 19] (*d* + 2)*f* + 1
->
-> **(a)** Gaussian samples, Byzantine attack. **(b)** Exponential samples, Byzantine attack.
+| Algorithm    | *n* ≥            |
+| ------------ | ---------------- |
+| OneShot      | 4*f* + 1         |
+| ABA [5]      | 5*f* + 1         |
+| IA [12]      | 3*f* + 1         |
+| BI [3, 4]    | 2*df* + 1        |
+| BVC [14, 19] | (*d* + 2)*f* + 1 |
+
+**(a)** Gaussian samples, Byzantine attack. **(b)** Exponential samples, Byzantine attack.
 
 **Figure 1** Empirical simulations measuring PBA’s accuracy compared to baseline algorithms given
 data distributed by a Gaussian (symmetric) and Exponential (asymmetric) distributions.
