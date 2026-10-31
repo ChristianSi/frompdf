@@ -19,7 +19,7 @@ from pdftext.schema import (
     Span as PdfTextSpan,
 )
 
-from frompdf.models import InlineRange, Line
+from frompdf.models import InlineRange, Line, Word
 from frompdf.scripts import AnnotatedText
 from frompdf.segmentation import same_physical_line, same_running_text_line
 
@@ -234,6 +234,8 @@ def span_char_text_ranges(span_dict: PdfTextSpan) -> dict[int, tuple[int, int]]:
 
     raw_text = ''.join(raw_parts)
     decoded_text = span_dict.get('text', '')
+    if raw_text == decoded_text:
+        return raw_ranges
     text_ranges: dict[int, tuple[int, int]] = {}
     opcodes = SequenceMatcher(None, raw_text, decoded_text, autojunk=False).get_opcodes()
 
@@ -1066,6 +1068,43 @@ def second_word_x1(line_dict: PdfTextLine) -> float | None:
     return None
 
 
+def line_words(line_dict: PdfTextLine, lead: int) -> tuple[Word, ...]:
+    """Return the words of a line's text with their horizontal extents.
+
+    Offsets refer to the line text without the lead leading whitespace
+    characters. Words without any positioned characters are omitted.
+    """
+    extents: dict[int, tuple[float, float]] = {}
+    text_parts: list[str] = []
+    offset = -lead
+    for span in line_dict.get('spans', []):
+        ranges = span_char_text_ranges(span)
+        for char in span.get('chars', []):
+            x1, _, x2, _ = get_bbox(char)
+            if x1 is None or x2 is None or id(char) not in ranges:
+                continue
+            start, end = ranges[id(char)]
+            for position in range(offset + start, offset + end):
+                extents[position] = (min(x1, x2), max(x1, x2))
+        text_value = span.get('text', '')
+        text_parts.append(text_value)
+        offset += len(text_value)
+    text = ''.join(text_parts)[lead:]
+    words: list[Word] = []
+    for match in re.finditer(r'\S+', text):
+        known = [extents[position] for position in range(*match.span()) if position in extents]
+        if known:
+            words.append(
+                Word(
+                    match.start(),
+                    match.end(),
+                    round(min(x1 for x1, _ in known), 1),
+                    round(max(x2 for _, x2 in known), 1),
+                )
+            )
+    return tuple(words)
+
+
 def visible_chars(line_dict: PdfTextLine) -> list[PdfTextChar]:
     """Return the characters of a line other than whitespace."""
     return [
@@ -1291,6 +1330,7 @@ def iter_lines(page_list: Sequence[Page]) -> list[Line]:
                     space_before=bool(text_value) and has_edge_space(raw_text, at_end=False),
                     space_after=bool(text_value) and has_edge_space(raw_text, at_end=True),
                     second_word_x1=round_or_none(second_word_x1(line_dict)),
+                    words=line_words(line_dict, len(raw_text) - len(raw_text.lstrip())),
                 )
                 page_lines.append((line_obj, line_dict, block_dict.get('lines', []), raw_text))
 

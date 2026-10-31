@@ -196,10 +196,14 @@ The implementation is split into focused modules under `src/frompdf`:
 - `pipeline.py` coordinates extraction and classification.
 - `reading_order.py` orders intact `pdftext` blocks within page regions and
   detected columns.
+- `rules.py` reads horizontal and vertical rules, such as table borders, from
+  the vector paths of each page with pypdfium2.
 - `segmentation.py` combines `pdftext` block hints with page-local geometry
   and typography to find Markdown block boundaries.
 - `scripts.py` slices and joins annotated plain text, preserving inline
   ranges through text repair, and renders `<sup>`/`<sub>` tags at serialization.
+- `tables.py` recognizes tables framed by connected rules, infers their rows,
+  columns, and spanning cells, and splits lines into the pieces of each cell.
 - `unhyphenation.py` repairs words and unspaced dashes split across physical
   lines, using document-wide evidence where available.
 
@@ -210,20 +214,27 @@ Important concepts:
   whether pieces of one visual line need a space between them, and whether it
   is the denominator of an inline fraction ending the preceding record. It
   also records where the text after its first word starts, which is where a
-  list item's text follows its marker.
+  list item's text follows its marker, and the horizontal extent of each
+  word, which tells the table cells its pieces belong to.
 - `InlineRange` records superscript, subscript, bold, or italic offsets in
   decoded plain text. Ranges of different kinds may overlap. Lines, blocks,
   and text fragments retain these ranges until serialization.
 - `PageNumber` in `models.py` stores the raw page number and optional visible
   page number.
 - `Block` in `models.py` is the base Markdown block type.
-- `Paragraph`, `StrongParagraph`, `BlockQuote`, `Heading`, `Footnote`, and
-  `ListItem` in `models.py` are supported block subclasses. `StrongParagraph`
-  is a paragraph rendered in bold. `ListItem` holds its Markdown list marker. `TextFragment` retains the source page and
-  preceding whitespace of each piece of a block's text, so page markers can
-  occur within paragraphs, block quotes, and notes.
+- `Paragraph`, `StrongParagraph`, `BlockQuote`, `Heading`, `Footnote`,
+  `ListItem`, and `Table` in `models.py` are supported block subclasses.
+  `StrongParagraph` is a paragraph rendered in bold. `ListItem` holds its
+  Markdown list marker. `Table` holds `TableCell` records with their row and
+  column spans and its number of header rows. `TextFragment` retains the
+  source page and preceding whitespace of each piece of a block's text, so
+  page markers can occur within paragraphs, block quotes, and notes.
 - `HARD_LINE_BREAK` in `models.py` marks deliberate line breaks in block text
-  until serialization renders them as a trailing backslash.
+  until serialization renders them as a trailing backslash, or as `<br>` in
+  table cells.
+- `Rule` in `rules.py` is a horizontal or vertical rule in `pdftext`
+  coordinates. `TableLayout` in `tables.py` holds a recognized table's source
+  lines and its cells with the line pieces of their parts.
 - `extract_markdown` in `pipeline.py` returns a list of blocks.
 - `markdown_to_text` in `output.py` serializes blocks as Markdown.
 
@@ -251,14 +262,23 @@ The current pipeline is roughly:
 6. Order the remaining lines by page region and detected column.
 7. Safely complete unambiguous page-label sequences and optionally dump them
    to `-pagenos.csv`.
-8. Detect and extract numbered footnote regions using typography and geometry,
+8. Recognize tables framed by connected horizontal and vertical rules, read
+   from the page drawings, with a vertical rule inside the frame. Columns lie
+   between vertical rules. Horizontal rules separate rows where they bound
+   all columns, or all columns subdivided between the same complete
+   boundaries; elsewhere they separate parts of a cell's text. Without rules
+   between body rows, lines starting in the first column start rows. Cells
+   span rows or columns where rules are missing. Below a spanning header cell,
+   rows of bold text extend the header. Tables are left out of all other
+   blocks, which are split where a table lies between their lines on a page.
+9. Detect and extract numbered footnote regions using typography and geometry,
    assembling supported paragraph and adjacent-page continuations.
-9. Recognize list items: lines starting with a marker, together with
-   following lines indented past it, across page boundaries. Bullet glyphs
-   suffice; dashes and numbers need at least two aligned items with
-   consecutive numbers after a deliberate break, and numbers without a
-   delimiter also most items wrapping onto continuation lines.
-10. Segment each page's body into blocks using `pdftext` hints, geometry,
+10. Recognize list items: lines starting with a marker, together with
+    following lines indented past it, across page boundaries. Bullet glyphs
+    suffice; dashes and numbers need at least two aligned items with
+    consecutive numbers after a deliberate break, and numbers without a
+    delimiter also most items wrapping onto continuation lines.
+11. Segment each page's body into blocks using `pdftext` hints, geometry,
     typography, indentation, and line-spacing evidence. Display-sized lines
     sharing face, alignment, and tight leading stay together, as in titles,
     while a change of both size and face after a short line, as between author
@@ -268,13 +288,13 @@ The current pipeline is roughly:
     of the whole visual line decides whether the text continues. Within a
     line of running text, a new block needs a change of size, not just face.
     Each list item becomes a block of its own.
-11. Join blocks continuing at the top of the next column or page. Similar
+12. Join blocks continuing at the top of the next column or page. Similar
     typography, a full last line, a non-indented first line, and consistent
     block-quote classification are required. An open sentence, a lower-case
     continuation, or a missing indent in a document whose paragraphs start
     indented must additionally support the join. List items join exactly
     where their recognized lines continue.
-12. Build paragraph, block-quote, or list-item records, replacing list
+13. Build paragraph, block-quote, or list-item records, replacing list
     markers with Markdown ones, and mark deliberate line breaks, including
     before lines of a list item that start right of its text.
     Join the pieces into which `pdftext` split a physical line with a space
@@ -284,20 +304,20 @@ The current pipeline is roughly:
     unspaced dashes split across physical lines within each block, preserving
     script ranges and attributing words joined across pages to their starting
     page.
-13. Reclassify heading-like paragraphs using size and confirmed title
+14. Reclassify heading-like paragraphs using size and confirmed title
     candidates, which take precedence over block quotes. Blocks without
     letters or digits never become headings. In the front matter following the
     first heading and the first top-level heading, render subtitles, author
     names, and chapter labels in bold instead and drop ornaments. Then
     normalize heading levels.
-14. Repair note text while retaining source-page boundaries, group notes when
+15. Repair note text while retaining source-page boundaries, group notes when
     numbering restarts, and place a single sequence at the document end.
     Multiple groups prefer boundaries matching the sections they cover,
     limited by intervening restart boundaries. Nearby restarts can associate
     old notes with a preceding mid-page boundary. Groups sharing a boundary
     share one Notes title. Default H2/H3 Notes titles match a deeper following
     heading when necessary to prevent accidental parentage.
-15. Serialize the blocks as Markdown in `.md`, including compact numbered notes.
+16. Serialize the blocks as Markdown in `.md`, including compact numbered notes.
     Text that Markdown would read as syntax is escaped, including list
     markers starting blocks that were not recognized as list items.
     Inline scripts become `<sup>`/`<sub>` tags; consumed footnote labels remain
@@ -315,3 +335,8 @@ The current pipeline is roughly:
     List items are written compactly, with page markers after the list
     marker; adjacent lists that Markdown would merge are separated by the
     same comment.
+    Tables are written as pipe tables, repairing cell text like paragraph
+    text. Header rows below a cell spanning columns are combined with it;
+    other spanning cells fill their first row and column. Header cells drop
+    bold. Pipes are escaped, parts of a cell's text are separated by `<br>`,
+    and page markers start the first header cell.

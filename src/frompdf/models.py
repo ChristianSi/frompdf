@@ -27,6 +27,16 @@ class InlineRange:
         return self.kind in ('sup', 'sub')
 
 
+@dataclass(frozen=True)
+class Word:
+    """A run of non-whitespace characters in a line's text, with its horizontal extent."""
+
+    start: int
+    end: int
+    x1: float
+    x2: float
+
+
 @dataclass
 class Line:
     """A flattened line record extracted from pdftext output."""
@@ -55,6 +65,9 @@ class Line:
     # Where the text following the first word and its whitespace starts, as
     # the text of a list item following its marker.
     second_word_x1: float | None = field(default=None, kw_only=True)
+    # The words of the text with known positions, which tell the table cells
+    # that the pieces of a line belong to.
+    words: tuple[Word, ...] = field(default=(), kw_only=True, repr=False)
 
 
 @dataclass
@@ -116,6 +129,31 @@ class Footnote(Block):
     """A numbered note with page-aware text, later moved to a Notes section."""
 
     label: str = '1'
+
+
+@dataclass
+class TableCell:
+    """A table cell, possibly spanning rows or columns.
+
+    HARD_LINE_BREAK separates parts of the text that rules set apart in the cell.
+    """
+
+    row: int
+    column: int
+    row_span: int = 1
+    column_span: int = 1
+    text: str = ''
+    ranges: tuple[InlineRange, ...] = ()
+
+
+@dataclass
+class Table(Block):
+    """A table, with cells in reading order, whose first rows form its header."""
+
+    row_count: int = 0
+    column_count: int = 0
+    header_rows: int = 1
+    cells: list[TableCell] = field(default_factory=list)
 
 
 @dataclass

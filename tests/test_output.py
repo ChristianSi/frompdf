@@ -3,6 +3,7 @@ import unittest
 
 from frompdf.models import (
     HARD_LINE_BREAK,
+    Block,
     BlockQuote,
     Footnote,
     Heading,
@@ -11,6 +12,8 @@ from frompdf.models import (
     PageNumber,
     Paragraph,
     StrongParagraph,
+    Table,
+    TableCell,
     TextFragment,
 )
 from frompdf.output import markdown_to_text
@@ -193,6 +196,103 @@ class MarkdownOutputTests(unittest.TestCase):
         markdown_to_text([block], output)
 
         self.assertEqual(output.getvalue(), 'a\\*b<sup>2&#42;</sup> c\n')
+
+
+def render_blocks(blocks: list[Block], page_markers: bool = False) -> str:
+    output = io.StringIO()
+    markdown_to_text(blocks, output, page_markers=page_markers)
+    return output.getvalue()
+
+
+class PipeTableTests(unittest.TestCase):
+    def test_header_rows_combine_labels_of_spanning_cells_with_those_below(self) -> None:
+        page = page_number(1)
+        cells = [
+            TableCell(0, 0, row_span=2, text='Benchmark'),
+            TableCell(0, 1, column_span=2, text='TSOTSA'),
+            TableCell(1, 1, text='F1', ranges=(InlineRange(0, 2, 'bold'),)),
+            TableCell(1, 2, text='Pr'),
+            TableCell(2, 0, row_span=2, text='Round1', ranges=(InlineRange(0, 6, 'bold'),)),
+            TableCell(2, 1, text='0.9'),
+            TableCell(2, 2, text='0.8'),
+            TableCell(3, 1, text='0.7'),
+            TableCell(3, 2, text='0.6'),
+        ]
+        table = Table('', page, page, row_count=4, column_count=3, header_rows=2, cells=cells)
+
+        self.assertEqual(
+            render_blocks([table]),
+            '| Benchmark  | TSOTSA F1 | TSOTSA Pr |\n'
+            '| ---------- | --------- | --------- |\n'
+            '| **Round1** | 0.9       | 0.8       |\n'
+            '|            | 0.7       | 0.6       |\n',
+        )
+
+    def test_cells_spanning_undivided_columns_fill_their_first_column(self) -> None:
+        page = page_number(1)
+        cells = [
+            TableCell(0, 0, column_span=2, text='Benchmark'),
+            TableCell(0, 2, text='Hit@1'),
+            TableCell(1, 0, column_span=2, text='All'),
+            TableCell(1, 2, text='0.75'),
+        ]
+        table = Table('', page, page, row_count=2, column_count=3, header_rows=1, cells=cells)
+
+        self.assertEqual(
+            render_blocks([table]),
+            '| Benchmark |     | Hit@1 |\n'
+            '| --------- | --- | ----- |\n'
+            '| All       |     | 0.75  |\n',
+        )
+
+    def test_cell_text_escapes_pipes_and_breaks_parts_with_html(self) -> None:
+        page = page_number(1)
+        cells = [
+            TableCell(0, 0, text='*n*', ranges=(InlineRange(0, 3, 'italic'),)),
+            TableCell(0, 1, text='|x|'),
+            TableCell(1, 0, text='- a'),
+            TableCell(1, 1, text=f'- b{HARD_LINE_BREAK}- c'),
+        ]
+        table = Table('', page, page, row_count=2, column_count=2, header_rows=1, cells=cells)
+
+        self.assertEqual(
+            render_blocks([table]),
+            '| *\\*n\\** | \\|x\\|      |\n| ------- | ---------- |\n| - a     | - b<br>- c |\n',
+        )
+
+    def test_page_marker_starts_the_first_header_cell_with_its_pipe_escaped(self) -> None:
+        first, second = page_number(1), page_number(2, '12')
+        cells = [
+            TableCell(0, 0, text='(a)'),
+            TableCell(0, 1, text='b'),
+            TableCell(1, 0, text='c'),
+            TableCell(1, 1, text='d'),
+        ]
+        table = Table('', second, second, row_count=2, column_count=2, header_rows=1, cells=cells)
+
+        self.assertEqual(
+            render_blocks([Paragraph('Text', first, first), table], page_markers=True),
+            '[[PAGE:1]]Text\n\n'
+            '| [[PAGE:2\\|VISIBLE:12]]\\(a) | b   |\n'
+            '| -------------------------- | --- |\n'
+            '| c                          | d   |\n',
+        )
+
+    def test_wide_tables_are_not_padded(self) -> None:
+        page = page_number(1)
+        long_text = 'word ' * 30
+        cells = [
+            TableCell(0, 0, text='Year'),
+            TableCell(0, 1, text='Definition'),
+            TableCell(1, 0, text='2004'),
+            TableCell(1, 1, text=long_text.strip()),
+        ]
+        table = Table('', page, page, row_count=2, column_count=2, header_rows=1, cells=cells)
+
+        self.assertEqual(
+            render_blocks([table]),
+            f'| Year | Definition |\n| --- | --- |\n| 2004 | {long_text.strip()} |\n',
+        )
 
 
 if __name__ == '__main__':

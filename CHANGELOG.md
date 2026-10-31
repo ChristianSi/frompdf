@@ -9,6 +9,16 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
 
 ### Added
 
+- Tables drawn with rules are rendered as pipe tables. Tables need connected
+  horizontal and vertical rules with a vertical rule between columns, as in
+  ruled grids or booktabs-style tables with column rules; rules nested in
+  scaled or cropped drawings are found as well. Rules missing between cells
+  make them span rows or columns. A header cell spanning several columns is
+  combined with the labels below it; other spanning cells show their text in
+  their first row and column. Rules dividing a cell's text without lining up
+  across columns separate its parts by `<br>`. Text around a table no longer
+  runs into it. Tables without column rules or continuing across pages are not
+  recognized yet.
 - Bulleted and numbered lists are rendered as compact Markdown lists, with
   continuation lines indented to the item text. Bullet glyphs mark items on
   their own; dashes and numbers need at least two aligned items with

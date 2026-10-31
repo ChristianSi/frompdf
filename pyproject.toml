@@ -30,6 +30,7 @@ classifiers = [
 ]
 dependencies = [
     "pdftext>=0.7.0",
+    "pypdfium2",
 ]
 
 [project.urls]

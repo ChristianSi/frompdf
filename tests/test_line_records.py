@@ -4,7 +4,8 @@ from typing import cast
 from pdftext.schema import Line as PdfTextLine
 from pdftext.schema import Page
 
-from frompdf.lines import iter_lines, second_word_x1
+from frompdf.lines import iter_lines, line_words, second_word_x1
+from frompdf.models import Word
 
 
 def page_with_lines(texts: list[str]) -> Page:
@@ -49,6 +50,33 @@ class SecondWordTests(unittest.TestCase):
         line_dict = {'bbox': [0.0, 0.0, 8.0, 8.0], 'spans': [{'text': ' a', 'chars': chars}]}
 
         self.assertIsNone(second_word_x1(cast(PdfTextLine, line_dict)))
+
+
+class LineWordTests(unittest.TestCase):
+    def test_words_span_their_characters_across_spans_after_leading_whitespace(self) -> None:
+        def chars(text: str, x1: float) -> list[dict[str, object]]:
+            return [
+                {'char': char, 'bbox': [x1 + 5.0 * index, 0.0, x1 + 5.0 * index + 4.0, 8.0]}
+                for index, char in enumerate(text)
+            ]
+
+        line_dict = {
+            'bbox': [0.0, 0.0, 200.0, 8.0],
+            'spans': [
+                {'text': ' CEA 0.', 'chars': chars(' CEA 0.', 95.0)},
+                {'text': '9 x', 'chars': chars('9 x', 200.0)},
+            ],
+        }
+
+        self.assertEqual(
+            line_words(cast(PdfTextLine, line_dict), 1),
+            (Word(0, 3, 100.0, 114.0), Word(4, 7, 120.0, 204.0), Word(8, 9, 210.0, 214.0)),
+        )
+
+    def test_words_without_positioned_characters_are_omitted(self) -> None:
+        line_dict = {'bbox': [0.0, 0.0, 20.0, 8.0], 'spans': [{'text': 'ab', 'chars': []}]}
+
+        self.assertEqual(line_words(cast(PdfTextLine, line_dict), 0), ())
 
 
 if __name__ == '__main__':

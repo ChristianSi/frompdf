@@ -1,4 +1,5 @@
 import csv
+import unicodedata
 from dataclasses import asdict
 from pathlib import Path
 from typing import TextIO
@@ -15,6 +16,8 @@ from frompdf.models import (
     ListItem,
     PageNumber,
     StrongParagraph,
+    Table,
+    TableCell,
     TextFragment,
 )
 from frompdf.scripts import AnnotatedText, join_annotated_texts
@@ -22,9 +25,10 @@ from frompdf.scripts import AnnotatedText, join_annotated_texts
 
 def dump_csv(line_list: list[Line], output_path: Path) -> None:
     """Write line records as CSV with a header row."""
-    field_names = list(Line.__dataclass_fields__)
+    # Word positions would bloat the CSV, which shows line geometry.
+    field_names = [name for name in Line.__dataclass_fields__ if name != 'words']
     with output_path.open('w', encoding='utf-8', newline='') as output_file:
-        writer = csv.DictWriter(output_file, fieldnames=field_names)
+        writer = csv.DictWriter(output_file, fieldnames=field_names, extrasaction='ignore')
         writer.writeheader()
         for line_obj in line_list:
             writer.writerow(asdict(line_obj))
@@ -131,6 +135,108 @@ def render_fragments(
     return text.replace(HARD_LINE_BREAK, '\\')
 
 
+# Tables are padded to aligned columns unless that makes their rows longer
+# than this. Padding long cells would only bloat the source.
+MAX_PADDED_TABLE_WIDTH = 120
+
+
+def render_cell(cell: TableCell, header: bool, marker: str = '') -> str:
+    """Render the text of a table cell for a pipe table, with an optional leading page marker.
+
+    Header cells drop bold, which renderers apply to them anyway, but keep
+    italics, as of variables. Parts of the text set apart by rules are
+    separated by HTML line breaks, as cells cannot contain line breaks.
+    """
+    markers = frozenset({0}) if marker else frozenset()
+    ranges = tuple(run for run in cell.ranges if not header or run.kind != 'bold')
+    resolved = resolve_emphasis(AnnotatedText(cell.text, ranges), markers)
+    escaped, insertions = escape_markdown(resolved, block_line_start=False, markers=markers)
+    text = render_inline(escaped, {shift_index(insertions, 0): marker} if marker else None)
+    # Pipes would separate cells, even within inline markup and page markers.
+    return text.replace(HARD_LINE_BREAK, '<br>').replace('|', '\\|')
+
+
+def spans_split_below(
+    table: Table, cell: TableCell, covering: dict[tuple[int, int], TableCell]
+) -> bool:
+    """Return whether a header row below a cell spanning columns divides them among cells."""
+    columns = range(cell.column, cell.column + cell.column_span)
+    return any(
+        len({id(covering[(row, column)]) for column in columns}) > 1
+        for row in range(cell.row + cell.row_span, table.header_rows)
+    )
+
+
+def table_rows(table: Table, marker: str = '') -> list[list[str]]:
+    """Return the rendered cells of a table as a single header row and body rows.
+
+    Header rows are combined into one, joining the labels of each column. The
+    label of a header cell spanning columns divided further below applies to
+    each of them. Otherwise, a cell spanning rows or columns is rendered in its
+    first row and column only. A page marker starts the first header cell.
+    """
+    covering = {
+        (row, column): cell
+        for cell in table.cells
+        for row in range(cell.row, cell.row + cell.row_span)
+        for column in range(cell.column, cell.column + cell.column_span)
+    }
+    header: list[str] = []
+    for column in range(table.column_count):
+        labels: list[str] = []
+        for row in range(table.header_rows):
+            cell = covering[(row, column)]
+            if cell.row != row or (
+                cell.column != column and not spans_split_below(table, cell, covering)
+            ):
+                continue
+            label = render_cell(cell, header=True, marker='' if labels or column else marker)
+            if label:
+                labels.append(label)
+        if not labels and not column and marker:
+            labels.append(marker)
+        header.append(' '.join(labels))
+    body = [
+        [
+            render_cell(cell, header=False)
+            if (cell := covering[(row, column)]).row == row and cell.column == column
+            else ''
+            for column in range(table.column_count)
+        ]
+        for row in range(table.header_rows, table.row_count)
+    ]
+    return [header, *body]
+
+
+def display_width(text: str) -> int:
+    """Return the number of monospace columns text takes up."""
+    return sum(
+        0 if unicodedata.combining(char) else 2 if unicodedata.east_asian_width(char) in 'WF' else 1
+        for char in text
+    )
+
+
+def render_table(table: Table, marker: str = '') -> str:
+    """Render a table as a pipe table, starting with an optional page marker."""
+    rows = table_rows(table, marker)
+    widths = [
+        max(3, *(display_width(row[column]) for row in rows))
+        for column in range(table.column_count)
+    ]
+    padded = sum(widths) + 3 * len(widths) + 1 <= MAX_PADDED_TABLE_WIDTH
+
+    def format_row(cells: list[str]) -> str:
+        if padded:
+            cells = [
+                cell + ' ' * (width - display_width(cell))
+                for cell, width in zip(cells, widths, strict=True)
+            ]
+        return '| ' + ' | '.join(cells) + ' |'
+
+    delimiter = ['-' * width if padded else '---' for width in widths]
+    return '\n'.join([format_row(rows[0]), format_row(delimiter), *map(format_row, rows[1:])])
+
+
 def list_family(block_obj: Block) -> str | None:
     """Return the marker type of a list block: `-`, or the delimiter of numbered items."""
     if isinstance(block_obj, Footnote):
@@ -179,6 +285,16 @@ def markdown_to_text(
         if block_index:
             output_file.write(block_separator(block_list[block_index - 1], block_obj))
 
+        if isinstance(block_obj, Table):
+            new_page = previous_page is None or block_obj.start_page.raw != previous_page.raw
+            output_file.write(
+                render_table(
+                    block_obj,
+                    format_page_marker(block_obj.start_page) if page_markers and new_page else '',
+                )
+            )
+            previous_page = block_obj.end_page
+            continue
         if isinstance(block_obj, StrongParagraph):
             text = render_fragments(block_obj, previous_page, page_markers, opening='**') + '**'
         else:

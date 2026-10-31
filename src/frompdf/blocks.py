@@ -1,5 +1,6 @@
 import re
 from collections import Counter, defaultdict
+from collections.abc import Sequence
 from dataclasses import replace
 from statistics import median
 
@@ -17,9 +18,21 @@ from frompdf.front_matter import format_front_matter, has_alphanumeric
 from frompdf.heading_candidates import find_typographic_heading_lines
 from frompdf.line_breaks import hard_line_break_ids
 from frompdf.lists import ListMarker, find_list_items
-from frompdf.models import Block, BlockQuote, Heading, Line, ListItem, PageNumber, Paragraph
-from frompdf.scripts import AnnotatedText, collapse_annotated_whitespace
+from frompdf.models import (
+    HARD_LINE_BREAK,
+    Block,
+    BlockQuote,
+    Heading,
+    Line,
+    ListItem,
+    PageNumber,
+    Paragraph,
+    Table,
+    TableCell,
+)
+from frompdf.scripts import AnnotatedText, collapse_annotated_whitespace, join_annotated_texts
 from frompdf.segmentation import segment_lines
+from frompdf.tables import TableLayout
 from frompdf.unhyphenation import (
     document_coordination_tokens,
     document_mixed_case_words,
@@ -486,20 +499,119 @@ def detect_headings(
     return converted_blocks
 
 
+def split_groups_at_tables(
+    group_list: list[list[Line]], tables: Sequence[TableLayout]
+) -> list[list[Line]]:
+    """Split groups of lines where a table lies between two of them on the same page.
+
+    Text continuing past a table at the top of another column or page stays
+    together, so the table follows it.
+    """
+    if not tables:
+        return group_list
+    split: list[list[Line]] = []
+    for group in group_list:
+        split.append([group[0]])
+        for previous, line in zip(group, group[1:], strict=False):
+            if any(
+                table.page_no == line.page_no == previous.page_no
+                and previous.y2 is not None
+                and line.y1 is not None
+                and previous.y2 <= table.top
+                and table.bottom <= line.y1
+                for table in tables
+            ):
+                split.append([])
+            split[-1].append(line)
+    return split
+
+
+def build_table(
+    layout: TableLayout,
+    page_number_map: dict[int, PageNumber],
+    word_counts: Counter[str],
+    mixed_case_words: set[str],
+    coordination_tokens: set[str],
+) -> Table:
+    """Build a table block, repairing the text of each cell like that of a paragraph.
+
+    Lines within a cell are joined by spaces, and its parts by hard line breaks.
+    """
+    cells: list[TableCell] = []
+    for cell in layout.cells:
+        annotated = AnnotatedText('')
+        if cell.parts:
+            fragments = build_page_fragments(
+                cell.lines,
+                page_number_map,
+                word_counts,
+                mixed_case_words,
+                coordination_tokens,
+                {id(part[-1]) for part in cell.parts[:-1]},
+            )
+            pieces = join_fragments(fragments)
+            lines = [
+                pieces.slice(match.start(), match.end())
+                for match in re.finditer('[^\n]+', pieces.text)
+            ]
+            annotated = join_annotated_texts(
+                piece + AnnotatedText('' if piece.text.endswith(HARD_LINE_BREAK) else ' ')
+                for piece in lines
+            )
+            annotated = annotated.slice(0, len(annotated.text.rstrip(' ')))
+        cells.append(
+            TableCell(
+                cell.row,
+                cell.column,
+                cell.row_span,
+                cell.column_span,
+                annotated.text,
+                annotated.ranges,
+            )
+        )
+    page = page_number_map[layout.page_no]
+    return Table(
+        text='\n'.join(cell.text for cell in cells if cell.text),
+        start_page=page,
+        end_page=page,
+        row_count=layout.row_count,
+        column_count=layout.column_count,
+        header_rows=layout.header_rows,
+        cells=cells,
+    )
+
+
 def lines_to_markdown_blocks(
-    line_list: list[Line], page_number_map: dict[int, PageNumber], notes_title: str = 'Notes'
+    line_list: list[Line],
+    page_number_map: dict[int, PageNumber],
+    notes_title: str = 'Notes',
+    tables: Sequence[TableLayout] = (),
 ) -> list[Block]:
-    """Convert line records into Markdown blocks."""
+    """Convert line records into Markdown blocks.
+
+    The lines of tables are left out of all other blocks, and the tables are
+    placed before the first line following their first one.
+    """
     block_list: list[Block] = []
-    default_font_size = dominant_document_font_size(line_list)
-    document_median_weight = document_median_avg_weight(line_list)
-    body_lefts_by_page = build_body_lefts_by_page(line_list, default_font_size)
     evidence_texts = [
         spelling_evidence_text(AnnotatedText(line.text, line.ranges)) for line in line_list
     ]
     word_counts = document_word_counts(evidence_texts)
     mixed_case_words = document_mixed_case_words(evidence_texts)
     coordination_tokens = document_coordination_tokens(evidence_texts)
+    table_of_line = {id(line): table for table in tables for line in table.lines}
+    table_positions: dict[int, float] = {}
+    remaining_lines: list[Line] = []
+    for line in line_list:
+        table = table_of_line.get(id(line))
+        if table is None:
+            remaining_lines.append(line)
+        else:
+            table_positions.setdefault(id(table), len(remaining_lines) - 0.5)
+    line_list = remaining_lines
+    default_font_size = dominant_document_font_size(line_list)
+    document_median_weight = document_median_avg_weight(line_list)
+    body_lefts_by_page = build_body_lefts_by_page(line_list, default_font_size)
     source_positions = {id(line): index for index, line in enumerate(line_list)}
     body_lines, notes = extract_footnotes(line_list, default_font_size)
     heading_lines = find_typographic_heading_lines(body_lines)
@@ -508,13 +620,16 @@ def lines_to_markdown_blocks(
     page_layouts = build_page_layouts(body_lines)
     list_items = find_list_items(body_lines, heading_lines)
 
-    group_list = merge_continued_groups(
-        segment_lines(body_lines, heading_lines, list_items.item_of_line),
-        page_layouts,
-        default_font_size,
-        body_lefts_by_page,
-        heading_lines,
-        list_items.item_of_line,
+    group_list = split_groups_at_tables(
+        merge_continued_groups(
+            segment_lines(body_lines, heading_lines, list_items.item_of_line),
+            page_layouts,
+            default_font_size,
+            body_lefts_by_page,
+            heading_lines,
+            list_items.item_of_line,
+        ),
+        tables,
     )
 
     for current_lines in group_list:
@@ -543,7 +658,7 @@ def lines_to_markdown_blocks(
         block_list, default_font_size, document_median_weight, typographic_heading_indices
     )
     dropped = format_front_matter(block_list, source_blocks)
-    positioned_blocks = [
+    positioned_blocks: list[tuple[float, Block]] = [
         (position, block_obj)
         for index, (position, block_obj) in enumerate(zip(block_positions, block_list, strict=True))
         if index not in dropped
@@ -559,6 +674,13 @@ def lines_to_markdown_blocks(
             ),
         )
         for note in notes
+    )
+    positioned_blocks.extend(
+        (
+            table_positions[id(table)],
+            build_table(table, page_number_map, word_counts, mixed_case_words, coordination_tokens),
+        )
+        for table in tables
     )
     positioned_blocks.sort(key=lambda item: item[0])
     return place_footnotes([block for _, block in positioned_blocks], notes_title)
