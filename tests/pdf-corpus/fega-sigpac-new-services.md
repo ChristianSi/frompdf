@@ -251,8 +251,8 @@ integrable en multitud de desarrollos informáticos de empresas u otros usuarios
 
 **EJEMPLO:** https://sigpac-hubcloud.es/codigossigpac/cod_aprovechamiento.json
 
-> ***Ejemplo de Respuesta a la consulta de listado de códigos de tipo de
-> aprovechamiento***
+***Ejemplo de Respuesta a la consulta de listado de códigos de tipo de
+aprovechamiento***
 
 ## 6. Servicio de Salidas Gráficas de SIGPAC
 

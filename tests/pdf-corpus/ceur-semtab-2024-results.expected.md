@@ -191,11 +191,11 @@ excluded from the evaluation.
 Using the correctness score ������������, the approximated Precision (AP), Recall (AR), and F1-score (AF1)
 for CTA were calculated as follows:
 
-> ∑︀������������(��)
-> |System Annotations|
->
-> ∑︀������������(��)
-> |Target Annotations|
+∑︀������������(��)
+|System Annotations|
+
+∑︀������������(��)
+|Target Annotations|
 
 2 × ���� × ����
 ���� + ���� (3)
