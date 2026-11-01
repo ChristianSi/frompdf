@@ -175,6 +175,9 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
   sharing its top, now also count as one line.
 - Indented text above a document's title on the same page, such as a
   letterhead, is no longer rendered as a block quote, but as paragraphs.
+- Indented lines centered on each other, with varying left and right edges,
+  are no longer rendered as a block quote, as they rather form a caption,
+  title, or formula. Right-aligned epigraphs remain quoted.
 - A gap about as tall as a blank line now starts a new paragraph even after a
   full line without final punctuation. This separates the parts of a
   small-print letterhead, or a heading from a long source note above it.

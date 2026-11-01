@@ -36,7 +36,7 @@ from frompdf.models import (
     TextFragment,
 )
 from frompdf.scripts import AnnotatedText, collapse_annotated_whitespace, join_annotated_texts
-from frompdf.segmentation import segment_lines
+from frompdf.segmentation import same_physical_line, segment_lines
 from frompdf.tables import TableLayout
 from frompdf.unhyphenation import (
     document_coordination_tokens,
@@ -205,13 +205,45 @@ def is_indented_line(line_obj: Line, body_lefts: list[float], threshold: float) 
     return line_obj.x1 - max(preceding_body_lefts) >= threshold
 
 
+def is_centered_block(line_list: list[Line], threshold: float) -> bool:
+    """Return whether lines are centered on each other, with varying left and right edges.
+
+    Pieces of a visual line that pdftext splits count as one line. Lines that
+    share a left or right edge, as in justified, ragged, or right-aligned text,
+    are not centered.
+    """
+    extents: list[list[float]] = []
+    for index, line_obj in enumerate(line_list):
+        if line_obj.x1 is None or line_obj.x2 is None:
+            return False
+        if index and same_physical_line(line_list[index - 1], line_obj):
+            extents[-1][1] = line_obj.x2
+        else:
+            extents.append([line_obj.x1, line_obj.x2])
+    if len(extents) < 2:
+        return False
+
+    def spread(values: list[float]) -> float:
+        return max(values) - min(values)
+
+    return (
+        spread([left for left, _ in extents]) >= threshold
+        and spread([right for _, right in extents]) >= threshold
+        and spread([(left + right) / 2 for left, right in extents]) < threshold
+    )
+
+
 def is_indented_blockquote_block(
     line_list: list[Line],
     body_lefts_by_page: dict[int, list[float]],
     default_font_size: float | None,
     allow_single_line: bool = False,
 ) -> bool:
-    """Return whether a block is consistently inset from its page or column margin."""
+    """Return whether a block is consistently inset from its page or column margin.
+
+    Centered lines with varying left edges are not, as they rather form a
+    caption or title.
+    """
     if len(line_list) < 2 and not allow_single_line:
         return False
 
@@ -223,7 +255,7 @@ def is_indented_blockquote_block(
         if not body_lefts or not is_indented_line(line_obj, body_lefts, threshold):
             return False
 
-    return True
+    return not is_centered_block(line_list, threshold)
 
 
 def is_blockquote_block(

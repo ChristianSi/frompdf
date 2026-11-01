@@ -23,7 +23,7 @@ def paragraph(text: str, font_size: float, avg_weight: float | None = None) -> P
     )
 
 
-def positioned_line(text: str, x1: float) -> Line:
+def positioned_line(text: str, x1: float, x2: float = 200.0, y1: float = 10.0) -> Line:
     return Line(
         text=text,
         page_no=1,
@@ -31,9 +31,9 @@ def positioned_line(text: str, x1: float) -> Line:
         line_no_on_page=1,
         font_size=8.5,
         x1=x1,
-        y1=10.0,
-        x2=200.0,
-        y2=18.5,
+        y1=y1,
+        x2=x2,
+        y2=y1 + 8.5,
         rel_x=None,
         rel_y=None,
         avg_weight=400.0,
@@ -64,6 +64,36 @@ class BlockQuoteDetectionTests(unittest.TestCase):
                 body_lefts_by_page={1: [42.5]},
             )
         )
+
+    def test_centered_caption_is_not_quoted(self) -> None:
+        caption = [
+            positioned_line('Example of a response to a query listing', 60.0, 180.0),
+            positioned_line('codes', 108.0, 131.0, y1=20.0),
+        ]
+
+        self.assertFalse(
+            is_blockquote_block(caption, default_font_size=10.5, body_lefts_by_page={1: [42.5]})
+        )
+
+    def test_right_aligned_and_indented_quotes_remain_quoted(self) -> None:
+        cases = {
+            'right-aligned epigraph': [
+                positioned_line('All that is solid melts into air', 120.0),
+                positioned_line('Karl Marx and Friedrich Engels', 90.0, y1=20.0),
+            ],
+            'first-line indent with ragged ending': [
+                positioned_line('Quoted text starts with an indent', 70.0),
+                positioned_line('and ends early.', 60.0, 140.0, y1=20.0),
+            ],
+        }
+
+        for name, quote in cases.items():
+            with self.subTest(name):
+                self.assertTrue(
+                    is_blockquote_block(
+                        quote, default_font_size=10.5, body_lefts_by_page={1: [42.5]}
+                    )
+                )
 
 
 class HeadingDetectionTests(unittest.TestCase):
