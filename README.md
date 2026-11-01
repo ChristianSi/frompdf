@@ -57,7 +57,8 @@ frompdf currently detects and serializes:
   as bold paragraphs instead of headings
 - block quotes, based on indentation
 - bulleted and numbered lists, rendered as compact Markdown lists
-- tables drawn with column rules, rendered as pipe tables
+- tables drawn with rules, rendered as pipe tables, including tables
+  continuing across pages
 - repeated headers and footers, which are removed from the Markdown output
 - visible page numbers found in removed headers or footers
 - optional page-boundary markers embedded in the Markdown output
@@ -156,7 +157,8 @@ quote continuing on the next page contains the marker where that page's text
 starts; a word split across the boundary stays on its starting page. Collected
 notes retain their source pages, so markers can move backward in page order
 and can occur inside a continued note. In tables, a marker starts the first
-header cell, with its pipe escaped as in `[[PAGE:7\|VISIBLE:9]]`.
+header cell, or the text of a cell where a table continues on the next page,
+with its pipe escaped as in `[[PAGE:7\|VISIBLE:9]]`.
 
 ### Footnotes
 
@@ -240,18 +242,29 @@ between vertical rules, and rows between horizontal ones. Where a table has
 no rules between its body rows, a header ruled off below forms one row, and
 each line with text in the first column starts another.
 
+Tables without vertical rules need a rule above and below their header, of
+the same width, and their columns need clear gaps between them, separating
+the header labels. Such a table ends at another rule of that width, or
+continues on the next page.
+
+A table at the bottom of a page continues at the top of the next one when its
+header is repeated there or its columns line up. The repeated header and a
+caption such as "Table 1 (continued)" are dropped. A first row without text in
+the first column continues the row before it, if no rule closed the table at
+the bottom of the page or its text continues in lower case; otherwise it stays
+a row of its own.
+
 Pipe tables have a single header row and no cells spanning rows or columns.
 Header rows below a header cell spanning several columns are combined with it,
 joining its label with each label below. Other cells spanning rows or columns
 show their text in their first row and column, leaving the others empty. Rules
 dividing a cell's text without lining up with rules in other columns separate
-its parts by `<br>` tags. Header cells drop bold, which renderers apply to
-them anyway. Pipes in cell text, including those of page markers, are escaped
-as `\|`. Columns are aligned with spaces unless that makes rows longer than
-120 characters.
+its parts by `<br>` tags, as do paragraphs set with hanging indents within a
+cell. Header cells drop bold, which renderers apply to them anyway. Pipes in
+cell text, including those of page markers, are escaped as `\|`. Columns are
+aligned with spaces unless that makes rows longer than 120 characters.
 
-Tables without column rules, or continuing across pages, are not recognized
-yet and remain ordinary text.
+Tables without any rules are not recognized yet and remain ordinary text.
 
 ### Superscripts and subscripts
 
@@ -298,7 +311,7 @@ structure has to be inferred. Current limitations include:
   emphasized text
 - block quote detection is conservative and currently relies on indentation
 - nested lists, captions, and code blocks are not modeled as dedicated block
-  types yet, and tables only when drawn with column rules
+  types yet, and tables only when drawn with rules
 - multi-column and heavily designed PDFs can still produce awkward reading
   order
 - header and footer removal depends on repetition and page-position heuristics

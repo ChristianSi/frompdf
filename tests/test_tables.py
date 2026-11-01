@@ -11,13 +11,15 @@ from frompdf.models import (
     Word,
 )
 from frompdf.rules import Rule
-from frompdf.tables import TableLayout, find_tables
+from frompdf.tables import TableFrame, TableLayout, find_tables, split_hanging_paragraphs
 
 # Synthetic text is set in 10-point type, 5 points per character.
 CHAR_WIDTH = 5.0
 
 
-def table_line(pieces: list[tuple[float, str]], y: float, line_no: int, bold: bool = False) -> Line:
+def table_line(
+    pieces: list[tuple[float, str]], y: float, line_no: int, bold: bool = False, page: int = 1
+) -> Line:
     """Build a line of pieces of text starting at given x positions, such as table cells."""
     texts: list[str] = []
     words: list[Word] = []
@@ -34,7 +36,7 @@ def table_line(pieces: list[tuple[float, str]], y: float, line_no: int, bold: bo
     text = ' '.join(texts)
     return Line(
         text=text,
-        page_no=1,
+        page_no=page,
         block_no=1,
         line_no_on_page=line_no,
         font_size=10.0,
@@ -258,6 +260,137 @@ class NegativeTests(unittest.TestCase):
         self.assertEqual(find_tables(lines, {1: grid_rules([100, 200, 300], [100, 120, 140])}), [])
 
 
+def header_rules(top: float, header_bottom: float, bottom: float | None) -> list[Rule]:
+    """Return horizontal rules above and below a header, and optionally below the table."""
+    positions = [top, header_bottom] + ([] if bottom is None else [bottom])
+    return [Rule(True, position, 100, 400) for position in positions]
+
+
+def year_rows(page: int, y: float, years: list[str], first_line_no: int = 10) -> list[Line]:
+    """Return table rows of a year and two cells of text, ten points apart."""
+    return [
+        table_line(
+            [(105, year), (155, f'Text for {year}'), (305, 'More text')],
+            y + 10 * index,
+            first_line_no + index,
+            page=page,
+        )
+        for index, year in enumerate(years)
+    ]
+
+
+HEADER = [(105, 'Date'), (155, 'Definition'), (305, 'Origin')]
+
+
+class TablesWithoutColumnRulesTests(unittest.TestCase):
+    def test_gutters_below_a_ruled_header_separate_columns(self) -> None:
+        lines = [
+            table_line(HEADER, 104, 1),
+            *year_rows(1, 124, ['2004', '2005']),
+            table_line([(163, 'continued'), (313, 'and more')], 144, 20),
+        ]
+
+        table = find_tables(lines, {1: header_rules(100, 118, 160)})[0]
+
+        self.assertEqual((table.row_count, table.column_count), (3, 3))
+        self.assertEqual(cell_texts(table)[(2, 1)], ['Text for 2005 continued'])
+        self.assertEqual(cell_texts(table)[(2, 2)], ['More text and more'])
+
+    def test_header_label_crossing_a_gutter_is_no_table(self) -> None:
+        lines = [
+            table_line([(105, 'A title running across the columns')], 104, 1),
+            *year_rows(1, 124, ['2004', '2005']),
+        ]
+
+        self.assertEqual(find_tables(lines, {1: header_rules(100, 118, 150)}), [])
+
+    def test_column_without_header_label_is_no_table(self) -> None:
+        lines = [table_line([(105, 'Date'), (155, 'Definition')], 104, 1)]
+        lines += year_rows(1, 124, ['2004', '2005'])
+
+        self.assertEqual(find_tables(lines, {1: header_rules(100, 118, 150)}), [])
+
+    def test_unclosed_table_without_continuation_is_dropped(self) -> None:
+        lines = [table_line(HEADER, 104, 1), *year_rows(1, 124, ['2004', '2005'])]
+
+        self.assertEqual(find_tables(lines, {1: header_rules(100, 118, None)}), [])
+
+    def test_hanging_indents_start_paragraphs_within_cells(self) -> None:
+        def line(x: float, text: str, y: float) -> Line:
+            return table_line([(x, text)], y, 1)
+
+        part = [
+            line(250, 'First', 0),
+            line(258, 'more', 10),
+            line(250, 'Second', 20),
+            line(258, 'and', 30),
+            line(258, 'more', 40),
+        ]
+        centered = [line(270, 'Service', 0), line(285, 'of', 10), line(262, 'queries', 20)]
+
+        self.assertEqual(split_hanging_paragraphs(part), [part[:2], part[2:]])
+        self.assertEqual(split_hanging_paragraphs(centered), [centered])
+
+
+class ContinuedTableTests(unittest.TestCase):
+    def test_table_continues_with_repeated_header_and_continued_row(self) -> None:
+        first_page = [table_line(HEADER, 104, 1), *year_rows(1, 124, ['2004', '2005'])]
+        second_page = [
+            table_line([(105, 'Table 1 (continued)')], 80, 1, page=2),
+            table_line(HEADER, 104, 2, page=2),
+            table_line([(163, 'and continued'), (313, 'further')], 124, 3, page=2),
+            *year_rows(2, 134, ['2006']),
+        ]
+        rules = {1: header_rules(100, 118, None), 2: header_rules(100, 118, 150)}
+
+        tables = find_tables(first_page + second_page, rules)
+
+        self.assertEqual(len(tables), 1)
+        table = tables[0]
+        self.assertEqual([frame.page_no for frame in table.frames], [1, 2])
+        self.assertEqual((table.row_count, table.header_rows), (4, 1))
+        self.assertEqual(cell_texts(table)[(2, 1)], ['Text for 2005 and continued'])
+        self.assertEqual(cell_texts(table)[(3, 0)], ['2006'])
+        self.assertIn(second_page[0], table.lines)
+
+    def test_closed_table_continues_with_a_new_row_unless_text_continues(self) -> None:
+        def table(first_row: str) -> TableLayout:
+            first_page = [table_line(HEADER, 104, 1), *year_rows(1, 124, ['2004', '2005'])]
+            second_page = [
+                table_line(HEADER, 104, 2, page=2),
+                table_line([(155, first_row)], 124, 3, page=2),
+                *year_rows(2, 144, ['2006']),
+            ]
+            rules = {
+                1: grid_rules([100, 150, 300, 400], [100, 118, 134, 145]),
+                2: grid_rules([100, 150, 300, 400], [100, 118, 135, 155]),
+            }
+            return find_tables(first_page + second_page, rules)[0]
+
+        new_row = table('- New item')
+        continued = table('continued text')
+
+        self.assertEqual(new_row.row_count, 5)
+        self.assertEqual(cell_texts(new_row)[(3, 1)], ['- New item'])
+        self.assertEqual(continued.row_count, 4)
+        self.assertEqual(cell_texts(continued)[(2, 1)], ['Text for 2005 continued text'])
+
+    def test_text_after_a_table_keeps_the_next_page_table_apart(self) -> None:
+        first_page = [
+            table_line(HEADER, 104, 1),
+            *year_rows(1, 124, ['2004', '2005']),
+            table_line([(105, 'A paragraph after the table.')], 200, 30),
+        ]
+        second_page = [table_line(HEADER, 104, 2, page=2), *year_rows(2, 124, ['2006', '2007'])]
+        rules = {1: header_rules(100, 118, 150), 2: header_rules(100, 118, 150)}
+
+        tables = find_tables(first_page + second_page, rules)
+
+        self.assertEqual(
+            [[frame.page_no for frame in table.frames] for table in tables], [[1], [2]]
+        )
+
+
 class TableBlockTests(unittest.TestCase):
     def test_table_lines_form_a_table_block_between_paragraphs(self) -> None:
         def paragraph_line(text: str, y: float, line_no: int) -> Line:
@@ -295,9 +428,7 @@ class TableBlockTests(unittest.TestCase):
 
     def test_text_is_split_only_where_a_table_lies_between_its_lines(self) -> None:
         table = TableLayout(
-            1,
-            top=100.0,
-            bottom=150.0,
+            frames=[TableFrame(1, 100.0, 150.0)],
             lines=[],
             row_count=2,
             column_count=2,
@@ -315,6 +446,32 @@ class TableBlockTests(unittest.TestCase):
                 [[above, below], [bottom_of_column, top_of_next_column]], [table]
             ),
             [[above], [below], [bottom_of_column, top_of_next_column]],
+        )
+
+    def test_table_continued_on_the_next_page_forms_one_block(self) -> None:
+        lines = [
+            table_line(HEADER, 104, 1),
+            *year_rows(1, 124, ['2004', '2005']),
+            table_line(HEADER, 104, 1, page=2),
+            table_line([(163, 'and so'), (313, 'on')], 124, 2, page=2),
+            *year_rows(2, 134, ['2006']),
+        ]
+        pages = {1: PageNumber(1, None), 2: PageNumber(2, None)}
+        tables = find_tables(
+            lines, {1: header_rules(100, 118, None), 2: header_rules(100, 118, 150)}
+        )
+
+        blocks = lines_to_markdown_blocks(lines, pages, tables=tables)
+
+        self.assertEqual(len(blocks), 1)
+        table = blocks[0]
+        assert isinstance(table, Table)
+        self.assertEqual((table.start_page.raw, table.end_page.raw), (1, 2))
+        cell = next(cell for cell in table.cells if (cell.row, cell.column) == (2, 1))
+        self.assertEqual(cell.text, 'Text for 2005 and so')
+        self.assertEqual(
+            [(fragment.text, fragment.page.raw, fragment.separator) for fragment in cell.fragments],
+            [('Text for 2005', 1, ''), ('and so', 2, ' ')],
         )
 
 

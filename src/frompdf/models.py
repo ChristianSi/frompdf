@@ -135,7 +135,9 @@ class Footnote(Block):
 class TableCell:
     """A table cell, possibly spanning rows or columns.
 
-    HARD_LINE_BREAK separates parts of the text that rules set apart in the cell.
+    HARD_LINE_BREAK separates parts of the text that rules or paragraph
+    indents set apart in the cell. Cells continuing on another page retain
+    page-aware fragments of their text, which contain no line breaks.
     """
 
     row: int
@@ -144,6 +146,7 @@ class TableCell:
     column_span: int = 1
     text: str = ''
     ranges: tuple[InlineRange, ...] = ()
+    fragments: list[TextFragment] = field(default_factory=list)
 
 
 @dataclass

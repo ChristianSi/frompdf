@@ -202,8 +202,10 @@ The implementation is split into focused modules under `src/frompdf`:
   and typography to find Markdown block boundaries.
 - `scripts.py` slices and joins annotated plain text, preserving inline
   ranges through text repair, and renders `<sup>`/`<sub>` tags at serialization.
-- `tables.py` recognizes tables framed by connected rules, infers their rows,
-  columns, and spanning cells, and splits lines into the pieces of each cell.
+- `tables.py` recognizes tables framed by connected rules, or ruled off around
+  their header with columns separated by gutters, infers their rows, columns,
+  and spanning cells, splits lines into the pieces of each cell, and joins
+  tables continuing on the next page.
 - `unhyphenation.py` repairs words and unspaced dashes split across physical
   lines, using document-wide evidence where available.
 
@@ -234,7 +236,8 @@ Important concepts:
   table cells.
 - `Rule` in `rules.py` is a horizontal or vertical rule in `pdftext`
   coordinates. `TableLayout` in `tables.py` holds a recognized table's source
-  lines and its cells with the line pieces of their parts.
+  lines, its frame on each page, and its cells with the line pieces of their
+  parts, which may continue on the next page.
 - `extract_markdown` in `pipeline.py` returns a list of blocks.
 - `markdown_to_text` in `output.py` serializes blocks as Markdown.
 
@@ -269,7 +272,17 @@ The current pipeline is roughly:
    boundaries; elsewhere they separate parts of a cell's text. Without rules
    between body rows, lines starting in the first column start rows. Cells
    span rows or columns where rules are missing. Below a spanning header cell,
-   rows of bold text extend the header. Tables are left out of all other
+   rows of bold text extend the header. Without vertical rules, a top rule
+   and a header rule of the same width frame the header, and the gutters of
+   the body just left of header labels separate columns. Such a table ends at
+   a third rule or continues on the next page. Lines starting left of the
+   other lines of a cell part, as with hanging indents, start parts of their
+   own. A table ending its page joins a table starting the next page, after
+   at most a caption marked as continued, if its header repeats or its
+   columns line up; the repeated header and the caption are dropped. A first
+   row without text in the first column joins the last row if the table was
+   not closed by a rule or the row's text starts in lower case. Unclosed
+   tables that do not continue are dropped. Tables are left out of all other
    blocks, which are split where a table lies between their lines on a page.
 9. Detect and extract numbered footnote regions using typography and geometry,
    assembling supported paragraph and adjacent-page continuations.
@@ -339,4 +352,5 @@ The current pipeline is roughly:
     text. Header rows below a cell spanning columns are combined with it;
     other spanning cells fill their first row and column. Header cells drop
     bold. Pipes are escaped, parts of a cell's text are separated by `<br>`,
-    and page markers start the first header cell.
+    and page markers start the first header cell and the text of cells
+    continuing on another page.

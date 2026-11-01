@@ -278,6 +278,36 @@ class PipeTableTests(unittest.TestCase):
             '| c                          | d   |\n',
         )
 
+    def test_page_markers_precede_cell_text_continuing_on_another_page(self) -> None:
+        first, second = page_number(1), page_number(2)
+        cells = [
+            TableCell(0, 0, text='Year', fragments=[TextFragment('Year', first)]),
+            TableCell(0, 1, text='Text', fragments=[TextFragment('Text', first)]),
+            TableCell(1, 0, text='2007', fragments=[TextFragment('2007', first)]),
+            TableCell(
+                1,
+                1,
+                text='columnists at (that) time.',
+                fragments=[
+                    TextFragment('columnists at', first),
+                    TextFragment('(that) time.', second, ' '),
+                ],
+            ),
+            TableCell(2, 0),
+            TableCell(2, 1, text='- New', fragments=[TextFragment('- New', second)]),
+        ]
+        table = Table('', first, second, row_count=3, column_count=2, header_rows=1, cells=cells)
+
+        self.assertEqual(
+            render_blocks([table, Paragraph('After', second, second)], page_markers=True),
+            '| [[PAGE:1]]Year | Text                                  |\n'
+            '| -------------- | ------------------------------------- |\n'
+            '| 2007           | columnists at [[PAGE:2]]\\(that) time. |\n'
+            '|                | - New                                 |\n'
+            '\n'
+            'After\n',
+        )
+
     def test_wide_tables_are_not_padded(self) -> None:
         page = page_number(1)
         long_text = 'word ' * 30

@@ -29,6 +29,7 @@ from frompdf.models import (
     Paragraph,
     Table,
     TableCell,
+    TextFragment,
 )
 from frompdf.scripts import AnnotatedText, collapse_annotated_whitespace, join_annotated_texts
 from frompdf.segmentation import segment_lines
@@ -514,16 +515,26 @@ def split_groups_at_tables(
         split.append([group[0]])
         for previous, line in zip(group, group[1:], strict=False):
             if any(
-                table.page_no == line.page_no == previous.page_no
+                frame.page_no == line.page_no == previous.page_no
                 and previous.y2 is not None
                 and line.y1 is not None
-                and previous.y2 <= table.top
-                and table.bottom <= line.y1
+                and previous.y2 <= frame.top
+                and frame.bottom <= line.y1
                 for table in tables
+                for frame in table.frames
             ):
                 split.append([])
             split[-1].append(line)
     return split
+
+
+def single_line_text(value: AnnotatedText) -> AnnotatedText:
+    """Join the lines of text with spaces, or nothing after hard line breaks."""
+    lines = [value.slice(match.start(), match.end()) for match in re.finditer('[^\n]+', value.text)]
+    joined = join_annotated_texts(
+        line + AnnotatedText('' if line.text.endswith(HARD_LINE_BREAK) else ' ') for line in lines
+    )
+    return joined.slice(0, len(joined.text.rstrip(' ')))
 
 
 def build_table(
@@ -539,26 +550,24 @@ def build_table(
     """
     cells: list[TableCell] = []
     for cell in layout.cells:
-        annotated = AnnotatedText('')
+        fragments: list[TextFragment] = []
         if cell.parts:
-            fragments = build_page_fragments(
+            for fragment in build_page_fragments(
                 cell.lines,
                 page_number_map,
                 word_counts,
                 mixed_case_words,
                 coordination_tokens,
                 {id(part[-1]) for part in cell.parts[:-1]},
-            )
-            pieces = join_fragments(fragments)
-            lines = [
-                pieces.slice(match.start(), match.end())
-                for match in re.finditer('[^\n]+', pieces.text)
-            ]
-            annotated = join_annotated_texts(
-                piece + AnnotatedText('' if piece.text.endswith(HARD_LINE_BREAK) else ' ')
-                for piece in lines
-            )
-            annotated = annotated.slice(0, len(annotated.text.rstrip(' ')))
+            ):
+                text = single_line_text(AnnotatedText(fragment.text, fragment.ranges))
+                separator = (
+                    '' if not fragments or fragments[-1].text.endswith(HARD_LINE_BREAK) else ' '
+                )
+                fragments.append(
+                    TextFragment(text.text, fragment.page, separator, ranges=text.ranges)
+                )
+        annotated = join_fragments(fragments)
         cells.append(
             TableCell(
                 cell.row,
@@ -567,17 +576,17 @@ def build_table(
                 cell.column_span,
                 annotated.text,
                 annotated.ranges,
+                fragments,
             )
         )
-    page = page_number_map[layout.page_no]
     return Table(
         text='\n'.join(cell.text for cell in cells if cell.text),
-        start_page=page,
-        end_page=page,
+        start_page=page_number_map[layout.frames[0].page_no],
+        end_page=page_number_map[layout.frames[-1].page_no],
         row_count=layout.row_count,
         column_count=layout.column_count,
         header_rows=layout.header_rows,
-        cells=cells,
+        cells=sorted(cells, key=lambda cell: (cell.row, cell.column)),
     )
 
 

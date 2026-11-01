@@ -140,18 +140,37 @@ def render_fragments(
 MAX_PADDED_TABLE_WIDTH = 120
 
 
-def render_cell(cell: TableCell, header: bool, marker: str = '') -> str:
-    """Render the text of a table cell for a pipe table, with an optional leading page marker.
+def cell_page_markers(
+    cell: TableCell, previous_page: PageNumber
+) -> tuple[dict[int, str], PageNumber]:
+    """Return page markers where a cell's text starts on a new page, and its last page."""
+    markers: dict[int, str] = {}
+    offset = 0
+    for fragment in cell.fragments:
+        offset += len(fragment.separator)
+        if fragment.page.raw != previous_page.raw:
+            markers[offset] = format_page_marker(fragment.page)
+        offset += len(fragment.text)
+        previous_page = fragment.page
+    return markers, previous_page
+
+
+def render_cell(cell: TableCell, header: bool, markers: dict[int, str] | None = None) -> str:
+    """Render the text of a table cell for a pipe table, inserting page markers at given offsets.
 
     Header cells drop bold, which renderers apply to them anyway, but keep
     italics, as of variables. Parts of the text set apart by rules are
     separated by HTML line breaks, as cells cannot contain line breaks.
     """
-    markers = frozenset({0}) if marker else frozenset()
+    markers = markers or {}
+    positions = frozenset(markers)
     ranges = tuple(run for run in cell.ranges if not header or run.kind != 'bold')
-    resolved = resolve_emphasis(AnnotatedText(cell.text, ranges), markers)
-    escaped, insertions = escape_markdown(resolved, block_line_start=False, markers=markers)
-    text = render_inline(escaped, {shift_index(insertions, 0): marker} if marker else None)
+    resolved = resolve_emphasis(AnnotatedText(cell.text, ranges), positions)
+    escaped, insertions = escape_markdown(resolved, block_line_start=False, markers=positions)
+    text = render_inline(
+        escaped,
+        {shift_index(insertions, position): marker for position, marker in markers.items()},
+    )
     # Pipes would separate cells, even within inline markup and page markers.
     return text.replace(HARD_LINE_BREAK, '<br>').replace('|', '\\|')
 
@@ -167,13 +186,15 @@ def spans_split_below(
     )
 
 
-def table_rows(table: Table, marker: str = '') -> list[list[str]]:
+def table_rows(table: Table, marker: str = '', page_markers: bool = False) -> list[list[str]]:
     """Return the rendered cells of a table as a single header row and body rows.
 
     Header rows are combined into one, joining the labels of each column. The
     label of a header cell spanning columns divided further below applies to
     each of them. Otherwise, a cell spanning rows or columns is rendered in its
-    first row and column only. A page marker starts the first header cell.
+    first row and column only. The given page marker starts the first header
+    cell. With page_markers, further markers precede body text starting on
+    another page, in the order of rows and columns.
     """
     covering = {
         (row, column): cell
@@ -190,21 +211,29 @@ def table_rows(table: Table, marker: str = '') -> list[list[str]]:
                 cell.column != column and not spans_split_below(table, cell, covering)
             ):
                 continue
-            label = render_cell(cell, header=True, marker='' if labels or column else marker)
+            label = render_cell(
+                cell,
+                header=True,
+                markers={0: marker} if marker and not labels and not column else None,
+            )
             if label:
                 labels.append(label)
         if not labels and not column and marker:
             labels.append(marker)
         header.append(' '.join(labels))
-    body = [
-        [
-            render_cell(cell, header=False)
-            if (cell := covering[(row, column)]).row == row and cell.column == column
-            else ''
-            for column in range(table.column_count)
-        ]
-        for row in range(table.header_rows, table.row_count)
-    ]
+    previous_page = table.start_page
+    body: list[list[str]] = []
+    for row in range(table.header_rows, table.row_count):
+        body.append([])
+        for column in range(table.column_count):
+            cell = covering[(row, column)]
+            if cell.row != row or cell.column != column:
+                body[-1].append('')
+                continue
+            markers, previous_page = cell_page_markers(cell, previous_page)
+            body[-1].append(
+                render_cell(cell, header=False, markers=markers if page_markers else None)
+            )
     return [header, *body]
 
 
@@ -216,9 +245,12 @@ def display_width(text: str) -> int:
     )
 
 
-def render_table(table: Table, marker: str = '') -> str:
-    """Render a table as a pipe table, starting with an optional page marker."""
-    rows = table_rows(table, marker)
+def render_table(table: Table, marker: str = '', page_markers: bool = False) -> str:
+    """Render a table as a pipe table, starting with an optional page marker.
+
+    With page_markers, markers also precede text continuing on other pages.
+    """
+    rows = table_rows(table, marker, page_markers)
     widths = [
         max(3, *(display_width(row[column]) for row in rows))
         for column in range(table.column_count)
@@ -291,6 +323,7 @@ def markdown_to_text(
                 render_table(
                     block_obj,
                     format_page_marker(block_obj.start_page) if page_markers and new_page else '',
+                    page_markers,
                 )
             )
             previous_page = block_obj.end_page
