@@ -226,6 +226,30 @@ class ParagraphSegmentationTests(unittest.TestCase):
 
         self.assertEqual(len(group_texts(lines)), 2)
 
+    def test_splits_on_blank_line_gap_after_full_open_line(self) -> None:
+        lines = [
+            line('ordinary first line', 1),
+            line('ordinary second line', 2),
+            line('ordinary third line', 3),
+            line('full line without an ending', 4),
+            line('Next paragraph after a blank line', 5, y1=72.0),
+            line('continues normally', 6, y1=84.0),
+        ]
+
+        self.assertEqual(len(group_texts(lines)), 2)
+
+    def test_keeps_smaller_gap_after_full_open_line(self) -> None:
+        lines = [
+            line('ordinary first line', 1),
+            line('ordinary second line', 2),
+            line('ordinary third line', 3),
+            line('full line without an ending', 4),
+            line('continuation after some spacing', 5, y1=67.0),
+            line('continues normally', 6, y1=79.0),
+        ]
+
+        self.assertEqual(len(group_texts(lines)), 1)
+
     def test_splits_heading_from_body_inside_pdftext_block(self) -> None:
         lines = [
             line('previous body line', 1, font_size=9.0),
@@ -352,6 +376,11 @@ class ParagraphSegmentationTests(unittest.TestCase):
         self.assertEqual(len(group_texts(lines)), 2)
 
 
+def inset_line(text: str, block_no: int, y1: float, x2: float = 160.0) -> Line:
+    """Build a small-print line inset from the body column, as in a letterhead."""
+    return line(text, round(y1), block_no=block_no, font_size=8.0, x1=80.0, x2=x2, y1=y1)
+
+
 def body_lines(first_line_no: int, count: int = 6, *, block_no: int = 9) -> list[Line]:
     """Build an ordinary body paragraph establishing the page's rhythm and size."""
     return [
@@ -386,6 +415,43 @@ def display_line(
         avg_weight=700.0,
         font_name=font_name,
     )
+
+
+class InsetPassageSegmentationTests(unittest.TestCase):
+    def test_joins_evenly_spaced_inset_lines_across_pdftext_blocks(self) -> None:
+        lines = [
+            *body_lines(1, block_no=1),
+            inset_line('MINISTERIO', 2, 100.0, x2=120.0),
+            inset_line('DE AGRICULTURA, PESCA', 3, 109.5),
+            inset_line('Y ALIMENTACION', 3, 119.0),
+        ]
+
+        self.assertEqual(
+            group_texts(lines)[1:],
+            [['MINISTERIO', 'DE AGRICULTURA, PESCA', 'Y ALIMENTACION']],
+        )
+
+    def test_keeps_inset_lines_apart_without_evenly_spaced_followers(self) -> None:
+        cases = {
+            'last line of its block': [
+                inset_line('Leibniz International Proceedings', 2, 100.0, x2=180.0),
+                inset_line('Schloss Dagstuhl Publishing', 3, 109.5, x2=150.0),
+            ],
+            'completed sentence': [
+                inset_line('Leibniz International Proceedings.', 2, 100.0, x2=180.0),
+                inset_line('Schloss Dagstuhl Publishing', 3, 109.5, x2=150.0),
+                inset_line('Wadern, Germany', 3, 119.0, x2=130.0),
+            ],
+            'wider spacing at the block edge': [
+                inset_line('Leibniz International Proceedings', 2, 100.0, x2=180.0),
+                inset_line('Schloss Dagstuhl Publishing', 3, 111.0, x2=150.0),
+                inset_line('Wadern, Germany', 3, 119.0, x2=130.0),
+            ],
+        }
+
+        for name, inset_lines in cases.items():
+            with self.subTest(name):
+                self.assertEqual(len(group_texts([*body_lines(1, block_no=1), *inset_lines])), 3)
 
 
 class DisplayLineSegmentationTests(unittest.TestCase):

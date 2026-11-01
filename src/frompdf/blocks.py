@@ -14,7 +14,11 @@ from frompdf.continuations import (
     join_fragments,
 )
 from frompdf.footnotes import build_footnote, extract_footnotes, place_footnotes
-from frompdf.front_matter import format_front_matter, has_alphanumeric
+from frompdf.front_matter import (
+    format_front_matter,
+    has_alphanumeric,
+    unquote_blocks_above_title,
+)
 from frompdf.heading_candidates import find_typographic_heading_lines
 from frompdf.line_breaks import hard_line_break_ids
 from frompdf.lists import ListMarker, find_list_items
@@ -667,6 +671,7 @@ def lines_to_markdown_blocks(
         block_list, default_font_size, document_median_weight, typographic_heading_indices
     )
     dropped = format_front_matter(block_list, source_blocks)
+    unquote_blocks_above_title(block_list)
     positioned_blocks: list[tuple[float, Block]] = [
         (position, block_obj)
         for index, (position, block_obj) in enumerate(zip(block_positions, block_list, strict=True))

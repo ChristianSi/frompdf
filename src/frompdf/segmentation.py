@@ -27,6 +27,12 @@ MIN_HANGING_CONTINUATION_RUNS = 1
 LARGE_ADVANCE_MIN_RATIO = 1.25
 LARGE_ADVANCE_EXTRA_EM = 0.35
 NORMAL_ADVANCE_TOLERANCE_EM = 0.25
+# An advance this many times the normal rhythm leaves a gap about as tall as a
+# blank line, which separates paragraphs however full the line above is.
+BLANK_LINE_ADVANCE_RATIO = 1.7
+# A pdftext block edge may add this much to the leading of the following lines
+# without counting as spacing, in multiples of the font size.
+UNIFORM_ADVANCE_TOLERANCE_EM = 0.1
 
 # Ignore small size changes caused by rounding or mixed inline typography.
 FONT_SIZE_BREAK_RATIO = 1.1
@@ -665,10 +671,25 @@ def begins_hanging_indent_paragraph(previous: Line, current: Line, context: Page
     return ratio is not None and normal is not None and 0 < ratio <= normal + 1.0
 
 
+def has_blank_line_advance(left: Line, right: Line, context: PageContext) -> bool:
+    """Return whether a pair is separated by a gap about as tall as a blank line."""
+    ratio = advance_ratio(left, right)
+    normal = context.normal_advance_ratio
+    return ratio is not None and normal is not None and ratio >= normal * BLANK_LINE_ADVANCE_RATIO
+
+
 def large_advance_supports_break(left: Line, right: Line, context: PageContext) -> bool:
-    """Return whether visible spacing follows a completed or unusually short line."""
+    """Return whether visible spacing separates two paragraphs.
+
+    A gap about as tall as a blank line does so on its own. A smaller one must
+    follow a completed or unusually short line. Shortness is measured against
+    the column of body text, so a blank line is the only evidence for smaller
+    print laid out in a narrower measure, as in a letterhead.
+    """
     if not has_large_advance(left, right, context):
         return False
+    if has_blank_line_advance(left, right, context):
+        return True
     column = column_for_line(left, context)
     if column is None:
         return False
@@ -753,6 +774,43 @@ def aligned_open_continuation(left: Line, right: Line, context: PageContext) -> 
     return both_inset and right_edges_match and not ends_sentence(left.text)
 
 
+def aligned_inset_continuation(
+    left: Line, right: Line, following: Line | None, context: PageContext
+) -> bool:
+    """Return whether a pdftext block edge splits an evenly spaced, left-aligned inset passage.
+
+    The lines on both sides of the edge must share the left edge and style of
+    the line following right, which pdftext keeps in right's block, and be no
+    farther apart than right and following are. This joins the first line of
+    a letterhead, such as "MINISTERIO" above "DE AGRICULTURA, PESCA", to the
+    lines below it.
+    """
+    if (
+        following is None
+        or following.page_no != right.page_no
+        or following.block_no != right.block_no
+        or left.x1 is None
+        or right.x1 is None
+        or ends_sentence(left.text)
+        or not compatible_style(right, following)
+    ):
+        return False
+    column = column_for_line(right, context)
+    if column is None:
+        return False
+    font_size = right.font_size or context.font_size
+    edge_advance = advance_ratio(left, right)
+    following_advance = advance_ratio(right, following)
+    return (
+        min(left.x1, right.x1) - column.left > font_size * MAX_FIRST_LINE_INDENT_EM
+        and near(left.x1, right.x1, font_size)
+        and near(following.x1, right.x1, font_size)
+        and edge_advance is not None
+        and following_advance is not None
+        and 0 < edge_advance <= following_advance + UNIFORM_ADVANCE_TOLERANCE_EM
+    )
+
+
 def visual_line_start(line_list: list[Line], index: int) -> Line:
     """Return the first piece of the visual line ending with the line at index.
 
@@ -782,11 +840,16 @@ def visual_line_start(line_list: list[Line], index: int) -> Line:
 
 
 def high_confidence_continuation(
-    left: Line, right: Line, context: PageContext, left_start: Line | None = None
+    left: Line,
+    right: Line,
+    context: PageContext,
+    left_start: Line | None = None,
+    following: Line | None = None,
 ) -> bool:
     """Return whether geometry safely overrides a spurious pdftext block edge.
 
-    left_start begins the visual line ending with left, if left is a later piece.
+    left_start begins the visual line ending with left, if left is a later
+    piece. following is the line after right, if any.
     """
     if (
         context.rhythm_sample_count < MIN_RHYTHM_SAMPLES
@@ -807,7 +870,12 @@ def high_confidence_continuation(
         left_edges_match and line_is_full(left, column, font_size) and not ends_sentence(left.text)
     )
     hyphenated_line = left_edges_match and ends_word_break_hyphen(left.text)
-    return open_full_line or hyphenated_line or aligned_open_continuation(left, right, context)
+    return (
+        open_full_line
+        or hyphenated_line
+        or aligned_open_continuation(left, right, context)
+        or aligned_inset_continuation(left, right, following, context)
+    )
 
 
 def continues_display_line(previous: Line, current: Line, context: PageContext) -> bool:
@@ -949,7 +1017,9 @@ def should_start_new_group(
             return True
         if changes_face_after_short_line(previous, current, context):
             return True
-    if pdftext_break and high_confidence_continuation(previous, current, context, previous_start):
+    if pdftext_break and high_confidence_continuation(
+        previous, current, context, previous_start, following
+    ):
         return False
     return pdftext_break
 

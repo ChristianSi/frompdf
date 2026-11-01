@@ -1,7 +1,20 @@
 import unittest
 
-from frompdf.front_matter import format_front_matter, is_chapter_label, is_section_like
-from frompdf.models import Block, Heading, InlineRange, PageNumber, Paragraph, StrongParagraph
+from frompdf.front_matter import (
+    format_front_matter,
+    is_chapter_label,
+    is_section_like,
+    unquote_blocks_above_title,
+)
+from frompdf.models import (
+    Block,
+    BlockQuote,
+    Heading,
+    InlineRange,
+    PageNumber,
+    Paragraph,
+    StrongParagraph,
+)
 
 PAGE_ONE = PageNumber(raw=1, visible=None)
 PAGE_TWO = PageNumber(raw=2, visible=None)
@@ -208,6 +221,30 @@ class FrontMatterFormattingTests(unittest.TestCase):
             describe(formatted(blocks))[2:5],
             ['H3 ARTICLE', 'H1 Article Title', '** Jane Doe, John Roe'],
         )
+
+
+class BlocksAboveTitleTests(unittest.TestCase):
+    def test_quotes_above_title_on_its_page_become_paragraphs(self) -> None:
+        blocks: list[Block] = [
+            BlockQuote('Cover epigraph', PAGE_ONE, PAGE_ONE),
+            BlockQuote('Ministry letterhead', PAGE_TWO, PAGE_TWO),
+            heading('Title', 1, PAGE_TWO),
+            BlockQuote('Quotation in the body', PAGE_TWO, PAGE_TWO),
+        ]
+
+        unquote_blocks_above_title(blocks)
+
+        self.assertEqual(
+            [type(block) for block in blocks], [BlockQuote, Paragraph, Heading, BlockQuote]
+        )
+        self.assertEqual(blocks[1].text, 'Ministry letterhead')
+
+    def test_keeps_quotes_without_a_title(self) -> None:
+        blocks: list[Block] = [BlockQuote('Quotation', PAGE_ONE, PAGE_ONE), paragraph(BODY_TEXT)]
+
+        unquote_blocks_above_title(blocks)
+
+        self.assertIsInstance(blocks[0], BlockQuote)
 
 
 if __name__ == '__main__':

@@ -173,6 +173,14 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
   `pdftext` block edge just because its font face differs, as after a run-in
   theorem label. Pieces of a line centered on a tall delimiter, rather than
   sharing its top, now also count as one line.
+- Indented text above a document's title on the same page, such as a
+  letterhead, is no longer rendered as a block quote, but as paragraphs.
+- A gap about as tall as a blank line now starts a new paragraph even after a
+  full line without final punctuation. This separates the parts of a
+  small-print letterhead, or a heading from a long source note above it.
+- An evenly spaced, left-aligned inset passage, such as a letterhead, no
+  longer loses its first line to a `pdftext` block edge when the lines after
+  the edge keep the same spacing.
 
 ## 0.1.0 - 2026-07-09
 

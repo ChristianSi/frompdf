@@ -3,12 +3,13 @@
 Subtitles, author names, and chapter labels near a title are often set large
 or bold, so font-size heuristics turn them into headings of their own. They are
 rendered as bold paragraphs instead, leaving heading levels to the title and
-the document's sections.
+the document's sections. Indented text above a title, such as a letterhead, is
+rendered as paragraphs rather than block quotes.
 """
 
 import re
 
-from frompdf.models import Block, Heading, StrongParagraph
+from frompdf.models import Block, BlockQuote, Heading, Paragraph, StrongParagraph
 from frompdf.segmentation import NUMBERED_OR_BULLETED_START_PATTERN
 
 # A paragraph this long is body text, such as an abstract, ending the front
@@ -158,3 +159,30 @@ def format_front_matter(block_list: list[Block], source_blocks: list[Block]) -> 
             and not has_alphanumeric(block_list[index].text)
         )
     return dropped
+
+
+def unquote_blocks_above_title(block_list: list[Block]) -> None:
+    """Render block quotes above the document's first heading on its page as paragraphs.
+
+    A block quote sets text apart from running text, which only starts below
+    the title. Indented text above it is rather a letterhead or similar.
+    Blocks are replaced in place.
+    """
+    title_index = next(
+        (index for index, block in enumerate(block_list) if isinstance(block, Heading)), None
+    )
+    if title_index is None:
+        return
+    title_page = block_list[title_index].start_page.raw
+    for index in range(title_index):
+        block = block_list[index]
+        if isinstance(block, BlockQuote) and block.start_page.raw == title_page:
+            block_list[index] = Paragraph(
+                text=block.text,
+                ranges=block.ranges,
+                start_page=block.start_page,
+                end_page=block.end_page,
+                font_size=block.font_size,
+                avg_weight=block.avg_weight,
+                fragments=block.fragments,
+            )
