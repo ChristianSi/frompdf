@@ -153,7 +153,8 @@ This font is particularly easy to read, both on the web and in print. Therefore,
 the primary font for correspondence and communications.
 
 *Source: Source Sans Pro. (2019). Retrieved from typewolf.com/site-of-the-day/fonts/source-sans-pro*
-**Secondary Font: Roboto**
+
+##### Secondary Font: Roboto
 
 ##### Roboto | *Roboto* | Roboto
 
