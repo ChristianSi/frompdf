@@ -335,155 +335,17 @@ existing literary canon of values (cf. Hube et al., 2017; Wojcik & Picard, 2019<
 
 [[PAGE:9|VISIBLE:33]]Table 1 The development of the Wikipedia article on chick lit (2004–2020)
 
-Date Minimum Definition (first sentence) Information on the origin of the term
-
-2004 “Chick lit” is a slightly uncomplimentary term
-used to denote popular fiction written for
-and marketed to young women, especially
-single young women in their 20s, working in
-the business world. [no references]
-“Chick lit” has also been claimed as a type of
-“postfeminist” fiction, perhaps in an attempt
-to rehabilitate its literary reputation. The
-term itself includes a derivative reference to
-“Chicklet” brand chewing gum, with the
-implication that the reader is likely to be the
-sort of clichéed nonintellectual female who
-chews gum and avoids serious literature. [no
-references]
-2005 “Chick lit” is a term used to denote a genre of
-popular fiction written for and marketed to
-young women, especially single, working
-women in their twenties. [no references]
-Aside from its obvious source (chick is an
-American slang term for young woman and
-lit is short for “literature”), the term
-“chick-lit” includes a reference to Chiclets
-brand chewing gum, with the implication
-that readers of the genre are likely to be
-clichéd, unintellectual females who chew
-gum and avoid “serious” literature.
-
-However, the genre has also been claimed as a
-type of post-feminist fiction which covers
-the breadth of the female experience which
-deals unconventionally with traditional
-romantic themes of love, courtship and
-gender. [no references]
-2006c “Chick lit” is a term used to denote genre
-One of the first uses of the term was in the title
-of the 1995 anthology *Chick Lit:*
-
-fiction written for and marketed to young
-women, especially single, working women
-in their twenties and thirties. [no references]
-
-*Postfeminist Fiction*, edited by Cris Mazza
-and Jeffrey DeShell. The work in this
-anthology was not chick lit as we know it
-today, and the term was used ironically.
-However James Wolcott’s 1996 article in
-The New Yorker “Hear Me Purr” co-opted
-“chick lit” to define the trend of “girlishness”
-evident in the writing of female
-newspaper columnists at that time. This is
-significant, as major chick lit works such as
-Helen Fielding’s*Bridget Jones’s Diary*and
-Candace Bushnell’s*Sex and the
-City*originated in such columns.
-
-2007 unaltered The term was introduced by Cris Mazza and
-Jeffrey DeShell as an ironic title for their
-edited anthology *Chick Lit: Postfeminist
-Fiction,* published in 1995. The genre was
-defined as a type of post-feminist or
-second-wave feminism that went beyond
-female-as-victim to include fiction that covered
-the breadth of female experiences, including
-love, courtship and gender. The
-collection emphasized experimental work,
-including violent, perverse and sexual
-
-themes. James Wolcott’s 1996 article in The
-New Yorker “Hear Me Purr” co-opted the
-term “chick lit” to proscribe what he called
-the trend of “girlishness” evident in the
-writing of female newspaper columnists at
-
-[[PAGE:10|VISIBLE:34]]Table 1 (continued)
-
-Date Minimum Definition (first sentence) Information on the origin of the term
-
-that time. Works such as Helen Fielding’s
-Bridget Jones’s Diary and Candace
-
-Bushnell’s Sex and the City are examples of
-such work that helped establish contemporary
-connotations of the term.
-2008 Chick lit is a term used to denote genre fiction
-within women’s fiction written for and
-marketed to young women, especially
-single, working women in their twenties and
-thirties. [reference: Hooten, 2007]
-unaltered
-
-2009–2010 Chick lit is genre fiction within women’s
-
-lightheartedly. [reference: Hooten, 2007]
-The term appeared in print as early as 1988 as
-college slang for a course titled “female
-literary tradition.” [reference: Betterton:
-*Alma Mater* 1988] In 1995, Cris Mazza and
-Jeffrey DeShell used the term as an ironic
-title for their edited anthology *Chick Lit:
-Postfeminist Fiction*. The genre was defined
-as a type of post-feminist or second-wave
-feminism that went beyond female-as-victim
-to include fiction that covered the breadth of
-female experiences, including love, courtship
-and gender. The collection emphasized
-experimental work, including violent, perverse
-and sexual themes. James Wolcott’s
-1996 article in The New Yorker “Hear Me
-Purr” co-opted the term “chick lit” to proscribe
-what he called the trend of “girlishness”
-evident in the writing of female
-newspaper columnists at that time. Works
-such as Helen Fielding’s*Bridget Jones’s
-Diary*and Candace Bushnell’s*Sex and the
-City*are examples of such work that helped
-establish contemporary connotations of the
-term.
-2011–2014 Chick lit is genre fiction which addresses issues
-of modern womanhood, often humorously
-and lightheartedly. [reference: Hooten,
-2007]
-unaltered
-
-fiction which addresses issues of modern
-women often humorously and
-
-2015b Chick lit or Chick literature is genre fiction
-which addresses issues of modern
-womanhood, often humorously and
-lightheartedly. [reference: Hooten, 2007]
-
-unaltered
-
-2016–2020 Chick lit or Chick literature is genre fiction,
-Chick lit scholars note that the term was first
-used ironically in 1995 by Cris Mazza and
-Jeffrey DeShell as the title for their edited
-anthology *Chick Lit: Postfeminist Fiction*,
-which contains 22 short fiction pieces in
-response to Mazza and DeShell’s call for
-“postfeminist writing.” [reference: Mazza &
-DeShell, 1995]
-
-which “consists of heroine-centered narrative
-that focus on the trials and tribulations
-of their individual protagonists.” [reference:
-Smith, 2008]
+| Date | Minimum Definition (first sentence) | Information on the origin of the term |
+| --- | --- | --- |
+| 2004 | “Chick lit” is a slightly uncomplimentary term used to denote popular fiction written for and marketed to young women, especially single young women in their 20s, working in the business world. [no references] | “Chick lit” has also been claimed as a type of “postfeminist” fiction, perhaps in an attempt to rehabilitate its literary reputation. The term itself includes a derivative reference to “Chicklet” brand chewing gum, with the implication that the reader is likely to be the sort of clichéed nonintellectual female who chews gum and avoids serious literature. [no references] |
+| 2005 | “Chick lit” is a term used to denote a genre of popular fiction written for and marketed to young women, especially single, working women in their twenties. [no references] | Aside from its obvious source (chick is an American slang term for young woman and lit is short for “literature”), the term “chick-lit” includes a reference to Chiclets brand chewing gum, with the implication that readers of the genre are likely to be clichéd, unintellectual females who chew gum and avoid “serious” literature.<br>However, the genre has also been claimed as a type of post-feminist fiction which covers the breadth of the female experience which deals unconventionally with traditional romantic themes of love, courtship and gender. [no references] |
+| 2006c | “Chick lit” is a term used to denote genre fiction written for and marketed to young women, especially single, working women in their twenties and thirties. [no references] | One of the first uses of the term was in the title of the 1995 anthology *Chick Lit: Postfeminist Fiction*, edited by Cris Mazza and Jeffrey DeShell. The work in this anthology was not chick lit as we know it today, and the term was used ironically. However James Wolcott’s 1996 article in The New Yorker “Hear Me Purr” co-opted “chick lit” to define the trend of “girlishness” evident in the writing of female newspaper columnists at that time. This is significant, as major chick lit works such as Helen Fielding’s*Bridget Jones’s Diary*and Candace Bushnell’s*Sex and the City*originated in such columns. |
+| 2007 | unaltered | The term was introduced by Cris Mazza and Jeffrey DeShell as an ironic title for their edited anthology *Chick Lit: Postfeminist Fiction,* published in 1995. The genre was defined as a type of post-feminist or second-wave feminism that went beyond female-as-victim to include fiction that covered the breadth of female experiences, including love, courtship and gender. The collection emphasized experimental work, including violent, perverse and sexual themes. James Wolcott’s 1996 article in The New Yorker “Hear Me Purr” co-opted the term “chick lit” to proscribe what he called the trend of “girlishness” evident in the writing of female newspaper columnists at [[PAGE:10\|VISIBLE:34]]that time. Works such as Helen Fielding’s Bridget Jones’s Diary and Candace Bushnell’s Sex and the City are examples of such work that helped establish contemporary connotations of the term. |
+| 2008 | Chick lit is a term used to denote genre fiction within women’s fiction written for and marketed to young women, especially single, working women in their twenties and thirties. [reference: Hooten, 2007] | unaltered |
+| 2009–2010 | Chick lit is genre fiction within women’s fiction which addresses issues of modern women often humorously and lightheartedly. [reference: Hooten, 2007] | The term appeared in print as early as 1988 as college slang for a course titled “female literary tradition.” [reference: Betterton: *Alma Mater* 1988] In 1995, Cris Mazza and Jeffrey DeShell used the term as an ironic title for their edited anthology *Chick Lit: Postfeminist Fiction*. The genre was defined as a type of post-feminist or second-wave feminism that went beyond female-as-victim to include fiction that covered the breadth of female experiences, including love, courtship and gender. The collection emphasized experimental work, including violent, perverse and sexual themes. James Wolcott’s 1996 article in The New Yorker “Hear Me Purr” co-opted the term “chick lit” to proscribe what he called the trend of “girlishness” evident in the writing of female newspaper columnists at that time. Works such as Helen Fielding’s*Bridget Jones’s Diary*and Candace Bushnell’s*Sex and the City*are examples of such work that helped establish contemporary connotations of the term. |
+| 2011–2014 | Chick lit is genre fiction which addresses issues of modern womanhood, often humorously and lightheartedly. [reference: Hooten, 2007] | unaltered |
+| 2015b | Chick lit or Chick literature is genre fiction which addresses issues of modern womanhood, often humorously and lightheartedly. [reference: Hooten, 2007] | unaltered |
+| 2016–2020 | Chick lit or Chick literature is genre fiction, which “consists of heroine-centered narrative that focus on the trials and tribulations of their individual protagonists.” [reference: Smith, 2008] | Chick lit scholars note that the term was first used ironically in 1995 by Cris Mazza and Jeffrey DeShell as the title for their edited anthology *Chick Lit: Postfeminist Fiction*, which contains 22 short fiction pieces in response to Mazza and DeShell’s call for “postfeminist writing.” [reference: Mazza & DeShell, 1995] |
 
 ## [[PAGE:11|VISIBLE:35]]structural inequalities such as gender and racial bias,<sup>14</sup> there is more space for new, less
 

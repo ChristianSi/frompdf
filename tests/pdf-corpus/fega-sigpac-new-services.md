@@ -289,10 +289,7 @@ nuevos medios de difusión SIGPAC de datos SIGC:
 | **Visor SIGPAC** | - Interfaz sencilla e intuitiva | - No permite automatización | - Consulta rápida de parcelas y recintos |
 |  | - Información SIGPAC de Campaña PAC<br>- Útil para validaciones visuales rápidas | - Limitada personalización de capas | - Gestión PAC. Verificación visual de datos por técnicos |
 |  | - Útil para trámites (Ayudas PAC) | - Requiere conexión estable | - Formación o soporte a usuarios externos |
-
-| [[PAGE:11]]Servicio | Ventajas | Limitaciones | Propuestas de uso |
-| --- | --- | --- | --- |
-|  | - Acceso selectivo a datos vectoriales |  |  |
+|  | [[PAGE:11]]- Acceso selectivo a datos vectoriales |  |  |
 | **Servicio de descargas ATOM** | - Formatos de descarga: GPKG y Shp | - Archivos grandes y pesados | - Repositorios internos de datos |
 |  | - Organizado por provincias y municipios<br>- Ideal para análisis masivos | - Requiere almacenamiento en local<br>- No tiene visualización directa y actualizada<br>- Navegación poco amigable | - Análisis y explotación masiva<br>- Cruces con otras fuentes (catastro, ayudas, etc.) |
 | **Map Vector Tile (MVT)** | - Visualización rápida y fluida<br>- Ideal para entornos web o móviles<br>- Bajo consumo de red | - No compatible con SIG clásicos | - Desarrollo de visores y aplicaciones |
@@ -303,10 +300,7 @@ nuevos medios de difusión SIGPAC de datos SIGC:
 |  | - Rápido y ligero<br>- Reutilizable en aplicaciones | - No admite búsqueda espacial | - Backend para portales o aplicaciones |
 | **OGC API - Features** | - Más eficiente que WFS<br>- Compatible con JSON/GeoJSON | - Requiere conocimientos técnicos | - Automatización de consultas SIGPAC |
 |  | - Integrable en SIG profesionales |  | - Integración en procesos y aplicaciones |
-
-| [[PAGE:12]]Servicio | Ventajas | Limitaciones | Propuestas de uso |
-| --- | --- | --- | --- |
-|  | - Acceso selectivo a datos vectoriales |  | - Desarrollo de aplicaciones con datos SIGPAC |
+|  | [[PAGE:12]]- Acceso selectivo a datos vectoriales |  | - Desarrollo de aplicaciones con datos SIGPAC |
 |  | - Alta interoperabilidad |  | - Visualización en proyectos SIG |
 | **Listas de códigos SIGPAC** | - Codificación oficial estandarizada | - Son datos sólo alfanuméricos | - Validación de datos en formularios |
 |  | - Fácil integración y validación<br>- Documentación clara y mantenida | - No es un servicio dinámico<br>- Sin visualización directa | - Mapeo e interpretación de datos SIGPAC |
