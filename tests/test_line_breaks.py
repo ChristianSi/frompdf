@@ -9,10 +9,12 @@ from frompdf.line_breaks import (
     hard_line_break_ids,
     is_centered_line_layout,
     is_hard_line_break,
+    line_by_line_passages,
 )
 from frompdf.models import HARD_LINE_BREAK, BlockQuote, Heading, Line, PageNumber, Paragraph
 from frompdf.output import markdown_to_text
 from frompdf.scripts import AnnotatedText, collapse_annotated_whitespace
+from frompdf.segmentation import segment_lines
 
 BODY_TEXT = 'Ordinary body text filling the whole column width'
 
@@ -249,6 +251,83 @@ class CenteredLineLayoutTests(unittest.TestCase):
         layouts = build_page_layouts(card_page(block))
 
         self.assertEqual(hard_line_break_ids(block, layouts), set())
+
+
+VERSE = [
+    'Open the borders, open them wide.',
+    'Be open to all who suffer pain.',
+    'So it has always been,',
+    'so the spirit of old remains.',
+]
+
+
+def verse(top: float = 90.0, *, x2: float | None = None, font_size: float = 9.0) -> list[Line]:
+    """Build lines of verse in smaller type, inset 15 units from the body margin."""
+    return [
+        line(text, top + index * 11, x1=35.0, x2=x2, font_size=font_size)
+        for index, text in enumerate(VERSE)
+    ]
+
+
+def passages(page: list[Line]) -> dict[int, int]:
+    return line_by_line_passages(build_page_layouts(page))
+
+
+class LineByLinePassageTests(unittest.TestCase):
+    def test_inset_verse_in_smaller_type_is_a_passage(self) -> None:
+        stanza = verse()
+        page = body_column() + stanza + body_column(top=140.0, count=3)
+
+        self.assertEqual(passages(page), {id(line_obj): id(stanza[0]) for line_obj in stanza})
+
+    def test_gap_separates_stanzas(self) -> None:
+        first, second = verse(), verse(top=148.0)
+        page = body_column() + first + second + body_column(top=200.0, count=3)
+
+        found = passages(page)
+        self.assertEqual({found[id(line_obj)] for line_obj in first}, {id(first[0])})
+        self.assertEqual({found[id(line_obj)] for line_obj in second}, {id(second[0])})
+
+    def test_wrapped_inset_prose_is_not_a_passage(self) -> None:
+        page = body_column() + verse(x2=220.0) + body_column(top=140.0, count=3)
+
+        self.assertEqual(passages(page), {})
+
+    def test_inset_lines_in_body_type_are_not_a_passage(self) -> None:
+        # Such lines might start indented paragraphs instead.
+        page = body_column() + verse(font_size=10.0) + body_column(top=150.0, count=3)
+
+        self.assertEqual(passages(page), {})
+
+    def test_text_must_resume_after_a_passage(self) -> None:
+        self.assertEqual(passages(body_column() + verse()), {})
+
+    def test_passage_lines_form_a_block_of_their_own(self) -> None:
+        stanza = verse()
+        before, after = body_column(), body_column(top=140.0, count=3)
+        page = before + stanza + after
+
+        groups = segment_lines(page, passage_lines=passages(page))
+
+        self.assertIn(stanza, groups)
+
+    def test_passage_breaks_lines_continuing_a_sentence_in_lower_case(self) -> None:
+        stanza = verse()
+        layouts = build_page_layouts(body_column() + stanza + body_column(top=140.0, count=3))
+
+        self.assertEqual(
+            hard_line_break_ids(stanza, layouts, passage=True),
+            {id(stanza[0]), id(stanza[1]), id(stanza[2])},
+        )
+
+    def test_passage_measure_reaches_as_far_right_as_it_is_inset(self) -> None:
+        # Only the verse itself starts at its left edge, so the longest line
+        # would bound the measure without knowing that it forms a passage.
+        stanza = verse()
+        layouts = build_page_layouts(body_column() + stanza + body_column(top=140.0, count=3))
+
+        self.assertEqual(hard_line_break_ids(stanza, layouts), set())
+        self.assertIn(id(stanza[1]), hard_line_break_ids(stanza, layouts, passage=True))
 
 
 class HardLineBreakTextTests(unittest.TestCase):

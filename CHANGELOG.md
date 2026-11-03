@@ -184,6 +184,12 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
 - An evenly spaced, left-aligned inset passage, such as a letterhead, no
   longer loses its first line to a `pdftext` block edge when the lines after
   the edge keep the same spacing.
+- Verse quoted in prose, set off in smaller type at an inset left edge, is no
+  longer split into a mix of paragraphs and partial block quotes, nor merged
+  into the paragraph introducing it. Each stanza becomes a quoted paragraph,
+  with a hard line break wherever a line leaves room for the next word, even
+  before a sentence continuing in lower case. Such a passage is recognized
+  when most of its lines leave that room and body text resumes after it.
 
 ## 0.1.0 - 2026-07-09
 

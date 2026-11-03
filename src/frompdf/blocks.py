@@ -20,7 +20,7 @@ from frompdf.front_matter import (
     unquote_blocks_above_title,
 )
 from frompdf.heading_candidates import find_typographic_heading_lines
-from frompdf.line_breaks import hard_line_break_ids
+from frompdf.line_breaks import hard_line_break_ids, line_by_line_passages
 from frompdf.lists import ListMarker, find_list_items
 from frompdf.models import (
     HARD_LINE_BREAK,
@@ -291,11 +291,13 @@ def markdown_block_from_lines(
     follows_blockquote: bool = False,
     typographic_heading: bool = False,
     list_marker: ListMarker | None = None,
+    passage: bool = False,
 ) -> Block:
     """Build a Markdown block from grouped line records.
 
     With a list marker, the lines form a list item whose first line starts
-    with that marker, which is replaced by a Markdown marker.
+    with that marker, which is replaced by a Markdown marker. A passage is set
+    off from the text line by line, as quoted verse.
     """
     block_class: type[Block] = (
         BlockQuote
@@ -320,6 +322,7 @@ def markdown_block_from_lines(
             line_list,
             page_layouts,
             line_list[0].second_word_x1 if list_marker is not None else None,
+            passage,
         ),
     )
     annotated = join_fragments(fragments)
@@ -664,10 +667,11 @@ def lines_to_markdown_blocks(
     block_positions: list[int] = []
     page_layouts = build_page_layouts(body_lines)
     list_items = find_list_items(body_lines, heading_lines)
+    passage_lines = line_by_line_passages(page_layouts)
 
     group_list = split_groups_at_tables(
         merge_continued_groups(
-            segment_lines(body_lines, heading_lines, list_items.item_of_line),
+            segment_lines(body_lines, heading_lines, list_items.item_of_line, passage_lines),
             page_layouts,
             default_font_size,
             body_lefts_by_page,
@@ -695,6 +699,7 @@ def lines_to_markdown_blocks(
                 follows_blockquote=bool(block_list) and isinstance(block_list[-1], BlockQuote),
                 typographic_heading=typographic_heading,
                 list_marker=list_items.markers.get(id(current_lines[0])),
+                passage=all(id(line) in passage_lines for line in current_lines),
             )
         )
 

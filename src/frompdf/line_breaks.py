@@ -1,6 +1,7 @@
 """Recognize deliberate line breaks within blocks from line geometry and typography."""
 
 import re
+from dataclasses import replace
 from itertools import pairwise
 from statistics import median
 
@@ -8,9 +9,14 @@ from frompdf.continuations import PageLayout, begins_lowercase, ends_open_senten
 from frompdf.models import Line
 from frompdf.segmentation import (
     MAX_FIRST_LINE_INDENT_EM,
+    MIN_FIRST_LINE_INDENT_EM,
+    PageContext,
+    close_font_size,
     column_for_line,
     compatible_style,
     ends_word_break_hyphen,
+    has_normal_advance,
+    is_prose_line,
     is_textual_line,
     line_is_short,
     near,
@@ -46,6 +52,9 @@ MIN_CENTERED_WIDTH_SPREAD_EM = 1.0
 # Centered prose, such as an abstract, fills most of its column. Cards, verse,
 # and other text set line by line stay well short of it.
 MAX_CENTERED_LINE_WIDTH_SHARE = 2 / 3
+
+# A set-off passage, such as quoted verse, has at least this many lines.
+MIN_PASSAGE_LINES = 2
 
 
 def first_word_width(line_obj: Line) -> float | None:
@@ -111,12 +120,18 @@ def has_line_content(line_obj: Line) -> bool:
     )
 
 
-def may_break_between(left: Line, right: Line, lone_address_starts_line: bool = False) -> bool:
+def may_break_between(
+    left: Line,
+    right: Line,
+    lone_address_starts_line: bool = False,
+    set_line_by_line: bool = False,
+) -> bool:
     """Return whether nothing rules out a deliberate break between two lines.
 
-    Hyphenated words and sentences continuing in lower case are never broken,
-    nor are fragments with few letters or digits, such as pieces of
-    mathematical notation. With lone_address_starts_line, an e-mail address or
+    Hyphenated words are never broken, nor are fragments with few letters or
+    digits, such as pieces of mathematical notation. Neither are sentences
+    continuing in lower case, unless the lines are known to be set line by
+    line, as in verse. With lone_address_starts_line, an e-mail address or
     URL on a line of its own does not count as a continuation.
     """
     return (
@@ -126,20 +141,54 @@ def may_break_between(left: Line, right: Line, lone_address_starts_line: bool = 
         and has_line_content(right)
         and not ends_word_break_hyphen(left.text)
         and not (
-            ends_open_sentence(left.text)
+            not set_line_by_line
+            and ends_open_sentence(left.text)
             and begins_lowercase(right.text)
             and not (lone_address_starts_line and LONE_ADDRESS_PATTERN.match(right.text))
         )
     )
 
 
+def next_word_fits(
+    left: Line, right: Line, layout: PageLayout, min_measure_right: float | None = None
+) -> bool:
+    """Return whether the first word of right would have fit on the open side of left.
+
+    Wrapped text breaks only when the next word does not fit, so room for it
+    is the clearest evidence of a deliberate break. This is tested on the
+    open side of left- and right-aligned lines. min_measure_right is the
+    least right edge of the measure of left-aligned lines, if known.
+    """
+    if left.x1 is None or left.x2 is None or right.x1 is None or right.x2 is None:
+        return False
+
+    font_size = left.font_size or layout.context.font_size
+    word_width = first_word_width(right)
+    if word_width is None:
+        return False
+    needed_room = word_width + font_size * FIT_SLACK_EM
+    if near(right.x1, left.x1, font_size):
+        measure_right = left_aligned_measure_right(left, layout, font_size)
+        if min_measure_right is not None:
+            measure_right = max(measure_right, min_measure_right)
+        return measure_right - left.x2 >= needed_room
+    if near(right.x2, left.x2, font_size):
+        # Both lines must be clearly inset, so the indented first line of a
+        # justified paragraph never counts as right-aligned.
+        measure_left = right_aligned_measure_left(left, layout, font_size)
+        return (
+            min(left.x1, right.x1) - measure_left > font_size * MAX_FIRST_LINE_INDENT_EM
+            and left.x1 - measure_left >= needed_room
+        )
+    return False
+
+
 def is_hard_line_break(left: Line, right: Line, layout: PageLayout) -> bool:
     """Return whether right starts a new line by design rather than by wrapping.
 
-    The clearest evidence is room left on the line: wrapped text breaks only
-    when the next word does not fit. This is tested on the open side of left-
-    and right-aligned lines. Otherwise, a change of font face, weight, or size
-    after a clearly short line also marks a deliberate break.
+    The clearest evidence is room left on the line for the next word.
+    Otherwise, a change of font face, weight, or size after a clearly short
+    line also marks a deliberate break.
     """
     if (
         left.x1 is None
@@ -149,25 +198,10 @@ def is_hard_line_break(left: Line, right: Line, layout: PageLayout) -> bool:
         or not may_break_between(left, right)
     ):
         return False
+    if next_word_fits(left, right, layout):
+        return True
 
     font_size = left.font_size or layout.context.font_size
-    word_width = first_word_width(right)
-    if word_width is None:
-        return False
-    needed_room = word_width + font_size * FIT_SLACK_EM
-    if near(right.x1, left.x1, font_size):
-        if left_aligned_measure_right(left, layout, font_size) - left.x2 >= needed_room:
-            return True
-    elif near(right.x2, left.x2, font_size):
-        # Both lines must be clearly inset, so the indented first line of a
-        # justified paragraph never counts as right-aligned.
-        measure_left = right_aligned_measure_left(left, layout, font_size)
-        if (
-            min(left.x1, right.x1) - measure_left > font_size * MAX_FIRST_LINE_INDENT_EM
-            and left.x1 - measure_left >= needed_room
-        ):
-            return True
-
     column = column_for_line(left, layout.context)
     return (
         column is not None
@@ -226,7 +260,10 @@ def starts_right_of_item_text(right: Line, first: Line, item_text_x1: float) -> 
 
 
 def hard_line_break_ids(
-    line_list: list[Line], layouts: dict[int, PageLayout], item_text_x1: float | None = None
+    line_list: list[Line],
+    layouts: dict[int, PageLayout],
+    item_text_x1: float | None = None,
+    passage: bool = False,
 ) -> set[int]:
     """Return the IDs of a block's lines that are followed by a deliberate line break.
 
@@ -234,6 +271,9 @@ def hard_line_break_ids(
     line ends are assumed to be deliberate too, unless they are ruled out.
     item_text_x1 is where the text of a list item starts after its marker.
     Wrapped lines never start right of it, so lines that do follow a break.
+    In a passage set off line by line, such as quoted verse, every line
+    leaving room for the next word ends deliberately, even where a sentence
+    continues in lower case.
     """
     hard_break_ids = {
         id(left)
@@ -251,4 +291,132 @@ def hard_line_break_ids(
             for left, right in pairwise(line_list)
             if may_break_between(left, right, lone_address_starts_line=True)
         )
+    if passage:
+        for left_pieces, right_pieces in pairwise(visual_lines(line_list)):
+            left, right = left_pieces[-1], right_pieces[0]
+            layout = layouts[left.page_no]
+            if may_break_between(left, right, set_line_by_line=True) and next_word_fits(
+                whole_visual_line(left_pieces),
+                whole_visual_line(right_pieces),
+                layout,
+                passage_measure_right(left_pieces[0], layout.context),
+            ):
+                hard_break_ids.add(id(left))
     return hard_break_ids
+
+
+def visual_lines(line_list: list[Line]) -> list[list[Line]]:
+    """Group consecutive pieces of the same visual line."""
+    grouped: list[list[Line]] = []
+    for line_obj in line_list:
+        if grouped and same_physical_line(grouped[-1][-1], line_obj):
+            grouped[-1].append(line_obj)
+        else:
+            grouped.append([line_obj])
+    return grouped
+
+
+def whole_visual_line(pieces: list[Line]) -> Line:
+    """Return a line record spanning all pieces of a visual line."""
+    return replace(pieces[0], text=' '.join(piece.text for piece in pieces), x2=pieces[-1].x2)
+
+
+def passage_measure_right(line_obj: Line, context: PageContext) -> float | None:
+    """Return the least right edge of the measure of a passage set off from its column.
+
+    Quotations are inset on the left and at most as far on the right, which
+    matters where no line at their left edge shows how far the measure reaches.
+    """
+    column = column_for_line(line_obj, context)
+    if column is None or line_obj.x1 is None:
+        return None
+    return column.right - (line_obj.x1 - column.left)
+
+
+def is_passage_line(line_obj: Line, context: PageContext) -> bool:
+    """Return whether a visual line is set off from the body in smaller, inset type."""
+    if line_obj.x1 is None or line_obj.font_size is None or not is_prose_line(line_obj):
+        return False
+    column = column_for_line(line_obj, context)
+    return (
+        column is not None
+        and line_obj.font_size < context.font_size
+        and not close_font_size(line_obj.font_size, context.font_size)
+        and line_obj.x1 - column.left >= line_obj.font_size * MIN_FIRST_LINE_INDENT_EM
+    )
+
+
+def continues_passage(previous: Line, current: Line, context: PageContext) -> bool:
+    """Return whether current continues a set-off passage on the next line."""
+    font_size = current.font_size or context.font_size
+    return (
+        previous.page_no == current.page_no
+        and near(current.x1, previous.x1 or 0.0, font_size)
+        and compatible_style(previous, current)
+        and has_normal_advance(previous, current, context)
+    )
+
+
+def text_resumes_after(whole_lines: list[Line], run: list[int], context: PageContext) -> bool:
+    """Return whether body text follows a passage in its column on the same page.
+
+    Quotations are embedded in the text, so it resumes after them, possibly
+    after further stanzas at the same left edge. Small inset print ending a
+    page, such as unrecognized notes, or above a title, such as a letterhead,
+    is not.
+    """
+    first = whole_lines[run[0]]
+    font_size = first.font_size or context.font_size
+    for following in whole_lines[run[-1] + 1 :]:
+        if is_passage_line(following, context) and near(following.x1, first.x1 or 0.0, font_size):
+            continue
+        return close_font_size(following.font_size, context.font_size) and column_for_line(
+            following, context
+        ) == column_for_line(first, context)
+    return False
+
+
+def line_by_line_passages(layouts: dict[int, PageLayout]) -> dict[int, int]:
+    """Map the IDs of lines in passages set off line by line to the ID of their first line.
+
+    Such passages, as verse quoted in prose, are set in smaller type, inset
+    from the column margin, and evenly spaced at a shared left edge. Most of
+    their lines end where the next line's first word would still have fit,
+    unlike quoted prose, which wraps, and body text resumes after them.
+    pdftext tends to split them into blocks of a line or two, and they need
+    not have spacing or indents to separate them from the text around them
+    otherwise. A gap, as between stanzas, ends a passage.
+    """
+    passage_of_line: dict[int, int] = {}
+    for layout in layouts.values():
+        context = layout.context
+        page_lines = visual_lines(list(layout.lines))
+        whole_lines = [whole_visual_line(pieces) for pieces in page_lines]
+        runs: list[list[int]] = []
+        for index, current in enumerate(whole_lines):
+            if not is_passage_line(current, context):
+                continue
+            if not (
+                runs
+                and runs[-1][-1] == index - 1
+                and continues_passage(whole_lines[index - 1], current, context)
+            ):
+                runs.append([])
+            runs[-1].append(index)
+        for run in runs:
+            measure_right = passage_measure_right(whole_lines[run[0]], context)
+            fitting = sum(
+                next_word_fits(whole_lines[left], whole_lines[right], layout, measure_right)
+                for left, right in pairwise(run)
+            )
+            if (
+                len(run) >= MIN_PASSAGE_LINES
+                and fitting * 2 > len(run) - 1
+                and text_resumes_after(whole_lines, run, context)
+            ):
+                passage_of_line.update(
+                    (id(piece), id(page_lines[run[0]][0]))
+                    for index in run
+                    for piece in page_lines[index]
+                )
+    return passage_of_line

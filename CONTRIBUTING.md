@@ -179,7 +179,9 @@ The implementation is split into focused modules under `src/frompdf`:
 - `line_breaks.py` recognizes deliberate line breaks within blocks, where the
   next word would have fit on the line or the font changes after a short line,
   extending them to all line ends of blocks set line by line in short
-  centered lines.
+  centered lines. It also finds passages set off from the text line by line,
+  such as quoted verse, whose line ends break even before a sentence
+  continuing in lower case.
 - `lines.py` repairs detached diacritics, removes icon-font glyphs, decodes
   glyphs of TeX math extension fonts, restores private-use bullets of symbol
   fonts, reattaches detached scripts, flattens
@@ -300,7 +302,11 @@ The current pipeline is roughly:
     `pdftext` starts a new block after a line split into pieces, the left edge
     of the whole visual line decides whether the text continues. Within a
     line of running text, a new block needs a change of size, not just face.
-    Each list item becomes a block of its own.
+    Each list item becomes a block of its own, and so does each passage set
+    off line by line: evenly spaced lines in smaller type, inset at a shared
+    left edge, most of which leave room for the next line's first word,
+    followed by body text on the same page. A gap, as between stanzas, ends
+    such a passage.
 12. Join blocks continuing at the top of the next column or page. Similar
     typography, a full last line, a non-indented first line, and consistent
     block-quote classification are required. An open sentence, a lower-case
@@ -309,7 +315,8 @@ The current pipeline is roughly:
     where their recognized lines continue.
 13. Build paragraph, block-quote, or list-item records, replacing list
     markers with Markdown ones, and mark deliberate line breaks, including
-    before lines of a list item that start right of its text.
+    before lines of a list item that start right of its text, and wherever a
+    line of a passage set off line by line leaves room for the next word.
     Join the pieces into which `pdftext` split a physical line with a space
     or nothing, depending on reported whitespace and the gap between them,
     unless they are too far apart to be running text, and append fraction
