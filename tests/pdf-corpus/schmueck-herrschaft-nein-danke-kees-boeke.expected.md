@@ -280,10 +280,9 @@ Menge seine Friedensbotschaft zu verkünden.
 
 In dieser Zeit schrieb und komponierte er auch einige seiner Antikriegslieder
 wie das populäre *Nooit-meer-oorlog!* (Nie wieder Krieg!):
-„Das ist es, was uns hier alle verbindet: Nie wieder Krieg.
 
-Darin sind wir uns einig: Nicht für einen Staat, nicht für eine Partei.
-
+> „Das ist es, was uns hier alle verbindet: Nie wieder Krieg.\
+> Darin sind wir uns einig: Nicht für einen Staat, nicht für eine Partei.\
 > Nicht für eine Klasse oder Herrschaft. Nicht für ein Ziel, egal für welches.
 > Nie wieder Krieg.“<sup>14</sup>
 
@@ -628,18 +627,14 @@ der Grenzen zusätzlichen öffentlichen Nachdruck zu verleihen, schrieb und
 komponierte er das Lied *Opent de grenzen!* (Öffnet die Grenzen!), das von
 den Kindern der Werkplaats gesungen wurde:
 
-„Öffnet die Grenzen, öffnet sie weit.
-
-> Holland, sei offen für alle, die Leid erfahren.
-> So ist es früher immer gewesen,
->
+> „Öffnet die Grenzen, öffnet sie weit.\
+> Holland, sei offen für alle, die Leid erfahren.\
+> So ist es früher immer gewesen,\
 > so ist von alters her der holländische Geist.
 >
-> Wenn nun einmal Jesus an der Grenze stünde,
-> ohne Papiere, nur ein Mensch,
->
-> würdet ihr zu ihm sagen: „Werde nur getötet,
->
+> Wenn nun einmal Jesus an der Grenze stünde,\
+> ohne Papiere, nur ein Mensch,\
+> würdet ihr zu ihm sagen: „Werde nur getötet,\
 > du bist ein Fremder, ein Flüchtling, ein Jude?“<sup>39</sup>
 
 Aus Empörung über die Zurückweisung von Geflüchteten an den Grenzen
