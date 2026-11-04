@@ -202,7 +202,7 @@ Familie von Schokoladenfabrikanten<sup>8</sup>. In ihr traf er eine spirituell
 verwandte Seele. Im Sommer 1911 verlobten sie sich, um noch im selben
 [[PAGE:11|VISIBLE:167]]Jahr, am 19. Dezember, in Birmingham zu heiraten. Für Boeke bedeutete die
 Ehe zugleich auch den Abschied von einer gerade begonnenen Ingenieurslaufbahn
-und den Aufbruch in ein lebenslanges Engagement als ein christ-lich-anarchistischer
+und den Aufbruch in ein lebenslanges Engagement als ein christlich-anarchistischer
 „Weltverbesserer“. Nach ihrer Hochzeit zog das Paar in
 den Libanon, wo Kees am 24. Februar 1912 eine Stelle als Direktor an der
 von Quäkern geleiteten Boys High School in Brummana antrat, einer kleinen
@@ -692,7 +692,7 @@ vor, der jedoch auf dem Kongress keinen nennenswerten
 [[PAGE:30|VISIBLE:186]]Zuspruch fand, so dass Boeke seine Hoffnung auf eine landesweite Realisierung
 seiner Vorschläge für eine allgemeine Bildungsreform aufgeben
 musste. Davon ließ er sich jedoch nicht irritieren und präsentierte seine
-Ideen nun vermehrt auf internationaler Ebene, so auf einer UNESCO-Kon-ferenz
+Ideen nun vermehrt auf internationaler Ebene, so auf einer UNESCO-Konferenz
 internationaler Schuldirektoren in Paris (31. März – 1. April 1949),
 wo er seine Idee einer *Really International Children’s Community* vorstellte.
 Daraus entwickelte sich der Plan für eine *Werkplaats International
@@ -807,7 +807,7 @@ einen Namen zu geben.
 
 Allerdings war Kees Boeke nicht der Erfinder des Begriffes *Soziokratie.*
 Geprägt wurde der Begriff 1853 vom französischen Philosophen und Soziologen
-Auguste Comte (1798-1857) aus der Kombination der lateinisch-grie-chischen
+Auguste Comte (1798-1857) aus der Kombination der lateinisch-griechischen
 Wörter *socius* und *kratein*, was wörtlich übersetzt die „Herrschaft
 der Gefährten“ bezeichnet. Comte verstand darunter die Herrschaft einer
 Elite von wissenschaftlich ausgebildeten Experten (Soziologen) und „Priestern
@@ -1188,7 +1188,7 @@ Ein ähnliches auf kybernetischen Prinzipien basierenden Organisationsmodell
 war in den frühen 1960er-Jahren in England in der Zeitschrift *Anarchy*
 von Colin Ward, dem Begründer des pragmatischen Anarchismus, diskutiert
 worden, aus dem sich später die *anarchistische Kybernetik* <sup>74</sup>
-entwickeln sollte, die Mechanismen für Selbstorganisation, non-hierarchi-sche
+entwickeln sollte, die Mechanismen für Selbstorganisation, non-hierarchische
 Governance und föderative Strukturen in freiwilligen Gemeinschaften
 bieten soll. Und auch das, was Kees Boeke mit seinem Konzept der Soziokratie
 vertrat, hatte zweifellos pragmatisch-anarchistische Züge. Doch
