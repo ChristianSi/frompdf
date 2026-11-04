@@ -1,5 +1,7 @@
 from collections import Counter
 from collections.abc import Iterable
+from itertools import pairwise
+from typing import Any
 from unicodedata import category, normalize
 
 from frompdf.scripts import AnnotatedText, join_annotated_texts
@@ -13,6 +15,18 @@ WORD_HYPHENS = VISIBLE_WORD_HYPHENS | {SOFT_HYPHEN}
 EN_DASH = '\u2013'
 EM_DASH = '\u2014'
 LINE_FINAL_DASHES = {EN_DASH, EM_DASH}
+
+
+class DocumentWordCounts(Counter[str]):
+    """Case-folded word counts with evidence on the parts of hyphenated compounds.
+
+    part_counts counts each part of a hyphenated compound and each pair of
+    adjacent parts, joined by a hyphen.
+    """
+
+    def __init__(self, *args: Any, **kwargs: Any) -> None:
+        super().__init__(*args, **kwargs)
+        self.part_counts: Counter[str] = Counter()
 
 
 def is_word_base(char: str) -> bool:
@@ -90,9 +104,26 @@ def spelling_evidence_text(value: AnnotatedText) -> str:
     return ''.join(chars)
 
 
-def document_word_counts(line_texts: Iterable[str]) -> Counter[str]:
-    """Count normalized words in the unmodified document text."""
-    return Counter(word for text in line_texts for word in words_in_text(text))
+def document_word_counts(line_texts: Iterable[str]) -> DocumentWordCounts:
+    """Count normalized words and the parts of compounds in the unmodified document text."""
+    counts = DocumentWordCounts(word for text in line_texts for word in words_in_text(text))
+    for word, count in counts.items():
+        parts = word.split('-')
+        if len(parts) < 2:
+            continue
+        for part in parts:
+            counts.part_counts[part] += count
+        for left, right in pairwise(parts):
+            counts.part_counts[left + '-' + right] += count
+    return counts
+
+
+def attested_count(key: str | None, word_counts: Counter[str]) -> int:
+    """Return how often a key occurs as a word or, as known, a part of a compound."""
+    if key is None:
+        return 0
+    part_counts = word_counts.part_counts if isinstance(word_counts, DocumentWordCounts) else {}
+    return word_counts[key] + part_counts.get(key, 0)
 
 
 def is_mixed_case_word(word: str) -> bool:
@@ -236,9 +267,30 @@ def should_keep_boundary_hyphen(
     if boundary_hyphen == SOFT_HYPHEN:
         return False
     if any(char in VISIBLE_WORD_HYPHENS for char in left_fragment + right_fragment):
-        return True
+        return keeps_compound_part_hyphen(left_fragment, right_fragment, word_counts)
 
     return contains_nonletter(combined_word)
+
+
+def keeps_compound_part_hyphen(
+    left_fragment: str, right_fragment: str, word_counts: Counter[str]
+) -> bool:
+    """Decide on a line-final hyphen within a hyphenated compound.
+
+    The parts adjoining the boundary decide, as kon and ferenz in
+    UNESCO-Kon-ferenz, where Konferenz occurs elsewhere in the document,
+    as a word or as part of a compound. Without such evidence, the hyphen
+    is kept, as in difficult-to-remove.
+    """
+    inner_left = exact_word(left_fragment).rsplit('-', 1)[-1]
+    inner_right = exact_word(right_fragment).split('-', 1)[0]
+    joined_count = attested_count(dictionary_candidate(inner_left + inner_right), word_counts)
+    hyphenated_count = attested_count(
+        dictionary_candidate(inner_left + '-' + inner_right), word_counts
+    )
+    if joined_count or hyphenated_count:
+        return hyphenated_count >= joined_count
+    return True
 
 
 def is_learned_coordination_boundary(

@@ -191,6 +191,50 @@ class FallbackHeuristicTests(unittest.TestCase):
         self.assertEqual(resolve(['word\u2011', 'part']), 'word\u2011part')
 
 
+class CompoundPartTests(unittest.TestCase):
+    def test_counts_parts_of_compounds_and_adjacent_pairs(self) -> None:
+        counts = document_word_counts(['christlich-anarchistischen Top-Down-Ansatz'])
+
+        self.assertEqual(
+            counts.part_counts,
+            Counter(
+                {
+                    'christlich': 1,
+                    'anarchistischen': 1,
+                    'christlich-anarchistischen': 1,
+                    'top': 1,
+                    'down': 1,
+                    'ansatz': 1,
+                    'top-down': 1,
+                    'down-ansatz': 1,
+                }
+            ),
+        )
+
+    def test_joined_parts_at_the_boundary_remove_the_hyphen(self) -> None:
+        self.assertEqual(
+            resolve(['eine UNESCO-Kon-', 'ferenz in Paris'], 'die Konferenz'),
+            'eine UNESCO-Konferenz\nin Paris',
+        )
+
+    def test_parts_of_other_compounds_count_as_evidence(self) -> None:
+        self.assertEqual(
+            resolve(['ein christ-', 'lich-anarchistischer Pfarrer'], 'christlich-pazifistisch'),
+            'ein christlich-anarchistischer\nPfarrer',
+        )
+
+    def test_hyphenated_parts_at_the_boundary_keep_the_hyphen(self) -> None:
+        self.assertEqual(
+            resolve(['by women-of-', 'color writers'], 'people-of-color'),
+            'by women-of-color\nwriters',
+        )
+
+    def test_compound_without_evidence_keeps_the_hyphen(self) -> None:
+        self.assertEqual(
+            resolve(['difficult-to-', 'remove clauses']), 'difficult-to-remove\nclauses'
+        )
+
+
 class BoundaryRewriteTests(unittest.TestCase):
     def test_moves_trailing_punctuation_with_continuation_word(self) -> None:
         result = resolve(['While, tradi-', 'tionally, licenses differed.'])

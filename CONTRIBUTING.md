@@ -209,7 +209,8 @@ The implementation is split into focused modules under `src/frompdf`:
   and spanning cells, splits lines into the pieces of each cell, and joins
   tables continuing on the next page.
 - `unhyphenation.py` repairs words and unspaced dashes split across physical
-  lines, using document-wide evidence where available.
+  lines, using document-wide evidence where available. This includes the
+  parts of hyphenated compounds, which decide on hyphens within compounds.
 
 Important concepts:
 

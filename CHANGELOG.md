@@ -142,7 +142,12 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
 - Words split by line-final hyphens are now rejoined within detected blocks,
   using document-wide spelling evidence and conservative fallback heuristics
   to retain lexical hyphens. Coordination hyphens are preserved using link
-  words learned from explicit same-line patterns in the document.
+  words learned from explicit same-line patterns in the document. Within
+  hyphenated compounds, such as `UNESCO-Kon-ferenz` or
+  `christ-lich-anarchistischer`, the parts adjoining the line break are
+  joined where the document uses the joined part elsewhere, as a word or as
+  part of another compound; otherwise the hyphen is kept, as in
+  `difficult-to-remove`.
 - Unspaced en and em dashes split across lines are now rejoined within
   detected blocks.
 - Multi-column page regions are now ordered column by column while full-width
