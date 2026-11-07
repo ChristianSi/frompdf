@@ -134,7 +134,7 @@ values were nonfaulty. Selecting the highest-probability *v*ˆ conditioned on th
 thus the inferred *v*ˆ) is at least a likely as a quorum containing only nonfaulty values. At a
 high level, this process is described by the probability maximization in Def. 2.1.
 
-▶ **Definition 2.1** (Proximal Byzantine Value Selection)**.** *For received values R* ⊆ R<sup>n</sup> *and
+▶ **Definition 2.1** (Proximal Byzantine Value Selection). *For received values R* ⊆ R<sup>n</sup> *and
 quorum size s, select a set r from the s-sized subsets of R, and a value x that maximizes the
 likelihood that x is the true value given observations in r.*
 
@@ -173,7 +173,7 @@ output is an important feature of PBA protocols.
 [[PAGE:4|VISIBLE:64:4]]A well-known result [11] is that the displacement of the geometric median Gm(*Q*) of a
 set of nonfaulty values is bounded when up to |*F*| < |*Q*| faulty values are added to the set.
 
-▶ **Lemma 2.2** (Theoretical maximum displacement [6, 11])**.** *Let R* = *Q* ∪ *F,* |*Q*| = *s and*
+▶ **Lemma 2.2** (Theoretical maximum displacement [6, 11]). *Let R* = *Q* ∪ *F,* |*Q*| = *s and*
 |*F*| = *f such that s* > *f with geometric medians Gm*(*Q*) = *m<sub>Q</sub> and Gm*(*R*) = *m<sub>R</sub>. Let*
 ∆<sup>Q</sup> = max<sub>qi</sub>∈<sub>Q</sub> ||*q<sub>i</sub>* − *Gm*(*Q*)||<sub>2</sub> *and C*<sup>(s,f)</sup><sub>0</sub> = √ *s
 s*<sup>2</sup>−*f*2
@@ -186,7 +186,7 @@ directly calculated from the information available. Instead, Lemma 2.3 presents 
 computable bound guaranteed to contain the geometric median of the nonfaulty values, but
 is based only on the received values and the system parameters (i.e., *n*, *f*, and *s*).
 
-▶ **Lemma 2.3** (Computable maximum displacement)**.** *Let R* = *Q* ∪ *F,* |*Q*| = *s and* |*F*| = *f
+▶ **Lemma 2.3** (Computable maximum displacement). *Let R* = *Q* ∪ *F,* |*Q*| = *s and* |*F*| = *f
 such that s* > 2*f with Gm*(*Q*) = *m<sub>Q</sub> and Gm*(*R*) = *m<sub>R</sub>, and C*<sup>(s,f)</sup> = √ *s*
 2*sf*−*f*<sup>2</sup>
 *. Then*
@@ -203,14 +203,14 @@ output is our instantiation of an *accuracy* [12] property.
 *<sup>d</sup>,* |*R*| > *s* + *f where s* > *f, define
 R*<sup>(f,x)</sup> ⊆ *R by removing the f elements of R furthest from x. Let* ∆<sup>R</sup>*<sub>f</sub>* = max*ri*∈*R*(*f*,*Gm*(*R*)) ||*ri* −
 
-▶ **Definition 2.4** (Region Guarantee)**.** *For any set R* ⊆ R
+▶ **Definition 2.4** (Region Guarantee). *For any set R* ⊆ R
 
 *Gm*(*R*)||<sub>2</sub>*. The* region guarantee *RG*(*R*, *s*, *f*) *is a d-dimensional ball centered at x with radius*
 2*C*(*s*,*f*)∆*R
 f
 .*
 
-▶ **Lemma 2.5** (Accuracy)**.** *For any R* = (*Q* ∪ *F) containing* |*Q*| = *s* > 2*f nonfaulty and at
+▶ **Lemma 2.5** (Accuracy). *For any R* = (*Q* ∪ *F) containing* |*Q*| = *s* > 2*f nonfaulty and at
 most* |*F*| = *f faulty values, let PBA*(*R*, *s*) = (*x*, *R*′)*. Then Gm*(*Q*) ∈ *RG*(*R*, *s*, *f*) *and*
 
 ||*m<sub>Q</sub>* − *x*||<sub>2</sub> ≤ *C*(*s*,*f*)0 ∆*R*′
@@ -270,9 +270,9 @@ the only consumer of replica outputs, as is often the case in industrial control
 contrast, note that accuracy (Lemma 2.5) only requires quorum membership to be more
 than twice the number of faulty replicas.
 
-▶ **Lemma 2.6** (Agreement)**.** *For any R<sup>i</sup>* = (*Q<sup>i</sup>* ∪ *F<sup>i</sup>*) ⊆ *R* = (*Q* ∪ *F*)*, let r* = |*R<sup>i</sup>*|*, s* = |*Q<sup>i</sup>*|*,
+▶ **Lemma 2.6** (Agreement). *For any R<sup>i</sup>* = (*Q<sup>i</sup>* ∪ *F<sup>i</sup>*) ⊆ *R* = (*Q* ∪ *F*)*, let r* = |*R<sup>i</sup>*|*, s* = |*Q<sup>i</sup>*|*,
 f* = |*F*|*, and PBA*(*R<sup>i</sup>*, *s*) = (*x<sub>i</sub>*, *R<sup>i</sup>*<sub>∗</sub>)*. If s* > ⌈|*R*|/2⌉ *and r* ≥ *s* + *f, then for any other subset
-R<sup>j</sup>* = (*Q<sup>j</sup>* ∪ *F<sup>j</sup>*) ⊆ *R where* |*R<sup>j</sup>*| ≥ *r and PBA*(*R<sup>j</sup>*, *s*) = (*x<sub>j</sub>* , *R<sup>j</sup>*<sub>∗</sub>)*,* ||*x<sub>i</sub>* − *x<sub>j</sub>* || ≤ 2*C*<sup>(s,f)</sup><sub>0</sub> ∆*Q.*
+R<sup>j</sup>* = (*Q<sup>j</sup>* ∪ *F<sup>j</sup>*) ⊆ *R where* |*R<sup>j</sup>*| ≥ *r and PBA*(*R<sup>j</sup>*, *s*) = (*x<sub>j</sub>* , *R<sup>j</sup>*<sub>∗</sub>), ||*x<sub>i</sub>* − *x<sub>j</sub>* || ≤ 2*C*<sup>(s,f)</sup><sub>0</sub> ∆*Q.*
 
 [[PAGE:6|VISIBLE:64:6]]**Figure 2** Runtime benchmark (Pi Zero).
 

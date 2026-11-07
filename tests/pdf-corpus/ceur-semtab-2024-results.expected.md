@@ -271,7 +271,7 @@ STI vs LLMs Track Summary Results.
 | Benchmark | Task | TSOTSA F1 | TSOTSA Pr | City System F1 | City System Pr | Kepler ASI F1 | Kepler ASI Pr |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | **SuperSemtab 24 Round1** | **CEA** | **0.905** | 0.905 | 0.858 | 0.866 | 0.764 | 0.907 |
-| **MammoTab24** | **CEA** | **-** | - | **0.647** | 0.648 | 0.182 | 0.336 |
+| **MammoTab24** | **CEA** | - | - | **0.647** | 0.648 | 0.182 | 0.336 |
 
 **Table 3**\
 Table Metadata to KG Track Summary Results.
@@ -328,11 +328,11 @@ Accuracy Track Summary Results.
 
 | Benchmark | Task | TSOTSA F1 | TSOTSA Pr | Kepler-aSI F1 | Kepler-aSI Pr | DREIFLUSS F1 | DREIFLUSS Pr | ISI-KG F1 | ISI-KG Pr |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| **WikidataTables Round1** | **CEA** | **0.069** | 0.24 | **-** | - | **-** | - | **-** | - |
-|  | **CTA** | 0.717 | 0.717 | **-** | - | **-** | - | **0.929** | 0.929 |
-|  | **CPA** | 0.677 | 0.734 | **-** | - | **-** | - | **0.898** | 0.988 |
-| **WikidataTables Round2** | **CTA** | 0.194 | 0.279 | **-** | - | **-** | - | **0.956** | 0.956 |
-|  | **CPA** | - | - | **-** | - | **-** | - | **0.899** | 0.992 |
+| **WikidataTables Round1** | **CEA** | **0.069** | 0.24 | - | - | - | - | - | - |
+|  | **CTA** | 0.717 | 0.717 | - | - | - | - | **0.929** | 0.929 |
+|  | **CPA** | 0.677 | 0.734 | - | - | - | - | **0.898** | 0.988 |
+| **WikidataTables Round2** | **CTA** | 0.194 | 0.279 | - | - | - | - | **0.956** | 0.956 |
+|  | **CPA** | - | - | - | - | - | - | **0.899** | 0.992 |
 | **tBiodiv-Entity** | **TD** | **0.055** | 0.055 | - | - | - | - | - | - |
 |  | **CEA** | **0.926** | 0.926 | - | - | - | - | - | - |
 |  | **RA** | **0.002** | 0.002 | - | - | - | - | - | - |
@@ -349,9 +349,9 @@ Accuracy Track Summary Results.
 |  | **CEA** | **0.575** | 0.806 | - | - | - | - | - | - |
 |  | **CTA** | **0.749** | 0.749 | - | - | - | - | - | - |
 |  | **CPA** | **0.060** | 0.060 | - | - | - | - | - | - |
-| **tBiodiv-Large-Relational** | **CEA** | - | - | - | - | **0.932** | 0.932 | **-** | - |
+| **tBiodiv-Large-Relational** | **CEA** | - | - | - | - | **0.932** | 0.932 | - | - |
 |  | **CTA** | - | - | **0.741** | 0.741 | 0.615 | 0.615 | - | - |
-| **tBiomed-Large-Relational** | **CEA** | - | - | - | - | **0.925** | 0.925 | **-** | - |
+| **tBiomed-Large-Relational** | **CEA** | - | - | - | - | **0.925** | 0.925 | - | - |
 |  | **CTA** | - | - | **0.867** | 0.867 | - | - | - | - |
 
 ## Acknowledgments

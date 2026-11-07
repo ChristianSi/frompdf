@@ -143,7 +143,7 @@ of the CC Logo.”*
 
 ##### Primary Font: Source Sans Pro
 
-Source Sans Pro **|** *Source Sans Pro* **| Source Sans Pro**
+Source Sans Pro | *Source Sans Pro* **| Source Sans Pro**
 
 “Source Sans Pro is an open-source grotesque typeface designed by Paul D. Hunt for Adobe
 Systems...The slightly condensed letterforms of Source Sans Pro make it ideal for user interfaces

@@ -697,7 +697,7 @@ Ideen nun vermehrt auf internationaler Ebene, so auf einer UNESCO-Konferenz
 internationaler Schuldirektoren in Paris (31. März – 1. April 1949),
 wo er seine Idee einer *Really International Children’s Community* vorstellte.
 Daraus entwickelte sich der Plan für eine *Werkplaats International
-Children’s Community* (WICC)*.* Das Projekt zielte darauf ab, Kindergemeinschaften
+Children’s Community* (WICC). Das Projekt zielte darauf ab, Kindergemeinschaften
 als Keimzellen eines friedlichen Zusammenlebens weltweit zu etablieren.
 Diese Gemeinschaften sollten Kinder unterschiedlicher sozialer,
 religiöser und nationaler Herkunft aufnehmen, wobei – in Anlehnung an
@@ -1633,7 +1633,7 @@ anarchisch, sondern auch alltagstauglich und effektiv sind.
     erwarb, nahm er Mitte der 1950er-Jahre eine Tätigkeit als Schulleiter auf, musste diese jedoch
     nach nur wenigen Jahren aufgrund der Spätfolgen seiner KZ-Haft vorzeitig aufgeben. Vgl.
     Hazekamp: *De bezielende Kracht van Joop Westerweel,* a. a. O. (vgl. Anm. 40), p. 8.
-42. Vgl. Hooghiemstra: *De geest in dit huis is liefderijk,* a. a. O. (vgl. Anm. 4)*,* bes. Kapitel 6: *Oorlog,*
+42. Vgl. Hooghiemstra: *De geest in dit huis is liefderijk,* a. a. O. (vgl. Anm. 4), bes. Kapitel 6: *Oorlog,*
     pp. 201-251.
 43. [[PAGE:29|VISIBLE:185]]Die Mitarbeiter:innen hatten keinen Anspruch auf ein reguläres Gehalt, sondern waren auf
     das angewiesen, was die Werkplaats gerade zur Verfügung stellen konnte.
@@ -1781,7 +1781,7 @@ anarchisch, sondern auch alltagstauglich und effektiv sind.
     und Autoritäten auf humorvolle Weise bloßzustellen. So entstand ein experimenteller anarchistischer
     Versuch, die Anarchie im Hier und Jetzt real erfahrbar zu machen.
 70. [[PAGE:47|VISIBLE:203]]Siehe *De AS* mit dem Themenschwerpunkt *De Sociokratie van Kees Boeke,* vol. 14 (1986),
-    no. 76 (Okt.-Dec.), (online | PDF)*.*
+    no. 76 (Okt.-Dec.), (online | PDF).
 71. Thom Holterman: *Redelijk ordenen bij Kees Boeke,* in: Ebd., p. 6 (Übers. aus d. Niederl. v.
     Verf.).
 72. So Thom Holterman am 25. August 2025 in einer E-Mail, in der er dem Verfasser mitteilte:
