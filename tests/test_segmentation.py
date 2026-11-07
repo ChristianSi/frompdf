@@ -1,7 +1,7 @@
 import unittest
 from dataclasses import replace
 
-from frompdf.models import Line
+from frompdf.models import InlineRange, Line
 from frompdf.segmentation import (
     build_page_context,
     find_marker_lines,
@@ -603,7 +603,7 @@ class SameLineFragmentTests(unittest.TestCase):
             ['Lemma 2.6 (Agreement). For any', ') is a subset of all values'],
         )
 
-    def fraction_paragraph(self, last_text: str) -> list[Line]:
+    def fraction_paragraph(self, last_text: str, last_x2: float = 220.0) -> list[Line]:
         """Build a paragraph whose fourth line holds an inline fraction before a parser edge."""
         return [
             line('first line of a paragraph that', 1),
@@ -612,7 +612,7 @@ class SameLineFragmentTests(unittest.TestCase):
             line('one must send', 4, x2=120.0),
             line('n log IDmax', 4, x1=121.0, x2=150.0, y1=46.5),
             line('n', 4, x1=140.0, x2=145.0, y1=53.5, font_size=7.0),
-            line(last_text, 4, x1=152.0),
+            line(last_text, 4, x1=152.0, x2=last_x2),
             line('originally established and', 5, block_no=2),
             line('continued until its ending.', 6, block_no=2, x2=140.0),
         ]
@@ -627,7 +627,121 @@ class SameLineFragmentTests(unittest.TestCase):
         self.assertEqual(len(group_texts(self.fraction_paragraph('messages. Although'))), 1)
 
     def test_parser_edge_after_completed_sentence_ending_in_fragments_is_kept(self) -> None:
-        self.assertEqual(len(group_texts(self.fraction_paragraph('messages. Done.'))), 2)
+        lines = self.fraction_paragraph('messages. Done.', last_x2=212.0)
+
+        self.assertEqual(len(group_texts(lines)), 2)
+
+    def test_parser_edge_after_sentence_reaching_the_column_edge_is_overridden(self) -> None:
+        self.assertEqual(len(group_texts(self.fraction_paragraph('messages. Done.'))), 1)
+
+
+class RunningTextContinuationTests(unittest.TestCase):
+    """Pdftext block edges below a line, in a column from 20 to 220 with 10 pt type."""
+
+    OPEN = 'the end of this line leaves the sentence open and'
+    CLOSED = 'the end of this line completes its sentence here.'
+    NEXT = 'The following text continues below that line'
+
+    def group_count(self, previous: Line, current: Line) -> int:
+        lines = [
+            *(line(f'Ordinary body text filling line {n}', n, x1=20.0) for n in range(1, 6)),
+            previous,
+            current,
+            line('and yet another ordinary line of the body text', 8, block_no=current.block_no),
+        ]
+        return len(group_texts(lines))
+
+    def previous(self, text: str = OPEN, **options) -> Line:
+        return line(text, 6, **options)
+
+    def current(self, text: str = NEXT, **options) -> Line:
+        return line(text, 7, block_no=2, **options)
+
+    def test_full_line_ending_a_sentence_continues(self) -> None:
+        self.assertEqual(self.group_count(self.previous(self.CLOSED), self.current()), 1)
+
+    def test_line_mostly_in_italics_continues(self) -> None:
+        current = replace(
+            self.current(font_name='Body-Italic'), ranges=(InlineRange(4, 40, 'italic'),)
+        )
+
+        self.assertEqual(self.group_count(self.previous(), current), 1)
+
+    def test_italics_do_not_mislead_a_style_change_with_opaque_font_names(self) -> None:
+        previous = replace(
+            self.previous(font_name='AdvItalic12'), ranges=(InlineRange(0, 40, 'italic'),)
+        )
+        current = line(self.NEXT, 7, font_name='AdvRoman34')
+        following = line('and yet another ordinary line of the text', 8, font_name='AdvRoman34')
+        lines = [
+            *(
+                line(f'Ordinary body text filling line {n}', n, font_name='AdvRoman34')
+                for n in range(1, 6)
+            ),
+            previous,
+            current,
+            following,
+        ]
+
+        self.assertEqual(len(group_texts(lines)), 1)
+
+    def test_break_below_an_indented_first_line_is_overridden(self) -> None:
+        self.assertEqual(self.group_count(self.previous(x1=30.0), self.current()), 1)
+
+    def test_visual_line_above_a_short_line_is_compared_as_a_whole(self) -> None:
+        lines = [
+            *(line(f'Ordinary body text filling line {n}', n) for n in range(1, 6)),
+            line('the first piece of this', 6, x2=120.0),
+            line('the second piece of it', 6, x1=121.0),
+            line('short final line', 7, x2=100.0, block_no=2),
+        ]
+
+        self.assertEqual(len(group_texts(lines)), 1)
+
+    def test_conservative_negatives(self) -> None:
+        for name, previous, current in (
+            ('short open line', self.previous(x2=100.0), self.current()),
+            (
+                'sentence end short of the edge',
+                self.previous(self.CLOSED, x2=212.0),
+                self.current(),
+            ),
+            (
+                'sentence end above an italic line',
+                self.previous(self.CLOSED),
+                replace(
+                    self.current(font_name='Body-Italic'), ranges=(InlineRange(4, 40, 'italic'),)
+                ),
+            ),
+            (
+                'fully italic line',
+                self.previous(),
+                replace(
+                    self.current(font_name='Body-Italic'), ranges=(InlineRange(0, 45, 'italic'),)
+                ),
+            ),
+            (
+                'run-in heading in bold',
+                self.previous(),
+                replace(
+                    self.current(font_name='Body-Italic'),
+                    ranges=(InlineRange(0, 8, 'bold'), InlineRange(8, 40, 'italic')),
+                ),
+            ),
+            ('inset line', self.previous(self.CLOSED), self.current(x1=150.0)),
+            ('large indent above', self.previous(x1=60.0), self.current()),
+            ('reference', self.previous(self.CLOSED), self.current('[3] A. Author, A paper')),
+            ('enumeration', self.previous(self.CLOSED), self.current('(2) The second item')),
+            ('theorem', self.previous(self.CLOSED), self.current('▶ Definition of terms')),
+            ('numbered item', self.previous(self.CLOSED), self.current('4. The fourth item')),
+        ):
+            with self.subTest(name):
+                self.assertEqual(self.group_count(previous, current), 2)
+
+    def test_gap_keeps_a_paragraph_break(self) -> None:
+        self.assertEqual(
+            self.group_count(self.previous(self.CLOSED), line(self.NEXT, 8, block_no=2)), 2
+        )
 
 
 class MarkerLineTests(unittest.TestCase):

@@ -304,6 +304,12 @@ The current pipeline is roughly:
     `pdftext` starts a new block after a line split into pieces, the left edge
     of the whole visual line decides whether the text continues. Within a
     line of running text, a new block needs a change of size, not just face.
+    Below a line filling its column, regular spacing at the same left edge, or
+    at the margin below an indented first line, continues the paragraph despite
+    a `pdftext` block edge or a font change explained by italics within the
+    lines, unless the next line starts with an item label. After a sentence
+    end, this takes the same font, a line closely reaching the right edge, and
+    a next line at the margin.
     Each list item becomes a block of its own, and so does each passage set
     off line by line: evenly spaced lines in smaller type, inset at a shared
     left edge, most of which leave room for the next line's first word,

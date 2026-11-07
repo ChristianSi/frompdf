@@ -179,6 +179,11 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
   `pdftext` block edge just because its font face differs, as after a run-in
   theorem label. Pieces of a line centered on a tall delimiter, rather than
   sharing its top, now also count as one line.
+- A `pdftext` block edge or font change below a line filling its column no
+  longer starts a new paragraph where nothing else marks one: regular spacing,
+  no indent, and no item label on the next line. This also holds after an
+  indented first line, for lines mostly in italics, and for lines ending a
+  sentence if they reach the right edge closely and the font stays the same.
 - Indented text above a document's title on the same page, such as a
   letterhead, is no longer rendered as a block quote, but as paragraphs.
 - Indented lines centered on each other, with varying left and right edges,

@@ -66,8 +66,15 @@ MIN_COLUMN_LINES = 5
 MARKER_LINE_CENTER_TOLERANCE_EM = 1.0
 MARKER_LINE_MAX_COLUMN_SHARE = 0.5
 
+# A line ending a sentence must reach the column's right edge this closely, in
+# ems, to count as continued. Real paragraphs rarely happen to end that close to
+# the edge, unlike within the tolerance of line_is_full.
+CONTINUED_SENTENCE_END_MAX_SHORTFALL_EM = 0.5
+
 # Numbered headings and list items start a new block even in display type.
 NUMBERED_OR_BULLETED_START_PATTERN = re.compile(r'^(?:\d+(?:\.\d+)*\.?|[IVXLC]+\.|[•◦▪●■])\s')
+# Further labels of references, enumerations, and theorems, which start a new item.
+ITEM_LABEL_START_PATTERN = re.compile(r'\[\d+\]|\(\d+\)|\d+\)|▶')
 SENTENCE_END_PATTERN = re.compile(r'[.!?…][’”\'"\]\)}»›]*(?:\d+)?$')
 WORD_BREAK_HYPHEN_PATTERN = re.compile(r'\w[-\u00ad]$')
 FONT_SUBSET_PREFIX_PATTERN = re.compile(r'^[A-Z]{6}\+')
@@ -165,15 +172,20 @@ def normalized_font_name(font_name: str | None) -> str | None:
     return FONT_SUBSET_PREFIX_PATTERN.sub('', font_name).casefold()
 
 
-def compatible_style(left: Line, right: Line) -> bool:
-    """Return whether two lines have compatible dominant typography."""
+def compatible_size_and_weight(left: Line, right: Line) -> bool:
+    """Return whether two lines have compatible font sizes and weights."""
     if not close_font_size(left.font_size, right.font_size):
         return False
-    if (
-        left.avg_weight is not None
-        and right.avg_weight is not None
-        and abs(left.avg_weight - right.avg_weight) >= FONT_WEIGHT_BREAK
-    ):
+    return (
+        left.avg_weight is None
+        or right.avg_weight is None
+        or abs(left.avg_weight - right.avg_weight) < FONT_WEIGHT_BREAK
+    )
+
+
+def compatible_style(left: Line, right: Line) -> bool:
+    """Return whether two lines have compatible dominant typography."""
+    if not compatible_size_and_weight(left, right):
         return False
 
     left_name = normalized_font_name(left.font_name)
@@ -890,6 +902,92 @@ def high_confidence_continuation(
     )
 
 
+def mixes_italics(line_obj: Line) -> bool:
+    """Return whether a line has both italic and upright letters."""
+    italic = {
+        index
+        for run in line_obj.ranges
+        if run.kind == 'italic'
+        for index in range(run.start, run.end)
+    }
+    return bool(italic) and any(
+        character.isalpha() and index not in italic for index, character in enumerate(line_obj.text)
+    )
+
+
+def differs_only_by_italics(left: Line, right: Line) -> bool:
+    """Return whether a font difference may just reflect italics within running text.
+
+    A line's font is its dominant one, so a line that is mostly italic differs
+    from an upright neighbor, though its upright text continues in the same font.
+    Bold is left out, as it often marks a run-in heading.
+    """
+    return (
+        compatible_size_and_weight(left, right)
+        and (mixes_italics(left) or mixes_italics(right))
+        and not any(run.kind == 'bold' for run in (*left.ranges, *right.ranges))
+    )
+
+
+def continues_running_text(
+    previous: Line, current: Line, context: PageContext, previous_start: Line | None = None
+) -> bool:
+    """Return whether current continues a paragraph, whatever pdftext or the fonts suggest.
+
+    previous_start begins the visual line ending with previous, if different.
+    The previous line must fill the column at regular spacing, with current
+    starting at the same left edge, or at the margin below an indented first
+    line. Indents and gaps marking paragraphs are checked before this, so
+    nothing but a pdftext block edge or a font change is left to suggest a break.
+
+    A line ending a sentence must also reach the column's right edge closely,
+    be followed by a line at the margin, and share its font: without an indent or
+    a gap, real paragraphs are rarely set this way, as in intertrans and folie.
+    """
+    start = previous_start or previous
+    if (
+        context.rhythm_sample_count < MIN_RHYTHM_SAMPLES
+        or not is_prose_line(previous)
+        or not is_prose_line(current)
+        or NUMBERED_OR_BULLETED_START_PATTERN.match(current.text)
+        or ITEM_LABEL_START_PATTERN.match(current.text)
+        or not has_normal_advance(previous, current, context)
+        or start.x1 is None
+        or previous.x2 is None
+        or current.x1 is None
+        or current.x2 is None
+    ):
+        return False
+    column = column_for_line(current, context)
+    if (
+        column is None
+        or column.line_count < MIN_COLUMN_LINES
+        or column_for_line(start, context) != column
+        # The whole visual line must lie above current, not just its last piece.
+        or min(previous.x2, current.x2) <= max(start.x1, current.x1)
+    ):
+        return False
+
+    font_size = current.font_size or context.font_size
+    previous_size = previous.font_size or context.font_size
+    at_margin = near(current.x1, column.left, font_size)
+    below_first_line_indent = (
+        at_margin and 0 < start.x1 - column.left <= font_size * MAX_FIRST_LINE_INDENT_EM
+    )
+    if not line_is_full(previous, column, previous_size) or not (
+        near(start.x1, current.x1, font_size) or below_first_line_indent
+    ):
+        return False
+    if ends_sentence(previous.text):
+        return (
+            at_margin
+            and compatible_style(previous, current)
+            and column.right - previous.x2
+            <= previous_size * CONTINUED_SENTENCE_END_MAX_SHORTFALL_EM
+        )
+    return compatible_style(previous, current) or differs_only_by_italics(previous, current)
+
+
 def continues_display_line(previous: Line, current: Line, context: PageContext) -> bool:
     """Return whether current continues a title or other display text from previous.
 
@@ -995,7 +1093,9 @@ def should_start_new_group(
     if continues_display_line(previous, current, context):
         return False
     if not same_flow(previous, current, context):
-        return pdftext_break
+        return pdftext_break and not continues_running_text(
+            previous, current, context, previous_start
+        )
 
     reliable_context = context.rhythm_sample_count >= MIN_RHYTHM_SAMPLES
     if reliable_context:
@@ -1017,6 +1117,7 @@ def should_start_new_group(
                 close_font_size(previous.font_size, context.font_size)
                 or close_font_size(current.font_size, context.font_size)
             )
+            and not continues_running_text(previous, current, context, previous_start)
         ):
             return True
         if (
@@ -1029,8 +1130,9 @@ def should_start_new_group(
             return True
         if changes_face_after_short_line(previous, current, context):
             return True
-    if pdftext_break and high_confidence_continuation(
-        previous, current, context, previous_start, following
+    if pdftext_break and (
+        high_confidence_continuation(previous, current, context, previous_start, following)
+        or continues_running_text(previous, current, context, previous_start)
     ):
         return False
     return pdftext_break
