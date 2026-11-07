@@ -204,6 +204,59 @@ def render_blocks(blocks: list[Block], page_markers: bool = False) -> str:
     return output.getvalue()
 
 
+class ThematicBreakOutputTests(unittest.TestCase):
+    def test_paragraphs_reading_as_thematic_breaks_are_not_escaped(self) -> None:
+        page = page_number(1)
+        for text in ('***', '* * *', '---', '- - -', '___'):
+            with self.subTest(text):
+                self.assertEqual(render_blocks([Paragraph(text, page, page)]), f'{text}\n')
+
+    def test_page_marker_gets_its_own_paragraph(self) -> None:
+        one, two = page_number(1), page_number(2, '184')
+
+        self.assertEqual(
+            render_blocks(
+                [Paragraph('Text.', one, one), Paragraph('***', two, two)], page_markers=True
+            ),
+            '[[PAGE:1]]Text.\n\n[[PAGE:2|VISIBLE:184]]\n\n***\n',
+        )
+
+    def test_rule_on_the_same_page_has_no_page_marker(self) -> None:
+        page = page_number(1)
+
+        self.assertEqual(
+            render_blocks(
+                [Paragraph('Text.', page, page), Paragraph('***', page, page)], page_markers=True
+            ),
+            '[[PAGE:1]]Text.\n\n***\n',
+        )
+
+    def test_emphasis_of_a_rule_is_dropped(self) -> None:
+        page = page_number(1)
+        block = Paragraph('***', page, page, ranges=(InlineRange(0, 3, 'bold'),))
+
+        self.assertEqual(render_blocks([block]), '***\n')
+
+    def test_note_sign_in_a_superscript_stays_escaped(self) -> None:
+        page = page_number(1)
+        block = Paragraph('***', page, page, ranges=(InlineRange(0, 3, 'sup'),))
+
+        self.assertEqual(render_blocks([block]), '<sup>&#42;&#42;&#42;</sup>\n')
+
+    def test_other_text_and_blocks_stay_escaped(self) -> None:
+        page = page_number(1)
+        for block, expected in (
+            (Paragraph('**', page, page), '\\*\\*\n'),
+            (Paragraph('***\n***', page, page), '\\*\\*\\*\n\\*\\*\\*\n'),
+            (BlockQuote('***', page, page), '> \\*\\*\\*\n'),
+            (Heading('***', page, page, level=2), '## \\*\\*\\*\n'),
+            (ListItem('***', page, page), '- \\*\\*\\*\n'),
+            (StrongParagraph('***', page, page), '**\\*\\*\\***\n'),
+        ):
+            with self.subTest(type(block).__name__, text=block.text):
+                self.assertEqual(render_blocks([block]), expected)
+
+
 class PipeTableTests(unittest.TestCase):
     def test_header_rows_combine_labels_of_spanning_cells_with_those_below(self) -> None:
         page = page_number(1)

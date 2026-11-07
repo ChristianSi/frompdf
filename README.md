@@ -68,7 +68,10 @@ frompdf currently detects and serializes:
 - bold and italic text, rendered as `**bold**` and `*italic*` emphasis
 - deliberate line breaks within blocks, such as in epigraphs or address cards,
   preserved as hard line breaks (a trailing backslash)
-- escaping of text that Markdown would otherwise read as syntax
+- escaping of text that Markdown would otherwise read as syntax, except for
+  paragraphs such as `***`, which stay Markdown horizontal rules
+- short, centered lines without letters or digits, such as ornaments ending a
+  chapter, kept as paragraphs of their own
 
 The internal block model tracks the raw PDF page number and, when available,
 the visible page number for each block.
@@ -152,7 +155,9 @@ visible as plain text when the Markdown is rendered. A parenthesis directly
 following a marker is escaped as `\(`, so it does not turn the marker into a
 link, and `[[PAGE:` occurring in the source text is escaped as `[\[PAGE:`, so
 it cannot be mistaken for a marker. Markers are placed after Markdown prefixes
-such as `## ` for headings and `> ` for block quotes. A paragraph or block
+such as `## ` for headings and `> ` for block quotes. A horizontal rule
+starting a page follows its marker as a separate paragraph, since it would not
+be recognized as a rule on the marker's line. A paragraph or block
 quote continuing on the next page contains the marker where that page's text
 starts; a word split across the boundary stays on its starting page. Collected
 notes retain their source pages, so markers can move backward in page order

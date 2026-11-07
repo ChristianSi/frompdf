@@ -10,7 +10,7 @@ rendered as paragraphs rather than block quotes.
 import re
 
 from frompdf.models import Block, BlockQuote, Heading, Paragraph, StrongParagraph
-from frompdf.segmentation import NUMBERED_OR_BULLETED_START_PATTERN
+from frompdf.segmentation import NUMBERED_OR_BULLETED_START_PATTERN, has_alphanumeric
 
 # A paragraph this long is body text, such as an abstract, ending the front
 # matter. Bylines, affiliations, and dates are much shorter.
@@ -33,11 +33,6 @@ def visible_text(block_obj: Block) -> str:
 def is_chapter_label(block_obj: Block) -> bool:
     """Return whether a block is a label such as "CHAPTER 10" rather than a title."""
     return bool(CHAPTER_LABEL_PATTERN.fullmatch(visible_text(block_obj)))
-
-
-def has_alphanumeric(text: str) -> bool:
-    """Return whether text contains letters or digits, unlike ornaments and rules."""
-    return any(character.isalnum() for character in text)
 
 
 def title_indices(block_list: list[Block]) -> list[int]:

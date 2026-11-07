@@ -14,11 +14,7 @@ from frompdf.continuations import (
     join_fragments,
 )
 from frompdf.footnotes import build_footnote, extract_footnotes, place_footnotes
-from frompdf.front_matter import (
-    format_front_matter,
-    has_alphanumeric,
-    unquote_blocks_above_title,
-)
+from frompdf.front_matter import format_front_matter, unquote_blocks_above_title
 from frompdf.heading_candidates import find_typographic_heading_lines
 from frompdf.line_breaks import hard_line_break_ids, line_by_line_passages
 from frompdf.lists import ListMarker, find_list_items
@@ -36,7 +32,12 @@ from frompdf.models import (
     TextFragment,
 )
 from frompdf.scripts import AnnotatedText, collapse_annotated_whitespace, join_annotated_texts
-from frompdf.segmentation import same_physical_line, segment_lines
+from frompdf.segmentation import (
+    find_marker_lines,
+    has_alphanumeric,
+    same_physical_line,
+    segment_lines,
+)
 from frompdf.tables import TableLayout
 from frompdf.unhyphenation import (
     document_coordination_tokens,
@@ -292,16 +293,19 @@ def markdown_block_from_lines(
     typographic_heading: bool = False,
     list_marker: ListMarker | None = None,
     passage: bool = False,
+    marker_line: bool = False,
 ) -> Block:
     """Build a Markdown block from grouped line records.
 
     With a list marker, the lines form a list item whose first line starts
     with that marker, which is replaced by a Markdown marker. A passage is set
-    off from the text line by line, as quoted verse.
+    off from the text line by line, as quoted verse. A marker line, such as an
+    ornament, is inset but not quoted.
     """
     block_class: type[Block] = (
         BlockQuote
         if not typographic_heading
+        and not marker_line
         and list_marker is None
         and is_blockquote_block(
             line_list, default_font_size, body_lefts_by_page, follows_blockquote
@@ -666,12 +670,15 @@ def lines_to_markdown_blocks(
     typographic_heading_indices: set[int] = set()
     block_positions: list[int] = []
     page_layouts = build_page_layouts(body_lines)
-    list_items = find_list_items(body_lines, heading_lines)
+    marker_lines = find_marker_lines(body_lines)
+    list_items = find_list_items(body_lines, heading_lines, marker_lines)
     passage_lines = line_by_line_passages(page_layouts)
 
     group_list = split_groups_at_tables(
         merge_continued_groups(
-            segment_lines(body_lines, heading_lines, list_items.item_of_line, passage_lines),
+            segment_lines(
+                body_lines, heading_lines, list_items.item_of_line, passage_lines, marker_lines
+            ),
             page_layouts,
             default_font_size,
             body_lefts_by_page,
@@ -700,6 +707,7 @@ def lines_to_markdown_blocks(
                 typographic_heading=typographic_heading,
                 list_marker=list_items.markers.get(id(current_lines[0])),
                 passage=all(id(line) in passage_lines for line in current_lines),
+                marker_line=all(id(line) in marker_lines for line in current_lines),
             )
         )
 

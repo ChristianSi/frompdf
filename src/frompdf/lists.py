@@ -184,13 +184,19 @@ def accepted(run: ListRun) -> bool:
     return len(run.items) >= MIN_WEAK_ITEMS
 
 
-def find_list_items(line_list: list[Line], heading_lines: dict[int, int]) -> ListItems:
+def find_list_items(
+    line_list: list[Line],
+    heading_lines: dict[int, int],
+    marker_lines: dict[int, int] | None = None,
+) -> ListItems:
     """Find list items among ordered body lines, which may span pages.
 
     Positions are compared relative to the page column, so items continue
     across pages with different margins. Lines of headings never belong to
-    items.
+    items, nor do marker lines, such as ornaments, which end a list although
+    they are indented past its markers.
     """
+    marker_lines = marker_lines or {}
     contexts: dict[int, PageContext] = {}
     lines_by_page: dict[int, list[Line]] = {}
     for line_obj in line_list:
@@ -220,7 +226,12 @@ def find_list_items(line_list: list[Line], heading_lines: dict[int, int]) -> Lis
         if not heading and not same_line and offset is not None:
             marker = parse_list_marker(line_obj.text)
 
-        if run is not None and not heading and offset is not None:
+        if (
+            run is not None
+            and not heading
+            and id(line_obj) not in marker_lines
+            and offset is not None
+        ):
             aligned = abs(offset - run.marker_offset) <= font_size * MARKER_ALIGNMENT_EM
             if marker is not None and aligned and continues_marker(run, marker):
                 run.items.append([line_obj])

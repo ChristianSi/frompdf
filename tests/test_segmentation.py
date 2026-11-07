@@ -4,6 +4,7 @@ from dataclasses import replace
 from frompdf.models import Line
 from frompdf.segmentation import (
     build_page_context,
+    find_marker_lines,
     normalized_font_family,
     same_physical_line,
     segment_lines,
@@ -627,6 +628,91 @@ class SameLineFragmentTests(unittest.TestCase):
 
     def test_parser_edge_after_completed_sentence_ending_in_fragments_is_kept(self) -> None:
         self.assertEqual(len(group_texts(self.fraction_paragraph('messages. Done.'))), 2)
+
+
+class MarkerLineTests(unittest.TestCase):
+    """Lines in a column from 20 to 220, centered at 120."""
+
+    def text_lines(self) -> list[Line]:
+        return [
+            line('The first line of the closing paragraph', 1),
+            line('and the second line of that paragraph', 2),
+            line('with a short end.', 3, x2=100.0),
+        ]
+
+    def groups_with_following_text(self, *middle: Line) -> list[list[str]]:
+        lines = [*self.text_lines(), *middle, line('The next section starts here', 6)]
+        return [
+            [line_obj.text for line_obj in group]
+            for group in segment_lines(lines, marker_lines=find_marker_lines(lines))
+        ]
+
+    def test_centered_ornament_with_tight_leading_is_separated(self) -> None:
+        ornament = line('⸟', 4, x1=117.0, x2=123.0, y1=44.0, font_size=11.0)
+
+        self.assertEqual(
+            self.groups_with_following_text(ornament)[-2:],
+            [['⸟'], ['The next section starts here']],
+        )
+
+    def test_staggered_pieces_form_one_marker_line(self) -> None:
+        pieces = [
+            line('*', 4, x1=114.0, x2=118.0, y1=48.0),
+            line('*', 4, x1=118.0, x2=122.0, y1=51.0),
+            line('*', 4, x1=122.0, x2=126.0, y1=48.0),
+        ]
+
+        self.assertEqual(
+            self.groups_with_following_text(*pieces)[-2:],
+            [['*', '*', '*'], ['The next section starts here']],
+        )
+
+    def test_marker_on_a_sparse_page_ignores_its_own_pieces_for_columns(self) -> None:
+        lines = [
+            line('A closing paragraph that fills its column', 1),
+            line('*', 2, x1=114.0, x2=118.0),
+            line('*', 2, x1=118.0, x2=122.0),
+            line('*', 2, x1=122.0, x2=126.0),
+        ]
+
+        self.assertEqual(len(find_marker_lines(lines)), 3)
+
+    def test_marker_is_centered_within_its_own_column(self) -> None:
+        lines = [
+            *(line(f'Left column text, line {n}', n, x2=200.0) for n in range(1, 7)),
+            *(
+                line(f'Right column text, line {n}', n + 6, x1=300.0, x2=480.0, y1=n * 12.0)
+                for n in range(1, 7)
+            ),
+            line('⁂', 13, x1=387.0, x2=393.0, y1=84.0),
+        ]
+
+        self.assertEqual(set(find_marker_lines(lines)), {id(lines[-1])})
+
+    def test_conservative_negatives(self) -> None:
+        for name, candidate in {
+            'text': line('Fin', 4, x1=110.0, x2=130.0),
+            'digit': line('1', 4, x1=117.0, x2=123.0),
+            'uncentered': line('-', 4, x1=60.0, x2=66.0),
+            'left-aligned': line('***', 4, x2=32.0),
+            'wide': line('. . . . . . . . . . . . . .', 4, x1=30.0, x2=210.0),
+            'undecoded': line('\ufffd\ufffd + \ufffd\ufffd', 4, x1=105.0, x2=135.0),
+            'blank': line(' ', 4, x1=117.0, x2=123.0),
+        }.items():
+            with self.subTest(name):
+                self.assertEqual(find_marker_lines([*self.text_lines(), candidate]), {})
+
+    def test_note_sign_on_a_line_of_text_is_no_marker(self) -> None:
+        lines = [
+            *self.text_lines(),
+            line('Centered title', 4, x1=90.0, x2=116.0),
+            line('*', 4, x1=116.0, x2=120.0),
+        ]
+
+        self.assertEqual(find_marker_lines(lines), {})
+
+    def test_ordinary_paragraph_is_not_split_without_markers(self) -> None:
+        self.assertEqual(len(self.groups_with_following_text()), 1)
 
 
 if __name__ == '__main__':

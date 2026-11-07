@@ -293,7 +293,8 @@ The current pipeline is roughly:
     following lines indented past it, across page boundaries. Bullet glyphs
     suffice; dashes and numbers need at least two aligned items with
     consecutive numbers after a deliberate break, and numbers without a
-    delimiter also most items wrapping onto continuation lines.
+    delimiter also most items wrapping onto continuation lines. Marker lines,
+    described below, end a list although they are indented past its markers.
 11. Segment each page's body into blocks using `pdftext` hints, geometry,
     typography, indentation, and line-spacing evidence. Display-sized lines
     sharing face, alignment, and tight leading stay together, as in titles,
@@ -307,7 +308,9 @@ The current pipeline is roughly:
     off line by line: evenly spaced lines in smaller type, inset at a shared
     left edge, most of which leave room for the next line's first word,
     followed by body text on the same page. A gap, as between stanzas, ends
-    such a passage.
+    such a passage. Marker lines, such as ornaments, also become blocks of their
+    own: visual lines without letters or digits, short and centered in their
+    column. They are never block quotes.
 12. Join blocks continuing at the top of the next column or page. Similar
     typography, a full last line, a non-indented first line, and consistent
     block-quote classification are required. An open sentence, a lower-case
@@ -340,7 +343,10 @@ The current pipeline is roughly:
     heading when necessary to prevent accidental parentage.
 16. Serialize the blocks as Markdown in `.md`, including compact numbered notes.
     Text that Markdown would read as syntax is escaped, including list
-    markers starting blocks that were not recognized as list items.
+    markers starting blocks that were not recognized as list items. Only
+    paragraphs reading as a thematic break, such as `***`, stay unescaped and
+    drop their emphasis; a page marker starting one becomes a paragraph of its
+    own, so it does not turn the rule into literal text.
     Inline scripts become `<sup>`/`<sub>` tags; consumed footnote labels remain
     ordinary list markers.
     Bold and italic ranges become `**`/`*` emphasis. Headings and strong

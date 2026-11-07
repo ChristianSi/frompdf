@@ -1,6 +1,6 @@
 import unittest
 
-from frompdf.escaping import escape_markdown, shift_index
+from frompdf.escaping import escape_markdown, is_thematic_break, shift_index
 from frompdf.models import HARD_LINE_BREAK, InlineRange
 from frompdf.scripts import AnnotatedText
 
@@ -59,6 +59,18 @@ class InlineEscapeTests(unittest.TestCase):
         self.assertEqual(result.text, 'x*_1 \\*')
         self.assertEqual(result.ranges, (InlineRange(1, 4, 'sup'),))
         self.assertEqual(insertions, [5])
+
+
+class ThematicBreakTests(unittest.TestCase):
+    def test_recognizes_lines_of_at_least_three_identical_characters(self) -> None:
+        for text in ('***', '* * *', '*****', '---', '- - -', '___', '_ _ _', ' *** '):
+            with self.subTest(text):
+                self.assertTrue(is_thematic_break(text))
+
+    def test_rejects_other_text(self) -> None:
+        for text in ('', '**', '--', '__', '*-*', '***a', '***\n***', '===', '⁂', '—'):
+            with self.subTest(text):
+                self.assertFalse(is_thematic_break(text))
 
 
 class LineStartEscapeTests(unittest.TestCase):

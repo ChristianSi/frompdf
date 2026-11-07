@@ -194,6 +194,42 @@ class ListItemTests(unittest.TestCase):
         )
 
 
+class MarkerLineAfterListTests(unittest.TestCase):
+    """An ornament centered in the column from 20 to 220 is inset past the list markers."""
+
+    def block_summaries(self, *following: Line) -> list[tuple[type, str]]:
+        items = [
+            line('• First entry filling the whole line of its column', 12.0),
+            line('and wrapping onto a second line of its column', 24.0, x1=32.0),
+            line('• Second entry filling the whole line of its column', 36.0),
+        ]
+        blocks = lines_to_markdown_blocks(
+            [*items, *following], {1: PageNumber(raw=1, visible=None)}
+        )
+        return [(type(block), block.text) for block in blocks]
+
+    def test_ornament_is_a_paragraph_after_the_last_item(self) -> None:
+        self.assertEqual(
+            self.block_summaries(line('⸟', 48.0, x1=117.0, x2=123.0))[-2:],
+            [(ListItem, 'Second entry filling the whole line of its column'), (Paragraph, '⸟')],
+        )
+
+    def test_pieces_of_an_ornament_form_one_paragraph_after_the_last_item(self) -> None:
+        pieces = [
+            line('*', 50.0, x1=114.0, x2=118.0),
+            line('*', 53.0, x1=118.0, x2=122.0),
+            line('*', 50.0, x1=122.0, x2=126.0),
+        ]
+
+        self.assertEqual(self.block_summaries(*pieces)[-1], (Paragraph, '***'))
+
+    def test_uncentered_short_continuation_stays_in_the_item(self) -> None:
+        self.assertEqual(
+            self.block_summaries(line('fin', 48.0, x1=32.0, x2=50.0))[-1],
+            (ListItem, 'Second entry filling the whole line of its column\nfin'),
+        )
+
+
 class ListBlockTests(unittest.TestCase):
     def test_builds_list_items_instead_of_quotes_and_strips_markers(self) -> None:
         bold_label = (InlineRange(0, 1, 'bold'),)

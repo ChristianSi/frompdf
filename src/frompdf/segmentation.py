@@ -1,7 +1,7 @@
 import re
 from collections import defaultdict
 from dataclasses import dataclass
-from itertools import pairwise
+from itertools import groupby, pairwise
 from statistics import median
 
 from frompdf.models import Line
@@ -58,6 +58,13 @@ MAX_SAME_FACE_FRAGMENT_GAP_EM = 0.5
 # Sparse synthetic or highly irregular pages should retain pdftext's decisions.
 MIN_RHYTHM_SAMPLES = 3
 MIN_COLUMN_LINES = 5
+
+# A marker line, such as an ornament ending a chapter or separating sections,
+# has no letters or digits, is centered in its column within this many ems, and
+# takes up at most this share of the column's width. Leading is no evidence, as
+# ornaments often sit closer to the text than its lines do to each other.
+MARKER_LINE_CENTER_TOLERANCE_EM = 1.0
+MARKER_LINE_MAX_COLUMN_SHARE = 0.5
 
 # Numbered headings and list items start a new block even in display type.
 NUMBERED_OR_BULLETED_START_PATTERN = re.compile(r'^(?:\d+(?:\.\d+)*\.?|[IVXLC]+\.|[•◦▪●■])\s')
@@ -196,6 +203,11 @@ def is_prose_line(line_obj: Line) -> bool:
 def is_textual_line(line_obj: Line) -> bool:
     """Return whether a short line still contains meaningful natural-language text."""
     return sum(character.isalpha() for character in line_obj.text) >= 3
+
+
+def has_alphanumeric(text: str) -> bool:
+    """Return whether text contains letters or digits, unlike ornaments and rules."""
+    return any(character.isalnum() for character in text)
 
 
 def cluster_left_edges(line_list: list[Line], font_size: float) -> list[float]:
@@ -1024,17 +1036,75 @@ def should_start_new_group(
     return pdftext_break
 
 
+def is_marker_line(
+    pieces: list[Line], columns: tuple[ColumnContext, ...], font_size: float
+) -> bool:
+    """Return whether the pieces of a visual line form a marker line within a column.
+
+    Replacement characters stand for undecoded glyphs, as in formulas, which
+    may well be letters.
+    """
+    text = ''.join(piece.text for piece in pieces)
+    left = pieces[0].x1
+    right = pieces[-1].x2
+    if (
+        not text.strip()
+        or has_alphanumeric(text)
+        or '\ufffd' in text
+        or left is None
+        or right is None
+    ):
+        return False
+    center = (left + right) / 2
+    return any(
+        abs(center - (column.left + column.right) / 2)
+        <= font_size * MARKER_LINE_CENTER_TOLERANCE_EM
+        and right - left <= column.width * MARKER_LINE_MAX_COLUMN_SHARE
+        for column in columns
+    )
+
+
+def find_marker_lines(line_list: list[Line]) -> dict[int, int]:
+    """Map the line IDs of marker lines to the first ID of their visual line.
+
+    A visual line may consist of several pieces, such as three asterisks set at
+    staggered heights. Columns follow the lines with letters or digits only, as
+    the pieces of a marker would otherwise form a column on sparse pages.
+    """
+    marker_lines: dict[int, int] = {}
+    for _, page_group in groupby(line_list, key=lambda line_obj: line_obj.page_no):
+        page_lines = list(page_group)
+        font_size = dominant_page_font_size(page_lines)
+        columns = build_columns(
+            [line_obj for line_obj in page_lines if has_alphanumeric(line_obj.text)], font_size
+        )
+        start = 0
+        while start < len(page_lines):
+            end = start + 1
+            while end < len(page_lines) and same_physical_line(
+                page_lines[end - 1], page_lines[end]
+            ):
+                end += 1
+            pieces = page_lines[start:end]
+            if is_marker_line(pieces, columns, font_size):
+                marker_lines.update((id(piece), id(pieces[0])) for piece in pieces)
+            start = end
+    return marker_lines
+
+
 def segment_page(
     line_list: list[Line],
     heading_lines: dict[int, int] | None = None,
     list_item_lines: dict[int, int] | None = None,
     passage_lines: dict[int, int] | None = None,
+    marker_lines: dict[int, int] | None = None,
 ) -> list[list[Line]]:
     """Segment a page; heading_lines maps confirmed line IDs to their title's first ID.
 
     list_item_lines likewise maps the line IDs of list items to their first
     line's ID, so each item becomes a group of its own. So does passage_lines
-    for passages set off line by line, such as quoted verse.
+    for passages set off line by line, such as quoted verse, and marker_lines
+    for marker lines, such as ornaments.
     """
     if not line_list:
         return []
@@ -1042,6 +1112,7 @@ def segment_page(
     heading_lines = heading_lines or {}
     list_item_lines = list_item_lines or {}
     passage_lines = passage_lines or {}
+    marker_lines = marker_lines or {}
     groups: list[list[Line]] = [[line_list[0]]]
 
     for index, current in enumerate(line_list[1:], start=1):
@@ -1058,6 +1129,8 @@ def segment_page(
             starts_group = previous_item != current_item
         elif id(previous) in passage_lines or id(current) in passage_lines:
             starts_group = passage_lines.get(id(previous)) != passage_lines.get(id(current))
+        elif id(previous) in marker_lines or id(current) in marker_lines:
+            starts_group = marker_lines.get(id(previous)) != marker_lines.get(id(current))
         else:
             starts_group = should_start_new_group(
                 preceding,
@@ -1078,6 +1151,7 @@ def segment_lines(
     heading_lines: dict[int, int] | None = None,
     list_item_lines: dict[int, int] | None = None,
     passage_lines: dict[int, int] | None = None,
+    marker_lines: dict[int, int] | None = None,
 ) -> list[list[Line]]:
     """Segment ordered lines without ever joining text across page boundaries."""
     groups: list[list[Line]] = []
@@ -1086,10 +1160,16 @@ def segment_lines(
 
     for line_obj in line_list:
         if current_page_no is not None and line_obj.page_no != current_page_no:
-            groups.extend(segment_page(current_page, heading_lines, list_item_lines, passage_lines))
+            groups.extend(
+                segment_page(
+                    current_page, heading_lines, list_item_lines, passage_lines, marker_lines
+                )
+            )
             current_page = []
         current_page.append(line_obj)
         current_page_no = line_obj.page_no
 
-    groups.extend(segment_page(current_page, heading_lines, list_item_lines, passage_lines))
+    groups.extend(
+        segment_page(current_page, heading_lines, list_item_lines, passage_lines, marker_lines)
+    )
     return groups

@@ -28,9 +28,15 @@ ORDERED_PATTERN = re.compile(r'(\d{1,9})([.)])(?=[ \t]|$)')
 DASH_LINE_PATTERN = re.compile(r'-[- \t]*')
 EQUALS_LINE_PATTERN = re.compile(r'=+[ \t]*')
 LINK_DEFINITION_PATTERN = re.compile(r'\[[^\]]+\]:')
+THEMATIC_BREAK_PATTERN = re.compile(r'(?:\*[ \t]*){3,}|(?:-[ \t]*){3,}|(?:_[ \t]*){3,}')
 
 # Markdown allows up to three spaces of indentation before block syntax.
 MAX_BLOCK_INDENT = 3
+
+
+def is_thematic_break(text: str) -> bool:
+    """Return whether unescaped text is a Markdown thematic break."""
+    return THEMATIC_BREAK_PATTERN.fullmatch(text.strip(' \t')) is not None
 
 
 def inline_escape_positions(

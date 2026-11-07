@@ -1,4 +1,5 @@
 import unittest
+from dataclasses import replace
 from typing import cast
 
 from pdftext.schema import Line as PdfTextLine
@@ -6,10 +7,11 @@ from pdftext.schema import Line as PdfTextLine
 from frompdf.blocks import (
     initial_heading_level,
     is_blockquote_block,
+    lines_to_markdown_blocks,
     should_boost_heading_font_size,
 )
 from frompdf.lines import average_font_weight, dominant_font_name
-from frompdf.models import Line, PageNumber, Paragraph
+from frompdf.models import BlockQuote, Line, PageNumber, Paragraph
 
 
 def paragraph(text: str, font_size: float, avg_weight: float | None = None) -> Paragraph:
@@ -39,6 +41,65 @@ def positioned_line(text: str, x1: float, x2: float = 200.0, y1: float = 10.0) -
         avg_weight=400.0,
         font_name='Body-Italic',
     )
+
+
+class MarkerLineBlockTests(unittest.TestCase):
+    def blocks_for_marker(self, *pieces: Line) -> list[str]:
+        body = [
+            positioned_line('The first line of the closing paragraph', 20.0, 220.0, y1=10.0),
+            positioned_line('and the second line of that paragraph', 20.0, 220.0, y1=22.0),
+            positioned_line('with a short end.', 20.0, 100.0, y1=34.0),
+        ]
+        blocks = lines_to_markdown_blocks(
+            [*body, *pieces], {1: PageNumber(raw=1, visible=None)}, notes_title='Notes'
+        )
+        self.assertFalse(any(isinstance(block, BlockQuote) for block in blocks))
+        self.assertTrue(all(isinstance(block, Paragraph) for block in blocks))
+        return [block.text for block in blocks]
+
+    def test_marker_line_of_several_pieces_is_an_unquoted_paragraph(self) -> None:
+        pieces = [
+            positioned_line('*', 114.0, 118.0, y1=46.0),
+            positioned_line('*', 118.0, 122.0, y1=48.0),
+            positioned_line('*', 122.0, 126.0, y1=46.0),
+        ]
+
+        self.assertEqual(self.blocks_for_marker(*pieces)[-1], '***')
+
+    def test_single_marker_line_is_an_unquoted_paragraph(self) -> None:
+        self.assertEqual(
+            self.blocks_for_marker(positioned_line('⸟', 117.0, 123.0, y1=44.0))[-1], '⸟'
+        )
+
+    def test_marker_line_after_block_quote_is_an_unquoted_paragraph(self) -> None:
+        body = [
+            positioned_line(f'Line {n} of the paragraph above the quote', 20.0, 220.0, y1=n * 12.0)
+            for n in range(5)
+        ]
+        quote = [
+            replace(
+                positioned_line(f'Line {n} of the quote', 50.0, 190.0, y1=60.0 + n * 12.0),
+                block_no=2,
+            )
+            for n in range(3)
+        ]
+        for name, pieces in {
+            'single': [positioned_line('⸟', 117.0, 123.0, y1=96.0)],
+            'staggered': [
+                positioned_line('*', 114.0, 118.0, y1=98.0),
+                positioned_line('*', 118.0, 122.0, y1=100.0),
+                positioned_line('*', 122.0, 126.0, y1=98.0),
+            ],
+        }.items():
+            with self.subTest(name):
+                blocks = lines_to_markdown_blocks(
+                    [*body, *quote, *(replace(piece, block_no=2) for piece in pieces)],
+                    {1: PageNumber(raw=1, visible=None)},
+                )
+                self.assertEqual(
+                    [type(block) for block in blocks], [Paragraph, BlockQuote, Paragraph]
+                )
+                self.assertEqual(blocks[-1].text, ''.join(piece.text for piece in pieces))
 
 
 class BlockQuoteDetectionTests(unittest.TestCase):

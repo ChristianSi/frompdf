@@ -47,6 +47,7 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
   starts. Escapes are limited to where they are needed. Text that only looks
   like a list marker, at the start of a paragraph that was not recognized as
   a list item, is escaped as well, so it does not become an accidental list.
+  Paragraphs reading as a horizontal rule, such as `***`, stay unescaped.
 - Deliberate line breaks within paragraphs and block quotes, such as those in
   epigraphs and their attributions, author and affiliation cards, or lists of
   dates, are preserved as CommonMark hard line breaks (a trailing backslash).
@@ -195,6 +196,11 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
   with a hard line break wherever a line leaves room for the next word, even
   before a sentence continuing in lower case. Such a passage is recognized
   when most of its lines leave that room and body text resumes after it.
+- Short lines without letters or digits centered in their column, such as
+  ornaments ending a chapter or separating sections, are now paragraphs of
+  their own rather than lines of the preceding paragraph, list item, or block
+  quote, also when they consist of several pieces, like asterisks at staggered
+  heights. They are never rendered as block quotes.
 
 ## 0.1.0 - 2026-07-09
 

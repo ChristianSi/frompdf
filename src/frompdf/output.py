@@ -5,7 +5,7 @@ from pathlib import Path
 from typing import TextIO
 
 from frompdf.emphasis import render_inline, resolve_emphasis
-from frompdf.escaping import escape_markdown, shift_index
+from frompdf.escaping import escape_markdown, is_thematic_break, shift_index
 from frompdf.models import (
     HARD_LINE_BREAK,
     Block,
@@ -15,6 +15,7 @@ from frompdf.models import (
     Line,
     ListItem,
     PageNumber,
+    Paragraph,
     StrongParagraph,
     Table,
     TableCell,
@@ -307,6 +308,24 @@ def block_separator(previous_block: Block, block_obj: Block) -> str:
     return '\n\n'
 
 
+def thematic_break_text(block_obj: Block) -> str | None:
+    """Return the text of a paragraph to render as a thematic break, if it reads like one.
+
+    Such paragraphs are ornaments, which stay unescaped so Markdown renders
+    them as horizontal rules. A rule cannot carry emphasis, but superscripts,
+    as of note signs, are not ornaments.
+    """
+    if (
+        not isinstance(block_obj, Paragraph)
+        or isinstance(block_obj, StrongParagraph)
+        or len(block_obj.fragments) > 1
+        or any(run.is_script for run in block_obj.ranges)
+        or not is_thematic_break(block_obj.text)
+    ):
+        return None
+    return block_obj.text.strip(' \t')
+
+
 def markdown_to_text(
     block_list: list[Block], output_file: TextIO, page_markers: bool = False
 ) -> None:
@@ -317,15 +336,16 @@ def markdown_to_text(
         if block_index:
             output_file.write(block_separator(block_list[block_index - 1], block_obj))
 
+        new_page = previous_page is None or block_obj.start_page.raw != previous_page.raw
+        marker = format_page_marker(block_obj.start_page) if page_markers and new_page else ''
         if isinstance(block_obj, Table):
-            new_page = previous_page is None or block_obj.start_page.raw != previous_page.raw
-            output_file.write(
-                render_table(
-                    block_obj,
-                    format_page_marker(block_obj.start_page) if page_markers and new_page else '',
-                    page_markers,
-                )
-            )
+            output_file.write(render_table(block_obj, marker, page_markers))
+            previous_page = block_obj.end_page
+            continue
+        thematic_break = thematic_break_text(block_obj)
+        if thematic_break is not None:
+            # A page marker on the same line would turn the rule into literal text.
+            output_file.write(f'{marker}\n\n{thematic_break}' if marker else thematic_break)
             previous_page = block_obj.end_page
             continue
         if isinstance(block_obj, StrongParagraph):
