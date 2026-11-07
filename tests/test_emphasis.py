@@ -240,6 +240,23 @@ class EmphasisResolutionTests(unittest.TestCase):
     def test_drops_ranges_of_punctuation_only_between_letters(self) -> None:
         self.assertEqual(resolved_markdown('a-b', (1, 2, 'italic')), 'a-b')
 
+    def test_drops_ranges_of_punctuation_only_where_delimiters_would_be_valid(self) -> None:
+        self.assertEqual(resolved_markdown('(WICC). Next', (6, 7, 'italic')), '(WICC). Next')
+        self.assertEqual(resolved_markdown('Anm. 4), und', (6, 7, 'italic')), 'Anm. 4), und')
+        self.assertEqual(resolved_markdown('(WICC). Next', (6, 7, 'bold')), '(WICC). Next')
+        self.assertEqual(resolved_markdown('a – b', (2, 3, 'italic')), 'a – b')
+
+    def test_drops_ranges_left_with_punctuation_after_removing_overlaps(self) -> None:
+        self.assertEqual(
+            resolved_markdown(', word here', (0, 6, 'bold'), (2, 11, 'italic')),
+            ', *word here*',
+        )
+
+    def test_keeps_ranges_with_letters_digits_or_symbols(self) -> None:
+        self.assertEqual(resolved_markdown('(WICC) x. y', (7, 9, 'italic')), '(WICC) *x.* y')
+        self.assertEqual(resolved_markdown('p. 4 y', (3, 4, 'bold')), 'p. **4** y')
+        self.assertEqual(resolved_markdown('a → b', (2, 3, 'italic')), 'a *→* b')
+
     def test_moves_scripts_outside_only_where_delimiters_fail(self) -> None:
         text = 'word3 next'
         sup = (4, 5, 'sup')

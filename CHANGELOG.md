@@ -66,7 +66,7 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
   italics covering all of their text. Emphasis is adjusted so Markdown renders
   it as intended: list, quote, and page markers stay outside, and punctuation,
   symbols, or scripts at its edges move outside where a delimiter could not
-  open or close otherwise.
+  open or close otherwise. Spans of nothing but punctuation are dropped.
 - Numbered footnotes are collected into Notes sections, with separate groups
   when numbering restarts, original list labels, and a `--notes-title` option.
   Recognized continuation paragraphs and notes spanning adjacent pages retain

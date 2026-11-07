@@ -362,7 +362,8 @@ The current pipeline is roughly:
     shorter one loses the overlap. Punctuation, symbols, and scripts at range
     edges move outside where a delimiter could not open or close, and
     openers that CommonMark could read as closing the enclosing emphasis are
-    adjusted, so the delimiters render as intended.
+    adjusted, so the delimiters render as intended. Ranges left with nothing but
+    punctuation are dropped.
     Restarted lists sharing a Notes section are separated by an empty HTML
     comment so Markdown renderers preserve their starting numbers.
     List items are written compactly, with page markers after the list

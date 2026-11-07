@@ -260,6 +260,11 @@ def covers_all_text(rendered: RenderedText, runs: Iterable[InlineRange]) -> bool
     )
 
 
+def has_only_punctuation(text: str, run: InlineRange) -> bool:
+    """Return whether a range holds nothing but punctuation and whitespace."""
+    return all(is_punctuation(char) or char.isspace() for char in text[run.start : run.end])
+
+
 def resolve_emphasis(
     value: AnnotatedText,
     markers: Iterable[int] = (),
@@ -272,6 +277,8 @@ def resolve_emphasis(
     starts with `[` and ends with `]`. Display blocks, such as headings,
     already stand out: they lose bold ranges, and italic ones if they cover all
     of their text. With strong, the whole text is rendered in strong emphasis.
+    Ranges of nothing but punctuation, usually slips such as an italic period
+    after a title, are dropped.
     """
     markers = frozenset(markers)
     rendered = RenderedText(value, markers)
@@ -285,7 +292,9 @@ def resolve_emphasis(
     runs = without_partial_overlaps(rendered, [run for run in trimmed if run is not None])
     flanking = (rendered.flanking(run) for run in runs)
     emphasis = without_ambiguous_openers(
-        rendered, [run for run in flanking if run is not None], strong
+        rendered,
+        [run for run in flanking if run is not None and not has_only_punctuation(value.text, run)],
+        strong,
     )
     emphasis.sort(key=lambda run: run.start)
     return AnnotatedText(
