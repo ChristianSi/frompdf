@@ -118,6 +118,7 @@ der Menschen lebendig werden zu lassen. Mit der 1926 von ihm gegründeten
 ein Organisationsmodell entstand, mit dem sich der folgende Beitrag
 beschäftigen wird: die *Soziokratie –* ein bemerkenswertes Konzept für eine
 herrschaftsfreie Ordnung.
+
 ⸟
 
 ### [[PAGE:8|VISIBLE:164]]1. Ein christlicher Pazifist entdeckt den Anarchismus
@@ -427,6 +428,7 @@ der *Werkplaats Kindergemeenschap* – einer freien Gemeinschaft von Kindern,
 Jugendlichen und Erwachsenen, die zur Geburtsstätte und zum
 Referenzprojekt von Kees Boekes Organisationsprinzip der *Soziokratie* werden
 sollte.
+
 ⸟
 
 ### [[PAGE:19|VISIBLE:175]]2. Die Werkplaats Kindergemeenschap – ein Labor der Selbstorganisation
@@ -786,6 +788,7 @@ idealistisch geprägter Selbstverwaltung und den praktischen Anforderungen
 des schulischen Alltags. Doch gerade aus dieser Spannung heraus
 entstand etwas Neues: ein Konzept, das weit über die Werkplaats hinaus
 Wirkung entfalten sollte – das Organisationsmodell der *Soziokratie*.
+
 ⸟
 
 ### [[PAGE:34|VISIBLE:190]]3. Das Organisationsmodell der Soziokratie im Spannungsfeld von Theorie und Praxis
@@ -1119,6 +1122,7 @@ das in der Folgezeit eine dynamische Weiterentwicklung und weltweite
 Verbreitung als eine moderne – libertär „angehauchte“ – Managementmethode
 erleben sollte, mit der wir uns im abschließenden Epilog näher
 beschäftigen wollen.
+
 ⸟
 
 ### [[PAGE:46|VISIBLE:202]]Epilog
@@ -1380,7 +1384,8 @@ beweist, dass ein pragmatisch verstandener Anarchismus nicht an der
 Wirklichkeit scheitert, sondern im besten Fall in ihr aufgeht, sie kulturell
 verändert und neue Methoden der Organisation hervorbringt, die nicht nur
 anarchisch, sondern auch alltagstauglich und effektiv sind.
-\*\*\*
+
+***
 
 ### [[PAGE:5|VISIBLE:161]]Notes
 

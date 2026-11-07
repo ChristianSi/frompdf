@@ -36,7 +36,7 @@ expensive and bad, they sell *whatever* to all the pilgrims. … I know from my 
 trip to Mecca for the ‘*omra* [the so-called small pilgrimage, carried out during the
 rest of the Islamic calendar].”
 
-\*\*\*
+***
 
 This first encounter with *beldi* foods took place in a very intimate and personal
 moment, a moment that I could have easily missed. Hajja did not think that this
@@ -284,7 +284,7 @@ meaning homemade] food is simply the best. You know what’s in there!” She
 gestured toward her tummy, rubbed it, and sighed with pleasure. For her, this
 was food as good as it gets.
 
-\*\*\*
+***
 
 Although I had spent nearly one hour with her in the kitchen—and had been
 sharing meals with her and her family for a couple of months already—I was not
@@ -413,7 +413,9 @@ angered by what she described as a “sell-out” of Moroccan food products to
 wealthier foreigners like myself. She tirelessly pointed this out to me whenever
 her work to identify and make *beldi* foods bore no fruits.
 
-[[PAGE:12|VISIBLE:184]]\*\*\*
+[[PAGE:12|VISIBLE:184]]
+
+***
 
 Fatimzahra’s failure to find and make *beldi* olives further showcases the work
 invested in making *beldi* foods and relates it to broader social, material, and
