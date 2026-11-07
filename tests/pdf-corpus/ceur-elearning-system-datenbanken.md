@@ -413,7 +413,6 @@ können entfernt werden, wenn bspw. Lernende die
 Aufgabe wechseln oder sich der Fokus der Thematik ändert.
 
 Vordefinierte Inhalte beziehen sich nicht zwingend auf eine
-
 Aufgabe im Einzelnen. Sie können Informationen betreffen,
 die wichtig sind um ein Grundverständnis für die Kursinhalte
 zu erlangen. Auch wenn keine Challenges aktiv sind,

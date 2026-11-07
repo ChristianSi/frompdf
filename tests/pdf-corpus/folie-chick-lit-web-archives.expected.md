@@ -71,7 +71,6 @@ anyway. According to Aleida Assmann, the Internet and the archive are complement
 institutions: “the archive fulfills the desire for reliable material preservation and longterm
 storage of information; the Internet fulfills the desire for an acceleration of the data
 flow and lightning-fast and targeted access to information.”<sup>1</sup> (2009, 174; my transl.)
-
 What many Humanities scholars do not know or, out of skepticism about the Internet as
 a ‘reliable’ academic source, simply do not consider, is that parts of the web are
 archived, for example by the Internet Archive, a non-profit library of free books,
@@ -527,10 +526,8 @@ the formal weaknesses to the author, and then to jointly improve it.
 While *chicklit.co.uk* never put a focus on women-of-color chick lit, *chicklitbook.com*
 from 2005 to 2012 had a subpage titled “Multicultural Chick Lit” about books “with
 [[PAGE:15|VISIBLE:39]]heroines from all different nationalities and from different cultures” (25 Nov. 2005c),
-
-divided into *Indian Chick Lit*, *Latina Lit*, *Asian Chick Lit*, and *African-American Chick*
-
-*Lit*. This page was under construction from July 2012 and did not go online anymore.
+divided into *Indian Chick Lit*, *Latina Lit*, *Asian Chick Lit*, and *African-American Chick
+Lit*. This page was under construction from July 2012 and did not go online anymore.
 For the fan websites, however, the deficit with regard to the diversity of the chick lit
 genre can be partly excused by the fact that they were not obliged to take a ‘neutral’ and
 balanced position in the first place. Moreover, they went offline in 2014/15 and were no

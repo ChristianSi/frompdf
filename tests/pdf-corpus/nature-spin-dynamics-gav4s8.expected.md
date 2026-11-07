@@ -622,7 +622,6 @@ attribute the slowing down of the remagnetization dynamics in
 the SkL/Cyc phases to a suppression of the thermal conductivity.
 
 Thermal conductivity is determined by the energy, velocity, and
-
 mean free path of the heat-carrying quasiparticles. While the
 magnetic phase is spatially uniform in the FM phase, dislocations are
 possible in the skyrmion lattice of the SkL phase, and domains with

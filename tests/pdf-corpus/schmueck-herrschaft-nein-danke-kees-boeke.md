@@ -304,7 +304,6 @@ statt, auf der die Gründung einer *Christlichen Internationale* beschlossen
 wurde. Als deren Sekretäre wurden Kees Boeke und der Schweizer Pazifist
 und Mathematiker Pierre Cérésole ernannt. Kurze Zeit später wurde das
 Sekretariat der *Christlichen Internationale* nach London verlegt und mit dem
-
 *Versöhnungsbund* zum *Internationalen Versöhnungsbund* (engl. *International
 Fellowship of Reconciliation,* IFOR) vereinigt. Ihr folgte die Konferenz des
 *Internationalen Versöhnungsbundes* im Sommer 1920 ebenfalls in Bilthoven,

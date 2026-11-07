@@ -239,7 +239,6 @@ investigar uma ontologia inaugural do espaço enquanto espaço. No recorte kanti
 desdobramento de suas idéias, o espaço é o lugar ordenado pelas formas racionalizadas de
 ideias universais de mundo. Em suma, a partir do século XVIII, o racionalismo cartesiano e
 kantiano definiu as bases gerais das visões manipuláveis de ideias cristalizadas de mundo.
-
 Tal questão se remeteria ao aristotelismo clássico delimitado pela física moderna, onde os
 físicos manteriam os conhecimentos guardados e instaurados pela alquimia dos antigos e
 filósofos originários, - a natureza neste momento se entende enquanto totalidade (Unidade
@@ -510,7 +509,6 @@ Se o pensamento é uma ação condutora de espaço, esta questão nos coloca em 
 tremendo de pensar de modo próprio uma Ciência transdisciplinarenquanto uma nova
 escala espacial e territorial da história do pensamento no uso do espaço, como uma
 alternância do discurso não-vigente – alteridade por alteridade (diferenças por diferenças).
-
 Tais são as razões da emergência epistemológica de se pensar a Espaçologia como uma
 nova interpretação do mundo do representacional das coisas, no que tange ao fluxograma
 de encontros e desencontros, territorializações, desterritorializações, enfim, enquanto uma
@@ -627,7 +625,6 @@ viagem do pensamento na busca do universo das coisas insólitas regidas pela mae
 [[PAGE:15]]natureza. Exemplos disto, cada pensador da totalidade investigou os fios soltos da
 paisagem não-organizada mediada pela tarefa do pensar: o agir do pensar organiza o
 sistema de pensamento contido nas gramáticas inscritas na totalidade e por leis próprias.
-
 No fragmento heraclítico, onde a natureza ama se esconder, podemos nos posicionar no
 espaço que está ocultado enquanto primeira escritura espacial da natureza naturante que
 anseia revelar-se aos pensadores da totalidade. Para isto, os pensadores da totalidade

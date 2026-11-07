@@ -149,7 +149,6 @@ distribution of observations in *r*, thus approximating the candidate *x*. Below
 use PBA(*R*, *s*) to refer to our approximation of PBVS to avoid additional notation. The
 geometric median [16] is well-suited for estimating the expected value of a broad class of
 distributions [15, 16], and remains robust even when < 1/2 of the samples are arbitrarily
-
 corrupted. We compare the conditional likelihoods *P*(*x* | *r*) for each *r* and *x* with a similaritybased
 approximation of conditional probabilities [2]. This is necessary for multidimensional
 data since the covariance matrix is unknown, but is a reasonable approach since each nonfaulty
