@@ -3,7 +3,12 @@ from typing import cast
 
 from pdftext.schema import Page
 
-from frompdf.lines import decode_math_extension_glyphs, iter_lines
+from frompdf.lines import (
+    decode_double_struck_letters,
+    decode_math_extension_glyphs,
+    iter_lines,
+)
+from frompdf.models import InlineRange
 
 MATH_EXTENSION = 'LMMathExtension10-Regular'
 
@@ -61,6 +66,63 @@ class MathExtensionGlyphTests(unittest.TestCase):
 
     def test_span_whose_text_differs_from_its_characters_is_kept(self) -> None:
         self.assertEqual(decoded_text(span([('l', 0, 5)], MATH_EXTENSION, text='lm')), 'lm')
+
+    def test_decoded_wide_hat_is_emphasized_with_its_italic_letter(self) -> None:
+        page = cast(
+            Page,
+            {
+                'blocks': [
+                    {
+                        'lines': [
+                            {
+                                'bbox': [0, 0, 100, 10],
+                                'spans': [
+                                    span([('P', 0, 6)], 'LMMathItalic10-Regular'),
+                                    span([('b', 0, 6)], MATH_EXTENSION),
+                                    span([('(', 6, 9)], 'LMRoman10-Regular'),
+                                ],
+                            }
+                        ]
+                    }
+                ]
+            },
+        )
+        decode_math_extension_glyphs([page])
+
+        line = iter_lines([page])[0]
+
+        self.assertEqual(line.text, 'P\u0302(')
+        self.assertEqual(line.ranges, (InlineRange(0, 2, 'italic'),))
+
+
+class DoubleStruckLetterTests(unittest.TestCase):
+    def decoded_text(self, *spans: dict) -> str:
+        page = cast(
+            Page, {'blocks': [{'lines': [{'bbox': [0, 0, 100, 10], 'spans': list(spans)}]}]}
+        )
+        decode_double_struck_letters([page])
+        return iter_lines([page])[0].text
+
+    def test_capitals_of_blackboard_bold_fonts_become_double_struck(self) -> None:
+        self.assertEqual(
+            self.decoded_text(
+                span([('R', 0, 5)], 'LMMathItalic10-Regular'),
+                span([('⊆', 5, 10)], 'LMMathSymbols10-Regular'),
+                span([('R', 10, 15)], 'QDTWCG+MSBM10'),
+                span([('N', 15, 20), ('A', 20, 25)], 'MSBM7'),
+            ),
+            'R⊆ℝℕ𝔸',
+        )
+
+    def test_other_glyphs_and_fonts_are_kept(self) -> None:
+        self.assertEqual(
+            self.decoded_text(
+                span([('k', 0, 5), ('7', 5, 10)], 'MSBM10'),
+                span([('R', 10, 15)], 'MSAM10'),
+                span([('R', 15, 20)], 'LMRoman10-Bold'),
+            ),
+            'k7RR',
+        )
 
 
 if __name__ == '__main__':

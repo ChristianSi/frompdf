@@ -83,6 +83,8 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
   markers render as plain text in Markdown viewers and HTML. A parenthesis
   directly following a marker is escaped, so it does not form a link, as is
   the second bracket of `[[PAGE:` in the source text.
+- Capitals of the AMS blackboard bold fonts (`msbm`), which these fonts map
+  to plain letters, become double-struck letters, as in `R ⊆ ℝⁿ`.
 
 ### Changed
 
@@ -222,6 +224,16 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
 - Smaller print after a visibly larger gap, such as a licence notice at the
   bottom of a first page, now starts a new paragraph even below a full line
   of body text that does not end a sentence.
+- Superscripts and subscripts that `pdftext` puts into line records of their
+  own are now recognized in displayed formulas too, as in `C₀⁽ˢ,ᶠ⁾ Δ^Q`,
+  where the scripts of the rest of the line outnumber its ordinary letters,
+  or the pieces are reported from right to left. With real font sizes, such
+  pieces are judged against the whole line, leaving out its own scripts.
+- Accents set as modifier letters, as TeX's `ˆ` and `˜`, now combine with the
+  letter below them, also where Unicode has no precomposed letter, as in `v̂`,
+  which keeps a combining accent. The word space after such an accent is no
+  longer dropped. Italics now include combining accents following an italic
+  letter, as in `*P̂*`.
 
 ## 0.1.0 - 2026-07-09
 

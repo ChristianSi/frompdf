@@ -214,6 +214,59 @@ class SameLineScriptDetectionTests(unittest.TestCase):
         self.assertTrue(line_script_ranges(numerator, [text, numerator], [text]))
         self.assertEqual(line_script_ranges(numerator, [text, numerator, denominator], [text]), ())
 
+    def test_fragment_is_judged_against_display_whose_subscripts_outnumber_its_letters(
+        self,
+    ) -> None:
+        # As in lipics-64's `‖m_Q − m_R‖₂ ≤ C₀⁽ˢ,ᶠ⁾`, with three subscripts and three letters.
+        text = pdf_line('mQmR2C', {1: (14, 7), 3: (14, 7), 4: (14, 7)}, size=10)
+        fragment = pdf_line('(s,f)0', {**{i: (8, 7) for i in range(5)}, 5: (14, 7)}, size=10, x=30)
+
+        self.assertEqual(
+            render_scripts('(s,f)0', line_script_ranges(fragment, [text, fragment], [text])),
+            '<sup>(s,f)</sup><sub>0</sub>',
+        )
+
+    def test_fragment_with_more_letters_than_the_text_beside_it_is_a_script(self) -> None:
+        text = pdf_line('2C', {}, size=10)
+        fragment = pdf_line('(s,f)R', {i: (8, 7) for i in range(6)}, size=10, x=10)
+
+        self.assertEqual(
+            render_scripts('(s,f)R', line_script_ranges(fragment, [text, fragment], [text])),
+            '<sup>(s,f)R</sup>',
+        )
+
+    def test_text_beside_a_drop_cap_with_real_font_sizes_stays_plain(self) -> None:
+        initial = pdf_line('I', {0: (0, 40)}, size=10)
+        text = pdf_line('n spin', {}, size=10, x=5)
+
+        self.assertEqual(line_script_ranges(text, [initial, text], [initial]), ())
+
+    def page_of_records(self, *records: PdfTextLine) -> Page:
+        """Put each record into a pdftext block of its own, with real font sizes."""
+        for record in records:
+            record['spans'][0]['font'] = {'size': 10}  # type: ignore[typeddict-item]
+        return cast(Page, {'blocks': [{'lines': [record]} for record in records]})
+
+    def test_line_records_judge_a_piece_against_its_whole_visual_line(self) -> None:
+        # The superscript of `∆^Q` only touches the scripts before it.
+        text = pdf_line('mQmR2C', {1: (14, 7), 3: (14, 7), 4: (14, 7)}, size=10)
+        fragment = pdf_line('(s,f)0', {**{i: (8, 7) for i in range(5)}, 5: (14, 7)}, size=10, x=30)
+        exponent = pdf_line('Q', {0: (8, 7)}, size=10, x=60)
+
+        lines = iter_lines([self.page_of_records(text, fragment, exponent)])
+
+        self.assertEqual(render_scripts(lines[2].text, lines[2].ranges), '<sup>Q</sup>')
+
+    def test_line_records_join_pieces_reported_from_right_to_left(self) -> None:
+        text = pdf_line('mQmR2C', {1: (14, 7), 3: (14, 7), 4: (14, 7)}, size=10)
+        fragment = pdf_line('(s,f)0', {**{i: (8, 7) for i in range(5)}, 5: (14, 7)}, size=10, x=30)
+
+        lines = iter_lines([self.page_of_records(fragment, text)])
+
+        self.assertEqual(
+            render_scripts(lines[0].text, lines[0].ranges), '<sup>(s,f)</sup><sub>0</sub>'
+        )
+
     def test_line_records_detect_marker_in_another_pdftext_block(self) -> None:
         text = pdf_line('insulator OSeO3', {}, size=10)
         marker = pdf_line('51.', {0: (8, 7), 1: (8, 7)}, size=10, x=75)

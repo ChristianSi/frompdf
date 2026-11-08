@@ -2,6 +2,7 @@ import re
 from collections import Counter, defaultdict
 from collections.abc import Sequence
 from difflib import SequenceMatcher
+from itertools import pairwise
 from typing import Literal, cast
 from unicodedata import category, name, normalize
 
@@ -23,12 +24,16 @@ from frompdf.models import InlineRange, Line, Word
 from frompdf.scripts import AnnotatedText
 from frompdf.segmentation import same_physical_line, same_running_text_line
 
+# Spacing accents, including the modifier letters that TeX fonts map their
+# circumflex and tilde to, as for lipics-64's `v̂`.
 SPACING_TO_COMBINING = {
     '¨': '\u0308',
     '´': '\u0301',
     '`': '\u0300',
     '^': '\u0302',
+    'ˆ': '\u0302',
     '~': '\u0303',
+    '˜': '\u0303',
 }
 
 # Icon fonts map pictograms, such as e-mail, ORCID, or home-page symbols next
@@ -138,17 +143,16 @@ def get_bbox(
 
 
 def composed_diacritic(base_text: str, spacing_accent: str) -> str | None:
-    """Return a precomposed Latin letter for a supported base/accent pair."""
+    """Return a Latin letter with the accent of a supported base/accent pair.
+
+    Letters without a precomposed form, as `v̂`, keep a combining accent.
+    """
     combining_accent = SPACING_TO_COMBINING.get(spacing_accent)
     if len(base_text) != 1 or combining_accent is None:
         return None
     if not base_text.isascii() or category(base_text) not in {'Ll', 'Lu'}:
         return None
-
-    composed = normalize('NFC', base_text + combining_accent)
-    if len(composed) != 1 or composed == base_text:
-        return None
-    return composed
+    return normalize('NFC', base_text + combining_accent)
 
 
 def diacritic_geometry_score(
@@ -254,8 +258,23 @@ def span_char_text_ranges(span_dict: PdfTextSpan) -> dict[int, tuple[int, int]]:
     return text_ranges
 
 
-def spacing_artifact_touches_accent(whitespace_char: PdfTextChar, accent_char: PdfTextChar) -> bool:
-    """Return whether a zero-width space was inserted beside an out-of-order accent."""
+# A zero-width space beside an accent separates words if the next character
+# follows at a gap of this range, relative to the accent's height, as after
+# the accent of lipics-64's `v̂`, which follows its base in reading order.
+# Beside the out-of-order accents of ceur-elearning, the next character is
+# far away or at the same position.
+WORD_GAP_AFTER_ACCENT_RANGE = (0.1, 1.0)
+
+
+def spacing_artifact_touches_accent(
+    whitespace_char: PdfTextChar,
+    accent_char: PdfTextChar,
+    following_char: PdfTextChar | None = None,
+) -> bool:
+    """Return whether a zero-width space was inserted beside an out-of-order accent.
+
+    following_char is the visible character after the space, if any.
+    """
     whitespace_text = whitespace_char.get('char', '')
     if not whitespace_text.isspace() or whitespace_text in {'\r', '\n'}:
         return False
@@ -287,6 +306,13 @@ def spacing_artifact_touches_accent(whitespace_char: PdfTextChar, accent_char: P
     accent_height = accent_y2 - accent_y1
     if accent_width <= 0 or accent_height <= 0 or abs(whitespace_x2 - whitespace_x1) > 0.1:
         return False
+
+    following_x1 = get_bbox(following_char)[0] if following_char is not None else None
+    if following_x1 is not None:
+        gap = following_x1 - whitespace_x1
+        min_gap, max_gap = WORD_GAP_AFTER_ACCENT_RANGE
+        if accent_height * min_gap < gap <= accent_height * max_gap:
+            return False
 
     edge_distance = min(abs(whitespace_x1 - accent_x1), abs(whitespace_x1 - accent_x2))
     horizontal_tolerance = max(0.5, accent_width * 0.2)
@@ -360,10 +386,22 @@ def normalize_detached_diacritics(page_list: Sequence[Page]) -> None:
                     pending_edits[accent_span_id][id(accent_char)] = (accent_char, '')
                     used_base_ids.add(id(base_char))
 
-                    for whitespace_span, whitespace_char in positioned_chars:
+                    for whitespace_index, (whitespace_span, whitespace_char) in enumerate(
+                        positioned_chars
+                    ):
                         whitespace_span_id = id(whitespace_span)
+                        following_char = next(
+                            (
+                                char_dict
+                                for _, char_dict in positioned_chars[whitespace_index + 1 :]
+                                if char_dict.get('char', '').strip()
+                            ),
+                            None,
+                        )
                         if (
-                            spacing_artifact_touches_accent(whitespace_char, accent_char)
+                            spacing_artifact_touches_accent(
+                                whitespace_char, accent_char, following_char
+                            )
                             and id(whitespace_char) in text_ranges_by_span_id[whitespace_span_id]
                         ):
                             pending_edits[whitespace_span_id][id(whitespace_char)] = (
@@ -494,6 +532,35 @@ def decode_math_extension_glyphs(page_list: Sequence[Page]) -> None:
                         if char_text.strip():
                             previous_char = char
                     span_dict['text'] = ''.join(texts)
+
+
+# The AMS blackboard bold fonts (msbm5 to msbm10) map their double-struck
+# capitals to plain ones, as the `ℝ` of lipics-64's `R ⊆ ℝⁿ`. Their other
+# glyphs are unrelated symbols, left as reported.
+DOUBLE_STRUCK_FONT_NAME_PATTERN = re.compile(r'\bmsbm\d', re.IGNORECASE)
+LETTERLIKE_DOUBLE_STRUCK = {'C': 'ℂ', 'H': 'ℍ', 'N': 'ℕ', 'P': 'ℙ', 'Q': 'ℚ', 'R': 'ℝ', 'Z': 'ℤ'}
+DOUBLE_STRUCK_CAPITALS = str.maketrans(
+    {
+        letter: LETTERLIKE_DOUBLE_STRUCK.get(letter, chr(0x1D538 + index))
+        for index, letter in enumerate('ABCDEFGHIJKLMNOPQRSTUVWXYZ')
+    }
+)
+
+
+def decode_double_struck_letters(page_list: Sequence[Page]) -> None:
+    """Replace capitals of blackboard bold fonts with double-struck letters, in place."""
+    for page_dict in page_list:
+        for block_dict in page_dict.get('blocks', []):
+            for line_dict in block_dict.get('lines', []):
+                for span_dict in line_dict.get('spans', []):
+                    font_name = span_dict.get('font', {}).get('name')
+                    if not isinstance(font_name, str) or not DOUBLE_STRUCK_FONT_NAME_PATTERN.search(
+                        font_name
+                    ):
+                        continue
+                    span_dict['text'] = span_dict.get('text', '').translate(DOUBLE_STRUCK_CAPITALS)
+                    for char in span_dict.get('chars', []):
+                        char['char'] = char.get('char', '').translate(DOUBLE_STRUCK_CAPITALS)
 
 
 def private_use_bullets(span_dict: PdfTextSpan) -> dict[str, str]:
@@ -671,7 +738,8 @@ def span_emphasis_kinds(span_dict: PdfTextSpan) -> tuple[Literal['bold', 'italic
 def line_emphasis_ranges(line_dict: PdfTextLine) -> tuple[InlineRange, ...]:
     """Return the bold and italic ranges of a line's text, merging those of adjacent spans.
 
-    Only the letters of math italic fonts are styled.
+    Only the letters of math italic fonts are styled, with combining marks
+    following them.
     """
     ranges: list[InlineRange] = []
     open_runs: dict[str, InlineRange] = {}
@@ -686,6 +754,13 @@ def line_emphasis_ranges(line_dict: PdfTextLine) -> tuple[InlineRange, ...]:
         )
         for piece, piece_kinds in pieces:
             end = offset + len(piece)
+            if piece and all(category(char).startswith('M') for char in piece):
+                # Combining marks belong to the styled letter they follow, as
+                # the hat of a decoded wide accent in lipics-64's `P̂`.
+                for kind, run in open_runs.items():
+                    open_runs[kind] = InlineRange(run.start, end, run.kind)
+                offset = end
+                continue
             for kind in ('bold', 'italic'):
                 run = open_runs.get(kind)
                 if kind in piece_kinds:
@@ -836,22 +911,62 @@ def script_runs(glyphs: list[ScriptGlyph], ordinary: list[ScriptGlyph]) -> list[
     return runs
 
 
-def is_small_fragment(ordinary: list[ScriptGlyph], others: list[ScriptGlyph]) -> bool:
-    """Return whether a line's ordinary glyphs are all small next to the rest of its visual line.
+# A fragment is a script of the rest of its visual line if its glyphs are at
+# least this size relative to that line's largest ordinary glyphs, as TeX's
+# 7 pt scripts of 10 pt text. Drop caps two lines tall or more are larger.
+SCRIPT_FRAGMENT_MIN_SIZE_RATIO = 0.6
 
-    Sizes are compared with the dominant size of the rest of the visual line,
-    whose glyphs of that size must outnumber those of the fragment. A large
-    initial, such as a drop cap, therefore never makes the following text
-    small, nor do a few tall delimiters in a formula. Scripts of the rest of
-    the line, as in lipics-64's `xᵢ − xⱼ`, do not count against its size.
+
+def plain_glyphs(line_dict: PdfTextLine) -> list[ScriptGlyph]:
+    """Return the alphanumeric glyphs of a line that are no scripts within the line itself."""
+    glyphs = script_glyphs(line_dict)
+    ordinary = [g for g in glyphs if g[2].get('char', '').isalnum()]
+    if not ordinary:
+        return []
+    script_starts = {run.start for run in script_runs(glyphs, ordinary)}
+    return [g for g in ordinary if g[0] not in script_starts]
+
+
+def fragment_references(
+    ordinary: list[ScriptGlyph], others: list[ScriptGlyph]
+) -> list[ScriptGlyph]:
+    """Return the glyphs of the rest of a visual line that a line's glyphs are small next to.
+
+    others holds the glyphs of the rest of the line that are no scripts there,
+    so subscripts as in lipics-64's `‖m_Q − m_R‖₂ ≤ C` do not make the
+    script size seem ordinary. Glyphs of a script's size next to the largest
+    ones are small, as a formula fragment `(s,f)` after `C`, if the PDF reports
+    real font sizes. Otherwise the
+    dominant size of the rest of the line counts, whose glyphs of that size
+    must outnumber those of the fragment. A large initial, such as a drop cap,
+    therefore never makes the following text small. An empty list means that
+    the glyphs are not small.
     """
     real_sizes = all(g[4] > 1 for g in ordinary + others)
-    sizes = Counter(round(glyph_size(g, real_sizes), 1) for g in others)
-    dominant = max(sizes, key=lambda size: (sizes[size], size))
-    references = [g for g in others if abs(glyph_size(g, real_sizes) - dominant) <= dominant * 0.08]
-    return len(references) > len(ordinary) and all(
-        glyph_size(g, real_sizes) <= dominant * SCRIPT_MAX_SIZE_RATIO for g in ordinary
-    )
+
+    def size(glyph: ScriptGlyph) -> float:
+        return glyph_size(glyph, real_sizes)
+
+    largest = max(size(g) for g in others)
+    # Glyph boxes, standing in for placeholder sizes, vary with letter shapes.
+    if (
+        real_sizes
+        and largest > 0
+        and all(
+            largest * SCRIPT_FRAGMENT_MIN_SIZE_RATIO <= size(g) <= largest * SCRIPT_MAX_SIZE_RATIO
+            for g in ordinary
+        )
+    ):
+        return [g for g in others if abs(size(g) - largest) <= largest * 0.08]
+
+    sizes = Counter(round(size(g), 1) for g in others)
+    dominant = max(sizes, key=lambda value: (sizes[value], value))
+    references = [g for g in others if abs(size(g) - dominant) <= dominant * 0.08]
+    if len(references) > len(ordinary) and all(
+        size(g) <= dominant * SCRIPT_MAX_SIZE_RATIO for g in ordinary
+    ):
+        return references
+    return []
 
 
 def line_script_ranges(
@@ -867,16 +982,15 @@ def line_script_ranges(
     """
     glyphs = script_glyphs(line_dict)
     ordinary = [g for g in glyphs if g[2].get('char', '').isalnum()]
-    others = [
-        g for other in same_line for g in script_glyphs(other) if g[2].get('char', '').isalnum()
-    ]
+    others = [g for other in same_line for g in plain_glyphs(other)]
     runs = {run.start: run for run in script_runs(glyphs, ordinary)} if ordinary else {}
     line_box = positioned_box(line_dict)
-    if others and (not ordinary or is_small_fragment(ordinary, others)):
+    references = fragment_references(ordinary, others) if others else []
+    if references:
         # Judge the fragment against the surrounding text. Scripts of its own,
         # such as the subscript in a superscript `2−c₁`, keep their own level
         # unless they are scripts of the surrounding text too.
-        runs.update((run.start, run) for run in script_runs(glyphs, others))
+        runs.update((run.start, run) for run in script_runs(glyphs, references))
         # A fraction is stacked relative to the complete visual line.
         boxes = [positioned_box(own_line) for own_line in (line_dict, *same_line)]
         known_boxes = [box for box in boxes if box is not None]
@@ -1338,15 +1452,27 @@ def iter_lines(page_list: Sequence[Page]) -> list[Line]:
                 previous_y1 = y1
 
         # pdftext emits the pieces of a split line of running text
-        # consecutively, though not necessarily within one block.
+        # consecutively, though not necessarily within one block, nor always
+        # from left to right, as in a formula in lipics-64. With real font
+        # sizes, scripts are judged against all other pieces of the line;
+        # glyph boxes, standing in for placeholder sizes, are too unreliable
+        # beyond the neighboring pieces.
+        visual_lines = [0]
+        for (left, *_), (right, *_) in pairwise(page_lines):
+            joined = same_running_text_line(left, right) or same_running_text_line(right, left)
+            visual_lines.append(visual_lines[-1] + (not joined))
+        real_sizes = all(
+            float(char.get('font', {}).get('size', 1) or 1) > 1
+            for _, line_dict, _, _ in page_lines
+            for char in visible_chars(line_dict)
+        )
         for index, (line_obj, line_dict, block_lines, raw_text) in enumerate(page_lines):
-            same_line: list[PdfTextLine] = []
-            if index > 0 and same_running_text_line(page_lines[index - 1][0], line_obj):
-                same_line.append(page_lines[index - 1][1])
-            if index + 1 < len(page_lines) and same_running_text_line(
-                line_obj, page_lines[index + 1][0]
-            ):
-                same_line.append(page_lines[index + 1][1])
+            same_line = [
+                other_dict
+                for other_index, (_, other_dict, _, _) in enumerate(page_lines)
+                if visual_lines[other_index] == visual_lines[index]
+                and (other_index != index if real_sizes else abs(other_index - index) == 1)
+            ]
             scripts = line_script_ranges(line_dict, block_lines, same_line)
             annotated = AnnotatedText(raw_text, scripts + line_emphasis_ranges(line_dict)).slice(
                 len(raw_text) - len(raw_text.lstrip()), len(raw_text.rstrip())

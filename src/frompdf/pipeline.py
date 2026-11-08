@@ -6,6 +6,7 @@ from frompdf.blocks import lines_to_markdown_blocks
 from frompdf.lines import (
     attach_stacked_scripts,
     attach_stray_scripts,
+    decode_double_struck_letters,
     decode_math_extension_glyphs,
     drop_dominant_emphasis,
     iter_lines,
@@ -42,6 +43,7 @@ def extract_markdown(
     normalize_detached_diacritics(page_list)
     remove_icon_glyphs(page_list)
     decode_math_extension_glyphs(page_list)
+    decode_double_struck_letters(page_list)
     restore_private_use_bullets(page_list)
     attach_stray_scripts(page_list)
     attach_stacked_scripts(page_list)

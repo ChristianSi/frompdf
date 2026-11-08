@@ -91,6 +91,40 @@ class DetachedDiacriticTests(unittest.TestCase):
 
         self.assertEqual(page['blocks'][0]['lines'][0]['spans'][0]['text'], 'ür')
 
+    def test_composes_tex_circumflex_and_keeps_following_word_space(self) -> None:
+        # As in lipics-64: a math italic `v`, the circumflex as a modifier letter
+        # overlapping it, a zero-width space, and the next word after a gap.
+        for base, expected in (('v', 'v\u0302 a'), ('e', 'ê a')):
+            with self.subTest(base):
+                chars = [
+                    positioned_char(base, [0.0, 0.0, 4.8, 8.8]),
+                    positioned_char('ˆ', [0.4, 0.0, 5.4, 8.8]),
+                    positioned_char(' ', [5.4, 7.0, 5.4, 7.0]),
+                    positioned_char('a', [8.5, 0.0, 13.5, 8.8]),
+                ]
+                page = page_with_line(chars, f'{base}ˆ a')
+
+                normalize_detached_diacritics([page])
+
+                self.assertEqual(page['blocks'][0]['lines'][0]['spans'][0]['text'], expected)
+
+    def test_removes_zero_width_space_beside_out_of_order_accent(self) -> None:
+        # As in ceur-elearning: the accent of a letter earlier in the line comes
+        # later in the text, with a zero-width space at its edge, before the
+        # text continues far to the right.
+        chars = [
+            positioned_char('u', [18.0, 0.0, 23.1, 8.0]),
+            positioned_char('F', [93.4, 0.0, 99.4, 8.0]),
+            positioned_char('¨', [18.1, -0.5, 22.7, 7.5]),
+            positioned_char(' ', [22.7, 7.0, 22.7, 7.0]),
+            positioned_char('r', [99.5, 0.0, 103.1, 8.0]),
+        ]
+        page = page_with_line(chars, 'uF¨ r')
+
+        normalize_detached_diacritics([page])
+
+        self.assertEqual(page['blocks'][0]['lines'][0]['spans'][0]['text'], 'üFr')
+
 
 if __name__ == '__main__':
     unittest.main()

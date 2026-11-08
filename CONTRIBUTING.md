@@ -183,8 +183,9 @@ The implementation is split into focused modules under `src/frompdf`:
   such as quoted verse, whose line ends break even before a sentence
   continuing in lower case.
 - `lines.py` repairs detached diacritics, removes icon-font glyphs, decodes
-  glyphs of TeX math extension fonts, restores private-use bullets of symbol
-  fonts, reattaches detached scripts, flattens
+  glyphs of TeX math extension fonts and capitals of blackboard bold fonts,
+  restores private-use bullets of symbol fonts, reattaches detached scripts,
+  flattens
   `pdftext` output, and extracts line geometry, typography, inline script
   ranges, and bold and italic ranges.
 - `lists.py` recognizes bulleted and numbered list items and their
@@ -248,21 +249,26 @@ The current pipeline is roughly:
 
 1. Extract raw `pdftext` page data.
 2. Repair detached, geometrically positioned diacritics in the raw data,
-   remove glyphs from icon fonts, and decode TeX math extension glyphs that
-   `pdftext` reports by their font codes. Restore bullets of symbol fonts,
-   which `pdftext` drops as private-use characters. Move scripts that `pdftext` set
+   keeping a combining accent where no precomposed letter exists, remove
+   glyphs from icon fonts, and decode TeX math extension glyphs that
+   `pdftext` reports by their font codes. Capitals of blackboard bold fonts
+   become double-struck letters. Restore bullets of symbol fonts, which
+   `pdftext` drops as private-use characters. Move scripts that `pdftext` set
    apart, in a block of their own or stacked below or above another script,
    back into the line records they belong to.
 3. Flatten the result into line records with geometry, typography, and
    conservative character-level superscript/subscript annotations. When
-   `pdftext` puts small glyphs into a line record of their own, the adjacent
+   `pdftext` puts small glyphs into a line record of their own, the other
    pieces of the same line of running text serve as the ordinary reference
-   text. Small records centered below small text ending the preceding record,
-   with the line continuing after them, are marked as fraction denominators.
-   Bold and italic ranges follow font names and the italic font flag.
-   Letters in math italic fonts are italic; other math fonts are ignored. A
-   style covering most of the document's letters and digits is its body style
-   and is dropped.
+   text, leaving out their own scripts. With real font sizes, these are all
+   pieces of the line, in either order, and glyphs of a script's size next to
+   the largest ones are small; otherwise, the adjacent pieces must mostly be
+   in a larger size. Small records centered below small text ending the
+   preceding record, with the line continuing after them, are marked as
+   fraction denominators. Bold and italic ranges follow font names and the
+   italic font flag. Letters in math italic fonts are italic, with combining
+   marks following them; other math fonts are ignored. A style covering most
+   of the document's letters and digits is its body style and is dropped.
 4. Optionally dump the unfiltered line records to `-lines.csv`.
 5. Detect and remove headers and footers, collecting visible page labels.
 6. Order the remaining lines by page region and detected column. A block
