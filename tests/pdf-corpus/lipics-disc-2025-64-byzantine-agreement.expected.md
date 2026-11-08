@@ -179,7 +179,7 @@ set of nonfaulty values is bounded when up to |*F*| < |*Q*| faulty values are ad
 s*<sup>2</sup>−*f*2
 *. Then the maximum displacement is*
 
-> ||*m<sub>Q</sub>* − *m<sub>R</sub>*||<sub>2</sub> ≤ *C*(*s*,*f*)0 ∆*Q*
+||*m<sub>Q</sub>* − *m<sub>R</sub>*||<sub>2</sub> ≤ *C*(*s*,*f*)0 ∆*Q*
 
 However, the contents of *Q* is unknown, so the bound implied by Lemma 2.2 cannot be
 directly calculated from the information available. Instead, Lemma 2.3 presents a
