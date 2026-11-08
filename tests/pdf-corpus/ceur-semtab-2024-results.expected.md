@@ -1,11 +1,8 @@
 # [[PAGE:1]]Results of SemTab 2024
 
-Oktie Hassanzadeh<sup>1,&#42;</sup>
-, Marco Cremaschi<sup>3</sup>, Vincenzo Cutrona<sup>4</sup>,
+**Oktie Hassanzadeh<sup>1,&#42;</sup>, Nora Abdelmageed<sup>2</sup>, Marco Cremaschi<sup>3</sup>, Vincenzo Cutrona<sup>4</sup>,
 Fabio D’Adda<sup>3</sup>, Vasilis Efthymiou<sup>5</sup>, Benno Kruit<sup>6</sup>, Elita Lobo<sup>7</sup>,
-Nandana Mihindukulasooriya<sup>1</sup> and Nhan H. Pham<sup>1</sup>
-
-#### , Nora Abdelmageed<sup>2</sup>
+Nandana Mihindukulasooriya<sup>1</sup> and Nhan H. Pham<sup>1</sup>**
 
 *<sup>1</sup>IBM Research, USA
 <sup>2</sup>Friedrich Schiller University Jena, Germany\

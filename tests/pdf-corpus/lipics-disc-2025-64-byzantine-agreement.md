@@ -191,20 +191,15 @@ such that s* > 2*f with Gm*(*Q*) = *m<sub>Q</sub> and Gm*(*R*) = *m<sub>R</sub>,
 2*sf*−*f*<sup>2</sup>
 *. Then*
 
-> (*s*,*f*)∆*R
-> f*
->
-> ||*m<sub>Q</sub>* − *m<sub>R</sub>*||<sub>2</sub> ≤ *C*
+||*m<sub>Q</sub>* − *m<sub>R</sub>*||<sub>2</sub> ≤ *C*(*s*,*f*)∆*R
+f*
 
 The computable displacement is used to compute the *region guarantee* for a given PBA
 result. The fact that PBA only produces outputs with region guarantees containing the true
 output is our instantiation of an *accuracy* [12] property.
 
-*<sup>d</sup>,* |*R*| > *s* + *f where s* > *f, define
+▶ **Definition 2.4** (Region Guarantee). *For any set R* ⊆ R<sup>d</sup>, |*R*| > *s* + *f where s* > *f, define
 R*<sup>(f,x)</sup> ⊆ *R by removing the f elements of R furthest from x. Let* ∆<sup>R</sup>*<sub>f</sub>* = max*ri*∈*R*(*f*,*Gm*(*R*)) ||*ri* −
-
-▶ **Definition 2.4** (Region Guarantee). *For any set R* ⊆ R
-
 *Gm*(*R*)||<sub>2</sub>*. The* region guarantee *RG*(*R*, *s*, *f*) *is a d-dimensional ball centered at x with radius*
 2*C*(*s*,*f*)∆*R
 f
@@ -214,10 +209,8 @@ f
 most* |*F*| = *f faulty values, let PBA*(*R*, *s*) = (*x*, *R*′)*. Then Gm*(*Q*) ∈ *RG*(*R*, *s*, *f*) *and*
 
 ||*m<sub>Q</sub>* − *x*||<sub>2</sub> ≤ *C*(*s*,*f*)0 ∆*R*′
-\+ *C*(*s*,*f*)0 ∆<sup>Q</sup> ≤ 2*C*
-
-> (*s*,*f*)∆*R
-> f*
+\+ *C*(*s*,*f*)0 ∆<sup>Q</sup> ≤ 2*C*(*s*,*f*)∆*R
+f*
 
 ## 2.2 OneShot PBA Agreement and Termination
 

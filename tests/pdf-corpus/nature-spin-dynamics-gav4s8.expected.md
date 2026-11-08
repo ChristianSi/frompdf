@@ -557,9 +557,9 @@ time slows down across the phase transition from the FM
 phase to the SkL phase (11.5 K and 10 K) and the Cyc phase (8 K).
 The increase of the remagnetization time reaches a factor of 1.5–2
 
-4
-
 # Recovery time (ns)
+
+4
 
 8 K
 
@@ -846,9 +846,7 @@ equation<sup>59</sup>. The Gilbert damping was set to 10−<sup>3</sup>. 20,000 
 used for the integration. The Fourier transform of the correlation function gives the
 dynamical structure factor,
 
-### *m<sup>j</sup>r*ðÞ<sup>t</sup> *<sup>mj</sup>r*0ðÞ <sup>0</sup>
-
-### *C<sup>j</sup> r r* <sup>0</sup> ð Þ¼ <sup>;</sup> *<sup>t</sup>*
+### *C<sup>j</sup> r r* <sup>0</sup> ð Þ¼ <sup>;</sup> *<sup>t</sup> m<sup>j</sup>r*ðÞ<sup>t</sup> *<sup>mj</sup>r*0ðÞ <sup>0</sup>
 
 ### *m<sup>j</sup>r*ðÞ<sup>t</sup>
 
