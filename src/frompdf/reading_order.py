@@ -20,6 +20,14 @@ MIN_COLUMN_HEIGHT_EM = 2.0
 MIN_COLUMN_OVERLAP_EM = 2.0
 MIN_COLUMN_OVERLAP_RATIO = 0.35
 
+# pdftext can put a visual line's start into a block of its own, ordered after
+# the block continuing that line, as with a raised script lifting the top of the
+# continuation in lipics-64's Definition 2.4. The start ends within this
+# distance, relative to the font size, of where the continuation begins.
+LINE_START_MAX_GAP_EM = 0.1
+# Both pieces must share most of the smaller one's height.
+LINE_START_MIN_VERTICAL_OVERLAP = 0.5
+
 
 @dataclass
 class LayoutBlock:
@@ -271,6 +279,45 @@ def order_layout_region(block_list: list[LayoutBlock], font_size: float) -> list
     return sorted(block_list, key=lambda block: block.original_index)
 
 
+def starts_visual_line_of(start_line: Line, continuation_line: Line) -> bool:
+    """Return whether start_line ends right where continuation_line begins on its visual line."""
+    if (
+        start_line.x1 is None
+        or start_line.y1 is None
+        or start_line.x2 is None
+        or start_line.y2 is None
+        or continuation_line.x1 is None
+        or continuation_line.y1 is None
+        or continuation_line.y2 is None
+    ):
+        return False
+    font_size = max(start_line.font_size or 0.0, continuation_line.font_size or 0.0, 1.0)
+    vertical_overlap = min(start_line.y2, continuation_line.y2) - max(
+        start_line.y1, continuation_line.y1
+    )
+    smaller_height = min(start_line.y2 - start_line.y1, continuation_line.y2 - continuation_line.y1)
+    return (
+        start_line.x1 < continuation_line.x1
+        and abs(continuation_line.x1 - start_line.x2) <= font_size * LINE_START_MAX_GAP_EM
+        and smaller_height > 0
+        and vertical_overlap >= smaller_height * LINE_START_MIN_VERTICAL_OVERLAP
+    )
+
+
+def move_line_starts_before_continuations(block_list: list[LayoutBlock]) -> list[LayoutBlock]:
+    """Move a block ending where the preceding block's first line begins before that block."""
+    ordered = list(block_list)
+    index = 0
+    while index < len(ordered) - 1:
+        continuation, start = ordered[index], ordered[index + 1]
+        if starts_visual_line_of(start.lines[-1], continuation.lines[0]):
+            ordered[index], ordered[index + 1] = start, continuation
+            index += 2
+        else:
+            index += 1
+    return ordered
+
+
 def order_lines_for_reading(line_list: list[Line]) -> list[Line]:
     """Order intact pdftext blocks by page regions and detected columns."""
     if not line_list:
@@ -312,7 +359,9 @@ def order_lines_for_reading(line_list: list[Line]) -> list[Line]:
                 ordered_lines.extend(block_lines)
             continue
 
-        for layout_block in order_layout_region(positioned_blocks, font_size):
+        for layout_block in move_line_starts_before_continuations(
+            order_layout_region(positioned_blocks, font_size)
+        ):
             ordered_lines.extend(layout_block.lines)
 
     return ordered_lines

@@ -206,6 +206,16 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
   their own rather than lines of the preceding paragraph, list item, or block
   quote, also when they consist of several pieces, like asterisks at staggered
   heights. They are never rendered as block quotes.
+- The start of a line no longer follows its continuation where `pdftext`
+  puts them into separate blocks and orders the continuation first, as when a
+  raised superscript lifts its top. The start now precedes a block that it
+  touches on the same line, so definitions, lemmas, and author lists no longer
+  come out scrambled, nor partly as headings.
+- Short script-sized fragments touching the text of a line, such as the
+  superscripts of a formula in a block of their own, no longer start a new
+  paragraph within that line. A line ending in such a formula no longer starts
+  a new paragraph at a `pdftext` block edge either, as its typography is now
+  judged by its start.
 
 ## 0.1.0 - 2026-07-09
 

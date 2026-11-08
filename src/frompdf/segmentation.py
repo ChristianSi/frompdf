@@ -524,6 +524,44 @@ def same_running_text_line(left: Line, right: Line) -> bool:
     return right.x1 - left.x2 < font_size * RUNNING_TEXT_MAX_GAP_EM
 
 
+# A short piece of a visual line in script-sized type, such as a formula
+# fragment with raised and lowered parts, touching its neighbor within this distance,
+# relative to the larger size, continues the line, as in lipics-64's
+# Definition 2.4. Scripts are at most the larger ratio of their base text's
+# size, and at least about half of it, as TeX's second-level scripts. Much
+# smaller ratios rather stem from rotated figure labels, as in nature.
+SCRIPT_FRAGMENT_MAX_GAP_EM = 0.1
+SCRIPT_FRAGMENT_MIN_SIZE_RATIO = 0.4
+SCRIPT_FRAGMENT_MAX_SIZE_RATIO = 0.85
+
+
+def is_script_sized(piece: Line, reference: Line) -> bool:
+    """Return whether a piece is set in script-sized type relative to a reference."""
+    return (
+        piece.font_size is not None
+        and reference.font_size is not None
+        and reference.font_size * SCRIPT_FRAGMENT_MIN_SIZE_RATIO
+        <= piece.font_size
+        <= reference.font_size * SCRIPT_FRAGMENT_MAX_SIZE_RATIO
+    )
+
+
+def touches_script_fragment(left: Line, right: Line) -> bool:
+    """Return whether adjacent pieces of one visual line touch, one a short script-sized one.
+
+    Script-sized prose, such as a label in another face, is no script.
+    """
+    if not same_physical_line(left, right) or not any(
+        is_script_sized(piece, other) and not is_prose_line(piece)
+        for piece, other in ((left, right), (right, left))
+    ):
+        return False
+    assert left.x2 is not None
+    assert right.x1 is not None
+    font_size = max(left.font_size or 0.0, right.font_size or 0.0, 1.0)
+    return abs(right.x1 - left.x2) <= font_size * SCRIPT_FRAGMENT_MAX_GAP_EM
+
+
 def normal_advance_ratios(line_list: list[Line]) -> list[float]:
     """Return plausible ordinary line advances from the already ordered page."""
     ratios: list[float] = []
@@ -945,9 +983,12 @@ def continues_running_text(
     a gap, real paragraphs are rarely set this way, as in intertrans and folie.
     """
     start = previous_start or previous
+    # A visual line ending in a script-sized fragment, such as a formula, is
+    # judged by its start, whose type matches the paragraph's.
+    reference = start if is_script_sized(previous, start) else previous
     if (
         context.rhythm_sample_count < MIN_RHYTHM_SAMPLES
-        or not is_prose_line(previous)
+        or not is_prose_line(reference)
         or not is_prose_line(current)
         or NUMBERED_OR_BULLETED_START_PATTERN.match(current.text)
         or ITEM_LABEL_START_PATTERN.match(current.text)
@@ -969,7 +1010,7 @@ def continues_running_text(
         return False
 
     font_size = current.font_size or context.font_size
-    previous_size = previous.font_size or context.font_size
+    previous_size = reference.font_size or context.font_size
     at_margin = near(current.x1, column.left, font_size)
     below_first_line_indent = (
         at_margin and 0 < start.x1 - column.left <= font_size * MAX_FIRST_LINE_INDENT_EM
@@ -981,11 +1022,11 @@ def continues_running_text(
     if ends_sentence(previous.text):
         return (
             at_margin
-            and compatible_style(previous, current)
+            and compatible_style(reference, current)
             and column.right - previous.x2
             <= previous_size * CONTINUED_SENTENCE_END_MAX_SHORTFALL_EM
         )
-    return compatible_style(previous, current) or differs_only_by_italics(previous, current)
+    return compatible_style(reference, current) or differs_only_by_italics(reference, current)
 
 
 def continues_display_line(previous: Line, current: Line, context: PageContext) -> bool:
@@ -1082,6 +1123,8 @@ def should_start_new_group(
         and is_prose_line(current)
         and close_font_size(previous.font_size, current.font_size)
     ):
+        return False
+    if touches_script_fragment(previous, current):
         return False
     if same_physical_line(previous, current):
         return pdftext_break and not (

@@ -603,6 +603,29 @@ class SameLineFragmentTests(unittest.TestCase):
             ['Lemma 2.6 (Agreement). For any', ') is a subset of all values'],
         )
 
+    def script_fragment_line(self, fragment_x1: float, fragment_size: float = 7.0) -> list[Line]:
+        """Build a line whose script-sized fragment pdftext puts into the next block."""
+        return [
+            *body_lines(1, block_no=1),
+            line('Definition 2.4. For any set R', 8, block_no=2, x2=120.0),
+            line('d', 8, block_no=3, x1=fragment_x1, x2=fragment_x1 + 4.0, font_size=fragment_size),
+            line(', |R| > s + f where s > f, define', 8, block_no=3, x1=fragment_x1 + 4.5),
+            line('R(f,x) by removing the f elements.', 9, block_no=3, x2=180.0),
+        ]
+
+    def test_touching_script_sized_fragment_continues_the_line(self) -> None:
+        self.assertEqual(len(group_texts(self.script_fragment_line(120.0))[-1]), 4)
+
+    def test_script_fragment_conservative_negatives(self) -> None:
+        for name, fragment_x1, fragment_size in (
+            ('gap before the fragment', 126.0, 7.0),
+            ('far smaller than a script', 120.0, 3.0),
+        ):
+            with self.subTest(name):
+                lines = self.script_fragment_line(fragment_x1, fragment_size)
+
+                self.assertEqual(group_texts(lines)[-1][0], 'd')
+
     def fraction_paragraph(self, last_text: str, last_x2: float = 220.0) -> list[Line]:
         """Build a paragraph whose fourth line holds an inline fraction before a parser edge."""
         return [
@@ -697,6 +720,22 @@ class RunningTextContinuationTests(unittest.TestCase):
         ]
 
         self.assertEqual(len(group_texts(lines)), 1)
+
+    def visual_line_ending_in_formula(self, formula_size: float) -> list[Line]:
+        """Build a full visual line ending in a formula in smaller type, before a parser edge."""
+        return [
+            *(line(f'Ordinary body text filling line {n}', n) for n in range(1, 6)),
+            line('the first piece of this text', 6, x2=150.0),
+            line('= max ri ∈ R(f,Gm(R)) ||ri −', 6, x1=152.0, y1=72.5, font_size=formula_size),
+            line('Gm(R)||2 continues the sentence', 7, block_no=2),
+            line('and yet another ordinary line of the body text', 8, block_no=2),
+        ]
+
+    def test_visual_line_ending_in_script_sized_formula_is_judged_by_its_start(self) -> None:
+        self.assertEqual(len(group_texts(self.visual_line_ending_in_formula(5.0))), 1)
+
+    def test_visual_line_ending_in_far_smaller_text_is_not_judged_by_its_start(self) -> None:
+        self.assertEqual(len(group_texts(self.visual_line_ending_in_formula(3.0))), 2)
 
     def test_conservative_negatives(self) -> None:
         for name, previous, current in (

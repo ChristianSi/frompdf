@@ -265,7 +265,9 @@ The current pipeline is roughly:
    and is dropped.
 4. Optionally dump the unfiltered line records to `-lines.csv`.
 5. Detect and remove headers and footers, collecting visible page labels.
-6. Order the remaining lines by page region and detected column.
+6. Order the remaining lines by page region and detected column. A block
+   ending where the first line of the block before it begins, on the same
+   visual line, moves before that block.
 7. Safely complete unambiguous page-label sequences and optionally dump them
    to `-pagenos.csv`.
 8. Recognize tables framed by connected horizontal and vertical rules, read
@@ -303,13 +305,15 @@ The current pipeline is roughly:
     candidates override boundaries only at and within those titles. Where
     `pdftext` starts a new block after a line split into pieces, the left edge
     of the whole visual line decides whether the text continues. Within a
-    line of running text, a new block needs a change of size, not just face.
+    line of running text, a new block needs a change of size, not just face,
+    and never starts at a short, touching piece in script-sized type.
     Below a line filling its column, regular spacing at the same left edge, or
     at the margin below an indented first line, continues the paragraph despite
     a `pdftext` block edge or a font change explained by italics within the
-    lines, unless the next line starts with an item label. After a sentence
-    end, this takes the same font, a line closely reaching the right edge, and
-    a next line at the margin.
+    lines, unless the next line starts with an item label. A visual line
+    ending in a script-sized piece, such as a formula, is judged by its start.
+    After a sentence end, this takes the same font, a line closely reaching the
+    right edge, and a next line at the margin.
     Each list item becomes a block of its own, and so does each passage set
     off line by line: evenly spaced lines in smaller type, inset at a shared
     left edge, most of which leave room for the next line's first word,
