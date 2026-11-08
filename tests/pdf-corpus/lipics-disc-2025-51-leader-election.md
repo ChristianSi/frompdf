@@ -166,7 +166,7 @@ two local communication ports: port 0 and port 1. By means of a specific port, a
 able to send messages to and receive messages from one of its neighbors.
 
 When the system is not anonymous, processes have unique identifiers that are arbitrarily
-selected from N.
+selected from ℕ.
 
 We assume an *asynchronous system*; that is, each message has an unpredictable delay
 that is finite but unbounded. A message cannot be lost. Messages are buffered, in the sense
@@ -216,7 +216,7 @@ We now describe an algorithm where each process sends *O*(*U*ID<sub>min</sub>) m
 direction, and just 3 messages in the counter-clockwise direction. This algorithm is of interest
 as it shows that our claim below needs the uniformity assumption:
 
-▶ **Theorem 1.** *For any uniform leader election algorithm and any bound b* ∈ N *there exists
+▶ **Theorem 1.** *For any uniform leader election algorithm and any bound b* ∈ ℕ *there exists
 an oriented ring where at least one process sends more than b messages in each direction.*
 
 The Constant Direction Algorithm, pseudocode in Algorithm 1, starts in a competing
