@@ -2,6 +2,7 @@ import re
 from collections import Counter, defaultdict
 from collections.abc import Sequence
 from dataclasses import replace
+from itertools import pairwise
 from statistics import median
 
 from frompdf.continuations import (
@@ -234,6 +235,13 @@ def is_centered_block(line_list: list[Line], threshold: float) -> bool:
     )
 
 
+def visual_line_count(line_list: list[Line]) -> int:
+    """Return the number of visual lines formed by consecutive line records."""
+    if not line_list:
+        return 0
+    return 1 + sum(not same_physical_line(left, right) for left, right in pairwise(line_list))
+
+
 def is_indented_blockquote_block(
     line_list: list[Line],
     body_lefts_by_page: dict[int, list[float]],
@@ -243,9 +251,10 @@ def is_indented_blockquote_block(
     """Return whether a block is consistently inset from its page or column margin.
 
     Centered lines with varying left edges are not, as they rather form a
-    caption or title.
+    caption or title. A single visual line counts as one line however many
+    pieces pdftext splits it into, as a formula with scripts.
     """
-    if len(line_list) < 2 and not allow_single_line:
+    if visual_line_count(line_list) < 2 and not allow_single_line:
         return False
 
     font_size = block_font_size(line_list) or default_font_size

@@ -216,6 +216,9 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
   paragraph within that line. A line ending in such a formula no longer starts
   a new paragraph at a `pdftext` block edge either, as its typography is now
   judged by its start.
+- A single indented line split by `pdftext` into several pieces, such as a
+  displayed formula with scripts, is no longer rendered as a block quote. Like
+  any single indented line, it is only quoted after another block quote.
 
 ## 0.1.0 - 2026-07-09
 

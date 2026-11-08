@@ -126,6 +126,29 @@ class BlockQuoteDetectionTests(unittest.TestCase):
             )
         )
 
+    def test_indented_line_split_into_pieces_counts_as_one_line(self) -> None:
+        formula = [
+            positioned_line('||mQ − mR||2 ≤ C', 60.0, 100.0),
+            replace(positioned_line('(s,f)0', 100.2, 112.0, y1=8.5), font_size=6.0),
+            positioned_line('∆Q', 112.5, 122.0),
+        ]
+        two_lines = [
+            positioned_line('the first line of a quotation', 60.0),
+            positioned_line('and its second line', 60.0, 150.0, y1=22.0),
+        ]
+
+        for name, line_list, expected in (
+            ('one visual line', formula, False),
+            ('two visual lines', two_lines, True),
+        ):
+            with self.subTest(name):
+                self.assertEqual(
+                    is_blockquote_block(
+                        line_list, default_font_size=10.5, body_lefts_by_page={1: [42.5]}
+                    ),
+                    expected,
+                )
+
     def test_centered_caption_is_not_quoted(self) -> None:
         caption = [
             positioned_line('Example of a response to a query listing', 60.0, 180.0),
