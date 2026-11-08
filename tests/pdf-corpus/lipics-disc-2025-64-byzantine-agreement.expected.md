@@ -52,6 +52,7 @@ sensors and controls, personal health monitoring devices and drug-delivery
 systems, and automotive telemetry and safety systems, as well as industrial and agricultural
 platforms for monitoring and controlling mechanical, physical, and biological processes. In
 all of these domains, the quality and reliability of sensor and sensor-derived data is central
+
 © Roy Shadmon and Owen Arden;
 
 licensed under Creative Commons License CC-BY 4.0
