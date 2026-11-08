@@ -251,6 +251,26 @@ class ParagraphSegmentationTests(unittest.TestCase):
 
         self.assertEqual(len(group_texts(lines)), 1)
 
+    def test_splits_smaller_print_after_smaller_gap_below_full_open_line(self) -> None:
+        # The page's dominant size, as of an abstract, matches neither the body
+        # text nor the small print, as on the first page of lipics-64.
+        abstract = [
+            line(f'abstract text in its own size filling line {n}', n, y1=n * 11.0, font_size=9.0)
+            for n in range(1, 9)
+        ]
+        body = [line(f'ordinary body text line {n}', n, y1=100.0 + n * 12.0) for n in range(1, 4)]
+        for name, font_size, expected in (
+            ('visibly smaller print', 7.0, '© Notice in print after spacing;'),
+            ('barely smaller print', 9.8, 'ordinary body text line 1'),
+        ):
+            with self.subTest(name):
+                small_print = [
+                    line('© Notice in print after spacing;', 5, y1=155.0, font_size=font_size),
+                    line('licensed', 6, y1=163.0, font_size=font_size),
+                ]
+
+                self.assertEqual(group_texts([*abstract, *body, *small_print])[-1][0], expected)
+
     def test_splits_heading_from_body_inside_pdftext_block(self) -> None:
         lines = [
             line('previous body line', 1, font_size=9.0),

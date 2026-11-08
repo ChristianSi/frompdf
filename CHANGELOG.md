@@ -219,6 +219,9 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
 - A single indented line split by `pdftext` into several pieces, such as a
   displayed formula with scripts, is no longer rendered as a block quote. Like
   any single indented line, it is only quoted after another block quote.
+- Smaller print after a visibly larger gap, such as a licence notice at the
+  bottom of a first page, now starts a new paragraph even below a full line
+  of body text that does not end a sentence.
 
 ## 0.1.0 - 2026-07-09
 

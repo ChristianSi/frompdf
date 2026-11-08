@@ -744,13 +744,15 @@ def large_advance_supports_break(left: Line, right: Line, context: PageContext) 
     """Return whether visible spacing separates two paragraphs.
 
     A gap about as tall as a blank line does so on its own. A smaller one must
-    follow a completed or unusually short line. Shortness is measured against
-    the column of body text, so a blank line is the only evidence for smaller
-    print laid out in a narrower measure, as in a letterhead.
+    follow a completed or unusually short line, or come with a visible change
+    of size, as before a licence notice in small print below a full, open line
+    of body text in lipics-64. Shortness is measured against the column of body
+    text, so a blank line is the only evidence for smaller print laid out in
+    a narrower measure, as in a letterhead.
     """
     if not has_large_advance(left, right, context):
         return False
-    if has_blank_line_advance(left, right, context):
+    if has_blank_line_advance(left, right, context) or significant_size_change(left, right):
         return True
     column = column_for_line(left, context)
     if column is None:
