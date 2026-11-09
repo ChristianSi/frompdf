@@ -138,10 +138,7 @@ high level, this process is described by the probability maximization in Def. 2.
 quorum size s, select a set r from the s-sized subsets of R, and a value x that maximizes the
 likelihood that x is the true value given observations in r.*
 
-PBA(*R*, *s*) ≜ argmax
-*r*∈[*R*]*<sup>s</sup>
-x*∈ℝ<sup>n</sup>
-*P*(*x* | *r*)
+PBA(*R*, *s*) ≜ argmax<sub>r∈[R]<sup>s</sup>, x∈ℝ<sup>n</sup></sub> *P*(*x* | *r*)
 
 Our chosen approximation of Proximal Byzantine Value Selection (PBVS) uses the
 geometric median of each *r* as a robust estimator for the expected value of the unknown
@@ -175,9 +172,7 @@ set of nonfaulty values is bounded when up to |*F*| < |*Q*| faulty values are ad
 
 ▶ **Lemma 2.2** (Theoretical maximum displacement [6, 11]). *Let R* = *Q* ∪ *F,* |*Q*| = *s and*
 |*F*| = *f such that s* > *f with geometric medians Gm*(*Q*) = *m<sub>Q</sub> and Gm*(*R*) = *m<sub>R</sub>. Let*
-∆<sup>Q</sup> = max<sub>qi</sub>∈<sub>Q</sub> ||*q<sub>i</sub>* − *Gm*(*Q*)||<sub>2</sub> *and C*<sup>(s,f)</sup><sub>0</sub> = √ *s
-s*<sup>2</sup>−*f*<sup>2</sup>
-*. Then the maximum displacement is*
+∆<sup>Q</sup> = max<sub>qi</sub>∈<sub>Q</sub> ||*q<sub>i</sub>* − *Gm*(*Q*)||<sub>2</sub> *and C*<sup>(s,f)</sup><sub>0</sub> = *s*/√(*s*<sup>2</sup>−*f*<sup>2</sup>)*. Then the maximum displacement is*
 
 ||*m<sub>Q</sub>* − *m<sub>R</sub>*||<sub>2</sub> ≤ *C*<sup>(s,f)</sup><sub>0</sub> ∆<sup>Q</sup>
 
@@ -187,12 +182,9 @@ computable bound guaranteed to contain the geometric median of the nonfaulty val
 is based only on the received values and the system parameters (i.e., *n*, *f*, and *s*).
 
 ▶ **Lemma 2.3** (Computable maximum displacement). *Let R* = *Q* ∪ *F,* |*Q*| = *s and* |*F*| = *f
-such that s* > 2*f with Gm*(*Q*) = *m<sub>Q</sub> and Gm*(*R*) = *m<sub>R</sub>, and C*<sup>(s,f)</sup> = √ *s*
-2*sf*−*f*<sup>2</sup>
-*. Then*
+such that s* > 2*f with Gm*(*Q*) = *m<sub>Q</sub> and Gm*(*R*) = *m<sub>R</sub>, and C*<sup>(s,f)</sup> = *s*/√(2*sf*−*f*<sup>2</sup>)*. Then*
 
-||*m<sub>Q</sub>* − *m<sub>R</sub>*||<sub>2</sub> ≤ *C*(*s*,*f*)∆*R
-f*
+||*m<sub>Q</sub>* − *m<sub>R</sub>*||<sub>2</sub> ≤ *C*<sup>(s,f)</sup>∆<sup>R</sup>*<sub>f</sub>*
 
 The computable displacement is used to compute the *region guarantee* for a given PBA
 result. The fact that PBA only produces outputs with region guarantees containing the true
@@ -201,16 +193,13 @@ output is our instantiation of an *accuracy* [12] property.
 ▶ **Definition 2.4** (Region Guarantee). *For any set R* ⊆ ℝ<sup>d</sup>, |*R*| > *s* + *f where s* > *f, define
 R*<sup>(f,x)</sup> ⊆ *R by removing the f elements of R furthest from x. Let* ∆<sup>R</sup>*<sub>f</sub>* = max*ri*∈*R*(*f*,*Gm*(*R*)) ||*ri* −
 *Gm*(*R*)||<sub>2</sub>*. The* region guarantee *RG*(*R*, *s*, *f*) *is a d-dimensional ball centered at x with radius*
-2*C*<sup>(s,f)</sup>∆*R
-f
-.*
+2*C*<sup>(s,f)</sup>∆<sup>R</sup>*<sub>f</sub>.*
 
 ▶ **Lemma 2.5** (Accuracy). *For any R* = (*Q* ∪ *F) containing* |*Q*| = *s* > 2*f nonfaulty and at
 most* |*F*| = *f faulty values, let PBA*(*R*, *s*) = (*x*, *R*′)*. Then Gm*(*Q*) ∈ *RG*(*R*, *s*, *f*) *and*
 
 ||*m<sub>Q</sub>* − *x*||<sub>2</sub> ≤ *C*<sup>(s,f)</sup><sub>0</sub> ∆<sup>R</sup>′
-\+ *C*<sup>(s,f)</sup><sub>0</sub> ∆<sup>Q</sup> ≤ 2*C*<sup>(s,f)</sup>∆*R
-f*
+\+ *C*<sup>(s,f)</sup><sub>0</sub> ∆<sup>Q</sup> ≤ 2*C*<sup>(s,f)</sup>∆<sup>R</sup>*<sub>f</sub>*
 
 ## 2.2 OneShot PBA Agreement and Termination
 
