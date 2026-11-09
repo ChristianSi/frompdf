@@ -34,7 +34,7 @@ https://doi.org/10.1038/s41467-022-30829-z **OPEN**
 Vladimir Tsurkan<sup>2,3</sup>, István Kézsmárki <sup>2</sup>, Francesco Foggetti<sup>4,5</sup>, Sergey Artyukhin <sup>4</sup> &
 Paul H. M. van Loosdrecht <sup>1</sup>✉**
 
-# 1234567890():,;
+1234567890():,;
 
 Formation of magnetic order alters the character of spin excitations, which then affects
 transport properties. We investigate the photoexcited ultrafast spin dynamics in different
@@ -149,9 +149,9 @@ spectroscopy below the magnetic ordering temperature, *T*<sub>C</sub> ~13
 
 0
 
-# (mdeg.)
+(mdeg.)
 
-# (mdeg.)
+(mdeg.)
 
 30 mT
 40 mT
@@ -167,9 +167,9 @@ spectroscopy below the magnetic ordering temperature, *T*<sub>C</sub> ~13
 
 -1
 
-# Magnetic Field (mT)
+Magnetic Field (mT)
 
-# Paramagnet
+##### Paramagnet
 
 \-
 
@@ -195,9 +195,9 @@ spectroscopy below the magnetic ordering temperature, *T*<sub>C</sub> ~13
 40 mT
 50 mT
 
-# (mdeg.)
+(mdeg.)
 
-# (mdeg.)
+(mdeg.)
 
 30 mT
 60 mT
@@ -243,27 +243,27 @@ respectively.
 
 **e**
 
-SkL
-FM
-6
-5
-4
-3
-2
-0 40 80 120
-Magnetic Field (mT)
-15
-14
-13
-12
+> SkL
+> FM
+> 6
+> 5
+> 4
+> 3
+> 2
+> 0 40 80 120
+> Magnetic Field (mT)
+> 15
+> 14
+> 13
+> 12
+>
+> 6
+>
+> 0.0
 
-6
+Frequency (GHz)
 
-0.0
-
-# Frequency (GHz)
-
-# Frequency
+Frequency
 
 -0.5
 
@@ -273,11 +273,11 @@ Magnetic Field (mT)
 60 mT
 75 mT
 
-# (mdeg.)
+(mdeg.)
 
 4
 
-# (GHz)
+(GHz)
 
 -1.0
 
@@ -325,11 +325,11 @@ Time (ps)
 > -0.3
 > 0.0
 
-# Lifetime (ps)
+Lifetime (ps)
 
-# (arb. units)
+(arb. units)
 
-# (mdeg.)
+(mdeg.)
 
 30 mT
 40 mT
@@ -337,7 +337,7 @@ Time (ps)
 60 mT
 75 mT
 
-# Amplitude
+Amplitude
 
 200
 
@@ -557,9 +557,9 @@ time slows down across the phase transition from the FM
 phase to the SkL phase (11.5 K and 10 K) and the Cyc phase (8 K).
 The increase of the remagnetization time reaches a factor of 1.5–2
 
-# Recovery time (ns)
-
 4
+
+Recovery time (ns)
 
 8 K
 
@@ -748,15 +748,16 @@ dynamics simulations of GaV<sub>4</sub>S<sub>8</sub> at *T* = 12 K and magnetic 
 
 3.0
 
-# Peak width *q*
-
-# (arb. units)
-
-2.0
-
-1.0
-
-0.0
+> Peak width
+> *q*
+>
+> (arb. units)
+>
+> 2.0
+>
+> 1.0
+>
+> 0.0
 
 0 40 80 120
 
