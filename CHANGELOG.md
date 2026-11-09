@@ -251,6 +251,10 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
   which keeps a combining accent. The word space after such an accent is no
   longer dropped. Italics now include combining accents following an italic
   letter, as in `*P̂*`.
+- Text running vertically, such as the axis labels of figures, no longer
+  becomes oversized headings in PDFs that report no real font sizes. Its size
+  is now measured across the text, by the width of its box, not by the length
+  of the text.
 
 ## 0.1.0 - 2026-07-09
 

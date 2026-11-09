@@ -1,3 +1,4 @@
+import math
 import re
 from collections import Counter, defaultdict
 from collections.abc import Sequence
@@ -128,14 +129,33 @@ def span_char_text_ranges(span_dict: PdfTextSpan) -> dict[int, tuple[int, int]]:
     return text_ranges
 
 
-def bbox_height(obj: PdfTextLine | PdfTextSpan) -> float | None:
-    """Return a usable bbox height, if present."""
-    _, y1, _, y2 = get_bbox(obj)
-    if y1 is None or y2 is None:
-        return None
+# Text turned by a quarter turn either way, within this tolerance in radians,
+# runs vertically, so that its height shows as the width of its bbox, as in the
+# axis labels of nature's figures.
+QUARTER_TURN_TOLERANCE = 0.1
 
-    height = abs(y2 - y1)
-    if height <= 1.0:
+
+def is_quarter_turned(obj: PdfTextChar | PdfTextSpan) -> bool:
+    """Return whether text runs vertically, turned by a quarter turn either way."""
+    try:
+        rotation = float(obj.get('rotation', 0) or 0) % math.pi
+    except (TypeError, ValueError):
+        return False
+    return abs(rotation - math.pi / 2) <= QUARTER_TURN_TOLERANCE
+
+
+def text_height(obj: PdfTextChar | PdfTextSpan) -> float | None:
+    """Return the extent of a bbox across the direction of its text, if present."""
+    x1, y1, x2, y2 = get_bbox(obj)
+    if is_quarter_turned(obj):
+        return None if x1 is None or x2 is None else abs(x2 - x1)
+    return None if y1 is None or y2 is None else abs(y2 - y1)
+
+
+def bbox_height(obj: PdfTextSpan) -> float | None:
+    """Return a usable height of a span's bbox across its text, if present."""
+    height = text_height(obj)
+    if height is None or height <= 1.0:
         return None
 
     return height
@@ -720,8 +740,7 @@ def glyph_font_size(char: PdfTextChar) -> float | None:
     size = float(char.get('font', {}).get('size', 1) or 1)
     if size > 1:
         return size
-    _, y1, _, y2 = get_bbox(char)
-    return None if y1 is None or y2 is None else y2 - y1
+    return text_height(char)
 
 
 def second_word_x1(line_dict: PdfTextLine) -> float | None:

@@ -1,10 +1,18 @@
 import unittest
 from typing import cast
 
+from pdftext.schema import Char as PdfTextChar
 from pdftext.schema import Line as PdfTextLine
 from pdftext.schema import Page
+from pdftext.schema import Span as PdfTextSpan
 
-from frompdf.lines import iter_lines, line_words, second_word_x1
+from frompdf.lines import (
+    effective_span_font_size,
+    glyph_font_size,
+    iter_lines,
+    line_words,
+    second_word_x1,
+)
 from frompdf.models import Word
 
 
@@ -81,3 +89,54 @@ class LineWordTests(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+def placeholder_span(bbox: list[float], rotation: float) -> PdfTextSpan:
+    """Build a span whose font reports the placeholder size 1.0."""
+    return cast(
+        PdfTextSpan,
+        {'text': '(mdeg.)', 'bbox': bbox, 'rotation': rotation, 'font': {'size': 1.0}},
+    )
+
+
+class PlaceholderFontSizeTests(unittest.TestCase):
+    def test_vertical_span_measures_its_bbox_width(self) -> None:
+        # An axis label read bottom to top, as in nature's figures.
+        span = placeholder_span([251.2, 544.0, 259.2, 572.6], 4.7124)
+
+        self.assertAlmostEqual(effective_span_font_size(span) or 0.0, 8.0, places=1)
+
+    def test_span_turned_the_other_way_measures_its_bbox_width(self) -> None:
+        span = placeholder_span([251.2, 544.0, 259.2, 572.6], 1.5708)
+
+        self.assertAlmostEqual(effective_span_font_size(span) or 0.0, 8.0, places=1)
+
+    def test_horizontal_span_measures_its_bbox_height(self) -> None:
+        for rotation in (0.0, 3.1416):
+            span = placeholder_span([251.2, 544.0, 279.8, 552.0], rotation)
+
+            self.assertAlmostEqual(effective_span_font_size(span) or 0.0, 8.0, places=1)
+
+    def test_obliquely_turned_span_keeps_measuring_its_bbox_height(self) -> None:
+        span = placeholder_span([0.0, 0.0, 30.0, 20.0], 0.6)
+
+        self.assertAlmostEqual(effective_span_font_size(span) or 0.0, 20.0, places=1)
+
+    def test_reported_size_is_kept_for_vertical_span(self) -> None:
+        span = placeholder_span([251.2, 544.0, 259.2, 572.6], 4.7124)
+        span['font'] = {'size': 7.5}
+
+        self.assertEqual(effective_span_font_size(span), 7.5)
+
+    def test_vertical_glyph_measures_its_bbox_width(self) -> None:
+        char = cast(
+            PdfTextChar,
+            {
+                'char': '(',
+                'bbox': [251.2, 570.6, 259.2, 572.6],
+                'rotation': 4.7124,
+                'font': {'size': 1.0},
+            },
+        )
+
+        self.assertAlmostEqual(glyph_font_size(char) or 0.0, 8.0, places=1)
