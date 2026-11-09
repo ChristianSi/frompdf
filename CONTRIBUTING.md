@@ -185,9 +185,9 @@ The implementation is split into focused modules under `src/frompdf`:
 - `lines.py` repairs detached diacritics, removes icon-font glyphs, decodes
   glyphs of TeX math extension fonts and capitals of blackboard bold fonts,
   restores private-use bullets of symbol fonts, reattaches detached scripts,
-  flattens
-  `pdftext` output, and extracts line geometry, typography, inline script
-  ranges, and bold and italic ranges.
+  merges the pieces of split denominators, flattens `pdftext` output, and
+  extracts line geometry, typography, inline script ranges, bold and italic
+  ranges, and fraction denominators and limits stacked below a line.
 - `lists.py` recognizes bulleted and numbered list items and their
   continuation lines, using marker alignment, consecutive numbering, and
   deliberate breaks before weakly marked lists.
@@ -218,8 +218,10 @@ Important concepts:
 
 - `Line` in `models.py` is a flattened record from `pdftext` output. It
   records whether `pdftext` reported whitespace at its edges, which tells
-  whether pieces of one visual line need a space between them, and whether it
-  is the denominator of an inline fraction ending the preceding record. It
+  whether pieces of one visual line need a space between them, whether it
+  is the denominator of an inline fraction ending the preceding record, and
+  whether it belongs to the limits below the last word of the record before
+  them, as under `argmax`. It
   also records where the text after its first word starts, which is where a
   list item's text follows its marker, and the horizontal extent of each
   word, which tells the table cells its pieces belong to.
@@ -256,7 +258,10 @@ The current pipeline is roughly:
    become double-struck letters. Restore bullets of symbol fonts, which
    `pdftext` drops as private-use characters. Move scripts that `pdftext` set
    apart, in a block of their own or stacked below or above another script,
-   back into the line records they belong to.
+   back into the line records they belong to; a record mostly in script size
+   is measured against its largest glyphs. Merge touching records of small
+   glyphs centered below a numerator into one denominator, which starts with
+   a radical sign reaching down beside it from the numerator's record.
 3. Flatten the result into line records with geometry, typography, and
    conservative character-level superscript/subscript annotations. When
    `pdftext` puts small glyphs into a line record of their own, the other
@@ -265,11 +270,15 @@ The current pipeline is roughly:
    pieces of the line, in either order, and glyphs of a script's size next to
    the largest ones are small; otherwise, the adjacent pieces must mostly be
    in a larger size. Small records centered below small text ending the
-   preceding record, with the line continuing after them, are marked as
-   fraction denominators. Bold and italic ranges follow font names and the
-   italic font flag. Letters in math italic fonts are italic, with combining
-   marks following them; other math fonts are ignored. A style covering most
-   of the document's letters and digits is its body style and is dropped.
+   preceding record, with the line continuing after the wider of numerator
+   and denominator, are marked as fraction denominators. Neither part of a
+   fraction is a script of the text around it. Records of small text centered
+   below a line's last word, which has letters in it, with the line continuing
+   after them, are marked as its limits. Bold and italic ranges follow font
+   names and the italic font flag. Letters in math italic fonts are italic,
+   with combining marks following them; other math fonts are ignored. A style
+   covering most of the document's letters and digits is its body style and
+   is dropped.
 4. Optionally dump the unfiltered line records to `-lines.csv`.
 5. Detect and remove headers and footers, collecting visible page labels.
 6. Order the remaining lines by page region and detected column. A block
@@ -344,7 +353,9 @@ The current pipeline is roughly:
     Join the pieces into which `pdftext` split a physical line with a space
     or nothing, depending on reported whitespace and the gap between them,
     unless they are too far apart to be running text, and append fraction
-    denominators to their numerators after a slash. Then repair words and
+    denominators to their numerators after a slash, writing a radical over a
+    compound denominator as `√(…)`. Limits follow the word above them as a
+    subscript, with their rows separated by commas. Then repair words and
     unspaced dashes split across physical lines within each block, preserving
     script ranges and attributing words joined across pages to their starting
     page. URLs and DOIs broken at a line end are joined first, top-down, with
@@ -371,8 +382,8 @@ The current pipeline is roughly:
     paragraphs reading as a thematic break, such as `***`, stay unescaped and
     drop their emphasis; a page marker starting one becomes a paragraph of its
     own, so it does not turn the rule into literal text.
-    Inline scripts become `<sup>`/`<sub>` tags; consumed footnote labels remain
-    ordinary list markers.
+    Inline scripts become `<sup>`/`<sub>` tags, nesting scripts of the other
+    kind within them; consumed footnote labels remain ordinary list markers.
     Bold and italic ranges become `**`/`*` emphasis. Headings and strong
     paragraphs drop bold, and italics covering all of their text. Ranges of
     the same kind separated only by whitespace are merged; list markers stay

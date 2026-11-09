@@ -12,7 +12,12 @@ from collections.abc import Iterable, Mapping
 from unicodedata import category
 
 from frompdf.models import HARD_LINE_BREAK, InlineKind, InlineRange
-from frompdf.scripts import AnnotatedText, merged_script_runs, render_script
+from frompdf.scripts import (
+    AnnotatedText,
+    merged_script_runs,
+    nested_script_runs,
+    render_script,
+)
 
 DELIMITERS = {'bold': '**', 'italic': '*'}
 
@@ -335,5 +340,10 @@ def render_inline(value: AnnotatedText, inserts: Mapping[int, str] | None = None
         if index + 1 < len(positions):
             segment = text[position : positions[index + 1]]
             script = script_at.get(position)
-            parts.append(render_script(segment, script.kind) if script else segment)
+            if script is None:
+                parts.append(segment)
+            else:
+                end = positions[index + 1]
+                nested = nested_script_runs(value.ranges, position, end, script.kind)
+                parts.append(render_script(segment, script.kind, nested))
     return ''.join(parts)

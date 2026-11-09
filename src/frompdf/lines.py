@@ -22,7 +22,11 @@ from pdftext.schema import (
 
 from frompdf.models import InlineRange, Line, Word
 from frompdf.scripts import AnnotatedText
-from frompdf.segmentation import same_physical_line, same_running_text_line
+from frompdf.segmentation import (
+    RUNNING_TEXT_MAX_GAP_EM,
+    same_physical_line,
+    same_running_text_line,
+)
 
 # Spacing accents, including the modifier letters that TeX fonts map their
 # circumflex and tilde to, as for lipics-64's `v̂`.
@@ -1071,13 +1075,81 @@ def trailing_small_glyph_box(line_dict: PdfTextLine, font_size: float) -> Box | 
     return union_box(boxes) if boxes else None
 
 
+def stacked_limit_count(page_lines: Sequence[Line], index: int) -> int:
+    """Return the number of line records after index that form limits below its last word.
+
+    Limits, as under `argmax` in lipics-64, are records of small text below
+    the middle of the line, centered as a whole below its last word, which
+    has letters in it. The record after them continues the line after the
+    wider of the word and the limits.
+    """
+    operator = page_lines[index]
+    if (
+        not operator.words
+        or operator.font_size is None
+        or operator.x2 is None
+        or operator.y1 is None
+        or operator.y2 is None
+    ):
+        return 0
+    word = operator.words[-1]
+    if not any(char.isalpha() for char in operator.text[word.start : word.end]):
+        return 0
+    font_size = operator.font_size
+    middle = (operator.y1 + operator.y2) / 2
+    boxes: list[Box] = []
+    end = index + 1
+    while end < len(page_lines):
+        piece = page_lines[end]
+        if (
+            piece.page_no != operator.page_no
+            or piece.fraction_denominator
+            or piece.font_size is None
+            or piece.font_size > font_size * SCRIPT_MAX_SIZE_RATIO
+            or piece.x1 is None
+            or piece.x2 is None
+            or piece.y1 is None
+            or piece.y2 is None
+            or piece.y1 < middle
+        ):
+            break
+        boxes.append((piece.x1, piece.y1, piece.x2, piece.y2))
+        end += 1
+    if not boxes or end >= len(page_lines):
+        return 0
+    following = page_lines[end]
+    limits = union_box(boxes)
+    tolerance = font_size * STACKED_ALIGNMENT_TOLERANCE_EM
+    if (
+        abs((limits[0] + limits[2]) - (word.x1 + word.x2)) / 2 > tolerance
+        or following.x1 is None
+        or not same_physical_line(operator, following)
+        or not 0 <= following.x1 - max(operator.x2, limits[2]) < font_size * RUNNING_TEXT_MAX_GAP_EM
+    ):
+        return 0
+    return len(boxes)
+
+
+def without_trailing_scripts(line_obj: Line) -> tuple[InlineRange, ...]:
+    """Return a line's ranges without the scripts that end it, as a fraction's numerator."""
+    end = len(line_obj.text)
+    trailing: set[InlineRange] = set()
+    for run in sorted((run for run in line_obj.ranges if run.is_script), key=lambda run: -run.end):
+        if run.end != end:
+            break
+        trailing.add(run)
+        end = run.start
+    return tuple(run for run in line_obj.ranges if run not in trailing)
+
+
 def is_fraction_denominator(
     numerator: Line, numerator_dict: PdfTextLine, denominator: Line, following: Line
 ) -> bool:
     """Return whether a line is centered below small text ending the preceding line.
 
-    The text following it must continue the line of the numerator, so text
-    on the next line never counts as a denominator.
+    The text following it must continue the line of the numerator after the
+    wider of numerator and denominator, so text on the next line never counts
+    as a denominator.
     """
     if (
         numerator.y1 is None
@@ -1087,11 +1159,16 @@ def is_fraction_denominator(
         or denominator.y1 is None
         or denominator.y2 is None
         or following.y2 is None
+        or numerator.x2 is None
+        or following.x1 is None
         or same_physical_line(numerator, denominator)
-        or not same_running_text_line(numerator, following)
+        or not same_physical_line(numerator, following)
     ):
         return False
     font_size = max(numerator.font_size or 0.0, following.font_size or 0.0)
+    fraction_end = max(numerator.x2, denominator.x2)
+    if following.x1 - fraction_end >= max(font_size, 1.0) * RUNNING_TEXT_MAX_GAP_EM:
+        return False
     if (
         font_size <= 0
         or (denominator.font_size or font_size) > font_size * SCRIPT_MAX_SIZE_RATIO
@@ -1302,7 +1379,9 @@ def trailing_script(
     """Return the boxes of a script ending a line and of its base glyph, its kind, and size.
 
     A line of nothing but a script, which pdftext can set apart from its base,
-    takes the base from the end of the line before, if they touch.
+    takes the base from the end of the line before, if they touch. A line
+    mostly in script size, as lipics-64's `⁽ˢ,ᶠ⁾∆ᴿ`, is measured against its
+    largest glyphs, as the `∆` that the `R` is a script of.
     """
     chars = visible_chars(line_dict)
     font_size = dominant_font_size(line_dict)
@@ -1310,6 +1389,14 @@ def trailing_script(
     if trailing is None:
         return None
     run, base_box = trailing
+    sizes = [glyph_font_size(char) for char in chars]
+    largest = max((size for size in sizes if size is not None), default=None)
+    if not run and font_size is not None and largest is not None and largest > font_size:
+        trailing = trailing_small_run(chars, largest)
+        if trailing is None:
+            return None
+        font_size = largest
+        run, base_box = trailing
     if not run and before is not None:
         # Measure a line of small glyphs against the line it continues.
         before_chars = visible_chars(before)
@@ -1391,6 +1478,129 @@ def attach_stacked_scripts(page_list: Sequence[Page]) -> None:
                 line['bbox'] = cast(Bbox, list(union_box(remaining)))
             else:
                 block['lines'] = [other for other in block['lines'] if other is not line]
+
+
+# Pieces of a denominator that pdftext splits into several records touch
+# within this distance, relative to the size of the surrounding text, as the
+# `s`, `2−f`, and `2` of lipics-64's `s/√(s²−f²)`.
+DENOMINATOR_PIECE_MAX_GAP_EM = 0.1
+RADICAL = '√'
+
+
+def largest_glyph_size(line_dict: PdfTextLine) -> float | None:
+    """Return the size of the largest visible glyph of a line, if known."""
+    sizes = [glyph_font_size(char) for char in visible_chars(line_dict)]
+    return max((size for size in sizes if size is not None), default=None)
+
+
+def stacked_denominator_pieces(
+    ordered: Sequence[PdfTextLine], index: int
+) -> tuple[list[int], PdfTextSpan | None] | None:
+    """Return the indexes of records forming a denominator after a numerator, and its radical.
+
+    The record at index ends with a numerator in glyphs that are small next
+    to its largest ones. At least two following records of small glyphs touch
+    each other below it, followed by another record. A radical before the
+    numerator belongs to the denominator if it reaches down beside it.
+    Together they must be centered below the numerator.
+    """
+    numerator = ordered[index]
+    font_size = largest_glyph_size(numerator)
+    if font_size is None or font_size <= 0:
+        return None
+    end = index + 1
+    while end < len(ordered):
+        size = largest_glyph_size(ordered[end])
+        if size is None or size > font_size * SCRIPT_MAX_SIZE_RATIO:
+            break
+        end += 1
+    if end - index - 1 < 2 or end >= len(ordered):
+        return None
+    piece_boxes = [positioned_box(ordered[piece]) for piece in range(index + 1, end)]
+    numerator_box = trailing_small_glyph_box(numerator, font_size)
+    if numerator_box is None or any(box is None for box in piece_boxes):
+        return None
+    boxes = [box for box in piece_boxes if box is not None]
+    if any(
+        abs(right[0] - left[2]) > font_size * DENOMINATOR_PIECE_MAX_GAP_EM
+        for left, right in zip(boxes, boxes[1:], strict=False)
+    ):
+        return None
+    denominator_box = union_box(boxes)
+    tolerance = font_size * STACKED_ALIGNMENT_TOLERANCE_EM
+    if numerator_box[3] > denominator_box[1] + tolerance:
+        return None
+
+    radical = numerator_radical(numerator, font_size)
+    radical_box = positioned_box(radical) if radical is not None else None
+    if radical_box is not None and (
+        radical_box[3] < denominator_box[3] - tolerance
+        or radical_box[2] > denominator_box[0] + tolerance
+    ):
+        radical, radical_box = None, None
+    if radical_box is not None:
+        denominator_box = union_box([radical_box, denominator_box])
+    numerator_center = (numerator_box[0] + numerator_box[2]) / 2
+    if abs(numerator_center - (denominator_box[0] + denominator_box[2]) / 2) > tolerance:
+        return None
+    return list(range(index + 1, end)), radical
+
+
+def numerator_radical(numerator: PdfTextLine, font_size: float) -> PdfTextSpan | None:
+    """Return the span of a radical sign right before the small glyphs ending a line, if any."""
+    spans = [span for span in numerator.get('spans', []) if span.get('text', '').strip()]
+    small = 0
+    while small < len(spans) and all(
+        (glyph_font_size(char) or font_size) <= font_size * SCRIPT_MAX_SIZE_RATIO
+        for char in spans[len(spans) - 1 - small].get('chars', [])
+        if char.get('char', '').strip()
+    ):
+        small += 1
+    if not small or small == len(spans):
+        return None
+    candidate = spans[len(spans) - 1 - small]
+    return candidate if candidate.get('text', '').strip() == RADICAL else None
+
+
+def merge_split_denominators(page_list: Sequence[Page]) -> None:
+    """Merge the pieces of a denominator that pdftext splits into several records, in place.
+
+    A radical reaching down beside the denominator moves from the numerator's
+    record to the start of the denominator.
+    """
+    for page_dict in page_list:
+        index = 0
+        while True:
+            ordered = [
+                (block, line)
+                for block in page_dict.get('blocks', [])
+                for line in block.get('lines', [])
+            ]
+            if index >= len(ordered):
+                break
+            found = stacked_denominator_pieces([line for _, line in ordered], index)
+            if found is None:
+                index += 1
+                continue
+            pieces, radical = found
+            numerator = ordered[index][1]
+            first = ordered[pieces[0]][1]
+            if radical is not None:
+                spans = numerator.get('spans', [])
+                position = next(i for i, span in enumerate(spans) if span is radical)
+                following = spans[position + 1 : position + 2]
+                removed = 2 if following and not following[0].get('text', '').strip() else 1
+                numerator['spans'] = spans[:position] + spans[position + removed :]
+                first['spans'] = [radical, *first.get('spans', [])]
+                for line in (numerator, first):
+                    boxes = [box for box in map(positioned_char_box, visible_chars(line)) if box]
+                    if boxes:
+                        line['bbox'] = cast(Bbox, list(union_box(boxes)))
+            for piece in pieces[1:]:
+                block, line = ordered[piece]
+                append_spans(first, line.get('spans', []))
+                block['lines'] = [other for other in block['lines'] if other is not line]
+            index += 1
 
 
 def has_edge_space(raw_text: str, at_end: bool) -> bool:
@@ -1486,6 +1696,24 @@ def iter_lines(page_list: Sequence[Page]) -> list[Line]:
                 line_obj,
                 page_lines[index + 1][0],
             )
+            if line_obj.fraction_denominator:
+                # Numerator and denominator are no scripts of the line around
+                # them; the denominator's own scripts are judged within it.
+                numerator = page_lines[index - 1][0]
+                numerator.ranges = without_trailing_scripts(numerator)
+                own = AnnotatedText(
+                    raw_text, line_script_ranges(line_dict) + line_emphasis_ranges(line_dict)
+                ).slice(len(raw_text) - len(raw_text.lstrip()), len(raw_text.rstrip()))
+                line_obj.ranges = own.ranges
             line_list.append(line_obj)
+
+        page_line_objs = [line_obj for line_obj, _, _, _ in page_lines]
+        for index, line_obj in enumerate(page_line_objs):
+            if line_obj.stacked_limit or line_obj.fraction_denominator:
+                continue
+            for limit in page_line_objs[
+                index + 1 : index + 1 + stacked_limit_count(page_line_objs, index)
+            ]:
+                limit.stacked_limit = True
 
     return line_list

@@ -2,10 +2,10 @@
 
 import re
 from collections import Counter, defaultdict
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from itertools import pairwise
 
-from frompdf.models import HARD_LINE_BREAK, Line, PageNumber, TextFragment
+from frompdf.models import HARD_LINE_BREAK, InlineRange, Line, PageNumber, TextFragment
 from frompdf.scripts import AnnotatedText, join_annotated_texts
 from frompdf.segmentation import (
     FONT_WEIGHT_BREAK,
@@ -353,6 +353,11 @@ def continues_across_boundary(
     )
 
 
+# TeX separates an operator with limits, as `argmax`, from its argument by a
+# thin space of a sixth of an em, narrower than a word space.
+LIMITS_SPACE_GAP_EM = 1 / 6 - 0.01
+
+
 def line_separator(left: Line, right: Line) -> str:
     """Return the text separating two consecutive lines of a block.
 
@@ -374,7 +379,12 @@ def line_separator(left: Line, right: Line) -> str:
 
 
 def fraction_part(value: AnnotatedText) -> AnnotatedText:
-    """Return the denominator of an inline fraction, parenthesized if it is compound."""
+    """Return the denominator of an inline fraction, parenthesized if it is compound.
+
+    A radical starting the denominator covers all of it, as in `√(s²−f²)`.
+    """
+    if value.text.startswith('√') and len(value.text) > 2:
+        return value.slice(0, 1) + AnnotatedText('(') + value.slice(1) + AnnotatedText(')')
     if any(char.isspace() or char in FRACTION_OPERATORS for char in value.text):
         return AnnotatedText('(') + value + AnnotatedText(')')
     return value
@@ -389,10 +399,35 @@ def physical_line_texts(line_list: list[Line], hard_break_ids: set[int]) -> list
     """
     texts: list[AnnotatedText] = []
     previous: Line | None = None
+    # The numerator's line extended to the end of a fraction just appended.
+    widened: Line | None = None
+    # Limits below the last word of the previous line, and their last record.
+    limits: AnnotatedText | None = None
+    last_limit: Line | None = None
     for line in line_list:
         text = AnnotatedText(line.text, line.ranges) + AnnotatedText(
             HARD_LINE_BREAK if id(line) in hard_break_ids else ''
         )
+        if (
+            line.stacked_limit
+            and previous is not None
+            and id(previous) not in hard_break_ids
+            and previous.page_no == line.page_no
+        ):
+            # Rows of limits are separated by commas.
+            if limits is None or last_limit is None:
+                limits = text
+            else:
+                separator = line_separator(last_limit, line)
+                limits = limits + AnnotatedText(', ' if separator == '\n' else separator) + text
+            last_limit = line
+            if previous.x2 is not None and line.x2 is not None:
+                widened = replace(previous, x2=max((widened or previous).x2 or 0.0, line.x2))
+            continue
+        after_limits = limits is not None
+        if limits is not None:
+            texts[-1] = texts[-1] + subscript(limits)
+            limits, last_limit = None, None
         if (
             line.fraction_denominator
             and previous is not None
@@ -400,16 +435,40 @@ def physical_line_texts(line_list: list[Line], hard_break_ids: set[int]) -> list
             and previous.page_no == line.page_no
             and previous.line_no_on_page == line.line_no_on_page - 1
         ):
-            # The text after the fraction continues the numerator's line.
+            # The text after the fraction continues the numerator's line, if
+            # need be after a denominator wider than the numerator.
             texts[-1] = texts[-1] + AnnotatedText('/') + fraction_part(text)
+            if previous.x2 is not None and line.x2 is not None:
+                widened = replace(
+                    previous, x2=max(previous.x2, line.x2), space_after=line.space_after
+                )
             continue
         separator = '\n' if previous is None else line_separator(previous, line)
+        if separator == '\n' and widened is not None:
+            separator = line_separator(widened, line)
+        if (
+            after_limits
+            and separator == ''
+            and widened is not None
+            and widened.x2 is not None
+            and line.x1 is not None
+            and line.x1 - widened.x2 >= (line.font_size or 0.0) * LIMITS_SPACE_GAP_EM
+        ):
+            separator = ' '
+        widened = None
         if separator == '\n':
             texts.append(text)
         else:
             texts[-1] = texts[-1] + AnnotatedText(separator) + text
         previous = line
+    if limits is not None:
+        texts[-1] = texts[-1] + subscript(limits)
     return texts
+
+
+def subscript(value: AnnotatedText) -> AnnotatedText:
+    """Return text as a subscript, keeping the scripts within it."""
+    return AnnotatedText(value.text, (*value.ranges, InlineRange(0, len(value.text), 'sub')))
 
 
 def build_page_fragments(

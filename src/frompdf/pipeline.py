@@ -10,6 +10,7 @@ from frompdf.lines import (
     decode_math_extension_glyphs,
     drop_dominant_emphasis,
     iter_lines,
+    merge_split_denominators,
     normalize_detached_diacritics,
     remove_icon_glyphs,
     restore_private_use_bullets,
@@ -47,6 +48,7 @@ def extract_markdown(
     restore_private_use_bullets(page_list)
     attach_stray_scripts(page_list)
     attach_stacked_scripts(page_list)
+    merge_split_denominators(page_list)
     line_list = iter_lines(page_list)
     drop_dominant_emphasis(line_list)
 

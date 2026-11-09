@@ -234,6 +234,13 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
   it or give a value after a `=`; another URL continues only one ending in
   `/`, as in archive URLs. Text following a URL, list numbers, and a note
   marker starting the next line are left alone.
+- Stacked math in formulas, such as `Δ^R_f`, fractions like `s/√(s²−f²)`
+  whose denominator `pdftext` splits into several records, and limits below
+  `argmax`, is no longer split over several lines. Limits follow their
+  operator as a subscript. The `-lines.csv` dump gains a `stacked_limit`
+  column.
+- Superscripts and subscripts within a script are rendered as nested tags,
+  as in `argmax<sub>r∈[R]<sup>s</sup></sub>`.
 - Superscripts and subscripts that `pdftext` puts into line records of their
   own are now recognized in displayed formulas too, as in `C₀⁽ˢ,ᶠ⁾ Δ^Q`,
   where the scripts of the rest of the line outnumber its ordinary letters,

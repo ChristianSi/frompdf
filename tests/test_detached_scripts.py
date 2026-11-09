@@ -111,6 +111,18 @@ class StackedScriptTests(unittest.TestCase):
 
         self.assertEqual(texts(page_obj), ['bound 2C', '<sup>(s)</sup><sub>0</sub>', 'holds'])
 
+    def test_subscript_below_superscript_of_a_record_mostly_in_script_size(self) -> None:
+        # As lipics-64's `⁽ˢ,ᶠ⁾∆ᴿ`, with the `f` of `∆ᴿ_f` in a record below the `R`.
+        base = line(
+            span('(s,f)', 0, 98, 7, width=3), span('∆', 15, 100, 10), span('R', 20, 98, 7, width=3)
+        )
+        subscript = line(span('f', 20, 104, 7, width=3))
+        page_obj = page([base, subscript, line(span('. Next', 23.5, 100, 10))])
+
+        attach_stacked_scripts([page_obj])
+
+        self.assertEqual([record.text for record in iter_lines([page_obj])], ['(s,f)∆Rf', '. Next'])
+
     def test_misaligned_or_same_direction_scripts_stay_apart(self) -> None:
         for second in (span('∗', 28, 104, 7, width=4), span('∗', 25, 98, 7, width=4)):
             with self.subTest(second=second['bbox']):

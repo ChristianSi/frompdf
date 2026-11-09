@@ -7,6 +7,7 @@ from pdftext.schema import Line as PdfTextLine
 from pdftext.schema import Page
 
 from frompdf.blocks import detect_headings
+from frompdf.emphasis import render_inline
 from frompdf.footnotes import DetectedNote, build_footnote, numbered_line
 from frompdf.lines import iter_lines, line_script_ranges
 from frompdf.models import BlockQuote, Heading, InlineRange, Line, PageNumber, Paragraph
@@ -281,6 +282,23 @@ class SameLineScriptDetectionTests(unittest.TestCase):
 
 
 class ScriptAnnotationTests(unittest.TestCase):
+    def test_scripts_of_the_other_kind_nest_within_a_script(self) -> None:
+        text = 'maxr∈Rs, x∈Xn P'
+        ranges = (
+            InlineRange(3, 13, 'sub'),
+            InlineRange(6, 7, 'sup'),
+            InlineRange(12, 13, 'sup'),
+            InlineRange(14, 15, 'italic'),
+        )
+
+        self.assertEqual(
+            render_scripts(text, ranges), 'max<sub>r∈R<sup>s</sup>, x∈X<sup>n</sup></sub> P'
+        )
+        self.assertEqual(
+            render_inline(AnnotatedText(text, ranges)),
+            'max<sub>r∈R<sup>s</sup>, x∈X<sup>n</sup></sub> *P*',
+        )
+
     def test_slicing_clips_runs_and_whitespace_collapse_retains_heading_scripts(self) -> None:
         value = AnnotatedText(
             '  GaV4S8\n title ', (InlineRange(5, 6, 'sub'), InlineRange(7, 8, 'sub'))
