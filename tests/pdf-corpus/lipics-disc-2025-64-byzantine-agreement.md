@@ -337,15 +337,13 @@ control systems and datastream processing applications.
    1986. doi:10.1145/5925.5931.
 6. El-Mahdi El-Mhamdi, Sadegh Farhadkhani, Rachid Guerraoui, and Lê-Nguyên Hoang. On
    the Strategyproofness of the Geometric Median. In *Proceedings of The 26th International
-   Conference on Artificial Intelligence and Statistics*. PMLR, April 2023. URL: https://
-   proceedings.mlr.press/v206/el-mhamdi23a.html.
+   Conference on Artificial Intelligence and Statistics*. PMLR, April 2023. URL: https://proceedings.mlr.press/v206/el-mhamdi23a.html.
 7. Peter J. Huber and Elvezio M. Ronchetti. *Robust Statistics*. Wiley, 2011.
 8. Kate Keahey, Jason Anderson, Zhuo Zhen, Pierre Riteau, Paul Ruth, Dan Stanzione, Mert
    Cevik, Jacob Colleran, Haryadi S. Gunawi, Cody Hammock, Joe Mambretti, Alexander
    Barnes, François Halbach, Alex Rocha, and Joe Stubbs. Lessons learned from the chameleon
    testbed. In *Proceedings of the 2020 USENIX Annual Technical Conference (USENIX ATC
-   ’20)*. USENIX Association, July 2020. URL: https://www.usenix.org/conference/atc20/
-   presentation/keahey.
+   ’20)*. USENIX Association, July 2020. URL: https://www.usenix.org/conference/atc20/presentation/keahey.
 9. Leslie Lamport. The weak Byzantine generals problem. *Journal of the ACM*, 30(3), 1983.
    doi:10.1145/2402.322398.
 10. Leslie Lamport and P. M. Melliar-Smith. Byzantine clock synchronization. In *Principles of
@@ -364,8 +362,7 @@ control systems and datastream processing applications.
 15. Stanislav Minsker. Geometric median and robust estimation in Banach spaces. *Bernoulli*,
     21(4), November 2015. doi:10.3150/14-BEJ645.
 16. Stanislav Minsker and Nate Strawn. The Geometric Median and Applications to Robust
-    Mean Estimation. *SIAM Journal on Mathematics of Data Science*, 6(2), June 2024. doi:
-    10.1137/23M1592420.
+    Mean Estimation. *SIAM Journal on Mathematics of Data Science*, 6(2), June 2024. doi:10.1137/23M1592420.
 17. Emanuel Parzen. *Stochastic Processes*. Dover Books on Mathematics. Dover Publications Inc.,
     2015.
 18. Roy Shadmon and Owen Arden. Enhancing accuracy in approximate byzantine agreement with

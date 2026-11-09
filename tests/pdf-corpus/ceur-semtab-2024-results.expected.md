@@ -372,16 +372,15 @@ lakes with contextualized column-based representation learning, Proc. VLDB Endow
 [2] G. Fan, J. Wang, Y. Li, R. J. Miller, Table discovery in data lakes: State-of-the-art and future
 directions, in: S. Das, I. Pandis, K. S. Candan, S. Amer-Yahia (Eds.), Companion of the 2023
 [[PAGE:7]]International Conference on Management of Data, SIGMOD/PODS 2023, Seattle, WA, USA, June
-18-23, 2023, ACM, 2023, pp. 69–75. URL: https://doi.org/10.1145/3555041.3589409. doi:10.
-1145/3555041.3589409.
+18-23, 2023, ACM, 2023, pp. 69–75. URL: https://doi.org/10.1145/3555041.3589409. doi:10.1145/3555041.3589409.
 
 [3] A. Khatiwada, G. Fan, R. Shraga, Z. Chen, W. Gatterbauer, R. J. Miller, M. Riedewald, SANTOS:
 relationship-based semantic table union search, Proc. ACM Manag. Data 1 (2023) 9:1–9:25. URL:
 https://doi.org/10.1145/3588689. doi:10.1145/3588689.
 
 [4] P. Ouellette, A. Sciortino, F. Nargesian, B. G. Bashardoost, E. Zhu, K. Q. Pu, R. J. Miller, RONIN:
-data lake exploration, Proc. VLDB Endow. 14 (2021) 2863–2866. URL: http://www.vldb.org/pvldb/
-vol14/p2863-nargesian.pdf. doi:10.14778/3476311.3476364.
+data lake exploration, Proc. VLDB Endow. 14 (2021) 2863–2866. URL: http://www.vldb.org/pvldb/vol14/p2863-nargesian.pdf.
+doi:10.14778/3476311.3476364.
 
 [5] F. Nargesian, K. Q. Pu, B. G. Bashardoost, E. Zhu, R. J. Miller, Data lake organization, IEEE
 Trans. Knowl. Data Eng. 35 (2023) 237–250. URL: https://doi.org/10.1109/TKDE.2021.3091101.
@@ -393,14 +392,13 @@ Endow. 16 (2022) 932–945. URL: https://www.vldb.org/pvldb/vol16/p932-khatiwada
 [7] A. Khatiwada, R. Shraga, R. J. Miller, DIALITE: discover, align and integrate open data tables,
 in: S. Das, I. Pandis, K. S. Candan, S. Amer-Yahia (Eds.), Companion of the 2023 International
 Conference on Management of Data, SIGMOD/PODS 2023, Seattle, WA, USA, June 18-23,
-2023, ACM, 2023, pp. 187–190. URL: https://doi.org/10.1145/3555041.3589732. doi:10.1145/
-3555041.3589732.
+2023, ACM, 2023, pp. 187–190. URL: https://doi.org/10.1145/3555041.3589732. doi:10.1145/3555041.3589732.
 
 [8] S. Galhotra, U. Khurana, O. Hassanzadeh, K. Srinivas, H. Samulowitz, M. Qi, Automated feature
 enhancement for predictive modeling using external knowledge, in: P. Papapetrou, X. Cheng, Q. He
 (Eds.), 2019 International Conference on Data Mining Workshops, ICDM Workshops 2019, Beijing,
-China, November 8-11, 2019, IEEE, 2019, pp. 1094–1097. URL: https://doi.org/10.1109/ICDMW.
-2019.00161. doi:10.1109/ICDMW.2019.00161.
+China, November 8-11, 2019, IEEE, 2019, pp. 1094–1097. URL: https://doi.org/10.1109/ICDMW.2019.00161.
+doi:10.1109/ICDMW.2019.00161.
 
 [9] M. palmonari, F. D’Adda, M. Cremaschi, E. Jimenez-Ruiz, Tutorial on Semantic Table Interpretation
 \- TUTSTI @ ISWC2024, https://unimib-datai.github.io/sti-website/tutorial/, 2024.
@@ -446,8 +444,8 @@ Proceedings*, CEUR-WS.org, 2013. URL: https://ceur-ws.org/Vol-1057/MunozEtAl_LD4
 pdf.
 
 [18] P. Venetis, A. Y. Halevy, J. Madhavan, M. Pasca, W. Shen, F. Wu, G. Miao, C. Wu, Recovering
-semantics of tables on the web, Proc. VLDB Endow. 4 (2011) 528–538. URL: http://www.vldb.org/
-pvldb/vol4/p528-venetis.pdf. doi:10.14778/2002938.2002939.
+semantics of tables on the web, Proc. VLDB Endow. 4 (2011) 528–538. URL: http://www.vldb.org/pvldb/vol4/p528-venetis.pdf.
+doi:10.14778/2002938.2002939.
 
 [19] V. Efthymiou, S. Galhotra, O. Hassanzadeh, E. Jiménez-Ruiz, K. Srinivas, 1st international workshop
 on tabular data analysis (TaDA, in: R. Bordawekar, C. Cappiello, V. Efthymiou, L. Ehrlinger,

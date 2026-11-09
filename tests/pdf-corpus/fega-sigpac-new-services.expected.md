@@ -143,11 +143,11 @@ declarados de la campaña anterior que ya se proporcionaban.
 Presenta 2 URL para que las aplicaciones GIS<sup>10</sup> se configuren para mostrar sus
 datos.
 
-- https://sigpac-hubcloud.es/mvt/[parametro]@3857@geojson/
-  {z}/{x}/{y}.geojson: para mostrar los datos de la campaña vigente.
+- https://sigpac-hubcloud.es/mvt/[parametro]@3857@geojson/{z}/{x}/{y}.geojson:
+  para mostrar los datos de la campaña vigente.
   También la capa Cultivo declarado de la campaña anterior.
-- https://sigpac-hubcloud.es/mvt/**anterior**/
-  [parametro]@3857@geojson/{z}/{x}/{y}.geojson para visualizar los datos
+- https://sigpac-hubcloud.es/mvt/**anterior**/[parametro]@3857@geojson/{z}/{x}/{y}.geojson
+  para visualizar los datos
   completos de la campaña anterior.
 
 ## 2. WMS – Web Map Service de SIGPAC

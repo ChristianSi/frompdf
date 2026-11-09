@@ -569,8 +569,7 @@ Fresh Fruits and Fluid Fixity.” In *Seasonal Workers in Mediterranean Agricult
 Costs of Eating Fresh*, edited by Jörg Gertel and Ruth S. Sippel, 23–35. London: Routledge.
 
 Butler, Julie. 2013. “World Olive Oil Production Drops by a Quarter, Council Predicts.” *Olive
-Oil Times*, 11 March. Retrieved 6 June 2024 from https://www.oliveoiltimes.com/
-business/world-olive-oil-production-drops/33212.
+Oil Times*, 11 March. Retrieved 6 June 2024 from https://www.oliveoiltimes.com/business/world-olive-oil-production-drops/33212.
 
 Codron, Jean-Marie, Zouhair Bouhsina, Fatiha Fort, Emilie Coudel, and Aurelie Puech. 2004.
 “Supermarkets in Low-Income Mediterranean Countries: Impact on Horticulture Systems.”

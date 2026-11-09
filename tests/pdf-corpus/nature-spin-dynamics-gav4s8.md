@@ -1069,8 +1069,7 @@ material in this article are included in the article’s Creative Commons licens
 indicated otherwise in a credit line to the material. If material is not included in the
 article’s Creative Commons license and your intended use is not permitted by statutory
 regulation or exceeds the permitted use, you will need to obtain permission directly from
-the copyright holder. To view a copy of this license, visit http://creativecommons.org/
-licenses/by/4.0/.
+the copyright holder. To view a copy of this license, visit http://creativecommons.org/licenses/by/4.0/.
 
 © The Author(s) 2022
 

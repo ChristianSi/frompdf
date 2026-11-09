@@ -447,8 +447,8 @@ Attribution 4.0 International license, (CC BY 4.0).
 
 **Front Cover**
 
-Hazzan, Heather. (2019, August). *Young Woman Waiting in Doctor’s Office*. SELF Magazine. Retrieved from: https://flickr.com/
-photos/selfmagazine/48546126237/in/album-72157710332198661/. Licensed under CC BY.
+Hazzan, Heather. (2019, August). *Young Woman Waiting in Doctor’s Office*. SELF Magazine. Retrieved from: https://flickr.com/photos/selfmagazine/48546126237/in/album-72157710332198661/.
+Licensed under CC BY.
 
 **Page Five**
 

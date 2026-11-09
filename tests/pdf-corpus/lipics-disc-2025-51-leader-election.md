@@ -368,8 +368,7 @@ counterclockwise, for a total of O*(*n* log<sup>2</sup> *U*) *messages.*
    arbitrary knowledge in message passing systems. *Distributed Computing*, 25(4):297–311, 2012.
    doi:10.1007/S00446-012-0163-Y.
 9. A. Cornejo and F. Kuhn. Deploying wireless networks with beeps. In *DISC 2010*, volume
-   6343 of *Lecture Notes in Comput. Sci.*, pages 148–162. Springer, 2010. doi:10.1007/
-   978-3-642-15763-9_15.
+   6343 of *Lecture Notes in Comput. Sci.*, pages 148–162. Springer, 2010. doi:10.1007/978-3-642-15763-9_15.
 10. A. Czumaj and P. Davies. Leader election in multi-hop radio networks. *Theoretical Computer
     Science*, 792:2–11, 2019. doi:10.1016/J.TCS.2019.02.027.
 11. F. Dufoulon, J. Burman, and J. Beauquier. Beeping a deterministic time-optimal leader election.
@@ -387,8 +386,7 @@ counterclockwise, for a total of O*(*n* log<sup>2</sup> *U*) *messages.*
 15. Alon Itai and Michael Rodeh. Symmetry breaking in distributed networks. *Inf. Comput.*,
     88(1):60–87, July 1990. doi:10.1016/0890-5401(90)90004-2.
 16. S. Kutten, W. K. Moses Jr., G. Pandurangan, and D. Peleg. Singularly optimal randomized
-    leader election. In *DISC 2020*, volume 179 of *LIPIcs*, pages 22:1–22:18, 2020. doi:10.4230/
-    LIPICS.DISC.2020.22.
+    leader election. In *DISC 2020*, volume 179 of *LIPIcs*, pages 22:1–22:18, 2020. doi:10.4230/LIPICS.DISC.2020.22.
 17. M. Raynal. *Fault-Tolerant Message-Passing Distributed Systems: An Algorithmic Approach*.
     Springer, 2018.
 18. N. Santoro. *Design and Analysis of Distributed Algorithms*. John Wiley & Sons, 2007.
