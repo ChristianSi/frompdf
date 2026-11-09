@@ -1,5 +1,6 @@
 import unittest
 from collections import Counter
+from dataclasses import replace
 
 from frompdf.blocks import lines_to_markdown_blocks
 from frompdf.models import InlineRange, Line, PageNumber
@@ -315,7 +316,8 @@ class BoundaryRewriteTests(unittest.TestCase):
     def test_does_not_merge_across_markdown_blocks(self) -> None:
         lines = [
             text_line('first paragraph ends with unfinished-', block_no=1, line_no=1),
-            text_line('continuation is a new paragraph', block_no=2, line_no=2),
+            # An indented first line starts the new paragraph.
+            replace(text_line('continuation is a new paragraph', block_no=2, line_no=2), x1=35.0),
         ]
 
         blocks = lines_to_markdown_blocks(lines, {1: PageNumber(raw=1, visible=None)})
@@ -364,7 +366,7 @@ class UnspacedDashTests(unittest.TestCase):
     def test_does_not_move_dash_token_across_markdown_blocks(self) -> None:
         lines = [
             text_line('first block ends—', block_no=1, line_no=1),
-            text_line('next block begins', block_no=2, line_no=2),
+            replace(text_line('next block begins', block_no=2, line_no=2), x1=35.0),
         ]
 
         blocks = lines_to_markdown_blocks(lines, {1: PageNumber(raw=1, visible=None)})

@@ -319,7 +319,10 @@ The current pipeline is roughly:
     lines, unless the next line starts with an item label. A visual line
     ending in a script-sized piece, such as a formula, is judged by its start.
     After a sentence end, this takes the same font, a line closely reaching the
-    right edge, and a next line at the margin.
+    right edge, and a next line at the margin. Below a shorter line without a
+    sentence end, a `pdftext` block edge is overridden by a next line starting
+    in lower case, not with an item label, at the same left edge, in the same
+    typography and at regular spacing.
     Each list item becomes a block of its own, and so does each passage set
     off line by line: evenly spaced lines in smaller type, inset at a shared
     left edge, most of which leave room for the next line's first word,

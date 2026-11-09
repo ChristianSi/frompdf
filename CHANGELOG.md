@@ -224,6 +224,10 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
 - Smaller print after a visibly larger gap, such as a licence notice at the
   bottom of a first page, now starts a new paragraph even below a full line
   of body text that does not end a sentence.
+- A `pdftext` block edge below a short line no longer starts a new paragraph
+  where the next line continues the open sentence in lower case, at the same
+  left edge, in the same typography, and at regular spacing. Lines starting
+  with a lower-case item label, such as `a)` or `iv.`, are not joined this way.
 - Superscripts and subscripts that `pdftext` puts into line records of their
   own are now recognized in displayed formulas too, as in `C₀⁽ˢ,ᶠ⁾ Δ^Q`,
   where the scripts of the rest of the line outnumber its ordinary letters,

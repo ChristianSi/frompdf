@@ -802,6 +802,31 @@ class RunningTextContinuationTests(unittest.TestCase):
             self.group_count(self.previous(self.CLOSED), line(self.NEXT, 8, block_no=2)), 2
         )
 
+    SHORT_OPEN = 'notice by its two authors;'
+    LOWER = 'licensed under some licence'
+
+    def test_short_open_line_continues_in_lower_case(self) -> None:
+        # As in lipics-64's licence notice, whose lines are far from full.
+        self.assertEqual(
+            self.group_count(self.previous(self.SHORT_OPEN, x2=120.0), self.current(self.LOWER)),
+            1,
+        )
+
+    def test_lower_case_continuation_conservative_negatives(self) -> None:
+        short_open = self.previous(self.SHORT_OPEN, x2=120.0)
+        for name, previous, current in (
+            ('sentence end', self.previous('notice by its two authors.', x2=120.0), None),
+            ('upper case', short_open, self.current('Licensed under some licence')),
+            ('letter label', short_open, self.current('a) the first item of a list')),
+            ('roman label', short_open, self.current('iv. the fourth item of a list')),
+            ('other left edge', short_open, self.current(self.LOWER, x1=60.0)),
+            ('other face', short_open, self.current(self.LOWER, font_name='Label-Sans')),
+            ('larger gap', short_open, self.current(self.LOWER, y1=90.0)),
+        ):
+            with self.subTest(name):
+                current = current or self.current(self.LOWER)
+                self.assertEqual(self.group_count(previous, current), 2)
+
 
 class MarkerLineTests(unittest.TestCase):
     """Lines in a column from 20 to 220, centered at 120."""

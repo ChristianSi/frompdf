@@ -75,6 +75,9 @@ CONTINUED_SENTENCE_END_MAX_SHORTFALL_EM = 0.5
 NUMBERED_OR_BULLETED_START_PATTERN = re.compile(r'^(?:\d+(?:\.\d+)*\.?|[IVXLC]+\.|[•◦▪●■])\s')
 # Further labels of references, enumerations, and theorems, which start a new item.
 ITEM_LABEL_START_PATTERN = re.compile(r'\[\d+\]|\(\d+\)|\d+\)|▶')
+# Lower-case letter and roman labels, as `a)`, `(b)`, or `iv.`, which start an
+# item rather than continue the text above in lower case.
+LOWER_CASE_ITEM_LABEL_START_PATTERN = re.compile(r'\(?[a-z]{1,4}[.)]\s')
 SENTENCE_END_PATTERN = re.compile(r'[.!?…][’”\'"\]\)}»›]*(?:\d+)?$')
 WORD_BREAK_HYPHEN_PATTERN = re.compile(r'\w[-\u00ad]$')
 FONT_SUBSET_PREFIX_PATTERN = re.compile(r'^[A-Z]{6}\+')
@@ -1031,6 +1034,31 @@ def continues_running_text(
     return compatible_style(reference, current) or differs_only_by_italics(reference, current)
 
 
+def continues_in_lower_case(
+    previous: Line, current: Line, context: PageContext, previous_start: Line | None = None
+) -> bool:
+    """Return whether current continues the open sentence of previous in lower case.
+
+    previous_start begins the visual line ending with previous, if different.
+    Unlike continues_running_text, previous need not fill its column, as in
+    the short lines of lipics-64's licence notice: an open line end, a next
+    line starting in lower case at the same left edge, the same typography,
+    and regular spacing together leave only a pdftext block edge to suggest
+    a break.
+    """
+    start = previous_start or previous
+    if start.x1 is None or current.x1 is None:
+        return False
+    return (
+        not ends_sentence(previous.text)
+        and current.text[:1].islower()
+        and not LOWER_CASE_ITEM_LABEL_START_PATTERN.match(current.text)
+        and near(start.x1, current.x1, current.font_size or context.font_size)
+        and compatible_style(previous, current)
+        and has_normal_advance(previous, current, context)
+    )
+
+
 def continues_display_line(previous: Line, current: Line, context: PageContext) -> bool:
     """Return whether current continues a title or other display text from previous.
 
@@ -1178,6 +1206,7 @@ def should_start_new_group(
     if pdftext_break and (
         high_confidence_continuation(previous, current, context, previous_start, following)
         or continues_running_text(previous, current, context, previous_start)
+        or continues_in_lower_case(previous, current, context, previous_start)
     ):
         return False
     return pdftext_break
