@@ -5,7 +5,8 @@ from typing import cast
 from pdftext.schema import Page
 
 from frompdf.continuations import build_page_fragments, join_fragments
-from frompdf.lines import iter_lines, merge_split_denominators
+from frompdf.detached_scripts import merge_split_denominators
+from frompdf.lines import iter_lines
 from frompdf.models import PageNumber
 from frompdf.scripts import render_scripts
 

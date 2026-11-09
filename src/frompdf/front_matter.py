@@ -9,8 +9,8 @@ rendered as paragraphs rather than block quotes.
 
 import re
 
+from frompdf.line_features import NUMBERED_OR_BULLETED_START_PATTERN, has_alphanumeric
 from frompdf.models import Block, BlockQuote, Heading, Paragraph, StrongParagraph
-from frompdf.segmentation import NUMBERED_OR_BULLETED_START_PATTERN, has_alphanumeric
 
 # A paragraph this long is body text, such as an abstract, ending the front
 # matter. Bylines, affiliations, and dates are much shorter.

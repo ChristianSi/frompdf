@@ -6,7 +6,7 @@ from typing import cast
 
 from pdftext.schema import Page
 
-from frompdf.lines import normalize_detached_diacritics
+from frompdf.glyph_repairs import normalize_detached_diacritics
 from frompdf.output import markdown_to_text
 from frompdf.pipeline import extract_markdown
 

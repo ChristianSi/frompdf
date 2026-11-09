@@ -6,23 +6,25 @@ from itertools import pairwise
 from statistics import median
 
 from frompdf.continuations import PageLayout, begins_lowercase, ends_open_sentence
+from frompdf.line_features import (
+    close_font_size,
+    compatible_style,
+    ends_word_break_hyphen,
+    is_prose_line,
+    is_textual_line,
+    same_physical_line,
+    visibly_different_font_sizes,
+)
 from frompdf.models import Line
-from frompdf.segmentation import (
+from frompdf.page_context import (
     MAX_FIRST_LINE_INDENT_EM,
     MIN_FIRST_LINE_INDENT_EM,
     PageContext,
-    close_font_size,
     column_for_line,
-    compatible_style,
-    ends_word_break_hyphen,
     has_normal_advance,
-    is_prose_line,
-    is_textual_line,
     line_is_short,
     near,
     percentile_90,
-    same_physical_line,
-    visibly_different_font_sizes,
 )
 
 # Room for the inter-word space plus a margin of error, since the next word's

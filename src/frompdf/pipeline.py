@@ -3,18 +3,19 @@ from pathlib import Path
 from pdftext.extraction import dictionary_output
 
 from frompdf.blocks import lines_to_markdown_blocks
-from frompdf.lines import (
+from frompdf.detached_scripts import (
     attach_stacked_scripts,
     attach_stray_scripts,
+    merge_split_denominators,
+)
+from frompdf.glyph_repairs import (
     decode_double_struck_letters,
     decode_math_extension_glyphs,
-    drop_dominant_emphasis,
-    iter_lines,
-    merge_split_denominators,
     normalize_detached_diacritics,
     remove_icon_glyphs,
     restore_private_use_bullets,
 )
+from frompdf.lines import drop_dominant_emphasis, iter_lines
 from frompdf.models import Block
 from frompdf.output import (
     build_csv_output_path,

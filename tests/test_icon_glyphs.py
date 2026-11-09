@@ -3,7 +3,8 @@ from typing import cast
 
 from pdftext.schema import Page
 
-from frompdf.lines import iter_lines, remove_icon_glyphs, restore_private_use_bullets
+from frompdf.glyph_repairs import remove_icon_glyphs, restore_private_use_bullets
+from frompdf.lines import iter_lines
 
 
 def span(text: str, font_name: str, x1: float) -> dict[str, object]:

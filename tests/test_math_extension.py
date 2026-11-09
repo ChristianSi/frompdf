@@ -3,11 +3,8 @@ from typing import cast
 
 from pdftext.schema import Page
 
-from frompdf.lines import (
-    decode_double_struck_letters,
-    decode_math_extension_glyphs,
-    iter_lines,
-)
+from frompdf.glyph_repairs import decode_double_struck_letters, decode_math_extension_glyphs
+from frompdf.lines import iter_lines
 from frompdf.models import InlineRange
 
 MATH_EXTENSION = 'LMMathExtension10-Regular'

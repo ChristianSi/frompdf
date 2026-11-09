@@ -1,47 +1,53 @@
 import re
-from collections import defaultdict
-from dataclasses import dataclass
-from itertools import groupby, pairwise
-from statistics import median
+from itertools import groupby
 
+from frompdf.line_features import (
+    NUMBERED_OR_BULLETED_START_PATTERN,
+    close_font_size,
+    compatible_style,
+    differs_only_by_italics,
+    ends_sentence,
+    ends_word_break_hyphen,
+    has_alphanumeric,
+    is_prose_line,
+    is_script_sized,
+    is_textual_line,
+    normalized_font_name,
+    same_physical_line,
+    same_running_text_line,
+    significant_size_change,
+    significant_style_change,
+    touches_script_fragment,
+    visibly_different_font_sizes,
+)
 from frompdf.models import Line
+from frompdf.page_context import (
+    MARGIN_TOLERANCE_EM,
+    MAX_FIRST_LINE_INDENT_EM,
+    MIN_COLUMN_LINES,
+    MIN_FIRST_LINE_INDENT_EM,
+    MIN_RHYTHM_SAMPLES,
+    ColumnContext,
+    HangingIndentContext,
+    PageContext,
+    advance_ratio,
+    build_columns,
+    build_page_context,
+    column_for_line,
+    dominant_page_font_size,
+    has_blank_line_advance,
+    has_large_advance,
+    has_normal_advance,
+    line_is_full,
+    line_is_short,
+    near,
+    near_left_edge,
+    same_flow,
+)
 
-# Paragraph indentation is normally a modest offset from the body margin. Larger
-# offsets are more likely to be quotations, side material, or right-aligned text.
-MIN_FIRST_LINE_INDENT_EM = 0.55
-MAX_FIRST_LINE_INDENT_EM = 2.5
-MARGIN_TOLERANCE_EM = 0.3
-LEFT_EDGE_CLUSTER_TOLERANCE_EM = 0.2
-
-# Hanging-indent regions need repeated evidence in both directions. A single
-# indented run is more likely to be a quote than a bibliography layout. Their
-# wider limit accommodates list labels whose bounding boxes extend left of the
-# aligned reference text, without broadening ordinary first-line indentation.
-MAX_HANGING_INDENT_EM = 4.0
-MIN_HANGING_EDGE_LINES = 3
-MIN_HANGING_START_TO_CONTINUATION_TRANSITIONS = 2
-MIN_HANGING_CONTINUATION_TO_START_TRANSITIONS = 2
-MIN_HANGING_CONTINUATION_RUNS = 1
-
-# A line advance this far above the page's normal rhythm is visible paragraph spacing.
-LARGE_ADVANCE_MIN_RATIO = 1.25
-LARGE_ADVANCE_EXTRA_EM = 0.35
-NORMAL_ADVANCE_TOLERANCE_EM = 0.25
-# An advance this many times the normal rhythm leaves a gap about as tall as a
-# blank line, which separates paragraphs however full the line above is.
-BLANK_LINE_ADVANCE_RATIO = 1.7
 # A pdftext block edge may add this much to the leading of the following lines
 # without counting as spacing, in multiples of the font size.
 UNIFORM_ADVANCE_TOLERANCE_EM = 0.1
-
-# Ignore small size changes caused by rounding or mixed inline typography.
-FONT_SIZE_BREAK_RATIO = 1.1
-FONT_SIZE_BREAK_POINTS = 0.75
-FONT_WEIGHT_BREAK = 200.0
-
-# Margin clusters farther apart than this are treated as separate columns.
-MIN_COLUMN_GAP = 40.0
-MIN_COLUMN_GAP_EM = 4.0
 
 # Lines this much larger than the page's body text are display text, such as
 # titles. Their own leading, rather than the body rhythm, shows continuation.
@@ -55,10 +61,6 @@ DISPLAY_LINE_MAX_ADVANCE_EM = 1.4
 # pieces of one run of text, even if superscripts change their extracted size.
 MAX_SAME_FACE_FRAGMENT_GAP_EM = 0.5
 
-# Sparse synthetic or highly irregular pages should retain pdftext's decisions.
-MIN_RHYTHM_SAMPLES = 3
-MIN_COLUMN_LINES = 5
-
 # A marker line, such as an ornament ending a chapter or separating sections,
 # has no letters or digits, is centered in its column within this many ems, and
 # takes up at most this share of the column's width. Leading is no evidence, as
@@ -71,595 +73,12 @@ MARKER_LINE_MAX_COLUMN_SHARE = 0.5
 # the edge, unlike within the tolerance of line_is_full.
 CONTINUED_SENTENCE_END_MAX_SHORTFALL_EM = 0.5
 
-# Numbered headings and list items start a new block even in display type.
-NUMBERED_OR_BULLETED_START_PATTERN = re.compile(r'^(?:\d+(?:\.\d+)*\.?|[IVXLC]+\.|[•◦▪●■])\s')
-# Further labels of references, enumerations, and theorems, which start a new item.
+# Labels of references, enumerations, and theorems beyond those of
+# NUMBERED_OR_BULLETED_START_PATTERN, which start a new item.
 ITEM_LABEL_START_PATTERN = re.compile(r'\[\d+\]|\(\d+\)|\d+\)|▶')
 # Lower-case letter and roman labels, as `a)`, `(b)`, or `iv.`, which start an
 # item rather than continue the text above in lower case.
 LOWER_CASE_ITEM_LABEL_START_PATTERN = re.compile(r'\(?[a-z]{1,4}[.)]\s')
-SENTENCE_END_PATTERN = re.compile(r'[.!?…][’”\'"\]\)}»›]*(?:\d+)?$')
-WORD_BREAK_HYPHEN_PATTERN = re.compile(r'\w[-\u00ad]$')
-FONT_SUBSET_PREFIX_PATTERN = re.compile(r'^[A-Z]{6}\+')
-FONT_FACE_SUFFIX_PATTERN = re.compile(
-    r'(?:[-_.](?:black|bold|bolditalic|bolditalicmt|boldmt|boldoblique|book|bookitalic|'
-    r'demibold|heavy|italic|italicmt|light|medi|medium|mediumitalic|oblique|regular|'
-    r'regu|reguital|semibold|thin|b|bd|bi|i|it|sb)(?:\+\d+)?)$',
-    flags=re.IGNORECASE,
-)
-ATTACHED_FONT_VENDOR_SUFFIX_PATTERN = re.compile(r'(?<![\s-])MT$', flags=re.IGNORECASE)
-
-
-@dataclass(frozen=True)
-class ColumnContext:
-    """Dominant margins for one page column."""
-
-    left: float
-    right: float
-    line_count: int
-
-    @property
-    def width(self) -> float:
-        return self.right - self.left
-
-
-@dataclass(frozen=True)
-class HangingIndentContext:
-    """Repeated first-line and continuation margins within one page column."""
-
-    column_left: float
-    start_left: float
-    continuation_left: float
-    y_min: float
-    y_max: float
-
-
-@dataclass(frozen=True)
-class PageContext:
-    """Page-local geometry used to classify boundaries between ordered lines."""
-
-    font_size: float
-    normal_advance_ratio: float | None
-    rhythm_sample_count: int
-    columns: tuple[ColumnContext, ...]
-    hanging_indents: tuple[HangingIndentContext, ...]
-
-
-def dominant_page_font_size(line_list: list[Line]) -> float:
-    """Return the text-length-weighted body font size for one page."""
-    size_weights: dict[float, int] = defaultdict(int)
-    for line_obj in line_list:
-        if line_obj.font_size is None or not line_obj.text:
-            continue
-        size_weights[line_obj.font_size] += max(len(line_obj.text), 1)
-
-    if not size_weights:
-        return 10.0
-    return max(size_weights.items(), key=lambda item: (item[1], item[0]))[0]
-
-
-def close_font_size(left: float | None, right: float | None) -> bool:
-    """Return whether two line font sizes are visually compatible."""
-    if left is None or right is None:
-        return True
-    return abs(left - right) <= max(0.3, max(left, right) * 0.04)
-
-
-def visibly_different_font_sizes(left: float | None, right: float | None) -> bool:
-    """Return whether two dominant sizes differ enough to signal distinct layout roles."""
-    if left is None or right is None:
-        return False
-    smaller = min(left, right)
-    larger = max(left, right)
-    return (
-        smaller > 0
-        and larger - smaller >= FONT_SIZE_BREAK_POINTS
-        and larger / smaller >= FONT_SIZE_BREAK_RATIO
-    )
-
-
-def normalized_font_family(font_name: str | None) -> str | None:
-    """Normalize a PDF font name to its family, ignoring face and vendor suffixes."""
-    if font_name is None:
-        return None
-    family_name = FONT_SUBSET_PREFIX_PATTERN.sub('', font_name)
-    family_name = FONT_FACE_SUFFIX_PATTERN.sub('', family_name)
-    family_name = ATTACHED_FONT_VENDOR_SUFFIX_PATTERN.sub('', family_name)
-    return family_name.casefold()
-
-
-def normalized_font_name(font_name: str | None) -> str | None:
-    """Normalize an exact PDF font face name for conservative compatibility checks."""
-    if font_name is None:
-        return None
-    return FONT_SUBSET_PREFIX_PATTERN.sub('', font_name).casefold()
-
-
-def compatible_size_and_weight(left: Line, right: Line) -> bool:
-    """Return whether two lines have compatible font sizes and weights."""
-    if not close_font_size(left.font_size, right.font_size):
-        return False
-    return (
-        left.avg_weight is None
-        or right.avg_weight is None
-        or abs(left.avg_weight - right.avg_weight) < FONT_WEIGHT_BREAK
-    )
-
-
-def compatible_style(left: Line, right: Line) -> bool:
-    """Return whether two lines have compatible dominant typography."""
-    if not compatible_size_and_weight(left, right):
-        return False
-
-    left_name = normalized_font_name(left.font_name)
-    right_name = normalized_font_name(right.font_name)
-    return left_name is None or right_name is None or left_name == right_name
-
-
-def significant_size_change(left: Line, right: Line) -> bool:
-    """Return whether the dominant font size visibly changes between two lines."""
-    return visibly_different_font_sizes(left.font_size, right.font_size)
-
-
-def significant_style_change(left: Line, right: Line) -> bool:
-    """Return whether dominant size or font family clearly changes."""
-    if significant_size_change(left, right):
-        return True
-    left_name = normalized_font_family(left.font_name)
-    right_name = normalized_font_family(right.font_name)
-    return left_name is not None and right_name is not None and left_name != right_name
-
-
-def is_prose_line(line_obj: Line) -> bool:
-    """Return whether a line has enough letters for prose-oriented heuristics."""
-    return sum(character.isalpha() for character in line_obj.text) >= 8
-
-
-def is_textual_line(line_obj: Line) -> bool:
-    """Return whether a short line still contains meaningful natural-language text."""
-    return sum(character.isalpha() for character in line_obj.text) >= 3
-
-
-def has_alphanumeric(text: str) -> bool:
-    """Return whether text contains letters or digits, unlike ornaments and rules."""
-    return any(character.isalnum() for character in text)
-
-
-def cluster_left_edges(line_list: list[Line], font_size: float) -> list[float]:
-    """Return likely body-text left edges, separating widely spaced columns."""
-    weighted_lefts: dict[float, int] = defaultdict(int)
-    for line_obj in line_list:
-        if (
-            line_obj.x1 is None
-            or line_obj.font_size is None
-            or not line_obj.text
-            or not close_font_size(line_obj.font_size, font_size)
-        ):
-            continue
-        weighted_lefts[round(line_obj.x1, 1)] += max(len(line_obj.text), 1)
-
-    if not weighted_lefts:
-        return []
-
-    cluster_gap = max(MIN_COLUMN_GAP, font_size * MIN_COLUMN_GAP_EM)
-    clusters: list[list[float]] = []
-    for left in sorted(weighted_lefts):
-        if not clusters or left - clusters[-1][-1] > cluster_gap:
-            clusters.append([left])
-        else:
-            clusters[-1].append(left)
-
-    # The leftmost common edge in a cluster is the continuation-line margin;
-    # modest first-line indents remain in the same cluster.
-    return [min(cluster) for cluster in clusters]
-
-
-def nearest_column_index(x1: float, left_edges: list[float] | tuple[float, ...]) -> int:
-    """Return the index of the nearest page-column left edge."""
-    return min(range(len(left_edges)), key=lambda index: abs(x1 - left_edges[index]))
-
-
-def percentile_90(value_list: list[float]) -> float:
-    """Return a simple deterministic 90th percentile."""
-    ordered = sorted(value_list)
-    return ordered[round((len(ordered) - 1) * 0.9)]
-
-
-def build_columns(line_list: list[Line], font_size: float) -> tuple[ColumnContext, ...]:
-    """Build dominant left and right margins for page columns."""
-    left_edges = cluster_left_edges(line_list, font_size)
-    if not left_edges:
-        return ()
-
-    rights_by_column: dict[int, list[float]] = defaultdict(list)
-    counts_by_column: dict[int, int] = defaultdict(int)
-    for line_obj in line_list:
-        if line_obj.x1 is None or line_obj.x2 is None or not line_obj.text:
-            continue
-        column_index = nearest_column_index(line_obj.x1, left_edges)
-        counts_by_column[column_index] += 1
-        if line_obj.font_size is not None and close_font_size(line_obj.font_size, font_size):
-            rights_by_column[column_index].append(line_obj.x2)
-
-    columns: list[ColumnContext] = []
-    for column_index, left in enumerate(left_edges):
-        right_values = rights_by_column.get(column_index, [])
-        if not right_values:
-            continue
-        columns.append(
-            ColumnContext(
-                left=left,
-                right=percentile_90(right_values),
-                line_count=counts_by_column[column_index],
-            )
-        )
-    substantial_columns = tuple(
-        column for column in columns if column.line_count >= MIN_COLUMN_LINES
-    )
-    if substantial_columns:
-        return substantial_columns
-    if not columns:
-        return ()
-    return (max(columns, key=lambda column: column.line_count),)
-
-
-def cluster_line_lefts(line_list: list[Line], font_size: float) -> list[tuple[float, int]]:
-    """Return tolerant left-edge clusters as median coordinate and line count."""
-    tolerance = max(1.5, font_size * LEFT_EDGE_CLUSTER_TOLERANCE_EM)
-    clusters: list[list[float]] = []
-
-    for left in sorted(line_obj.x1 for line_obj in line_list if line_obj.x1 is not None):
-        if not clusters or left - clusters[-1][-1] > tolerance:
-            clusters.append([left])
-        else:
-            clusters[-1].append(left)
-
-    return [(float(median(cluster)), len(cluster)) for cluster in clusters]
-
-
-def near_left_edge(value: float | None, edge: float, font_size: float) -> bool:
-    """Return whether a line starts at a tolerant learned left edge."""
-    tolerance = max(1.5, font_size * LEFT_EDGE_CLUSTER_TOLERANCE_EM)
-    return value is not None and abs(value - edge) <= tolerance
-
-
-def hanging_transition_counts(
-    line_list: list[Line], start_left: float, continuation_left: float, font_size: float
-) -> tuple[int, int, int]:
-    """Count local transitions supporting one hanging-indent edge pair."""
-    start_to_continuation = 0
-    continuation_to_start = 0
-    continuation_runs = 0
-
-    for left, right in pairwise(line_list):
-        if left.y1 is None or right.y1 is None:
-            continue
-        advance = right.y1 - left.y1
-        if advance <= 0 or advance > font_size * 2.5:
-            continue
-
-        left_is_start = near_left_edge(left.x1, start_left, font_size)
-        left_is_continuation = near_left_edge(left.x1, continuation_left, font_size)
-        right_is_start = near_left_edge(right.x1, start_left, font_size)
-        right_is_continuation = near_left_edge(right.x1, continuation_left, font_size)
-        if left_is_start and right_is_continuation:
-            start_to_continuation += 1
-        elif left_is_continuation and right_is_start:
-            continuation_to_start += 1
-        elif left_is_continuation and right_is_continuation:
-            continuation_runs += 1
-
-    return start_to_continuation, continuation_to_start, continuation_runs
-
-
-def hanging_edge_regions(
-    line_list: list[Line],
-    start_left: float,
-    continuation_left: float,
-    font_size: float,
-) -> list[list[Line]]:
-    """Return contiguous runs whose lines use either candidate hanging-indent edge."""
-    regions: list[list[Line]] = []
-    current_region: list[Line] = []
-
-    def uses_learned_edge(line_obj: Line) -> bool:
-        return near_left_edge(line_obj.x1, start_left, font_size) or near_left_edge(
-            line_obj.x1, continuation_left, font_size
-        )
-
-    for line_obj in line_list:
-        continues_region = False
-        if current_region and current_region[-1].y1 is not None and line_obj.y1 is not None:
-            advance = line_obj.y1 - current_region[-1].y1
-            continues_region = 0 < advance <= font_size * 2.5
-
-        if uses_learned_edge(line_obj) and (not current_region or continues_region):
-            current_region.append(line_obj)
-            continue
-        if current_region:
-            regions.append(current_region)
-        current_region = [line_obj] if uses_learned_edge(line_obj) else []
-
-    if current_region:
-        regions.append(current_region)
-    return regions
-
-
-def build_hanging_indents(
-    line_list: list[Line], font_size: float, columns: tuple[ColumnContext, ...]
-) -> tuple[HangingIndentContext, ...]:
-    """Learn repeated hanging-indent margins without mistaking one inset run for a quote."""
-    if not columns:
-        return ()
-
-    lines_by_column: dict[float, list[Line]] = defaultdict(list)
-    column_lefts = tuple(column.left for column in columns)
-    for line_obj in line_list:
-        if (
-            line_obj.x1 is None
-            or not line_obj.text.strip()
-            or visibly_different_font_sizes(line_obj.font_size, font_size)
-        ):
-            continue
-        column_index = nearest_column_index(line_obj.x1, column_lefts)
-        lines_by_column[columns[column_index].left].append(line_obj)
-
-    hanging_indents: list[HangingIndentContext] = []
-    min_indent = font_size * MIN_FIRST_LINE_INDENT_EM
-    max_indent = font_size * MAX_HANGING_INDENT_EM
-
-    for column in columns:
-        column_lines = lines_by_column.get(column.left, [])
-        edge_clusters = cluster_line_lefts(column_lines, font_size)
-        candidates: list[tuple[int, HangingIndentContext]] = []
-        for start_left, total_start_count in edge_clusters:
-            if total_start_count < MIN_HANGING_EDGE_LINES:
-                continue
-            for continuation_left, total_continuation_count in edge_clusters:
-                indent = continuation_left - start_left
-                if (
-                    total_continuation_count < MIN_HANGING_EDGE_LINES
-                    or not min_indent <= indent <= max_indent
-                ):
-                    continue
-
-                for region_lines in hanging_edge_regions(
-                    column_lines, start_left, continuation_left, font_size
-                ):
-                    start_count = sum(
-                        near_left_edge(line_obj.x1, start_left, font_size)
-                        for line_obj in region_lines
-                    )
-                    continuation_count = sum(
-                        near_left_edge(line_obj.x1, continuation_left, font_size)
-                        for line_obj in region_lines
-                    )
-                    if (
-                        start_count < MIN_HANGING_EDGE_LINES
-                        or continuation_count <= start_count
-                        or continuation_count < MIN_HANGING_EDGE_LINES
-                    ):
-                        continue
-
-                    transitions = hanging_transition_counts(
-                        region_lines, start_left, continuation_left, font_size
-                    )
-                    start_to_continuation, continuation_to_start, continuation_runs = transitions
-                    if (
-                        start_to_continuation < MIN_HANGING_START_TO_CONTINUATION_TRANSITIONS
-                        or continuation_to_start < MIN_HANGING_CONTINUATION_TO_START_TRANSITIONS
-                        or continuation_runs < MIN_HANGING_CONTINUATION_RUNS
-                    ):
-                        continue
-
-                    y_values = [line_obj.y1 for line_obj in region_lines if line_obj.y1 is not None]
-                    if not y_values:
-                        continue
-                    score = (
-                        start_to_continuation * 3 + continuation_to_start * 2 + continuation_runs
-                    )
-                    candidates.append(
-                        (
-                            score,
-                            HangingIndentContext(
-                                column_left=column.left,
-                                start_left=start_left,
-                                continuation_left=continuation_left,
-                                y_min=min(y_values),
-                                y_max=max(y_values),
-                            ),
-                        )
-                    )
-
-        if candidates:
-            selected_regions: list[HangingIndentContext] = []
-            for _, candidate in sorted(candidates, key=lambda item: item[0], reverse=True):
-                # Right-aligned list labels can create several first-line edges while
-                # their text shares one continuation edge (for example, items 9 and 10).
-                overlaps_incompatible = any(
-                    candidate.y_min <= selected.y_max
-                    and selected.y_min <= candidate.y_max
-                    and not near_left_edge(
-                        candidate.continuation_left, selected.continuation_left, font_size
-                    )
-                    for selected in selected_regions
-                )
-                if not overlaps_incompatible:
-                    selected_regions.append(candidate)
-            hanging_indents.extend(selected_regions)
-
-    return tuple(hanging_indents)
-
-
-def same_physical_line(left: Line, right: Line) -> bool:
-    """Return whether pdftext emitted adjacent fragments from one visual line."""
-    if None in {left.x1, left.y1, left.x2, right.x1, right.y1}:
-        return False
-    assert left.x1 is not None
-    assert left.y1 is not None
-    assert left.x2 is not None
-    assert right.x1 is not None
-    assert right.y1 is not None
-    font_size = max(left.font_size or 0.0, right.font_size or 0.0, 1.0)
-    tolerance = font_size * 0.35
-    # Tops differ at tall delimiters, which are centered on the text instead.
-    same_band = abs(right.y1 - left.y1) <= tolerance or (
-        left.y2 is not None
-        and right.y2 is not None
-        and abs((right.y1 + right.y2) - (left.y1 + left.y2)) / 2 <= tolerance
-    )
-    return same_band and right.x1 >= left.x2 - font_size * 0.25
-
-
-# Pieces of one visual line further apart than this, relative to the larger
-# size, are not running text, such as the cells of a table row in folie or a
-# logo beside a title in intertrans.
-RUNNING_TEXT_MAX_GAP_EM = 1.0
-
-
-def same_running_text_line(left: Line, right: Line) -> bool:
-    """Return whether adjacent fragments of one visual line belong to the same running text."""
-    if not same_physical_line(left, right):
-        return False
-    assert left.x2 is not None
-    assert right.x1 is not None
-    font_size = max(left.font_size or 0.0, right.font_size or 0.0, 1.0)
-    return right.x1 - left.x2 < font_size * RUNNING_TEXT_MAX_GAP_EM
-
-
-# A short piece of a visual line in script-sized type, such as a formula
-# fragment with raised and lowered parts, touching its neighbor within this distance,
-# relative to the larger size, continues the line, as in lipics-64's
-# Definition 2.4. Scripts are at most the larger ratio of their base text's
-# size, and at least about half of it, as TeX's second-level scripts. Much
-# smaller ratios rather stem from rotated figure labels, as in nature.
-SCRIPT_FRAGMENT_MAX_GAP_EM = 0.1
-SCRIPT_FRAGMENT_MIN_SIZE_RATIO = 0.4
-SCRIPT_FRAGMENT_MAX_SIZE_RATIO = 0.85
-
-
-def is_script_sized(piece: Line, reference: Line) -> bool:
-    """Return whether a piece is set in script-sized type relative to a reference."""
-    return (
-        piece.font_size is not None
-        and reference.font_size is not None
-        and reference.font_size * SCRIPT_FRAGMENT_MIN_SIZE_RATIO
-        <= piece.font_size
-        <= reference.font_size * SCRIPT_FRAGMENT_MAX_SIZE_RATIO
-    )
-
-
-def touches_script_fragment(left: Line, right: Line) -> bool:
-    """Return whether adjacent pieces of one visual line touch, one a short script-sized one.
-
-    Script-sized prose, such as a label in another face, is no script.
-    """
-    if not same_physical_line(left, right) or not any(
-        is_script_sized(piece, other) and not is_prose_line(piece)
-        for piece, other in ((left, right), (right, left))
-    ):
-        return False
-    assert left.x2 is not None
-    assert right.x1 is not None
-    font_size = max(left.font_size or 0.0, right.font_size or 0.0, 1.0)
-    return abs(right.x1 - left.x2) <= font_size * SCRIPT_FRAGMENT_MAX_GAP_EM
-
-
-def normal_advance_ratios(line_list: list[Line]) -> list[float]:
-    """Return plausible ordinary line advances from the already ordered page."""
-    ratios: list[float] = []
-    for left, right in pairwise(line_list):
-        if (
-            left.y1 is None
-            or right.y1 is None
-            or left.x1 is None
-            or left.x2 is None
-            or right.x1 is None
-            or right.x2 is None
-            or not close_font_size(left.font_size, right.font_size)
-            or same_physical_line(left, right)
-        ):
-            continue
-        font_size = max(left.font_size or 0.0, right.font_size or 0.0)
-        if font_size <= 0:
-            continue
-        advance = right.y1 - left.y1
-        horizontal_overlap = min(left.x2, right.x2) - max(left.x1, right.x1)
-        ratio = advance / font_size
-        if horizontal_overlap > 0 and 0.65 <= ratio <= 1.65:
-            ratios.append(ratio)
-    return ratios
-
-
-def build_page_context(line_list: list[Line]) -> PageContext:
-    """Build robust page-local layout statistics."""
-    font_size = dominant_page_font_size(line_list)
-    advance_ratios = normal_advance_ratios(line_list)
-    columns = build_columns(line_list, font_size)
-    return PageContext(
-        font_size=font_size,
-        normal_advance_ratio=float(median(advance_ratios)) if advance_ratios else None,
-        rhythm_sample_count=len(advance_ratios),
-        columns=columns,
-        hanging_indents=build_hanging_indents(line_list, font_size, columns),
-    )
-
-
-def column_for_line(line_obj: Line, context: PageContext) -> ColumnContext | None:
-    """Return the nearest dominant column for a positioned line."""
-    if line_obj.x1 is None or not context.columns:
-        return None
-    index = nearest_column_index(line_obj.x1, tuple(column.left for column in context.columns))
-    return context.columns[index]
-
-
-def same_flow(left: Line, right: Line, context: PageContext) -> bool:
-    """Return whether adjacent ordered lines plausibly belong to one column flow."""
-    if left.page_no != right.page_no:
-        return False
-    left_column = column_for_line(left, context)
-    right_column = column_for_line(right, context)
-    if left_column is not None and right_column is not None and left_column != right_column:
-        return False
-    if same_physical_line(left, right):
-        return True
-    if None in {left.y1, right.y1, left.x1, left.x2, right.x1, right.x2}:
-        return True
-    assert left.y1 is not None
-    assert right.y1 is not None
-    assert left.x1 is not None
-    assert left.x2 is not None
-    assert right.x1 is not None
-    assert right.x2 is not None
-    return right.y1 > left.y1 and min(left.x2, right.x2) > max(left.x1, right.x1)
-
-
-def advance_ratio(left: Line, right: Line) -> float | None:
-    """Return baseline advance normalized by the larger line font size."""
-    if left.y1 is None or right.y1 is None:
-        return None
-    font_size = max(left.font_size or 0.0, right.font_size or 0.0)
-    if font_size <= 0:
-        return None
-    return (right.y1 - left.y1) / font_size
-
-
-def has_large_advance(left: Line, right: Line, context: PageContext) -> bool:
-    """Return whether a pair has unusually large page-relative vertical spacing."""
-    ratio = advance_ratio(left, right)
-    normal = context.normal_advance_ratio
-    if ratio is None or normal is None:
-        return False
-    return ratio >= max(normal * LARGE_ADVANCE_MIN_RATIO, normal + LARGE_ADVANCE_EXTRA_EM)
-
-
-def has_normal_advance(left: Line, right: Line, context: PageContext) -> bool:
-    """Return whether a pair follows the page's ordinary vertical rhythm."""
-    ratio = advance_ratio(left, right)
-    normal = context.normal_advance_ratio
-    if ratio is None or normal is None:
-        return False
-    return 0 < ratio <= normal + NORMAL_ADVANCE_TOLERANCE_EM
 
 
 def hanging_indents_for_boundary(
@@ -736,13 +155,6 @@ def begins_hanging_indent_paragraph(previous: Line, current: Line, context: Page
     return ratio is not None and normal is not None and 0 < ratio <= normal + 1.0
 
 
-def has_blank_line_advance(left: Line, right: Line, context: PageContext) -> bool:
-    """Return whether a pair is separated by a gap about as tall as a blank line."""
-    ratio = advance_ratio(left, right)
-    normal = context.normal_advance_ratio
-    return ratio is not None and normal is not None and ratio >= normal * BLANK_LINE_ADVANCE_RATIO
-
-
 def large_advance_supports_break(left: Line, right: Line, context: PageContext) -> bool:
     """Return whether visible spacing separates two paragraphs.
 
@@ -762,37 +174,6 @@ def large_advance_supports_break(left: Line, right: Line, context: PageContext) 
         return False
     font_size = left.font_size or context.font_size
     return line_is_short(left, column, font_size) or ends_sentence(left.text)
-
-
-def near(value: float | None, target: float, font_size: float) -> bool:
-    """Return whether a coordinate is close to a target margin."""
-    return value is not None and abs(value - target) <= max(2.5, font_size * MARGIN_TOLERANCE_EM)
-
-
-def line_is_short(line_obj: Line, column: ColumnContext, font_size: float) -> bool:
-    """Return whether a line ends unusually early relative to its column."""
-    if line_obj.x2 is None or column.width <= 0:
-        return False
-    shortfall = column.right - line_obj.x2
-    return shortfall >= max(font_size * 3.0, column.width * 0.18)
-
-
-def line_is_full(line_obj: Line, column: ColumnContext, font_size: float) -> bool:
-    """Return whether a line reaches the ordinary column right edge."""
-    if line_obj.x2 is None or column.width <= 0:
-        return False
-    shortfall = column.right - line_obj.x2
-    return shortfall <= max(font_size * 1.5, column.width * 0.08)
-
-
-def ends_sentence(text: str) -> bool:
-    """Return whether text ends in language-independent sentence punctuation."""
-    return bool(SENTENCE_END_PATTERN.search(text.rstrip()))
-
-
-def ends_word_break_hyphen(text: str) -> bool:
-    """Return whether a line ends in a likely word-breaking hyphen."""
-    return bool(WORD_BREAK_HYPHEN_PATTERN.search(text.rstrip()))
 
 
 def begins_first_line_indent(
@@ -942,33 +323,6 @@ def high_confidence_continuation(
         or hyphenated_line
         or aligned_open_continuation(left, right, context)
         or aligned_inset_continuation(left, right, following, context)
-    )
-
-
-def mixes_italics(line_obj: Line) -> bool:
-    """Return whether a line has both italic and upright letters."""
-    italic = {
-        index
-        for run in line_obj.ranges
-        if run.kind == 'italic'
-        for index in range(run.start, run.end)
-    }
-    return bool(italic) and any(
-        character.isalpha() and index not in italic for index, character in enumerate(line_obj.text)
-    )
-
-
-def differs_only_by_italics(left: Line, right: Line) -> bool:
-    """Return whether a font difference may just reflect italics within running text.
-
-    A line's font is its dominant one, so a line that is mostly italic differs
-    from an upright neighbor, though its upright text continues in the same font.
-    Bold is left out, as it often marks a run-in heading.
-    """
-    return (
-        compatible_size_and_weight(left, right)
-        and (mixes_italics(left) or mixes_italics(right))
-        and not any(run.kind == 'bold' for run in (*left.ranges, *right.ranges))
     )
 
 

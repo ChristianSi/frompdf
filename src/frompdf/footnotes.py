@@ -6,9 +6,9 @@ from dataclasses import dataclass, field, replace
 from statistics import median
 
 from frompdf.continuations import build_page_fragments, join_fragments
+from frompdf.line_features import close_font_size, ends_sentence
 from frompdf.models import Block, Footnote, Heading, Line, PageNumber, TextFragment
 from frompdf.scripts import AnnotatedText
-from frompdf.segmentation import close_font_size, ends_sentence
 
 # Require a visible size reduction and a lower-page region, with ordinary text
 # above it. The position is relative to the occupied page, not rel_y (which is

@@ -3,7 +3,8 @@ from typing import cast
 
 from pdftext.schema import Page
 
-from frompdf.lines import attach_stacked_scripts, attach_stray_scripts, iter_lines
+from frompdf.detached_scripts import attach_stacked_scripts, attach_stray_scripts
+from frompdf.lines import iter_lines
 from frompdf.scripts import render_scripts
 
 

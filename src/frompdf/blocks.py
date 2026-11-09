@@ -18,6 +18,7 @@ from frompdf.footnotes import build_footnote, extract_footnotes, place_footnotes
 from frompdf.front_matter import format_front_matter, unquote_blocks_above_title
 from frompdf.heading_candidates import find_typographic_heading_lines
 from frompdf.line_breaks import hard_line_break_ids, line_by_line_passages
+from frompdf.line_features import has_alphanumeric, same_physical_line
 from frompdf.lists import ListMarker, find_list_items
 from frompdf.models import (
     HARD_LINE_BREAK,
@@ -33,12 +34,7 @@ from frompdf.models import (
     TextFragment,
 )
 from frompdf.scripts import AnnotatedText, collapse_annotated_whitespace, join_annotated_texts
-from frompdf.segmentation import (
-    find_marker_lines,
-    has_alphanumeric,
-    same_physical_line,
-    segment_lines,
-)
+from frompdf.segmentation import find_marker_lines, segment_lines
 from frompdf.tables import TableLayout
 from frompdf.unhyphenation import (
     document_coordination_tokens,

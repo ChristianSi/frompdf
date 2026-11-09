@@ -5,28 +5,30 @@ from collections import Counter, defaultdict
 from dataclasses import dataclass, replace
 from itertools import pairwise
 
-from frompdf.models import HARD_LINE_BREAK, InlineRange, Line, PageNumber, TextFragment
-from frompdf.scripts import AnnotatedText, join_annotated_texts
-from frompdf.segmentation import (
+from frompdf.line_features import (
     FONT_WEIGHT_BREAK,
+    close_font_size,
+    ends_sentence,
+    is_prose_line,
+    is_textual_line,
+    same_physical_line,
+    same_running_text_line,
+    significant_style_change,
+)
+from frompdf.models import HARD_LINE_BREAK, InlineRange, Line, PageNumber, TextFragment
+from frompdf.page_context import (
     MAX_FIRST_LINE_INDENT_EM,
     MIN_COLUMN_LINES,
     MIN_FIRST_LINE_INDENT_EM,
     PageContext,
     build_page_context,
-    close_font_size,
     column_for_line,
     dominant_page_font_size,
-    ends_sentence,
-    is_prose_line,
-    is_textual_line,
     line_is_full,
     line_is_short,
     near,
-    same_physical_line,
-    same_running_text_line,
-    significant_style_change,
 )
+from frompdf.scripts import AnnotatedText, join_annotated_texts
 from frompdf.unhyphenation import unhyphenate_annotated_lines
 
 # A list item at the top of a column starts a new block even when the preceding

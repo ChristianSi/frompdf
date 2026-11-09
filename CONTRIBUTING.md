@@ -166,6 +166,8 @@ The implementation is split into focused modules under `src/frompdf`:
 - `cli.py` implements the command-line interface.
 - `continuations.py` recognizes text continuing at the top of the next column
   or page and assembles page-aware text fragments for blocks and notes.
+- `detached_scripts.py` reattaches scripts that `pdftext` set apart from
+  their lines and merges the pieces of split denominators.
 - `emphasis.py` adjusts bold and italic ranges so their Markdown delimiters
   are valid and nested, and renders scripts and emphasis together.
 - `escaping.py` escapes text that Markdown would otherwise read as syntax,
@@ -174,6 +176,9 @@ The implementation is split into focused modules under `src/frompdf`:
   page-aware text, and places numeric groups in Notes sections.
 - `front_matter.py` renders subtitles, author names, and chapter labels near
   document titles as bold paragraphs and drops ornaments between them.
+- `glyph_repairs.py` repairs detached diacritics, removes icon-font glyphs,
+  decodes glyphs of TeX math extension fonts and capitals of blackboard bold
+  fonts, and restores private-use bullets of symbol fonts.
 - `heading_candidates.py` identifies compact centered titles using caps or
   italic styling, established body columns, and surrounding whitespace.
 - `line_breaks.py` recognizes deliberate line breaks within blocks, where the
@@ -182,18 +187,21 @@ The implementation is split into focused modules under `src/frompdf`:
   centered lines. It also finds passages set off from the text line by line,
   such as quoted verse, whose line ends break even before a sentence
   continuing in lower case.
-- `lines.py` repairs detached diacritics, removes icon-font glyphs, decodes
-  glyphs of TeX math extension fonts and capitals of blackboard bold fonts,
-  restores private-use bullets of symbol fonts, reattaches detached scripts,
-  merges the pieces of split denominators, flattens `pdftext` output, and
-  extracts line geometry, typography, inline script ranges, bold and italic
-  ranges, and fraction denominators and limits stacked below a line.
+- `line_features.py` compares the font sizes, faces, and styles of lines and
+  tells whether pieces lie on the same physical line or line of running text,
+  along with other line-level traits such as sentence ends.
+- `lines.py` flattens `pdftext` output and extracts line geometry,
+  typography, inline script ranges, bold and italic ranges, and fraction
+  denominators and limits stacked below a line.
 - `lists.py` recognizes bulleted and numbered list items and their
   continuation lines, using marker alignment, consecutive numbering, and
   deliberate breaks before weakly marked lists.
 - `models.py` defines line, page-number, and Markdown block records.
 - `output.py` writes diagnostic line and page-number CSV files and serializes
   Markdown output.
+- `page_context.py` collects the columns, hanging-indent regions, and line
+  rhythm of a page and judges indentation, line fullness, and line spacing
+  against them.
 - `page_edges.py` detects and removes headers and footers, extracts visible
   page labels, and safely completes unambiguous label sequences.
 - `pipeline.py` coordinates extraction and classification.

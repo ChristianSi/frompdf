@@ -1,15 +1,10 @@
 import unittest
 from dataclasses import replace
 
+from frompdf.line_features import normalized_font_family, same_physical_line
 from frompdf.models import InlineRange, Line
-from frompdf.segmentation import (
-    build_page_context,
-    find_marker_lines,
-    normalized_font_family,
-    same_physical_line,
-    segment_lines,
-    visual_line_start,
-)
+from frompdf.page_context import build_page_context
+from frompdf.segmentation import find_marker_lines, segment_lines, visual_line_start
 
 
 def line(

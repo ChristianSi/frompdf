@@ -13,15 +13,14 @@ from dataclasses import dataclass, field
 from itertools import pairwise
 from typing import Literal
 
+from frompdf.line_features import same_physical_line, visibly_different_font_sizes
 from frompdf.models import Line
-from frompdf.segmentation import (
+from frompdf.page_context import (
     PageContext,
     build_page_context,
     column_for_line,
     has_normal_advance,
     line_is_full,
-    same_physical_line,
-    visibly_different_font_sizes,
 )
 
 STRONG_BULLETS = '•◦▪▫●○■□‣⁃➢❖✓'

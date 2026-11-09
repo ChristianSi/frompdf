@@ -3,16 +3,15 @@
 import re
 from collections import defaultdict
 
+from frompdf.line_features import close_font_size, normalized_font_name
 from frompdf.models import Line
-from frompdf.segmentation import (
+from frompdf.page_context import (
     MIN_COLUMN_LINES,
     MIN_RHYTHM_SAMPLES,
     ColumnContext,
     PageContext,
     build_page_context,
-    close_font_size,
     column_for_line,
-    normalized_font_name,
 )
 
 # Small-cap glyph heights can be about half the body height when a PDF supplies
