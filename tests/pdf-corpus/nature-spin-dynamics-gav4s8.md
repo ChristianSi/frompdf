@@ -817,7 +817,6 @@ utilized as the transport agent. The crystal growth was performed at temperature
 > Time-resolved magneto-optical Kerr effect experiment. The experiments were
 >
 > performed with a Yb:KGW regenerative amplified laser as main light
->
 > source (Pharos) with the repetition rate of 100 kHz. Infrared output of a non-collinear
 > optical parametric amplifier (800 nm, 40 fs) and the second harmonic
 > generation of the fundamental light (515 nm, 270 fs) were used for the pump and

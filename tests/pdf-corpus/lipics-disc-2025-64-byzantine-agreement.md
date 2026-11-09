@@ -54,7 +54,6 @@ platforms for monitoring and controlling mechanical, physical, and biological pr
 all of these domains, the quality and reliability of sensor and sensor-derived data is central
 
 © Roy Shadmon and Owen Arden;
-
 licensed under Creative Commons License CC-BY 4.0
 39th International Symposium on Distributed Computing (DISC 2025).
 Editor: Dariusz R. Kowalski; Article No. 64; pp. 64:1–64:8

@@ -54,7 +54,6 @@ platforms for monitoring and controlling mechanical, physical, and biological pr
 all of these domains, the quality and reliability of sensor and sensor-derived data is central
 
 © Roy Shadmon and Owen Arden;
-
 licensed under Creative Commons License CC-BY 4.0
 39th International Symposium on Distributed Computing (DISC 2025).
 Editor: Dariusz R. Kowalski; Article No. 64; pp. 64:1–64:8
@@ -114,14 +113,14 @@ start with an arbitrary real value and reach an output solution satisfying two p
 
 Mahaney and Schneider [12] distinguish Inexact Agreement (IA) from classical ABA by
 redefining the validity property in terms of *accuracy*. Outputs are instead bound by their
-distance to a true value *v*ˆ, which each nonfaulty replica’s initial value *v<sub>i</sub>* approximates.
+distance to a true value *v̂*, which each nonfaulty replica’s initial value *v<sub>i</sub>* approximates.
 
 [[PAGE:3|VISIBLE:64:3]]Our work concerns a new class of protocols that make an additional assumption, often
 satisfied by the underlying data processed by IA systems. Stochastic Byzantine Agreement
-(SBA) protocols require that *v*ˆ and nonfaulty *v<sub>i</sub>* are – or can be effectively approximated as
+(SBA) protocols require that *v̂* and nonfaulty *v<sub>i</sub>* are – or can be effectively approximated as
 being – distributed according to probability distributions. No assumptions are made about
 the nature of Byzantine values. The two distributions are distinct and potentially unknown,
-but correlated since *v*<sub>i</sub>s approximate *v*ˆ. SBA protocols also satisfy *ϵ*-agreement, but *ϵ* in SBA
+but correlated since *v*<sub>i</sub>s approximate *v̂*. SBA protocols also satisfy *ϵ*-agreement, but *ϵ* in SBA
 is larger than the *ϵ* values in classical ABA protocols. This difference in *ϵ*-agreement is by
 design and unavoidable due to tradeoffs between accuracy and high-precision agreement [12].
 The goals of these protocols are close enough that we argue ABA is an appropriate umbrella
@@ -129,19 +128,19 @@ term, with IA and SBA refining properties 1 and 2 as described above.
 
 The key characteristic of our SBA protocol, *Proximal Byzantine Agreement* (PBA), is
 that each replica uses the set *R* of received values *v<sub>i</sub>* ∈ *R* to find a quorum of values *r* and
-a candidate *v*ˆ such that *v*ˆ would be the most likely true value if we knew that the quorum
-values were nonfaulty. Selecting the highest-probability *v*ˆ conditioned on the observations in
+a candidate *v̂* such that *v̂* would be the most likely true value if we knew that the quorum
+values were nonfaulty. Selecting the highest-probability *v̂* conditioned on the observations in
 *r*, ensures that if any (minority of) values in *r* turn out to be faulty, then the quorum *r* (and
-thus the inferred *v*ˆ) is at least a likely as a quorum containing only nonfaulty values. At a
+thus the inferred *v̂*) is at least a likely as a quorum containing only nonfaulty values. At a
 high level, this process is described by the probability maximization in Def. 2.1.
 
-▶ **Definition 2.1** (Proximal Byzantine Value Selection). *For received values R* ⊆ R<sup>n</sup> *and
+▶ **Definition 2.1** (Proximal Byzantine Value Selection). *For received values R* ⊆ ℝ<sup>n</sup> *and
 quorum size s, select a set r from the s-sized subsets of R, and a value x that maximizes the
 likelihood that x is the true value given observations in r.*
 
 PBA(*R*, *s*) ≜ argmax
 *r*∈[*R*]*<sup>s</sup>
-x*∈R<sup>n</sup>
+x*∈ℝ<sup>n</sup>
 *P*(*x* | *r*)
 
 Our chosen approximation of Proximal Byzantine Value Selection (PBVS) uses the
@@ -156,12 +155,12 @@ data since the covariance matrix is unknown, but is a reasonable approach since 
 replica output is an approximation of the same underlying value.
 
 More specifically, for each quorum *r*, we compute its median *x* = Gm(*r*) and evaluate
-the likelihood *P*̂(*x* | *r*) using a similarity measure adapted from Blok et al. [2]. *P*̂(*x* | *r*)
+the likelihood *P̂*(*x* | *r*) using a similarity measure adapted from Blok et al. [2]. *P̂*(*x* | *r*)
 approximates the affect of the unknown covariance matrix and joint probability of *q* on
 the independent probability of *x* with an exponent *α* to score similarity between *x* and
 quorum values on a [0, 1) scale. We chose this approach after discovering that computing the
 geometric median and then approximating its likelihood is significantly faster than iteratively
-evaluating *P*̂(*X* = *x* | *r*) to find maximal values, and had almost no impact on accuracy.
+evaluating *P̂*(*X* = *x* | *r*) to find maximal values, and had almost no impact on accuracy.
 
 ## 2.1 Geometric properties
 
@@ -177,10 +176,10 @@ set of nonfaulty values is bounded when up to |*F*| < |*Q*| faulty values are ad
 ▶ **Lemma 2.2** (Theoretical maximum displacement [6, 11]). *Let R* = *Q* ∪ *F,* |*Q*| = *s and*
 |*F*| = *f such that s* > *f with geometric medians Gm*(*Q*) = *m<sub>Q</sub> and Gm*(*R*) = *m<sub>R</sub>. Let*
 ∆<sup>Q</sup> = max<sub>qi</sub>∈<sub>Q</sub> ||*q<sub>i</sub>* − *Gm*(*Q*)||<sub>2</sub> *and C*<sup>(s,f)</sup><sub>0</sub> = √ *s
-s*<sup>2</sup>−*f*2
+s*<sup>2</sup>−*f*<sup>2</sup>
 *. Then the maximum displacement is*
 
-||*m<sub>Q</sub>* − *m<sub>R</sub>*||<sub>2</sub> ≤ *C*(*s*,*f*)0 ∆*Q*
+||*m<sub>Q</sub>* − *m<sub>R</sub>*||<sub>2</sub> ≤ *C*<sup>(s,f)</sup><sub>0</sub> ∆<sup>Q</sup>
 
 However, the contents of *Q* is unknown, so the bound implied by Lemma 2.2 cannot be
 directly calculated from the information available. Instead, Lemma 2.3 presents a
@@ -199,18 +198,18 @@ The computable displacement is used to compute the *region guarantee* for a give
 result. The fact that PBA only produces outputs with region guarantees containing the true
 output is our instantiation of an *accuracy* [12] property.
 
-▶ **Definition 2.4** (Region Guarantee). *For any set R* ⊆ R<sup>d</sup>, |*R*| > *s* + *f where s* > *f, define
+▶ **Definition 2.4** (Region Guarantee). *For any set R* ⊆ ℝ<sup>d</sup>, |*R*| > *s* + *f where s* > *f, define
 R*<sup>(f,x)</sup> ⊆ *R by removing the f elements of R furthest from x. Let* ∆<sup>R</sup>*<sub>f</sub>* = max*ri*∈*R*(*f*,*Gm*(*R*)) ||*ri* −
 *Gm*(*R*)||<sub>2</sub>*. The* region guarantee *RG*(*R*, *s*, *f*) *is a d-dimensional ball centered at x with radius*
-2*C*(*s*,*f*)∆*R
+2*C*<sup>(s,f)</sup>∆*R
 f
 .*
 
 ▶ **Lemma 2.5** (Accuracy). *For any R* = (*Q* ∪ *F) containing* |*Q*| = *s* > 2*f nonfaulty and at
 most* |*F*| = *f faulty values, let PBA*(*R*, *s*) = (*x*, *R*′)*. Then Gm*(*Q*) ∈ *RG*(*R*, *s*, *f*) *and*
 
-||*m<sub>Q</sub>* − *x*||<sub>2</sub> ≤ *C*(*s*,*f*)0 ∆*R*′
-\+ *C*(*s*,*f*)0 ∆<sup>Q</sup> ≤ 2*C*(*s*,*f*)∆*R
+||*m<sub>Q</sub>* − *x*||<sub>2</sub> ≤ *C*<sup>(s,f)</sup><sub>0</sub> ∆<sup>R</sup>′
+\+ *C*<sup>(s,f)</sup><sub>0</sub> ∆<sup>Q</sup> ≤ 2*C*<sup>(s,f)</sup>∆*R
 f*
 
 ## 2.2 OneShot PBA Agreement and Termination
@@ -266,7 +265,7 @@ than twice the number of faulty replicas.
 
 ▶ **Lemma 2.6** (Agreement). *For any R<sup>i</sup>* = (*Q<sup>i</sup>* ∪ *F<sup>i</sup>*) ⊆ *R* = (*Q* ∪ *F*)*, let r* = |*R<sup>i</sup>*|*, s* = |*Q<sup>i</sup>*|*,
 f* = |*F*|*, and PBA*(*R<sup>i</sup>*, *s*) = (*x<sub>i</sub>*, *R<sup>i</sup>*<sub>∗</sub>)*. If s* > ⌈|*R*|/2⌉ *and r* ≥ *s* + *f, then for any other subset
-R<sup>j</sup>* = (*Q<sup>j</sup>* ∪ *F<sup>j</sup>*) ⊆ *R where* |*R<sup>j</sup>*| ≥ *r and PBA*(*R<sup>j</sup>*, *s*) = (*x<sub>j</sub>* , *R<sup>j</sup>*<sub>∗</sub>), ||*x<sub>i</sub>* − *x<sub>j</sub>* || ≤ 2*C*<sup>(s,f)</sup><sub>0</sub> ∆*Q.*
+R<sup>j</sup>* = (*Q<sup>j</sup>* ∪ *F<sup>j</sup>*) ⊆ *R where* |*R<sup>j</sup>*| ≥ *r and PBA*(*R<sup>j</sup>*, *s*) = (*x<sub>j</sub>* , *R<sup>j</sup>*<sub>∗</sub>), ||*x<sub>i</sub>* − *x<sub>j</sub>* || ≤ 2*C*<sup>(s,f)</sup><sub>0</sub> ∆<sup>Q</sup>.
 
 [[PAGE:6|VISIBLE:64:6]]**Figure 2** Runtime benchmark (Pi Zero).
 
