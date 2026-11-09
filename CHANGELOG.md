@@ -228,6 +228,12 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
   where the next line continues the open sentence in lower case, at the same
   left edge, in the same typography, and at regular spacing. Lines starting
   with a lower-case item label, such as `a)` or `iv.`, are not joined this way.
+- URLs and DOIs broken at a line end are joined again without a space, as
+  `https://proceedings.mlr.press/…` or `doi:10.1137/…`, also across several
+  lines. The next line's first token must have the structure of a URL within
+  it or give a value after a `=`; another URL continues only one ending in
+  `/`, as in archive URLs. Text following a URL, list numbers, and a note
+  marker starting the next line are left alone.
 - Superscripts and subscripts that `pdftext` puts into line records of their
   own are now recognized in displayed formulas too, as in `C₀⁽ˢ,ᶠ⁾ Δ^Q`,
   where the scripts of the rest of the line outnumber its ordinary letters,

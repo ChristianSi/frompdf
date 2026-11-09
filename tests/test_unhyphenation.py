@@ -10,6 +10,7 @@ from frompdf.unhyphenation import (
     document_mixed_case_words,
     document_word_counts,
     spelling_evidence_text,
+    unhyphenate_annotated_lines,
     unhyphenate_block_lines,
 )
 
@@ -374,6 +375,76 @@ class UnspacedDashTests(unittest.TestCase):
         self.assertEqual(
             [block.text for block in blocks],
             ['first block ends—', 'next block begins'],
+        )
+
+
+class BrokenUrlTests(unittest.TestCase):
+    def test_joins_url_pieces_without_a_space(self) -> None:
+        for name, lines, expected in (
+            (
+                'after the scheme',
+                ['PMLR, April 2023. URL: https://', 'proceedings.mlr.press/v206/x.html.'],
+                'PMLR, April 2023. URL: https://proceedings.mlr.press/v206/x.html.',
+            ),
+            (
+                'after doi:',
+                ['June 2024. doi:', '10.1137/23M1592420.'],
+                'June 2024. doi:10.1137/23M1592420.',
+            ),
+            (
+                'after a slash, keeping the rest of the line',
+                ['URL: https://www.usenix.org/atc20/', 'presentation/keahey. Next text'],
+                'URL: https://www.usenix.org/atc20/presentation/keahey.\nNext text',
+            ),
+            (
+                'query value',
+                ['https://en.wikipedia.org/w/index.php?title=Chick_lit&oldid=', '94749285.'],
+                'https://en.wikipedia.org/w/index.php?title=Chick_lit&oldid=94749285.',
+            ),
+            (
+                'archived URL after a slash',
+                ['Home. https://web.archive.org/web/2005/', 'http://chicklitbooks.com/.'],
+                'Home. https://web.archive.org/web/2005/http://chicklitbooks.com/.',
+            ),
+            (
+                'over three lines',
+                [
+                    'https://',
+                    'en.wikipedia.org/w/index.php?title=Talk:Chick_lit&',
+                    'oldid=969364576. Accessed',
+                ],
+                'https://en.wikipedia.org/w/index.php?title=Talk:Chick_lit&oldid=969364576.\nAccessed',
+            ),
+        ):
+            with self.subTest(name):
+                self.assertEqual(resolve(lines), expected)
+
+    def test_conservative_negatives(self) -> None:
+        for name, lines in (
+            ('sentence after a URL', ['https://doi.org/10.5281/zenodo.14207232', 'This dataset']),
+            ('list number', ['https://sig.mapama.gob.es/geoportal/', '12. Next item']),
+            (
+                'second DOI after a period',
+                ['https://doi.org/10.1109/X.2019.1.', 'doi:10.1109/X.2019.1.'],
+            ),
+            ('abbreviation', ['see https://example.org/.', 'e.g. this text']),
+            ('word after a slash', ['see https://example.org/', 'for details']),
+            ('no URL', ['the ratio is 3:', '1.5 and more']),
+            ('hard line break', ['https://example.org/a/\u2028', 'b/c.html']),
+        ):
+            with self.subTest(name):
+                self.assertEqual(resolve(lines), '\n'.join(lines))
+
+    def test_note_marker_starts_another_url(self) -> None:
+        lines = [
+            AnnotatedText('1https://github.com/raisely/NoHarm/', (InlineRange(0, 1, 'sup'),)),
+            AnnotatedText('2https://www.gnu.org/selling.html', (InlineRange(0, 1, 'sup'),)),
+        ]
+
+        result = unhyphenate_annotated_lines(lines, Counter(), set(), set())
+
+        self.assertEqual(
+            result.text, '1https://github.com/raisely/NoHarm/\n2https://www.gnu.org/selling.html'
         )
 
 

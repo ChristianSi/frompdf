@@ -1,3 +1,4 @@
+import re
 from collections import Counter
 from collections.abc import Iterable
 from itertools import pairwise
@@ -15,6 +16,17 @@ WORD_HYPHENS = VISIBLE_WORD_HYPHENS | {SOFT_HYPHEN}
 EN_DASH = '\u2013'
 EM_DASH = '\u2014'
 LINE_FINAL_DASHES = {EN_DASH, EM_DASH}
+
+
+# A URL or DOI broken at a line end continues on the next line without a
+# space, as in lipics-64's `https://` before `proceedings.mlr.press/…`, or
+# `doi:` before `10.1137/…`. The next line's first token continues it if it
+# has the structure of a URL within it, or gives the value after a `=`.
+URL_START_PATTERN = re.compile(r'https?://|www\.|doi:', re.IGNORECASE)
+URL_STRUCTURE_CHARS = frozenset('/.=&?#%_:@')
+URL_TRAILING_PUNCTUATION = '.,;:!?)]}'
+# Abbreviations such as `e.g.` start ordinary text after a URL ending a sentence.
+ABBREVIATION_PATTERN = re.compile(r'(?:[A-Za-z]\.)+[A-Za-z]?')
 
 
 class DocumentWordCounts(Counter[str]):
@@ -334,6 +346,58 @@ def split_first_token(line: str) -> tuple[str, str] | None:
     return first_token, remainder
 
 
+def url_continuation_token(left_line: str, right_line: str) -> tuple[str, str] | None:
+    """Return the token continuing a URL that ends the left line, and the rest of the right line.
+
+    A token holding another URL continues only a URL ending in `/`, as in
+    archive URLs embedding the archived one; after a sentence end, it
+    starts a new reference instead.
+    """
+    if not left_line or left_line[-1].isspace():
+        return None
+    left_token = left_line.rsplit(maxsplit=1)[-1]
+    if URL_START_PATTERN.search(left_token) is None:
+        return None
+    token_parts = split_first_token(right_line)
+    if token_parts is None:
+        return None
+    first_token, remainder = token_parts
+    core = first_token.rstrip(URL_TRAILING_PUNCTUATION)
+    if not core or ABBREVIATION_PATTERN.fullmatch(core):
+        return None
+    if URL_START_PATTERN.search(core):
+        continues = left_token.endswith('/')
+    else:
+        continues = any(char in URL_STRUCTURE_CHARS for char in core) or left_token.endswith('=')
+    return (first_token, remainder) if continues else None
+
+
+def join_broken_urls(lines: list[AnnotatedText]) -> list[AnnotatedText]:
+    """Move the pieces of URLs broken at line ends onto the lines they start on.
+
+    Lines are worked top-down, so a URL broken over several lines grows line
+    by line. Lines left empty are dropped. A change of script level at the
+    boundary, as before a note marker, ends the URL.
+    """
+    joined: list[AnnotatedText] = []
+    for line in lines:
+        while joined and line.text:
+            url_parts = url_continuation_token(joined[-1].text, line.text)
+            if url_parts is None:
+                break
+            token, remainder = url_parts
+            token_start = len(line.text) - len(line.text.lstrip())
+            if script_kind_at(joined[-1], len(joined[-1].text) - 1) != script_kind_at(
+                line, token_start
+            ):
+                break
+            joined[-1] += line.slice(token_start, token_start + len(token))
+            line = line.slice(len(line.text) - len(remainder))
+        if line.text or not joined:
+            joined.append(line)
+    return joined
+
+
 def unspaced_dash_token(left_line: str, right_line: str) -> tuple[str, str] | None:
     """Return the token to move across an unspaced en/em-dash boundary."""
     token_parts = split_first_token(right_line)
@@ -438,7 +502,7 @@ def unhyphenate_annotated_lines(
     coordination_tokens: set[str],
 ) -> AnnotatedText:
     """Repair boundaries using plain text, moving annotations with the source tokens."""
-    rewritten_lines = list(line_texts)
+    rewritten_lines = join_broken_urls(list(line_texts))
     consumed_line_indexes: set[int] = set()
 
     # Work upward so resolving one boundary cannot consume a line before its

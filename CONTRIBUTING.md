@@ -209,9 +209,10 @@ The implementation is split into focused modules under `src/frompdf`:
   their header with columns separated by gutters, infers their rows, columns,
   and spanning cells, splits lines into the pieces of each cell, and joins
   tables continuing on the next page.
-- `unhyphenation.py` repairs words and unspaced dashes split across physical
-  lines, using document-wide evidence where available. This includes the
-  parts of hyphenated compounds, which decide on hyphens within compounds.
+- `unhyphenation.py` repairs words, unspaced dashes, and URLs split across
+  physical lines, using document-wide evidence where available. This
+  includes the parts of hyphenated compounds, which decide on hyphens within
+  compounds.
 
 Important concepts:
 
@@ -346,7 +347,11 @@ The current pipeline is roughly:
     denominators to their numerators after a slash. Then repair words and
     unspaced dashes split across physical lines within each block, preserving
     script ranges and attributing words joined across pages to their starting
-    page.
+    page. URLs and DOIs broken at a line end are joined first, top-down, with
+    the next line's first token if it has the structure of a URL within it,
+    or a value after a `=`, unless a change of script level, as before a
+    note marker, lies between them. A token starting another URL only
+    continues a URL ending in `/`.
 14. Reclassify heading-like paragraphs using size and confirmed title
     candidates, which take precedence over block quotes. Blocks without
     letters or digits never become headings. In the front matter following the
