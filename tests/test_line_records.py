@@ -140,3 +140,55 @@ class PlaceholderFontSizeTests(unittest.TestCase):
         )
 
         self.assertAlmostEqual(glyph_font_size(char) or 0.0, 8.0, places=1)
+
+
+def span_with_glyphs(glyphs: list[tuple[str, float, float]]) -> PdfTextSpan:
+    """Build a placeholder-size span from glyphs given as text, bottom, and height."""
+    chars = [
+        {
+            'char': text,
+            'bbox': [5.0 * index, bottom - height, 5.0 * index + 4.0, bottom],
+            'font': {'size': 1.0},
+        }
+        for index, (text, bottom, height) in enumerate(glyphs)
+    ]
+    boxes = [char['bbox'] for char in chars]
+    bbox = [
+        min(box[0] for box in boxes),
+        min(box[1] for box in boxes),
+        max(box[2] for box in boxes),
+        max(box[3] for box in boxes),
+    ]
+    return cast(
+        PdfTextSpan,
+        {
+            'text': ''.join(text for text, _, _ in glyphs),
+            'bbox': bbox,
+            'font': {'size': 1.0},
+            'chars': chars,
+        },
+    )
+
+
+class PlaceholderGlyphSizeTests(unittest.TestCase):
+    def test_lowered_subscripts_do_not_stretch_the_span_size(self) -> None:
+        # GaV₄S₈ in nature: subscripts end 0.7 below the baseline.
+        span = span_with_glyphs(
+            [('G', 722.2, 9.1), ('a', 722.2, 9.1), ('V', 722.2, 9.1), ('4', 722.9, 6.07)]
+            + [('S', 722.2, 9.1), ('8', 722.9, 6.07)]
+        )
+
+        self.assertAlmostEqual(effective_span_font_size(span) or 0.0, 9.1, places=2)
+
+    def test_large_glyphs_keep_their_size(self) -> None:
+        # The number of graf's "CHAPTER 10" is set much larger than the word.
+        span = span_with_glyphs(
+            [(char, 94.2, 12.6) for char in 'CHAPTER'] + [('1', 102.6, 34.35), ('0', 102.6, 34.35)]
+        )
+
+        self.assertAlmostEqual(effective_span_font_size(span) or 0.0, 34.35, places=2)
+
+    def test_whitespace_glyphs_are_ignored(self) -> None:
+        span = span_with_glyphs([('a', 20.0, 9.1), (' ', 30.0, 20.0), ('b', 20.0, 9.1)])
+
+        self.assertAlmostEqual(effective_span_font_size(span) or 0.0, 9.1, places=2)

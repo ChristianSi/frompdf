@@ -173,10 +173,21 @@ def effective_span_font_size(span_dict: PdfTextSpan) -> float | None:
     except (TypeError, ValueError):
         return None
 
-    # Some PDFs report every readable font as size 1.0; in that case bbox height
-    # is the better available proxy for the visually rendered size.
+    # Some PDFs report every readable font as size 1.0; in that case box heights
+    # are the better available proxy for the visually rendered size. The
+    # tallest glyph box stands for the span, as the span's own box also
+    # stretches over glyphs raised or lowered against the others, such as the
+    # subscripts in `GaV₄S₈` in nature, while a large glyph keeps its size, as
+    # the number of graf's "CHAPTER 10".
     if size_float <= 1.0:
-        return bbox_height(span_dict)
+        glyph_heights = [
+            height
+            for char in span_dict.get('chars', [])
+            if char.get('char', '').strip()
+            and (height := text_height(char)) is not None
+            and height > 1.0
+        ]
+        return max(glyph_heights, default=None) or bbox_height(span_dict)
 
     return size_float
 

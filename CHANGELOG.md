@@ -255,6 +255,11 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
   becomes oversized headings in PDFs that report no real font sizes. Its size
   is now measured across the text, by the width of its box, not by the length
   of the text.
+- In PDFs that report no real font sizes, lines with subscripts or
+  superscripts, as in `GaV₄S₈`, no longer turn into headings or split off from
+  their paragraph. A span is now measured by its tallest glyph rather than by
+  its box, which also stretches over glyphs raised or lowered against the
+  others.
 - Body text in the second column of a page is no longer quoted as a block
   quote where figure labels lie between the columns, or where the column is
   set in smaller type than the body, as the methods of a journal article.
