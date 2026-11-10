@@ -260,6 +260,12 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
   their paragraph. A span is now measured by its tallest glyph rather than by
   its box, which also stretches over glyphs raised or lowered against the
   others.
+- An indented first line now starts a new paragraph also where it or the line
+  before it is split into pieces at inline math or a superscript, as in
+  `GaV₄S₈²³.` ending a paragraph.
+- Paragraphs continuing at the top of the next column are joined also where a
+  caption below a figure spans both columns, which no longer widens the
+  column the caption starts in.
 - Body text in the second column of a page is no longer quoted as a block
   quote where figure labels lie between the columns, or where the column is
   set in smaller type than the body, as the methods of a journal article.

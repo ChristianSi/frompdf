@@ -4,7 +4,12 @@ from dataclasses import replace
 from frompdf.line_features import normalized_font_family, same_physical_line
 from frompdf.models import InlineRange, Line
 from frompdf.page_context import build_page_context
-from frompdf.segmentation import find_marker_lines, segment_lines, visual_line_start
+from frompdf.segmentation import (
+    find_marker_lines,
+    next_visual_line,
+    segment_lines,
+    visual_line_start,
+)
 
 
 def line(
@@ -910,3 +915,72 @@ class MarkerLineTests(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+def open_body_lines(start: int, count: int) -> list[Line]:
+    """Build full, open body lines of one column."""
+    return [
+        line(f'ordinary body text running on line {start + n}', start + n) for n in range(count)
+    ]
+
+
+class VisualLineIndentTests(unittest.TestCase):
+    def test_indent_after_a_line_ending_in_a_script_piece_starts_a_paragraph(self) -> None:
+        # As GaV₄S₈²³. ending a paragraph in nature.
+        lines = [
+            *open_body_lines(1, 5),
+            line('ending with a formula GaV', 6, x2=120.0),
+            replace(line('23.', 6, x1=120.5, x2=130.0, font_size=6.0), y1=70.0, y2=76.0),
+            line('The next paragraph starts with an indent', 7, x1=30.0),
+            *open_body_lines(8, 3),
+        ]
+
+        groups = group_texts(lines)
+
+        self.assertEqual(groups[1][0], 'The next paragraph starts with an indent')
+        self.assertEqual(groups[0][-1], '23.')
+
+    def test_indented_line_split_by_inline_math_starts_a_paragraph(self) -> None:
+        # As "… is given by κ = ∑ cᵢvᵢρᵢ" in nature, split before vᵢρᵢ.
+        lines = [
+            *open_body_lines(1, 5),
+            line('the paragraph ends here.', 6, x2=120.0),
+            line('The next paragraph is given by the formula', 7, x1=30.0, x2=200.0),
+            line('vi', 7, x1=200.5, x2=210.0),
+            *open_body_lines(8, 3),
+        ]
+
+        groups = group_texts(lines)
+
+        self.assertEqual(groups[1][:2], ['The next paragraph is given by the formula', 'vi'])
+
+    def test_split_line_followed_by_another_indented_line_starts_no_paragraph(self) -> None:
+        lines = [
+            *open_body_lines(1, 5),
+            line('the paragraph ends here.', 6, x2=120.0),
+            line('An inset passage is given by the formula', 7, x1=30.0, x2=200.0),
+            line('vi', 7, x1=200.5, x2=210.0),
+            line('and continues inset on the next line', 8, x1=30.0),
+            *open_body_lines(9, 3),
+        ]
+
+        groups = group_texts(lines)
+
+        self.assertNotIn('An inset passage is given by the formula', [g[0] for g in groups])
+
+
+class NextVisualLineTests(unittest.TestCase):
+    def test_skips_later_pieces_of_the_same_visual_line(self) -> None:
+        lines = [
+            line('given by the formula', 1, x2=150.0),
+            line('vi', 1, x1=150.5, x2=160.0),
+            line('ρi, where', 1, x1=160.5, x2=200.0),
+            line('the next visual line', 2),
+        ]
+
+        self.assertIs(next_visual_line(lines, 0), lines[3])
+
+    def test_returns_none_after_the_last_visual_line(self) -> None:
+        lines = [line('given by the formula', 1, x2=150.0), line('vi', 1, x1=150.5, x2=160.0)]
+
+        self.assertIsNone(next_visual_line(lines, 0))

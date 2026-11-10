@@ -195,6 +195,13 @@ def build_columns(line_list: list[Line], font_size: float) -> tuple[ColumnContex
         right_values = rights_by_column.get(column_index, [])
         if not right_values:
             continue
+        if column_index + 1 < len(left_edges):
+            # Where most lines end before the next column starts, those
+            # reaching beyond it span the columns, as captions below figures
+            # set across the page in nature.
+            within = [right for right in right_values if right <= left_edges[column_index + 1]]
+            if len(within) > len(right_values) / 2:
+                right_values = within
         columns.append(
             ColumnContext(
                 left=left,

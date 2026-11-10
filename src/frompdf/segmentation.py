@@ -181,12 +181,18 @@ def begins_first_line_indent(
     current: Line,
     following: Line | None,
     context: PageContext,
+    previous_start: Line | None = None,
 ) -> bool:
-    """Return whether current has the transient indent of a new paragraph's first line."""
+    """Return whether current has the transient indent of a new paragraph's first line.
+
+    following starts the next visual line, and previous_start begins the
+    visual line ending with previous, if previous is a later piece, such as a
+    citation after a formula: `GaV₄S₈²³.` in nature.
+    """
     if (
         following is None
         or current.x1 is None
-        or not is_textual_line(previous)
+        or not (is_textual_line(previous) or is_textual_line(previous_start or previous))
         or not is_prose_line(current)
         or not is_prose_line(following)
         or not compatible_style(current, following)
@@ -285,6 +291,34 @@ def visual_line_start(line_list: list[Line], index: int) -> Line:
             break
         start = other
     return start
+
+
+def next_visual_line(line_list: list[Line], index: int) -> Line | None:
+    """Return the first piece of the visual line after the one containing the line at index.
+
+    Later pieces of the same visual line, such as text resuming after inline
+    math, follow on the right and share its vertical band, as for
+    visual_line_start.
+    """
+    current = line_list[index]
+    piece = current
+    for other in line_list[index + 1 :]:
+        if (
+            other.page_no != current.page_no
+            or piece.x2 is None
+            or other.x1 is None
+            or current.y1 is None
+            or current.y2 is None
+            or other.y1 is None
+            or other.y2 is None
+            or other.x1 < piece.x2 - max(current.font_size or 0.0, 1.0) * 0.25
+        ):
+            return other
+        overlap = min(other.y2, current.y2) - max(other.y1, current.y1)
+        if overlap < min(other.y2 - other.y1, current.y2 - current.y1) * 0.5:
+            return other
+        piece = other
+    return None
 
 
 def high_confidence_continuation(
@@ -490,10 +524,13 @@ def should_start_new_group(
     following: Line | None,
     context: PageContext,
     previous_start: Line | None = None,
+    next_line: Line | None = None,
 ) -> bool:
     """Decide whether current begins a new page-local Markdown block.
 
     previous_start begins the visual line ending with previous, if different.
+    next_line starts the visual line after current's, if current continues
+    in later pieces; following is used otherwise.
     """
     if previous.page_no != current.page_no:
         return True
@@ -553,7 +590,9 @@ def should_start_new_group(
             and large_advance_supports_break(previous, current, context)
         ):
             return True
-        if begins_first_line_indent(previous, current, following, context):
+        if begins_first_line_indent(
+            previous, current, next_line or following, context, previous_start
+        ):
             return True
         if changes_face_after_short_line(previous, current, context):
             return True
@@ -669,6 +708,7 @@ def segment_page(
                 following,
                 context,
                 visual_line_start(line_list, index - 1),
+                next_visual_line(line_list, index),
             )
         if starts_group:
             groups.append([])

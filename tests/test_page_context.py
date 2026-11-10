@@ -1,7 +1,8 @@
 import unittest
+from dataclasses import replace
 
 from frompdf.models import Line
-from frompdf.page_context import margin_left_edges
+from frompdf.page_context import build_columns, margin_left_edges
 
 BODY_TEXT = 'ordinary body text filling the whole column width'
 
@@ -69,6 +70,26 @@ class MarginLeftEdgeTests(unittest.TestCase):
         self.assertEqual(
             margin_left_edges(column(40.0) + labels + column(300.0), 10.0), [40.0, 300.0]
         )
+
+
+def spanning(x1: float, x2: float, y1: float) -> Line:
+    """Build a line running from x1 to x2."""
+    return replace(line(BODY_TEXT, x1, y1), x2=x2)
+
+
+class ColumnRightEdgeTests(unittest.TestCase):
+    def test_lines_spanning_into_the_next_column_do_not_widen_a_column(self) -> None:
+        # A caption set across the page below a column, as in nature.
+        caption = [spanning(40.0, 500.0, 200.0 + 12.0 * index) for index in range(2)]
+        columns = build_columns(column(40.0, count=8) + caption + column(300.0, count=8), 10.0)
+
+        self.assertEqual([(c.left, c.right) for c in columns], [(40.0, 240.0), (300.0, 500.0)])
+
+    def test_mostly_wide_lines_keep_their_right_edge(self) -> None:
+        wide = [spanning(40.0, 500.0, 200.0 + 12.0 * index) for index in range(6)]
+        columns = build_columns(column(40.0, count=3) + wide + column(300.0, count=6), 10.0)
+
+        self.assertEqual(columns[0].right, 500.0)
 
 
 if __name__ == '__main__':
