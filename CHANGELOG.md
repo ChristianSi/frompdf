@@ -255,6 +255,13 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
   becomes oversized headings in PDFs that report no real font sizes. Its size
   is now measured across the text, by the width of its box, not by the length
   of the text.
+- Body text in the second column of a page is no longer quoted as a block
+  quote where figure labels lie between the columns, or where the column is
+  set in smaller type than the body, as the methods of a journal article.
+  Column margins now follow edges shared by several lines of prose, so stray
+  labels no longer shift them, and text starting beyond the end of the body
+  lines of the column to its left starts another column rather than being
+  indented.
 
 ## 0.1.0 - 2026-07-09
 

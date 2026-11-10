@@ -1,3 +1,4 @@
+import math
 import re
 from collections import Counter, defaultdict
 from collections.abc import Sequence
@@ -32,6 +33,12 @@ from frompdf.models import (
     Table,
     TableCell,
     TextFragment,
+)
+from frompdf.page_context import (
+    ColumnContext,
+    margin_left_edges,
+    nearest_column_index,
+    percentile_90,
 )
 from frompdf.scripts import AnnotatedText, collapse_annotated_whitespace, join_annotated_texts
 from frompdf.segmentation import find_marker_lines, segment_lines
@@ -131,11 +138,15 @@ def block_avg_weight(line_list: list[Line]) -> float | None:
     return round(weighted_sum / total_weight, 1)
 
 
-def build_body_lefts_by_page(
+def build_body_columns_by_page(
     line_list: list[Line], default_font_size: float | None
-) -> dict[int, list[float]]:
-    """Return likely body-text left edges for each page."""
-    weighted_lefts_by_page: dict[int, dict[float, int]] = defaultdict(lambda: defaultdict(int))
+) -> dict[int, list[ColumnContext]]:
+    """Return the likely columns of body text for each page.
+
+    A column extends from its left margin to where most body lines starting
+    nearest that margin end, or indefinitely without line ends to tell.
+    """
+    body_lines_by_page: dict[int, list[Line]] = defaultdict(list)
 
     for line_obj in line_list:
         if (
@@ -147,26 +158,25 @@ def build_body_lefts_by_page(
         ):
             continue
 
-        rounded_x1 = round(line_obj.x1, 1)
-        weighted_lefts_by_page[line_obj.page_no][rounded_x1] += max(len(line_obj.text), 1)
+        body_lines_by_page[line_obj.page_no].append(line_obj)
 
-    body_lefts_by_page: dict[int, list[float]] = {}
-    column_gap = max((default_font_size or 1.0) * 4.0, 40.0)
+    body_columns_by_page: dict[int, list[ColumnContext]] = {}
+    for page_no, body_lines in body_lines_by_page.items():
+        lefts = margin_left_edges(body_lines, default_font_size)
+        rights: dict[int, list[float]] = defaultdict(list)
+        for line_obj in body_lines:
+            if line_obj.x1 is not None and line_obj.x2 is not None:
+                rights[nearest_column_index(line_obj.x1, lefts)].append(line_obj.x2)
+        body_columns_by_page[page_no] = [
+            ColumnContext(
+                left,
+                percentile_90(rights[index]) if rights[index] else math.inf,
+                len(rights[index]),
+            )
+            for index, left in enumerate(lefts)
+        ]
 
-    for page_no, weighted_lefts in weighted_lefts_by_page.items():
-        if not weighted_lefts:
-            continue
-
-        clusters: list[list[float]] = []
-        for x1 in sorted(weighted_lefts):
-            if not clusters or x1 - clusters[-1][-1] > column_gap:
-                clusters.append([x1])
-            else:
-                clusters[-1].append(x1)
-
-        body_lefts_by_page[page_no] = [min(cluster) for cluster in clusters]
-
-    return body_lefts_by_page
+    return body_columns_by_page
 
 
 def is_footnote_like_block(line_list: list[Line]) -> bool:
@@ -186,21 +196,27 @@ def indent_threshold(font_size: float | None) -> float:
     return max(font_size * 0.8, 6.0)
 
 
-def is_indented_line(line_obj: Line, body_lefts: list[float], threshold: float) -> bool:
-    """Return whether a line is indented from its nearest page or column left edge."""
+def is_indented_line(line_obj: Line, body_columns: list[ColumnContext], threshold: float) -> bool:
+    """Return whether a line is indented from its nearest page or column left edge.
+
+    A line starting beyond where the body lines of the nearest column to its
+    left end rather starts another column, such as one set in smaller type
+    than the body and so without body edges of its own, as the methods in
+    nature.
+    """
     if line_obj.x1 is None:
         return False
 
-    if any(abs(line_obj.x1 - body_left) < threshold for body_left in body_lefts):
+    if any(abs(line_obj.x1 - column.left) < threshold for column in body_columns):
         return False
 
-    preceding_body_lefts = [
-        body_left for body_left in body_lefts if body_left <= line_obj.x1 - threshold
+    preceding_columns = [
+        column for column in body_columns if column.left <= line_obj.x1 - threshold
     ]
-    if not preceding_body_lefts:
+    if not preceding_columns:
         return False
 
-    return line_obj.x1 - max(preceding_body_lefts) >= threshold
+    return line_obj.x1 < max(preceding_columns, key=lambda column: column.left).right
 
 
 def is_centered_block(line_list: list[Line], threshold: float) -> bool:
@@ -240,7 +256,7 @@ def visual_line_count(line_list: list[Line]) -> int:
 
 def is_indented_blockquote_block(
     line_list: list[Line],
-    body_lefts_by_page: dict[int, list[float]],
+    body_columns_by_page: dict[int, list[ColumnContext]],
     default_font_size: float | None,
     allow_single_line: bool = False,
 ) -> bool:
@@ -257,8 +273,8 @@ def is_indented_blockquote_block(
     threshold = indent_threshold(font_size)
 
     for line_obj in line_list:
-        body_lefts = body_lefts_by_page.get(line_obj.page_no, [])
-        if not body_lefts or not is_indented_line(line_obj, body_lefts, threshold):
+        body_columns = body_columns_by_page.get(line_obj.page_no, [])
+        if not body_columns or not is_indented_line(line_obj, body_columns, threshold):
             return False
 
     return not is_centered_block(line_list, threshold)
@@ -267,7 +283,7 @@ def is_indented_blockquote_block(
 def is_blockquote_block(
     line_list: list[Line],
     default_font_size: float | None,
-    body_lefts_by_page: dict[int, list[float]],
+    body_columns_by_page: dict[int, list[ColumnContext]],
     follows_blockquote: bool = False,
 ) -> bool:
     """Return whether a group of lines should be rendered as a Markdown block quote."""
@@ -279,7 +295,7 @@ def is_blockquote_block(
 
     return is_indented_blockquote_block(
         line_list,
-        body_lefts_by_page,
+        body_columns_by_page,
         default_font_size,
         allow_single_line=follows_blockquote,
     )
@@ -289,7 +305,7 @@ def markdown_block_from_lines(
     line_list: list[Line],
     page_number_map: dict[int, PageNumber],
     default_font_size: float | None,
-    body_lefts_by_page: dict[int, list[float]],
+    body_columns_by_page: dict[int, list[ColumnContext]],
     page_layouts: dict[int, PageLayout],
     word_counts: Counter[str],
     mixed_case_words: set[str],
@@ -313,7 +329,7 @@ def markdown_block_from_lines(
         and not marker_line
         and list_marker is None
         and is_blockquote_block(
-            line_list, default_font_size, body_lefts_by_page, follows_blockquote
+            line_list, default_font_size, body_columns_by_page, follows_blockquote
         )
         else Paragraph
     )
@@ -361,7 +377,7 @@ def merge_continued_groups(
     group_list: list[list[Line]],
     page_layouts: dict[int, PageLayout],
     default_font_size: float | None,
-    body_lefts_by_page: dict[int, list[float]],
+    body_columns_by_page: dict[int, list[ColumnContext]],
     heading_lines: dict[int, int],
     list_item_lines: dict[int, int],
 ) -> list[list[Line]]:
@@ -395,14 +411,14 @@ def merge_continued_groups(
             )
         ):
             previous_is_quote = is_blockquote_block(
-                merged[-1], default_font_size, body_lefts_by_page
+                merged[-1], default_font_size, body_columns_by_page
             )
             current_is_quote = is_blockquote_block(
-                group, default_font_size, body_lefts_by_page, previous_is_quote
+                group, default_font_size, body_columns_by_page, previous_is_quote
             )
             joined = merged[-1] + group
             if previous_is_quote == is_blockquote_block(
-                joined, default_font_size, body_lefts_by_page
+                joined, default_font_size, body_columns_by_page
             ) and (
                 current_is_quote == previous_is_quote
                 or continues_previous_alignment(merged[-1], group, page_layouts)
@@ -668,7 +684,7 @@ def lines_to_markdown_blocks(
     line_list = remaining_lines
     default_font_size = dominant_document_font_size(line_list)
     document_median_weight = document_median_avg_weight(line_list)
-    body_lefts_by_page = build_body_lefts_by_page(line_list, default_font_size)
+    body_columns_by_page = build_body_columns_by_page(line_list, default_font_size)
     source_positions = {id(line): index for index, line in enumerate(line_list)}
     body_lines, notes = extract_footnotes(line_list, default_font_size)
     heading_lines = find_typographic_heading_lines(body_lines)
@@ -686,7 +702,7 @@ def lines_to_markdown_blocks(
             ),
             page_layouts,
             default_font_size,
-            body_lefts_by_page,
+            body_columns_by_page,
             heading_lines,
             list_items.item_of_line,
         ),
@@ -703,7 +719,7 @@ def lines_to_markdown_blocks(
                 current_lines,
                 page_number_map,
                 default_font_size,
-                body_lefts_by_page,
+                body_columns_by_page,
                 page_layouts,
                 word_counts,
                 mixed_case_words,

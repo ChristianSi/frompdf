@@ -4,7 +4,7 @@ from collections import Counter
 from dataclasses import replace
 
 from frompdf.blocks import (
-    build_body_lefts_by_page,
+    build_body_columns_by_page,
     lines_to_markdown_blocks,
     merge_continued_groups,
 )
@@ -236,7 +236,7 @@ class GroupMergeTests(unittest.TestCase):
             groups,
             build_page_layouts(lines),
             10.0,
-            build_body_lefts_by_page(lines, 10.0),
+            build_body_columns_by_page(lines, 10.0),
             {},
             {},
         )

@@ -12,6 +12,10 @@ from frompdf.blocks import (
 )
 from frompdf.lines import average_font_weight, dominant_font_name
 from frompdf.models import BlockQuote, Line, PageNumber, Paragraph
+from frompdf.page_context import ColumnContext
+
+# A body column whose lines run from 42.5 to 300.
+BODY_COLUMNS = {1: [ColumnContext(42.5, 300.0, 10)]}
 
 
 def paragraph(text: str, font_size: float, avg_weight: float | None = None) -> Paragraph:
@@ -110,7 +114,7 @@ class BlockQuoteDetectionTests(unittest.TestCase):
             is_blockquote_block(
                 [attribution],
                 default_font_size=10.5,
-                body_lefts_by_page={1: [42.5]},
+                body_columns_by_page=BODY_COLUMNS,
                 follows_blockquote=True,
             )
         )
@@ -122,7 +126,7 @@ class BlockQuoteDetectionTests(unittest.TestCase):
             is_blockquote_block(
                 [ordinary_line],
                 default_font_size=10.5,
-                body_lefts_by_page={1: [42.5]},
+                body_columns_by_page=BODY_COLUMNS,
             )
         )
 
@@ -144,7 +148,7 @@ class BlockQuoteDetectionTests(unittest.TestCase):
             with self.subTest(name):
                 self.assertEqual(
                     is_blockquote_block(
-                        line_list, default_font_size=10.5, body_lefts_by_page={1: [42.5]}
+                        line_list, default_font_size=10.5, body_columns_by_page=BODY_COLUMNS
                     ),
                     expected,
                 )
@@ -156,7 +160,7 @@ class BlockQuoteDetectionTests(unittest.TestCase):
         ]
 
         self.assertFalse(
-            is_blockquote_block(caption, default_font_size=10.5, body_lefts_by_page={1: [42.5]})
+            is_blockquote_block(caption, default_font_size=10.5, body_columns_by_page=BODY_COLUMNS)
         )
 
     def test_right_aligned_and_indented_quotes_remain_quoted(self) -> None:
@@ -175,8 +179,29 @@ class BlockQuoteDetectionTests(unittest.TestCase):
             with self.subTest(name):
                 self.assertTrue(
                     is_blockquote_block(
-                        quote, default_font_size=10.5, body_lefts_by_page={1: [42.5]}
+                        quote, default_font_size=10.5, body_columns_by_page=BODY_COLUMNS
                     )
+                )
+
+    def test_lines_beyond_the_end_of_body_lines_start_another_column(self) -> None:
+        # A column in smaller type than the body has no body edges of its own,
+        # as the methods in nature.
+        next_column = [
+            positioned_line('methods set in smaller type in the next column', 320.0, 560.0),
+            positioned_line('without any body text of their own', 320.0, 560.0, y1=20.0),
+        ]
+        wider_column = {1: [ColumnContext(42.5, 580.0, 10)]}
+
+        for name, columns, expected in (
+            ('next column', BODY_COLUMNS, False),
+            ('within a wider column', wider_column, True),
+        ):
+            with self.subTest(name):
+                self.assertEqual(
+                    is_blockquote_block(
+                        next_column, default_font_size=10.5, body_columns_by_page=columns
+                    ),
+                    expected,
                 )
 
 

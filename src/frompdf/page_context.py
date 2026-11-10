@@ -3,7 +3,12 @@ from dataclasses import dataclass
 from itertools import pairwise
 from statistics import median
 
-from frompdf.line_features import close_font_size, same_physical_line, visibly_different_font_sizes
+from frompdf.line_features import (
+    close_font_size,
+    is_prose_line,
+    same_physical_line,
+    visibly_different_font_sizes,
+)
 from frompdf.models import Line
 
 # Paragraph indentation is normally a modest offset from the body margin. Larger
@@ -34,6 +39,10 @@ BLANK_LINE_ADVANCE_RATIO = 1.7
 # Margin clusters farther apart than this are treated as separate columns.
 MIN_COLUMN_GAP = 40.0
 MIN_COLUMN_GAP_EM = 4.0
+# A left edge shared by this many lines of prose is established as a margin.
+# Figure labels rarely share an edge with that much text, while three lines
+# are few enough for a column ending soon after the top of a page.
+MIN_ESTABLISHED_EDGE_LINES = 3
 
 # Sparse synthetic or highly irregular pages should retain pdftext's decisions.
 MIN_RHYTHM_SAMPLES = 3
@@ -88,33 +97,70 @@ def dominant_page_font_size(line_list: list[Line]) -> float:
     return max(size_weights.items(), key=lambda item: (item[1], item[0]))[0]
 
 
-def cluster_left_edges(line_list: list[Line], font_size: float) -> list[float]:
-    """Return likely body-text left edges, separating widely spaced columns."""
-    weighted_lefts: dict[float, int] = defaultdict(int)
-    for line_obj in line_list:
-        if (
-            line_obj.x1 is None
-            or line_obj.font_size is None
-            or not line_obj.text
-            or not close_font_size(line_obj.font_size, font_size)
-        ):
-            continue
-        weighted_lefts[round(line_obj.x1, 1)] += max(len(line_obj.text), 1)
+def column_gap(font_size: float | None) -> float:
+    """Return the distance between left edges that separates page columns."""
+    return max(MIN_COLUMN_GAP, (font_size or 1.0) * MIN_COLUMN_GAP_EM)
 
-    if not weighted_lefts:
+
+def margin_left_edges(line_list: list[Line], font_size: float | None) -> list[float]:
+    """Return the left margins of page columns formed by the given body lines.
+
+    Left edges closer than the column gap form one column. Its leftmost common
+    edge is the continuation-line margin; modest first-line indents remain in
+    the same column. Where the column has an established edge, its leftmost
+    one is the margin, so that stray short lines just left of a column, as the
+    labels of a figure beside it in nature, neither shift its margin nor join
+    it to the next column. Columns with only stray lines keep their leftmost
+    edge.
+    """
+    lefts = sorted(
+        round(line_obj.x1, 1) for line_obj in line_list if line_obj.x1 is not None and line_obj.text
+    )
+    if not lefts:
         return []
 
-    cluster_gap = max(MIN_COLUMN_GAP, font_size * MIN_COLUMN_GAP_EM)
+    established = established_left_edges(line_list, font_size)
     clusters: list[list[float]] = []
-    for left in sorted(weighted_lefts):
-        if not clusters or left - clusters[-1][-1] > cluster_gap:
+    for left in lefts:
+        if not clusters or left - clusters[-1][-1] > column_gap(font_size):
             clusters.append([left])
         else:
             clusters[-1].append(left)
 
-    # The leftmost common edge in a cluster is the continuation-line margin;
-    # modest first-line indents remain in the same cluster.
-    return [min(cluster) for cluster in clusters]
+    margins: list[float] = []
+    for cluster in clusters:
+        established_in_cluster = [edge for edge in established if cluster[0] <= edge <= cluster[-1]]
+        margins.append(min(established_in_cluster, default=cluster[0]))
+    return margins
+
+
+def established_left_edges(line_list: list[Line], font_size: float | None) -> list[float]:
+    """Return the left edges shared by enough lines of prose, as their leftmost value."""
+    tolerance = max(1.5, (font_size or 1.0) * LEFT_EDGE_CLUSTER_TOLERANCE_EM)
+    groups: list[list[float]] = []
+    prose_lefts = sorted(
+        round(line_obj.x1, 1)
+        for line_obj in line_list
+        if line_obj.x1 is not None and is_prose_line(line_obj)
+    )
+    for left in prose_lefts:
+        if not groups or left - groups[-1][-1] > tolerance:
+            groups.append([left])
+        else:
+            groups[-1].append(left)
+    return [group[0] for group in groups if len(group) >= MIN_ESTABLISHED_EDGE_LINES]
+
+
+def cluster_left_edges(line_list: list[Line], font_size: float) -> list[float]:
+    """Return likely body-text left edges, separating widely spaced columns."""
+    return margin_left_edges(
+        [
+            line_obj
+            for line_obj in line_list
+            if line_obj.font_size is not None and close_font_size(line_obj.font_size, font_size)
+        ],
+        font_size,
+    )
 
 
 def nearest_column_index(x1: float, left_edges: list[float] | tuple[float, ...]) -> int:
