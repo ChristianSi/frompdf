@@ -32,3 +32,6 @@ htmlcov/
 # Local environment files
 .env
 .env.*
+
+# Personal Claude Code settings
+.claude/settings.local.json
