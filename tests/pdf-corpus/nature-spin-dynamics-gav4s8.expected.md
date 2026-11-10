@@ -438,6 +438,7 @@ the few GHz range. The excitation mechanism of this coherent
 collective spin motion has been assigned to the ultrafast photoinduced
 modulation of the magnetocrystalline anisotropy of
 GaV<sub>4</sub>S<sub>8</sub><sup>23</sup>.
+
 The comprehensive set of the Δ*θ* traces clearly shows that the
 nature of the coherent and incoherent spin dynamics changes
 character depending on the location in the magnetic phase
@@ -720,6 +721,7 @@ the phase transitions is shown in Fig. 5. The reduction of the spin
 correlation length in the SkL and Cyc phase considerably lowers
 the magnon mean free path, encoded by the inverse width of the
 magnon lines in the spectral function.
+
 The magnon thermal conductivity is given by *κ* ¼ ∑<sub>i</sub>*c<sub>i</sub>viρi*, where
 *c<sub>i</sub>* is the specific heat of mode *i*, *v<sub>i</sub>* is its velocity and *ρ<sub>i</sub>* is the mean
 free path. The latter can be estimated via the magnon spectral
@@ -765,9 +767,7 @@ Fig. 5 Magnon peak width extracted from simulated spectral functions. A
 
 Gaussian fit of magnon peaks is performed on the cuts of the magnon
 spectral function S(*q*, *ω* = 8 meV) and the magnon peak width *δq* is
-
 determined. Plotted is the magnetic field dependence. The blue-shaded
-
 areas are guides to the eye indicating the magnetic phase transition.
 
 manipulating the domain structure by means of external electric
@@ -802,7 +802,6 @@ similar to Ref. <sup>55</sup>. As starting material for growth, the preliminary 
 powder was used. The polycrystals were prepared by solid state reactions
 using high-purity elements: Ga (99.9999%), V (99.5%) and S (99.999%). The iodine was
 utilized as the transport agent. The crystal growth was performed at temperatures
-
 between 800 and 850 °C. Perfect truncated octahedron-like samples with shiny faces
 and dimension up to 5 mm were obtained after 2 month of transport.
 
