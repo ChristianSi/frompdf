@@ -121,7 +121,7 @@ spin precession experiments.
 
 Results
 
-##### Magnetic properties and phase diagram of GaV<sub>4</sub>S<sub>8</sub>. GaV<sub>4</sub>S<sub>8</sub> is a
+**Magnetic properties and phase diagram of GaV<sub>4</sub>S<sub>8</sub>**. GaV<sub>4</sub>S<sub>8</sub> is a
 
 multiferroic semiconductor from the lacunar spinel family, with a
 non-chiral polar crystal structure. The magnetic phase diagram of
@@ -169,7 +169,7 @@ spectroscopy below the magnetic ordering temperature, *T*<sub>C</sub> ~13
 
 Magnetic Field (mT)
 
-##### Paramagnet
+Paramagnet
 
 \-
 
@@ -738,8 +738,8 @@ experiment make a quantitative comparison difficult in this region,
 but the overall trend of decreasing thermal conductivity in the non-collinear
 SkL and Cyc phase compared to the FM phase is robust.
 Such domain-wall driven thermal conductivity decrease is analogous
-
-##### to that observed in ferroelectric Pb(Zr<sub>0.3</sub>Ti<sub>0.7</sub>)O<sub>3</sub>, where a decrease of phonon thermal conductivity of 11% has been achieved by
+to that observed in ferroelectric Pb(Zr<sub>0.3</sub>Ti<sub>0.7</sub>)O<sub>3</sub>, where a decrease of
+phonon thermal conductivity of 11% has been achieved by
 
 [[PAGE:7|VISIBLE:6]]Fig. 4 Simulated spin texture and magnon spectra. a Representative spin textures and b magnon spectral functions, obtained from atomistic spin
 dynamics simulations of GaV<sub>4</sub>S<sub>8</sub> at *T* = 12 K and magnetic field magnitudes, as indicated at the top of each panel.
@@ -851,8 +851,7 @@ dynamical structure factor,
 Z þ1
 1
 
-### ð<sup>q;</sup> <sup>ω</sup>Þ¼ 1
-
+ð<sup>q;</sup> <sup>ω</sup>Þ¼ 1
 ffiffiffiffiffi\
 2*π* p *N*
 

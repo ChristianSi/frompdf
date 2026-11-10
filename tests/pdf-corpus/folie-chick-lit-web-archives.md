@@ -346,8 +346,7 @@ existing literary canon of values (cf. Hube et al., 2017; Wojcik & Picard, 2019<
 | 2015b | Chick lit or Chick literature is genre fiction which addresses issues of modern womanhood, often humorously and lightheartedly. [reference: Hooten, 2007] | unaltered |
 | 2016–2020 | Chick lit or Chick literature is genre fiction, which “consists of heroine-centered narrative that focus on the trials and tribulations of their individual protagonists.” [reference: Smith, 2008] | Chick lit scholars note that the term was first used ironically in 1995 by Cris Mazza and Jeffrey DeShell as the title for their edited anthology *Chick Lit: Postfeminist Fiction*, which contains 22 short fiction pieces in response to Mazza and DeShell’s call for “postfeminist writing.” [reference: Mazza & DeShell, 1995] |
 
-## [[PAGE:11|VISIBLE:35]]structural inequalities such as gender and racial bias,<sup>14</sup> there is more space for new, less
-
+[[PAGE:11|VISIBLE:35]]structural inequalities such as gender and racial bias,<sup>14</sup> there is more space for new, less
 established, and also anti-canonical topics, which, according to the encyclopedia’s
 guidelines, should be described “from a neutral point of view (NPOV)” (Wikipedia:
 “Neutral point of view”, 12 July 2020f),<sup>15</sup> as is the ideal for all articles in the
