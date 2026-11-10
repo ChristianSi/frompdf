@@ -230,10 +230,10 @@ RGB: 5 181 218
 HSL: 190 95 43
 CMYK: 84 15 0 15
 
-> **Please note:** Any colors reproduced in print may
-> not be accurate, therefore in order to achieve the best
-> possible results in printing, use CMYK and consult
-> with the printer.
+**Please note:** Any colors reproduced in print may
+not be accurate, therefore in order to achieve the best
+possible results in printing, use CMYK and consult
+with the printer.
 
 ### [[PAGE:11|VISIBLE:9]]Visuals
 

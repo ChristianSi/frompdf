@@ -260,8 +260,8 @@ respectively.
 > 6
 >
 > 0.0
-
-Frequency (GHz)
+>
+> Frequency (GHz)
 
 Frequency
 
@@ -416,44 +416,42 @@ fast demagnetization stems from the photoexcited carrier
 relaxation process, where magnons are created either through
 direct electron-magnon scattering or by the phonons emitted
 during non-radiative carrier relaxation process<sup>41</sup>. After this initial
-
-> process, Δ*θ* shows a relatively slow demagnetization, and an even
-> slower subsequent remagnetization. The demagnetization and
-> remagnetization processes also occur in the paramagnetic phase
-> slightly above *T*<sub>C</sub>. Because GaV<sub>4</sub>S<sub>8</sub> is a semiconductor, the
-> demagnetization process is completed in a relatively slow timescale
-> of ~200–400 ps, as widely observed in semiconductor
-> magnets<sup>24</sup>. In general, in semiconductors this slow demagnetization
-> dynamics is understood in terms of spin-lattice thermalization,
-> which takes place after the rapid heating of the lattice
-> system due to an efficient energy transfer from the electron system
-> to the lattice system<sup>24</sup>. An interesting observation is that at
-> 11.5 K and at a low magnetic field Δ*θ* changes sign and takes a
-> positive value, indicating that magnetization is enhanced by the
-> photoexcitation. The origin of this lies in the peak structure of
-> magnetic susceptibility around the phase boundary between the
-> Cyc and paramagnetic phases<sup>23,42</sup>. In addition to these incoherent
-> spin dynamics, a clear oscillatory structure appears in the magnetically
-> ordered phase with a typical period of 100–300 ps, i.e., in
-> the few GHz range. The excitation mechanism of this coherent
-> collective spin motion has been assigned to the ultrafast photoinduced
-> modulation of the magnetocrystalline anisotropy of
-> GaV<sub>4</sub>S<sub>8</sub><sup>23</sup>.
-> The comprehensive set of the Δ*θ* traces clearly shows that the
-> nature of the coherent and incoherent spin dynamics changes
-> character depending on the location in the magnetic phase
-> diagram. We first discuss the coherent oscillatory response in the
-> different magnetic phases. To do this, we fit the data using a
-> damped cosine oscillation, superimposed on a bi-exponential
-> function that accounts for the incoherent demagnetization and
-> remagnetization dynamics. We disregard the dynamics on the
-> earliest timescale (up to ~40 ps) originating from ultrafast carrier
-> relaxation processes [see supplementary information]. Figure 2a
-> shows data taken at *T* = 10 K for various fields in the Cyc, SkL,
-> and FM phases, along with the phenomenological model fits to
-> the data (black lines). To more clearly show the coherent
-> oscillatory component, we replot the data in Fig. 2b after
-
+process, Δ*θ* shows a relatively slow demagnetization, and an even
+slower subsequent remagnetization. The demagnetization and
+remagnetization processes also occur in the paramagnetic phase
+slightly above *T*<sub>C</sub>. Because GaV<sub>4</sub>S<sub>8</sub> is a semiconductor, the
+demagnetization process is completed in a relatively slow timescale
+of ~200–400 ps, as widely observed in semiconductor
+magnets<sup>24</sup>. In general, in semiconductors this slow demagnetization
+dynamics is understood in terms of spin-lattice thermalization,
+which takes place after the rapid heating of the lattice
+system due to an efficient energy transfer from the electron system
+to the lattice system<sup>24</sup>. An interesting observation is that at
+11.5 K and at a low magnetic field Δ*θ* changes sign and takes a
+positive value, indicating that magnetization is enhanced by the
+photoexcitation. The origin of this lies in the peak structure of
+magnetic susceptibility around the phase boundary between the
+Cyc and paramagnetic phases<sup>23,42</sup>. In addition to these incoherent
+spin dynamics, a clear oscillatory structure appears in the magnetically
+ordered phase with a typical period of 100–300 ps, i.e., in
+the few GHz range. The excitation mechanism of this coherent
+collective spin motion has been assigned to the ultrafast photoinduced
+modulation of the magnetocrystalline anisotropy of
+GaV<sub>4</sub>S<sub>8</sub><sup>23</sup>.
+The comprehensive set of the Δ*θ* traces clearly shows that the
+nature of the coherent and incoherent spin dynamics changes
+character depending on the location in the magnetic phase
+diagram. We first discuss the coherent oscillatory response in the
+different magnetic phases. To do this, we fit the data using a
+damped cosine oscillation, superimposed on a bi-exponential
+function that accounts for the incoherent demagnetization and
+remagnetization dynamics. We disregard the dynamics on the
+earliest timescale (up to ~40 ps) originating from ultrafast carrier
+relaxation processes [see supplementary information]. Figure 2a
+shows data taken at *T* = 10 K for various fields in the Cyc, SkL,
+and FM phases, along with the phenomenological model fits to
+the data (black lines). To more clearly show the coherent
+oscillatory component, we replot the data in Fig. 2b after
 [[PAGE:5|VISIBLE:4]]subtracting the incoherent component. The magnetic-field
 dependence of the oscillation frequency is shown in Fig. 2c. At
 low magnetic fields in the Cyc phase, the frequency of the
@@ -805,39 +803,39 @@ powder was used. The polycrystals were prepared by solid state reactions
 using high-purity elements: Ga (99.9999%), V (99.5%) and S (99.999%). The iodine was
 utilized as the transport agent. The crystal growth was performed at temperatures
 
-> between 800 and 850 °C. Perfect truncated octahedron-like samples with shiny faces
-> and dimension up to 5 mm were obtained after 2 month of transport.
->
-> Magnetic properties were measured by a SQUID magnetometer (MPMS 5,
-> Quantum Design) in the temperature range 1.8–400 K in magnetic fields up to 5 T.
-> Mapping of the magnetic phases shown in phase diagram, Fig. 1a of the paper, was
-> done using the data on derivatives d*M*/d*H*, taking the singularity points as the
-> phase boundaries between the cycloidal (Cyc), skyrmion (SkL), and ferromagnetic
-> (FM) phases<sup>33</sup>.
->
-> Time-resolved magneto-optical Kerr effect experiment. The experiments were
->
-> performed with a Yb:KGW regenerative amplified laser as main light
-> source (Pharos) with the repetition rate of 100 kHz. Infrared output of a non-collinear
-> optical parametric amplifier (800 nm, 40 fs) and the second harmonic
-> generation of the fundamental light (515 nm, 270 fs) were used for the pump and
-> probe pulse, respectively. The spot size of the focused pump pulses on the sample
-> was ~600 *μ*m in diameter, larger than that of the probe pulse ~250 *μ*m. The pump
-> pulse was linearly polarized, whose photon energy (1.55 eV) lies well above the
-> GaV<sub>4</sub>S<sub>8</sub> band gap of ~0.35 eV<sup>39,40</sup>. The pump-induced transient change of the Kerr
-> rotation angle of the probe pulse, Δ*θ*, was measured. The sample temperature and
-> external magnetic field were controlled with a superconducting-magnetic cryostat.
->
-> Modelling of the spin texture and calculation of the magnon spectra. To
->
-> reproduce the Cyc-SkL-FM sequence of magnetic phases, we used UppASD code<sup>58</sup>
-> to perform Monte-Carlo (MC) simulations using 72\*72\*1 supercells, and 100,000
-> Metropolis MC steps for each combination of temperature and magnetic field. The
-> parameters of the magnetic Hamiltonian were adopted from Ref. <sup>56</sup>. Particularly,
-> we used the set of constants, obtained using superexchange theory. In order to
-> compute magnon spectra, the MC calculations were followed by spin dynamics
-> simulations using the UppASD program<sup>58</sup>. The magnon spectral function, evaluated
-> numerically from the time-dependent correlation function
+between 800 and 850 °C. Perfect truncated octahedron-like samples with shiny faces
+and dimension up to 5 mm were obtained after 2 month of transport.
+
+Magnetic properties were measured by a SQUID magnetometer (MPMS 5,
+Quantum Design) in the temperature range 1.8–400 K in magnetic fields up to 5 T.
+Mapping of the magnetic phases shown in phase diagram, Fig. 1a of the paper, was
+done using the data on derivatives d*M*/d*H*, taking the singularity points as the
+phase boundaries between the cycloidal (Cyc), skyrmion (SkL), and ferromagnetic
+(FM) phases<sup>33</sup>.
+
+Time-resolved magneto-optical Kerr effect experiment. The experiments were
+
+performed with a Yb:KGW regenerative amplified laser as main light
+source (Pharos) with the repetition rate of 100 kHz. Infrared output of a non-collinear
+optical parametric amplifier (800 nm, 40 fs) and the second harmonic
+generation of the fundamental light (515 nm, 270 fs) were used for the pump and
+probe pulse, respectively. The spot size of the focused pump pulses on the sample
+was ~600 *μ*m in diameter, larger than that of the probe pulse ~250 *μ*m. The pump
+pulse was linearly polarized, whose photon energy (1.55 eV) lies well above the
+GaV<sub>4</sub>S<sub>8</sub> band gap of ~0.35 eV<sup>39,40</sup>. The pump-induced transient change of the Kerr
+rotation angle of the probe pulse, Δ*θ*, was measured. The sample temperature and
+external magnetic field were controlled with a superconducting-magnetic cryostat.
+
+Modelling of the spin texture and calculation of the magnon spectra. To
+
+reproduce the Cyc-SkL-FM sequence of magnetic phases, we used UppASD code<sup>58</sup>
+to perform Monte-Carlo (MC) simulations using 72\*72\*1 supercells, and 100,000
+Metropolis MC steps for each combination of temperature and magnetic field. The
+parameters of the magnetic Hamiltonian were adopted from Ref. <sup>56</sup>. Particularly,
+we used the set of constants, obtained using superexchange theory. In order to
+compute magnon spectra, the MC calculations were followed by spin dynamics
+simulations using the UppASD program<sup>58</sup>. The magnon spectral function, evaluated
+numerically from the time-dependent correlation function
 
 ***m**<sup>j</sup>r*0ðÞ <sup>0</sup> ð<sup>1</sup>Þ
 of the Cartesian component *j* of the magnetization ***m**<sup>j</sup>*<sub>r</sub>ðÞ*t* at the position **r** and
@@ -850,38 +848,38 @@ dynamical structure factor,
 
 ### *m<sup>j</sup>r*ðÞ<sup>t</sup>
 
-> Z þ1
-> 1
+Z þ1
+1
 
 ### ð<sup>q;</sup> <sup>ω</sup>Þ¼ 1
 
 ffiffiffiffiffi\
 2*π* p *N*
 
-> ∑
-> ***r***;***r***0
-> *ei**q***ð***rr***0
->
-> ð***r  r***0; *t*Þ*dt* ð2Þ
-> The magnon linewidth was then obtained by fitting the peaks of the spectral
-> function with Gaussians. The thermal conductivity was estimated from the
-> linewidth as explained in the main text.
->
-> *S<sup>j</sup>*
->
-> Þ
->
-> *eiωtC<sup>j</sup>*
->
-> Data availability
->
-> The data that support the findings of this study are available from the authors upon
-> reasonable request.
->
-> Code availability
->
-> The codes that support the calculations of this study are available from the authors upon
-> reasonable request.
+∑
+***r***;***r***0
+*ei**q***ð***rr***0
+
+ð***r  r***0; *t*Þ*dt* ð2Þ
+The magnon linewidth was then obtained by fitting the peaks of the spectral
+function with Gaussians. The thermal conductivity was estimated from the
+linewidth as explained in the main text.
+
+*S<sup>j</sup>*
+
+Þ
+
+*eiωtC<sup>j</sup>*
+
+Data availability
+
+The data that support the findings of this study are available from the authors upon
+reasonable request.
+
+Code availability
+
+The codes that support the calculations of this study are available from the authors upon
+reasonable request.
 
 [[PAGE:8|VISIBLE:7]]Received: 10 August 2021; Accepted: 20 May 2022;
 
