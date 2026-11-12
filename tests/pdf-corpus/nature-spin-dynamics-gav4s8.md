@@ -142,247 +142,83 @@ parallel to the polar rhombohedral axes, being either of the cubic
 <111> axes<sup>33,34,36</sup>. The temperature dependence of this anisotropy
 has been investigated by electron spin resonance (ESR)
 spectroscopy below the magnetic ordering temperature, *T*<sub>C</sub> ~13
+[[PAGE:4|VISIBLE:3]]K<sup>36</sup>. It was also demonstrated that the uniaxial anisotropy has a
+strong impact on the stability range of the SkL phase in lacunar
+spinels<sup>33,34,37,38</sup>, and specific to GaV<sub>4</sub>S<sub>8</sub> it confines the orientation
+of the skyrmion tubes along the easy axis<sup>33,37</sup>.
 
-**a bc**
+[[PAGE:3|VISIBLE:2]]
 
-0
+```
+a bc                                       0                              0
 
-0
+                                                                                               30 mT
+                                      (mdeg.)                       (mdeg.)                    40 mT
+                                           -1                   20 mT    -1                    50 mT
+                                                                40 mT                          70 mT
+                                                                60 mT                          80 mT
+                                         -                      120 mT -
+                                           -2             8 K 10 K       -2                    120 mT
 
-(mdeg.)
+Magnetic Field (mT)            Paramagnet
+                                         de
+                                           0                              0
 
-(mdeg.)
+                                                                20 mT
+                                                                40 mT                          30 mT
+                                      (mdeg.)                       (mdeg.)                    60 mT
+                                           -1                   50 mT    -1                    100 mT
+                                                                100 mT
+                         Cyc             - -2                   110 mT - -2                    150 mT
+                                                                120 mT
+                                                       11.5 K 14.5 K
 
-30 mT
-40 mT
-50 mT
-70 mT
-80 mT
-
-20 mT
-40 mT
-60 mT
-
--1
-
--1
-
-Magnetic Field (mT)
-
-Paramagnet
-
-\-
-
-120 mT
-
-\-
-
-120 mT
-
--2
-
--2
-
-8 K 10 K
-
-**de**
-
-0
-
-0
-
-20 mT
-40 mT
-50 mT
-
-(mdeg.)
-
-(mdeg.)
-
-30 mT
-60 mT
-
--1
-
--1
-
-100 mT
-110 mT
-120 mT
-
-100 mT
-150 mT
-
-##### Cyc
-
-\-
-
-\-
-
--2
-
--2
-
-11.5 K 14.5 K
-
-0 1000 2000
-Time (ps)
-
-0 1000 2000
-Time (ps)
-
-Temperature (K)
+                                             0 1000 2000                   0 1000 2000
+               Temperature (K)
+                                                  Time (ps)                     Time (ps)
+```
 
 Fig. 1 Photoinduced **Δ*θ*** dynamics in the different magnetic phases of GaV<sub>4</sub>S<sub>8</sub>.a Magnetic phase diagram of GaV<sub>4</sub>S<sub>8</sub>. Vertical dashed lines indicate the
 temperatures where trMOKE measurements were performed. b–e Δ*θ* traces under different external magnetic fields at 8 K, 10 K, 11.5 K, and 14.5 K,
 respectively.
 
-[[PAGE:4|VISIBLE:3]]**a**
+[[PAGE:4|VISIBLE:3]]
 
-**c**
+```
+a                                      c                                   e
+   0.0                                       15                                  6
+                                             14
+   -0.5                      30 mT           13
+                             40 mT           12               FM                 4
+(mdeg.)                      50 mT  Frequency (GHz)                     Frequency
+   -1.0                      60 mT            6                             (GHz)
+   -1.5                      75 mT            5         SkL        Cyc           2              Cyc
+-                            120 mT           4                    Sk                           Sk
+   -2.0                                       3  Cyc               FM            0
+                                              2                                       8 10 12
+         200 400 600 800                       0 40 80 120
+            Time (ps)                           Magnetic Field (mT)                  Temperature (K)
 
-**e**
+b                                      d                                    f  300
+   0.0                                      1.2
+   -0.3                                                            Cyc
+                             30 mT          0.8                    Sk          200
+(mdeg.)                      40 mT  (arb. units)                   FM Lifetime (ps)
+                             50 mT Amplitude
+                             60 mT          0.4 Cyc                            100       Cyc
+-                            75 mT                      FM SkL                           Sk
+                             120 mT
+                                            0.0                                  0
+         200 400 600 800                       0 40 80 120                           8 10 12
 
-> SkL
-> FM
-> 6
-> 5
-> 4
-> 3
-> 2
-> 0 40 80 120
-> Magnetic Field (mT)
-> 15
-> 14
-> 13
-> 12
->
-> 6
->
-> 0.0
->
-> Frequency (GHz)
-
-Frequency
-
--0.5
-
-30 mT
-40 mT
-50 mT
-60 mT
-75 mT
-
-(mdeg.)
-
-4
-
-(GHz)
-
--1.0
-
-2
-
-> Cyc
-> Sk
->
-> \-
->
-> Cyc
-> Sk
->
-> -1.5
-
-120 mT
-
-FM
-
-##### Cyc
-
--2.0
-
-0
-
-8 10 12
-Temperature (K)
-
-200 400 600 800
-Time (ps)
-
-**b**
-
-**d**
-
-**f**
-
-300
-
-1.2
-
-> Cyc
-> Sk
-> FM
-> -0.3
-> 0.0
-
-Lifetime (ps)
-
-(arb. units)
-
-(mdeg.)
-
-30 mT
-40 mT
-50 mT
-60 mT
-75 mT
-
-Amplitude
-
-200
-
-0.8
-
-##### Cyc
-
-100
-
-0.4
-
-\-
-
-> Cyc
-> Sk
-
-##### FM SkL
-
-120 mT
-
-0
-
-0.0
-
-8 10 12
-
-0 40 80 120
-Magnetic Field (mT)
-
-200 400 600 800
-Time (ps)
-
-Temperature (K)
+            Time (ps)                           Magnetic Field (mT)                  Temperature (K)
+```
 
 Fig. 2 Coherent spin precession in the FM, SkL, and Cyc phases. a Δ*θ* traces in the first 800 ps shown with fit curves (black solid lines) at 10 K.
-
 b Coherent oscillatory component of the data shown in a. c, d Magnetic-field dependence of the frequency and amplitude of the coherent oscillation. The
 blue-shaded areas are guides to the eye indicating where the magnetic phase transition occurs. e, f Temperature dependence of the frequency and lifetime
 of the coherent oscillation, with the magnetic field fixed at 30 mT (60 mT) for the Cyc (SkL) phase. Error bars are the standard deviation of the fitting
 parameters.
-
-K<sup>36</sup>. It was also demonstrated that the uniaxial anisotropy has a
-strong impact on the stability range of the SkL phase in lacunar
-spinels<sup>33,34,37,38</sup>, and specific to GaV<sub>4</sub>S<sub>8</sub> it confines the orientation
-of the skyrmion tubes along the easy axis<sup>33,37</sup>.
 
 In the trMOKE experiments, the external magnetic field is
 applied normal to the (100) crystal surface so that all of the four
@@ -555,58 +391,33 @@ magnetic field is observed. However, below *T*<sub>C</sub> the remagnetization
 time slows down across the phase transition from the FM
 phase to the SkL phase (11.5 K and 10 K) and the Cyc phase (8 K).
 The increase of the remagnetization time reaches a factor of 1.5–2
+[[PAGE:6|VISIBLE:5]]depending on the temperature, which is remarkable considering
+that it is triggered by a small change of magnetic field in a single
+material.
 
-4
+[[PAGE:5|VISIBLE:4]]
 
+```
+  4
+
+            8 K          10 K       11.5 K       14.5 K
+  3
+            FM FM                      FM
 Recovery time (ns)
+  2 Cyc          Cyc Cyc
+  1                   SkL          SkL
+                                                PM
+  0
+   0 40 80      0 40 80      0 40 80      0 50 100 150
 
-8 K
-
-10 K
-
-11.5 K
-
-14.5 K
-
-3
-
-FM
-
-FM FM
-
-2
-
-Cyc
-
-SkL
-Cyc Cyc
-
-1
-
-SkL
-
-PM
-
-> 0
-> 0 40 80
-
-0 40 80
-
-0 40 80
-
-0 50 100 150
-
-Magnetic Field (mT)
+                       Magnetic Field (mT)
+```
 
 Fig. 3 Change of the remagnetization across the magnetic phase transition. Time constant of the remagnetization process at 8 K, 10 K, 11.5 K, and 14.5 K
 are plotted. The blue-shaded areas are guides to the eye indicating the magnetic phase transition. Error bars are the standard deviation of the fitting
 parameters.
 
-[[PAGE:6|VISIBLE:5]]depending on the temperature, which is remarkable considering
-that it is triggered by a small change of magnetic field in a single
-material.
-
-As described earlier, the spin system is heated up through the
+[[PAGE:6|VISIBLE:5]]As described earlier, the spin system is heated up through the
 spin-lattice coupling in 200–400 ps, and afterwards the recovery
 of the magnetization occurs due to the heat diffusion away from
 the excited region. Indeed, the remagnetization time of a few ns is
@@ -742,36 +553,33 @@ SkL and Cyc phase compared to the FM phase is robust.
 Such domain-wall driven thermal conductivity decrease is analogous
 to that observed in ferroelectric Pb(Zr<sub>0.3</sub>Ti<sub>0.7</sub>)O<sub>3</sub>, where a decrease of
 phonon thermal conductivity of 11% has been achieved by
+[[PAGE:7|VISIBLE:6]]manipulating the domain structure by means of external electric
+field<sup>57</sup>.
 
-[[PAGE:7|VISIBLE:6]]Fig. 4 Simulated spin texture and magnon spectra. a Representative spin textures and b magnon spectral functions, obtained from atomistic spin
+Fig. 4 Simulated spin texture and magnon spectra. a Representative spin textures and b magnon spectral functions, obtained from atomistic spin
 dynamics simulations of GaV<sub>4</sub>S<sub>8</sub> at *T* = 12 K and magnetic field magnitudes, as indicated at the top of each panel.
 
-3.0
+```
+      3.0
 
-> Peak width
-> *q*
->
-> (arb. units)
->
-> 2.0
->
-> 1.0
->
-> 0.0
+q
+      2.0
 
-0 40 80 120
+(arb. units)
+Peak width
+      1.0
 
-Magnetic field (mT)
+      0.0
+         0 40 80 120
+
+             Magnetic field (mT)
+```
 
 Fig. 5 Magnon peak width extracted from simulated spectral functions. A
-
 Gaussian fit of magnon peaks is performed on the cuts of the magnon
 spectral function S(*q*, *ω* = 8 meV) and the magnon peak width *δq* is
 determined. Plotted is the magnetic field dependence. The blue-shaded
 areas are guides to the eye indicating the magnetic phase transition.
-
-manipulating the domain structure by means of external electric
-field<sup>57</sup>.
 
 To summarize, we investigated the ultrafast spin dynamics in
 different magnetic phases in GaV<sub>4</sub>S<sub>8</sub> by using time-resolved MOKE

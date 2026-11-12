@@ -229,16 +229,15 @@ through their continuous work to provision, process, and prepare *beldi*
 foods, migrants reproduced their knowledge and their symbolic connections to
 the *bled*. This knowledge and work are highly gendered and decidedly lower class.
 While the knowledge of origin and provenance of foods, of regional ecologies,
-
-**Figure 10.1.** Lemon and olive trees on the family’s land. Morocco, 2012. © Katharina
-Graf
-
 [[PAGE:7|VISIBLE:179]]yearly variations in harvest, changing prices, and the work of maintaining rural
 kinship ties even decades after migrating to the city is shared equally among
 low-income men and women, the knowledge and work of processing, preserving,
 storing, and preparing food in a *beldi* way is predominantly female.
 
-## Making *Beldi* Foods in Low-Income Homes
+[[PAGE:6|VISIBLE:178]]**Figure 10.1.** Lemon and olive trees on the family’s land. Morocco, 2012. © Katharina
+Graf
+
+## [[PAGE:7|VISIBLE:179]]Making *Beldi* Foods in Low-Income Homes
 
 Since Hajja returned from the hajj in mid-November the *riad* was always full.
 Family members from all over Morocco but especially from Hajja’s *bled* honored
@@ -320,11 +319,7 @@ world of flux.
 In other words, the categories depend on context and bodily knowledge; *beldi*
 does not mean the same thing for everyone and cannot be made by and for everyone.
 In fact, most middle- and upper-class urban Moroccans would associate
-
-[[PAGE:9|VISIBLE:181]]**Figure 10.2.** Packaged *beldi* bread sold in a supermarket. Morocco, 2017. © Katharina
-Graf
-
-*beldi* with a certain rural backwardness and *rumi* with modernity and cosmopolitanism.
+[[PAGE:9|VISIBLE:181]]*beldi* with a certain rural backwardness and *rumi* with modernity and cosmopolitanism.
 Notions of “us” and “them” are locating differences across income
 and class. Rachik’s (1997) description of *beldi* and *rumi* furniture and fashion in
 middle- and upper-income urban homes is suggestive. Whereas low tables and
@@ -335,6 +330,9 @@ similar association with regards to Moroccan and European dishes: while European
 or *rumi* dishes such as vegetable creams or pastas are considered to be urban
 and modern, *beldi* dishes such as meat stews or legume soups are associated with
 rural foodways and tradition.
+
+**Figure 10.2.** Packaged *beldi* bread sold in a supermarket. Morocco, 2017. © Katharina
+Graf
 
 At the same time, educated urban professionals who are well versed in European
 discourses surrounding what Grasseni (2016) calls the “heritage arena” are
@@ -388,10 +386,7 @@ With the beginning of the olive harvest in late November, Fatimzahra was regular
 on the phone speaking to aunts and cousins, later to acquaintances from
 other parts of Morocco. She tried to assure a supply of unprocessed olives from
 the Souss but did not succeed. The trees of her mother’s family did not carry any
-
-[[PAGE:11|VISIBLE:183]]**Figure 10.3.** Unused olive press. Morocco, 2012. © Katharina Graf
-
-olives that year, a fact that we confirmed in person during the December visit to
+[[PAGE:11|VISIBLE:183]]olives that year, a fact that we confirmed in person during the December visit to
 the countryside. Indeed, the two olive presses on her family land had remained
 unused for years, because the harvest had gradually declined to insignificant
 quantities (figure 10.3). Fatimzahra involved her entire social network to access
@@ -400,6 +395,8 @@ after one month of trying via various sources, she gave up, and we bought severa
 kilograms of “normal” (*‘adi*) preserved olives in a shop. Of course, the price of
 olives had nearly doubled in the meantime, thwarting Fatimzahra’s efforts to save
 money by provisioning them via her relatives.
+
+**Figure 10.3.** Unused olive press. Morocco, 2012. © Katharina Graf
 
 When I later asked her to explain the situation to me, she replied, “It was the
 Americans’ fault.” From one of her acquaintances near the city of Beni Mellal,

@@ -233,7 +233,9 @@ yet still benefits from the increase in accuracy.
 | BI [3, 4]    | 2*df* + 1        |
 | BVC [14, 19] | (*d* + 2)*f* + 1 |
 
-**(a)** Gaussian samples, Byzantine attack. **(b)** Exponential samples, Byzantine attack.
+```
+(a) Gaussian samples, Byzantine attack. (b) Exponential samples, Byzantine attack.
+```
 
 **Figure 1** Empirical simulations measuring PBA’s accuracy compared to baseline algorithms given
 data distributed by a Gaussian (symmetric) and Exponential (asymmetric) distributions.

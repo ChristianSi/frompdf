@@ -165,11 +165,8 @@ werden.
 Ein wichtiger Aspekt der Mapping-Aufgaben ist es die
 Eingaben der Lernenden so früh und umfangreich wie sinnvoll
 und möglich zu prüfen. Bereits bei den Eingaben werden
-clientseitige Abfragen genutzt, welche durch JavaScript rea-
-
-#### Figure 2: Beispiel von Constraints
-
-lisiert werden. Diese beziehen sich auf grundsätzliche Strukturen
+clientseitige Abfragen genutzt, welche durch JavaScript realisiert
+werden. Diese beziehen sich auf grundsätzliche Strukturen
 und Regeln bei den Tabellendefinitionen. Weiterhin
 kann der äquivalente DDL-Code aus den entstandenen Relationen
 erzeugt werden, um eine Prüfung auf dem Datenbankserver
@@ -181,6 +178,8 @@ beziehen. Die Korrektheit einer Lösung kann zwar
 generell nicht automatisch entschieden werden, aber Fehler
 können weitestgehend erkannt werden. Die Gestaltung der
 Aufgaben kann dies erleichtern.
+
+#### Figure 2: Beispiel von Constraints
 
 Bereits bei der Eingabe sind ausgewählte Strukturen und
 Regeln bezogen auf die Tabellen und Constraints einzuhalten,
