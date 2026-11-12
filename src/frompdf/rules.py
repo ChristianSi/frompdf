@@ -339,3 +339,131 @@ def extract_rules(input_path: Path, page_list: Sequence[Page]) -> dict[int, list
     finally:
         pdf.close()
     return rules_by_page
+
+
+# A drawing box (left, top, right, bottom) in `pdftext` coordinates.
+DrawingBox = tuple[float, float, float, float]
+
+# The unit square that image and shading objects are drawn into.
+UNIT_SQUARE = ((0.0, 0.0), (1.0, 0.0), (0.0, 1.0), (1.0, 1.0))
+
+
+def path_points(page_object: PageObject, matrix: Matrix) -> list[tuple[float, float]]:
+    """Return the points of all segments of a path, including curve control points.
+
+    The control points of a curve enclose it, so their box encloses the path.
+    """
+    return [
+        segment_point(pdfium_c.FPDFPath_GetPathSegment(page_object, index), matrix)
+        for index in range(max(pdfium_c.FPDFPath_CountSegments(page_object), 0))
+    ]
+
+
+def clipped_box(points: Sequence[tuple[float, float]], clip: ClipBox | None) -> ClipBox | None:
+    """Return the box (left, bottom, right, top) of points clipped to a box, if visible."""
+    if not points:
+        return None
+    xs = [x for x, _ in points]
+    ys = [y for _, y in points]
+    box = (min(xs), min(ys), max(xs), max(ys))
+    if clip is not None:
+        box = (
+            max(box[0], clip[0]),
+            max(box[1], clip[1]),
+            min(box[2], clip[2]),
+            min(box[3], clip[3]),
+        )
+        if box[2] < box[0] or box[3] < box[1]:
+            return None
+    return box
+
+
+def collect_page_drawings(
+    page_objects: Sequence[PageObject],
+    container: Matrix,
+    clip: ClipBox | None,
+    boxes: list[ClipBox],
+) -> None:
+    """Append the boxes of visible drawings by page objects, descending into form XObjects.
+
+    Paths count where their stroke or fill shows on white paper; images and
+    shadings always do.
+    """
+    for page_object in page_objects:
+        object_type = pdfium_c.FPDFPageObj_GetType(page_object)
+        if object_type not in (
+            pdfium_c.FPDF_PAGEOBJ_FORM,
+            pdfium_c.FPDF_PAGEOBJ_PATH,
+            pdfium_c.FPDF_PAGEOBJ_IMAGE,
+            pdfium_c.FPDF_PAGEOBJ_SHADING,
+        ):
+            continue
+        object_clip = object_clip_box(page_object, container, clip)
+        matrix = multiply(object_matrix(page_object), container)
+        if object_type == pdfium_c.FPDF_PAGEOBJ_FORM:
+            count = max(pdfium_c.FPDFFormObj_CountObjects(page_object), 0)
+            children = [
+                pdfium_c.FPDFFormObj_GetObject(page_object, index) for index in range(count)
+            ]
+            collect_page_drawings(children, matrix, object_clip, boxes)
+            continue
+        if object_type == pdfium_c.FPDF_PAGEOBJ_PATH:
+            fill_mode, stroke = ctypes.c_int(), ctypes.c_int()
+            if not pdfium_c.FPDFPath_GetDrawMode(page_object, fill_mode, stroke):
+                continue
+            if not (
+                (stroke.value and is_visible_color(page_object, stroke=True))
+                or (fill_mode.value and is_visible_color(page_object, stroke=False))
+            ):
+                continue
+            points = path_points(page_object, matrix)
+        elif object_type == pdfium_c.FPDF_PAGEOBJ_IMAGE:
+            points = [transform(matrix, x, y) for x, y in UNIT_SQUARE]
+        else:
+            left, bottom, right, top = (ctypes.c_float() for _ in range(4))
+            if not pdfium_c.FPDFPageObj_GetBounds(page_object, left, bottom, right, top):
+                continue
+            points = [
+                transform(container, x, y)
+                for x in (left.value, right.value)
+                for y in (bottom.value, top.value)
+            ]
+        box = clipped_box(points, object_clip)
+        if box is not None:
+            boxes.append(box)
+
+
+def extract_drawings(input_path: Path, page_list: Sequence[Page]) -> dict[int, list[DrawingBox]]:
+    """Return the boxes of visible drawings on each page, by page number starting at 1.
+
+    Drawings are vector paths, images, and shadings, such as the plots of a
+    figure. Rotated pages are skipped, as for rules.
+    """
+    drawings_by_page: dict[int, list[DrawingBox]] = {}
+    pdf = pdfium.PdfDocument(input_path)
+    try:
+        for page_no, page_dict in enumerate(page_list, start=1):
+            if page_dict.get('rotation', 0) or page_no > len(pdf):
+                continue
+            page = pdf[page_no - 1]
+            try:
+                # Mirror pdftext's mapping from PDF page space to its coordinates.
+                left, bottom, _, top = page.get_bbox()
+                height = math.ceil(abs(top - bottom))
+                raw_boxes: list[ClipBox] = []
+                count = max(pdfium_c.FPDFPage_CountObjects(page.raw), 0)
+                collect_page_drawings(
+                    [pdfium_c.FPDFPage_GetObject(page.raw, index) for index in range(count)],
+                    IDENTITY,
+                    None,
+                    raw_boxes,
+                )
+            finally:
+                page.close()
+            drawings_by_page[page_no] = [
+                (x1 - left, height - (y2 - bottom), x2 - left, height - (y1 - bottom))
+                for x1, y1, x2, y2 in raw_boxes
+            ]
+    finally:
+        pdf.close()
+    return drawings_by_page

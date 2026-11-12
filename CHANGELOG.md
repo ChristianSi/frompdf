@@ -9,6 +9,15 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
 
 ### Added
 
+- The text of captioned figures, such as tick values, axis titles, and
+  legends of plots, is laid out at its approximate positions in a block of
+  preformatted text instead of spilling into the flow as scattered paragraphs
+  and headings. Figures are recognized from their drawings and a caption
+  starting with a figure label and number, such as `Fig. 3`, just below or
+  above them. Like tables, figures and their captions are left out of the
+  flow, so paragraphs interrupted by a figure continue past it, and the
+  figure follows them with its caption as one paragraph. Figures without text,
+  such as photos, keep only their caption.
 - Tables drawn with rules are rendered as pipe tables. Tables need connected
   horizontal and vertical rules with a vertical rule between columns, as in
   ruled grids or booktabs-style tables with column rules; rules nested in

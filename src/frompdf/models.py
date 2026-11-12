@@ -164,6 +164,11 @@ class Table(Block):
 
 
 @dataclass
+class FigureText(Block):
+    """The text of a figure laid out at its approximate positions, as preformatted rows."""
+
+
+@dataclass
 class ListItem(Block):
     """An item of a bulleted or numbered list, with its Markdown list marker.
 

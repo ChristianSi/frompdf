@@ -5,6 +5,7 @@ from frompdf.models import (
     HARD_LINE_BREAK,
     Block,
     BlockQuote,
+    FigureText,
     Footnote,
     Heading,
     InlineRange,
@@ -380,3 +381,29 @@ class PipeTableTests(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+class FigureTextOutputTests(unittest.TestCase):
+    def test_figure_text_is_fenced_without_escaping(self) -> None:
+        page = page_number(1)
+        grid = '  4      8 K\n*-1*     # 10 K'
+
+        self.assertEqual(render_blocks([FigureText(grid, page, page)]), f'```\n{grid}\n```\n')
+
+    def test_page_marker_precedes_the_fence(self) -> None:
+        one, two = page_number(1), page_number(2, '184')
+
+        self.assertEqual(
+            render_blocks(
+                [Paragraph('Text.', one, one), FigureText('0 40 80', two, two)],
+                page_markers=True,
+            ),
+            '[[PAGE:1]]Text.\n\n[[PAGE:2|VISIBLE:184]]\n\n```\n0 40 80\n```\n',
+        )
+
+    def test_fence_is_longer_than_backtick_runs_in_the_text(self) -> None:
+        page = page_number(1)
+
+        self.assertEqual(
+            render_blocks([FigureText('a ``` b', page, page)]), '````\na ``` b\n````\n'
+        )

@@ -8,6 +8,7 @@ from frompdf.detached_scripts import (
     attach_stray_scripts,
     merge_split_denominators,
 )
+from frompdf.figures import find_figures
 from frompdf.glyph_repairs import (
     decode_double_struck_letters,
     decode_math_extension_glyphs,
@@ -29,7 +30,7 @@ from frompdf.page_edges import (
     remove_headers_and_footers,
 )
 from frompdf.reading_order import order_lines_for_reading
-from frompdf.rules import extract_rules
+from frompdf.rules import extract_drawings, extract_rules
 from frompdf.tables import find_tables
 
 
@@ -68,4 +69,5 @@ def extract_markdown(
 
     page_number_map = build_page_number_map(len(page_list), page_number_list)
     tables = find_tables(filtered_lines, extract_rules(input_path, page_list))
-    return lines_to_markdown_blocks(filtered_lines, page_number_map, notes_title, tables)
+    figures = find_figures(filtered_lines, extract_drawings(input_path, page_list), tables)
+    return lines_to_markdown_blocks(filtered_lines, page_number_map, notes_title, tables, figures)

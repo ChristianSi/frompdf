@@ -172,6 +172,9 @@ The implementation is split into focused modules under `src/frompdf`:
   are valid and nested, and renders scripts and emphasis together.
 - `escaping.py` escapes text that Markdown would otherwise read as syntax,
   checking inline characters everywhere and block syntax at line starts.
+- `figures.py` recognizes captioned figures from the regions of their
+  drawings, collects the labels around them and their caption lines, and lays
+  out the labels in a grid of characters at their approximate positions.
 - `footnotes.py` detects numbered bottom notes, assembles continuations with
   page-aware text, and places numeric groups in Notes sections.
 - `front_matter.py` renders subtitles, author names, and chapter labels near
@@ -208,7 +211,8 @@ The implementation is split into focused modules under `src/frompdf`:
 - `reading_order.py` orders intact `pdftext` blocks within page regions and
   detected columns.
 - `rules.py` reads horizontal and vertical rules, such as table borders, from
-  the vector paths of each page with pypdfium2.
+  the vector paths of each page with pypdfium2, as well as the boxes of all
+  visible drawings: paths, images, and shadings.
 - `segmentation.py` combines `pdftext` block hints with page-local geometry
   and typography to find Markdown block boundaries.
 - `scripts.py` slices and joins annotated plain text, preserving inline
@@ -240,7 +244,9 @@ Important concepts:
   page number.
 - `Block` in `models.py` is the base Markdown block type.
 - `Paragraph`, `StrongParagraph`, `BlockQuote`, `Heading`, `Footnote`,
-  `ListItem`, and `Table` in `models.py` are supported block subclasses.
+  `ListItem`, `Table`, and `FigureText` in `models.py` are supported block
+  subclasses. `FigureText` holds the rows of a figure's labels laid out as
+  preformatted text.
   `StrongParagraph` is a paragraph rendered in bold. `ListItem` holds its
   Markdown list marker. `Table` holds `TableCell` records with their row and
   column spans and its number of header rows. `TextFragment` retains the
@@ -252,7 +258,9 @@ Important concepts:
 - `Rule` in `rules.py` is a horizontal or vertical rule in `pdftext`
   coordinates. `TableLayout` in `tables.py` holds a recognized table's source
   lines, its frame on each page, and its cells with the line pieces of their
-  parts, which may continue on the next page.
+  parts, which may continue on the next page. `FigureLayout` in `figures.py`
+  holds a captioned figure's label lines, its caption lines, and its extent
+  on its page.
 - `extract_markdown` in `pipeline.py` returns a list of blocks.
 - `markdown_to_text` in `output.py` serializes blocks as Markdown.
 
@@ -313,6 +321,21 @@ The current pipeline is roughly:
    not closed by a rule or the row's text starts in lower case. Unclosed
    tables that do not continue are dropped. Tables are left out of all other
    blocks, which are split where a table lies between their lines on a page.
+   Then recognize captioned figures. Visible drawings closer than a few points
+   form regions; those of at least a few ems both ways are panels. A panel's
+   caption, starting with a figure label and number such as `Fig. 3`, is the
+   nearest one shortly below it, or else above it; panels without one take
+   that of the nearest panel close enough for their labels to touch. Lines
+   within a few ems around the panels of a figure, short of its caption, are
+   its labels, except body text: prose at body size starting at an
+   established margin, prose set larger, as headings, and lines continuing
+   such lines directly above them. Vertical lines are never body text. The
+   caption continues in lines directly below it in its size. Figures are
+   left out of all other blocks like tables, together with their captions,
+   which follow their figure as one paragraph. Figures with labels are laid
+   out as preformatted text, with cells as wide as their median character and
+   as tall as their median line; vertical labels are written horizontally,
+   and colliding labels move to the nearest free row.
 9. Detect and extract numbered footnote regions using typography and geometry,
    assembling supported paragraph and adjacent-page continuations.
 10. Recognize list items: lines starting with a marker, together with

@@ -1,4 +1,5 @@
 import csv
+import re
 import unicodedata
 from dataclasses import asdict
 from pathlib import Path
@@ -10,6 +11,7 @@ from frompdf.models import (
     HARD_LINE_BREAK,
     Block,
     BlockQuote,
+    FigureText,
     Footnote,
     Heading,
     Line,
@@ -289,6 +291,13 @@ def continues_list(previous_block: Block, block_obj: Block) -> bool:
     return previous_number is None or block_obj.number == previous_number + 1
 
 
+def render_preformatted(text: str) -> str:
+    """Render text as a fenced code block, with a fence longer than any backtick run in it."""
+    longest = max((len(run) for run in re.findall('`+', text)), default=0)
+    fence = '`' * max(3, longest + 1)
+    return f'{fence}\n{text}\n{fence}'
+
+
 def block_separator(previous_block: Block, block_obj: Block) -> str:
     """Return the text separating two consecutive blocks."""
     if isinstance(previous_block, BlockQuote) and isinstance(block_obj, BlockQuote):
@@ -340,6 +349,12 @@ def markdown_to_text(
         marker = format_page_marker(block_obj.start_page) if page_markers and new_page else ''
         if isinstance(block_obj, Table):
             output_file.write(render_table(block_obj, marker, page_markers))
+            previous_page = block_obj.end_page
+            continue
+        if isinstance(block_obj, FigureText):
+            # A page marker within the fence would be literal text.
+            fenced = render_preformatted(block_obj.text)
+            output_file.write(f'{marker}\n\n{fenced}' if marker else fenced)
             previous_page = block_obj.end_page
             continue
         thematic_break = thematic_break_text(block_obj)
