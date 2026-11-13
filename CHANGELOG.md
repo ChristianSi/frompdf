@@ -21,9 +21,11 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
   boxes with running text on them, such as scanned pages with a text layer
   and framed notes, stay text. Logos and other drawings repeated on several
   pages are skipped. The images of `file.pdf` are written as PNG, or JPEG
-  for photos, to the directory `file-img`, which is renamed to
-  `file-img.bak` if it already exists; a directory holding anything but
-  such images is never replaced. Like tables, pictures and their captions
+  for photos, to the directory `file-img`. They are named by their page and
+  their number on it, padded with zeros so they sort in order, such as
+  `p03-1.png` in a document of 10 to 99 pages. An existing directory is
+  renamed to `file-img.bak`; a directory holding anything but such images
+  is never replaced. Like tables, pictures and their captions
   are left out of the flow, so paragraphs interrupted by a picture continue
   past it, and the picture follows them with its caption as one paragraph.
   A caption is the text set directly below a picture in smaller type, or

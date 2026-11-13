@@ -11,6 +11,7 @@ from frompdf.images import (
     ImageDirError,
     backup_existing_image_dir,
     build_image_dir_path,
+    build_image_name,
     figure_resolution,
     holds_only_images,
     is_blank,
@@ -134,6 +135,19 @@ class ResolutionTests(unittest.TestCase):
                 self.assertEqual(figure_resolution(figure), expected)
 
 
+class ImageNameTests(unittest.TestCase):
+    def test_numbers_are_padded_to_the_digits_of_their_counts(self) -> None:
+        for args, expected in (
+            ((1, 9, 1, 9), 'p1-1.png'),
+            ((1, 10, 1, 9), 'p01-1.png'),
+            ((12, 12, 3, 3), 'p12-3.png'),
+            ((7, 250, 4, 12), 'p007-04.png'),
+            ((100, 100, 10, 10), 'p100-10.png'),
+        ):
+            with self.subTest(args):
+                self.assertEqual(build_image_name(*args, 'png'), expected)
+
+
 class WriteImagesTests(unittest.TestCase):
     def setUp(self) -> None:
         temp_dir = tempfile.TemporaryDirectory()
@@ -164,6 +178,16 @@ class WriteImagesTests(unittest.TestCase):
             red, green, blue = image.getpixel((66, 40))
             self.assertGreater(blue, 200)
             self.assertLess(red + green, 60)
+
+    def test_image_numbers_are_padded_for_pages_with_ten_images(self) -> None:
+        squares = [FigureLayout(1, (20.0, 20.0, 80.0, 80.0), [], []) for _ in range(10)]
+        blank = FigureLayout(1, (20.0, 100.0, 80.0, 160.0), [], [])
+
+        self.assertEqual(write_images(self.pdf_path, [*squares, blank], self.image_dir), 10)
+
+        self.assertEqual(squares[0].image, 'paper-img/p1-01.png')
+        self.assertEqual(squares[9].image, 'paper-img/p1-10.png')
+        self.assertIsNone(blank.image)
 
     def test_blank_pictures_get_no_image_and_no_directory(self) -> None:
         blank = FigureLayout(1, (20.0, 100.0, 80.0, 160.0), [], [])

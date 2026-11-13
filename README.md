@@ -289,6 +289,9 @@ output references them where they occur, without alternative text:
 ```
 
 The files are named by the page of the picture and its number on that page.
+Both numbers are padded with zeros so that the names sort in order: in a
+document of 10 to 99 pages, the first picture on page 3 is `p03-1.png`, and
+on a page with 10 or more pictures, they are numbered `01`, `02`, and so on.
 Each picture is cut from its page as the PDF shows it, at 300 pixels per
 inch: photos, screenshots, vector drawings such as plots and diagrams, and
 the text lying within them, such as tick values, axis titles, and legends.

@@ -7,7 +7,7 @@ to a directory named after the PDF, which is created only when needed.
 
 import math
 import re
-from collections import Counter
+from collections import defaultdict
 from collections.abc import Sequence
 from pathlib import Path
 
@@ -19,7 +19,8 @@ from frompdf.figures import FigureLayout
 # The directory of images is named like the PDF, followed by this suffix.
 IMAGE_DIR_SUFFIX = '-img'
 # The names of image files: the page number and the number of the image on
-# its page. Only directories holding nothing else are ever replaced.
+# its page, both padded with zeros. Only directories holding nothing else are
+# ever replaced.
 IMAGE_NAME_PATTERN = re.compile(r'p\d+-\d+\.(?:png|jpg)')
 
 # Pictures are rendered at this many pixels per inch. Those consisting of
@@ -116,6 +117,20 @@ def is_blank(image: PilImage) -> bool:
     return not any(image.convert('L').histogram()[:BLANK_MIN_LEVEL])
 
 
+def build_image_name(
+    page_no: int, page_count: int, image_no: int, image_count: int, suffix: str
+) -> str:
+    """Return the file name of an image, such as `p03-1.png`.
+
+    The page number is padded with zeros to as many digits as the number of
+    pages of the document has, and the number of the image to as many as the
+    number of images on its page has, so the names sort in order.
+    """
+    page_digits = len(str(page_count))
+    image_digits = len(str(image_count))
+    return f'p{page_no:0{page_digits}d}-{image_no:0{image_digits}d}.{suffix}'
+
+
 def write_images(input_path: Path, figures: Sequence[FigureLayout], image_dir: Path) -> int:
     """Write the images of figures into a directory and return their number.
 
@@ -124,31 +139,40 @@ def write_images(input_path: Path, figures: Sequence[FigureLayout], image_dir: P
     first image is written, after moving an existing one aside.
     """
     written = 0
-    images_on_page: Counter[int] = Counter()
+    figures_by_page: dict[int, list[FigureLayout]] = defaultdict(list)
+    for figure in figures:
+        figures_by_page[figure.page_no].append(figure)
     pdf = pdfium.PdfDocument(input_path)
     try:
-        for figure in figures:
-            if figure.page_no > len(pdf) or figure.box[2] <= figure.box[0]:
+        page_count = len(pdf)
+        for page_no, page_figures in figures_by_page.items():
+            if page_no > page_count:
                 continue
-            page = pdf[figure.page_no - 1]
+            # All pictures of a page are rendered before any is written, as
+            # their names depend on how many of them are not blank.
+            rendered: list[tuple[FigureLayout, PilImage]] = []
+            page = pdf[page_no - 1]
             try:
-                image = render_figure(page, figure)
+                for figure in page_figures:
+                    if figure.box[2] <= figure.box[0]:
+                        continue
+                    image = render_figure(page, figure)
+                    if not is_blank(image):
+                        rendered.append((figure, image))
             finally:
                 page.close()
-            if is_blank(image):
-                continue
-            if not written:
+            if rendered and not written:
                 backup_existing_image_dir(image_dir)
                 image_dir.mkdir()
-            images_on_page[figure.page_no] += 1
-            suffix = 'jpg' if figure.lossy else 'png'
-            name = f'p{figure.page_no}-{images_on_page[figure.page_no]}.{suffix}'
-            if figure.lossy:
-                image.save(image_dir / name, quality=JPEG_QUALITY, optimize=True)
-            else:
-                image.save(image_dir / name, optimize=True)
-            figure.image = f'{image_dir.name}/{name}'
-            written += 1
+            for image_no, (figure, image) in enumerate(rendered, start=1):
+                suffix = 'jpg' if figure.lossy else 'png'
+                name = build_image_name(page_no, page_count, image_no, len(rendered), suffix)
+                if figure.lossy:
+                    image.save(image_dir / name, quality=JPEG_QUALITY, optimize=True)
+                else:
+                    image.save(image_dir / name, optimize=True)
+                figure.image = f'{image_dir.name}/{name}'
+                written += 1
     finally:
         pdf.close()
     return written
