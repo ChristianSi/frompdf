@@ -234,7 +234,9 @@ kinship ties even decades after migrating to the city is shared equally among
 low-income men and women, the knowledge and work of processing, preserving,
 storing, and preparing food in a *beldi* way is predominantly female.
 
-[[PAGE:6|VISIBLE:178]]**Figure 10.1.** Lemon and olive trees on the family’s land. Morocco, 2012. © Katharina
+[[PAGE:6|VISIBLE:178]]![](graf-domestic-cooks-work-img/p6-1.jpg)
+
+**Figure 10.1.** Lemon and olive trees on the family’s land. Morocco, 2012. © Katharina
 Graf
 
 ## [[PAGE:7|VISIBLE:179]]Making *Beldi* Foods in Low-Income Homes
@@ -331,6 +333,8 @@ or *rumi* dishes such as vegetable creams or pastas are considered to be urban
 and modern, *beldi* dishes such as meat stews or legume soups are associated with
 rural foodways and tradition.
 
+![](graf-domestic-cooks-work-img/p9-1.jpg)
+
 **Figure 10.2.** Packaged *beldi* bread sold in a supermarket. Morocco, 2017. © Katharina
 Graf
 
@@ -395,6 +399,8 @@ after one month of trying via various sources, she gave up, and we bought severa
 kilograms of “normal” (*‘adi*) preserved olives in a shop. Of course, the price of
 olives had nearly doubled in the meantime, thwarting Fatimzahra’s efforts to save
 money by provisioning them via her relatives.
+
+![](graf-domestic-cooks-work-img/p11-1.jpg)
 
 **Figure 10.3.** Unused olive press. Morocco, 2012. © Katharina Graf
 

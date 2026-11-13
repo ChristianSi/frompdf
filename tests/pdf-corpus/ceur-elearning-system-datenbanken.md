@@ -158,6 +158,8 @@ den Überblick zu behalten. Zudem kann die Größe des abgekoppelten
 Fensters durch Ziehen mit der Maus verändert
 werden.
 
+![](ceur-elearning-system-datenbanken-img/p2-1.png)
+
 #### Figure 1: Aktive Bearbeitung einer Spalte
 
 ## 3.2 Prüfen der Eingaben
@@ -178,6 +180,8 @@ beziehen. Die Korrektheit einer Lösung kann zwar
 generell nicht automatisch entschieden werden, aber Fehler
 können weitestgehend erkannt werden. Die Gestaltung der
 Aufgaben kann dies erleichtern.
+
+![](ceur-elearning-system-datenbanken-img/p2-2.jpg)
 
 #### Figure 2: Beispiel von Constraints
 
@@ -263,6 +267,8 @@ werden farblich hervorgehoben.
 Der ’Notification Icon’ befindet sich in der Toolbar im
 oberen Bereich des Systems.
 
+![](ceur-elearning-system-datenbanken-img/p3-1.png)
+
 #### Figure 3: Hinweis zur Umbennung einer Spalte
 
 ## 3.4 Die Toolbar
@@ -326,7 +332,11 @@ kann, ist diese Ansicht hilfreich um zu eruieren, wie weit
 sich das eigene Ergebnis vom gesuchten zumindest in diesen
 Aspekten unterscheidet.
 
+![](ceur-elearning-system-datenbanken-img/p3-2.jpg)
+
 #### Figure 4: Toolbar mit Benachrichtigungshinweis
+
+![](ceur-elearning-system-datenbanken-img/p3-3.jpg)
 
 #### Figure 5: Toolbar mit geöffneten Benachrichtigungen
 
@@ -341,6 +351,8 @@ unterschieden. Vor allem das Feedback ist gewünscht,
 [[PAGE:4]]da dieses dazu dient, das System an die Bedürfnisse der Lernenden
 anzupassen und eine kontinuierliche Verbesserung
 voranzutreiben (siehe Abbildung 6).
+
+![](ceur-elearning-system-datenbanken-img/p4-1.png)
 
 #### Figure 6: Feedbackfenster
 
@@ -459,7 +471,9 @@ Aufgabe. Eine zweite Zeichenkette wird erzeugt und beinhaltet
 HTML-Code. Dieser wird zur visuellen Darstellung
 des SQL-Codes für die Lernenden genutzt.
 
-#### [[PAGE:5]]Figure 7: Challenge Auswahl und Hilfemedien
+[[PAGE:5]]![](ceur-elearning-system-datenbanken-img/p5-1.png)
+
+#### Figure 7: Challenge Auswahl und Hilfemedien
 
 Die Ansicht des DDL-Codes soll den Lernenden einen anderen
 Blick auf die eigene Lösung verschaffen (siehe Abbildung
@@ -515,6 +529,8 @@ ihre Lösungen aufbauen kann sich bspw. die Anzahl der
 Elemente in einem Constraint unterscheiden und trotzdem
 eine richtige Lösung erzeugen.
 
+![](ceur-elearning-system-datenbanken-img/p5-2.png)
+
 #### Figure 8: Ausgabe des SQL-Codes und Rückmeldung der Datenbank
 
 Die Schaltfläche ’Submit’ führt die Lernenden zur Abgabe
@@ -537,6 +553,8 @@ Abbildung 7 ist zu sehen, dass eine Challenge Aufgaben zur
 Auswahl der Bearbeitungsreihenfolge beinhalten kann. Eine
 Challenge bleibt bestehen bis alle Aufgaben erfolgreich
 bearbeitet wurden.
+
+![](ceur-elearning-system-datenbanken-img/p6-1.png)
 
 #### Figure 9: Abgabe einer Lernaufgabe
 
@@ -592,7 +610,11 @@ Dabei soll über ein Dropdown-Menü, welches alle inaktiven
 Tabellen auflistet, angegeben werden, aus welcher Tabelle
 eine Tabelle jeweils entstanden ist.
 
+![](ceur-elearning-system-datenbanken-img/p6-2.png)
+
 #### Figure 10: Tabellendefinition mit erweiterten Funktionen
+
+![](ceur-elearning-system-datenbanken-img/p6-3.png)
 
 #### Figure 11: Tabellendefinition finalisieren
 

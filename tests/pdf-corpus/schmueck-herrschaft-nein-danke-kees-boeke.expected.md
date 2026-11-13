@@ -1,3 +1,5 @@
+[[PAGE:1|VISIBLE:157]]![](schmueck-herrschaft-nein-danke-kees-boeke-img/p1-1.png)
+
 # [[PAGE:2|VISIBLE:158]]espero
 
 **Libertäre Zeitschrift
@@ -48,7 +50,9 @@ Redaktionsanschrift: kontakt@edition-espero.de
 
 Published in Germany | ISSN (Online): 2700-1598
 
-[[PAGE:4|VISIBLE:160]]Der niederländische Pädagoge und christliche Anarchist Kees Boeke (1884-1966),
+[[PAGE:4|VISIBLE:160]]![](schmueck-herrschaft-nein-danke-kees-boeke-img/p4-1.jpg)
+
+Der niederländische Pädagoge und christliche Anarchist Kees Boeke (1884-1966),
 der auch als der „Erfinder“ des libertären Organisationsmodells der Soziokratie gilt.
 Foto: 1939, Quelle: Nationaal Archief, No. 119-0499, Open Source.
 
@@ -460,8 +464,12 @@ zu geben, sich durch alle Arten von Arbeit entsprechend ihrer eigenen
 Natur und Begabung zu entwickeln . . . Was ich also schaffen wollte, war in der
 Tat ein Ort zum Arbeiten, daher der Name.”<sup>26</sup>
 
-[[PAGE:20|VISIBLE:176]]Eine Unterrichtsstunde in der *Werkplaats,* Bilthoven, 1946.
+[[PAGE:20|VISIBLE:176]]![](schmueck-herrschaft-nein-danke-kees-boeke-img/p20-1.jpg)
+
+Eine Unterrichtsstunde in der *Werkplaats,* Bilthoven, 1946.
 Quelle: Nationaal Archief, No. 014-0553, Open Source.
+
+![](schmueck-herrschaft-nein-danke-kees-boeke-img/p20-2.jpg)
 
 Schüler:innen der *Werkplaats* beim Laufwettbewerb, 1946.
 Quelle: Nationaal Archief, No. 0901-5854, Open Source.
@@ -727,7 +735,9 @@ jedoch keinen Sonderstatus besaßen. Vielmehr nahmen auch sie
 wie alle anderen Schüler:innen voll an den Schulaktivitäten teil, einschließlich
 der morgendlichen Reinigungsrunden.
 
-[[PAGE:31|VISIBLE:187]]Die Kronprinzessin und spätere Königin Beatrix beim Putzdienst in der *Werkplaats,* 1947.
+[[PAGE:31|VISIBLE:187]]![](schmueck-herrschaft-nein-danke-kees-boeke-img/p31-1.jpg)
+
+Die Kronprinzessin und spätere Königin Beatrix beim Putzdienst in der *Werkplaats,* 1947.
 Quelle: Nationaal Archief, No. 255-7414, Open Source.
 
 [[PAGE:32|VISIBLE:188]]Aufgrund der Integration der Werkplaats in das staatliche Bildungssystem
@@ -1962,7 +1972,9 @@ anarchisch, sondern auch alltagstauglich und effektiv sind.
 - Zimmermann, Werner: *Kees Boeke,* in: *TAU. Monatsblätter für Erkenntnis
   und Tat,* Lauf an der Pegnitz und Bern, Heft 106, Februar 1933, S. 18-21.
 
-[[PAGE:60|VISIBLE:216]]Das Kees Boeke und der Soziokratie gewidmete Themen-Special der niederländischen
+[[PAGE:60|VISIBLE:216]]![](schmueck-herrschaft-nein-danke-kees-boeke-img/p60-1.jpg)
+
+Das Kees Boeke und der Soziokratie gewidmete Themen-Special der niederländischen
 anarchistischen Zeitschrift *De AS,* vol. 14 (1986), no. 76 (Okt.-Dez.), (online | PDF).
 
 ## [[PAGE:61|VISIBLE:217]]ANHANG:
@@ -2186,3 +2198,5 @@ Mitmenschen die oben aufgeführten Gedanken darzulegen.
 
 Bilthoven, 5. Mai 1945\
 KEES BOEKE
+
+[[PAGE:68|VISIBLE:224]]![](schmueck-herrschaft-nein-danke-kees-boeke-img/p68-1.png)

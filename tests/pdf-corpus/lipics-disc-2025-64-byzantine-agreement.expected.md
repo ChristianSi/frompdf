@@ -233,9 +233,9 @@ yet still benefits from the increase in accuracy.
 | BI [3, 4]    | 2*df* + 1        |
 | BVC [14, 19] | (*d* + 2)*f* + 1 |
 
-```
-(a) Gaussian samples, Byzantine attack. (b) Exponential samples, Byzantine attack.
-```
+![](lipics-disc-2025-64-byzantine-agreement-img/p5-1.png)
+
+**(a)** Gaussian samples, Byzantine attack. **(b)** Exponential samples, Byzantine attack.
 
 **Figure 1** Empirical simulations measuring PBA’s accuracy compared to baseline algorithms given
 data distributed by a Gaussian (symmetric) and Exponential (asymmetric) distributions.
@@ -258,7 +258,9 @@ than twice the number of faulty replicas.
 f* = |*F*|*, and PBA*(*R<sup>i</sup>*, *s*) = (*x<sub>i</sub>*, *R<sup>i</sup>*<sub>∗</sub>)*. If s* > ⌈|*R*|/2⌉ *and r* ≥ *s* + *f, then for any other subset
 R<sup>j</sup>* = (*Q<sup>j</sup>* ∪ *F<sup>j</sup>*) ⊆ *R where* |*R<sup>j</sup>*| ≥ *r and PBA*(*R<sup>j</sup>*, *s*) = (*x<sub>j</sub>* , *R<sup>j</sup>*<sub>∗</sub>), ||*x<sub>i</sub>* − *x<sub>j</sub>* || ≤ 2*C*<sup>(s,f)</sup><sub>0</sub> ∆<sup>Q</sup>.
 
-[[PAGE:6|VISIBLE:64:6]]**Figure 2** Runtime benchmark (Pi Zero).
+[[PAGE:6|VISIBLE:64:6]]![](lipics-disc-2025-64-byzantine-agreement-img/p6-1.png)
+
+**Figure 2** Runtime benchmark (Pi Zero).
 
 ## 3 Evaluation
 

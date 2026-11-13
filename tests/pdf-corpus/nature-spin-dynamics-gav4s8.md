@@ -1,4 +1,8 @@
-## [[PAGE:1]]Slowdown of photoexcited spin dynamics in the non-collinear spin-ordered phases in skyrmion host GaV4S8
+[[PAGE:1]]![](nature-spin-dynamics-gav4s8-img/p1-1.png)
+
+![](nature-spin-dynamics-gav4s8-img/p1-2.png)
+
+## Slowdown of photoexcited spin dynamics in the non-collinear spin-ordered phases in skyrmion host GaV4S8
 
 **Fumiya Sekiguchi, Kestutis Budzinauskas, Prashant Padmanabhan,
 Rolf B. Versteeg, Vladimir Tsurkan, István Kézsmárki, Francesco
@@ -24,7 +28,9 @@ these conditions:
 Weitere Informationen finden Sie unter: / For more information see:
 https://creativecommons.org/licenses/by/4.0/deed.de
 
-### [[PAGE:2|VISIBLE:1]]ARTICLE
+[[PAGE:2|VISIBLE:1]]![](nature-spin-dynamics-gav4s8-img/p2-1.png)
+
+### ARTICLE
 
 https://doi.org/10.1038/s41467-022-30829-z **OPEN**
 
@@ -147,72 +153,13 @@ strong impact on the stability range of the SkL phase in lacunar
 spinels<sup>33,34,37,38</sup>, and specific to GaV<sub>4</sub>S<sub>8</sub> it confines the orientation
 of the skyrmion tubes along the easy axis<sup>33,37</sup>.
 
-[[PAGE:3|VISIBLE:2]]
-
-```
-a bc                                       0                              0
-
-                                                                                               30 mT
-                                      (mdeg.)                       (mdeg.)                    40 mT
-                                           -1                   20 mT    -1                    50 mT
-                                                                40 mT                          70 mT
-                                                                60 mT                          80 mT
-                                         -                      120 mT -
-                                           -2             8 K 10 K       -2                    120 mT
-
-Magnetic Field (mT)            Paramagnet
-                                         de
-                                           0                              0
-
-                                                                20 mT
-                                                                40 mT                          30 mT
-                                      (mdeg.)                       (mdeg.)                    60 mT
-                                           -1                   50 mT    -1                    100 mT
-                                                                100 mT
-                         Cyc             - -2                   110 mT - -2                    150 mT
-                                                                120 mT
-                                                       11.5 K 14.5 K
-
-                                             0 1000 2000                   0 1000 2000
-               Temperature (K)
-                                                  Time (ps)                     Time (ps)
-```
+[[PAGE:3|VISIBLE:2]]![](nature-spin-dynamics-gav4s8-img/p3-1.png)
 
 Fig. 1 Photoinduced **Δ*θ*** dynamics in the different magnetic phases of GaV<sub>4</sub>S<sub>8</sub>.a Magnetic phase diagram of GaV<sub>4</sub>S<sub>8</sub>. Vertical dashed lines indicate the
 temperatures where trMOKE measurements were performed. b–e Δ*θ* traces under different external magnetic fields at 8 K, 10 K, 11.5 K, and 14.5 K,
 respectively.
 
-[[PAGE:4|VISIBLE:3]]
-
-```
-a                                      c                                   e
-   0.0                                       15                                  6
-                                             14
-   -0.5                      30 mT           13
-                             40 mT           12               FM                 4
-(mdeg.)                      50 mT  Frequency (GHz)                     Frequency
-   -1.0                      60 mT            6                             (GHz)
-   -1.5                      75 mT            5         SkL        Cyc           2              Cyc
--                            120 mT           4                    Sk                           Sk
-   -2.0                                       3  Cyc               FM            0
-                                              2                                       8 10 12
-         200 400 600 800                       0 40 80 120
-            Time (ps)                           Magnetic Field (mT)                  Temperature (K)
-
-b                                      d                                    f  300
-   0.0                                      1.2
-   -0.3                                                            Cyc
-                             30 mT          0.8                    Sk          200
-(mdeg.)                      40 mT  (arb. units)                   FM Lifetime (ps)
-                             50 mT Amplitude
-                             60 mT          0.4 Cyc                            100       Cyc
--                            75 mT                      FM SkL                           Sk
-                             120 mT
-                                            0.0                                  0
-         200 400 600 800                       0 40 80 120                           8 10 12
-
-            Time (ps)                           Magnetic Field (mT)                  Temperature (K)
-```
+[[PAGE:4|VISIBLE:3]]![](nature-spin-dynamics-gav4s8-img/p4-1.png)
 
 Fig. 2 Coherent spin precession in the FM, SkL, and Cyc phases. a Δ*θ* traces in the first 800 ps shown with fit curves (black solid lines) at 10 K.
 b Coherent oscillatory component of the data shown in a. c, d Magnetic-field dependence of the frequency and amplitude of the coherent oscillation. The
@@ -395,23 +342,7 @@ The increase of the remagnetization time reaches a factor of 1.5–2
 that it is triggered by a small change of magnetic field in a single
 material.
 
-[[PAGE:5|VISIBLE:4]]
-
-```
-  4
-
-            8 K          10 K       11.5 K       14.5 K
-  3
-            FM FM                      FM
-Recovery time (ns)
-  2 Cyc          Cyc Cyc
-  1                   SkL          SkL
-                                                PM
-  0
-   0 40 80      0 40 80      0 40 80      0 50 100 150
-
-                       Magnetic Field (mT)
-```
+[[PAGE:5|VISIBLE:4]]![](nature-spin-dynamics-gav4s8-img/p5-1.png)
 
 Fig. 3 Change of the remagnetization across the magnetic phase transition. Time constant of the remagnetization process at 8 K, 10 K, 11.5 K, and 14.5 K
 are plotted. The blue-shaded areas are guides to the eye indicating the magnetic phase transition. Error bars are the standard deviation of the fitting
@@ -556,24 +487,12 @@ phonon thermal conductivity of 11% has been achieved by
 [[PAGE:7|VISIBLE:6]]manipulating the domain structure by means of external electric
 field<sup>57</sup>.
 
+![](nature-spin-dynamics-gav4s8-img/p7-1.png)
+
 Fig. 4 Simulated spin texture and magnon spectra. a Representative spin textures and b magnon spectral functions, obtained from atomistic spin
 dynamics simulations of GaV<sub>4</sub>S<sub>8</sub> at *T* = 12 K and magnetic field magnitudes, as indicated at the top of each panel.
 
-```
-      3.0
-
-q
-      2.0
-
-(arb. units)
-Peak width
-      1.0
-
-      0.0
-         0 40 80 120
-
-             Magnetic field (mT)
-```
+![](nature-spin-dynamics-gav4s8-img/p7-2.png)
 
 Fig. 5 Magnon peak width extracted from simulated spectral functions. A
 Gaussian fit of magnon peaks is performed on the cuts of the magnon
@@ -688,6 +607,8 @@ The codes that support the calculations of this study are available from the aut
 reasonable request.
 
 [[PAGE:8|VISIBLE:7]]Received: 10 August 2021; Accepted: 20 May 2022;
+
+![](nature-spin-dynamics-gav4s8-img/p8-1.png)
 
 References
 

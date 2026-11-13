@@ -1,4 +1,6 @@
-# [[PAGE:1]]Style Guide | 2019
+[[PAGE:1]]![](cc-style-guide-2019-img/p1-1.png)
+
+# Style Guide | 2019
 
 Photographer: Heather Hazzan; Wardrobe:
 Ronald Burton; Props: Campbell Pearson;
@@ -112,13 +114,21 @@ Building a vibrant, collaborative global commons
 [[PAGE:7|VISIBLE:5]]**Mood Board —**\
 CC is vibrant, creative, collaborative, innovative, and global.
 
+![](cc-style-guide-2019-img/p7-1.jpg)
+
 ## [[PAGE:8|VISIBLE:6]]Brand Identity —
 
 ### Logo(s)
 
 Creative Commons has one primary logo:
 
+![](cc-style-guide-2019-img/p8-1.png)
+
 However, the following derivatives of CC’s primary logo can also be used when appropriate:
+
+![](cc-style-guide-2019-img/p8-2.png)
+
+![](cc-style-guide-2019-img/p8-3.png)
 
 The above logos can be used in any of the colors found in the color palette. However, in order to
 ensure that the logos are clearly displayed, we recommend using the colors tomato (#ed592f), dark
@@ -255,6 +265,8 @@ geometric designs, and the brand colors is encouraged.
 
 Below are some examples of how all of these elements can be combined for a single information
 campaign.
+
+![](cc-style-guide-2019-img/p11-1.jpg)
 
 **Please note:** When uploading images to Wordpress, be sure to add a unique *title,* so the image is easily
 searchable; *alternative text* describing the image, for accessibility; and a *caption* that includes the CC license
@@ -471,3 +483,5 @@ creativecommons/47959607413/in/album-72157708726481004/ Licensed under CC BY.
 **Left, Middle, and Right:** Heath, Victoria. (2019, September 29). *An Explanation of Creative Commons*. Retrieved
 from: canva.com/design/DADm40hSwIU/9yEhtLnl5O1WMKbx8JSSkA/view?utm_content=DADm40hSwIU&utm\_
 campaign=designshare&utm_medium=link&utm_source=viewer. Licensed under CC BY-NC-ND 4.0.
+
+[[PAGE:18|VISIBLE:16]]![](cc-style-guide-2019-img/p18-1.png)
