@@ -305,7 +305,9 @@ drawings count as pictures if they contain an image or vector paths with
 curves or diagonal lines, and are not very small. Rules and plain rectangles
 alone, as in tables and boxes around text, are no pictures. The parts of a
 figure that lie close together, such as the panels of a plot, form a single
-image.
+image. Pictures without a caption must cover at least 12 cm², so small
+logos, icons, and other ornaments are skipped; captioned pictures may be
+smaller, such as thin strips cut from screenshots.
 
 Text of the document is never cut into an image. Images and other drawings
 with running text on them are treated as backgrounds or frames, so that
@@ -336,9 +338,9 @@ that contain nothing but image files as written by frompdf. If a directory
 of that name holds anything else, frompdf stops without changing it; rename
 it, or use `--no-images`.
 
-Pages that are rotated, vector charts made of rectangles and straight lines
-only, such as bar charts, and small pictures are not written as images yet.
-Logos that occur only once, as on a first page, are.
+Pages that are rotated and vector charts made of rectangles and straight
+lines only, such as bar charts, are not written as images yet. Larger logos
+that occur only once, as on a first page, are.
 
 ### Superscripts and subscripts
 

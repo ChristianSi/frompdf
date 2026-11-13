@@ -56,6 +56,10 @@ MIN_RUNNING_LETTERS = 24
 # An image covering at least this share of its page is a background if there
 # is any text on it, as the scan below the text layer of a page read by OCR.
 PAGE_IMAGE_SHARE = 0.8
+# A picture without a caption covers at least this many square points
+# (12 cm²). Smaller ones are logos, icons, and other ornaments; captioned
+# pictures only need to be panels, as thin strips cut from screenshots.
+MIN_UNCAPTIONED_AREA = 12 * (72 / 2.54) ** 2
 # Drawings at the same place on at least this many pages are page furniture,
 # such as logos and rules in headers. Places are compared on a grid of points.
 MIN_FURNITURE_PAGES = 3
@@ -788,7 +792,8 @@ def page_figures(
     """Return the pictures of a page in reading order, with their lines and captions.
 
     drawings are the visible drawings of the page, which pictures may extend
-    over.
+    over. Small pictures without a caption are left out, and their text is
+    left in the flow.
     """
     labels = find_label_lines(page_lines, panels, body_lines, figure_fonts, body_size)
     pictures = picture_boxes(page_lines, panels, labels, body_size, table_boxes, drawings)
@@ -817,7 +822,11 @@ def page_figures(
         figure.resolution, figure.lossy = picture_resolution(
             figure.box, drawings, bool(figure.lines)
         )
-    return figures
+    return [
+        figure
+        for figure in figures
+        if figure.caption_lines or box_area(figure.box) >= MIN_UNCAPTIONED_AREA
+    ]
 
 
 def find_figures(

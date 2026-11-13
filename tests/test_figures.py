@@ -128,6 +128,19 @@ class FigureDetectionTests(unittest.TestCase):
         self.assertEqual(figures[0].lines, [])
         self.assertEqual(figures[0].caption_lines, [])
 
+    def test_small_picture_needs_a_caption(self) -> None:
+        # An icon of about 2.1 by 2.1 cm, below the minimum area of pictures
+        # without a caption.
+        icon = (60.0, 280.0, 120.0, 340.0)
+        lines = [*body(100.0, 4), *body(400.0, 3)]
+
+        self.assertEqual(find_figures(lines, {1: [photo(icon)]}), [])
+
+        figures = find_figures([*lines, *caption()], {1: [photo(icon)]})
+
+        self.assertEqual([figure.box for figure in figures], [icon])
+        self.assertEqual(texts(figures[0].caption_lines), texts(caption()))
+
     def test_caption_is_recognized_by_its_type_in_any_language(self) -> None:
         for first in ('Rys. 1. Wykres sygnału w czasie', 'Вид на город с холма, 1930 год'):
             with self.subTest(first):
@@ -181,10 +194,12 @@ class FigureDetectionTests(unittest.TestCase):
 
         self.assertEqual(find_figures(body(100.0, 4), {1: [icon, ornament]}), [])
 
-    def test_wide_strip_of_an_image_is_a_picture(self) -> None:
+    def test_wide_strip_of_an_image_with_a_caption_is_a_picture(self) -> None:
+        # A strip cut from a screenshot, of about 8.5 by 0.4 cm.
         strip = photo((60.0, 200.0, 300.0, 212.0))
+        strip_caption = line('Figure 4: The toolbar', 60.0, 222.0, 160.0, font_size=9.0)
 
-        self.assertEqual(len(find_figures(body(100.0, 4), {1: [strip]})), 1)
+        self.assertEqual(len(find_figures([*body(100.0, 4), strip_caption], {1: [strip]})), 1)
 
     def test_drawing_with_running_text_on_it_is_a_background(self) -> None:
         lines = body(210.0, 4)
@@ -226,14 +241,14 @@ class FigureDetectionTests(unittest.TestCase):
         self.assertEqual(find_figures(lines, {page_no: [photo(logo)] for page_no in (1, 2, 3)}), [])
 
     def test_rule_reaching_far_beyond_a_picture_does_not_extend_it(self) -> None:
-        icon = (140.0, 200.0, 200.0, 260.0)
-        heading = line('A heading above the icon', 40.0, 180.0, 200.0, font_size=14.0)
+        picture = (140.0, 200.0, 260.0, 320.0)
+        heading = line('A heading above the picture', 40.0, 180.0, 200.0, font_size=14.0)
         underline = Drawing((40.0, 197.0, 300.0, 198.0), 'path')
         tick = Drawing((136.0, 230.0, 140.0, 231.0), 'path')
 
-        figures = find_figures([heading, *body(300.0, 3)], {1: [photo(icon), underline, tick]})
+        figures = find_figures([heading, *body(400.0, 3)], {1: [photo(picture), underline, tick]})
 
-        self.assertEqual([figure.box for figure in figures], [(136.0, 200.0, 200.0, 260.0)])
+        self.assertEqual([figure.box for figure in figures], [(136.0, 200.0, 260.0, 320.0)])
 
     def test_panels_close_together_form_one_picture(self) -> None:
         upper = (100.0, 100.0, 300.0, 200.0)
