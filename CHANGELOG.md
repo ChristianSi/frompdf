@@ -30,8 +30,8 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
   past it, and the picture follows them with its caption as one paragraph.
   A caption is the text set directly below a picture in smaller type, or
   starting in bold or italics.
-- The new option `--no-images` leaves out the image files and the references
-  to them. The text within pictures is still left out.
+- The new option `-I`/`--no-images` leaves out the image files and the
+  references to them. The text within pictures is still left out.
 - Tables drawn with rules are rendered as pipe tables. Tables need connected
   horizontal and vertical rules with a vertical rule between columns, as in
   ruled grids or booktabs-style tables with column rules; rules nested in

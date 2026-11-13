@@ -28,6 +28,7 @@ def main() -> int:
         help='Title for collected footnotes (default: Notes)',
     )
     parser.add_argument(
+        '-I',
         '--no-images',
         action='store_true',
         help='Do not write the pictures of the document as image files',

@@ -321,10 +321,11 @@ type than the body text, or starts in bold or italics. Pictures and their
 captions are taken out of the flow of the text, so a paragraph interrupted by
 a picture continues past it, and the picture follows it with its caption.
 
-Use `--no-images` to write no image files and no references to them:
+Use `-I` or its long form `--no-images` to write no image files and no
+references to them:
 
 ```bash
-frompdf --no-images ./document.pdf
+frompdf -I ./document.pdf
 ```
 
 The text within pictures is still left out of the Markdown output.
