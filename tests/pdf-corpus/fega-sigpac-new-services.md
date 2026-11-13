@@ -12,8 +12,6 @@ GARANTÍA AGRARIA O.A.
 SUBDIRECCIÓN GENERAL
 DE AYUDAS DIRECTAS
 
-![](fega-sigpac-new-services-img/p01-1.png)
-
 # PUBLICACIÓN DE NUEVOS SERVICIOS SIGPAC DE CONSULTA Y DIVULGACIÓN DE DATOS DEL SISTEMA INTEGRADO DE GESTIÓN Y CONTROL (SIGC)
 
 El SIGPAC (Sistema de Información Geográfica de Parcelas Agrícolas) es el
@@ -138,8 +136,6 @@ divulgación y reutilización (o redistribución) de la información.
 
 ## 1. Servicio de Teselas Vectoriales (MVT) de SIGPAC
 
-![](fega-sigpac-new-services-img/p05-1.jpg)
-
 El Servicio MVT lanzado en 2024 se actualiza con la entrada en vigor de la
 campaña vigente en febrero de 2025, empezando a proporcionar datos de
 Recintos y Elementos del paisaje de la campaña anterior. Además, sigue
@@ -158,7 +154,7 @@ datos.
 
 ## 2. WMS – Web Map Service de SIGPAC
 
-![](fega-sigpac-new-services-img/p05-2.jpg)
+![](fega-sigpac-new-services-img/p05-1.jpg)
 
 Se trata de un servicio WMS (Web Map Service), conforme con la Directiva
 INSPIRE y la UNE-EN ISO 19128:2009, que permite acceder a información
@@ -184,8 +180,6 @@ En Ejemplos del Servicio WMS se muestran algunos usos de este servicio.
 ***Ejemplo de Visualización de recintos mediante WMS en QGIS***
 
 ## 3. Servicio de Consultas de SIGPAC
-
-![](fega-sigpac-new-services-img/p06-2.jpg)
 
 Este servicio permite acceder a las propiedades de un recinto de forma
 estructurada (al igual que en el Visor SIGPAC se pueden consultar dichas
@@ -244,8 +238,6 @@ en QGIS***
 
 ## 5. Servicio de Listas de Códigos SIGPAC
 
-![](fega-sigpac-new-services-img/p08-2.png)
-
 Este servicio permite acceder a las listas controladas de códigos oficiales del
 SIGPAC. Devuelve el listado de valores posibles para un concepto concreto (por
 ejemplo, valores de provincias, municipios o usos SIGPAC, entre otros).
@@ -277,8 +269,6 @@ integrable en multitud de desarrollos informáticos de empresas u otros usuarios
 aprovechamiento***
 
 ## 6. Servicio de Salidas Gráficas de SIGPAC
-
-![](fega-sigpac-new-services-img/p09-2.png)
 
 Este servicio proporciona salidas gráficas en formato PDF con información
 gráfica y alfanumérica de Recintos de la campaña PAC vigente y del Cultivo

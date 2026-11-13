@@ -1,8 +1,4 @@
-[[PAGE:1]]![](nature-spin-dynamics-gav4s8-img/p1-1.png)
-
-![](nature-spin-dynamics-gav4s8-img/p1-2.png)
-
-## Slowdown of photoexcited spin dynamics in the non-collinear spin-ordered phases in skyrmion host GaV4S8
+## [[PAGE:1]]Slowdown of photoexcited spin dynamics in the non-collinear spin-ordered phases in skyrmion host GaV4S8
 
 **Fumiya Sekiguchi, Kestutis Budzinauskas, Prashant Padmanabhan,
 Rolf B. Versteeg, Vladimir Tsurkan, István Kézsmárki, Francesco
@@ -607,8 +603,6 @@ The codes that support the calculations of this study are available from the aut
 reasonable request.
 
 [[PAGE:8|VISIBLE:7]]Received: 10 August 2021; Accepted: 20 May 2022;
-
-![](nature-spin-dynamics-gav4s8-img/p8-1.png)
 
 References
 

@@ -126,10 +126,6 @@ Creative Commons has one primary logo:
 
 However, the following derivatives of CC’s primary logo can also be used when appropriate:
 
-![](cc-style-guide-2019-img/p08-2.png)
-
-![](cc-style-guide-2019-img/p08-3.png)
-
 The above logos can be used in any of the colors found in the color palette. However, in order to
 ensure that the logos are clearly displayed, we recommend using the colors tomato (#ed592f), dark
 slate gray (#333333), black, or white. You can download these logos on our website, here.
