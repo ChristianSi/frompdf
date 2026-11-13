@@ -234,7 +234,7 @@ kinship ties even decades after migrating to the city is shared equally among
 low-income men and women, the knowledge and work of processing, preserving,
 storing, and preparing food in a *beldi* way is predominantly female.
 
-[[PAGE:6|VISIBLE:178]]![](graf-domestic-cooks-work-img/p6-1.jpg)
+[[PAGE:6|VISIBLE:178]]![](graf-domestic-cooks-work-img/p06-1.jpg)
 
 **Figure 10.1.** Lemon and olive trees on the family’s land. Morocco, 2012. © Katharina
 Graf
@@ -333,7 +333,7 @@ or *rumi* dishes such as vegetable creams or pastas are considered to be urban
 and modern, *beldi* dishes such as meat stews or legume soups are associated with
 rural foodways and tradition.
 
-![](graf-domestic-cooks-work-img/p9-1.jpg)
+![](graf-domestic-cooks-work-img/p09-1.jpg)
 
 **Figure 10.2.** Packaged *beldi* bread sold in a supermarket. Morocco, 2017. © Katharina
 Graf

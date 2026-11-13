@@ -12,7 +12,7 @@ GARANTÍA AGRARIA O.A.
 SUBDIRECCIÓN GENERAL
 DE AYUDAS DIRECTAS
 
-![](fega-sigpac-new-services-img/p1-1.png)
+![](fega-sigpac-new-services-img/p01-1.png)
 
 # PUBLICACIÓN DE NUEVOS SERVICIOS SIGPAC DE CONSULTA Y DIVULGACIÓN DE DATOS DEL SISTEMA INTEGRADO DE GESTIÓN Y CONTROL (SIGC)
 
@@ -61,7 +61,7 @@ de Servicios SIGPAC: https://sigpac-hubcloud.es/**, al cual se accede desde
 el sitio SIGPAC de la Web del FEGA, pinchando en el nuevo icono de Servicios
 SIGPAC en la nube:
 
-![](fega-sigpac-new-services-img/p2-1.jpg)
+![](fega-sigpac-new-services-img/p02-1.jpg)
 
 En este Catálogo se alojan nuevos medios SIGPAC de difusión de datos SIGC
 con los que el FEGA continúa ampliando su abanico de servicios y su labor
@@ -138,7 +138,7 @@ divulgación y reutilización (o redistribución) de la información.
 
 ## 1. Servicio de Teselas Vectoriales (MVT) de SIGPAC
 
-![](fega-sigpac-new-services-img/p5-1.jpg)
+![](fega-sigpac-new-services-img/p05-1.jpg)
 
 El Servicio MVT lanzado en 2024 se actualiza con la entrada en vigor de la
 campaña vigente en febrero de 2025, empezando a proporcionar datos de
@@ -158,7 +158,7 @@ datos.
 
 ## 2. WMS – Web Map Service de SIGPAC
 
-![](fega-sigpac-new-services-img/p5-2.jpg)
+![](fega-sigpac-new-services-img/p05-2.jpg)
 
 Se trata de un servicio WMS (Web Map Service), conforme con la Directiva
 INSPIRE y la UNE-EN ISO 19128:2009, que permite acceder a información
@@ -179,13 +179,13 @@ https://wms.mapa.gob.es/sigpac/wms, que se deshabilitará a finales del 2025.
 
 En Ejemplos del Servicio WMS se muestran algunos usos de este servicio.
 
-![](fega-sigpac-new-services-img/p6-1.jpg)
+![](fega-sigpac-new-services-img/p06-1.jpg)
 
 ***Ejemplo de Visualización de recintos mediante WMS en QGIS***
 
 ## 3. Servicio de Consultas de SIGPAC
 
-![](fega-sigpac-new-services-img/p6-2.jpg)
+![](fega-sigpac-new-services-img/p06-2.jpg)
 
 Este servicio permite acceder a las propiedades de un recinto de forma
 estructurada (al igual que en el Visor SIGPAC se pueden consultar dichas
@@ -210,13 +210,13 @@ destacan:
 
 **EJEMPLO:** https://sigpac-hubcloud.es/servicioconsultassigpac/query/recinfo/6/60/0/0/41/126/1.json
 
-![](fega-sigpac-new-services-img/p7-1.png)
+![](fega-sigpac-new-services-img/p07-1.png)
 
 ***Ejemplo de Respuesta a la consulta de propiedades de un recinto***
 
 ## 4. Servicio OGC API de SIGPAC
 
-![](fega-sigpac-new-services-img/p7-2.png)
+![](fega-sigpac-new-services-img/p07-2.png)
 
 El Reglamento de Ejecución 2023/138 establece, para la categoría de datos
 Geoespaciales, que los conjuntos de datos de alto valor se pondrán a disposición
@@ -237,14 +237,14 @@ uso por parte de desarrolladores y usuarios interesados en los datos
 geoespaciales del SIGC. En Ejemplos del Servicio OGC API se muestran
 algunos usos de este servicio.
 
-![](fega-sigpac-new-services-img/p8-1.png)
+![](fega-sigpac-new-services-img/p08-1.png)
 
 ***Ejemplo de Visualización de recintos y elementos del paisaje mediante OGC API
 en QGIS***
 
 ## 5. Servicio de Listas de Códigos SIGPAC
 
-![](fega-sigpac-new-services-img/p8-2.png)
+![](fega-sigpac-new-services-img/p08-2.png)
 
 Este servicio permite acceder a las listas controladas de códigos oficiales del
 SIGPAC. Devuelve el listado de valores posibles para un concepto concreto (por
@@ -271,14 +271,14 @@ integrable en multitud de desarrollos informáticos de empresas u otros usuarios
 
 **EJEMPLO:** https://sigpac-hubcloud.es/codigossigpac/cod_aprovechamiento.json
 
-![](fega-sigpac-new-services-img/p9-1.png)
+![](fega-sigpac-new-services-img/p09-1.png)
 
 ***Ejemplo de Respuesta a la consulta de listado de códigos de tipo de
 aprovechamiento***
 
 ## 6. Servicio de Salidas Gráficas de SIGPAC
 
-![](fega-sigpac-new-services-img/p9-2.png)
+![](fega-sigpac-new-services-img/p09-2.png)
 
 Este servicio proporciona salidas gráficas en formato PDF con información
 gráfica y alfanumérica de Recintos de la campaña PAC vigente y del Cultivo

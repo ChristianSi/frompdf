@@ -1,4 +1,4 @@
-[[PAGE:1]]![](cc-style-guide-2019-img/p1-1.png)
+[[PAGE:1]]![](cc-style-guide-2019-img/p01-1.png)
 
 # Style Guide | 2019
 
@@ -114,7 +114,7 @@ Building a vibrant, collaborative global commons
 [[PAGE:7|VISIBLE:5]]**Mood Board —**\
 CC is vibrant, creative, collaborative, innovative, and global.
 
-![](cc-style-guide-2019-img/p7-1.jpg)
+![](cc-style-guide-2019-img/p07-1.jpg)
 
 ## [[PAGE:8|VISIBLE:6]]Brand Identity —
 
@@ -122,13 +122,13 @@ CC is vibrant, creative, collaborative, innovative, and global.
 
 Creative Commons has one primary logo:
 
-![](cc-style-guide-2019-img/p8-1.png)
+![](cc-style-guide-2019-img/p08-1.png)
 
 However, the following derivatives of CC’s primary logo can also be used when appropriate:
 
-![](cc-style-guide-2019-img/p8-2.png)
+![](cc-style-guide-2019-img/p08-2.png)
 
-![](cc-style-guide-2019-img/p8-3.png)
+![](cc-style-guide-2019-img/p08-3.png)
 
 The above logos can be used in any of the colors found in the color palette. However, in order to
 ensure that the logos are clearly displayed, we recommend using the colors tomato (#ed592f), dark

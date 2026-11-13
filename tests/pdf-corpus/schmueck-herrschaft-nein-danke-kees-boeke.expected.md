@@ -1,4 +1,4 @@
-[[PAGE:1|VISIBLE:157]]![](schmueck-herrschaft-nein-danke-kees-boeke-img/p1-1.png)
+[[PAGE:1|VISIBLE:157]]![](schmueck-herrschaft-nein-danke-kees-boeke-img/p01-1.png)
 
 # [[PAGE:2|VISIBLE:158]]espero
 
@@ -50,7 +50,7 @@ Redaktionsanschrift: kontakt@edition-espero.de
 
 Published in Germany | ISSN (Online): 2700-1598
 
-[[PAGE:4|VISIBLE:160]]![](schmueck-herrschaft-nein-danke-kees-boeke-img/p4-1.jpg)
+[[PAGE:4|VISIBLE:160]]![](schmueck-herrschaft-nein-danke-kees-boeke-img/p04-1.jpg)
 
 Der niederländische Pädagoge und christliche Anarchist Kees Boeke (1884-1966),
 der auch als der „Erfinder“ des libertären Organisationsmodells der Soziokratie gilt.
