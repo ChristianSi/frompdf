@@ -1,6 +1,8 @@
 import argparse
 from pathlib import Path
 
+from frompdf.images import ImageDirError, build_image_dir_path
+from frompdf.models import Image
 from frompdf.output import (
     build_csv_output_path,
     build_pagenos_output_path,
@@ -26,6 +28,11 @@ def main() -> int:
         help='Title for collected footnotes (default: Notes)',
     )
     parser.add_argument(
+        '--no-images',
+        action='store_true',
+        help='Do not write the pictures of the document as image files',
+    )
+    parser.add_argument(
         '--dump-lines',
         action='store_true',
         help='Write extracted line records to a CSV file',
@@ -46,18 +53,28 @@ def main() -> int:
 
     text_output_path = build_text_output_path(input_path)
 
-    block_list = extract_markdown(
-        input_path,
-        dump_lines=args.dump_lines,
-        dump_pagenos=args.dump_pagenos,
-        notes_title=args.notes_title,
-    )
+    image_dir = None if args.no_images else build_image_dir_path(input_path)
+
+    try:
+        block_list = extract_markdown(
+            input_path,
+            dump_lines=args.dump_lines,
+            dump_pagenos=args.dump_pagenos,
+            notes_title=args.notes_title,
+            image_dir=image_dir,
+        )
+    except ImageDirError as error:
+        raise SystemExit(str(error)) from error
     dump_text(block_list, text_output_path, page_markers=args.page_markers)
 
     if args.dump_lines:
         print(f'{build_csv_output_path(input_path)} written')
     if args.dump_pagenos:
         print(f'{build_pagenos_output_path(input_path)} written')
+    image_count = sum(isinstance(block_obj, Image) for block_obj in block_list)
+    if image_dir is not None and image_count:
+        noun = 'image' if image_count == 1 else 'images'
+        print(f'{image_dir}/ written ({image_count} {noun})')
     print(f'{text_output_path} written')
     return 0
 

@@ -172,9 +172,9 @@ The implementation is split into focused modules under `src/frompdf`:
   are valid and nested, and renders scripts and emphasis together.
 - `escaping.py` escapes text that Markdown would otherwise read as syntax,
   checking inline characters everywhere and block syntax at line starts.
-- `figures.py` recognizes captioned figures from the regions of their
-  drawings, collects the labels around them and their caption lines, and lays
-  out the labels in a grid of characters at their approximate positions.
+- `figures.py` recognizes pictures from the regions of the drawings of a
+  page, tells their labels from the text of the document, finds the boxes to
+  cut from the page, and collects their caption lines.
 - `footnotes.py` detects numbered bottom notes, assembles continuations with
   page-aware text, and places numeric groups in Notes sections.
 - `front_matter.py` renders subtitles, author names, and chapter labels near
@@ -184,6 +184,9 @@ The implementation is split into focused modules under `src/frompdf`:
   fonts, and restores private-use bullets of symbol fonts.
 - `heading_candidates.py` identifies compact centered titles using caps or
   italic styling, established body columns, and surrounding whitespace.
+- `images.py` renders the boxes of pictures from their pages with pypdfium2
+  and writes them as image files to a directory that is moved aside safely
+  if it exists.
 - `line_breaks.py` recognizes deliberate line breaks within blocks, where the
   next word would have fit on the line or the font changes after a short line,
   extending them to all line ends of blocks set line by line in short
@@ -211,8 +214,9 @@ The implementation is split into focused modules under `src/frompdf`:
 - `reading_order.py` orders intact `pdftext` blocks within page regions and
   detected columns.
 - `rules.py` reads horizontal and vertical rules, such as table borders, from
-  the vector paths of each page with pypdfium2, as well as the boxes of all
-  visible drawings: paths, images, and shadings.
+  the vector paths of each page with pypdfium2, as well as all visible
+  drawings: paths with the number of their curves and diagonals, shadings,
+  and images with their size in pixels, leaving out fully transparent ones.
 - `segmentation.py` combines `pdftext` block hints with page-local geometry
   and typography to find Markdown block boundaries.
 - `scripts.py` slices and joins annotated plain text, preserving inline
@@ -244,9 +248,8 @@ Important concepts:
   page number.
 - `Block` in `models.py` is the base Markdown block type.
 - `Paragraph`, `StrongParagraph`, `BlockQuote`, `Heading`, `Footnote`,
-  `ListItem`, `Table`, and `FigureText` in `models.py` are supported block
-  subclasses. `FigureText` holds the rows of a figure's labels laid out as
-  preformatted text.
+  `ListItem`, `Table`, and `Image` in `models.py` are supported block
+  subclasses. `Image` holds the path of the image file written for a picture.
   `StrongParagraph` is a paragraph rendered in bold. `ListItem` holds its
   Markdown list marker. `Table` holds `TableCell` records with their row and
   column spans and its number of header rows. `TextFragment` retains the
@@ -258,9 +261,10 @@ Important concepts:
 - `Rule` in `rules.py` is a horizontal or vertical rule in `pdftext`
   coordinates. `TableLayout` in `tables.py` holds a recognized table's source
   lines, its frame on each page, and its cells with the line pieces of their
-  parts, which may continue on the next page. `FigureLayout` in `figures.py`
-  holds a captioned figure's label lines, its caption lines, and its extent
-  on its page.
+  parts, which may continue on the next page. `Drawing` in `rules.py` is a
+  visible path, image, or shading with its box. `FigureLayout` in
+  `figures.py` holds a picture's box on its page, the lines of text within
+  it, its caption lines, and the path of its image once written.
 - `extract_markdown` in `pipeline.py` returns a list of blocks.
 - `markdown_to_text` in `output.py` serializes blocks as Markdown.
 
@@ -321,21 +325,35 @@ The current pipeline is roughly:
    not closed by a rule or the row's text starts in lower case. Unclosed
    tables that do not continue are dropped. Tables are left out of all other
    blocks, which are split where a table lies between their lines on a page.
-   Then recognize captioned figures. Visible drawings closer than a few points
-   form regions; those of at least a few ems both ways are panels. A panel's
-   caption, starting with a figure label and number such as `Fig. 3`, is the
-   nearest one shortly below it, or else above it; panels without one take
-   that of the nearest panel close enough for their labels to touch. Lines
-   within a few ems around the panels of a figure, short of its caption, are
-   its labels, except body text: prose at body size starting at an
-   established margin, prose set larger, as headings, and lines continuing
-   such lines directly above them. Vertical lines are never body text. The
-   caption continues in lines directly below it in its size. Figures are
-   left out of all other blocks like tables, together with their captions,
-   which follow their figure as one paragraph. Figures with labels are laid
-   out as preformatted text, with cells as wide as their median character and
-   as tall as their median line; vertical labels are written horizontally,
-   and colliding labels move to the nearest free row.
+   Then recognize pictures, independently of the wording of captions.
+   Drawings repeated at the same place on several pages are page furniture.
+   Drawings with running text on them, which is body text or long lines of
+   prose set below each other, are backgrounds or frames, as is an image
+   covering its page with any text on it. The other drawings closer than a
+   few points form regions, which rules join only where they stay near
+   them. A region is a panel if it is at least a few ems large and holds an
+   image, a shading, or paths with several curves or diagonals, but neither
+   running text nor a table. Lines within a panel are labels, as are lines
+   in a figure font, which sets text within panels and hardly any away from
+   them. Around a panel, vertical lines are labels, and so are lines
+   without letters and short lines in small type unless they continue text
+   directly above them. All other lines are text. Each panel grows by the
+   labels within a few ems, nearest first, and by drawings touching it that
+   reach little beyond it; pictures within a few ems of each other are
+   joined. A picture never grows over text or a table. The lines within its
+   box belong to the picture. Its caption starts with the nearest line
+   shortly below it, if that is set smaller than the body or starts in bold
+   or italics at body size, and starts with a letter or an opening mark. The
+   caption continues in lines directly below it in its size, until a
+   sentence ends short of its right edge. Pictures are left out of all other
+   blocks like tables, together with their captions, which follow them as
+   one paragraph. Unless images are turned off, each picture is rendered
+   from its page and written as an image file: PNG at 300 pixels per inch,
+   or, for pictures of images only, at their resolution if lower, as JPEG
+   if their data is compressed with loss. Blank renderings are dropped.
+   Pictures with captions are placed where their caption starts, others
+   before the first line below them in their column, or after the last line
+   above them.
 9. Detect and extract numbered footnote regions using typography and geometry,
    assembling supported paragraph and adjacent-page continuations.
 10. Recognize list items: lines starting with a marker, together with
@@ -429,6 +447,8 @@ The current pipeline is roughly:
     List items are written compactly, with page markers after the list
     marker; adjacent lists that Markdown would merge are separated by the
     same comment.
+    Images are written as `![](path)` without alternative text, with paths
+    containing whitespace or brackets in angle brackets.
     Tables are written as pipe tables, repairing cell text like paragraph
     text. Header rows below a cell spanning columns are combined with it;
     other spanning cells fill their first row and column. Header cells drop

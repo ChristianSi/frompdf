@@ -164,8 +164,13 @@ class Table(Block):
 
 
 @dataclass
-class FigureText(Block):
-    """The text of a figure laid out at its approximate positions, as preformatted rows."""
+class Image(Block):
+    """A picture cut from a page, referenced by the path of its image file.
+
+    The path is relative to the Markdown output, with forward slashes.
+    """
+
+    target: str = ''
 
 
 @dataclass

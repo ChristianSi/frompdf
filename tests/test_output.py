@@ -5,9 +5,9 @@ from frompdf.models import (
     HARD_LINE_BREAK,
     Block,
     BlockQuote,
-    FigureText,
     Footnote,
     Heading,
+    Image,
     InlineRange,
     ListItem,
     PageNumber,
@@ -379,31 +379,38 @@ class PipeTableTests(unittest.TestCase):
         )
 
 
-if __name__ == '__main__':
-    unittest.main()
-
-
-class FigureTextOutputTests(unittest.TestCase):
-    def test_figure_text_is_fenced_without_escaping(self) -> None:
+class ImageOutputTests(unittest.TestCase):
+    def test_image_is_referenced_without_alternative_text(self) -> None:
         page = page_number(1)
-        grid = '  4      8 K\n*-1*     # 10 K'
 
-        self.assertEqual(render_blocks([FigureText(grid, page, page)]), f'```\n{grid}\n```\n')
+        self.assertEqual(
+            render_blocks([Image('', page, page, target='paper-img/p1-1.png')]),
+            '![](paper-img/p1-1.png)\n',
+        )
 
-    def test_page_marker_precedes_the_fence(self) -> None:
+    def test_page_marker_precedes_the_image(self) -> None:
         one, two = page_number(1), page_number(2, '184')
 
         self.assertEqual(
             render_blocks(
-                [Paragraph('Text.', one, one), FigureText('0 40 80', two, two)],
+                [Paragraph('Text.', one, one), Image('', two, two, target='paper-img/p2-1.jpg')],
                 page_markers=True,
             ),
-            '[[PAGE:1]]Text.\n\n[[PAGE:2|VISIBLE:184]]\n\n```\n0 40 80\n```\n',
+            '[[PAGE:1]]Text.\n\n[[PAGE:2|VISIBLE:184]]![](paper-img/p2-1.jpg)\n',
         )
 
-    def test_fence_is_longer_than_backtick_runs_in_the_text(self) -> None:
+    def test_paths_with_spaces_or_brackets_are_enclosed_in_angle_brackets(self) -> None:
         page = page_number(1)
 
         self.assertEqual(
-            render_blocks([FigureText('a ``` b', page, page)]), '````\na ``` b\n````\n'
+            render_blocks([Image('', page, page, target='my paper (v2)-img/p1-1.png')]),
+            '![](<my paper (v2)-img/p1-1.png>)\n',
         )
+        self.assertEqual(
+            render_blocks([Image('', page, page, target='a<b>-img/p1-1.png')]),
+            '![](<a\\<b\\>-img/p1-1.png>)\n',
+        )
+
+
+if __name__ == '__main__':
+    unittest.main()

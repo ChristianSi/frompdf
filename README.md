@@ -34,6 +34,7 @@ The current version provides one command:
 For an input named `file.pdf`, the command writes:
 
 - `file.md` - Markdown output
+- `file-img/` - the pictures of the document as image files, if it has any
 
 With diagnostic options, it can also write:
 
@@ -43,7 +44,8 @@ With diagnostic options, it can also write:
   inferred visible page labels
 
 If `file.md` already exists, frompdf renames it to `file.md.bak` before
-writing the new output.
+writing the new output. An existing `file-img` directory is renamed to
+`file-img.bak` in the same way.
 
 ## Current Markdown features
 
@@ -59,6 +61,8 @@ frompdf currently detects and serializes:
 - bulleted and numbered lists, rendered as compact Markdown lists
 - tables drawn with rules, rendered as pipe tables, including tables
   continuing across pages
+- pictures, such as photos, plots, and diagrams, written as image files and
+  referenced from the Markdown output
 - repeated headers and footers, which are removed from the Markdown output
 - visible page numbers found in removed headers or footers
 - optional page-boundary markers embedded in the Markdown output
@@ -79,7 +83,8 @@ the visible page number for each block.
 ## Requirements
 
 - Python 3.11 or newer
-- `pdftext`, installed through this package's dependencies
+- `pdftext`, `pypdfium2`, and `Pillow`, installed through this package's
+  dependencies
 
 ## Installation
 
@@ -271,6 +276,66 @@ aligned with spaces unless that makes rows longer than 120 characters.
 
 Tables without any rules are not recognized yet and remain ordinary text.
 
+### Images
+
+The pictures of a document are written as image files to a directory next to
+the Markdown output, named like the PDF with `-img` appended. The Markdown
+output references them where they occur, without alternative text:
+
+```markdown
+![](document-img/p3-1.png)
+
+**Figure 2** The caption of the picture.
+```
+
+The files are named by the page of the picture and its number on that page.
+Each picture is cut from its page as the PDF shows it, at 300 pixels per
+inch: photos, screenshots, vector drawings such as plots and diagrams, and
+the text lying within them, such as tick values, axis titles, and legends.
+This text is part of the image and therefore left out of the Markdown output.
+Pictures made of images only keep the resolution of their images if it is
+lower. Photos are written as JPEG files, all other pictures as PNG files.
+
+Pictures are recognized from the drawings of a page, not from their
+captions, so they are found in documents of any language. Regions of
+drawings count as pictures if they contain an image or vector paths with
+curves or diagonal lines, and are not very small. Rules and plain rectangles
+alone, as in tables and boxes around text, are no pictures. The parts of a
+figure that lie close together, such as the panels of a plot, form a single
+image.
+
+Text of the document is never cut into an image. Images and other drawings
+with running text on them are treated as backgrounds or frames, so that
+scanned pages with a text layer, covers, and framed notes stay text. Text
+around a picture belongs to it only if it runs vertically, is set in a font
+that occurs in pictures only, or consists of numbers or a few characters in
+small type, such as tick values. Everything else, such as a caption, ends
+the picture and stays text. Logos, rules, and other drawings repeated at the
+same place on several pages are skipped as page furniture.
+
+The text directly below a picture is its caption if it is set in smaller
+type than the body text, or starts in bold or italics. Pictures and their
+captions are taken out of the flow of the text, so a paragraph interrupted by
+a picture continues past it, and the picture follows it with its caption.
+
+Use `--no-images` to write no image files and no references to them:
+
+```bash
+frompdf --no-images ./document.pdf
+```
+
+The text within pictures is still left out of the Markdown output.
+
+If the directory for the images already exists, frompdf renames it by
+appending `.bak`, replacing an older backup. It only does so for directories
+that contain nothing but image files as written by frompdf. If a directory
+of that name holds anything else, frompdf stops without changing it; rename
+it, or use `--no-images`.
+
+Pages that are rotated, vector charts made of rectangles and straight lines
+only, such as bar charts, and small pictures are not written as images yet.
+Logos that occur only once, as on a first page, are.
+
 ### Superscripts and subscripts
 
 Small, raised or lowered characters in running text retain their position
@@ -317,6 +382,8 @@ structure has to be inferred. Current limitations include:
 - block quote detection is conservative and currently relies on indentation
 - nested lists, captions, and code blocks are not modeled as dedicated block
   types yet, and tables only when drawn with rules
+- picture detection is heuristic: text set in the document's font beside a
+  plot stays text, and a picture can include or miss a label at its edge
 - multi-column and heavily designed PDFs can still produce awkward reading
   order
 - header and footer removal depends on repetition and page-position heuristics

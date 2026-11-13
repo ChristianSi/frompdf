@@ -3,15 +3,16 @@
 `pdftext` reports text only, so the vector paths of each page are read with
 pypdfium2, the PDF library underlying `pdftext`. Straight path segments and
 thin filled rectangles become rules, in the coordinates `pdftext` uses for
-text: points from the top left of the page's crop box.
+text: points from the top left of the page's crop box. All visible drawings,
+which are paths, images, and shadings, are reported with their boxes as well.
 """
 
 import ctypes
 import math
 from collections.abc import Sequence
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from pathlib import Path
-from typing import Any
+from typing import Any, Literal
 
 import pypdfium2 as pdfium
 import pypdfium2.raw as pdfium_c
@@ -347,6 +348,49 @@ DrawingBox = tuple[float, float, float, float]
 # The unit square that image and shading objects are drawn into.
 UNIT_SQUARE = ((0.0, 0.0), (1.0, 0.0), (0.0, 1.0), (1.0, 1.0))
 
+# Straight segments advancing more than this in both directions, in points,
+# are diagonal, unlike the sides of rules, frames, and table cells.
+MIN_DIAGONAL_ADVANCE = 1.0
+
+# The filters of image data compressed with loss, as photos usually are.
+LOSSY_IMAGE_FILTERS = frozenset({'DCTDecode', 'JPXDecode'})
+
+# An image shows if more than this share of its pixels is not fully
+# transparent. Some templates lay an empty image over much of a page.
+MIN_VISIBLE_PIXEL_SHARE = 0.01
+
+
+@dataclass(frozen=True)
+class Drawing:
+    """A visible drawing on a page: a vector path, an image, or a shading.
+
+    box is in `pdftext` coordinates. detail counts the curves and diagonal
+    segments of a path, which rules, frames, and the cells of tables lack.
+    Images have their size in pixels, and are lossy if their data is
+    compressed with loss, as that of photos.
+    """
+
+    box: DrawingBox
+    kind: Literal['path', 'image', 'shading'] = 'path'
+    detail: int = 0
+    pixel_width: int = 0
+    pixel_height: int = 0
+    lossy: bool = False
+
+    @property
+    def resolution(self) -> float | None:
+        """Return the resolution of an image in pixels per inch, if known."""
+        width = self.box[2] - self.box[0]
+        height = self.box[3] - self.box[1]
+        if not self.pixel_width or not self.pixel_height or width <= 0 or height <= 0:
+            return None
+        return 72.0 * max(self.pixel_width / width, self.pixel_height / height)
+
+
+# A drawing in PDF page space: its box (left, bottom, right, top) and the
+# drawing itself, whose box is still to be converted.
+RawDrawing = tuple[ClipBox, Drawing]
+
 
 def path_points(page_object: PageObject, matrix: Matrix) -> list[tuple[float, float]]:
     """Return the points of all segments of a path, including curve control points.
@@ -357,6 +401,73 @@ def path_points(page_object: PageObject, matrix: Matrix) -> list[tuple[float, fl
         segment_point(pdfium_c.FPDFPath_GetPathSegment(page_object, index), matrix)
         for index in range(max(pdfium_c.FPDFPath_CountSegments(page_object), 0))
     ]
+
+
+def path_detail(page_object: PageObject, points: Sequence[tuple[float, float]]) -> int:
+    """Return the number of curves and diagonal segments of a path.
+
+    points are the transformed points of its segments. A curve has three of
+    them: two control points and its end.
+    """
+    curve_points = 0
+    diagonals = 0
+    for index, point in enumerate(points):
+        segment = pdfium_c.FPDFPath_GetPathSegment(page_object, index)
+        segment_type = pdfium_c.FPDFPathSegment_GetType(segment)
+        if segment_type == pdfium_c.FPDF_SEGMENT_BEZIERTO:
+            curve_points += 1
+        elif segment_type == pdfium_c.FPDF_SEGMENT_LINETO and index:
+            previous = points[index - 1]
+            if (
+                abs(point[0] - previous[0]) > MIN_DIAGONAL_ADVANCE
+                and abs(point[1] - previous[1]) > MIN_DIAGONAL_ADVANCE
+            ):
+                diagonals += 1
+    return curve_points // 3 + diagonals
+
+
+def image_pixel_size(page_object: PageObject) -> tuple[int, int]:
+    """Return the width and height of an image in pixels, or zeros if unknown."""
+    width, height = ctypes.c_uint(), ctypes.c_uint()
+    if not pdfium_c.FPDFImageObj_GetImagePixelSize(page_object, width, height):
+        return 0, 0
+    return width.value, height.value
+
+
+def image_is_lossy(page_object: PageObject) -> bool:
+    """Return whether the data of an image is compressed with loss, as by JPEG."""
+    for index in range(max(pdfium_c.FPDFImageObj_GetImageFilterCount(page_object), 0)):
+        length = pdfium_c.FPDFImageObj_GetImageFilter(page_object, index, None, 0)
+        if length <= 0:
+            continue
+        buffer = ctypes.create_string_buffer(length)
+        pdfium_c.FPDFImageObj_GetImageFilter(page_object, index, buffer, length)
+        if buffer.value.decode('ascii', errors='replace') in LOSSY_IMAGE_FILTERS:
+            return True
+    return False
+
+
+def image_is_visible(document: Any, page: Any, page_object: PageObject) -> bool:
+    """Return whether an image shows anything, unlike a fully transparent one.
+
+    Only images with transparency are rendered to tell, as most have none.
+    """
+    if not pdfium_c.FPDFPageObj_HasTransparency(page_object):
+        return True
+    bitmap = pdfium_c.FPDFImageObj_GetRenderedBitmap(document, page, page_object)
+    if not bitmap:
+        return True
+    try:
+        if pdfium_c.FPDFBitmap_GetFormat(bitmap) != pdfium_c.FPDFBitmap_BGRA:
+            return True
+        size = pdfium_c.FPDFBitmap_GetStride(bitmap) * pdfium_c.FPDFBitmap_GetHeight(bitmap)
+        buffer = pdfium_c.FPDFBitmap_GetBuffer(bitmap)
+        if size <= 0 or not buffer:
+            return True
+        alpha = ctypes.string_at(buffer, size)[3::4]
+        return len(alpha) - alpha.count(0) > MIN_VISIBLE_PIXEL_SHARE * len(alpha)
+    finally:
+        pdfium_c.FPDFBitmap_Destroy(bitmap)
 
 
 def clipped_box(points: Sequence[tuple[float, float]], clip: ClipBox | None) -> ClipBox | None:
@@ -382,12 +493,16 @@ def collect_page_drawings(
     page_objects: Sequence[PageObject],
     container: Matrix,
     clip: ClipBox | None,
-    boxes: list[ClipBox],
+    drawings: list[RawDrawing],
+    document: Any,
+    page: Any,
 ) -> None:
-    """Append the boxes of visible drawings by page objects, descending into form XObjects.
+    """Append the visible drawings by page objects, descending into form XObjects.
 
-    Paths count where their stroke or fill shows on white paper; images and
-    shadings always do.
+    Paths count where their stroke or fill shows on white paper, images
+    unless they are fully transparent, and shadings always. The boxes of the
+    drawings are still to be converted from PDF page space. document and
+    page are the pdfium handles of the page the objects are on.
     """
     for page_object in page_objects:
         object_type = pdfium_c.FPDFPageObj_GetType(page_object)
@@ -405,7 +520,7 @@ def collect_page_drawings(
             children = [
                 pdfium_c.FPDFFormObj_GetObject(page_object, index) for index in range(count)
             ]
-            collect_page_drawings(children, matrix, object_clip, boxes)
+            collect_page_drawings(children, matrix, object_clip, drawings, document, page)
             continue
         if object_type == pdfium_c.FPDF_PAGEOBJ_PATH:
             fill_mode, stroke = ctypes.c_int(), ctypes.c_int()
@@ -417,8 +532,19 @@ def collect_page_drawings(
             ):
                 continue
             points = path_points(page_object, matrix)
+            drawing = Drawing((0.0, 0.0, 0.0, 0.0), 'path', path_detail(page_object, points))
         elif object_type == pdfium_c.FPDF_PAGEOBJ_IMAGE:
+            if not image_is_visible(document, page, page_object):
+                continue
             points = [transform(matrix, x, y) for x, y in UNIT_SQUARE]
+            pixel_width, pixel_height = image_pixel_size(page_object)
+            drawing = Drawing(
+                (0.0, 0.0, 0.0, 0.0),
+                'image',
+                pixel_width=pixel_width,
+                pixel_height=pixel_height,
+                lossy=image_is_lossy(page_object),
+            )
         else:
             left, bottom, right, top = (ctypes.c_float() for _ in range(4))
             if not pdfium_c.FPDFPageObj_GetBounds(page_object, left, bottom, right, top):
@@ -428,18 +554,19 @@ def collect_page_drawings(
                 for x in (left.value, right.value)
                 for y in (bottom.value, top.value)
             ]
+            drawing = Drawing((0.0, 0.0, 0.0, 0.0), 'shading')
         box = clipped_box(points, object_clip)
         if box is not None:
-            boxes.append(box)
+            drawings.append((box, drawing))
 
 
-def extract_drawings(input_path: Path, page_list: Sequence[Page]) -> dict[int, list[DrawingBox]]:
-    """Return the boxes of visible drawings on each page, by page number starting at 1.
+def extract_drawings(input_path: Path, page_list: Sequence[Page]) -> dict[int, list[Drawing]]:
+    """Return the visible drawings on each page, by page number starting at 1.
 
     Drawings are vector paths, images, and shadings, such as the plots of a
     figure. Rotated pages are skipped, as for rules.
     """
-    drawings_by_page: dict[int, list[DrawingBox]] = {}
+    drawings_by_page: dict[int, list[Drawing]] = {}
     pdf = pdfium.PdfDocument(input_path)
     try:
         for page_no, page_dict in enumerate(page_list, start=1):
@@ -450,19 +577,24 @@ def extract_drawings(input_path: Path, page_list: Sequence[Page]) -> dict[int, l
                 # Mirror pdftext's mapping from PDF page space to its coordinates.
                 left, bottom, _, top = page.get_bbox()
                 height = math.ceil(abs(top - bottom))
-                raw_boxes: list[ClipBox] = []
+                raw_drawings: list[RawDrawing] = []
                 count = max(pdfium_c.FPDFPage_CountObjects(page.raw), 0)
                 collect_page_drawings(
                     [pdfium_c.FPDFPage_GetObject(page.raw, index) for index in range(count)],
                     IDENTITY,
                     None,
-                    raw_boxes,
+                    raw_drawings,
+                    pdf.raw,
+                    page.raw,
                 )
             finally:
                 page.close()
             drawings_by_page[page_no] = [
-                (x1 - left, height - (y2 - bottom), x2 - left, height - (y1 - bottom))
-                for x1, y1, x2, y2 in raw_boxes
+                replace(
+                    drawing,
+                    box=(x1 - left, height - (y2 - bottom), x2 - left, height - (y1 - bottom)),
+                )
+                for (x1, y1, x2, y2), drawing in raw_drawings
             ]
     finally:
         pdf.close()

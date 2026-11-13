@@ -22,6 +22,9 @@ dist/
 .coverage
 htmlcov/
 
+# Image directories written by corpus conversions
+tests/pdf-corpus/*-img/
+
 # Editor / OS files
 .vscode/
 .idea/

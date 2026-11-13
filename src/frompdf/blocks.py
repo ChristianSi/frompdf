@@ -15,7 +15,7 @@ from frompdf.continuations import (
     document_indents_paragraphs,
     join_fragments,
 )
-from frompdf.figures import FigureLayout, figure_grid
+from frompdf.figures import FigureLayout, reading_position
 from frompdf.footnotes import build_footnote, extract_footnotes, place_footnotes
 from frompdf.front_matter import format_front_matter, unquote_blocks_above_title
 from frompdf.heading_candidates import find_typographic_heading_lines
@@ -26,8 +26,8 @@ from frompdf.models import (
     HARD_LINE_BREAK,
     Block,
     BlockQuote,
-    FigureText,
     Heading,
+    Image,
     Line,
     ListItem,
     PageNumber,
@@ -52,9 +52,10 @@ from frompdf.unhyphenation import (
     spelling_evidence_text,
 )
 
-# Figures and tables are placed half a line before the first line following
-# them. Figures at the same place are ordered by steps much smaller than that,
-# and their captions follow them by an even smaller one.
+# Tables and figures with captions are placed half a line before the first
+# line following their first one, other figures where they lie on their page.
+# Figures at the same place are ordered by steps much smaller than that, and
+# their captions follow them by an even smaller one.
 FIGURE_ORDER_STEP = 1e-3
 CAPTION_ORDER_STEP = 1e-6
 
@@ -572,12 +573,35 @@ def detect_headings(
     return converted_blocks
 
 
+# A frame on a page: its page number, top, bottom, left, and right.
+Frame = tuple[int, float, float, float, float]
+
+
+def table_frames(tables: Sequence[TableLayout]) -> list[Frame]:
+    """Return the frames of tables, which span the width of their pages."""
+    return [
+        (frame.page_no, frame.top, frame.bottom, -math.inf, math.inf)
+        for table in tables
+        for frame in table.frames
+    ]
+
+
+def figure_frames(figures: Sequence[FigureLayout]) -> list[Frame]:
+    """Return the frames of figures, enclosing their pictures and captions."""
+    frames: list[Frame] = []
+    for figure in figures:
+        left, top, right, bottom = figure.frame
+        frames.append((figure.page_no, top, bottom, left, right))
+    return frames
+
+
 def split_groups_at_frames(
-    group_list: list[list[Line]], frames: Sequence[tuple[int, float, float]]
+    group_list: list[list[Line]], frames: Sequence[Frame]
 ) -> list[list[Line]]:
     """Split groups of lines where a frame lies between two of them on the same page.
 
-    Frames are given as page number, top, and bottom, as of tables and figures.
+    Frames are those of tables and figures. A frame lies between two lines
+    if it is below the first, above the second, and not beside the first.
     Text continuing past a frame at the top of another column or page stays
     together, so the frame follows it.
     """
@@ -593,7 +617,9 @@ def split_groups_at_frames(
                 and line.y1 is not None
                 and previous.y2 <= top
                 and bottom <= line.y1
-                for page_no, top, bottom in frames
+                and (previous.x1 is None or previous.x1 < right)
+                and (previous.x2 is None or left < previous.x2)
+                for page_no, top, bottom, left, right in frames
             ):
                 split.append([])
             split[-1].append(line)
@@ -604,16 +630,13 @@ def split_groups_at_tables(
     group_list: list[list[Line]], tables: Sequence[TableLayout]
 ) -> list[list[Line]]:
     """Split groups of lines where a table lies between two of them on the same page."""
-    return split_groups_at_frames(
-        group_list,
-        [(frame.page_no, frame.top, frame.bottom) for table in tables for frame in table.frames],
-    )
+    return split_groups_at_frames(group_list, table_frames(tables))
 
 
-def build_figure_text(figure: FigureLayout, page_number_map: dict[int, PageNumber]) -> FigureText:
-    """Build the block of a figure's text laid out at its approximate positions."""
+def build_image(figure: FigureLayout, page_number_map: dict[int, PageNumber]) -> Image:
+    """Build the block referencing the image written for a figure."""
     page = page_number_map[figure.page_no]
-    return FigureText(text='\n'.join(figure_grid(figure.lines)), start_page=page, end_page=page)
+    return Image(text='', start_page=page, end_page=page, target=figure.image or '')
 
 
 def single_line_text(value: AnnotatedText) -> AnnotatedText:
@@ -687,9 +710,11 @@ def lines_to_markdown_blocks(
 ) -> list[Block]:
     """Convert line records into Markdown blocks.
 
-    The lines of tables and figures are left out of all other blocks, and the
-    tables and figures are placed before the first line following their first
-    one. The caption of a figure follows its text.
+    The lines of tables and figures are left out of all other blocks. Tables
+    and figures with captions are placed before the first line following
+    their first one or that of their caption, other figures where they lie
+    among the lines of their page. Figures become images if one was written
+    for them, followed by their captions.
     """
     block_list: list[Block] = []
     evidence_texts = [
@@ -710,8 +735,13 @@ def lines_to_markdown_blocks(
         frame = frame_of_line.get(id(line))
         if frame is None:
             remaining_lines.append(line)
-        else:
+        elif isinstance(frame, TableLayout) or (
+            frame.caption_lines and line is frame.caption_lines[0]
+        ):
             frame_positions.setdefault(id(frame), len(remaining_lines) - 0.5)
+    for figure in figures:
+        if id(figure) not in frame_positions:
+            frame_positions[id(figure)] = reading_position(figure, remaining_lines)
     line_list = remaining_lines
     default_font_size = dominant_document_font_size(line_list)
     document_median_weight = document_median_avg_weight(line_list)
@@ -737,25 +767,28 @@ def lines_to_markdown_blocks(
             heading_lines,
             list_items.item_of_line,
         ),
-        [(frame.page_no, frame.top, frame.bottom) for table in tables for frame in table.frames]
-        + [(figure.page_no, figure.top, figure.bottom) for figure in figures],
+        table_frames(tables) + figure_frames(figures),
     )
     # Figures at the same position keep their order, and their captions follow
-    # their text.
+    # their images.
     figure_positions = {
         id(figure): frame_positions[id(figure)] + index * FIGURE_ORDER_STEP
         for index, figure in enumerate(figures)
-        if id(figure) in frame_positions
     }
     positioned_groups: list[tuple[float, list[Line]]] = [
         (source_positions[id(group[0])], group) for group in group_list
     ]
+    # Captions may be the only text of their page.
+    caption_layouts = build_page_layouts(
+        [line for figure in figures for line in figure.caption_lines]
+    )
+    page_layouts = caption_layouts | page_layouts
     # A caption forms one paragraph, also where its lines change faces or a
     # sentence ends a line.
     positioned_groups.extend(
         (figure_positions[id(figure)] + CAPTION_ORDER_STEP, figure.caption_lines)
         for figure in figures
-        if id(figure) in figure_positions
+        if figure.caption_lines
     )
     positioned_groups.sort(key=lambda item: item[0])
 
@@ -813,9 +846,9 @@ def lines_to_markdown_blocks(
         for table in tables
     )
     positioned_blocks.extend(
-        (figure_positions[id(figure)], build_figure_text(figure, page_number_map))
+        (figure_positions[id(figure)], build_image(figure, page_number_map))
         for figure in figures
-        if id(figure) in figure_positions and figure.lines
+        if figure.image
     )
     positioned_blocks.sort(key=lambda item: item[0])
     return place_footnotes([block for _, block in positioned_blocks], notes_title)

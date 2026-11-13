@@ -9,15 +9,27 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
 
 ### Added
 
-- The text of captioned figures, such as tick values, axis titles, and
-  legends of plots, is laid out at its approximate positions in a block of
-  preformatted text instead of spilling into the flow as scattered paragraphs
-  and headings. Figures are recognized from their drawings and a caption
-  starting with a figure label and number, such as `Fig. 3`, just below or
-  above them. Like tables, figures and their captions are left out of the
-  flow, so paragraphs interrupted by a figure continue past it, and the
-  figure follows them with its caption as one paragraph. Figures without text,
-  such as photos, keep only their caption.
+- The pictures of a document, such as photos, screenshots, plots, and
+  diagrams, are written as image files and referenced from the Markdown
+  output as `![](file-img/p3-1.png)`. Each picture is cut from its page as
+  the PDF shows it, at 300 pixels per inch, together with the text lying
+  within it, such as the tick values, axis titles, and legends of plots.
+  This text is left out of the Markdown output instead of spilling into the
+  flow as scattered paragraphs and headings. Pictures are recognized from
+  their drawings alone, in documents of any language and with or without
+  captions. Text of the document is never cut into an image: images and
+  boxes with running text on them, such as scanned pages with a text layer
+  and framed notes, stay text. Logos and other drawings repeated on several
+  pages are skipped. The images of `file.pdf` are written as PNG, or JPEG
+  for photos, to the directory `file-img`, which is renamed to
+  `file-img.bak` if it already exists; a directory holding anything but
+  such images is never replaced. Like tables, pictures and their captions
+  are left out of the flow, so paragraphs interrupted by a picture continue
+  past it, and the picture follows them with its caption as one paragraph.
+  A caption is the text set directly below a picture in smaller type, or
+  starting in bold or italics.
+- The new option `--no-images` leaves out the image files and the references
+  to them. The text within pictures is still left out.
 - Tables drawn with rules are rendered as pipe tables. Tables need connected
   horizontal and vertical rules with a vertical rule between columns, as in
   ruled grids or booktabs-style tables with column rules; rules nested in

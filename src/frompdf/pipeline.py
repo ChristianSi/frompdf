@@ -16,6 +16,7 @@ from frompdf.glyph_repairs import (
     remove_icon_glyphs,
     restore_private_use_bullets,
 )
+from frompdf.images import write_images
 from frompdf.lines import drop_dominant_emphasis, iter_lines
 from frompdf.models import Block
 from frompdf.output import (
@@ -39,8 +40,14 @@ def extract_markdown(
     dump_lines: bool = False,
     dump_pagenos: bool = False,
     notes_title: str = 'Notes',
+    image_dir: Path | None = None,
 ) -> list[Block]:
-    """Extract Markdown blocks from a PDF."""
+    """Extract Markdown blocks from a PDF.
+
+    The pictures of the document are written as images into image_dir and
+    referenced from the blocks. Without it, they are left out, like the text
+    shown by them.
+    """
     input_path = Path(input_file_name)
     page_list = dictionary_output(str(input_path), sort=True, keep_chars=True)
     normalize_detached_diacritics(page_list)
@@ -69,5 +76,13 @@ def extract_markdown(
 
     page_number_map = build_page_number_map(len(page_list), page_number_list)
     tables = find_tables(filtered_lines, extract_rules(input_path, page_list))
-    figures = find_figures(filtered_lines, extract_drawings(input_path, page_list), tables)
+    page_sizes = {
+        page_no: (page['bbox'][2] - page['bbox'][0], page['bbox'][3] - page['bbox'][1])
+        for page_no, page in enumerate(page_list, start=1)
+    }
+    figures = find_figures(
+        filtered_lines, extract_drawings(input_path, page_list), tables, page_sizes
+    )
+    if image_dir is not None:
+        write_images(input_path, figures, image_dir)
     return lines_to_markdown_blocks(filtered_lines, page_number_map, notes_title, tables, figures)
