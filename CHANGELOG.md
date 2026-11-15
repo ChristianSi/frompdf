@@ -84,8 +84,12 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
   citation markers, chemical formulas, and mathematical indices. Detected
   footnote labels remain ordinary numbered list markers.
 - Bold and italic text is rendered as `**bold**` and `*italic*` emphasis,
-  based on font names and the italic font flag. Letters in math italic fonts
-  count as italic; other math fonts and a document's body style are ignored.
+  based on font names and the italic font flag. Fonts named by opaque hashes,
+  such as `AdvOTcb88df00`, count as bold if their letters are drawn with
+  strokes at least 1.4 times as wide as those of the body font, as for the
+  bold lead sentences and panel letters of figure captions in Nature
+  Communications. Letters in math italic fonts count as italic; other math
+  fonts and a document's body style are ignored.
   Headings and bold front-matter paragraphs get no additional bold, nor
   italics covering all of their text. Emphasis is adjusted so Markdown renders
   it as intended: list, quote, and page markers stay outside, and punctuation,

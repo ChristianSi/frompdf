@@ -365,6 +365,11 @@ fonts, such as TeX variables, are italic as well. Other math fonts, holding
 symbols and operators, are ignored even when flagged as italic. A style used
 for most of a document's text is its body style and is not marked either.
 
+Some PDFs name their fonts by opaque hashes, such as `AdvOTcb88df00`, and
+report no weights. Such a font counts as bold if the strokes of its letters,
+measured from their outlines, are at least 1.4 times as wide as those of the
+body font. Fonts with ordinary names are judged by their names only.
+
 Bold and italic parts of paragraphs, block quotes, and notes are rendered as
 `**bold**` and `*italic*`, as are completely styled blocks. Headings and the
 bold paragraphs used for subtitles and author names never get additional bold,

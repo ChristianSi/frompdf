@@ -16,6 +16,7 @@ from frompdf.glyph_repairs import (
     remove_icon_glyphs,
     restore_private_use_bullets,
 )
+from frompdf.glyph_weight import find_heavy_fonts
 from frompdf.images import write_images
 from frompdf.lines import drop_dominant_emphasis, iter_lines
 from frompdf.models import Block
@@ -58,7 +59,7 @@ def extract_markdown(
     attach_stray_scripts(page_list)
     attach_stacked_scripts(page_list)
     merge_split_denominators(page_list)
-    line_list = iter_lines(page_list)
+    line_list = iter_lines(page_list, find_heavy_fonts(input_path, page_list))
     drop_dominant_emphasis(line_list)
 
     if dump_lines:

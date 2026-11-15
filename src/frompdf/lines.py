@@ -232,8 +232,13 @@ def dominant_font_name(line_dict: PdfTextLine) -> str | None:
     return max(name_weights.items(), key=lambda item: (item[1], item[0]))[0]
 
 
-def average_font_weight(line_dict: PdfTextLine) -> float | None:
-    """Return the length-weighted average font weight for visible text in a line."""
+def average_font_weight(
+    line_dict: PdfTextLine, heavy_fonts: frozenset[str] = frozenset()
+) -> float | None:
+    """Return the length-weighted average font weight for visible text in a line.
+
+    heavy_fonts are the names of fonts recognized as bold by their glyphs.
+    """
     weighted_sum = 0.0
     total_weight = 0
 
@@ -249,10 +254,11 @@ def average_font_weight(line_dict: PdfTextLine) -> float | None:
             continue
 
         # Some embedded fonts report weight 0 for every span even though their
-        # names retain a conventional bold marker such as `.B` or `-Bold`.
+        # names retain a conventional bold marker such as `.B` or `-Bold`, or
+        # their glyphs show them to be bold.
         font_name = font_dict.get('name')
         if font_weight == 0 and isinstance(font_name, str):
-            if BOLD_FONT_NAME_PATTERN.search(font_name):
+            if BOLD_FONT_NAME_PATTERN.search(font_name) or font_name in heavy_fonts:
                 font_weight = 700
 
         weighted_sum += float(font_weight) * weight
@@ -275,17 +281,20 @@ def is_math_italic_span(span_dict: PdfTextSpan) -> bool:
     return bool(MATH_ITALIC_FONT_NAME_PATTERN.search(span_font_name(span_dict)))
 
 
-def span_emphasis_kinds(span_dict: PdfTextSpan) -> tuple[Literal['bold', 'italic'], ...]:
+def span_emphasis_kinds(
+    span_dict: PdfTextSpan, heavy_fonts: frozenset[str] = frozenset()
+) -> tuple[Literal['bold', 'italic'], ...]:
     """Return whether a span's font is bold and whether it is italic.
 
-    Math italic fonts are italic; other math fonts are ignored.
+    Math italic fonts are italic; other math fonts are ignored. heavy_fonts
+    are the names of fonts recognized as bold by their glyphs.
     """
     font_name = span_font_name(span_dict)
     math_italic = is_math_italic_span(span_dict)
     if MATH_FONT_NAME_PATTERN.search(font_name) and not math_italic:
         return ()
     kinds: list[Literal['bold', 'italic']] = []
-    if BOLD_FACE_PATTERN.search(font_name):
+    if BOLD_FACE_PATTERN.search(font_name) or font_name in heavy_fonts:
         kinds.append('bold')
     flags = span_dict.get('font', {}).get('flags')
     if (
@@ -298,18 +307,21 @@ def span_emphasis_kinds(span_dict: PdfTextSpan) -> tuple[Literal['bold', 'italic
     return tuple(kinds)
 
 
-def line_emphasis_ranges(line_dict: PdfTextLine) -> tuple[InlineRange, ...]:
+def line_emphasis_ranges(
+    line_dict: PdfTextLine, heavy_fonts: frozenset[str] = frozenset()
+) -> tuple[InlineRange, ...]:
     """Return the bold and italic ranges of a line's text, merging those of adjacent spans.
 
     Only the letters of math italic fonts are styled, with combining marks
-    following them.
+    following them. heavy_fonts are the names of fonts recognized as bold by
+    their glyphs.
     """
     ranges: list[InlineRange] = []
     open_runs: dict[str, InlineRange] = {}
     offset = 0
     for span_dict in line_dict.get('spans', []):
         text_value = span_dict.get('text', '')
-        kinds = span_emphasis_kinds(span_dict) if text_value.strip() else ()
+        kinds = span_emphasis_kinds(span_dict, heavy_fonts) if text_value.strip() else ()
         pieces = (
             [(char, kinds if char.isalpha() else ()) for char in text_value]
             if kinds and is_math_italic_span(span_dict)
@@ -831,8 +843,11 @@ def has_edge_space(raw_text: str, at_end: bool) -> bool:
     return edge.isspace()
 
 
-def iter_lines(page_list: Sequence[Page]) -> list[Line]:
-    """Flatten pdftext dictionary output into a list of Line records."""
+def iter_lines(page_list: Sequence[Page], heavy_fonts: frozenset[str] = frozenset()) -> list[Line]:
+    """Flatten pdftext dictionary output into a list of Line records.
+
+    heavy_fonts are the names of fonts recognized as bold by their glyphs.
+    """
     line_list: list[Line] = []
 
     for page_index, page_dict in enumerate(page_list, start=1):
@@ -870,7 +885,7 @@ def iter_lines(page_list: Sequence[Page]) -> list[Line]:
                     y2=round_or_none(y2),
                     rel_x=rel_x,
                     rel_y=rel_y,
-                    avg_weight=average_font_weight(line_dict),
+                    avg_weight=average_font_weight(line_dict, heavy_fonts),
                     font_name=dominant_font_name(line_dict),
                     space_before=bool(text_value) and has_edge_space(raw_text, at_end=False),
                     space_after=bool(text_value) and has_edge_space(raw_text, at_end=True),
@@ -905,7 +920,8 @@ def iter_lines(page_list: Sequence[Page]) -> list[Line]:
                 and (other_index != index if real_sizes else abs(other_index - index) == 1)
             ]
             scripts = line_script_ranges(line_dict, block_lines, same_line)
-            annotated = AnnotatedText(raw_text, scripts + line_emphasis_ranges(line_dict)).slice(
+            emphasis = line_emphasis_ranges(line_dict, heavy_fonts)
+            annotated = AnnotatedText(raw_text, scripts + emphasis).slice(
                 len(raw_text) - len(raw_text.lstrip()), len(raw_text.rstrip())
             )
             line_obj.ranges = annotated.ranges
@@ -922,9 +938,9 @@ def iter_lines(page_list: Sequence[Page]) -> list[Line]:
                 # them; the denominator's own scripts are judged within it.
                 numerator = page_lines[index - 1][0]
                 numerator.ranges = without_trailing_scripts(numerator)
-                own = AnnotatedText(
-                    raw_text, line_script_ranges(line_dict) + line_emphasis_ranges(line_dict)
-                ).slice(len(raw_text) - len(raw_text.lstrip()), len(raw_text.rstrip()))
+                own = AnnotatedText(raw_text, line_script_ranges(line_dict) + emphasis).slice(
+                    len(raw_text) - len(raw_text.lstrip()), len(raw_text.rstrip())
+                )
                 line_obj.ranges = own.ranges
             line_list.append(line_obj)
 
