@@ -17,10 +17,13 @@ the radical of the symbol font. The text fonts of Advent are left alone.
 import re
 from collections.abc import Sequence
 from pathlib import Path
+from typing import cast
 from unicodedata import normalize
 
+from pdftext.schema import Bbox, Page
+from pdftext.schema import Block as PdfTextBlock
 from pdftext.schema import Char as PdfTextChar
-from pdftext.schema import Page
+from pdftext.schema import Line as PdfTextLine
 from pdftext.schema import Span as PdfTextSpan
 
 from frompdf.font_encodings import base_font_name, read_font_differences
@@ -29,6 +32,7 @@ from frompdf.glyph_repairs import (
     MATH_EXTENSION_CHARS,
     overlaps_horizontally,
 )
+from frompdf.lines import Box, union_box
 
 # Base names of the clones by TeX layout. Not all of them have been seen in
 # PDFs; the others follow zotero-pdf-miner's list.
@@ -103,6 +107,8 @@ SPECIAL_GLYPHS: dict[str, dict[str, str]] = {
         'C138': ']',
     },
     'cmex': {'ffi': ''},
+    # The dieresis of the roman font, as wiley's `Tielbörger`, is named `Euro`.
+    'cmr': {'Euro': '¨'},
 }
 # The text that Unicode mappings following these glyph names give them.
 SPECIAL_GLYPH_NAMES = {
@@ -113,6 +119,7 @@ SPECIAL_GLYPH_NAMES = {
     '½': 'onehalf',
     'ffi': 'ffi',
     'ﬃ': 'ffi',
+    '€': 'Euro',
 }
 POSITION_NAME_PATTERN = re.compile(r'C(\d+)')
 
@@ -213,6 +220,62 @@ def decode_span(
     return previous_char
 
 
+# pdftext takes font code 2 for pdfium's mark of a hyphen ending a line, so it
+# reads such a glyph as `-` and a line end and starts a new line record after
+# it, as after the `∼` of nature-spin's `τ ∼ c/κ`. The next record continues
+# the same visual line if they overlap vertically by at least this share of
+# the lower one's height.
+HYPHEN_MARK_CODE = '\x02'
+SAME_LINE_MIN_OVERLAP = 0.5
+
+
+def ends_at_code_2(line_dict: PdfTextLine) -> bool:
+    """Return whether a line record ends at a glyph of an Advent math font with font code 2."""
+    spans = line_dict.get('spans', [])
+    if not spans:
+        return False
+    font_name = spans[-1].get('font', {}).get('name')
+    chars = spans[-1].get('chars', [])
+    return (
+        isinstance(font_name, str)
+        and is_advent_math_font(font_name)
+        and bool(chars)
+        and chars[-1].get('char') == HYPHEN_MARK_CODE
+    )
+
+
+def line_box(line_dict: PdfTextLine) -> Box:
+    """Return the box of a line record."""
+    x1, y1, x2, y2 = line_dict['bbox']
+    return x1, y1, x2, y2
+
+
+def continues_visual_line(line_dict: PdfTextLine, next_line: PdfTextLine) -> bool:
+    """Return whether a line record continues the visual line of the one before it."""
+    x1, y1, _, y2 = line_dict['bbox']
+    next_x1, next_y1, _, next_y2 = next_line['bbox']
+    overlap = min(y2, next_y2) - max(y1, next_y1)
+    height = min(y2 - y1, next_y2 - next_y1)
+    return next_x1 > x1 and height > 0 and overlap >= height * SAME_LINE_MIN_OVERLAP
+
+
+def join_lines_split_at_code_2(block_dict: PdfTextBlock) -> None:
+    """Join line records that pdftext split after a glyph with font code 2, in place."""
+    lines = block_dict.get('lines', [])
+    index = 0
+    while index + 1 < len(lines):
+        line_dict, next_line = lines[index], lines[index + 1]
+        if not ends_at_code_2(line_dict) or not continues_visual_line(line_dict, next_line):
+            index += 1
+            continue
+        last_span = line_dict['spans'][-1]
+        last_span['text'] = last_span.get('text', '').removesuffix('\n')
+        line_dict['spans'].extend(next_line.get('spans', []))
+        boxes = [line_box(line_dict), line_box(next_line)]
+        line_dict['bbox'] = cast(Bbox, list(union_box(boxes)))
+        del lines[index + 1]
+
+
 def is_advent_math_font(font_name: str) -> bool:
     """Return whether a font is an Advent math font."""
     return advent_math_layout(font_name) is not None
@@ -222,11 +285,13 @@ def decode_advent_math_glyphs(page_list: Sequence[Page], input_path: Path | None
     """Replace the misnamed glyphs of Advent math fonts with the characters they show, in place.
 
     The font encodings are read from input_path, if given, to decode glyphs
-    without a Unicode mapping.
+    without a Unicode mapping. Line records that pdftext split after a glyph
+    with font code 2 are joined.
     """
     differences: dict[str, dict[int, str]] | None = None
     for page_dict in page_list:
         for block_dict in page_dict.get('blocks', []):
+            join_lines_split_at_code_2(block_dict)
             for line_dict in block_dict.get('lines', []):
                 previous_char: PdfTextChar | None = None
                 for span_dict in line_dict.get('spans', []):

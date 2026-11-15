@@ -190,16 +190,43 @@ class AdventMathGlyphTests(unittest.TestCase):
             '=1',
         )
 
-    def test_line_end_after_a_font_code_is_kept(self) -> None:
-        # pdftext reads font code 2 as a hyphen at the end of a line.
-        page = page_of(span(['\x02'], SYMBOLS, text='-\n'))
+    def lines_after_code_2(self, next_top: float) -> list:
+        """Decode a line ending in font code 2 and a next line record at next_top."""
+        # pdftext reads font code 2 as a hyphen ending a line, and starts a new
+        # line record after it.
+        first = {'bbox': [0, 0, 20, 10], 'spans': [span(['y'], 'AdvOT7d6df7ab.I')]}
+        first['spans'].append(span(['\x02'], SYMBOLS, text='-\n', x=10))
+        second = {
+            'bbox': [20, next_top, 60, next_top + 10],
+            'spans': [span(['b', 'i', 'n'], 'AdvOT1ef757c0', x=20)],
+        }
+        page = cast(Page, {'blocks': [{'lines': [first, second]}]})
         with tempfile.TemporaryDirectory() as directory:
             path = write_pdf(
                 directory,
                 {1: b'<< /BaseFont /AdvMacMthSyN /Encoding << /Differences [2 /C24] >> >>'},
             )
             decode_advent_math_glyphs([page], path)
-        self.assertEqual(page['blocks'][0]['lines'][0]['spans'][0]['text'], '∼\n')
+        return iter_lines([page])
+
+    def test_line_split_after_font_code_2_is_joined(self) -> None:
+        lines = self.lines_after_code_2(next_top=0.5)
+        self.assertEqual([line.text for line in lines], ['y∼bin'])
+
+    def test_line_end_after_font_code_2_is_kept_before_the_next_line(self) -> None:
+        lines = self.lines_after_code_2(next_top=12)
+        self.assertEqual([line.text for line in lines], ['y∼', 'bin'])
+
+    def test_accents_of_the_roman_font_become_spacing_accents(self) -> None:
+        # Code 2 is the acute accent (`C19`) of wiley's `Ravigné`, and the
+        # dieresis of its `Tielbörger` is named `Euro`.
+        with tempfile.TemporaryDirectory() as directory:
+            path = write_pdf(
+                directory,
+                {1: b'<< /BaseFont /AdvP4C4E59 /Encoding << /Differences [2 /C19] >> >>'},
+            )
+            text = decoded_text(span(['\x02', '€'], 'AdvP4C4E59', text='-'), input_path=path)
+        self.assertEqual(text, '´¨')
 
     def test_radical_bar_drawn_as_ligature_is_dropped(self) -> None:
         self.assertEqual(

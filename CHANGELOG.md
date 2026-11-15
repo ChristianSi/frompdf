@@ -145,7 +145,10 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
   fonts clone TeX's math fonts under wrong glyph names, so `p = 0.03` no
   longer reads `p ¼ 0.03`, `(x + ∞)` no longer reads `ðx þ 1Þ`, and minus
   signs, `∼`, and `·`, which had no Unicode mapping at all, are no longer
-  lost. The same characters in other fonts, such as real fractions and
+  lost. Accents set in these fonts combine with their letters, as in
+  `Tielbörger` and `Ravigné`. Lines are no longer broken after symbols with
+  font code 2, which `pdftext` takes for a hyphen ending the line, as in
+  `τ ∼ c/κ`. The same characters in other fonts, such as real fractions and
   Icelandic letters, are left alone.
 - Inline fractions set with the numerator above the denominator, such as
   `IDmax/n` or `1/2` in running text, are written with a slash on one line

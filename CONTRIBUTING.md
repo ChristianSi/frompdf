@@ -163,7 +163,7 @@ The implementation is split into focused modules under `src/frompdf`:
 
 - `advent_fonts.py` decodes the glyphs of Advent 3B2 math fonts, which clone
   TeX's math fonts under wrong glyph names, by their positions in the TeX
-  layouts.
+  layouts, and joins line records that `pdftext` split after them.
 - `blocks.py` turns segmented lines into blocks, classifies block quotes and
   headings, and coordinates within-block text repair.
 - `cli.py` implements the command-line interface.
@@ -277,20 +277,23 @@ Important concepts:
 The current pipeline is roughly:
 
 1. Extract raw `pdftext` page data.
-2. Repair detached, geometrically positioned diacritics in the raw data,
-   keeping a combining accent where no precomposed letter exists, remove
-   glyphs from icon fonts, and decode TeX math extension glyphs that
-   `pdftext` reports by their font codes. Glyphs of the math fonts of
-   Advent 3B2, whose Unicode mappings follow wrong glyph names, become the
-   characters they show; glyphs without a mapping are identified by the
-   glyph names that their font codes have in the font's encoding. Capitals of
-   blackboard bold fonts become double-struck letters. Restore bullets of symbol fonts, which
-   `pdftext` drops as private-use characters. Move scripts that `pdftext` set
-   apart, in a block of their own or stacked below or above another script,
-   back into the line records they belong to; a record mostly in script size
-   is measured against its largest glyphs. Merge touching records of small
-   glyphs centered below a numerator into one denominator, which starts with
-   a radical sign reaching down beside it from the numerator's record.
+2. Decode the glyphs of the math fonts of Advent 3B2, whose Unicode
+   mappings follow wrong glyph names, as the characters they show; glyphs
+   without a mapping are identified by the glyph names that their font codes
+   have in the font's encoding. Join the line records that `pdftext` split
+   after such a glyph with font code 2, which it takes for a hyphen ending
+   the line. Repair detached, geometrically positioned diacritics in the raw
+   data, including the accents of these fonts, keeping a combining accent
+   where no precomposed letter exists, remove glyphs from icon fonts, and
+   decode TeX math extension glyphs that `pdftext` reports by their font
+   codes. Capitals of blackboard bold fonts become double-struck letters.
+   Restore bullets of symbol fonts, which `pdftext` drops as private-use
+   characters. Move scripts that `pdftext` set apart, in a block of their
+   own or stacked below or above another script, back into the line records
+   they belong to; a record mostly in script size is measured against its
+   largest glyphs. Merge touching records of small glyphs centered below a
+   numerator into one denominator, which starts with a radical sign reaching
+   down beside it from the numerator's record.
 3. Flatten the result into line records with geometry, typography, and
    conservative character-level superscript/subscript annotations. When
    `pdftext` puts small glyphs into a line record of their own, the other
