@@ -28,7 +28,7 @@ https://creativecommons.org/licenses/by/4.0/deed.de
 
 ### ARTICLE
 
-https://doi.org/10.1038/s41467-022-30829-z **OPEN**
+**https://doi.org/10.1038/s41467-022-30829-z OPEN**
 
 # Slowdown of photoexcited spin dynamics in the non-collinear spin-ordered phases in skyrmion host GaV<sub>4</sub>S<sub>8</sub>
 
@@ -121,7 +121,7 @@ scattering due to the multi-domain magnetic structure, consistent
 with the signature of phase coexistence observed in the coherent
 spin precession experiments.
 
-Results
+**Results**
 
 **Magnetic properties and phase diagram of GaV<sub>4</sub>S<sub>8</sub>**. GaV<sub>4</sub>S<sub>8</sub> is a
 
@@ -151,15 +151,15 @@ of the skyrmion tubes along the easy axis<sup>33,37</sup>.
 
 [[PAGE:3|VISIBLE:2]]![](nature-spin-dynamics-gav4s8-img/p3-1.png)
 
-Fig. 1 Photoinduced **Δ*θ*** dynamics in the different magnetic phases of GaV<sub>4</sub>S<sub>8</sub>.a Magnetic phase diagram of GaV<sub>4</sub>S<sub>8</sub>. Vertical dashed lines indicate the
-temperatures where trMOKE measurements were performed. b–e Δ*θ* traces under different external magnetic fields at 8 K, 10 K, 11.5 K, and 14.5 K,
+**Fig. 1 Photoinduced Δ*θ* dynamics in the different magnetic phases of GaV<sub>4</sub>S<sub>8</sub>.a** Magnetic phase diagram of GaV<sub>4</sub>S<sub>8</sub>. Vertical dashed lines indicate the
+temperatures where trMOKE measurements were performed. **b**–**e** Δ*θ* traces under different external magnetic fields at 8 K, 10 K, 11.5 K, and 14.5 K,
 respectively.
 
 [[PAGE:4|VISIBLE:3]]![](nature-spin-dynamics-gav4s8-img/p4-1.png)
 
-Fig. 2 Coherent spin precession in the FM, SkL, and Cyc phases. a Δ*θ* traces in the first 800 ps shown with fit curves (black solid lines) at 10 K.
-b Coherent oscillatory component of the data shown in a. c, d Magnetic-field dependence of the frequency and amplitude of the coherent oscillation. The
-blue-shaded areas are guides to the eye indicating where the magnetic phase transition occurs. e, f Temperature dependence of the frequency and lifetime
+**Fig. 2 Coherent spin precession in the FM, SkL, and Cyc phases. a** Δ*θ* traces in the first 800 ps shown with fit curves (black solid lines) at 10 K.
+**b** Coherent oscillatory component of the data shown in **a**. **c**, **d** Magnetic-field dependence of the frequency and amplitude of the coherent oscillation. The
+blue-shaded areas are guides to the eye indicating where the magnetic phase transition occurs. **e**, **f** Temperature dependence of the frequency and lifetime
 of the coherent oscillation, with the magnetic field fixed at 30 mT (60 mT) for the Cyc (SkL) phase. Error bars are the standard deviation of the fitting
 parameters.
 
@@ -340,7 +340,7 @@ material.
 
 [[PAGE:5|VISIBLE:4]]![](nature-spin-dynamics-gav4s8-img/p5-1.png)
 
-Fig. 3 Change of the remagnetization across the magnetic phase transition. Time constant of the remagnetization process at 8 K, 10 K, 11.5 K, and 14.5 K
+**Fig. 3 Change of the remagnetization across the magnetic phase transition.** Time constant of the remagnetization process at 8 K, 10 K, 11.5 K, and 14.5 K
 are plotted. The blue-shaded areas are guides to the eye indicating the magnetic phase transition. Error bars are the standard deviation of the fitting
 parameters.
 
@@ -485,12 +485,12 @@ field<sup>57</sup>.
 
 ![](nature-spin-dynamics-gav4s8-img/p7-1.png)
 
-Fig. 4 Simulated spin texture and magnon spectra. a Representative spin textures and b magnon spectral functions, obtained from atomistic spin
+**Fig. 4 Simulated spin texture and magnon spectra. a** Representative spin textures and **b** magnon spectral functions, obtained from atomistic spin
 dynamics simulations of GaV<sub>4</sub>S<sub>8</sub> at *T* = 12 K and magnetic field magnitudes, as indicated at the top of each panel.
 
 ![](nature-spin-dynamics-gav4s8-img/p7-2.png)
 
-Fig. 5 Magnon peak width extracted from simulated spectral functions. A
+**Fig. 5 Magnon peak width extracted from simulated spectral functions.** A
 Gaussian fit of magnon peaks is performed on the cuts of the magnon
 spectral function S(*q*, *ω* = 8 meV) and the magnon peak width *δq* is
 determined. Plotted is the magnetic field dependence. The blue-shaded
@@ -516,9 +516,9 @@ demonstrates that the change of spin ordering triggers a dramatic
 change of dynamic behaviors, motivating further research on
 materials with novel spin correlations.
 
-Methods
+**Methods**
 
-Sample preparation and characterization of the magnetic properties. GaV<sub>4</sub>S<sub>8</sub>
+**Sample preparation and characterization of the magnetic properties**. GaV<sub>4</sub>S<sub>8</sub>
 
 single crystals have been grown by the chemical transport reactions method in a way
 similar to Ref. <sup>55</sup>. As starting material for growth, the preliminary synthesized polycrystalline
@@ -535,7 +535,7 @@ done using the data on derivatives d*M*/d*H*, taking the singularity points as t
 phase boundaries between the cycloidal (Cyc), skyrmion (SkL), and ferromagnetic
 (FM) phases<sup>33</sup>.
 
-Time-resolved magneto-optical Kerr effect experiment. The experiments were
+**Time-resolved magneto-optical Kerr effect experiment**. The experiments were
 
 performed with a Yb:KGW regenerative amplified laser as main light
 source (Pharos) with the repetition rate of 100 kHz. Infrared output of a non-collinear
@@ -548,7 +548,7 @@ GaV<sub>4</sub>S<sub>8</sub> band gap of ~0.35 eV<sup>39,40</sup>. The pump-indu
 rotation angle of the probe pulse, Δ*θ*, was measured. The sample temperature and
 external magnetic field were controlled with a superconducting-magnetic cryostat.
 
-Modelling of the spin texture and calculation of the magnon spectra. To
+**Modelling of the spin texture and calculation of the magnon spectra**. To
 
 reproduce the Cyc-SkL-FM sequence of magnetic phases, we used UppASD code<sup>58</sup>
 to perform Monte-Carlo (MC) simulations using 72\*72\*1 supercells, and 100,000
@@ -592,19 +592,19 @@ linewidth as explained in the main text.
 
 *eiωtC<sup>j</sup>*
 
-Data availability
+**Data availability**
 
 The data that support the findings of this study are available from the authors upon
 reasonable request.
 
-Code availability
+**Code availability**
 
 The codes that support the calculations of this study are available from the authors upon
 reasonable request.
 
 [[PAGE:8|VISIBLE:7]]Received: 10 August 2021; Accepted: 20 May 2022;
 
-References
+**References**
 
 1. Mühlbauer, S. et al. Skyrmion Lattice in a Chiral Magnet. *Science* **323**, 915–919
    (2009).
@@ -739,7 +739,7 @@ References
 59. Landau, L. & Lifshitz, E. On the theory of the dispersion of magnetic
     permeability in ferromagnetic bodies. *Phys. Z. Sowjetunion* **8**, 153 (1935).
 
-Acknowledgements
+**Acknowledgements**
 
 We thank Y. Mukai, D. Ehlers and V. Kocsis for fruitful discussions. The work is
 supported by the Deutsche Forschungsgemeinschaft (DFG, German Research Foundation)
@@ -748,7 +748,7 @@ Materials, via project No. 107745057-TRR-80: From Electronic Correlations to Fun
 (Augsburg-Munich-Stuttgart), the project ANCD 20.80009.5007.19 (Moldova),
 via the DFG Priority Program SPP2137, Skyrmionics, under Grant No. KE 2370/1-1.
 
-Author contributions
+**Author contributions**
 
 F.S. performed time-resolved Kerr effect experiments with the support from K.B. and
 P.P.F.S. analyzed the data with R.B. and P.v.L.V.T. grew and characterized the GaV<sub>4</sub>S<sub>8</sub>
@@ -756,15 +756,15 @@ single crystals. V.T. and I.K. performed the magnetometry study and determined t
 magnetic phase diagrams. S.A. and F.F. performed theoretical calculations. F.S. wrote the
 paper with input from all authors. F.S. and P.v.L. conceived the project.
 
-[[PAGE:9|VISIBLE:8]]Funding
+[[PAGE:9|VISIBLE:8]]**Funding**
 
 Open Access funding enabled and organized by Projekt DEAL.
 
-Competing interests
+**Competing interests**
 
 The authors declare no competing interests.
 
-Additional information
+**Additional information**
 
 **Supplementary information** The online version contains supplementary material
 available at https://doi.org/10.1038/s41467-022-30829-z.

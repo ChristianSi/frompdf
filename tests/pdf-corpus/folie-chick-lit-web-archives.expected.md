@@ -2,11 +2,11 @@
 
 https://doi.org/10.1007/s42803-021-00031-6
 
-ORIGINAL PAPER **Open Access**
+**ORIGINAL PAPER Open Access**
 
 # Recovering contemporary genre histories – the development of chick lit as seen through the internet archive’s wayback machine and wikipedia’s history page
 
-Sandra Folie<sup>1</sup>
+**Sandra Folie<sup>1</sup>**
 
 Received: 21 August 2020 /Accepted: 11 February 2021 / Published online: 11 May 2021
 
@@ -30,7 +30,7 @@ and long-running fan websites, which are now offline but well-documented in the
 Internet Archive, and the history page of the Wikipedia article on *chick lit* will
 challenge some of the narratives that have long dominated *chick lit* research.
 
-Keywords Genre history . Chick lit . Internet archive . Wayback machine . Fan websites.
+**Keywords** Genre history . Chick lit . Internet archive . Wayback machine . Fan websites.
 Wikipedia
 
 ## 1 Introduction
@@ -332,7 +332,7 @@ culture such as chick lit, but does not exactly embrace these phenomena and in f
 may even be overly dismissive of them. Although Wikipedia also tends to reproduce an
 existing literary canon of values (cf. Hube et al., 2017; Wojcik & Picard, 2019<sup>13</sup>) and
 
-[[PAGE:9|VISIBLE:33]]Table 1 The development of the Wikipedia article on chick lit (2004–2020)
+[[PAGE:9|VISIBLE:33]]**Table 1** The development of the Wikipedia article on chick lit (2004–2020)
 
 | Date | Minimum Definition (first sentence) | Information on the origin of the term |
 | --- | --- | --- |
