@@ -54,3 +54,8 @@ Short, freely licensed PDF files for testing the conversion.
   by Jochen Schmück, from [espero, Nr.
   12](https://www.edition-espero.de/espero-nr-12-januar-2026/), pp. 161–223;
   shared with the author's permission.
+- wiley-elevational-density-dependence.pdf: "[Elevational variation in
+  density dependence in a subtropical
+  forest](https://onlinelibrary.wiley.com/doi/pdf/10.1002/ece3.1123)" by Meng
+  Xu and Shixiao Yu, from Ecology and Evolution 4(14), pp. 2823–2833 (2014);
+  license: CC-BY-3.0.

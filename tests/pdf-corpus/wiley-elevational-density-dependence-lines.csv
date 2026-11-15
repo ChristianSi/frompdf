@@ -1,0 +1,1042 @@
+text,page_no,block_no,line_no_on_page,font_size,x1,y1,x2,y2,rel_x,rel_y,avg_weight,font_name,ranges,space_before,space_after,fraction_denominator,stacked_limit,second_word_x1
+Elevational variation in density dependence in a subtropical,1,1,1,14.9,57.1,82.1,528.6,96.6,,,0.0,AdvPSFTBL,(),False,False,False,False,149.7
+forest,1,1,2,14.9,57.1,99.9,103.8,114.5,0.0,17.7,0.0,AdvPSFTBL,(),False,False,False,False,
+Meng Xu & Shixiao Yu,1,2,3,10.0,57.1,122.7,163.8,132.4,0.0,22.9,0.0,AdvPSFT-R,(),False,False,False,False,87.7
+"Department of Ecology, School of Life Sciences/State Key Laboratory of Biocontrol, Sun Yat-sen University, Guangzhou 510275, China",1,3,4,7.5,57.1,139.4,490.5,146.7,0.0,16.7,0.0,AdvPSFT-L,(),False,False,False,False,97.8
+Abstract,1,4,5,9.5,217.3,191.7,254.5,200.9,160.2,52.3,700.0,AdvPSFT-B,"({'start': 0, 'end': 8, 'kind': 'bold'},)",False,False,False,False,
+Keywords,1,5,6,7.5,57.1,193.2,92.4,200.4,-160.2,1.4,700.0,AdvPSFT-B,"({'start': 0, 'end': 8, 'kind': 'bold'},)",False,False,False,False,
+"Density dependence, Janzen–Connell",1,6,7,7.5,57.1,203.0,176.1,210.9,0.0,9.8,0.0,AdvPSFT-L,(),False,False,False,False,82.8
+Density-dependent mortality has been recognized as an important mechanism,1,7,8,9.5,217.3,210.1,529.6,219.1,160.2,7.1,0.0,AdvMINION-R,(),False,False,False,False,294.1
+"that underpins tree species diversity, especially in tropical forests. However, few",1,7,9,9.5,217.3,222.1,529.8,231.0,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,235.8
+studies have attempted to explore how density dependence varies with spatial,1,7,10,9.5,217.3,234.0,529.7,243.0,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,247.8
+scale and even fewer have attempted to identify why there is scale-dependent,1,7,11,9.5,217.3,245.9,529.7,254.9,0.0,11.9,0.0,AdvMINION-R,(),False,False,False,False,239.3
+"hypothesis, mixed model, neighborhood",1,8,12,7.5,57.1,214.1,186.3,221.3,-160.2,-31.8,0.0,AdvPSFT-L,(),False,False,False,False,95.2
+"effects, soilborne pathogens, subtropical",1,9,13,7.5,57.1,224.5,187.1,231.8,0.0,10.4,0.0,AdvPSFT-L,(),False,False,False,False,82.9
+forest.,1,9,14,7.5,57.1,234.9,77.4,242.2,0.0,10.4,0.0,AdvPSFT-L,(),False,False,False,False,
+Correspondence,1,10,15,7.5,57.1,255.9,114.1,263.2,0.0,21.0,700.0,AdvPSFT-B,"({'start': 0, 'end': 14, 'kind': 'bold'},)",False,False,False,False,
+"differentiation. In this study, we explore the elevational variation in density",1,11,16,9.5,217.3,257.9,529.9,266.9,160.2,1.9,0.0,AdvMINION-R,(),False,False,False,False,279.3
+dependence. Three 1-ha permanent plots were established at low and high ele-,1,11,17,9.5,217.3,269.8,529.6,278.8,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,268.3
+"vations in the Heishiding subtropical forest, southern China. Using data from",1,11,18,9.5,217.3,281.8,529.6,290.8,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,248.8
+"1200 1 m2 seedling quadrats, comprising of 200 1 m2 quadrats located in each",1,11,19,9.5,217.3,291.8,529.7,302.8,0.0,10.0,0.0,AdvMINION-R,"({'start': 8, 'end': 9, 'kind': 'sup'}, {'start': 50, 'end': 51, 'kind': 'sup'})",False,False,False,False,239.1
+"1-ha plot, we examined the variation in density dependence between elevations",1,11,20,9.5,217.3,305.7,529.6,314.7,0.0,13.9,0.0,AdvMINION-R,(),False,False,False,False,238.0
+using a generalized linear mixed model with crossed random effects. A green-,1,11,21,9.5,217.3,317.7,529.6,326.7,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,241.8
+house experiment also investigated the potential effects of the soil biota on den-,1,11,22,9.5,217.3,329.7,529.7,338.6,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,242.8
+sity-dependent differentiation. Our results demonstrated that density-dependent,1,11,23,9.5,217.3,341.6,529.6,350.6,0.0,11.9,0.0,AdvMINION-R,(),False,False,False,False,277.3
+seedling mortality can vary between elevations in subtropical forests. Species,1,11,24,9.5,217.3,353.5,529.6,362.5,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,252.8
+found at a lower elevation suffered stronger negative density dependence than,1,11,25,9.5,217.3,365.5,529.7,374.5,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,244.3
+those found at a higher elevation. The greenhouse experiment indicated that,1,11,26,9.5,217.3,377.4,529.7,386.4,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,242.1
+two species that commonly occur at both elevations suffered more from soil-,1,11,27,9.5,217.3,389.4,529.7,398.4,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,235.8
+borne pathogens during seed germination and seedling growth when they grew,1,11,28,9.5,217.3,401.4,529.8,410.4,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,243.2
+"at the lower elevation, which implied that soil pathogens may play a crucial role",1,11,29,9.5,217.3,413.3,529.7,422.3,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,227.5
+in density-dependent spatial variation.,1,11,30,9.5,217.3,425.3,366.1,434.3,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,228.1
+"Shixiao Yu, Department of Ecology, School of",1,12,31,7.5,57.1,266.3,204.4,273.6,-160.2,-159.0,0.0,AdvPSFT-L,(),False,False,False,False,82.0
+Life Sciences/State Key Laboratory of,1,12,32,7.5,57.1,276.8,175.6,284.1,0.0,10.4,0.0,AdvPSFT-L,(),False,False,False,False,70.9
+"Biocontrol, Sun Yat-sen University,",1,12,33,7.5,57.1,287.3,167.9,294.6,0.0,10.6,0.0,AdvPSFT-L,(),False,False,False,False,94.0
+"Guangzhou 510275, China. Tel/Fax: +86 20",1,13,34,7.5,57.1,297.8,199.2,305.0,0.0,10.4,0.0,AdvPSFT-L,(),False,False,False,False,96.9
+39332980; E-mail: lssysx@mail.sysu.edu.cn,1,13,35,7.5,57.1,308.3,194.0,315.5,0.0,10.5,0.0,AdvPSFT-L,(),False,False,False,False,94.8
+Funding Information,1,14,36,7.5,57.1,329.1,130.4,336.4,0.0,20.8,700.0,AdvPSFT-B,"({'start': 0, 'end': 19, 'kind': 'bold'},)",False,False,False,False,88.4
+Key Project of the National Natural Science,1,15,37,7.5,57.1,339.5,195.7,346.8,0.0,10.4,0.0,AdvPSFT-L,(),False,False,False,False,71.3
+Foundation of China (grant number,1,15,38,7.5,57.1,350.0,172.3,357.3,0.0,10.5,0.0,AdvPSFT-L,(),False,False,False,False,95.6
+31230013 and 30730021).,1,15,39,7.5,57.1,360.5,144.3,367.7,0.0,10.5,0.0,AdvPSFT-L,(),False,False,False,False,92.7
+Received: 8 August 2013; Revised: 5 March,1,16,40,7.5,57.1,381.5,197.6,388.7,0.0,21.0,0.0,AdvPSFT-L,(),False,False,False,False,89.6
+2014; Accepted: 30 April 2014,1,16,41,7.5,57.1,391.9,157.4,399.1,0.0,10.5,0.0,AdvPSFT-L,(),False,False,False,False,78.2
+Ecology and Evolution 2014; 4(14): 2823–,1,17,42,7.5,57.1,413.0,202.6,421.0,0.0,21.1,305.1,AdvPSFT-BI,"({'start': 0, 'end': 21, 'kind': 'bold'}, {'start': 0, 'end': 21, 'kind': 'italic'}, {'start': 22, 'end': 40, 'kind': 'bold'})",False,False,False,False,87.1
+2833,1,17,43,7.5,57.1,424.2,73.6,431.5,0.0,11.2,700.0,AdvPSFT-B,"({'start': 0, 'end': 4, 'kind': 'bold'},)",False,False,False,False,
+doi: 10.1002/ece3.1123,1,18,44,7.5,57.1,445.1,132.9,452.3,0.0,20.9,0.0,AdvPSFT-L,(),False,False,False,False,70.4
+Previous studies have typically assessed NDD in a sin-,1,19,45,9.5,311.9,477.7,529.6,486.7,254.8,32.6,0.0,AdvMINION-R,(),False,False,False,False,348.9
+gle community over a single time period (but see,1,19,46,9.5,302.5,489.7,529.7,498.7,-9.4,12.0,0.0,AdvMINION-R,(),False,False,False,False,320.6
+Lambers et al. 2002; Johnson et al. 2012; Lin et al. 2012;,1,19,47,9.5,302.5,501.7,529.7,510.6,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,339.0
+"Piao et al. 2012; Shuai et al. 2014). However, because",1,19,48,9.5,302.5,513.6,529.7,522.6,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,325.2
+"the two mechanisms that potentially drive NDD, that is,",1,19,49,9.5,302.5,525.6,529.7,534.6,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,318.5
+"host-specific natural enemies and resource competition,",1,19,50,9.5,302.5,537.5,529.6,546.5,0.0,11.9,0.0,AdvMINION-R,(),False,False,False,False,355.4
+"are both influenced by environmental variation, the",1,19,51,9.5,302.5,549.5,529.7,558.4,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,321.4
+direction and strength of NDD may vary substantially in,1,19,52,9.5,302.5,561.4,529.6,570.4,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,340.9
+different environments (Coley and Barone 1996; Fajardo,1,19,53,9.5,302.5,573.4,529.7,582.4,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,339.4
+"and McIntire 2011; Swinfield et al. 2012). For example,",1,19,54,9.5,302.5,585.3,529.7,594.3,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,321.6
+variation in NDD at different latitudes has been,1,19,55,9.5,302.5,597.3,529.6,606.3,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,345.5
+observed and is considered as a driving mechanism that,1,19,56,9.5,302.5,609.3,529.7,618.3,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,340.6
+may underpin regional tree species diversity patterns,1,19,57,9.5,302.5,621.2,529.6,630.2,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,325.5
+(Lambers et al. 2002; McCarthy-Neumann and Kobe,1,19,58,9.5,302.5,633.1,529.7,642.1,0.0,11.9,0.0,AdvMINION-R,(),False,False,False,False,346.0
+2010; Johnson et al. 2012; Shuai et al. 2014). Lin et al.,1,19,59,9.5,302.5,645.1,529.7,654.1,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,327.8
+Introduction,1,20,60,11.5,57.1,481.9,131.8,493.0,-245.4,-163.2,0.0,AdvPSFTBL,(),False,False,False,False,
+Negative density dependence (NDD) has been recognized,1,21,61,9.5,57.1,501.7,284.3,510.7,0.0,19.8,0.0,AdvMINION-R,(),False,False,False,False,94.1
+as a crucial mechanism that probably modulates tree,1,21,62,9.5,57.1,513.6,284.3,522.6,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,70.9
+abundance and maintains tree species diversity in forest,1,21,63,9.5,57.1,525.6,284.3,534.6,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,103.1
+communities (Wills et al. 1997; Webb and Peart 1999;,1,21,64,9.5,57.1,537.5,284.4,546.5,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,112.5
+Harms et al. 2000; Hubbell et al. 2001; Lambers et al.,1,21,65,9.5,57.1,549.5,284.3,558.4,0.0,11.9,0.0,AdvMINION-R,(),False,False,False,False,88.8
+2002; Wright 2002; Volkov et al. 2005; Chen et al. 2010;,1,21,66,9.5,57.1,561.4,284.4,570.4,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,81.6
+Comita et al. 2010; Metz et al. 2010; Zhu et al. 2010;,1,21,67,9.5,57.1,573.4,284.4,582.4,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,91.3
+Johnson et al. 2012). This spacing mechanism promotes,1,21,68,9.5,57.1,585.3,284.3,594.3,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,93.3
+species coexistence by preventing species from becoming,1,21,69,9.5,57.1,597.3,284.3,606.3,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,87.5
+disproportionately abundant at a local scale. For,1,21,70,9.5,57.1,609.3,284.4,618.3,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,137.7
+"instance, a high-seedling density, close to a conspecific",1,21,71,9.5,57.1,621.2,284.3,630.2,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,95.8
+"adult, due to the leptokurtic dispersal of seeds, may pro-",1,21,72,9.5,57.1,633.2,284.3,642.2,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,82.8
+duce strong resource competition or be subject to path-,1,21,73,9.5,57.1,645.1,284.3,654.1,0.0,11.9,0.0,AdvMINION-R,(),False,False,False,False,79.4
+ogen infections. This results in higher mortality rates or,1,21,74,9.5,57.1,657.1,284.3,666.0,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,79.8
+"a lower average growth rate, which leads to an increase",1,21,75,9.5,57.1,669.0,284.3,678.0,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,65.8
+in space for other species (Janzen 1970; Connell 1971;,1,21,76,9.5,57.1,681.0,284.4,690.0,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,70.1
+Wright 2002).,1,21,77,9.5,57.1,692.9,112.2,701.9,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,88.2
+(2012) have found that NDD differed between the dry,1,22,78,9.5,302.5,657.1,529.9,666.0,245.4,-35.9,0.0,AdvMINION-R,(),False,False,False,False,332.8
+and wet seasons in tropical forests. They attributed this,1,22,79,9.5,302.5,669.0,529.7,678.0,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,321.3
+variation to resource availability and to the natural,1,22,80,9.5,302.5,681.0,529.6,690.0,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,343.9
+enemy dynamics.,1,22,81,9.5,302.5,692.9,369.6,701.9,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,331.2
+ª 2014 The Authors. Ecology and Evolution published by John Wiley & Sons Ltd.,1,23,82,6.5,57.1,715.3,290.8,723.7,-245.4,22.3,0.0,AdvPSFT-L,(),False,False,False,False,64.5
+2823,1,24,83,8.0,512.1,715.9,529.7,723.6,455.0,0.6,700.0,AdvPSFT-B,"({'start': 0, 'end': 4, 'kind': 'bold'},)",False,False,False,False,
+"This is an open access article under the terms of the Creative Commons Attribution License, which permits use,",1,25,84,6.5,57.1,725.3,379.2,731.7,-455.0,9.5,0.0,AdvPSFT-L,(),False,False,False,False,70.5
+"distribution and reproduction in any medium, provided the original work is properly cited.",1,25,85,6.5,57.1,733.9,316.7,740.1,0.0,8.5,0.0,AdvPSFT-L,(),False,False,False,False,91.7
+"20457758, 2014, 14, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/ece3.1123 by Cambodia Hinari NPL, Wiley Online Library on [15/11/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License",2,1,1,5.2,579.0,16.3,583.7,766.9,,,0.0,Times-Roman,(),True,False,False,False,580.1
+Elevational Variation in Density Dependence M. Xu & S. Yu,2,2,2,7.5,65.6,42.8,538.1,50.0,-513.4,26.5,0.0,AdvPSFT-R,(),False,False,False,False,106.8
+Variation in NDD due to a fluctuating environment,2,3,3,9.5,75.1,71.5,292.7,80.5,9.5,28.8,0.0,AdvMINION-R,(),False,False,False,False,116.4
+would substantially influence species diversity. A stronger,2,3,4,9.5,65.6,83.4,292.7,92.4,-9.5,11.9,0.0,AdvMINION-R,(),False,False,False,False,93.2
+"become the focus of research into NDD. However, com-",2,4,5,9.5,311.0,71.5,538.1,80.5,245.4,-11.9,0.0,AdvMINION-R,(),False,False,False,False,344.2
+petition between seedlings has been shown to be unim-,2,4,6,9.5,311.0,83.4,538.1,92.4,0.0,11.9,0.0,AdvMINION-R,(),False,False,False,False,345.5
+portant for seedling recruitment (Paine et al. 2008;,2,4,7,9.5,311.0,95.4,538.1,104.4,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,347.4
+"Svenning et al. 2008). Over the past few decades, the",2,4,8,9.5,311.0,107.4,538.1,116.4,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,351.8
+biotic mechanisms that underlie NDD patterns have been,2,4,9,9.5,311.0,119.3,538.1,128.3,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,336.2
+widely studied. The Janzen–Connell (J–C) hypothesis,2,4,10,9.5,311.0,130.0,538.1,140.3,0.0,10.7,0.0,AdvMINION-R,(),False,False,False,False,342.7
+(Janzen 1970; Connell 1971) is considered to be a lead-,2,4,11,9.5,311.0,143.3,538.1,152.2,0.0,13.2,0.0,AdvMINION-R,(),False,False,False,False,344.2
+ing mechanism behind the maintenance of diversity in,2,4,12,9.5,311.0,155.2,538.1,164.2,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,328.2
+tropical forests and has received considerable empirical,2,4,13,9.5,311.0,167.2,538.1,176.2,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,345.6
+support (see reviews by Freckleton and Lewis 2006; Car-,2,4,14,9.5,311.0,179.1,538.1,188.1,0.0,11.9,0.0,AdvMINION-R,(),False,False,False,False,344.8
+son et al. 2008; Mordecai 2011). The J–C hypothesis,2,4,15,9.5,311.0,189.8,538.1,200.0,0.0,10.7,0.0,AdvMINION-R,(),False,False,False,False,330.7
+proposes that the offspring survival rate should increase,2,4,16,9.5,311.0,203.0,538.1,212.0,0.0,13.2,0.0,AdvMINION-R,(),False,False,False,False,349.4
+as the distance from conspecific adults increases and,2,4,17,9.5,311.0,215.0,538.1,224.0,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,324.8
+conspecific offspring density should decrease due to pre-,2,4,18,9.5,311.0,226.9,538.1,235.9,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,356.9
+dation by specialized natural enemies (pathogens and,2,4,19,9.5,311.0,238.9,538.1,247.9,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,342.0
+herbivores). This favors the establishment of heterospeci-,2,4,20,9.5,311.0,250.9,538.1,259.8,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,360.5
+fic offspring near the adults and results in increased spe-,2,4,21,9.5,311.0,262.8,538.1,271.8,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,323.9
+"cies diversity. Therefore, host-specific pests, such as",2,4,22,9.5,311.0,274.7,538.1,283.7,0.0,11.9,0.0,AdvMINION-R,(),False,False,False,False,332.3
+"pathogens and herbivores, may be the main agents driv-",2,4,23,9.5,311.0,286.7,538.1,295.7,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,353.9
+ing NDD and higher species diversity (Bagchi et al.,2,4,24,9.5,311.0,298.6,538.1,307.6,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,330.0
+2014).,2,4,25,9.5,311.0,310.6,334.9,319.6,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,
+NDD can produce a stronger community compensatory,2,5,26,9.5,65.6,95.4,292.9,104.4,-245.4,-215.2,0.0,AdvMINION-R,(),False,False,False,False,91.0
+trend (CCT) that depresses common species and provides,2,5,27,9.5,65.6,107.4,292.8,116.3,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,89.5
+"opportunities for rare species, which promotes species",2,5,28,9.5,65.6,119.3,292.8,128.3,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,123.4
+diversity (Connell et al. 1984). If the per capita NDD is,2,5,29,9.5,65.6,131.3,292.8,140.3,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,102.3
+"equal among species, abundant common species are",2,5,30,9.5,65.6,143.2,292.8,152.2,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,93.3
+"expected to suffer higher overall mortality, which leads to",2,5,31,9.5,65.6,155.2,292.8,164.2,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,102.2
+a CCT (Webb and Peart 1999; Queenborough et al. 2007;,2,6,32,9.5,65.6,167.2,292.8,176.2,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,73.1
+"Chen et al. 2010). However, per capita NDD may vary",2,7,33,9.5,65.6,179.1,293.0,188.1,0.0,11.9,0.0,AdvMINION-R,(),False,False,False,False,90.8
+"among species. For example, negative conspecific effects",2,7,34,9.5,65.6,191.0,292.7,200.0,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,96.7
+have been found to decrease as the relative abundance of,2,8,35,9.5,65.6,203.0,293.7,212.0,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,86.7
+"a species increases, a pattern that appears to contradict a",2,8,36,9.5,65.6,215.0,292.8,223.9,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,73.5
+possible CCT (Comita et al. 2010; Lewis 2010; Mangan,2,8,37,9.5,65.6,226.9,292.8,235.9,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,100.8
+"et al. 2010; Johnson et al. 2012). In this situation, a CCT",2,8,38,9.5,65.6,238.9,292.8,247.9,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,76.0
+still results if the local conspecific neighbor densities,2,8,39,9.5,65.6,250.9,292.8,259.8,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,85.6
+increase with species abundance (Kobe and Vriesendorp,2,8,40,9.5,65.6,262.8,292.7,271.8,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,100.6
+2011). Lin et al. (2012) have verified this hypothesis in,2,9,41,9.5,65.6,274.7,292.8,283.7,0.0,11.9,0.0,AdvMINION-R,(),False,False,False,False,94.3
+the Xishuangbanna tropical forest. They found that,2,9,42,9.5,65.6,286.7,292.8,295.7,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,85.2
+although rare species suffered stronger negative effects,2,9,43,9.5,65.6,298.6,292.7,307.6,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,105.4
+"per individual neighbor, individuals of common species",2,9,44,9.5,65.6,310.6,292.8,319.6,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,82.8
+experienced higher local conspecific densities at the com-,2,9,45,9.5,65.6,322.6,292.8,331.6,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,114.6
+"munity level, which resulted in a declining seedling sur-",2,9,46,9.5,65.6,334.5,292.8,343.5,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,97.7
+"vival rate as the population abundance rose. Moreover,",2,9,47,9.5,65.6,346.5,292.8,355.5,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,88.2
+theoretical studies have also indicated that rare species,2,9,48,9.5,65.6,358.5,292.8,367.4,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,111.1
+suffering from stronger conspecific negative effects can,2,9,49,9.5,65.6,370.4,292.7,379.4,0.0,11.9,0.0,AdvMINION-R,(),False,False,False,False,104.5
+persist in a community and that diversity can be main-,2,9,50,9.5,65.6,382.3,292.8,391.3,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,94.6
+tained (Chisholm and Muller-Landau 2011; Yenni et al.,2,9,51,9.5,65.6,394.3,292.8,403.3,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,94.1
+"2012). Nevertheless, NDD has substantial impacts on",2,9,52,9.5,65.6,406.2,292.8,415.2,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,96.1
+"community composition and species diversity. Therefore,",2,9,53,9.5,65.6,418.2,292.7,427.2,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,114.1
+investigating NDD variation will improve our under-,2,9,54,9.5,65.6,430.2,292.8,439.2,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,120.3
+standing of how forest community diversity is main-,2,9,55,9.5,65.6,442.1,292.8,451.1,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,104.4
+tained.,2,9,56,9.5,65.6,454.1,91.6,463.1,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,
+It is reasonable to expect that pathogens are the princi-,2,10,57,9.5,320.4,322.6,538.1,331.6,254.8,-131.5,0.0,AdvMINION-R,(),False,False,False,False,329.8
+"pal driver of NDD at the seedling stage. Indeed, soilborne",2,10,58,9.5,311.0,334.5,538.1,343.5,-9.4,12.0,0.0,AdvMINION-R,(),False,False,False,False,325.8
+fungal pathogens that cause damping-off diseases in,2,10,59,9.5,311.0,346.5,538.1,355.5,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,342.1
+young seedlings have been shown to cause density and/or,2,10,60,9.5,311.0,358.5,538.1,367.5,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,338.2
+distance-dependent seedling mortality (Augspurger 1983;,2,10,61,9.5,311.0,370.4,538.1,379.4,0.0,11.9,0.0,AdvMINION-R,(),False,False,False,False,390.1
+Augspurger and Kelly 1984; Packer and Clay 2000; Hood,2,10,62,9.5,311.0,382.3,538.1,391.3,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,358.9
+"et al. 2004; Bell, Freckleton and Lewis 2006; Reinhart and",2,10,63,9.5,311.0,394.3,538.1,403.3,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,321.3
+Clay 2009; Bagchi et al. 2010; Hersh et al. 2012; Liu et al.,2,10,64,9.5,311.0,406.3,538.1,415.2,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,331.3
+"2012a,b). It has also been demonstrated that soilborne",2,10,65,9.5,311.0,418.2,538.1,427.2,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,351.5
+pathogens influence the relationship between plant diver-,2,10,66,9.5,311.0,430.2,538.1,439.2,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,353.5
+sity and productivity (Maron et al. 2011; Schnitzer et al.,2,10,67,9.5,311.0,442.1,538.1,451.1,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,328.2
+"2011), if it is assumed that the rate of host-specific patho-",2,10,68,9.5,311.0,454.1,538.1,463.1,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,338.0
+gen transmission decreases as diversity increases. How-,2,10,69,9.5,311.0,466.0,538.1,475.0,0.0,11.9,0.0,AdvMINION-R,(),False,False,False,False,329.7
+An important aspect of our investigation into NDD,2,11,70,9.5,75.1,466.0,292.8,475.0,-235.9,-0.0,0.0,AdvMINION-R,(),False,False,False,False,91.7
+variation was a study of the underlying mechanisms. As,2,11,71,9.5,65.6,478.0,292.8,487.0,-9.5,12.0,0.0,AdvMINION-R,(),False,False,False,False,104.1
+"mentioned previously, the natural enemies and resource",2,11,72,9.5,65.6,489.9,292.8,498.9,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,111.6
+competition dynamics can be affected by environmental,2,11,73,9.5,65.6,501.9,292.8,510.9,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,117.0
+factors and may produce variations in NDD. For exam-,2,11,74,9.5,65.6,513.9,292.8,522.8,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,95.4
+"ple, forest communities experience distinct elevational",2,11,75,9.5,65.6,525.8,292.8,534.8,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,85.7
+variations in temperature and humidity. The higher,2,11,76,9.5,65.6,537.8,292.8,546.8,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,110.6
+"ever, future research needs to investigate whether",2,12,77,9.5,311.0,478.0,538.1,487.0,245.4,-59.8,0.0,AdvMINION-R,(),False,False,False,False,337.9
+soilborne pathogens cause the NDD differentiation,2,12,78,9.5,311.0,489.9,538.1,498.9,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,355.4
+observed in natural tree communities.,2,12,79,9.5,311.0,501.9,458.9,510.9,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,347.9
+"In this study, we report observational and experimental",2,13,80,9.5,320.4,513.9,538.1,522.8,9.4,12.0,0.0,AdvMINION-R,(),False,False,False,False,332.1
+results. We first tested for spatial variation in the effects,2,13,81,9.5,311.0,525.8,538.1,534.8,-9.4,12.0,0.0,AdvMINION-R,(),False,False,False,False,341.9
+of local conspecific and heterospecific neighbors on seed-,2,13,82,9.5,311.0,537.8,538.1,546.8,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,322.4
+ling survival in a subtropical evergreen broadleaved forest.,2,13,83,9.5,311.0,549.7,538.1,558.7,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,328.5
+We examined elevational differences in density depen-,2,13,84,9.5,311.0,561.6,538.1,570.6,0.0,11.9,0.0,AdvMINION-R,(),False,False,False,False,329.6
+dence using survival data from 5216 seedlings of 112 spe-,2,13,85,9.5,311.0,573.6,538.1,582.6,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,336.3
+"cies at two elevations. Then, we experimentally tested for",2,13,86,9.5,311.0,585.6,538.1,594.6,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,328.5
+temperatures and humidities at low elevations may,2,14,87,9.5,65.6,549.7,293.0,558.7,-245.4,-35.8,0.0,AdvMINION-R,(),False,False,False,False,123.5
+increase the activity and density of pathogens (Burdon,2,14,88,9.5,65.6,561.6,292.8,570.6,0.0,11.9,0.0,AdvMINION-R,(),False,False,False,False,101.3
+"1987), thereby contributing to a stronger NDD. Alterna-",2,14,89,9.5,65.6,573.6,292.7,582.6,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,93.7
+"tively, species may be under greater stress at high eleva-",2,14,90,9.5,65.6,585.6,292.8,594.6,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,92.5
+"tions due to the low temperature and humidity. Hence,",2,14,91,9.5,65.6,597.5,292.8,606.5,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,89.0
+it is more probable that they will die as a result of den-,2,14,92,9.5,65.6,609.5,292.8,618.5,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,75.1
+"sity dependence. In addition, many studies have indi-",2,14,93,9.5,65.6,621.5,292.8,630.4,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,84.4
+"cated that under extremely stressful conditions,",2,14,94,9.5,65.6,633.4,292.7,642.4,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,97.4
+the effects of soilborne pathogens on the seedling survival,2,15,95,9.5,311.0,597.5,538.1,606.5,245.4,-35.9,0.0,AdvMINION-R,(),False,False,False,False,326.3
+of species growing in soil collected from beneath the,2,15,96,9.5,311.0,609.5,538.1,618.5,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,324.5
+adults of the same species at low and high elevations. We,2,15,97,9.5,311.0,621.5,538.1,630.5,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,337.3
+found that the species suffered strong conspecific seedling,2,15,98,9.5,311.0,633.4,538.1,642.4,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,337.3
+"NDD at the low-elevation site, whereas NDD was absent",2,15,99,9.5,311.0,645.4,538.1,654.4,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,335.7
+competition may become weaker and facilitation may,2,16,100,9.5,65.6,645.4,293.0,654.4,-245.4,-0.0,0.0,AdvMINION-R,(),False,False,False,False,118.5
+occur (Callaway 2007; Anderson 2009; Fajardo and,2,16,101,9.5,65.6,657.3,292.8,666.3,0.0,11.9,0.0,AdvMINION-R,(),False,False,False,False,94.8
+McIntire 2011).,2,16,102,9.5,65.6,669.2,127.0,678.2,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,103.1
+at the high-elevation site. Soilborne pathogens exerted a,2,17,103,9.5,311.0,657.3,538.1,666.3,245.4,-12.0,0.0,AdvMINION-R,(),False,False,False,False,322.5
+stronger negative effect on species at the low-elevation site,2,17,104,9.5,311.0,669.3,538.1,678.2,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,345.5
+and may play a crucial role in NDD elevational variation,2,17,105,9.5,311.0,681.2,538.1,690.2,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,328.9
+in subtropical forests.,2,17,106,9.5,311.0,693.2,394.6,702.2,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,321.8
+The seedling stage represents a bottleneck in the life,2,18,107,9.5,75.1,681.2,292.8,690.2,-235.9,-12.0,0.0,AdvMINION-R,(),False,False,False,False,94.7
+"cycle of trees (Harper 1977), which has meant that it has",2,18,108,9.5,65.6,693.2,292.8,702.2,-9.5,12.0,0.0,AdvMINION-R,(),False,False,False,False,87.6
+2824 ª 2014 The Authors. Ecology and Evolution published by John Wiley & Sons Ltd.,2,19,109,6.5,65.6,729.2,538.1,737.6,-0.0,36.0,35.9,AdvPSFT-L,"({'start': 0, 'end': 4, 'kind': 'bold'},)",False,False,False,False,311.8
+"20457758, 2014, 14, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/ece3.1123 by Cambodia Hinari NPL, Wiley Online Library on [15/11/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License",3,1,1,5.2,579.0,16.3,583.7,766.9,,,0.0,Times-Roman,(),True,False,False,False,580.1
+M. Xu & S. Yu Elevational Variation in Density Dependence,3,2,2,7.5,57.1,42.8,529.6,50.0,-521.8,26.5,0.0,AdvPSFT-R,(),False,False,False,False,68.4
+(Engelhardia fenzelii and Cryptocarya concinna) that com-,3,3,3,9.5,302.5,71.5,529.6,80.5,245.4,28.8,0.0,AdvMINION-I,"({'start': 1, 'end': 21, 'kind': 'italic'}, {'start': 26, 'end': 46, 'kind': 'italic'})",False,False,False,False,353.3
+monly occurred in both the low- and high-elevation field,3,3,4,9.5,302.5,83.4,529.7,92.4,0.0,11.9,0.0,AdvMINION-R,(),False,False,False,False,330.5
+sites. These species were chosen because the two species,3,3,5,9.5,302.5,95.4,529.6,104.4,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,325.3
+were dominant in the Heishiding Nature Reserve plant,3,3,6,9.5,302.5,107.4,529.7,116.4,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,325.2
+communities and because the seeds could be stored and,3,3,7,9.5,302.5,119.3,529.7,128.3,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,356.8
+rapidly germinated after surface sterilization. The seeds,3,3,8,9.5,302.5,131.3,529.7,140.3,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,334.6
+were collected from the low-elevation site during autumn,3,3,9,9.5,302.5,143.2,529.6,152.2,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,323.8
+Materials and Methods,3,4,10,11.5,57.1,75.6,195.7,86.7,-245.4,-67.7,0.0,AdvPSFTBL,(),False,False,False,False,117.2
+Study sites,3,5,11,9.7,57.1,100.8,112.9,110.2,0.0,25.2,0.0,AdvPSFTBL,(),False,False,False,False,89.6
+The field work was conducted at Heishiding Natural,3,6,12,9.5,57.1,119.3,284.3,128.3,0.0,18.5,0.0,AdvMINION-R,(),False,False,False,False,78.2
+Reserve (111°53′,3,6,13,9.5,57.1,129.4,122.0,140.9,0.0,10.2,0.0,AdvMINION-R,(),False,False,False,False,90.3
+"E, 23°27′",3,6,14,9.5,122.5,129.4,158.0,140.9,65.4,0.0,0.0,AdvMINION-R,(),False,False,False,False,134.3
+"N, 150–927 m above sea level),",3,6,15,9.5,158.5,130.0,284.3,140.2,35.9,0.5,0.0,AdvMINION-R,(),False,False,False,False,172.0
+"in Guangdong Province, China. The reserve covers",3,6,16,9.5,57.1,143.2,284.3,152.2,-101.3,13.2,0.0,AdvMINION-R,(),False,False,False,False,72.9
+around 4200 ha of subtropical evergreen broad-leaved,3,6,17,9.5,57.1,155.2,284.3,164.1,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,91.4
+forest and the Tropic of Cancer runs through its center.,3,6,18,9.5,57.1,167.1,284.3,176.1,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,82.7
+The region has a subtropical moist monsoon climate. The,3,6,19,9.5,57.1,179.1,284.3,188.1,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,75.1
+and winter 2010. They were surface sterilized (0.5%,3,7,20,9.5,302.5,155.2,529.7,164.2,245.4,-23.9,0.0,AdvMINION-R,(),False,False,False,False,323.6
+"KMnO4 for 2 h), rinsed with water three times, and then",3,7,21,9.5,302.5,167.2,529.7,176.9,0.0,12.0,0.0,AdvMINION-R,"({'start': 4, 'end': 5, 'kind': 'sub'},)",False,False,False,False,336.4
+kept in a refrigerator at 4°C. The seeds were soaked in,3,7,22,9.5,302.5,177.5,529.6,188.1,0.0,10.3,0.0,AdvMINION-R,(),False,False,False,False,323.6
+water for 24 h before planting.,3,7,23,9.5,302.5,191.0,422.4,200.0,-0.0,13.5,0.0,AdvMINION-R,(),False,False,False,False,326.5
+"mean annual temperature is 19.6°C, with mean monthly",3,8,24,9.5,57.1,189.5,284.6,200.0,-245.4,-1.6,0.0,AdvMINION-R,(),False,False,False,False,82.3
+temperatures ranging from 10.6°C in January to 28.4°C,3,8,25,9.5,57.1,201.4,284.3,212.0,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,111.9
+"in July. The annual precipitation averages 1744 mm, with",3,8,26,9.5,57.1,214.9,284.4,223.9,-0.0,13.5,0.0,AdvMINION-R,(),False,False,False,False,68.3
+a humid season from April to September and a dry sea-,3,8,27,9.5,57.1,226.9,284.3,235.9,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,65.3
+son from October to March. The dominant tree species,3,8,28,9.5,57.1,238.8,284.3,247.8,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,75.0
+in this region belong to the Fagaceae and Lauraceae fami-,3,8,29,9.5,57.1,250.8,284.3,259.8,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,68.1
+"lies, which are broadly distributed in subtropical ever-",3,8,30,9.5,57.1,262.8,284.3,271.7,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,77.0
+green broadleaved forests (Yu et al. 2000).,3,8,31,9.5,57.1,274.7,221.9,283.7,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,81.1
+"In January 2011, four adult trees of each species in the",3,9,32,9.5,311.9,203.0,529.6,212.0,254.8,-71.7,0.0,AdvMINION-R,(),False,False,False,False,323.8
+low- and high-elevation plots were chosen randomly as,3,9,33,9.5,302.5,215.0,529.7,224.0,-9.4,12.0,0.0,AdvMINION-R,(),False,False,False,False,324.5
+inoculum sources. We collected soil at a depth of,3,10,34,9.5,302.5,226.9,530.6,235.9,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,346.8
+0–20 cm and at a distance of 0–1 m away from the adult,3,10,35,9.5,302.5,237.6,529.7,247.9,0.0,10.7,0.0,AdvMINION-R,(),False,False,False,False,324.3
+trees. Soil samples from the same species and elevation,3,10,36,9.5,302.5,250.9,529.6,259.8,0.0,13.2,0.0,AdvMINION-R,(),False,False,False,False,327.2
+were mixed to create composite samples. They were then,3,10,37,9.5,302.5,262.8,529.7,271.8,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,324.0
+transported to the laboratory in Guangzhou and sieved to,3,10,38,9.5,302.5,274.7,529.7,283.7,0.0,11.9,0.0,AdvMINION-R,(),False,False,False,False,350.1
+eliminate any seeds and stones. The soil samples from,3,10,39,9.5,302.5,286.7,529.6,295.7,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,343.1
+each species at the low- or high-elevation sites were,3,10,40,9.5,302.5,298.6,529.7,307.6,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,325.9
+divided into two parts. One part was left untreated (the,3,10,41,9.5,302.5,310.6,529.7,319.6,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,335.2
+"control), whereas the second part was autoclaved for 2 h",3,10,42,9.5,302.5,322.6,529.7,331.5,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,339.8
+at 121°C (sterilized treatment). These soil samples were,3,10,43,9.5,302.5,333.0,529.7,343.5,0.0,10.4,0.0,AdvMINION-R,(),False,False,False,False,314.3
+then placed in pots that were 14 cm in diameter and,3,10,44,9.5,302.5,346.5,529.7,355.5,-0.0,13.5,0.0,AdvMINION-R,(),False,False,False,False,325.0
+12 cm in height. The bottom half of the pot was filled,3,10,45,9.5,302.5,358.5,529.7,367.4,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,315.0
+with sterilized sand. A total of 500 g of either untreated,3,10,46,9.5,302.5,370.4,529.6,379.4,0.0,11.9,0.0,AdvMINION-R,(),False,False,False,False,323.6
+Field surveys,3,11,47,9.7,57.1,304.0,123.1,313.5,-245.4,-66.3,0.0,AdvPSFTBL,(),False,False,False,False,84.6
+Six 1-ha permanent plots were established and observed,3,12,48,9.5,57.1,322.5,284.3,331.5,0.0,18.5,0.0,AdvMINION-R,(),False,False,False,False,73.1
+from winter 2007 until spring 2008 to estimate the effect,3,12,49,9.5,57.1,334.5,284.3,343.5,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,79.8
+of neighboring tree species on seedling recruitment in the,3,12,50,9.5,57.1,346.4,284.3,355.4,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,68.3
+natural community. Three of the plots were located at a,3,12,51,9.5,57.1,358.4,284.3,367.4,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,88.5
+relatively high elevation (600 m above sea level) and three,3,12,52,9.5,57.1,370.4,284.3,379.4,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,94.6
+plots were located at a low elevation (340 m). All three,3,12,53,9.5,57.1,382.3,284.3,391.3,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,80.2
+or sterilized soil was then added to the pots. Six seeds of,3,13,54,9.5,302.5,382.3,530.6,391.3,245.4,0.0,0.0,AdvMINION-R,(),False,False,False,False,314.5
+Cryptocarya concinna and 15 seeds of Engelhardia fenzelii,3,13,55,9.5,302.5,394.3,529.6,403.3,0.0,12.0,0.0,AdvMINION-I,"({'start': 0, 'end': 20, 'kind': 'italic'}, {'start': 37, 'end': 57, 'kind': 'italic'})",False,False,False,False,351.5
+were planted in the pots containing their parent soil.,3,13,56,9.5,302.5,406.2,529.7,415.2,-0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,326.0
+These pots were placed in two greenhouses in which the,3,13,57,9.5,302.5,418.2,529.7,427.2,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,328.4
+field conditions at the low and high elevations were,3,13,58,9.5,302.5,430.2,529.7,439.2,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,325.4
+"reproduced. Specifically, the pots containing soil samples",3,13,59,9.5,302.5,442.1,529.7,451.1,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,352.7
+from the low-elevation site were placed in a greenhouse,3,13,60,9.5,302.5,454.1,529.7,463.1,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,325.8
+"that was kept at 27°C, and the soil humidity was main-",3,13,61,9.5,302.5,464.4,529.6,475.0,0.0,10.3,0.0,AdvMINION-R,(),False,False,False,False,321.7
+tained at 30% by controlling the watering frequency. The,3,13,62,9.5,302.5,478.0,529.7,487.0,0.0,13.5,0.0,AdvMINION-R,(),False,False,False,False,329.8
+pots containing the soil samples from the high-elevation,3,13,63,9.5,302.5,489.9,529.6,498.9,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,323.0
+plots at each altitude were close to one another (two of,3,14,64,9.5,57.1,394.3,285.3,403.3,-245.4,-95.6,0.0,AdvMINION-R,(),False,False,False,False,80.0
+the low-altitude plots are adjacent) and the horizontal,3,14,65,9.5,57.1,406.2,284.3,415.2,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,74.6
+distance between the high-altitude plots and the low-alti-,3,14,66,9.5,57.1,418.2,284.3,427.1,0.0,11.9,0.0,AdvMINION-R,(),False,False,False,False,91.9
+tude plots was about 300 m. All saplings and adult tree,3,14,67,9.5,57.1,430.1,284.3,439.1,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,78.6
+stems ≥1 cm diameter at breast height (DBH) in the plots,3,14,68,9.5,57.1,439.1,284.3,451.3,0.0,9.0,0.0,AdvMINION-R,(),False,False,False,False,81.7
+"were tagged, measured, mapped, and identified to the",3,14,69,9.5,57.1,454.0,284.3,463.0,-0.0,14.9,0.0,AdvMINION-R,(),False,False,False,False,80.6
+"species level (Liu et al. 2012a). In all, 181 species from",3,14,70,9.5,57.1,466.0,284.3,475.0,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,88.0
+"106 genera and 55 families were identified, comprising",3,14,71,9.5,57.1,478.0,284.3,487.0,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,76.0
+"approximately 29,800 individuals. A previous study of the",3,14,72,9.5,57.1,489.9,284.3,498.9,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,115.5
+area indicated that species composition did not change,3,14,73,9.5,57.1,501.9,284.3,510.9,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,77.8
+significantly with elevation (Liu et al. 2012a).,3,14,74,9.5,57.1,513.8,233.5,522.8,0.0,11.9,0.0,AdvMINION-R,(),False,False,False,False,106.2
+site were maintained at a temperature of 21°C and at a,3,15,75,9.5,302.5,500.3,529.7,510.9,245.4,-13.5,0.0,AdvMINION-R,(),False,False,False,False,319.6
+soil humidity of 15%.,3,15,76,9.5,302.5,513.9,387.4,522.8,0.0,13.5,0.0,AdvMINION-R,(),False,False,False,False,318.8
+"In spring 2008, we established 300 census stations,",3,16,77,9.5,66.6,525.8,284.3,534.7,-235.9,11.9,0.0,AdvMINION-R,(),False,False,False,False,81.1
+which were used to monitor seedling dynamics in the,3,16,78,9.5,57.1,537.7,284.3,546.7,-9.5,12.0,0.0,AdvMINION-R,(),False,False,False,False,85.5
+plots. Fifty census stations were located within each 1-ha,3,16,79,9.5,57.1,549.7,284.3,558.7,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,81.9
+plot. Each station consisted of one 1 m2 seed trap and,3,16,80,9.5,57.1,559.7,284.3,570.6,0.0,10.0,0.0,AdvMINION-R,"({'start': 39, 'end': 40, 'kind': 'sup'},)",False,False,False,False,79.5
+"Collectively, four treatment combinations (two eleva-",3,17,81,9.5,311.9,525.8,529.7,534.8,254.8,-33.9,0.0,AdvMINION-R,(),False,False,False,False,363.5
+tions 9 two soil treatments) were used for each species.,3,17,82,9.5,302.5,537.6,529.6,546.8,-9.4,11.8,0.0,AdvMINION-R,(),False,False,False,False,324.8
+"Each treatment combination was replicated 10 times, and",3,17,83,9.5,302.5,549.7,529.7,558.7,0.0,12.1,0.0,AdvMINION-R,(),False,False,False,False,324.4
+the positions of the pots in the greenhouses were ran-,3,17,84,9.5,302.5,561.6,529.7,570.6,0.0,11.9,0.0,AdvMINION-R,(),False,False,False,False,319.4
+domly changed every week. The experiment lasted for,3,17,85,9.5,302.5,573.6,529.6,582.6,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,332.4
+4 months and seed germination and seedling growth were,3,17,86,9.5,302.5,585.6,529.7,594.6,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,310.5
+determined every 2 weeks.,3,17,87,9.5,302.5,597.5,405.0,606.5,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,349.4
+four 1 m2 seedling quadrats (Fig. S1). In each of the 1200,3,18,88,9.5,57.1,571.6,284.4,582.6,-245.4,-25.9,0.0,AdvMINION-R,"({'start': 8, 'end': 9, 'kind': 'sup'},)",False,False,False,False,76.6
+"seedling quadrats, all woody plant seedlings with a DBH",3,18,89,9.5,57.1,585.6,284.3,594.6,-0.0,13.9,0.0,AdvMINION-R,(),False,False,False,False,91.8
+"<1 cm were tagged, measured, and identified to the spe-",3,18,90,9.5,57.1,596.0,284.3,606.5,0.0,10.4,0.0,AdvMINION-R,(),False,False,False,False,70.5
+cies level. The census was repeated in spring 2009. We,3,18,91,9.5,57.1,609.4,284.3,618.4,0.0,13.5,0.0,AdvMINION-R,(),False,False,False,False,75.8
+also collected seedling mortality data during the second,3,18,92,9.5,57.1,621.4,284.3,630.4,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,76.6
+census.,3,18,93,9.5,57.1,633.4,84.2,642.3,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,
+Statistical analysis,3,19,94,9.7,302.5,626.8,396.6,636.3,245.4,-6.5,0.0,AdvPSFTBL,(),False,False,False,False,356.1
+We modeled the survival probability as a function of local,3,20,95,9.5,302.5,645.4,529.7,654.4,-0.0,18.5,0.0,AdvMINION-R,(),False,False,False,False,318.6
+neighborhood variables using generalized linear mixed,3,20,96,9.5,302.5,657.3,529.7,666.3,0.0,11.9,0.0,AdvMINION-R,(),False,False,False,False,362.9
+models (GLMMs) and assumed that there was a binomial,3,20,97,9.5,302.5,669.2,529.6,678.2,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,333.2
+error and logit-link function (Bolker et al. 2009). We,3,20,98,9.5,302.5,681.2,529.7,690.2,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,327.6
+used the “lme4” package and MCMC sampler to calculate,3,20,99,9.5,302.5,693.1,529.6,702.2,0.0,11.9,0.0,AdvMINION-R,(),False,False,False,False,323.2
+Greenhouse experiment,3,21,100,9.7,57.1,662.7,179.4,672.1,-245.4,-30.4,0.0,AdvPSFTBL,(),False,False,False,False,120.9
+We examined the effects of soilborne pathogens on seed,3,22,101,9.5,57.1,681.2,284.4,690.2,0.0,18.5,0.0,AdvMINION-R,(),False,False,False,False,74.2
+germination and seedling growth using two species,3,22,102,9.5,57.1,693.2,284.3,702.2,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,112.0
+ª 2014 The Authors. Ecology and Evolution published by John Wiley & Sons Ltd. 2825,3,23,103,6.5,57.1,729.1,529.7,737.5,0.0,36.0,35.9,AdvPSFT-L,"({'start': 78, 'end': 82, 'kind': 'bold'},)",False,False,False,False,64.4
+"20457758, 2014, 14, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/ece3.1123 by Cambodia Hinari NPL, Wiley Online Library on [15/11/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License",4,1,1,5.2,579.0,16.3,583.7,766.9,,,0.0,Times-Roman,(),True,False,False,False,580.1
+Elevational Variation in Density Dependence M. Xu & S. Yu,4,2,2,7.5,65.6,42.8,538.1,50.0,-513.4,26.5,0.0,AdvPSFT-R,(),False,False,False,False,106.8
+"a1m2 quadrat, the abundance of conspecific and hetero-",4,3,3,9.5,311.0,69.5,538.1,80.5,245.4,26.7,0.0,AdvMINION-R,"({'start': 3, 'end': 4, 'kind': 'sup'},)",False,False,False,False,341.0
+specific trees and the basal area of conspecific and hetero-,4,3,4,9.5,311.0,83.4,538.1,92.4,-0.0,13.9,0.0,AdvMINION-R,(),False,False,False,False,342.1
+"specific trees (DBH ≥ 1 cm). For each seedling, we",4,3,5,9.5,311.0,92.5,538.1,104.6,0.0,9.0,0.0,AdvMINION-R,(),False,False,False,False,346.8
+summed the number of conspecific or heterospecific seed-,4,3,6,9.5,311.0,107.4,538.2,116.3,0.0,14.9,0.0,AdvMINION-R,(),False,False,False,False,347.1
+ling neighbors that existed in the seedling quadrat during,4,3,7,9.5,311.0,119.3,538.1,128.3,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,328.9
+the census. We also summed the conspecific or,4,3,8,9.5,311.0,131.3,538.1,140.3,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,332.2
+heterospecific tree abundance and the conspecific or het-,4,3,9,9.5,311.0,143.2,538.1,152.2,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,367.1
+erospecific tree basal area within a 20 m radius from each,4,3,10,9.5,311.0,155.2,538.1,164.2,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,354.5
+station’s seed trap. The 20 m cutoff was selected because,4,3,11,9.5,311.0,167.2,538.1,176.2,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,346.6
+previous analyses have shown that neighbor effects are,4,3,12,9.5,311.0,179.1,538.1,188.1,0.0,11.9,0.0,AdvMINION-R,(),False,False,False,False,348.9
+not usually significant beyond 20 m (Hubbell et al. 2001).,4,3,13,9.5,311.0,191.0,537.8,200.0,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,327.1
+the P-values (Baayen et al. 2008; Bates et al. 2012). We,4,4,14,9.5,65.6,71.5,292.8,80.5,-245.4,-119.5,0.0,AdvMINION-R,"({'start': 4, 'end': 5, 'kind': 'italic'},)",False,False,False,False,82.1
+included local neighborhood density variables and eleva-,4,4,15,9.5,65.6,83.4,292.8,92.4,0.0,11.9,0.0,AdvMINION-R,(),False,False,False,False,103.0
+"tion as fixed effects when species identity, seedling quad-",4,4,16,9.5,65.6,95.4,292.8,104.4,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,85.0
+"rat, station, and plot were entered as random effects. The",4,4,17,9.5,65.6,107.4,292.8,116.3,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,81.9
+quadrat-specific and station-specific random effects were,4,4,18,9.5,65.6,119.3,292.7,128.3,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,131.2
+used to incorporate potential spatial autocorrelation in,4,4,19,9.5,65.6,131.3,292.8,140.3,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,88.4
+seedling survival within the same quadrat and station,4,4,20,9.5,65.6,143.2,292.8,152.2,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,102.1
+(Dormann et al. 2007). A plot-specific random effect was,4,4,21,9.5,65.6,155.2,292.8,164.2,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,110.3
+used to characterize the variation between plots. We also,4,4,22,9.5,65.6,167.2,292.8,176.2,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,86.9
+included species identity as a crossed random effect,4,4,23,9.5,65.6,179.1,292.7,188.1,0.0,11.9,0.0,AdvMINION-R,(),False,False,False,False,105.6
+because species with different ecological strategies were,4,4,24,9.5,65.6,191.0,292.7,200.0,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,100.2
+expected to respond differently to neighborhood variables,4,4,25,9.5,65.6,203.0,292.7,212.0,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,102.3
+(Lin et al. 2012). This design allowed the species used in,4,4,26,9.5,65.6,215.0,292.8,224.0,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,85.7
+the study to be viewed as a random sample of all the spe-,4,4,27,9.5,65.6,226.9,292.8,235.9,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,80.7
+cies in the community and provided a convenient frame-,4,4,28,9.5,65.6,238.9,292.7,247.9,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,83.1
+work for comparing density dependence between,4,4,29,9.5,65.6,250.9,292.8,259.8,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,95.4
+elevations (Chen et al. 2010). We also included initial,4,4,30,9.5,65.6,262.8,292.8,271.8,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,108.9
+seedling height as a covariate in the models because seed-,4,4,31,9.5,65.6,274.7,292.8,283.7,0.0,11.9,0.0,AdvMINION-R,(),False,False,False,False,99.7
+ling height is a significant predictor of survival. The,4,4,32,9.5,65.6,286.7,292.8,295.7,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,86.2
+GLMM for seedling survival with crossed random effects,4,4,33,9.5,65.6,298.6,292.7,307.6,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,98.2
+is as follows:,4,4,34,9.5,65.6,310.6,114.7,319.6,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,74.7
+We also defined another GLMM to test the effects of,4,5,35,9.5,320.4,203.0,539.0,212.0,254.8,-107.6,0.0,AdvMINION-R,(),False,False,False,False,337.7
+"relative conspecific seedling density, relative abundance of",4,5,36,9.5,311.0,215.0,539.0,224.0,-9.4,12.0,0.0,AdvMINION-R,(),False,False,False,False,342.1
+conspecific trees and relative basal area of conspecific,4,5,37,9.5,311.0,226.9,538.1,235.9,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,358.8
+"trees on seedling survival. In this model, we included the",4,6,38,9.5,311.0,238.9,538.1,247.9,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,332.2
+"proportion of conspecific seedlings in a 1 m2 quadrat, the",4,6,39,9.5,311.0,248.8,538.1,259.8,0.0,9.9,0.0,AdvMINION-R,"({'start': 44, 'end': 45, 'kind': 'sup'},)",False,False,False,False,356.6
+"conspecific tree abundance proportion, the conspecific",4,6,40,9.5,311.0,262.8,538.1,271.8,-0.0,14.0,0.0,AdvMINION-R,(),False,False,False,False,359.1
+tree basal area proportion within a 20 m radius and ele-,4,6,41,9.5,311.0,274.7,538.1,283.7,0.0,11.9,0.0,AdvMINION-R,(),False,False,False,False,329.2
+vation as fixed effects and the initial seedling height as a,4,6,42,9.5,311.0,286.7,538.1,295.7,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,338.9
+covariate. The random part of this model was the same as,4,6,43,9.5,311.0,298.6,538.1,307.6,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,350.8
+that of the first model. The relative measurements were,4,6,44,9.5,311.0,310.6,538.1,319.6,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,330.5
+chosen as predictors because the variation in the relative,4,6,45,9.5,311.0,322.6,538.1,331.5,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,341.2
+value produced a better characterization of species coexis-,4,6,46,9.5,311.0,334.5,538.1,343.5,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,334.1
+tence (Adler et al. 2007; Siepielski and McPeek 2010).,4,6,47,9.5,311.0,346.5,520.9,355.5,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,334.0
+yijk ∼ binomial(pijk),4,7,48,9.5,141.5,339.7,216.4,356.1,-169.4,-6.7,0.0,AdvMINION-R,"({'start': 1, 'end': 2, 'kind': 'sub'}, {'start': 2, 'end': 3, 'kind': 'sub'}, {'start': 3, 'end': 4, 'kind': 'sub'}, {'start': 17, 'end': 18, 'kind': 'sub'}, {'start': 18, 'end': 19, 'kind': 'sub'}, {'start': 19, 'end': 20, 'kind': 'sub'}, {'start': 0, 'end': 4, 'kind': 'italic'}, {'start': 16, 'end': 20, 'kind': 'italic'})",False,False,False,False,154.5
+We performed a model selection procedure and com-,4,8,49,9.5,320.4,358.5,538.1,367.4,178.8,18.7,0.0,AdvMINION-R,(),False,False,False,False,337.6
+pared the models containing the different fixed effects,4,8,50,9.5,311.0,370.4,538.1,379.4,-9.4,11.9,0.0,AdvMINION-R,(),False,False,False,False,338.1
+mentioned above (Table 1). The best-fit model was,4,8,51,9.5,311.0,382.3,538.1,391.3,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,360.0
+selected as the one with the lowest Akaike information,4,8,52,9.5,311.0,394.3,538.1,403.3,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,345.3
+criterion (AIC). We also examined the data from the low-,4,8,53,9.5,311.0,406.2,538.1,415.2,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,347.0
+and the high-elevation sites separately. For both eleva-,4,8,54,9.5,311.0,418.2,538.1,427.2,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,330.5
+"tions, we performed the model comparison and selected",4,8,55,9.5,311.0,430.2,538.1,439.2,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,336.5
+the best model to analyze the effects of neighbors.,4,8,56,9.5,311.0,442.1,505.9,451.1,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,326.0
+logit(pijk)= log( pijk,4,9,57,9.5,67.2,374.0,148.7,396.5,-243.8,-68.1,0.0,AdvMINION-R,"({'start': 7, 'end': 8, 'kind': 'sub'}, {'start': 8, 'end': 9, 'kind': 'sub'}, {'start': 9, 'end': 10, 'kind': 'sub'}, {'start': 19, 'end': 20, 'kind': 'sub'}, {'start': 20, 'end': 21, 'kind': 'sub'}, {'start': 21, 'end': 22, 'kind': 'sub'}, {'start': 6, 'end': 10, 'kind': 'italic'}, {'start': 18, 'end': 22, 'kind': 'italic'})",False,False,False,False,114.8
+1 − pijk,4,9,58,9.5,130.1,386.6,156.5,403.0,62.9,12.6,0.0,AdvMINION-I,"({'start': 4, 'end': 8, 'kind': 'italic'},)",False,False,False,False,136.4
+)=[b0 + b1conseedlings,4,10,59,9.5,156.9,379.9,251.5,396.5,26.8,-6.8,0.0,AdvMINION-R,"({'start': 4, 'end': 5, 'kind': 'sub'}, {'start': 9, 'end': 10, 'kind': 'sub'})",False,False,False,False,185.6
++ b2heteroseedlings + b3contrees,4,11,60,9.5,112.9,401.2,240.5,417.8,-44.1,21.3,0.0,AdvMINION-R,"({'start': 3, 'end': 4, 'kind': 'sub'}, {'start': 23, 'end': 24, 'kind': 'sub'})",False,False,False,False,121.9
++ b4heterotrees + b5elevations,4,11,61,9.5,112.9,415.4,230.1,432.0,-0.0,14.2,0.0,AdvMINION-R,"({'start': 3, 'end': 4, 'kind': 'sub'}, {'start': 19, 'end': 20, 'kind': 'sub'})",False,False,False,False,121.9
++ b6initialheight],4,11,62,9.5,112.9,429.6,179.6,446.2,-0.0,14.2,0.0,AdvMINION-R,"({'start': 3, 'end': 4, 'kind': 'sub'},)",False,False,False,False,121.9
+fixed part +[cspeciesconseedlings,4,11,63,9.5,179.5,429.6,293.2,446.2,66.7,-0.0,0.0,AdvMINION-R,(),False,False,False,False,197.5
++ cspeciesheteroseedlings + cspeciescontrees,4,11,64,9.5,112.9,445.5,268.5,462.2,-66.7,15.9,0.0,AdvMINION-R,"({'start': 3, 'end': 4, 'kind': 'sub'}, {'start': 4, 'end': 5, 'kind': 'sub'}, {'start': 5, 'end': 6, 'kind': 'sub'}, {'start': 6, 'end': 7, 'kind': 'sub'}, {'start': 7, 'end': 8, 'kind': 'sub'}, {'start': 8, 'end': 9, 'kind': 'sub'}, {'start': 9, 'end': 10, 'kind': 'sub'}, {'start': 29, 'end': 30, 'kind': 'sub'}, {'start': 30, 'end': 31, 'kind': 'sub'}, {'start': 31, 'end': 32, 'kind': 'sub'}, {'start': 32, 'end': 33, 'kind': 'sub'}, {'start': 33, 'end': 34, 'kind': 'sub'}, {'start': 34, 'end': 35, 'kind': 'sub'}, {'start': 35, 'end': 36, 'kind': 'sub'})",False,False,False,False,121.9
++ cspeciesheterotrees + lspecies + lquadrat,4,11,65,9.5,112.9,461.0,258.5,477.6,-0.0,15.5,0.0,AdvMINION-R,(),False,False,False,False,121.9
++ lstation + lplot],4,11,66,6.6,112.9,476.5,175.8,493.1,-0.0,15.5,0.0,AdvMINION-R,(),False,False,False,False,121.9
+random part,4,11,67,6.6,175.7,482.1,212.8,488.4,62.9,5.6,0.0,AdvMINION-R,"({'start': 0, 'end': 1, 'kind': 'sub'}, {'start': 1, 'end': 2, 'kind': 'sub'}, {'start': 2, 'end': 3, 'kind': 'sub'}, {'start': 3, 'end': 4, 'kind': 'sub'}, {'start': 4, 'end': 5, 'kind': 'sub'}, {'start': 5, 'end': 6, 'kind': 'sub'}, {'start': 7, 'end': 8, 'kind': 'sub'}, {'start': 8, 'end': 9, 'kind': 'sub'}, {'start': 9, 'end': 10, 'kind': 'sub'}, {'start': 10, 'end': 11, 'kind': 'sub'})",False,False,False,False,201.9
+"For the greenhouse experiment, we calculated the rela-",4,12,68,9.5,320.4,454.1,538.1,463.1,144.6,-28.0,0.0,AdvMINION-R,(),False,False,False,False,337.4
+tive soil biota effect based on seed germination (log seed,4,12,69,9.5,311.0,466.0,538.1,475.0,-9.4,11.9,0.0,AdvMINION-R,(),False,False,False,False,328.6
+germination rate in the control soil – log seed germina-,4,12,70,9.5,311.0,476.7,538.1,487.0,0.0,10.7,0.0,AdvMINION-R,(),False,False,False,False,362.0
+tion rate in the sterilized soil) and seedling growth (log,4,12,71,9.5,311.0,489.9,538.1,498.9,-0.0,13.2,0.0,AdvMINION-R,(),False,False,False,False,330.9
+seedling height in the control soil – log seedling height in,4,12,72,9.5,311.0,500.6,538.1,510.9,0.0,10.7,0.0,AdvMINION-R,(),False,False,False,False,344.9
+the sterilized soil) at the low and high elevations. A two-,4,12,73,9.5,311.0,513.9,538.1,522.8,0.0,13.2,0.0,AdvMINION-R,(),False,False,False,False,326.5
+"way ANOVA was used to test the effects of sterilization,",4,12,74,9.5,311.0,525.8,538.1,534.8,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,329.8
+elevation and their interaction. A Student’s t-test was,4,12,75,9.5,311.0,537.8,538.1,546.8,0.0,12.0,0.0,AdvMINION-R,"({'start': 45, 'end': 46, 'kind': 'italic'},)",False,False,False,False,351.2
+used to compare the relative soil biota effects between the,4,12,76,9.5,311.0,549.7,538.1,558.7,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,331.7
+low and the high elevations and to test whether the mean,4,12,77,9.5,311.0,561.6,538.1,570.6,0.0,11.9,0.0,AdvMINION-R,(),False,False,False,False,328.0
+of the relative soil biota effects differed significantly from,4,12,78,9.5,311.0,573.6,538.1,582.6,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,322.3
+0. All statistical analyses were performed using R 2.15.0,4,12,79,9.5,311.0,585.6,538.1,594.6,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,322.3
+(R Development Core Team 2011).,4,12,80,9.5,311.0,597.5,448.3,606.5,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,323.5
+where yijk is the binary response (alive or dead) for seed-,4,13,81,9.5,65.6,501.8,292.8,511.6,-245.4,-95.8,0.0,AdvMINION-R,"({'start': 7, 'end': 8, 'kind': 'sub'}, {'start': 8, 'end': 9, 'kind': 'sub'}, {'start': 9, 'end': 10, 'kind': 'sub'}, {'start': 6, 'end': 7, 'kind': 'italic'})",False,False,False,False,91.5
+ling i in plot j and station k and pijk is the predicted sur-,4,13,82,9.5,65.6,513.7,292.8,523.5,0.0,12.0,0.0,AdvMINION-R,"({'start': 36, 'end': 37, 'kind': 'sub'}, {'start': 37, 'end': 38, 'kind': 'sub'}, {'start': 38, 'end': 39, 'kind': 'sub'}, {'start': 5, 'end': 6, 'kind': 'italic'}, {'start': 15, 'end': 16, 'kind': 'italic'}, {'start': 29, 'end': 30, 'kind': 'italic'}, {'start': 35, 'end': 36, 'kind': 'italic'})",False,False,False,False,83.5
+vival probability for each seedling. In the fixed part of the,4,13,83,9.5,65.6,525.6,292.8,534.6,-0.0,11.9,0.0,AdvMINION-R,(),False,False,False,False,86.6
+"model, b0 denotes the fixed intercept. b1, b2, b3, b4, b5,",4,13,84,9.5,65.6,536.7,292.8,547.4,0.0,11.1,0.0,AdvMINION-R,(),False,False,False,False,96.2
+and b6 represent the mean coefficient values across all,4,13,85,9.5,65.6,548.7,292.8,559.4,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,85.1
+"species for conspecific seedling abundance, heterospecific",4,13,86,9.5,65.6,561.5,292.7,570.5,0.0,12.8,0.0,AdvMINION-R,(),False,False,False,False,96.0
+"seedling abundance, conspecific tree abundance, hetero-",4,13,87,9.5,65.6,573.5,292.8,582.5,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,101.3
+"specific tree abundance, elevation and initial seedling",4,13,88,9.5,65.6,585.5,292.8,594.4,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,100.2
+"height, respectively. cspecies denotes the random slope for",4,13,89,9.5,65.6,596.5,292.8,607.2,0.0,11.1,0.0,AdvMINION-R,"({'start': 27, 'end': 28, 'kind': 'sub'}, {'start': 28, 'end': 29, 'kind': 'sub'}, {'start': 29, 'end': 30, 'kind': 'sub'})",False,False,False,False,95.8
+"each species (i.e., the four parameters for local neighbor-",4,13,90,9.5,65.6,609.4,292.7,618.4,-0.0,12.8,0.0,AdvMINION-R,(),False,False,False,False,86.5
+hood density vary among species). lspecies characterizes,4,13,91,9.5,65.6,620.4,292.8,631.1,0.0,11.0,0.0,AdvMINION-R,"({'start': 39, 'end': 40, 'kind': 'sub'}, {'start': 40, 'end': 41, 'kind': 'sub'}, {'start': 41, 'end': 42, 'kind': 'sub'})",False,False,False,False,90.9
+"the variation among species and lquadrat, lstation, and lplot",4,13,92,9.5,65.6,632.4,292.8,643.1,0.0,12.0,0.0,AdvMINION-R,"({'start': 48, 'end': 49, 'kind': 'sub'}, {'start': 49, 'end': 50, 'kind': 'sub'}, {'start': 50, 'end': 51, 'kind': 'sub'})",False,False,False,False,80.9
+describe the survival autocorrelation within the seedling,4,13,93,9.5,65.6,645.2,292.8,654.2,0.0,12.8,0.0,AdvMINION-R,(),False,False,False,False,101.4
+"quadrat, station, and variation among 1 ha plots, respec-",4,13,94,9.5,65.6,657.2,292.7,666.2,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,101.4
+tively.,4,13,95,9.5,65.6,669.1,88.2,678.1,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,
+Results,4,14,96,11.5,311.0,625.5,353.6,636.7,245.4,-43.6,0.0,AdvPSFTBL,(),False,False,False,False,
+Field surveys,4,15,97,9.7,311.0,650.8,376.9,660.2,0.0,25.2,0.0,AdvPSFTBL,(),False,False,False,False,338.5
+The best model for absolute neighbor effects used conspe-,4,16,98,9.5,311.0,669.2,538.1,678.2,0.0,18.5,0.0,AdvMINION-R,(),False,False,False,False,328.8
+"cific seedling density, heterospecific seedling density, con-",4,16,99,9.5,311.0,681.2,538.1,690.2,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,330.2
+"specific tree basal area, and heterospecific tree basal area",4,16,100,9.5,311.0,693.2,538.1,702.2,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,343.0
+The local neighborhood variables used in this study,4,17,101,9.5,75.1,681.1,293.0,690.1,-235.9,-12.1,0.0,AdvMINION-R,(),False,False,False,False,95.2
+included conspecific and heterospecific seedling density in,4,17,102,9.5,65.6,693.1,292.8,702.0,-9.5,12.0,0.0,AdvMINION-R,(),False,False,False,False,102.0
+2826 ª 2014 The Authors. Ecology and Evolution published by John Wiley & Sons Ltd.,4,18,103,6.5,65.6,729.2,538.1,737.6,-0.0,36.1,35.9,AdvPSFT-L,"({'start': 0, 'end': 4, 'kind': 'bold'},)",False,False,False,False,311.8
+"20457758, 2014, 14, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/ece3.1123 by Cambodia Hinari NPL, Wiley Online Library on [15/11/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License",5,1,1,5.2,579.0,16.3,583.7,766.9,,,0.0,Times-Roman,(),True,False,False,False,580.1
+M. Xu & S. Yu Elevational Variation in Density Dependence,5,2,2,7.5,57.1,42.8,529.6,50.0,-521.8,26.5,0.0,AdvPSFT-R,(),False,False,False,False,68.4
+Table 1. Comparison of generalized linear mixed models of seedling survival in the six 1-ha plots.,5,3,3,7.5,57.1,71.4,374.1,78.7,0.0,28.6,57.7,AdvPSFT-L,"({'start': 0, 'end': 8, 'kind': 'bold'},)",False,False,False,False,79.0
+Models Fixed effects AIC BIC logLink,5,4,4,7.5,57.1,88.8,528.0,96.1,0.0,17.5,0.0,AdvPSFT-L,(),False,False,False,False,123.7
+1 Ht + Cons + Hets + Cona + Heta 1702.6 1832.2 −829.3,5,5,5,7.5,57.1,105.5,529.7,119.2,0.0,16.7,0.0,AdvPSFT-L,(),False,False,False,False,123.7
+2 Ht + Cons + Hets + Conb + Hetb 1681.8 1811.4 −818.9,5,5,6,7.5,57.1,115.9,529.7,129.6,0.0,10.4,0.0,AdvPSFT-L,(),False,False,False,False,123.7
+3 Ht + Cons + Hets + Cona + Heta + Ele 1692.4 1827.9 −823.2,5,5,7,7.5,57.1,126.4,529.7,140.1,0.0,10.5,0.0,AdvPSFT-L,(),False,False,False,False,123.7
+4 Ht + Cons + Hets + Conb + Hetb + Ele 1672.7 1808.2 −813.3,5,5,8,7.5,57.2,136.9,529.7,150.5,0.0,10.4,268.1,AdvPSFT-L,"({'start': 39, 'end': 52, 'kind': 'bold'}, {'start': 54, 'end': 59, 'kind': 'bold'})",False,False,False,False,123.7
+5 Ht + Cons + Hets + Cona + Heta + Conb + Hetb + Ele 1694.8 1842.0 −822.4,5,5,9,7.5,57.2,147.3,529.7,161.0,0.0,10.5,0.0,AdvPSFT-L,(),False,False,False,False,123.7
+6 Ht + Cons + Hets + Cona + Heta + Ele + Cons:Ele + Cona:Ele 1692.8 1840.1 −821.4,5,5,10,7.5,57.2,157.8,529.7,171.5,0.0,10.4,0.0,AdvPSFT-L,(),False,False,False,False,123.7
+7 Ht + Cons + Hets + Conb + Hetb + Ele + Cons:Ele + Conb:Ele 1676.7 1823.9 −813.3,5,5,11,7.5,57.2,168.3,529.7,182.0,0.0,10.5,0.0,AdvPSFT-L,(),False,False,False,False,123.7
+8 Ht + Rel-Cons + Rel-Cona 1666.2 1731.0 −822.1,5,5,12,7.5,57.1,178.7,529.7,192.4,-0.0,10.4,0.0,AdvPSFT-L,(),False,False,False,False,123.7
+9 Ht + Rel-Cons + Rel-Conb 1671.0 1735.8 −824.5,5,5,13,7.5,57.1,189.2,529.7,202.9,0.0,10.5,0.0,AdvPSFT-L,(),False,False,False,False,123.7
+10 Ht + Rel-Cons + Rel-Cona + Ele 1652.6 1723.2 −814.3,5,5,14,7.5,57.1,199.6,529.7,213.3,0.0,10.4,273.9,AdvPSFT-L,"({'start': 34, 'end': 47, 'kind': 'bold'}, {'start': 49, 'end': 54, 'kind': 'bold'})",False,False,False,False,123.7
+11 Ht + Rel-Cons + Rel-Conb + Ele 1655.8 1726.5 −815.9,5,5,15,7.5,57.1,210.1,529.7,223.8,0.0,10.5,0.0,AdvPSFT-L,(),False,False,False,False,123.7
+12 Ht + Rel-Cons + Rel-Cona + Rel-Conb + Ele 1660.7 1760.9 −813.4,5,5,16,7.5,57.2,220.5,529.7,234.2,0.0,10.4,0.0,AdvPSFT-L,(),False,False,False,False,123.7
+13 Ht + Rel-Cons + Rel-Cona + Ele + Rel-Cons:Ele + Rel-Cona:Ele 1653.9 1736.3 −812.9,5,5,17,7.5,57.2,231.0,529.7,244.7,0.0,10.5,0.0,AdvPSFT-L,(),False,False,False,False,123.7
+14 Ht + Rel-Cons + Rel-Conb + Ele + Rel-Cons:Ele + Rel-Conb:Ele 1656.6 1739.0 −814.3,5,5,18,7.5,57.2,241.5,529.7,255.1,0.0,10.4,0.0,AdvPSFT-L,(),False,False,False,False,123.7
+"Ht, initial seedling height; Cons, conspecific seedling density; Hets, heterospecific seedling density; Cona, conspecific tree abundance; Heta, het-",5,5,19,7.5,57.2,261.3,529.7,268.6,0.0,19.8,0.0,AdvPSFT-L,(),False,False,False,False,69.7
+"erospecific tree abundance; Ele, elevation; Conb, conspecific tree basal area; Hetb, heterospecific tree basal area; Rel-Cons, relative conspecific",5,5,20,7.5,57.2,271.8,529.6,279.1,0.0,10.5,0.0,AdvPSFT-L,(),False,False,False,False,93.9
+"seedling density; Rel-Cona, relative conspecific tree abundance; Rel-Conb, relative conspecific tree basal area.",5,5,21,7.5,57.2,282.2,409.6,289.5,0.0,10.4,0.0,AdvPSFT-L,(),False,False,False,False,85.7
+Significant results are shown in boldface type.,5,5,22,7.5,57.2,292.7,205.4,300.0,0.0,10.5,0.0,AdvPSFT-L,(),False,False,False,False,92.8
+as the fixed effects. The best model for relative neighbor,5,6,23,9.5,57.1,321.5,284.3,330.5,-0.0,28.9,0.0,AdvMINION-R,(),False,False,False,False,68.7
+effects used the relative conspecific seedling density and,5,6,24,9.5,57.1,333.5,284.3,342.4,0.0,11.9,0.0,AdvMINION-R,(),False,False,False,False,85.4
+relative conspecific tree abundance as the fixed effects,5,6,25,9.5,57.1,345.4,284.3,354.4,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,90.6
+"(Table 1). In both models, elevation was an important",5,6,26,9.5,57.1,357.4,284.3,366.4,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,85.2
+"variable in explaining seedling survival (Table 1), with",5,6,27,9.5,57.1,369.3,284.3,378.3,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,92.6
+low-elevation trees having a significantly lower survival,5,6,28,9.5,57.1,381.3,284.3,390.3,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,113.9
+rate than high-elevation trees (Table 2). Conspecific seed-,5,6,29,9.5,57.1,393.3,284.3,402.3,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,75.1
+ling neighbors had a significant negative effect on seedling,5,6,30,9.5,57.1,405.2,284.3,414.2,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,74.7
+survival (Table 2) at the six 1-ha sites. The strength of,5,7,31,9.5,57.1,417.2,285.3,426.2,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,91.6
+the relative conspecific seedling effects varied widely for,5,7,32,9.5,57.1,429.1,284.3,438.1,0.0,11.9,0.0,AdvMINION-R,(),False,False,False,False,73.6
+the two species but was mostly negative (Fig. 1). In con-,5,7,33,9.5,57.1,441.1,284.3,450.0,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,72.9
+"trast, the effects of heterospecific seedlings and hetero-",5,7,34,9.5,57.1,453.0,284.3,462.0,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,81.5
+specific tree neighbors were close to zero for the two,5,7,35,9.5,57.1,465.0,284.3,474.0,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,90.7
+species. The conspecific tree effects varied considerably,5,8,36,9.5,57.1,476.9,284.5,485.9,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,91.0
+for both species but the average value was close to zero,5,8,37,9.5,57.1,488.9,284.3,497.9,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,72.6
+Figure 1. Distribution of effects of conspecific and heterospecific,5,9,38,7.5,302.5,518.8,529.6,526.1,245.4,29.9,95.5,AdvPSFT-L,"({'start': 0, 'end': 9, 'kind': 'bold'},)",False,False,False,False,327.3
+neighbors on seedling survival in 6 1-ha plots.,5,9,39,7.5,302.5,529.4,450.5,536.6,0.0,10.6,0.0,AdvPSFT-L,(),False,False,False,False,336.4
+Table 2. Parameter estimates and significance in generalized linear,5,10,40,7.5,57.1,523.4,284.3,530.8,-245.4,-5.9,84.8,AdvPSFT-L,"({'start': 0, 'end': 8, 'kind': 'bold'},)",False,False,False,False,79.0
+mixed models (model 4 and model 10) that predicted neighbor effects,5,10,41,7.5,57.1,533.9,284.3,541.2,0.0,10.5,0.0,AdvPSFT-L,(),False,False,False,False,78.7
+of seedlings on seedling survival in six 1-ha plots.,5,10,42,7.5,57.1,544.4,215.5,551.7,0.0,10.4,0.0,AdvPSFT-L,(),False,False,False,False,66.3
+"(Table 2, Fig. 1). The relative conspecific seedlings effects",5,11,43,9.5,302.5,549.7,529.7,558.7,245.4,5.4,0.0,AdvMINION-R,(),False,False,False,False,330.5
+"had a significant negative impact on the seedling survival,",5,11,44,9.5,302.5,561.7,529.7,570.7,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,320.1
+whereas relative conspecific tree effects did not signifi-,5,11,45,9.5,302.5,573.7,529.7,582.7,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,338.1
+cantly affect seedling survival (Table 2).,5,11,46,9.5,302.5,585.6,457.0,594.6,0.0,11.9,0.0,AdvMINION-R,(),False,False,False,False,328.4
+Fixed effect Estimate Z-value P (>|z|),5,12,47,7.5,57.1,561.0,280.8,569.4,-245.4,-24.6,0.0,AdvPSFT-L,(),False,False,False,False,75.9
+Initial height of seedlings 0.6856 7.114 <0.0001,5,13,48,7.5,57.1,579.3,284.3,586.7,0.0,18.4,104.3,AdvPSFT-L,"({'start': 41, 'end': 48, 'kind': 'bold'},)",False,False,False,False,76.5
+Conspecific seedlings −0.0935 −2.480 0.0131,5,13,49,7.5,57.1,589.7,284.3,602.6,0.0,10.4,105.0,AdvPSFT-L,"({'start': 37, 'end': 43, 'kind': 'bold'},)",False,False,False,False,96.1
+Heterospecific seedlings 0.0115 0.461 0.6447,5,13,50,7.5,57.1,600.3,284.3,607.6,-0.0,10.5,0.0,AdvPSFT-L,(),False,False,False,False,104.4
+Conspecific trees −0.0127 −0.313 0.7546,5,13,51,7.5,57.1,610.6,284.3,623.5,0.0,10.4,0.0,AdvPSFT-L,(),False,False,False,False,96.1
+Heterospecific trees 0.2694 1.256 0.2091,5,13,52,7.5,57.1,621.2,284.3,628.5,0.0,10.5,0.0,AdvPSFT-L,(),False,False,False,False,104.4
+Elevations 0.6737 −3.507 0.0005,5,13,53,7.5,57.1,631.5,284.3,644.5,0.0,10.4,144.8,AdvPSFT-L,"({'start': 25, 'end': 31, 'kind': 'bold'},)",False,False,False,False,174.0
+Initial height of seedlings 0.7110 7.373 <0.0001,5,13,54,7.5,57.1,642.1,284.3,649.4,-0.0,10.5,104.3,AdvPSFT-L,"({'start': 41, 'end': 48, 'kind': 'bold'},)",False,False,False,False,76.5
+Relative conspecific seedlings −0.7031 −2.517 0.0118,5,13,55,7.5,57.1,652.5,284.3,665.4,0.0,10.4,85.7,AdvPSFT-L,"({'start': 46, 'end': 52, 'kind': 'bold'},)",False,False,False,False,84.1
+Relative conspecific trees −0.4886 −0.423 0.6722,5,13,56,7.5,57.1,663.0,284.3,675.9,0.0,10.5,0.0,AdvPSFT-L,(),False,False,False,False,84.1
+Elevations 0.8337 −4.036 <0.0001,5,13,57,7.5,57.1,673.4,284.3,686.4,0.0,10.5,163.3,AdvPSFT-L,"({'start': 25, 'end': 32, 'kind': 'bold'},)",False,False,False,False,174.0
+Significant results are shown in boldface type.,5,13,58,7.5,57.1,692.4,205.4,699.7,-0.0,19.0,0.0,AdvPSFT-L,(),False,False,False,False,92.7
+"At both low and high elevations, the best models of the",5,14,59,9.5,311.9,597.5,529.7,606.5,254.8,-94.9,0.0,AdvMINION-R,(),False,False,False,False,324.2
+absolute neighbor effect contained the conspecific seedling,5,14,60,9.5,302.5,609.5,529.7,618.5,-9.4,12.0,0.0,AdvMINION-R,(),False,False,False,False,337.3
+density and heterospecific seedling density as fixed effects.,5,14,61,9.5,302.5,621.5,529.7,630.4,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,333.1
+"At the low elevation, the best model of the relative neigh-",5,14,62,9.5,302.5,633.4,529.7,642.4,-0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,314.9
+bor effect contained the relative conspecific seedling den-,5,14,63,9.5,302.5,645.4,529.6,654.4,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,319.4
+sity and relative conspecific tree abundance as fixed,5,14,64,9.5,302.5,657.3,529.6,666.3,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,322.5
+"effects, whereas at the high elevation, the best fixed effects",5,14,65,9.5,302.5,669.3,529.7,678.3,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,331.7
+were the relative conspecific seedling density and the rela-,5,14,66,9.5,302.5,681.2,529.7,690.2,0.0,11.9,0.0,AdvMINION-R,(),False,False,False,False,323.5
+tive conspecific tree basal area. For the low-elevation,5,14,67,9.5,302.5,693.2,529.6,702.2,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,322.5
+ª 2014 The Authors. Ecology and Evolution published by John Wiley & Sons Ltd. 2827,5,15,68,6.5,57.1,729.1,529.7,737.5,-245.4,35.9,35.9,AdvPSFT-L,"({'start': 78, 'end': 82, 'kind': 'bold'},)",False,False,False,False,64.4
+"20457758, 2014, 14, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/ece3.1123 by Cambodia Hinari NPL, Wiley Online Library on [15/11/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License",6,1,1,5.2,579.0,16.3,583.7,766.9,,,0.0,Times-Roman,(),True,False,False,False,580.1
+Elevational Variation in Density Dependence M. Xu & S. Yu,6,2,2,7.5,65.6,42.8,538.1,50.0,-513.4,26.5,0.0,AdvPSFT-R,(),False,False,False,False,106.8
+Table 3. Parameter estimates and significance in generalized linear,6,3,3,7.5,65.6,71.4,292.8,78.7,0.0,28.6,84.8,AdvPSFT-L,"({'start': 0, 'end': 8, 'kind': 'bold'},)",False,False,False,False,87.4
+mixed best-fit models that predicted neighbor and relative neighbor,6,3,4,7.5,65.6,81.9,292.7,89.2,0.0,10.5,0.0,AdvPSFT-L,(),False,False,False,False,88.2
+effects on seedling survival in low- and high-elevation plots.,6,3,5,7.5,65.6,92.3,258.5,99.6,0.0,10.4,0.0,AdvPSFT-L,(),False,False,False,False,89.3
+"cantly influence seed germination (Fig. 2A). However, the",6,4,6,9.5,311.0,71.5,538.1,80.5,245.4,-20.8,0.0,AdvMINION-R,(),False,False,False,False,337.1
+low-elevation simulation experiment showed increased,6,4,7,9.5,311.0,83.4,538.1,92.4,0.0,11.9,0.0,AdvMINION-R,(),False,False,False,False,369.2
+seedling growth compared with the high-elevation simula-,6,4,8,9.5,311.0,95.4,538.1,104.4,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,344.7
+"tion experiment (F = 10.99, P = 0.002, Fig. 2B), and this",6,4,9,9.5,311.0,105.8,538.1,116.4,0.0,10.4,0.0,AdvMINION-R,"({'start': 17, 'end': 18, 'kind': 'italic'}, {'start': 28, 'end': 29, 'kind': 'italic'})",False,False,False,False,330.4
+"elevation effect was affected by soil sterilization (F = 3.21,",6,4,10,9.5,311.0,117.8,538.1,128.3,-0.0,12.0,0.0,AdvMINION-R,"({'start': 53, 'end': 54, 'kind': 'italic'},)",False,False,False,False,348.5
+"P = 0.080, Fig. 2B). Even though there was no significant",6,4,11,9.5,311.0,129.7,538.1,140.3,0.0,12.0,0.0,AdvMINION-R,"({'start': 0, 'end': 1, 'kind': 'italic'},)",False,False,False,False,319.6
+difference between elevations for the relative soil biota,6,4,12,9.5,311.0,143.2,538.1,152.2,0.0,13.5,0.0,AdvMINION-R,(),False,False,False,False,353.8
+"effect on the seed germination rate (t-test, t = 1.59,",6,4,13,9.5,311.0,153.6,538.1,164.2,0.0,10.4,0.0,AdvMINION-R,"({'start': 37, 'end': 38, 'kind': 'italic'}, {'start': 45, 'end': 46, 'kind': 'italic'})",False,False,False,False,338.2
+"P = 0.123, Fig. 3A), soil biota significantly affected the",6,4,14,9.5,311.0,165.6,538.1,176.2,0.0,12.0,0.0,AdvMINION-R,"({'start': 0, 'end': 1, 'kind': 'italic'},)",False,False,False,False,319.6
+plants in the low-elevation simulation experiment,6,4,15,9.5,311.0,179.1,538.1,188.1,0.0,13.5,0.0,AdvMINION-R,(),False,False,False,False,343.7
+"(t = −2.20, P = 0.040, Fig. 3A) compared with the high-",6,4,16,9.5,311.0,189.5,538.1,206.8,0.0,10.4,0.0,AdvMINION-R,"({'start': 1, 'end': 2, 'kind': 'italic'}, {'start': 12, 'end': 13, 'kind': 'italic'})",False,False,False,False,320.8
+"elevation experiment (t = −0.86, P = 0.402, Fig. 3A). The",6,4,17,9.5,311.0,201.4,538.1,218.8,0.0,12.0,0.0,AdvMINION-R,"({'start': 22, 'end': 23, 'kind': 'italic'}, {'start': 33, 'end': 34, 'kind': 'italic'})",False,False,False,False,348.6
+relative soil biota effects on seedling growth differed sig-,6,4,18,9.5,311.0,215.0,538.1,224.0,-0.0,13.5,0.0,AdvMINION-R,(),False,False,False,False,342.6
+"nificantly between elevations (t = 3.18, P = 0.005,",6,4,19,9.5,311.0,225.4,538.1,235.9,0.0,10.4,0.0,AdvMINION-R,"({'start': 31, 'end': 32, 'kind': 'italic'}, {'start': 41, 'end': 42, 'kind': 'italic'})",False,False,False,False,358.1
+Fig. 3B). In the low-elevation simulation experiment the,6,4,20,9.5,311.0,238.9,538.1,247.9,-0.0,13.5,0.0,AdvMINION-R,(),False,False,False,False,328.4
+"soil biota depressed seedling growth (t = −2.14,",6,4,21,9.5,311.0,249.3,538.1,266.6,0.0,10.4,0.0,AdvMINION-R,"({'start': 38, 'end': 39, 'kind': 'italic'},)",False,False,False,False,335.3
+"P = 0.061, Fig. 3B), whereas soil biota in the high-eleva-",6,4,22,9.5,311.0,261.3,538.1,271.8,0.0,12.0,0.0,AdvMINION-R,"({'start': 0, 'end': 1, 'kind': 'italic'},)",False,False,False,False,319.6
+"tion experiment had a positive effect (t = 2.40,",6,4,23,9.5,311.0,273.2,538.1,283.7,0.0,11.9,0.0,AdvMINION-R,"({'start': 39, 'end': 40, 'kind': 'italic'},)",False,False,False,False,337.0
+P = 0.037).,6,4,24,9.5,311.0,285.1,354.6,295.7,0.0,12.0,0.0,AdvMINION-R,"({'start': 0, 'end': 1, 'kind': 'italic'},)",False,False,False,False,319.6
+Parameter estimate,6,5,25,7.5,160.2,109.8,222.1,117.0,-150.7,-175.3,0.0,AdvPSFT-L,(),False,False,False,False,195.1
+Low elevation High elevation,6,6,26,7.5,160.2,126.2,279.0,133.4,0.0,16.3,0.0,AdvPSFT-L,(),False,False,False,False,176.0
+Estimate Pr (>|z|) Estimate Pr(>|z|),6,7,27,7.5,160.2,141.6,291.3,150.0,0.0,15.5,0.0,AdvPSFT-L,(),False,False,False,False,197.2
+Initial height of seedlings 0.6992 <0.0001 0.6430 0.0018,6,7,28,7.5,65.6,159.9,292.7,167.3,-94.6,18.3,171.7,AdvPSFT-L,"({'start': 35, 'end': 42, 'kind': 'bold'}, {'start': 50, 'end': 56, 'kind': 'bold'})",False,False,False,False,85.0
+Conspecific seedlings −0.0337 0.0472 −0.0578 0.1603,6,7,29,7.5,65.6,170.3,292.7,183.3,-0.0,10.4,87.5,AdvPSFT-L,"({'start': 30, 'end': 36, 'kind': 'bold'},)",False,False,False,False,104.5
+Heterospecific seedlings 0.0030 0.9098 0.0712 0.3698,6,7,30,7.5,65.6,180.8,292.8,188.1,-0.0,10.5,0.0,AdvPSFT-L,(),False,False,False,False,112.9
+Initial height of seedlings 0.7498 <0.0001 0.6670 0.0014,6,7,31,7.5,65.6,191.3,292.7,198.7,0.0,10.5,171.7,AdvPSFT-L,"({'start': 35, 'end': 42, 'kind': 'bold'}, {'start': 50, 'end': 56, 'kind': 'bold'})",False,False,False,False,85.0
+Relative conspecific,6,7,32,7.5,65.6,201.8,127.4,209.1,0.0,10.4,0.0,AdvPSFT-L,(),False,False,False,False,92.5
+seedlings,6,7,33,7.5,68.9,212.3,97.7,219.5,3.3,10.6,0.0,AdvPSFT-L,(),False,False,False,False,
+−1.0711 0.0157 −0.4067 0.4361,6,7,34,7.5,160.2,201.7,292.7,214.6,91.3,-10.6,155.6,AdvPSFT-L,"({'start': 8, 'end': 14, 'kind': 'bold'},)",False,False,False,False,201.8
+Fixed effect,6,8,35,7.5,65.6,142.5,102.6,149.8,-94.6,-59.2,0.0,AdvPSFT-L,(),False,False,False,False,84.3
+Relative conspecific trees 1.6633 0.3908 0.3168 0.9104,6,9,36,7.5,65.6,222.7,292.8,230.0,-0.0,80.2,0.0,AdvPSFT-L,(),False,False,False,False,92.5
+Significant results are shown in boldface type.,6,10,37,7.5,65.6,241.7,213.9,249.0,0.0,19.0,0.0,AdvPSFT-L,(),False,False,False,False,101.2
+"plant community, both the conspecific seedling density",6,11,38,9.5,65.6,274.4,293.0,283.4,0.0,32.8,0.0,AdvMINION-R,(),False,False,False,False,90.4
+and the relative conspecific seedling density had signifi-,6,11,39,9.5,65.6,286.4,292.8,295.4,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,84.5
+cant negative effects on seedling survival (Table 3). In,6,11,40,9.5,65.6,298.4,292.8,307.4,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,87.3
+"contrast, heterospecific seedlings and relative conspecific",6,11,41,9.5,65.6,310.3,292.8,319.3,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,103.5
+tree abundance had no significant effects on seedling sur-,6,11,42,9.5,65.6,322.2,292.8,331.2,0.0,11.9,0.0,AdvMINION-R,(),False,False,False,False,83.4
+"vival (Table 3). However, none of these species-specific",6,11,43,9.5,65.6,334.2,292.7,343.2,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,88.5
+neighbor effects were significantly correlated with seedling,6,11,44,9.5,65.6,346.2,292.8,355.1,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,103.1
+survival at the high-elevation sites (Table 3).,6,11,45,9.5,65.6,358.1,239.2,367.1,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,98.4
+Discussion,6,12,46,11.5,311.0,314.7,373.3,325.8,245.4,-43.4,0.0,AdvPSFTBL,(),False,False,False,False,
+"In this study, we examined the data from a field survey to",6,13,47,9.5,311.0,334.5,538.1,343.5,0.0,19.8,0.0,AdvMINION-R,(),False,False,False,False,322.4
+explore the variation in density dependence between two,6,13,48,9.5,311.0,346.5,538.1,355.5,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,343.0
+different elevations in a subtropical forest. We also investi-,6,13,49,9.5,311.0,358.5,538.1,367.4,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,346.3
+gated the potential role of the soilborne biota in driving,6,13,50,9.5,311.0,370.4,538.1,379.4,0.0,11.9,0.0,AdvMINION-R,(),False,False,False,False,335.4
+this elevational differentiation. Our results indicated that,6,13,51,9.5,311.0,382.3,538.1,391.3,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,329.0
+Greenhouse experiments,6,14,52,9.7,65.6,387.4,192.7,396.9,-245.4,5.1,0.0,AdvPSFTBL,(),False,False,False,False,129.4
+"at the low-elevation sites, the strong negative effects of",6,15,53,9.5,311.0,394.3,539.0,403.3,245.4,6.9,0.0,AdvMINION-R,(),False,False,False,False,323.0
+"conspecific seedlings limited seedling survival, whereas",6,15,54,9.5,311.0,406.2,538.1,415.2,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,359.1
+conspecific and heterospecific neighbors had no significant,6,15,55,9.5,311.0,418.2,538.1,427.2,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,355.9
+effects on seedling survival in the high-elevation sites. The,6,15,56,9.5,311.0,430.2,538.1,439.2,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,337.8
+negative effects of soil pathogens on seed germination and,6,15,57,9.5,311.0,442.1,538.1,451.1,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,345.4
+seedling growth were stronger in the low-elevation sites,6,15,58,9.5,311.0,454.1,538.1,463.1,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,346.3
+than in the high-elevation sites. This suggested that soil-,6,15,59,9.5,311.0,466.0,538.1,475.0,0.0,11.9,0.0,AdvMINION-R,(),False,False,False,False,332.2
+"In the greenhouse experiment, we found that soil biota",6,16,60,9.5,65.6,406.0,292.8,415.0,-245.4,-60.0,0.0,AdvMINION-R,(),False,False,False,False,78.5
+had a negative effect on seed germination and seedling,6,16,61,9.5,65.6,417.9,292.8,426.9,0.0,11.9,0.0,AdvMINION-R,(),False,False,False,False,84.6
+growth for both species in the low-elevation experiment.,6,16,62,9.5,65.6,429.8,292.7,438.8,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,96.8
+We have reported the combined results for these two spe-,6,16,63,9.5,65.6,441.8,292.8,450.8,-0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,81.8
+cies because the effects of soil sterilization and elevation,6,16,64,9.5,65.6,453.8,292.7,462.7,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,83.7
+on seed germination and seedling growth were highly,6,17,65,9.5,65.6,465.7,293.0,474.7,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,81.5
+consistent for the two species and because we were more,6,17,66,9.5,65.6,477.7,292.8,486.7,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,107.6
+interested in overall community responses rather than,6,17,67,9.5,65.6,489.6,292.8,498.6,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,108.8
+"species-specific results. Sterilization (ANOVA, F = 0.99,",6,17,68,9.5,65.6,500.0,292.8,510.6,0.0,10.4,0.0,AdvMINION-R,"({'start': 48, 'end': 49, 'kind': 'italic'},)",False,False,False,False,128.9
+"P = 0.322), elevation (F = 0.92, P = 0.341), and steriliza-",6,17,69,9.5,65.6,511.9,292.7,522.5,-0.0,11.9,0.0,AdvMINION-R,"({'start': 0, 'end': 1, 'kind': 'italic'}, {'start': 23, 'end': 24, 'kind': 'italic'}, {'start': 33, 'end': 34, 'kind': 'italic'})",False,False,False,False,74.3
+"tion 9 elevation (F = 0.45, P = 0.503) did not signifi-",6,17,70,9.5,65.6,523.9,292.8,534.5,-0.0,12.0,0.0,AdvMINION-R,"({'start': 18, 'end': 19, 'kind': 'italic'}, {'start': 28, 'end': 29, 'kind': 'italic'})",False,False,False,False,84.6
+borne pathogens played an important role in density,6,18,71,9.5,311.0,478.0,538.3,487.0,245.4,-45.9,0.0,AdvMINION-R,(),False,False,False,False,339.4
+dependence differentiation in subtropical forests.,6,18,72,9.5,311.0,489.9,499.1,498.9,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,358.7
+Conspecific NDD appeared to be stronger in the low-,6,19,73,9.5,320.4,501.9,538.1,510.9,9.4,12.0,0.0,AdvMINION-R,(),False,False,False,False,368.8
+elevation sites than in the high-elevation sites. This result,6,19,74,9.5,311.0,513.9,538.1,522.8,-9.4,12.0,0.0,AdvMINION-R,(),False,False,False,False,348.8
+was consistent with the strong negative effect of relative,6,19,75,9.5,311.0,525.8,538.1,534.8,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,329.2
+(A) (B),6,20,76,8.0,65.6,560.1,243.3,567.6,-245.4,34.3,700.0,Helvetica-Bold,"({'start': 0, 'end': 7, 'kind': 'bold'},)",False,False,False,False,232.2
+Figure 2. Greenhouse experiments testing the,6,21,77,7.5,385.1,652.4,536.5,659.7,319.5,92.4,146.5,AdvPSFT-L,"({'start': 0, 'end': 9, 'kind': 'bold'},)",False,False,False,False,409.9
+effect of elevations (low vs. high) and soil,6,21,78,7.5,385.1,662.8,519.4,670.1,0.0,10.4,0.0,AdvPSFT-L,(),False,False,False,False,405.9
+treatments (sterilization vs. control) on seed,6,22,79,7.5,385.1,673.3,525.6,680.6,0.0,10.5,0.0,AdvPSFT-L,(),False,False,False,False,422.0
+germination (A) and seedling growth (B). Bars,6,23,80,7.5,385.1,683.8,532.6,691.1,0.0,10.5,0.0,AdvPSFT-L,(),False,False,False,False,426.1
+represent means ± 1 SE.,6,23,81,7.5,385.1,694.1,465.6,707.0,0.0,10.3,0.0,AdvPSFT-L,(),False,False,False,False,417.4
+2828 ª 2014 The Authors. Ecology and Evolution published by John Wiley & Sons Ltd.,6,24,82,6.5,65.6,729.2,538.1,737.6,-319.5,35.0,35.9,AdvPSFT-L,"({'start': 0, 'end': 4, 'kind': 'bold'},)",False,False,False,False,311.8
+"20457758, 2014, 14, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/ece3.1123 by Cambodia Hinari NPL, Wiley Online Library on [15/11/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License",7,1,1,5.2,579.0,16.3,583.7,766.9,,,0.0,Times-Roman,(),True,False,False,False,580.1
+M. Xu & S. Yu Elevational Variation in Density Dependence,7,2,2,7.5,57.1,42.8,529.6,50.0,-521.8,26.5,0.0,AdvPSFT-R,(),False,False,False,False,68.4
+(A) (B),7,3,3,8.0,216.8,74.8,393.6,82.4,159.7,32.1,700.0,Helvetica-Bold,"({'start': 0, 'end': 7, 'kind': 'bold'},)",False,False,False,False,382.5
+Figure 3. Greenhouse experiments testing the,7,4,4,7.5,57.1,191.2,208.5,198.5,-159.7,116.4,146.5,AdvPSFT-L,"({'start': 0, 'end': 9, 'kind': 'bold'},)",False,False,False,False,81.9
+effect of elevation on the relative soil biota,7,4,5,7.5,57.1,201.6,195.9,208.9,0.0,10.4,0.0,AdvPSFT-L,(),False,False,False,False,78.0
+effect based on seed germination (A) and,7,4,6,7.5,57.1,212.1,191.4,219.4,0.0,10.4,0.0,AdvPSFT-L,(),False,False,False,False,78.0
+seedling growth (B). Bars represent means ± 1,7,5,7,7.5,57.1,222.5,208.4,235.4,0.0,10.4,0.0,AdvPSFT-L,(),False,False,False,False,85.7
+SE.,7,5,8,7.5,57.1,233.1,66.7,240.3,-0.0,10.6,0.0,AdvPSFT-L,(),False,False,False,False,
+conspecific seedlings in the low-elevation sites. Spatial,7,6,9,9.5,57.1,262.8,284.3,271.8,0.0,29.7,0.0,AdvMINION-R,(),False,False,False,False,105.1
+"variation, together with the changes in environmental",7,6,10,9.5,57.1,274.8,284.3,283.8,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,99.8
+"conditions, may alter the local interaction between plant",7,6,11,9.5,57.1,286.7,284.3,295.7,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,104.1
+"species and host-pathogen interactions, which would",7,6,12,9.5,57.1,298.6,284.3,307.6,0.0,11.9,0.0,AdvMINION-R,(),False,False,False,False,90.8
+affect the strength of the NDD (Benitez et al. 2013). The,7,6,13,9.5,57.1,310.6,284.3,319.6,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,81.4
+stress gradients hypothesis predicts that facilitative inter-,7,6,14,9.5,57.1,322.6,284.3,331.6,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,81.8
+actions will become more important when stress or con-,7,6,15,9.5,57.1,334.5,284.3,343.5,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,88.0
+sumer pressure are high (Maestre et al. 2009; Malkinson,7,6,16,9.5,57.1,346.5,284.3,355.5,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,85.0
+understory light availability at lower elevations may,7,7,17,9.5,302.5,262.8,529.9,271.8,245.4,-83.7,0.0,AdvMINION-R,(),False,False,False,False,351.6
+"increase pathogen activity, and this could result in a",7,7,18,9.5,302.5,274.8,529.7,283.8,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,339.0
+higher risk of disease and a stronger NDD effect.,7,7,19,9.5,302.5,286.7,493.3,295.7,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,330.0
+Two studies that compared density dependence,7,8,20,9.5,311.9,298.6,529.6,307.6,9.4,11.9,0.0,AdvMINION-R,(),False,False,False,False,338.7
+between a tropical forest and a temperate forest produced,7,8,21,9.5,302.5,310.6,529.7,319.6,-9.4,12.0,0.0,AdvMINION-R,(),False,False,False,False,337.0
+mixed results (Lambers et al. 2002; McCarthy-Neumann,7,8,22,9.5,302.5,322.6,529.6,331.6,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,330.9
+and Kobe 2010). McCarthy-Neumann and Kobe (2010),7,9,23,9.5,302.5,334.5,529.7,343.5,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,321.7
+showed that tropical tree species suffered NDD more fre-,7,9,24,9.5,302.5,346.5,529.7,355.5,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,334.8
+"quently than temperate tree species, whereas Lambers",7,9,25,9.5,302.5,358.5,529.6,367.4,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,337.4
+et al. (2002) concluded that the proportion of species,7,9,26,9.5,302.5,370.4,529.6,379.4,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,312.8
+affected in temperate forests was equivalent to that in,7,9,27,9.5,302.5,382.4,529.6,391.4,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,337.4
+"tropical forests. However, they investigated the variation",7,9,28,9.5,302.5,394.3,529.7,403.3,0.0,11.9,0.0,AdvMINION-R,(),False,False,False,False,336.3
+in density dependence between latitudes in terms of the,7,9,29,9.5,302.5,406.2,529.6,415.2,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,314.5
+frequency of species affected by NDD rather than in,7,9,30,9.5,302.5,418.2,529.6,427.2,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,345.9
+terms of the NDD strength. Our study focused on the,7,9,31,9.5,302.5,430.2,529.7,439.2,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,328.9
+variation in the strength of NDD between elevations and,7,9,32,9.5,302.5,442.1,529.7,451.1,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,340.5
+stressed the effect of environmental factors on soilborne,7,9,33,9.5,302.5,454.1,529.6,463.1,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,336.3
+pathogens. Our results support the hypothesis that the,7,9,34,9.5,302.5,466.1,529.6,475.1,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,348.8
+NDD mechanism is stronger in a forest community with,7,9,35,9.5,302.5,478.0,529.7,487.0,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,327.1
+"high temperatures and high soil moistures, which are the",7,9,36,9.5,302.5,489.9,529.6,498.9,0.0,11.9,0.0,AdvMINION-R,(),False,False,False,False,323.1
+conditions found in a tropical forest (Shuai et al. 2014).,7,9,37,9.5,302.5,501.9,521.8,510.9,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,346.1
+and Tielbörger 2010; Fajardo and McIntire 2011). As,7,10,38,9.5,57.1,358.0,284.4,367.5,-245.4,-143.9,0.0,AdvMINION-R,(),False,True,False,False,77.6
+"elevation increases, temperature and soil moisture",7,10,39,9.5,57.1,370.4,284.3,379.4,0.0,12.4,0.0,AdvMINION-R,(),False,False,False,False,101.1
+declines and understory light availability rises. These,7,10,40,9.5,57.1,382.4,284.3,391.4,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,94.3
+changes may directly influence the interactions between,7,10,41,9.5,57.1,394.3,284.3,403.3,0.0,11.9,0.0,AdvMINION-R,(),False,False,False,False,92.0
+"plants, possibly making facilitation more important than",7,10,42,9.5,57.1,406.2,284.3,415.2,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,86.6
+"competition at high elevations, which would buffer NDD",7,10,43,9.5,57.1,418.2,284.4,427.2,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,107.6
+"changes. For example, Bunker and Carson (2005) found",7,10,44,9.5,57.1,430.2,284.3,439.2,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,93.6
+that increased soil moisture favored NDD in seasonal for-,7,10,45,9.5,57.1,442.1,284.3,451.1,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,75.5
+"ests in Panama. In our study, the lapse rate related to the",7,10,46,9.5,57.1,454.1,284.3,463.1,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,74.2
+change in elevation between the high and low-elevation,7,10,47,9.5,57.1,466.1,284.3,475.0,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,88.4
+sites (about 300 m) was about 1.5°C. If we combine this,7,10,48,9.5,57.1,476.5,284.3,487.0,0.0,10.4,0.0,AdvMINION-R,(),False,False,False,False,77.2
+with the anticipated declines in air and soil moisture at,7,10,49,9.5,57.1,489.9,284.3,498.9,-0.0,13.5,0.0,AdvMINION-R,(),False,False,False,False,78.5
+"high-elevation sites, compared with low-elevation sites,",7,10,50,9.5,57.1,501.9,284.3,510.9,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,117.6
+we should expect lower competition for resources,7,10,51,9.5,57.1,513.9,284.3,522.8,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,76.2
+"between plant species at the high-elevation sites. However,",7,10,52,9.5,57.1,525.8,284.3,534.8,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,91.4
+the change in environmental conditions may regulate,7,10,53,9.5,57.1,537.8,284.3,546.8,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,75.5
+host-pathogen interactions (Burdon and Thrall 2009;,7,10,54,9.5,57.1,549.7,284.4,558.7,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,119.6
+Tack et al. 2012). Changes in environmental conditions,7,10,55,9.5,57.1,561.7,284.3,570.7,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,80.5
+"can affect host and pathogen physiological statuses, as",7,10,56,9.5,57.1,573.7,284.3,582.7,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,75.9
+well as dispersal and establishment (Pariaud et al. 2009;,7,10,57,9.5,57.1,585.6,284.4,594.5,0.0,11.9,0.0,AdvMINION-R,(),False,False,False,False,76.8
+In contrast to the effects caused by conspecific seedling,7,11,58,9.5,311.9,513.9,529.6,522.8,254.8,-71.7,0.0,AdvMINION-R,(),False,False,False,False,323.7
+"neighbors, conspecific tree neighbors and heterospecific",7,11,59,9.5,302.5,525.8,529.7,534.8,-9.4,12.0,0.0,AdvMINION-R,(),False,False,False,False,347.7
+neighbors had no significant effects on seedling survival,7,11,60,9.5,302.5,537.8,529.7,546.8,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,344.6
+"at the low- or the high-elevation sites. These results, espe-",7,11,61,9.5,302.5,549.7,529.6,558.7,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,312.8
+"cially for conspecific tree neighbors, were in contrast to",7,11,62,9.5,302.5,561.7,529.7,570.7,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,326.6
+several recent studies that have indicated that conspecific,7,11,63,9.5,302.5,573.7,529.6,582.6,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,331.9
+trees had strong negative effects on seedling survival,7,12,64,9.5,302.5,585.6,529.7,594.6,0.0,11.9,0.0,AdvMINION-R,(),False,False,False,False,326.7
+(Chen et al. 2010; Comita et al. 2010; Metz et al. 2010;,7,12,65,9.5,302.5,597.5,529.7,606.5,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,331.0
+Lin et al. 2012). The Janzen–Connell hypothesis proposes,7,12,66,9.5,302.5,608.2,529.6,618.5,0.0,10.7,0.0,AdvMINION-R,(),False,False,False,False,318.9
+that species-specific enemies are more prevalent near,7,12,67,9.5,302.5,621.5,529.6,630.4,0.0,13.2,0.0,AdvMINION-R,(),False,False,False,False,324.3
+adult trees. This factor could be the potential reason for,7,12,68,9.5,302.5,633.4,529.6,642.4,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,326.2
+"the negative effects caused by conspecific trees. However,",7,12,69,9.5,302.5,645.4,529.6,654.4,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,318.3
+conspecific trees may also provide an appropriate local,7,12,70,9.5,302.5,657.3,529.7,666.3,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,349.6
+"habitat for conspecific seedling growth, which would mit-",7,12,71,9.5,302.5,669.3,529.6,678.3,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,332.5
+Laine et al. 2011). Several studies have investigated how,7,13,72,9.5,57.1,597.5,284.5,606.5,-245.4,-71.8,0.0,AdvMINION-R,(),False,False,False,False,82.4
+light availability and soil moisture affects survival and dis-,7,13,73,9.5,57.1,609.5,284.3,618.5,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,77.5
+ease development (Ichihara and Yamaji 2009; ;Alvarez-Lo-,7,13,74,9.5,57.1,621.5,284.3,630.4,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,75.7
+"ayza et al. 2011; Hersh et al. 2012). For example, soil",7,13,75,9.5,57.1,633.4,284.3,642.4,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,79.1
+moisture has been found to affect the co-infection combi-,7,13,76,9.5,57.1,645.4,284.3,654.4,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,94.4
+nation (Hersh et al. 2012). Light intensity variations,7,13,77,9.5,57.1,657.3,284.3,666.3,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,89.1
+changed endosymbiotic fungi into pathogens and this,7,13,78,9.5,57.1,669.3,284.3,678.3,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,94.8
+affected seedling survival (Alvarez-Loayza et al. 2011).,7,13,79,9.5,57.1,681.2,284.3,690.2,0.0,11.9,0.0,AdvMINION-R,(),False,False,False,False,93.2
+"Thus, higher temperatures and moistures and lower",7,13,80,9.5,57.1,693.2,284.3,702.2,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,86.0
+igate the negative effects caused by attacks from natural,7,14,81,9.5,302.5,681.2,529.7,690.2,245.4,-12.0,0.0,AdvMINION-R,(),False,False,False,False,324.8
+"enemies. In addition, several studies have also shown",7,14,82,9.5,302.5,693.2,529.7,702.2,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,341.5
+ª 2014 The Authors. Ecology and Evolution published by John Wiley & Sons Ltd. 2829,7,15,83,6.5,57.1,729.1,529.7,737.5,-245.4,35.9,35.9,AdvPSFT-L,"({'start': 78, 'end': 82, 'kind': 'bold'},)",False,False,False,False,64.4
+"20457758, 2014, 14, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/ece3.1123 by Cambodia Hinari NPL, Wiley Online Library on [15/11/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License",8,1,1,5.2,579.0,16.3,583.7,766.9,,,0.0,Times-Roman,(),True,False,False,False,580.1
+Elevational Variation in Density Dependence M. Xu & S. Yu,8,2,2,7.5,65.6,42.8,538.1,50.0,-513.4,26.5,0.0,AdvPSFT-R,(),False,False,False,False,106.8
+positive effects by heterospecific neighbors (Peters 2003;,8,3,3,9.5,65.6,71.5,292.8,80.5,0.0,28.8,0.0,AdvMINION-R,(),False,False,False,False,99.9
+"Chen et al. 2010; Lin et al. 2012), which supports the",8,3,4,9.5,65.6,83.4,292.8,92.4,0.0,11.9,0.0,AdvMINION-R,(),False,False,False,False,91.3
+herd protection hypothesis (Wills and Green 1995). The,8,3,5,9.5,65.6,95.4,292.8,104.4,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,87.4
+demographic analysis carried out in our study did not,8,3,6,9.5,65.6,107.4,292.8,116.4,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,120.9
+detect this phenomenon in the low- or the high-elevation,8,3,7,9.5,65.6,119.3,292.8,128.3,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,91.8
+sites.,8,3,8,9.5,65.6,131.3,84.0,140.3,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,
+"activity of soil pathogens, thus inducing a stronger NDD.",8,4,9,9.5,311.0,71.5,538.1,80.5,245.4,-59.7,0.0,AdvMINION-R,(),False,False,False,False,342.2
+"However, the origin of the seeds may potentially influence",8,4,10,9.5,311.0,83.4,538.1,92.4,0.0,11.9,0.0,AdvMINION-R,(),False,False,False,False,350.6
+the results of the greenhouse experiment. Parental effects,8,4,11,9.5,311.0,95.4,538.1,104.4,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,326.8
+are known to influence plant responses and plasticity in,8,4,12,9.5,311.0,107.4,538.1,116.4,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,326.8
+the next generation. All the seeds used in the greenhouse,8,4,13,9.5,311.0,119.3,538.1,128.3,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,326.6
+"experiment were collected from the low-elevation site,",8,4,14,9.5,311.0,131.3,538.1,140.3,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,360.0
+which meant that they were probably adapted to a low-,8,4,15,9.5,311.0,143.3,538.1,152.2,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,338.1
+"elevation environment. In this case, we would expect a",8,4,16,9.5,311.0,155.2,538.1,164.2,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,350.1
+better performance from the seedlings that had been,8,4,17,9.5,311.0,167.2,538.1,176.2,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,339.4
+grown in the low-elevation site simulation experiment.,8,4,18,9.5,311.0,179.1,538.1,188.1,0.0,11.9,0.0,AdvMINION-R,(),False,False,False,False,340.6
+"Indeed, we found that seedling growth was greater in the",8,4,19,9.5,311.0,191.0,538.1,200.0,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,343.0
+low-elevation site experiment than in the high-elevation,8,4,20,9.5,311.0,203.0,538.1,212.0,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,367.1
+We found wide variation among species in the effect of,8,5,21,9.5,75.1,143.2,293.7,152.2,-235.9,-59.8,0.0,AdvMINION-R,(),False,False,False,False,91.3
+"conspecific seedlings on survival. However, in contrast to",8,5,22,9.5,65.6,155.2,292.8,164.2,-9.5,12.0,0.0,AdvMINION-R,(),False,False,False,False,111.3
+"the results of a recent study (Comita et al. 2010), we did",8,5,23,9.5,65.6,167.2,292.8,176.2,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,81.2
+not find a significant relationship between the strength of,8,6,24,9.5,65.6,179.1,293.7,188.1,0.0,11.9,0.0,AdvMINION-R,(),False,False,False,False,82.1
+the conspecific neighbor effects and species abundance,8,6,25,9.5,65.6,191.0,292.7,200.0,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,83.1
+(Fig. S2). Although the association between NDD and,8,6,26,9.5,65.6,203.0,292.8,212.0,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,88.7
+species abundance has recently received some empirical,8,6,27,9.5,65.6,215.0,292.7,224.0,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,96.8
+"site simulation experiment, whereas there was no differ-",8,7,28,9.5,311.0,215.0,538.1,224.0,245.4,0.0,0.0,AdvMINION-R,(),False,False,False,False,328.1
+ence in the germination rates between the two elevations.,8,7,29,9.5,311.0,226.9,538.1,235.9,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,331.5
+Adaption to the parental environment may make seeds,8,7,30,9.5,311.0,238.9,538.1,247.9,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,351.8
+more resistant to soil biota attack if the soil biota effects,8,7,31,9.5,311.0,250.9,538.1,259.8,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,334.9
+were the same at the low and high-elevation sites. How-,8,7,32,9.5,311.0,262.8,538.1,271.8,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,332.7
+"ever, there was a stronger negative feedback in the low-",8,7,33,9.5,311.0,274.7,538.1,283.7,0.0,11.9,0.0,AdvMINION-R,(),False,False,False,False,333.2
+"elevation experiment, which suggested that there was a",8,7,34,9.5,311.0,286.7,538.1,295.7,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,350.3
+stronger soil biota negative effect at low elevation.,8,7,35,9.5,311.0,298.6,506.1,307.6,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,345.6
+and theoretical support (Mangan et al. 2010; Chisholm,8,8,36,9.5,65.6,226.9,292.8,235.9,-245.4,-71.7,0.0,AdvMINION-R,(),False,False,False,False,85.1
+and Muller-Landau 2011; Kobe and Vriesendorp 2011;,8,8,37,9.5,65.6,238.9,292.7,247.9,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,85.4
+"Johnson et al. 2012), there should be more research into",8,8,38,9.5,65.6,250.9,292.8,259.8,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,101.2
+"whether other species characteristics, such as shade toler-",8,8,39,9.5,65.6,262.8,292.7,271.8,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,100.1
+ance (Kobe 1999; McCarthy-Neumann and Kobe 2008;,8,8,40,9.5,65.6,274.7,292.7,283.7,0.0,11.9,0.0,AdvMINION-R,(),False,False,False,False,88.0
+"Comita and Hubbell 2009), also affect NDD variation",8,8,41,9.5,65.6,286.7,292.7,295.7,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,99.8
+"among species. Unfortunately, we did not quantify the",8,8,42,9.5,65.6,298.6,292.8,307.6,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,97.1
+value of other species traits and therefore cannot examine,8,8,43,9.5,65.6,310.6,292.7,319.6,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,88.9
+their potential role in driving the NDD variation. Future,8,8,44,9.5,65.6,322.6,292.8,331.6,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,87.4
+studies should consider species characteristics in other,8,8,45,9.5,65.6,334.5,292.7,343.5,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,97.7
+forests and examine the specific mechanisms that underlie,8,8,46,9.5,65.6,346.5,292.7,355.5,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,93.6
+the relationship between NDD and species abundance.,8,8,47,9.5,65.6,358.5,292.7,367.4,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,83.2
+"In this study, we aimed to demonstrate the treatment",8,9,48,9.5,320.4,310.6,538.1,319.6,254.8,-47.8,0.0,AdvMINION-R,(),False,False,False,False,333.0
+effects at the community level and did not attempt to,8,9,49,9.5,311.0,322.6,538.1,331.6,-9.4,12.0,0.0,AdvMINION-R,(),False,False,False,False,339.6
+clarify details about effects caused by individual adults.,8,9,50,9.5,311.0,334.5,538.1,343.5,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,339.4
+"So, in the greenhouse experiment, we bulked soil samples",8,9,51,9.5,311.0,346.5,538.1,355.5,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,326.2
+taken from the soil surrounding four adult plants. How-,8,9,52,9.5,311.0,358.5,538.1,367.5,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,335.7
+This would improve our understanding of species compo-,8,10,53,9.5,65.6,370.4,292.8,379.4,-245.4,11.9,0.0,AdvMINION-R,(),False,False,False,False,85.4
+sition and diversity maintenance.,8,10,54,9.5,65.6,382.3,194.3,391.3,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,90.3
+"ever, some studies have shown that the identity of the",8,11,55,9.5,311.0,370.4,538.1,379.4,245.4,-12.0,0.0,AdvMINION-R,(),False,False,False,False,333.8
+"adult is important (Reinhart and Clay 2009), so our",8,11,56,9.5,311.0,382.3,538.1,391.3,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,336.7
+results may have over inflated the importance of the,8,11,57,9.5,311.0,394.3,538.1,403.3,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,341.5
+We conducted a manipulative experiment to assess the,8,12,58,9.5,75.1,394.3,292.8,403.3,-235.9,-0.0,0.0,AdvMINION-R,(),False,False,False,False,91.7
+mechanisms that underpin elevational variation in NDD.,8,12,59,9.5,65.6,406.2,292.8,415.2,-9.5,12.0,0.0,AdvMINION-R,(),False,False,False,False,116.6
+Although studies testing the potential mechanisms behind,8,12,60,9.5,65.6,418.2,292.8,427.2,-0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,104.9
+NDD have often examined the role of soil-borne patho-,8,12,61,9.5,65.6,430.2,292.8,439.2,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,90.6
+gens (Augspurger and Kelly 1984; Packer and Clay 2000;,8,12,62,9.5,65.6,442.1,292.7,451.1,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,86.3
+strong negative soil biota effects at one adult tree out of,8,13,63,9.5,311.0,406.3,539.0,415.2,245.4,-35.9,0.0,AdvMINION-R,(),False,False,False,False,339.0
+the four sampled.,8,13,64,9.5,311.0,418.2,379.3,427.2,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,326.0
+"Autoclaving the soil also eliminated other soil biota,",8,14,65,9.5,320.4,430.2,538.1,439.2,9.4,12.0,0.0,AdvMINION-R,(),False,False,False,False,371.5
+"such as arbuscular mycorrhizal fungi (AMF), which may",8,14,66,9.5,311.0,442.1,538.3,451.1,-9.4,12.0,0.0,AdvMINION-R,(),False,False,False,False,332.5
+Bell et al. 2006; Bagchi et al. 2010; Reinhart et al. 2010;,8,15,67,9.5,65.6,454.1,292.8,463.1,-245.4,12.0,0.0,AdvMINION-R,(),False,False,False,False,84.2
+"Liu et al. 2012b), few experiments have attempted to",8,15,68,9.5,65.6,466.0,292.8,475.0,0.0,11.9,0.0,AdvMINION-R,(),False,False,False,False,84.4
+explore how they drive NDD temporal and spatial varia-,8,15,69,9.5,65.6,478.0,292.8,487.0,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,97.6
+tion (McCarthy-Neumann and Kobe 2010; Shuai et al.,8,15,70,9.5,65.6,489.9,292.8,498.9,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,86.6
+2014). A recent study that investigated seasonal differ-,8,15,71,9.5,65.6,501.9,292.8,510.9,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,94.9
+ences in density dependence found that NDD was stron-,8,15,72,9.5,65.6,513.9,292.8,522.8,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,89.7
+"ger in the dry season than in the wet season, which",8,15,73,9.5,65.6,525.8,292.8,534.8,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,83.1
+indicated that a decrease in soil water resources influ-,8,15,74,9.5,65.6,537.8,292.8,546.8,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,106.1
+enced the negative neighborhood effect (Lin et al. 2012).,8,15,75,9.5,65.6,549.7,292.8,558.7,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,91.6
+The study results suggested that this was due to a greater,8,15,76,9.5,65.6,561.6,292.8,570.6,0.0,11.9,0.0,AdvMINION-R,(),False,False,False,False,83.8
+susceptibility to natural enemies and/or aggravated com-,8,15,77,9.5,65.6,573.6,292.8,582.6,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,119.5
+"petition in the dry season. Alternatively, the increased",8,15,78,9.5,65.6,585.6,292.8,594.6,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,101.3
+"abundance, activity and transmission of soil-borne patho-",8,15,79,9.5,65.6,597.5,292.8,606.5,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,112.7
+have led to a nutrient flush (Packer and Clay 2000). If,8,16,80,9.5,311.0,454.1,539.1,463.1,245.4,-143.4,0.0,AdvMINION-R,(),False,False,False,False,333.0
+AMF played a more important role than soilborne patho-,8,16,81,9.5,311.0,466.0,538.1,475.0,0.0,11.9,0.0,AdvMINION-R,(),False,False,False,False,333.7
+"gens, then sterilization would have decreased seed germi-",8,16,82,9.5,311.0,478.0,538.1,487.0,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,333.8
+nation or seedling growth relative to the unsterilized,8,16,83,9.5,311.0,489.9,538.1,498.9,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,342.1
+treatments. The opposite effect would suggest that soil-,8,16,84,9.5,311.0,501.9,538.1,510.9,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,358.6
+borne pathogens decreased seed germination. Neverthe-,8,16,85,9.5,311.0,513.9,538.1,522.8,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,338.4
+"less, we found a positive soil biota effect on seedling",8,16,86,9.5,311.0,525.8,538.1,534.8,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,331.9
+"growth in the simulated high-elevation environment,",8,16,87,9.5,311.0,537.8,538.1,546.8,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,345.4
+which highlighted the complex interactions between the,8,16,88,9.5,311.0,549.7,538.1,558.7,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,338.7
+soil biota and the abiotic environment. Additional studies,8,16,89,9.5,311.0,561.6,538.1,570.6,0.0,11.9,0.0,AdvMINION-R,(),False,False,False,False,327.5
+are required to identify the different responses by soil,8,16,90,9.5,311.0,573.6,538.1,582.6,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,327.9
+organisms to changes in environmental conditions and to,8,16,91,9.5,311.0,585.6,538.1,594.6,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,353.4
+understand the plant community and species diversity,8,17,92,9.5,311.0,597.5,538.3,606.5,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,360.1
+implications of these differences.,8,17,93,9.5,311.0,609.5,437.6,618.5,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,361.4
+gens at high temperatures and high moisture levels may,8,18,94,9.5,65.6,609.5,293.0,618.5,-245.4,-0.0,0.0,AdvMINION-R,(),False,False,False,False,86.7
+intensify the NDD strength (Wong et al. 1984; Coley and,8,18,95,9.5,65.6,621.5,292.8,630.4,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,101.8
+Barone 1996; O Hanlon-Manners and Kotanen 2004;,8,18,96,9.5,65.6,633.4,292.8,642.4,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,99.3
+"Swinfield et al. 2012), which would explain the stronger",8,18,97,9.5,65.6,645.4,292.7,654.4,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,105.2
+NDD observed in the low-elevation sites. The increased,8,18,98,9.5,65.6,657.3,292.8,666.3,0.0,11.9,0.0,AdvMINION-R,(),False,False,False,False,91.1
+negative feedback in the simulated low-elevation environ-,8,18,99,9.5,65.6,669.2,292.8,678.2,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,100.5
+ment confirmed our speculation that increased soil tem-,8,18,100,9.5,65.6,681.2,292.8,690.2,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,89.6
+perature and moisture affected the abundance and/or,8,18,101,9.5,65.6,693.2,292.8,702.2,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,104.0
+Conclusions,8,19,102,11.5,311.0,637.5,381.6,648.6,245.4,-55.7,0.0,AdvPSFTBL,(),False,False,False,False,
+Our results suggest that local scale NDD tends to be,8,20,103,9.5,311.0,657.3,538.1,666.3,0.0,19.8,0.0,AdvMINION-R,(),False,False,False,False,332.3
+stronger at low elevations than at high elevations in the,8,20,104,9.5,311.0,669.2,538.1,678.2,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,346.8
+subtropical forest and that soilborne pathogens play a,8,20,105,9.5,311.0,681.2,538.1,690.2,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,359.3
+crucial role in this elevational variation in NDD. Our,8,20,106,9.5,311.0,693.2,538.1,702.2,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,342.0
+2830 ª 2014 The Authors. Ecology and Evolution published by John Wiley & Sons Ltd.,8,21,107,6.5,65.6,729.2,538.1,737.6,-245.4,36.0,35.9,AdvPSFT-L,"({'start': 0, 'end': 4, 'kind': 'bold'},)",False,False,False,False,311.8
+"20457758, 2014, 14, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/ece3.1123 by Cambodia Hinari NPL, Wiley Online Library on [15/11/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License",9,1,1,5.2,579.0,16.3,583.7,766.9,,,0.0,Times-Roman,(),True,False,False,False,580.1
+M. Xu & S. Yu Elevational Variation in Density Dependence,9,2,2,7.5,57.1,42.8,529.6,50.0,-521.8,26.5,0.0,AdvPSFT-R,(),False,False,False,False,68.4
+study also highlights the need to incorporate NDD spatial,9,3,3,9.5,57.1,71.5,284.3,80.5,-0.0,28.8,0.0,AdvMINION-R,(),False,False,False,False,81.2
+variation into future theoretical and empirical efforts to,9,3,4,9.5,57.1,83.4,284.3,92.4,0.0,11.9,0.0,AdvMINION-R,(),False,False,False,False,95.9
+identify the true characteristics of the natural community.,9,3,5,9.5,57.1,95.4,284.3,104.4,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,89.6
+Combining the seasonal and latitudinal variation in NDD,9,3,6,9.5,57.1,107.4,284.4,116.4,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,104.0
+found by recent studies (Johnson et al. 2012; Lin et al.,9,3,7,9.5,57.1,119.3,284.3,128.3,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,85.0
+"2012; Shuai et al. 2014), suggests that the temporal and",9,3,8,9.5,57.1,131.3,284.3,140.3,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,82.0
+spatial variation in NDD may strongly influence the spe-,9,3,9,9.5,57.1,143.2,284.3,152.2,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,85.5
+cies coexistence and diversity patterns in forest communi-,9,3,10,9.5,57.1,155.2,284.3,164.2,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,74.2
+ties. Further research is also required to identify specific,9,3,11,9.5,57.1,167.2,284.3,176.2,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,76.5
+soil-borne pathogens and test their host specificity to,9,3,12,9.5,57.1,179.1,284.3,188.1,0.0,11.9,0.0,AdvMINION-R,(),False,False,False,False,102.1
+improve understanding of the processes underlying spe-,9,3,13,9.5,57.1,191.0,284.3,200.0,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,93.8
+cies diversity patterns and to simultaneously consider the,9,3,14,9.5,57.1,203.0,284.3,212.0,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,74.7
+"influence of other environmental factors, such as elevated",9,3,15,9.5,57.1,215.0,284.3,223.9,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,95.7
+"CO2 concentrations, on soil biota effects.",9,3,16,9.5,57.1,226.9,216.9,236.7,0.0,12.0,0.0,AdvMINION-R,"({'start': 2, 'end': 3, 'kind': 'sub'},)",False,False,False,False,77.0
+Janzen-Connell mechanism: pathogens cause,9,4,17,8.7,311.1,71.5,471.0,79.8,254.0,-155.4,0.0,AdvMINION-R,(),False,False,False,False,368.2
+overcompensating density dependence in a tropical tree.,9,5,18,8.7,311.1,83.2,512.7,91.5,0.0,11.7,0.0,AdvMINION-R,(),False,False,False,False,378.4
+Ecol. Lett. 13:1262–1269.,9,5,19,8.7,311.1,93.8,400.3,103.2,0.0,10.6,0.0,AdvMINION-R,(),False,False,False,False,331.3
+"Bagchi, R., R. E. Gallery, S. Gripenberg, S. J. Gurr, L. Narayan,",9,6,20,8.7,302.5,106.6,528.4,114.9,-8.6,12.8,0.0,AdvMINION-R,(),False,False,False,False,331.0
+"C. E. Addis, et al. 2014. Pathogens and insect herbivores",9,6,21,8.7,311.1,118.4,513.9,126.7,8.6,11.7,0.0,AdvMINION-R,(),False,False,False,False,321.8
+drive rainforest plant diversity and composition. Nature,9,6,22,8.7,311.1,130.1,512.2,138.3,0.0,11.7,0.0,AdvMINION-R,(),False,False,False,False,331.8
+506:85–88.,9,6,23,8.7,311.1,140.6,348.9,150.0,0.0,10.5,0.0,AdvMINION-R,(),False,False,False,False,
+"Bates, D., M. Maechler, and B. Bolker. 2012. lme4: Linear",9,7,24,8.7,302.5,153.5,509.8,161.7,-8.6,12.9,0.0,AdvMINION-R,(),False,False,False,False,325.8
+mixed-effects models using S4 classes. R package version,9,7,25,8.7,311.1,165.1,514.1,173.4,8.6,11.7,0.0,AdvMINION-R,(),False,False,False,False,360.9
+0.999375-42. Available at: http://lme4.r-forge.r-project.org/.,9,7,26,8.7,311.1,176.9,522.9,185.2,0.0,11.7,0.0,AdvMINION-R,(),False,False,False,False,359.0
+"Bell, T., R. P. Freckleton, and O. T. Lewis. 2006. Plant",9,7,27,8.7,302.5,188.6,497.7,196.8,-8.6,11.7,0.0,AdvMINION-R,(),False,False,False,False,320.5
+pathogens drive density-dependent seedling mortality in a,9,7,28,8.7,311.1,200.3,519.0,208.6,8.6,11.7,0.0,AdvMINION-R,(),False,False,False,False,349.8
+tropical tree. Ecol. Lett. 9:569–574.,9,7,29,8.7,311.1,210.8,435.9,220.2,0.0,10.5,0.0,AdvMINION-R,(),False,False,False,False,341.1
+"Benitez, M. S., M. H. Hersh, R. Vilgalys, and J. S. Clark. 2013.",9,8,30,8.7,302.5,223.7,526.9,232.0,-8.6,12.9,0.0,AdvMINION-R,(),False,False,False,False,333.2
+Pathogen regulation of plant diversity via effective,9,8,31,8.7,311.1,235.4,491.3,243.7,8.6,11.7,0.0,AdvMINION-R,(),False,False,False,False,347.0
+specialization. Trends Ecol. Evol. 28:705–711.,9,8,32,8.7,311.1,246.0,473.5,255.4,0.0,10.6,0.0,AdvMINION-R,(),False,False,False,False,363.5
+Acknowledgments,9,9,33,11.5,57.1,257.2,168.2,268.3,-254.0,11.2,0.0,AdvPSFTBL,(),False,False,False,False,
+"Bolker, B. M., M. E. Brooks, C. J. Clark, S. W. Geange, J. R.",9,10,34,8.7,302.5,258.8,519.1,267.1,245.4,1.6,0.0,AdvMINION-R,(),False,False,False,False,330.4
+"Poulsen, M. H. H. Stevens, et al. 2009. Generalized linear",9,10,35,8.7,311.1,270.5,517.5,278.8,8.6,11.7,0.0,AdvMINION-R,(),False,False,False,False,343.9
+mixed models: a practical guide for ecology and evolution.,9,10,36,8.7,311.1,282.2,522.0,290.5,0.0,11.7,0.0,AdvMINION-R,(),False,False,False,False,335.9
+Trends Ecol. Evol. 24:127–135.,9,10,37,8.7,311.1,292.8,421.2,302.2,0.0,10.6,0.0,AdvMINION-R,(),False,False,False,False,338.6
+"We are grateful to Weinan Ye, Qinghua Kang, Yi Zheng,",9,11,38,9.5,57.1,277.0,284.3,286.0,-254.0,-15.8,0.0,AdvMINION-R,(),False,False,False,False,73.8
+"Zhiming Zhang, Yu Liu, Xubing Liu and Minxia Liang for",9,11,39,9.5,57.1,288.9,284.3,297.9,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,93.3
+their help and advice on many aspects of this study. Finan-,9,11,40,9.5,57.1,300.9,284.3,309.9,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,77.8
+cial support for this study was provided by the Key Project,9,11,41,9.5,57.1,312.9,284.3,321.9,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,73.0
+of the National Natural Science Foundation of China,9,11,42,9.5,57.1,324.8,284.3,333.8,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,70.8
+(grant number 31230013 and 30730021) and the Zhang-,9,11,43,9.5,57.1,336.8,284.3,345.8,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,84.9
+Hongda Science Foundation at Sun Yat-sen University.,9,11,44,9.5,57.1,348.8,268.7,357.8,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,90.7
+"Bunker, D. E., and W. P. Carson. 2005. Drought stress and",9,12,45,8.7,302.5,305.6,515.2,313.9,245.4,-43.1,0.0,AdvMINION-R,(),False,False,False,False,333.1
+tropical forest woody seedlings: effect on community,9,12,46,8.7,311.1,317.4,501.3,325.6,8.6,11.7,0.0,AdvMINION-R,(),False,False,False,False,341.1
+structure and composition. J. Ecol. 93:794–806.,9,12,47,8.7,311.1,327.9,481.0,337.3,0.0,10.5,0.0,AdvMINION-R,(),False,False,False,False,345.7
+"Burdon, J. J. 1987. Diseases & plant population biology.",9,12,48,8.7,302.5,340.8,503.6,349.1,-8.6,12.9,0.0,AdvMINION-R,(),False,False,False,False,334.4
+"Cambridge University Press, Cambridge, U.K.",9,12,49,8.7,311.1,352.5,475.3,360.7,8.6,11.7,0.0,AdvMINION-R,(),False,False,False,False,353.0
+"Burdon, J. J., and P. H. Thrall. 2009. Coevolution of plants",9,13,50,8.7,302.5,364.2,515.6,372.5,-8.6,11.7,0.0,AdvMINION-R,(),False,False,False,False,334.4
+and their pathogens in natural habitats. Science,9,13,51,8.7,311.1,375.9,481.7,384.2,8.6,11.7,0.0,AdvMINION-R,(),False,False,False,False,327.2
+324:755–756.,9,13,52,8.7,311.1,386.5,357.3,395.9,0.0,10.6,0.0,AdvMINION-R,(),False,False,False,False,
+Conflict of Interest,9,14,53,11.5,57.1,376.6,170.8,387.9,-254.0,-9.8,0.0,AdvPSFTBL,(),False,False,False,False,107.5
+None declared.,9,15,54,9.5,57.1,396.6,115.4,405.5,0.0,19.9,0.0,AdvMINION-R,(),False,False,False,False,81.3
+"Callaway, R. M. 2007. Positive interactions and",9,16,55,8.7,302.5,399.3,471.8,407.6,245.4,2.7,0.0,AdvMINION-R,(),False,False,False,False,338.8
+"interdependence in plant communities. Springer, Dordrecht,",9,17,56,8.7,311.1,411.0,527.6,419.3,8.6,11.7,0.0,AdvMINION-R,(),False,False,False,False,372.1
+the Netherlands.,9,17,57,8.7,311.1,422.7,369.7,431.0,0.0,11.7,0.0,AdvMINION-R,(),False,False,False,False,325.0
+References,9,18,58,9.5,57.1,418.5,105.4,427.8,-254.0,-4.2,700.0,AdvPSFT-B,"({'start': 0, 'end': 10, 'kind': 'bold'},)",False,False,False,False,
+"Carson, W. P., T. A. Jill, G. L. Egbert, and S. A. Schnitzer.",9,19,59,8.7,302.5,434.4,512.3,442.7,245.4,15.9,0.0,AdvMINION-R,(),False,False,False,False,332.6
+2008. Challenges associated with testing and falsifying the,9,19,60,8.7,311.1,446.1,517.7,454.4,8.6,11.7,0.0,AdvMINION-R,(),False,False,False,False,332.8
+"Janzen-Connell hypothesis, a review and critique. Pp. 210–",9,19,61,8.7,311.1,456.7,522.4,466.1,0.0,10.6,0.0,AdvMINION-R,(),False,False,False,False,368.2
+"241. in W. P. Carson and A. S. stefan, eds. Tropical forest",9,19,62,8.7,311.1,469.5,519.5,477.8,0.0,12.8,0.0,AdvMINION-R,"({'start': 5, 'end': 7, 'kind': 'italic'},)",False,False,False,False,328.6
+"community ecology. Wiley-Blackwell, West Sussex.",9,19,63,8.7,311.1,481.3,493.3,489.5,0.0,11.7,0.0,AdvMINION-R,(),False,False,False,False,355.0
+"Chen, L., X. Mi, L. S. Comita, L. Zhang, H. Ren, and K. Ma.",9,19,64,8.7,302.5,492.9,521.8,501.2,-8.6,11.7,0.0,AdvMINION-R,(),False,False,False,False,326.2
+2010. Community-level consequences of density dependence,9,19,65,8.7,311.1,504.7,527.4,513.0,8.6,11.7,0.0,AdvMINION-R,(),False,False,False,False,332.8
+and habitat association in a subtropical broad-leaved forest.,9,19,66,8.7,311.1,516.4,525.5,524.6,0.0,11.7,0.0,AdvMINION-R,(),False,False,False,False,327.2
+Ecol. Lett. 13:695–704.,9,19,67,8.7,311.1,526.9,392.0,536.3,0.0,10.5,0.0,AdvMINION-R,(),False,False,False,False,331.3
+"Adler, P. B., J. HilleRisLambers, and J. M. Levine. 2007. A",9,20,68,8.7,57.1,437.0,266.4,445.3,-254.0,-89.9,0.0,AdvMINION-R,(),False,False,False,False,81.4
+niche for neutrality. Ecol. Lett. 10:95–104.,9,20,69,8.7,65.8,447.6,216.4,457.0,8.7,10.6,0.0,AdvMINION-R,(),False,False,False,False,87.6
+"Alvarez-Loayza, P., J. F. White Jr, M. S. Torres, H. Balslev,",9,21,70,8.7,57.1,460.4,268.1,468.7,-8.7,12.8,0.0,AdvMINION-R,(),False,False,False,False,115.5
+"T. Kristiansen, J.-C. Svenning, et al. 2011. Light converts",9,21,71,8.7,65.8,472.1,269.6,480.4,8.7,11.7,0.0,AdvMINION-R,(),False,False,False,False,76.0
+"endosymbiotic fungus to pathogen, influencing seedling",9,21,72,8.7,65.8,483.8,265.8,492.1,0.0,11.7,0.0,AdvMINION-R,(),False,False,False,False,120.5
+"survival and niche-space filling of a common tropical tree,",9,21,73,8.7,65.8,495.6,275.7,503.8,0.0,11.7,0.0,AdvMINION-R,(),False,False,False,False,96.0
+Iriartea deltoidea. PloS one 6:e16386.,9,21,74,8.7,65.8,507.2,197.5,515.5,0.0,11.7,0.0,AdvMINION-R,"({'start': 0, 'end': 18, 'kind': 'italic'},)",False,False,False,False,94.5
+"Anderson, J. T. 2009. Positive density dependence in seedlings",9,22,75,8.7,57.1,519.0,280.3,527.3,-8.7,11.7,0.0,AdvMINION-R,(),False,False,False,False,96.3
+of the neotropical tree species Garcinia macrophylla and,9,22,76,8.7,65.8,530.6,268.2,538.9,8.7,11.7,0.0,AdvMINION-R,(),False,False,False,False,75.8
+Xylopia micans. J. Veg. Sci. 20:27–36.,9,22,77,8.7,65.8,541.2,200.6,550.7,0.0,10.6,0.0,AdvMINION-R,(),False,False,False,False,95.8
+"Chisholm, R. A., and H. C. Muller-Landau. 2011. A theoretical",9,23,78,8.7,302.5,539.8,528.9,548.0,236.7,-1.5,0.0,AdvMINION-R,(),False,False,False,False,341.8
+model linking interspecific variation in density dependence,9,23,79,8.7,311.1,551.5,522.8,559.7,8.6,11.7,0.0,AdvMINION-R,(),False,False,False,False,336.2
+to species abundances. Theoret. Ecol. 4:241–253.,9,23,80,8.7,311.1,562.0,485.0,571.5,0.0,10.6,0.0,AdvMINION-R,(),False,False,False,False,321.3
+"Coley, P. D., and J. A. Barone. 1996. Herbivory and plant",9,23,81,8.7,302.5,574.9,510.0,583.1,-8.6,12.8,0.0,AdvMINION-R,(),False,False,False,False,327.5
+defenses in tropical forests. Annu. Rev. Ecol. Syst. 27:305–,9,23,82,8.7,311.1,585.4,520.1,594.9,8.6,10.6,0.0,AdvMINION-R,(),False,False,False,False,343.0
+335.,9,23,83,8.7,311.1,598.3,325.7,606.6,0.0,12.8,0.0,AdvMINION-R,(),False,False,False,False,
+"Augspurger, C. K. 1983. Seed dispersal of the tropical tree,",9,24,84,8.7,57.1,554.1,267.6,562.3,-254.0,-44.2,0.0,AdvMINION-R,(),False,False,False,False,102.9
+"Platypodium elegans, and the escape of its seedlings from",9,24,85,8.7,65.8,565.8,269.4,574.1,8.7,11.7,0.0,AdvMINION-R,"({'start': 0, 'end': 19, 'kind': 'italic'},)",False,False,False,False,112.4
+fungal pathogens. J. Ecol. 71:759–771.,9,24,86,8.7,65.8,576.3,201.4,585.8,0.0,10.5,0.0,AdvMINION-R,(),False,False,False,False,90.7
+"Augspurger, C. K., and C. K. Kelly. 1984. Pathogen mortality",9,25,87,8.7,57.1,589.2,276.9,597.4,-8.7,12.8,0.0,AdvMINION-R,(),False,False,False,False,102.9
+of tropical tree seedlings: experimental studies of the effects,9,25,88,8.7,65.8,600.9,279.6,609.2,8.7,11.7,0.0,AdvMINION-R,(),False,False,False,False,75.8
+"of dispersal distance, seedling density, and light conditions.",9,25,89,8.7,65.8,612.6,278.3,620.9,0.0,11.7,0.0,AdvMINION-R,(),False,False,False,False,75.8
+Oecologia 61:211–217.,9,25,90,8.7,65.8,623.1,145.9,632.6,0.0,10.6,0.0,AdvMINION-R,(),False,False,False,False,103.9
+"Comita, L. S., and S. P. Hubbell. 2009. Local neighborhood",9,26,91,8.7,302.5,610.0,516.4,618.3,236.7,-13.1,0.0,AdvMINION-R,(),False,False,False,False,333.8
+and species’ shade tolerance influence survival in a diverse,9,26,92,8.7,311.1,621.7,520.6,630.0,8.6,11.7,0.0,AdvMINION-R,(),False,False,False,False,327.2
+seedling bank. Ecology 90:328–334.,9,26,93,8.7,311.1,632.3,437.0,641.7,0.0,10.6,0.0,AdvMINION-R,(),False,False,False,False,342.3
+"Baayen, R. H., D. J. Davidson, and D. M. Bates. 2008.",9,27,94,8.7,57.1,636.0,251.5,644.3,-254.0,3.7,0.0,AdvMINION-R,(),False,False,False,False,87.1
+Mixed-effects modeling with crossed random effects for,9,27,95,8.7,65.8,647.7,265.5,656.0,8.7,11.7,0.0,AdvMINION-R,(),False,False,False,False,116.2
+subjects and items. J. Mem. Lang. 59:390–412.,9,27,96,8.7,65.8,658.2,231.9,667.7,0.0,10.5,0.0,AdvMINION-R,(),False,False,False,False,96.2
+"Bagchi, R., T. Swinfield, R. E. Gallery, O. T. Lewis, S.",9,27,97,8.7,57.1,671.1,248.7,679.4,-8.7,12.9,0.0,AdvMINION-R,(),False,False,False,False,85.7
+"Gripenberg, L. Narayan, et al. 2010. Testing the",9,27,98,8.7,65.8,682.8,236.9,691.1,8.7,11.7,0.0,AdvMINION-R,(),False,False,False,False,110.7
+"Comita, L. S., H. C. Muller-Landau, S. Aguilar, and S. P.",9,28,99,8.7,302.5,645.1,507.6,653.4,236.7,-37.7,0.0,AdvMINION-R,(),False,False,False,False,333.8
+Hubbell. 2010. Asymmetric density dependence shapes,9,28,100,8.7,311.1,656.8,506.8,665.1,8.6,11.7,0.0,AdvMINION-R,(),False,False,False,False,344.5
+species abundances in a tropical tree community. Science,9,28,101,8.7,311.1,668.5,516.7,676.8,0.0,11.7,0.0,AdvMINION-R,(),False,False,False,False,338.1
+329:330–332.,9,28,102,8.7,311.1,679.1,357.3,688.5,0.0,10.6,0.0,AdvMINION-R,(),False,False,False,False,
+ª 2014 The Authors. Ecology and Evolution published by John Wiley & Sons Ltd. 2831,9,29,103,6.5,57.1,729.1,529.7,737.5,-254.0,50.0,35.9,AdvPSFT-L,"({'start': 78, 'end': 82, 'kind': 'bold'},)",False,False,False,False,64.4
+"20457758, 2014, 14, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/ece3.1123 by Cambodia Hinari NPL, Wiley Online Library on [15/11/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License",10,1,1,5.2,579.0,16.3,583.7,766.9,,,0.0,Times-Roman,(),True,False,False,False,580.1
+Elevational Variation in Density Dependence M. Xu & S. Yu,10,2,2,7.5,65.6,42.8,538.1,50.0,-513.4,26.5,0.0,AdvPSFT-R,(),False,False,False,False,106.8
+"Connell, J. H. 1971. On the role of natural enemies in",10,3,3,8.7,65.6,71.6,260.4,79.8,-0.0,28.8,0.0,AdvMINION-R,(),False,False,False,False,98.3
+preventing competitive exclusion in some marine animals,10,3,4,8.7,74.3,83.2,281.2,91.5,8.7,11.7,0.0,AdvMINION-R,(),False,False,False,False,114.7
+and in rain forest trees. Pp. 298–312. in P. J. D. Boer and,10,3,5,8.7,74.3,93.8,281.5,103.2,0.0,10.6,0.0,AdvMINION-R,"({'start': 39, 'end': 41, 'kind': 'italic'},)",False,False,False,False,90.3
+"G. Gradwell, eds. Dynamics of populations. Centre for",10,3,6,8.7,74.3,106.6,269.9,114.9,0.0,12.8,0.0,AdvMINION-R,(),False,False,False,False,85.3
+"Agricultural Publishing and Documentation, Wageningen,",10,3,7,8.7,74.3,118.4,282.4,126.7,0.0,11.7,0.0,AdvMINION-R,(),False,False,False,False,119.5
+The Netherlands.,10,3,8,8.7,74.3,130.1,135.4,138.3,0.0,11.7,0.0,AdvMINION-R,(),False,False,False,False,90.7
+"Laine, A. L., J. J. Burdon, P. N. Dodds, and P. H. Thrall. 2011.",10,4,9,8.7,311.0,71.5,537.4,79.8,236.7,-58.5,0.0,AdvMINION-R,(),False,False,False,False,335.1
+Spatial variation in disease resistance: from molecules to,10,4,10,8.7,319.6,83.2,521.9,91.5,8.6,11.7,0.0,AdvMINION-R,(),False,False,False,False,346.2
+metapopulations. J. Ecol. 99:96–112.,10,4,11,8.7,319.6,93.8,449.7,103.2,0.0,10.6,0.0,AdvMINION-R,(),False,False,False,False,383.9
+"Lambers, J., J. S. Clark, and B. Beckage. 2002.",10,4,12,8.7,311.0,106.6,475.1,114.9,-8.6,12.8,0.0,AdvMINION-R,(),False,False,False,False,345.9
+Density-dependent mortality and the latitudinal gradient in,10,5,13,8.7,319.6,118.4,533.1,126.7,8.6,11.7,0.0,AdvMINION-R,(),False,False,False,False,389.4
+species diversity. Nature 417:732–735.,10,5,14,8.7,319.6,128.9,454.9,138.3,0.0,10.5,0.0,AdvMINION-R,(),False,False,False,False,346.6
+"Lewis, O. T. 2010. Close relatives are bad news. Nature",10,5,15,8.7,311.0,141.7,508.8,150.0,-8.6,12.8,0.0,AdvMINION-R,(),False,False,False,False,335.6
+466:698–699.,10,5,16,8.7,319.6,152.3,365.7,161.7,8.6,10.6,0.0,AdvMINION-R,(),False,False,False,False,
+"Connell, J. H., J. G. Tracey, and L. J. Webb. 1984.",10,6,17,8.7,65.6,141.7,245.6,150.0,-254.0,-10.6,0.0,AdvMINION-R,(),False,False,False,False,98.3
+"Compensatory recruitment, growth, and mortality as factors",10,6,18,8.7,74.3,153.5,290.3,161.8,8.7,11.7,0.0,AdvMINION-R,(),False,False,False,False,128.8
+maintaining rain forest tree diversity. Ecol. Monogr. 54:141–,10,6,19,8.7,74.3,164.0,291.8,173.4,0.0,10.5,0.0,AdvMINION-R,(),False,False,False,False,119.9
+164.,10,6,20,8.7,74.3,176.9,88.9,185.2,0.0,12.9,0.0,AdvMINION-R,(),False,False,False,False,
+"Lin, L., L. S. Comita, Z. Zheng, and M. Cao. 2012. Seasonal",10,7,21,8.7,311.0,165.1,526.6,173.4,236.7,-11.7,0.0,AdvMINION-R,(),False,False,False,False,327.6
+differentiation in density-dependent seedling survival in a,10,7,22,8.7,319.6,176.9,526.2,185.2,8.6,11.7,0.0,AdvMINION-R,(),False,False,False,False,373.0
+tropical rain forest. J. Ecol. 100:905–914.,10,7,23,8.7,319.6,187.4,465.4,196.8,-0.0,10.5,0.0,AdvMINION-R,(),False,False,False,False,349.6
+"Liu, X., M. Liang, R. S. Etienne, Y. Wang, C. Staehelin, and S.",10,7,24,8.7,311.0,200.3,534.8,208.6,-8.6,12.9,0.0,AdvMINION-R,(),False,False,False,False,327.6
+Yu. 2012a. Experimental evidence for a phylogenetic,10,7,25,8.7,319.6,212.0,507.4,220.3,8.6,11.7,0.0,AdvMINION-R,(),False,False,False,False,334.5
+Janzen-Connell effect in a subtropical forest. Ecol. Lett.,10,7,26,8.7,319.6,223.7,517.9,232.0,0.0,11.7,0.0,AdvMINION-R,(),False,False,False,False,376.7
+15:111–118.,10,7,27,8.7,319.6,234.2,361.5,243.7,0.0,10.5,0.0,AdvMINION-R,(),False,False,False,False,
+"Dormann, C. F., J. M. McPherson, M. B. Araujo, R. Bivand, J.",10,8,28,8.7,65.6,188.6,290.2,196.8,-254.0,-45.7,0.0,AdvMINION-R,(),False,False,False,False,105.1
+"Bolliger, G. Carl, et al. 2007. Methods to account for spatial",10,8,29,8.7,74.3,200.3,290.2,208.6,8.7,11.7,0.0,AdvMINION-R,(),False,False,False,False,106.4
+autocorrelation in the analysis of species distributional data:,10,8,30,8.7,74.3,212.0,290.0,220.3,0.0,11.7,0.0,AdvMINION-R,(),False,False,False,False,131.5
+a review. Ecography 30:609–628.,10,8,31,8.7,74.3,222.6,190.6,232.0,0.0,10.6,0.0,AdvMINION-R,(),False,False,False,False,81.0
+"Fajardo, A., and E. J. McIntire. 2011. Under strong niche",10,9,32,8.7,65.6,235.4,270.9,243.7,-8.7,12.8,0.0,AdvMINION-R,(),False,False,False,False,97.2
+overlap conspecifics do not compete but help each other to,10,9,33,8.7,74.3,247.1,287.9,255.4,8.7,11.7,0.0,AdvMINION-R,(),False,False,False,False,103.1
+survive: facilitation at the intraspecific level. J. Ecol. 99:,10,9,34,8.7,74.3,258.8,272.8,267.1,0.0,11.7,0.0,AdvMINION-R,(),False,False,False,False,104.2
+642–650.,10,9,35,8.7,74.3,269.4,105.7,278.8,0.0,10.6,0.0,AdvMINION-R,(),False,False,False,False,
+"Liu, Y., S. Yu, Z. P. Xie, and C. Staehelin. 2012b. Analysis of a",10,10,36,8.7,311.0,247.1,536.0,255.4,236.7,-22.3,0.0,AdvMINION-R,(),False,False,False,False,327.6
+negative plant–soil feedback in a subtropical monsoon,10,10,37,8.7,319.6,257.6,514.6,267.1,8.6,10.5,0.0,AdvMINION-R,(),False,False,False,False,351.4
+forest. J. Ecol. 100:1019–1028.,10,10,38,8.7,319.6,269.4,426.8,278.8,0.0,11.7,0.0,AdvMINION-R,(),False,False,False,False,344.3
+"Freckleton, R. P., and O. T. Lewis. 2006. Pathogens, density",10,11,39,8.7,65.6,282.2,280.4,290.5,-254.0,12.8,0.0,AdvMINION-R,(),False,False,False,False,107.5
+dependence and the coexistence of tropical trees. Proceed.,10,11,40,8.7,74.3,294.0,282.6,302.2,8.7,11.7,0.0,AdvMINION-R,(),False,False,False,False,118.7
+Royal Soc. B: Biol. Sci. 273:2909–2916.,10,11,41,8.7,74.3,304.5,213.2,313.9,0.0,10.5,0.0,AdvMINION-R,(),False,False,False,False,97.1
+"Harms, K. E., S. J. Wright, O. Calderon, A. Hernandez, and",10,11,42,8.7,65.6,317.4,280.7,325.7,-8.7,12.9,0.0,AdvMINION-R,(),False,False,False,False,94.6
+E. A. Herre. 2000. Pervasive density-dependent recruitment,10,11,43,8.7,74.3,329.0,286.9,337.3,8.7,11.7,0.0,AdvMINION-R,(),False,False,False,False,84.0
+enhances seedling diversity in a tropical forest. Nature,10,11,44,8.7,74.3,340.8,268.8,349.1,0.0,11.7,0.0,AdvMINION-R,(),False,False,False,False,109.0
+404:493–495.,10,11,45,8.7,74.3,351.3,120.3,360.7,0.0,10.5,0.0,AdvMINION-R,(),False,False,False,False,
+"Maestre, F. T., R. M. Callaway, F. Valladares, and C. J. Lortie.",10,12,46,8.7,311.0,282.2,533.5,290.5,236.7,-69.1,0.0,AdvMINION-R,(),False,False,False,False,343.8
+2009. Refining the stress-gradient hypothesis for competition,10,12,47,8.7,319.6,294.0,538.0,302.2,8.6,11.7,0.0,AdvMINION-R,(),False,False,False,False,341.3
+and facilitation in plant communities. J. Ecol. 97:199–205.,10,12,48,8.7,319.6,304.5,528.4,313.9,0.0,10.5,0.0,AdvMINION-R,(),False,False,False,False,335.6
+"Malkinson, D., and K. Tielbörger. 2010. What does the",10,12,49,8.7,311.0,317.0,508.9,325.7,-8.6,12.5,0.0,AdvMINION-R,(),False,True,False,False,353.4
+stress-gradient hypothesis predict? Resolving the,10,12,50,8.7,319.6,329.0,492.2,337.3,8.6,12.1,0.0,AdvMINION-R,(),False,False,False,False,373.5
+discrepancies. Oikos 119:1546–1552.,10,12,51,8.7,319.6,339.6,449.1,349.1,0.0,10.6,0.0,AdvMINION-R,(),False,False,False,False,371.0
+"Mangan, S. A., S. A. Schnitzer, E. A. Herre, K. M. Mack, M.",10,13,52,8.7,311.0,352.5,527.8,360.7,-8.6,12.8,0.0,AdvMINION-R,(),False,False,False,False,344.8
+"C. Valencia, E. I. Sanchez, et al. 2010. Negative plant-soil",10,13,53,8.7,319.6,364.2,525.3,372.5,8.6,11.7,0.0,AdvMINION-R,(),False,False,False,False,330.3
+feedback predicts tree-species relative abundance in a,10,13,54,8.7,319.6,375.9,510.4,384.2,0.0,11.7,0.0,AdvMINION-R,(),False,False,False,False,353.1
+tropical forest. Nature 466:752–755.,10,13,55,8.7,319.6,386.5,447.8,395.9,0.0,10.6,0.0,AdvMINION-R,(),False,False,False,False,349.6
+"Harper, J. L. 1977. Population biology of plants. Acdemic",10,14,56,8.7,65.6,364.2,272.7,372.5,-254.0,-22.3,0.0,AdvMINION-R,(),False,False,False,False,95.8
+"Press, London.",10,14,57,8.7,74.3,375.9,127.0,384.2,8.7,11.7,0.0,AdvMINION-R,(),False,False,False,False,97.1
+"Hersh, M. H., R. Vilgalys, and J. S. Clark. 2012. Evaluating the",10,15,58,8.7,65.6,387.6,291.2,395.9,-8.7,11.7,0.0,AdvMINION-R,(),False,False,False,False,91.8
+impacts of multiple generalist fungal pathogens on,10,15,59,8.7,74.3,399.3,256.1,407.6,8.7,11.7,0.0,AdvMINION-R,(),False,False,False,False,104.5
+temperate tree seedling survival. Ecology 93:511–520.,10,15,60,8.7,74.3,409.9,264.3,419.3,0.0,10.6,0.0,AdvMINION-R,(),False,False,False,False,112.3
+"Hood, L. A., M. D. Swaine, and P. A. Mason. 2004. The",10,15,61,8.7,65.6,422.7,267.9,431.0,-8.7,12.8,0.0,AdvMINION-R,(),False,False,False,False,91.0
+influence of spatial patterns of damping-off disease and,10,15,62,8.7,74.3,434.4,273.6,442.7,8.7,11.7,0.0,AdvMINION-R,(),False,False,False,False,109.4
+arbuscular mycorrhizal colonization on tree seedling,10,15,63,8.7,74.3,446.1,262.0,454.4,0.0,11.7,0.0,AdvMINION-R,(),False,False,False,False,113.9
+establishment in Ghanaian tropical forest soil. J. Ecol.,10,15,64,8.7,74.3,457.9,267.1,466.1,0.0,11.7,0.0,AdvMINION-R,(),False,False,False,False,125.4
+92:816–823.,10,15,65,8.7,74.3,468.4,116.2,477.8,0.0,10.5,0.0,AdvMINION-R,(),False,False,False,False,
+"Maron, J. L., M. Marler, J. N. Klironomos, and C. C. Cleveland.",10,16,66,8.7,311.0,399.3,535.6,407.6,236.7,-69.1,0.0,AdvMINION-R,(),False,False,False,False,339.4
+2011. Soil fungal pathogens and the relationship between,10,16,67,8.7,319.6,411.0,520.5,419.3,8.6,11.7,0.0,AdvMINION-R,(),False,False,False,False,340.7
+plant diversity and productivity. Ecol. Lett. 14:36–41.,10,16,68,8.7,319.6,421.5,507.0,431.0,0.0,10.5,0.0,AdvMINION-R,(),False,False,False,False,340.0
+"McCarthy-Neumann, S., and R. K. Kobe. 2008. Tolerance of",10,16,69,8.7,311.0,434.4,528.7,442.7,-8.6,12.9,0.0,AdvMINION-R,(),False,False,False,False,389.8
+soil pathogens co-varies with shade tolerance across species,10,16,70,8.7,319.6,446.1,532.1,454.4,8.6,11.7,0.0,AdvMINION-R,(),False,False,False,False,334.7
+of tropical tree seedlings. Ecology 89:1883–1892.,10,16,71,8.7,319.6,456.7,492.7,466.1,0.0,10.6,0.0,AdvMINION-R,(),False,False,False,False,329.6
+"McCarthy-Neumann, S., and R. K. Kobe. 2010. Conspecific",10,16,72,8.7,311.0,469.5,524.0,477.8,-8.6,12.8,0.0,AdvMINION-R,(),False,False,False,False,389.8
+plant-soil feedbacks reduce survivorship and growth of,10,16,73,8.7,319.6,481.3,517.4,489.6,8.6,11.7,0.0,AdvMINION-R,(),False,False,False,False,355.9
+tropical tree seedlings. J. Ecol. 98:396–407.,10,16,74,8.7,319.6,491.8,472.0,501.2,0.0,10.5,0.0,AdvMINION-R,(),False,False,False,False,349.6
+"Metz, M. R., W. P. Sousa, and R. Valencia. 2010. Widespread",10,16,75,8.7,311.0,504.7,532.4,513.0,-8.6,12.9,0.0,AdvMINION-R,(),False,False,False,False,333.6
+density-dependent seedling mortality promotes species,10,16,76,8.7,319.6,516.4,514.8,524.6,8.6,11.7,0.0,AdvMINION-R,(),False,False,False,False,387.7
+coexistence in a highly diverse Amazonian rain forest.,10,16,77,8.7,319.6,528.0,512.8,536.3,0.0,11.7,0.0,AdvMINION-R,(),False,False,False,False,362.2
+Ecology 91:3675–3685.,10,16,78,8.7,319.6,538.6,400.4,548.1,0.0,10.6,0.0,AdvMINION-R,(),False,False,False,False,350.1
+"Hubbell, S. P., J. A. Ahumada, R. Condit, and R. B. Foster. 2001.",10,17,79,8.7,65.6,481.3,291.4,489.5,-254.0,-57.3,0.0,AdvMINION-R,(),False,False,False,False,98.2
+Local neighborhood effects on long-term survival of,10,17,80,8.7,74.3,492.9,257.6,501.2,8.7,11.7,0.0,AdvMINION-R,(),False,False,False,False,95.2
+individual trees in a neotropical forest. Ecol. Res. 16:859–875.,10,17,81,8.7,74.3,503.5,289.8,513.0,0.0,10.6,0.0,AdvMINION-R,(),False,False,False,False,112.2
+"Ichihara, Y., and K. Yamaji. 2009. Effect of light conditions on",10,17,82,8.7,65.6,516.4,290.8,524.6,-8.7,12.8,0.0,AdvMINION-R,(),False,False,False,False,99.6
+the resistance of current-year Fagus crenata seedlings against,10,17,83,8.7,74.3,528.0,290.7,536.3,8.7,11.7,0.0,AdvMINION-R,"({'start': 31, 'end': 44, 'kind': 'italic'},)",False,False,False,False,88.2
+fungal pathogens causing damping-off in a natural beech,10,17,84,8.7,74.3,539.8,278.8,548.1,0.0,11.7,0.0,AdvMINION-R,(),False,False,False,False,99.1
+forest: fungus isolation and histological and chemical,10,17,85,8.7,74.3,551.5,265.0,559.7,0.0,11.7,0.0,AdvMINION-R,(),False,False,False,False,98.9
+resistance. J. Chem. Ecol. 35:1077–1085.,10,17,86,8.7,74.3,562.0,217.6,571.5,0.0,10.6,0.0,AdvMINION-R,(),False,False,False,False,113.1
+"Mordecai, E. 2011. Pathogen impacts on plant communities:",10,18,87,8.7,311.0,551.5,528.5,559.7,236.7,-10.6,0.0,AdvMINION-R,(),False,False,False,False,349.5
+"unifying theory, concepts, and empirical work. Ecol.",10,18,88,8.7,319.6,563.2,507.1,571.5,8.6,11.7,0.0,AdvMINION-R,(),False,False,False,False,351.8
+Monogr. 81:429–441.,10,18,89,8.7,319.6,573.7,395.3,583.2,0.0,10.5,0.0,AdvMINION-R,(),False,False,False,False,353.4
+"Janzen, D. H. 1970. Herbivores and the number of tree species",10,19,90,8.7,65.6,574.9,291.2,583.1,-254.0,1.2,0.0,AdvMINION-R,(),False,False,False,False,93.9
+in tropical forests. Am. Nat. 104:501–528.,10,19,91,8.7,74.3,585.4,223.9,594.9,8.7,10.6,0.0,AdvMINION-R,(),False,False,False,False,84.2
+"Johnson, D. J., W. T. Beaulieu, J. D. Bever, and K. Clay. 2012.",10,19,92,8.7,65.6,598.3,289.7,606.6,-8.7,12.8,0.0,AdvMINION-R,(),False,False,False,False,99.7
+Conspecific negative density dependence and forest diversity.,10,19,93,8.7,74.3,610.0,292.7,618.3,8.7,11.7,0.0,AdvMINION-R,(),False,False,False,False,117.9
+Science 336:904–907.,10,19,94,8.7,74.3,620.5,149.0,630.0,0.0,10.5,0.0,AdvMINION-R,(),False,False,False,False,103.0
+"O Hanlon-Manners, D. L., and P. M. Kotanen. 2004. Evidence",10,20,95,8.7,311.0,586.6,536.0,594.9,236.7,-33.9,0.0,AdvMINION-R,(),False,False,False,False,320.4
+that fungal pathogens inhibit recruitment of a,10,20,96,8.7,319.6,598.3,484.9,606.6,8.6,11.7,0.0,AdvMINION-R,(),False,False,False,False,336.4
+"shade-intolerant tree, white birch (Betula papyrifera), in",10,20,97,8.7,319.6,610.0,519.6,618.3,0.0,11.7,0.0,AdvMINION-R,"({'start': 36, 'end': 53, 'kind': 'italic'},)",False,False,False,False,380.1
+understory habitats. Oecologia 140:650–653.,10,20,98,8.7,319.6,620.5,477.7,630.0,0.0,10.5,0.0,AdvMINION-R,(),False,False,False,False,360.8
+"Packer, A., and K. Clay. 2000. Soil pathogens and spatial",10,20,99,8.7,311.0,633.4,514.7,641.7,-8.6,12.9,0.0,AdvMINION-R,(),False,False,False,False,339.4
+patterns of seedling mortality in a temperate tree. Nature,10,20,100,8.7,319.6,645.1,525.0,653.4,8.6,11.7,0.0,AdvMINION-R,(),False,False,False,False,351.0
+404:278–281.,10,20,101,8.7,319.6,655.7,365.7,665.1,0.0,10.6,0.0,AdvMINION-R,(),False,False,False,False,
+"Kobe, R. K. 1999. Light gradient partitioning among tropical",10,21,102,8.7,65.6,633.4,284.2,641.7,-254.0,-22.3,0.0,AdvMINION-R,(),False,False,False,False,89.0
+tree species through differential seedling mortality and,10,21,103,8.7,74.3,645.1,269.6,653.4,8.7,11.7,0.0,AdvMINION-R,(),False,False,False,False,90.3
+growth. Ecology 80:187–201.,10,21,104,8.7,74.3,655.7,176.6,665.1,0.0,10.6,0.0,AdvMINION-R,(),False,False,False,False,104.2
+"Kobe, R. K., and C. F. Vriesendorp. 2011. Conspecific density",10,22,105,8.7,65.6,668.5,287.4,676.8,-8.7,12.8,0.0,AdvMINION-R,(),False,False,False,False,89.0
+dependence in seedlings varies with species shade tolerance,10,22,106,8.7,74.3,680.3,286.1,688.5,8.7,11.7,0.0,AdvMINION-R,(),False,False,False,False,118.7
+in a wet tropical forest. Ecol. Lett. 14:503–510.,10,22,107,8.7,74.3,690.8,241.6,700.2,0.0,10.5,0.0,AdvMINION-R,(),False,False,False,False,84.2
+"Paine, T., K. E. Harms, S. A. Schnitzer, and W. P. Carson.",10,23,108,8.7,311.0,668.5,520.9,676.8,236.7,-22.3,0.0,AdvMINION-R,(),False,False,False,False,335.3
+2008. Weak competition among tropical tree seedlings:,10,23,109,8.7,319.6,680.3,516.7,688.5,8.6,11.7,0.0,AdvMINION-R,(),False,False,False,False,341.3
+implications for species coexistence. Biotropica 40:432–440.,10,23,110,8.7,319.6,690.8,532.6,700.2,0.0,10.5,0.0,AdvMINION-R,(),False,False,False,False,366.1
+2832 ª 2014 The Authors. Ecology and Evolution published by John Wiley & Sons Ltd.,10,24,111,6.5,65.6,729.2,538.1,737.6,-254.0,38.4,35.9,AdvPSFT-L,"({'start': 0, 'end': 4, 'kind': 'bold'},)",False,False,False,False,311.8
+"20457758, 2014, 14, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/ece3.1123 by Cambodia Hinari NPL, Wiley Online Library on [15/11/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License",11,1,1,5.2,579.0,16.3,583.7,766.9,,,0.0,Times-Roman,(),True,False,False,False,580.1
+M. Xu & S. Yu Elevational Variation in Density Dependence,11,2,2,7.5,57.1,42.8,529.6,50.0,-521.8,26.5,0.0,AdvPSFT-R,(),False,False,False,False,68.4
+and time in wild host–pathogen systems: causes and,11,3,3,8.7,311.1,70.4,498.6,79.8,254.0,27.6,0.0,AdvMINION-R,(),False,False,False,False,327.2
+consequences. J. Evol. Biol. 25:1918–1936.,11,3,4,8.7,311.1,82.1,461.5,91.5,0.0,11.7,0.0,AdvMINION-R,(),False,False,False,False,363.6
+"Pariaud, B., V. Ravigné, F. Halkett, H. Goyeau, J. Carlier, and",11,4,5,8.7,57.1,71.1,279.5,79.9,-254.0,-10.9,0.0,AdvMINION-R,(),False,False,False,False,89.6
+C. Lannou. 2009. Aggressiveness and its role in the,11,4,6,8.7,65.8,83.2,248.9,91.5,8.7,12.1,0.0,AdvMINION-R,(),False,False,False,False,76.5
+adaptation of plant pathogens. Plant. Pathol. 58:409–424.,11,4,7,8.7,65.8,93.8,271.3,103.2,0.0,10.6,0.0,AdvMINION-R,(),False,False,False,False,106.5
+"Peters, H. A. 2003. Neighbour-regulated mortality: the",11,4,8,8.7,57.1,106.6,252.4,114.9,-8.7,12.8,0.0,AdvMINION-R,(),False,False,False,False,83.3
+influence of positive and negative density dependence on,11,4,9,8.7,65.8,118.4,270.6,126.7,8.7,11.7,0.0,AdvMINION-R,(),False,False,False,False,100.9
+tree populations in species-rich tropical forests. Ecol. Lett.,11,4,10,8.7,65.8,130.1,274.4,138.3,0.0,11.7,0.0,AdvMINION-R,(),False,False,False,False,81.9
+6:757–765.,11,4,11,8.7,65.8,140.6,103.6,150.0,0.0,10.5,0.0,AdvMINION-R,(),False,False,False,False,
+"Volkov, I., J. R. Banavar, F. He, S. P. Hubbell, and A. Maritan.",11,5,12,8.7,302.5,95.0,528.9,103.2,236.7,-45.6,0.0,AdvMINION-R,(),False,False,False,False,332.8
+2005. Density dependence explains tree species abundance,11,5,13,8.7,311.1,106.6,519.5,114.9,8.6,11.7,0.0,AdvMINION-R,(),False,False,False,False,332.8
+and diversity in tropical forests. Nature 438:658–661.,11,5,14,8.7,311.1,117.2,501.3,126.7,0.0,10.6,0.0,AdvMINION-R,(),False,False,False,False,327.2
+"Webb, C. O., and D. R. Peart. 1999. Seedling density",11,5,15,8.7,302.5,130.1,492.9,138.3,-8.6,12.8,0.0,AdvMINION-R,(),False,False,False,False,328.3
+dependence promotes coexistence of Bornean rain forest,11,5,16,8.7,311.1,141.7,513.8,150.0,8.6,11.7,0.0,AdvMINION-R,(),False,False,False,False,355.5
+trees. Ecology 80:2006–2017.,11,5,17,8.7,311.1,152.3,413.2,161.7,0.0,10.6,0.0,AdvMINION-R,(),False,False,False,False,332.4
+"Piao, T., L. S. Comita, G. Jin, and J. H. Kim. 2012. Density",11,6,18,8.7,57.1,153.5,270.9,161.8,-254.0,1.2,0.0,AdvMINION-R,(),False,False,False,False,77.8
+dependence across multiple life stages in a temperate,11,6,19,8.7,65.8,165.2,255.6,173.4,8.7,11.7,0.0,AdvMINION-R,(),False,False,False,False,110.2
+old-growth forest of northeast China. Oecologia 172:207–,11,6,20,8.7,65.8,175.7,272.7,185.2,0.0,10.6,0.0,AdvMINION-R,(),False,False,False,False,108.2
+217.,11,6,21,8.7,65.8,188.6,80.4,196.8,0.0,12.8,0.0,AdvMINION-R,(),False,False,False,False,
+"Wills, C., and D. Green. 1995. A genetic herd-immunity model",11,7,22,8.7,302.5,165.1,529.3,173.4,236.7,-23.4,0.0,AdvMINION-R,(),False,False,False,False,325.5
+for the maintenance of MHC polymorphism. Immunol.,11,7,23,8.7,311.1,176.9,511.7,185.2,8.6,11.7,0.0,AdvMINION-R,(),False,False,False,False,324.3
+Rev. 143:263–292.,11,7,24,8.7,311.1,187.4,375.3,196.8,0.0,10.5,0.0,AdvMINION-R,(),False,False,False,False,329.2
+"Queenborough, S. A., D. Burslem, N. C. Garwood, and R.",11,8,25,8.7,57.1,200.3,266.2,208.6,-254.0,12.9,0.0,AdvMINION-R,(),False,False,False,False,115.4
+Valencia. 2007. Neighborhood and community interactions,11,8,26,8.7,65.8,212.0,278.3,220.3,8.7,11.7,0.0,AdvMINION-R,(),False,False,False,False,100.7
+determine the spatial pattern of tropical tree seedling,11,8,27,8.7,65.8,223.7,256.3,232.0,0.0,11.7,0.0,AdvMINION-R,(),False,False,False,False,104.4
+survival. Ecology 88:2248–2258.,11,8,28,8.7,65.8,234.2,178.9,243.7,0.0,10.5,0.0,AdvMINION-R,(),False,False,False,False,98.1
+"Wills, C., R. Condit, R. B. Foster, and S. P. Hubbell. 1997.",11,9,29,8.7,302.5,200.3,512.9,208.6,236.7,-33.9,0.0,AdvMINION-R,(),False,False,False,False,325.5
+Strong density-and diversity-related effects help to maintain,11,9,30,8.7,311.1,212.0,526.0,220.3,8.6,11.7,0.0,AdvMINION-R,(),False,False,False,False,337.4
+tree species diversity in a neotropical forest. Proc. Natl,11,9,31,8.7,311.1,223.7,507.6,232.0,0.0,11.7,0.0,AdvMINION-R,(),False,False,False,False,327.2
+Acad. Sci. USA 94:1252–1257.,11,9,32,8.7,311.1,234.2,418.4,243.7,0.0,10.5,0.0,AdvMINION-R,(),False,False,False,False,333.8
+R Development Core Team. 2011. R: A language and,11,10,33,8.7,57.1,247.1,248.1,255.4,-254.0,12.9,0.0,AdvMINION-R,(),False,False,False,False,65.5
+environment for statistical computing. R Foundation for,11,10,34,8.7,65.8,258.8,268.9,267.1,8.7,11.7,0.0,AdvMINION-R,(),False,False,False,False,114.1
+"Statistical Computing, Vienna, Austria. ISBN, 3-900051.",11,10,35,8.7,65.8,270.5,266.5,278.8,0.0,11.7,0.0,AdvMINION-R,(),False,False,False,False,102.3
+"Reinhart, K. O., and K. Clay. 2009. Spatial variation in",11,10,36,8.7,57.1,282.2,254.2,290.5,-8.7,11.7,0.0,AdvMINION-R,(),False,False,False,False,92.6
+"soil-borne disease dynamics of a temperate tree, Prunus",11,10,37,8.7,65.8,294.0,265.1,302.2,8.7,11.7,0.0,AdvMINION-R,"({'start': 49, 'end': 55, 'kind': 'italic'},)",False,False,False,False,104.5
+serotina. Ecology 90:2984–2993.,11,10,38,8.7,65.8,304.5,178.5,313.9,0.0,10.5,0.0,AdvMINION-R,"({'start': 0, 'end': 8, 'kind': 'italic'},)",False,False,False,False,97.7
+"Wong, D., M. Barbetti, and K. Sivasithamparam. 1984. Effects",11,11,39,8.7,302.5,247.1,525.4,255.4,236.7,-57.4,0.0,AdvMINION-R,(),False,False,False,False,329.0
+of soil temperature and moisture on the pathogenicity of,11,11,40,8.7,311.1,258.8,517.1,267.1,8.6,11.7,0.0,AdvMINION-R,(),False,False,False,False,321.1
+fungi associated with root rot of subterranean clover. Crop,11,11,41,8.7,311.1,270.5,523.1,278.8,0.0,11.7,0.0,AdvMINION-R,(),False,False,False,False,332.4
+Past. Sci. 35:675–684.,11,11,42,8.7,311.1,281.1,387.8,290.5,0.0,10.5,0.0,AdvMINION-R,(),False,False,False,False,330.6
+"Wright, J. S. 2002. Plant diversity in tropical forests: a review",11,12,43,8.7,302.5,294.0,522.7,302.2,-8.6,12.9,0.0,AdvMINION-R,(),False,False,False,False,332.6
+of mechanisms of species coexistence. Oecologia 130:1–14.,11,12,44,8.7,311.1,304.5,520.7,313.9,8.6,10.5,0.0,AdvMINION-R,(),False,False,False,False,321.1
+"Yenni, G., P. B. Adler, and S. K. M. Ernest. 2012. Strong",11,12,45,8.7,302.5,317.4,506.4,325.7,-8.6,12.9,0.0,AdvMINION-R,(),False,False,False,False,328.1
+self-limitation promotes the persistence of rare species.,11,12,46,8.7,311.1,329.0,508.0,337.3,8.6,11.7,0.0,AdvMINION-R,(),False,False,False,False,363.6
+Ecology 93:456–461.,11,12,47,8.7,311.1,339.6,383.6,349.1,0.0,10.6,0.0,AdvMINION-R,(),False,False,False,False,341.6
+"Reinhart, K. O., T. Tytgat, W. H. Van der Putten, and K. Clay.",11,13,48,8.7,57.1,317.4,284.1,325.7,-254.0,-22.3,0.0,AdvMINION-R,(),False,False,False,False,92.6
+2010. Virulence of soil-borne pathogens and invasion by,11,13,49,8.7,65.8,329.0,268.8,337.3,8.7,11.7,0.0,AdvMINION-R,(),False,False,False,False,87.5
+Prunus serotina. New Phytol. 186:484–495.,11,13,50,8.7,65.8,339.6,217.8,349.1,0.0,10.6,0.0,AdvMINION-R,"({'start': 0, 'end': 15, 'kind': 'italic'},)",False,False,False,False,93.0
+"Schnitzer, S. A., J. N. Klironomos, J. Hillerislambers, L. L.",11,13,51,8.7,57.1,352.5,265.5,360.7,-8.7,12.8,0.0,AdvMINION-R,(),False,False,False,False,94.7
+"Kinkel, P. B. Reich, K. Xiao, et al. 2011. Soil microbes drive",11,13,52,8.7,65.8,364.2,281.5,372.5,8.7,11.7,0.0,AdvMINION-R,(),False,False,False,False,93.7
+the classic plant diversity-productivity pattern. Ecology,11,13,53,8.7,65.8,375.9,262.9,384.2,0.0,11.7,0.0,AdvMINION-R,(),False,False,False,False,79.7
+92:296–303.,11,13,54,8.7,65.8,386.5,107.8,395.9,0.0,10.6,0.0,AdvMINION-R,(),False,False,False,False,
+"Yu, S. X., Y. Li, Y. F. Wang, and C. F. Zhou. 2000. The",11,14,55,8.7,302.5,352.5,502.4,360.7,236.7,-34.0,0.0,AdvMINION-R,(),False,False,False,False,317.4
+vegetation classification and its digitized map of Heishiding,11,14,56,8.7,311.1,364.2,525.1,372.5,8.6,11.7,0.0,AdvMINION-R,(),False,False,False,False,350.2
+"Nature Reserve, Guangdong I. The distribution of the",11,14,57,8.7,311.1,375.9,504.3,384.2,0.0,11.7,0.0,AdvMINION-R,(),False,False,False,False,338.6
+vegetation type and formation. Acta Sci. Nat. Univers.,11,14,58,8.7,311.1,387.6,505.9,395.9,0.0,11.7,0.0,AdvMINION-R,(),False,False,False,False,350.2
+Sunyat. 39:61–66.,11,14,59,8.7,311.1,398.1,373.8,407.6,0.0,10.5,0.0,AdvMINION-R,(),False,False,False,False,340.2
+"Shuai, F., Y. Wang, and S. Yu. 2014. Density dependence in",11,15,60,8.7,57.1,399.3,272.3,407.6,-254.0,1.2,0.0,AdvMINION-R,(),False,False,False,False,81.9
+forests is stronger in tropical and subtropical climates,11,15,61,8.7,65.8,411.0,258.6,419.3,8.7,11.7,0.0,AdvMINION-R,(),False,False,False,False,91.5
+among closely related species. Ecography. doi:10.1111/j.,11,15,62,8.7,65.8,422.7,264.7,431.0,0.0,11.7,0.0,AdvMINION-R,(),False,False,False,False,92.9
+1600-0587.2013.00293.x.,11,15,63,8.7,65.8,434.4,152.4,442.7,0.0,11.7,0.0,AdvMINION-R,(),False,False,False,False,
+"Zhu, Y., X. Mi, H. Ren, and K. Ma. 2010. Density dependence",11,16,64,8.7,302.5,411.0,526.9,419.3,236.7,-23.4,0.0,AdvMINION-R,(),False,False,False,False,322.1
+is prevalent in a heterogeneous subtropical forest. Oikos,11,16,65,8.7,311.1,422.7,512.9,431.0,8.6,11.7,0.0,AdvMINION-R,(),False,False,False,False,319.5
+119:109–119.,11,16,66,8.7,311.1,433.3,357.3,442.7,0.0,10.6,0.0,AdvMINION-R,(),False,False,False,False,
+"Siepielski, A. M., and M. A. McPeek. 2010. On the evidence",11,17,67,8.7,57.1,446.1,272.7,454.4,-254.0,12.8,0.0,AdvMINION-R,(),False,False,False,False,94.8
+for species coexistence: a critique of the coexistence,11,17,68,8.7,65.8,457.9,250.8,466.1,8.7,11.7,0.0,AdvMINION-R,(),False,False,False,False,79.0
+program. Ecology 91:3153–3164.,11,17,69,8.7,65.8,468.4,182.1,477.8,0.0,10.5,0.0,AdvMINION-R,(),False,False,False,False,101.3
+Supporting Information,11,18,70,11.5,302.5,461.7,445.5,473.0,236.7,-6.7,0.0,AdvPSFTBL,(),False,False,False,False,373.3
+"Svenning, J. C., T. Fabbro, and S. J. Wright. 2008. Seedling",11,19,71,8.7,57.1,481.3,269.6,489.6,-245.4,19.5,0.0,AdvMINION-R,(),False,False,False,False,94.5
+interactions in a tropical forest in Panama. Oecologia,11,19,72,8.7,65.8,492.9,257.9,501.2,8.7,11.7,0.0,AdvMINION-R,(),False,False,False,False,110.2
+155:143–150.,11,19,73,8.7,65.8,503.5,111.9,513.0,0.0,10.6,0.0,AdvMINION-R,(),False,False,False,False,
+Additional Supporting Information may be found in the,11,20,74,9.5,302.5,481.6,529.7,490.6,236.7,-21.9,0.0,AdvMINION-R,(),False,False,False,False,347.4
+online version of this article:,11,20,75,9.5,302.5,493.6,414.0,502.6,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,329.7
+Figure S1. Details of seedling quadrat network design.,11,21,76,9.5,302.5,511.5,514.0,520.5,0.0,17.9,132.1,AdvMINION-R,"({'start': 0, 'end': 10, 'kind': 'bold'},)",False,False,False,False,331.1
+Figure S2. The mean strength of conspecific NDD exhib-,11,21,77,9.5,302.5,523.5,529.6,532.5,0.0,12.0,132.1,AdvMINION-R,"({'start': 0, 'end': 10, 'kind': 'bold'},)",False,False,False,False,331.5
+ited by individual tree species (points) is not related to,11,21,78,9.5,302.5,535.4,529.7,544.4,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,321.5
+species abundance in the low-elevation (A) and high-,11,21,79,9.5,302.5,547.4,529.7,556.4,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,334.4
+elevation communities (B) of the subtropical forest.,11,21,80,9.5,302.5,559.4,504.3,568.4,0.0,12.0,0.0,AdvMINION-R,(),False,False,False,False,339.9
+"Swinfield, T., O. T. Lewis, R. Bagchi, and R. P. Freckleton.",11,22,81,8.7,57.1,516.4,267.6,524.6,-245.4,-43.0,0.0,AdvMINION-R,(),False,False,False,False,94.6
+2012. Consequences of changing rainfall for fungal,11,22,82,8.7,65.8,528.0,247.5,536.3,8.7,11.7,0.0,AdvMINION-R,(),False,False,False,False,87.5
+pathogen-induced mortality in tropical tree seedlings. Ecol.,11,22,83,8.7,65.8,539.8,278.0,548.1,0.0,11.7,0.0,AdvMINION-R,(),False,False,False,False,132.9
+Evol. 2:1408–1413.,11,22,84,8.7,65.8,550.3,132.5,559.7,0.0,10.5,0.0,AdvMINION-R,(),False,False,False,False,86.3
+"Tack, A., P. Thrall, L. Barrett, J. Burdon, and A. L. Laine.",11,23,85,8.7,57.1,563.2,264.3,571.5,-8.7,12.9,0.0,AdvMINION-R,(),False,False,False,False,79.1
+2012. Variation in infectivity and aggressiveness in space,11,23,86,8.7,65.8,574.9,268.6,583.1,8.7,11.7,0.0,AdvMINION-R,(),False,False,False,False,87.5
+ª 2014 The Authors. Ecology and Evolution published by John Wiley & Sons Ltd. 2833,11,24,87,6.5,57.1,729.1,529.7,737.5,-8.7,154.3,35.9,AdvPSFT-L,"({'start': 78, 'end': 82, 'kind': 'bold'},)",False,False,False,False,64.4

@@ -468,8 +468,7 @@ discussed earlier, *c<sub>i</sub>* and *v<sub>i</sub>* do not play a decisive ro
 experiment, and hence *κ* is inversely proportional to *δq*. The heat
 transfer equation reads <sup>c</sup>∂<sup>T</sup>
 ∂<sub>t</sub> = *κ* Δ*T*, so that the relaxation time scale
-is *τ* ∼
-*c* / *κ*. Therefore, the relaxation time, inversely proportional to
+is *τ* ∼ *c* / *κ*. Therefore, the relaxation time, inversely proportional to
 the thermal conductivity, is expected to change along the same trend
 as the magnon linewidth *δq*. Indeed, the experimental data show
 significant increase of the relaxation time in the SkL and Cyc phases.

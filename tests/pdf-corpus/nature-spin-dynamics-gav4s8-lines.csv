@@ -603,54 +603,53 @@ free path. The latter can be estimated via the magnon spectral,6,9,86,9.5,303.6,
 "experiment, and hence κ is inversely proportional to δq. The heat",6,9,89,9.5,303.6,595.3,551.7,605.3,0.0,9.8,0.0,AdvOT1ef757c0,"({'start': 22, 'end': 23, 'kind': 'italic'}, {'start': 53, 'end': 55, 'kind': 'italic'})",False,False,False,False,349.7
 transfer equation reads c∂T,6,9,90,9.5,303.6,604.7,399.8,616.6,-0.0,9.4,0.0,AdvOT1ef757c0,"({'start': 24, 'end': 25, 'kind': 'sup'}, {'start': 26, 'end': 27, 'kind': 'sup'}, {'start': 24, 'end': 25, 'kind': 'italic'}, {'start': 26, 'end': 27, 'kind': 'italic'})",False,False,False,False,333.9
 "∂t = κ ΔT, so that the relaxation time scale",6,9,91,9.5,392.1,606.7,551.7,623.2,88.5,2.0,0.0,AdvOT1ef757c0,"({'start': 1, 'end': 2, 'kind': 'sub'}, {'start': 1, 'end': 2, 'kind': 'italic'}, {'start': 5, 'end': 6, 'kind': 'italic'}, {'start': 8, 'end': 9, 'kind': 'italic'})",False,False,False,False,402.5
-is τ ∼,6,9,92,9.5,303.6,618.2,326.4,634.6,-88.5,11.5,0.0,AdvOT1ef757c0,"({'start': 3, 'end': 4, 'kind': 'italic'},)",False,False,False,False,311.9
-"c / κ. Therefore, the relaxation time, inversely proportional to",6,9,93,9.5,319.8,618.2,551.7,628.2,16.2,0.0,0.0,AdvOT1ef757c0,"({'start': 0, 'end': 1, 'kind': 'italic'}, {'start': 4, 'end': 5, 'kind': 'italic'})",True,False,False,False,334.2
-"the thermal conductivity, is expected to change along the same trend",6,9,94,9.5,303.6,629.3,551.7,638.5,-16.2,11.1,0.0,AdvOT1ef757c0,(),False,False,False,False,317.3
-"In addition to the reduced mean free path, the magnon velocity",6,10,95,9.5,53.1,375.4,291.8,384.6,-250.5,-253.9,0.0,AdvOT1ef757c0,(),False,False,False,False,64.2
-also depends on the magnetic phase. Because the SkL and Cyc phase,6,10,96,9.5,43.6,385.9,291.6,395.1,-9.5,10.5,0.0,AdvOT1ef757c0,(),False,False,False,False,59.9
-in GaV4S8 have a long spin periodicity (the SkL (Cyc) periodicity is,6,11,97,9.5,43.6,396.4,291.7,406.3,0.0,10.4,0.0,AdvOT1ef757c0,"({'start': 6, 'end': 7, 'kind': 'sub'}, {'start': 8, 'end': 9, 'kind': 'sub'})",False,False,False,False,53.6
-"~22 nm (~18 nm)), the Brillouin Zone of the magnon dispersion",6,11,98,9.5,43.6,406.9,291.7,416.0,-0.0,10.5,0.0,AdvOT1ef757c0,(),False,False,False,False,59.3
-folds into a small momentum (q) space. This results in relatively flat,6,11,99,9.5,43.6,417.3,291.7,426.4,0.0,10.4,0.0,AdvOT1ef757c0,"({'start': 29, 'end': 30, 'kind': 'italic'},)",False,False,False,False,63.5
-"magnon branches52,53, rendering the effective magnon velocity slow.",6,11,100,9.5,43.6,426.2,291.7,436.9,-0.0,8.9,0.0,AdvOT1ef757c0,"({'start': 15, 'end': 16, 'kind': 'sup'}, {'start': 16, 'end': 17, 'kind': 'sup'}, {'start': 17, 'end': 18, 'kind': 'sup'}, {'start': 18, 'end': 19, 'kind': 'sup'}, {'start': 19, 'end': 20, 'kind': 'sup'})",False,False,False,False,76.0
-This seems qualitatively consistent with our experimental observa-,6,11,101,9.5,43.6,438.3,291.6,447.4,0.0,12.0,0.0,AdvOT1ef757c0,(),False,False,False,False,63.1
-"tions. However, such a modulation of magnon dispersion is",6,11,102,9.5,43.6,448.7,291.6,457.9,0.0,10.4,0.0,AdvOT1ef757c0,(),False,False,False,False,69.5
-prominent in the small wave vectors corresponding to the long,6,12,103,9.5,43.6,459.2,291.7,468.3,0.0,10.5,0.0,AdvOT1ef757c0,(),False,False,False,False,86.8
-"pitch of the skyrmion-lattice or spin cycloid, and in the lower energy",6,13,104,9.5,43.6,469.6,291.8,478.8,0.0,10.4,0.0,AdvOT1ef757c0,(),False,False,False,False,64.3
-"scale of ~ μeV. Indeed, the eigenmode of spin oscillations in the SkL",6,13,105,9.5,43.6,479.4,291.6,489.4,0.0,9.7,0.0,AdvOT1ef757c0,(),False,False,False,False,63.0
-or Cyc phase appears in the ~GHz frequency with the zero magnon,6,13,106,9.5,43.6,490.5,291.6,499.7,0.0,11.2,0.0,AdvOT1ef757c0,(),False,False,False,False,54.0
-velocities. The contribution of the magnons with such small,6,14,107,9.5,43.6,501.0,291.7,510.2,-0.0,10.5,0.0,AdvOT1ef757c0,(),False,False,False,False,84.4
-"velocities to the heat transport is limited, and hence the thermal",6,14,108,9.5,43.6,511.5,291.7,520.6,0.0,10.4,0.0,AdvOT1ef757c0,(),False,False,False,False,80.3
-transport is considered not much affected by the change of magnon,6,14,109,9.5,43.6,521.9,291.6,531.1,0.0,10.5,0.0,AdvOT1ef757c0,(),False,False,False,False,79.5
-velocity across the phase transition to the SkL and Cyc. On the other,6,14,110,9.5,43.6,532.4,291.6,541.5,-0.0,10.4,0.0,AdvOT1ef757c0,(),False,False,False,False,73.4
-"hand, the formation of magnetic domain walls reducing the magnon",6,14,111,9.5,43.6,542.9,291.6,552.0,0.0,10.5,0.0,AdvOT1ef757c0,(),False,False,False,False,66.3
-mean free path induces the broadening in the magnon dispersion at,6,14,112,9.5,43.6,553.3,291.7,562.5,0.0,10.4,0.0,AdvOT1ef757c0,(),False,False,False,False,66.4
-"finite wave vector in the thermal energy range of ~ meV (at 10 K), as",6,14,113,9.5,43.6,563.8,291.7,572.9,0.0,10.5,0.0,AdvOT1ef757c0,(),False,False,False,False,64.3
-shown in detail later.,6,14,114,9.5,43.6,574.2,121.5,583.3,0.0,10.4,0.0,AdvOT1ef757c0,(),False,False,False,False,70.5
-"Moreover, there are other magnetic-phase-dependent parameters",6,15,115,9.5,53.1,584.7,291.8,593.9,9.5,10.5,0.0,AdvOT1ef757c0,(),False,False,False,False,93.5
-"affecting the remagnetization dynamics, namely the spin heat",6,15,116,9.5,43.6,595.1,291.7,604.3,-9.5,10.4,0.0,AdvOT1ef757c0,(),False,False,False,False,80.3
-"capacity and the spin-lattice coupling. Here, the spin heat capacity",6,16,117,9.5,43.6,605.6,291.9,614.8,0.0,10.5,0.0,AdvOT1ef757c0,(),False,False,False,False,76.1
-is reported to be smaller in the SkL and Cyc phase compared to FM,6,16,118,9.5,43.6,616.1,291.7,625.2,0.0,10.4,0.0,AdvOT1ef757c0,(),False,False,False,False,51.8
-"phase42, which by itself does not explain the slower recovery",6,16,119,9.5,43.6,625.0,291.8,635.7,0.0,8.9,0.0,AdvOT1ef757c0,"({'start': 5, 'end': 6, 'kind': 'sup'}, {'start': 6, 'end': 7, 'kind': 'sup'})",False,False,False,False,78.6
-dynamics in the SkL/Cyc phase. The spin-lattice coupling can affect,6,16,120,9.5,43.6,637.0,291.6,646.1,0.0,12.0,0.0,AdvOT1ef757c0,(),False,False,False,False,80.9
-the thermal relaxation dynamics through the phonon-magnon,6,16,121,9.5,43.6,647.5,291.6,656.6,0.0,10.5,0.0,AdvOT1ef757c0,(),False,False,False,False,61.1
-scattering processes54. The efficiency of phonon-magnon scattering,6,16,122,9.5,43.6,656.4,291.8,667.0,0.0,8.9,0.0,AdvOT1ef757c0,"({'start': 20, 'end': 21, 'kind': 'sup'}, {'start': 21, 'end': 22, 'kind': 'sup'})",False,False,False,False,81.5
-"processes depends on the character of the magnon modes, which",6,16,123,9.5,43.6,668.4,291.7,677.5,0.0,12.0,0.0,AdvOT1ef757c0,(),False,False,False,False,80.9
-"changes across the magnetic phase transition55. However, the length",6,16,124,9.5,43.6,677.3,291.7,688.0,0.0,8.9,0.0,AdvOT1ef757c0,"({'start': 44, 'end': 45, 'kind': 'sup'}, {'start': 45, 'end': 46, 'kind': 'sup'})",False,False,False,False,74.8
-scale of the spin periodicity in the SkL and Cyc phase are around,6,16,125,9.5,43.6,689.3,291.6,698.5,0.0,12.0,0.0,AdvOT1ef757c0,(),False,False,False,False,64.0
-"20 nm, which is much longer than the unit cell scale. This results in",6,16,126,9.5,43.6,699.7,291.6,708.9,0.0,10.4,0.0,AdvOT1ef757c0,(),False,False,False,False,54.1
-the modulation of the magnon modes at very low frequency of ~GHz,6,16,127,9.5,43.6,710.2,291.6,719.4,0.0,10.5,0.0,AdvOT1ef757c0,(),False,False,False,False,56.9
-"with small wave vector, as mentioned earlier. The impact of such a",6,16,128,9.5,43.6,720.6,291.6,729.8,0.0,10.4,0.0,AdvOT1ef757c0,(),False,False,False,False,62.6
-spin modulation with q ~ 0 on the phonon velocity is considered to,6,16,129,9.5,43.6,731.1,291.6,740.3,0.0,10.5,0.0,AdvOT1ef757c0,"({'start': 21, 'end': 22, 'kind': 'italic'},)",False,False,False,False,61.5
-"as the magnon linewidth δq. Indeed, the experimental data show",6,17,130,9.5,303.6,639.1,551.8,649.1,260.0,-92.0,0.0,AdvOT1ef757c0,"({'start': 24, 'end': 26, 'kind': 'italic'},)",False,False,False,False,314.9
-significant increase of the relaxation time in the SkL and Cyc phases.,6,17,131,9.5,303.6,650.2,551.7,659.4,0.0,11.1,0.0,AdvOT1ef757c0,(),False,False,False,False,342.9
-Larger errors of the remagnetization time constant at low fields in the,6,17,132,9.5,303.6,660.7,551.7,669.9,0.0,10.5,0.0,AdvOT1ef757c0,(),False,False,False,False,328.9
-"experiment make a quantitative comparison difficult in this region,",6,17,133,9.5,303.6,671.2,551.7,680.3,0.0,10.4,0.0,AdvOT1ef757c0,(),False,False,False,False,347.5
-but the overall trend of decreasing thermal conductivity in the non-,6,17,134,9.5,303.6,681.6,551.7,690.8,-0.0,10.5,0.0,AdvOT1ef757c0,(),False,False,False,False,318.4
-collinear SkL and Cyc phase compared to the FM phase is robust.,6,17,135,9.5,303.6,692.1,551.7,701.3,0.0,10.5,0.0,AdvOT1ef757c0,(),False,False,False,False,337.6
-Such domain-wall driven thermal conductivity decrease is analogous,6,17,136,9.5,303.6,702.6,551.7,711.7,0.0,10.4,0.0,AdvOT1ef757c0,(),False,False,False,False,323.7
-"to that observed in ferroelectric Pb(Zr0.3Ti0.7)O3, where a decrease of",6,18,137,9.5,303.6,713.0,552.6,722.9,0.0,10.5,0.0,AdvOT1ef757c0,"({'start': 39, 'end': 40, 'kind': 'sub'}, {'start': 40, 'end': 41, 'kind': 'sub'}, {'start': 41, 'end': 42, 'kind': 'sub'}, {'start': 44, 'end': 45, 'kind': 'sub'}, {'start': 45, 'end': 46, 'kind': 'sub'}, {'start': 46, 'end': 47, 'kind': 'sub'}, {'start': 49, 'end': 50, 'kind': 'sub'})",False,False,False,False,313.4
-phonon thermal conductivity of 11% has been achieved by,6,18,138,9.5,303.6,723.5,551.8,732.6,0.0,10.4,0.0,AdvOT1ef757c0,(),False,False,False,False,339.0
-NATURE COMMUNICATIONS | (2022) 13:3212 | https://doi.org/10.1038/s41467-022-30829-z | www.nature.com/naturecommunications 5,6,19,139,6.7,43.6,751.1,551.7,759.3,-260.0,27.6,5.8,AdvOTea1a7398,"({'start': 122, 'end': 123, 'kind': 'bold'},)",False,False,False,False,70.8
+"is τ ∼ c / κ. Therefore, the relaxation time, inversely proportional to",6,9,92,9.5,303.6,618.2,551.7,634.6,-88.5,11.5,0.0,AdvOT1ef757c0,"({'start': 3, 'end': 4, 'kind': 'italic'}, {'start': 7, 'end': 8, 'kind': 'italic'}, {'start': 11, 'end': 12, 'kind': 'italic'})",False,False,False,False,311.9
+"the thermal conductivity, is expected to change along the same trend",6,9,93,9.5,303.6,629.3,551.7,638.5,-0.0,11.1,0.0,AdvOT1ef757c0,(),False,False,False,False,317.3
+"In addition to the reduced mean free path, the magnon velocity",6,10,94,9.5,53.1,375.4,291.8,384.6,-250.5,-253.9,0.0,AdvOT1ef757c0,(),False,False,False,False,64.2
+also depends on the magnetic phase. Because the SkL and Cyc phase,6,10,95,9.5,43.6,385.9,291.6,395.1,-9.5,10.5,0.0,AdvOT1ef757c0,(),False,False,False,False,59.9
+in GaV4S8 have a long spin periodicity (the SkL (Cyc) periodicity is,6,11,96,9.5,43.6,396.4,291.7,406.3,0.0,10.4,0.0,AdvOT1ef757c0,"({'start': 6, 'end': 7, 'kind': 'sub'}, {'start': 8, 'end': 9, 'kind': 'sub'})",False,False,False,False,53.6
+"~22 nm (~18 nm)), the Brillouin Zone of the magnon dispersion",6,11,97,9.5,43.6,406.9,291.7,416.0,-0.0,10.5,0.0,AdvOT1ef757c0,(),False,False,False,False,59.3
+folds into a small momentum (q) space. This results in relatively flat,6,11,98,9.5,43.6,417.3,291.7,426.4,0.0,10.4,0.0,AdvOT1ef757c0,"({'start': 29, 'end': 30, 'kind': 'italic'},)",False,False,False,False,63.5
+"magnon branches52,53, rendering the effective magnon velocity slow.",6,11,99,9.5,43.6,426.2,291.7,436.9,-0.0,8.9,0.0,AdvOT1ef757c0,"({'start': 15, 'end': 16, 'kind': 'sup'}, {'start': 16, 'end': 17, 'kind': 'sup'}, {'start': 17, 'end': 18, 'kind': 'sup'}, {'start': 18, 'end': 19, 'kind': 'sup'}, {'start': 19, 'end': 20, 'kind': 'sup'})",False,False,False,False,76.0
+This seems qualitatively consistent with our experimental observa-,6,11,100,9.5,43.6,438.3,291.6,447.4,0.0,12.0,0.0,AdvOT1ef757c0,(),False,False,False,False,63.1
+"tions. However, such a modulation of magnon dispersion is",6,11,101,9.5,43.6,448.7,291.6,457.9,0.0,10.4,0.0,AdvOT1ef757c0,(),False,False,False,False,69.5
+prominent in the small wave vectors corresponding to the long,6,12,102,9.5,43.6,459.2,291.7,468.3,0.0,10.5,0.0,AdvOT1ef757c0,(),False,False,False,False,86.8
+"pitch of the skyrmion-lattice or spin cycloid, and in the lower energy",6,13,103,9.5,43.6,469.6,291.8,478.8,0.0,10.4,0.0,AdvOT1ef757c0,(),False,False,False,False,64.3
+"scale of ~ μeV. Indeed, the eigenmode of spin oscillations in the SkL",6,13,104,9.5,43.6,479.4,291.6,489.4,0.0,9.7,0.0,AdvOT1ef757c0,(),False,False,False,False,63.0
+or Cyc phase appears in the ~GHz frequency with the zero magnon,6,13,105,9.5,43.6,490.5,291.6,499.7,0.0,11.2,0.0,AdvOT1ef757c0,(),False,False,False,False,54.0
+velocities. The contribution of the magnons with such small,6,14,106,9.5,43.6,501.0,291.7,510.2,-0.0,10.5,0.0,AdvOT1ef757c0,(),False,False,False,False,84.4
+"velocities to the heat transport is limited, and hence the thermal",6,14,107,9.5,43.6,511.5,291.7,520.6,0.0,10.4,0.0,AdvOT1ef757c0,(),False,False,False,False,80.3
+transport is considered not much affected by the change of magnon,6,14,108,9.5,43.6,521.9,291.6,531.1,0.0,10.5,0.0,AdvOT1ef757c0,(),False,False,False,False,79.5
+velocity across the phase transition to the SkL and Cyc. On the other,6,14,109,9.5,43.6,532.4,291.6,541.5,-0.0,10.4,0.0,AdvOT1ef757c0,(),False,False,False,False,73.4
+"hand, the formation of magnetic domain walls reducing the magnon",6,14,110,9.5,43.6,542.9,291.6,552.0,0.0,10.5,0.0,AdvOT1ef757c0,(),False,False,False,False,66.3
+mean free path induces the broadening in the magnon dispersion at,6,14,111,9.5,43.6,553.3,291.7,562.5,0.0,10.4,0.0,AdvOT1ef757c0,(),False,False,False,False,66.4
+"finite wave vector in the thermal energy range of ~ meV (at 10 K), as",6,14,112,9.5,43.6,563.8,291.7,572.9,0.0,10.5,0.0,AdvOT1ef757c0,(),False,False,False,False,64.3
+shown in detail later.,6,14,113,9.5,43.6,574.2,121.5,583.3,0.0,10.4,0.0,AdvOT1ef757c0,(),False,False,False,False,70.5
+"Moreover, there are other magnetic-phase-dependent parameters",6,15,114,9.5,53.1,584.7,291.8,593.9,9.5,10.5,0.0,AdvOT1ef757c0,(),False,False,False,False,93.5
+"affecting the remagnetization dynamics, namely the spin heat",6,15,115,9.5,43.6,595.1,291.7,604.3,-9.5,10.4,0.0,AdvOT1ef757c0,(),False,False,False,False,80.3
+"capacity and the spin-lattice coupling. Here, the spin heat capacity",6,16,116,9.5,43.6,605.6,291.9,614.8,0.0,10.5,0.0,AdvOT1ef757c0,(),False,False,False,False,76.1
+is reported to be smaller in the SkL and Cyc phase compared to FM,6,16,117,9.5,43.6,616.1,291.7,625.2,0.0,10.4,0.0,AdvOT1ef757c0,(),False,False,False,False,51.8
+"phase42, which by itself does not explain the slower recovery",6,16,118,9.5,43.6,625.0,291.8,635.7,0.0,8.9,0.0,AdvOT1ef757c0,"({'start': 5, 'end': 6, 'kind': 'sup'}, {'start': 6, 'end': 7, 'kind': 'sup'})",False,False,False,False,78.6
+dynamics in the SkL/Cyc phase. The spin-lattice coupling can affect,6,16,119,9.5,43.6,637.0,291.6,646.1,0.0,12.0,0.0,AdvOT1ef757c0,(),False,False,False,False,80.9
+the thermal relaxation dynamics through the phonon-magnon,6,16,120,9.5,43.6,647.5,291.6,656.6,0.0,10.5,0.0,AdvOT1ef757c0,(),False,False,False,False,61.1
+scattering processes54. The efficiency of phonon-magnon scattering,6,16,121,9.5,43.6,656.4,291.8,667.0,0.0,8.9,0.0,AdvOT1ef757c0,"({'start': 20, 'end': 21, 'kind': 'sup'}, {'start': 21, 'end': 22, 'kind': 'sup'})",False,False,False,False,81.5
+"processes depends on the character of the magnon modes, which",6,16,122,9.5,43.6,668.4,291.7,677.5,0.0,12.0,0.0,AdvOT1ef757c0,(),False,False,False,False,80.9
+"changes across the magnetic phase transition55. However, the length",6,16,123,9.5,43.6,677.3,291.7,688.0,0.0,8.9,0.0,AdvOT1ef757c0,"({'start': 44, 'end': 45, 'kind': 'sup'}, {'start': 45, 'end': 46, 'kind': 'sup'})",False,False,False,False,74.8
+scale of the spin periodicity in the SkL and Cyc phase are around,6,16,124,9.5,43.6,689.3,291.6,698.5,0.0,12.0,0.0,AdvOT1ef757c0,(),False,False,False,False,64.0
+"20 nm, which is much longer than the unit cell scale. This results in",6,16,125,9.5,43.6,699.7,291.6,708.9,0.0,10.4,0.0,AdvOT1ef757c0,(),False,False,False,False,54.1
+the modulation of the magnon modes at very low frequency of ~GHz,6,16,126,9.5,43.6,710.2,291.6,719.4,0.0,10.5,0.0,AdvOT1ef757c0,(),False,False,False,False,56.9
+"with small wave vector, as mentioned earlier. The impact of such a",6,16,127,9.5,43.6,720.6,291.6,729.8,0.0,10.4,0.0,AdvOT1ef757c0,(),False,False,False,False,62.6
+spin modulation with q ~ 0 on the phonon velocity is considered to,6,16,128,9.5,43.6,731.1,291.6,740.3,0.0,10.5,0.0,AdvOT1ef757c0,"({'start': 21, 'end': 22, 'kind': 'italic'},)",False,False,False,False,61.5
+"as the magnon linewidth δq. Indeed, the experimental data show",6,17,129,9.5,303.6,639.1,551.8,649.1,260.0,-92.0,0.0,AdvOT1ef757c0,"({'start': 24, 'end': 26, 'kind': 'italic'},)",False,False,False,False,314.9
+significant increase of the relaxation time in the SkL and Cyc phases.,6,17,130,9.5,303.6,650.2,551.7,659.4,0.0,11.1,0.0,AdvOT1ef757c0,(),False,False,False,False,342.9
+Larger errors of the remagnetization time constant at low fields in the,6,17,131,9.5,303.6,660.7,551.7,669.9,0.0,10.5,0.0,AdvOT1ef757c0,(),False,False,False,False,328.9
+"experiment make a quantitative comparison difficult in this region,",6,17,132,9.5,303.6,671.2,551.7,680.3,0.0,10.4,0.0,AdvOT1ef757c0,(),False,False,False,False,347.5
+but the overall trend of decreasing thermal conductivity in the non-,6,17,133,9.5,303.6,681.6,551.7,690.8,-0.0,10.5,0.0,AdvOT1ef757c0,(),False,False,False,False,318.4
+collinear SkL and Cyc phase compared to the FM phase is robust.,6,17,134,9.5,303.6,692.1,551.7,701.3,0.0,10.5,0.0,AdvOT1ef757c0,(),False,False,False,False,337.6
+Such domain-wall driven thermal conductivity decrease is analogous,6,17,135,9.5,303.6,702.6,551.7,711.7,0.0,10.4,0.0,AdvOT1ef757c0,(),False,False,False,False,323.7
+"to that observed in ferroelectric Pb(Zr0.3Ti0.7)O3, where a decrease of",6,18,136,9.5,303.6,713.0,552.6,722.9,0.0,10.5,0.0,AdvOT1ef757c0,"({'start': 39, 'end': 40, 'kind': 'sub'}, {'start': 40, 'end': 41, 'kind': 'sub'}, {'start': 41, 'end': 42, 'kind': 'sub'}, {'start': 44, 'end': 45, 'kind': 'sub'}, {'start': 45, 'end': 46, 'kind': 'sub'}, {'start': 46, 'end': 47, 'kind': 'sub'}, {'start': 49, 'end': 50, 'kind': 'sub'})",False,False,False,False,313.4
+phonon thermal conductivity of 11% has been achieved by,6,18,137,9.5,303.6,723.5,551.8,732.6,0.0,10.4,0.0,AdvOT1ef757c0,(),False,False,False,False,339.0
+NATURE COMMUNICATIONS | (2022) 13:3212 | https://doi.org/10.1038/s41467-022-30829-z | www.nature.com/naturecommunications 5,6,19,138,6.7,43.6,751.1,551.7,759.3,-260.0,27.6,5.8,AdvOTea1a7398,"({'start': 122, 'end': 123, 'kind': 'bold'},)",False,False,False,False,70.8
 ARTICLE NATURE COMMUNICATIONS | https://doi.org/10.1038/s41467-022-30829-z,7,1,1,8.0,43.6,17.5,551.7,30.0,,,0.0,AdvOTea1a7398,(),False,False,False,False,285.7
 "Fig. 4 Simulated spin texture and magnon spectra. a Representative spin textures and b magnon spectral functions, obtained from atomistic spin",7,2,2,8.0,43.6,226.9,536.6,234.2,-0.0,209.4,261.9,AdvOTea1a7398,"({'start': 0, 'end': 51, 'kind': 'bold'}, {'start': 85, 'end': 86, 'kind': 'bold'})",False,False,False,False,58.5
 "dynamics simulations of GaV4S8 at T = 12 K and magnetic field magnitudes, as indicated at the top of each panel.",7,2,3,8.0,43.6,235.6,426.1,245.4,-0.0,8.7,0.0,AdvOTea1a7398,"({'start': 27, 'end': 28, 'kind': 'sub'}, {'start': 29, 'end': 30, 'kind': 'sub'}, {'start': 34, 'end': 35, 'kind': 'italic'})",False,False,False,False,77.6
