@@ -140,6 +140,13 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
   lacks a Unicode mapping for them, so `Ω(n log …)` no longer loses its
   parentheses and `P̂` no longer reads `Pb`. Pieces of extensible delimiters
   are left unchanged.
+- Math set in the `Adv…` fonts of Advent 3B2 (PTC Arbortext APP), common in
+  PDFs from Elsevier, Wiley, and Nature Communications, is decoded. These
+  fonts clone TeX's math fonts under wrong glyph names, so `p = 0.03` no
+  longer reads `p ¼ 0.03`, `(x + ∞)` no longer reads `ðx þ 1Þ`, and minus
+  signs, `∼`, and `·`, which had no Unicode mapping at all, are no longer
+  lost. The same characters in other fonts, such as real fractions and
+  Icelandic letters, are left alone.
 - Inline fractions set with the numerator above the denominator, such as
   `IDmax/n` or `1/2` in running text, are written with a slash on one line
   instead of spreading over three. Compound denominators are parenthesized.

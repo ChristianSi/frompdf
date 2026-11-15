@@ -2,6 +2,7 @@ from pathlib import Path
 
 from pdftext.extraction import dictionary_output
 
+from frompdf.advent_fonts import decode_advent_math_glyphs
 from frompdf.blocks import lines_to_markdown_blocks
 from frompdf.detached_scripts import (
     attach_stacked_scripts,
@@ -56,6 +57,7 @@ def extract_markdown(
     normalize_detached_diacritics(page_list)
     remove_icon_glyphs(page_list)
     decode_math_extension_glyphs(page_list)
+    decode_advent_math_glyphs(page_list, input_path)
     decode_double_struck_letters(page_list)
     restore_private_use_bullets(page_list)
     attach_stray_scripts(page_list)

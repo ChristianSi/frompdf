@@ -161,6 +161,9 @@ core records or block types, or alters the pipeline stages described below.
 
 The implementation is split into focused modules under `src/frompdf`:
 
+- `advent_fonts.py` decodes the glyphs of Advent 3B2 math fonts, which clone
+  TeX's math fonts under wrong glyph names, by their positions in the TeX
+  layouts.
 - `blocks.py` turns segmented lines into blocks, classifies block quotes and
   headings, and coordinates within-block text repair.
 - `cli.py` implements the command-line interface.
@@ -175,6 +178,9 @@ The implementation is split into focused modules under `src/frompdf`:
 - `figures.py` recognizes pictures from the regions of the drawings of a
   page, tells their labels from the text of the document, finds the boxes to
   cut from the page, and collects their caption lines.
+- `font_encodings.py` reads the glyph names that the `/Differences` of font
+  encodings assign to character codes from the raw PDF, including compressed
+  object streams.
 - `footnotes.py` detects numbered bottom notes, assembles continuations with
   page-aware text, and places numeric groups in Notes sections.
 - `front_matter.py` renders subtitles, author names, and chapter labels near
@@ -274,8 +280,11 @@ The current pipeline is roughly:
 2. Repair detached, geometrically positioned diacritics in the raw data,
    keeping a combining accent where no precomposed letter exists, remove
    glyphs from icon fonts, and decode TeX math extension glyphs that
-   `pdftext` reports by their font codes. Capitals of blackboard bold fonts
-   become double-struck letters. Restore bullets of symbol fonts, which
+   `pdftext` reports by their font codes. Glyphs of the math fonts of
+   Advent 3B2, whose Unicode mappings follow wrong glyph names, become the
+   characters they show; glyphs without a mapping are identified by the
+   glyph names that their font codes have in the font's encoding. Capitals of
+   blackboard bold fonts become double-struck letters. Restore bullets of symbol fonts, which
    `pdftext` drops as private-use characters. Move scripts that `pdftext` set
    apart, in a block of their own or stacked below or above another script,
    back into the line records they belong to; a record mostly in script size
