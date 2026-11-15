@@ -460,16 +460,16 @@ correlation length in the SkL and Cyc phase considerably lowers
 the magnon mean free path, encoded by the inverse width of the
 magnon lines in the spectral function.
 
-The magnon thermal conductivity is given by *κ* ¼ ∑<sub>i</sub>*c<sub>i</sub>v<sub>i</sub>ρ<sub>i</sub>*, where
+The magnon thermal conductivity is given by *κ* = ∑<sub>i</sub>*c<sub>i</sub>v<sub>i</sub>ρ<sub>i</sub>*, where
 *c<sub>i</sub>* is the specific heat of mode *i*, *v<sub>i</sub>* is its velocity and *ρ<sub>i</sub>* is the mean
 free path. The latter can be estimated via the magnon spectral
-broadening as *ρ<sub>i</sub>* ¼ 2*π*=*δq*, with the *δq* is the line broadening. As
+broadening as *ρ<sub>i</sub>* = 2*π*/*δq*, with the *δq* is the line broadening. As
 discussed earlier, *c<sub>i</sub>* and *v<sub>i</sub>* do not play a decisive role in this
 experiment, and hence *κ* is inversely proportional to *δq*. The heat
 transfer equation reads <sup>c</sup>∂<sup>T</sup>
-∂*t* ¼ *κ* Δ*T*, so that the relaxation time scale
-is *τ* -
-*c* = *κ*. Therefore, the relaxation time, inversely proportional to
+∂<sub>t</sub> = *κ* Δ*T*, so that the relaxation time scale
+is *τ* ∼
+*c* / *κ*. Therefore, the relaxation time, inversely proportional to
 the thermal conductivity, is expected to change along the same trend
 as the magnon linewidth *δq*. Indeed, the experimental data show
 significant increase of the relaxation time in the SkL and Cyc phases.
@@ -559,39 +559,38 @@ compute magnon spectra, the MC calculations were followed by spin dynamics
 simulations using the UppASD program<sup>58</sup>. The magnon spectral function, evaluated
 numerically from the time-dependent correlation function
 
-***m**<sup>j</sup>r*0ðÞ 0 ð1Þ
-of the Cartesian component *j* of the magnetization ***m**<sup>j</sup>r*ðÞ*t* at the position **r** and
-time *t*. The magnetization ***m**<sup>j</sup>r*ðÞ*t* was obtained by integration of the Landau–Lifshitz
+⟩⟨***m**<sup>j</sup><sub>r</sub>*′() 0⟩ (1)
+of the Cartesian component *j* of the magnetization ***m**<sup>j</sup><sub>r</sub>*()*t* at the position **r** and
+time *t*. The magnetization ***m**<sup>j</sup><sub>r</sub>*()*t* was obtained by integration of the Landau–Lifshitz
 equation<sup>59</sup>. The Gilbert damping was set to 10<sup>−3</sup>. 20,000 timesteps of 10 fs were
 used for the integration. The Fourier transform of the correlation function gives the
 dynamical structure factor,
 
-> *C<sup>j</sup> r  r*\
-> 0 ð Þ¼ ; *t*
+> *C<sup>j</sup> r* − *r*
+> ′ ( )= , *t* ⟨
 
-***m**<sup>j</sup>r*ðÞ*t **m**<sup>j</sup>r*0ðÞ 0
+***m**<sup>j</sup><sub>r</sub>*()*t **m**<sup>j</sup><sub>r</sub>*′() 0 ⟩
 
-***m**<sup>j</sup>r*ðÞ*t*
+− ⟨***m**<sup>j</sup><sub>r</sub>*()*t*
 
-Z þ1
-1
+∫ +∞
+−∞
 
-ð***q***; *ω*Þ¼ 1
-ffiffiffiffiffi\
-2*π* p *N*
+(***q***, *ω*)= 1
+2*π* √ *N*
 
 ∑
-***r***;***r***0
-*ei**q***ð***rr***0
+***r***,***r***′
+*e*−<sup>iq</sup>·(<sup>r</sup>−<sup>r</sup>′
 
-ð***r  r***0; *t*Þ*dt* ð2Þ
+(***r*** − ***r***′, *t*)*dt* (2)
 The magnon linewidth was then obtained by fitting the peaks of the spectral
 function with Gaussians. The thermal conductivity was estimated from the
 linewidth as explained in the main text.
 
 *S<sup>j</sup>*
 
-Þ
+)
 
 *e<sup>iωt</sup>C<sup>j</sup>*
 
