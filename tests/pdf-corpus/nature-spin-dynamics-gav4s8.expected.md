@@ -4,7 +4,7 @@
 Rolf B. Versteeg, Vladimir Tsurkan, István Kézsmárki, Francesco
 Foggetti, Sergey Artyukhin, Paul H. M. van Loosdrecht**
 
-#### Angaben zur Veröffentlichung / Publication details:
+##### Angaben zur Veröffentlichung / Publication details:
 
 Sekiguchi, Fumiya, Kestutis Budzinauskas, Prashant Padmanabhan, Rolf B.
 Versteeg, Vladimir Tsurkan, István Kézsmárki, Francesco Foggetti, Sergey
@@ -13,9 +13,9 @@ dynamics in the non-collinear spin-ordered phases in skyrmion host GaV4S8.”
 Nature Communications 13 (1): 3212.
 https://doi.org/10.1038/s41467-022-30829-z.
 
-### Nutzungsbedingungen / Terms of use:
+#### Nutzungsbedingungen / Terms of use:
 
-##### CC BY 4.0
+**CC BY 4.0**
 
 Dieses Dokument wird unter folgenden Bedingungen zur Verfügung gestellt: / This document is made available under
 these conditions:
@@ -121,7 +121,7 @@ scattering due to the multi-domain magnetic structure, consistent
 with the signature of phase coexistence observed in the coherent
 spin precession experiments.
 
-**Results**
+##### Results
 
 **Magnetic properties and phase diagram of GaV<sub>4</sub>S<sub>8</sub>**. GaV<sub>4</sub>S<sub>8</sub> is a
 
@@ -460,14 +460,14 @@ correlation length in the SkL and Cyc phase considerably lowers
 the magnon mean free path, encoded by the inverse width of the
 magnon lines in the spectral function.
 
-The magnon thermal conductivity is given by *κ* ¼ ∑<sub>i</sub>*c<sub>i</sub>viρi*, where
+The magnon thermal conductivity is given by *κ* ¼ ∑<sub>i</sub>*c<sub>i</sub>v<sub>i</sub>ρ<sub>i</sub>*, where
 *c<sub>i</sub>* is the specific heat of mode *i*, *v<sub>i</sub>* is its velocity and *ρ<sub>i</sub>* is the mean
 free path. The latter can be estimated via the magnon spectral
 broadening as *ρ<sub>i</sub>* ¼ 2*π*=*δq*, with the *δq* is the line broadening. As
 discussed earlier, *c<sub>i</sub>* and *v<sub>i</sub>* do not play a decisive role in this
 experiment, and hence *κ* is inversely proportional to *δq*. The heat
 transfer equation reads <sup>c</sup>∂<sup>T</sup>
-∂<sub>t</sub> ¼ *κ* Δ*T*, so that the relaxation time scale
+∂*t* ¼ *κ* Δ*T*, so that the relaxation time scale
 is *τ* -
 *c* = *κ*. Therefore, the relaxation time, inversely proportional to
 the thermal conductivity, is expected to change along the same trend
@@ -516,7 +516,7 @@ demonstrates that the change of spin ordering triggers a dramatic
 change of dynamic behaviors, motivating further research on
 materials with novel spin correlations.
 
-**Methods**
+##### Methods
 
 **Sample preparation and characterization of the magnetic properties**. GaV<sub>4</sub>S<sub>8</sub>
 
@@ -559,21 +559,24 @@ compute magnon spectra, the MC calculations were followed by spin dynamics
 simulations using the UppASD program<sup>58</sup>. The magnon spectral function, evaluated
 numerically from the time-dependent correlation function
 
-***m**<sup>j</sup>r*0ðÞ <sup>0</sup> ð<sup>1</sup>Þ
-of the Cartesian component *j* of the magnetization ***m**<sup>j</sup>*<sub>r</sub>ðÞ*t* at the position **r** and
-time *t*. The magnetization ***m**<sup>j</sup>*<sub>r</sub>ðÞ*t* was obtained by integration of the Landau–Lifshitz
-equation<sup>59</sup>. The Gilbert damping was set to 10−<sup>3</sup>. 20,000 timesteps of 10 fs were
+***m**<sup>j</sup>r*0ðÞ 0 ð1Þ
+of the Cartesian component *j* of the magnetization ***m**<sup>j</sup>r*ðÞ*t* at the position **r** and
+time *t*. The magnetization ***m**<sup>j</sup>r*ðÞ*t* was obtained by integration of the Landau–Lifshitz
+equation<sup>59</sup>. The Gilbert damping was set to 10<sup>−3</sup>. 20,000 timesteps of 10 fs were
 used for the integration. The Fourier transform of the correlation function gives the
 dynamical structure factor,
 
-### *C<sup>j</sup> r r* <sup>0</sup> ð Þ¼ <sup>;</sup> *<sup>t</sup> m<sup>j</sup>r*ðÞ<sup>t</sup> *<sup>mj</sup>r*0ðÞ <sup>0</sup>
+> *C<sup>j</sup> r  r*\
+> 0 ð Þ¼ ; *t*
 
-### *m<sup>j</sup>r*ðÞ<sup>t</sup>
+***m**<sup>j</sup>r*ðÞ*t **m**<sup>j</sup>r*0ðÞ 0
+
+***m**<sup>j</sup>r*ðÞ*t*
 
 Z þ1
 1
 
-ð<sup>q;</sup> <sup>ω</sup>Þ¼ 1
+ð***q***; *ω*Þ¼ 1
 ffiffiffiffiffi\
 2*π* p *N*
 
@@ -590,21 +593,21 @@ linewidth as explained in the main text.
 
 Þ
 
-*eiωtC<sup>j</sup>*
+*e<sup>iωt</sup>C<sup>j</sup>*
 
-**Data availability**
+##### Data availability
 
 The data that support the findings of this study are available from the authors upon
 reasonable request.
 
-**Code availability**
+##### Code availability
 
 The codes that support the calculations of this study are available from the authors upon
 reasonable request.
 
 [[PAGE:8|VISIBLE:7]]Received: 10 August 2021; Accepted: 20 May 2022;
 
-**References**
+##### References
 
 1. Mühlbauer, S. et al. Skyrmion Lattice in a Chiral Magnet. *Science* **323**, 915–919
    (2009).
@@ -739,7 +742,7 @@ reasonable request.
 59. Landau, L. & Lifshitz, E. On the theory of the dispersion of magnetic
     permeability in ferromagnetic bodies. *Phys. Z. Sowjetunion* **8**, 153 (1935).
 
-**Acknowledgements**
+##### Acknowledgements
 
 We thank Y. Mukai, D. Ehlers and V. Kocsis for fruitful discussions. The work is
 supported by the Deutsche Forschungsgemeinschaft (DFG, German Research Foundation)
@@ -748,7 +751,7 @@ Materials, via project No. 107745057-TRR-80: From Electronic Correlations to Fun
 (Augsburg-Munich-Stuttgart), the project ANCD 20.80009.5007.19 (Moldova),
 via the DFG Priority Program SPP2137, Skyrmionics, under Grant No. KE 2370/1-1.
 
-**Author contributions**
+##### Author contributions
 
 F.S. performed time-resolved Kerr effect experiments with the support from K.B. and
 P.P.F.S. analyzed the data with R.B. and P.v.L.V.T. grew and characterized the GaV<sub>4</sub>S<sub>8</sub>
@@ -756,15 +759,15 @@ single crystals. V.T. and I.K. performed the magnetometry study and determined t
 magnetic phase diagrams. S.A. and F.F. performed theoretical calculations. F.S. wrote the
 paper with input from all authors. F.S. and P.v.L. conceived the project.
 
-[[PAGE:9|VISIBLE:8]]**Funding**
+##### [[PAGE:9|VISIBLE:8]]Funding
 
 Open Access funding enabled and organized by Projekt DEAL.
 
-**Competing interests**
+##### Competing interests
 
 The authors declare no competing interests.
 
-**Additional information**
+##### Additional information
 
 **Supplementary information** The online version contains supplementary material
 available at https://doi.org/10.1038/s41467-022-30829-z.

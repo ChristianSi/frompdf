@@ -27,7 +27,13 @@ restrict others from doing anything the license permits.
 
 ## [[PAGE:4|VISIBLE:2]]Table of Contents —
 
-#### Introduction 3 - 4 Mood Board 5 Brand Identity 6 - 9 Logo(s) Font(s) Color Palette Visual Elements
+**Introduction 3 - 4
+Mood Board 5
+Brand Identity 6 - 9**
+Logo(s)\
+Font(s)\
+Color Palette\
+Visual Elements
 
 #### Publications Style 9 - 14 Tone
 
@@ -130,7 +136,7 @@ The above logos can be used in any of the colors found in the color palette. How
 ensure that the logos are clearly displayed, we recommend using the colors tomato (#ed592f), dark
 slate gray (#333333), black, or white. You can download these logos on our website, here.
 
-##### Things to avoid:
+#### Things to avoid:
 
 - Do not reproduce the logo in any other colors outside of the brand’s primary colors, except for
   black and white (when necessary)
@@ -147,7 +153,7 @@ of the CC Logo.”*
 
 ### [[PAGE:9|VISIBLE:7]]Font(s)
 
-##### Primary Font: Source Sans Pro
+#### Primary Font: Source Sans Pro
 
 Source Sans Pro | *Source Sans Pro* **| Source Sans Pro**
 
@@ -160,9 +166,9 @@ the primary font for correspondence and communications.
 
 *Source: Source Sans Pro. (2019). Retrieved from typewolf.com/site-of-the-day/fonts/source-sans-pro*
 
-##### Secondary Font: Roboto
+#### Secondary Font: Roboto
 
-##### Roboto | *Roboto* | Roboto
+Roboto | *Roboto* **| Roboto**
 
 “Roboto is an open-source, grotesque sans-serif typeface designed by Christian Robertson in 2011
 and released through Google...it renders crisply on screens and is very legible, even at smaller sizes.
@@ -173,9 +179,9 @@ and communications when desired.
 
 *Source: Roboto. (2019). Retrieved from typewolf.com/site-of-the-day/fonts/roboto*
 
-##### Secondary Font: CC Accidenz Commons
+#### Secondary Font: CC Accidenz Commons
 
-CC Accidenz Commons
+#### CC Accidenz Commons
 
 CC Accidenz Commons is an open-licensed font designed specifically for Creative Commons and
 can be used and/or remixed by anyone. It was designed in 2018 by Archetypo, a research and type
