@@ -9,6 +9,7 @@ from frompdf.detached_scripts import (
     merge_split_denominators,
 )
 from frompdf.figures import find_figures
+from frompdf.font_sizes import restore_font_sizes
 from frompdf.glyph_repairs import (
     decode_double_struck_letters,
     decode_math_extension_glyphs,
@@ -51,6 +52,7 @@ def extract_markdown(
     """
     input_path = Path(input_file_name)
     page_list = dictionary_output(str(input_path), sort=True, keep_chars=True)
+    restore_font_sizes(input_path, page_list)
     normalize_detached_diacritics(page_list)
     remove_icon_glyphs(page_list)
     decode_math_extension_glyphs(page_list)

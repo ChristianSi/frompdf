@@ -173,8 +173,10 @@ def effective_span_font_size(span_dict: PdfTextSpan) -> float | None:
     except (TypeError, ValueError):
         return None
 
-    # Some PDFs report every readable font as size 1.0; in that case box heights
-    # are the better available proxy for the visually rendered size. The
+    # Some PDFs report every readable font as size 1.0. Their real sizes are
+    # restored from the text matrices beforehand where pdfium knows them;
+    # otherwise box heights are the better available proxy for the visually
+    # rendered size, although they vary between fonts of the same size. The
     # tallest glyph box stands for the span, as the span's own box also
     # stretches over glyphs raised or lowered against the others, such as the
     # subscripts in `GaV₄S₈` in nature, while a large glyph keeps its size, as

@@ -116,6 +116,15 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
 
 ### Changed
 
+- PDFs that set all text at font size 1 and scale it by the text matrix, as
+  those typeset by Advent 3B2, get their real font sizes from the matrix
+  instead of from the heights of glyph boxes, which vary between fonts of the
+  same size. Section titles such as "Results" and "Methods" in Nature
+  Communications, set in bold at the body size, are now recognized as
+  headings.
+- A heading reading like a section heading, such as "Abstract", ends the
+  front matter below a title even where it is set like the author names, so
+  it stays a heading.
 - Titles set in several ragged or centered lines are kept as one heading,
   even when `pdftext` splits them into separate blocks or their extracted
   sizes vary slightly. Fragments of one physical line in the same font face

@@ -54,7 +54,12 @@ def title_indices(block_list: list[Block]) -> list[int]:
 
 
 def front_matter_region(block_list: list[Block], title_index: int) -> list[int]:
-    """Return the indices of blocks following a title before its page's body text."""
+    """Return the indices of blocks following a title before its page's body text.
+
+    A heading reading like a section heading, such as "Abstract", ends the
+    front matter unless it directly follows the title, even where it is set
+    like the author names above it.
+    """
     title = block_list[title_index]
     assert isinstance(title, Heading)
     region: list[int] = []
@@ -63,7 +68,7 @@ def front_matter_region(block_list: list[Block], title_index: int) -> list[int]:
         if block.start_page.raw != title.start_page.raw:
             break
         if isinstance(block, Heading):
-            if block.level <= title.level:
+            if block.level <= title.level or region and is_section_like(block):
                 break
         elif len(block.text) > MAX_FRONT_MATTER_PARAGRAPH_CHARACTERS:
             break

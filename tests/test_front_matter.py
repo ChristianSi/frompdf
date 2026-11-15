@@ -136,6 +136,20 @@ class FrontMatterFormattingTests(unittest.TestCase):
             ],
         )
 
+    def test_section_heading_set_like_the_authors_ends_the_front_matter(self) -> None:
+        blocks: list[Block] = [
+            heading('Title', 1),
+            heading('Jane Doe', 2),
+            paragraph('Received: 21 August 2020'),
+            heading('Abstract', 2),
+            paragraph(BODY_TEXT),
+        ]
+
+        self.assertEqual(
+            describe(formatted(blocks))[1:4],
+            ['** Jane Doe', 'Received: 21 August 2020', 'H2 Abstract'],
+        )
+
     def test_only_the_level_directly_below_the_title_is_demoted(self) -> None:
         blocks: list[Block] = [
             heading('espero', 1),
