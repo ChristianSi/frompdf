@@ -10,9 +10,13 @@ are backgrounds or frames, and the text below a picture, such as its caption,
 ends it.
 
 Pictures are recognized from the drawings alone, not from the wording of
-their captions, so they do not depend on the language of a document.
+their captions, so they do not depend on the language of a document. A
+caption below a picture is told by its typography, or else by a label such
+as `Fig. 3` or `Abbildung 3` starting it, as where an OCR text layer carries
+no typography to tell it by.
 """
 
+import re
 from collections import Counter
 from collections.abc import Sequence
 from dataclasses import dataclass
@@ -85,6 +89,17 @@ MAX_CAPTION_GAP_EM = 3.5
 MAX_CAPTION_OVERLAP_EM = 0.5
 # Characters that may start a caption besides letters, as in "(a) …".
 CAPTION_OPENERS = '([{"\'«‹„“‚‘'
+# Labels of figures in English, French, German, Spanish, Portuguese,
+# Japanese, and Chinese, followed by an Arabic or Roman number, as in
+# `Fig. 3`, `FIGURE 2.1`, `Abb. 4a`, `Figura IV`, `図 3`, or `第2図`, start
+# a caption at body size without emphasis. Other words may follow a number
+# at the start of a line, but these hardly ever do right below a picture.
+CAPTION_LABEL_PATTERN = re.compile(
+    r'(?:(?:Fig(?:ures?|uras?|s)?|FIG(?:URES?|URAS?|S)?|Abb|Abbildung(?:en)?|ABB(?:ILDUNG)?)'
+    r'\.?\s*(?:\d+(?:[.\-–]\d+)*[a-z]?|[IVXLC]+)(?=$|[\s.:,;)—–-])'
+    r'|[図图圖]\s*[0-9０-９]+(?:[.\-–．－][0-9０-９]+)*'
+    r'|第\s*[0-9０-９]+\s*[図图圖])'
+)
 # A caption continues in lines directly below its previous line, separated by
 # less than this in ems of its size. It ends after a sentence ending this
 # far, in ems, short of the right edge of its lines.
@@ -675,13 +690,15 @@ def is_caption_start(line: Line, body_size: float) -> bool:
     """Return whether a line below a picture is set as the start of a caption.
 
     A caption is set smaller than the body, or starts in bold or italics at
-    body size. It starts with a letter or an opening mark, unlike footnotes.
+    body size, or with a figure label, such as `Fig. 3`. It starts with a
+    letter or an opening mark, unlike footnotes.
     """
-    first = line.text.lstrip()[:1]
+    text = line.text.lstrip()
+    first = text[:1]
     if not (first.isalpha() or (first and first in CAPTION_OPENERS)) or is_vertical(line):
         return False
     if close_font_size(line.font_size, body_size):
-        return starts_emphasized(line)
+        return starts_emphasized(line) or CAPTION_LABEL_PATTERN.match(text) is not None
     return line.font_size is not None and line.font_size < body_size
 
 

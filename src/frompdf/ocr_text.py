@@ -599,7 +599,9 @@ def measure_page(
             ),
             default=page_width,
         )
-        text = ''.join(char['char'] for char in chars)
+        # Span text, unlike character data, shows a hyphen ending the line,
+        # which pdfium reports as code 2 in the character data.
+        text = ''.join(span.get('text', '') for span in line.get('spans', [])).strip()
         ink = measure_line(scan, text, box, origin_y, size, right_bound)
         if ink is None:
             continue

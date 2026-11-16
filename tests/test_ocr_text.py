@@ -198,7 +198,7 @@ def add_invisible_text(
     pdfium_c.FPDFPage_InsertObject(page.raw, text_object)
 
 
-def write_scanned_pdf(path: Path) -> None:
+def write_scanned_pdf(path: Path, first_text: str = 'the nude human figure ex') -> None:
     """Write a page whose image shows two lines, under an inaccurate invisible text layer.
 
     The text layer omits the hyphen ending the first line and sets the
@@ -216,7 +216,7 @@ def write_scanned_pdf(path: Path) -> None:
     pdf_image.set_bitmap(pdfium.PdfBitmap.from_pil(image))
     pdf_image.set_matrix(pdfium.PdfMatrix().scale(300, 200))
     page.insert_obj(pdf_image)
-    add_invisible_text(pdf, page, 'the nude human figure ex', 12.0, 21.0, 147.0)
+    add_invisible_text(pdf, page, first_text, 12.0, 21.0, 147.0)
     add_invisible_text(pdf, page, 'pressed more than status', 9.0, 21.0, 131.0)
     pdfium_c.FPDFPage_GenerateContent(page.raw)
     pdf.save(path)
@@ -240,6 +240,18 @@ class RepairTests(unittest.TestCase):
         # Both lines end within the ink of the image, short of the page.
         for right in rights:
             self.assertLess(right, 200.0)
+
+    def test_keeps_a_single_hyphen_where_the_text_layer_has_one(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / 'scan.pdf'
+            write_scanned_pdf(path, 'the nude human figure ex-')
+            pages = dictionary_output(str(path), keep_chars=True)
+            repair_ocr_text_layers(path, pages)
+
+        first = pages[0]['blocks'][0]['lines'][0]
+        self.assertEqual(
+            ''.join(span['text'] for span in first['spans']).strip(), 'the nude human figure ex-'
+        )
 
     def test_leaves_visible_text_alone(self) -> None:
         with tempfile.TemporaryDirectory() as directory:

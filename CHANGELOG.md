@@ -18,6 +18,12 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
   ordinary lines from becoming headings, line breaks from becoming paragraph
   breaks, and the columns of a page apart, and words hyphenated at line ends
   are joined again.
+- Captions set like body text, as in scans whose OCR text layer carries no
+  typography, are recognized below pictures when they start with a figure
+  label and number, such as `Fig. 3`, `Figure 2.1`, `Abb. 4a`, `Figura IV`,
+  `図 3`, or `第2図`, in English, French, German, Spanish, Portuguese,
+  Japanese, or Chinese. Captions in other languages are still recognized by
+  their typography.
 - Numbered items set as paragraphs, whose indented first lines start with
   the number and whose other lines continue at the margin, as numbered notes
   often are, are recognized as list items.

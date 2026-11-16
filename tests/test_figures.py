@@ -162,6 +162,41 @@ class FigureDetectionTests(unittest.TestCase):
 
         self.assertEqual(texts(figures[0].caption_lines), ['Figure 2: A screenshot'])
 
+    def test_caption_at_body_size_starts_with_a_figure_label(self) -> None:
+        # Text layers of scans often carry no typography to tell captions by.
+        for first in (
+            'Fig. 2 "Paddle doll." Middle Kingdom.',
+            'FIGURE 3.1 Survey area',
+            'Abb. 4a: Grundriss des Hauses',
+            'Figura IV. Vista de la ciudad',
+            '図 3 実験装置の概要',
+            '第2図 装置',
+        ):
+            with self.subTest(first):
+                start = line(first, 40.0, 330.0, 250.0)
+                rest = line('Wood with mud beads.', 40.0, 341.0, 160.0)
+
+                figures = find_figures(
+                    [*body(100.0, 4), start, rest, *body(380.0, 3)], {1: [photo(PANEL)]}
+                )
+
+                self.assertEqual(texts(figures[0].caption_lines), [first, 'Wood with mud beads.'])
+
+    def test_words_or_distant_labels_at_body_size_are_no_captions(self) -> None:
+        for first, top in (
+            ('Figure shows the signal over time, with the field', 330.0),
+            ('Figures 3 and 4 show the signal over time', 400.0),
+            ('figure 3 shows the signal over time, with the field', 330.0),
+        ):
+            with self.subTest(first):
+                start = line(first, 40.0, top, 300.0)
+
+                figures = find_figures(
+                    [*body(100.0, 4), start, *body(top + 12.0, 3)], {1: [photo(PANEL)]}
+                )
+
+                self.assertEqual(figures[0].caption_lines, [])
+
     def test_footnote_and_distant_small_text_below_a_picture_are_no_captions(self) -> None:
         footnote = line('1 A note on the text above.', 40.0, 330.0, 200.0, font_size=8.0)
         distant = line('Some small print far below.', 40.0, 420.0, 200.0, font_size=8.0)

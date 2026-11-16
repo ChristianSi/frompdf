@@ -357,7 +357,8 @@ The current pipeline is roughly:
    not closed by a rule or the row's text starts in lower case. Unclosed
    tables that do not continue are dropped. Tables are left out of all other
    blocks, which are split where a table lies between their lines on a page.
-   Then recognize pictures, independently of the wording of captions.
+   Then recognize pictures, independently of the wording of captions, which
+   only helps to tell captions without typographic evidence.
    Drawings repeated at the same place on several pages are page furniture.
    Drawings with running text on them, which is body text or long lines of
    prose set below each other, are backgrounds or frames, as is an image
@@ -375,7 +376,9 @@ The current pipeline is roughly:
    joined. A picture never grows over text or a table. The lines within its
    box belong to the picture. Its caption starts with the nearest line
    shortly below it, if that is set smaller than the body or starts in bold
-   or italics at body size, and starts with a letter or an opening mark. The
+   or italics at body size, or with a figure label in English, French,
+   German, Spanish, Portuguese, Japanese, or Chinese and a number, such as
+   `Fig. 3`, `Abb. 4a`, or `図 3`, and starts with a letter or an opening mark. The
    caption continues in lines directly below it in its size, until a
    sentence ends short of its right edge. Pictures are left out of all other
    blocks like tables, together with their captions, which follow them as
