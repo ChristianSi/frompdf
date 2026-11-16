@@ -173,6 +173,48 @@ class ListItemTests(unittest.TestCase):
 
         self.assertEqual(item_texts(lines)[-1], ['• Second item'])
 
+    def test_accepts_numbered_paragraphs_continuing_at_the_margin(self) -> None:
+        # Numbered notes set as paragraphs: the marker starts an indented
+        # first line, and full lines continue at the margin.
+        lines = [
+            *introduction(),
+            line('1. First note that wraps onto', 60.0, x1=30.0),
+            line(FULL, 72.0),
+            line('a last line.', 84.0, x2=80.0),
+            line('2. Second note that wraps', 96.0, x1=30.0),
+            line('onto the margin.', 108.0, x1=21.5, x2=90.0),
+            *closing(132.0),
+        ]
+
+        self.assertEqual(
+            item_texts(lines),
+            [
+                ['1. First note that wraps onto', FULL, 'a last line.'],
+                ['2. Second note that wraps', 'onto the margin.'],
+            ],
+        )
+
+    def test_numbered_paragraphs_end_below_short_lines_and_keep_one_layout(self) -> None:
+        after_short_line = [
+            *introduction(),
+            line('1. First note', 60.0, x1=30.0),
+            line('ends here.', 72.0, x2=80.0),
+            line('2. Second note that ends.', 84.0, x1=30.0, x2=150.0),
+            line('A paragraph at the margin follows below it', 96.0),
+            *closing(120.0),
+        ]
+        indented_continuation = [
+            *introduction(),
+            line('1. First note', 60.0, x1=30.0),
+            line('with a hanging continuation', 72.0, x1=42.0),
+            line('2. Second note', 84.0, x1=30.0),
+            line(FULL, 96.0),
+            *closing(120.0),
+        ]
+
+        self.assertEqual(item_texts(after_short_line)[-1], ['2. Second note that ends.'])
+        self.assertEqual(item_texts(indented_continuation)[-1], ['2. Second note'])
+
     def test_continues_items_on_the_next_page_with_other_margins(self) -> None:
         lines = [
             *introduction(),

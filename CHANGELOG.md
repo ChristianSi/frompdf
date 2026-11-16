@@ -9,6 +9,21 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
 
 ### Added
 
+- Scanned documents with an OCR text layer are read with the geometry of
+  their scans. OCR layers only estimate where their lines end and how large
+  their type is, and often drop the hyphens ending lines. Each line is now
+  measured against the scan below it: where its ink starts and ends, its
+  baseline, and the height of its letters, which gives its font size, and a
+  hyphen ending the line is restored where the scan shows one. This keeps
+  ordinary lines from becoming headings, line breaks from becoming paragraph
+  breaks, and the columns of a page apart, and words hyphenated at line ends
+  are joined again.
+- Numbered items set as paragraphs, whose indented first lines start with
+  the number and whose other lines continue at the margin, as numbered notes
+  often are, are recognized as list items.
+- Centered titles in capitals or italics spanning the columns of a page,
+  such as a Notes title over two columns, are recognized as headings.
+
 - The pictures of a document, such as photos, screenshots, plots, and
   diagrams, are written as image files and referenced from the Markdown
   output as `![](file-img/p3-1.png)`. Each picture is cut from its page as

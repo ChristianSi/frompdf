@@ -22,6 +22,7 @@ from frompdf.glyph_weight import find_heavy_fonts
 from frompdf.images import write_images
 from frompdf.lines import drop_dominant_emphasis, iter_lines
 from frompdf.models import Block
+from frompdf.ocr_text import repair_ocr_text_layers
 from frompdf.output import (
     build_csv_output_path,
     build_pagenos_output_path,
@@ -54,6 +55,7 @@ def extract_markdown(
     input_path = Path(input_file_name)
     page_list = dictionary_output(str(input_path), sort=True, keep_chars=True)
     restore_font_sizes(input_path, page_list)
+    repair_ocr_text_layers(input_path, page_list)
     decode_advent_math_glyphs(page_list, input_path)
     normalize_detached_diacritics(page_list)
     remove_icon_glyphs(page_list)

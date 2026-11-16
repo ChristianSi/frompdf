@@ -146,3 +146,29 @@ class TypographicHeadingTests(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+def column_line(text: str, top: float, x1: float, x2: float, size: float = 10.0) -> Line:
+    return replace(line(text, top, size=size), x1=x1, x2=x2)
+
+
+class SpanningHeadingTests(unittest.TestCase):
+    PROSE = 'Ordinary prose fills its column of the page'
+
+    def two_column_page(self, heading: Line) -> list[Line]:
+        left = [column_line(self.PROSE, 20.0 + 14 * index, 50.0, 190.0) for index in range(6)]
+        right = [column_line(self.PROSE, 20.0 + 14 * index, 210.0, 350.0) for index in range(6)]
+        below = [column_line(self.PROSE, 150.0 + 14 * index, 50.0, 190.0) for index in range(6)]
+        return [*left, *right, heading, *below]
+
+    def test_caps_title_centered_over_both_columns_is_a_heading(self):
+        heading = column_line('NOTES', 120.0, 180.0, 220.0)
+        lines = self.two_column_page(heading)
+
+        self.assertEqual(find_typographic_heading_lines(lines), {id(heading): id(heading)})
+
+    def test_caps_line_across_the_gutter_off_center_is_not_a_heading(self):
+        heading = column_line('NOTES AND MORE', 120.0, 170.0, 290.0)
+        lines = self.two_column_page(heading)
+
+        self.assertEqual(find_typographic_heading_lines(lines), {})

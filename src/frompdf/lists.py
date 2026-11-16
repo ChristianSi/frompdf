@@ -1,7 +1,10 @@
 """Recognize the items of bulleted and numbered lists among body lines.
 
 An item starts with a marker at the start of a line and may continue on
-following lines indented past the marker. Unambiguous bullet glyphs mark items
+following lines indented past the marker. Items may also be set as
+paragraphs whose indented first lines start with the marker, as numbered
+notes often are, continuing on lines at the column margin below full lines.
+All items of a list are set alike. Unambiguous bullet glyphs mark items
 on their own. Dashes, asterisks, and numbers also start ordinary lines, as
 when a parenthetical dash or a date wraps to the next line, so they need
 several aligned items, consecutive numbers, and a deliberate break before the
@@ -16,11 +19,13 @@ from typing import Literal
 from frompdf.line_features import same_physical_line, visibly_different_font_sizes
 from frompdf.models import Line
 from frompdf.page_context import (
+    MIN_FIRST_LINE_INDENT_EM,
     PageContext,
     build_page_context,
     column_for_line,
     has_normal_advance,
     line_is_full,
+    near,
 )
 
 STRONG_BULLETS = '•◦▪▫●○■□‣⁃➢❖✓'
@@ -95,6 +100,9 @@ class ListRun:
     items: list[list[Line]]
     markers: list[ListMarker]
     continuation_offset: float | None = None
+    # Whether continuation lines are indented past the markers, or the items
+    # are paragraphs continuing at the margin, once the first one tells.
+    layout: Literal['hanging', 'paragraph'] | None = None
 
 
 def parse_list_marker(text: str) -> ListMarker | None:
@@ -152,6 +160,18 @@ def aligns_with_continuation(run: ListRun, line_obj: Line, offset: float) -> boo
         else 0.0
     )
     return -tolerance - protrusion <= offset - run.continuation_offset <= tolerance
+
+
+def at_margin(offset: float, font_size: float) -> bool:
+    """Return whether a line starts at its column margin, not indented like a first line."""
+    return near(offset, 0.0, font_size) or 0.0 <= offset < font_size * MIN_FIRST_LINE_INDENT_EM
+
+
+def continues_paragraph(previous: Line, context: PageContext) -> bool:
+    """Return whether a line is full, so that the paragraph it ends a line of continues."""
+    column = column_for_line(previous, context)
+    font_size = previous.font_size or context.font_size
+    return column is not None and line_is_full(previous, column, font_size)
 
 
 def continues_marker(run: ListRun, marker: ListMarker) -> bool:
@@ -239,17 +259,30 @@ def find_list_items(
             if same_line and previous is run.items[-1][-1]:
                 run.items[-1].append(line_obj)
                 continue
-            if (
-                not visibly_different_font_sizes(line_obj.font_size, run.font_size)
+            hanging = (
+                run.layout != 'paragraph'
                 and offset >= run.marker_offset + font_size * MIN_CONTINUATION_INDENT_EM
                 and aligns_with_continuation(run, line_obj, offset)
+            )
+            paragraph = (
+                run.layout != 'hanging'
+                and offset <= run.marker_offset - font_size * MIN_CONTINUATION_INDENT_EM
+                and at_margin(offset, font_size)
+                and previous is not None
+                and previous is run.items[-1][-1]
+                and continues_paragraph(previous, contexts[previous.page_no])
+            )
+            if (
+                not visibly_different_font_sizes(line_obj.font_size, run.font_size)
+                and (hanging or paragraph)
                 and (
                     previous is None
                     or previous.page_no != line_obj.page_no
                     or has_normal_advance(previous, line_obj, context)
                 )
             ):
-                if run.continuation_offset is None:
+                if run.layout is None:
+                    run.layout = 'hanging' if hanging else 'paragraph'
                     run.continuation_offset = offset
                 run.items[-1].append(line_obj)
                 continue

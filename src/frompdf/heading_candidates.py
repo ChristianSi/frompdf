@@ -81,11 +81,16 @@ def candidate_has_boundaries(
     context: PageContext,
     column: ColumnContext,
 ) -> bool:
-    """Require whitespace and a following passage in the same established column."""
+    """Require whitespace and a following passage in the same established column.
+
+    Below a title spanning columns, the passage starts in a column of its own.
+    """
     first, last = page[start], page[end - 1]
     if end == len(page):
         return False
     following = page[end]
+    if column not in context.columns:
+        column = column_for_line(following, context) or column
     assert first.y1 is not None and last.y2 is not None
     if following.y1 is None or following.y1 <= last.y2:
         return False
@@ -127,6 +132,30 @@ def candidate_has_boundaries(
     return False
 
 
+def spanned_columns(
+    line: Line, column: ColumnContext, columns: set[ColumnContext]
+) -> ColumnContext | None:
+    """Return the span of the established columns that a line reaches across from its own.
+
+    A title centered over several columns lies across the gutter between them.
+    """
+    if line.x1 is None or line.x2 is None:
+        return None
+    spanned = [
+        other
+        for other in columns
+        if other.left < line.x2 and other.right > line.x1 and other is not column
+    ]
+    if not spanned:
+        return None
+    reached = [column, *spanned]
+    return ColumnContext(
+        min(other.left for other in reached),
+        max(other.right for other in reached),
+        sum(other.line_count for other in reached),
+    )
+
+
 def page_heading_lines(page: list[Line], context: PageContext) -> dict[int, int]:
     """Map each confirmed heading line's identity to its first line's identity."""
     if context.rhythm_sample_count < MIN_RHYTHM_SAMPLES or context.normal_advance_ratio is None:
@@ -154,8 +183,11 @@ def page_heading_lines(page: list[Line], context: PageContext) -> dict[int, int]
             start += 1
             continue
         if not centered_in_column(first, column, context.font_size):
-            start += 1
-            continue
+            span = spanned_columns(first, column, columns)
+            if span is None or not centered_in_column(first, span, context.font_size):
+                start += 1
+                continue
+            column = span
         end = start + 1
         assert first.font_size is not None
         # Compare advances to the body rhythm: small-cap glyph heights would

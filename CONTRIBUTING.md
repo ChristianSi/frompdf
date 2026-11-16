@@ -189,7 +189,8 @@ The implementation is split into focused modules under `src/frompdf`:
   decodes glyphs of TeX math extension fonts and capitals of blackboard bold
   fonts, and restores private-use bullets of symbol fonts.
 - `heading_candidates.py` identifies compact centered titles using caps or
-  italic styling, established body columns, and surrounding whitespace.
+  italic styling, established body columns, which a title may span, and
+  surrounding whitespace.
 - `images.py` renders the boxes of pictures from their pages with pypdfium2
   and writes them as image files to a directory that is moved aside safely
   if it exists.
@@ -206,9 +207,13 @@ The implementation is split into focused modules under `src/frompdf`:
   typography, inline script ranges, bold and italic ranges, and fraction
   denominators and limits stacked below a line.
 - `lists.py` recognizes bulleted and numbered list items and their
-  continuation lines, using marker alignment, consecutive numbering, and
-  deliberate breaks before weakly marked lists.
+  continuation lines, indented past the marker or, for items set as
+  paragraphs, at the margin, using marker alignment, consecutive numbering,
+  and deliberate breaks before weakly marked lists.
 - `models.py` defines line, page-number, and Markdown block records.
+- `ocr_text.py` measures the lines of invisible OCR text layers against the
+  scans below them and replaces their line boxes, font sizes, and missing
+  line-end hyphens by what the scan shows.
 - `output.py` writes diagnostic line and page-number CSV files and serializes
   Markdown output.
 - `page_context.py` collects the columns, hanging-indent regions, and line
@@ -277,7 +282,22 @@ Important concepts:
 The current pipeline is roughly:
 
 1. Extract raw `pdftext` page data.
-2. Decode the glyphs of the math fonts of Advent 3B2, whose Unicode
+2. Take the geometry of invisible text over ink, as OCR places it over
+   scanned pages, from the page rendered at 300 pixels per inch, as the OCR
+   geometry is only estimated. Each line's ink starts near its text and
+   continues across gaps of up to one and a half OCR sizes, ending before
+   the next line on the same visual line. Its baseline is where the ink drops
+   the most for its share, its top where it rises from the sparse level of
+   ascenders, or, in capitals and digits, where it starts, measured in
+   segments of a few ems and taken as their medians. Lines mostly in
+   lowercase show their x-height, taken as half an em, lines of capitals
+   and digits their cap height, taken as 0.7 em; the sizes of the document
+   are grouped within 10% around the most common ones. Other lines take the
+   size of the nearest such line of their `pdftext` block or column. A bar
+   ending the ink below the x-height, as wide as a hyphen, becomes a hyphen
+   unless the text already ends in a dash. Line boxes span the ink, with
+   the characters spread along them.
+   Decode the glyphs of the math fonts of Advent 3B2, whose Unicode
    mappings follow wrong glyph names, as the characters they show; glyphs
    without a mapping are identified by the glyph names that their font codes
    have in the font's encoding. Join the line records that `pdftext` split
@@ -369,7 +389,10 @@ The current pipeline is roughly:
 9. Detect and extract numbered footnote regions using typography and geometry,
    assembling supported paragraph and adjacent-page continuations.
 10. Recognize list items: lines starting with a marker, together with
-    following lines indented past it, across page boundaries. Bullet glyphs
+    following lines indented past it, across page boundaries. Items may also
+    be paragraphs whose indented first lines start with the marker,
+    continuing below full lines at the margin; all items of a list are set
+    alike. Bullet glyphs
     suffice; dashes and numbers need at least two aligned items with
     consecutive numbers after a deliberate break, and numbers without a
     delimiter also most items wrapping onto continuation lines. Marker lines,
