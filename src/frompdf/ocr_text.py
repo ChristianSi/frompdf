@@ -13,7 +13,8 @@ against the dark pixels of its rendered page: its left and right ends, its
 baseline, the height of its lowercase letters or capitals, and a hyphen
 ending it. Line boxes, sizes, and hyphens of the text layer are then replaced
 by these measurements, so that the rest of the pipeline judges indents, line
-ends, and type sizes as in any other PDF.
+ends, and type sizes as in any other PDF. Lines of slightly skewed scans,
+which the text layer turns by their skew, are measured and set upright.
 
 Measured heights vary by a few percent from line to line, as the scan is
 slightly skewed and edges are blurred. The sizes of the document are grouped
@@ -28,7 +29,13 @@ same distance from the origins of their text, and their measured sizes are
 in about the same proportion to the sizes of the text layer. Measurements
 far from this typical placement are not trusted. A misplaced line is measured
 again where its typical placement expects its baseline, or else placed
-there; a line whose height is implausible takes its size from its neighbors.
+there; a line whose height is implausible takes the size that the typical
+proportion gives its OCR size.
+
+Some OCR engines mark the hyphens that they take to break words at line ends
+with a not sign `¬`, which becomes a soft hyphen. The text layer of a blank
+page, where the OCR engine read print showing through from the back of the
+leaf, lies over no ink at all, and is dropped.
 """
 
 import ctypes
@@ -125,10 +132,12 @@ TAIL_BELOW = 0.5
 # The typical placement of a kind of line in a document is the median of at
 # least this many lines of that kind.
 MIN_TYPICAL_LINES = 10
-# A measured baseline more than this many OCR sizes from where the typical
-# placement expects it is that of another line, or of no line. The baselines
-# of a document scatter by about a quarter of that, while a neighboring line
-# lies about a whole size away.
+# A measured baseline more than this many OCR sizes below where the typical
+# placement expects it is that of the next line, which lies about a whole size
+# away, while the baselines of a document mostly scatter by about a quarter of
+# that. Baselines above it scatter by up to half a size, as in lines of
+# capitals whose boxes leave room for descenders, but are never that of the
+# line above, which lies beyond where the baseline is first looked for.
 BASELINE_TOLERANCE = 0.4
 # A misplaced line is measured again with its baseline looked for this many
 # OCR sizes above and below where the typical placement expects it, which
@@ -138,8 +147,16 @@ RETRY_BASELINE_SEARCH = 0.35
 # the OCR size is implausible. Correct ones scatter by up to about 1.25,
 # misled ones by 1.5 and more.
 SIZE_TOLERANCE = 1.4
+# OCR engines report the skew of a scanned line as the rotation of its text,
+# which is often a degree or two. Lines skewed by up to this many radians run
+# across the page, and are measured as upright lines.
+MAX_SKEW = math.radians(3.0)
 # Characters ending a line that already break it like a hyphen.
 LINE_END_DASHES = frozenset('-\u00ad\u2010\u2011\u2012\u2013\u2014')
+# The not sign by which OCR engines such as ABBYY FineReader mark a hyphen
+# breaking a word at a line end, which a soft hyphen stands for.
+OCR_BREAK_MARK = '\u00ac'
+SOFT_HYPHEN = '\u00ad'
 
 Box = tuple[float, float, float, float]
 
@@ -620,28 +637,76 @@ def line_box(line: PdfTextLine) -> Box:
     return x1, y1, x2, y2
 
 
+def is_upright(char: PdfTextChar) -> bool:
+    """Return whether a character runs across the page, up to the skew of a scan.
+
+    Rotations are measured counterclockwise in radians, so that a slight
+    clockwise skew comes as nearly a full turn.
+    """
+    rotation = float(char.get('rotation') or 0.0)
+    return abs(math.remainder(rotation, math.tau)) <= MAX_SKEW
+
+
+def mark_soft_hyphen(line: PdfTextLine, chars: Sequence[PdfTextChar]) -> None:
+    """Turn a not sign breaking a word at the end of a line into a soft hyphen, in place.
+
+    chars are the visible characters of the line. Only a not sign following
+    a letter breaks a word, unlike one standing for a logical negation.
+    """
+    if len(chars) < 2 or chars[-1].get('char') != OCR_BREAK_MARK:
+        return
+    if not chars[-2].get('char', '').isalpha():
+        return
+    last = chars[-1]
+    last['char'] = SOFT_HYPHEN
+    for span in line.get('spans', []):
+        if any(char is last for char in span.get('chars', [])):
+            text = span.get('text', '')
+            index = text.rfind(OCR_BREAK_MARK)
+            if index >= 0:
+                span['text'] = text[:index] + SOFT_HYPHEN + text[index + 1 :]
+
+
+def drop_lines(page: Page, lines: Sequence[PdfTextLine]) -> None:
+    """Remove lines from the blocks of a page, and blocks left without lines, in place."""
+    dropped = {id(line) for line in lines}
+    blocks = page.get('blocks', [])
+    for block in blocks:
+        block['lines'] = [line for line in block.get('lines', []) if id(line) not in dropped]
+    page['blocks'] = [block for block in blocks if block['lines']]
+
+
 def measure_page(
     pdf_page: pdfium.PdfPage,
     text_page: pdfium.PdfTextPage,
     page: Page,
     page_index: int,
 ) -> list[OcrLine]:
-    """Return the lines of a page's invisible text layer that lie over ink, measured."""
+    """Return the lines of a page's invisible text layer that lie over ink, measured.
+
+    Not signs breaking words at line ends become soft hyphens. Where no line
+    of the text layer lies over ink, the page is blank and its text layer is
+    dropped.
+    """
     entries = [
         (block_index, line, visible_line_chars(line))
         for block_index, block in enumerate(page.get('blocks', []))
         for line in block.get('lines', [])
     ]
-    candidates = [
+    invisible = [
         entry
         for entry in entries
-        if entry[2]
-        and not any(char.get('rotation') for char in entry[2])
-        and all(is_invisible(text_page, char) for char in entry[2])
+        if entry[2] and all(is_invisible(text_page, char) for char in entry[2])
     ]
-    if not candidates:
+    if not invisible:
         return []
+    for _, line, chars in invisible:
+        mark_soft_hyphen(line, chars)
     scan = render_scan(pdf_page, page)
+    if not any(scan.region(*line_box(line)).any() for _, line, _ in invisible):
+        drop_lines(page, [line for _, line, _ in invisible])
+        return []
+    candidates = [entry for entry in invisible if all(is_upright(char) for char in entry[2])]
     page_width = scan.x(scan.ink.shape[1])
     boxes = [line_box(line) for _, line, _ in entries]
     measured: list[OcrLine] = []
@@ -704,11 +769,9 @@ def typical_placements(lines: Sequence[OcrLine]) -> dict[str, Placement]:
 
 
 def is_misplaced(line: OcrLine, placements: dict[str, Placement]) -> bool:
-    """Return whether the measured baseline of a line is far from its typical placement."""
+    """Return whether the measured baseline of a line lies far below its typical placement."""
     placement = placements.get(line.ink.kind)
-    return (
-        placement is not None and abs(baseline_offset(line) - placement.offset) > BASELINE_TOLERANCE
-    )
+    return placement is not None and baseline_offset(line) - placement.offset > BASELINE_TOLERANCE
 
 
 def has_implausible_size(line: OcrLine, placements: dict[str, Placement]) -> bool:
@@ -803,7 +866,8 @@ def rewrite_line(line: OcrLine) -> None:
     """Replace the geometry and size of a line of the text layer by its measurement.
 
     Characters keep their relative positions along the line, which spans
-    the ink, short of a hyphen that is added to the end of the line.
+    the ink, short of a hyphen that is added to the end of the line. The
+    line becomes upright, as its measurement is, even where the scan skews it.
     """
     ink = line.ink
     size = line.size or ink.em
@@ -824,7 +888,9 @@ def rewrite_line(line: OcrLine) -> None:
             x1, _, x2, _ = char['bbox']
             char['bbox'] = cast(Bbox, [moved(x1), y1, moved(x2), y2])
             char['font'] = {**char.get('font', {}), 'size': size}
+            char['rotation'] = 0.0
         span['font'] = {**span.get('font', {}), 'size': size}
+        span['rotation'] = 0
         if span.get('chars') and span.get('text', '').strip():
             last_span = span
     if line.hyphen is not None and last_span is not None:

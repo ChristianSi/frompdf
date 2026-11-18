@@ -21,7 +21,12 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
   typically sets lines are not trusted: a line placed so far off that the
   baseline of a neighboring line was measured is measured again where its
   baseline is expected, and a line whose letter height was misled, as by
-  quotation marks, takes the size that its OCR size suggests.
+  quotation marks, takes the size that its OCR size suggests. The not sign
+  `¬`, by which some OCR engines mark words broken at line ends, is read as
+  a soft hyphen, so that the parts of such words are joined. The text layer
+  of a blank page, where the OCR engine read print showing through from the
+  back of the leaf, is dropped. Lines of slightly skewed scans, which OCR
+  layers turn by up to a few degrees, are measured like the others.
 - Captions set like body text, as in scans whose OCR text layer carries no
   typography, are recognized below pictures when they start with a figure
   label and number, such as `Fig. 3`, `Figure 2.1`, `Abb. 4a`, `Figura IV`,

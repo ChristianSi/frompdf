@@ -1,12 +1,16 @@
 import ctypes
+import math
 import tempfile
 import unittest
 from pathlib import Path
+from typing import cast
 
 import numpy as np
 import pypdfium2 as pdfium
 import pypdfium2.raw as pdfium_c
 from pdftext.extraction import dictionary_output
+from pdftext.schema import Char as PdfTextChar
+from pdftext.schema import Line as PdfTextLine
 from PIL import Image, ImageDraw, ImageFont
 
 from frompdf.ocr_text import (
@@ -21,12 +25,15 @@ from frompdf.ocr_text import (
     has_implausible_size,
     ink_runs,
     is_misplaced,
+    is_upright,
     letter_kind,
     line_end_hyphen,
+    mark_soft_hyphen,
     measure_line,
     remeasure,
     repair_ocr_text_layers,
     typical_placements,
+    visible_line_chars,
 )
 
 # Synthetic scans have 4 pixels per point.
@@ -239,6 +246,8 @@ class PlacementTests(unittest.TestCase):
         # quarter of the size is not.
         self.assertTrue(is_misplaced(ocr_line(100.0, 105.0), placements))
         self.assertFalse(is_misplaced(ocr_line(100.0, 94.0), placements))
+        # A baseline above its typical placement is not the next line's.
+        self.assertFalse(is_misplaced(ocr_line(100.0, 91.0), placements))
         # Lines of a kind without a typical placement are not judged.
         self.assertFalse(is_misplaced(ocr_line(100.0, 105.0, kind='cap'), placements))
         # A height misled by quotation marks is implausible, a size off by a
@@ -300,10 +309,72 @@ class AssignSizeTests(unittest.TestCase):
         self.assertEqual(unmeasured.size, 9.7)
 
 
+def text_line(*words: str) -> PdfTextLine:
+    """Return a line of a text layer with a span per word, followed by a space."""
+    spans = [
+        {'text': word + ' ', 'chars': [{'char': char} for char in word + ' ']} for word in words
+    ]
+    return cast(PdfTextLine, {'spans': spans})
+
+
+def line_text(line: PdfTextLine) -> str:
+    """Return the text of a line from its spans."""
+    return ''.join(span['text'] for span in line['spans']).strip()
+
+
+def char_text(line: PdfTextLine) -> str:
+    """Return the text of a line from its characters."""
+    return ''.join(char['char'] for span in line['spans'] for char in span['chars']).strip()
+
+
+class UprightTests(unittest.TestCase):
+    def test_tells_skewed_lines_from_turned_ones(self) -> None:
+        def char(rotation: float) -> PdfTextChar:
+            return cast(PdfTextChar, {'char': 'a', 'rotation': rotation})
+
+        self.assertTrue(is_upright(char(0.0)))
+        self.assertTrue(is_upright(char(math.radians(0.6))))
+        # A slight clockwise skew comes as nearly a full turn.
+        self.assertTrue(is_upright(char(math.tau - math.radians(0.6))))
+        self.assertFalse(is_upright(char(math.radians(10.0))))
+        self.assertFalse(is_upright(char(math.pi / 2)))
+        self.assertFalse(is_upright(char(math.pi)))
+
+
+class SoftHyphenTests(unittest.TestCase):
+    def test_turns_a_not_sign_breaking_a_word_into_a_soft_hyphen(self) -> None:
+        line = text_line('the', 'East', 'India', 'Com\u00ac')
+
+        mark_soft_hyphen(line, visible_line_chars(line))
+
+        self.assertEqual(line_text(line), 'the East India Com\u00ad')
+        self.assertEqual(char_text(line), 'the East India Com\u00ad')
+
+    def test_leaves_negations_and_not_signs_within_lines_alone(self) -> None:
+        negation = text_line('p', '\u2227', '\u00ac')
+        within = text_line('de\u00ac', 'sire', 'to')
+
+        mark_soft_hyphen(negation, visible_line_chars(negation))
+        mark_soft_hyphen(within, visible_line_chars(within))
+
+        self.assertEqual(line_text(negation), 'p \u2227 \u00ac')
+        self.assertEqual(line_text(within), 'de\u00ac sire to')
+
+
 def add_invisible_text(
-    pdf: pdfium.PdfDocument, page: pdfium.PdfPage, text: str, size: float, x: float, y: float
+    pdf: pdfium.PdfDocument,
+    page: pdfium.PdfPage,
+    text: str,
+    size: float,
+    x: float,
+    y: float,
+    skew: float = 0.0,
 ) -> None:
-    """Add a line of invisible text, as OCR text layers are, at a baseline position."""
+    """Add a line of invisible text, as OCR text layers are, at a baseline position.
+
+    skew turns the line counterclockwise on the page by that many degrees, which
+    pdftext reports as a clockwise rotation.
+    """
     font = pdfium_c.FPDFText_LoadStandardFont(pdf.raw, b'Helvetica')
     text_object = pdfium_c.FPDFPageObj_CreateTextObj(pdf.raw, font, size)
     encoded = ctypes.create_string_buffer(text.encode('utf-16-le') + b'\0\0')
@@ -311,15 +382,23 @@ def add_invisible_text(
         text_object, ctypes.cast(encoded, ctypes.POINTER(pdfium_c.FPDF_WCHAR))
     )
     pdfium_c.FPDFTextObj_SetTextRenderMode(text_object, pdfium_c.FPDF_TEXTRENDERMODE_INVISIBLE)
-    pdfium_c.FPDFPageObj_Transform(text_object, 1, 0, 0, 1, x, y)
+    cos, sin = math.cos(math.radians(skew)), math.sin(math.radians(skew))
+    pdfium_c.FPDFPageObj_Transform(text_object, cos, sin, -sin, cos, x, y)
     pdfium_c.FPDFPage_InsertObject(page.raw, text_object)
 
 
-def write_scanned_pdf(path: Path, first_text: str = 'the nude human figure ex') -> None:
+def write_scanned_pdf(
+    path: Path,
+    first_text: str = 'the nude human figure ex',
+    extra_text: str | None = None,
+    skew: float = 0.0,
+) -> None:
     """Write a page whose image shows two lines, under an inaccurate invisible text layer.
 
     The text layer omits the hyphen ending the first line and sets the
-    second one, which has no descenders, in a smaller size.
+    second one, which has no descenders, in a smaller size. extra_text is
+    set near the bottom of the page, where the image shows no print. The
+    text layer is skewed by skew degrees, as for a slightly skewed scan.
     """
     resolution = 4
     image = Image.new('L', (300 * resolution, 200 * resolution), 255)
@@ -333,8 +412,25 @@ def write_scanned_pdf(path: Path, first_text: str = 'the nude human figure ex') 
     pdf_image.set_bitmap(pdfium.PdfBitmap.from_pil(image))
     pdf_image.set_matrix(pdfium.PdfMatrix().scale(300, 200))
     page.insert_obj(pdf_image)
-    add_invisible_text(pdf, page, first_text, 12.0, 21.0, 147.0)
-    add_invisible_text(pdf, page, 'pressed more than status', 9.0, 21.0, 131.0)
+    add_invisible_text(pdf, page, first_text, 12.0, 21.0, 147.0, skew)
+    add_invisible_text(pdf, page, 'pressed more than status', 9.0, 21.0, 131.0, skew)
+    if extra_text is not None:
+        add_invisible_text(pdf, page, extra_text, 9.0, 21.0, 20.0)
+    pdfium_c.FPDFPage_GenerateContent(page.raw)
+    pdf.save(path)
+    pdf.close()
+
+
+def write_blank_scan_pdf(path: Path) -> None:
+    """Write a page whose image shows no print, under the text layer of show-through."""
+    pdf = pdfium.PdfDocument.new()
+    page = pdf.new_page(300, 200)
+    pdf_image = pdfium.PdfImage.new(pdf)
+    image = Image.new('L', (1200, 800), 160)
+    pdf_image.set_bitmap(pdfium.PdfBitmap.from_pil(image))
+    pdf_image.set_matrix(pdfium.PdfMatrix().scale(300, 200))
+    page.insert_obj(pdf_image)
+    add_invisible_text(pdf, page, 'MISSION TO THE', 12.0, 21.0, 147.0)
     pdfium_c.FPDFPage_GenerateContent(page.raw)
     pdf.save(path)
     pdf.close()
@@ -357,6 +453,35 @@ class RepairTests(unittest.TestCase):
         # Both lines end within the ink of the image, short of the page.
         for right in rights:
             self.assertLess(right, 200.0)
+
+    def test_measures_a_skewed_text_layer_as_upright_lines(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / 'scan.pdf'
+            write_scanned_pdf(path, skew=0.6)
+            pages = dictionary_output(str(path), keep_chars=True)
+            skewed = [
+                char.get('rotation')
+                for block in pages[0]['blocks']
+                for line in block['lines']
+                for span in line['spans']
+                for char in span['chars']
+            ]
+            repair_ocr_text_layers(path, pages)
+
+        lines = [line for block in pages[0]['blocks'] for line in block['lines']]
+        rotations = {
+            char.get('rotation')
+            for line in lines
+            for span in line['spans']
+            for char in span['chars']
+        }
+        texts = [''.join(span['text'] for span in line['spans']).strip() for line in lines]
+        # pdftext reports the skew as nearly a full turn.
+        self.assertTrue(any(rotation and rotation > 6.0 for rotation in skewed))
+        self.assertEqual(texts, ['the nude human figure ex-', 'pressed more than status'])
+        self.assertEqual(rotations, {0.0})
+        for line in lines:
+            self.assertLess(line['bbox'][2], 200.0)
 
     def test_keeps_a_single_hyphen_where_the_text_layer_has_one(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
@@ -391,6 +516,29 @@ class RepairTests(unittest.TestCase):
             repair_ocr_text_layers(path, pages)
 
         self.assertEqual(repr(pages), before)
+
+    def test_drops_the_text_layer_of_a_blank_page(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / 'blank.pdf'
+            write_blank_scan_pdf(path)
+            pages = dictionary_output(str(path), keep_chars=True)
+            repair_ocr_text_layers(path, pages)
+
+        self.assertEqual(pages[0]['blocks'], [])
+
+    def test_keeps_a_line_off_the_ink_of_a_printed_page(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / 'scan.pdf'
+            write_scanned_pdf(path, extra_text='far below the print')
+            pages = dictionary_output(str(path), keep_chars=True)
+            repair_ocr_text_layers(path, pages)
+
+        texts = [
+            ''.join(span['text'] for span in line['spans']).strip()
+            for block in pages[0]['blocks']
+            for line in block['lines']
+        ]
+        self.assertIn('far below the print', texts)
 
 
 if __name__ == '__main__':
