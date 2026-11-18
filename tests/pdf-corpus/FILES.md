@@ -33,6 +33,11 @@ Short, freely licensed PDF files for testing the conversion.
 - intertrans-espacologia.pdf: "[Espaçologia: filosofias na totalidade do
   espaço](https://revistas.hcte.ufrj.br/index.php/intertrans/article/download/249/205/)"
   by Wallace Lopes; license: CC-BY-4.0.
+- jstor-very-terrestrial-radiation.pdf: "[The Transmission of Terrestrial
+  Radiation by the Earth's Atmosphere in Summer and in
+  Winter](https://archive.org/details/jstor-1639980)" by Frank W. Very, from
+  Science 40(1029), pp. 417–424 (1914); public domain (without the JSTOR cover
+  page)
 - lipics-disc-2025-51-leader-election.pdf: "[Brief Announcement: Non-Uniform
   Content-Oblivious Leader Election on Oriented Asynchronous
   Rings](https://drops.dagstuhl.de/storage/00lipics/lipics-vol356-disc2025/LIPIcs.DISC.2025.51/LIPIcs.DISC.2025.51.pdf)"
@@ -54,8 +59,8 @@ Short, freely licensed PDF files for testing the conversion.
   by Jochen Schmück, from [espero, Nr.
   12](https://www.edition-espero.de/espero-nr-12-januar-2026/), pp. 161–223;
   shared with the author's permission.
-- wiley-elevational-density-dependence.pdf: "[Elevational variation in
-  density dependence in a subtropical
+- wiley-elevational-density-dependence.pdf: "[Elevational variation in density
+  dependence in a subtropical
   forest](https://onlinelibrary.wiley.com/doi/pdf/10.1002/ece3.1123)" by Meng
   Xu and Shixiao Yu, from Ecology and Evolution 4(14), pp. 2823–2833 (2014);
   license: CC-BY-3.0.
