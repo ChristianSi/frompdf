@@ -328,11 +328,10 @@ on calm days are still hotter. Even plant surfaces
 in sunshine, though much cooled by evaporation,
 are appreciably warmer than the air.
 Taking the currently adopted thermal equivagram
-cal.\
+cal.
 lent of radiation, a r 7.9 X 10-1l gram cal a
 
 black body at 288? Abs. C. radiates 0.544, and
-
 one at 298? radiates 0.623 gram. cal./sq. cm.
 min. Hence an arid region whose surface is
 on the average 20? C. hotter than the assigned
@@ -584,7 +583,6 @@ layer for carbon dioxide is given as 90 cm., and
 that for illuminating gas hardly exceeds 20 cm.
 (Op. cit., p. 62.)
 6American Journal of Science (4), Vol. 18,
-
 pp. 277-286, October, 1904. For air "some
 60 per cent. of its own radiation is absorbed
 by a column as thin as 245 cm." (op. cit.,
@@ -811,7 +809,7 @@ and the mean effective transmission for an
 average day and a cloudy night is
 
 b =. i(0.28 + 0.16) = 0.22.
-For mean temperate values,\
+For mean temperate values,
 T-AT, 292 - 10
 T
 \-
