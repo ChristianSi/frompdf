@@ -27,6 +27,11 @@ SPACING_TO_COMBINING = {
     '˜': '\u0303',
 }
 
+# Some producers map a glyph to a list of alternative characters, of which
+# only one is meant. jstor-cover's space glyph maps to `\t\r \xa0`, its hyphen
+# to `-\xad‐`.
+SOFT_HYPHEN = '\xad'
+
 # Icon fonts map pictograms, such as e-mail, ORCID, or home-page symbols next
 # to author names, to arbitrary letters and punctuation, so their text is noise.
 ICON_FONT_NAME_PATTERN = re.compile(
@@ -313,6 +318,69 @@ def normalize_detached_diacritics(page_list: Sequence[Page]) -> None:
 
                     for char_dict, replacement in edits.values():
                         char_dict['char'] = replacement
+
+
+def alternative_mapping(chars: Sequence[str]) -> str | None:
+    """Return the character a glyph's alternative Unicode mappings stand for, if they are.
+
+    Distinct whitespace characters stand for a space, distinct dashes, among
+    which a soft hyphen may be listed, for the first of them. Other sequences,
+    such as the letters of ligatures, are real text.
+    """
+    if len(chars) < 2 or len(set(chars)) != len(chars):
+        return None
+    if all(char.isspace() for char in chars):
+        return ' '
+    dashes = [char for char in chars if char != SOFT_HYPHEN]
+    if dashes and all(len(char) == 1 and category(char) == 'Pd' for char in dashes):
+        return dashes[0]
+    return None
+
+
+def collapse_alternative_mappings(page_list: Sequence[Page]) -> None:
+    """Reduce glyphs mapped to a list of alternative characters to one of them, in place.
+
+    pdftext reports each character of a glyph's Unicode mapping with the
+    glyph's box.
+    """
+    for page_dict in page_list:
+        for block_dict in page_dict.get('blocks', []):
+            for line_dict in block_dict.get('lines', []):
+                for span_dict in line_dict.get('spans', []):
+                    collapse_span_alternative_mappings(span_dict)
+
+
+def collapse_span_alternative_mappings(span_dict: PdfTextSpan) -> None:
+    """Reduce the alternative mappings of a span's glyphs in its characters and text."""
+    chars = span_dict.get('chars', [])
+    groups: list[tuple[int, int, str]] = []
+    start = 0
+    while start < len(chars):
+        end = start + 1
+        box = get_bbox(chars[start])
+        while end < len(chars) and get_bbox(chars[end]) == box:
+            end += 1
+        x1, _, x2, _ = box
+        replacement = alternative_mapping([char.get('char', '') for char in chars[start:end]])
+        # Line ends that pdftext adds, such as `\r\n`, have empty boxes.
+        if replacement is not None and x1 is not None and x2 is not None and x2 > x1:
+            groups.append((start, end, replacement))
+        start = end
+    if not groups:
+        return
+
+    text = span_dict.get('text', '')
+    text_ranges = span_char_text_ranges(span_dict)
+    for start, end, replacement in reversed(groups):
+        ranges = [text_ranges[id(char)] for char in chars[start:end] if id(char) in text_ranges]
+        if not ranges:
+            continue
+        text_start = min(range_start for range_start, _ in ranges)
+        text_end = max(range_end for _, range_end in ranges)
+        text = text[:text_start] + replacement + text[text_end:]
+        chars[start]['char'] = replacement
+        del chars[start + 1 : end]
+    span_dict['text'] = text
 
 
 def is_icon_span(span_dict: PdfTextSpan) -> bool:

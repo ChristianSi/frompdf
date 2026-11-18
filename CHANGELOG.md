@@ -232,6 +232,11 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
 
 ### Fixed
 
+- Glyphs that a PDF maps to a list of alternative characters, as the cover
+  pages of JSTOR's early journal content map their spaces to a tab, carriage
+  return, space, and no-break space, and their hyphens to a hyphen-minus, soft
+  hyphen, and hyphen, are read as one space or hyphen. Every word of such
+  text was followed by a line break, and every hyphen doubled.
 - Whitespace-only lines reported by `pdftext` no longer produce empty blocks
   or stray empty lines in the Markdown output, nor split paragraphs.
 - Lines that `pdftext` splits at superscripts, font changes, or math no longer

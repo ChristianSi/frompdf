@@ -185,9 +185,10 @@ The implementation is split into focused modules under `src/frompdf`:
   page-aware text, and places numeric groups in Notes sections.
 - `front_matter.py` renders subtitles, author names, and chapter labels near
   document titles as bold paragraphs and drops ornaments between them.
-- `glyph_repairs.py` repairs detached diacritics, removes icon-font glyphs,
-  decodes glyphs of TeX math extension fonts and capitals of blackboard bold
-  fonts, and restores private-use bullets of symbol fonts.
+- `glyph_repairs.py` reduces glyphs mapped to lists of alternative spaces or
+  dashes to one character, repairs detached diacritics, removes icon-font
+  glyphs, decodes glyphs of TeX math extension fonts and capitals of
+  blackboard bold fonts, and restores private-use bullets of symbol fonts.
 - `heading_candidates.py` identifies compact centered titles using caps or
   italic styling, established body columns, which a title may span, and
   surrounding whitespace.
@@ -302,8 +303,10 @@ The current pipeline is roughly:
    without a mapping are identified by the glyph names that their font codes
    have in the font's encoding. Join the line records that `pdftext` split
    after such a glyph with font code 2, which it takes for a hyphen ending
-   the line. Repair detached, geometrically positioned diacritics in the raw
-   data, including the accents of these fonts, keeping a combining accent
+   the line. Reduce glyphs whose Unicode mapping lists alternative
+   characters, all whitespace or all dashes, to a space or their first dash.
+   Repair detached, geometrically positioned diacritics in the raw data,
+   including the accents of these fonts, keeping a combining accent
    where no precomposed letter exists, remove glyphs from icon fonts, and
    decode TeX math extension glyphs that `pdftext` reports by their font
    codes. Capitals of blackboard bold fonts become double-struck letters.

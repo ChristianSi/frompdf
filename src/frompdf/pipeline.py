@@ -12,6 +12,7 @@ from frompdf.detached_scripts import (
 from frompdf.figures import find_figures
 from frompdf.font_sizes import restore_font_sizes
 from frompdf.glyph_repairs import (
+    collapse_alternative_mappings,
     decode_double_struck_letters,
     decode_math_extension_glyphs,
     normalize_detached_diacritics,
@@ -57,6 +58,7 @@ def extract_markdown(
     restore_font_sizes(input_path, page_list)
     repair_ocr_text_layers(input_path, page_list)
     decode_advent_math_glyphs(page_list, input_path)
+    collapse_alternative_mappings(page_list)
     normalize_detached_diacritics(page_list)
     remove_icon_glyphs(page_list)
     decode_math_extension_glyphs(page_list)
