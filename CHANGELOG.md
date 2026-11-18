@@ -17,7 +17,11 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
   hyphen ending the line is restored where the scan shows one. This keeps
   ordinary lines from becoming headings, line breaks from becoming paragraph
   breaks, and the columns of a page apart, and words hyphenated at line ends
-  are joined again.
+  are joined again. Measurements far from where and how large the OCR layer
+  typically sets lines are not trusted: a line placed so far off that the
+  baseline of a neighboring line was measured is measured again where its
+  baseline is expected, and a line whose letter height was misled, as by
+  quotation marks, takes the size that its OCR size suggests.
 - Captions set like body text, as in scans whose OCR text layer carries no
   typography, are recognized below pictures when they start with a figure
   label and number, such as `Fig. 3`, `Figure 2.1`, `Abb. 4a`, `Figura IV`,

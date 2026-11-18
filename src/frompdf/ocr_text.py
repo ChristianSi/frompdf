@@ -19,12 +19,23 @@ Measured heights vary by a few percent from line to line, as the scan is
 slightly skewed and edges are blurred. The sizes of the document are grouped
 around their most common values within that precision, so that lines set in
 the same size get the same one.
+
+The text layer may also place a line so far from its ink that the baseline
+looked for near the text is that of a neighboring line, and quotation marks
+or stray marks can mislead the measured height. The OCR engine places the
+lines of a document consistently, though: their baselines lie at about the
+same distance from the origins of their text, and their measured sizes are
+in about the same proportion to the sizes of the text layer. Measurements
+far from this typical placement are not trusted. A misplaced line is measured
+again where its typical placement expects its baseline, or else placed
+there; a line whose height is implausible takes its size from its neighbors.
 """
 
 import ctypes
 import math
+from collections import defaultdict
 from collections.abc import Sequence
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from pathlib import Path
 from typing import cast
 
@@ -111,6 +122,22 @@ HYPHEN_SEARCH_TOP_EM = 0.45
 TAIL_WIDTH = 2.0
 TAIL_ABOVE = 1.2
 TAIL_BELOW = 0.5
+# The typical placement of a kind of line in a document is the median of at
+# least this many lines of that kind.
+MIN_TYPICAL_LINES = 10
+# A measured baseline more than this many OCR sizes from where the typical
+# placement expects it is that of another line, or of no line. The baselines
+# of a document scatter by about a quarter of that, while a neighboring line
+# lies about a whole size away.
+BASELINE_TOLERANCE = 0.4
+# A misplaced line is measured again with its baseline looked for this many
+# OCR sizes above and below where the typical placement expects it, which
+# stays clear of the lines above and below.
+RETRY_BASELINE_SEARCH = 0.35
+# A measured size off by more than this ratio from the typical proportion to
+# the OCR size is implausible. Correct ones scatter by up to about 1.25,
+# misled ones by 1.5 and more.
+SIZE_TOLERANCE = 1.4
 # Characters ending a line that already break it like a hyphen.
 LINE_END_DASHES = frozenset('-\u00ad\u2010\u2011\u2012\u2013\u2014')
 
@@ -180,7 +207,14 @@ class InkLine:
 
 @dataclass
 class OcrLine:
-    """A line of the text layer of a page, with its measurement."""
+    """A line of the text layer of a page, with its measurement.
+
+    origin is the y coordinate of the origin of its text and ocr_size its
+    size in the text layer, box its box there, and right_bound where the
+    ink of the next line on the same visual line may start. estimated tells
+    that the size of the ink is estimated from the OCR size, as the scan
+    does not tell it plausibly.
+    """
 
     page_index: int
     block_index: int
@@ -188,8 +222,27 @@ class OcrLine:
     chars: list[PdfTextChar]
     weight: int
     ink: InkLine
+    text: str
+    box: Box
+    origin: float
+    ocr_size: float
+    right_bound: float
     size: float | None = None
     hyphen: float | None = None
+    estimated: bool = False
+
+
+@dataclass(frozen=True)
+class Placement:
+    """Where the text layer of a document typically places a kind of line.
+
+    offset is the distance of the measured baseline below the origin of the
+    text, and scale the measured size, both in units of the OCR size. scale
+    is None for lines whose letters do not tell their height.
+    """
+
+    offset: float
+    scale: float | None
 
 
 def letter_kind(text: str) -> str:
@@ -366,12 +419,15 @@ def measure_line(
     origin_y: float,
     ocr_size: float,
     right_bound: float,
+    baseline_range: tuple[float, float] | None = None,
 ) -> InkLine | None:
     """Return what the scan shows of a line of the text layer, if it shows ink there.
 
     text_box is the box that the text layer gives the line, whose left end
     and the origin of the text are close to the ink, unlike its right end.
     Ink of the next line on the same visual line starts at right_bound.
+    The baseline is looked for near the origin, or within baseline_range
+    where it is given.
 
     The line is found in its whole length first, then measured in segments,
     whose heights and baselines are less blurred by the skew of the scan.
@@ -379,12 +435,16 @@ def measure_line(
     x1, _, x2, _ = text_box
     left = x1 - MAX_INK_LEAD * ocr_size
     kind = letter_kind(text)
+    if baseline_range is None:
+        baseline_range = (
+            origin_y - BASELINE_SEARCH_ABOVE * ocr_size,
+            origin_y + BASELINE_SEARCH_BELOW * ocr_size,
+        )
     rough = letter_band(
         scan,
         left,
         min(max(x2, x1 + ocr_size), right_bound),
-        origin_y - BASELINE_SEARCH_ABOVE * ocr_size,
-        origin_y + BASELINE_SEARCH_BELOW * ocr_size,
+        *baseline_range,
         ocr_size,
         kind == 'cap',
     )
@@ -605,16 +665,105 @@ def measure_page(
         ink = measure_line(scan, text, box, origin_y, size, right_bound)
         if ink is None:
             continue
-        measured.append(OcrLine(page_index, block_index, line, chars, len(chars), ink))
+        measured.append(
+            OcrLine(
+                page_index,
+                block_index,
+                line,
+                chars,
+                len(chars),
+                ink,
+                text,
+                box,
+                origin_y,
+                size,
+                right_bound,
+            )
+        )
     return measured
+
+
+def baseline_offset(line: OcrLine) -> float:
+    """Return how far the measured baseline of a line lies below its origin, in OCR sizes."""
+    return (line.ink.baseline - line.origin) / line.ocr_size
+
+
+def typical_placements(lines: Sequence[OcrLine]) -> dict[str, Placement]:
+    """Return the typical placement of each kind of line with enough lines of its kind."""
+    placements: dict[str, Placement] = {}
+    for kind in ('x', 'cap', 'mixed'):
+        same = [line for line in lines if line.ink.kind == kind]
+        if len(same) < MIN_TYPICAL_LINES:
+            continue
+        scales = [line.ink.em / line.ocr_size for line in same if line.ink.height is not None]
+        placements[kind] = Placement(
+            float(np.median([baseline_offset(line) for line in same])),
+            float(np.median(scales)) if len(scales) >= MIN_TYPICAL_LINES else None,
+        )
+    return placements
+
+
+def is_misplaced(line: OcrLine, placements: dict[str, Placement]) -> bool:
+    """Return whether the measured baseline of a line is far from its typical placement."""
+    placement = placements.get(line.ink.kind)
+    return (
+        placement is not None and abs(baseline_offset(line) - placement.offset) > BASELINE_TOLERANCE
+    )
+
+
+def has_implausible_size(line: OcrLine, placements: dict[str, Placement]) -> bool:
+    """Return whether the measured height of a line is far from its typical proportion."""
+    placement = placements.get(line.ink.kind)
+    return (
+        line.ink.height is not None
+        and placement is not None
+        and placement.scale is not None
+        and abs(math.log(line.ink.em / line.ocr_size / placement.scale)) > math.log(SIZE_TOLERANCE)
+    )
+
+
+def remeasure(scan: Scan, line: OcrLine, placement: Placement) -> None:
+    """Measure a misplaced line again where its typical placement expects its baseline.
+
+    Where the scan shows no baseline there either, the line is placed at the
+    expected baseline, along the box of the text layer, with its size
+    estimated from the OCR size, or else left to its neighbors.
+    """
+    expected = line.origin + placement.offset * line.ocr_size
+    search = RETRY_BASELINE_SEARCH * line.ocr_size
+    ink = measure_line(
+        scan,
+        line.text,
+        line.box,
+        line.origin,
+        line.ocr_size,
+        line.right_bound,
+        (expected - search, expected + search),
+    )
+    if ink is None or abs(ink.baseline - expected) > BASELINE_TOLERANCE * line.ocr_size:
+        scale = placement.scale if placement.scale is not None else 1.0
+        ink = InkLine(
+            line.box[0], line.box[2], expected, scale * line.ocr_size, None, line.ink.kind, None
+        )
+        line.estimated = placement.scale is not None
+    line.ink = ink
+
+
+def estimate_size(line: OcrLine, placement: Placement) -> None:
+    """Estimate the size of a line from its OCR size, by the typical proportion of its kind."""
+    assert placement.scale is not None
+    line.ink = replace(line.ink, em=placement.scale * line.ocr_size, height=None)
+    line.estimated = True
 
 
 def assign_sizes(lines: Sequence[OcrLine]) -> None:
     """Give the measured lines of a document their sizes, grouped around common ones.
 
-    Lines whose letters do not tell their height take the size of the nearest
-    line of their `pdftext` block that does, or else of the nearest line above
-    or below them in their column, or else their own estimate.
+    Lines whose size is estimated take the common size nearest to their
+    estimate, as their neighbors may be set in another size. Other lines
+    whose letters do not tell their height take the size of the nearest
+    line of their `pdftext` block that does, or else of the nearest line
+    above or below them in their column, or else their own estimate.
     """
     measured = [line for line in lines if line.ink.height is not None]
     for line, size in zip(
@@ -626,6 +775,9 @@ def assign_sizes(lines: Sequence[OcrLine]) -> None:
     groups = sorted({line.size for line in measured if line.size is not None})
     for index, line in enumerate(lines):
         if line.size is not None:
+            continue
+        if line.estimated:
+            line.size = nearest_group(line.ink.em, groups)
             continue
         same_block = [
             other
@@ -729,10 +881,28 @@ def repair_ocr_text_layers(input_path: Path, page_list: Sequence[Page]) -> None:
             finally:
                 text_page.close()
                 pdf_page.close()
+        placements = typical_placements(lines)
+        misplaced: defaultdict[int, list[OcrLine]] = defaultdict(list)
+        for line in lines:
+            if is_misplaced(line, placements):
+                misplaced[line.page_index].append(line)
+        # Pages are rendered again rather than kept, as their scans are large.
+        for page_index, page_lines in misplaced.items():
+            page = page_list[page_index]
+            pdf_page = pdf[page.get('page', page_index)]
+            try:
+                scan = render_scan(pdf_page, page)
+            finally:
+                pdf_page.close()
+            for line in page_lines:
+                remeasure(scan, line, placements[line.ink.kind])
     finally:
         pdf.close()
     if not lines:
         return
+    for line in lines:
+        if has_implausible_size(line, placements):
+            estimate_size(line, placements[line.ink.kind])
     assign_sizes(lines)
     for line in lines:
         tail = line.ink.tail

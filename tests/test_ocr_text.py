@@ -10,14 +10,23 @@ from pdftext.extraction import dictionary_output
 from PIL import Image, ImageDraw, ImageFont
 
 from frompdf.ocr_text import (
+    InkLine,
+    OcrLine,
+    Placement,
     Scan,
+    assign_sizes,
     dense_band,
+    estimate_size,
     group_sizes,
+    has_implausible_size,
     ink_runs,
+    is_misplaced,
     letter_kind,
     line_end_hyphen,
     measure_line,
+    remeasure,
     repair_ocr_text_layers,
+    typical_placements,
 )
 
 # Synthetic scans have 4 pixels per point.
@@ -181,6 +190,114 @@ class GroupSizeTests(unittest.TestCase):
 
         self.assertEqual(group_sizes(sizes), [10.0, 10.0, 10.0, 8.0, 8.0, 12.5])
         self.assertEqual(group_sizes([]), [])
+
+
+def ocr_line(
+    origin: float,
+    baseline: float,
+    em: float = 11.5,
+    ocr_size: float = 10.0,
+    kind: str = 'x',
+    block_index: int = 0,
+    measured: bool = True,
+) -> OcrLine:
+    """Return a line of a text layer from 20 to 200 points with its measurement."""
+    ink_line = InkLine(20.0, 200.0, baseline, em, em * 0.5 if measured else None, kind, None)
+    return OcrLine(
+        0,
+        block_index,
+        {'bbox': [20.0, origin - ocr_size, 200.0, origin], 'spans': []},
+        [],
+        30,
+        ink_line,
+        'the ancient Egyptians used',
+        (20.0, origin - ocr_size, 200.0, origin),
+        origin,
+        ocr_size,
+        300.0,
+    )
+
+
+class PlacementTests(unittest.TestCase):
+    def test_typical_placement_is_the_median_of_each_kind_with_enough_lines(self) -> None:
+        # Lowercase lines lie 0.35 sizes above their origins, three are
+        # misplaced on the next line; too few lines of capitals are known.
+        lines = [ocr_line(100.0 + 20 * index, 96.5 + 20 * index) for index in range(10)]
+        lines += [ocr_line(400.0 + 20 * index, 405.0 + 20 * index) for index in range(3)]
+        lines += [ocr_line(500.0, 500.0, kind='cap') for _ in range(3)]
+
+        placements = typical_placements(lines)
+
+        self.assertEqual(set(placements), {'x'})
+        self.assertAlmostEqual(placements['x'].offset, -0.35)
+        self.assertAlmostEqual(placements['x'].scale or 0.0, 1.15)
+
+    def test_finds_misplaced_baselines_and_implausible_sizes(self) -> None:
+        placements = {'x': Placement(-0.35, 1.15)}
+
+        # A baseline on the next line is misplaced, one scattered by a
+        # quarter of the size is not.
+        self.assertTrue(is_misplaced(ocr_line(100.0, 105.0), placements))
+        self.assertFalse(is_misplaced(ocr_line(100.0, 94.0), placements))
+        # Lines of a kind without a typical placement are not judged.
+        self.assertFalse(is_misplaced(ocr_line(100.0, 105.0, kind='cap'), placements))
+        # A height misled by quotation marks is implausible, a size off by a
+        # tenth or one not told by the letters is not.
+        self.assertTrue(has_implausible_size(ocr_line(100.0, 96.5, em=20.4), placements))
+        self.assertTrue(has_implausible_size(ocr_line(100.0, 96.5, em=5.4), placements))
+        self.assertFalse(has_implausible_size(ocr_line(100.0, 96.5, em=12.6), placements))
+        self.assertFalse(
+            has_implausible_size(ocr_line(100.0, 96.5, em=20.4, measured=False), placements)
+        )
+
+
+class RemeasureTests(unittest.TestCase):
+    def test_measures_a_misplaced_line_where_its_placement_expects_it(self) -> None:
+        scan = blank()
+        x = 20.0
+        for word in ('xlx', 'pxxl', 'xx', 'lxpx'):
+            x = write_word(scan, x, 50.0, word) + 3.0
+        x = 20.0
+        for word in ('lxx', 'xxlp', 'xlx'):
+            x = write_word(scan, x, 66.0, word) + 3.0
+        # The text layer puts the first line so low that its baseline was
+        # taken from the second one.
+        line = ocr_line(54.0, 66.0)
+
+        remeasure(Scan(scan, SCALE), line, Placement(-0.4, 1.0))
+
+        self.assertAlmostEqual(line.ink.baseline, 50.0, delta=0.3)
+        self.assertAlmostEqual(line.ink.x1, 20.0, delta=0.3)
+        self.assertFalse(line.estimated)
+
+    def test_places_a_line_without_ink_where_its_placement_expects_it(self) -> None:
+        line = ocr_line(54.0, 66.0)
+
+        remeasure(Scan(blank(), SCALE), line, Placement(-0.4, 1.15))
+
+        self.assertAlmostEqual(line.ink.baseline, 50.0)
+        self.assertEqual((line.ink.x1, line.ink.x2), (20.0, 200.0))
+        self.assertAlmostEqual(line.ink.em, 11.5)
+        self.assertIsNone(line.ink.height)
+        self.assertTrue(line.estimated)
+
+
+class AssignSizeTests(unittest.TestCase):
+    def test_estimated_sizes_take_the_nearest_common_size_not_their_blocks(self) -> None:
+        # The last body line shares its block with notes set in a smaller size.
+        body = [ocr_line(100.0 + 15 * index, 96.5 + 15 * index, em=11.3) for index in range(4)]
+        notes = [
+            ocr_line(200.0 + 12 * index, 197.0 + 12 * index, em=9.7, ocr_size=8.0, block_index=1)
+            for index in range(4)
+        ]
+        estimated = ocr_line(180.0, 176.5, em=20.4, block_index=1)
+        unmeasured = ocr_line(250.0, 247.0, em=9.0, ocr_size=8.0, block_index=1, measured=False)
+        estimate_size(estimated, Placement(-0.35, 1.15))
+
+        assign_sizes([*body, *notes, estimated, unmeasured])
+
+        self.assertEqual(estimated.size, 11.3)
+        self.assertEqual(unmeasured.size, 9.7)
 
 
 def add_invisible_text(
