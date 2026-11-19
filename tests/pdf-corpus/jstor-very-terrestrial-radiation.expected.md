@@ -210,7 +210,8 @@ or from variations in the general conditions
 as to moisture, etc.\
 It is common for writers on terrestrial
 
-Altitude 100 200 300 400 50? 600 700 800 90? Above Horizon
+Altitude 100 200 300 400 50? 600 700 800 90?
+Above Horizon
 
 T .........116 .162 190 .208 .226 .23.24 .256 .262
 T r. .344 .415 .459 .495 .525 .543 .501.572,.581
@@ -592,7 +593,8 @@ July 5, 1909 (4) Early A.M. (5) Noon
 External temperature + 660?.7 F. + 75?.0 F.\
 Dew-point ......... 57. + 61.\
 Relative humidity ......72% 62%
-Div. Div. {-32.7 -30.7
+Div. Div.
+{-32.7 -30.7
 Little wind-Deep blue sky.... -33.0 - 29.4
 Zenithal sky ............... 32.7 - 37.1
 Galvanometer deflections ...... -32.9 - 27.4
@@ -705,7 +707,8 @@ Lowell in his " Temperature of Mars." 8
 Lowell's equation for nocturnal cooling may
 be put in the form
 
-T-Af,- 4/g(l\_-\_ae) T - AT, y(L T - AT2 - ae) - ,y(1 - be)'
+T-Af,- 4/g(l\_-\_ae)
+T - AT, y(L T - AT2 - ae) - ,y(1 - be)'
 
 where T is the average day temperature on the
 absolute scale, AT1 is the nocturnal cooling
