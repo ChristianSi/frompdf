@@ -22,6 +22,13 @@ VALID_ROMAN_NUMERAL_PATTERN = re.compile(
 )
 ROMAN_NUMERAL_VALUES = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
 FOOTER_SUFFIX_NOISE_PATTERN = re.compile(r'(?:\$(?:NUM|ROMAN))+(?:[.)])?|[a-z0-9]{1,4}(?:[.)])?')
+OCR_ROMAN_LABEL_PATTERN = re.compile(r'[IVXLCDMivxlcdmUl1|]+')
+# OCR reads `I` as `l`, `1`, or `|`, and `II` as `U`. A final `I` may also
+# become `L`, which is a real numeral, so that reading is tried separately.
+OCR_ROMAN_READINGS = (
+    str.maketrans({'l': 'I', '1': 'I', '|': 'I', 'U': 'II'}),
+    str.maketrans({'l': 'I', '1': 'I', '|': 'I', 'U': 'II', 'L': 'I'}),
+)
 NUMBERED_NOTE_PATTERN = re.compile(r'\s*\d+[.)](?:\s|$)')
 
 
@@ -711,6 +718,73 @@ def recover_ocr_footer_numbers(
     return recovered
 
 
+def expected_roman_page_label(raw: int, visible_by_raw: dict[int, str]) -> str | None:
+    """Predict a Roman label from the nearest labels, if they form one sequence."""
+    nearby = []
+    for other_raw, visible in visible_by_raw.items():
+        parsed = parse_visible_page_label(visible)
+        distance = abs(other_raw - raw)
+        if (
+            parsed is not None
+            and parsed.numeral_system == 'roman'
+            and not parsed.prefix
+            and 0 < distance <= 8
+        ):
+            nearby.append((distance, other_raw, parsed))
+    if len(nearby) < 2:
+        return None
+
+    # The two nearest labels, and any equally near ones, must agree.
+    nearby.sort(key=lambda item: (item[0], item[1]))
+    closest = [
+        (other_raw, parsed) for distance, other_raw, parsed in nearby if distance <= nearby[1][0]
+    ]
+    if len({parsed.number - other_raw for other_raw, parsed in closest}) != 1:
+        return None
+    anchor_raw, anchor = closest[0]
+    return format_visible_page_label(anchor, anchor.number + raw - anchor_raw)
+
+
+def recover_ocr_roman_running_labels(
+    candidate_list: list[HeaderFooterCandidate],
+    separated_indices: set[int],
+    repeated_keys: set[tuple[str, str]],
+    visible_by_raw: dict[int, str],
+) -> set[int]:
+    """Recover misread Roman folios in repeated running text, as `XU INTRODUCTION`."""
+    anchors = dict(visible_by_raw)
+    recovered: set[int] = set()
+    for candidate in outermost_edge_candidates(candidate_list):
+        raw = candidate.line.page_no
+        words = candidate.line.text.split()
+        if candidate.index not in separated_indices or raw in anchors or len(words) < 2:
+            continue
+        # Use only labels read before this step, so guesses cannot chain.
+        expected = expected_roman_page_label(raw, anchors)
+        if expected is None:
+            continue
+
+        for position in [0, -1]:
+            token = words[position]
+            if (
+                not OCR_ROMAN_LABEL_PATTERN.fullmatch(token)
+                or parse_visible_page_label(token) is not None
+                or not any(
+                    token.translate(table).casefold() == expected.casefold()
+                    for table in OCR_ROMAN_READINGS
+                )
+            ):
+                continue
+            # The rest of the line must be repeated running text.
+            corrected = [*words]
+            corrected[position] = expected
+            if (candidate.zone, normalize_header_footer_text(' '.join(corrected))) in repeated_keys:
+                visible_by_raw[raw] = expected
+                recovered.add(candidate.index)
+                break
+    return recovered
+
+
 def add_same_baseline_footer_companions(
     excluded_indices: set[int], candidate_list: list[HeaderFooterCandidate]
 ) -> None:
@@ -750,6 +824,11 @@ def remove_headers_and_footers(
     )
     visible_by_raw = infer_repeated_page_numbers(separated_candidates, repeated_keys)
     visible_by_raw.update(infer_edge_page_numbers(candidate_list))
+    excluded_indices.update(
+        recover_ocr_roman_running_labels(
+            candidate_list, separated_indices, repeated_keys, visible_by_raw
+        )
+    )
     excluded_indices.update(recover_ocr_footer_numbers(candidate_list, visible_by_raw))
 
     for candidate in candidate_list:

@@ -17,6 +17,7 @@ from frompdf.page_edges import (
     normalize_header_footer_text,
     parse_visible_page_label,
     recover_ocr_footer_numbers,
+    recover_ocr_roman_running_labels,
     remove_headers_and_footers,
     repeated_footer_text_bases,
     repeated_header_footer_keys,
@@ -312,6 +313,66 @@ class FooterOCRTests(unittest.TestCase):
                 recover_ocr_footer_numbers([candidate(1, '100'), damaged], visible), set()
             )
             self.assertEqual(visible, {1: '100'})
+
+
+class RomanRunningLabelOCRTests(unittest.TestCase):
+    REPEATED_KEYS = {('header', '$ROMAN introduction'), ('header', 'introduction $ROMAN')}
+
+    def recover(self, texts: dict[int, str], visible: dict[int, str]) -> set[int]:
+        candidates = [candidate(raw, text, 'header') for raw, text in texts.items()]
+        return recover_ocr_roman_running_labels(candidates, set(texts), self.REPEATED_KEYS, visible)
+
+    def test_recovers_misread_numerals_predicted_by_the_sequence(self) -> None:
+        for text, expected in [
+            ('XU INTRODUCTION', 'XII'),
+            ('INTRODUCTION Xlll', 'XIII'),
+            ('INTRODUCTION X1II', 'XIII'),
+        ]:
+            raw = 12 if expected == 'XII' else 13
+            visible = {10: 'X', 11: 'XI'}
+            self.assertEqual(self.recover({raw: text}, visible), {raw})
+            self.assertEqual(visible[raw], expected)
+
+    def test_recovers_final_l_and_u_after_the_last_label(self) -> None:
+        visible = {16: 'XVI', 15: 'XV'}
+        self.assertEqual(
+            self.recover({17: 'INTRODUCTION XVll', 18: 'XVIU INTRODUCTION'}, visible), {17, 18}
+        )
+        self.assertEqual(visible[17], 'XVII')
+        self.assertEqual(visible[18], 'XVIII')
+        visible = {21: 'XXI', 22: 'XXII'}
+        self.assertEqual(self.recover({23: 'INTRODUCTION XXIIL'}, visible), {23})
+        self.assertEqual(visible[23], 'XXIII')
+
+    def test_rejects_readings_the_sequence_does_not_predict(self) -> None:
+        visible = {10: 'X', 11: 'XI'}
+        self.assertEqual(self.recover({13: 'INTRODUCTION XU'}, visible), set())
+        self.assertEqual(visible, {10: 'X', 11: 'XI'})
+
+    def test_requires_two_agreeing_nearby_labels(self) -> None:
+        for visible in [
+            {11: 'XI'},
+            {11: 'XI', 10: 'IX'},
+            {11: 'XI', 13: 'XIV'},
+            {11: 'XI', 2: 'II'},
+        ]:
+            self.assertEqual(self.recover({12: 'XU INTRODUCTION'}, visible), set())
+
+    def test_requires_the_rest_of_the_line_to_be_repeated_running_text(self) -> None:
+        for text in ['XU PREFACE', 'XU', 'INTRODUCTION XUX']:
+            self.assertEqual(self.recover({12: text}, {10: 'X', 11: 'XI'}), set())
+
+    def test_leaves_valid_numerals_and_known_pages_alone(self) -> None:
+        self.assertEqual(self.recover({12: 'XL INTRODUCTION'}, {10: 'X', 11: 'XI'}), set())
+        self.assertEqual(
+            self.recover({12: 'XU INTRODUCTION'}, {10: 'X', 11: 'XI', 12: 'XII'}), set()
+        )
+
+    def test_does_not_chain_recovered_labels(self) -> None:
+        visible = {4: 'IV', 5: 'V'}
+        texts = {7: 'VU INTRODUCTION', 13: 'XIU INTRODUCTION'}
+        self.assertEqual(self.recover(texts, visible), {7})
+        self.assertNotIn(13, visible)
 
 
 class HeaderFooterRemovalTests(unittest.TestCase):

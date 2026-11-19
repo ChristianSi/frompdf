@@ -213,6 +213,12 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
 - Running footer detection now measures repetition within local page ranges
   and alternating recto/verso pages, tolerates short OCR-damaged page-label
   suffixes, and can join nearby Roman-number anchors across opposite edges.
+- Running headers and footers whose Roman page number was misread by OCR,
+  such as `XU INTRODUCTION` or `INTRODUCTION XVll`, are removed, and their
+  page number is recovered. OCR often reads `I` as `l`, `1`, `|`, or `L`, and
+  `II` as `U`; such a reading is accepted only if the rest of the line is
+  repeated running text and the nearest page numbers predict exactly that
+  number.
 - Indented attributions following block quotes now remain part of the quote.
 - Paragraph boundaries now combine `pdftext` block hints with page-local font
   size and family, line spacing, indentation, alignment, and line-length
