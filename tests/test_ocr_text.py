@@ -2,6 +2,7 @@ import ctypes
 import math
 import tempfile
 import unittest
+from collections.abc import Sequence
 from pathlib import Path
 from typing import cast
 
@@ -32,6 +33,7 @@ from frompdf.ocr_text import (
     measure_line,
     remeasure,
     repair_ocr_text_layers,
+    split_joined_lines,
     typical_placements,
     visible_line_chars,
 )
@@ -260,23 +262,38 @@ class PlacementTests(unittest.TestCase):
         )
 
 
+def two_printed_lines() -> np.ndarray:
+    """Return a scan of two lines of words, with baselines at 50 and 66 points."""
+    scan = blank()
+    x = 20.0
+    for word in ('xlx', 'pxxl', 'xx', 'lxpx'):
+        x = write_word(scan, x, 50.0, word) + 3.0
+    x = 20.0
+    for word in ('lxx', 'xxlp', 'xlx'):
+        x = write_word(scan, x, 66.0, word) + 3.0
+    return scan
+
+
 class RemeasureTests(unittest.TestCase):
     def test_measures_a_misplaced_line_where_its_placement_expects_it(self) -> None:
-        scan = blank()
-        x = 20.0
-        for word in ('xlx', 'pxxl', 'xx', 'lxpx'):
-            x = write_word(scan, x, 50.0, word) + 3.0
-        x = 20.0
-        for word in ('lxx', 'xxlp', 'xlx'):
-            x = write_word(scan, x, 66.0, word) + 3.0
         # The text layer puts the first line so low that its baseline was
         # taken from the second one.
         line = ocr_line(54.0, 66.0)
 
-        remeasure(Scan(scan, SCALE), line, Placement(-0.4, 1.0))
+        remeasure(Scan(two_printed_lines(), SCALE), line, Placement(-0.4, 1.0))
 
         self.assertAlmostEqual(line.ink.baseline, 50.0, delta=0.3)
         self.assertAlmostEqual(line.ink.x1, 20.0, delta=0.3)
+        self.assertFalse(line.estimated)
+
+    def test_finds_a_line_set_far_too_low_above_its_expected_baseline(self) -> None:
+        # As where pdftext joined it with the next line, the text layer puts
+        # the first line 0.7 sizes lower than its typical placement.
+        line = ocr_line(61.0, 66.0)
+
+        remeasure(Scan(two_printed_lines(), SCALE), line, Placement(-0.4, 1.0))
+
+        self.assertAlmostEqual(line.ink.baseline, 50.0, delta=0.3)
         self.assertFalse(line.estimated)
 
     def test_places_a_line_without_ink_where_its_placement_expects_it(self) -> None:
@@ -339,6 +356,67 @@ class UprightTests(unittest.TestCase):
         self.assertFalse(is_upright(char(math.radians(10.0))))
         self.assertFalse(is_upright(char(math.pi / 2)))
         self.assertFalse(is_upright(char(math.pi)))
+
+
+def write_text_layer(path: Path, lines: Sequence[tuple[str, float, float]]) -> None:
+    """Write a page with invisible lines of 12 point text, given with their origins."""
+    pdf = pdfium.PdfDocument.new()
+    page = pdf.new_page(300, 200)
+    for text, x, y in lines:
+        add_invisible_text(pdf, page, text, 12.0, x, y)
+    pdfium_c.FPDFPage_GenerateContent(page.raw)
+    pdf.save(path)
+    pdf.close()
+
+
+def split_text_layer(lines: Sequence[tuple[str, float, float]]) -> list[PdfTextLine]:
+    """Return the lines of a text layer read by pdftext, after splitting joined ones."""
+    with tempfile.TemporaryDirectory() as directory:
+        path = Path(directory) / 'layer.pdf'
+        write_text_layer(path, lines)
+        page = dictionary_output(str(path), keep_chars=True)[0]
+        pdf = pdfium.PdfDocument(path)
+        try:
+            text_page = pdf[0].get_textpage()
+            split_joined_lines(text_page, page)
+        finally:
+            pdf.close()
+    return [line for block in page['blocks'] for line in block['lines']]
+
+
+class JoinedLineTests(unittest.TestCase):
+    def test_splits_printed_lines_that_pdftext_joined(self) -> None:
+        # The second line lies two thirds of a size below the first, so
+        # that their boxes overlap and pdftext joins them.
+        lines = split_text_layer(
+            [('the nude human figure ex', 21.0, 147.0), ('pressed more than status', 21.0, 139.0)]
+        )
+
+        self.assertEqual(
+            [line_text(line) for line in lines],
+            ['the nude human figure ex', 'pressed more than status'],
+        )
+        self.assertEqual(
+            [char_text(line) for line in lines],
+            ['the nude human figure ex', 'pressed more than status'],
+        )
+        first, second = lines
+        self.assertLess(first['bbox'][1], second['bbox'][1])
+        self.assertLess(second['bbox'][0], first['bbox'][2] - 12.0)
+        self.assertEqual(
+            second['spans'][0]['char_start_idx'], second['spans'][0]['chars'][0]['char_idx']
+        )
+
+    def test_keeps_lines_that_continue_rightwards_or_barely_drop(self) -> None:
+        # Text continuing to the right below the line, as a subscript does,
+        # and a next line only a third of a size lower are not split.
+        rightwards = split_text_layer([('the nude', 21.0, 147.0), ('human figure', 80.0, 139.0)])
+        barely = split_text_layer(
+            [('the nude human figure ex', 21.0, 147.0), ('pressed more than status', 21.0, 143.0)]
+        )
+
+        self.assertEqual(len(rightwards), 1)
+        self.assertEqual(len(barely), 1)
 
 
 class SoftHyphenTests(unittest.TestCase):

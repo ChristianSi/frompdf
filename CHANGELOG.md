@@ -26,7 +26,9 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
   a soft hyphen, so that the parts of such words are joined. The text layer
   of a blank page, where the OCR engine read print showing through from the
   back of the leaf, is dropped. Lines of slightly skewed scans, which OCR
-  layers turn by up to a few degrees, are measured like the others.
+  layers turn by up to a few degrees, are measured like the others. Printed
+  lines that the OCR layer sets so close together that they were read as one
+  line are split again.
 - Captions set like body text, as in scans whose OCR text layer carries no
   typography, are recognized below pictures when they start with a figure
   label and number, such as `Fig. 3`, `Figure 2.1`, `Abb. 4a`, `Figura IV`,

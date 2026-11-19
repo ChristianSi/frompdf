@@ -21,16 +21,20 @@ slightly skewed and edges are blurred. The sizes of the document are grouped
 around their most common values within that precision, so that lines set in
 the same size get the same one.
 
-The text layer may also place a line so far from its ink that the baseline
-looked for near the text is that of a neighboring line, and quotation marks
+The text layer may also place a line so far below its ink that the baseline
+looked for near the text is that of the next line, and quotation marks
 or stray marks can mislead the measured height. The OCR engine places the
 lines of a document consistently, though: their baselines lie at about the
 same distance from the origins of their text, and their measured sizes are
 in about the same proportion to the sizes of the text layer. Measurements
-far from this typical placement are not trusted. A misplaced line is measured
-again where its typical placement expects its baseline, or else placed
-there; a line whose height is implausible takes the size that the typical
-proportion gives its OCR size.
+far below this typical placement are not trusted. A misplaced line is
+measured again at or above where its typical placement expects its baseline,
+or else placed there; a line whose height is implausible takes the size that
+the typical proportion gives its OCR size.
+
+Where the text layer sets a line so low that its box overlaps that of the
+next line, `pdftext` joins the two. The characters of the next line start
+again at the left, at origins about a line lower, where the line is split.
 
 Some OCR engines mark the hyphens that they take to break words at line ends
 with a not sign `¬`, which becomes a soft hyphen. The text layer of a blank
@@ -43,6 +47,7 @@ import math
 from collections import defaultdict
 from collections.abc import Sequence
 from dataclasses import dataclass, replace
+from itertools import pairwise
 from pathlib import Path
 from typing import cast
 
@@ -54,6 +59,8 @@ from pdftext.schema import Bbox, Page
 from pdftext.schema import Char as PdfTextChar
 from pdftext.schema import Line as PdfTextLine
 from pdftext.schema import Span as PdfTextSpan
+
+from frompdf.lines import span_char_text_ranges
 
 # Pages are rendered at this many pixels per inch to be measured, enough to
 # tell the height of letters to a few percent and the shape of a hyphen.
@@ -139,10 +146,13 @@ MIN_TYPICAL_LINES = 10
 # capitals whose boxes leave room for descenders, but are never that of the
 # line above, which lies beyond where the baseline is first looked for.
 BASELINE_TOLERANCE = 0.4
-# A misplaced line is measured again with its baseline looked for this many
-# OCR sizes above and below where the typical placement expects it, which
-# stays clear of the lines above and below.
-RETRY_BASELINE_SEARCH = 0.35
+# A misplaced line is measured again with its baseline looked for up to the
+# first many OCR sizes above where the typical placement expects it, and the
+# second below. The text layer misplaces lines by setting them too low, by up
+# to about a size where `pdftext` joined them with the next line, and both
+# limits stay clear of the baselines of the lines above and below.
+RETRY_SEARCH_ABOVE = 0.8
+RETRY_SEARCH_BELOW = 0.2
 # A measured size off by more than this ratio from the typical proportion to
 # the OCR size is implausible. Correct ones scatter by up to about 1.25,
 # misled ones by 1.5 and more.
@@ -157,6 +167,13 @@ LINE_END_DASHES = frozenset('-\u00ad\u2010\u2011\u2012\u2013\u2014')
 # breaking a word at a line end, which a soft hyphen stands for.
 OCR_BREAK_MARK = '\u00ac'
 SOFT_HYPHEN = '\u00ad'
+# `pdftext` joins printed lines whose boxes in the text layer overlap into one
+# line. The next printed line starts at a character more than one OCR size
+# left of the character before, whose origin lies at least this many OCR
+# sizes below that of the start of the line. Characters of a line run
+# rightwards, and their origins drift with the skew of the scan along the
+# line, but hardly between where two lines start.
+MIN_JOINED_LINE_DROP = 0.5
 
 Box = tuple[float, float, float, float]
 
@@ -676,6 +693,115 @@ def drop_lines(page: Page, lines: Sequence[PdfTextLine]) -> None:
     page['blocks'] = [block for block in blocks if block['lines']]
 
 
+def joined_line_starts(
+    text_page: pdfium.PdfTextPage, page: Page, line: PdfTextLine
+) -> list[tuple[int, int]]:
+    """Return where the printed lines joined into a line of the text layer start after the first.
+
+    Starts are given by the index of a span of the line and that of a
+    character within it.
+    """
+    starts: list[tuple[int, int]] = []
+    previous: PdfTextChar | None = None
+    start_origin = 0.0
+    size = 0.0
+    for span_index, span in enumerate(line.get('spans', [])):
+        for char_index, char in enumerate(span.get('chars', [])):
+            if not char.get('char', '').strip():
+                continue
+            origin = char_origin_y(text_page, char, page)
+            if origin is None:
+                continue
+            if previous is None:
+                start_origin = origin
+                size = float(char.get('font', {}).get('size') or 0.0)
+            elif (
+                size > 0
+                and char['bbox'][0] < previous['bbox'][0] - size
+                and origin - start_origin >= MIN_JOINED_LINE_DROP * size
+            ):
+                starts.append((span_index, char_index))
+                start_origin = origin
+            previous = char
+    return starts
+
+
+def span_piece(span: PdfTextSpan, chars: list[PdfTextChar], text: str) -> PdfTextSpan:
+    """Return a span holding some of the characters and text of another."""
+    piece = cast(PdfTextSpan, {**span, 'chars': chars, 'text': text})
+    if chars:
+        piece['bbox'] = union_bbox([get_bbox(char) for char in chars])
+        piece['char_start_idx'] = chars[0]['char_idx']
+        piece['char_end_idx'] = chars[-1]['char_idx']
+    return piece
+
+
+def split_span(span: PdfTextSpan, cuts: Sequence[int]) -> list[PdfTextSpan] | None:
+    """Split a span before each of its characters at the indices cuts.
+
+    Return None where the text of the span does not tell where its
+    characters lie in it.
+    """
+    if not cuts:
+        return [span]
+    chars = span.get('chars', [])
+    text = span.get('text', '')
+    ranges = span_char_text_ranges(span)
+    offsets = [0]
+    for cut in cuts:
+        text_range = ranges.get(id(chars[cut]))
+        if text_range is None or text_range[0] < offsets[-1]:
+            return None
+        offsets.append(text_range[0])
+    offsets.append(len(text))
+    return [
+        span_piece(span, chars[start:end], text[text_start:text_end])
+        for (start, end), (text_start, text_end) in zip(
+            pairwise([0, *cuts, len(chars)]), pairwise(offsets), strict=True
+        )
+    ]
+
+
+def split_joined_line(
+    text_page: pdfium.PdfTextPage, page: Page, line: PdfTextLine
+) -> list[PdfTextLine]:
+    """Return the printed lines that `pdftext` joined into a line of the text layer."""
+    starts = joined_line_starts(text_page, page, line)
+    if not starts:
+        return [line]
+    parts: list[list[PdfTextSpan]] = [[]]
+    for span_index, span in enumerate(line.get('spans', [])):
+        pieces = split_span(span, [char for index, char in starts if index == span_index])
+        if pieces is None:
+            return [line]
+        for piece_index, piece in enumerate(pieces):
+            if piece_index:
+                parts.append([])
+            if piece.get('chars'):
+                parts[-1].append(piece)
+    return [
+        cast(
+            PdfTextLine,
+            {**line, 'spans': spans, 'bbox': union_bbox([get_bbox(span) for span in spans])},
+        )
+        for spans in parts
+        if spans
+    ]
+
+
+def split_joined_lines(text_page: pdfium.PdfTextPage, page: Page) -> None:
+    """Split the lines of a page's invisible text layer joined from printed lines, in place."""
+    for block in page.get('blocks', []):
+        lines: list[PdfTextLine] = []
+        for line in block.get('lines', []):
+            chars = visible_line_chars(line)
+            if chars and all(is_invisible(text_page, char) for char in chars):
+                lines.extend(split_joined_line(text_page, page, line))
+            else:
+                lines.append(line)
+        block['lines'] = lines
+
+
 def measure_page(
     pdf_page: pdfium.PdfPage,
     text_page: pdfium.PdfTextPage,
@@ -684,10 +810,12 @@ def measure_page(
 ) -> list[OcrLine]:
     """Return the lines of a page's invisible text layer that lie over ink, measured.
 
-    Not signs breaking words at line ends become soft hyphens. Where no line
-    of the text layer lies over ink, the page is blank and its text layer is
+    Lines of the text layer joined from printed lines are split first. Not
+    signs breaking words at line ends become soft hyphens. Where no line of
+    the text layer lies over ink, the page is blank and its text layer is
     dropped.
     """
+    split_joined_lines(text_page, page)
     entries = [
         (block_index, line, visible_line_chars(line))
         for block_index, block in enumerate(page.get('blocks', []))
@@ -793,7 +921,6 @@ def remeasure(scan: Scan, line: OcrLine, placement: Placement) -> None:
     estimated from the OCR size, or else left to its neighbors.
     """
     expected = line.origin + placement.offset * line.ocr_size
-    search = RETRY_BASELINE_SEARCH * line.ocr_size
     ink = measure_line(
         scan,
         line.text,
@@ -801,9 +928,12 @@ def remeasure(scan: Scan, line: OcrLine, placement: Placement) -> None:
         line.origin,
         line.ocr_size,
         line.right_bound,
-        (expected - search, expected + search),
+        (
+            expected - RETRY_SEARCH_ABOVE * line.ocr_size,
+            expected + RETRY_SEARCH_BELOW * line.ocr_size,
+        ),
     )
-    if ink is None or abs(ink.baseline - expected) > BASELINE_TOLERANCE * line.ocr_size:
+    if ink is None or ink.baseline - expected > BASELINE_TOLERANCE * line.ocr_size:
         scale = placement.scale if placement.scale is not None else 1.0
         ink = InkLine(
             line.box[0], line.box[2], expected, scale * line.ocr_size, None, line.ink.kind, None
