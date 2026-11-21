@@ -22,6 +22,7 @@ from frompdf.ocr_text import (
     assign_sizes,
     dense_band,
     estimate_size,
+    find_scan_rules,
     group_sizes,
     has_implausible_size,
     ink_runs,
@@ -111,6 +112,36 @@ class DenseBandTests(unittest.TestCase):
         assert band is not None
         self.assertAlmostEqual(band[0], 5.0, delta=1.0)
         self.assertAlmostEqual(band[1], 30.0, delta=1.0)
+
+
+class ScanRuleTests(unittest.TestCase):
+    def test_finds_a_printed_rule_also_where_skewed(self) -> None:
+        scan = blank()
+        ink(scan, 20.0, 30.0, 120.0, 30.5)
+        # A skewed rule descends by a quarter point every 25 points.
+        for step in range(8):
+            x = 150.0 + step * 12.5
+            ink(scan, x, 60.0 + step * 0.25, x + 12.5, 60.5 + step * 0.25)
+
+        rules = find_scan_rules(Scan(scan, SCALE))
+
+        self.assertEqual(len(rules), 2)
+        self.assertTrue(all(rule.horizontal for rule in rules))
+        self.assertAlmostEqual(rules[0].position, 30.25, delta=0.3)
+        self.assertAlmostEqual(rules[0].start, 20.0, delta=0.3)
+        self.assertAlmostEqual(rules[0].end, 120.0, delta=0.3)
+        self.assertAlmostEqual(rules[1].start, 150.0, delta=0.3)
+        self.assertAlmostEqual(rules[1].end, 250.0, delta=0.3)
+
+    def test_rejects_short_rules_text_and_underlined_words(self) -> None:
+        scan = blank()
+        ink(scan, 10.0, 20.0, 25.0, 20.5)
+        # Letters running together, as in a dark scan.
+        ink(scan, 40.0, 45.0, 140.0, 50.0)
+        end = write_word(scan, 160.0, 80.0, 'xlxxlxxpxlxxlxxx')
+        ink(scan, 160.0, 80.5, end, 81.0)
+
+        self.assertEqual(find_scan_rules(Scan(scan, SCALE)), [])
 
 
 class LineEndHyphenTests(unittest.TestCase):

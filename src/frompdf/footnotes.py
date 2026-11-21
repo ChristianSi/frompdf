@@ -1,13 +1,27 @@
-"""Recognize bottom notes from layout and collect them into endnote sections."""
+"""Recognize bottom notes from layout and place them after the text they annotate.
+
+Notes numbered through a section are collected into a Notes section at its
+end. Notes numbered anew on each page, or marked by symbols such as `*` and
+`†`, are placed after the last paragraph starting on their page, introduced
+by a `Notes:` paragraph.
+
+On scanned pages, measured sizes can miss the smaller size of notes, and
+OCR misreads the superscript numbers and symbols labeling them. There, lines
+below a printed rule or set more closely than body text count as small, too,
+and notes are told apart by a hanging indent and by what OCR makes of labels.
+"""
 
 import re
 from collections import Counter, defaultdict
+from collections.abc import Mapping, Sequence, Set
 from dataclasses import dataclass, field, replace
+from itertools import pairwise
 from statistics import median
 
 from frompdf.continuations import build_page_fragments, join_fragments
 from frompdf.line_features import close_font_size, ends_sentence
-from frompdf.models import Block, Footnote, Heading, Line, PageNumber, TextFragment
+from frompdf.models import Block, Footnote, Heading, Line, PageNumber, Paragraph, TextFragment
+from frompdf.rules import Rule
 from frompdf.scripts import AnnotatedText
 
 # Require a visible size reduction and a lower-page region, with ordinary text
@@ -16,6 +30,45 @@ from frompdf.scripts import AnnotatedText
 NOTE_FONT_RATIO = 0.90
 NOTE_MIN_PAGE_FRACTION = 0.45
 NOTE_LABEL = re.compile(r'^\s*(\d+)[.)]?\s+(\S.*)$')
+# Symbols marking notes, in the order of their use on a page. They are only
+# taken for labels on scans: born-digital PDFs may map icons such as `✉`,
+# marking an author's address, to `*`.
+NOTE_SYMBOLS = '*†‡§‖¶'
+
+# A page's body size is that of the document, unless text in that size makes
+# up less than the first share of the text on the page and its neighbors, as
+# where an introduction is set in another size than the main text. Then it is
+# the largest size making up at least the second share there, rather than
+# that of notes taking up more room, given they hold at least the third many
+# characters.
+MIN_BODY_SIZE_SHARE = 0.1
+MIN_PART_BODY_SIZE_SHARE = 0.3
+MIN_BODY_SIZE_CHARS = 500
+
+# On scans, the measured size of notes can be that of body text, as for
+# short lines mostly in capitals. Lines are small, too, where at least the
+# second many in a row are set at most the first share of the distance
+# between the lines of body text apart, or less than that distance from a
+# line measured small. That is the median of at least the third many
+# distances on the page. Single distances vary with the measured baselines
+# of the scan.
+NOTE_PITCH_RATIO = 0.85
+MIN_CLOSE_LINES = 3
+MIN_PITCH_SAMPLES = 3
+# OCR reads the superscript labels of notes as other characters, or joins
+# them to the following word. A line may start a note where it begins with a
+# number joined to a capitalized word, or with one or two marks, or `i`,
+# `I`, `l` or `|` misread for `1`, before one.
+OCR_LABEL_PREFIX = re.compile(
+    r'^\s*(?:(\d{1,2})\s*(?=[A-Z‘“(])|[^\w\s]{1,2}(?=[A-Z])|[iIl|](?=[A-Z]))'
+)
+# A note marked by a symbol starts with it as a word of its own. OCR reads
+# the daggers following `*` on a page as these characters.
+OCR_NOTE_MARK = re.compile(r'^\s*(\S{1,2})\s+(\S.*)$')
+OCR_DAGGER_READINGS = frozenset({'t', 'f', '+', 'X', '|'})
+# Lines starting notes with a hanging indent lie at least this many ems left
+# of their continuation lines.
+MIN_HANGING_INDENT = 0.2
 
 
 @dataclass
@@ -144,6 +197,238 @@ def numbered_line(region: list[Line], index: int) -> tuple[str, Line, int] | Non
     return None
 
 
+def without_label(line: Line, start: int) -> Line:
+    """Return a line without the label preceding the given offset of its text."""
+    annotated = AnnotatedText(line.text, line.ranges).slice(start)
+    return replace(line, text=annotated.text, ranges=annotated.ranges)
+
+
+def label_rank(label: str) -> int:
+    """Return the position of a note label in its sequence, counting from 1.
+
+    Symbols follow the order of NOTE_SYMBOLS, then repeat doubled.
+    """
+    if label.isdecimal():
+        return int(label)
+    return NOTE_SYMBOLS.index(label[0]) + 1 + len(NOTE_SYMBOLS) * (len(label) - 1)
+
+
+def is_symbol_label(label: str) -> bool:
+    return not label.isdecimal()
+
+
+def page_body_sizes(pages: Mapping[int, Sequence[Line]], body_size: float) -> dict[int, float]:
+    """Return the body size of each page, which can differ by part of the document."""
+    weights: dict[int, Counter[float]] = defaultdict(Counter)
+    for page_no, page in pages.items():
+        for line in page:
+            if line.font_size is not None:
+                weights[page_no][line.font_size] += len(line.text)
+    sizes: dict[int, float] = {}
+    for page_no in pages:
+        window: Counter[float] = Counter()
+        for neighbor in (page_no - 1, page_no, page_no + 1):
+            window.update(weights.get(neighbor, Counter()))
+        total = window.total()
+        in_body_size = sum(
+            weight for size, weight in window.items() if close_font_size(size, body_size)
+        )
+        if total < MIN_BODY_SIZE_CHARS or in_body_size >= total * MIN_BODY_SIZE_SHARE:
+            sizes[page_no] = body_size
+        else:
+            sizes[page_no] = max(
+                (
+                    size
+                    for size, weight in window.items()
+                    if weight >= total * MIN_PART_BODY_SIZE_SHARE
+                ),
+                default=max(window.items(), key=lambda item: (item[1], item[0]))[0],
+            )
+    return sizes
+
+
+def body_line_pitch(page: Sequence[Line], body_size: float) -> float | None:
+    """Return the usual distance between successive lines of body text on a page."""
+    distances = [
+        below.y2 - above.y2
+        for above, below in pairwise(page)
+        if above.y2 is not None
+        and below.y2 is not None
+        and close_font_size(above.font_size, body_size)
+        and close_font_size(below.font_size, body_size)
+        and horizontally_overlaps(above, below)
+        and 0 < below.y2 - above.y2 < 2 * body_size
+    ]
+    return median(distances) if len(distances) >= MIN_PITCH_SAMPLES else None
+
+
+def starts_like_note(line: Line) -> bool:
+    """Return whether the text of a scanned line begins with what may be a note label."""
+    mark = OCR_NOTE_MARK.match(line.text)
+    return (
+        NOTE_LABEL.match(line.text) is not None
+        or OCR_LABEL_PREFIX.match(line.text) is not None
+        or (mark is not None and any(char in NOTE_SYMBOLS for char in mark[1]))
+    )
+
+
+def scan_note_sizes(page: list[Line], body_size: float, rules: Sequence[Rule]) -> list[Line]:
+    """Return the lines of a scanned page, reduced in size where its layout shows notes.
+
+    Runs of lines set more closely than body text are given the size their
+    distances tell. Lines below a rule printed in the lower part of the page, starting
+    with what may be a note label, are given the largest size of notes.
+    """
+    sizes = [line.font_size for line in page]
+    pitch = body_line_pitch(page, body_size)
+    if pitch is not None:
+        # Runs of closely set lines, as their first index and their distances.
+        runs: list[tuple[int, list[float]]] = []
+        small = body_size * NOTE_FONT_RATIO
+        for index, (above, below) in enumerate(pairwise(page)):
+            distance = (below.y2 or 0) - (above.y2 or 0)
+            measured_small = any(
+                line.font_size is not None and line.font_size <= small for line in (above, below)
+            )
+            if not (
+                above.y2 is not None
+                and below.y2 is not None
+                and horizontally_overlaps(above, below)
+                and 0 < distance < pitch
+                and (distance <= pitch * NOTE_PITCH_RATIO or measured_small)
+            ):
+                continue
+            if runs and runs[-1][0] + len(runs[-1][1]) == index:
+                runs[-1][1].append(distance)
+            else:
+                runs.append((index, [distance]))
+        for first, distances in runs:
+            if len(distances) + 1 < MIN_CLOSE_LINES:
+                continue
+            reduced = min(body_size * median(distances) / pitch, small)
+            for index in range(first, first + len(distances) + 1):
+                size = sizes[index]
+                if size is not None:
+                    sizes[index] = min(size, reduced)
+    bottom = max((line.y2 or 0) for line in page)
+    below_rule = [
+        [index for index, line in enumerate(page) if (line.y1 or 0) >= rule.position]
+        for rule in rules
+        if rule.horizontal and rule.position >= bottom * NOTE_MIN_PAGE_FRACTION
+    ]
+    # The rule nearest to the notes separates them, rather than one above
+    # some last body text.
+    lowest = min((indices for indices in below_rule if indices), key=len, default=[])
+    if lowest and starts_like_note(page[lowest[0]]):
+        for index in lowest:
+            size = sizes[index]
+            if size is not None:
+                sizes[index] = min(size, body_size * NOTE_FONT_RATIO)
+    return [
+        line if size == line.font_size else replace(line, font_size=size)
+        for line, size in zip(page, sizes, strict=True)
+    ]
+
+
+def note_starts(region: list[Line]) -> dict[int, tuple[str, Line, int]]:
+    """Return the lines of a note region starting notes, by index.
+
+    Each comes with its label, its text without the label, and the number of
+    lines it consumes, which is 2 for a detached label.
+    """
+    starts: dict[int, tuple[str, Line, int]] = {}
+    index = 0
+    while index < len(region):
+        numbered = numbered_line(region, index)
+        if numbered:
+            starts[index] = numbered
+            index += numbered[2]
+        else:
+            index += 1
+    return starts
+
+
+def hanging_note_starts(region: list[Line]) -> set[int]:
+    """Return the lines of a scanned note region that a hanging indent shows to start notes.
+
+    The lines set furthest left start notes where continuation lines are
+    indented, given most of them begin like labels. A single first line
+    left of all others starts a note by its position alone.
+    """
+    if any(line.x1 is None for line in region):
+        return set()
+    sizes = [line.font_size for line in region if line.font_size]
+    em = median(sizes) if sizes else 10.0
+    left = min(line.x1 or 0 for line in region)
+    offsets = sorted((line.x1 or 0) - left for line in region)
+    limit = next(
+        (lower for lower, upper in pairwise(offsets) if upper - lower >= MIN_HANGING_INDENT * em),
+        None,
+    )
+    if limit is None:
+        return set()
+    flush = [index for index, line in enumerate(region) if (line.x1 or 0) - left <= limit]
+    labeled = sum(OCR_LABEL_PREFIX.match(region[index].text) is not None for index in flush)
+    if labeled * 2 >= len(flush) or (flush == [0] and len(region) > 2):
+        return set(flush)
+    return set()
+
+
+def sequence_labels(found: list[str | None], symbols: bool) -> list[str]:
+    """Number the notes of a scanned region in order, as OCR misreads their labels.
+
+    Numbers continue from the first one that most labels read as numbers agree
+    on, or from 1.
+    """
+    if symbols:
+        count = len(NOTE_SYMBOLS)
+        return [NOTE_SYMBOLS[index % count] * (index // count + 1) for index in range(len(found))]
+    firsts = Counter(
+        int(label) - index for index, label in enumerate(found) if label and label.isdecimal()
+    )
+    first = max(firsts.most_common(1)[0][0], 1) if firsts else 1
+    return [str(first + index) for index in range(len(found))]
+
+
+def scan_note_starts(region: list[Line]) -> dict[int, tuple[str, Line, int]]:
+    """Return the lines of a scanned note region starting notes, like note_starts.
+
+    Besides labels read correctly, a line starts a note where it begins with
+    a symbol or a misreading of a dagger after one, where it begins like a
+    label after a sentence ends, or where a hanging indent shows it. Labels
+    are numbered or marked in order, as OCR misreads many of them.
+    """
+    hanging = hanging_note_starts(region)
+    found: dict[int, tuple[str | None, Line, int]] = {}
+    symbols = False
+    index = 0
+    while index < len(region):
+        line = region[index]
+        numbered = numbered_line(region, index)
+        mark = OCR_NOTE_MARK.match(line.text)
+        prefix = OCR_LABEL_PREFIX.match(line.text)
+        if numbered:
+            found[index] = numbered
+            index += numbered[2]
+            continue
+        if mark and (
+            any(char in NOTE_SYMBOLS for char in mark[1])
+            or (symbols and mark[1] in OCR_DAGGER_READINGS)
+        ):
+            found[index] = (None, without_label(line, mark.start(2)), 1)
+            symbols = True
+        elif prefix and (index in hanging or index == 0 or ends_sentence(region[index - 1].text)):
+            found[index] = (prefix[1], without_label(line, prefix.end()), 1)
+        elif index in hanging:
+            found[index] = (None, line, 1)
+        index += 1
+    labels = sequence_labels([label for label, _, _ in found.values()], symbols)
+    return {
+        index: (label, line, consumed)
+        for label, (index, (_, line, consumed)) in zip(labels, found.items(), strict=True)
+    }
+
+
 def continues_previous_note(note: DetectedNote, first: Line) -> bool:
     """Only attach an unnumbered prefix to an open note on the preceding page."""
     previous = note.paragraphs[-1][-1]
@@ -174,38 +459,51 @@ def append_note_line(note: DetectedNote, line: Line, source_index: int) -> None:
 
 
 def extract_footnotes(
-    lines: list[Line], body_size: float | None
+    lines: list[Line],
+    body_size: float | None,
+    scanned_pages: Set[int] = frozenset(),
+    scan_rules: Mapping[int, Sequence[Rule]] | None = None,
 ) -> tuple[list[Line], list[DetectedNote]]:
-    """Remove confidently numbered note areas, retaining their original positions."""
+    """Remove confidently labeled note areas, retaining their original positions.
+
+    scanned_pages are the pages with OCR text, and scan_rules the rules printed
+    on them, which tell notes apart where sizes and labels do not.
+    """
     if body_size is None:
         return lines, []
     pages: dict[int, list[tuple[int, Line]]] = defaultdict(list)
     for index, line in enumerate(lines):
         pages[line.page_no].append((index, line))
+    body_sizes = page_body_sizes(
+        {page_no: [line for _, line in indexed] for page_no, indexed in pages.items()}, body_size
+    )
     notes: list[DetectedNote] = []
     removed: set[int] = set()
-    for indexed_page in pages.values():
+    for page_no, indexed_page in pages.items():
+        page_body_size = body_sizes[page_no]
         page = [line for _, line in indexed_page]
+        scanned = page_no in scanned_pages
+        if scanned:
+            page = scan_note_sizes(page, page_body_size, (scan_rules or {}).get(page_no, ()))
         start = 0
         while start < len(page):
-            if not is_small_note_line(page, start, body_size):
+            if not is_small_note_line(page, start, page_body_size):
                 start += 1
                 continue
             end = start + 1
-            while end < len(page) and is_small_note_line(page, end, body_size):
+            while end < len(page) and is_small_note_line(page, end, page_body_size):
                 end += 1
-            if is_note_region(page, start, end, body_size):
+            if is_note_region(page, start, end, page_body_size):
                 region = page[start:end]
-                first_label = next(
-                    (index for index in range(len(region)) if numbered_line(region, index)), None
-                )
+                starts = scan_note_starts(region) if scanned else note_starts(region)
+                first_label = min(starts, default=None)
                 if (
                     first_label is not None
                     and first_label > 0
                     and introduced_by_heading(
                         region[:first_label],
                         region[first_label],
-                        region[first_label].font_size or body_size,
+                        region[first_label].font_size or page_body_size,
                     )
                 ):
                     # A small-font title can be inside the candidate region.
@@ -216,11 +514,10 @@ def extract_footnotes(
                 )
                 offset = 0
                 while offset < len(region):
-                    numbered = numbered_line(region, offset)
                     source_index = indexed_page[start + offset][0]
                     consumed = 1
-                    if numbered:
-                        label, text_line, consumed = numbered
+                    if offset in starts:
+                        label, text_line, consumed = starts[offset]
                         current = DetectedNote(label, [[text_line]], source_index + consumed - 1)
                         notes.append(current)
                     elif current is not None:
@@ -319,15 +616,81 @@ def note_group_destination(
     return destination
 
 
+def is_page_confined(group: list[tuple[int, Footnote]]) -> bool:
+    """Return whether all notes of a group start on the same page."""
+    return len({note.start_page.raw for _, note in group}) == 1
+
+
+def page_local_groups(blocks: list[Block], groups: list[list[tuple[int, Footnote]]]) -> set[int]:
+    """Return the groups of notes labeled anew on each page, by index.
+
+    Notes marked by symbols always are. Numbered notes are where two groups
+    on different pages, both starting at 1, follow each other without a
+    heading between them, as a new section would number its notes anew. Then
+    all groups of a single page starting at 1 are.
+    """
+    local = {index for index, group in enumerate(groups) if is_symbol_label(group[0][1].label)}
+    numbered = [
+        index
+        for index, group in enumerate(groups)
+        if index not in local and group[0][1].label == '1' and is_page_confined(group)
+    ]
+    restarting_pages = any(
+        following == index + 1
+        and groups[index][0][1].start_page.raw < groups[following][0][1].start_page.raw
+        and not any(
+            isinstance(block, Heading)
+            for block in blocks[groups[index][-1][0] + 1 : groups[following][0][0]]
+        )
+        for index, following in pairwise(numbered)
+    )
+    return local | set(numbered) if restarting_pages else local
+
+
+def page_notes_destination(blocks: list[Block], group: list[tuple[int, Footnote]]) -> int:
+    """Return where notes of a page follow the last paragraph starting on it.
+
+    That is before headings ending the page, whose text follows on the next.
+    """
+    page = group[0][1].start_page.raw
+    destination = next(
+        (
+            index + 1
+            for index in range(len(blocks) - 1, -1, -1)
+            if not isinstance(blocks[index], Footnote) and blocks[index].start_page.raw <= page
+        ),
+        0,
+    )
+    while destination > 1 and isinstance(blocks[destination - 1], Heading):
+        destination -= 1
+    return destination
+
+
 def place_footnotes(blocks: list[Block], title: str = 'Notes') -> list[Block]:
-    """Place numeric groups at section boundaries, sharing one title per boundary."""
+    """Place notes after the text they annotate, sharing one title per position.
+
+    Notes labeled anew on each page follow the last paragraph starting on
+    their page, after a paragraph of the title and a colon. Other groups are
+    placed at section boundaries, under a heading of the title.
+    """
     groups: list[list[tuple[int, Footnote]]] = []
     for index, block in enumerate(blocks):
         if not isinstance(block, Footnote):
             continue
-        if not groups or int(block.label) <= int(groups[-1][-1][1].label):
+        if (
+            not groups
+            or is_symbol_label(block.label) != is_symbol_label(groups[-1][-1][1].label)
+            or label_rank(block.label) <= label_rank(groups[-1][-1][1].label)
+        ):
             groups.append([])
         groups[-1].append((index, block))
+    local = page_local_groups(blocks, groups)
+    page_insertions: dict[int, list[Footnote]] = defaultdict(list)
+    for index in sorted(local):
+        page_insertions[page_notes_destination(blocks, groups[index])].extend(
+            note for _, note in groups[index]
+        )
+    groups = [group for index, group in enumerate(groups) if index not in local]
     insertions: dict[int, list[Footnote]] = defaultdict(list)
     insertion_scopes: dict[int, int] = {}
     previous_destination = 0
@@ -352,6 +715,9 @@ def place_footnotes(blocks: list[Block], title: str = 'Notes') -> list[Block]:
     default_level = 2 if len(insertions) == 1 else 3
     result: list[Block] = []
     for index in range(len(blocks) + 1):
+        if notes := page_insertions.get(index):
+            result.append(Paragraph(f'{title}:', notes[0].start_page, notes[0].start_page))
+            result.extend(notes)
         if notes := insertions.get(index):
             following = blocks[index] if index < len(blocks) else None
             level = default_level

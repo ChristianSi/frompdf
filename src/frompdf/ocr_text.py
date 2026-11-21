@@ -40,13 +40,16 @@ Some OCR engines mark the hyphens that they take to break words at line ends
 with a not sign `¬`, which becomes a soft hyphen. The text layer of a blank
 page, where the OCR engine read print showing through from the back of the
 leaf, lies over no ink at all, and is dropped.
+
+The text layer holds no drawings. Horizontal rules printed on a page, such
+as those separating footnotes from the text, are found in its scan, too.
 """
 
 import ctypes
 import math
 from collections import defaultdict
 from collections.abc import Sequence
-from dataclasses import dataclass, replace
+from dataclasses import dataclass, field, replace
 from itertools import pairwise
 from pathlib import Path
 from typing import cast
@@ -61,6 +64,7 @@ from pdftext.schema import Line as PdfTextLine
 from pdftext.schema import Span as PdfTextSpan
 
 from frompdf.lines import span_char_text_ranges
+from frompdf.rules import Rule
 
 # Pages are rendered at this many pixels per inch to be measured, enough to
 # tell the height of letters to a few percent and the shape of a hyphen.
@@ -174,6 +178,19 @@ SOFT_HYPHEN = '\u00ad'
 # rightwards, and their origins drift with the skew of the scan along the
 # line, but hardly between where two lines start.
 MIN_JOINED_LINE_DROP = 0.5
+# A printed rule is ink running across rows of pixels for at least the first
+# many points, in pieces at least the second long in each row, as a rule
+# skewed with the scan descends across rows by up to MAX_SKEW. It inks at
+# least the third share of the columns it spans, mostly at most the fourth
+# thick, unlike text, whose letters leave gaps and rise higher. The rows up
+# to the fifth above and below it hold at most the sixth share of ink along
+# it, unlike rows through text, as of underlined words.
+MIN_SCAN_RULE_LENGTH = 24.0
+MIN_SCAN_RULE_PIECE = 8.0
+MIN_SCAN_RULE_COVERAGE = 0.9
+MAX_SCAN_RULE_THICKNESS = 2.0
+SCAN_RULE_MARGIN = 1.5
+MAX_SCAN_RULE_MARGIN_INK = 0.1
 
 Box = tuple[float, float, float, float]
 
@@ -266,6 +283,18 @@ class OcrLine:
     estimated: bool = False
 
 
+@dataclass
+class OcrLayout:
+    """What the scans of a document show beyond its text layers.
+
+    pages are the numbers, starting at 1, of the pages whose text is an OCR
+    text layer, and rules the horizontal rules printed on them, by page.
+    """
+
+    pages: set[int] = field(default_factory=set)
+    rules: dict[int, list[Rule]] = field(default_factory=dict)
+
+
 @dataclass(frozen=True)
 class Placement:
     """Where the text layer of a document typically places a kind of line.
@@ -313,6 +342,47 @@ def ink_runs(columns: NDArray[np.bool_], max_gap: int) -> list[tuple[int, int]]:
     starts = [int(inked[0]), *(int(inked[index + 1]) for index in breaks)]
     ends = [*(int(inked[index]) for index in breaks), int(inked[-1])]
     return list(zip(starts, ends, strict=True))
+
+
+def find_scan_rules(scan: Scan) -> list[Rule]:
+    """Return the horizontal rules printed on a scanned page, in `pdftext` coordinates."""
+    min_piece = MIN_SCAN_RULE_PIECE * scan.scale
+    # Pieces of rules, as the first and last row and column they ink.
+    bands: list[list[int]] = []
+    # Bands continued by the previous row, which the next row may continue.
+    open_bands: list[list[int]] = []
+    for row in (int(row) for row in np.flatnonzero(scan.ink.sum(axis=1) >= min_piece)):
+        open_bands = [band for band in open_bands if row - band[1] <= 1]
+        continued: list[list[int]] = []
+        for start, end in ink_runs(scan.ink[row], 0):
+            if end - start + 1 < min_piece:
+                continue
+            band = next((band for band in open_bands if start <= band[3] and end >= band[2]), None)
+            if band is None:
+                band = [row, row, start, end]
+                bands.append(band)
+            else:
+                band[1], band[2], band[3] = row, min(band[2], start), max(band[3], end)
+            continued.append(band)
+        open_bands = [band for band in open_bands if band not in continued] + continued
+    margin = max(round(SCAN_RULE_MARGIN * scan.scale), 1)
+    rules: list[Rule] = []
+    max_thickness = MAX_SCAN_RULE_THICKNESS * scan.scale
+    for first, last, start, end in bands:
+        length = end - start + 1
+        if (
+            length < MIN_SCAN_RULE_LENGTH * scan.scale
+            or last - first + 1 > max_thickness + length * math.tan(MAX_SKEW)
+        ):
+            continue
+        thickness = scan.ink[first : last + 1, start : end + 1].sum(axis=0)
+        if (thickness > 0).mean() < MIN_SCAN_RULE_COVERAGE or np.median(thickness) > max_thickness:
+            continue
+        above = scan.ink[max(first - margin, 0) : first, start : end + 1]
+        below = scan.ink[last + 1 : last + 1 + margin, start : end + 1]
+        if all(part.size and part.mean() <= MAX_SCAN_RULE_MARGIN_INK for part in (above, below)):
+            rules.append(Rule(True, scan.y((first + last + 1) / 2), scan.x(start), scan.x(end + 1)))
+    return rules
 
 
 def subpixel_peak(values: NDArray[np.float64], index: int) -> float:
@@ -807,13 +877,15 @@ def measure_page(
     text_page: pdfium.PdfTextPage,
     page: Page,
     page_index: int,
+    layout: OcrLayout,
 ) -> list[OcrLine]:
     """Return the lines of a page's invisible text layer that lie over ink, measured.
 
     Lines of the text layer joined from printed lines are split first. Not
     signs breaking words at line ends become soft hyphens. Where no line of
     the text layer lies over ink, the page is blank and its text layer is
-    dropped.
+    dropped. Otherwise the page and the rules printed on it are added to
+    layout.
     """
     split_joined_lines(text_page, page)
     entries = [
@@ -834,6 +906,9 @@ def measure_page(
     if not any(scan.region(*line_box(line)).any() for _, line, _ in invisible):
         drop_lines(page, [line for _, line, _ in invisible])
         return []
+    layout.pages.add(page_index + 1)
+    if rules := find_scan_rules(scan):
+        layout.rules[page_index + 1] = rules
     candidates = [entry for entry in invisible if all(is_upright(char) for char in entry[2])]
     page_width = scan.x(scan.ink.shape[1])
     boxes = [line_box(line) for _, line, _ in entries]
@@ -1061,8 +1136,12 @@ def union_bbox(boxes: Sequence[Box]) -> Bbox:
     )
 
 
-def repair_ocr_text_layers(input_path: Path, page_list: Sequence[Page]) -> None:
-    """Replace the geometry of invisible text over scans by that of the ink, in place."""
+def repair_ocr_text_layers(input_path: Path, page_list: Sequence[Page]) -> OcrLayout:
+    """Replace the geometry of invisible text over scans by that of the ink, in place.
+
+    Return which pages are scans with text layers, and the rules printed on them.
+    """
+    layout = OcrLayout()
     lines: list[OcrLine] = []
     pdf = pdfium.PdfDocument(input_path)
     try:
@@ -1073,7 +1152,7 @@ def repair_ocr_text_layers(input_path: Path, page_list: Sequence[Page]) -> None:
             pdf_page = pdf[page_no]
             text_page = pdf_page.get_textpage()
             try:
-                lines.extend(measure_page(pdf_page, text_page, page, page_index))
+                lines.extend(measure_page(pdf_page, text_page, page, page_index, layout))
             finally:
                 text_page.close()
                 pdf_page.close()
@@ -1095,7 +1174,7 @@ def repair_ocr_text_layers(input_path: Path, page_list: Sequence[Page]) -> None:
     finally:
         pdf.close()
     if not lines:
-        return
+        return layout
     for line in lines:
         if has_implausible_size(line, placements):
             estimate_size(line, placements[line.ink.kind])
@@ -1107,3 +1186,4 @@ def repair_ocr_text_layers(input_path: Path, page_list: Sequence[Page]) -> None:
                 tail, tail.left, line.ink.x2, line.ink.baseline, line.size or line.ink.em
             )
         rewrite_line(line)
+    return layout

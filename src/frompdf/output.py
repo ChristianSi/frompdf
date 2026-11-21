@@ -7,6 +7,7 @@ from typing import TextIO
 
 from frompdf.emphasis import caption_emphasis, render_inline, resolve_emphasis
 from frompdf.escaping import escape_markdown, is_thematic_break, shift_index
+from frompdf.footnotes import is_symbol_label, label_rank
 from frompdf.models import (
     HARD_LINE_BREAK,
     Block,
@@ -275,10 +276,21 @@ def render_table(table: Table, marker: str = '', page_markers: bool = False) -> 
     return '\n'.join([format_row(rows[0]), format_row(delimiter), *map(format_row, rows[1:])])
 
 
+def footnote_prefix(label: str) -> str:
+    """Return the list marker of a note: its number, or a bullet before its symbol.
+
+    An asterisk is escaped, as it would start a nested list.
+    """
+    if is_symbol_label(label):
+        escaped = label.replace('*', '\\*')
+        return f'- {escaped} '
+    return f'{label}. '
+
+
 def list_family(block_obj: Block) -> str | None:
     """Return the marker type of a list block: `-`, or the delimiter of numbered items."""
     if isinstance(block_obj, Footnote):
-        return '.'
+        return '-' if is_symbol_label(block_obj.label) else '.'
     if isinstance(block_obj, ListItem):
         return block_obj.marker[-1] if block_obj.number is not None else '-'
     return None
@@ -316,7 +328,8 @@ def block_separator(previous_block: Block, block_obj: Block) -> str:
     if isinstance(previous_block, Footnote) and isinstance(block_obj, Footnote):
         # Restarted groups may share a Notes section. Separate their
         # lists so Markdown renderers retain the new starting number.
-        if int(block_obj.label) <= int(previous_block.label):
+        other_kind = is_symbol_label(block_obj.label) != is_symbol_label(previous_block.label)
+        if other_kind or label_rank(block_obj.label) <= label_rank(previous_block.label):
             return '\n\n<!-- -->\n\n'
         return '\n'
     if continues_list(previous_block, block_obj):
@@ -378,7 +391,7 @@ def markdown_to_text(
             text = render_fragments(block_obj, previous_page, page_markers)
         if isinstance(block_obj, Footnote | ListItem):
             prefix = (
-                f'{block_obj.label}. '
+                footnote_prefix(block_obj.label)
                 if isinstance(block_obj, Footnote)
                 else f'{block_obj.marker} '
             )

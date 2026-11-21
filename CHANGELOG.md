@@ -29,6 +29,23 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
   layers turn by up to a few degrees, are measured like the others. Printed
   lines that the OCR layer sets so close together that they were read as one
   line are split again.
+- Footnotes of scanned documents are recognized. OCR text layers misread the
+  superscript numbers labeling notes, or join them to the following word,
+  and measured sizes can miss the smaller type of short notes. On scanned
+  pages, lines below a rule printed above the notes, or set more closely
+  than body text, are taken as notes, too. Notes are told apart by a
+  hanging indent and by what OCR makes of their labels, and are numbered in
+  order, as are notes marked by `*`, `†`, `‡`, `§`, `‖`, and `¶`, which OCR
+  often reads as `t`, `+`, or `X`. Parts of a document set in another body
+  size than the rest, such as the introduction of a reprint, are judged by
+  their own body size.
+- Notes numbered anew on each page, and notes marked by symbols, follow the
+  last paragraph starting on their page instead of being collected at the
+  end of a section, introduced by a paragraph such as `Notes:`, after the
+  notes title. Notes marked by symbols are written as a bulleted list
+  starting with their symbols, such as `- \* A note.`. Numbering restarts on
+  each page where two pages with notes numbered from 1 follow each other
+  without a heading between them.
 - Captions set like body text, as in scans whose OCR text layer carries no
   typography, are recognized below pictures when they start with a figure
   label and number, such as `Fig. 3`, `Figure 2.1`, `Abb. 4a`, `Figura IV`,

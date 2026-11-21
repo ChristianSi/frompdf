@@ -37,6 +37,7 @@ from frompdf.models import (
     TableCell,
     TextFragment,
 )
+from frompdf.ocr_text import OcrLayout
 from frompdf.page_context import (
     ColumnContext,
     margin_left_edges,
@@ -713,6 +714,7 @@ def lines_to_markdown_blocks(
     notes_title: str = 'Notes',
     tables: Sequence[TableLayout] = (),
     figures: Sequence[FigureLayout] = (),
+    ocr_layout: OcrLayout | None = None,
 ) -> list[Block]:
     """Convert line records into Markdown blocks.
 
@@ -721,7 +723,8 @@ def lines_to_markdown_blocks(
     their first one or that of their caption, other figures where they lie
     among the lines of their page. Figures become images if one was written
     for them, followed by their captions. Table captions precede or follow
-    their tables as they do on the page.
+    their tables as they do on the page. The layout of scanned pages with OCR
+    text, if given, helps to recognize their footnotes.
     """
     block_list: list[Block] = []
     evidence_texts = [
@@ -754,7 +757,12 @@ def lines_to_markdown_blocks(
     document_median_weight = document_median_avg_weight(line_list)
     body_columns_by_page = build_body_columns_by_page(line_list, default_font_size)
     source_positions = {id(line): index for index, line in enumerate(line_list)}
-    body_lines, notes = extract_footnotes(line_list, default_font_size)
+    body_lines, notes = extract_footnotes(
+        line_list,
+        default_font_size,
+        ocr_layout.pages if ocr_layout else frozenset(),
+        ocr_layout.rules if ocr_layout else {},
+    )
     heading_lines = find_typographic_heading_lines(body_lines)
     typographic_heading_indices: set[int] = set()
     block_positions: list[float] = []

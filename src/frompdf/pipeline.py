@@ -57,7 +57,7 @@ def extract_markdown(
     input_path = Path(input_file_name)
     page_list = dictionary_output(str(input_path), sort=True, keep_chars=True)
     restore_font_sizes(input_path, page_list)
-    repair_ocr_text_layers(input_path, page_list)
+    ocr_layout = repair_ocr_text_layers(input_path, page_list)
     decode_advent_math_glyphs(page_list, input_path)
     collapse_alternative_mappings(page_list)
     normalize_detached_diacritics(page_list)
@@ -100,4 +100,6 @@ def extract_markdown(
     )
     if image_dir is not None:
         write_images(input_path, figures, image_dir)
-    return lines_to_markdown_blocks(filtered_lines, page_number_map, notes_title, tables, figures)
+    return lines_to_markdown_blocks(
+        filtered_lines, page_number_map, notes_title, tables, figures, ocr_layout
+    )

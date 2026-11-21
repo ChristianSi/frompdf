@@ -3,9 +3,18 @@ import unittest
 from collections import Counter
 from dataclasses import replace
 
-from frompdf.footnotes import DetectedNote, build_footnote, extract_footnotes, place_footnotes
+from frompdf.footnotes import (
+    DetectedNote,
+    build_footnote,
+    extract_footnotes,
+    page_body_sizes,
+    place_footnotes,
+    scan_note_sizes,
+    scan_note_starts,
+)
 from frompdf.models import Footnote, Heading, Line, PageNumber, Paragraph, TextFragment
 from frompdf.output import markdown_to_text
+from frompdf.rules import Rule
 
 
 def line(text: str, y: float, *, page: int = 1, size: float = 8, block: int = 2) -> Line:
@@ -132,6 +141,122 @@ class FootnoteDetectionTests(unittest.TestCase):
         self.assertEqual([n.label for n in notes], ['1', '2'])
 
 
+def paragraph(text: str, page: int = 1, end_page: int | None = None) -> Paragraph:
+    return Paragraph(text, PageNumber(page, None), PageNumber(end_page or page, None))
+
+
+def scanned_body(lines: int = 5, pitch: float = 14.0) -> list[Line]:
+    """Return body lines of a scanned page, set pitch points apart."""
+    return [
+        line(
+            f'Body text line {index} running across the whole column.', 20 + index * pitch, size=10
+        )
+        for index in range(lines)
+    ]
+
+
+class PageBodySizeTests(unittest.TestCase):
+    def sized(self, page: int, sizes: dict[float, int]) -> list[Line]:
+        return [line('x' * chars, 10, page=page, size=size) for size, chars in sizes.items()]
+
+    def test_part_set_in_another_size_uses_its_largest_common_size(self) -> None:
+        pages = {
+            1: self.sized(1, {11: 700, 9: 300}),
+            2: self.sized(2, {11: 400, 9: 600}),
+            3: self.sized(3, {11: 700, 9: 300}),
+            4: self.sized(4, {13: 900}),
+            9: self.sized(9, {13: 900}),
+        }
+        sizes = page_body_sizes(pages, 13)
+        # Page 2 is mostly notes, but its body size is still that of its part.
+        # Page 3 neighbors text in the document size, which it keeps.
+        self.assertEqual([sizes[page] for page in pages], [11, 11, 13, 13, 13])
+
+    def test_keeps_document_size_where_used_or_where_text_is_scarce(self) -> None:
+        pages = {
+            1: self.sized(1, {10: 250, 8: 750}),
+            2: self.sized(2, {10: 250, 8: 750}),
+            5: self.sized(5, {12: 400}),
+        }
+        self.assertEqual(page_body_sizes(pages, 10), {1: 10, 2: 10, 5: 10})
+
+
+class ScanNoteTests(unittest.TestCase):
+    def test_runs_of_closely_set_lines_count_as_small(self) -> None:
+        notes = [line(f'Note line {index}', 110 + index * 10, size=10) for index in range(3)]
+        page = scanned_body() + notes
+        sizes = [item.font_size for item in scan_note_sizes(page, 10, [])]
+        self.assertEqual(sizes[:5], [10] * 5)
+        self.assertTrue(all(size is not None and size <= 9 for size in sizes[5:]))
+        # A single close pair can be an error in measured baselines.
+        pair = scanned_body() + notes[:2]
+        self.assertEqual(scan_note_sizes(pair, 10, []), pair)
+
+    def test_lines_below_a_low_rule_are_small_where_they_start_like_notes(self) -> None:
+        rule = Rule(True, 100, 20, 80)
+        for text, small in [('* See the appendix.', True), ('Ordinary text below.', False)]:
+            with self.subTest(text=text):
+                page = scanned_body() + [line(text, 110, size=10)]
+                result = scan_note_sizes(page, 10, [rule])
+                self.assertEqual((result[-1].font_size or 10) < 10, small)
+                self.assertEqual(result[:5], page[:5])
+        # A rule high on the page separates no notes.
+        page = scanned_body() + [line('* See the appendix.', 110, size=10)]
+        self.assertEqual(scan_note_sizes(page, 10, [Rule(True, 10, 20, 80)]), page)
+
+    def test_hanging_indent_and_misread_labels_number_notes_in_order(self) -> None:
+        region = [
+            line('iNetscher, p. 156, indeed insists on Dutch sovereignty', 100),
+            replace(line('over Siak, but speaks otherwise.', 110), x1=23),
+            line('^Memorandum for the guidance of Mr. Anderson, with', 120),
+            replace(line('the letters, G/34/89.', 130), x1=23),
+            line('3See below, pp. 210-22.', 140),
+            line('Ibid., p. 12.', 150),
+        ]
+        starts = scan_note_starts(region)
+        self.assertEqual(sorted(starts), [0, 2, 4, 5])
+        self.assertEqual([label for label, _, _ in starts.values()], ['1', '2', '3', '4'])
+        self.assertEqual(
+            [text_line.text for _, text_line, _ in starts.values()],
+            [
+                'Netscher, p. 156, indeed insists on Dutch sovereignty',
+                'Memorandum for the guidance of Mr. Anderson, with',
+                'See below, pp. 210-22.',
+                'Ibid., p. 12.',
+            ],
+        )
+
+    def test_numbers_continue_from_labels_read_as_numbers(self) -> None:
+        region = [line('^First note.', 100), line('8Second note.', 110), line('®Third.', 120)]
+        starts = scan_note_starts(region)
+        self.assertEqual([label for label, _, _ in starts.values()], ['7', '8', '9'])
+
+    def test_symbols_and_misread_daggers_mark_notes_in_order(self) -> None:
+        region = [
+            line('* Marsden’s Sumatra, page 409.', 100),
+            line('t Ibid, page 439.', 110),
+            line('X Ibid, page 441.', 120),
+        ]
+        starts = scan_note_starts(region)
+        self.assertEqual([label for label, _, _ in starts.values()], ['*', '†', '‡'])
+        self.assertEqual(starts[1][1].text, 'Ibid, page 439.')
+        # Without a symbol before, a letter is just a word.
+        self.assertEqual(scan_note_starts(region[1:]), {})
+
+    def test_extracts_notes_with_misread_labels_on_scanned_pages_only(self) -> None:
+        notes = [
+            line('^A first note explaining the text.', 100, size=8),
+            replace(line('continued on its second line.', 110, size=8), x1=24),
+            line('®Ibid., p. 5.', 120, size=8),
+        ]
+        lines = scanned_body() + notes
+        remaining, detected = extract_footnotes(lines, 10, {1})
+        self.assertEqual(remaining, lines[:5])
+        self.assertEqual([note.label for note in detected], ['1', '2'])
+        self.assertEqual(len(detected[0].paragraphs[0]), 2)
+        self.assertEqual(extract_footnotes(lines, 10), (lines, []))
+
+
 class FootnotePlacementTests(unittest.TestCase):
     def test_single_numbering_sequence_is_document_endmatter_at_h2(self) -> None:
         first, last = note('4'), note('8', 2)
@@ -201,7 +326,7 @@ class FootnotePlacementTests(unittest.TestCase):
 
     def test_restart_without_a_section_boundary_does_not_create_adjacent_titles(self) -> None:
         boundary = heading('Next section')
-        blocks = place_footnotes([note('1'), note('1', 2), boundary])
+        blocks = place_footnotes([note('1'), note('1'), boundary])
         self.assertEqual([b.text for b in blocks], ['Notes', 'Note 1', 'Note 1', 'Next section'])
 
     def test_notes_need_not_be_children_but_cannot_parent_the_following_section(self) -> None:
@@ -332,6 +457,69 @@ class FootnotePlacementTests(unittest.TestCase):
     def test_no_notes_leaves_blocks_untouched(self) -> None:
         blocks = [heading('Existing title', 5)]
         self.assertEqual(place_footnotes(blocks), blocks)
+
+
+class PageNotePlacementTests(unittest.TestCase):
+    def test_notes_numbered_by_page_follow_the_last_paragraph_starting_there(self) -> None:
+        first = paragraph('Starts on page one.')
+        spanning = paragraph('Starts on page one, ends on two.', 1, 2)
+        second = paragraph('Starts on page two.', 2)
+        boundary = heading('Next section', 2, 3)
+        blocks = place_footnotes(
+            [first, spanning, note('1'), note('2'), second, note('1', 2), boundary],
+            'Anmerkungen',
+        )
+        self.assertEqual(
+            [block.text for block in blocks],
+            [
+                'Starts on page one.',
+                'Starts on page one, ends on two.',
+                'Anmerkungen:',
+                'Note 1',
+                'Note 2',
+                'Starts on page two.',
+                'Anmerkungen:',
+                'Note 1',
+                'Next section',
+            ],
+        )
+        self.assertIsInstance(blocks[2], Paragraph)
+
+    def test_notes_numbered_by_section_keep_their_sections(self) -> None:
+        # A heading between restarts tells of numbering by section.
+        source = [note('1'), heading('Next section', 2, 2), note('1', 3)]
+        blocks = place_footnotes(source)
+        self.assertEqual(sum(block.text == 'Notes' for block in blocks), 2)
+
+    def test_symbol_notes_are_by_page_and_precede_headings_ending_the_page(self) -> None:
+        text = paragraph('Body text.')
+        title = heading('Chapter two')
+        source = [text, title, note('*'), note('†'), paragraph('More text.', 2)]
+        blocks = place_footnotes(source)
+        self.assertEqual(
+            [block.text for block in blocks],
+            ['Body text.', 'Notes:', 'Note *', 'Note †', 'Chapter two', 'More text.'],
+        )
+        output = io.StringIO()
+        markdown_to_text(blocks[1:4], output)
+        self.assertEqual(output.getvalue(), 'Notes:\n\n- \\* Note \\*\n- † Note †\n')
+
+    def test_notes_of_successive_pages_at_one_place_form_separate_lists(self) -> None:
+        source = [
+            paragraph('Long paragraph.', 1, 4),
+            note('1'),
+            note('2'),
+            note('1', 2),
+            note('*', 3),
+            note('*', 4),
+        ]
+        output = io.StringIO()
+        markdown_to_text(place_footnotes(source), output)
+        self.assertEqual(
+            output.getvalue(),
+            'Long paragraph.\n\nNotes:\n\n1. Note 1\n2. Note 2\n\n<!-- -->\n\n'
+            '1. Note 1\n\n<!-- -->\n\n- \\* Note \\*\n\n<!-- -->\n\n- \\* Note \\*\n',
+        )
 
 
 class FootnoteTextTests(unittest.TestCase):
