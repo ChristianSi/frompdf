@@ -449,7 +449,7 @@ tree basal area, and heterospecific tree basal area
 
 [[PAGE:5|VISIBLE:2827]]20457758, 2014, 14, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/ece3.1123 by Cambodia Hinari NPL, Wiley Online Library on [15/11/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
 
-**Table 1.** Comparison of generalized linear mixed models of seedling survival in the six 1-ha plots.
+**Table 1.** *Comparison of generalized linear mixed models of seedling survival in the six 1-ha plots.*
 
 | Models | Fixed effects                                                | AIC        | BIC        | logLink    |
 | ------ | ------------------------------------------------------------ | ---------- | ---------- | ---------- |
@@ -489,18 +489,9 @@ tree neighbors were close to zero for the two
 species. The conspecific tree effects varied considerably
 for both species but the average value was close to zero
 
-![](wiley-elevational-density-dependence-img/p05-1.png)
-
-**Figure 1.** Distribution of effects of conspecific and heterospecific
-neighbors on seedling survival in 6 1-ha plots.
-**Table 2.** Parameter estimates and significance in generalized linear
+**Table 2.** *Parameter estimates and significance in generalized linear
 mixed models (model 4 and model 10) that predicted neighbor effects
-of seedlings on seedling survival in six 1-ha plots.
-
-(Table 2, Fig. 1). The relative conspecific seedlings effects
-had a significant negative impact on the seedling survival,
-whereas relative conspecific tree effects did not significantly
-affect seedling survival (Table 2).
+of seedlings on seedling survival in six 1-ha plots.*
 
 | Fixed effect                   | Estimate | Z-value | P (>\|z\|)  |
 | ------------------------------ | -------- | ------- | ----------- |
@@ -515,6 +506,16 @@ affect seedling survival (Table 2).
 | Relative conspecific trees     | −0.4886  | −0.423  | 0.6722      |
 | Elevations                     | 0.8337   | −4.036  | **<0.0001** |
 
+![](wiley-elevational-density-dependence-img/p05-1.png)
+
+**Figure 1.** *Distribution of effects of conspecific and heterospecific
+neighbors on seedling survival in 6 1-ha plots.*
+
+(Table 2, Fig. 1). The relative conspecific seedlings effects
+had a significant negative impact on the seedling survival,
+whereas relative conspecific tree effects did not significantly
+affect seedling survival (Table 2).
+
 Significant results are shown in boldface type.
 
 At both low and high elevations, the best models of the
@@ -527,9 +528,9 @@ effects, whereas at the high elevation, the best fixed effects
 were the relative conspecific seedling density and the relative
 conspecific tree basal area. For the low-elevation
 
-[[PAGE:6|VISIBLE:2828]]**Table 3.** Parameter estimates and significance in generalized linear
+[[PAGE:6|VISIBLE:2828]]**Table 3.** *Parameter estimates and significance in generalized linear
 mixed best-fit models that predicted neighbor and relative neighbor
-effects on seedling survival in low- and high-elevation plots.
+effects on seedling survival in low- and high-elevation plots.*
 
 | Fixed effect | Parameter estimate Low elevation Estimate Pr (>\|z\|) | High elevation Estimate Pr(>\|z\|) |
 | --- | --- | --- |

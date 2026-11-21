@@ -52,9 +52,9 @@ Published in Germany | ISSN (Online): 2700-1598
 
 [[PAGE:4|VISIBLE:160]]![](schmueck-herrschaft-nein-danke-kees-boeke-img/p04-1.jpg)
 
-Der niederländische Pädagoge und christliche Anarchist Kees Boeke (1884-1966),
+*Der niederländische Pädagoge und christliche Anarchist Kees Boeke (1884-1966),
 der auch als der „Erfinder“ des libertären Organisationsmodells der Soziokratie gilt.
-Foto: 1939, Quelle: Nationaal Archief, No. 119-0499, Open Source.
+Foto: 1939, Quelle: Nationaal Archief, No. 119-0499, Open Source.*
 
 ## [[PAGE:5|VISIBLE:161]]Herrschaft? Nein danke! – Kees Boeke und das libertäre Organisationsmodell der Soziokratie
 
@@ -466,13 +466,13 @@ Tat ein Ort zum Arbeiten, daher der Name.”<sup>26</sup>
 
 [[PAGE:20|VISIBLE:176]]![](schmueck-herrschaft-nein-danke-kees-boeke-img/p20-1.jpg)
 
-Eine Unterrichtsstunde in der *Werkplaats,* Bilthoven, 1946.
-Quelle: Nationaal Archief, No. 014-0553, Open Source.
+*Eine Unterrichtsstunde in der* Werkplaats, *Bilthoven, 1946.
+Quelle: Nationaal Archief, No. 014-0553, Open Source.*
 
 ![](schmueck-herrschaft-nein-danke-kees-boeke-img/p20-2.jpg)
 
-Schüler:innen der *Werkplaats* beim Laufwettbewerb, 1946.
-Quelle: Nationaal Archief, No. 0901-5854, Open Source.
+*Schüler:innen der* Werkplaats *beim Laufwettbewerb, 1946.
+Quelle: Nationaal Archief, No. 0901-5854, Open Source.*
 
 [[PAGE:21|VISIBLE:177]]Die Entwicklung des Werkplaats-Projektes lässt sich in drei markante
 Phasen unterteilen: In den Anfangsjahren von 1926 bis 1933 wuchs die Zahl
@@ -737,8 +737,8 @@ der morgendlichen Reinigungsrunden.
 
 [[PAGE:31|VISIBLE:187]]![](schmueck-herrschaft-nein-danke-kees-boeke-img/p31-1.jpg)
 
-Die Kronprinzessin und spätere Königin Beatrix beim Putzdienst in der *Werkplaats,* 1947.
-Quelle: Nationaal Archief, No. 255-7414, Open Source.
+*Die Kronprinzessin und spätere Königin Beatrix beim Putzdienst in der* Werkplaats, *1947.
+Quelle: Nationaal Archief, No. 255-7414, Open Source.*
 
 [[PAGE:32|VISIBLE:188]]Aufgrund der Integration der Werkplaats in das staatliche Bildungssystem
 der Niederlande kam es in der Werkplaats-Community vermehrt zu
@@ -1974,8 +1974,8 @@ anarchisch, sondern auch alltagstauglich und effektiv sind.
 
 [[PAGE:60|VISIBLE:216]]![](schmueck-herrschaft-nein-danke-kees-boeke-img/p60-1.jpg)
 
-Das Kees Boeke und der Soziokratie gewidmete Themen-Special der niederländischen
-anarchistischen Zeitschrift *De AS,* vol. 14 (1986), no. 76 (Okt.-Dez.), (online | PDF).
+*Das Kees Boeke und der Soziokratie gewidmete Themen-Special der niederländischen
+anarchistischen Zeitschrift* De AS, *vol. 14 (1986), no. 76 (Okt.-Dez.), (online | PDF).*
 
 ## [[PAGE:61|VISIBLE:217]]ANHANG:
 

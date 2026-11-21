@@ -223,7 +223,7 @@ improve accuracy with more replicas, a distinguishing characteristic of PBA valu
 that more replicas are not required to ensure the safety or liveness properties of the system,
 yet still benefits from the increase in accuracy.
 
-[[PAGE:5|VISIBLE:64:5]]**Table 1** Replica set size. *d* is number of data dimensions.
+[[PAGE:5|VISIBLE:64:5]]**Table 1** *Replica set size.* d *is number of data dimensions.*
 
 | Algorithm    | *n* ≥            |
 | ------------ | ---------------- |
@@ -235,7 +235,7 @@ yet still benefits from the increase in accuracy.
 
 ![](lipics-disc-2025-64-byzantine-agreement-img/p5-1.png)
 
-**(a)** Gaussian samples, Byzantine attack. **(b)** Exponential samples, Byzantine attack.
+**(a)** *Gaussian samples, Byzantine attack.* **(b)** *Exponential samples, Byzantine attack.*
 
 **Figure 1** Empirical simulations measuring PBA’s accuracy compared to baseline algorithms given
 data distributed by a Gaussian (symmetric) and Exponential (asymmetric) distributions.
@@ -260,7 +260,7 @@ R<sup>j</sup>* = (*Q<sup>j</sup>* ∪ *F<sup>j</sup>*) ⊆ *R where* |*R<sup>j</
 
 [[PAGE:6|VISIBLE:64:6]]![](lipics-disc-2025-64-byzantine-agreement-img/p6-1.png)
 
-**Figure 2** Runtime benchmark (Pi Zero).
+**Figure 2** *Runtime benchmark (Pi Zero).*
 
 ## 3 Evaluation
 

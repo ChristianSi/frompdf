@@ -236,8 +236,8 @@ storing, and preparing food in a *beldi* way is predominantly female.
 
 [[PAGE:6|VISIBLE:178]]![](graf-domestic-cooks-work-img/p06-1.jpg)
 
-**Figure 10.1.** Lemon and olive trees on the family’s land. Morocco, 2012. © Katharina
-Graf
+**Figure 10.1.** *Lemon and olive trees on the family’s land. Morocco, 2012. © Katharina
+Graf*
 
 ## [[PAGE:7|VISIBLE:179]]Making *Beldi* Foods in Low-Income Homes
 
@@ -335,8 +335,8 @@ rural foodways and tradition.
 
 ![](graf-domestic-cooks-work-img/p09-1.jpg)
 
-**Figure 10.2.** Packaged *beldi* bread sold in a supermarket. Morocco, 2017. © Katharina
-Graf
+**Figure 10.2.** *Packaged* beldi *bread sold in a supermarket. Morocco, 2017. © Katharina
+Graf*
 
 At the same time, educated urban professionals who are well versed in European
 discourses surrounding what Grasseni (2016) calls the “heritage arena” are
@@ -402,7 +402,7 @@ money by provisioning them via her relatives.
 
 ![](graf-domestic-cooks-work-img/p11-1.jpg)
 
-**Figure 10.3.** Unused olive press. Morocco, 2012. © Katharina Graf
+**Figure 10.3.** *Unused olive press. Morocco, 2012. © Katharina Graf*
 
 When I later asked her to explain the situation to me, she replied, “It was the
 Americans’ fault.” From one of her acquaintances near the city of Beni Mellal,

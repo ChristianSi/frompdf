@@ -151,17 +151,17 @@ of the skyrmion tubes along the easy axis<sup>33,37</sup>.
 
 [[PAGE:3|VISIBLE:2]]![](nature-spin-dynamics-gav4s8-img/p3-1.png)
 
-**Fig. 1 Photoinduced Δ*θ* dynamics in the different magnetic phases of GaV<sub>4</sub>S<sub>8</sub>.a** Magnetic phase diagram of GaV<sub>4</sub>S<sub>8</sub>. Vertical dashed lines indicate the
-temperatures where trMOKE measurements were performed. **b**–**e** Δ*θ* traces under different external magnetic fields at 8 K, 10 K, 11.5 K, and 14.5 K,
-respectively.
+**Fig. 1 Photoinduced Δ*θ* dynamics in the different magnetic phases of GaV<sub>4</sub>S<sub>8</sub>.a** *Magnetic phase diagram of GaV<sub>4</sub>S<sub>8</sub>. Vertical dashed lines indicate the
+temperatures where trMOKE measurements were performed.* **b**–**e** *Δ*θ *traces under different external magnetic fields at 8 K, 10 K, 11.5 K, and 14.5 K,
+respectively.*
 
 [[PAGE:4|VISIBLE:3]]![](nature-spin-dynamics-gav4s8-img/p4-1.png)
 
-**Fig. 2 Coherent spin precession in the FM, SkL, and Cyc phases. a** Δ*θ* traces in the first 800 ps shown with fit curves (black solid lines) at 10 K.
-**b** Coherent oscillatory component of the data shown in **a**. **c**, **d** Magnetic-field dependence of the frequency and amplitude of the coherent oscillation. The
-blue-shaded areas are guides to the eye indicating where the magnetic phase transition occurs. **e**, **f** Temperature dependence of the frequency and lifetime
+**Fig. 2 Coherent spin precession in the FM, SkL, and Cyc phases. a** *Δ*θ *traces in the first 800 ps shown with fit curves (black solid lines) at 10 K.*
+**b** *Coherent oscillatory component of the data shown in* **a**. **c**, **d** *Magnetic-field dependence of the frequency and amplitude of the coherent oscillation. The
+blue-shaded areas are guides to the eye indicating where the magnetic phase transition occurs.* **e**, **f** *Temperature dependence of the frequency and lifetime
 of the coherent oscillation, with the magnetic field fixed at 30 mT (60 mT) for the Cyc (SkL) phase. Error bars are the standard deviation of the fitting
-parameters.
+parameters.*
 
 In the trMOKE experiments, the external magnetic field is
 applied normal to the (100) crystal surface so that all of the four
@@ -340,9 +340,9 @@ material.
 
 [[PAGE:5|VISIBLE:4]]![](nature-spin-dynamics-gav4s8-img/p5-1.png)
 
-**Fig. 3 Change of the remagnetization across the magnetic phase transition.** Time constant of the remagnetization process at 8 K, 10 K, 11.5 K, and 14.5 K
+**Fig. 3 Change of the remagnetization across the magnetic phase transition.** *Time constant of the remagnetization process at 8 K, 10 K, 11.5 K, and 14.5 K
 are plotted. The blue-shaded areas are guides to the eye indicating the magnetic phase transition. Error bars are the standard deviation of the fitting
-parameters.
+parameters.*
 
 [[PAGE:6|VISIBLE:5]]As described earlier, the spin system is heated up through the
 spin-lattice coupling in 200–400 ps, and afterwards the recovery
@@ -484,16 +484,16 @@ field<sup>57</sup>.
 
 ![](nature-spin-dynamics-gav4s8-img/p7-1.png)
 
-**Fig. 4 Simulated spin texture and magnon spectra. a** Representative spin textures and **b** magnon spectral functions, obtained from atomistic spin
-dynamics simulations of GaV<sub>4</sub>S<sub>8</sub> at *T* = 12 K and magnetic field magnitudes, as indicated at the top of each panel.
+**Fig. 4 Simulated spin texture and magnon spectra. a** *Representative spin textures and* **b** *magnon spectral functions, obtained from atomistic spin
+dynamics simulations of GaV<sub>4</sub>S<sub>8</sub> at* T *= 12 K and magnetic field magnitudes, as indicated at the top of each panel.*
 
 ![](nature-spin-dynamics-gav4s8-img/p7-2.png)
 
-**Fig. 5 Magnon peak width extracted from simulated spectral functions.** A
+**Fig. 5 Magnon peak width extracted from simulated spectral functions.** *A
 Gaussian fit of magnon peaks is performed on the cuts of the magnon
-spectral function S(*q*, *ω* = 8 meV) and the magnon peak width *δq* is
+spectral function S*(q, ω *= 8 meV) and the magnon peak width* δq *is
 determined. Plotted is the magnetic field dependence. The blue-shaded
-areas are guides to the eye indicating the magnetic phase transition.
+areas are guides to the eye indicating the magnetic phase transition.*
 
 To summarize, we investigated the ultrafast spin dynamics in
 different magnetic phases in GaV<sub>4</sub>S<sub>8</sub> by using time-resolved MOKE

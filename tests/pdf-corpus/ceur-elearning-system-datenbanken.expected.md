@@ -160,7 +160,7 @@ werden.
 
 ![](ceur-elearning-system-datenbanken-img/p2-1.png)
 
-#### Figure 1: Aktive Bearbeitung einer Spalte
+**Figure 1: Aktive Bearbeitung einer Spalte**
 
 ## 3.2 Prüfen der Eingaben
 
@@ -183,7 +183,7 @@ Aufgaben kann dies erleichtern.
 
 ![](ceur-elearning-system-datenbanken-img/p2-2.jpg)
 
-#### Figure 2: Beispiel von Constraints
+**Figure 2: Beispiel von Constraints**
 
 Bereits bei der Eingabe sind ausgewählte Strukturen und
 Regeln bezogen auf die Tabellen und Constraints einzuhalten,
@@ -269,7 +269,7 @@ oberen Bereich des Systems.
 
 ![](ceur-elearning-system-datenbanken-img/p3-1.png)
 
-#### Figure 3: Hinweis zur Umbennung einer Spalte
+**Figure 3: Hinweis zur Umbennung einer Spalte**
 
 ## 3.4 Die Toolbar
 
@@ -334,11 +334,11 @@ Aspekten unterscheidet.
 
 ![](ceur-elearning-system-datenbanken-img/p3-2.jpg)
 
-#### Figure 4: Toolbar mit Benachrichtigungshinweis
+**Figure 4: Toolbar mit Benachrichtigungshinweis**
 
 ![](ceur-elearning-system-datenbanken-img/p3-3.jpg)
 
-#### Figure 5: Toolbar mit geöffneten Benachrichtigungen
+**Figure 5: Toolbar mit geöffneten Benachrichtigungen**
 
 ## 3.5 Feedback durch die Lernenden
 
@@ -354,7 +354,7 @@ voranzutreiben (siehe Abbildung 6).
 
 ![](ceur-elearning-system-datenbanken-img/p4-1.png)
 
-#### Figure 6: Feedbackfenster
+**Figure 6: Feedbackfenster**
 
 ## 3.6 Mediale Hilfestellungen
 
@@ -473,7 +473,7 @@ des SQL-Codes für die Lernenden genutzt.
 
 [[PAGE:5]]![](ceur-elearning-system-datenbanken-img/p5-1.png)
 
-#### Figure 7: Challenge Auswahl und Hilfemedien
+**Figure 7: Challenge Auswahl und Hilfemedien**
 
 Die Ansicht des DDL-Codes soll den Lernenden einen anderen
 Blick auf die eigene Lösung verschaffen (siehe Abbildung
@@ -531,7 +531,7 @@ eine richtige Lösung erzeugen.
 
 ![](ceur-elearning-system-datenbanken-img/p5-2.png)
 
-#### Figure 8: Ausgabe des SQL-Codes und Rückmeldung der Datenbank
+**Figure 8: Ausgabe des SQL-Codes und Rückmeldung der Datenbank**
 
 Die Schaltfläche ’Submit’ führt die Lernenden zur Abgabe
 ihrer Lösung. Zur Sicherheit und um Fehlklicks abzufangen
@@ -556,7 +556,7 @@ bearbeitet wurden.
 
 ![](ceur-elearning-system-datenbanken-img/p6-1.png)
 
-#### Figure 9: Abgabe einer Lernaufgabe
+**Figure 9: Abgabe einer Lernaufgabe**
 
 ## 3.8 Prüfungsmodus
 
@@ -612,11 +612,11 @@ eine Tabelle jeweils entstanden ist.
 
 ![](ceur-elearning-system-datenbanken-img/p6-2.png)
 
-#### Figure 10: Tabellendefinition mit erweiterten Funktionen
+**Figure 10: Tabellendefinition mit erweiterten Funktionen**
 
 ![](ceur-elearning-system-datenbanken-img/p6-3.png)
 
-#### Figure 11: Tabellendefinition finalisieren
+**Figure 11: Tabellendefinition finalisieren**
 
 Die Studierenden sollen für jede neu entstandene Tabelle
 die Normalform angeben. Dazu befindet sich ein Auswahlfeld

@@ -332,7 +332,7 @@ culture such as chick lit, but does not exactly embrace these phenomena and in f
 may even be overly dismissive of them. Although Wikipedia also tends to reproduce an
 existing literary canon of values (cf. Hube et al., 2017; Wojcik & Picard, 2019<sup>13</sup>) and
 
-[[PAGE:9|VISIBLE:33]]**Table 1** The development of the Wikipedia article on chick lit (2004–2020)
+[[PAGE:9|VISIBLE:33]]**Table 1** *The development of the Wikipedia article on chick lit (2004–2020)*
 
 | Date | Minimum Definition (first sentence) | Information on the origin of the term |
 | --- | --- | --- |

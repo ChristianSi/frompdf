@@ -113,9 +113,8 @@ are openly available on Zenodo. Across the two rounds, three groups of datasets 
   CPA, TD, and RA tasks. As indicated in Table 1, the tBiomed datasets contain a larger number of tables
   but are comparable to the tBiodiv datasets in terms of the average number of rows and columns.
 
-[[PAGE:3]]**Table 1**
-
-Statistics of the Accuracy Track test datasets in each SemTab 2024 round.
+[[PAGE:3]]**Table 1**\
+*Statistics of the Accuracy Track test datasets in each SemTab 2024 round.*
 
 |                              | Tables # | Avg. # Cols   | Avg. # Rows    |
 | ---------------------------- | -------- | ------------- | -------------- |
@@ -263,7 +262,7 @@ correctly matched to the ground truth glossary item within the top 1 and top 5 p
 outputs, respectively.
 
 [[PAGE:5]]**Table 2**\
-STI vs LLMs Track Summary Results.
+*STI vs LLMs Track Summary Results.*
 
 | Benchmark | Task | TSOTSA F1 | TSOTSA Pr | City System F1 | City System Pr | Kepler ASI F1 | Kepler ASI Pr |
 | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -271,7 +270,7 @@ STI vs LLMs Track Summary Results.
 | **MammoTab24** | **CEA** | - | - | **0.647** | 0.648 | 0.182 | 0.336 |
 
 **Table 3**\
-Table Metadata to KG Track Summary Results.
+*Table Metadata to KG Track Summary Results.*
 
 | Benchmark              |               | Adwan Hit@1 | Adwan Hit@5 | MetaLinker Hit@1 | MetaLinker Hit@5 |
 | ---------------------- | ------------- | ----------- | ----------- | ---------------- | ---------------- |
@@ -321,7 +320,7 @@ graphs or business glossaries without access to table contents. The Adwan soluti
 Hit@5 scores of 0.92 in Round 1 and 0.98 in Round 2.
 
 [[PAGE:6]]**Table 4**\
-Accuracy Track Summary Results.
+*Accuracy Track Summary Results.*
 
 | Benchmark | Task | TSOTSA F1 | TSOTSA Pr | Kepler-aSI F1 | Kepler-aSI Pr | DREIFLUSS F1 | DREIFLUSS Pr | ISI-KG F1 | ISI-KG Pr |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |

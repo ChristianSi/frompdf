@@ -270,10 +270,10 @@ campaign.
 
 ![](cc-style-guide-2019-img/p11-1.jpg)
 
-**Please note:** When uploading images to Wordpress, be sure to add a unique *title,* so the image is easily
-searchable; *alternative text* describing the image, for accessibility; and a *caption* that includes the CC license
+**Please note:** *When uploading images to Wordpress, be sure to add a unique* title, *so the image is easily
+searchable;* alternative text *describing the image, for accessibility; and a* caption *that includes the CC license
 the image is published under (including a hyperlink), as well as the name of the photographer and/or
-graphic designer.
+graphic designer.*
 
 ## [[PAGE:12|VISIBLE:10]]Publications Style —
 
