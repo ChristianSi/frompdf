@@ -258,6 +258,11 @@ def should_keep_boundary_hyphen(
     mixed_case_words: set[str],
 ) -> bool:
     """Decide whether a line-boundary hyphen belongs to the complete word."""
+    if len(left_fragment) == 1 and left_fragment.isalpha() and boundary_hyphen != SOFT_HYPHEN:
+        # Hyphenation never breaks a word after its first letter, so a hyphen
+        # after a single letter is part of the word, as in nature-spin's
+        # `g-tensor`.
+        return True
     combined_word = left_fragment + right_fragment
     if right_fragment[0].isupper() and not is_all_caps(combined_word):
         exact_candidate = exact_dictionary_candidate(combined_word)

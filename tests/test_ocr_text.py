@@ -389,22 +389,26 @@ class UprightTests(unittest.TestCase):
         self.assertFalse(is_upright(char(math.pi)))
 
 
-def write_text_layer(path: Path, lines: Sequence[tuple[str, float, float]]) -> None:
-    """Write a page with invisible lines of 12 point text, given with their origins."""
+def write_text_layer(
+    path: Path, lines: Sequence[tuple[str, float, float]], invisible: bool = True
+) -> None:
+    """Write a page with lines of 12 point text, given with their origins."""
     pdf = pdfium.PdfDocument.new()
     page = pdf.new_page(300, 200)
     for text, x, y in lines:
-        add_invisible_text(pdf, page, text, 12.0, x, y)
+        add_invisible_text(pdf, page, text, 12.0, x, y, invisible=invisible)
     pdfium_c.FPDFPage_GenerateContent(page.raw)
     pdf.save(path)
     pdf.close()
 
 
-def split_text_layer(lines: Sequence[tuple[str, float, float]]) -> list[PdfTextLine]:
+def split_text_layer(
+    lines: Sequence[tuple[str, float, float]], invisible: bool = True
+) -> list[PdfTextLine]:
     """Return the lines of a text layer read by pdftext, after splitting joined ones."""
     with tempfile.TemporaryDirectory() as directory:
         path = Path(directory) / 'layer.pdf'
-        write_text_layer(path, lines)
+        write_text_layer(path, lines, invisible)
         page = dictionary_output(str(path), keep_chars=True)[0]
         pdf = pdfium.PdfDocument(path)
         try:
@@ -436,6 +440,17 @@ class JoinedLineTests(unittest.TestCase):
         self.assertLess(second['bbox'][0], first['bbox'][2] - 12.0)
         self.assertEqual(
             second['spans'][0]['char_start_idx'], second['spans'][0]['chars'][0]['char_idx']
+        )
+
+    def test_splits_joined_lines_of_visible_text(self) -> None:
+        lines = split_text_layer(
+            [('Genova, Italy. 5Dipartimento', 21.0, 147.0), ('email: pvl', 21.0, 139.0)],
+            invisible=False,
+        )
+
+        self.assertEqual(
+            [line_text(line) for line in lines],
+            ['Genova, Italy. 5Dipartimento', 'email: pvl'],
         )
 
     def test_keeps_lines_that_continue_rightwards_or_barely_drop(self) -> None:
@@ -478,11 +493,13 @@ def add_invisible_text(
     x: float,
     y: float,
     skew: float = 0.0,
+    invisible: bool = True,
 ) -> None:
     """Add a line of invisible text, as OCR text layers are, at a baseline position.
 
     skew turns the line counterclockwise on the page by that many degrees, which
-    pdftext reports as a clockwise rotation.
+    pdftext reports as a clockwise rotation. Unless invisible, the text is
+    printed, as in other PDFs.
     """
     font = pdfium_c.FPDFText_LoadStandardFont(pdf.raw, b'Helvetica')
     text_object = pdfium_c.FPDFPageObj_CreateTextObj(pdf.raw, font, size)
@@ -490,7 +507,8 @@ def add_invisible_text(
     pdfium_c.FPDFText_SetText(
         text_object, ctypes.cast(encoded, ctypes.POINTER(pdfium_c.FPDF_WCHAR))
     )
-    pdfium_c.FPDFTextObj_SetTextRenderMode(text_object, pdfium_c.FPDF_TEXTRENDERMODE_INVISIBLE)
+    if invisible:
+        pdfium_c.FPDFTextObj_SetTextRenderMode(text_object, pdfium_c.FPDF_TEXTRENDERMODE_INVISIBLE)
     cos, sin = math.cos(math.radians(skew)), math.sin(math.radians(skew))
     pdfium_c.FPDFPageObj_Transform(text_object, cos, sin, -sin, cos, x, y)
     pdfium_c.FPDFPage_InsertObject(page.raw, text_object)

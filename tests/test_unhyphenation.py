@@ -180,6 +180,15 @@ class FallbackHeuristicTests(unittest.TestCase):
     def test_other_nonletter_keeps_boundary_hyphen(self) -> None:
         self.assertEqual(resolve(['C++-', 'api bindings']), 'C++-api\nbindings')
 
+    def test_single_letter_keeps_boundary_hyphen(self) -> None:
+        self.assertEqual(resolve(['the g-', 'tensor changes']), 'the g-tensor\nchanges')
+
+    def test_single_letter_keeps_hyphen_against_joined_evidence(self) -> None:
+        self.assertEqual(resolve(['an e-', 'mail'], 'email'), 'an e-mail')
+
+    def test_single_letter_soft_hyphen_is_removed(self) -> None:
+        self.assertEqual(resolve(['a­', 'part']), 'apart')
+
     def test_default_removes_boundary_hyphen(self) -> None:
         self.assertEqual(
             resolve(['code modifica-', 'tions are allowed']),

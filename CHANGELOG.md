@@ -28,7 +28,8 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
   back of the leaf, is dropped. Lines of slightly skewed scans, which OCR
   layers turn by up to a few degrees, are measured like the others. Printed
   lines that the OCR layer sets so close together that they were read as one
-  line are split again.
+  line are split again, as are lines of other PDFs joined because a tall
+  glyph such as `✉` lets their boxes overlap.
 - Footnotes of scanned documents are recognized. OCR text layers misread the
   superscript numbers labeling notes, or join them to the following word,
   and measured sizes can miss the smaller type of short notes. On scanned
@@ -395,6 +396,7 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
   labels no longer shift them, and text starting beyond the end of the body
   lines of the column to its left starts another column rather than being
   indented.
+- A hyphen ending a line after a single letter is kept, as in `g-tensor`.
 
 ## 0.1.0 - 2026-07-09
 

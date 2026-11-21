@@ -35,6 +35,9 @@ the typical proportion gives its OCR size.
 Where the text layer sets a line so low that its box overlaps that of the
 next line, `pdftext` joins the two. The characters of the next line start
 again at the left, at origins about a line lower, where the line is split.
+Printed text is split the same way, where a tall glyph lets the boxes of two
+lines overlap, as nature-spin's `✉` starting the line below its last
+affiliation.
 
 Some OCR engines mark the hyphens that they take to break words at line ends
 with a not sign `¬`, which becomes a soft hyphen. The text layer of a blank
@@ -171,12 +174,12 @@ LINE_END_DASHES = frozenset('-\u00ad\u2010\u2011\u2012\u2013\u2014')
 # breaking a word at a line end, which a soft hyphen stands for.
 OCR_BREAK_MARK = '\u00ac'
 SOFT_HYPHEN = '\u00ad'
-# `pdftext` joins printed lines whose boxes in the text layer overlap into one
-# line. The next printed line starts at a character more than one OCR size
-# left of the character before, whose origin lies at least this many OCR
-# sizes below that of the start of the line. Characters of a line run
-# rightwards, and their origins drift with the skew of the scan along the
-# line, but hardly between where two lines start.
+# `pdftext` joins printed lines whose boxes overlap into one line. The next
+# printed line starts at a character more than one font size left of the
+# character before, whose origin lies at least this many font sizes below
+# that of the start of the line. Characters of a line run rightwards, and
+# their origins drift with the skew of a scan along the line, but hardly
+# between where two lines start.
 MIN_JOINED_LINE_DROP = 0.5
 # A printed rule is ink running across rows of pixels for at least the first
 # many points, in pieces at least the second long in each row, as a rule
@@ -860,15 +863,11 @@ def split_joined_line(
 
 
 def split_joined_lines(text_page: pdfium.PdfTextPage, page: Page) -> None:
-    """Split the lines of a page's invisible text layer joined from printed lines, in place."""
+    """Split the lines of a page that `pdftext` joined from printed lines, in place."""
     for block in page.get('blocks', []):
         lines: list[PdfTextLine] = []
         for line in block.get('lines', []):
-            chars = visible_line_chars(line)
-            if chars and all(is_invisible(text_page, char) for char in chars):
-                lines.extend(split_joined_line(text_page, page, line))
-            else:
-                lines.append(line)
+            lines.extend(split_joined_line(text_page, page, line))
         block['lines'] = lines
 
 
@@ -881,13 +880,11 @@ def measure_page(
 ) -> list[OcrLine]:
     """Return the lines of a page's invisible text layer that lie over ink, measured.
 
-    Lines of the text layer joined from printed lines are split first. Not
-    signs breaking words at line ends become soft hyphens. Where no line of
-    the text layer lies over ink, the page is blank and its text layer is
+    Not signs breaking words at line ends become soft hyphens. Where no line
+    of the text layer lies over ink, the page is blank and its text layer is
     dropped. Otherwise the page and the rules printed on it are added to
     layout.
     """
-    split_joined_lines(text_page, page)
     entries = [
         (block_index, line, visible_line_chars(line))
         for block_index, block in enumerate(page.get('blocks', []))
@@ -1139,7 +1136,9 @@ def union_bbox(boxes: Sequence[Box]) -> Bbox:
 def repair_ocr_text_layers(input_path: Path, page_list: Sequence[Page]) -> OcrLayout:
     """Replace the geometry of invisible text over scans by that of the ink, in place.
 
-    Return which pages are scans with text layers, and the rules printed on them.
+    Lines that `pdftext` joined from printed lines are split first, on all
+    pages. Return which pages are scans with text layers, and the rules
+    printed on them.
     """
     layout = OcrLayout()
     lines: list[OcrLine] = []
@@ -1152,6 +1151,7 @@ def repair_ocr_text_layers(input_path: Path, page_list: Sequence[Page]) -> OcrLa
             pdf_page = pdf[page_no]
             text_page = pdf_page.get_textpage()
             try:
+                split_joined_lines(text_page, page)
                 lines.extend(measure_page(pdf_page, text_page, page, page_index, layout))
             finally:
                 text_page.close()
