@@ -111,7 +111,8 @@ class TableLayout:
 
     The source lines include those that are not part of any cell, such as a
     repeated header. columns are the column boundaries of the last part. A
-    table is closed when a rule ends its last part.
+    table is closed when a rule ends its last part. Its caption, if any, lies
+    above or below it.
     """
 
     frames: list[TableFrame]
@@ -122,6 +123,8 @@ class TableLayout:
     cells: list[CellLayout]
     columns: list[float] = field(default_factory=list)
     closed: bool = True
+    caption_lines: list[Line] = field(default_factory=list)
+    caption_above: bool = True
 
     @property
     def page_no(self) -> int:

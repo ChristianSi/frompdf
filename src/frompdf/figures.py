@@ -13,15 +13,22 @@ Pictures are recognized from the drawings alone, not from the wording of
 their captions, so they do not depend on the language of a document. A
 caption below a picture is told by its typography, or else by a label such
 as `Fig. 3` or `Abbildung 3` starting it, as where an OCR text layer carries
-no typography to tell it by.
+no typography to tell it by (see captions).
 """
 
-import re
 from collections import Counter
 from collections.abc import Sequence
 from dataclasses import dataclass
 
-from frompdf.line_features import close_font_size, ends_sentence, is_prose_line, is_textual_line
+from frompdf.captions import (
+    MAX_CAPTION_GAP_EM,
+    MAX_CAPTION_OVERLAP_EM,
+    TABLE_LABEL_PATTERN,
+    caption_lines,
+    is_caption_start,
+    starts_with_label,
+)
+from frompdf.line_features import close_font_size, is_prose_line, is_textual_line
 from frompdf.models import Line
 from frompdf.page_context import (
     MAX_FIRST_LINE_INDENT_EM,
@@ -82,32 +89,6 @@ MAX_FIGURE_FONT_AWAY_SHARE = 0.1
 # A line belongs to a picture or to a drawing if more than this share of its
 # box lies within it.
 MIN_INSIDE_SHARE = 0.5
-
-# A caption starts at most this far below its picture, in body ems, and
-# reaches at most this far into it.
-MAX_CAPTION_GAP_EM = 3.5
-MAX_CAPTION_OVERLAP_EM = 0.5
-# Characters that may start a caption besides letters, as in "(a) …".
-CAPTION_OPENERS = '([{"\'«‹„“‚‘'
-# Labels of figures in English, French, German, Spanish, Portuguese,
-# Japanese, and Chinese, followed by an Arabic or Roman number, as in
-# `Fig. 3`, `FIGURE 2.1`, `Abb. 4a`, `Figura IV`, `図 3`, or `第2図`, start
-# a caption at body size without emphasis. Other words may follow a number
-# at the start of a line, but these hardly ever do right below a picture.
-CAPTION_LABEL_PATTERN = re.compile(
-    r'(?:(?:Fig(?:ures?|uras?|s)?|FIG(?:URES?|URAS?|S)?|Abb|Abbildung(?:en)?|ABB(?:ILDUNG)?)'
-    r'\.?\s*(?:\d+(?:[.\-–]\d+)*[a-z]?|[IVXLC]+)(?=$|[\s.:,;)—–-])'
-    r'|[図图圖]\s*[0-9０-９]+(?:[.\-–．－][0-9０-９]+)*'
-    r'|第\s*[0-9０-９]+\s*[図图圖])'
-)
-# A caption continues in lines directly below its previous line, separated by
-# less than this in ems of its size. It ends after a sentence ending this
-# far, in ems, short of the right edge of its lines.
-CAPTION_CONTINUATION_GAP_EM = 1.0
-CAPTION_SHORT_LINE_EM = 2.0
-# The pieces of one line of a caption are at most this far apart, in ems.
-# Text further right on the same line is that of a picture beside it.
-CAPTION_PIECE_GAP_EM = 2.0
 
 # A line continues the line above it at most this far below, in ems, about
 # the line spacing of body text.
@@ -677,38 +658,15 @@ def picture_boxes(
     return pictures
 
 
-def starts_emphasized(line: Line) -> bool:
-    """Return whether the text of a line starts in bold or italics."""
-    start = len(line.text) - len(line.text.lstrip())
-    return any(
-        text_range.kind in ('bold', 'italic') and text_range.start <= start < text_range.end
-        for text_range in line.ranges
-    )
-
-
-def is_caption_start(line: Line, body_size: float) -> bool:
-    """Return whether a line below a picture is set as the start of a caption.
-
-    A caption is set smaller than the body, or starts in bold or italics at
-    body size, or with a figure label, such as `Fig. 3`. It starts with a
-    letter or an opening mark, unlike footnotes.
-    """
-    text = line.text.lstrip()
-    first = text[:1]
-    if not (first.isalpha() or (first and first in CAPTION_OPENERS)) or is_vertical(line):
-        return False
-    if close_font_size(line.font_size, body_size):
-        return starts_emphasized(line) or CAPTION_LABEL_PATTERN.match(text) is not None
-    return line.font_size is not None and line.font_size < body_size
-
-
 def find_caption(
     picture: DrawingBox, page_lines: Sequence[Line], used: set[int], body_size: float
 ) -> Line | None:
     """Return the first line of the caption of a picture, if it has one.
 
     This is the unused line starting nearest below the picture, shortly below
-    its bottom and below a part of it, if it is set as a caption.
+    its bottom and below a part of it, if it is set as a caption. A line
+    running vertically, as an axis title, or starting with a table label, as
+    the caption of a table below, is none.
     """
     nearest: tuple[float, float, Line] | None = None
     for line in page_lines:
@@ -725,54 +683,14 @@ def find_caption(
             continue
         if nearest is None or (box[1], box[0]) < nearest[:2]:
             nearest = (box[1], box[0], line)
-    if nearest is None or not is_caption_start(nearest[2], body_size):
+    if (
+        nearest is None
+        or is_vertical(nearest[2])
+        or starts_with_label(nearest[2], TABLE_LABEL_PATTERN)
+        or not is_caption_start(nearest[2], body_size)
+    ):
         return None
     return nearest[2]
-
-
-def continues_caption(caption: Sequence[Line], line: Line) -> bool:
-    """Return whether a line continues a caption, given its lines so far.
-
-    It continues the visual line of the last one closely, or starts directly
-    below it in the same size, unless that line ended a sentence short of the
-    right edge of the caption, as the last line of a paragraph.
-    """
-    last = caption[-1]
-    if (
-        line.page_no != last.page_no
-        or last.y1 is None
-        or last.y2 is None
-        or line.y1 is None
-        or line.y2 is None
-        or not close_font_size(line.font_size, last.font_size)
-    ):
-        return False
-    font_size = last.font_size or 0.0
-    if line.y1 < last.y2 and last.y1 < line.y2:
-        return (
-            line.x1 is None
-            or last.x2 is None
-            or line.x1 - last.x2 <= font_size * CAPTION_PIECE_GAP_EM
-        )
-    right_edge = max(previous.x2 for previous in caption if previous.x2 is not None)
-    if (
-        last.x2 is not None
-        and last.x2 < right_edge - font_size * CAPTION_SHORT_LINE_EM
-        and ends_sentence(last.text.strip())
-    ):
-        return False
-    return 0 <= line.y1 - last.y2 <= font_size * CAPTION_CONTINUATION_GAP_EM
-
-
-def caption_lines(first: Line, page_lines: Sequence[Line], used: set[int]) -> list[Line]:
-    """Return the lines of the caption starting with first, following it in reading order."""
-    start = next(index for index, line in enumerate(page_lines) if line is first)
-    lines = [first]
-    for line in page_lines[start + 1 :]:
-        if id(line) in used or not continues_caption(lines, line):
-            break
-        lines.append(line)
-    return lines
 
 
 def picture_resolution(

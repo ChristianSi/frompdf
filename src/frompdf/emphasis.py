@@ -265,6 +265,48 @@ def covers_all_text(rendered: RenderedText, runs: Iterable[InlineRange]) -> bool
     )
 
 
+def runs_of(indices: set[int], length: int, kind: InlineKind) -> list[InlineRange]:
+    """Return the ranges of a kind covering exactly the given indices of a text."""
+    runs: list[InlineRange] = []
+    start: int | None = None
+    for index in range(length + 1):
+        if index < length and index in indices:
+            if start is None:
+                start = index
+        elif start is not None:
+            runs.append(InlineRange(start, index, kind))
+            start = None
+    return runs
+
+
+def caption_emphasis(value: AnnotatedText) -> AnnotatedText:
+    """Return the text of a caption set in italics, unless it already stands out.
+
+    A caption stands out if most of its letters and digits outside scripts are
+    bold or italic. Otherwise, all of its text but the bold parts is set in
+    italics, and its italic parts, such as names of species, are set upright,
+    as typographers do in italic text. Bold parts stay as they are.
+    """
+    rendered = RenderedText(value)
+    covered: dict[str, set[int]] = {'bold': set(), 'italic': set()}
+    for run in value.ranges:
+        if run.kind in covered:
+            covered[run.kind].update(range(run.start, run.end))
+    bold, italic = covered['bold'], covered['italic']
+    letters = [
+        index
+        for index, char in enumerate(value.text)
+        if char.isalnum() and index not in rendered.script_at
+    ]
+    if not letters or 2 * sum(index in bold or index in italic for index in letters) > len(letters):
+        return value
+    plain = set(range(len(value.text))) - bold - italic
+    kept = tuple(run for run in value.ranges if run.kind != 'italic')
+    return AnnotatedText(
+        value.text, kept + tuple(runs_of(plain | (italic & bold), len(value.text), 'italic'))
+    )
+
+
 def has_only_punctuation(text: str, run: InlineRange) -> bool:
     """Return whether a range holds nothing but punctuation and whitespace."""
     return all(is_punctuation(char) or char.isspace() for char in text[run.start : run.end])

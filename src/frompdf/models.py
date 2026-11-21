@@ -122,6 +122,11 @@ class BlockQuote(Block):
 
 
 @dataclass
+class Caption(Block):
+    """The caption of a figure or table, rendered in italics unless already emphasized."""
+
+
+@dataclass
 class Heading(Block):
     """A Markdown heading."""
 

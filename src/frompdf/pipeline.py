@@ -4,6 +4,7 @@ from pdftext.extraction import dictionary_output
 
 from frompdf.advent_fonts import decode_advent_math_glyphs
 from frompdf.blocks import lines_to_markdown_blocks
+from frompdf.captions import find_table_captions
 from frompdf.detached_scripts import (
     attach_stacked_scripts,
     attach_stray_scripts,
@@ -91,6 +92,11 @@ def extract_markdown(
     }
     figures = find_figures(
         filtered_lines, extract_drawings(input_path, page_list), tables, page_sizes
+    )
+    find_table_captions(
+        filtered_lines,
+        tables,
+        {id(line) for figure in figures for line in [*figure.lines, *figure.caption_lines]},
     )
     if image_dir is not None:
         write_images(input_path, figures, image_dir)

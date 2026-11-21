@@ -26,6 +26,7 @@ from frompdf.models import (
     HARD_LINE_BREAK,
     Block,
     BlockQuote,
+    Caption,
     Heading,
     Image,
     Line,
@@ -54,8 +55,9 @@ from frompdf.unhyphenation import (
 
 # Tables and figures with captions are placed half a line before the first
 # line following their first one, other figures where they lie on their page.
-# Figures at the same place are ordered by steps much smaller than that, and
-# their captions follow them by an even smaller one.
+# Figures, or tables, at the same place are ordered by steps much smaller than
+# that, and their captions follow them, or precede tables captioned above, by
+# an even smaller one.
 FIGURE_ORDER_STEP = 1e-3
 CAPTION_ORDER_STEP = 1e-6
 
@@ -324,16 +326,20 @@ def markdown_block_from_lines(
     list_marker: ListMarker | None = None,
     passage: bool = False,
     marker_line: bool = False,
+    caption: bool = False,
 ) -> Block:
     """Build a Markdown block from grouped line records.
 
     With a list marker, the lines form a list item whose first line starts
     with that marker, which is replaced by a Markdown marker. A passage is set
     off from the text line by line, as quoted verse. A marker line, such as an
-    ornament, is inset but not quoted.
+    ornament, is inset but not quoted. The lines of a caption form a caption
+    however they are set.
     """
     block_class: type[Block] = (
-        BlockQuote
+        Caption
+        if caption
+        else BlockQuote
         if not typographic_heading
         and not marker_line
         and list_marker is None
@@ -714,7 +720,8 @@ def lines_to_markdown_blocks(
     and figures with captions are placed before the first line following
     their first one or that of their caption, other figures where they lie
     among the lines of their page. Figures become images if one was written
-    for them, followed by their captions.
+    for them, followed by their captions. Table captions precede or follow
+    their tables as they do on the page.
     """
     block_list: list[Block] = []
     evidence_texts = [
@@ -724,7 +731,7 @@ def lines_to_markdown_blocks(
     mixed_case_words = document_mixed_case_words(evidence_texts)
     coordination_tokens = document_coordination_tokens(evidence_texts)
     frame_of_line: dict[int, TableLayout | FigureLayout] = {
-        id(line): frame for frame in tables for line in frame.lines
+        id(line): frame for frame in tables for line in [*frame.lines, *frame.caption_lines]
     }
     frame_of_line.update(
         (id(line), figure) for figure in figures for line in [*figure.lines, *figure.caption_lines]
@@ -769,27 +776,45 @@ def lines_to_markdown_blocks(
         ),
         table_frames(tables) + figure_frames(figures),
     )
-    # Figures at the same position keep their order, and their captions follow
-    # their images.
+    # Figures, and tables, at the same position keep their order, and their
+    # captions follow their images, or precede or follow their tables.
     figure_positions = {
         id(figure): frame_positions[id(figure)] + index * FIGURE_ORDER_STEP
         for index, figure in enumerate(figures)
     }
+    tables_at_position: Counter[float] = Counter()
+    table_positions: dict[int, float] = {}
+    for table in tables:
+        position = frame_positions[id(table)]
+        table_positions[id(table)] = position + tables_at_position[position] * FIGURE_ORDER_STEP
+        tables_at_position[position] += 1
     positioned_groups: list[tuple[float, list[Line]]] = [
         (source_positions[id(group[0])], group) for group in group_list
     ]
     # Captions may be the only text of their page.
     caption_layouts = build_page_layouts(
-        [line for figure in figures for line in figure.caption_lines]
+        [line for frame in [*figures, *tables] for line in frame.caption_lines]
     )
     page_layouts = caption_layouts | page_layouts
-    # A caption forms one paragraph, also where its lines change faces or a
+    # A caption forms one block, also where its lines change faces or a
     # sentence ends a line.
     positioned_groups.extend(
         (figure_positions[id(figure)] + CAPTION_ORDER_STEP, figure.caption_lines)
         for figure in figures
         if figure.caption_lines
     )
+    positioned_groups.extend(
+        (
+            table_positions[id(table)]
+            + (-CAPTION_ORDER_STEP if table.caption_above else CAPTION_ORDER_STEP),
+            table.caption_lines,
+        )
+        for table in tables
+        if table.caption_lines
+    )
+    caption_starts = {
+        id(frame.caption_lines[0]) for frame in [*figures, *tables] if frame.caption_lines
+    }
     positioned_groups.sort(key=lambda item: item[0])
 
     for position, current_lines in positioned_groups:
@@ -812,6 +837,7 @@ def lines_to_markdown_blocks(
                 list_marker=list_items.markers.get(id(current_lines[0])),
                 passage=all(id(line) in passage_lines for line in current_lines),
                 marker_line=all(id(line) in marker_lines for line in current_lines),
+                caption=id(current_lines[0]) in caption_starts,
             )
         )
 
@@ -840,7 +866,7 @@ def lines_to_markdown_blocks(
     )
     positioned_blocks.extend(
         (
-            frame_positions[id(table)],
+            table_positions[id(table)],
             build_table(table, page_number_map, word_counts, mixed_case_words, coordination_tokens),
         )
         for table in tables

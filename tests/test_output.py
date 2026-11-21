@@ -5,9 +5,11 @@ from frompdf.models import (
     HARD_LINE_BREAK,
     Block,
     BlockQuote,
+    Caption,
     Footnote,
     Heading,
     Image,
+    InlineKind,
     InlineRange,
     ListItem,
     PageNumber,
@@ -409,6 +411,94 @@ class ImageOutputTests(unittest.TestCase):
         self.assertEqual(
             render_blocks([Image('', page, page, target='a<b>-img/p1-1.png')]),
             '![](<a\\<b\\>-img/p1-1.png>)\n',
+        )
+
+
+def caption(text: str, *ranges: tuple[str, InlineKind]) -> Caption:
+    """Build a caption whose ranges cover the given parts of its text."""
+    page = page_number(1)
+    spans = []
+    for part, kind in ranges:
+        start = text.index(part)
+        spans.append(InlineRange(start, start + len(part), kind))
+    return Caption(text, page, page, ranges=tuple(spans))
+
+
+class CaptionOutputTests(unittest.TestCase):
+    def test_plain_caption_is_set_in_italics(self) -> None:
+        self.assertEqual(
+            render_blocks([caption('A photo of the author.')]), '*A photo of the author.*\n'
+        )
+
+    def test_bold_label_stays_and_the_rest_is_set_in_italics(self) -> None:
+        self.assertEqual(
+            render_blocks([caption('Figure 1. Distribution of effects.', ('Figure 1.', 'bold'))]),
+            '**Figure 1.** *Distribution of effects.*\n',
+        )
+
+    def test_italic_parts_are_set_upright(self) -> None:
+        self.assertEqual(
+            render_blocks(
+                [
+                    caption(
+                        'Table 1 Replica set size. d is number of data dimensions.',
+                        ('Table 1', 'bold'),
+                        ('d', 'italic'),
+                    )
+                ]
+            ),
+            '**Table 1** *Replica set size.* d *is number of data dimensions.*\n',
+        )
+
+    def test_italic_parts_within_bold_ones_stay_italic(self) -> None:
+        self.assertEqual(
+            render_blocks(
+                [
+                    caption(
+                        'Fig. 1 Dynamics of θ. Traces under different fields at 8 K and 12 K.',
+                        ('Fig. 1 Dynamics of θ.', 'bold'),
+                        ('θ', 'italic'),
+                    )
+                ]
+            ),
+            '**Fig. 1 Dynamics of *θ*.** *Traces under different fields at 8 K and 12 K.*\n',
+        )
+
+    def test_caption_mostly_in_bold_or_italics_stays_as_it_is(self) -> None:
+        self.assertEqual(
+            render_blocks(
+                [caption('Figure 2: Constraints of the model', ('Figure 2: Constraints', 'bold'))]
+            ),
+            '**Figure 2: Constraints** of the model\n',
+        )
+        self.assertEqual(
+            render_blocks(
+                [
+                    caption(
+                        'Distribution of E. coli in the samples.',
+                        ('Distribution of E. coli in the samples.', 'italic'),
+                    )
+                ]
+            ),
+            '*Distribution of E. coli in the samples.*\n',
+        )
+
+    def test_emphasis_closes_and_reopens_around_page_markers(self) -> None:
+        one, two = page_number(1), page_number(2)
+        block = Caption(
+            'Figure 1. A caption continued',
+            one,
+            two,
+            ranges=(InlineRange(0, 9, 'bold'),),
+            fragments=[
+                TextFragment('Figure 1. A caption', one, ranges=(InlineRange(0, 9, 'bold'),)),
+                TextFragment('continued', two, ' '),
+            ],
+        )
+
+        self.assertEqual(
+            render_blocks([block], page_markers=True),
+            '[[PAGE:1]]**Figure 1.** *A caption* [[PAGE:2]]*continued*\n',
         )
 
 

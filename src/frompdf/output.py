@@ -5,12 +5,13 @@ from dataclasses import asdict
 from pathlib import Path
 from typing import TextIO
 
-from frompdf.emphasis import render_inline, resolve_emphasis
+from frompdf.emphasis import caption_emphasis, render_inline, resolve_emphasis
 from frompdf.escaping import escape_markdown, is_thematic_break, shift_index
 from frompdf.models import (
     HARD_LINE_BREAK,
     Block,
     BlockQuote,
+    Caption,
     Footnote,
     Heading,
     Image,
@@ -116,6 +117,8 @@ def render_fragments(
         first = len(fragments[0].separator)
         inserts[first] = inserts.get(first, '') + opening
 
+    if isinstance(block_obj, Caption):
+        joined = caption_emphasis(joined)
     heading = isinstance(block_obj, Heading)
     resolved = resolve_emphasis(
         joined,

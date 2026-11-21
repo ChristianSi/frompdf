@@ -2,7 +2,7 @@ import unittest
 
 from frompdf.blocks import lines_to_markdown_blocks
 from frompdf.figures import FigureLayout, find_figures, join_boxes, reading_position
-from frompdf.models import Image, InlineRange, Line, PageNumber, Paragraph
+from frompdf.models import Caption, Image, InlineRange, Line, PageNumber, Paragraph
 from frompdf.rules import Drawing, DrawingBox
 from frompdf.tables import TableFrame, TableLayout
 
@@ -460,7 +460,7 @@ class FigureBlockTests(unittest.TestCase):
             [*before, *figure_lines, *caption_lines, *after], pages, figures=[figure]
         )
 
-        self.assertEqual([type(block) for block in blocks][:3], [Paragraph, Image, Paragraph])
+        self.assertEqual([type(block) for block in blocks][:3], [Paragraph, Image, Caption])
         self.assertIn('continued on the next page', blocks[0].text.replace('\n', ' '))
         assert isinstance(blocks[1], Image)
         self.assertEqual(blocks[1].target, 'doc-img/p1-1.png')
@@ -477,7 +477,7 @@ class FigureBlockTests(unittest.TestCase):
             figures=[figure],
         )
 
-        self.assertEqual([type(block) for block in blocks], [Paragraph, Paragraph])
+        self.assertEqual([type(block) for block in blocks], [Paragraph, Caption])
         self.assertEqual(blocks[1].text, 'Fig. 1 The caption.')
 
     def test_picture_without_text_is_placed_where_it_lies_on_its_page(self) -> None:
@@ -501,7 +501,7 @@ class FigureBlockTests(unittest.TestCase):
             [*body(100.0, 4), *caption_lines], pages, figures=[figure]
         )
 
-        self.assertEqual([type(block) for block in blocks], [Paragraph, Image, Paragraph])
+        self.assertEqual([type(block) for block in blocks], [Paragraph, Image, Caption])
         self.assertEqual(blocks[2].text, 'A photo of the author.')
 
 

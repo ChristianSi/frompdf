@@ -145,6 +145,17 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
   the second bracket of `[[PAGE:` in the source text.
 - Capitals of the AMS blackboard bold fonts (`msbm`), which these fonts map
   to plain letters, become double-struck letters, as in `R ⊆ ℝⁿ`.
+- Tables framed by rules get their captions, which lie right above or below
+  them and start with a table label, such as `Table 1`, `TABLE IV`,
+  `Tableau 2`, `Tabelle 3`, `Tabla 4`, `Cuadro 5`, `Tabela 6`, `Quadro 7`,
+  or `表 8`. A label set like body text must stand alone or be followed by a
+  separator, as in `Table 3:`, so sentences such as "Table 3 shows …" are
+  no captions.
+- Captions of figures and tables are set apart in italics, unless most of
+  their text is already bold or italic. Their bold parts, such as a leading
+  `**Figure 1.**`, stay as they are, and their italic parts, such as names of
+  species or variables, are set upright, as typographers do in italic text.
+  Captions are never turned into headings or block quotes.
 
 ### Changed
 
@@ -249,6 +260,10 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
 
 ### Fixed
 
+- A figure caption no longer runs into the caption of a table or another
+  figure that starts on the next line, after a sentence ending. Nor does it
+  take in text further left on its last visual line, as a caption in the
+  next column starting slightly higher.
 - Glyphs that a PDF maps to a list of alternative characters, as the cover
   pages of JSTOR's early journal content map their spaces to a tab, carriage
   return, space, and no-break space, and their hyphens to a hyphen-minus, soft
