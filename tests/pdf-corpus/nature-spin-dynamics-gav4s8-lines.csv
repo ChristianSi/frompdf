@@ -45,8 +45,9 @@ abundance in the skyrmion-lattice/cycloid phase. These results highlight the imp
 the step toward ultrafast photocontrol of the magnets with novel spin orders.,2,9,24,9.5,43.6,497.0,353.3,505.6,0.0,13.9,0.0,AdvOTea1a7398,(),False,False,False,False,59.4
 "1 II. Physikalisches Institut, Universität zu Köln, Zülpicher Str. 77, D-50937 Köln, Germany. 2 Experimental Physics V, Center for Electronic Correlations",2,10,25,8.0,43.6,700.5,540.3,709.4,0.0,203.4,0.0,AdvOTf23bb480,"({'start': 0, 'end': 1, 'kind': 'sup'}, {'start': 94, 'end': 95, 'kind': 'sup'})",False,False,False,False,47.1
 "and Magnetism, University of Augsburg, 86159 Augsburg, Germany. 3 Institute of Applied Physics, MD 2028 Chișinău, Republic of Moldova. 4 Istituto",2,10,26,8.0,43.6,709.9,540.8,720.0,-0.0,9.4,0.0,AdvOTf23bb480,"({'start': 64, 'end': 65, 'kind': 'sup'}, {'start': 135, 'end': 136, 'kind': 'sup'})",False,False,False,False,58.2
-"Italiano di Tecnologia, Via Morego 30, 16163 Genova, Italy. 5Dipartimento di Fisica, Università di Genova, Via Dodecaneso, 33, 16146 Genova, Italy. ✉email: sekiguchi.fumiya.2n@kyoto-u.ac.jp; pvl@ph2.uni-koeln.de",2,10,27,8.0,43.6,720.4,534.0,739.3,-0.0,10.5,0.0,AdvOTf23bb480,(),False,False,False,False,70.1
-NATURE COMMUNICATIONS | (2022) 13:3212 | https://doi.org/10.1038/s41467-022-30829-z | www.nature.com/naturecommunications 1,2,11,28,6.7,43.6,751.1,551.7,759.3,0.0,30.6,5.8,AdvOTea1a7398,"({'start': 122, 'end': 123, 'kind': 'bold'},)",False,False,False,False,70.8
+"Italiano di Tecnologia, Via Morego 30, 16163 Genova, Italy. 5Dipartimento di Fisica, Università di Genova, Via Dodecaneso, 33, 16146 Genova, Italy.",2,10,27,8.0,43.6,720.4,534.0,729.3,-0.0,10.5,0.0,AdvOTf23bb480,"({'start': 60, 'end': 61, 'kind': 'sup'},)",False,True,False,False,70.1
+✉email: sekiguchi.fumiya.2n@kyoto-u.ac.jp; pvl@ph2.uni-koeln.de,2,10,28,8.0,43.6,728.7,257.5,739.3,0.0,8.3,0.0,AdvOTf23bb480,(),False,False,False,False,71.0
+NATURE COMMUNICATIONS | (2022) 13:3212 | https://doi.org/10.1038/s41467-022-30829-z | www.nature.com/naturecommunications 1,2,11,29,6.7,43.6,751.1,551.7,759.3,0.0,22.3,5.8,AdvOTea1a7398,"({'start': 122, 'end': 123, 'kind': 'bold'},)",False,False,False,False,70.8
 ARTICLE NATURE COMMUNICATIONS | https://doi.org/10.1038/s41467-022-30829-z,3,1,1,8.0,43.6,17.5,551.7,30.0,,,0.0,AdvOTea1a7398,(),False,False,False,False,285.7
 I,3,2,2,40.9,43.6,41.8,54.6,86.9,-0.0,24.3,0.0,AdvOT125c650c,(),False,False,False,False,
 "n spin systems several types of interactions can coexist, and",3,2,3,9.5,55.4,51.2,291.6,60.3,11.8,9.3,0.0,AdvOT1ef757c0,(),False,False,False,False,64.2
@@ -297,95 +298,96 @@ Cyc,4,47,80,10.8,283.2,223.7,301.8,233.9,18.3,18.7,0.0,ArialMT,(),False,False,Fa
 ,4,50,85,,53.4,231.8,60.4,238.4,-7.4,-12.9,,,(),False,False,False,False,
 Cyc,4,51,86,7.6,478.9,233.3,494.0,240.5,425.4,1.5,0.0,ArialMT,(),True,False,False,False,
 Sk,4,51,87,7.6,478.9,241.8,489.9,249.0,0.0,8.5,0.0,ArialMT,(),True,False,False,False,
-FM SkL,4,52,88,10.8,321.7,237.2,375.5,253.4,-157.2,-4.6,0.0,ArialMT,(),False,False,False,False,321.7
-,4,53,89,,60.7,238.7,60.7,238.7,-260.9,1.5,,,(),False,False,False,False,
-120 mT,4,54,90,7.6,192.9,240.9,220.9,248.0,132.2,2.2,0.0,ArialMT,(),True,False,False,False,209.9
-0,4,55,91,9.8,443.3,253.8,448.7,262.8,250.4,12.9,0.0,ArialMT,(),False,False,False,False,
-0.0,4,56,92,9.8,264.9,256.2,278.4,265.3,-178.4,2.4,0.0,ArialMT,(),False,False,False,False,
-8 10 12,4,57,93,9.8,463.5,261.6,533.1,270.7,198.7,5.4,0.0,ArialMT,(),False,False,False,False,491.5
-0 40 80 120,4,58,94,9.8,277.9,264.1,380.8,273.1,-185.7,2.4,0.0,ArialMT,(),False,False,False,False,305.8
-Magnetic Field (mT),4,58,95,9.8,283.3,278.4,370.0,287.6,5.4,14.4,0.0,ArialMT,(),False,False,False,False,325.5
-200 400 600 800,4,59,96,9.8,96.1,266.9,185.0,276.0,-187.2,-11.5,0.0,ArialMT,(),False,False,False,False,120.3
-Time (ps),4,59,97,9.8,110.2,279.6,151.4,288.8,14.1,12.7,0.0,ArialMT,(),False,False,False,False,134.6
-Temperature (K),4,60,98,9.8,461.1,278.1,532.7,287.3,350.9,-1.5,0.0,ArialMT,(),False,False,False,False,519.7
-"Fig. 2 Coherent spin precession in the FM, SkL, and Cyc phases. a Δθ traces in the first 800 ps shown with fit curves (black solid lines) at 10 K.",4,61,99,8.0,43.6,297.0,535.4,307.2,-417.5,18.8,320.4,AdvOTea1a7398,"({'start': 0, 'end': 65, 'kind': 'bold'}, {'start': 67, 'end': 68, 'kind': 'italic'})",False,False,False,False,58.5
-"b Coherent oscillatory component of the data shown in a. c, d Magnetic-field dependence of the frequency and amplitude of the coherent oscillation. The",4,62,100,8.0,43.6,308.5,551.7,316.4,0.0,11.6,19.2,AdvOTea1a7398,"({'start': 0, 'end': 1, 'kind': 'bold'}, {'start': 54, 'end': 55, 'kind': 'bold'}, {'start': 57, 'end': 58, 'kind': 'bold'}, {'start': 60, 'end': 61, 'kind': 'bold'})",False,False,False,False,50.1
-"blue-shaded areas are guides to the eye indicating where the magnetic phase transition occurs. e, f Temperature dependence of the frequency and lifetime",4,62,101,8.0,43.6,319.5,551.7,326.7,-0.0,11.0,9.4,AdvOTea1a7398,"({'start': 95, 'end': 96, 'kind': 'bold'}, {'start': 98, 'end': 99, 'kind': 'bold'})",False,False,False,False,86.0
-"of the coherent oscillation, with the magnetic field fixed at 30 mT (60 mT) for the Cyc (SkL) phase. Error bars are the standard deviation of the fitting",4,62,102,8.0,43.6,329.4,550.1,337.3,0.0,9.9,0.0,AdvOTea1a7398,(),False,False,False,False,52.7
-parameters.,4,62,103,8.0,43.6,340.5,82.8,347.6,0.0,11.0,0.0,AdvOTea1a7398,(),False,False,False,False,
-K36. It was also demonstrated that the uniaxial anisotropy has a,4,63,104,9.5,43.6,359.0,291.6,369.7,-0.0,18.5,0.0,AdvOT1ef757c0,"({'start': 1, 'end': 2, 'kind': 'sup'}, {'start': 2, 'end': 3, 'kind': 'sup'})",False,False,False,False,62.4
-strong impact on the stability range of the SkL phase in lacunar,4,63,105,9.5,43.6,371.0,291.6,380.1,0.0,12.0,0.0,AdvOT1ef757c0,(),False,False,False,False,70.8
-"spinels33,34,37,38, and specific to GaV4S8 it confines the orientation",4,63,106,9.5,43.6,379.9,291.7,391.3,0.0,8.9,0.0,AdvOT1ef757c0,"({'start': 7, 'end': 8, 'kind': 'sup'}, {'start': 8, 'end': 9, 'kind': 'sup'}, {'start': 9, 'end': 10, 'kind': 'sup'}, {'start': 10, 'end': 11, 'kind': 'sup'}, {'start': 11, 'end': 12, 'kind': 'sup'}, {'start': 12, 'end': 13, 'kind': 'sup'}, {'start': 13, 'end': 14, 'kind': 'sup'}, {'start': 14, 'end': 15, 'kind': 'sup'}, {'start': 15, 'end': 16, 'kind': 'sup'}, {'start': 16, 'end': 17, 'kind': 'sup'}, {'start': 17, 'end': 18, 'kind': 'sup'}, {'start': 39, 'end': 40, 'kind': 'sub'}, {'start': 41, 'end': 42, 'kind': 'sub'})",False,False,False,False,107.7
-"of the skyrmion tubes along the easy axis33,37.",4,63,107,9.5,43.6,390.3,221.9,401.0,-0.0,10.4,0.0,AdvOT1ef757c0,"({'start': 41, 'end': 42, 'kind': 'sup'}, {'start': 42, 'end': 43, 'kind': 'sup'}, {'start': 43, 'end': 44, 'kind': 'sup'}, {'start': 44, 'end': 45, 'kind': 'sup'}, {'start': 45, 'end': 46, 'kind': 'sup'})",False,False,False,False,54.3
-"process, Δθ shows a relatively slow demagnetization, and an even",4,64,108,9.5,303.6,359.8,551.7,369.8,260.0,-30.6,0.0,AdvOT1ef757c0,"({'start': 10, 'end': 11, 'kind': 'italic'},)",False,False,False,False,336.2
-slower subsequent remagnetization. The demagnetization and,4,64,109,9.5,303.6,371.0,551.7,380.1,-0.0,11.2,0.0,AdvOT1ef757c0,(),False,False,False,False,333.3
-remagnetization processes also occur in the paramagnetic phase,4,64,110,9.5,303.6,381.5,551.7,390.6,0.0,10.5,0.0,AdvOT1ef757c0,(),False,False,False,False,368.2
-"slightly above TC. Because GaV4S8 is a semiconductor, the",4,64,111,9.5,303.6,391.9,551.7,401.8,0.0,10.4,0.0,AdvOT1ef757c0,"({'start': 16, 'end': 17, 'kind': 'sub'}, {'start': 30, 'end': 31, 'kind': 'sub'}, {'start': 32, 'end': 33, 'kind': 'sub'}, {'start': 15, 'end': 16, 'kind': 'italic'})",False,False,False,False,336.8
-demagnetization process is completed in a relatively slow time-,4,64,112,9.5,303.6,402.4,551.7,411.5,0.0,10.5,0.0,AdvOT1ef757c0,(),False,False,False,False,369.9
-"scale of ~200–400 ps, as widely observed in semiconductor",4,64,113,9.5,303.6,411.7,551.6,422.0,0.0,9.3,0.0,AdvOT1ef757c0,(),False,False,False,False,327.7
-"magnets24. In general, in semiconductors this slow demagneti-",4,64,114,9.5,303.6,421.7,551.7,432.5,0.0,10.1,0.0,AdvOT1ef757c0,"({'start': 7, 'end': 8, 'kind': 'sup'}, {'start': 8, 'end': 9, 'kind': 'sup'})",False,False,False,False,348.6
-zation dynamics is understood in terms of spin-lattice thermali-,4,64,115,9.5,303.6,433.7,551.7,442.9,0.0,12.0,0.0,AdvOT1ef757c0,(),False,False,False,False,330.1
-"zation, which takes place after the rapid heating of the lattice",4,64,116,9.5,303.6,444.2,551.7,453.4,0.0,10.5,0.0,AdvOT1ef757c0,(),False,False,False,False,333.2
-system due to an efficient energy transfer from the electron sys-,4,64,117,9.5,303.6,454.6,551.7,463.8,0.0,10.4,0.0,AdvOT1ef757c0,(),False,False,False,False,332.5
-tem to the lattice system24. An interesting observation is that at,4,64,118,9.5,303.6,463.6,551.7,474.3,0.0,8.9,0.0,AdvOT1ef757c0,"({'start': 25, 'end': 26, 'kind': 'sup'}, {'start': 26, 'end': 27, 'kind': 'sup'})",False,False,False,False,321.4
-11.5 K and at a low magnetic field Δθ changes sign and takes a,4,64,119,9.5,303.6,474.8,551.7,484.9,-0.0,11.2,0.0,AdvOT1ef757c0,"({'start': 36, 'end': 37, 'kind': 'italic'},)",False,False,False,False,321.2
-"positive value, indicating that magnetization is enhanced by the",4,64,120,9.5,303.6,486.1,551.6,495.2,-0.0,11.2,0.0,AdvOT1ef757c0,(),False,False,False,False,336.2
-photoexcitation. The origin of this lies in the peak structure of,4,64,121,9.5,303.6,496.5,552.6,505.6,0.0,10.4,0.0,AdvOT1ef757c0,(),False,False,False,False,368.7
-magnetic susceptibility around the phase boundary between the,4,64,122,9.5,303.6,507.0,551.6,516.1,0.0,10.5,0.0,AdvOT1ef757c0,(),False,False,False,False,341.6
-"Cyc and paramagnetic phases23,42. In addition to these incoherent",4,64,123,9.5,303.6,515.9,551.7,526.6,0.0,8.9,0.0,AdvOT1ef757c0,"({'start': 27, 'end': 28, 'kind': 'sup'}, {'start': 28, 'end': 29, 'kind': 'sup'}, {'start': 29, 'end': 30, 'kind': 'sup'}, {'start': 30, 'end': 31, 'kind': 'sup'}, {'start': 31, 'end': 32, 'kind': 'sup'})",False,False,False,False,320.3
-"spin dynamics, a clear oscillatory structure appears in the mag-",4,64,124,9.5,303.6,527.9,551.7,537.1,0.0,12.0,0.0,AdvOT1ef757c0,(),False,False,False,False,323.1
-"netically ordered phase with a typical period of 100–300 ps, i.e., in",4,64,125,9.5,303.6,537.2,551.7,547.5,0.0,9.3,0.0,AdvOT1ef757c0,(),False,False,False,False,337.5
-the few GHz range. The excitation mechanism of this coherent,4,64,126,9.5,303.6,548.8,551.7,558.0,0.0,11.6,0.0,AdvOT1ef757c0,(),False,False,False,False,319.1
-collective spin motion has been assigned to the ultrafast photo-,4,64,127,9.5,303.6,559.2,551.7,568.4,0.0,10.4,0.0,AdvOT1ef757c0,(),False,False,False,False,342.0
-induced modulation of the magnetocrystalline anisotropy of,4,64,128,9.5,303.6,569.7,552.6,578.9,0.0,10.5,0.0,AdvOT1ef757c0,(),False,False,False,False,339.8
-GaV4S8,4,64,129,9.5,303.6,580.2,332.3,590.1,0.0,10.4,0.0,AdvOT1ef757c0,"({'start': 3, 'end': 4, 'kind': 'sub'}, {'start': 5, 'end': 6, 'kind': 'sub'})",False,False,False,False,
-23.,4,64,130,9.5,332.3,578.7,341.6,589.3,28.7,-1.5,0.0,AdvOT1ef757c0,"({'start': 0, 'end': 1, 'kind': 'sup'}, {'start': 1, 'end': 2, 'kind': 'sup'})",False,False,False,False,
-The comprehensive set of the Δθ traces clearly shows that the,4,64,131,9.5,313.1,589.9,551.7,599.9,-19.2,11.2,0.0,AdvOT1ef757c0,"({'start': 30, 'end': 31, 'kind': 'italic'},)",False,False,False,False,330.9
-nature of the coherent and incoherent spin dynamics changes,4,64,132,9.5,303.6,601.1,551.7,610.2,-9.5,11.2,0.0,AdvOT1ef757c0,(),False,False,False,False,332.4
-character depending on the location in the magnetic phase,4,64,133,9.5,303.6,611.6,551.7,620.7,0.0,10.5,0.0,AdvOT1ef757c0,(),False,False,False,False,344.2
-diagram. We first discuss the coherent oscillatory response in the,4,64,134,9.5,303.6,622.0,551.7,631.2,0.0,10.4,0.0,AdvOT1ef757c0,(),False,False,False,False,339.5
-"different magnetic phases. To do this, we fit the data using a",4,64,135,9.5,303.6,632.5,551.7,641.7,0.0,10.5,0.0,AdvOT1ef757c0,(),False,False,False,False,340.2
-"damped cosine oscillation, superimposed on a bi-exponential",4,64,136,9.5,303.6,643.0,551.6,652.1,0.0,10.5,0.0,AdvOT1ef757c0,(),False,False,False,False,339.5
-function that accounts for the incoherent demagnetization and,4,64,137,9.5,303.6,653.4,551.7,662.6,0.0,10.4,0.0,AdvOT1ef757c0,(),False,False,False,False,339.5
-remagnetization dynamics. We disregard the dynamics on the,4,64,138,9.5,303.6,663.9,551.6,673.1,0.0,10.5,0.0,AdvOT1ef757c0,(),False,False,False,False,369.2
-earliest timescale (up to ~40 ps) originating from ultrafast carrier,4,64,139,9.5,303.6,674.3,551.7,683.5,0.0,10.4,0.0,AdvOT1ef757c0,(),False,False,False,False,333.0
-relaxation processes [see supplementary information]. Figure 2a,4,64,140,9.5,303.6,684.8,551.7,694.0,0.0,10.5,0.0,AdvOT1ef757c0,(),False,False,False,False,344.7
-"shows data taken at T = 10 K for various fields in the Cyc, SkL,",4,64,141,9.5,303.6,693.0,551.7,704.4,0.0,8.2,0.0,AdvOT1ef757c0,"({'start': 20, 'end': 21, 'kind': 'italic'},)",False,False,False,False,330.1
-"and FM phases, along with the phenomenological model fits to",4,64,142,9.5,303.6,705.7,551.7,714.9,0.0,12.7,0.0,AdvOT1ef757c0,(),False,False,False,False,321.4
-the data (black lines). To more clearly show the coherent,4,64,143,9.5,303.6,716.2,551.7,725.3,0.0,10.4,0.0,AdvOT1ef757c0,(),False,False,False,False,321.6
-"oscillatory component, we replot the data in Fig. 2b after",4,64,144,9.5,303.6,726.7,551.7,735.8,0.0,10.5,0.0,AdvOT1ef757c0,(),False,False,False,False,348.7
-"In the trMOKE experiments, the external magnetic field is",4,65,145,9.5,53.1,402.4,291.6,411.5,-250.5,-324.3,0.0,AdvOT1ef757c0,(),False,False,False,False,66.1
-applied normal to the (100) crystal surface so that all of the four,4,65,146,9.5,43.6,412.8,291.7,422.0,-9.5,10.4,0.0,AdvOT1ef757c0,(),False,False,False,False,74.2
-"possible structural domains host the same magnetic state, since",4,65,147,9.5,43.6,423.3,291.6,432.5,0.0,10.5,0.0,AdvOT1ef757c0,(),False,False,False,False,77.3
-the magnetic field spans the same angle with the four <111>,4,65,148,9.5,43.6,433.7,291.7,442.9,0.0,10.4,0.0,AdvOT1ef757c0,(),False,False,False,False,59.9
-directions being the magnetic easy axis of the four possible,4,65,149,9.5,43.6,444.2,291.6,453.4,0.0,10.5,0.0,AdvOT1ef757c0,(),False,False,False,False,86.3
-"domains. Hence, these four domains contribute equally to the",4,65,150,9.5,43.6,454.6,291.7,463.8,0.0,10.4,0.0,AdvOT1ef757c0,(),False,False,False,False,82.5
-trMOKE signal. The experiments were performed with a,4,65,151,9.5,43.6,465.1,291.6,474.3,0.0,10.5,0.0,AdvOT1ef757c0,(),False,False,False,False,84.2
-"Yb:KGW regenerative amplified laser as main light source, which",4,65,152,9.5,43.6,475.6,291.6,484.7,0.0,10.4,0.0,AdvOT1ef757c0,(),False,False,False,False,81.1
-provides higher pulse energy with lower repetition rate (100 kHz),4,65,153,9.5,43.6,486.1,291.6,495.2,0.0,10.5,0.0,AdvOT1ef757c0,(),False,False,False,False,78.3
-compared to the setup in our previous work23. This enables,4,65,154,9.5,43.6,495.0,291.6,505.6,0.0,8.9,0.0,AdvOT1ef757c0,"({'start': 42, 'end': 43, 'kind': 'sup'}, {'start': 43, 'end': 44, 'kind': 'sup'})",False,False,False,False,86.3
-stronger photoexcitation while minimizing heat accumulation in,4,65,155,9.5,43.6,507.0,291.7,516.1,-0.0,12.0,0.0,AdvOT1ef757c0,(),False,False,False,False,78.1
-the sample. The experiments have been performed in the regime,4,65,156,9.5,43.6,517.4,291.6,526.6,0.0,10.4,0.0,AdvOT1ef757c0,(),False,False,False,False,58.3
-where the response is linear in pump fluence (~30 μJ/cm2 on the,4,65,157,9.5,43.6,526.3,291.7,537.2,0.0,8.9,0.0,AdvOT1ef757c0,"({'start': 55, 'end': 56, 'kind': 'sup'}, {'start': 50, 'end': 51, 'kind': 'italic'})",False,False,False,False,69.2
-"sample surface). For the pump and probe, infrared pulses",4,65,158,9.5,43.6,538.3,291.6,547.4,-0.0,12.0,0.0,AdvOT1ef757c0,(),False,False,False,False,76.5
-"(800 nm, 40 fs) and visible pulses (515 nm, 270 fs) were used,",4,65,159,9.5,43.6,548.8,291.6,557.9,0.0,10.5,0.0,AdvOT1ef757c0,(),False,False,False,False,62.3
-"respectively. The pump pulse was linearly polarized, with the",4,65,160,9.5,43.6,559.2,291.7,568.4,0.0,10.4,0.0,AdvOT1ef757c0,(),False,False,False,False,94.3
-photon energy (1.55 eV) well above the GaV4S8 band gap of,4,65,161,9.5,43.6,569.7,292.5,579.6,0.0,10.5,0.0,AdvOT1ef757c0,"({'start': 42, 'end': 43, 'kind': 'sub'}, {'start': 44, 'end': 45, 'kind': 'sub'})",False,False,False,False,75.9
-"~0.35 eV39,40.",4,65,162,9.5,43.6,578.7,95.4,589.3,0.0,8.9,0.0,AdvOT1ef757c0,"({'start': 8, 'end': 9, 'kind': 'sup'}, {'start': 9, 'end': 10, 'kind': 'sup'}, {'start': 10, 'end': 11, 'kind': 'sup'}, {'start': 11, 'end': 12, 'kind': 'sup'}, {'start': 12, 'end': 13, 'kind': 'sup'})",False,False,False,False,66.6
-Coherent spin precession. Figures 1b–e show the photoinduced,4,66,163,9.5,43.6,604.5,291.6,614.8,0.0,25.8,284.7,AdvOT1ef757c0,"({'start': 0, 'end': 24, 'kind': 'bold'},)",False,False,False,False,83.4
-"transient change of the Kerr rotation angle of the probe pulse, Δθ,",4,66,164,9.5,43.6,615.3,291.7,625.3,-0.0,10.8,0.0,AdvOT1ef757c0,"({'start': 65, 'end': 66, 'kind': 'italic'},)",False,False,False,False,79.4
-for the magnetic fields ranging from 20–150 mT and four fixed,4,66,165,9.5,43.6,625.4,291.6,635.7,-0.0,10.1,0.0,AdvOT1ef757c0,(),False,False,False,False,58.1
-temperatures as indicated by the dashed vertical lines in the phase,4,66,166,9.5,43.6,637.0,291.7,646.1,0.0,11.6,0.0,AdvOT1ef757c0,(),False,False,False,False,95.5
-diagram Fig. 1a. The observed Δθ traces show the presence of,4,66,167,9.5,43.6,646.7,292.5,656.7,0.0,9.7,0.0,AdvOT1ef757c0,"({'start': 31, 'end': 32, 'kind': 'italic'},)",False,False,False,False,78.7
-"several processes characterized by their timescales. First, imme-",4,66,168,9.5,43.6,657.9,291.6,667.0,-0.0,11.2,0.0,AdvOT1ef757c0,(),False,False,False,False,72.8
-diately after photoexcitation Δθ shows a marked fast (<40 ps),4,66,169,9.5,43.6,667.6,291.6,677.7,0.0,9.7,0.0,AdvOT1ef757c0,"({'start': 31, 'end': 32, 'kind': 'italic'},)",False,False,False,False,73.1
-decrease. This behavior is observed at all magnetic fields and all,4,66,170,9.5,43.6,678.8,291.6,688.0,-0.0,11.2,0.0,AdvOT1ef757c0,(),False,False,False,False,80.6
-temperatures below TC as can be seen in Figs. 1b-1d. This initial,4,66,171,9.5,43.6,689.3,291.7,699.2,-0.0,10.5,0.0,AdvOT1ef757c0,"({'start': 20, 'end': 21, 'kind': 'sub'}, {'start': 19, 'end': 20, 'kind': 'italic'})",False,False,False,False,96.1
-fast demagnetization stems from the photoexcited carrier,4,66,172,9.5,43.6,699.7,291.6,708.9,0.0,10.4,0.0,AdvOT1ef757c0,(),False,False,False,False,64.6
-"relaxation process, where magnons are created either through",4,66,173,9.5,43.6,710.2,291.6,719.4,0.0,10.5,0.0,AdvOT1ef757c0,(),False,False,False,False,85.8
-direct electron-magnon scattering or by the phonons emitted,4,66,174,9.5,43.6,720.6,291.7,729.8,0.0,10.4,0.0,AdvOT1ef757c0,(),False,False,False,False,70.1
-during non-radiative carrier relaxation process41. After this initial,4,66,175,9.5,43.6,729.6,291.7,740.3,0.0,8.9,0.0,AdvOT1ef757c0,"({'start': 47, 'end': 48, 'kind': 'sup'}, {'start': 48, 'end': 49, 'kind': 'sup'})",False,False,False,False,71.2
-NATURE COMMUNICATIONS | (2022) 13:3212 | https://doi.org/10.1038/s41467-022-30829-z | www.nature.com/naturecommunications 3,4,67,176,6.7,43.6,751.1,551.7,759.3,-0.0,21.5,5.8,AdvOTea1a7398,"({'start': 122, 'end': 123, 'kind': 'bold'},)",False,False,False,False,70.8
+FM,4,52,88,10.8,359.8,237.2,375.5,247.2,-119.0,-4.6,0.0,ArialMT,(),False,True,False,False,
+SkL,4,52,89,10.8,321.7,243.3,340.3,253.4,-38.2,6.0,0.0,ArialMT,(),False,False,False,False,
+,4,53,90,,60.7,238.7,60.7,238.7,-260.9,-4.5,,,(),False,False,False,False,
+120 mT,4,54,91,7.6,192.9,240.9,220.9,248.0,132.2,2.2,0.0,ArialMT,(),True,False,False,False,209.9
+0,4,55,92,9.8,443.3,253.8,448.7,262.8,250.4,12.9,0.0,ArialMT,(),False,False,False,False,
+0.0,4,56,93,9.8,264.9,256.2,278.4,265.3,-178.4,2.4,0.0,ArialMT,(),False,False,False,False,
+8 10 12,4,57,94,9.8,463.5,261.6,533.1,270.7,198.7,5.4,0.0,ArialMT,(),False,False,False,False,491.5
+0 40 80 120,4,58,95,9.8,277.9,264.1,380.8,273.1,-185.7,2.4,0.0,ArialMT,(),False,False,False,False,305.8
+Magnetic Field (mT),4,58,96,9.8,283.3,278.4,370.0,287.6,5.4,14.4,0.0,ArialMT,(),False,False,False,False,325.5
+200 400 600 800,4,59,97,9.8,96.1,266.9,185.0,276.0,-187.2,-11.5,0.0,ArialMT,(),False,False,False,False,120.3
+Time (ps),4,59,98,9.8,110.2,279.6,151.4,288.8,14.1,12.7,0.0,ArialMT,(),False,False,False,False,134.6
+Temperature (K),4,60,99,9.8,461.1,278.1,532.7,287.3,350.9,-1.5,0.0,ArialMT,(),False,False,False,False,519.7
+"Fig. 2 Coherent spin precession in the FM, SkL, and Cyc phases. a Δθ traces in the first 800 ps shown with fit curves (black solid lines) at 10 K.",4,61,100,8.0,43.6,297.0,535.4,307.2,-417.5,18.8,320.4,AdvOTea1a7398,"({'start': 0, 'end': 65, 'kind': 'bold'}, {'start': 67, 'end': 68, 'kind': 'italic'})",False,False,False,False,58.5
+"b Coherent oscillatory component of the data shown in a. c, d Magnetic-field dependence of the frequency and amplitude of the coherent oscillation. The",4,62,101,8.0,43.6,308.5,551.7,316.4,0.0,11.6,19.2,AdvOTea1a7398,"({'start': 0, 'end': 1, 'kind': 'bold'}, {'start': 54, 'end': 55, 'kind': 'bold'}, {'start': 57, 'end': 58, 'kind': 'bold'}, {'start': 60, 'end': 61, 'kind': 'bold'})",False,False,False,False,50.1
+"blue-shaded areas are guides to the eye indicating where the magnetic phase transition occurs. e, f Temperature dependence of the frequency and lifetime",4,62,102,8.0,43.6,319.5,551.7,326.7,-0.0,11.0,9.4,AdvOTea1a7398,"({'start': 95, 'end': 96, 'kind': 'bold'}, {'start': 98, 'end': 99, 'kind': 'bold'})",False,False,False,False,86.0
+"of the coherent oscillation, with the magnetic field fixed at 30 mT (60 mT) for the Cyc (SkL) phase. Error bars are the standard deviation of the fitting",4,62,103,8.0,43.6,329.4,550.1,337.3,0.0,9.9,0.0,AdvOTea1a7398,(),False,False,False,False,52.7
+parameters.,4,62,104,8.0,43.6,340.5,82.8,347.6,0.0,11.0,0.0,AdvOTea1a7398,(),False,False,False,False,
+K36. It was also demonstrated that the uniaxial anisotropy has a,4,63,105,9.5,43.6,359.0,291.6,369.7,-0.0,18.5,0.0,AdvOT1ef757c0,"({'start': 1, 'end': 2, 'kind': 'sup'}, {'start': 2, 'end': 3, 'kind': 'sup'})",False,False,False,False,62.4
+strong impact on the stability range of the SkL phase in lacunar,4,63,106,9.5,43.6,371.0,291.6,380.1,0.0,12.0,0.0,AdvOT1ef757c0,(),False,False,False,False,70.8
+"spinels33,34,37,38, and specific to GaV4S8 it confines the orientation",4,63,107,9.5,43.6,379.9,291.7,391.3,0.0,8.9,0.0,AdvOT1ef757c0,"({'start': 7, 'end': 8, 'kind': 'sup'}, {'start': 8, 'end': 9, 'kind': 'sup'}, {'start': 9, 'end': 10, 'kind': 'sup'}, {'start': 10, 'end': 11, 'kind': 'sup'}, {'start': 11, 'end': 12, 'kind': 'sup'}, {'start': 12, 'end': 13, 'kind': 'sup'}, {'start': 13, 'end': 14, 'kind': 'sup'}, {'start': 14, 'end': 15, 'kind': 'sup'}, {'start': 15, 'end': 16, 'kind': 'sup'}, {'start': 16, 'end': 17, 'kind': 'sup'}, {'start': 17, 'end': 18, 'kind': 'sup'}, {'start': 39, 'end': 40, 'kind': 'sub'}, {'start': 41, 'end': 42, 'kind': 'sub'})",False,False,False,False,107.7
+"of the skyrmion tubes along the easy axis33,37.",4,63,108,9.5,43.6,390.3,221.9,401.0,-0.0,10.4,0.0,AdvOT1ef757c0,"({'start': 41, 'end': 42, 'kind': 'sup'}, {'start': 42, 'end': 43, 'kind': 'sup'}, {'start': 43, 'end': 44, 'kind': 'sup'}, {'start': 44, 'end': 45, 'kind': 'sup'}, {'start': 45, 'end': 46, 'kind': 'sup'})",False,False,False,False,54.3
+"process, Δθ shows a relatively slow demagnetization, and an even",4,64,109,9.5,303.6,359.8,551.7,369.8,260.0,-30.6,0.0,AdvOT1ef757c0,"({'start': 10, 'end': 11, 'kind': 'italic'},)",False,False,False,False,336.2
+slower subsequent remagnetization. The demagnetization and,4,64,110,9.5,303.6,371.0,551.7,380.1,-0.0,11.2,0.0,AdvOT1ef757c0,(),False,False,False,False,333.3
+remagnetization processes also occur in the paramagnetic phase,4,64,111,9.5,303.6,381.5,551.7,390.6,0.0,10.5,0.0,AdvOT1ef757c0,(),False,False,False,False,368.2
+"slightly above TC. Because GaV4S8 is a semiconductor, the",4,64,112,9.5,303.6,391.9,551.7,401.8,0.0,10.4,0.0,AdvOT1ef757c0,"({'start': 16, 'end': 17, 'kind': 'sub'}, {'start': 30, 'end': 31, 'kind': 'sub'}, {'start': 32, 'end': 33, 'kind': 'sub'}, {'start': 15, 'end': 16, 'kind': 'italic'})",False,False,False,False,336.8
+demagnetization process is completed in a relatively slow time-,4,64,113,9.5,303.6,402.4,551.7,411.5,0.0,10.5,0.0,AdvOT1ef757c0,(),False,False,False,False,369.9
+"scale of ~200–400 ps, as widely observed in semiconductor",4,64,114,9.5,303.6,411.7,551.6,422.0,0.0,9.3,0.0,AdvOT1ef757c0,(),False,False,False,False,327.7
+"magnets24. In general, in semiconductors this slow demagneti-",4,64,115,9.5,303.6,421.7,551.7,432.5,0.0,10.1,0.0,AdvOT1ef757c0,"({'start': 7, 'end': 8, 'kind': 'sup'}, {'start': 8, 'end': 9, 'kind': 'sup'})",False,False,False,False,348.6
+zation dynamics is understood in terms of spin-lattice thermali-,4,64,116,9.5,303.6,433.7,551.7,442.9,0.0,12.0,0.0,AdvOT1ef757c0,(),False,False,False,False,330.1
+"zation, which takes place after the rapid heating of the lattice",4,64,117,9.5,303.6,444.2,551.7,453.4,0.0,10.5,0.0,AdvOT1ef757c0,(),False,False,False,False,333.2
+system due to an efficient energy transfer from the electron sys-,4,64,118,9.5,303.6,454.6,551.7,463.8,0.0,10.4,0.0,AdvOT1ef757c0,(),False,False,False,False,332.5
+tem to the lattice system24. An interesting observation is that at,4,64,119,9.5,303.6,463.6,551.7,474.3,0.0,8.9,0.0,AdvOT1ef757c0,"({'start': 25, 'end': 26, 'kind': 'sup'}, {'start': 26, 'end': 27, 'kind': 'sup'})",False,False,False,False,321.4
+11.5 K and at a low magnetic field Δθ changes sign and takes a,4,64,120,9.5,303.6,474.8,551.7,484.9,-0.0,11.2,0.0,AdvOT1ef757c0,"({'start': 36, 'end': 37, 'kind': 'italic'},)",False,False,False,False,321.2
+"positive value, indicating that magnetization is enhanced by the",4,64,121,9.5,303.6,486.1,551.6,495.2,-0.0,11.2,0.0,AdvOT1ef757c0,(),False,False,False,False,336.2
+photoexcitation. The origin of this lies in the peak structure of,4,64,122,9.5,303.6,496.5,552.6,505.6,0.0,10.4,0.0,AdvOT1ef757c0,(),False,False,False,False,368.7
+magnetic susceptibility around the phase boundary between the,4,64,123,9.5,303.6,507.0,551.6,516.1,0.0,10.5,0.0,AdvOT1ef757c0,(),False,False,False,False,341.6
+"Cyc and paramagnetic phases23,42. In addition to these incoherent",4,64,124,9.5,303.6,515.9,551.7,526.6,0.0,8.9,0.0,AdvOT1ef757c0,"({'start': 27, 'end': 28, 'kind': 'sup'}, {'start': 28, 'end': 29, 'kind': 'sup'}, {'start': 29, 'end': 30, 'kind': 'sup'}, {'start': 30, 'end': 31, 'kind': 'sup'}, {'start': 31, 'end': 32, 'kind': 'sup'})",False,False,False,False,320.3
+"spin dynamics, a clear oscillatory structure appears in the mag-",4,64,125,9.5,303.6,527.9,551.7,537.1,0.0,12.0,0.0,AdvOT1ef757c0,(),False,False,False,False,323.1
+"netically ordered phase with a typical period of 100–300 ps, i.e., in",4,64,126,9.5,303.6,537.2,551.7,547.5,0.0,9.3,0.0,AdvOT1ef757c0,(),False,False,False,False,337.5
+the few GHz range. The excitation mechanism of this coherent,4,64,127,9.5,303.6,548.8,551.7,558.0,0.0,11.6,0.0,AdvOT1ef757c0,(),False,False,False,False,319.1
+collective spin motion has been assigned to the ultrafast photo-,4,64,128,9.5,303.6,559.2,551.7,568.4,0.0,10.4,0.0,AdvOT1ef757c0,(),False,False,False,False,342.0
+induced modulation of the magnetocrystalline anisotropy of,4,64,129,9.5,303.6,569.7,552.6,578.9,0.0,10.5,0.0,AdvOT1ef757c0,(),False,False,False,False,339.8
+GaV4S8,4,64,130,9.5,303.6,580.2,332.3,590.1,0.0,10.4,0.0,AdvOT1ef757c0,"({'start': 3, 'end': 4, 'kind': 'sub'}, {'start': 5, 'end': 6, 'kind': 'sub'})",False,False,False,False,
+23.,4,64,131,9.5,332.3,578.7,341.6,589.3,28.7,-1.5,0.0,AdvOT1ef757c0,"({'start': 0, 'end': 1, 'kind': 'sup'}, {'start': 1, 'end': 2, 'kind': 'sup'})",False,False,False,False,
+The comprehensive set of the Δθ traces clearly shows that the,4,64,132,9.5,313.1,589.9,551.7,599.9,-19.2,11.2,0.0,AdvOT1ef757c0,"({'start': 30, 'end': 31, 'kind': 'italic'},)",False,False,False,False,330.9
+nature of the coherent and incoherent spin dynamics changes,4,64,133,9.5,303.6,601.1,551.7,610.2,-9.5,11.2,0.0,AdvOT1ef757c0,(),False,False,False,False,332.4
+character depending on the location in the magnetic phase,4,64,134,9.5,303.6,611.6,551.7,620.7,0.0,10.5,0.0,AdvOT1ef757c0,(),False,False,False,False,344.2
+diagram. We first discuss the coherent oscillatory response in the,4,64,135,9.5,303.6,622.0,551.7,631.2,0.0,10.4,0.0,AdvOT1ef757c0,(),False,False,False,False,339.5
+"different magnetic phases. To do this, we fit the data using a",4,64,136,9.5,303.6,632.5,551.7,641.7,0.0,10.5,0.0,AdvOT1ef757c0,(),False,False,False,False,340.2
+"damped cosine oscillation, superimposed on a bi-exponential",4,64,137,9.5,303.6,643.0,551.6,652.1,0.0,10.5,0.0,AdvOT1ef757c0,(),False,False,False,False,339.5
+function that accounts for the incoherent demagnetization and,4,64,138,9.5,303.6,653.4,551.7,662.6,0.0,10.4,0.0,AdvOT1ef757c0,(),False,False,False,False,339.5
+remagnetization dynamics. We disregard the dynamics on the,4,64,139,9.5,303.6,663.9,551.6,673.1,0.0,10.5,0.0,AdvOT1ef757c0,(),False,False,False,False,369.2
+earliest timescale (up to ~40 ps) originating from ultrafast carrier,4,64,140,9.5,303.6,674.3,551.7,683.5,0.0,10.4,0.0,AdvOT1ef757c0,(),False,False,False,False,333.0
+relaxation processes [see supplementary information]. Figure 2a,4,64,141,9.5,303.6,684.8,551.7,694.0,0.0,10.5,0.0,AdvOT1ef757c0,(),False,False,False,False,344.7
+"shows data taken at T = 10 K for various fields in the Cyc, SkL,",4,64,142,9.5,303.6,693.0,551.7,704.4,0.0,8.2,0.0,AdvOT1ef757c0,"({'start': 20, 'end': 21, 'kind': 'italic'},)",False,False,False,False,330.1
+"and FM phases, along with the phenomenological model fits to",4,64,143,9.5,303.6,705.7,551.7,714.9,0.0,12.7,0.0,AdvOT1ef757c0,(),False,False,False,False,321.4
+the data (black lines). To more clearly show the coherent,4,64,144,9.5,303.6,716.2,551.7,725.3,0.0,10.4,0.0,AdvOT1ef757c0,(),False,False,False,False,321.6
+"oscillatory component, we replot the data in Fig. 2b after",4,64,145,9.5,303.6,726.7,551.7,735.8,0.0,10.5,0.0,AdvOT1ef757c0,(),False,False,False,False,348.7
+"In the trMOKE experiments, the external magnetic field is",4,65,146,9.5,53.1,402.4,291.6,411.5,-250.5,-324.3,0.0,AdvOT1ef757c0,(),False,False,False,False,66.1
+applied normal to the (100) crystal surface so that all of the four,4,65,147,9.5,43.6,412.8,291.7,422.0,-9.5,10.4,0.0,AdvOT1ef757c0,(),False,False,False,False,74.2
+"possible structural domains host the same magnetic state, since",4,65,148,9.5,43.6,423.3,291.6,432.5,0.0,10.5,0.0,AdvOT1ef757c0,(),False,False,False,False,77.3
+the magnetic field spans the same angle with the four <111>,4,65,149,9.5,43.6,433.7,291.7,442.9,0.0,10.4,0.0,AdvOT1ef757c0,(),False,False,False,False,59.9
+directions being the magnetic easy axis of the four possible,4,65,150,9.5,43.6,444.2,291.6,453.4,0.0,10.5,0.0,AdvOT1ef757c0,(),False,False,False,False,86.3
+"domains. Hence, these four domains contribute equally to the",4,65,151,9.5,43.6,454.6,291.7,463.8,0.0,10.4,0.0,AdvOT1ef757c0,(),False,False,False,False,82.5
+trMOKE signal. The experiments were performed with a,4,65,152,9.5,43.6,465.1,291.6,474.3,0.0,10.5,0.0,AdvOT1ef757c0,(),False,False,False,False,84.2
+"Yb:KGW regenerative amplified laser as main light source, which",4,65,153,9.5,43.6,475.6,291.6,484.7,0.0,10.4,0.0,AdvOT1ef757c0,(),False,False,False,False,81.1
+provides higher pulse energy with lower repetition rate (100 kHz),4,65,154,9.5,43.6,486.1,291.6,495.2,0.0,10.5,0.0,AdvOT1ef757c0,(),False,False,False,False,78.3
+compared to the setup in our previous work23. This enables,4,65,155,9.5,43.6,495.0,291.6,505.6,0.0,8.9,0.0,AdvOT1ef757c0,"({'start': 42, 'end': 43, 'kind': 'sup'}, {'start': 43, 'end': 44, 'kind': 'sup'})",False,False,False,False,86.3
+stronger photoexcitation while minimizing heat accumulation in,4,65,156,9.5,43.6,507.0,291.7,516.1,-0.0,12.0,0.0,AdvOT1ef757c0,(),False,False,False,False,78.1
+the sample. The experiments have been performed in the regime,4,65,157,9.5,43.6,517.4,291.6,526.6,0.0,10.4,0.0,AdvOT1ef757c0,(),False,False,False,False,58.3
+where the response is linear in pump fluence (~30 μJ/cm2 on the,4,65,158,9.5,43.6,526.3,291.7,537.2,0.0,8.9,0.0,AdvOT1ef757c0,"({'start': 55, 'end': 56, 'kind': 'sup'}, {'start': 50, 'end': 51, 'kind': 'italic'})",False,False,False,False,69.2
+"sample surface). For the pump and probe, infrared pulses",4,65,159,9.5,43.6,538.3,291.6,547.4,-0.0,12.0,0.0,AdvOT1ef757c0,(),False,False,False,False,76.5
+"(800 nm, 40 fs) and visible pulses (515 nm, 270 fs) were used,",4,65,160,9.5,43.6,548.8,291.6,557.9,0.0,10.5,0.0,AdvOT1ef757c0,(),False,False,False,False,62.3
+"respectively. The pump pulse was linearly polarized, with the",4,65,161,9.5,43.6,559.2,291.7,568.4,0.0,10.4,0.0,AdvOT1ef757c0,(),False,False,False,False,94.3
+photon energy (1.55 eV) well above the GaV4S8 band gap of,4,65,162,9.5,43.6,569.7,292.5,579.6,0.0,10.5,0.0,AdvOT1ef757c0,"({'start': 42, 'end': 43, 'kind': 'sub'}, {'start': 44, 'end': 45, 'kind': 'sub'})",False,False,False,False,75.9
+"~0.35 eV39,40.",4,65,163,9.5,43.6,578.7,95.4,589.3,0.0,8.9,0.0,AdvOT1ef757c0,"({'start': 8, 'end': 9, 'kind': 'sup'}, {'start': 9, 'end': 10, 'kind': 'sup'}, {'start': 10, 'end': 11, 'kind': 'sup'}, {'start': 11, 'end': 12, 'kind': 'sup'}, {'start': 12, 'end': 13, 'kind': 'sup'})",False,False,False,False,66.6
+Coherent spin precession. Figures 1b–e show the photoinduced,4,66,164,9.5,43.6,604.5,291.6,614.8,0.0,25.8,284.7,AdvOT1ef757c0,"({'start': 0, 'end': 24, 'kind': 'bold'},)",False,False,False,False,83.4
+"transient change of the Kerr rotation angle of the probe pulse, Δθ,",4,66,165,9.5,43.6,615.3,291.7,625.3,-0.0,10.8,0.0,AdvOT1ef757c0,"({'start': 65, 'end': 66, 'kind': 'italic'},)",False,False,False,False,79.4
+for the magnetic fields ranging from 20–150 mT and four fixed,4,66,166,9.5,43.6,625.4,291.6,635.7,-0.0,10.1,0.0,AdvOT1ef757c0,(),False,False,False,False,58.1
+temperatures as indicated by the dashed vertical lines in the phase,4,66,167,9.5,43.6,637.0,291.7,646.1,0.0,11.6,0.0,AdvOT1ef757c0,(),False,False,False,False,95.5
+diagram Fig. 1a. The observed Δθ traces show the presence of,4,66,168,9.5,43.6,646.7,292.5,656.7,0.0,9.7,0.0,AdvOT1ef757c0,"({'start': 31, 'end': 32, 'kind': 'italic'},)",False,False,False,False,78.7
+"several processes characterized by their timescales. First, imme-",4,66,169,9.5,43.6,657.9,291.6,667.0,-0.0,11.2,0.0,AdvOT1ef757c0,(),False,False,False,False,72.8
+diately after photoexcitation Δθ shows a marked fast (<40 ps),4,66,170,9.5,43.6,667.6,291.6,677.7,0.0,9.7,0.0,AdvOT1ef757c0,"({'start': 31, 'end': 32, 'kind': 'italic'},)",False,False,False,False,73.1
+decrease. This behavior is observed at all magnetic fields and all,4,66,171,9.5,43.6,678.8,291.6,688.0,-0.0,11.2,0.0,AdvOT1ef757c0,(),False,False,False,False,80.6
+temperatures below TC as can be seen in Figs. 1b-1d. This initial,4,66,172,9.5,43.6,689.3,291.7,699.2,-0.0,10.5,0.0,AdvOT1ef757c0,"({'start': 20, 'end': 21, 'kind': 'sub'}, {'start': 19, 'end': 20, 'kind': 'italic'})",False,False,False,False,96.1
+fast demagnetization stems from the photoexcited carrier,4,66,173,9.5,43.6,699.7,291.6,708.9,0.0,10.4,0.0,AdvOT1ef757c0,(),False,False,False,False,64.6
+"relaxation process, where magnons are created either through",4,66,174,9.5,43.6,710.2,291.6,719.4,0.0,10.5,0.0,AdvOT1ef757c0,(),False,False,False,False,85.8
+direct electron-magnon scattering or by the phonons emitted,4,66,175,9.5,43.6,720.6,291.7,729.8,0.0,10.4,0.0,AdvOT1ef757c0,(),False,False,False,False,70.1
+during non-radiative carrier relaxation process41. After this initial,4,66,176,9.5,43.6,729.6,291.7,740.3,0.0,8.9,0.0,AdvOT1ef757c0,"({'start': 47, 'end': 48, 'kind': 'sup'}, {'start': 48, 'end': 49, 'kind': 'sup'})",False,False,False,False,71.2
+NATURE COMMUNICATIONS | (2022) 13:3212 | https://doi.org/10.1038/s41467-022-30829-z | www.nature.com/naturecommunications 3,4,67,177,6.7,43.6,751.1,551.7,759.3,-0.0,21.5,5.8,AdvOTea1a7398,"({'start': 122, 'end': 123, 'kind': 'bold'},)",False,False,False,False,70.8
 ARTICLE NATURE COMMUNICATIONS | https://doi.org/10.1038/s41467-022-30829-z,5,1,1,8.0,43.6,17.5,551.7,30.0,,,0.0,AdvOTea1a7398,(),False,False,False,False,285.7
 300–500 ps as seen in the traces at 30 mT and 50 mT. The trace at,5,2,2,9.5,303.6,50.0,551.7,60.3,260.0,32.5,0.0,AdvOT1ef757c0,(),False,False,False,False,337.5
 "40 mT, which is near the phase boundary between the Cyc and",5,2,3,9.5,303.6,61.6,551.7,70.8,0.0,11.6,0.0,AdvOT1ef757c0,(),False,False,False,False,314.5
@@ -733,43 +735,44 @@ mj,7,21,80,7.5,403.7,524.7,411.0,533.4,100.1,-49.8,0.0,AdvOT7d6df7ab.I,"({'start
 r()t mj,7,21,81,7.5,409.7,523.9,427.1,538.6,6.0,-0.8,0.0,AdvOT7d6df7ab.I,"({'start': 0, 'end': 1, 'kind': 'sub'}, {'start': 6, 'end': 7, 'kind': 'sup'}, {'start': 0, 'end': 1, 'kind': 'italic'}, {'start': 3, 'end': 4, 'kind': 'italic'}, {'start': 5, 'end': 6, 'kind': 'bold'}, {'start': 5, 'end': 7, 'kind': 'italic'})",False,False,False,False,419.8
 r′() 0 ⟩,7,21,82,7.5,425.7,525.1,441.8,538.6,16.0,1.3,0.0,AdvMacMthSyN,"({'start': 0, 'end': 1, 'kind': 'sub'}, {'start': 0, 'end': 1, 'kind': 'italic'})",False,False,False,False,432.2
 Cj r − r,7,22,83,7.5,355.7,524.7,379.9,538.6,-70.0,-0.5,0.0,AdvOT7d6df7ab.I,"({'start': 1, 'end': 2, 'kind': 'sup'}, {'start': 0, 'end': 2, 'kind': 'italic'}, {'start': 3, 'end': 4, 'kind': 'italic'}, {'start': 7, 'end': 8, 'kind': 'italic'})",False,False,False,False,364.9
-"′ ( )= , t ⟨",7,22,84,7.5,362.4,524.7,403.7,538.6,6.7,0.0,0.0,AdvMacMthSyN,"({'start': 9, 'end': 10, 'kind': 'italic'},)",False,False,False,False,362.4
-− ⟨,7,23,85,7.5,443.5,525.1,454.5,538.6,81.1,0.5,0.0,AdvP4C4E46,(),False,False,False,False,451.0
-mj,7,23,86,7.5,454.5,524.7,461.8,533.4,11.0,-0.5,0.0,AdvOT7d6df7ab.I,"({'start': 1, 'end': 2, 'kind': 'sup'}, {'start': 0, 'end': 1, 'kind': 'bold'}, {'start': 0, 'end': 2, 'kind': 'italic'})",False,False,False,False,
-r()t,7,23,87,7.5,460.4,526.2,470.5,538.6,5.9,1.5,0.0,AdvOT7d6df7ab.I,"({'start': 0, 'end': 1, 'kind': 'sub'}, {'start': 0, 'end': 1, 'kind': 'italic'}, {'start': 3, 'end': 4, 'kind': 'italic'})",False,False,False,False,
-∫ +∞,7,24,88,5.2,437.3,586.1,454.5,604.3,-23.1,59.9,0.0,AdvMacMthSyN,(),False,False,False,False,445.0
-−∞,7,24,89,5.2,441.5,600.8,450.9,609.5,4.1,14.7,0.0,AdvMacMthSyN,(),False,False,False,False,
-"(q, ω)= 1",7,25,90,7.5,353.0,587.5,391.5,605.0,-88.4,-13.4,0.0,AdvMacMthSyN,"({'start': 1, 'end': 2, 'kind': 'bold'}, {'start': 1, 'end': 2, 'kind': 'italic'}, {'start': 4, 'end': 5, 'kind': 'italic'})",False,False,False,False,362.6
-,7,25,91,,386.0,597.4,393.9,606.3,32.9,9.9,,,(),False,False,False,False,
-2π √ N,7,25,92,7.5,379.8,592.4,399.6,605.7,-6.2,-5.0,0.0,AdvOT7d6df7ab.I+03,"({'start': 1, 'end': 2, 'kind': 'italic'}, {'start': 5, 'end': 6, 'kind': 'italic'})",False,False,False,False,379.8
-∑,7,26,93,7.5,401.5,590.8,407.6,599.5,21.7,-1.6,0.0,AdvTTab7e17fd+22,(),False,False,False,False,
-"r,r′",7,26,94,5.2,400.9,598.8,407.7,605.3,-0.6,8.0,0.0,AdvOT45bf69de.BI,"({'start': 0, 'end': 1, 'kind': 'bold'}, {'start': 0, 'end': 1, 'kind': 'italic'}, {'start': 2, 'end': 3, 'kind': 'bold'}, {'start': 2, 'end': 3, 'kind': 'italic'})",False,False,False,False,
-e,7,26,95,7.5,409.5,592.6,412.4,599.8,8.6,-6.2,0.0,AdvOT7d6df7ab.I,"({'start': 0, 'end': 1, 'kind': 'italic'},)",False,False,False,False,
-−iq·(r−r′,7,26,96,5.2,412.4,590.3,433.3,599.7,2.9,-2.3,0.0,AdvMacMthSyN,"({'start': 1, 'end': 2, 'kind': 'sup'}, {'start': 2, 'end': 3, 'kind': 'sup'}, {'start': 5, 'end': 6, 'kind': 'sup'}, {'start': 7, 'end': 8, 'kind': 'sup'}, {'start': 1, 'end': 3, 'kind': 'italic'}, {'start': 2, 'end': 3, 'kind': 'bold'}, {'start': 5, 'end': 6, 'kind': 'bold'}, {'start': 5, 'end': 6, 'kind': 'italic'}, {'start': 7, 'end': 8, 'kind': 'bold'}, {'start': 7, 'end': 8, 'kind': 'italic'})",False,False,False,False,
-(r − r′,7,27,97,7.5,473.0,591.1,492.4,605.0,60.5,0.8,0.0,AdvMacMthSyN,"({'start': 1, 'end': 2, 'kind': 'bold'}, {'start': 1, 'end': 2, 'kind': 'italic'}, {'start': 5, 'end': 6, 'kind': 'bold'}, {'start': 5, 'end': 6, 'kind': 'italic'})",False,False,False,False,480.3
-", t)dt (2)",7,27,98,7.5,492.9,592.3,551.7,605.0,19.9,1.2,0.0,AdvOT7d6df7ab.I,"({'start': 2, 'end': 3, 'kind': 'italic'}, {'start': 4, 'end': 6, 'kind': 'italic'})",False,False,False,False,496.2
-The magnon linewidth was then obtained by fitting the peaks of the spectral,7,27,99,7.5,313.6,608.2,547.7,615.5,-179.3,15.9,0.0,AdvOT1ef757c0,(),False,False,False,False,327.7
-function with Gaussians. The thermal conductivity was estimated from the,7,27,100,7.5,303.6,616.7,531.9,623.9,-10.0,8.4,0.0,AdvOT1ef757c0,(),False,False,False,False,331.4
-linewidth as explained in the main text.,7,27,101,7.5,303.6,625.1,424.8,632.3,0.0,8.4,0.0,AdvOT1ef757c0,(),False,False,False,False,334.2
-Sj,7,28,102,7.5,347.8,591.1,352.5,599.8,44.2,-34.1,0.0,AdvOT7d6df7ab.I,"({'start': 1, 'end': 2, 'kind': 'sup'}, {'start': 0, 'end': 2, 'kind': 'italic'})",False,False,False,False,
-),7,29,103,5.2,433.9,591.0,435.6,599.7,86.1,-0.0,0.0,AdvMacMthSyN,(),False,False,False,False,
-e,7,30,104,7.5,456.2,592.6,459.2,599.8,22.3,1.5,0.0,AdvOT7d6df7ab.I,"({'start': 0, 'end': 1, 'kind': 'italic'},)",False,False,False,False,
-iωt,7,30,105,5.2,459.2,590.7,465.7,596.2,2.9,-1.9,0.0,AdvOT7d6df7ab.I,"({'start': 0, 'end': 1, 'kind': 'sup'}, {'start': 1, 'end': 2, 'kind': 'sup'}, {'start': 2, 'end': 3, 'kind': 'sup'}, {'start': 0, 'end': 3, 'kind': 'italic'})",False,False,False,False,
-Cj,7,30,106,7.5,466.2,591.1,472.5,599.8,7.0,0.4,0.0,AdvOT7d6df7ab.I,"({'start': 1, 'end': 2, 'kind': 'sup'}, {'start': 0, 'end': 2, 'kind': 'italic'})",False,False,False,False,
-Data availability,7,31,107,9.5,303.6,656.5,370.4,665.0,-162.6,65.4,700.0,AdvOTcb88df00,"({'start': 0, 'end': 17, 'kind': 'bold'},)",False,False,False,False,326.2
-The data that support the findings of this study are available from the authors upon,7,32,108,7.0,303.6,667.1,544.3,673.8,0.0,10.6,0.0,AdvOT1ef757c0,(),False,False,False,False,316.9
-reasonable request.,7,32,109,7.0,303.6,675.8,357.2,682.5,0.0,8.7,0.0,AdvOT1ef757c0,(),False,False,False,False,335.5
-Methods,7,33,110,9.5,43.6,680.0,79.5,688.5,-260.0,4.1,700.0,AdvOTcb88df00,"({'start': 0, 'end': 7, 'kind': 'bold'},)",False,False,False,False,
-Sample preparation and characterization of the magnetic properties. GaV4S8,7,34,111,7.5,43.6,690.1,290.6,698.0,0.0,10.2,624.3,AdvOTcb88df00,"({'start': 71, 'end': 72, 'kind': 'sub'}, {'start': 73, 'end': 74, 'kind': 'sub'}, {'start': 0, 'end': 66, 'kind': 'bold'})",False,False,False,False,69.7
-single crystals have been grown by the chemical transport reactions method in a way,7,34,112,7.5,43.6,698.7,291.1,705.9,0.0,8.6,0.0,AdvOT1ef757c0,(),False,False,False,False,62.1
-"similar to Ref. 55. As starting material for growth, the preliminary synthesized poly-",7,34,113,7.5,43.6,706.0,286.3,714.4,0.0,7.2,0.0,AdvOT1ef757c0,"({'start': 16, 'end': 17, 'kind': 'sup'}, {'start': 17, 'end': 18, 'kind': 'sup'})",False,False,False,False,65.4
-crystalline powder was used. The polycrystals were prepared by solid state reactions,7,34,114,7.5,43.6,715.6,286.1,722.8,0.0,9.7,0.0,AdvOT1ef757c0,(),False,False,False,False,74.4
-"using high-purity elements: Ga (99.9999%), V (99.5%) and S (99.999%). The iodine was",7,34,115,7.5,43.6,724.1,291.6,731.3,0.0,8.5,0.0,AdvOT1ef757c0,(),False,False,False,False,60.6
-utilized as the transport agent. The crystal growth was performed at temperatures,7,34,116,7.5,43.6,732.6,280.6,739.8,0.0,8.4,0.0,AdvOT1ef757c0,(),False,False,False,False,66.7
-Code availability,7,35,117,9.5,303.6,706.8,371.5,715.4,260.0,-25.7,700.0,AdvOTcb88df00,"({'start': 0, 'end': 17, 'kind': 'bold'},)",False,False,False,False,327.3
-The codes that support the calculations of this study are available from the authors upon,7,36,118,7.0,303.6,717.4,551.6,724.1,0.0,10.5,0.0,AdvOT1ef757c0,(),False,False,False,False,316.4
-reasonable request.,7,36,119,7.0,303.6,726.1,357.2,732.8,0.0,8.7,0.0,AdvOT1ef757c0,(),False,False,False,False,335.5
-6 NATURE COMMUNICATIONS | (2022) 13:3212 | https://doi.org/10.1038/s41467-022-30829-z | www.nature.com/naturecommunications,7,37,120,6.7,43.6,751.1,494.9,759.3,-260.0,25.0,5.8,AdvOTea1a7398,"({'start': 0, 'end': 1, 'kind': 'bold'},)",False,False,False,False,106.6
+′,7,22,84,5.2,380.0,524.7,381.4,533.3,24.3,0.0,0.0,AdvMacMthSyN,(),False,True,False,False,
+"( )= , t ⟨",7,22,85,7.5,362.4,525.1,403.7,538.6,-17.6,0.5,0.0,AdvMacMthSyN,"({'start': 7, 'end': 8, 'kind': 'italic'},)",False,False,False,False,387.7
+− ⟨,7,23,86,7.5,443.5,525.1,454.5,538.6,81.1,0.0,0.0,AdvP4C4E46,(),False,False,False,False,451.0
+mj,7,23,87,7.5,454.5,524.7,461.8,533.4,11.0,-0.5,0.0,AdvOT7d6df7ab.I,"({'start': 1, 'end': 2, 'kind': 'sup'}, {'start': 0, 'end': 1, 'kind': 'bold'}, {'start': 0, 'end': 2, 'kind': 'italic'})",False,False,False,False,
+r()t,7,23,88,7.5,460.4,526.2,470.5,538.6,5.9,1.5,0.0,AdvOT7d6df7ab.I,"({'start': 0, 'end': 1, 'kind': 'sub'}, {'start': 0, 'end': 1, 'kind': 'italic'}, {'start': 3, 'end': 4, 'kind': 'italic'})",False,False,False,False,
+∫ +∞,7,24,89,5.2,437.3,586.1,454.5,604.3,-23.1,59.9,0.0,AdvMacMthSyN,(),False,False,False,False,445.0
+−∞,7,24,90,5.2,441.5,600.8,450.9,609.5,4.1,14.7,0.0,AdvMacMthSyN,(),False,False,False,False,
+"(q, ω)= 1",7,25,91,7.5,353.0,587.5,391.5,605.0,-88.4,-13.4,0.0,AdvMacMthSyN,"({'start': 1, 'end': 2, 'kind': 'bold'}, {'start': 1, 'end': 2, 'kind': 'italic'}, {'start': 4, 'end': 5, 'kind': 'italic'})",False,False,False,False,362.6
+,7,25,92,,386.0,597.4,393.9,606.3,32.9,9.9,,,(),False,False,False,False,
+2π √ N,7,25,93,7.5,379.8,592.4,399.6,605.7,-6.2,-5.0,0.0,AdvOT7d6df7ab.I+03,"({'start': 1, 'end': 2, 'kind': 'italic'}, {'start': 5, 'end': 6, 'kind': 'italic'})",False,False,False,False,379.8
+∑,7,26,94,7.5,401.5,590.8,407.6,599.5,21.7,-1.6,0.0,AdvTTab7e17fd+22,(),False,False,False,False,
+"r,r′",7,26,95,5.2,400.9,598.8,407.7,605.3,-0.6,8.0,0.0,AdvOT45bf69de.BI,"({'start': 0, 'end': 1, 'kind': 'bold'}, {'start': 0, 'end': 1, 'kind': 'italic'}, {'start': 2, 'end': 3, 'kind': 'bold'}, {'start': 2, 'end': 3, 'kind': 'italic'})",False,False,False,False,
+e,7,26,96,7.5,409.5,592.6,412.4,599.8,8.6,-6.2,0.0,AdvOT7d6df7ab.I,"({'start': 0, 'end': 1, 'kind': 'italic'},)",False,False,False,False,
+−iq·(r−r′,7,26,97,5.2,412.4,590.3,433.3,599.7,2.9,-2.3,0.0,AdvMacMthSyN,"({'start': 1, 'end': 2, 'kind': 'sup'}, {'start': 2, 'end': 3, 'kind': 'sup'}, {'start': 5, 'end': 6, 'kind': 'sup'}, {'start': 7, 'end': 8, 'kind': 'sup'}, {'start': 1, 'end': 3, 'kind': 'italic'}, {'start': 2, 'end': 3, 'kind': 'bold'}, {'start': 5, 'end': 6, 'kind': 'bold'}, {'start': 5, 'end': 6, 'kind': 'italic'}, {'start': 7, 'end': 8, 'kind': 'bold'}, {'start': 7, 'end': 8, 'kind': 'italic'})",False,False,False,False,
+(r − r′,7,27,98,7.5,473.0,591.1,492.4,605.0,60.5,0.8,0.0,AdvMacMthSyN,"({'start': 1, 'end': 2, 'kind': 'bold'}, {'start': 1, 'end': 2, 'kind': 'italic'}, {'start': 5, 'end': 6, 'kind': 'bold'}, {'start': 5, 'end': 6, 'kind': 'italic'})",False,False,False,False,480.3
+", t)dt (2)",7,27,99,7.5,492.9,592.3,551.7,605.0,19.9,1.2,0.0,AdvOT7d6df7ab.I,"({'start': 2, 'end': 3, 'kind': 'italic'}, {'start': 4, 'end': 6, 'kind': 'italic'})",False,False,False,False,496.2
+The magnon linewidth was then obtained by fitting the peaks of the spectral,7,27,100,7.5,313.6,608.2,547.7,615.5,-179.3,15.9,0.0,AdvOT1ef757c0,(),False,False,False,False,327.7
+function with Gaussians. The thermal conductivity was estimated from the,7,27,101,7.5,303.6,616.7,531.9,623.9,-10.0,8.4,0.0,AdvOT1ef757c0,(),False,False,False,False,331.4
+linewidth as explained in the main text.,7,27,102,7.5,303.6,625.1,424.8,632.3,0.0,8.4,0.0,AdvOT1ef757c0,(),False,False,False,False,334.2
+Sj,7,28,103,7.5,347.8,591.1,352.5,599.8,44.2,-34.1,0.0,AdvOT7d6df7ab.I,"({'start': 1, 'end': 2, 'kind': 'sup'}, {'start': 0, 'end': 2, 'kind': 'italic'})",False,False,False,False,
+),7,29,104,5.2,433.9,591.0,435.6,599.7,86.1,-0.0,0.0,AdvMacMthSyN,(),False,False,False,False,
+e,7,30,105,7.5,456.2,592.6,459.2,599.8,22.3,1.5,0.0,AdvOT7d6df7ab.I,"({'start': 0, 'end': 1, 'kind': 'italic'},)",False,False,False,False,
+iωt,7,30,106,5.2,459.2,590.7,465.7,596.2,2.9,-1.9,0.0,AdvOT7d6df7ab.I,"({'start': 0, 'end': 1, 'kind': 'sup'}, {'start': 1, 'end': 2, 'kind': 'sup'}, {'start': 2, 'end': 3, 'kind': 'sup'}, {'start': 0, 'end': 3, 'kind': 'italic'})",False,False,False,False,
+Cj,7,30,107,7.5,466.2,591.1,472.5,599.8,7.0,0.4,0.0,AdvOT7d6df7ab.I,"({'start': 1, 'end': 2, 'kind': 'sup'}, {'start': 0, 'end': 2, 'kind': 'italic'})",False,False,False,False,
+Data availability,7,31,108,9.5,303.6,656.5,370.4,665.0,-162.6,65.4,700.0,AdvOTcb88df00,"({'start': 0, 'end': 17, 'kind': 'bold'},)",False,False,False,False,326.2
+The data that support the findings of this study are available from the authors upon,7,32,109,7.0,303.6,667.1,544.3,673.8,0.0,10.6,0.0,AdvOT1ef757c0,(),False,False,False,False,316.9
+reasonable request.,7,32,110,7.0,303.6,675.8,357.2,682.5,0.0,8.7,0.0,AdvOT1ef757c0,(),False,False,False,False,335.5
+Methods,7,33,111,9.5,43.6,680.0,79.5,688.5,-260.0,4.1,700.0,AdvOTcb88df00,"({'start': 0, 'end': 7, 'kind': 'bold'},)",False,False,False,False,
+Sample preparation and characterization of the magnetic properties. GaV4S8,7,34,112,7.5,43.6,690.1,290.6,698.0,0.0,10.2,624.3,AdvOTcb88df00,"({'start': 71, 'end': 72, 'kind': 'sub'}, {'start': 73, 'end': 74, 'kind': 'sub'}, {'start': 0, 'end': 66, 'kind': 'bold'})",False,False,False,False,69.7
+single crystals have been grown by the chemical transport reactions method in a way,7,34,113,7.5,43.6,698.7,291.1,705.9,0.0,8.6,0.0,AdvOT1ef757c0,(),False,False,False,False,62.1
+"similar to Ref. 55. As starting material for growth, the preliminary synthesized poly-",7,34,114,7.5,43.6,706.0,286.3,714.4,0.0,7.2,0.0,AdvOT1ef757c0,"({'start': 16, 'end': 17, 'kind': 'sup'}, {'start': 17, 'end': 18, 'kind': 'sup'})",False,False,False,False,65.4
+crystalline powder was used. The polycrystals were prepared by solid state reactions,7,34,115,7.5,43.6,715.6,286.1,722.8,0.0,9.7,0.0,AdvOT1ef757c0,(),False,False,False,False,74.4
+"using high-purity elements: Ga (99.9999%), V (99.5%) and S (99.999%). The iodine was",7,34,116,7.5,43.6,724.1,291.6,731.3,0.0,8.5,0.0,AdvOT1ef757c0,(),False,False,False,False,60.6
+utilized as the transport agent. The crystal growth was performed at temperatures,7,34,117,7.5,43.6,732.6,280.6,739.8,0.0,8.4,0.0,AdvOT1ef757c0,(),False,False,False,False,66.7
+Code availability,7,35,118,9.5,303.6,706.8,371.5,715.4,260.0,-25.7,700.0,AdvOTcb88df00,"({'start': 0, 'end': 17, 'kind': 'bold'},)",False,False,False,False,327.3
+The codes that support the calculations of this study are available from the authors upon,7,36,119,7.0,303.6,717.4,551.6,724.1,0.0,10.5,0.0,AdvOT1ef757c0,(),False,False,False,False,316.4
+reasonable request.,7,36,120,7.0,303.6,726.1,357.2,732.8,0.0,8.7,0.0,AdvOT1ef757c0,(),False,False,False,False,335.5
+6 NATURE COMMUNICATIONS | (2022) 13:3212 | https://doi.org/10.1038/s41467-022-30829-z | www.nature.com/naturecommunications,7,37,121,6.7,43.6,751.1,494.9,759.3,-260.0,25.0,5.8,AdvOTea1a7398,"({'start': 0, 'end': 1, 'kind': 'bold'},)",False,False,False,False,106.6
 NATURE COMMUNICATIONS | https://doi.org/10.1038/s41467-022-30829-z ARTICLE,8,1,1,8.0,43.6,17.5,551.7,30.0,,,0.0,AdvOTea1a7398,(),False,False,False,False,75.6
 Received: 10 August 2021; Accepted: 20 May 2022;,8,2,2,9.0,43.6,51.5,230.1,60.2,-0.0,34.0,0.0,AdvOT1ef757c0,(),False,False,False,False,80.1
 "35. Geirhos, K. et al. Macroscopic manifestation of domain-wall magnetism and",8,3,3,7.5,303.6,52.6,551.3,59.8,260.0,1.1,0.0,AdvOT1ef757c0,(),False,False,False,False,318.2

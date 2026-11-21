@@ -259,7 +259,7 @@ acquires a collective motion of the skyrmion BR mode,
 accompanied by the oscillating magnetization components along
 the skyrmion tube direction<sup>45,46</sup>. On the other hand, the coherent
 spin precession is triggered by the photoinduced quench of the
-magnetocrystalline anisotropy<sup>23</sup>, as well as by the change of the *g*tensor
+magnetocrystalline anisotropy<sup>23</sup>, as well as by the change of the *g*-tensor
 as the Jahn–Teller distortion is diminished by the
 photoexcitation. Therefore, the skyrmion BR mode strongly
 couples to the photoinduced anisotropy quench, resulting in the
@@ -565,8 +565,8 @@ equation<sup>59</sup>. The Gilbert damping was set to 10<sup>−3</sup>. 20,000 
 used for the integration. The Fourier transform of the correlation function gives the
 dynamical structure factor,
 
-> *C<sup>j</sup> r* − *r*
-> ′ ( )= , *t* ⟨
+*C<sup>j</sup> r* − *r*′
+( )= , *t* ⟨
 
 ***m**<sup>j</sup><sub>r</sub>*()*t **m**<sup>j</sup><sub>r</sub>*′() 0 ⟩
 
@@ -798,4 +798,5 @@ the copyright holder. To view a copy of this license, visit http://creativecommo
 
 1. II. Physikalisches Institut, Universität zu Köln, Zülpicher Str. 77, D-50937 Köln, Germany. <sup>2</sup> Experimental Physics V, Center for Electronic Correlations
    and Magnetism, University of Augsburg, 86159 Augsburg, Germany. <sup>3</sup> Institute of Applied Physics, MD 2028 Chișinău, Republic of Moldova. <sup>4</sup> Istituto
-   Italiano di Tecnologia, Via Morego 30, 16163 Genova, Italy. 5Dipartimento di Fisica, Università di Genova, Via Dodecaneso, 33, 16146 Genova, Italy. ✉email: sekiguchi.fumiya.2n@kyoto-u.ac.jp; pvl@ph2.uni-koeln.de
+   Italiano di Tecnologia, Via Morego 30, 16163 Genova, Italy. <sup>5</sup>Dipartimento di Fisica, Università di Genova, Via Dodecaneso, 33, 16146 Genova, Italy.
+   ✉email: sekiguchi.fumiya.2n@kyoto-u.ac.jp; pvl@ph2.uni-koeln.de
