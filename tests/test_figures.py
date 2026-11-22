@@ -399,6 +399,114 @@ class FigureDetectionTests(unittest.TestCase):
         self.assertEqual((with_label.resolution, with_label.lossy), (None, False))
 
 
+def rule(x1: float, y1: float, x2: float, y2: float) -> Drawing:
+    """Build a thin rule from (x1, y1) to (x2, y2), horizontal or vertical."""
+    return Drawing((x1 - 0.25, y1 - 0.25, x2 + 0.25, y2 + 0.25), 'path')
+
+
+def bar_chart() -> list[Drawing]:
+    """Build a bar chart whose axes are rules and whose bars are plain rectangles.
+
+    Its tick values are drawn as outlines, each a small detailed drawing too
+    small for a panel of its own.
+    """
+    return [
+        rule(100.0, 200.0, 100.0, 320.0),
+        rule(100.0, 320.0, 300.0, 320.0),
+        rule(96.0, 260.0, 100.0, 260.0),
+        Drawing((130.0, 250.0, 170.0, 320.0), 'path'),
+        Drawing((210.0, 230.0, 250.0, 320.0), 'path'),
+        Drawing((84.0, 256.0, 94.0, 264.0), 'path', detail=16),
+        Drawing((84.0, 316.0, 94.0, 324.0), 'path', detail=16),
+    ]
+
+
+class PlotAxesTests(unittest.TestCase):
+    def test_bar_chart_drawn_from_rules_and_rectangles_is_a_picture(self) -> None:
+        lines = [*body(100.0, 4), *body(400.0, 3)]
+
+        figures = find_figures(lines, {1: bar_chart()})
+
+        self.assertEqual([figure.box for figure in figures], [(84.0, 199.75, 300.25, 324.0)])
+
+    def test_rules_meeting_at_a_corner_around_plain_boxes_are_no_picture(self) -> None:
+        # Axes-like rules without detailed drawings, as the border and the
+        # shaded cells of a table.
+        drawings = [drawing for drawing in bar_chart() if not drawing.detail]
+
+        self.assertEqual(find_figures(body(100.0, 4), {1: drawings}), [])
+
+    def test_short_rules_meeting_are_no_axes(self) -> None:
+        # Rules shorter than a panel, as the corner marks of a frame.
+        drawings = [
+            rule(100.0, 290.0, 100.0, 320.0),
+            rule(100.0, 320.0, 130.0, 320.0),
+            *(drawing for drawing in bar_chart()[3:] if not drawing.detail),
+            *(drawing for drawing in bar_chart() if drawing.detail),
+        ]
+
+        self.assertEqual(find_figures(body(100.0, 4), {1: drawings}), [])
+
+    def test_axes_do_not_join_detailed_drawings_out_of_reach(self) -> None:
+        # An ornament three ems right of the axes stays apart.
+        drawings = [
+            *(drawing for drawing in bar_chart() if not drawing.detail),
+            Drawing((330.0, 300.0, 340.0, 308.0), 'path', detail=16),
+        ]
+
+        self.assertEqual(find_figures(body(100.0, 4), {1: drawings}), [])
+
+
+def side_caption(
+    first: str = 'Figure 2. Greenhouse experiments testing the', *, x1: float = 320.0
+) -> list[Line]:
+    """Build a two-line caption in small type set beside the plot."""
+    return [
+        line(first, x1, 260.0, x1 + 130.0, font_size=8.0),
+        line('effect of elevation.', x1, 270.0, x1 + 70.0, font_size=8.0),
+    ]
+
+
+class SideCaptionTests(unittest.TestCase):
+    def test_caption_beside_a_picture_starts_with_a_figure_label(self) -> None:
+        # The caption lies right of the plot, or left of a narrower picture.
+        for picture, x1 in ((PANEL, 320.0), ((200.0, 200.0, 300.0, 320.0), 40.0)):
+            with self.subTest(x1=x1):
+                captions = side_caption(x1=x1)
+                figures = find_figures(
+                    [*body(100.0, 4), *captions, *body(400.0, 3)], {1: [photo(picture)]}
+                )
+
+                self.assertEqual(texts(figures[0].caption_lines), texts(captions))
+
+    def test_text_beside_a_picture_without_a_figure_label_is_no_caption(self) -> None:
+        captions = side_caption('Greenhouse experiments testing the')
+
+        figures = find_figures([*body(100.0, 4), *captions, *elsewhere()], {1: [photo(PANEL)]})
+
+        self.assertEqual(figures[0].caption_lines, [])
+
+    def test_body_text_beside_a_picture_starting_with_a_label_is_no_caption(self) -> None:
+        # A sentence of the next column at body size, without emphasis.
+        sentence = line('Figure 2 shows the effect of', 320.0, 260.0, 450.0)
+
+        figures = find_figures([*body(100.0, 4), sentence, *elsewhere()], {1: [photo(PANEL)]})
+
+        self.assertEqual(figures[0].caption_lines, [])
+
+    def test_caption_below_a_picture_is_not_taken_by_a_taller_one_beside_it(self) -> None:
+        short = (60.0, 200.0, 170.0, 260.0)
+        tall = (250.0, 200.0, 400.0, 330.0)
+        below_short = line('Figure 1. The short photo', 60.0, 270.0, 215.0, font_size=8.0)
+
+        figures = find_figures([below_short, *elsewhere()], {1: [photo(tall), photo(short)]})
+
+        self.assertEqual(
+            [(figure.box, texts(figure.caption_lines)) for figure in figures],
+            [(short, ['Figure 1. The short photo']), (tall, [])],
+        )
+
+
 class JoinBoxesTests(unittest.TestCase):
     def test_joins_chains_of_near_boxes_and_keeps_distant_ones(self) -> None:
         boxes = [(0.0, 0.0, 10.0, 10.0), (12.0, 0.0, 20.0, 10.0), (22.0, 5.0, 30.0, 20.0)]

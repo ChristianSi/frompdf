@@ -8,7 +8,7 @@ Chinese. A caption continues in the lines directly below its first one, until
 a sentence ends short of its right edge or the next line starts with another
 label.
 
-Figure captions lie below their pictures, as recognized with them. Table
+Figure captions lie below or beside their pictures, as recognized with them. Table
 captions lie right above or below their tables and always start with a table
 label, as headings and notes set like captions often border on tables. All
 tables of a document place their captions alike, on the side where more of

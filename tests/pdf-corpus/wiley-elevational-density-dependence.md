@@ -590,24 +590,7 @@ dependence differentiation in subtropical forests.
 Conspecific NDD appeared to be stronger in the low-elevation
 sites than in the high-elevation sites. This result
 was consistent with the strong negative effect of relative
-
-![](wiley-elevational-density-dependence-img/p06-1.png)
-
-> **Figure 2.** Greenhouse experiments testing the
-> effect of elevations (low vs. high) and soil
-> treatments (sterilization vs. control) on seed
-> germination (A) and seedling growth (B). Bars
-> represent means ± 1 SE.
->
-> [[PAGE:7|VISIBLE:2829]]**(A) (B)**
-
-**Figure 3.** Greenhouse experiments testing the
-effect of elevation on the relative soil biota
-effect based on seed germination (A) and
-seedling growth (B). Bars represent means ± 1
-SE.
-
-conspecific seedlings in the low-elevation sites. Spatial
+[[PAGE:7|VISIBLE:2829]]conspecific seedlings in the low-elevation sites. Spatial
 variation, together with the changes in environmental
 conditions, may alter the local interaction between plant
 species and host-pathogen interactions, which would
@@ -644,6 +627,22 @@ moisture has been found to affect the co-infection combination
 changed endosymbiotic fungi into pathogens and this
 affected seedling survival (Alvarez-Loayza et al. 2011).
 Thus, higher temperatures and moistures and lower
+
+[[PAGE:6|VISIBLE:2828]]![](wiley-elevational-density-dependence-img/p06-1.png)
+
+**Figure 2.** *Greenhouse experiments testing the
+effect of elevations (low vs. high) and soil
+treatments (sterilization vs. control) on seed
+germination (A) and seedling growth (B). Bars
+represent means ± 1 SE.*
+
+[[PAGE:7|VISIBLE:2829]]![](wiley-elevational-density-dependence-img/p07-1.png)
+
+**Figure 3.** *Greenhouse experiments testing the
+effect of elevation on the relative soil biota
+effect based on seed germination (A) and
+seedling growth (B). Bars represent means ± 1
+SE.*
 
 understory light availability at lower elevations may
 increase pathogen activity, and this could result in a

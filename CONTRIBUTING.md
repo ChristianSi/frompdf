@@ -381,7 +381,10 @@ The current pipeline is roughly:
    prose set below each other, are backgrounds or frames, as is an image
    covering its page with any text on it. The other drawings closer than a
    few points form regions, which rules join only where they stay near
-   them. A region is a panel if it is at least a few ems large and holds an
+   them. The axes of a plot, a long horizontal and a long vertical rule
+   meeting at a corner or crossing, join the regions within reach of them
+   and the rules connected to them, as the bars of a chart and its tick
+   values drawn as outlines. A region is a panel if it is at least a few ems large and holds an
    image, a shading, or paths with several curves or diagonals, but neither
    running text nor a table. Lines within a panel are labels, as are lines
    in a figure font, which sets text within panels and hardly any away from
@@ -397,7 +400,11 @@ The current pipeline is roughly:
    German, Spanish, Portuguese, Japanese, or Chinese and a number, such as
    `Fig. 3`, `Abb. 4a`, or `図 3`, and starts with a letter or an opening mark. The
    caption continues in lines directly below it in its size, until a
-   sentence ends short of its right edge. Pictures are left out of all other
+   sentence ends short of its right edge. Once all pictures of a page have
+   taken the captions below them, a picture without one takes a caption
+   beside it: the nearest line shortly left or right of it, starting at its
+   height, that starts with a figure label and is set smaller than the body
+   or starts in bold or italics. Pictures are left out of all other
    blocks like tables, together with their captions, which follow them as
    one paragraph. Unless images are turned off, each picture is rendered
    from its page and written as an image file: PNG at 300 pixels per inch,

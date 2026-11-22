@@ -6,14 +6,16 @@ which would turn into scattered paragraphs and headings in the flow of the
 document. Instead, each picture is cut out of its page as an image, together
 with the text lying within it, which is left out of the flow. The text of a
 document is never part of a picture: drawings with running text set on them
-are backgrounds or frames, and the text below a picture, such as its caption,
-ends it.
+are backgrounds or frames, and the text below or beside a picture, such as
+its caption, ends it.
 
 Pictures are recognized from the drawings alone, not from the wording of
 their captions, so they do not depend on the language of a document. A
 caption below a picture is told by its typography, or else by a label such
 as `Fig. 3` or `Abbildung 3` starting it, as where an OCR text layer carries
-no typography to tell it by (see captions).
+no typography to tell it by (see captions). A caption beside a picture, as
+in Wiley's journals, needs both, as text beside a picture is often that of
+another column.
 """
 
 from collections import Counter
@@ -21,11 +23,13 @@ from collections.abc import Sequence
 from dataclasses import dataclass
 
 from frompdf.captions import (
+    FIGURE_LABEL_PATTERN,
     MAX_CAPTION_GAP_EM,
     MAX_CAPTION_OVERLAP_EM,
     TABLE_LABEL_PATTERN,
     caption_lines,
     is_caption_start,
+    starts_emphasized,
     starts_with_label,
 )
 from frompdf.line_features import (
@@ -50,6 +54,11 @@ DRAWING_JOIN_GAP = 3.0
 # ticks of a plot, but also underlines and the rules beside or between texts.
 # They join a region only where they stay near it, at most this far beyond
 # it in body ems, so a rule next to a picture does not extend it over text.
+# The axes of a plot, a horizontal and a vertical rule as long as a panel's
+# longer side must measure (MIN_PANEL_SIZE_EM), meeting at a corner or
+# crossing, join the regions within this reach of them, as the bars of a
+# chart, which are plain rectangles, and its tick values, which may be drawn
+# as outlines.
 MAX_RULE_THICKNESS = 2.5
 RULE_REACH_EM = 2.0
 # A region is a panel of a picture if its longer side measures at least this
@@ -420,6 +429,29 @@ def visible_drawings(
     ]
 
 
+def plot_axes(rules: Sequence[DrawingBox], body_size: float) -> list[DrawingBox]:
+    """Return the boxes of the rules connected to the axes of plots.
+
+    Rules touching each other within the join gap are connected. They hold
+    axes if a long horizontal and a long vertical rule among them meet, as
+    at the corner of a plot or at the zero line of a bar chart.
+    """
+    min_length = body_size * MIN_PANEL_SIZE_EM
+    horizontal = [rule for rule in rules if rule[2] - rule[0] >= min_length]
+    vertical = [rule for rule in rules if rule[3] - rule[1] >= min_length]
+    return [
+        connected
+        for connected in join_boxes(rules, DRAWING_JOIN_GAP)
+        if any(
+            contains(connected, across)
+            and contains(connected, upright)
+            and boxes_near(across, upright, DRAWING_JOIN_GAP)
+            for across in horizontal
+            for upright in vertical
+        )
+    ]
+
+
 def page_panels(
     drawings: Sequence[Drawing],
     page_lines: Sequence[Line],
@@ -430,8 +462,9 @@ def page_panels(
     """Return the regions of drawings that are pictures or parts of them.
 
     The drawings form regions where they are close together; rules join the
-    regions they stay near. A region is a panel if it is large enough and
-    holds an image or detailed paths, but neither running text nor a table.
+    regions they stay near, and the axes of plots the regions within reach of
+    them. A region is a panel if it is large enough and holds an image or
+    detailed paths, but neither running text nor a table.
     """
     rules = [drawing.box for drawing in drawings if is_rule(drawing)]
     reach = body_size * RULE_REACH_EM
@@ -444,6 +477,12 @@ def page_panels(
             if contains(limit, rule) and boxes_near(region, rule, DRAWING_JOIN_GAP):
                 region = union_box(region, rule)
         regions.append(region)
+    for axes in plot_axes(rules, body_size):
+        limit = expanded(axes, reach)
+        for region in regions:
+            if contains(limit, region):
+                axes = union_box(axes, region)
+        regions.append(axes)
 
     min_size = body_size * MIN_PANEL_SIZE_EM
     panels: list[Panel] = []
@@ -684,6 +723,49 @@ def find_caption(
     return nearest[2]
 
 
+def find_side_caption(
+    picture: DrawingBox, page_lines: Sequence[Line], used: set[int], body_size: float
+) -> Line | None:
+    """Return the first line of a caption set beside a picture, if it has one.
+
+    This is the unused line nearest to the left or right of the picture,
+    shortly beside it and starting at its height, that starts with a figure
+    label and is set as a caption by its typography: smaller than the body,
+    or starting in bold or italics. Text beside a picture is often that of
+    another column, so the label alone does not suffice.
+    """
+    gap = body_size * MAX_CAPTION_GAP_EM
+    nearest: tuple[float, float, Line] | None = None
+    for line in page_lines:
+        box = line_box(line)
+        if (
+            box is None
+            or id(line) in used
+            or not picture[1] - body_size * MAX_CAPTION_OVERLAP_EM <= box[1] < picture[3]
+        ):
+            continue
+        if 0 <= picture[0] - box[2] <= gap:
+            distance = picture[0] - box[2]
+        elif 0 <= box[0] - picture[2] <= gap:
+            distance = box[0] - picture[2]
+        else:
+            continue
+        small = (
+            line.font_size is not None
+            and line.font_size < body_size
+            and not close_font_size(line.font_size, body_size)
+        )
+        if (
+            not is_vertical(line)
+            and starts_with_label(line, FIGURE_LABEL_PATTERN)
+            and is_caption_start(line, body_size)
+            and (small or starts_emphasized(line))
+            and (nearest is None or (distance, box[1]) < nearest[:2])
+        ):
+            nearest = (distance, box[1], line)
+    return None if nearest is None else nearest[2]
+
+
 def picture_resolution(
     picture: DrawingBox, drawings: Sequence[Drawing], has_text: bool
 ) -> tuple[float | None, bool]:
@@ -740,11 +822,17 @@ def page_figures(
         key=lambda figure: (reading_position(figure, page_lines), figure.box[1], figure.box[0])
     )
     used = {id(line) for figure in figures for line in figure.lines}
+    # Captions beside pictures are only looked for once all pictures have
+    # taken the captions below them, which may lie beside other pictures.
+    for find in (find_caption, find_side_caption):
+        for figure in figures:
+            if figure.caption_lines:
+                continue
+            caption = find(figure.box, page_lines, used, body_size)
+            if caption is not None:
+                figure.caption_lines = caption_lines(caption, page_lines, used)
+                used.update(id(line) for line in figure.caption_lines)
     for figure in figures:
-        caption = find_caption(figure.box, page_lines, used, body_size)
-        if caption is not None:
-            figure.caption_lines = caption_lines(caption, page_lines, used)
-            used.update(id(line) for line in figure.caption_lines)
         figure.resolution, figure.lossy = picture_resolution(
             figure.box, drawings, bool(figure.lines)
         )

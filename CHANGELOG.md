@@ -282,6 +282,16 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
 
 ### Fixed
 
+- Bar charts drawn from rules and plain rectangles, as in Wiley's journals,
+  are recognized as pictures. Their axes, a horizontal and a vertical rule
+  meeting at a corner, now join the bars and the tick values around them,
+  which are often drawn as outlines. Before, only their text labels were
+  left, as `(A) (B)`.
+- Captions set beside their pictures, as in Wiley's journals, are recognized
+  where no caption lies below a picture. They must start with a figure label
+  and be set as captions, smaller than the body or starting in bold or
+  italics, as text beside a picture is often that of another column. Such
+  captions were left in the text, often as block quotes.
 - Columns set between text spanning them both above and below, as between
   the front matter and a licence footer on the first page of an article, are
   read column by column. Their blocks were left in the order `pdftext`
