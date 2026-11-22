@@ -11,6 +11,11 @@ MIN_VERTICAL_GUTTER = 6.0
 # A horizontal gap of roughly one body-text line can separate layout regions.
 MIN_HORIZONTAL_GAP_EM = 1.0
 MIN_HORIZONTAL_GAP = 8.0
+# A horizontal cut must expose columns on one of its sides. Where bands
+# spanning the columns lie both above and below them, as a title and a footer,
+# the columns only appear after further horizontal cuts. Where no cut exposes
+# columns directly, up to this many further cuts within a side are tried.
+MAX_HORIZONTAL_CUT_LOOKAHEAD = 2
 
 # Both sides of a proposed column cut must contain a useful amount of text.
 MIN_COLUMN_LINES = 3
@@ -224,8 +229,27 @@ def best_vertical_cut(block_list: list[LayoutBlock], font_size: float) -> Layout
     return max(candidates, key=lambda cut: cut.score)
 
 
-def best_horizontal_cut(block_list: list[LayoutBlock], font_size: float) -> LayoutCut | None:
-    """Return a horizontal band split that exposes columns in either child."""
+def exposed_column_score(block_list: list[LayoutBlock], font_size: float, lookahead: int) -> float:
+    """Score the columns of a region, found after at most lookahead horizontal cuts."""
+    vertical_cut = best_vertical_cut(block_list, font_size)
+    if vertical_cut is not None:
+        return vertical_cut.score
+    if lookahead <= 0:
+        return 0.0
+    horizontal_cut = best_horizontal_cut(block_list, font_size, lookahead - 1)
+    if horizontal_cut is None:
+        return 0.0
+    return horizontal_cut.score - horizontal_cut.gap
+
+
+def best_horizontal_cut(
+    block_list: list[LayoutBlock], font_size: float, lookahead: int = 0
+) -> LayoutCut | None:
+    """Return a horizontal band split that exposes columns in either child.
+
+    With a lookahead, the columns of a child may appear only after that many
+    further horizontal cuts within it.
+    """
     minimum_gap = max(MIN_HORIZONTAL_GAP, font_size * MIN_HORIZONTAL_GAP_EM)
     candidates: list[LayoutCut] = []
 
@@ -237,11 +261,9 @@ def best_horizontal_cut(block_list: list[LayoutBlock], font_size: float) -> Layo
         first, second = split_at_gap(block_list, gap, 'horizontal')
         if not first or not second:
             continue
-        first_column_cut = best_vertical_cut(first, font_size)
-        second_column_cut = best_vertical_cut(second, font_size)
         column_score = max(
-            first_column_cut.score if first_column_cut is not None else 0.0,
-            second_column_cut.score if second_column_cut is not None else 0.0,
+            exposed_column_score(first, font_size, lookahead),
+            exposed_column_score(second, font_size, lookahead),
         )
         if column_score <= 0:
             continue
@@ -270,7 +292,9 @@ def order_layout_region(block_list: list[LayoutBlock], font_size: float) -> list
             vertical_cut.second, font_size
         )
 
-    horizontal_cut = best_horizontal_cut(block_list, font_size)
+    horizontal_cut = best_horizontal_cut(block_list, font_size) or best_horizontal_cut(
+        block_list, font_size, MAX_HORIZONTAL_CUT_LOOKAHEAD
+    )
     if horizontal_cut is not None:
         return order_layout_region(horizontal_cut.first, font_size) + order_layout_region(
             horizontal_cut.second, font_size

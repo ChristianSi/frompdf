@@ -6,38 +6,14 @@
 
 Department of Ecology, School of Life Sciences/State Key Laboratory of Biocontrol, Sun Yat-sen University, Guangzhou 510275, China
 
-### Abstract
-
 **Keywords**
 
 Density dependence, Janzen–Connell
-
-Density-dependent mortality has been recognized as an important mechanism
-that underpins tree species diversity, especially in tropical forests. However, few
-studies have attempted to explore how density dependence varies with spatial
-scale and even fewer have attempted to identify why there is scale-dependent
-
 hypothesis, mixed model, neighborhood
 effects, soilborne pathogens, subtropical
 forest.
 
 **Correspondence**
-
-differentiation. In this study, we explore the elevational variation in density
-dependence. Three 1-ha permanent plots were established at low and high elevations
-in the Heishiding subtropical forest, southern China. Using data from
-1200 1 m<sup>2</sup> seedling quadrats, comprising of 200 1 m<sup>2</sup> quadrats located in each
-1-ha plot, we examined the variation in density dependence between elevations
-using a generalized linear mixed model with crossed random effects. A greenhouse
-experiment also investigated the potential effects of the soil biota on density-dependent
-differentiation. Our results demonstrated that density-dependent
-seedling mortality can vary between elevations in subtropical forests. Species
-found at a lower elevation suffered stronger negative density dependence than
-those found at a higher elevation. The greenhouse experiment indicated that
-two species that commonly occur at both elevations suffered more from soilborne
-pathogens during seed germination and seedling growth when they grew
-at the lower elevation, which implied that soil pathogens may play a crucial role
-in density-dependent spatial variation.
 
 Shixiao Yu, Department of Ecology, School of\
 Life Sciences/State Key Laboratory of\
@@ -60,21 +36,27 @@ Received: 8 August 2013; Revised: 5 March\
 
 doi: 10.1002/ece3.1123
 
-Previous studies have typically assessed NDD in a single
-community over a single time period (but see
-Lambers et al. 2002; Johnson et al. 2012; Lin et al. 2012;
-Piao et al. 2012; Shuai et al. 2014). However, because
-the two mechanisms that potentially drive NDD, that is,
-host-specific natural enemies and resource competition,
-are both influenced by environmental variation, the
-direction and strength of NDD may vary substantially in
-different environments (Coley and Barone 1996; Fajardo
-and McIntire 2011; Swinfield et al. 2012). For example,
-variation in NDD at different latitudes has been
-observed and is considered as a driving mechanism that
-may underpin regional tree species diversity patterns
-(Lambers et al. 2002; McCarthy-Neumann and Kobe
-2010; Johnson et al. 2012; Shuai et al. 2014). Lin et al.
+### Abstract
+
+Density-dependent mortality has been recognized as an important mechanism
+that underpins tree species diversity, especially in tropical forests. However, few
+studies have attempted to explore how density dependence varies with spatial
+scale and even fewer have attempted to identify why there is scale-dependent
+differentiation. In this study, we explore the elevational variation in density
+dependence. Three 1-ha permanent plots were established at low and high elevations
+in the Heishiding subtropical forest, southern China. Using data from
+1200 1 m<sup>2</sup> seedling quadrats, comprising of 200 1 m<sup>2</sup> quadrats located in each
+1-ha plot, we examined the variation in density dependence between elevations
+using a generalized linear mixed model with crossed random effects. A greenhouse
+experiment also investigated the potential effects of the soil biota on density-dependent
+differentiation. Our results demonstrated that density-dependent
+seedling mortality can vary between elevations in subtropical forests. Species
+found at a lower elevation suffered stronger negative density dependence than
+those found at a higher elevation. The greenhouse experiment indicated that
+two species that commonly occur at both elevations suffered more from soilborne
+pathogens during seed germination and seedling growth when they grew
+at the lower elevation, which implied that soil pathogens may play a crucial role
+in density-dependent spatial variation.
 
 ## Introduction
 
@@ -95,6 +77,22 @@ infections. This results in higher mortality rates or
 a lower average growth rate, which leads to an increase
 in space for other species (Janzen 1970; Connell 1971;
 Wright 2002).
+
+Previous studies have typically assessed NDD in a single
+community over a single time period (but see
+Lambers et al. 2002; Johnson et al. 2012; Lin et al. 2012;
+Piao et al. 2012; Shuai et al. 2014). However, because
+the two mechanisms that potentially drive NDD, that is,
+host-specific natural enemies and resource competition,
+are both influenced by environmental variation, the
+direction and strength of NDD may vary substantially in
+different environments (Coley and Barone 1996; Fajardo
+and McIntire 2011; Swinfield et al. 2012). For example,
+variation in NDD at different latitudes has been
+observed and is considered as a driving mechanism that
+may underpin regional tree species diversity patterns
+(Lambers et al. 2002; McCarthy-Neumann and Kobe
+2010; Johnson et al. 2012; Shuai et al. 2014). Lin et al.
 
 (2012) have found that NDD differed between the dry
 and wet seasons in tropical forests. They attributed this

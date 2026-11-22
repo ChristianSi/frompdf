@@ -343,9 +343,13 @@ The current pipeline is roughly:
    download notices along the margin; pages with as many vertical as
    horizontal lines, as rotated tables, keep them. The remaining lines give
    the vertical text span at whose edges headers and footers are found.
-6. Order the remaining lines by page region and detected column. A block
-   ending where the first line of the block before it begins, on the same
-   visual line, moves before that block.
+6. Order the remaining lines by page region and detected column. Regions
+   are cut at vertical gutters between columns, or else at horizontal gaps
+   with columns on one side. Where no single horizontal cut exposes columns,
+   as between a title and a footer spanning them, columns found after up to
+   two further horizontal cuts count. A block ending where the first line
+   of the block before it begins, on the same visual line, moves before
+   that block.
 7. Safely complete unambiguous page-label sequences and optionally dump them
    to `-pagenos.csv`.
 8. Recognize tables framed by connected horizontal and vertical rules, read

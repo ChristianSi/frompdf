@@ -278,6 +278,11 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
 
 ### Fixed
 
+- Columns set between text spanning them both above and below, as between
+  the front matter and a licence footer on the first page of an article, are
+  read column by column. Their blocks were left in the order `pdftext`
+  reported them, which can start with the second column or interleave a
+  sidebar with the abstract beside it.
 - Notices running vertically along a page margin, such as the download notice
   that Wiley Online Library prints beside every page, are removed like
   running headers and footers when they repeat on several pages. They split a

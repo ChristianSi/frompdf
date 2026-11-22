@@ -89,6 +89,32 @@ class ReadingOrderTests(unittest.TestCase):
 
         self.assertEqual(ordered_block_numbers(ordered), [1, 3, 2, 4, 5, 6, 8, 7, 9])
 
+    def test_finds_columns_between_full_width_bands_above_and_below(self) -> None:
+        lines = [
+            *text_block(1, 'wide title', 20, 20, 250),
+            *text_block(2, 'right top', 150, 80, 250),
+            *text_block(3, 'left top', 20, 80, 120),
+            *text_block(4, 'left bottom', 20, 120, 120),
+            *text_block(5, 'right bottom', 150, 120, 250),
+            *text_block(6, 'wide footer', 20, 180, 250),
+        ]
+
+        ordered = order_lines_for_reading(lines)
+
+        self.assertEqual(ordered_block_numbers(ordered), [1, 3, 4, 2, 5, 6])
+
+    def test_preserves_order_between_full_width_bands_without_columns(self) -> None:
+        lines = [
+            *text_block(1, 'wide title', 20, 20, 250),
+            *text_block(2, 'lower paragraph', 20, 120, 250),
+            *text_block(3, 'upper paragraph', 20, 80, 250),
+            *text_block(4, 'wide footer', 20, 180, 250),
+        ]
+
+        ordered = order_lines_for_reading(lines)
+
+        self.assertEqual(ordered_block_numbers(ordered), [1, 2, 3, 4])
+
     def test_orders_three_aligned_author_cards_left_to_right(self) -> None:
         lines = [
             *text_block(1, 'middle author', 110, 20, 190, line_count=5),
