@@ -151,7 +151,7 @@ of the skyrmion tubes along the easy axis<sup>33,37</sup>.
 
 [[PAGE:3|VISIBLE:2]]![](nature-spin-dynamics-gav4s8-img/p3-1.png)
 
-**Fig. 1 Photoinduced Δ*θ* dynamics in the different magnetic phases of GaV<sub>4</sub>S<sub>8</sub>.a** *Magnetic phase diagram of GaV<sub>4</sub>S<sub>8</sub>. Vertical dashed lines indicate the
+**Fig. 1 Photoinduced Δ*θ* dynamics in the different magnetic phases of GaV<sub>4</sub>S<sub>8</sub>. a** *Magnetic phase diagram of GaV<sub>4</sub>S<sub>8</sub>. Vertical dashed lines indicate the
 temperatures where trMOKE measurements were performed.* **b**–**e** *Δ*θ *traces under different external magnetic fields at 8 K, 10 K, 11.5 K, and 14.5 K,
 respectively.*
 

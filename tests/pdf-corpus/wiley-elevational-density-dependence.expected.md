@@ -390,7 +390,7 @@ included conspecific and heterospecific seedling density in
 
 20457758, 2014, 14, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/ece3.1123 by Cambodia Hinari NPL, Wiley Online Library on [15/11/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
 
-a1m<sup>2</sup> quadrat, the abundance of conspecific and heterospecific
+a 1 m<sup>2</sup> quadrat, the abundance of conspecific and heterospecific
 trees and the basal area of conspecific and heterospecific
 trees (DBH ≥ 1 cm). For each seedling, we
 summed the number of conspecific or heterospecific seedling

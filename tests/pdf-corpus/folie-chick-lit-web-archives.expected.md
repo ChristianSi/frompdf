@@ -30,7 +30,7 @@ and long-running fan websites, which are now offline but well-documented in the
 Internet Archive, and the history page of the Wikipedia article on *chick lit* will
 challenge some of the narratives that have long dominated *chick lit* research.
 
-**Keywords** Genre history . Chick lit . Internet archive . Wayback machine . Fan websites.
+**Keywords** Genre history . Chick lit . Internet archive . Wayback machine . Fan websites .
 Wikipedia
 
 ## 1 Introduction
@@ -174,7 +174,7 @@ provide a broad definition of chick lit as part of a chick culture, but also as 
 narratively processes, reflects, and brings forth this culture.
 
 The changing mottos that preceded the start page of the American fan website
-*chicklitbooks.com* (2003–2015) –“It’s hip. It’s smart. It’s fun. It’s about you!” (16 June
+*chicklitbooks.com* (2003–2015) – “It’s hip. It’s smart. It’s fun. It’s about you!” (16 June
 2004a), “Hip, bright literature for today’s modern woman” (3 June 2005b), “Hip, smart
 fiction for women” (14 Oct. 2006), or “Smart, fun & modern fiction for females” (1
 Aug. 2009) – convey a similar understanding of chick lit as part of a broader chick
@@ -201,7 +201,7 @@ negative definition. First, there seems to have been a need to justify chick lit
 and to defend it against accusations such as being trivial or even anti-feminist. Second,
 at that time the plot of chick lit novels revolved largely around the protagonists’
 relationships with men. In the following years, however, chick lit was also explicitly
-differentiated from romance –“A lot of chick lit usually has a romantic story line to it,
+differentiated from romance – “A lot of chick lit usually has a romantic story line to it,
 but it’s rarely all that the book is about.” (“What is Chick Lit?”, 9 Dec. 2004b) – and
 from women’s fiction, which was usually less confidential/personal in tone and, unlike
 chick lit, did not have a constitutive element of humor (“What is Chick Lit?”, 9 Feb.
@@ -278,7 +278,7 @@ definition. Moreover, he mistakenly reduces the ambivalent and complex history o
 label to a mere commercially calculated reaction to the British *lad lit*; a genre, which,
 oddly enough, is described by other scholars as almost the reverse: “as the extent of
 chick lit’s remarkable ability to transform itself into new varieties” (Ferriss & Young,
-2006, 7). With the words “Now, it seems men are getting in on the act […]” (“ladlit”,1
+2006, 7). With the words “Now, it seems men are getting in on the act […]” (“ladlit”, 1
 June 2003), *chicklit.co.uk* had similarly commented on the emergence of *lad lit*, one of
 several subgenres to which they dedicated a subpage.
 
@@ -488,7 +488,7 @@ the whiteness not only of the genre, but also of the discourse that surrounds it
 > of [sic] designer brands and sexuality rather than addressing global issues such as
 > equality<sup>[9]</sup>. Although there are subsections of this genre that include protagonist [sic]
 > of various ethnicities, cultures, and backgrounds, these generally fall second to the
-> dominant ‘white’ chick lit<sup>[10]</sup>.[…] (emphasis and footnotes in the original)
+> dominant ‘white’ chick lit<sup>[10]</sup>. […] (emphasis and footnotes in the original)
 
 The section ends with the statement that “[t]he women of color genre of chick lit is
 becoming increasingly important as it presents questions regarding the issues these
