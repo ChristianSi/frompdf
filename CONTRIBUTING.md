@@ -163,7 +163,9 @@ The implementation is split into focused modules under `src/frompdf`:
 
 - `advent_fonts.py` decodes the glyphs of Advent 3B2 math fonts, which clone
   TeX's math fonts under wrong glyph names, by their positions in the TeX
-  layouts, and joins line records that `pdftext` split after them.
+  layouts, and joins line records that `pdftext` split after them. It also
+  decodes the misnamed glyphs of Advent pi fonts that have been seen in
+  documents.
 - `blocks.py` turns segmented lines into blocks, classifies block quotes and
   headings, and coordinates within-block text repair.
 - `cli.py` implements the command-line interface.
@@ -305,7 +307,8 @@ The current pipeline is roughly:
    without a mapping are identified by the glyph names that their font codes
    have in the font's encoding. Join the line records that `pdftext` split
    after such a glyph with font code 2, which it takes for a hyphen ending
-   the line. Reduce glyphs whose Unicode mapping lists alternative
+   the line. Glyphs of Advent's pi fonts, whose layouts are unknown, are
+   decoded where they have been seen in documents. Reduce glyphs whose Unicode mapping lists alternative
    characters, all whitespace or all dashes, to a space or their first dash.
    Repair detached, geometrically positioned diacritics in the raw data,
    including the accents of these fonts, keeping a combining accent

@@ -210,7 +210,11 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
   `Tielbörger` and `Ravigné`. Lines are no longer broken after symbols with
   font code 2, which `pdftext` takes for a hyphen ending the line, as in
   `τ ∼ c/κ`. The same characters in other fonts, such as real fractions and
-  Icelandic letters, are left alone.
+  Icelandic letters, are left alone. Advent's pi fonts, which set single
+  symbols and Greek letters within text, misname their glyphs too; those
+  seen in documents are decoded, so `© 2014`, `two × two`, and `β₀` no longer
+  read `ª 2014`, `two 9 two`, and `b₀`. Their other glyphs, whose layouts
+  are unknown, are left as they are.
 - Inline fractions set with the numerator above the denominator, such as
   `IDmax/n` or `1/2` in running text, are written with a slash on one line
   instead of spreading over three. Compound denominators are parenthesized.

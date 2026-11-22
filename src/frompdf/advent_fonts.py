@@ -12,6 +12,11 @@ the symbol fonts, such as `onequarter`, draw what roman type would; names
 like `C24` give the position in decimal; and names of ASCII characters, such
 as `zero` or `p`, give that character's code, so `zero` is the prime and `p`
 the radical of the symbol font. The text fonts of Advent are left alone.
+
+Advent's pi fonts, which set single symbols and Greek letters within text,
+also draw their glyphs under the names of other characters, as wiley's `©`
+named `ordfeminine` and `×` named `nine`. Their layouts are not known, so only
+glyphs seen in documents are decoded.
 """
 
 import re
@@ -122,6 +127,27 @@ SPECIAL_GLYPH_NAMES = {
     '€': 'Euro',
 }
 POSITION_NAME_PATTERN = re.compile(r'C(\d+)')
+
+# The glyphs of Advent's pi fonts seen in documents, by the text that their
+# glyph names give them: wiley's `β`, `γ`, `μ` named `b`, `c`, `l`, `×` named
+# `nine`, and `©` named `ordfeminine`, and folie's `©` named `numbersign`.
+ADVENT_PI_GLYPHS: dict[str, dict[str, str]] = {
+    'AdvPSMP10': {'b': 'β', 'c': 'γ', 'l': 'μ'},
+    'AdvTir_symb': {'9': '×'},
+    'AdvPSSym': {'ª': '©'},
+    'AdvPi3': {'#': '©'},
+}
+ADVENT_PI_TRANSLATIONS = {name: str.maketrans(glyphs) for name, glyphs in ADVENT_PI_GLYPHS.items()}
+
+
+def decode_pi_span(span_dict: PdfTextSpan, font_name: str) -> None:
+    """Replace the misnamed glyphs of a span in an Advent pi font in place."""
+    translation = ADVENT_PI_TRANSLATIONS.get(base_font_name(font_name))
+    if translation is None:
+        return
+    for char in span_dict.get('chars', []):
+        char['char'] = char.get('char', '').translate(translation)
+    span_dict['text'] = span_dict.get('text', '').translate(translation)
 
 
 def advent_math_layout(font_name: str) -> str | None:
@@ -282,11 +308,11 @@ def is_advent_math_font(font_name: str) -> bool:
 
 
 def decode_advent_math_glyphs(page_list: Sequence[Page], input_path: Path | None = None) -> None:
-    """Replace the misnamed glyphs of Advent math fonts with the characters they show, in place.
+    """Replace the misnamed glyphs of Advent math and pi fonts with the characters they show.
 
-    The font encodings are read from input_path, if given, to decode glyphs
-    without a Unicode mapping. Line records that pdftext split after a glyph
-    with font code 2 are joined.
+    The page data is changed in place. The font encodings are read from
+    input_path, if given, to decode glyphs without a Unicode mapping. Line
+    records that pdftext split after a glyph with font code 2 are joined.
     """
     differences: dict[str, dict[int, str]] | None = None
     for page_dict in page_list:
@@ -298,6 +324,8 @@ def decode_advent_math_glyphs(page_list: Sequence[Page], input_path: Path | None
                     font_name = span_dict.get('font', {}).get('name')
                     layout = advent_math_layout(font_name) if isinstance(font_name, str) else None
                     if layout is None or not isinstance(font_name, str):
+                        if isinstance(font_name, str):
+                            decode_pi_span(span_dict, font_name)
                         previous_char = next(
                             (
                                 char

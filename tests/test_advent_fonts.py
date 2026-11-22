@@ -258,5 +258,31 @@ class AdventMathGlyphTests(unittest.TestCase):
         self.assertEqual(decoded_text(span(['=', 'p'], 'AdvOT1ef757c0')), '=p')
 
 
+class AdventPiGlyphTests(unittest.TestCase):
+    def test_misnamed_glyphs_become_the_characters_they_show(self) -> None:
+        self.assertEqual(
+            decoded_text(span(['c'], 'IGPHCJ+AdvPSMP10'), span(['species'], 'AdvMINION-R')),
+            'γspecies',
+        )
+        self.assertEqual(
+            decoded_text(
+                span(['two '], 'AdvMINION-R'),
+                span(['9'], 'AdvTir_symb'),
+                span([' two'], 'AdvMINION-R'),
+            ),
+            'two × two',
+        )
+        self.assertEqual(decoded_text(span(['ª', ' 2014'], 'AdvPSSym')), '© 2014')
+        self.assertEqual(decoded_text(span(['#'], 'BLECFF+AdvPi3')), '©')
+
+    def test_glyphs_not_seen_in_documents_are_kept(self) -> None:
+        self.assertEqual(decoded_text(span(['a', 'm'], 'AdvPSMP10')), 'am')
+        self.assertEqual(decoded_text(span(['8'], 'AdvTir_symb')), '8')
+
+    def test_same_characters_in_other_fonts_are_kept(self) -> None:
+        self.assertEqual(decoded_text(span(['b', '9', 'ª', '#'], 'AdvMINION-R')), 'b9ª#')
+        self.assertEqual(decoded_text(span(['b', '9', 'ª', '#'], 'AdvPi1')), 'b9ª#')
+
+
 if __name__ == '__main__':
     unittest.main()
