@@ -2,9 +2,13 @@
 
 Some PDFs name their fonts by opaque hashes, as Advent 3B2 does with
 `AdvOTcb88df00`, and report no weights. Such a font is bold if its letters are
-drawn with much thicker strokes than those of the body font. The stroke width
-of a glyph is estimated from its outline as twice its area divided by its
-perimeter, which is exact for long, thin strokes.
+drawn with much thicker strokes than those of the body font. Fonts with
+names telling no style, and no weight reported for them, as Advent's
+`AdvPSFTBL`, are judged alike, but need far thicker strokes, as a regular
+sans-serif face beside a serif body already measures much thicker strokes
+than the body. The stroke width of a glyph is estimated from its outline as
+twice its area divided by its perimeter, which is exact for long, thin
+strokes.
 """
 
 import ctypes
@@ -37,6 +41,12 @@ CURVE_STEPS = 8
 # of the body font. Regular faces in the corpus measure at most 1.4 times the
 # stroke width of the body font, bold ones about 1.5 times and more.
 BOLD_STROKE_RATIO = 1.4
+# Fonts with names telling no style and no reported weight are bold only if
+# their strokes are at least this many times as wide as those of the body
+# font. Beside a serif body, regular sans-serif faces measure up to about 1.4
+# times its stroke width (wiley's AdvPSFT-R, Arial), bold faces up to about
+# 1.9 times, and black ones more (wiley's AdvPSFTBL, 2.4 times).
+UNNAMED_BOLD_STROKE_RATIO = 2.0
 # Only fonts named by an opaque hash are judged by their glyphs: names with a
 # run of hexadecimal digits, as `AdvOTcb88df00`. Other names without a style,
 # as `Arial`, name regular faces. A subset prefix, as `ABCDEF+`, is ignored.
@@ -214,34 +224,46 @@ def font_stroke_widths(input_path: Path, names: set[str]) -> dict[str, float]:
     return widths
 
 
+def has_unnamed_style(font_name: str) -> bool:
+    """Return whether a font name tells no style, being neither opaque nor naming one."""
+    name = SUBSET_PREFIX_PATTERN.sub('', font_name)
+    return not NAMED_STYLE_PATTERN.search(name) and not has_opaque_name(font_name)
+
+
 def find_heavy_fonts(input_path: Path, page_list: Sequence[Page]) -> frozenset[str]:
     """Return the names of fonts recognized as bold by their glyphs.
 
     These are fonts named by opaque hashes, drawn with strokes much wider
-    than those of the body font.
+    than those of the body font, and fonts with names telling no style and
+    no reported weight, drawn with strokes far wider still.
     """
     body_name = body_font_name(page_list)
     if body_name is None:
         return frozenset()
-    candidates = {
-        name
-        for page in page_list
-        for block in page.get('blocks', [])
-        for line in block.get('lines', [])
-        for span in line.get('spans', [])
-        if isinstance(name := span.get('font', {}).get('name'), str)
-        and name
-        and name != body_name
-        and has_opaque_name(name)
-    }
-    if not candidates:
+    names: set[str] = set()
+    weighed: set[str] = set()
+    for page in page_list:
+        for block in page.get('blocks', []):
+            for line in block.get('lines', []):
+                for span in line.get('spans', []):
+                    font = span.get('font', {})
+                    name = font.get('name')
+                    if isinstance(name, str) and name and name != body_name:
+                        names.add(name)
+                        if font.get('weight'):
+                            weighed.add(name)
+    ratios = {name: BOLD_STROKE_RATIO for name in names if has_opaque_name(name)}
+    ratios.update(
+        (name, UNNAMED_BOLD_STROKE_RATIO) for name in names - weighed if has_unnamed_style(name)
+    )
+    if not ratios:
         return frozenset()
-    widths = font_stroke_widths(input_path, candidates | {body_name})
+    widths = font_stroke_widths(input_path, set(ratios) | {body_name})
     body_width = widths.get(body_name)
     if body_width is None:
         return frozenset()
     return frozenset(
         name
-        for name in candidates
-        if (width := widths.get(name)) is not None and width >= BOLD_STROKE_RATIO * body_width
+        for name, ratio in ratios.items()
+        if (width := widths.get(name)) is not None and width >= ratio * body_width
     )

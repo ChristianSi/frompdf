@@ -214,7 +214,7 @@ in subtropical forests.
 
 ## [[PAGE:3|VISIBLE:2825]]Materials and Methods
 
-Study sites
+### Study sites
 
 The field work was conducted at Heishiding Natural
 Reserve (111°53′E, 23°27′N, 150–927 m above sea level),
@@ -231,7 +231,7 @@ in this region belong to the Fagaceae and Lauraceae families,
 which are broadly distributed in subtropical evergreen
 broadleaved forests (Yu et al. 2000).
 
-Field surveys
+### Field surveys
 
 Six 1-ha permanent plots were established and observed
 from winter 2007 until spring 2008 to estimate the effect
@@ -262,7 +262,7 @@ level. The census was repeated in spring 2009. We
 also collected seedling mortality data during the second
 census.
 
-Greenhouse experiment
+### Greenhouse experiment
 
 We examined the effects of soilborne pathogens on seed
 germination and seedling growth using two species
@@ -315,7 +315,7 @@ changed every week. The experiment lasted for
 4 months and seed germination and seedling growth were
 determined every 2 weeks.
 
-Statistical analysis
+### Statistical analysis
 
 We modeled the survival probability as a function of local
 neighborhood variables using generalized linear mixed
@@ -427,7 +427,7 @@ of the relative soil biota effects differed significantly from
 
 ## Results
 
-Field surveys
+### Field surveys
 
 The best model for absolute neighbor effects used conspecific
 seedling density, heterospecific seedling density, conspecific
@@ -537,7 +537,7 @@ tree abundance had no significant effects on seedling survival
 neighbor effects were significantly correlated with seedling
 survival at the high-elevation sites (Table 3).
 
-Greenhouse experiments
+### Greenhouse experiments
 
 In the greenhouse experiment, we found that soil biota
 had a negative effect on seed germination and seedling

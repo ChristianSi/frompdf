@@ -138,8 +138,12 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
   such as `AdvOTcb88df00`, count as bold if their letters are drawn with
   strokes at least 1.4 times as wide as those of the body font, as for the
   bold lead sentences and panel letters of figure captions in Nature
-  Communications. Letters in math italic fonts count as italic; other math
-  fonts and a document's body style are ignored.
+  Communications. Fonts whose names tell no style and for which the PDF
+  reports no weight count as bold with strokes at least twice as wide, as the
+  black sans-serif face `AdvPSFTBL` of Wiley's subheadings, which thus become
+  headings; regular sans-serif faces beside a serif body measure up to about
+  1.4 times its stroke width. Letters in math italic fonts count as italic;
+  other math fonts and a document's body style are ignored.
   Headings and bold front-matter paragraphs get no additional bold, nor
   italics covering all of their text. Emphasis is adjusted so Markdown renders
   it as intended: list, quote, and page markers stay outside, and punctuation,

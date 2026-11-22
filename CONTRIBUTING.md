@@ -191,6 +191,9 @@ The implementation is split into focused modules under `src/frompdf`:
   dashes to one character, repairs detached diacritics, removes icon-font
   glyphs, decodes glyphs of TeX math extension fonts and capitals of
   blackboard bold fonts, and restores private-use bullets of symbol fonts.
+- `glyph_weight.py` recognizes bold fonts whose names do not tell their
+  style by the stroke widths of their glyph outlines, compared with those of
+  the body font.
 - `heading_candidates.py` identifies compact centered titles using caps or
   italic styling, established body columns, which a title may span, and
   surrounding whitespace.
@@ -335,7 +338,10 @@ The current pipeline is roughly:
    fraction is a script of the text around it. Records of small text centered
    below a line's last word, which has letters in it, with the line continuing
    after them, are marked as its limits. Bold and italic ranges follow font
-   names and the italic font flag. Letters in math italic fonts are italic,
+   names and the italic font flag. Fonts named by opaque hashes are bold if
+   their strokes are at least 1.4 times as wide as those of the body font;
+   fonts whose names tell no style and for which no weight is reported, if
+   they are at least twice as wide. Letters in math italic fonts are italic,
    with combining marks following them; other math fonts are ignored. A style
    covering most of the document's letters and digits is its body style and
    is dropped.

@@ -17,6 +17,7 @@ from frompdf.glyph_weight import (
     find_heavy_fonts,
     font_stroke_widths,
     has_opaque_name,
+    has_unnamed_style,
 )
 from frompdf.lines import average_font_weight, line_emphasis_ranges, span_emphasis_kinds
 from frompdf.models import InlineRange
@@ -72,6 +73,14 @@ class FontNameTests(unittest.TestCase):
             with self.subTest(name):
                 self.assertFalse(has_opaque_name(name))
 
+    def test_names_neither_opaque_nor_telling_a_style_tell_no_style(self) -> None:
+        for name in ('AdvPSFTBL', 'AdvPSFT-R', 'IGPGNL+AdvPSFTBL', 'ArialMT'):
+            with self.subTest(name):
+                self.assertTrue(has_unnamed_style(name))
+        for name in ('AdvOTcb88df00', 'AdvOTb65e897d.B', 'NimbusSanL-Regu', 'Roboto-Medium'):
+            with self.subTest(name):
+                self.assertFalse(has_unnamed_style(name))
+
     def test_body_font_sets_most_visible_text(self) -> None:
         page = page_of_spans(span('Bold lead.', 'Heavy'), span(' ' + 'body text ' * 3, 'Body'))
 
@@ -108,6 +117,32 @@ class StrokeWidthTests(unittest.TestCase):
                 heavy = find_heavy_fonts(path, [page])
 
         self.assertEqual(heavy, frozenset({'Times-Bold'}))
+
+    def unnamed_heavy_fonts(self, weight: int = 0) -> frozenset[str]:
+        """Return the heavy fonts beside a Times-Italic body, all taken to tell no style."""
+        fonts = ('Times-Italic', 'Times-Bold', 'Helvetica', 'Helvetica-Bold')
+        page = page_of_spans(
+            span('regular body text ' * 4, 'Times-Italic'),
+            span('A bold lead.', 'Times-Bold'),
+            span('Sans text.', 'Helvetica'),
+            span('A black heading.', 'Helvetica-Bold', weight),
+        )
+        with tempfile.TemporaryDirectory() as temp_dir:
+            path = Path(temp_dir) / 'fonts.pdf'
+            write_pdf(path, fonts)
+            with (
+                mock.patch('frompdf.glyph_weight.has_opaque_name', return_value=False),
+                mock.patch('frompdf.glyph_weight.has_unnamed_style', return_value=True),
+            ):
+                return find_heavy_fonts(path, [page])
+
+    def test_fonts_telling_no_style_need_far_wider_strokes(self) -> None:
+        # Measured against the body, Helvetica-Bold has 2.2 times its stroke
+        # width, Times-Bold 1.7 times, and the regular Helvetica 1.5 times.
+        self.assertEqual(self.unnamed_heavy_fonts(), frozenset({'Helvetica-Bold'}))
+
+    def test_fonts_telling_no_style_but_a_weight_are_not_judged(self) -> None:
+        self.assertEqual(self.unnamed_heavy_fonts(weight=400), frozenset())
 
 
 class HeavyFontEmphasisTests(unittest.TestCase):
