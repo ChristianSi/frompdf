@@ -278,6 +278,11 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
 
 ### Fixed
 
+- Notices running vertically along a page margin, such as the download notice
+  that Wiley Online Library prints beside every page, are removed like
+  running headers and footers when they repeat on several pages. They split a
+  paragraph on every page and, spanning the page height, kept columns from
+  being read in order below figures and tables spanning both columns.
 - A figure caption no longer runs into the caption of a table or another
   figure that starts on the next line, after a sentence ending. Nor does it
   take in text further left on its last visual line, as a caption in the

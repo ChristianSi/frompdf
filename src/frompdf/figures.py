@@ -28,7 +28,12 @@ from frompdf.captions import (
     is_caption_start,
     starts_with_label,
 )
-from frompdf.line_features import close_font_size, is_prose_line, is_textual_line
+from frompdf.line_features import (
+    close_font_size,
+    is_prose_line,
+    is_textual_line,
+    is_vertical,
+)
 from frompdf.models import Line
 from frompdf.page_context import (
     MAX_FIRST_LINE_INDENT_EM,
@@ -93,10 +98,6 @@ MIN_INSIDE_SHARE = 0.5
 # A line continues the line above it at most this far below, in ems, about
 # the line spacing of body text.
 MAX_BODY_ADVANCE_EM = 1.6
-
-# Labels whose box is this much taller than wide, relative to the font size,
-# run vertically, as axis titles beside a plot.
-VERTICAL_MIN_HEIGHT_EM = 2.0
 
 
 @dataclass(frozen=True)
@@ -253,16 +254,6 @@ def line_box(line: Line) -> DrawingBox | None:
     if line.x1 is None or line.y1 is None or line.x2 is None or line.y2 is None:
         return None
     return line.x1, line.y1, line.x2, line.y2
-
-
-def is_vertical(line: Line) -> bool:
-    """Return whether a line runs vertically, being much taller than wide."""
-    box = line_box(line)
-    if box is None or len(line.text.strip()) < 2:
-        return False
-    font_size = line.font_size or 1.0
-    height = box[3] - box[1]
-    return height >= font_size * VERTICAL_MIN_HEIGHT_EM and height > 2 * (box[2] - box[0])
 
 
 def is_body_line(line: Line, body_size: float, body_edges: Sequence[float]) -> bool:

@@ -203,7 +203,8 @@ The implementation is split into focused modules under `src/frompdf`:
   continuing in lower case.
 - `line_features.py` compares the font sizes, faces, and styles of lines and
   tells whether pieces lie on the same physical line or line of running text,
-  along with other line-level traits such as sentence ends.
+  along with other line-level traits such as sentence ends and vertical
+  setting.
 - `lines.py` flattens `pdftext` output and extracts line geometry,
   typography, inline script ranges, bold and italic ranges, and fraction
   denominators and limits stacked below a line.
@@ -220,8 +221,9 @@ The implementation is split into focused modules under `src/frompdf`:
 - `page_context.py` collects the columns, hanging-indent regions, and line
   rhythm of a page and judges indentation, line fullness, and line spacing
   against them.
-- `page_edges.py` detects and removes headers and footers, extracts visible
-  page labels, and safely completes unambiguous label sequences.
+- `page_edges.py` detects and removes headers and footers, including notices
+  running vertically along a side margin, extracts visible page labels, and
+  safely completes unambiguous label sequences.
 - `pipeline.py` coordinates extraction and classification.
 - `reading_order.py` orders intact `pdftext` blocks within page regions and
   detected columns.
@@ -336,6 +338,11 @@ The current pipeline is roughly:
    is dropped.
 4. Optionally dump the unfiltered line records to `-lines.csv`.
 5. Detect and remove headers and footers, collecting visible page labels.
+   First, vertical lines set entirely beside the horizontal text of their
+   page are removed where the same text repeats on several pages, as
+   download notices along the margin; pages with as many vertical as
+   horizontal lines, as rotated tables, keep them. The remaining lines give
+   the vertical text span at whose edges headers and footers are found.
 6. Order the remaining lines by page region and detected column. A block
    ending where the first line of the block before it begins, on the same
    visual line, moves before that block.

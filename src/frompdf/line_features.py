@@ -19,6 +19,20 @@ FONT_FACE_SUFFIX_PATTERN = re.compile(
     flags=re.IGNORECASE,
 )
 ATTACHED_FONT_VENDOR_SUFFIX_PATTERN = re.compile(r'(?<![\s-])MT$', flags=re.IGNORECASE)
+# Lines whose box is this much taller than wide, relative to the font size,
+# run vertically, as axis titles beside a plot or notices along a page margin.
+VERTICAL_MIN_HEIGHT_EM = 2.0
+
+
+def is_vertical(line: Line) -> bool:
+    """Return whether a line runs vertically, being much taller than wide."""
+    if line.x1 is None or line.y1 is None or line.x2 is None or line.y2 is None:
+        return False
+    if len(line.text.strip()) < 2:
+        return False
+    font_size = line.font_size or 1.0
+    height = line.y2 - line.y1
+    return height >= font_size * VERTICAL_MIN_HEIGHT_EM and height > 2 * (line.x2 - line.x1)
 
 
 def close_font_size(left: float | None, right: float | None) -> bool:

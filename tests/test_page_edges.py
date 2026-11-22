@@ -556,6 +556,80 @@ class HeaderFooterRemovalTests(unittest.TestCase):
         )
 
 
+MARGIN_NOTICE = 'Downloaded from https://example.org/doi/10.1000/xyz on [15/11/2026]. See the Terms'
+
+
+def side_margin_page(raw: int, notice_x1: float = 579.0, notice_text: str = MARGIN_NOTICE):
+    """Return two body lines and a vertical line running along the page height."""
+    template = replace(candidate(raw, '').line, font_size=9.5, x1=57.0, x2=530.0)
+    body = [
+        replace(template, text=f'Opening paragraph of page {chr(70 + raw)}', y1=100.0, y2=110.0),
+        replace(template, text=f'Closing paragraph of page {chr(70 + raw)}', y1=400.0, y2=410.0),
+    ]
+    notice = replace(
+        template,
+        text=notice_text,
+        font_size=5.2,
+        x1=notice_x1,
+        x2=notice_x1 + 4.7,
+        y1=16.0,
+        y2=767.0,
+    )
+    return body, notice
+
+
+class SideMarginRemovalTests(unittest.TestCase):
+    def test_removes_vertical_notice_repeated_beside_the_text(self) -> None:
+        lines, body = [], []
+        for raw in range(1, 4):
+            page_body, notice = side_margin_page(raw)
+            body.extend(page_body)
+            lines.extend([notice, *page_body])
+        filtered, _ = remove_headers_and_footers(lines, [])
+        self.assertEqual(filtered, body)
+
+    def test_removed_notice_does_not_stretch_header_zones(self) -> None:
+        lines, body = [], []
+        for raw in range(1, 4):
+            page_body, notice = side_margin_page(raw)
+            footer = replace(page_body[0], text=f'Journal of Examples {raw}', y1=729.0, y2=737.0)
+            body.extend(page_body)
+            lines.extend([notice, *page_body, footer])
+        filtered, _ = remove_headers_and_footers(lines, [])
+        self.assertEqual(filtered, body)
+
+    def test_keeps_repeated_vertical_text_within_the_text_width(self) -> None:
+        lines = []
+        for raw in range(1, 4):
+            page_body, label = side_margin_page(raw, notice_x1=300.0, notice_text='Seedling growth')
+            lines.extend([label, *page_body])
+        filtered, _ = remove_headers_and_footers(lines, [])
+        self.assertEqual(filtered, lines)
+
+    def test_keeps_vertical_notice_found_on_too_few_pages(self) -> None:
+        lines = []
+        for raw in range(1, 3):
+            page_body, notice = side_margin_page(raw)
+            lines.extend([notice, *page_body])
+        filtered, _ = remove_headers_and_footers(lines, [])
+        self.assertEqual(filtered, lines)
+
+    def test_keeps_vertical_lines_of_rotated_pages(self) -> None:
+        lines = []
+        for raw in range(1, 4):
+            page_body, notice = side_margin_page(raw)
+            # A rotated table page: its text runs vertically, with only a short
+            # horizontal page label.
+            rotated_rows = [
+                replace(notice, text=f'{MARGIN_NOTICE} row {row}', x1=600.0 + 12 * row)
+                for row in range(3)
+            ]
+            label = replace(page_body[0], text='Table page', x1=280.0, x2=320.0)
+            lines.extend([*rotated_rows, label])
+        filtered, _ = remove_headers_and_footers(lines, [])
+        self.assertEqual(filtered, lines)
+
+
 class DumpPageNumbersTests(unittest.TestCase):
     def test_writes_every_page_and_marks_unknown_labels(self) -> None:
         page_numbers = [

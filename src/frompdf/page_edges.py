@@ -8,6 +8,7 @@ from typing import Literal
 
 from pdftext.schema import Page
 
+from frompdf.line_features import is_vertical
 from frompdf.models import Line, PageNumber
 
 ROMAN_NUMERAL_PATTERN = r'[IVXLCDMivxlcdm]+'
@@ -30,6 +31,9 @@ OCR_ROMAN_READINGS = (
     str.maketrans({'l': 'I', '1': 'I', '|': 'I', 'U': 'II', 'L': 'I'}),
 )
 NUMBERED_NOTE_PATTERN = re.compile(r'\s*\d+[.)](?:\s|$)')
+# Text running vertically along a page margin, such as download notices, keeps
+# at least this distance from the horizontal text of its page.
+SIDE_MARGIN_MIN_GAP = 4.0
 
 
 @dataclass
@@ -809,10 +813,63 @@ def add_same_baseline_footer_companions(
             excluded_indices.add(candidate.index)
 
 
+def side_margin_candidates(line_list: list[Line]) -> list[HeaderFooterCandidate]:
+    """Return vertical lines set beside the horizontal text of pages set horizontally.
+
+    Such a line lies entirely left or right of all horizontal lines of its
+    page. Pages with at least as many vertical as horizontal lines, as rotated
+    tables, are left alone, as their vertical lines are the text.
+    """
+    lines_by_page: dict[int, list[tuple[int, Line]]] = defaultdict(list)
+    for index, line in enumerate(line_list):
+        if line.text and line.x1 is not None and line.x2 is not None:
+            lines_by_page[line.page_no].append((index, line))
+
+    candidate_list: list[HeaderFooterCandidate] = []
+    for page_lines in lines_by_page.values():
+        vertical = [(index, line) for index, line in page_lines if is_vertical(line)]
+        horizontal = [line for _, line in page_lines if not is_vertical(line)]
+        if not vertical or not horizontal:
+            continue
+        if len(vertical) >= len(horizontal):
+            continue
+        left = min(line.x1 for line in horizontal if line.x1 is not None)
+        right = max(line.x2 for line in horizontal if line.x2 is not None)
+        for index, line in vertical:
+            assert line.x1 is not None and line.x2 is not None
+            if line.x2 <= left - SIDE_MARGIN_MIN_GAP or line.x1 >= right + SIDE_MARGIN_MIN_GAP:
+                candidate_list.append(
+                    HeaderFooterCandidate(
+                        index=index,
+                        line=line,
+                        zone='side',
+                        normalized=normalize_header_footer_text(line.text),
+                    )
+                )
+    return candidate_list
+
+
+def side_margin_indices(line_list: list[Line], page_count: int) -> set[int]:
+    """Return the indices of vertical lines repeated along the margins of pages."""
+    candidate_list = side_margin_candidates(line_list)
+    repeated_keys = repeated_header_footer_keys(candidate_list, page_count)
+    return {
+        candidate.index
+        for candidate in candidate_list
+        if (candidate.zone, candidate.normalized) in repeated_keys
+    }
+
+
 def remove_headers_and_footers(
     line_list: list[Line], page_list: Sequence[Page]
 ) -> tuple[list[Line], list[PageNumber]]:
-    """Remove repeated header/footer lines and collect visible page numbers."""
+    """Remove repeated header/footer lines and collect visible page numbers.
+
+    Repeated vertical lines along the side margins go first, so they do not
+    stretch the text span that headers and footers are found at the edges of.
+    """
+    side_indices = side_margin_indices(line_list, len(page_list))
+    line_list = [line for index, line in enumerate(line_list) if index not in side_indices]
     candidate_list = iter_header_footer_candidates(line_list)
     separated_candidates = separated_edge_candidates(line_list, candidate_list, len(page_list))
     separated_indices = {candidate.index for candidate in separated_candidates}
