@@ -101,10 +101,6 @@ and wet seasons in tropical forests. They attributed this
 variation to resource availability and to the natural
 enemy dynamics.
 
-ª 2014 The Authors. Ecology and Evolution published by John Wiley & Sons Ltd.
-
-**2823**
-
 This is an open access article under the terms of the Creative Commons Attribution License, which permits use,
 distribution and reproduction in any medium, provided the original work is properly cited.
 
@@ -162,9 +158,6 @@ McIntire 2011).
 
 The seedling stage represents a bottleneck in the life
 cycle of trees (Harper 1977), which has meant that it has
-
-20457758, 2014, 14, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/ece3.1123 by Cambodia Hinari NPL, Wiley Online Library on [15/11/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
-
 become the focus of research into NDD. However, competition
 between seedlings has been shown to be unimportant
 for seedling recruitment (Paine et al. 2008;
@@ -276,8 +269,6 @@ Greenhouse experiment
 We examined the effects of soilborne pathogens on seed
 germination and seedling growth using two species
 
-20457758, 2014, 14, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/ece3.1123 by Cambodia Hinari NPL, Wiley Online Library on [15/11/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
-
 (*Engelhardia fenzelii* and *Cryptocarya concinna*) that commonly
 occurred in both the low- and high-elevation field
 sites. These species were chosen because the two species
@@ -387,9 +378,6 @@ quadrat, station, and variation among 1 ha plots, respectively.
 
 The local neighborhood variables used in this study
 included conspecific and heterospecific seedling density in
-
-20457758, 2014, 14, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/ece3.1123 by Cambodia Hinari NPL, Wiley Online Library on [15/11/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
-
 a 1 m<sup>2</sup> quadrat, the abundance of conspecific and heterospecific
 trees and the basal area of conspecific and heterospecific
 trees (DBH ≥ 1 cm). For each seedling, we
@@ -447,9 +435,7 @@ The best model for absolute neighbor effects used conspecific
 seedling density, heterospecific seedling density, conspecific
 tree basal area, and heterospecific tree basal area
 
-[[PAGE:5|VISIBLE:2827]]20457758, 2014, 14, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/ece3.1123 by Cambodia Hinari NPL, Wiley Online Library on [15/11/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
-
-**Table 1.** *Comparison of generalized linear mixed models of seedling survival in the six 1-ha plots.*
+[[PAGE:5|VISIBLE:2827]]**Table 1.** *Comparison of generalized linear mixed models of seedling survival in the six 1-ha plots.*
 
 | Models | Fixed effects                                                | AIC        | BIC        | logLink    |
 | ------ | ------------------------------------------------------------ | ---------- | ---------- | ---------- |
@@ -506,6 +492,8 @@ of seedlings on seedling survival in six 1-ha plots.*
 | Relative conspecific trees     | −0.4886  | −0.423  | 0.6722      |
 | Elevations                     | 0.8337   | −4.036  | **<0.0001** |
 
+Significant results are shown in boldface type.
+
 ![](wiley-elevational-density-dependence-img/p05-1.png)
 
 **Figure 1.** *Distribution of effects of conspecific and heterospecific
@@ -515,8 +503,6 @@ neighbors on seedling survival in 6 1-ha plots.*
 had a significant negative impact on the seedling survival,
 whereas relative conspecific tree effects did not significantly
 affect seedling survival (Table 2).
-
-Significant results are shown in boldface type.
 
 At both low and high elevations, the best models of the
 absolute neighbor effect contained the conspecific seedling
@@ -565,11 +551,8 @@ consistent for the two species and because we were more
 interested in overall community responses rather than
 species-specific results. Sterilization (ANOVA, *F* = 0.99,
 *P* = 0.322), elevation (*F* = 0.92, *P* = 0.341), and sterilization
-9 elevation (*F* = 0.45, *P* = 0.503) did not signifi-
-
-20457758, 2014, 14, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/ece3.1123 by Cambodia Hinari NPL, Wiley Online Library on [15/11/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
-
-cantly influence seed germination (Fig. 2A). However, the
+9 elevation (*F* = 0.45, *P* = 0.503) did not significantly
+influence seed germination (Fig. 2A). However, the
 low-elevation simulation experiment showed increased
 seedling growth compared with the high-elevation simulation
 experiment (*F* = 10.99, *P* = 0.002, Fig. 2B), and this
@@ -617,10 +600,8 @@ was consistent with the strong negative effect of relative
 > treatments (sterilization vs. control) on seed
 > germination (A) and seedling growth (B). Bars
 > represent means ± 1 SE.
-
-[[PAGE:7|VISIBLE:2829]]20457758, 2014, 14, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/ece3.1123 by Cambodia Hinari NPL, Wiley Online Library on [15/11/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
-
-**(A) (B)**
+>
+> [[PAGE:7|VISIBLE:2829]]**(A) (B)**
 
 **Figure 3.** Greenhouse experiments testing the
 effect of elevation on the relative soil biota
@@ -636,6 +617,35 @@ affect the strength of the NDD (Benitez et al. 2013). The
 stress gradients hypothesis predicts that facilitative interactions
 will become more important when stress or consumer
 pressure are high (Maestre et al. 2009; Malkinson
+and Tielbörger 2010; Fajardo and McIntire 2011). As
+elevation increases, temperature and soil moisture
+declines and understory light availability rises. These
+changes may directly influence the interactions between
+plants, possibly making facilitation more important than
+competition at high elevations, which would buffer NDD
+changes. For example, Bunker and Carson (2005) found
+that increased soil moisture favored NDD in seasonal forests
+in Panama. In our study, the lapse rate related to the
+change in elevation between the high and low-elevation
+sites (about 300 m) was about 1.5°C. If we combine this
+with the anticipated declines in air and soil moisture at
+high-elevation sites, compared with low-elevation sites,
+we should expect lower competition for resources
+between plant species at the high-elevation sites. However,
+the change in environmental conditions may regulate
+host-pathogen interactions (Burdon and Thrall 2009;
+Tack et al. 2012). Changes in environmental conditions
+can affect host and pathogen physiological statuses, as
+well as dispersal and establishment (Pariaud et al. 2009;
+Laine et al. 2011). Several studies have investigated how
+light availability and soil moisture affects survival and disease
+development (Ichihara and Yamaji 2009; ;Alvarez-Loayza
+et al. 2011; Hersh et al. 2012). For example, soil
+moisture has been found to affect the co-infection combination
+(Hersh et al. 2012). Light intensity variations
+changed endosymbiotic fungi into pathogens and this
+affected seedling survival (Alvarez-Loayza et al. 2011).
+Thus, higher temperatures and moistures and lower
 
 understory light availability at lower elevations may
 increase pathogen activity, and this could result in a
@@ -660,27 +670,6 @@ NDD mechanism is stronger in a forest community with
 high temperatures and high soil moistures, which are the
 conditions found in a tropical forest (Shuai et al. 2014).
 
-and Tielbörger 2010; Fajardo and McIntire 2011). As
-elevation increases, temperature and soil moisture
-declines and understory light availability rises. These
-changes may directly influence the interactions between
-plants, possibly making facilitation more important than
-competition at high elevations, which would buffer NDD
-changes. For example, Bunker and Carson (2005) found
-that increased soil moisture favored NDD in seasonal forests
-in Panama. In our study, the lapse rate related to the
-change in elevation between the high and low-elevation
-sites (about 300 m) was about 1.5°C. If we combine this
-with the anticipated declines in air and soil moisture at
-high-elevation sites, compared with low-elevation sites,
-we should expect lower competition for resources
-between plant species at the high-elevation sites. However,
-the change in environmental conditions may regulate
-host-pathogen interactions (Burdon and Thrall 2009;
-Tack et al. 2012). Changes in environmental conditions
-can affect host and pathogen physiological statuses, as
-well as dispersal and establishment (Pariaud et al. 2009;
-
 In contrast to the effects caused by conspecific seedling
 neighbors, conspecific tree neighbors and heterospecific
 neighbors had no significant effects on seedling survival
@@ -694,19 +683,8 @@ that species-specific enemies are more prevalent near
 adult trees. This factor could be the potential reason for
 the negative effects caused by conspecific trees. However,
 conspecific trees may also provide an appropriate local
-habitat for conspecific seedling growth, which would mit-
-
-Laine et al. 2011). Several studies have investigated how
-light availability and soil moisture affects survival and disease
-development (Ichihara and Yamaji 2009; ;Alvarez-Loayza
-et al. 2011; Hersh et al. 2012). For example, soil
-moisture has been found to affect the co-infection combination
-(Hersh et al. 2012). Light intensity variations
-changed endosymbiotic fungi into pathogens and this
-affected seedling survival (Alvarez-Loayza et al. 2011).
-Thus, higher temperatures and moistures and lower
-
-igate the negative effects caused by attacks from natural
+habitat for conspecific seedling growth, which would mitigate
+the negative effects caused by attacks from natural
 enemies. In addition, several studies have also shown
 [[PAGE:8|VISIBLE:2830]]positive effects by heterospecific neighbors (Peters 2003;
 Chen et al. 2010; Lin et al. 2012), which supports the
@@ -763,9 +741,6 @@ NDD observed in the low-elevation sites. The increased
 negative feedback in the simulated low-elevation environment
 confirmed our speculation that increased soil temperature
 and moisture affected the abundance and/or
-
-20457758, 2014, 14, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/ece3.1123 by Cambodia Hinari NPL, Wiley Online Library on [15/11/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
-
 activity of soil pathogens, thus inducing a stronger NDD.
 However, the origin of the seeds may potentially influence
 the results of the greenhouse experiment. Parental effects
@@ -880,8 +855,6 @@ subjects and items. J. Mem. Lang. 59:390–412.
 
 Bagchi, R., T. Swinfield, R. E. Gallery, O. T. Lewis, S.
 Gripenberg, L. Narayan, et al. 2010. Testing the
-
-20457758, 2014, 14, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/ece3.1123 by Cambodia Hinari NPL, Wiley Online Library on [15/11/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
 
 Janzen-Connell mechanism: pathogens cause
 overcompensating density dependence in a tropical tree.
@@ -1019,8 +992,6 @@ Kobe, R. K., and C. F. Vriesendorp. 2011. Conspecific density
 dependence in seedlings varies with species shade tolerance
 in a wet tropical forest. Ecol. Lett. 14:503–510.
 
-20457758, 2014, 14, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/ece3.1123 by Cambodia Hinari NPL, Wiley Online Library on [15/11/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
-
 Laine, A. L., J. J. Burdon, P. N. Dodds, and P. H. Thrall. 2011.
 Spatial variation in disease resistance: from molecules to
 metapopulations. J. Ecol. 99:96–112.
@@ -1146,11 +1117,8 @@ Evol. 2:1408–1413.
 
 Tack, A., P. Thrall, L. Barrett, J. Burdon, and A. L. Laine.
 2012. Variation in infectivity and aggressiveness in space
-
-20457758, 2014, 14, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/ece3.1123 by Cambodia Hinari NPL, Wiley Online Library on [15/11/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
-
-> and time in wild host–pathogen systems: causes and
-> consequences. J. Evol. Biol. 25:1918–1936.
+and time in wild host–pathogen systems: causes and
+consequences. J. Evol. Biol. 25:1918–1936.
 
 Volkov, I., J. R. Banavar, F. He, S. P. Hubbell, and A. Maritan.
 2005. Density dependence explains tree species abundance
