@@ -308,7 +308,7 @@ site were maintained at a temperature of 21°C and at a
 soil humidity of 15%.
 
 Collectively, four treatment combinations (two elevations
-9 two soil treatments) were used for each species.
+× two soil treatments) were used for each species.
 Each treatment combination was replicated 10 times, and
 the positions of the pots in the greenhouses were randomly
 changed every week. The experiment lasted for
@@ -349,28 +349,28 @@ is as follows:
 logit(*p<sub>ijk</sub>*)= log( *p<sub>ijk</sub>*\
 1 − *pijk*
 
-)=[b<sub>0</sub> + b<sub>1</sub>conseedlings
+)=[β<sub>0</sub> + β<sub>1</sub>conseedlings
 
-> \+ b<sub>2</sub>heteroseedlings + b<sub>3</sub>contrees\
-> \+ b<sub>4</sub>heterotrees + b<sub>5</sub>elevations\
-> \+ b<sub>6</sub>initialheight]fixed part +[cspeciesconseedlings
-> \+ c<sub>species</sub>heteroseedlings + c<sub>species</sub>contrees
-> \+ cspeciesheterotrees + lspecies + lquadrat
+> \+ β<sub>2</sub>heteroseedlings + β<sub>3</sub>contrees\
+> \+ β<sub>4</sub>heterotrees + β<sub>5</sub>elevations\
+> \+ β<sub>6</sub>initialheight]fixed part +[γspeciesconseedlings
+> \+ γ<sub>species</sub>heteroseedlings + γ<sub>species</sub>contrees
+> \+ γspeciesheterotrees + μspecies + μquadrat
 >
-> \+ lstation + lplot]<sub>random</sub> <sub>part</sub>
+> \+ μstation + μplot]<sub>random</sub> <sub>part</sub>
 
 where *y*<sub>ijk</sub> is the binary response (alive or dead) for seedling
 *i* in plot *j* and station *k* and *p*<sub>ijk</sub> is the predicted survival
 probability for each seedling. In the fixed part of the
-model, b0 denotes the fixed intercept. b1, b2, b3, b4, b5,
-and b6 represent the mean coefficient values across all
+model, β0 denotes the fixed intercept. β1, β2, β3, β4, β5,
+and β6 represent the mean coefficient values across all
 species for conspecific seedling abundance, heterospecific
 seedling abundance, conspecific tree abundance, heterospecific
 tree abundance, elevation and initial seedling
-height, respectively. cspec<sub>ies</sub> denotes the random slope for
+height, respectively. γspec<sub>ies</sub> denotes the random slope for
 each species (i.e., the four parameters for local neighborhood
-density vary among species). lspec<sub>ies</sub> characterizes
-the variation among species and lquadrat, lstati<sub>on,</sub> and lplot
+density vary among species). μspec<sub>ies</sub> characterizes
+the variation among species and μquadrat, μstati<sub>on,</sub> and μplot
 describe the survival autocorrelation within the seedling
 quadrat, station, and variation among 1 ha plots, respectively.
 
@@ -549,7 +549,7 @@ consistent for the two species and because we were more
 interested in overall community responses rather than
 species-specific results. Sterilization (ANOVA, *F* = 0.99,
 *P* = 0.322), elevation (*F* = 0.92, *P* = 0.341), and sterilization
-9 elevation (*F* = 0.45, *P* = 0.503) did not significantly
+× elevation (*F* = 0.45, *P* = 0.503) did not significantly
 influence seed germination (Fig. 2A). However, the
 low-elevation simulation experiment showed increased
 seedling growth compared with the high-elevation simulation

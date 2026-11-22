@@ -10,7 +10,7 @@ https://doi.org/10.1007/s42803-021-00031-6
 
 Received: 21 August 2020 /Accepted: 11 February 2021 / Published online: 11 May 2021
 
-\# The Author(s) 2021
+© The Author(s) 2021
 
 ### Abstract
 
