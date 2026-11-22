@@ -39,6 +39,7 @@ from frompdf.page_edges import (
 from frompdf.reading_order import order_lines_for_reading
 from frompdf.rules import extract_drawings, extract_rules
 from frompdf.tables import find_tables
+from frompdf.word_spaces import insert_missing_word_spaces
 
 
 def extract_markdown(
@@ -61,6 +62,7 @@ def extract_markdown(
     decode_advent_math_glyphs(page_list, input_path)
     collapse_alternative_mappings(page_list)
     normalize_detached_diacritics(page_list)
+    insert_missing_word_spaces(page_list, ocr_layout.pages)
     remove_icon_glyphs(page_list)
     decode_math_extension_glyphs(page_list)
     decode_double_struck_letters(page_list)

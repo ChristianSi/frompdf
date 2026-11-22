@@ -397,6 +397,8 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
   lines of the column to its left starts another column rather than being
   indented.
 - A hyphen ending a line after a single letter is kept, as in `g-tensor`.
+- Words that a PDF sets apart without a space glyph get a space, where the
+  gap is as wide as the word gaps of their line, as in `GaV₄S₈. a`.
 
 ## 0.1.0 - 2026-07-09
 
