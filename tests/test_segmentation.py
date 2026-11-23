@@ -703,6 +703,11 @@ class RunningTextContinuationTests(unittest.TestCase):
     def test_full_line_ending_a_sentence_continues(self) -> None:
         self.assertEqual(self.group_count(self.previous(self.CLOSED), self.current()), 1)
 
+    def test_year_in_parentheses_after_a_sentence_end_continues(self) -> None:
+        current = self.current('(2012) have found that NDD differed')
+
+        self.assertEqual(self.group_count(self.previous(self.CLOSED), current), 1)
+
     def test_line_mostly_in_italics_continues(self) -> None:
         current = replace(
             self.current(font_name='Body-Italic'), ranges=(InlineRange(4, 40, 'italic'),)

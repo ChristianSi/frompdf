@@ -304,6 +304,10 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
 
 ### Fixed
 
+- A year in parentheses starting a line, as in `Lin et al.` followed by
+  `(2012) have found`, no longer counts as an enumeration label like `(2)`
+  where `pdftext` starts a new block. Such labels have at most three digits,
+  as for list markers. The citation was split into two paragraphs.
 - Bar charts drawn from rules and plain rectangles, as in Wiley's journals,
   are recognized as pictures. Their axes, a horizontal and a vertical rule
   meeting at a corner, now join the bars and the tick values around them,

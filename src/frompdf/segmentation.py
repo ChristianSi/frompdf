@@ -74,8 +74,11 @@ MARKER_LINE_MAX_COLUMN_SHARE = 0.5
 CONTINUED_SENTENCE_END_MAX_SHORTFALL_EM = 0.5
 
 # Labels of references, enumerations, and theorems beyond those of
-# NUMBERED_OR_BULLETED_START_PATTERN, which start a new item.
-ITEM_LABEL_START_PATTERN = re.compile(r'\[\d+\]|\(\d+\)|\d+\)|▶')
+# NUMBERED_OR_BULLETED_START_PATTERN, which start a new item. Like list
+# markers, their numbers have at most three digits: a year in parentheses, as
+# `(2012)` starting a line after `Lin et al.` in wiley-elevational, continues
+# a citation.
+ITEM_LABEL_START_PATTERN = re.compile(r'\[\d{1,3}\]|\(\d{1,3}\)|\d{1,3}\)|▶')
 # Lower-case letter and roman labels, as `a)`, `(b)`, or `iv.`, which start an
 # item rather than continue the text above in lower case.
 LOWER_CASE_ITEM_LABEL_START_PATTERN = re.compile(r'\(?[a-z]{1,4}[.)]\s')
