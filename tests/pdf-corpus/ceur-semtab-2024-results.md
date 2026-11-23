@@ -167,8 +167,9 @@ hierarchy in Wikidata [23]. This adaptation accounts for partially correct annot
 are ancestors or descendants of the ground truth (GT) classes. The correctness score ������������ for a CTA
 annotation �� is based on its distance from the GT classes within the hierarchy and is defined as follows:
 
-> cscore(��) =
-> ⎧
+cscore(��) =\
+⎧
+
 > ⎪⎨
 > ⎪⎩
 >

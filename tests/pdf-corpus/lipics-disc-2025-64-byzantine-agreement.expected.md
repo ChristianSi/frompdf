@@ -191,7 +191,7 @@ result. The fact that PBA only produces outputs with region guarantees containin
 output is our instantiation of an *accuracy* [12] property.
 
 ▶ **Definition 2.4** (Region Guarantee). *For any set R* ⊆ ℝ<sup>d</sup>, |*R*| > *s* + *f where s* > *f, define
-R*<sup>(f,x)</sup> ⊆ *R by removing the f elements of R furthest from x. Let* ∆<sup>R</sup>*<sub>f</sub>* = max*ri*∈*R*(*f*,*Gm*(*R*)) ||*ri* −
+R*<sup>(f,x)</sup> ⊆ *R by removing the f elements of R furthest from x. Let* ∆<sup>R</sup>*<sub>f</sub>* = max<sub>ri</sub>∈<sub>R</sub>(*f*,*Gm*(*R*)) ||*r<sub>i</sub>* −
 *Gm*(*R*)||<sub>2</sub>*. The* region guarantee *RG*(*R*, *s*, *f*) *is a d-dimensional ball centered at x with radius*
 2*C*<sup>(s,f)</sup>∆<sup>R</sup>*<sub>f</sub>.*
 

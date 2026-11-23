@@ -346,31 +346,26 @@ is as follows:
 
 *y<sub>ijk</sub>* ∼ binomial(*p<sub>ijk</sub>*)
 
-logit(*p<sub>ijk</sub>*)= log( *p<sub>ijk</sub>*\
-1 − *pijk*
-
-)=[β<sub>0</sub> + β<sub>1</sub>conseedlings
-
-> \+ β<sub>2</sub>heteroseedlings + β<sub>3</sub>contrees\
-> \+ β<sub>4</sub>heterotrees + β<sub>5</sub>elevations\
-> \+ β<sub>6</sub>initialheight]fixed part +[γspeciesconseedlings
-> \+ γ<sub>species</sub>heteroseedlings + γ<sub>species</sub>contrees
-> \+ γspeciesheterotrees + μspecies + μquadrat
->
-> \+ μstation + μplot]<sub>random</sub> <sub>part</sub>
+logit(*p<sub>ijk</sub>*)= log( *p<sub>ijk</sub>*/(1 − *p<sub>ijk</sub>*))=[β<sub>0</sub> + β<sub>1</sub>conseedlings\
+\+ β<sub>2</sub>heteroseedlings + β<sub>3</sub>contrees\
+\+ β<sub>4</sub>heterotrees + β<sub>5</sub>elevations\
+\+ β<sub>6</sub>initialheight]<sub>fixed</sub> <sub>part</sub> +[γ<sub>species</sub>conseedlings\
+\+ γ<sub>species</sub>heteroseedlings + γ<sub>species</sub>contrees\
+\+ γspeciesheterotrees + μspecies + μquadrat\
+\+ μstation + μplot]<sub>random</sub> <sub>part</sub>
 
 where *y*<sub>ijk</sub> is the binary response (alive or dead) for seedling
 *i* in plot *j* and station *k* and *p*<sub>ijk</sub> is the predicted survival
 probability for each seedling. In the fixed part of the
-model, β0 denotes the fixed intercept. β1, β2, β3, β4, β5,
-and β6 represent the mean coefficient values across all
+model, β<sub>0</sub> denotes the fixed intercept. β<sub>1</sub>, β<sub>2</sub>, β<sub>3</sub>, β4, β5,
+and β<sub>6</sub> represent the mean coefficient values across all
 species for conspecific seedling abundance, heterospecific
 seedling abundance, conspecific tree abundance, heterospecific
 tree abundance, elevation and initial seedling
-height, respectively. γspec<sub>ies</sub> denotes the random slope for
+height, respectively. γ<sub>species</sub> denotes the random slope for
 each species (i.e., the four parameters for local neighborhood
-density vary among species). μspec<sub>ies</sub> characterizes
-the variation among species and μquadrat, μstati<sub>on,</sub> and μplot
+density vary among species). μ<sub>species</sub> characterizes
+the variation among species and μ<sub>quadrat</sub>, μ<sub>station,</sub> and μ<sub>plot</sub>
 describe the survival autocorrelation within the seedling
 quadrat, station, and variation among 1 ha plots, respectively.
 
