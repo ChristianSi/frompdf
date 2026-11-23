@@ -335,15 +335,18 @@ The current pipeline is roughly:
    pieces of the line, in either order, and glyphs of a script's size next to
    the largest ones are small; otherwise, the adjacent pieces must mostly be
    in a larger size. Scripts are measured against the nearest ordinary
-   glyph in their own font, within reach, as glyph boxes span the ascent and
-   descent of their font, and the ordinary size is the one in which most of
-   the width of a piece is set. Small records centered below small text
+   glyph in their own font anywhere on the line, as glyph boxes span the
+   ascent and descent of their font, or else the nearest one within reach,
+   and the ordinary size is the one in which most of the width of a piece is
+   set. Small records centered below small text
    ending the preceding record, with the line continuing after the wider of
    numerator and denominator, are marked as fraction denominators, and so are
    records in full size centered below text ending the preceding record that
    lies entirely above them, with a glyph in full size, as in display
    equations. Neither part of a small fraction is a script of the text around
-   it; a numerator in full size keeps its own scripts. Records of small text
+   it; a numerator in full size keeps its own scripts. Whitespace before a
+   numerator centered over a wider denominator that starts right after the
+   preceding text is dropped. Records of small text
    centered below a line's last word, which has letters in it, with the line
    continuing after them, are marked as its limits. Bold and italic ranges
    follow font names and the italic font flag. Fonts named by opaque hashes

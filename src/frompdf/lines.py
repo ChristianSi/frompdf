@@ -2,6 +2,7 @@ import math
 import re
 from collections import Counter, defaultdict
 from collections.abc import Sequence
+from dataclasses import replace
 from difflib import SequenceMatcher
 from itertools import pairwise
 from typing import Literal
@@ -22,6 +23,7 @@ from pdftext.schema import (
 
 from frompdf.line_features import (
     RUNNING_TEXT_MAX_GAP_EM,
+    SAME_LINE_SPACE_GAP_EM,
     same_physical_line,
     same_running_text_line,
 )
@@ -463,7 +465,8 @@ def horizontal_gap(box: Box, other: Box) -> float:
     return max(0.0, other[0] - box[2], box[0] - other[2])
 
 
-# A script lies within this many heights of its ordinary reference glyph.
+# A script lies within this many heights of an ordinary reference glyph in
+# another font.
 SCRIPT_MAX_REFERENCE_GAP = 6
 
 
@@ -473,9 +476,11 @@ def script_runs(glyphs: list[ScriptGlyph], ordinary: list[ScriptGlyph]) -> list[
     The dominant size is the one in which most of the width of the ordinary
     glyphs is set, so a short piece such as `1 − p` followed by the subscript
     `ijk` is not judged by its scripts. Each small glyph is compared with the
-    nearest ordinary glyph in the same font, if one lies close enough, as
-    glyph boxes span the ascent and descent of their font, which differ
-    between fonts, as for `γ` from a symbol font before a subscript `species`.
+    nearest ordinary glyph in the same font, anywhere on the line, as glyph
+    boxes span the ascent and descent of their font, which differ between
+    fonts, as for `γ` from a symbol font before a subscript `species`, or for
+    `β` before the subscript `4` in a list of coefficients. Lacking one, the
+    nearest ordinary glyph within reach counts.
     """
     # Only use reported sizes when all visible alphanumerics have real sizes.
     # Nature reports size 1.0 even for differently scaled characters.
@@ -505,9 +510,9 @@ def script_runs(glyphs: list[ScriptGlyph], ordinary: list[ScriptGlyph]) -> list[
             )
 
         font_name = glyph_font_name(glyph)
-        same_font = [g for g in references if glyph_font_name(g) == font_name and within_reach(g)]
+        same_font = [g for g in references if glyph_font_name(g) == font_name]
         reference = min(same_font or references, key=distance)
-        if not within_reach(reference):
+        if not same_font and not within_reach(reference):
             continue
         ref_box = reference[3]
         kind = script_kind(box, ref_box)
@@ -783,10 +788,10 @@ def is_small_denominator(denominator: Line, font_size: float) -> bool:
     return (denominator.font_size or font_size) <= font_size * SCRIPT_MAX_SIZE_RATIO
 
 
-def is_fraction_denominator(
+def fraction_numerator_box(
     numerator: Line, numerator_dict: PdfTextLine, denominator: Line, following: Line
-) -> bool:
-    """Return whether a line is centered below text ending the preceding line.
+) -> Box | None:
+    """Return the box of a fraction's numerator ending a line if one is centered below it.
 
     A denominator in small type is centered below small text ending the line
     of its numerator. A denominator in full size is centered below text ending
@@ -808,26 +813,59 @@ def is_fraction_denominator(
         or same_physical_line(numerator, denominator)
         or not same_physical_line(numerator, following)
     ):
-        return False
+        return None
     font_size = fraction_font_size(numerator, following)
     fraction_end = max(numerator.x2, denominator.x2)
     if following.x1 - fraction_end >= max(font_size, 1.0) * RUNNING_TEXT_MAX_GAP_EM:
-        return False
+        return None
     if font_size <= 0 or not numerator.y1 < denominator.y1 < max(numerator.y2, following.y2):
-        return False
+        return None
     if is_small_denominator(denominator, font_size):
         box = trailing_small_glyph_box(numerator_dict, font_size)
     else:
         box = trailing_stacked_glyph_box(numerator_dict, denominator.y1, font_size)
     if box is None or box[3] > denominator.y2:
-        return False
+        return None
     tolerance = font_size * STACKED_ALIGNMENT_TOLERANCE_EM
     centered = abs((box[0] + box[2]) - (denominator.x1 + denominator.x2)) / 2 <= tolerance
     left_aligned_scripts = (
         abs(box[0] - denominator.x1) <= tolerance
         and abs((box[2] - box[0]) - (denominator.x2 - denominator.x1)) > tolerance
     )
-    return centered and not left_aligned_scripts
+    return box if centered and not left_aligned_scripts else None
+
+
+def without_space_before_numerator(numerator: Line, box: Box, denominator: Line) -> None:
+    """Drop whitespace a PDF puts before a fraction's numerator to center it.
+
+    A numerator narrower than its denominator is centered above it, apart from
+    the text before the fraction, as `log( p` in `log(p/(1 − p))`, though the
+    denominator starts right after that text. Whitespace before a numerator
+    starting the fraction, as in `< 1/2`, separates real words.
+    """
+    if denominator.x1 is None or numerator.font_size is None:
+        return
+    font_size = numerator.font_size
+    tolerance = font_size * STACKED_ALIGNMENT_TOLERANCE_EM
+    if box[0] <= denominator.x1 + tolerance:
+        return
+    for before, first in pairwise(numerator.words):
+        if (
+            first.x1 >= box[0] - tolerance
+            and before.x2 <= box[0]
+            and denominator.x1 - before.x2 < font_size * SAME_LINE_SPACE_GAP_EM
+        ):
+            text = AnnotatedText(numerator.text, numerator.ranges)
+            joined = text.slice(0, before.end) + text.slice(first.start)
+            removed = first.start - before.end
+            numerator.text, numerator.ranges = joined.text, joined.ranges
+            numerator.words = tuple(
+                word
+                if word.start < first.start
+                else replace(word, start=word.start - removed, end=word.end - removed)
+                for word in numerator.words
+            )
+            return
 
 
 def glyph_font_size(char: PdfTextChar) -> float | None:
@@ -997,15 +1035,18 @@ def iter_lines(page_list: Sequence[Page], heavy_fonts: frozenset[str] = frozense
                 len(raw_text) - len(raw_text.lstrip()), len(raw_text.rstrip())
             )
             line_obj.ranges = annotated.ranges
-            line_obj.fraction_denominator = 0 < index < len(
-                page_lines
-            ) - 1 and is_fraction_denominator(
-                page_lines[index - 1][0],
-                page_lines[index - 1][1],
-                line_obj,
-                page_lines[index + 1][0],
+            numerator_box = (
+                fraction_numerator_box(
+                    page_lines[index - 1][0],
+                    page_lines[index - 1][1],
+                    line_obj,
+                    page_lines[index + 1][0],
+                )
+                if 0 < index < len(page_lines) - 1
+                else None
             )
-            if line_obj.fraction_denominator:
+            line_obj.fraction_denominator = numerator_box is not None
+            if numerator_box is not None:
                 # Numerator and denominator are no scripts of the line around
                 # them; the denominator's own scripts are judged within it.
                 # A small numerator is no superscript either; scripts ending a
@@ -1014,6 +1055,7 @@ def iter_lines(page_list: Sequence[Page], heavy_fonts: frozenset[str] = frozense
                 font_size = fraction_font_size(numerator, page_lines[index + 1][0])
                 if is_small_denominator(line_obj, font_size):
                     numerator.ranges = without_trailing_scripts(numerator)
+                without_space_before_numerator(numerator, numerator_box, line_obj)
                 own = AnnotatedText(raw_text, line_script_ranges(line_dict) + emphasis).slice(
                     len(raw_text) - len(raw_text.lstrip()), len(raw_text.rstrip())
                 )

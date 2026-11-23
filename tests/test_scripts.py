@@ -119,6 +119,21 @@ class ScriptDetectionTests(unittest.TestCase):
             render_scripts(text, line_script_ranges(line)), 'γ<sub>species</sub> denotes'
         )
 
+    def test_scripts_are_measured_against_their_own_font_far_along_the_line(self) -> None:
+        # The last subscript lies more than six glyph heights from `cept`.
+        text = 'cept. β1, β2, β3, β4'
+        subscripts = [index for index, char in enumerate(text) if char.isdigit()]
+        line = pdf_line(text, {index: (14, 7) for index in subscripts}, size=10)
+        for index, char in enumerate(line['spans'][0]['chars']):
+            char['font']['name'] = 'Symbol' if text[index] == 'β' else 'Text'
+            if text[index] == 'β':
+                char['bbox'][1], char['bbox'][3] = 8, 21.5
+
+        self.assertEqual(
+            render_scripts(text, line_script_ranges(line)),
+            'cept. β<sub>1</sub>, β<sub>2</sub>, β<sub>3</sub>, β<sub>4</sub>',
+        )
+
     def test_leaves_small_caps_baseline_digits_and_unshifted_small_text_plain(self) -> None:
         for positions in ({}, {3: (13, 7)}, {3: (11.5, 7)}, {3: (10, 10)}):
             with self.subTest(positions=positions):

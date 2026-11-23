@@ -224,6 +224,21 @@ class FractionTextTests(unittest.TestCase):
     def test_text_after_a_full_size_fraction_is_spaced_from_its_end(self) -> None:
         self.assertEqual(assembled(*display_fraction()), 'log(p/(1 − p))= x')
 
+    def test_space_centering_a_narrow_numerator_is_dropped(self) -> None:
+        records = display_fraction()
+        # A space glyph between `(` and the numerator `p`, centered over `1 − p`.
+        records[0]['spans'][1:] = record(' p', 20, 94)['spans']
+
+        self.assertEqual(assembled(*records), 'log(p/(1 − p))= x')
+
+    def test_space_before_a_fraction_apart_from_the_text_is_kept(self) -> None:
+        first = record('f = ', 0, 100)
+        first['spans'].extend(record('p', 30, 94)['spans'])
+        first['bbox'] = [0.0, 94.0, 35.0, 109.0]
+        records = [first, record('1 − p', 20, 103), record(' + x', 46, 100)]
+
+        self.assertEqual(assembled(*records), 'f = p/(1 − p) + x')
+
 
 if __name__ == '__main__':
     unittest.main()

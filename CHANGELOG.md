@@ -234,11 +234,13 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
   or `≤`, and each further line starts with an operator, such as `+`, or
   follows a line ending with one. They never become block quotes or list
   items. Fractions set in full size, as `p/(1 − p)` in such equations, are
-  written on one line like inline fractions.
+  written on one line like inline fractions, without the space that centers
+  a narrower numerator over its denominator, as in `log( p`.
 - Superscripts and subscripts are measured against ordinary glyphs of their
-  own font, whose boxes match theirs, so subscripts after Greek letters from
-  symbol fonts, as in `γ_species` or `μ_quadrat`, are no longer missed or
-  split. A piece of text is judged by the size most of its width is set in,
+  own font anywhere on the line, whose boxes match theirs, so subscripts
+  after Greek letters from symbol fonts, as in `γ_species`, `μ_quadrat`, or
+  `β₄` far from other text of their font, are no longer missed or split. A
+  piece of text is judged by the size most of its width is set in,
   so the subscript of `1 − p_ijk` is recognized although its glyphs outnumber
   the others.
 - Scripts that `pdftext` separates from their line are reattached. This

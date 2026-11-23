@@ -7,6 +7,7 @@ from itertools import pairwise
 
 from frompdf.line_features import (
     FONT_WEIGHT_BREAK,
+    SAME_LINE_SPACE_GAP_EM,
     close_font_size,
     ends_sentence,
     is_prose_line,
@@ -55,16 +56,6 @@ COLUMN_FLOW_MAX_ADVANCE_EM = 2.0
 # suffices, while block-paragraph documents show almost none.
 MIN_INDENTED_PARAGRAPHS = 5
 MIN_INDENTED_PARAGRAPH_SHARE = 0.25
-
-# pdftext splits visual lines at superscripts, font changes, and math. Its
-# whitespace at the split usually tells whether the pieces are separate words,
-# but not always, as in ceur-open-source's `harm¹ and`, where a gap of 0.4 em
-# without a space character separates them. Touching pieces, such as `word`
-# and `¹, more`, are joined directly. Gaps are relative to the larger size.
-# The threshold lies between a thin space (1/6 em) and the narrowest word
-# space of tightly justified TeX lines (about 0.22 em), as before `messages`
-# in lipics-51's `Ω(…) messages`.
-SAME_LINE_SPACE_GAP_EM = 0.2
 
 # Characters making the denominator of an inline fraction compound, such that
 # it needs parentheses after a slash.

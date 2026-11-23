@@ -147,6 +147,16 @@ def same_physical_line(left: Line, right: Line) -> bool:
 # logo beside a title in intertrans.
 RUNNING_TEXT_MAX_GAP_EM = 1.0
 
+# pdftext splits visual lines at superscripts, font changes, and math. Its
+# whitespace at the split usually tells whether the pieces are separate words,
+# but not always, as in ceur-open-source's `harm¹ and`, where a gap of 0.4 em
+# without a space character separates them. Touching pieces, such as `word`
+# and `¹, more`, are joined directly. Gaps are relative to the larger size.
+# The threshold lies between a thin space (1/6 em) and the narrowest word
+# space of tightly justified TeX lines (about 0.22 em), as before `messages`
+# in lipics-51's `Ω(…) messages`.
+SAME_LINE_SPACE_GAP_EM = 0.2
+
 
 def same_running_text_line(left: Line, right: Line) -> bool:
     """Return whether adjacent fragments of one visual line belong to the same running text."""

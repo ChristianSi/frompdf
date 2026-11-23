@@ -346,7 +346,7 @@ is as follows:
 
 *y<sub>ijk</sub>* ∼ binomial(*p<sub>ijk</sub>*)
 
-logit(*p<sub>ijk</sub>*)= log( *p<sub>ijk</sub>*/(1 − *p<sub>ijk</sub>*))=[β<sub>0</sub> + β<sub>1</sub>conseedlings\
+logit(*p<sub>ijk</sub>*)= log(*p<sub>ijk</sub>*/(1 − *p<sub>ijk</sub>*))=[β<sub>0</sub> + β<sub>1</sub>conseedlings\
 \+ β<sub>2</sub>heteroseedlings + β<sub>3</sub>contrees\
 \+ β<sub>4</sub>heterotrees + β<sub>5</sub>elevations\
 \+ β<sub>6</sub>initialheight]<sub>fixed</sub> <sub>part</sub> +[γ<sub>species</sub>conseedlings\
@@ -357,7 +357,7 @@ logit(*p<sub>ijk</sub>*)= log( *p<sub>ijk</sub>*/(1 − *p<sub>ijk</sub>*))=[β<
 where *y*<sub>ijk</sub> is the binary response (alive or dead) for seedling
 *i* in plot *j* and station *k* and *p*<sub>ijk</sub> is the predicted survival
 probability for each seedling. In the fixed part of the
-model, β<sub>0</sub> denotes the fixed intercept. β<sub>1</sub>, β<sub>2</sub>, β<sub>3</sub>, β4, β5,
+model, β<sub>0</sub> denotes the fixed intercept. β<sub>1</sub>, β<sub>2</sub>, β<sub>3</sub>, β<sub>4</sub>, β<sub>5,</sub>
 and β<sub>6</sub> represent the mean coefficient values across all
 species for conspecific seedling abundance, heterospecific
 seedling abundance, conspecific tree abundance, heterospecific
