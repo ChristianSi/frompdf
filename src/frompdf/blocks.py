@@ -15,6 +15,7 @@ from frompdf.continuations import (
     document_indents_paragraphs,
     join_fragments,
 )
+from frompdf.equations import display_equations, equation_break_ids
 from frompdf.figures import FigureLayout, reading_position
 from frompdf.footnotes import build_footnote, extract_footnotes, place_footnotes
 from frompdf.front_matter import format_front_matter, unquote_blocks_above_title
@@ -328,14 +329,16 @@ def markdown_block_from_lines(
     passage: bool = False,
     marker_line: bool = False,
     caption: bool = False,
+    equation: bool = False,
 ) -> Block:
     """Build a Markdown block from grouped line records.
 
     With a list marker, the lines form a list item whose first line starts
     with that marker, which is replaced by a Markdown marker. A passage is set
     off from the text line by line, as quoted verse. A marker line, such as an
-    ornament, is inset but not quoted. The lines of a caption form a caption
-    however they are set.
+    ornament, is inset but not quoted. Nor is a display equation, which breaks
+    after each of its lines. The lines of a caption form a caption however
+    they are set.
     """
     block_class: type[Block] = (
         Caption
@@ -343,6 +346,7 @@ def markdown_block_from_lines(
         else BlockQuote
         if not typographic_heading
         and not marker_line
+        and not equation
         and list_marker is None
         and is_blockquote_block(
             line_list, default_font_size, body_columns_by_page, follows_blockquote
@@ -359,7 +363,9 @@ def markdown_block_from_lines(
         word_counts,
         mixed_case_words,
         coordination_tokens,
-        hard_line_break_ids(
+        equation_break_ids(line_list)
+        if equation
+        else hard_line_break_ids(
             line_list,
             page_layouts,
             line_list[0].second_word_x1 if list_marker is not None else None,
@@ -396,8 +402,12 @@ def merge_continued_groups(
     body_columns_by_page: dict[int, list[ColumnContext]],
     heading_lines: dict[int, int],
     list_item_lines: dict[int, int],
+    equation_lines: dict[int, int] | None = None,
 ) -> list[list[Line]]:
     """Join groups continuing at the top of the next column or page.
+
+    Display equations, whose lines equation_lines maps to their first line's
+    ID, are never joined.
 
     Both parts and the joined group must agree on whether they form a block
     quote, so a quote never absorbs ordinary paragraph text or vice versa. As an
@@ -406,6 +416,7 @@ def merge_continued_groups(
     List items continue exactly where their recognized lines do.
     """
     indented_paragraphs = document_indents_paragraphs(group_list, page_layouts)
+    unjoined = {**heading_lines, **(equation_lines or {})}
     merged: list[list[Line]] = []
     for group in group_list:
         if merged and (id(merged[-1][0]) in list_item_lines or id(group[0]) in list_item_lines):
@@ -416,8 +427,8 @@ def merge_continued_groups(
             continue
         if (
             merged
-            and id(merged[-1][0]) not in heading_lines
-            and id(group[0]) not in heading_lines
+            and id(merged[-1][0]) not in unjoined
+            and id(group[0]) not in unjoined
             and continues_across_boundary(
                 merged[-1],
                 group,
@@ -768,19 +779,26 @@ def lines_to_markdown_blocks(
     block_positions: list[float] = []
     page_layouts = build_page_layouts(body_lines)
     marker_lines = find_marker_lines(body_lines)
-    list_items = find_list_items(body_lines, heading_lines, marker_lines)
+    equation_lines = display_equations(page_layouts)
+    list_items = find_list_items(body_lines, heading_lines, marker_lines, equation_lines)
     passage_lines = line_by_line_passages(page_layouts)
 
     group_list = split_groups_at_frames(
         merge_continued_groups(
             segment_lines(
-                body_lines, heading_lines, list_items.item_of_line, passage_lines, marker_lines
+                body_lines,
+                heading_lines,
+                list_items.item_of_line,
+                passage_lines,
+                marker_lines,
+                equation_lines,
             ),
             page_layouts,
             default_font_size,
             body_columns_by_page,
             heading_lines,
             list_items.item_of_line,
+            equation_lines,
         ),
         table_frames(tables) + figure_frames(figures),
     )
@@ -846,6 +864,7 @@ def lines_to_markdown_blocks(
                 passage=all(id(line) in passage_lines for line in current_lines),
                 marker_line=all(id(line) in marker_lines for line in current_lines),
                 caption=id(current_lines[0]) in caption_starts,
+                equation=all(id(line) in equation_lines for line in current_lines),
             )
         )
 

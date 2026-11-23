@@ -403,6 +403,8 @@ def physical_line_texts(line_list: list[Line], hard_break_ids: set[int]) -> list
     previous: Line | None = None
     # The numerator's line extended to the end of a fraction just appended.
     widened: Line | None = None
+    # Whether a fraction was just appended, which the text after it follows.
+    after_fraction = False
     # Limits below the last word of the previous line, and their last record.
     limits: AnnotatedText | None = None
     last_limit: Line | None = None
@@ -444,10 +446,15 @@ def physical_line_texts(line_list: list[Line], hard_break_ids: set[int]) -> list
                 widened = replace(
                     previous, x2=max(previous.x2, line.x2), space_after=line.space_after
                 )
+                after_fraction = True
             continue
         separator = '\n' if previous is None else line_separator(previous, line)
-        if separator == '\n' and widened is not None:
-            separator = line_separator(widened, line)
+        if widened is not None and (separator == '\n' or after_fraction):
+            # The text after a fraction is spaced from its end, which may lie
+            # past the numerator, unless it starts before that end.
+            widened_separator = line_separator(widened, line)
+            if separator == '\n' or widened_separator != '\n':
+                separator = widened_separator
         if (
             after_limits
             and separator == ''
@@ -458,6 +465,7 @@ def physical_line_texts(line_list: list[Line], hard_break_ids: set[int]) -> list
         ):
             separator = ' '
         widened = None
+        after_fraction = False
         if separator == '\n':
             texts.append(text)
         else:

@@ -667,13 +667,15 @@ def segment_page(
     list_item_lines: dict[int, int] | None = None,
     passage_lines: dict[int, int] | None = None,
     marker_lines: dict[int, int] | None = None,
+    equation_lines: dict[int, int] | None = None,
 ) -> list[list[Line]]:
     """Segment a page; heading_lines maps confirmed line IDs to their title's first ID.
 
     list_item_lines likewise maps the line IDs of list items to their first
     line's ID, so each item becomes a group of its own. So does passage_lines
-    for passages set off line by line, such as quoted verse, and marker_lines
-    for marker lines, such as ornaments.
+    for passages set off line by line, such as quoted verse, marker_lines
+    for marker lines, such as ornaments, and equation_lines for display
+    equations running over several lines.
     """
     if not line_list:
         return []
@@ -682,6 +684,7 @@ def segment_page(
     list_item_lines = list_item_lines or {}
     passage_lines = passage_lines or {}
     marker_lines = marker_lines or {}
+    equation_lines = equation_lines or {}
     groups: list[list[Line]] = [[line_list[0]]]
 
     for index, current in enumerate(line_list[1:], start=1):
@@ -694,6 +697,8 @@ def segment_page(
         current_item = list_item_lines.get(id(current))
         if previous_heading is not None or current_heading is not None:
             starts_group = previous_heading != current_heading
+        elif id(previous) in equation_lines or id(current) in equation_lines:
+            starts_group = equation_lines.get(id(previous)) != equation_lines.get(id(current))
         elif previous_item is not None or current_item is not None:
             starts_group = previous_item != current_item
         elif id(previous) in passage_lines or id(current) in passage_lines:
@@ -722,6 +727,7 @@ def segment_lines(
     list_item_lines: dict[int, int] | None = None,
     passage_lines: dict[int, int] | None = None,
     marker_lines: dict[int, int] | None = None,
+    equation_lines: dict[int, int] | None = None,
 ) -> list[list[Line]]:
     """Segment ordered lines without ever joining text across page boundaries."""
     groups: list[list[Line]] = []
@@ -732,7 +738,12 @@ def segment_lines(
         if current_page_no is not None and line_obj.page_no != current_page_no:
             groups.extend(
                 segment_page(
-                    current_page, heading_lines, list_item_lines, passage_lines, marker_lines
+                    current_page,
+                    heading_lines,
+                    list_item_lines,
+                    passage_lines,
+                    marker_lines,
+                    equation_lines,
                 )
             )
             current_page = []
@@ -740,6 +751,13 @@ def segment_lines(
         current_page_no = line_obj.page_no
 
     groups.extend(
-        segment_page(current_page, heading_lines, list_item_lines, passage_lines, marker_lines)
+        segment_page(
+            current_page,
+            heading_lines,
+            list_item_lines,
+            passage_lines,
+            marker_lines,
+            equation_lines,
+        )
     )
     return groups

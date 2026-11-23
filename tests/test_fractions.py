@@ -96,6 +96,26 @@ class FractionDetectionTests(unittest.TestCase):
 
         self.assertFalse(flagged(*records)[2][1])
 
+    def test_full_size_parts_stacked_above_each_other_form_a_fraction(self) -> None:
+        self.assertEqual(
+            [is_denominator for _, is_denominator in flagged(*display_fraction())],
+            [False, True, False],
+        )
+
+    def test_full_size_numerator_must_lie_above_the_denominator(self) -> None:
+        self.assertFalse(flagged(*display_fraction(numerator_top=100))[1][1])
+
+
+def display_fraction(numerator_top: float = 94) -> list[dict]:
+    """Build `log(p/(1 − p))= x` in full size, the numerator raised above the denominator.
+
+    The tall parenthesis before the numerator reaches below the denominator's top.
+    """
+    first = record('log(', 0, 100)
+    first['spans'].extend(record('p', 25, numerator_top)['spans'])
+    first['bbox'] = [0.0, numerator_top, 30.0, 109.0]
+    return [first, record('1 − p', 15, 103), record(')= x', 41, 100)]
+
 
 def positioned_span(
     text: str, x: float, top: float, size: float, height: float | None = None
@@ -200,6 +220,9 @@ class FractionTextTests(unittest.TestCase):
         self.assertEqual(
             assembled(*fraction('s', '2s − f')), 'even when < s/(2s − f) of the samples'
         )
+
+    def test_text_after_a_full_size_fraction_is_spaced_from_its_end(self) -> None:
+        self.assertEqual(assembled(*display_fraction()), 'log(p/(1 − p))= x')
 
 
 if __name__ == '__main__':

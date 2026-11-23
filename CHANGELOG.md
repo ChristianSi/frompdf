@@ -228,6 +228,19 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
   Scripts stacked above each other, which are left-aligned rather than
   centered, are not affected. The `-lines.csv` dump gains a
   `fraction_denominator` column.
+- Display equations broken over several lines, set off from the text, form
+  one paragraph with a line break after each line, instead of a mix of
+  paragraphs and block quotes. Their first line holds a relation, such as `=`
+  or `≤`, and each further line starts with an operator, such as `+`, or
+  follows a line ending with one. They never become block quotes or list
+  items. Fractions set in full size, as `p/(1 − p)` in such equations, are
+  written on one line like inline fractions.
+- Superscripts and subscripts are measured against ordinary glyphs of their
+  own font, whose boxes match theirs, so subscripts after Greek letters from
+  symbol fonts, as in `γ_species` or `μ_quadrat`, are no longer missed or
+  split. A piece of text is judged by the size most of its width is set in,
+  so the subscript of `1 − p_ijk` is recognized although its glyphs outnumber
+  the others.
 - Scripts that `pdftext` separates from their line are reattached. This
   covers a subscript set below a superscript, as in `R` with `i` above `∗`,
   and a script that `pdftext` puts into a block of its own, which used to end

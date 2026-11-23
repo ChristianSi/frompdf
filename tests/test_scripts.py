@@ -98,6 +98,27 @@ class ScriptDetectionTests(unittest.TestCase):
             render_scripts('p j+1 text', line_script_ranges(line)), 'p <sub>j+1</sub> text'
         )
 
+    def test_dominant_size_is_the_one_most_width_is_set_in(self) -> None:
+        # The narrow subscript glyphs outnumber those of the base, `1 − p`.
+        text = '1 − pijk'
+        line = pdf_line(text, {5: (14, 7), 6: (14, 7), 7: (14, 7)}, size=10)
+        for index, char in enumerate(line['spans'][0]['chars'][5:]):
+            char['bbox'] = [25 + index * 2, 14, 27 + index * 2, 21]
+
+        self.assertEqual(render_scripts(text, line_script_ranges(line)), '1 − p<sub>ijk</sub>')
+
+    def test_scripts_are_measured_against_glyphs_of_their_own_font(self) -> None:
+        # A symbol font's taller glyph boxes would make the subscript seem unshifted.
+        text = 'γspecies denotes'
+        line = pdf_line(text, {index: (14, 7) for index in range(1, 8)}, size=10)
+        for index, char in enumerate(line['spans'][0]['chars']):
+            char['font']['name'] = 'Symbol' if index == 0 else 'Text'
+        line['spans'][0]['chars'][0]['bbox'] = [0, 8, 5, 21.5]
+
+        self.assertEqual(
+            render_scripts(text, line_script_ranges(line)), 'γ<sub>species</sub> denotes'
+        )
+
     def test_leaves_small_caps_baseline_digits_and_unshifted_small_text_plain(self) -> None:
         for positions in ({}, {3: (13, 7)}, {3: (11.5, 7)}, {3: (10, 10)}):
             with self.subTest(positions=positions):

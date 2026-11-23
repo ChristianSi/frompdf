@@ -175,6 +175,8 @@ The implementation is split into focused modules under `src/frompdf`:
   their lines and merges the pieces of split denominators.
 - `emphasis.py` adjusts bold and italic ranges so their Markdown delimiters
   are valid and nested, and renders scripts and emphasis together.
+- `equations.py` recognizes display equations running over several lines,
+  set off from the text, with operators or relations at their line breaks.
 - `escaping.py` escapes text that Markdown would otherwise read as syntax,
   checking inline characters everywhere and block syntax at line starts.
 - `figures.py` recognizes pictures from the regions of the drawings of a
@@ -332,19 +334,25 @@ The current pipeline is roughly:
    text, leaving out their own scripts. With real font sizes, these are all
    pieces of the line, in either order, and glyphs of a script's size next to
    the largest ones are small; otherwise, the adjacent pieces must mostly be
-   in a larger size. Small records centered below small text ending the
-   preceding record, with the line continuing after the wider of numerator
-   and denominator, are marked as fraction denominators. Neither part of a
-   fraction is a script of the text around it. Records of small text centered
-   below a line's last word, which has letters in it, with the line continuing
-   after them, are marked as its limits. Bold and italic ranges follow font
-   names and the italic font flag. Fonts named by opaque hashes are bold if
-   their strokes are at least 1.4 times as wide as those of the body font;
-   fonts whose names tell no style and for which no weight is reported, if
-   they are at least twice as wide. Letters in math italic fonts are italic,
-   with combining marks following them; other math fonts are ignored. A style
-   covering most of the document's letters and digits is its body style and
-   is dropped.
+   in a larger size. Scripts are measured against the nearest ordinary
+   glyph in their own font, within reach, as glyph boxes span the ascent and
+   descent of their font, and the ordinary size is the one in which most of
+   the width of a piece is set. Small records centered below small text
+   ending the preceding record, with the line continuing after the wider of
+   numerator and denominator, are marked as fraction denominators, and so are
+   records in full size centered below text ending the preceding record that
+   lies entirely above them, with a glyph in full size, as in display
+   equations. Neither part of a small fraction is a script of the text around
+   it; a numerator in full size keeps its own scripts. Records of small text
+   centered below a line's last word, which has letters in it, with the line
+   continuing after them, are marked as its limits. Bold and italic ranges
+   follow font names and the italic font flag. Fonts named by opaque hashes
+   are bold if their strokes are at least 1.4 times as wide as those of the
+   body font; fonts whose names tell no style and for which no weight is
+   reported, if they are at least twice as wide. Letters in math italic fonts
+   are italic, with combining marks following them; other math fonts are
+   ignored. A style covering most of the document's letters and digits is
+   its body style and is dropped.
 4. Optionally dump the unfiltered line records to `-lines.csv`.
 5. Detect and remove headers and footers, collecting visible page labels.
    First, vertical lines set entirely beside the horizontal text of their
@@ -433,7 +441,9 @@ The current pipeline is roughly:
     suffice; dashes and numbers need at least two aligned items with
     consecutive numbers after a deliberate break, and numbers without a
     delimiter also most items wrapping onto continuation lines. Marker lines,
-    described below, end a list although they are indented past its markers.
+    described below, end a list although they are indented past its markers,
+    and lines of display equations, also described below, neither start nor
+    continue items.
 11. Segment each page's body into blocks using `pdftext` hints, geometry,
     typography, indentation, and line-spacing evidence. Display-sized lines
     sharing face, alignment, and tight leading stay together, as in titles,
@@ -460,7 +470,14 @@ The current pipeline is roughly:
     followed by body text on the same page. A gap, as between stanzas, ends
     such a passage. Marker lines, such as ornaments, also become blocks of their
     own: visual lines without letters or digits, short and centered in their
-    column. They are never block quotes.
+    column. They are never block quotes. Display equations running over
+    several lines become blocks of their own as well. Their lines, counting
+    a fraction's denominator and the text after it with the numerator's line,
+    are set off from the text, indented or ending well short of the column's
+    right edge, in one column. The first holds a relation, such as `=` or
+    `≤`; each further line starts with an operator or relation, or follows a
+    line ending with one, closely and in no larger type. They are never
+    block quotes or list items and are never joined with other blocks.
 12. Join blocks continuing at the top of the next column or page. Similar
     typography, a full last line, a non-indented first line, and consistent
     block-quote classification are required. An open sentence, a lower-case
@@ -469,8 +486,9 @@ The current pipeline is roughly:
     where their recognized lines continue.
 13. Build paragraph, block-quote, or list-item records, replacing list
     markers with Markdown ones, and mark deliberate line breaks, including
-    before lines of a list item that start right of its text, and wherever a
-    line of a passage set off line by line leaves room for the next word.
+    before lines of a list item that start right of its text, wherever a
+    line of a passage set off line by line leaves room for the next word, and
+    after each line of a display equation.
     Join the pieces into which `pdftext` split a physical line with a space
     or nothing, depending on reported whitespace and the gap between them,
     unless they are too far apart to be running text, and append fraction

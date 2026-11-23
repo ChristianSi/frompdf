@@ -207,15 +207,18 @@ def find_list_items(
     line_list: list[Line],
     heading_lines: dict[int, int],
     marker_lines: dict[int, int] | None = None,
+    equation_lines: dict[int, int] | None = None,
 ) -> ListItems:
     """Find list items among ordered body lines, which may span pages.
 
     Positions are compared relative to the page column, so items continue
     across pages with different margins. Lines of headings never belong to
     items, nor do marker lines, such as ornaments, which end a list although
-    they are indented past its markers.
+    they are indented past its markers. Lines of display equations, which
+    may start with a minus sign, neither start nor continue items.
     """
     marker_lines = marker_lines or {}
+    equation_lines = equation_lines or {}
     contexts: dict[int, PageContext] = {}
     lines_by_page: dict[int, list[Line]] = {}
     for line_obj in line_list:
@@ -241,13 +244,15 @@ def find_list_items(
         heading = id(line_obj) in heading_lines
         same_line = previous is not None and same_physical_line(previous, line_obj)
 
+        equation = id(line_obj) in equation_lines
         marker = None
-        if not heading and not same_line and offset is not None:
+        if not heading and not equation and not same_line and offset is not None:
             marker = parse_list_marker(line_obj.text)
 
         if (
             run is not None
             and not heading
+            and not equation
             and id(line_obj) not in marker_lines
             and offset is not None
         ):
