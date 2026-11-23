@@ -93,7 +93,6 @@ observed and is considered as a driving mechanism that
 may underpin regional tree species diversity patterns
 (Lambers et al. 2002; McCarthy-Neumann and Kobe
 2010; Johnson et al. 2012; Shuai et al. 2014). Lin et al.
-
 (2012) have found that NDD differed between the dry
 and wet seasons in tropical forests. They attributed this
 variation to resource availability and to the natural
