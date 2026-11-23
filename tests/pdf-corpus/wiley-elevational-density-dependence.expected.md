@@ -516,15 +516,14 @@ conspecific tree basal area. For the low-elevation
 mixed best-fit models that predicted neighbor and relative neighbor
 effects on seedling survival in low- and high-elevation plots.*
 
-| Fixed effect | Parameter estimate Low elevation Estimate Pr (>\|z\|) | High elevation Estimate Pr(>\|z\|) |
-| --- | --- | --- |
-| Initial height of seedlings | 0.6992 **<0.0001** | 0.6430 **0.0018** |
-| Conspecific seedlings | −0.0337 **0.0472** | −0.0578 0.1603 |
-| Heterospecific seedlings | 0.0030 0.9098 | 0.0712 0.3698 |
-| Initial height of seedlings | 0.7498 **<0.0001** | 0.6670 **0.0014** |
-| Relative conspecific | −1.0711 **0.0157** | −0.4067 0.4361 |
-| seedlings |  |  |
-| Relative conspecific trees | 1.6633 0.3908 | 0.3168 0.9104 |
+| Fixed effect | Parameter estimate Low elevation Estimate | Parameter estimate Low elevation Pr (>\|z\|) | Parameter estimate High elevation Estimate | Parameter estimate High elevation Pr(>\|z\|) |
+| --- | --- | --- | --- | --- |
+| Initial height of seedlings | 0.6992 | **<0.0001** | 0.6430 | **0.0018** |
+| Conspecific seedlings | −0.0337 | **0.0472** | −0.0578 | 0.1603 |
+| Heterospecific seedlings | 0.0030 | 0.9098 | 0.0712 | 0.3698 |
+| Initial height of seedlings | 0.7498 | **<0.0001** | 0.6670 | **0.0014** |
+| Relative conspecific seedlings | −1.0711 | **0.0157** | −0.4067 | 0.4361 |
+| Relative conspecific trees | 1.6633 | 0.3908 | 0.3168 | 0.9104 |
 
 Significant results are shown in boldface type.
 

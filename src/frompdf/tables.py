@@ -14,8 +14,14 @@ Cells span rows or columns where rules between them are missing.
 
 Tables without vertical rules need a top rule and a rule below their header
 of the same width. Their columns lie between gutters, which no word of the
-body crosses, separating the labels of the header. The body ends at another
-rule of the same width, or continues on the next page.
+body crosses, separating the labels of the header. Shorter rules within the
+header divide it into rows. A label above such a rule spans the columns the
+rule covers and does not separate columns. The body ends at another rule of
+the same width, or continues on the next page.
+
+Without rules between body rows, a line with text only in the first column,
+starting right of the other lines there, continues the row above, as a
+wrapped label with a hanging indent.
 
 A table ending its page continues at the top of the next page if its header
 is repeated there or its columns line up. The repeated header and a caption
@@ -281,15 +287,27 @@ def line_row_boundaries(
 
     A header ruled off below forms one row. In the body, each visual line with
     text in the first column starts a row; other lines continue the cells above.
+    So does a visual line with text in the first column only, starting right of
+    the left edge of that column's text, as a label wrapped with a hanging indent.
     """
     rows = [top] if header_bottom is None else [top, header_bottom]
     body_top = rows[-1]
     body = [line for line in lines if (line_center(line) or 0.0) > body_top]
-    starts = [
-        min(line.y1 or 0.0 for line in visual_line)
-        for visual_line in physical_lines(body)
-        if any(word_column(word, columns) == 0 for line in visual_line for word in line.words)
-    ]
+    first_column_left = min(
+        (word.x1 for line in body for word in line.words if word_column(word, columns) == 0),
+        default=0.0,
+    )
+    starts: list[float] = []
+    for visual_line in physical_lines(body):
+        words = [word for line in visual_line for word in line.words]
+        first = [word for word in words if word_column(word, columns) == 0]
+        if not first or (
+            starts
+            and len(first) == len(words)
+            and min(word.x1 for word in first) > first_column_left + BOUNDARY_TOLERANCE
+        ):
+            continue
+        starts.append(min(line.y1 or 0.0 for line in visual_line))
     # The first row starts at the top of the body, possibly with lines
     # continuing a row from the previous page.
     first_top = min((line.y1 or 0.0 for line in body), default=body_top)
@@ -539,9 +557,11 @@ def assemble_table(
     ruled_rows: bool,
     parts: dict[int, set[float]],
     closed: bool = True,
+    header_rows: int | None = None,
 ) -> TableLayout | None:
     """Return a table with grid slots merged into cells and lines split among them.
 
+    Without a given number of header rows, they are inferred from the cells.
     Returns None if merged slots do not form rectangles, a word crosses a rule
     between cells, or too few cells have text.
     """
@@ -614,7 +634,7 @@ def assemble_table(
         lines=sorted(lines, key=lambda line: line.line_no_on_page),
         row_count=row_count,
         column_count=len(columns) - 1,
-        header_rows=header_row_count(cells, row_count),
+        header_rows=header_rows if header_rows is not None else header_row_count(cells, row_count),
         cells=cells,
         columns=columns,
         closed=closed,
@@ -684,17 +704,17 @@ def gutters(lines: Sequence[Line], left: float, right: float, min_width: float) 
     return centers
 
 
-def column_gutters(header: Sequence[Line], centers: list[float], min_gap: float) -> list[float]:
+def column_gutters(header: Sequence[Word], centers: list[float], min_gap: float) -> list[float]:
     """Return the gutters separating the columns of header labels, or none if they do not fit.
 
-    Labels are runs of header words separated by less than min_gap. Each column
-    lies between the gutters just left of consecutive labels. Labels must not
-    cross them, and no gutter may lie right of the last label, which would leave
-    a column without one. Other gutters, as between coincidentally aligned
-    words, are ignored.
+    Labels are runs of the given header words separated by less than min_gap.
+    Each column lies between the gutters just left of consecutive labels.
+    Labels must not cross them, and no gutter may lie right of the last label,
+    which would leave a column without one. Other gutters, as between
+    coincidentally aligned words, are ignored.
     """
     labels: list[list[float]] = []
-    for word in sorted((word for line in header for word in line.words), key=lambda word: word.x1):
+    for word in sorted(header, key=lambda word: word.x1):
         if labels and word.x1 - labels[-1][1] < min_gap:
             labels[-1][1] = max(labels[-1][1], word.x2)
         else:
@@ -712,6 +732,50 @@ def column_gutters(header: Sequence[Line], centers: list[float], min_gap: float)
     return chosen
 
 
+def spans_rule(word: Word, center: float, rule: Rule) -> bool:
+    """Return whether a horizontal rule lies below a word at a vertical center and spans it."""
+    return (
+        rule.position > center
+        and rule.start - BOUNDARY_TOLERANCE <= word.x1
+        and word.x2 <= rule.end + BOUNDARY_TOLERANCE
+    )
+
+
+def header_column_rules(
+    columns: list[float], header_rows: list[float], header_rules: Sequence[Rule], bottom: float
+) -> list[Rule] | None:
+    """Return the vertical boundaries between columns, interrupted below labels spanning them.
+
+    header_rows are the boundaries of the header rows, from the top rule to
+    the header rule. A rule within the header spans the columns it covers
+    in the header row above it. Returns None if a rule covers no column.
+    """
+    spans: dict[int, list[tuple[int, int]]] = defaultdict(list)
+    for rule in header_rules:
+        covered = [
+            column
+            for column in range(len(columns) - 1)
+            if covers_column([rule], rule.position, columns[column], columns[column + 1])
+        ]
+        if not covered:
+            return None
+        row = min(
+            range(len(header_rows) - 1),
+            key=lambda index: abs(header_rows[index + 1] - rule.position),
+        )
+        spans[row].append((covered[0], covered[-1]))
+    verticals: list[Rule] = []
+    for boundary in range(1, len(columns) - 1):
+        start = header_rows[0]
+        for row in range(len(header_rows) - 1):
+            if any(first < boundary <= last for first, last in spans[row]):
+                if header_rows[row] > start:
+                    verticals.append(Rule(False, columns[boundary], start, header_rows[row]))
+                start = header_rows[row + 1]
+        verticals.append(Rule(False, columns[boundary], start, bottom))
+    return verticals
+
+
 def table_below_header_rule(
     top: float,
     header_bottom: float,
@@ -720,11 +784,15 @@ def table_below_header_rule(
     right: float,
     page_lines: Sequence[Line],
     page_no: int,
+    header_rules: Sequence[Rule] = (),
 ) -> TableLayout | None:
     """Return a table without vertical rules, ruled off above and below its header.
 
     Without a bottom rule, the table takes up the rest of the page and must
-    continue on the next one.
+    continue on the next one. Shorter rules within the header divide it into
+    rows, with labels above them spanning the columns they cover. Header words
+    spanned by such a rule do not separate columns. If these rules do not fit
+    the columns, the header is taken as a single row.
     """
     page_bottom = max((line.y2 or 0.0) for line in page_lines) + 1.0
     lines = frame_lines(page_lines, left, right, top, bottom or page_bottom)
@@ -744,15 +812,42 @@ def table_below_header_rule(
         return None
     font_size = sorted(line.font_size or 1.0 for line in body)[len(body) // 2]
     min_gap = font_size * MIN_GUTTER_EM
-    centers = column_gutters(header, gutters(body, left, right, min_gap), min_gap)
-    if not centers:
-        return None
+    labels = [
+        word
+        for line in header
+        for word in line.words
+        if not any(spans_rule(word, line_center(line) or 0.0, rule) for rule in header_rules)
+    ]
+    centers = column_gutters(labels, gutters(body, left, right, min_gap), min_gap)
     columns = [left, *centers, right]
     frame_bottom = bottom if bottom is not None else page_bottom
-    verticals = [Rule(False, center, top, frame_bottom) for center in centers]
+    header_rows = [
+        top,
+        *cluster_positions([rule.position for rule in header_rules]),
+        header_bottom,
+    ]
+    verticals = (
+        header_column_rules(columns, header_rows, header_rules, frame_bottom) if centers else None
+    )
+    if verticals is None:
+        if header_rules:
+            return table_below_header_rule(
+                top, header_bottom, bottom, left, right, page_lines, page_no
+            )
+        return None
     rows = line_row_boundaries(top, header_bottom, frame_bottom, lines, columns)
+    rows[1:1] = header_rows[1:-1]
     return assemble_table(
-        page_no, lines, columns, rows, [], verticals, False, {}, closed=bottom is not None
+        page_no,
+        lines,
+        columns,
+        rows,
+        [],
+        verticals,
+        False,
+        {},
+        closed=bottom is not None,
+        header_rows=len(header_rows) - 1 if header_rules else None,
     )
 
 
@@ -783,9 +878,18 @@ def tables_below_header_rules(
         left = min(rule.start for rule in group)
         right = max(rule.end for rule in group)
         for index in range(len(positions) - 1):
+            top, header_bottom = positions[index], positions[index + 1]
             bottom = positions[index + 2] if index + 2 < len(positions) else None
+            # Shorter rules within the header, as below labels spanning columns.
+            header_rules = [
+                rule
+                for rule in rules
+                if top + BOUNDARY_TOLERANCE < rule.position < header_bottom - BOUNDARY_TOLERANCE
+                and rule.start >= left - BOUNDARY_TOLERANCE
+                and rule.end <= right + BOUNDARY_TOLERANCE
+            ]
             table = table_below_header_rule(
-                positions[index], positions[index + 1], bottom, left, right, page_lines, page_no
+                top, header_bottom, bottom, left, right, page_lines, page_no, header_rules
             )
             if table is not None:
                 tables.append(table)

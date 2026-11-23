@@ -315,6 +315,52 @@ class TablesWithoutColumnRulesTests(unittest.TestCase):
 
         self.assertEqual(find_tables(lines, {1: header_rules(100, 118, None)}), [])
 
+    def test_rule_within_the_header_sets_the_span_of_the_label_above_it(self) -> None:
+        lines = [
+            table_line([(215, 'Measured values')], 104, 1),
+            table_line([(105, 'Site'), (205, 'Mean'), (305, 'Range')], 124, 2),
+            table_line([(105, 'North'), (205, '4.5'), (305, '2-7')], 144, 3),
+            table_line([(105, 'South'), (205, '3.1'), (305, '1-5')], 154, 4),
+        ]
+        rules = [*header_rules(100, 140, 170), Rule(True, 115, 200, 400)]
+
+        table = find_tables(lines, {1: rules})[0]
+
+        self.assertEqual((table.row_count, table.column_count, table.header_rows), (4, 3, 2))
+        self.assertEqual(spans(table), {(0, 1): (1, 2)})
+        self.assertEqual(cell_texts(table)[(0, 1)], ['Measured values'])
+        self.assertEqual(
+            [cell_texts(table)[(1, column)] for column in range(3)],
+            [['Site'], ['Mean'], ['Range']],
+        )
+
+    def test_header_rule_covering_no_column_leaves_a_single_header_row(self) -> None:
+        lines = [table_line(HEADER, 104, 1), *year_rows(1, 124, ['2004', '2005'])]
+        rules = [*header_rules(100, 118, 150), Rule(True, 113, 105, 125)]
+
+        table = find_tables(lines, {1: rules})[0]
+
+        self.assertEqual((table.row_count, table.column_count, table.header_rows), (3, 3, 1))
+
+    def test_indented_line_with_only_a_first_column_continues_the_row_above(self) -> None:
+        def rows(continuation: list[tuple[float, str]]) -> list[Line]:
+            return [
+                table_line([(105, 'Name'), (205, 'Value'), (305, 'P')], 104, 1),
+                table_line([(105, 'Relative'), (205, '1.5'), (305, '0.2')], 124, 2),
+                table_line(continuation, 134, 3),
+                table_line([(105, 'Total'), (205, '2.0'), (305, '0.4')], 144, 4),
+            ]
+
+        wrapped = find_tables(rows([(108, 'density')]), {1: header_rules(100, 118, 160)})[0]
+        subitem = find_tables(
+            rows([(108, 'density'), (205, '1.7'), (305, '0.3')]), {1: header_rules(100, 118, 160)}
+        )[0]
+
+        self.assertEqual(wrapped.row_count, 3)
+        self.assertEqual(cell_texts(wrapped)[(1, 0)], ['Relative density'])
+        self.assertEqual(subitem.row_count, 4)
+        self.assertEqual(cell_texts(subitem)[(2, 0)], ['density'])
+
     def test_hanging_indents_start_paragraphs_within_cells(self) -> None:
         def line(x: float, text: str, y: float) -> Line:
             return table_line([(x, text)], y, 1)

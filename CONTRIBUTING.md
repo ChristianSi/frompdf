@@ -370,16 +370,20 @@ The current pipeline is roughly:
    span rows or columns where rules are missing. Below a spanning header cell,
    rows of bold text extend the header. Without vertical rules, a top rule
    and a header rule of the same width frame the header, and the gutters of
-   the body just left of header labels separate columns. Such a table ends at
-   a third rule or continues on the next page. Lines starting left of the
-   other lines of a cell part, as with hanging indents, start parts of their
-   own. A table ending its page joins a table starting the next page, after
-   at most a caption marked as continued, if its header repeats or its
-   columns line up; the repeated header and the caption are dropped. A first
-   row without text in the first column joins the last row if the table was
-   not closed by a rule or the row's text starts in lower case. Unclosed
-   tables that do not continue are dropped. Tables are left out of all other
-   blocks, which are split where a table lies between their lines on a page.
+   the body just left of header labels separate columns. Shorter rules within
+   the header divide it into rows; labels above them span the columns they
+   cover and do not separate columns. Without rules between body rows, an
+   indented line with text only in the first column continues the row above.
+   Such a table ends at a third rule or continues on the next page. Lines
+   starting left of the other lines of a cell part, as with hanging indents,
+   start parts of their own. A table ending its page joins a table starting
+   the next page, after at most a caption marked as continued, if its header
+   repeats or its columns line up; the repeated header and the caption are
+   dropped. A first row without text in the first column joins the last row
+   if the table was not closed by a rule or the row's text starts in lower
+   case. Unclosed tables that do not continue are dropped. Tables are left
+   out of all other blocks, which are split where a table lies between their
+   lines on a page.
    Then recognize pictures, independently of the wording of captions, which
    only helps to tell captions without typographic evidence.
    Drawings repeated at the same place on several pages are page furniture.

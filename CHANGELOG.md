@@ -92,10 +92,13 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
   their first row and column. Rules dividing a cell's text without lining up
   across columns separate its parts by `<br>`, as do paragraphs with hanging
   indents. Tables without vertical rules are recognized from rules above and
-  below their header and gaps between columns. Tables continuing on the next
-  page are joined, dropping a repeated header and a caption marked as
-  continued, and a row split by the page break is joined where its text
-  continues. Text around a table no longer runs into it.
+  below their header and gaps between columns. Shorter rules within such a
+  header, as below labels spanning several columns, divide it into rows and
+  give these labels their spans. A label wrapped onto an indented line, with
+  nothing beside it in the other columns, stays in its row. Tables
+  continuing on the next page are joined, dropping a repeated header and a
+  caption marked as continued, and a row split by the page break is joined
+  where its text continues. Text around a table no longer runs into it.
 - Bulleted and numbered lists are rendered as compact Markdown lists, with
   continuation lines indented to the item text. Bullet glyphs mark items on
   their own; dashes and numbers need at least two aligned items with
