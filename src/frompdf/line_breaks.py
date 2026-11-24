@@ -9,6 +9,7 @@ from frompdf.continuations import PageLayout, begins_lowercase, ends_open_senten
 from frompdf.line_features import (
     close_font_size,
     compatible_style,
+    continues_closing_face,
     ends_word_break_hyphen,
     is_prose_line,
     is_textual_line,
@@ -148,7 +149,8 @@ def is_hard_line_break(left: Line, right: Line, layout: PageLayout) -> bool:
 
     The clearest evidence is room left on the line for the next word.
     Otherwise, a change of font face, weight, or size after a clearly short
-    line also marks a deliberate break.
+    line also marks a deliberate break, unless the next line keeps the face
+    that the short line ends in.
     """
     if (
         left.x1 is None
@@ -166,6 +168,7 @@ def is_hard_line_break(left: Line, right: Line, layout: PageLayout) -> bool:
     return (
         column is not None
         and not compatible_style(left, right)
+        and not continues_closing_face(left, right)
         and line_is_short(left, column, font_size)
     )
 

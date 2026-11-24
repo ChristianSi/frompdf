@@ -30,8 +30,7 @@ Foundation of China (grant number
 Received: 8 August 2013; Revised: 5 March
 2014; Accepted: 30 April 2014
 
-***Ecology and Evolution* 2014; 4(14): 2823–\
-2833**
+***Ecology and Evolution* 2014; 4(14): 2823–2833**
 
 doi: 10.1002/ece3.1123
 

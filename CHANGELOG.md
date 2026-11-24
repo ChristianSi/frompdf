@@ -304,6 +304,11 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
 
 ### Fixed
 
+- A short line ending in another face than most of its text no longer
+  breaks before a next line continuing in that face. The line's font is the
+  one of most of its text, so the bold page range in `*Ecology and
+  Evolution* 2014; 4(14): 2823–2833`, all bold, seemed to change font after
+  the en dash.
 - Ragged-right text narrower than its column, such as the sidebar beside a
   Wiley abstract, no longer gets spurious line breaks. A line's measure is
   taken from lines sharing its left edge, and lines spanning into the next

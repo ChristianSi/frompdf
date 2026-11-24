@@ -11,7 +11,15 @@ from frompdf.line_breaks import (
     is_hard_line_break,
     line_by_line_passages,
 )
-from frompdf.models import HARD_LINE_BREAK, BlockQuote, Heading, Line, PageNumber, Paragraph
+from frompdf.models import (
+    HARD_LINE_BREAK,
+    BlockQuote,
+    Heading,
+    InlineRange,
+    Line,
+    PageNumber,
+    Paragraph,
+)
 from frompdf.output import markdown_to_text
 from frompdf.scripts import AnnotatedText, collapse_annotated_whitespace
 from frompdf.segmentation import segment_lines
@@ -83,6 +91,23 @@ def breaks(block: list[Line], page: list[Line]) -> list[bool]:
     """Return whether each line of block except the last is followed by a hard break."""
     layout = build_page_layouts(page)[1]
     return [is_hard_line_break(left, right, layout) for left, right in pairwise(block)]
+
+
+def journal_reference(next_font_name: str) -> list[Line]:
+    """Build a short line in bold whose journal name is also italic, then a line in a font.
+
+    The next line is bold in Body-Bold, and upright in any other font.
+    """
+    text = 'Journal of Long Names 2014; 4(14): 2823–'
+    first = line(text, 100, x2=150.0, font_name='Body-BoldItalic', avg_weight=300.0)
+    first.ranges = (InlineRange(0, 21, 'bold'), InlineRange(0, 21, 'italic'))
+    first.ranges += (InlineRange(22, len(text), 'bold'),)
+    following = 'Supplementary-material-and-identifiers'
+    bold = next_font_name == 'Body-Bold'
+    second = line(following, 112, font_name=next_font_name, avg_weight=700.0 if bold else 400.0)
+    if bold:
+        second.ranges = (InlineRange(0, len(following), 'bold'),)
+    return [first, second]
 
 
 class FirstWordWidthTests(unittest.TestCase):
@@ -162,6 +187,18 @@ class HardLineBreakTests(unittest.TestCase):
         ]
 
         self.assertEqual(breaks(block, body_column() + block), [False])
+
+    def test_next_line_keeping_the_face_a_short_line_ends_in_does_not_break(self) -> None:
+        # The first line is mostly bold italic, so its font and weight differ
+        # from the next line, which continues in the bold that ends it.
+        block = journal_reference('Body-Bold')
+
+        self.assertEqual(breaks(block, body_column() + block), [False])
+
+    def test_next_line_in_another_face_than_a_short_line_ends_in_breaks(self) -> None:
+        block = journal_reference('Body-Regular')
+
+        self.assertEqual(breaks(block, body_column() + block), [True])
 
     def test_measure_ignores_wider_lines_in_larger_type(self) -> None:
         title = [line('A Title Spanning The Whole Page', 0, x2=500.0, font_size=20.0)] * 3

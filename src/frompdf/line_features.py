@@ -229,6 +229,38 @@ def mixes_italics(line_obj: Line) -> bool:
     )
 
 
+def emphasis_at(line_obj: Line, index: int) -> frozenset[str]:
+    """Return the emphasis kinds, bold or italic, covering a character of a line."""
+    return frozenset(
+        run.kind
+        for run in line_obj.ranges
+        if run.kind in ('bold', 'italic') and run.start <= index < run.end
+    )
+
+
+def continues_closing_face(left: Line, right: Line) -> bool:
+    """Return whether right keeps the face that ends a line switching faces.
+
+    A line's font and weight are those of most of its text, so a line ending
+    in another face differs from a next line continuing in that face, as in
+    `*Ecology and Evolution* 2014; 4(14): 2823–` before `2833`, all in bold.
+    """
+    left_indexes = [index for index, character in enumerate(left.text) if not character.isspace()]
+    right_faces = {
+        emphasis_at(right, index)
+        for index, character in enumerate(right.text)
+        if not character.isspace()
+    }
+    if not left_indexes or len(right_faces) != 1:
+        return False
+    closing_face = emphasis_at(left, left_indexes[-1])
+    return (
+        close_font_size(left.font_size, right.font_size)
+        and emphasis_at(left, left_indexes[0]) != closing_face
+        and right_faces == {closing_face}
+    )
+
+
 def differs_only_by_italics(left: Line, right: Line) -> bool:
     """Return whether a font difference may just reflect italics within running text.
 

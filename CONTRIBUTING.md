@@ -204,12 +204,13 @@ The implementation is split into focused modules under `src/frompdf`:
   if it exists.
 - `line_breaks.py` recognizes deliberate line breaks within blocks, where the
   next word would have fit on the line or the font changes after a short line,
-  extending them to all line ends of blocks set line by line in short centered
-  lines. A line's measure is the usual right edge of the page's lines sharing
-  its left edge, in no visibly larger type, leaving out lines reaching into
-  the next column unless the line does so itself. It also finds passages set
-  off from the text line by line, such as quoted verse, whose line ends break
-  even before a sentence continuing in lower case.
+  unless the next line keeps the face the short line ends in, extending them
+  to all line ends of blocks set line by line in short centered lines. A
+  line's measure is the usual right edge of the page's lines sharing its left
+  edge, in no visibly larger type, leaving out lines reaching into the next
+  column unless the line does so itself. It also finds passages set off from
+  the text line by line, such as quoted verse, whose line ends break even
+  before a sentence continuing in lower case.
 - `line_features.py` compares the font sizes, faces, and styles of lines and
   tells whether pieces lie on the same physical line or line of running text,
   along with other line-level traits such as sentence ends and vertical
