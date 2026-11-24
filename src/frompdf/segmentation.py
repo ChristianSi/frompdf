@@ -1,4 +1,6 @@
 import re
+from collections.abc import Sequence
+from dataclasses import replace
 from itertools import groupby
 
 from frompdf.line_features import (
@@ -38,6 +40,7 @@ from frompdf.page_context import (
     has_blank_line_advance,
     has_large_advance,
     has_normal_advance,
+    leaves_no_room,
     line_is_full,
     line_is_short,
     near,
@@ -330,11 +333,18 @@ def high_confidence_continuation(
     context: PageContext,
     left_start: Line | None = None,
     following: Line | None = None,
+    page_lines: Sequence[Line] = (),
 ) -> bool:
     """Return whether geometry safely overrides a spurious pdftext block edge.
 
     left_start begins the visual line ending with left, if left is a later
-    piece. following is the line after right, if any.
+    piece. following is the line after right, if any. An open line counts as
+    full if it fills its column. A line ending in a comma, leaving a clause
+    open, also counts as full if the first word of right would not have fit
+    within the measure of the page_lines sharing its left edge, as in
+    ragged-right text set narrower than its column, such as a sidebar. That
+    measure is less certain than a column's, as for small type set among
+    larger text, so other lines must fill their column.
     """
     if (
         context.rhythm_sample_count < MIN_RHYTHM_SAMPLES
@@ -351,8 +361,18 @@ def high_confidence_continuation(
         return False
     font_size = right.font_size or context.font_size
     left_edges_match = near((left_start or left).x1, right.x1 or column.left, font_size)
+    whole_left = replace(left_start or left, x2=left.x2)
     open_full_line = (
-        left_edges_match and line_is_full(left, column, font_size) and not ends_sentence(left.text)
+        left_edges_match
+        and not ends_sentence(left.text)
+        and (
+            line_is_full(left, column, font_size)
+            or (
+                left.text.rstrip().endswith(',')
+                and bool(page_lines)
+                and leaves_no_room(whole_left, right, page_lines, context, font_size)
+            )
+        )
     )
     hyphenated_line = left_edges_match and ends_word_break_hyphen(left.text)
     return (
@@ -528,12 +548,14 @@ def should_start_new_group(
     context: PageContext,
     previous_start: Line | None = None,
     next_line: Line | None = None,
+    page_lines: Sequence[Line] = (),
 ) -> bool:
     """Decide whether current begins a new page-local Markdown block.
 
     previous_start begins the visual line ending with previous, if different.
     next_line starts the visual line after current's, if current continues
-    in later pieces; following is used otherwise.
+    in later pieces; following is used otherwise. page_lines are all lines of
+    the page, which give the measure of a line.
     """
     if previous.page_no != current.page_no:
         return True
@@ -600,7 +622,9 @@ def should_start_new_group(
         if changes_face_after_short_line(previous, current, context):
             return True
     if pdftext_break and (
-        high_confidence_continuation(previous, current, context, previous_start, following)
+        high_confidence_continuation(
+            previous, current, context, previous_start, following, page_lines
+        )
         or continues_running_text(previous, current, context, previous_start)
         or continues_in_lower_case(previous, current, context, previous_start)
     ):
@@ -717,6 +741,7 @@ def segment_page(
                 context,
                 visual_line_start(line_list, index - 1),
                 next_visual_line(line_list, index),
+                line_list,
             )
         if starts_group:
             groups.append([])

@@ -304,6 +304,13 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
 
 ### Fixed
 
+- Ragged-right text narrower than its column, such as the sidebar beside a
+  Wiley abstract, no longer gets spurious line breaks. A line's measure is
+  taken from lines sharing its left edge, and lines spanning into the next
+  column, such as an affiliation or a licence footer, no longer count, so
+  short sidebar lines no longer seem to leave room for the next word. A
+  sidebar line ending in a comma and leaving no room for the next word also
+  continues its paragraph where `pdftext` starts a new block.
 - A year in parentheses starting a line, as in `Lin et al.` followed by
   `(2012) have found`, no longer counts as an enumeration label like `(2)`
   where `pdftext` starts a new block. Such labels have at most three digits,

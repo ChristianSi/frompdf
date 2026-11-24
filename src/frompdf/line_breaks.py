@@ -13,23 +13,22 @@ from frompdf.line_features import (
     is_prose_line,
     is_textual_line,
     same_physical_line,
-    visibly_different_font_sizes,
 )
 from frompdf.models import Line
 from frompdf.page_context import (
+    FIT_SLACK_EM,
     MAX_FIRST_LINE_INDENT_EM,
     MIN_FIRST_LINE_INDENT_EM,
     PageContext,
     column_for_line,
+    first_word_width,
     has_normal_advance,
+    left_aligned_measure_right,
     line_is_short,
+    measures_line,
     near,
     percentile_90,
 )
-
-# Room for the inter-word space plus a margin of error, since the next word's
-# width is estimated from its line's average character width.
-FIT_SLACK_EM = 0.5
 
 # Lines with few letters still carry content, rather than being fragments of
 # notation, when they include enough digits, as in dates or postal codes.
@@ -57,47 +56,6 @@ MAX_CENTERED_LINE_WIDTH_SHARE = 2 / 3
 
 # A set-off passage, such as quoted verse, has at least this many lines.
 MIN_PASSAGE_LINES = 2
-
-
-def first_word_width(line_obj: Line) -> float | None:
-    """Estimate the width of a line's first word from its average character width."""
-    if line_obj.x1 is None or line_obj.x2 is None or not line_obj.text:
-        return None
-    # Only ordinary spaces allow a line break; no-break spaces join words.
-    first_word = line_obj.text.split(' ', 1)[0]
-    return (line_obj.x2 - line_obj.x1) * len(first_word) / len(line_obj.text)
-
-
-def measures_line(other: Line, line_obj: Line) -> bool:
-    """Return whether other's extent says something about the measure of line_obj.
-
-    Visibly larger text, such as a title above a narrower abstract, often spans
-    a wider measure than the text below it.
-    """
-    return not (
-        other.font_size is not None
-        and line_obj.font_size is not None
-        and other.font_size > line_obj.font_size
-        and visibly_different_font_sizes(other.font_size, line_obj.font_size)
-    )
-
-
-def left_aligned_measure_right(line_obj: Line, layout: PageLayout, font_size: float) -> float:
-    """Return the usual right edge of page lines sharing a line's left edge.
-
-    A percentile ignores occasional wider lines, such as a caption that starts
-    at the same margin but spans several columns.
-    """
-    assert line_obj.x1 is not None
-    assert line_obj.x2 is not None
-    rights = [
-        other.x2
-        for other in layout.lines
-        if other.x2 is not None
-        and near(other.x1, line_obj.x1, font_size)
-        and measures_line(other, line_obj)
-    ]
-    return percentile_90(rights) if rights else line_obj.x2
 
 
 def right_aligned_measure_left(line_obj: Line, layout: PageLayout, font_size: float) -> float:
@@ -170,7 +128,7 @@ def next_word_fits(
         return False
     needed_room = word_width + font_size * FIT_SLACK_EM
     if near(right.x1, left.x1, font_size):
-        measure_right = left_aligned_measure_right(left, layout, font_size)
+        measure_right = left_aligned_measure_right(left, layout.lines, layout.context, font_size)
         if min_measure_right is not None:
             measure_right = max(measure_right, min_measure_right)
         return measure_right - left.x2 >= needed_room

@@ -15,20 +15,19 @@ forest.
 
 **Correspondence**
 
-Shixiao Yu, Department of Ecology, School of\
-Life Sciences/State Key Laboratory of\
+Shixiao Yu, Department of Ecology, School of
+Life Sciences/State Key Laboratory of
 Biocontrol, Sun Yat-sen University,
-
-Guangzhou 510275, China. Tel/Fax: +86 20\
+Guangzhou 510275, China. Tel/Fax: +86 20
 39332980; E-mail: lssysx@mail.sysu.edu.cn
 
 **Funding Information**
 
-Key Project of the National Natural Science\
-Foundation of China (grant number\
+Key Project of the National Natural Science
+Foundation of China (grant number
 31230013 and 30730021).
 
-Received: 8 August 2013; Revised: 5 March\
+Received: 8 August 2013; Revised: 5 March
 2014; Accepted: 30 April 2014
 
 ***Ecology and Evolution* 2014; 4(14): 2823–\
@@ -453,7 +452,7 @@ Significant results are shown in boldface type.
 
 as the fixed effects. The best model for relative neighbor
 effects used the relative conspecific seedling density and
-relative conspecific tree abundance as the fixed effects\
+relative conspecific tree abundance as the fixed effects
 (Table 1). In both models, elevation was an important
 variable in explaining seedling survival (Table 1), with
 low-elevation trees having a significantly lower survival

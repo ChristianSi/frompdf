@@ -204,10 +204,12 @@ The implementation is split into focused modules under `src/frompdf`:
   if it exists.
 - `line_breaks.py` recognizes deliberate line breaks within blocks, where the
   next word would have fit on the line or the font changes after a short line,
-  extending them to all line ends of blocks set line by line in short
-  centered lines. It also finds passages set off from the text line by line,
-  such as quoted verse, whose line ends break even before a sentence
-  continuing in lower case.
+  extending them to all line ends of blocks set line by line in short centered
+  lines. A line's measure is the usual right edge of the page's lines sharing
+  its left edge, in no visibly larger type, leaving out lines reaching into
+  the next column unless the line does so itself. It also finds passages set
+  off from the text line by line, such as quoted verse, whose line ends break
+  even before a sentence continuing in lower case.
 - `line_features.py` compares the font sizes, faces, and styles of lines and
   tells whether pieces lie on the same physical line or line of running text,
   along with other line-level traits such as sentence ends and vertical
@@ -458,15 +460,19 @@ The current pipeline is roughly:
     line of running text, a new block needs a change of size, not just face,
     and never starts at a short, touching piece in script-sized type.
     Below a line filling its column, regular spacing at the same left edge, or
-    at the margin below an indented first line, continues the paragraph despite
-    a `pdftext` block edge or a font change explained by italics within the
-    lines, unless the next line starts with an item label. A visual line
-    ending in a script-sized piece, such as a formula, is judged by its start.
-    After a sentence end, this takes the same font, a line closely reaching the
-    right edge, and a next line at the margin. Below a shorter line without a
-    sentence end, a `pdftext` block edge is overridden by a next line starting
-    in lower case, not with an item label, at the same left edge, in the same
-    typography and at regular spacing.
+    at the margin below an indented first line, continues the paragraph
+    despite a `pdftext` block edge or a font change explained by italics
+    within the lines, unless the next line starts with an item label. A visual
+    line ending in a script-sized piece, such as a formula, is judged by its
+    start. After a sentence end, this takes the same font, a line closely
+    reaching the right edge, and a next line at the margin. A line ending in a
+    comma also counts as filling its column if the next line's first word
+    would not have fit within its measure, as in a ragged-right sidebar
+    narrower than its column. Item labels have at most three digits, so a year
+    in parentheses is none. Below a shorter line without a sentence end, a
+    `pdftext` block edge is overridden by a next line starting in lower case,
+    not with an item label, at the same left edge, in the same typography and
+    at regular spacing.
     Each list item becomes a block of its own, and so does each passage set
     off line by line: evenly spaced lines in smaller type, inset at a shared
     left edge, most of which leave room for the next line's first word,

@@ -1,4 +1,5 @@
 from collections import defaultdict
+from collections.abc import Sequence
 from dataclasses import dataclass
 from itertools import pairwise
 from statistics import median
@@ -35,6 +36,10 @@ NORMAL_ADVANCE_TOLERANCE_EM = 0.25
 # An advance this many times the normal rhythm leaves a gap about as tall as a
 # blank line, which separates paragraphs however full the line above is.
 BLANK_LINE_ADVANCE_RATIO = 1.7
+
+# Room for the inter-word space plus a margin of error, since the next word's
+# width is estimated from its line's average character width.
+FIT_SLACK_EM = 0.5
 
 # Margin clusters farther apart than this are treated as separate columns.
 MIN_COLUMN_GAP = 40.0
@@ -530,3 +535,75 @@ def line_is_full(line_obj: Line, column: ColumnContext, font_size: float) -> boo
         return False
     shortfall = column.right - line_obj.x2
     return shortfall <= max(font_size * 1.5, column.width * 0.08)
+
+
+def first_word_width(line_obj: Line) -> float | None:
+    """Estimate the width of a line's first word from its average character width."""
+    if line_obj.x1 is None or line_obj.x2 is None or not line_obj.text:
+        return None
+    # Only ordinary spaces allow a line break; no-break spaces join words.
+    first_word = line_obj.text.split(' ', 1)[0]
+    return (line_obj.x2 - line_obj.x1) * len(first_word) / len(line_obj.text)
+
+
+def measures_line(other: Line, line_obj: Line) -> bool:
+    """Return whether other's extent says something about the measure of line_obj.
+
+    Visibly larger text, such as a title above a narrower abstract, often spans
+    a wider measure than the text below it.
+    """
+    return not (
+        other.font_size is not None
+        and line_obj.font_size is not None
+        and other.font_size > line_obj.font_size
+        and visibly_different_font_sizes(other.font_size, line_obj.font_size)
+    )
+
+
+def next_column_left(line_obj: Line, context: PageContext) -> float | None:
+    """Return the left edge of the nearest column beyond the gutter right of a line's column."""
+    column = column_for_line(line_obj, context)
+    if column is None:
+        return None
+    return min((other.left for other in context.columns if other.left > column.right), default=None)
+
+
+def left_aligned_measure_right(
+    line_obj: Line, page_lines: Sequence[Line], context: PageContext, font_size: float
+) -> float:
+    """Return the usual right edge of the page's lines sharing a line's left edge.
+
+    Lines reaching into the next column span several columns, such as a
+    caption, an affiliation in the front matter, or a licence footer starting
+    at the same margin, and say nothing about the measure of a line within
+    its column. A percentile ignores occasional other wider lines.
+    """
+    assert line_obj.x1 is not None
+    assert line_obj.x2 is not None
+    next_left = next_column_left(line_obj, context)
+    if next_left is not None and line_obj.x2 > next_left:
+        next_left = None
+    rights = [
+        other.x2
+        for other in page_lines
+        if other.x2 is not None
+        and near(other.x1, line_obj.x1, font_size)
+        and measures_line(other, line_obj)
+        and (next_left is None or other.x2 <= next_left)
+    ]
+    return percentile_90(rights) if rights else line_obj.x2
+
+
+def leaves_no_room(
+    left: Line, right: Line, page_lines: Sequence[Line], context: PageContext, font_size: float
+) -> bool:
+    """Return whether the first word of right would not have fit at the end of left.
+
+    left is measured as a left-aligned line among page_lines. Wrapped lines
+    leave no room for the next word, wherever their measure ends.
+    """
+    word_width = first_word_width(right)
+    if left.x2 is None or word_width is None:
+        return False
+    measure_right = left_aligned_measure_right(left, page_lines, context, font_size)
+    return measure_right - left.x2 < word_width + font_size * FIT_SLACK_EM

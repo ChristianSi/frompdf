@@ -678,6 +678,38 @@ class SameLineFragmentTests(unittest.TestCase):
         self.assertEqual(len(group_texts(self.fraction_paragraph('messages. Done.'))), 1)
 
 
+def sidebar(third_line: str) -> list[Line]:
+    """Build body text above a ragged-right sidebar in smaller type, split by pdftext.
+
+    The sidebar's lines end well short of the body column, but its third line
+    leaves no room for the first word of the fourth.
+    """
+    body = [line(f'Ordinary body text filling line {n}', n) for n in range(1, 7)]
+    texts = [
+        ('Shixiao Yu, Department of Ecology, School of', 140.0, 3),
+        ('Life Sciences/State Key Laboratory of', 122.0, 3),
+        (third_line, 118.0, 3),
+        ('Guangzhou 510275, China. Tel/Fax: +86 20', 138.0, 4),
+        ('39332980; E-mail: someone@example.org', 134.0, 4),
+    ]
+    return body + [
+        line(text, 7 + index, block_no=block_no, font_size=8.0, x2=x2, y1=100.0 + 10 * index)
+        for index, (text, x2, block_no) in enumerate(texts)
+    ]
+
+
+class SidebarContinuationTests(unittest.TestCase):
+    def test_line_ending_in_a_comma_without_room_for_the_next_word_continues(self) -> None:
+        groups = group_texts(sidebar('Biocontrol, Sun Yat-sen University,'))
+
+        self.assertEqual(len(groups), 2)
+
+    def test_line_ending_without_a_comma_needs_to_fill_its_column(self) -> None:
+        groups = group_texts(sidebar('Biocontrol, Sun Yat-sen University'))
+
+        self.assertEqual(len(groups), 3)
+
+
 class RunningTextContinuationTests(unittest.TestCase):
     """Pdftext block edges below a line, in a column from 20 to 220 with 10 pt type."""
 

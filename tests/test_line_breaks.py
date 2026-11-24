@@ -172,6 +172,35 @@ class HardLineBreakTests(unittest.TestCase):
 
         self.assertEqual(breaks(block, title + body_column() + block), [False])
 
+    def test_measure_ignores_lines_reaching_into_the_next_column(self) -> None:
+        # A sidebar in small type beside the body, above a licence footer in
+        # the same type that spans both columns.
+        right_column = [line(BODY_TEXT, 12 + index * 12, x1=280.0, x2=480.0) for index in range(6)]
+        footer = [
+            line('Licence footer text', 300 + index * 10, x2=400.0, font_size=8.0)
+            for index in range(3)
+        ]
+        block = [
+            line('Shixiao Yu, Department of Ecology,', 100, x2=140.0, font_size=8.0),
+            line('Life Sciences/State Key Laboratory of', 110, x2=112.0, font_size=8.0),
+            line('Biocontrol, Sun Yat-sen University,', 120, x2=132.0, font_size=8.0),
+            line('Guangzhou 510275, China.', 130, x2=138.0, font_size=8.0),
+        ]
+        page = body_column() + right_column + block + footer
+
+        self.assertEqual(breaks(block, page), [False] * 3)
+
+    def test_lines_reaching_into_the_next_column_measure_each_other(self) -> None:
+        right_column = [line(BODY_TEXT, 12 + index * 12, x1=280.0, x2=480.0) for index in range(6)]
+        note = [line(BODY_TEXT, 300 + index * 10, x2=500.0, font_size=8.0) for index in range(3)]
+        block = [
+            line('relative conspecific tree basal area.', 330, x2=400.0, font_size=8.0),
+            line('Significant results are shown in boldface type.', 340, font_size=8.0),
+        ]
+        page = body_column() + right_column + note + block
+
+        self.assertEqual(breaks(block, page), [True])
+
     def test_hard_line_break_ids_mark_left_lines(self) -> None:
         block = [line('RECEIVED 09/04/21', 100), line('ACCEPTED 13/04/21', 112)]
         page = body_column() + block
