@@ -128,11 +128,11 @@ follows in Equation 1:,3,5,21,10.9,72.0,349.3,169.0,359.1,-10.9,13.5,425.0,Nimbu
 |System Annotations|,3,6,23,10.9,153.1,386.2,247.3,397.1,0.3,14.9,402.5,NimbusRomNo9L-Regu,(),False,False,False,False,191.0
 |Correct Annotations|,3,7,24,10.9,283.2,371.3,378.1,382.2,130.2,-14.9,403.6,NimbusRomNo9L-Regu,(),False,False,False,False,321.7
 |Target Annotations|,3,7,25,10.9,285.9,386.2,375.4,397.1,2.7,14.9,402.5,NimbusRomNo9L-Regu,(),False,False,False,False,319.0
-2 × �� × ��,3,8,26,10.9,416.6,371.3,465.5,381.6,130.7,-14.9,312.1,CMMI10,(),False,False,False,False,424.4
-�� + ��,3,8,27,10.9,426.0,386.8,456.1,396.5,9.4,15.5,357.0,CMMI10,(),False,False,False,False,436.9
-�� =,3,9,28,10.9,128.5,379.3,148.5,389.0,-297.4,-7.5,355.0,CMMI10,(),False,False,False,False,140.1
-", �� =",3,10,29,10.9,248.8,379.3,279.0,389.0,120.3,0.0,357.0,CMMI10,(),False,False,False,False,259.1
-", ��1 =",3,11,30,10.9,379.3,379.3,412.3,389.0,130.4,0.0,353.6,CMMI10,(),False,False,False,False,386.8
+2 × P × R,3,8,26,10.9,416.6,371.3,465.5,381.6,130.7,-14.9,293.0,CMSY10,"({'start': 4, 'end': 5, 'kind': 'italic'}, {'start': 8, 'end': 9, 'kind': 'italic'})",False,False,False,False,424.4
+P + R,3,8,27,10.9,426.0,386.8,456.1,396.5,9.4,15.5,355.0,CMMI10,"({'start': 0, 'end': 1, 'kind': 'italic'}, {'start': 4, 'end': 5, 'kind': 'italic'})",False,False,False,False,436.9
+P =,3,9,28,10.9,128.5,379.3,148.5,389.0,-297.4,-7.5,352.5,CMR10,"({'start': 0, 'end': 1, 'kind': 'italic'},)",False,False,False,False,140.1
+", R =",3,10,29,10.9,248.8,379.3,279.0,389.0,120.3,0.0,356.2,CMMI10,"({'start': 2, 'end': 3, 'kind': 'italic'},)",False,False,False,False,259.1
+", F1 =",3,11,30,10.9,379.3,379.3,412.3,389.0,130.4,0.0,352.5,CMR10,"({'start': 2, 'end': 3, 'kind': 'italic'},)",False,False,False,False,386.8
 (1),3,12,31,10.9,511.3,379.5,524.0,389.3,132.0,0.2,425.0,NimbusRomNo9L-Regu,(),False,False,False,False,
 "In this context, target annotations refer to the designated target cells for CEA, target columns for CTA,",3,13,32,10.9,82.9,404.5,524.7,414.3,-428.4,25.0,425.0,NimbusRomNo9L-Regu,(),False,False,False,False,94.6
 and target column pairs for CPA. An annotation is considered correct if it matches any entry in the,3,13,33,10.9,72.0,418.0,523.3,427.8,-10.9,13.5,422.5,NimbusRomNo9L-Regu,"({'start': 61, 'end': 68, 'kind': 'italic'},)",False,False,False,False,91.6
@@ -140,36 +140,36 @@ and target column pairs for CPA. An annotation is considered correct if it match
 annotations in the ground truth.,3,13,35,10.9,72.0,445.1,209.3,454.9,0.0,13.5,425.0,NimbusRomNo9L-Regu,(),False,False,False,False,125.0
 "For CTA evaluation, a modified version of Precision and Recall was applied, given the detailed type",3,14,36,10.9,82.9,458.7,523.3,468.5,10.9,13.5,425.0,NimbusRomNo9L-Regu,(),False,False,False,False,100.8
 "hierarchy in Wikidata [23]. This adaptation accounts for partially correct annotations, such as those that",3,14,37,10.9,72.0,472.2,523.3,482.0,-10.9,13.5,425.0,NimbusRomNo9L-Regu,(),False,False,False,False,115.7
-are ancestors or descendants of the ground truth (GT) classes. The correctness score ������������ for a CTA,3,14,38,10.9,72.0,485.7,523.7,495.6,0.0,13.4,417.6,NimbusRomNo9L-Regu,(),False,False,False,False,88.2
-annotation �� is based on its distance from the GT classes within the hierarchy and is defined as follows:,3,14,39,10.9,72.0,499.2,524.7,509.1,0.0,13.5,423.8,NimbusRomNo9L-Regu,(),False,False,False,False,120.8
-cscore(��) =,3,15,40,10.9,125.1,540.9,176.1,550.8,53.1,41.7,414.2,NimbusRomNo9L-Regu,(),False,False,False,False,170.0
+are ancestors or descendants of the ground truth (GT) classes. The correctness score cscore for a CTA,3,14,38,10.9,72.0,485.7,523.7,495.6,0.0,13.4,421.1,NimbusRomNo9L-Regu,"({'start': 85, 'end': 91, 'kind': 'italic'},)",False,False,False,False,88.2
+annotation α is based on its distance from the GT classes within the hierarchy and is defined as follows:,3,14,39,10.9,72.0,499.2,524.7,509.1,0.0,13.5,424.4,NimbusRomNo9L-Regu,"({'start': 11, 'end': 12, 'kind': 'italic'},)",False,False,False,False,120.8
+cscore(α) =,3,15,40,10.9,125.1,540.9,176.1,550.8,53.1,41.7,419.1,NimbusRomNo9L-Regu,"({'start': 7, 'end': 8, 'kind': 'italic'},)",False,False,False,False,170.0
 ⎧,3,15,41,10.9,180.7,522.4,190.4,532.7,55.6,-18.5,235.0,CMEX10,(),False,False,False,False,
 ⎪⎨,3,15,42,10.9,180.7,532.2,190.4,555.6,0.0,9.8,235.0,CMEX10,(),False,False,False,False,
 ⎪⎩,3,15,43,10.9,180.7,555.1,190.4,568.6,0.0,22.9,235.0,CMEX10,(),False,False,False,False,
 0.8,3,16,44,10.9,190.4,525.1,204.3,534.8,9.7,-30.0,350.0,CMR10,(),False,False,False,False,
-��(��),3,16,45,8.0,204.3,522.8,220.7,530.7,13.9,-2.4,386.7,CMMI8,"({'start': 2, 'end': 3, 'kind': 'sup'}, {'start': 5, 'end': 6, 'kind': 'sup'})",False,False,False,False,
-", if �� is in GT, or an ancestor of the GT, with ��(��) ≤ 5",3,16,46,10.9,221.2,524.5,469.0,535.4,16.9,1.8,407.6,NimbusRomNo9L-Regu,(),False,False,False,False,235.1
+d(α),3,16,45,8.0,204.3,522.8,220.7,530.7,13.9,-2.4,385.0,CMR8,"({'start': 0, 'end': 1, 'kind': 'sup'}, {'start': 1, 'end': 2, 'kind': 'sup'}, {'start': 2, 'end': 3, 'kind': 'sup'}, {'start': 3, 'end': 4, 'kind': 'sup'}, {'start': 0, 'end': 1, 'kind': 'italic'}, {'start': 2, 'end': 3, 'kind': 'italic'})",False,False,False,False,
+", if α is in GT, or an ancestor of the GT, with d(α) ≤ 5",3,16,46,10.9,221.2,524.5,469.0,535.4,16.9,1.8,410.5,NimbusRomNo9L-Regu,"({'start': 5, 'end': 6, 'kind': 'italic'}, {'start': 48, 'end': 49, 'kind': 'italic'}, {'start': 50, 'end': 51, 'kind': 'italic'})",False,False,False,False,235.1
 0.7,3,16,47,10.9,190.4,541.4,204.3,551.1,-30.8,16.9,350.0,CMR10,(),False,False,False,False,
-��(��),3,16,48,8.0,204.3,539.0,220.7,547.0,13.9,-2.4,386.7,CMMI8,"({'start': 2, 'end': 3, 'kind': 'sup'}, {'start': 5, 'end': 6, 'kind': 'sup'})",False,False,False,False,
-", if �� is a descendant of the GT, with ��(��) ≤ 3",3,16,49,10.9,221.2,540.8,433.4,551.7,16.9,1.8,404.1,NimbusRomNo9L-Regu,(),False,False,False,False,235.1
+d(α),3,16,48,8.0,204.3,539.0,220.7,547.0,13.9,-2.4,385.0,CMR8,"({'start': 0, 'end': 1, 'kind': 'sup'}, {'start': 1, 'end': 2, 'kind': 'sup'}, {'start': 2, 'end': 3, 'kind': 'sup'}, {'start': 3, 'end': 4, 'kind': 'sup'}, {'start': 0, 'end': 1, 'kind': 'italic'}, {'start': 2, 'end': 3, 'kind': 'italic'})",False,False,False,False,
+", if α is a descendant of the GT, with d(α) ≤ 3",3,16,49,10.9,221.2,540.8,433.4,551.7,16.9,1.8,407.3,NimbusRomNo9L-Regu,"({'start': 5, 'end': 6, 'kind': 'italic'}, {'start': 39, 'end': 40, 'kind': 'italic'}, {'start': 41, 'end': 42, 'kind': 'italic'})",False,False,False,False,235.1
 "0, otherwise;",3,16,50,10.9,190.4,557.6,280.6,567.6,-30.8,16.9,412.9,NimbusRomNo9L-Regu,(),False,False,False,False,235.1
 (2),3,17,51,10.9,511.3,541.0,524.0,550.8,320.9,-16.6,425.0,NimbusRomNo9L-Regu,(),False,False,False,False,
-"Here, ��(��) denotes the shortest distance from �� to one of the GT classes. CTA ground truth columns",3,18,52,10.9,82.9,577.6,523.3,588.5,-428.4,36.5,419.3,NimbusRomNo9L-Regu,(),False,False,False,False,109.6
-"can include multiple valid classes. For example, if �� is a GT class (��(��) = 0), the correctness score is",3,18,53,10.9,72.0,591.1,523.3,602.0,-10.9,13.5,416.7,NimbusRomNo9L-Regu,(),False,False,False,False,90.1
-"cscore(��) = 1. If �� is a grandchild of a GT class (��(��) = 2), the correctness score is cscore(��) = 0.49.",3,18,54,10.9,72.0,604.7,525.2,615.6,0.0,13.6,403.2,NimbusRomNo9L-Regu,(),False,False,False,False,118.4
+"Here, d(α) denotes the shortest distance from α to one of the GT classes. CTA ground truth columns",3,18,52,10.9,82.9,577.6,523.3,588.5,-428.4,36.5,421.2,NimbusRomNo9L-Regu,"({'start': 6, 'end': 7, 'kind': 'italic'}, {'start': 8, 'end': 9, 'kind': 'italic'}, {'start': 46, 'end': 47, 'kind': 'italic'})",False,False,False,False,109.6
+"can include multiple valid classes. For example, if α is a GT class (d(α) = 0), the correctness score is",3,18,53,10.9,72.0,591.1,523.3,602.0,-10.9,13.5,418.4,NimbusRomNo9L-Regu,"({'start': 52, 'end': 53, 'kind': 'italic'}, {'start': 69, 'end': 70, 'kind': 'italic'}, {'start': 71, 'end': 72, 'kind': 'italic'})",False,False,False,False,90.1
+"cscore(α) = 1. If α is a grandchild of a GT class (d(α) = 2), the correctness score is cscore(α) = 0.49.",3,18,54,10.9,72.0,604.7,525.2,615.6,0.0,13.6,405.3,NimbusRomNo9L-Regu,"({'start': 7, 'end': 8, 'kind': 'italic'}, {'start': 18, 'end': 19, 'kind': 'italic'}, {'start': 51, 'end': 52, 'kind': 'italic'}, {'start': 53, 'end': 54, 'kind': 'italic'}, {'start': 94, 'end': 95, 'kind': 'italic'})",False,False,False,False,118.4
 "Types from higher levels of the KG type hierarchy, such as Q35120 [entity] in Wikidata, were",3,18,55,10.9,71.7,618.9,523.3,628.8,-0.3,14.3,388.3,NimbusRomNo9L-Regu,(),False,False,False,False,101.3
 excluded from the evaluation.,3,18,56,10.9,72.0,632.5,201.6,642.3,0.3,13.5,425.0,NimbusRomNo9L-Regu,(),False,False,False,False,113.9
-"Using the correctness score ������������, the approximated Precision (AP), Recall (AR), and F1-score (AF1)",3,19,57,10.9,82.9,645.9,524.1,655.9,10.9,13.4,417.6,NimbusRomNo9L-Regu,(),False,False,False,False,111.0
+"Using the correctness score cscore, the approximated Precision (AP), Recall (AR), and F1-score (AF1)",3,19,57,10.9,82.9,645.9,524.1,655.9,10.9,13.4,421.1,NimbusRomNo9L-Regu,"({'start': 28, 'end': 34, 'kind': 'italic'},)",False,False,False,False,111.0
 for CTA were calculated as follows:,3,19,58,10.9,72.0,659.6,229.2,669.4,-10.9,13.7,425.0,NimbusRomNo9L-Regu,(),False,False,False,False,87.4
-∑︀������������(��),3,20,59,10.9,161.1,681.2,220.1,692.5,89.1,21.6,344.4,CMMI10,(),False,False,False,False,
+∑︀cscore(α),3,20,59,10.9,161.1,681.2,220.1,692.5,89.1,21.6,334.5,CMMI10,"({'start': 2, 'end': 8, 'kind': 'italic'}, {'start': 9, 'end': 10, 'kind': 'italic'})",False,False,False,False,
 |System Annotations|,3,20,60,10.9,143.5,696.5,237.7,707.4,-17.6,15.3,402.5,NimbusRomNo9L-Regu,(),False,False,False,False,181.3
-∑︀������������(��),3,21,61,10.9,296.8,681.2,355.7,692.5,153.3,-15.3,344.4,CMMI10,(),False,False,False,False,
+∑︀cscore(α),3,21,61,10.9,296.8,681.2,355.7,692.5,153.3,-15.3,334.5,CMMI10,"({'start': 2, 'end': 8, 'kind': 'italic'}, {'start': 9, 'end': 10, 'kind': 'italic'})",False,False,False,False,
 |Target Annotations|,3,21,62,10.9,281.5,696.5,371.0,707.4,-15.3,15.3,402.5,NimbusRomNo9L-Regu,(),False,False,False,False,314.7
-2 × ���� × ����,3,22,63,10.9,417.7,681.6,483.0,691.9,136.2,-14.9,329.5,CMMI10,(),False,False,False,False,425.6
-���� + ���� (3),3,22,64,10.9,427.1,689.8,524.0,706.8,9.4,8.2,375.0,CMMI10,(),False,False,False,False,446.2
-���� =,3,23,65,10.9,111.0,689.3,139.2,699.3,-316.1,-0.5,357.0,CMMI10,(),False,False,False,False,130.7
-", ���� =",3,24,66,10.9,238.9,689.3,277.3,699.3,127.9,0.0,357.9,CMMI10,(),False,False,False,False,249.2
-", ����1 =",3,25,67,10.9,372.2,689.3,413.5,699.3,133.3,0.0,355.0,CMMI10,(),False,False,False,False,379.8
+2 × AP × AR,3,22,63,10.9,417.7,681.6,483.0,691.9,136.2,-14.9,312.1,CMMI10,"({'start': 4, 'end': 6, 'kind': 'italic'}, {'start': 9, 'end': 11, 'kind': 'italic'})",False,False,False,False,425.6
+AP + AR (3),3,22,64,10.9,427.1,689.8,524.0,706.8,9.4,8.2,382.5,CMMI10,"({'start': 0, 'end': 2, 'kind': 'italic'}, {'start': 5, 'end': 7, 'kind': 'italic'})",False,False,False,False,446.2
+AP =,3,23,65,10.9,111.0,689.3,139.2,699.3,-316.1,-0.5,355.0,CMMI10,"({'start': 0, 'end': 2, 'kind': 'italic'},)",False,False,False,False,130.7
+", AR =",3,24,66,10.9,238.9,689.3,277.3,699.3,127.9,0.0,357.0,CMMI10,"({'start': 2, 'end': 4, 'kind': 'italic'},)",False,False,False,False,249.2
+", AF1 =",3,25,67,10.9,372.2,689.3,413.5,699.3,133.3,0.0,353.6,CMMI10,"({'start': 2, 'end': 4, 'kind': 'italic'},)",False,False,False,False,379.8
 2.2. STI vs LLMs Track,3,26,68,12.0,72.0,724.2,201.7,735.6,-300.2,34.8,704.0,NimbusSanL-Bold,"({'start': 0, 'end': 22, 'kind': 'bold'},)",False,False,False,False,97.9
 This track investigates the exclusive use of LLMs for performing the CEA task on Wikidata. Participants,3,27,69,10.9,71.7,746.5,523.3,756.3,-0.3,22.3,425.0,NimbusRomNo9L-Regu,(),False,False,False,False,93.5
 are tasked with either fine-tuning an LLM or employing prompting techniques on a dataset enriched,3,27,70,10.9,72.0,760.0,523.3,769.9,0.3,13.5,425.0,NimbusRomNo9L-Regu,(),False,False,False,False,88.8

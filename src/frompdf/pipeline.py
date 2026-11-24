@@ -38,6 +38,7 @@ from frompdf.page_edges import (
 )
 from frompdf.reading_order import order_lines_for_reading
 from frompdf.rules import extract_drawings, extract_rules
+from frompdf.surrogate_pairs import restore_surrogate_pairs
 from frompdf.tables import find_tables
 from frompdf.word_spaces import insert_missing_word_spaces
 
@@ -57,6 +58,7 @@ def extract_markdown(
     """
     input_path = Path(input_file_name)
     page_list = dictionary_output(str(input_path), sort=True, keep_chars=True)
+    restore_surrogate_pairs(input_path, page_list)
     restore_font_sizes(input_path, page_list)
     ocr_layout = repair_ocr_text_layers(input_path, page_list)
     decode_advent_math_glyphs(page_list, input_path)

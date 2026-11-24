@@ -146,14 +146,14 @@ follows in Equation 1:
 > |Correct Annotations|
 > |Target Annotations|
 
-2 × �� × ��
-�� + ��
+2 × *P* × *R
+P* + *R*
 
-�� =
+*P* =
 
-, �� =
+, *R* =
 
-, ��1 =
+, *F*1 =
 
 (1)
 
@@ -164,44 +164,44 @@ annotations in the ground truth.
 
 For CTA evaluation, a modified version of Precision and Recall was applied, given the detailed type
 hierarchy in Wikidata [23]. This adaptation accounts for partially correct annotations, such as those that
-are ancestors or descendants of the ground truth (GT) classes. The correctness score ������������ for a CTA
-annotation �� is based on its distance from the GT classes within the hierarchy and is defined as follows:
+are ancestors or descendants of the ground truth (GT) classes. The correctness score *cscore* for a CTA
+annotation *α* is based on its distance from the GT classes within the hierarchy and is defined as follows:
 
-cscore(��) =\
+cscore(*α*) =\
 ⎧
 
 > ⎪⎨
 > ⎪⎩
 >
-> 0.8��<sup>(</sup>��<sup>)</sup>, if �� is in GT, or an ancestor of the GT, with ��(��) ≤ 5
-> 0.7��<sup>(</sup>��<sup>)</sup>, if �� is a descendant of the GT, with ��(��) ≤ 3
+> 0.8<sup>d(α)</sup>, if *α* is in GT, or an ancestor of the GT, with *d*(*α*) ≤ 5
+> 0.7<sup>d(α)</sup>, if *α* is a descendant of the GT, with *d*(*α*) ≤ 3
 > 0, otherwise;
 
 (2)
 
-Here, ��(��) denotes the shortest distance from �� to one of the GT classes. CTA ground truth columns
-can include multiple valid classes. For example, if �� is a GT class (��(��) = 0), the correctness score is
-cscore(��) = 1. If �� is a grandchild of a GT class (��(��) = 2), the correctness score is cscore(��) = 0.49.
+Here, *d*(*α*) denotes the shortest distance from *α* to one of the GT classes. CTA ground truth columns
+can include multiple valid classes. For example, if *α* is a GT class (*d*(*α*) = 0), the correctness score is
+cscore(*α*) = 1. If *α* is a grandchild of a GT class (*d*(*α*) = 2), the correctness score is cscore(*α*) = 0.49.
 Types from higher levels of the KG type hierarchy, such as Q35120 [entity] in Wikidata, were
 excluded from the evaluation.
 
-Using the correctness score ������������, the approximated Precision (AP), Recall (AR), and F1-score (AF1)
+Using the correctness score *cscore*, the approximated Precision (AP), Recall (AR), and F1-score (AF1)
 for CTA were calculated as follows:
 
-∑︀������������(��)
+∑︀*cscore*(*α*)\
 |System Annotations|
 
-∑︀������������(��)
+∑︀*cscore*(*α*)\
 |Target Annotations|
 
-2 × ���� × ����
-���� + ���� (3)
+2 × *AP* × *AR
+AP* + *AR* (3)
 
-���� =
+*AP* =
 
-, ���� =
+, *AR* =
 
-, ����1 =
+, *AF*1 =
 
 ### 2.2. STI vs LLMs Track
 

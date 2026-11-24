@@ -245,6 +245,9 @@ The implementation is split into focused modules under `src/frompdf`:
   and typography to find Markdown block boundaries.
 - `scripts.py` slices and joins annotated plain text, preserving inline
   ranges through text repair, and renders `<sup>`/`<sub>` tags at serialization.
+- `surrogate_pairs.py` restores characters outside the Basic Multilingual
+  Plane, which `pdftext` replaces by a replacement character for each half
+  of their UTF-16 surrogate pairs, from the code units pdfium reports.
 - `tables.py` recognizes tables framed by connected rules, or ruled off around
   their header with columns separated by gutters, infers their rows, columns,
   and spanning cells, splits lines into the pieces of each cell, and joins
@@ -294,7 +297,11 @@ Important concepts:
 
 The current pipeline is roughly:
 
-1. Extract raw `pdftext` page data.
+1. Extract raw `pdftext` page data. Restore characters outside the Basic
+   Multilingual Plane, whose surrogate halves `pdftext` replaced, from the
+   code units that pdfium reports at their character indices, where both
+   halves share one glyph box. Mathematical italic letters of math italic
+   fonts become plain letters, as these fonts are rendered in italics.
 2. Take the geometry of invisible text over ink, as OCR places it over
    scanned pages, from the page rendered at 300 pixels per inch, as the OCR
    geometry is only estimated. Each line's ink starts near its text and

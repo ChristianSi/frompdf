@@ -304,6 +304,15 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
 
 ### Fixed
 
+- Characters outside the Basic Multilingual Plane are no longer lost as
+  pairs of replacement characters `��`. pdfium reports them as the two
+  halves of a UTF-16 surrogate pair, which `pdftext` replaces one by one;
+  they are now read again and combined. This restores the math letters of
+  pdfTeX documents whose math italic fonts map them to mathematical italic
+  characters, such as `𝑃` and `𝛼` in ceur-semtab-2024-results. As math
+  italic fonts are already rendered in italics, their mathematical italic
+  letters become plain letters, as `*P*`; other mathematical letters, such
+  as bold italic ones, are kept.
 - A short line ending in another face than most of its text no longer
   breaks before a next line continuing in that face. The line's font is the
   one of most of its text, so the bold page range in `*Ecology and
