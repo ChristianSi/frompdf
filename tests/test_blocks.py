@@ -5,6 +5,7 @@ from typing import cast
 from pdftext.schema import Line as PdfTextLine
 
 from frompdf.blocks import (
+    continues_blockquote,
     initial_heading_level,
     is_blockquote_block,
     lines_to_markdown_blocks,
@@ -203,6 +204,27 @@ class BlockQuoteDetectionTests(unittest.TestCase):
                     ),
                     expected,
                 )
+
+
+class ContinuesBlockQuoteTests(unittest.TestCase):
+    def quote(self, font_size: float) -> BlockQuote:
+        page_number = PageNumber(raw=1, visible=None)
+        return BlockQuote(
+            text='Quoted text', start_page=page_number, end_page=page_number, font_size=font_size
+        )
+
+    def test_line_in_the_size_of_a_preceding_quote_continues_it(self) -> None:
+        self.assertTrue(continues_blockquote(self.quote(8.5), [positioned_line('Last line', 60.0)]))
+
+    def test_line_in_visibly_other_size_does_not_continue_a_quote(self) -> None:
+        # A heading such as `Keywords` after a small-type abstract.
+        heading = replace(positioned_line('Keywords', 60.0), font_size=10.9)
+
+        self.assertFalse(continues_blockquote(self.quote(9.0), [heading]))
+
+    def test_line_after_a_paragraph_does_not_continue_a_quote(self) -> None:
+        self.assertFalse(continues_blockquote(paragraph('Text', 8.5), [positioned_line('x', 60.0)]))
+        self.assertFalse(continues_blockquote(None, [positioned_line('x', 60.0)]))
 
 
 class HeadingDetectionTests(unittest.TestCase):

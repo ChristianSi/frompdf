@@ -21,7 +21,11 @@ from frompdf.footnotes import build_footnote, extract_footnotes, place_footnotes
 from frompdf.front_matter import format_front_matter, unquote_blocks_above_title
 from frompdf.heading_candidates import find_typographic_heading_lines
 from frompdf.line_breaks import hard_line_break_ids, line_by_line_passages
-from frompdf.line_features import has_alphanumeric, same_physical_line
+from frompdf.line_features import (
+    has_alphanumeric,
+    same_physical_line,
+    visibly_different_font_sizes,
+)
 from frompdf.lists import ListMarker, find_list_items
 from frompdf.models import (
     HARD_LINE_BREAK,
@@ -291,6 +295,18 @@ def is_indented_blockquote_block(
             return False
 
     return not is_centered_block(line_list, threshold)
+
+
+def continues_blockquote(previous: Block | None, line_list: list[Line]) -> bool:
+    """Return whether a block follows a block quote set in the same size as its text.
+
+    A quotation may end in a paragraph of a single line, which takes the size
+    of the quotation's text. A single line in visibly other type, such as the
+    heading `Keywords` after a small-type abstract, does not continue it.
+    """
+    return isinstance(previous, BlockQuote) and not visibly_different_font_sizes(
+        previous.font_size, block_font_size(line_list)
+    )
 
 
 def is_blockquote_block(
@@ -858,7 +874,9 @@ def lines_to_markdown_blocks(
                 word_counts,
                 mixed_case_words,
                 coordination_tokens,
-                follows_blockquote=bool(block_list) and isinstance(block_list[-1], BlockQuote),
+                follows_blockquote=continues_blockquote(
+                    block_list[-1] if block_list else None, current_lines
+                ),
                 typographic_heading=typographic_heading,
                 list_marker=list_items.markers.get(id(current_lines[0])),
                 passage=all(id(line) in passage_lines for line in current_lines),

@@ -257,6 +257,19 @@ class ListItemLineBreakTests(unittest.TestCase):
         self.assertEqual(hard_line_break_ids(block, layouts, 54.0), {id(block[0])})
         self.assertEqual(hard_line_break_ids(block, layouts), set())
 
+    def test_first_line_is_measured_from_item_text(self) -> None:
+        # The marker lines of the list are all short, as in ceur-semtab's
+        # dataset items, a name and URL above their description.
+        block = [
+            line('• Dataset https://doi.org/10.5281', 100, x1=36.0, x2=150.0),
+            line('This dataset comprises tables of many kinds', 112, x1=54.0, x2=220.0),
+            line('and ends here.', 124, x1=54.0),
+        ]
+        layouts = build_page_layouts(body_column() + block)
+
+        self.assertEqual(hard_line_break_ids(block, layouts, 54.0), {id(block[0])})
+        self.assertEqual(hard_line_break_ids(block, layouts), set())
+
     def test_hanging_continuations_at_item_text_do_not_break(self) -> None:
         block = [
             line('• An item filling the whole line of its column', 100, x1=36.0, x2=220.0),

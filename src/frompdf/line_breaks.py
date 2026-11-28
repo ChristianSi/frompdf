@@ -234,6 +234,9 @@ def hard_line_break_ids(
     line ends are assumed to be deliberate too, unless they are ruled out.
     item_text_x1 is where the text of a list item starts after its marker.
     Wrapped lines never start right of it, so lines that do follow a break.
+    The first line of an item is also measured from there, where the lines
+    continuing the item show how far its text reaches; lines starting at the
+    marker may all be short, as in ceur-semtab's list of datasets.
     In a passage set off line by line, such as quoted verse, every line
     leaving room for the next word ends deliberately, even where a sentence
     continues in lower case.
@@ -242,6 +245,11 @@ def hard_line_break_ids(
         id(left)
         for left, right in pairwise(line_list)
         if is_hard_line_break(left, right, layouts[left.page_no])
+        or (
+            item_text_x1 is not None
+            and left is line_list[0]
+            and is_hard_line_break(replace(left, x1=item_text_x1), right, layouts[left.page_no])
+        )
         or (
             item_text_x1 is not None
             and starts_right_of_item_text(right, line_list[0], item_text_x1)

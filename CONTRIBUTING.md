@@ -461,7 +461,9 @@ The current pipeline is roughly:
     typography, indentation, and line-spacing evidence. Display-sized lines
     sharing face, alignment, and tight leading stay together, as in titles,
     while a change of both size and face after a short line, as between author
-    names and affiliations, starts a new block. Confirmed centered title
+    names and affiliations, starts a new block if one of the lines is set
+    larger than body text, or the text returns to body size after smaller
+    type, as a heading after an abstract. Confirmed centered title
     candidates override boundaries only at and within those titles. Where
     `pdftext` starts a new block after a line split into pieces, the left edge
     of the whole visual line decides whether the text continues. Within a
@@ -502,10 +504,14 @@ The current pipeline is roughly:
     indented must additionally support the join. List items join exactly
     where their recognized lines continue.
 13. Build paragraph, block-quote, or list-item records, replacing list
-    markers with Markdown ones, and mark deliberate line breaks, including
-    before lines of a list item that start right of its text, wherever a
-    line of a passage set off line by line leaves room for the next word, and
-    after each line of a display equation.
+    markers with Markdown ones. Blocks inset from their column are block
+    quotes if they have at least two lines, or one line in the size of a
+    block quote directly before them. Mark deliberate line breaks, including
+    before lines of a list item that start right of its text and after an
+    item's first line where the next word would have fit, measured from
+    where the item's text starts, wherever a line of a passage set off line
+    by line leaves room for the next word, and after each line of a display
+    equation.
     Join the pieces into which `pdftext` split a physical line with a space
     or nothing, depending on reported whitespace and the gap between them,
     unless they are too far apart to be running text, and append fraction

@@ -558,6 +558,25 @@ class FaceChangeSegmentationTests(unittest.TestCase):
             ],
         )
 
+    def test_splits_heading_returning_to_body_size_after_small_type(self) -> None:
+        small = {'font_size': 8.0, 'font_name': 'Roman8-Regular'}
+        lines = [
+            *body_lines(1, block_no=1),
+            line('small abstract text filling its whole line', 8, block_no=2, **small),
+            line('and ending short.', 9, block_no=2, x2=100.0, **small),
+            line('Keywords', 10, block_no=2, x2=60.0, font_name='Sans-Bold', avg_weight=700.0),
+            line('first keyword, second keyword', 11, block_no=3, x2=150.0, **small),
+        ]
+
+        self.assertEqual(
+            group_texts(lines)[1:],
+            [
+                ['small abstract text filling its whole line', 'and ending short.'],
+                ['Keywords'],
+                ['first keyword, second keyword'],
+            ],
+        )
+
     def test_keeps_card_lines_smaller_than_body_or_in_one_face_together(self) -> None:
         lines = [
             *body_lines(1, block_no=1),

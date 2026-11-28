@@ -512,7 +512,9 @@ def changes_face_after_short_line(previous: Line, current: Line, context: PageCo
     A change of both size and face after a deliberately short line separates
     items such as author names and affiliations, or a heading and its text, even
     when each style lasts only one line. One of the lines must be larger than
-    body text; changes among smaller lines, as in address cards, are kept.
+    body text, or the text must return to body size after smaller type, as a
+    heading like `Keywords` after the small type of an abstract. Changes among
+    smaller lines, or down from body size, as in address cards, are kept.
     """
     if (
         not is_textual_line(previous)
@@ -522,7 +524,12 @@ def changes_face_after_short_line(previous: Line, current: Line, context: PageCo
     ):
         return False
     larger = max(previous.font_size or 0.0, current.font_size or 0.0)
-    if larger < context.font_size or not visibly_different_font_sizes(larger, context.font_size):
+    returns_to_body_size = larger == current.font_size and close_font_size(
+        larger, context.font_size
+    )
+    if not returns_to_body_size and (
+        larger < context.font_size or not visibly_different_font_sizes(larger, context.font_size)
+    ):
         return False
     column = column_for_line(previous, context)
     font_size = previous.font_size or context.font_size

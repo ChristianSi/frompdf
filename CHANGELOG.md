@@ -304,6 +304,17 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
 
 ### Fixed
 
+- The first line of a list item now ends in a line break where the next
+  word would have fit, as after the name and URL heading each dataset in
+  ceur-semtab-2024-results. The line was measured from the item's marker,
+  where only other short marker lines start, rather than from where its
+  text starts, as the item's other lines do.
+- A heading in body-size type after the small type of an abstract, such as
+  `Keywords`, now starts a block of its own where `pdftext` keeps it with the
+  abstract, and becomes a heading like `Abstract`. A change of both size and
+  face after a short line now also separates text returning to body size
+  from smaller type, not only text larger than body size. A single line
+  directly after a block quote continues it only in the quote's type size.
 - Characters outside the Basic Multilingual Plane are no longer lost as
   pairs of replacement characters `��`. pdfium reports them as the two
   halves of a UTF-16 surrogate pair, which `pdftext` replaces one by one;

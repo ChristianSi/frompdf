@@ -18,10 +18,11 @@ Nandana Mihindukulasooriya<sup>1</sup> and Nhan H. Pham<sup>1</sup>**
 > SemTab 2024 marked the sixth iteration of the Semantic Web Challenge on Tabular Data to Knowledge Graph
 > Matching, held in conjunction with the 23<sup>rd</sup> International Semantic Web Conference (ISWC). SemTab serves as a
 > platform for the systematic evaluation of state-of-the-art semantic table interpretation systems. This paper provides
-> an overview of the 2024 challenge and highlights the key outcomes.\
-> **Keywords**
->
-> Tabular data, Knowledge Graphs, Matching, SemTab Challenge, Semantic Table Interpretation
+> an overview of the 2024 challenge and highlights the key outcomes.
+
+#### Keywords
+
+Tabular data, Knowledge Graphs, Matching, SemTab Challenge, Semantic Table Interpretation
 
 ## 1. Introduction
 
@@ -86,7 +87,7 @@ hidden—participants were provided with partial ground truth data during the ch
 training and/or validation sets. These labels enabled teams to evaluate their methods locally. All datasets
 are openly available on Zenodo. Across the two rounds, three groups of datasets were utilized:
 
-- **WikidataTables** https://doi.org/10.5281/zenodo.14207232
+- **WikidataTables** https://doi.org/10.5281/zenodo.14207232\
   This dataset comprises tables generated using an enhanced version of our data generator, which
   produces realistic-looking tables through SPARQL queries [21]. The target knowledge graph (KG)
   for this dataset is Wikidata, and, as in previous years, the tasks include Cell Entity Annotation
@@ -96,7 +97,7 @@ are openly available on Zenodo. Across the two rounds, three groups of datasets 
   and 11.6 rows. For these collections, the dataset generator was configured to produce a large
   number of small to medium-sized tables with high ambiguity in entity columns. This ambiguity
   was introduced by filtering for labels that can refer to multiple entities in Wikidata.
-- **tBiodiv** https://doi.org/10.5281/zenodo.10283015
+- **tBiodiv** https://doi.org/10.5281/zenodo.10283015\
   **tBiodivL** https://doi.org/10.5281/zenodo.10283083\
   These datasets, generated using KG2Tables [22] for the biodiversity domain, include two types of
   tables: 1) "horizontal" relational tables, where each table represents a collection of entities, and 2)
@@ -106,7 +107,7 @@ are openly available on Zenodo. Across the two rounds, three groups of datasets 
   Annotation (RA) task, which involves mapping each row to an entity. As shown in the statistics
   in Table 1, the relational table datasets are wider and exhibit greater variation in the number of
   columns.
-- **tBiomed** https://doi.org/10.5281/zenodo.10283103
+- **tBiomed** https://doi.org/10.5281/zenodo.10283103\
   **tBiomedL** https://doi.org/10.5281/zenodo.10283119\
   These datasets, also generated using KG2Tables [22] for the biomedical domain, include both
   relational and entity tables. They are accompanied by ground truth mappings for the CEA, CTA,
@@ -222,12 +223,12 @@ and F1—are consistent with those used for CEA in the Accuracy Track.
 
 #### 2.2.1. Datasets
 
-- **SuperSemtab 24** https://doi.org/10.5281/zenodo.11031987
+- **SuperSemtab 24** https://doi.org/10.5281/zenodo.11031987\
   This dataset was created by combining various tables from past SemTab Challenge datasets. It was
   then split into training and validation sets. The dataset features general-purpose tables as well as
   intentionally misspelled entities, designed to assess the model’s robustness. The dataset consists of
   16,180 training tables and 4,044 test tables.
-- **MammoTab 24 (SemTab)** https://doi.org/10.5281/zenodo.11519643
+- **MammoTab 24 (SemTab)** https://doi.org/10.5281/zenodo.11519643\
   MammoTab dataset [24] includes 1 million tables extracted from over 20 million Wikipedia pages
   and enriched with annotations from Wikidata. It addresses a significant gap in the state-of-the-art
   by providing a valuable resource for testing and training Semantic Table Interpretation approaches.
