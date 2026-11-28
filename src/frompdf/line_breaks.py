@@ -40,7 +40,8 @@ LONE_ADDRESS_PATTERN = re.compile(r'^\S*(?:@|://|www\.)\S*$')
 
 # Lines of a list item starting at least this many ems right of the item's
 # text, after its marker, are set apart deliberately, as the examples under
-# cc-style-guide's items on abbreviations.
+# cc-style-guide's items on abbreviations, if the line before them leaves room
+# for their first word.
 MIN_LIST_ITEM_INDENT_EM = 0.5
 
 # A shared center needs at least this many lines to be convincing.
@@ -110,6 +111,26 @@ def may_break_between(
     )
 
 
+def leaves_room_for_next_word(
+    left: Line, right: Line, layout: PageLayout, min_measure_right: float | None = None
+) -> bool:
+    """Return whether the first word of right would have fit at the end of left-aligned left.
+
+    The measure is the usual right edge of the page's lines sharing left's
+    left edge; min_measure_right is its least right edge, if known.
+    """
+    if left.x1 is None or left.x2 is None:
+        return False
+    font_size = left.font_size or layout.context.font_size
+    word_width = first_word_width(right)
+    if word_width is None:
+        return False
+    measure_right = left_aligned_measure_right(left, layout.lines, layout.context, font_size)
+    if min_measure_right is not None:
+        measure_right = max(measure_right, min_measure_right)
+    return measure_right - left.x2 >= word_width + font_size * FIT_SLACK_EM
+
+
 def next_word_fits(
     left: Line, right: Line, layout: PageLayout, min_measure_right: float | None = None
 ) -> bool:
@@ -129,10 +150,7 @@ def next_word_fits(
         return False
     needed_room = word_width + font_size * FIT_SLACK_EM
     if near(right.x1, left.x1, font_size):
-        measure_right = left_aligned_measure_right(left, layout.lines, layout.context, font_size)
-        if min_measure_right is not None:
-            measure_right = max(measure_right, min_measure_right)
-        return measure_right - left.x2 >= needed_room
+        return leaves_room_for_next_word(left, right, layout, min_measure_right)
     if near(right.x2, left.x2, font_size):
         # Both lines must be clearly inset, so the indented first line of a
         # justified paragraph never counts as right-aligned.
@@ -233,10 +251,12 @@ def hard_line_break_ids(
     Once a centered, line-by-line block shows one deliberate break, its other
     line ends are assumed to be deliberate too, unless they are ruled out.
     item_text_x1 is where the text of a list item starts after its marker.
-    Wrapped lines never start right of it, so lines that do follow a break.
-    The first line of an item is also measured from there, where the lines
-    continuing the item show how far its text reaches; lines starting at the
-    marker may all be short, as in ceur-semtab's list of datasets.
+    Lines starting right of it follow a break if the line before them left
+    room for their first word, as wrapped lines never do; the continuation
+    lines of some lists, such as bibliographies, are indented past the item's
+    text. The first line of an item is also measured from there, where the
+    lines continuing the item show how far its text reaches; lines starting at
+    the marker may all be short, as in ceur-semtab's list of datasets.
     In a passage set off line by line, such as quoted verse, every line
     leaving room for the next word ends deliberately, even where a sentence
     continues in lower case.
@@ -254,6 +274,7 @@ def hard_line_break_ids(
             item_text_x1 is not None
             and starts_right_of_item_text(right, line_list[0], item_text_x1)
             and may_break_between(left, right)
+            and leaves_room_for_next_word(left, right, layouts[left.page_no])
         )
     }
     if hard_break_ids and is_centered_line_layout(line_list, layouts[line_list[0].page_no]):

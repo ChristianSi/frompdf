@@ -304,6 +304,16 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
 
 ### Fixed
 
+- Words hyphenated at a line end after an elided word, as French `l’ex-`
+  before `emple` in graf-domestic-cooks-work, are now joined like other
+  words. The elided word joined by its apostrophe hid the document's evidence
+  for the whole word and counted as punctuation within it, which kept the
+  hyphen, as in `l’ex-emple`. Only the word after the apostrophe now decides.
+- Lists whose items wrap onto lines indented past the text after their
+  markers, as in some bibliographies, no longer get a line break before each
+  such line. A line of a list item starting right of the item's text now
+  follows a deliberate break only if the line before it leaves room for its
+  first word, which wrapped lines never do.
 - The first line of a list item now ends in a line break where the next
   word would have fit, as after the name and URL heading each dataset in
   ceur-semtab-2024-results. The line was measured from the item's marker,

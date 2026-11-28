@@ -507,11 +507,11 @@ The current pipeline is roughly:
     markers with Markdown ones. Blocks inset from their column are block
     quotes if they have at least two lines, or one line in the size of a
     block quote directly before them. Mark deliberate line breaks, including
-    before lines of a list item that start right of its text and after an
-    item's first line where the next word would have fit, measured from
-    where the item's text starts, wherever a line of a passage set off line
-    by line leaves room for the next word, and after each line of a display
-    equation.
+    before lines of a list item that start right of its text after a line
+    leaving room for their first word, after an item's first line where the
+    next word would have fit, measured from where the item's text starts,
+    wherever a line of a passage set off line by line leaves room for the
+    next word, and after each line of a display equation.
     Join the pieces into which `pdftext` split a physical line with a space
     or nothing, depending on reported whitespace and the gap between them,
     unless they are too far apart to be running text, and append fraction
@@ -520,11 +520,12 @@ The current pipeline is roughly:
     subscript, with their rows separated by commas. Then repair words and
     unspaced dashes split across physical lines within each block, preserving
     script ranges and attributing words joined across pages to their starting
-    page. URLs and DOIs broken at a line end are joined first, top-down, with
-    the next line's first token if it has the structure of a URL within it,
-    or a value after a `=`, unless a change of script level, as before a
-    note marker, lies between them. A token starting another URL only
-    continues a URL ending in `/`.
+    page. A word after an elided word and its apostrophe, as `l’ex-`, is
+    judged by itself. URLs and DOIs broken at a line end are joined first,
+    top-down, with the next line's first token if it has the structure of a
+    URL within it, or a value after a `=`, unless a change of script level,
+    as before a note marker, lies between them. A token starting another URL
+    only continues a URL ending in `/`.
 14. Reclassify heading-like paragraphs using size and confirmed title
     candidates, which take precedence over block quotes. Blocks without
     letters or digits never become headings. In the front matter following the

@@ -247,15 +247,28 @@ class HardLineBreakTests(unittest.TestCase):
 
 class ListItemLineBreakTests(unittest.TestCase):
     def test_lines_right_of_item_text_follow_a_break(self) -> None:
+        # As cc-style-guide's examples, after a line leaving room for them.
         block = [
-            line('• Clauses should be strung together with a hyphen.', 100, x1=36.0),
-            line('For example: CC BY-NC-ND', 112, x1=72.0),
-            line('wrapped item text', 124, x1=54.0),
+            line('• Clauses should be strung together with a hyphen.', 100, x2=180.0),
+            line('For example: CC BY-NC-ND', 112, x1=56.0),
+            line('wrapped item text', 124, x1=38.0),
         ]
         layouts = build_page_layouts(body_column() + block)
 
-        self.assertEqual(hard_line_break_ids(block, layouts, 54.0), {id(block[0])})
+        self.assertEqual(hard_line_break_ids(block, layouts, 38.0), {id(block[0])})
         self.assertEqual(hard_line_break_ids(block, layouts), set())
+
+    def test_continuations_indented_past_item_text_after_full_lines_do_not_break(self) -> None:
+        # As in bibliographies whose items wrap onto lines indented past the
+        # text after their dash markers.
+        block = [
+            line('– Anonyme, Un flibustier français dans la mer des', 100, x2=220.0),
+            line('Manuscrit inédit du début du siècle publié par', 112, x1=47.0, x2=220.0),
+            line('Paris, 1987.', 124, x1=47.0),
+        ]
+        layouts = build_page_layouts(body_column() + block)
+
+        self.assertEqual(hard_line_break_ids(block, layouts, 30.0), set())
 
     def test_first_line_is_measured_from_item_text(self) -> None:
         # The marker lines of the list are all short, as in ceur-semtab's

@@ -617,7 +617,7 @@ une dichotomie locale.” *Égypte/Monde Arabe* 30–31: 293–302.
 Sarter, Gilles. 2004. “Entre beldi et roumi: Préférences des consommateurs urbains et production
 de poulets au Maroc.” *Cahiers Agricultures* 13: 75–78.
 
-Simenel, Romain. 2010. “Beldi/roumi: Une conception Marocaine du produit de terroir, l’ex-emple
+Simenel, Romain. 2010. “Beldi/roumi: Une conception Marocaine du produit de terroir, l’exemple
 des Ait Ba’Amran de la région de Sidi Ifni.” *Hesp*é*ris-Tamuda* 45: 167–76.
 
 Sippel, Ruth S. 2014. *Export(t)räume: Bruchzonen marokkanischer Landwirtschaft*. Bielefeld:

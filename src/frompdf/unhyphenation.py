@@ -16,6 +16,9 @@ WORD_HYPHENS = VISIBLE_WORD_HYPHENS | {SOFT_HYPHEN}
 EN_DASH = '\u2013'
 EM_DASH = '\u2014'
 LINE_FINAL_DASHES = {EN_DASH, EM_DASH}
+# Apostrophes joining an elided word to the next one, as in French `l'homme`
+# or Italian `dell'anno`.
+ELISION_APOSTROPHES = {"'", '’'}
 
 
 # A URL or DOI broken at a line end continues on the next line without a
@@ -195,6 +198,22 @@ def strip_leading_wrapping_punctuation(text: str) -> str:
     ):
         first_word_index += 1
     return text[first_word_index:]
+
+
+def strip_elided_prefix(text: str) -> str:
+    """Strip an elided word joined by an apostrophe, as `l'` in French `l'anthropopha-`.
+
+    The word broken at the line end follows the apostrophe, and document
+    evidence counts it without the elided word, so only it decides.
+    """
+    for index in range(len(text) - 2, 0, -1):
+        if (
+            text[index] in ELISION_APOSTROPHES
+            and text[index - 1].isalpha()
+            and is_word_base(text[index + 1])
+        ):
+            return text[index + 1 :]
+    return text
 
 
 def initial_lexical_fragment(text: str) -> str | None:
@@ -443,7 +462,7 @@ def split_boundary_fragments(left_line: str, right_line: str) -> tuple[str, str,
     while left_token_start and not left_without_hyphen[left_token_start - 1].isspace():
         left_token_start -= 1
     raw_left_fragment = left_without_hyphen[left_token_start:]
-    left_fragment = strip_leading_wrapping_punctuation(raw_left_fragment)
+    left_fragment = strip_elided_prefix(strip_leading_wrapping_punctuation(raw_left_fragment))
     if not left_fragment or not any(is_word_base(char) for char in left_fragment):
         return None
 

@@ -107,6 +107,28 @@ class DocumentEvidenceTests(unittest.TestCase):
 
         self.assertEqual(result, 'the JavaScript\nruntime')
 
+    def test_elided_word_does_not_hide_document_evidence(self) -> None:
+        result = resolve(
+            ["avaient abandonné l'anthropopha-", 'gie et'],
+            evidence='anthropophagie',
+        )
+
+        self.assertEqual(result, "avaient abandonné l'anthropophagie\net")
+
+    def test_elided_word_with_typographic_apostrophe_is_stripped(self) -> None:
+        result = resolve(['les accusations d’an-', 'thropophagie'], evidence="l'anthropophagie")
+
+        self.assertEqual(result, 'les accusations d’anthropophagie')
+
+    def test_elided_word_does_not_prevent_default_removal(self) -> None:
+        self.assertEqual(resolve(["lors de l'expé-", 'dition']), "lors de l'expédition")
+
+    def test_elided_word_keeps_hyphenated_evidence(self) -> None:
+        self.assertEqual(
+            resolve(["c'est-", 'à-dire la même'], evidence="c'est-à-dire"),
+            "c'est-à-dire\nla même",
+        )
+
     def test_dictionary_keeps_internal_hyphens_and_ignores_surrounding_punctuation(self) -> None:
         counts = document_word_counts(['(E-Learning-Systeme), E‑Learning‑Systeme!'])
 
